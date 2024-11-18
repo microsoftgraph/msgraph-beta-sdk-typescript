@@ -16,7 +16,6 @@ export interface UsageRightItemRequestBuilder extends BaseRequestBuilder<UsageRi
      * Delete navigation property usageRights for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface UsageRightItemRequestBuilder extends BaseRequestBuilder<UsageRi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UsageRight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<UsageRightItemRequestBuilderGetQueryParameters> | undefined) : Promise<UsageRight | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface UsageRightItemRequestBuilder extends BaseRequestBuilder<UsageRi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UsageRight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UsageRight, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UsageRight | undefined>;
     /**
      * Delete navigation property usageRights for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the usage rights a device has been granted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UsageRightItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface UsageRightItemRequestBuilder extends BaseRequestBuilder<UsageRi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UsageRight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

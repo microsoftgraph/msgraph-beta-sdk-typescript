@@ -16,7 +16,6 @@ export interface TemporaryAccessPassAuthenticationMethodItemRequestBuilder exten
      * Delete a users's temporaryAccessPassAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -25,7 +24,6 @@ export interface TemporaryAccessPassAuthenticationMethodItemRequestBuilder exten
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TemporaryAccessPassAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<TemporaryAccessPassAuthenticationMethod | undefined>;
@@ -33,14 +31,12 @@ export interface TemporaryAccessPassAuthenticationMethodItemRequestBuilder exten
      * Delete a users's temporaryAccessPassAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

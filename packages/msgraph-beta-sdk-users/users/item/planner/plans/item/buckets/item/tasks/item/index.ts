@@ -22,29 +22,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PlannerTaskItemRequestBuilder extends BaseRequestBuilder<PlannerTaskItemRequestBuilder> {
     /**
      * Provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get assignedToTaskBoardFormat(): AssignedToTaskBoardFormatRequestBuilder;
     /**
      * Provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get bucketTaskBoardFormat(): BucketTaskBoardFormatRequestBuilder;
     /**
      * Provides operations to manage the details property of the microsoft.graph.plannerTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get details(): DetailsRequestBuilder;
     /**
      * Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get progressTaskBoardFormat(): ProgressTaskBoardFormatRequestBuilder;
     /**
      * Delete navigation property tasks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -52,7 +47,6 @@ export interface PlannerTaskItemRequestBuilder extends BaseRequestBuilder<Planne
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerTask | undefined>;
     /**
@@ -61,21 +55,18 @@ export interface PlannerTaskItemRequestBuilder extends BaseRequestBuilder<Planne
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: PlannerTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerTask | undefined>;
     /**
      * Delete navigation property tasks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read-only. Nullable. The collection of tasks in the bucket.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerTaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,7 +74,6 @@ export interface PlannerTaskItemRequestBuilder extends BaseRequestBuilder<Planne
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PlannerTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

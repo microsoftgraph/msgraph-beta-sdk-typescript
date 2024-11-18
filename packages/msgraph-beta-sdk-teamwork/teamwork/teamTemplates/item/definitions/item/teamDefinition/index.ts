@@ -28,6 +28,8 @@ import { OperationsRequestBuilderNavigationMetadata, OperationsRequestBuilderReq
 // @ts-ignore
 import { OwnersRequestBuilderNavigationMetadata, OwnersRequestBuilderRequestsMetadata, type OwnersRequestBuilder } from './owners/index.js';
 // @ts-ignore
+import { OwnersWithUserPrincipalNameRequestBuilderRequestsMetadata, type OwnersWithUserPrincipalNameRequestBuilder } from './ownersWithUserPrincipalName/index.js';
+// @ts-ignore
 import { PermissionGrantsRequestBuilderNavigationMetadata, PermissionGrantsRequestBuilderRequestsMetadata, type PermissionGrantsRequestBuilder } from './permissionGrants/index.js';
 // @ts-ignore
 import { PhotoRequestBuilderNavigationMetadata, PhotoRequestBuilderRequestsMetadata, type PhotoRequestBuilder } from './photo/index.js';
@@ -147,6 +149,12 @@ export interface TeamDefinitionRequestBuilder extends BaseRequestBuilder<TeamDef
      */
      get(requestConfiguration?: RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters> | undefined) : Promise<Team | undefined>;
     /**
+     * Provides operations to manage the owners property of the microsoft.graph.team entity.
+     * @param userPrincipalName Alternate key of user
+     * @returns {OwnersWithUserPrincipalNameRequestBuilder}
+     */
+     ownersWithUserPrincipalName(userPrincipalName: string | undefined) : OwnersWithUserPrincipalNameRequestBuilder;
+    /**
      * Update the navigation property teamDefinition in teamwork
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -202,6 +210,10 @@ const TeamDefinitionRequestBuilderGetQueryParametersMapper: Record<string, strin
  * Metadata for all the navigation properties in the request builder.
  */
 export const TeamDefinitionRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamDefinitionRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    ownersWithUserPrincipalName: {
+        requestsMetadata: OwnersWithUserPrincipalNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["userPrincipalName"],
+    },
     allChannels: {
         requestsMetadata: AllChannelsRequestBuilderRequestsMetadata,
         navigationMetadata: AllChannelsRequestBuilderNavigationMetadata,

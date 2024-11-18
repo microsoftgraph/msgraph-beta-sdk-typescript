@@ -17,7 +17,6 @@ export interface InvitedByRequestBuilder extends BaseRequestBuilder<InvitedByReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-list-invitedby?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InvitedByRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
@@ -25,7 +24,6 @@ export interface InvitedByRequestBuilder extends BaseRequestBuilder<InvitedByReq
      * Get the user or servicePrincipal that invited the specified user into the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InvitedByRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

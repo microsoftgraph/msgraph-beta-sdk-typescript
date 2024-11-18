@@ -16,7 +16,6 @@ export interface MentionItemRequestBuilder extends BaseRequestBuilder<MentionIte
      * Delete navigation property mentions for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,21 +23,18 @@ export interface MentionItemRequestBuilder extends BaseRequestBuilder<MentionIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Mention>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MentionItemRequestBuilderGetQueryParameters> | undefined) : Promise<Mention | undefined>;
     /**
      * Delete navigation property mentions for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MentionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

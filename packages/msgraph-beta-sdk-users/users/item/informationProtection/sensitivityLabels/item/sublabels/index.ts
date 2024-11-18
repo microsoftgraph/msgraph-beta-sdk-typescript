@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SublabelsRequestBuilder extends BaseRequestBuilder<SublabelsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the evaluate method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get evaluate(): EvaluateRequestBuilder;
     /**
      * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
      * @param sensitivityLabelId1 The unique identifier of sensitivityLabel
      * @returns {SensitivityLabelItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySensitivityLabelId1(sensitivityLabelId1: string) : SensitivityLabelItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface SublabelsRequestBuilder extends BaseRequestBuilder<SublabelsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabelCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SublabelsRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabelCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface SublabelsRequestBuilder extends BaseRequestBuilder<SublabelsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Get sublabels from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SublabelsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface SublabelsRequestBuilder extends BaseRequestBuilder<SublabelsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

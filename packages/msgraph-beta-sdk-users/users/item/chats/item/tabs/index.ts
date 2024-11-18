@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the tabs property of the microsoft.graph.chat entity.
      * @param teamsTabId The unique identifier of teamsTab
      * @returns {TeamsTabItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byTeamsTabId(teamsTabId: string) : TeamsTabItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsTabCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<TabsRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsTabCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsTab>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: TeamsTab, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsTab | undefined>;
     /**
      * A collection of all the tabs in the chat. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TabsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: TeamsTab, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

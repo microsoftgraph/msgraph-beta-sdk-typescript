@@ -28,24 +28,22 @@ export interface DeltaGetResponse extends BaseDeltaFunctionResponse, Parsable {
  */
 export interface DeltaRequestBuilder extends BaseRequestBuilder<DeltaRequestBuilder> {
     /**
-     * Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
+     * Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeltaGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/device-delta?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DeltaRequestBuilderGetQueryParameters> | undefined) : Promise<DeltaGetResponse | undefined>;
     /**
-     * Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
+     * Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeltaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
+ * Get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
  */
 export interface DeltaRequestBuilderGetQueryParameters {
     /**

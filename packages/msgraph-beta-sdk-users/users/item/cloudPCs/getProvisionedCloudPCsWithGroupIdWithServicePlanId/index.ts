@@ -43,7 +43,6 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters> | undefined) : Promise<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
      * Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

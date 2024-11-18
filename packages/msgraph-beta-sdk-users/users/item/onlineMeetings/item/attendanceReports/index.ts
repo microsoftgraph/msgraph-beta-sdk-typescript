@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<AttendanceReportsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
      * @param meetingAttendanceReportId The unique identifier of meetingAttendanceReport
      * @returns {MeetingAttendanceReportItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byMeetingAttendanceReportId(meetingAttendanceReportId: string) : MeetingAttendanceReportItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<Atte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingAttendanceReportCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AttendanceReportsRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingAttendanceReportCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<Atte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingAttendanceReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: MeetingAttendanceReport, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingAttendanceReport | undefined>;
     /**
      * The attendance reports of an online meeting. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttendanceReportsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<Atte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: MeetingAttendanceReport, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

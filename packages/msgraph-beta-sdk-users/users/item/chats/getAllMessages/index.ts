@@ -43,7 +43,6 @@ export interface GetAllMessagesRequestBuilder extends BaseRequestBuilder<GetAllM
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetAllMessagesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters> | undefined) : Promise<GetAllMessagesGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface GetAllMessagesRequestBuilder extends BaseRequestBuilder<GetAllM
      * Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetAllMessagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

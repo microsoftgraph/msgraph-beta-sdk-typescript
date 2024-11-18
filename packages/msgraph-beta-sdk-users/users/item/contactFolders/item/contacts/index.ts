@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ContactsRequestBuilder extends BaseRequestBuilder<ContactsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
      * @param contactId The unique identifier of contact
      * @returns {ContactItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byContactId(contactId: string) : ContactItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface ContactsRequestBuilder extends BaseRequestBuilder<ContactsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContactCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ContactsRequestBuilderGetQueryParameters> | undefined) : Promise<ContactCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface ContactsRequestBuilder extends BaseRequestBuilder<ContactsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Contact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: Contact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Contact | undefined>;
     /**
      * The contacts in the folder. Navigation property. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface ContactsRequestBuilder extends BaseRequestBuilder<ContactsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: Contact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

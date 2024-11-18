@@ -20,24 +20,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookItemRequestBuilder> {
     /**
      * Provides operations to call the copyNotebook method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get copyNotebook(): CopyNotebookRequestBuilder;
     /**
      * Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sectionGroups(): SectionGroupsRequestBuilder;
     /**
      * Provides operations to manage the sections property of the microsoft.graph.notebook entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sections(): SectionsRequestBuilder;
     /**
      * Delete navigation property notebooks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -45,7 +41,6 @@ export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Notebook>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters> | undefined) : Promise<Notebook | undefined>;
     /**
@@ -54,21 +49,18 @@ export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Notebook>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Notebook | undefined>;
     /**
      * Delete navigation property notebooks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NotebookItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -76,7 +68,6 @@ export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookI
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

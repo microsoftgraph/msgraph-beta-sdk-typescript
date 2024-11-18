@@ -18,19 +18,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SharedInsightItemRequestBuilder extends BaseRequestBuilder<SharedInsightItemRequestBuilder> {
     /**
      * Provides operations to manage the lastSharedMethod property of the microsoft.graph.sharedInsight entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get lastSharedMethod(): LastSharedMethodRequestBuilder;
     /**
      * Provides operations to manage the resource property of the microsoft.graph.sharedInsight entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resource(): ResourceRequestBuilder;
     /**
      * Delete navigation property shared for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -38,7 +35,6 @@ export interface SharedInsightItemRequestBuilder extends BaseRequestBuilder<Shar
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharedInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SharedInsightItemRequestBuilderGetQueryParameters> | undefined) : Promise<SharedInsight | undefined>;
     /**
@@ -47,21 +43,18 @@ export interface SharedInsightItemRequestBuilder extends BaseRequestBuilder<Shar
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharedInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: SharedInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharedInsight | undefined>;
     /**
      * Delete navigation property shared for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Access this property from the derived type itemInsights.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SharedInsightItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,7 +62,6 @@ export interface SharedInsightItemRequestBuilder extends BaseRequestBuilder<Shar
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: SharedInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

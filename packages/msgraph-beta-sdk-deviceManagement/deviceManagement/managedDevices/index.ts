@@ -18,11 +18,15 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { DownloadAppDiagnosticsRequestBuilderRequestsMetadata, type DownloadAppDiagnosticsRequestBuilder } from './downloadAppDiagnostics/index.js';
 // @ts-ignore
+import { DownloadPowerliftAppDiagnosticRequestBuilderRequestsMetadata, type DownloadPowerliftAppDiagnosticRequestBuilder } from './downloadPowerliftAppDiagnostic/index.js';
+// @ts-ignore
 import { ExecuteActionRequestBuilderRequestsMetadata, type ExecuteActionRequestBuilder } from './executeAction/index.js';
 // @ts-ignore
 import { ManagedDeviceItemRequestBuilderNavigationMetadata, ManagedDeviceItemRequestBuilderRequestsMetadata, type ManagedDeviceItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { MoveDevicesToOURequestBuilderRequestsMetadata, type MoveDevicesToOURequestBuilder } from './moveDevicesToOU/index.js';
+// @ts-ignore
+import { RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilderRequestsMetadata, type RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder } from './retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -50,6 +54,10 @@ export interface ManagedDevicesRequestBuilder extends BaseRequestBuilder<Managed
      * Provides operations to call the downloadAppDiagnostics method.
      */
     get downloadAppDiagnostics(): DownloadAppDiagnosticsRequestBuilder;
+    /**
+     * Provides operations to call the downloadPowerliftAppDiagnostic method.
+     */
+    get downloadPowerliftAppDiagnostic(): DownloadPowerliftAppDiagnosticRequestBuilder;
     /**
      * Provides operations to call the executeAction method.
      */
@@ -85,6 +93,12 @@ export interface ManagedDevicesRequestBuilder extends BaseRequestBuilder<Managed
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: ManagedDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ManagedDevice | undefined>;
+    /**
+     * Provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+     * @param userPrincipalName Usage: userPrincipalName='{userPrincipalName}'
+     * @returns {RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder}
+     */
+     retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(userPrincipalName: string | undefined) : RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder;
     /**
      * The list of managed devices.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -166,6 +180,10 @@ export const ManagedDevicesRequestBuilderNavigationMetadata: Record<Exclude<keyo
         navigationMetadata: ManagedDeviceItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["managedDevice%2Did"],
     },
+    retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName: {
+        requestsMetadata: RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["userPrincipalName"],
+    },
     bulkReprovisionCloudPc: {
         requestsMetadata: BulkReprovisionCloudPcRequestBuilderRequestsMetadata,
     },
@@ -180,6 +198,9 @@ export const ManagedDevicesRequestBuilderNavigationMetadata: Record<Exclude<keyo
     },
     downloadAppDiagnostics: {
         requestsMetadata: DownloadAppDiagnosticsRequestBuilderRequestsMetadata,
+    },
+    downloadPowerliftAppDiagnostic: {
+        requestsMetadata: DownloadPowerliftAppDiagnosticRequestBuilderRequestsMetadata,
     },
     executeAction: {
         requestsMetadata: ExecuteActionRequestBuilderRequestsMetadata,

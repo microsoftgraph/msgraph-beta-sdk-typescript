@@ -24,29 +24,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OnlineMeetingsRequestBuilder extends BaseRequestBuilder<OnlineMeetingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the createOrGet method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createOrGet(): CreateOrGetRequestBuilder;
     /**
      * Provides operations to call the getAllRecordings method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime(): GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Provides operations to call the getAllTranscripts method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime(): GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
      * @param onlineMeetingId The unique identifier of onlineMeeting
      * @returns {OnlineMeetingItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byOnlineMeetingId(onlineMeetingId: string) : OnlineMeetingItemRequestBuilder;
     /**
@@ -54,7 +49,6 @@ export interface OnlineMeetingsRequestBuilder extends BaseRequestBuilder<OnlineM
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeetingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OnlineMeetingsRequestBuilderGetQueryParameters> | undefined) : Promise<OnlineMeetingCollectionResponse | undefined>;
     /**
@@ -63,14 +57,12 @@ export interface OnlineMeetingsRequestBuilder extends BaseRequestBuilder<OnlineM
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeeting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: OnlineMeeting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnlineMeeting | undefined>;
     /**
      * Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OnlineMeetingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -78,7 +70,6 @@ export interface OnlineMeetingsRequestBuilder extends BaseRequestBuilder<OnlineM
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: OnlineMeeting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

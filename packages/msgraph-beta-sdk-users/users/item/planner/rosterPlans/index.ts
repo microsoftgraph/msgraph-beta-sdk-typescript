@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RosterPlansRequestBuilder extends BaseRequestBuilder<RosterPlansRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
      * @param plannerPlanId The unique identifier of plannerPlan
      * @returns {PlannerPlanItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPlannerPlanId(plannerPlanId: string) : PlannerPlanItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface RosterPlansRequestBuilder extends BaseRequestBuilder<RosterPlan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerPlanCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerPlanCollectionResponse | undefined>;
@@ -41,7 +38,6 @@ export interface RosterPlansRequestBuilder extends BaseRequestBuilder<RosterPlan
      * Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RosterPlansRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

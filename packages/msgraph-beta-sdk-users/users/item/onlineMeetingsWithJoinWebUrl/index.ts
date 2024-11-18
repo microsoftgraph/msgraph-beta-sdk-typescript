@@ -20,24 +20,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OnlineMeetingsWithJoinWebUrlRequestBuilder extends BaseRequestBuilder<OnlineMeetingsWithJoinWebUrlRequestBuilder> {
     /**
      * Provides operations to call the getVirtualAppointmentJoinWebUrl method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getVirtualAppointmentJoinWebUrl(): GetVirtualAppointmentJoinWebUrlRequestBuilder;
     /**
      * Provides operations to call the sendVirtualAppointmentReminderSms method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendVirtualAppointmentReminderSms(): SendVirtualAppointmentReminderSmsRequestBuilder;
     /**
      * Provides operations to call the sendVirtualAppointmentSms method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendVirtualAppointmentSms(): SendVirtualAppointmentSmsRequestBuilder;
     /**
      * Delete navigation property onlineMeetings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -45,7 +41,6 @@ export interface OnlineMeetingsWithJoinWebUrlRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeeting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters> | undefined) : Promise<OnlineMeeting | undefined>;
     /**
@@ -54,21 +49,18 @@ export interface OnlineMeetingsWithJoinWebUrlRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeeting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: OnlineMeeting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnlineMeeting | undefined>;
     /**
      * Delete navigation property onlineMeetings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -76,7 +68,6 @@ export interface OnlineMeetingsWithJoinWebUrlRequestBuilder extends BaseRequestB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: OnlineMeeting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

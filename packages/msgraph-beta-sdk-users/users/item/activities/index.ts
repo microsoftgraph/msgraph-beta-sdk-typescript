@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the recent method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recent(): RecentRequestBuilder;
     /**
      * Provides operations to manage the activities property of the microsoft.graph.user entity.
      * @param userActivityId The unique identifier of userActivity
      * @returns {UserActivityItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUserActivityId(userActivityId: string) : UserActivityItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserActivityCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ActivitiesRequestBuilderGetQueryParameters> | undefined) : Promise<UserActivityCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserActivity>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: UserActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserActivity | undefined>;
     /**
      * The user's activities across devices. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActivitiesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UserActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

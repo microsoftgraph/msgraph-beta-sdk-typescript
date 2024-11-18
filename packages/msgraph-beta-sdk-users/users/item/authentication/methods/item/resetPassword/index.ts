@@ -52,7 +52,6 @@ export interface ResetPasswordRequestBuilder extends BaseRequestBuilder<ResetPas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordResetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-beta|Find more info here}
      */
      post(body: ResetPasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordResetResponse | undefined>;
@@ -61,7 +60,6 @@ export interface ResetPasswordRequestBuilder extends BaseRequestBuilder<ResetPas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ResetPasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

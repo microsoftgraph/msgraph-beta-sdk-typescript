@@ -16,7 +16,6 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      * Delete navigation property parent for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ParentRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
      * Delete navigation property parent for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The parent label associated with a child label. Null if the label has no parent.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ParentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -34,9 +34,13 @@ import { GetSharedUseLicenseUsageReportRequestBuilderRequestsMetadata, type GetS
 // @ts-ignore
 import { GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata, type GetTotalAggregatedRemoteConnectionReportsRequestBuilder } from './getTotalAggregatedRemoteConnectionReports/index.js';
 // @ts-ignore
+import { RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata, type RetrieveBulkActionStatusReportRequestBuilder } from './retrieveBulkActionStatusReport/index.js';
+// @ts-ignore
 import { RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata, type RetrieveConnectionQualityReportsRequestBuilder } from './retrieveConnectionQualityReports/index.js';
 // @ts-ignore
 import { RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMetadata, type RetrieveCrossRegionDisasterRecoveryReportRequestBuilder } from './retrieveCrossRegionDisasterRecoveryReport/index.js';
+// @ts-ignore
+import { RetrieveFrontlineReportsRequestBuilderRequestsMetadata, type RetrieveFrontlineReportsRequestBuilder } from './retrieveFrontlineReports/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -93,6 +97,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
     get getTotalAggregatedRemoteConnectionReports(): GetTotalAggregatedRemoteConnectionReportsRequestBuilder;
     /**
+     * Provides operations to call the retrieveBulkActionStatusReport method.
+     */
+    get retrieveBulkActionStatusReport(): RetrieveBulkActionStatusReportRequestBuilder;
+    /**
      * Provides operations to call the retrieveConnectionQualityReports method.
      */
     get retrieveConnectionQualityReports(): RetrieveConnectionQualityReportsRequestBuilder;
@@ -100,6 +108,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
      */
     get retrieveCrossRegionDisasterRecoveryReport(): RetrieveCrossRegionDisasterRecoveryReportRequestBuilder;
+    /**
+     * Provides operations to call the retrieveFrontlineReports method.
+     */
+    get retrieveFrontlineReports(): RetrieveFrontlineReportsRequestBuilder;
     /**
      * Delete navigation property reports for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -226,11 +238,17 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     getTotalAggregatedRemoteConnectionReports: {
         requestsMetadata: GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata,
     },
+    retrieveBulkActionStatusReport: {
+        requestsMetadata: RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata,
+    },
     retrieveConnectionQualityReports: {
         requestsMetadata: RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata,
     },
     retrieveCrossRegionDisasterRecoveryReport: {
         requestsMetadata: RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMetadata,
+    },
+    retrieveFrontlineReports: {
+        requestsMetadata: RetrieveFrontlineReportsRequestBuilderRequestsMetadata,
     },
 };
 /**

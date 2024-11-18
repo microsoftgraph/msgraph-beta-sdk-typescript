@@ -58,119 +58,96 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCItemRequestBuilder> {
     /**
      * Provides operations to call the changeUserAccountType method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get changeUserAccountType(): ChangeUserAccountTypeRequestBuilder;
     /**
      * Provides operations to call the createSnapshot method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createSnapshot(): CreateSnapshotRequestBuilder;
     /**
      * Provides operations to call the endGracePeriod method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get endGracePeriod(): EndGracePeriodRequestBuilder;
     /**
      * Provides operations to call the getCloudPcConnectivityHistory method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getCloudPcConnectivityHistory(): GetCloudPcConnectivityHistoryRequestBuilder;
     /**
      * Provides operations to call the getCloudPcLaunchInfo method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getCloudPcLaunchInfo(): GetCloudPcLaunchInfoRequestBuilder;
     /**
      * Provides operations to call the getFrontlineCloudPcAccessState method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getFrontlineCloudPcAccessState(): GetFrontlineCloudPcAccessStateRequestBuilder;
     /**
      * Provides operations to call the getSupportedCloudPcRemoteActions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getSupportedCloudPcRemoteActions(): GetSupportedCloudPcRemoteActionsRequestBuilder;
     /**
      * Provides operations to call the powerOff method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get powerOff(): PowerOffRequestBuilder;
     /**
      * Provides operations to call the powerOn method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get powerOn(): PowerOnRequestBuilder;
     /**
      * Provides operations to call the reboot method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get reboot(): RebootRequestBuilder;
     /**
      * Provides operations to call the rename method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get rename(): RenameRequestBuilder;
     /**
      * Provides operations to call the reprovision method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get reprovision(): ReprovisionRequestBuilder;
     /**
      * Provides operations to call the resize method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get resize(): ResizeRequestBuilder;
     /**
      * Provides operations to call the restore method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get restore(): RestoreRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPCRemoteActionResults method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retrieveCloudPCRemoteActionResults(): RetrieveCloudPCRemoteActionResultsRequestBuilder;
     /**
      * Provides operations to call the retrieveReviewStatus method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retrieveReviewStatus(): RetrieveReviewStatusRequestBuilder;
     /**
      * Provides operations to call the retrieveSnapshots method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retrieveSnapshots(): RetrieveSnapshotsRequestBuilder;
     /**
      * Provides operations to call the retryPartnerAgentInstallation method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retryPartnerAgentInstallation(): RetryPartnerAgentInstallationRequestBuilder;
     /**
      * Provides operations to call the setReviewStatus method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setReviewStatus(): SetReviewStatusRequestBuilder;
     /**
      * Provides operations to call the start method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get start(): StartRequestBuilder;
     /**
      * Provides operations to call the stop method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get stop(): StopRequestBuilder;
     /**
      * Provides operations to call the troubleshoot method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get troubleshoot(): TroubleshootRequestBuilder;
     /**
      * Delete navigation property cloudPCs for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -178,7 +155,6 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPC>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPC | undefined>;
     /**
@@ -187,21 +163,18 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPC>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPC | undefined>;
     /**
      * Delete navigation property cloudPCs for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get cloudPCs from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPCItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -209,7 +182,6 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -192,6 +192,8 @@ import { ReprocessLicenseAssignmentRequestBuilderRequestsMetadata, type Reproces
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
 // @ts-ignore
+import { RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilderRequestsMetadata, type RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilder } from './retrieveManagedDevicesWithAppInstallationIssues/index.js';
+// @ts-ignore
 import { RetryServiceProvisioningRequestBuilderRequestsMetadata, type RetryServiceProvisioningRequestBuilder } from './retryServiceProvisioning/index.js';
 // @ts-ignore
 import { RevokeSignInSessionsRequestBuilderRequestsMetadata, type RevokeSignInSessionsRequestBuilder } from './revokeSignInSessions/index.js';
@@ -244,561 +246,454 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemRequestBuilder> {
     /**
      * Provides operations to manage the activities property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get activities(): ActivitiesRequestBuilder;
     /**
      * Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get agreementAcceptances(): AgreementAcceptancesRequestBuilder;
     /**
      * Provides operations to manage the analytics property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get analytics(): AnalyticsRequestBuilder;
     /**
      * Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get appConsentRequestsForApproval(): AppConsentRequestsForApprovalRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get appRoleAssignedResources(): AppRoleAssignedResourcesRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get appRoleAssignments(): AppRoleAssignmentsRequestBuilder;
     /**
      * Provides operations to manage the approvals property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get approvals(): ApprovalsRequestBuilder;
     /**
      * Provides operations to call the assignLicense method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get assignLicense(): AssignLicenseRequestBuilder;
     /**
      * Provides operations to manage the authentication property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get authentication(): AuthenticationRequestBuilder;
     /**
      * Provides operations to manage the calendar property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendar(): CalendarRequestBuilder;
     /**
      * Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendarGroups(): CalendarGroupsRequestBuilder;
     /**
      * Provides operations to manage the calendars property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendars(): CalendarsRequestBuilder;
     /**
      * Provides operations to manage the calendarView property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendarView(): CalendarViewRequestBuilder;
     /**
      * Provides operations to call the changePassword method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get changePassword(): ChangePasswordRequestBuilder;
     /**
      * Provides operations to manage the chats property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get chats(): ChatsRequestBuilder;
     /**
      * Provides operations to call the checkMemberGroups method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get checkMemberGroups(): CheckMemberGroupsRequestBuilder;
     /**
      * Provides operations to call the checkMemberObjects method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get checkMemberObjects(): CheckMemberObjectsRequestBuilder;
     /**
      * Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get cloudClipboard(): CloudClipboardRequestBuilder;
     /**
      * Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get cloudPCs(): CloudPCsRequestBuilder;
     /**
      * Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get contactFolders(): ContactFoldersRequestBuilder;
     /**
      * Provides operations to manage the contacts property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get contacts(): ContactsRequestBuilder;
     /**
      * Provides operations to call the convertExternalToInternalMemberUser method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get convertExternalToInternalMemberUser(): ConvertExternalToInternalMemberUserRequestBuilder;
     /**
      * Provides operations to manage the createdObjects property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get createdObjects(): CreatedObjectsRequestBuilder;
     /**
      * Provides operations to call the deletePasswordSingleSignOnCredentials method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deletePasswordSingleSignOnCredentials(): DeletePasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deviceEnrollmentConfigurations(): DeviceEnrollmentConfigurationsRequestBuilder;
     /**
      * Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get deviceManagementTroubleshootingEvents(): DeviceManagementTroubleshootingEventsRequestBuilder;
     /**
      * Provides operations to manage the devices property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get devices(): DevicesRequestBuilder;
     /**
      * Provides operations to manage the directReports property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get directReports(): DirectReportsRequestBuilder;
     /**
      * Provides operations to manage the drive property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get drive(): DriveRequestBuilder;
     /**
      * Provides operations to manage the drives property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get drives(): DrivesRequestBuilder;
     /**
      * Provides operations to manage the employeeExperience property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get employeeExperience(): EmployeeExperienceRequestBuilder;
     /**
      * Provides operations to manage the events property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get events(): EventsRequestBuilder;
     /**
      * Provides operations to call the exportDeviceAndAppManagementData method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get exportDeviceAndAppManagementData(): ExportDeviceAndAppManagementDataRequestBuilder;
     /**
      * Provides operations to call the exportPersonalData method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get exportPersonalData(): ExportPersonalDataRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to call the findMeetingTimes method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get findMeetingTimes(): FindMeetingTimesRequestBuilder;
     /**
      * Provides operations to call the findRoomLists method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get findRoomLists(): FindRoomListsRequestBuilder;
     /**
      * Provides operations to call the findRooms method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get findRooms(): FindRoomsRequestBuilder;
     /**
      * Provides operations to manage the followedSites property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get followedSites(): FollowedSitesRequestBuilder;
     /**
      * Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getEffectiveDeviceEnrollmentConfigurations(): GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder;
     /**
      * Provides operations to call the getLoggedOnManagedDevices method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getLoggedOnManagedDevices(): GetLoggedOnManagedDevicesRequestBuilder;
     /**
      * Provides operations to call the getMailTips method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getMailTips(): GetMailTipsRequestBuilder;
     /**
      * Provides operations to call the getManagedAppDiagnosticStatuses method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getManagedAppDiagnosticStatuses(): GetManagedAppDiagnosticStatusesRequestBuilder;
     /**
      * Provides operations to call the getManagedAppPolicies method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getManagedAppPolicies(): GetManagedAppPoliciesRequestBuilder;
     /**
      * Provides operations to call the getManagedDevicesWithAppFailures method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getManagedDevicesWithAppFailures(): GetManagedDevicesWithAppFailuresRequestBuilder;
     /**
      * Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getManagedDevicesWithFailedOrPendingApps(): GetManagedDevicesWithFailedOrPendingAppsRequestBuilder;
     /**
      * Provides operations to call the getMemberGroups method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getMemberGroups(): GetMemberGroupsRequestBuilder;
     /**
      * Provides operations to call the getMemberObjects method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getMemberObjects(): GetMemberObjectsRequestBuilder;
     /**
      * Provides operations to call the getPasswordSingleSignOnCredentials method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getPasswordSingleSignOnCredentials(): GetPasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get inferenceClassification(): InferenceClassificationRequestBuilder;
     /**
      * Provides operations to manage the informationProtection property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get informationProtection(): InformationProtectionRequestBuilder;
     /**
      * Provides operations to manage the insights property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get insights(): InsightsRequestBuilder;
     /**
      * Provides operations to call the invalidateAllRefreshTokens method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get invalidateAllRefreshTokens(): InvalidateAllRefreshTokensRequestBuilder;
     /**
      * Provides operations to manage the invitedBy property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get invitedBy(): InvitedByRequestBuilder;
     /**
      * Provides operations to call the isManagedAppUserBlocked method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get isManagedAppUserBlocked(): IsManagedAppUserBlockedRequestBuilder;
     /**
      * Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get joinedGroups(): JoinedGroupsRequestBuilder;
     /**
      * Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get joinedTeams(): JoinedTeamsRequestBuilder;
     /**
      * Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get licenseDetails(): LicenseDetailsRequestBuilder;
     /**
      * The mailboxSettings property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mailboxSettings(): MailboxSettingsRequestBuilder;
     /**
      * Provides operations to manage the mailFolders property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mailFolders(): MailFoldersRequestBuilder;
     /**
      * Provides operations to manage the managedAppLogCollectionRequests property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get managedAppLogCollectionRequests(): ManagedAppLogCollectionRequestsRequestBuilder;
     /**
      * Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get managedAppRegistrations(): ManagedAppRegistrationsRequestBuilder;
     /**
      * Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get managedDevices(): ManagedDevicesRequestBuilder;
     /**
      * Provides operations to manage the manager property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get manager(): ManagerRequestBuilder;
     /**
      * Provides operations to manage the memberOf property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get memberOf(): MemberOfRequestBuilder;
     /**
      * Provides operations to manage the messages property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get messages(): MessagesRequestBuilder;
     /**
      * Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mobileAppIntentAndStates(): MobileAppIntentAndStatesRequestBuilder;
     /**
      * Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mobileAppTroubleshootingEvents(): MobileAppTroubleshootingEventsRequestBuilder;
     /**
      * Provides operations to manage the notifications property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get notifications(): NotificationsRequestBuilder;
     /**
      * Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get oauth2PermissionGrants(): Oauth2PermissionGrantsRequestBuilder;
     /**
      * Provides operations to manage the onenote property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get onenote(): OnenoteRequestBuilder;
     /**
      * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get onlineMeetings(): OnlineMeetingsRequestBuilder;
     /**
      * Provides operations to manage the outlook property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get outlook(): OutlookRequestBuilder;
     /**
      * Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get ownedDevices(): OwnedDevicesRequestBuilder;
     /**
      * Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get ownedObjects(): OwnedObjectsRequestBuilder;
     /**
      * Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get pendingAccessReviewInstances(): PendingAccessReviewInstancesRequestBuilder;
     /**
      * Provides operations to manage the people property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get people(): PeopleRequestBuilder;
     /**
      * Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get permissionGrants(): PermissionGrantsRequestBuilder;
     /**
      * Provides operations to manage the photo property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get photo(): PhotoRequestBuilder;
     /**
      * Provides operations to manage the photos property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get photos(): PhotosRequestBuilder;
     /**
      * Provides operations to manage the planner property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get planner(): PlannerRequestBuilder;
     /**
      * Provides operations to manage the presence property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get presence(): PresenceRequestBuilder;
     /**
      * Provides operations to manage the profile property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get profile(): ProfileRequestBuilder;
     /**
      * Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get registeredDevices(): RegisteredDevicesRequestBuilder;
     /**
      * Provides operations to call the removeAllDevicesFromManagement method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get removeAllDevicesFromManagement(): RemoveAllDevicesFromManagementRequestBuilder;
     /**
      * Provides operations to call the reprocessLicenseAssignment method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get reprocessLicenseAssignment(): ReprocessLicenseAssignmentRequestBuilder;
     /**
      * Provides operations to call the restore method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get restore(): RestoreRequestBuilder;
     /**
+     * Provides operations to call the retrieveManagedDevicesWithAppInstallationIssues method.
+     */
+    get retrieveManagedDevicesWithAppInstallationIssues(): RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilder;
+    /**
      * Provides operations to call the retryServiceProvisioning method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get retryServiceProvisioning(): RetryServiceProvisioningRequestBuilder;
     /**
      * Provides operations to call the revokeSignInSessions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get revokeSignInSessions(): RevokeSignInSessionsRequestBuilder;
     /**
      * Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get scopedRoleMemberOf(): ScopedRoleMemberOfRequestBuilder;
     /**
      * Provides operations to manage the security property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get security(): SecurityRequestBuilder;
     /**
      * Provides operations to call the sendMail method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendMail(): SendMailRequestBuilder;
     /**
      * The serviceProvisioningErrors property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get settings(): SettingsRequestBuilder;
     /**
      * Provides operations to manage the solutions property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get solutions(): SolutionsRequestBuilder;
     /**
      * Provides operations to manage the sponsors property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sponsors(): SponsorsRequestBuilder;
     /**
      * Provides operations to manage the teamwork property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get teamwork(): TeamworkRequestBuilder;
     /**
      * Provides operations to manage the todo property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get todo(): TodoRequestBuilder;
     /**
      * Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get transitiveMemberOf(): TransitiveMemberOfRequestBuilder;
     /**
      * Provides operations to manage the transitiveReports property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get transitiveReports(): TransitiveReportsRequestBuilder;
     /**
      * Provides operations to call the translateExchangeIds method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get translateExchangeIds(): TranslateExchangeIdsRequestBuilder;
     /**
      * Provides operations to call the unblockManagedApps method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get unblockManagedApps(): UnblockManagedAppsRequestBuilder;
     /**
      * Provides operations to manage the usageRights property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get usageRights(): UsageRightsRequestBuilder;
     /**
      * Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get virtualEvents(): VirtualEventsRequestBuilder;
     /**
      * Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get windowsInformationProtectionDeviceRegistrations(): WindowsInformationProtectionDeviceRegistrationsRequestBuilder;
     /**
      * Provides operations to call the wipeAndBlockManagedApps method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get wipeAndBlockManagedApps(): WipeAndBlockManagedAppsRequestBuilder;
     /**
      * Provides operations to call the wipeManagedAppRegistrationByDeviceTag method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get wipeManagedAppRegistrationByDeviceTag(): WipeManagedAppRegistrationByDeviceTagRequestBuilder;
     /**
      * Provides operations to call the wipeManagedAppRegistrationsByAzureAdDeviceId method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get wipeManagedAppRegistrationsByAzureAdDeviceId(): WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder;
     /**
      * Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get wipeManagedAppRegistrationsByDeviceTag(): WipeManagedAppRegistrationsByDeviceTagRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
      * @param appId Alternate key of servicePrincipal
      * @returns {AppRoleAssignedResourcesWithAppIdRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      appRoleAssignedResourcesWithAppId(appId: string | undefined) : AppRoleAssignedResourcesWithAppIdRequestBuilder;
     /**
      * Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -806,7 +701,6 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the devices property of the microsoft.graph.user entity.
      * @param deviceId Alternate key of device
      * @returns {DevicesWithDeviceIdRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      devicesWithDeviceId(deviceId: string | undefined) : DevicesWithDeviceIdRequestBuilder;
     /**
@@ -814,14 +708,12 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * @param skip Usage: skip={skip}
      * @param top Usage: top={top}
      * @returns {ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      exportDeviceAndAppManagementDataWithSkipWithTop(skip: number | undefined, top: number | undefined) : ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder;
     /**
      * Provides operations to call the findRooms method.
      * @param RoomList Usage: RoomList='{RoomList}'
      * @returns {FindRoomsWithRoomListRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      findRoomsWithRoomList(roomList: string | undefined) : FindRoomsWithRoomListRequestBuilder;
     /**
@@ -829,7 +721,6 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserItemRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
@@ -837,7 +728,6 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
      * @param joinWebUrl Alternate key of onlineMeeting
      * @returns {OnlineMeetingsWithJoinWebUrlRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      onlineMeetingsWithJoinWebUrl(joinWebUrl: string | undefined) : OnlineMeetingsWithJoinWebUrlRequestBuilder;
     /**
@@ -846,7 +736,6 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<User | undefined>;
@@ -855,21 +744,18 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * @param EndDateTime Usage: EndDateTime='{EndDateTime}'
      * @param StartDateTime Usage: StartDateTime='{StartDateTime}'
      * @returns {ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      reminderViewWithStartDateTimeWithEndDateTime(endDateTime: string | undefined, startDateTime: string | undefined) : ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -877,7 +763,6 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -1252,6 +1137,9 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     },
     restore: {
         requestsMetadata: RestoreRequestBuilderRequestsMetadata,
+    },
+    retrieveManagedDevicesWithAppInstallationIssues: {
+        requestsMetadata: RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilderRequestsMetadata,
     },
     retryServiceProvisioning: {
         requestsMetadata: RetryServiceProvisioningRequestBuilderRequestsMetadata,

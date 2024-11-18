@@ -27,10 +27,11 @@ export interface AlertConfigurationsRequestBuilder extends BaseRequestBuilder<Al
      */
      byAlertConfigurationId(alertConfigurationId: string) : AlertConfigurationItemRequestBuilder;
     /**
-     * Get alertConfigurations from reports
+     * Get a list of the Microsoft Entra health monitoring alertConfiguration objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AlertConfigurationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/healthmonitoring-healthmonitoringroot-list-alertconfigurations?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AlertConfigurationsRequestBuilderGetQueryParameters> | undefined) : Promise<AlertConfigurationCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface AlertConfigurationsRequestBuilder extends BaseRequestBuilder<Al
      */
      post(body: AlertConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AlertConfiguration | undefined>;
     /**
-     * Get alertConfigurations from reports
+     * Get a list of the Microsoft Entra health monitoring alertConfiguration objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface AlertConfigurationsRequestBuilder extends BaseRequestBuilder<Al
      toPostRequestInformation(body: AlertConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get alertConfigurations from reports
+ * Get a list of the Microsoft Entra health monitoring alertConfiguration objects and their properties.
  */
 export interface AlertConfigurationsRequestBuilderGetQueryParameters {
     /**

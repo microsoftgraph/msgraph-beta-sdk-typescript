@@ -16,7 +16,6 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
      * Deletes a personAnnotation object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -25,7 +24,6 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAnnotation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PersonAnnotationItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAnnotation | undefined>;
     /**
@@ -34,7 +32,6 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAnnotation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PersonAnnotation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAnnotation | undefined>;
@@ -42,14 +39,12 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
      * Deletes a personAnnotation object from a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents notes that a user has added to their profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonAnnotationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface PersonAnnotationItemRequestBuilder extends BaseRequestBuilder<P
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PersonAnnotation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

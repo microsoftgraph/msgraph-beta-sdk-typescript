@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AiInsightsRequestBuilder extends BaseRequestBuilder<AiInsightsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the aiInsights property of the microsoft.graph.onlineMeeting entity.
      * @param callAiInsightId The unique identifier of callAiInsight
      * @returns {CallAiInsightItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byCallAiInsightId(callAiInsightId: string) : CallAiInsightItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AiInsightsRequestBuilder extends BaseRequestBuilder<AiInsightsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallAiInsightCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AiInsightsRequestBuilderGetQueryParameters> | undefined) : Promise<CallAiInsightCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AiInsightsRequestBuilder extends BaseRequestBuilder<AiInsightsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallAiInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: CallAiInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CallAiInsight | undefined>;
     /**
      * Get aiInsights from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AiInsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AiInsightsRequestBuilder extends BaseRequestBuilder<AiInsightsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CallAiInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

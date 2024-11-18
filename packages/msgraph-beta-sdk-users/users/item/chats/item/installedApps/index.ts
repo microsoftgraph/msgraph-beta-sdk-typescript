@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<InstalledAppsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
      * @param teamsAppInstallationId The unique identifier of teamsAppInstallation
      * @returns {TeamsAppInstallationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byTeamsAppInstallationId(teamsAppInstallationId: string) : TeamsAppInstallationItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppInstallationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InstalledAppsRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsAppInstallationCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppInstallation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: TeamsAppInstallation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsAppInstallation | undefined>;
     /**
      * A collection of all the apps in the chat. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InstalledAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: TeamsAppInstallation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

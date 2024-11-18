@@ -16,7 +16,6 @@ export interface LabelPolicySettingsRequestBuilder extends BaseRequestBuilder<La
      * Delete navigation property labelPolicySettings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface LabelPolicySettingsRequestBuilder extends BaseRequestBuilder<La
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtectionPolicySetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/security-informationprotectionpolicysetting-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<LabelPolicySettingsRequestBuilderGetQueryParameters> | undefined) : Promise<InformationProtectionPolicySetting | undefined>;
@@ -34,21 +32,18 @@ export interface LabelPolicySettingsRequestBuilder extends BaseRequestBuilder<La
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtectionPolicySetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: InformationProtectionPolicySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtectionPolicySetting | undefined>;
     /**
      * Delete navigation property labelPolicySettings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LabelPolicySettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,7 +51,6 @@ export interface LabelPolicySettingsRequestBuilder extends BaseRequestBuilder<La
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: InformationProtectionPolicySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

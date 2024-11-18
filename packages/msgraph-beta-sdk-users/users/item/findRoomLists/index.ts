@@ -43,7 +43,6 @@ export interface FindRoomListsRequestBuilder extends BaseRequestBuilder<FindRoom
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FindRoomListsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters> | undefined) : Promise<FindRoomListsGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface FindRoomListsRequestBuilder extends BaseRequestBuilder<FindRoom
      * Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindRoomListsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

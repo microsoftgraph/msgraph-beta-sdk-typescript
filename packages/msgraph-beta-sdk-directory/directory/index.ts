@@ -34,6 +34,8 @@ import { OutboundSharedUserProfilesRequestBuilderNavigationMetadata, OutboundSha
 // @ts-ignore
 import { PendingExternalUserProfilesRequestBuilderNavigationMetadata, PendingExternalUserProfilesRequestBuilderRequestsMetadata, type PendingExternalUserProfilesRequestBuilder } from './pendingExternalUserProfiles/index.js';
 // @ts-ignore
+import { PublicKeyInfrastructureRequestBuilderNavigationMetadata, PublicKeyInfrastructureRequestBuilderRequestsMetadata, type PublicKeyInfrastructureRequestBuilder } from './publicKeyInfrastructure/index.js';
+// @ts-ignore
 import { RecommendationsRequestBuilderNavigationMetadata, RecommendationsRequestBuilderRequestsMetadata, type RecommendationsRequestBuilder } from './recommendations/index.js';
 // @ts-ignore
 import { SharedEmailDomainsRequestBuilderNavigationMetadata, SharedEmailDomainsRequestBuilderRequestsMetadata, type SharedEmailDomainsRequestBuilder } from './sharedEmailDomains/index.js';
@@ -106,6 +108,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.
      */
     get pendingExternalUserProfiles(): PendingExternalUserProfilesRequestBuilder;
+    /**
+     * Provides operations to manage the publicKeyInfrastructure property of the microsoft.graph.directory entity.
+     */
+    get publicKeyInfrastructure(): PublicKeyInfrastructureRequestBuilder;
     /**
      * Provides operations to manage the recommendations property of the microsoft.graph.directory entity.
      */
@@ -250,6 +256,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
     pendingExternalUserProfiles: {
         requestsMetadata: PendingExternalUserProfilesRequestBuilderRequestsMetadata,
         navigationMetadata: PendingExternalUserProfilesRequestBuilderNavigationMetadata,
+    },
+    publicKeyInfrastructure: {
+        requestsMetadata: PublicKeyInfrastructureRequestBuilderRequestsMetadata,
+        navigationMetadata: PublicKeyInfrastructureRequestBuilderNavigationMetadata,
     },
     recommendations: {
         requestsMetadata: RecommendationsRequestBuilderRequestsMetadata,

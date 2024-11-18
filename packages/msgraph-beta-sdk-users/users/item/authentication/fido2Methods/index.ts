@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface Fido2MethodsRequestBuilder extends BaseRequestBuilder<Fido2MethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the creationOptions method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get creationOptionsWithChallengeTimeoutInMinutes(): CreationOptionsWithChallengeTimeoutInMinutesRequestBuilder;
     /**
      * Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
      * @param fido2AuthenticationMethodId The unique identifier of fido2AuthenticationMethod
      * @returns {Fido2AuthenticationMethodItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byFido2AuthenticationMethodId(fido2AuthenticationMethodId: string) : Fido2AuthenticationMethodItemRequestBuilder;
     /**
@@ -40,14 +37,12 @@ export interface Fido2MethodsRequestBuilder extends BaseRequestBuilder<Fido2Meth
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Fido2AuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters> | undefined) : Promise<Fido2AuthenticationMethodCollectionResponse | undefined>;
     /**
      * Represents the FIDO2 security keys registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<Fido2MethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

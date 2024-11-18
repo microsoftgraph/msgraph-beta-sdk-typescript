@@ -16,7 +16,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BitlockerRequestBuilder extends BaseRequestBuilder<BitlockerRequestBuilder> {
     /**
      * Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recoveryKeys(): RecoveryKeysRequestBuilder;
     /**
@@ -24,14 +23,12 @@ export interface BitlockerRequestBuilder extends BaseRequestBuilder<BitlockerReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Bitlocker>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<BitlockerRequestBuilderGetQueryParameters> | undefined) : Promise<Bitlocker | undefined>;
     /**
      * Get bitlocker from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BitlockerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -79,7 +79,7 @@ export interface AlertRecordCollectionResponse extends BaseCollectionPaginationC
 }
 export interface AlertRule extends Entity, Parsable {
     /**
-     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
      */
     alertRuleTemplate?: AlertRuleTemplate | null;
     /**
@@ -513,7 +513,7 @@ export interface RuleCondition extends AdditionalDataHolder, BackedModel, Parsab
      */
     operator?: OperatorType | null;
     /**
-     * The relationship type.  Possible values are: and, or.
+     * The relationship type. Possible values are: and, or.
      */
     relationshipType?: RelationshipType | null;
     /**

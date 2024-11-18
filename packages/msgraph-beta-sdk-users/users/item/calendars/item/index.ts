@@ -26,41 +26,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CalendarItemRequestBuilder extends BaseRequestBuilder<CalendarItemRequestBuilder> {
     /**
      * Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendarPermissions(): CalendarPermissionsRequestBuilder;
     /**
      * Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get calendarView(): CalendarViewRequestBuilder;
     /**
      * Provides operations to manage the events property of the microsoft.graph.calendar entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get events(): EventsRequestBuilder;
     /**
      * Provides operations to call the getSchedule method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getSchedule(): GetScheduleRequestBuilder;
     /**
      * Provides operations to call the permanentDelete method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to call the allowedCalendarSharingRoles method.
      * @param User Usage: User='{User}'
      * @returns {AllowedCalendarSharingRolesWithUserRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      allowedCalendarSharingRolesWithUser(user: string | undefined) : AllowedCalendarSharingRolesWithUserRequestBuilder;
     /**
      * Delete navigation property calendars for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -68,7 +61,6 @@ export interface CalendarItemRequestBuilder extends BaseRequestBuilder<CalendarI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Calendar>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CalendarItemRequestBuilderGetQueryParameters> | undefined) : Promise<Calendar | undefined>;
     /**
@@ -77,21 +69,18 @@ export interface CalendarItemRequestBuilder extends BaseRequestBuilder<CalendarI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Calendar>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Calendar, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Calendar | undefined>;
     /**
      * Delete navigation property calendars for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The user's calendars. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CalendarItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -99,7 +88,6 @@ export interface CalendarItemRequestBuilder extends BaseRequestBuilder<CalendarI
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Calendar, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

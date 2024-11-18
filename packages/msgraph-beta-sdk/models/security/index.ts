@@ -4,9 +4,7 @@
 // @ts-ignore
 import { createGroupFromDiscriminatorValue, createIdentitySetFromDiscriminatorValue, createPhysicalAddressFromDiscriminatorValue, createPublicErrorFromDiscriminatorValue, createResultInfoFromDiscriminatorValue, createSiteFromDiscriminatorValue, deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, deserializeIntoIdentity, serializeBaseCollectionPaginationCountResponse, serializeEntity, serializeGroup, serializeIdentity, serializeIdentitySet, serializePhysicalAddress, serializePublicError, serializeResultInfo, serializeSite, type BaseCollectionPaginationCountResponse, type Entity, type Group, type Identity, type IdentitySet, type PhysicalAddress, type PublicError, type ResultInfo, type Site } from '../index.js';
 // @ts-ignore
-import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
-// @ts-ignore
-import { type Guid } from 'guid-typescript';
+import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Guid, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
 export interface AadRiskDetectionAuditRecord extends AuditData, Parsable {
 }
@@ -1157,7 +1155,7 @@ export interface CaseInvestigation extends AuditData, Parsable {
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
-     * The type of action the operation represents. Possible values are: contentExport, applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
+     * The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
      */
     action?: CaseAction | null;
     /**
@@ -11618,7 +11616,7 @@ export function deserializeIntoIoTDeviceEvidence(ioTDeviceEvidence: Partial<IoTD
         "macAddress": n => { ioTDeviceEvidence.macAddress = n.getStringValue(); },
         "manufacturer": n => { ioTDeviceEvidence.manufacturer = n.getStringValue(); },
         "model": n => { ioTDeviceEvidence.model = n.getStringValue(); },
-        "nics": n => { ioTDeviceEvidence.nics = n.getObjectValue<NicEvidence>(createNicEvidenceFromDiscriminatorValue); },
+        "nics": n => { ioTDeviceEvidence.nics = n.getCollectionOfObjectValues<NicEvidence>(createNicEvidenceFromDiscriminatorValue); },
         "operatingSystem": n => { ioTDeviceEvidence.operatingSystem = n.getStringValue(); },
         "owners": n => { ioTDeviceEvidence.owners = n.getCollectionOfPrimitiveValues<string>(); },
         "protocols": n => { ioTDeviceEvidence.protocols = n.getCollectionOfPrimitiveValues<string>(); },
@@ -15762,11 +15760,11 @@ export interface EdiscoverySearchExportOperation extends CaseOperation, Parsable
      */
     additionalOptions?: AdditionalOptions[] | null;
     /**
-     * The name of export provided by the user.
+     * The description of the export by the user.
      */
     description?: string | null;
     /**
-     * The description of the export by the user.
+     * The name of export provided by the user.
      */
     displayName?: string | null;
     /**
@@ -17418,7 +17416,7 @@ export interface IoTDeviceEvidence extends AlertEvidence, Parsable {
     /**
      * The nics property
      */
-    nics?: NicEvidence | null;
+    nics?: NicEvidence[] | null;
     /**
      * The operatingSystem property
      */
@@ -19008,7 +19006,7 @@ export interface SensitivityLabelCollectionResponse extends BaseCollectionPagina
 }
 export interface Sensor extends Entity, Parsable {
     /**
-     * The date and time when the sensor was generated.
+     * The date and time when the sensor was generated. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
      */
     createdDateTime?: Date | null;
     /**
@@ -22719,7 +22717,7 @@ export function serializeIoTDeviceEvidence(writer: SerializationWriter, ioTDevic
         writer.writeStringValue("macAddress", ioTDeviceEvidence.macAddress);
         writer.writeStringValue("manufacturer", ioTDeviceEvidence.manufacturer);
         writer.writeStringValue("model", ioTDeviceEvidence.model);
-        writer.writeObjectValue<NicEvidence>("nics", ioTDeviceEvidence.nics, serializeNicEvidence);
+        writer.writeCollectionOfObjectValues<NicEvidence>("nics", ioTDeviceEvidence.nics, serializeNicEvidence);
         writer.writeStringValue("operatingSystem", ioTDeviceEvidence.operatingSystem);
         writer.writeCollectionOfPrimitiveValues<string>("owners", ioTDeviceEvidence.owners);
         writer.writeCollectionOfPrimitiveValues<string>("protocols", ioTDeviceEvidence.protocols);
@@ -28227,8 +28225,8 @@ export const PurgeAreasObject = {
 } as const;
 export const PurgeTypeObject = {
     Recoverable: "recoverable",
-    PermanentlyDeleted: "permanentlyDeleted",
     UnknownFutureValue: "unknownFutureValue",
+    PermanentlyDelete: "permanentlyDelete",
 } as const;
 export const QueryTypeObject = {
     Files: "files",

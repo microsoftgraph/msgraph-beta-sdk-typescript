@@ -18,7 +18,6 @@ export interface PhotosRequestBuilder extends BaseRequestBuilder<PhotosRequestBu
      * Provides operations to manage the photos property of the microsoft.graph.user entity.
      * @param profilePhotoId The unique identifier of profilePhoto
      * @returns {ProfilePhotoItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byProfilePhotoId(profilePhotoId: string) : ProfilePhotoItemRequestBuilder;
     /**
@@ -26,14 +25,12 @@ export interface PhotosRequestBuilder extends BaseRequestBuilder<PhotosRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProfilePhotoCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PhotosRequestBuilderGetQueryParameters> | undefined) : Promise<ProfilePhotoCollectionResponse | undefined>;
     /**
      * The collection of the user's profile photos in different sizes. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PhotosRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

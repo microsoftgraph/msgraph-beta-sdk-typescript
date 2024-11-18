@@ -78,15 +78,9 @@ import { RemoteLockRequestBuilderRequestsMetadata, type RemoteLockRequestBuilder
 // @ts-ignore
 import { RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderRequestsMetadata, type RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder } from './removeDeviceFirmwareConfigurationInterfaceManagement/index.js';
 // @ts-ignore
-import { ReprovisionCloudPcRequestBuilderRequestsMetadata, type ReprovisionCloudPcRequestBuilder } from './reprovisionCloudPc/index.js';
-// @ts-ignore
 import { RequestRemoteAssistanceRequestBuilderRequestsMetadata, type RequestRemoteAssistanceRequestBuilder } from './requestRemoteAssistance/index.js';
 // @ts-ignore
 import { ResetPasscodeRequestBuilderRequestsMetadata, type ResetPasscodeRequestBuilder } from './resetPasscode/index.js';
-// @ts-ignore
-import { ResizeCloudPcRequestBuilderRequestsMetadata, type ResizeCloudPcRequestBuilder } from './resizeCloudPc/index.js';
-// @ts-ignore
-import { RestoreCloudPcRequestBuilderRequestsMetadata, type RestoreCloudPcRequestBuilder } from './restoreCloudPc/index.js';
 // @ts-ignore
 import { RetireRequestBuilderRequestsMetadata, type RetireRequestBuilder } from './retire/index.js';
 // @ts-ignore
@@ -275,10 +269,6 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      */
     get removeDeviceFirmwareConfigurationInterfaceManagement(): RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder;
     /**
-     * Provides operations to call the reprovisionCloudPc method.
-     */
-    get reprovisionCloudPc(): ReprovisionCloudPcRequestBuilder;
-    /**
      * Provides operations to call the requestRemoteAssistance method.
      */
     get requestRemoteAssistance(): RequestRemoteAssistanceRequestBuilder;
@@ -286,14 +276,6 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the resetPasscode method.
      */
     get resetPasscode(): ResetPasscodeRequestBuilder;
-    /**
-     * Provides operations to call the resizeCloudPc method.
-     */
-    get resizeCloudPc(): ResizeCloudPcRequestBuilder;
-    /**
-     * Provides operations to call the restoreCloudPc method.
-     */
-    get restoreCloudPc(): RestoreCloudPcRequestBuilder;
     /**
      * Provides operations to call the retire method.
      */
@@ -551,20 +533,11 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     removeDeviceFirmwareConfigurationInterfaceManagement: {
         requestsMetadata: RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderRequestsMetadata,
     },
-    reprovisionCloudPc: {
-        requestsMetadata: ReprovisionCloudPcRequestBuilderRequestsMetadata,
-    },
     requestRemoteAssistance: {
         requestsMetadata: RequestRemoteAssistanceRequestBuilderRequestsMetadata,
     },
     resetPasscode: {
         requestsMetadata: ResetPasscodeRequestBuilderRequestsMetadata,
-    },
-    resizeCloudPc: {
-        requestsMetadata: ResizeCloudPcRequestBuilderRequestsMetadata,
-    },
-    restoreCloudPc: {
-        requestsMetadata: RestoreCloudPcRequestBuilderRequestsMetadata,
     },
     retire: {
         requestsMetadata: RetireRequestBuilderRequestsMetadata,

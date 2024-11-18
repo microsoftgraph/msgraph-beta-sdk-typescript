@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UsageRightsRequestBuilder extends BaseRequestBuilder<UsageRightsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the usageRights property of the microsoft.graph.user entity.
      * @param usageRightId The unique identifier of usageRight
      * @returns {UsageRightItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUsageRightId(usageRightId: string) : UsageRightItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface UsageRightsRequestBuilder extends BaseRequestBuilder<UsageRight
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UsageRightCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-list-usagerights?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UsageRightsRequestBuilderGetQueryParameters> | undefined) : Promise<UsageRightCollectionResponse | undefined>;
@@ -43,14 +40,12 @@ export interface UsageRightsRequestBuilder extends BaseRequestBuilder<UsageRight
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UsageRight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: UsageRight, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UsageRight | undefined>;
     /**
      * Retrieve a list of usageRight objects for a given user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UsageRightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +53,6 @@ export interface UsageRightsRequestBuilder extends BaseRequestBuilder<UsageRight
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UsageRight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

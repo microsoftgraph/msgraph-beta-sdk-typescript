@@ -20,19 +20,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ListsRequestBuilder extends BaseRequestBuilder<ListsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the lists property of the microsoft.graph.todo entity.
      * @param todoTaskListId The unique identifier of todoTaskList
      * @returns {TodoTaskListItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byTodoTaskListId(todoTaskListId: string) : TodoTaskListItemRequestBuilder;
     /**
@@ -40,7 +37,6 @@ export interface ListsRequestBuilder extends BaseRequestBuilder<ListsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TodoTaskListCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ListsRequestBuilderGetQueryParameters> | undefined) : Promise<TodoTaskListCollectionResponse | undefined>;
     /**
@@ -49,14 +45,12 @@ export interface ListsRequestBuilder extends BaseRequestBuilder<ListsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TodoTaskList>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: TodoTaskList, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TodoTaskList | undefined>;
     /**
      * The task lists in the users mailbox.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ListsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface ListsRequestBuilder extends BaseRequestBuilder<ListsRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: TodoTaskList, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

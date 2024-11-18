@@ -18,19 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OutlookTaskFolderItemRequestBuilder extends BaseRequestBuilder<OutlookTaskFolderItemRequestBuilder> {
     /**
      * Provides operations to call the permanentDelete method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
     get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
     get tasks(): TasksRequestBuilder;
     /**
      * Delete navigation property taskFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -38,7 +38,7 @@ export interface OutlookTaskFolderItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookTaskFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      get(requestConfiguration?: RequestConfiguration<OutlookTaskFolderItemRequestBuilderGetQueryParameters> | undefined) : Promise<OutlookTaskFolder | undefined>;
     /**
@@ -47,21 +47,21 @@ export interface OutlookTaskFolderItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OutlookTaskFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      patch(body: OutlookTaskFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OutlookTaskFolder | undefined>;
     /**
      * Delete navigation property taskFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The collection of task folders in the task group. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OutlookTaskFolderItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,7 +69,7 @@ export interface OutlookTaskFolderItemRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      toPatchRequestInformation(body: OutlookTaskFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

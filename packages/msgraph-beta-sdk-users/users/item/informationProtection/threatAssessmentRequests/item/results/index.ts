@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ResultsRequestBuilder extends BaseRequestBuilder<ResultsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
      * @param threatAssessmentResultId The unique identifier of threatAssessmentResult
      * @returns {ThreatAssessmentResultItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byThreatAssessmentResultId(threatAssessmentResultId: string) : ThreatAssessmentResultItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ResultsRequestBuilder extends BaseRequestBuilder<ResultsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatAssessmentResultCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ResultsRequestBuilderGetQueryParameters> | undefined) : Promise<ThreatAssessmentResultCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface ResultsRequestBuilder extends BaseRequestBuilder<ResultsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatAssessmentResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ThreatAssessmentResult, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ThreatAssessmentResult | undefined>;
     /**
      * A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ResultsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ResultsRequestBuilder extends BaseRequestBuilder<ResultsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ThreatAssessmentResult, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

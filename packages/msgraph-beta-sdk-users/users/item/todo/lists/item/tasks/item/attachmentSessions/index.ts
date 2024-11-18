@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AttachmentSessionsRequestBuilder extends BaseRequestBuilder<AttachmentSessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
      * @param attachmentSessionId The unique identifier of attachmentSession
      * @returns {AttachmentSessionItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAttachmentSessionId(attachmentSessionId: string) : AttachmentSessionItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface AttachmentSessionsRequestBuilder extends BaseRequestBuilder<Att
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttachmentSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AttachmentSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<AttachmentSessionCollectionResponse | undefined>;
     /**
      * Get attachmentSessions from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttachmentSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

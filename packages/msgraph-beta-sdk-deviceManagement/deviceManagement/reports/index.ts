@@ -150,7 +150,9 @@ import { GetWindowsUpdateAlertSummaryReportRequestBuilderRequestsMetadata, type 
 // @ts-ignore
 import { GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata, type GetZebraFotaDeploymentReportRequestBuilder } from './getZebraFotaDeploymentReport/index.js';
 // @ts-ignore
-import { RetrieveAssignedApplicationsReportRequestBuilderRequestsMetadata, type RetrieveAssignedApplicationsReportRequestBuilder } from './retrieveAssignedApplicationsReport/index.js';
+import { RetrieveDeviceAppInstallationStatusReportRequestBuilderRequestsMetadata, type RetrieveDeviceAppInstallationStatusReportRequestBuilder } from './retrieveDeviceAppInstallationStatusReport/index.js';
+// @ts-ignore
+import { RetrieveSecurityTaskAppsReportRequestBuilderRequestsMetadata, type RetrieveSecurityTaskAppsReportRequestBuilder } from './retrieveSecurityTaskAppsReport/index.js';
 // @ts-ignore
 import { RetrieveWin32CatalogAppsUpdateReportRequestBuilderRequestsMetadata, type RetrieveWin32CatalogAppsUpdateReportRequestBuilder } from './retrieveWin32CatalogAppsUpdateReport/index.js';
 // @ts-ignore
@@ -449,9 +451,13 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
     get getZebraFotaDeploymentReport(): GetZebraFotaDeploymentReportRequestBuilder;
     /**
-     * Provides operations to call the retrieveAssignedApplicationsReport method.
+     * Provides operations to call the retrieveDeviceAppInstallationStatusReport method.
      */
-    get retrieveAssignedApplicationsReport(): RetrieveAssignedApplicationsReportRequestBuilder;
+    get retrieveDeviceAppInstallationStatusReport(): RetrieveDeviceAppInstallationStatusReportRequestBuilder;
+    /**
+     * Provides operations to call the retrieveSecurityTaskAppsReport method.
+     */
+    get retrieveSecurityTaskAppsReport(): RetrieveSecurityTaskAppsReportRequestBuilder;
     /**
      * Provides operations to call the retrieveWin32CatalogAppsUpdateReport method.
      */
@@ -743,8 +749,11 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     getZebraFotaDeploymentReport: {
         requestsMetadata: GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata,
     },
-    retrieveAssignedApplicationsReport: {
-        requestsMetadata: RetrieveAssignedApplicationsReportRequestBuilderRequestsMetadata,
+    retrieveDeviceAppInstallationStatusReport: {
+        requestsMetadata: RetrieveDeviceAppInstallationStatusReportRequestBuilderRequestsMetadata,
+    },
+    retrieveSecurityTaskAppsReport: {
+        requestsMetadata: RetrieveSecurityTaskAppsReportRequestBuilderRequestsMetadata,
     },
     retrieveWin32CatalogAppsUpdateReport: {
         requestsMetadata: RetrieveWin32CatalogAppsUpdateReportRequestBuilderRequestsMetadata,

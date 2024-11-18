@@ -16,7 +16,6 @@ export interface ThreatAssessmentResultItemRequestBuilder extends BaseRequestBui
      * Delete navigation property results for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface ThreatAssessmentResultItemRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatAssessmentResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ThreatAssessmentResultItemRequestBuilderGetQueryParameters> | undefined) : Promise<ThreatAssessmentResult | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface ThreatAssessmentResultItemRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatAssessmentResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ThreatAssessmentResult, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ThreatAssessmentResult | undefined>;
     /**
      * Delete navigation property results for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ThreatAssessmentResultItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface ThreatAssessmentResultItemRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ThreatAssessmentResult, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

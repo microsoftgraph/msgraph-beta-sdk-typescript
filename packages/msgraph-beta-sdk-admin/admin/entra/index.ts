@@ -27,7 +27,7 @@ export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get entra from admin
+     * A container for Microsoft Entra resources. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Entra>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -51,7 +51,7 @@ export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get entra from admin
+     * A container for Microsoft Entra resources. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
@@ -67,7 +67,7 @@ export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuil
      toPatchRequestInformation(body: Entra, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get entra from admin
+ * A container for Microsoft Entra resources. Read-only.
  */
 export interface EntraRequestBuilderGetQueryParameters {
     /**

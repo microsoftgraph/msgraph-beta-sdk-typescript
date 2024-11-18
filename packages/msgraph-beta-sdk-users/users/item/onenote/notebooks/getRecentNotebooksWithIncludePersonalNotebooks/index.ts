@@ -43,7 +43,6 @@ export interface GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder ex
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/notebook-getrecentnotebooks?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters> | undefined) : Promise<GetRecentNotebooksWithIncludePersonalNotebooksGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder ex
      * Get a list of recentNotebook instances that have been accessed by the signed-in user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -18,12 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CreatedByRequestBuilder extends BaseRequestBuilder<CreatedByRequestBuilder> {
     /**
      * The mailboxSettings property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mailboxSettings(): MailboxSettingsRequestBuilder;
     /**
      * The serviceProvisioningErrors property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
@@ -31,14 +29,12 @@ export interface CreatedByRequestBuilder extends BaseRequestBuilder<CreatedByReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CreatedByRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
     /**
      * The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CreatedByRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

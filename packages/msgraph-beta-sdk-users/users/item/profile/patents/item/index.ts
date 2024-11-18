@@ -16,7 +16,6 @@ export interface ItemPatentItemRequestBuilder extends BaseRequestBuilder<ItemPat
      * Deletes an itemPatent object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -25,7 +24,6 @@ export interface ItemPatentItemRequestBuilder extends BaseRequestBuilder<ItemPat
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPatent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ItemPatentItemRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPatent | undefined>;
     /**
@@ -34,7 +32,6 @@ export interface ItemPatentItemRequestBuilder extends BaseRequestBuilder<ItemPat
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPatent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ItemPatent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPatent | undefined>;
@@ -42,14 +39,12 @@ export interface ItemPatentItemRequestBuilder extends BaseRequestBuilder<ItemPat
      * Deletes an itemPatent object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents patents that a user has added to their profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemPatentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ItemPatentItemRequestBuilder extends BaseRequestBuilder<ItemPat
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ItemPatent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -16,7 +16,6 @@ export interface LastMessagePreviewRequestBuilder extends BaseRequestBuilder<Las
      * Delete navigation property lastMessagePreview for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface LastMessagePreviewRequestBuilder extends BaseRequestBuilder<Las
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessageInfo>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<LastMessagePreviewRequestBuilderGetQueryParameters> | undefined) : Promise<ChatMessageInfo | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface LastMessagePreviewRequestBuilder extends BaseRequestBuilder<Las
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessageInfo>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ChatMessageInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChatMessageInfo | undefined>;
     /**
      * Delete navigation property lastMessagePreview for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Preview of the last message sent in the chat. Null if no messages are sent in the chat. Currently, only the list chats operation supports this property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LastMessagePreviewRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface LastMessagePreviewRequestBuilder extends BaseRequestBuilder<Las
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ChatMessageInfo, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

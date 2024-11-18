@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OnenoteResourceItemRequestBuilder extends BaseRequestBuilder<OnenoteResourceItemRequestBuilder> {
     /**
      * Provides operations to manage the media for the user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get content(): ContentRequestBuilder;
     /**
      * Delete navigation property resources for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface OnenoteResourceItemRequestBuilder extends BaseRequestBuilder<On
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OnenoteResourceItemRequestBuilderGetQueryParameters> | undefined) : Promise<OnenoteResource | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface OnenoteResourceItemRequestBuilder extends BaseRequestBuilder<On
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: OnenoteResource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnenoteResource | undefined>;
     /**
      * Delete navigation property resources for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OnenoteResourceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface OnenoteResourceItemRequestBuilder extends BaseRequestBuilder<On
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: OnenoteResource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

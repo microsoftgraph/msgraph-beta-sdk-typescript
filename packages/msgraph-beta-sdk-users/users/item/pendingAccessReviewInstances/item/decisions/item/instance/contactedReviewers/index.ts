@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ContactedReviewersRequestBuilder extends BaseRequestBuilder<ContactedReviewersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
      * @param accessReviewReviewerId The unique identifier of accessReviewReviewer
      * @returns {AccessReviewReviewerItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAccessReviewReviewerId(accessReviewReviewerId: string) : AccessReviewReviewerItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ContactedReviewersRequestBuilder extends BaseRequestBuilder<Con
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewReviewerCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewReviewerCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface ContactedReviewersRequestBuilder extends BaseRequestBuilder<Con
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewReviewer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AccessReviewReviewer, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewReviewer | undefined>;
     /**
      * Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactedReviewersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ContactedReviewersRequestBuilder extends BaseRequestBuilder<Con
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AccessReviewReviewer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

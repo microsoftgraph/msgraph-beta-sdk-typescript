@@ -16,7 +16,6 @@ export interface PersonAnnualEventItemRequestBuilder extends BaseRequestBuilder<
      * Delete navigation property anniversaries for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface PersonAnnualEventItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAnnualEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PersonAnnualEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAnnualEvent | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface PersonAnnualEventItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAnnualEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: PersonAnnualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAnnualEvent | undefined>;
     /**
      * Delete navigation property anniversaries for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the details of meaningful dates associated with a person.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PersonAnnualEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface PersonAnnualEventItemRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PersonAnnualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CommandItemRequestBuilder extends BaseRequestBuilder<CommandItemRequestBuilder> {
     /**
      * Provides operations to manage the responsepayload property of the microsoft.graph.command entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get responsepayload(): ResponsepayloadRequestBuilder;
     /**
      * Delete navigation property commands for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface CommandItemRequestBuilder extends BaseRequestBuilder<CommandIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Command>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CommandItemRequestBuilderGetQueryParameters> | undefined) : Promise<Command | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface CommandItemRequestBuilder extends BaseRequestBuilder<CommandIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Command>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Command, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Command | undefined>;
     /**
      * Delete navigation property commands for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Set of commands sent to this device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CommandItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface CommandItemRequestBuilder extends BaseRequestBuilder<CommandIte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Command, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

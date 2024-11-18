@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder extends BaseRequestBuilder<MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder> {
     /**
      * Provides operations to manage the device property of the microsoft.graph.microsoftAuthenticatorAuthenticationMethod entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get device(): DeviceRequestBuilder;
     /**
      * Deletes a microsoftAuthenticatorAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -32,7 +30,6 @@ export interface MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder ex
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MicrosoftAuthenticatorAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : Promise<MicrosoftAuthenticatorAuthenticationMethod | undefined>;
@@ -40,14 +37,12 @@ export interface MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder ex
      * Deletes a microsoftAuthenticatorAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

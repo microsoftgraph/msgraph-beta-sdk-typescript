@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PatentsRequestBuilder extends BaseRequestBuilder<PatentsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the patents property of the microsoft.graph.profile entity.
      * @param itemPatentId The unique identifier of itemPatent
      * @returns {ItemPatentItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byItemPatentId(itemPatentId: string) : ItemPatentItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface PatentsRequestBuilder extends BaseRequestBuilder<PatentsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPatentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PatentsRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPatentCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface PatentsRequestBuilder extends BaseRequestBuilder<PatentsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPatent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ItemPatent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPatent | undefined>;
     /**
      * Represents patents that a user has added to their profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PatentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface PatentsRequestBuilder extends BaseRequestBuilder<PatentsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ItemPatent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

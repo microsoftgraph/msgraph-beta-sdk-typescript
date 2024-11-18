@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PlannerBucketItemRequestBuilder extends BaseRequestBuilder<PlannerBucketItemRequestBuilder> {
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get tasks(): TasksRequestBuilder;
     /**
      * Delete navigation property buckets for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface PlannerBucketItemRequestBuilder extends BaseRequestBuilder<Plan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerBucket>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PlannerBucketItemRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerBucket | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface PlannerBucketItemRequestBuilder extends BaseRequestBuilder<Plan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerBucket>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: PlannerBucket, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerBucket | undefined>;
     /**
      * Delete navigation property buckets for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Collection of buckets in the plan. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerBucketItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface PlannerBucketItemRequestBuilder extends BaseRequestBuilder<Plan
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: PlannerBucket, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

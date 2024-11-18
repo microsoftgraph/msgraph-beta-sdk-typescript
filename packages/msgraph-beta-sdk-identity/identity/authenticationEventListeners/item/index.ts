@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AuthenticationEventListenerItemRequestBuilder extends BaseRequestBuilder<AuthenticationEventListenerItemRequestBuilder> {
     /**
-     * Deletes an authenticationEventListener object.
+     * Delete an authenticationEventListener object. The following derived types are currently supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-beta|Find more info here}
@@ -27,7 +27,7 @@ export interface AuthenticationEventListenerItemRequestBuilder extends BaseReque
      */
      get(requestConfiguration?: RequestConfiguration<AuthenticationEventListenerItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuthenticationEventListener | undefined>;
     /**
-     * Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
+     * Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationEventListener>}
@@ -36,7 +36,7 @@ export interface AuthenticationEventListenerItemRequestBuilder extends BaseReque
      */
      patch(body: AuthenticationEventListener, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationEventListener | undefined>;
     /**
-     * Deletes an authenticationEventListener object.
+     * Delete an authenticationEventListener object. The following derived types are currently supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -48,7 +48,7 @@ export interface AuthenticationEventListenerItemRequestBuilder extends BaseReque
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuthenticationEventListenerItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
+     * Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. The following derived types are currently supported.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

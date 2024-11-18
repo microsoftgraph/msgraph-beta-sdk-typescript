@@ -18,12 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserRequestBuilder extends BaseRequestBuilder<UserRequestBuilder> {
     /**
      * The mailboxSettings property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mailboxSettings(): MailboxSettingsRequestBuilder;
     /**
      * The serviceProvisioningErrors property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
@@ -31,7 +29,6 @@ export interface UserRequestBuilder extends BaseRequestBuilder<UserRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
@@ -39,7 +36,6 @@ export interface UserRequestBuilder extends BaseRequestBuilder<UserRequestBuilde
      * Retrieve the simple directory user that corresponds to this educationUser.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

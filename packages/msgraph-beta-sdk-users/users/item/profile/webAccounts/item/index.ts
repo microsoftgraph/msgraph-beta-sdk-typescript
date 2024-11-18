@@ -16,7 +16,6 @@ export interface WebAccountItemRequestBuilder extends BaseRequestBuilder<WebAcco
      * Delete navigation property webAccounts for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface WebAccountItemRequestBuilder extends BaseRequestBuilder<WebAcco
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WebAccount>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WebAccountItemRequestBuilderGetQueryParameters> | undefined) : Promise<WebAccount | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface WebAccountItemRequestBuilder extends BaseRequestBuilder<WebAcco
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WebAccount>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: WebAccount, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WebAccount | undefined>;
     /**
      * Delete navigation property webAccounts for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents web accounts the user has indicated they use or has added to their user profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WebAccountItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface WebAccountItemRequestBuilder extends BaseRequestBuilder<WebAcco
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: WebAccount, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
