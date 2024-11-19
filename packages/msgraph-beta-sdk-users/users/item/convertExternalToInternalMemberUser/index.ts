@@ -40,7 +40,6 @@ export interface ConvertExternalToInternalMemberUserRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConversionUserDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-convertexternaltointernalmemberuser?view=graph-rest-beta|Find more info here}
      */
      post(body: ConvertExternalToInternalMemberUserPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConversionUserDetails | undefined>;
@@ -49,7 +48,6 @@ export interface ConvertExternalToInternalMemberUserRequestBuilder extends BaseR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ConvertExternalToInternalMemberUserPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

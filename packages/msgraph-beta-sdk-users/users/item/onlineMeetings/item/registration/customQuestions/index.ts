@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CustomQuestionsRequestBuilder extends BaseRequestBuilder<CustomQuestionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
      * @param meetingRegistrationQuestionId The unique identifier of meetingRegistrationQuestion
      * @returns {MeetingRegistrationQuestionItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
      */
      byMeetingRegistrationQuestionId(meetingRegistrationQuestionId: string) : MeetingRegistrationQuestionItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface CustomQuestionsRequestBuilder extends BaseRequestBuilder<Custom
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingRegistrationQuestionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
      */
      get(requestConfiguration?: RequestConfiguration<CustomQuestionsRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingRegistrationQuestionCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface CustomQuestionsRequestBuilder extends BaseRequestBuilder<Custom
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingRegistrationQuestion>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
      */
      post(body: MeetingRegistrationQuestion, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingRegistrationQuestion | undefined>;
     /**
      * Custom registration questions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomQuestionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface CustomQuestionsRequestBuilder extends BaseRequestBuilder<Custom
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
      */
      toPostRequestInformation(body: MeetingRegistrationQuestion, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

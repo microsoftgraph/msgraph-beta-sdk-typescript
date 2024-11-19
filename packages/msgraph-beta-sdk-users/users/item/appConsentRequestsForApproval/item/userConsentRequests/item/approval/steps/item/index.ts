@@ -16,7 +16,6 @@ export interface ApprovalStepItemRequestBuilder extends BaseRequestBuilder<Appro
      * Delete navigation property steps for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface ApprovalStepItemRequestBuilder extends BaseRequestBuilder<Appro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStep>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ApprovalStepItemRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalStep | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface ApprovalStepItemRequestBuilder extends BaseRequestBuilder<Appro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStep>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ApprovalStep, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalStep | undefined>;
     /**
      * Delete navigation property steps for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Used to represent the decision associated with a single step in the approval process configured in approvalStage.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovalStepItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface ApprovalStepItemRequestBuilder extends BaseRequestBuilder<Appro
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ApprovalStep, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

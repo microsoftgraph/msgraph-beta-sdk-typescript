@@ -44,84 +44,68 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ChatItemRequestBuilder extends BaseRequestBuilder<ChatItemRequestBuilder> {
     /**
      * Provides operations to call the completeMigration method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get completeMigration(): CompleteMigrationRequestBuilder;
     /**
      * Provides operations to call the hideForUser method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get hideForUser(): HideForUserRequestBuilder;
     /**
      * Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get installedApps(): InstalledAppsRequestBuilder;
     /**
      * Provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get lastMessagePreview(): LastMessagePreviewRequestBuilder;
     /**
      * Provides operations to call the markChatReadForUser method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get markChatReadForUser(): MarkChatReadForUserRequestBuilder;
     /**
      * Provides operations to call the markChatUnreadForUser method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get markChatUnreadForUser(): MarkChatUnreadForUserRequestBuilder;
     /**
      * Provides operations to manage the members property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get members(): MembersRequestBuilder;
     /**
      * Provides operations to manage the messages property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get messages(): MessagesRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get operations(): OperationsRequestBuilder;
     /**
      * Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get permissionGrants(): PermissionGrantsRequestBuilder;
     /**
      * Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get pinnedMessages(): PinnedMessagesRequestBuilder;
     /**
      * Provides operations to call the removeAllAccessForUser method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get removeAllAccessForUser(): RemoveAllAccessForUserRequestBuilder;
     /**
      * Provides operations to call the sendActivityNotification method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendActivityNotification(): SendActivityNotificationRequestBuilder;
     /**
      * Provides operations to manage the tabs property of the microsoft.graph.chat entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get tabs(): TabsRequestBuilder;
     /**
      * Provides operations to call the unhideForUser method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get unhideForUser(): UnhideForUserRequestBuilder;
     /**
      * Delete navigation property chats for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -129,7 +113,6 @@ export interface ChatItemRequestBuilder extends BaseRequestBuilder<ChatItemReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Chat>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ChatItemRequestBuilderGetQueryParameters> | undefined) : Promise<Chat | undefined>;
@@ -139,21 +122,18 @@ export interface ChatItemRequestBuilder extends BaseRequestBuilder<ChatItemReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Chat>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Chat, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Chat | undefined>;
     /**
      * Delete navigation property chats for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChatItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -161,7 +141,6 @@ export interface ChatItemRequestBuilder extends BaseRequestBuilder<ChatItemReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Chat, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

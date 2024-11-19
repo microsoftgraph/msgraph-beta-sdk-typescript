@@ -24,24 +24,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsRequestBuilder> {
     /**
      * Provides operations to call the bulkResize method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get bulkResize(): BulkResizeRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the validateBulkResize method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get validateBulkResize(): ValidateBulkResizeRequestBuilder;
     /**
      * Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
      * @param cloudPCId The unique identifier of cloudPC
      * @returns {CloudPCItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byCloudPCId(cloudPCId: string) : CloudPCItemRequestBuilder;
     /**
@@ -49,7 +45,6 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPCCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPCCollectionResponse | undefined>;
     /**
@@ -57,7 +52,6 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      * @param groupId Usage: groupId='{groupId}'
      * @param servicePlanId Usage: servicePlanId='{servicePlanId}'
      * @returns {GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      getProvisionedCloudPCsWithGroupIdWithServicePlanId(groupId: string | undefined, servicePlanId: string | undefined) : GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder;
     /**
@@ -66,14 +60,12 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPC>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPC | undefined>;
     /**
      * Get cloudPCs from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -81,7 +73,6 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

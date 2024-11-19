@@ -22,24 +22,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MemberOfRequestBuilder extends BaseRequestBuilder<MemberOfRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to administrativeUnit.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphAdministrativeUnit(): GraphAdministrativeUnitRequestBuilder;
     /**
      * Casts the previous resource to group.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get graphGroup(): GraphGroupRequestBuilder;
     /**
      * Provides operations to manage the memberOf property of the microsoft.graph.device entity.
      * @param directoryObjectId The unique identifier of directoryObject
      * @returns {DirectoryObjectItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
@@ -47,14 +43,12 @@ export interface MemberOfRequestBuilder extends BaseRequestBuilder<MemberOfReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MemberOfRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
      * Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MemberOfRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

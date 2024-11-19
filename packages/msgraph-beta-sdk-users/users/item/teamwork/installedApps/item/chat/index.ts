@@ -17,7 +17,6 @@ export interface ChatRequestBuilder extends BaseRequestBuilder<ChatRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Chat>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ChatRequestBuilderGetQueryParameters> | undefined) : Promise<Chat | undefined>;
@@ -25,7 +24,6 @@ export interface ChatRequestBuilder extends BaseRequestBuilder<ChatRequestBuilde
      * Retrieve the chat of the specified user and Teams app.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChatRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

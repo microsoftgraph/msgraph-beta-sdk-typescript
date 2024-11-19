@@ -24,34 +24,28 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TodoTaskItemRequestBuilder extends BaseRequestBuilder<TodoTaskItemRequestBuilder> {
     /**
      * Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get attachments(): AttachmentsRequestBuilder;
     /**
      * Provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get attachmentSessions(): AttachmentSessionsRequestBuilder;
     /**
      * Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get checklistItems(): ChecklistItemsRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get linkedResources(): LinkedResourcesRequestBuilder;
     /**
      * Delete navigation property tasks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,7 +53,6 @@ export interface TodoTaskItemRequestBuilder extends BaseRequestBuilder<TodoTaskI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TodoTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<TodoTask | undefined>;
     /**
@@ -68,21 +61,18 @@ export interface TodoTaskItemRequestBuilder extends BaseRequestBuilder<TodoTaskI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TodoTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: TodoTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TodoTask | undefined>;
     /**
      * Delete navigation property tasks for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The tasks in this task list. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TodoTaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -90,7 +80,6 @@ export interface TodoTaskItemRequestBuilder extends BaseRequestBuilder<TodoTaskI
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: TodoTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

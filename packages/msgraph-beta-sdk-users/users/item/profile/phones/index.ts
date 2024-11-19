@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PhonesRequestBuilder extends BaseRequestBuilder<PhonesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the phones property of the microsoft.graph.profile entity.
      * @param itemPhoneId The unique identifier of itemPhone
      * @returns {ItemPhoneItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byItemPhoneId(itemPhoneId: string) : ItemPhoneItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface PhonesRequestBuilder extends BaseRequestBuilder<PhonesRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPhoneCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PhonesRequestBuilderGetQueryParameters> | undefined) : Promise<ItemPhoneCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface PhonesRequestBuilder extends BaseRequestBuilder<PhonesRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemPhone>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ItemPhone, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemPhone | undefined>;
     /**
      * Represents detailed information about phone numbers associated with a user in various services.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PhonesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface PhonesRequestBuilder extends BaseRequestBuilder<PhonesRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ItemPhone, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

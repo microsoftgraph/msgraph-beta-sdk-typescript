@@ -45,7 +45,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BufferDecryptionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      post(body: DecryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BufferDecryptionResult | undefined>;
     /**
@@ -53,7 +53,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toPostRequestInformation(body: DecryptBufferPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

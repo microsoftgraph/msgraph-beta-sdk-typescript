@@ -112,7 +112,6 @@ export interface TranslateExchangeIdsRequestBuilder extends BaseRequestBuilder<T
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TranslateExchangeIdsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta|Find more info here}
      */
      post(body: TranslateExchangeIdsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TranslateExchangeIdsPostResponse | undefined>;
@@ -121,7 +120,6 @@ export interface TranslateExchangeIdsRequestBuilder extends BaseRequestBuilder<T
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: TranslateExchangeIdsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

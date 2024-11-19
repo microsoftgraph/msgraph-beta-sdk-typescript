@@ -135,6 +135,7 @@ export interface AlertSeveritySummary extends AdditionalDataHolder, BackedModel,
     severity?: AlertSeverity | null;
 }
 export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
+export type Algorithm = (typeof AlgorithmObject)[keyof typeof AlgorithmObject];
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -1078,6 +1079,24 @@ export function createRelatedDeviceFromDiscriminatorValue(parseNode: ParseNode |
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedFile}
+ */
+// @ts-ignore
+export function createRelatedFileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedFile;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedFileHash}
+ */
+// @ts-ignore
+export function createRelatedFileHashFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedFileHash;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedMalware}
  */
 // @ts-ignore
@@ -1119,6 +1138,10 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoRelatedDestination;
                 case "#microsoft.graph.networkaccess.relatedDevice":
                     return deserializeIntoRelatedDevice;
+                case "#microsoft.graph.networkaccess.relatedFile":
+                    return deserializeIntoRelatedFile;
+                case "#microsoft.graph.networkaccess.relatedFileHash":
+                    return deserializeIntoRelatedFileHash;
                 case "#microsoft.graph.networkaccess.relatedMalware":
                     return deserializeIntoRelatedMalware;
                 case "#microsoft.graph.networkaccess.relatedProcess":
@@ -1131,6 +1154,10 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoRelatedThreatIntelligence;
                 case "#microsoft.graph.networkaccess.relatedToken":
                     return deserializeIntoRelatedToken;
+                case "#microsoft.graph.networkaccess.relatedTransaction":
+                    return deserializeIntoRelatedTransaction;
+                case "#microsoft.graph.networkaccess.relatedUrl":
+                    return deserializeIntoRelatedUrl;
                 case "#microsoft.graph.networkaccess.relatedUser":
                     return deserializeIntoRelatedUser;
                 case "#microsoft.graph.networkaccess.relatedWebCategory":
@@ -1166,6 +1193,24 @@ export function createRelatedThreatIntelligenceFromDiscriminatorValue(parseNode:
 // @ts-ignore
 export function createRelatedTokenFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoRelatedToken;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedTransaction}
+ */
+// @ts-ignore
+export function createRelatedTransactionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedTransaction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RelatedUrl}
+ */
+// @ts-ignore
+export function createRelatedUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRelatedUrl;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2256,17 +2301,21 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "filteringProfileId": n => { networkAccessTraffic.filteringProfileId = n.getStringValue(); },
         "filteringProfileName": n => { networkAccessTraffic.filteringProfileName = n.getStringValue(); },
         "headers": n => { networkAccessTraffic.headers = n.getObjectValue<Headers>(createHeadersFromDiscriminatorValue); },
+        "httpMethod": n => { networkAccessTraffic.httpMethod = n.getEnumValue<HttpMethod>(HttpMethodObject); },
         "initiatingProcessName": n => { networkAccessTraffic.initiatingProcessName = n.getStringValue(); },
         "networkProtocol": n => { networkAccessTraffic.networkProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
         "@odata.type": n => { networkAccessTraffic.odataType = n.getStringValue(); },
+        "operationStatus": n => { networkAccessTraffic.operationStatus = n.getEnumValue<NetworkTrafficOperationStatus>(NetworkTrafficOperationStatusObject); },
         "policyId": n => { networkAccessTraffic.policyId = n.getStringValue(); },
         "policyName": n => { networkAccessTraffic.policyName = n.getStringValue(); },
         "policyRuleId": n => { networkAccessTraffic.policyRuleId = n.getStringValue(); },
         "policyRuleName": n => { networkAccessTraffic.policyRuleName = n.getStringValue(); },
+        "popProcessingRegion": n => { networkAccessTraffic.popProcessingRegion = n.getStringValue(); },
         "privateAccessDetails": n => { networkAccessTraffic.privateAccessDetails = n.getObjectValue<PrivateAccessDetails>(createPrivateAccessDetailsFromDiscriminatorValue); },
         "receivedBytes": n => { networkAccessTraffic.receivedBytes = n.getNumberValue(); },
         "remoteNetworkId": n => { networkAccessTraffic.remoteNetworkId = n.getStringValue(); },
         "resourceTenantId": n => { networkAccessTraffic.resourceTenantId = n.getStringValue(); },
+        "responseCode": n => { networkAccessTraffic.responseCode = n.getNumberValue(); },
         "sentBytes": n => { networkAccessTraffic.sentBytes = n.getNumberValue(); },
         "sessionId": n => { networkAccessTraffic.sessionId = n.getStringValue(); },
         "sourceIp": n => { networkAccessTraffic.sourceIp = n.getStringValue(); },
@@ -2468,6 +2517,31 @@ export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevic
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoRelatedFile(relatedFile: Partial<RelatedFile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedFile),
+        "directory": n => { relatedFile.directory = n.getStringValue(); },
+        "name": n => { relatedFile.name = n.getStringValue(); },
+        "sizeInBytes": n => { relatedFile.sizeInBytes = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoRelatedFileHash(relatedFileHash: Partial<RelatedFileHash> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedFileHash),
+        "algorithm": n => { relatedFileHash.algorithm = n.getEnumValue<Algorithm>(AlgorithmObject); },
+        "value": n => { relatedFileHash.value = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMalware> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoRelatedResource(relatedMalware),
@@ -2541,6 +2615,28 @@ export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> 
     return {
         ...deserializeIntoRelatedResource(relatedToken),
         "uniqueTokenIdentifier": n => { relatedToken.uniqueTokenIdentifier = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoRelatedTransaction(relatedTransaction: Partial<RelatedTransaction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedTransaction),
+        "transactionId": n => { relatedTransaction.transactionId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoRelatedUrl(relatedUrl: Partial<RelatedUrl> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRelatedResource(relatedUrl),
+        "url": n => { relatedUrl.url = n.getStringValue(); },
     }
 }
 /**
@@ -3331,6 +3427,7 @@ export interface Headers extends AdditionalDataHolder, BackedModel, Parsable {
      */
     xForwardedFor?: string | null;
 }
+export type HttpMethod = (typeof HttpMethodObject)[keyof typeof HttpMethodObject];
 export type IkeEncryption = (typeof IkeEncryptionObject)[keyof typeof IkeEncryptionObject];
 export type IkeIntegrity = (typeof IkeIntegrityObject)[keyof typeof IkeIntegrityObject];
 export interface InternetAccessForwardingRule extends ForwardingRule, Parsable {
@@ -3550,6 +3647,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     headers?: Headers | null;
     /**
+     * The httpMethod property
+     */
+    httpMethod?: HttpMethod | null;
+    /**
      * The initiatingProcessName property
      */
     initiatingProcessName?: string | null;
@@ -3561,6 +3662,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * The OdataType property
      */
     odataType?: string | null;
+    /**
+     * The operationStatus property
+     */
+    operationStatus?: NetworkTrafficOperationStatus | null;
     /**
      * Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.
      */
@@ -3578,6 +3683,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     policyRuleName?: string | null;
     /**
+     * The popProcessingRegion property
+     */
+    popProcessingRegion?: string | null;
+    /**
      * The privateAccessDetails property
      */
     privateAccessDetails?: PrivateAccessDetails | null;
@@ -3593,6 +3702,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * The resourceTenantId property
      */
     resourceTenantId?: string | null;
+    /**
+     * The responseCode property
+     */
+    responseCode?: number | null;
     /**
      * Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.
      */
@@ -3654,6 +3767,7 @@ export interface NetworkAccessTrafficCollectionResponse extends BaseCollectionPa
 }
 export type NetworkDestinationType = (typeof NetworkDestinationTypeObject)[keyof typeof NetworkDestinationTypeObject];
 export type NetworkingProtocol = (typeof NetworkingProtocolObject)[keyof typeof NetworkingProtocolObject];
+export type NetworkTrafficOperationStatus = (typeof NetworkTrafficOperationStatusObject)[keyof typeof NetworkTrafficOperationStatusObject];
 export type OnboardingStatus = (typeof OnboardingStatusObject)[keyof typeof OnboardingStatusObject];
 export interface PeerConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -3876,6 +3990,30 @@ export interface RelatedDevice extends Parsable, RelatedResource {
      */
     deviceId?: string | null;
 }
+export interface RelatedFile extends Parsable, RelatedResource {
+    /**
+     * The directory property
+     */
+    directory?: string | null;
+    /**
+     * The name property
+     */
+    name?: string | null;
+    /**
+     * The sizeInBytes property
+     */
+    sizeInBytes?: number | null;
+}
+export interface RelatedFileHash extends Parsable, RelatedResource {
+    /**
+     * The algorithm property
+     */
+    algorithm?: Algorithm | null;
+    /**
+     * The value property
+     */
+    value?: string | null;
+}
 export interface RelatedMalware extends Parsable, RelatedResource {
     /**
      * The category property
@@ -3937,6 +4075,18 @@ export interface RelatedToken extends Parsable, RelatedResource {
      * The uniqueTokenIdentifier property
      */
     uniqueTokenIdentifier?: string | null;
+}
+export interface RelatedTransaction extends Parsable, RelatedResource {
+    /**
+     * The transactionId property
+     */
+    transactionId?: string | null;
+}
+export interface RelatedUrl extends Parsable, RelatedResource {
+    /**
+     * The url property
+     */
+    url?: string | null;
 }
 export interface RelatedUser extends Parsable, RelatedResource {
     /**
@@ -4847,17 +4997,21 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
         writer.writeStringValue("filteringProfileId", networkAccessTraffic.filteringProfileId);
         writer.writeStringValue("filteringProfileName", networkAccessTraffic.filteringProfileName);
         writer.writeObjectValue<Headers>("headers", networkAccessTraffic.headers, serializeHeaders);
+        writer.writeEnumValue<HttpMethod>("httpMethod", networkAccessTraffic.httpMethod);
         writer.writeStringValue("initiatingProcessName", networkAccessTraffic.initiatingProcessName);
         writer.writeEnumValue<NetworkingProtocol>("networkProtocol", networkAccessTraffic.networkProtocol);
         writer.writeStringValue("@odata.type", networkAccessTraffic.odataType);
+        writer.writeEnumValue<NetworkTrafficOperationStatus>("operationStatus", networkAccessTraffic.operationStatus);
         writer.writeStringValue("policyId", networkAccessTraffic.policyId);
         writer.writeStringValue("policyName", networkAccessTraffic.policyName);
         writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
         writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
+        writer.writeStringValue("popProcessingRegion", networkAccessTraffic.popProcessingRegion);
         writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
         writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
         writer.writeStringValue("remoteNetworkId", networkAccessTraffic.remoteNetworkId);
         writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
+        writer.writeNumberValue("responseCode", networkAccessTraffic.responseCode);
         writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
         writer.writeStringValue("sessionId", networkAccessTraffic.sessionId);
         writer.writeStringValue("sourceIp", networkAccessTraffic.sourceIp);
@@ -5060,6 +5214,31 @@ export function serializeRelatedDevice(writer: SerializationWriter, relatedDevic
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeRelatedFile(writer: SerializationWriter, relatedFile: Partial<RelatedFile> | undefined | null = {}) : void {
+    if (relatedFile) {
+        serializeRelatedResource(writer, relatedFile)
+        writer.writeStringValue("directory", relatedFile.directory);
+        writer.writeStringValue("name", relatedFile.name);
+        writer.writeNumberValue("sizeInBytes", relatedFile.sizeInBytes);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeRelatedFileHash(writer: SerializationWriter, relatedFileHash: Partial<RelatedFileHash> | undefined | null = {}) : void {
+    if (relatedFileHash) {
+        serializeRelatedResource(writer, relatedFileHash)
+        writer.writeEnumValue<Algorithm>("algorithm", relatedFileHash.algorithm);
+        writer.writeStringValue("value", relatedFileHash.value);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined | null = {}) : void {
     if (relatedMalware) {
         serializeRelatedResource(writer, relatedMalware)
@@ -5133,6 +5312,28 @@ export function serializeRelatedToken(writer: SerializationWriter, relatedToken:
     if (relatedToken) {
         serializeRelatedResource(writer, relatedToken)
         writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeRelatedTransaction(writer: SerializationWriter, relatedTransaction: Partial<RelatedTransaction> | undefined | null = {}) : void {
+    if (relatedTransaction) {
+        serializeRelatedResource(writer, relatedTransaction)
+        writer.writeStringValue("transactionId", relatedTransaction.transactionId);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeRelatedUrl(writer: SerializationWriter, relatedUrl: Partial<RelatedUrl> | undefined | null = {}) : void {
+    if (relatedUrl) {
+        serializeRelatedResource(writer, relatedUrl)
+        writer.writeStringValue("url", relatedUrl.url);
     }
 }
 /**
@@ -5745,6 +5946,13 @@ export const AlertTypeObject = {
     WebContentBlocked: "webContentBlocked",
     Malware: "malware",
 } as const;
+export const AlgorithmObject = {
+    Md5: "md5",
+    Sha1: "sha1",
+    Sha256: "sha256",
+    Sha256ac: "sha256ac",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const BandwidthCapacityInMbpsObject = {
     Mbps250: "mbps250",
     Mbps500: "mbps500",
@@ -5814,6 +6022,18 @@ export const ForwardingCategoryObject = {
 export const ForwardingRuleActionObject = {
     Bypass: "bypass",
     Forward: "forward",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const HttpMethodObject = {
+    Get: "get",
+    Post: "post",
+    Put: "put",
+    Delete: "delete",
+    Head: "head",
+    Options: "options",
+    Connect: "connect",
+    Patch: "patch",
+    Trace: "trace",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const IkeEncryptionObject = {
@@ -5920,6 +6140,11 @@ export const NetworkingProtocolObject = {
     Raw: "raw",
     Spx: "spx",
     SpxII: "spxII",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const NetworkTrafficOperationStatusObject = {
+    Success: "success",
+    Failure: "failure",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const OnboardingStatusObject = {

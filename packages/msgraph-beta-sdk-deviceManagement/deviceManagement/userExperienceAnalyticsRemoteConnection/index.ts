@@ -29,7 +29,7 @@ export interface UserExperienceAnalyticsRemoteConnectionRequestBuilder extends B
      */
      byUserExperienceAnalyticsRemoteConnectionId(userExperienceAnalyticsRemoteConnectionId: string) : UserExperienceAnalyticsRemoteConnectionItemRequestBuilder;
     /**
-     * User experience analytics remote connection
+     * User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserExperienceAnalyticsRemoteConnectionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -50,7 +50,7 @@ export interface UserExperienceAnalyticsRemoteConnectionRequestBuilder extends B
      */
      summarizeDeviceRemoteConnectionWithSummarizeBy(summarizeBy: string | undefined) : SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder;
     /**
-     * User experience analytics remote connection
+     * User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -64,7 +64,7 @@ export interface UserExperienceAnalyticsRemoteConnectionRequestBuilder extends B
      toPostRequestInformation(body: UserExperienceAnalyticsRemoteConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * User experience analytics remote connection
+ * User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
  */
 export interface UserExperienceAnalyticsRemoteConnectionRequestBuilderGetQueryParameters {
     /**

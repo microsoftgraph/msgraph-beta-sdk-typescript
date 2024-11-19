@@ -18,12 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface JoinedGroupsRequestBuilder extends BaseRequestBuilder<JoinedGroupsRequestBuilder> {
     /**
      * Provides operations to call the delta method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to call the evaluateDynamicMembership method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get evaluateDynamicMembership(): EvaluateDynamicMembershipRequestBuilder;
     /**
@@ -31,14 +29,12 @@ export interface JoinedGroupsRequestBuilder extends BaseRequestBuilder<JoinedGro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<JoinedGroupsRequestBuilderGetQueryParameters> | undefined) : Promise<GroupCollectionResponse | undefined>;
     /**
      * Get joinedGroups from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<JoinedGroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

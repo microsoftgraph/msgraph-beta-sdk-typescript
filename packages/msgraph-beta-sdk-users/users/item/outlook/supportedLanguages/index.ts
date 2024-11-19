@@ -54,7 +54,6 @@ export interface SupportedLanguagesRequestBuilder extends BaseRequestBuilder<Sup
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SupportedLanguagesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SupportedLanguagesRequestBuilderGetQueryParameters> | undefined) : Promise<SupportedLanguagesGetResponse | undefined>;
@@ -62,7 +61,6 @@ export interface SupportedLanguagesRequestBuilder extends BaseRequestBuilder<Sup
      * Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SupportedLanguagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

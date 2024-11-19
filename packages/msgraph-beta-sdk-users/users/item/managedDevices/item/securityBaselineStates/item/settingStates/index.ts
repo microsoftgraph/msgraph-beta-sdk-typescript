@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SettingStatesRequestBuilder extends BaseRequestBuilder<SettingStatesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
      * @param securityBaselineSettingStateId The unique identifier of securityBaselineSettingState
      * @returns {SecurityBaselineSettingStateItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySecurityBaselineSettingStateId(securityBaselineSettingStateId: string) : SecurityBaselineSettingStateItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface SettingStatesRequestBuilder extends BaseRequestBuilder<SettingS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityBaselineSettingStateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters> | undefined) : Promise<SecurityBaselineSettingStateCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface SettingStatesRequestBuilder extends BaseRequestBuilder<SettingS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityBaselineSettingState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: SecurityBaselineSettingState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SecurityBaselineSettingState | undefined>;
     /**
      * The security baseline state for different settings for a device
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface SettingStatesRequestBuilder extends BaseRequestBuilder<SettingS
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: SecurityBaselineSettingState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

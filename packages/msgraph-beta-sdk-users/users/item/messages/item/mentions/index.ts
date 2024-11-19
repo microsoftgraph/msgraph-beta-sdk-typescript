@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MentionsRequestBuilder extends BaseRequestBuilder<MentionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mentions property of the microsoft.graph.message entity.
      * @param mentionId The unique identifier of mention
      * @returns {MentionItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byMentionId(mentionId: string) : MentionItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface MentionsRequestBuilder extends BaseRequestBuilder<MentionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MentionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MentionsRequestBuilderGetQueryParameters> | undefined) : Promise<MentionCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface MentionsRequestBuilder extends BaseRequestBuilder<MentionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Mention>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: Mention, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Mention | undefined>;
     /**
      * A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MentionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface MentionsRequestBuilder extends BaseRequestBuilder<MentionsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: Mention, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

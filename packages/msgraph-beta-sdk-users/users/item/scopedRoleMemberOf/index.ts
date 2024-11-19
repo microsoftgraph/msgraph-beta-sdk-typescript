@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ScopedRoleMemberOfRequestBuilder extends BaseRequestBuilder<ScopedRoleMemberOfRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.
      * @param scopedRoleMembershipId The unique identifier of scopedRoleMembership
      * @returns {ScopedRoleMembershipItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byScopedRoleMembershipId(scopedRoleMembershipId: string) : ScopedRoleMembershipItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ScopedRoleMemberOfRequestBuilder extends BaseRequestBuilder<Sco
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ScopedRoleMembershipCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ScopedRoleMemberOfRequestBuilderGetQueryParameters> | undefined) : Promise<ScopedRoleMembershipCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface ScopedRoleMemberOfRequestBuilder extends BaseRequestBuilder<Sco
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ScopedRoleMembership>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ScopedRoleMembership, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ScopedRoleMembership | undefined>;
     /**
      * The scoped-role administrative unit memberships for this user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ScopedRoleMemberOfRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ScopedRoleMemberOfRequestBuilder extends BaseRequestBuilder<Sco
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ScopedRoleMembership, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

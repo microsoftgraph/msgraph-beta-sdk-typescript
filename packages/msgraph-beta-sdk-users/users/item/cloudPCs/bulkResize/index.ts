@@ -42,7 +42,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BulkResizePostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
      * @see {@link https://learn.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-beta|Find more info here}
      */
      post(body: BulkResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BulkResizePostResponse | undefined>;
@@ -51,7 +51,7 @@ export interface BulkResizeRequestBuilder extends BaseRequestBuilder<BulkResizeR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
      */
      toPostRequestInformation(body: BulkResizePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

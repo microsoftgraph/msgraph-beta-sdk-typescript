@@ -6,12 +6,18 @@ import { createCloudPcBulkActionFromDiscriminatorValue, serializeCloudPcBulkActi
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { RetryRequestBuilderRequestsMetadata, type RetryRequestBuilder } from './retry/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the bulkActions property of the microsoft.graph.virtualEndpoint entity.
  */
 export interface CloudPcBulkActionItemRequestBuilder extends BaseRequestBuilder<CloudPcBulkActionItemRequestBuilder> {
+    /**
+     * Provides operations to call the retry method.
+     */
+    get retry(): RetryRequestBuilder;
     /**
      * Delete navigation property bulkActions for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -77,6 +83,14 @@ export const CloudPcBulkActionItemRequestBuilderUriTemplate = "{+baseurl}/device
 const CloudPcBulkActionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const CloudPcBulkActionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CloudPcBulkActionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    retry: {
+        requestsMetadata: RetryRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

@@ -36,7 +36,7 @@ export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcBulkRemoteActionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The BulkSetCloudPcReviewStatus action is deprecated and will stop supporting on September 30, 2024. Please use bulk action entity api. as of 2024-05/BulkSetCloudPcReviewStatus
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-beta|Find more info here}
      */
      post(body: BulkSetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcBulkRemoteActionResult | undefined>;
@@ -45,7 +45,7 @@ export interface BulkSetCloudPcReviewStatusRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The BulkSetCloudPcReviewStatus action is deprecated and will stop supporting on September 30, 2024. Please use bulk action entity api. as of 2024-05/BulkSetCloudPcReviewStatus
      */
      toPostRequestInformation(body: BulkSetCloudPcReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

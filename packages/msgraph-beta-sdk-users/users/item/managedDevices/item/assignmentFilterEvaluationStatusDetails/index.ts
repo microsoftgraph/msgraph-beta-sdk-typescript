@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AssignmentFilterEvaluationStatusDetailsRequestBuilder extends BaseRequestBuilder<AssignmentFilterEvaluationStatusDetailsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.
      * @param assignmentFilterEvaluationStatusDetailsId The unique identifier of assignmentFilterEvaluationStatusDetails
      * @returns {AssignmentFilterEvaluationStatusDetailsItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAssignmentFilterEvaluationStatusDetailsId(assignmentFilterEvaluationStatusDetailsId: string) : AssignmentFilterEvaluationStatusDetailsItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AssignmentFilterEvaluationStatusDetailsRequestBuilder extends B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AssignmentFilterEvaluationStatusDetailsCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AssignmentFilterEvaluationStatusDetailsRequestBuilderGetQueryParameters> | undefined) : Promise<AssignmentFilterEvaluationStatusDetailsCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AssignmentFilterEvaluationStatusDetailsRequestBuilder extends B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AssignmentFilterEvaluationStatusDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AssignmentFilterEvaluationStatusDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AssignmentFilterEvaluationStatusDetails | undefined>;
     /**
      * Managed device mobile app configuration states for this device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignmentFilterEvaluationStatusDetailsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AssignmentFilterEvaluationStatusDetailsRequestBuilder extends B
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AssignmentFilterEvaluationStatusDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

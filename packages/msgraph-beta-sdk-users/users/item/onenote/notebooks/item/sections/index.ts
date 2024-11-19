@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the sections property of the microsoft.graph.notebook entity.
      * @param onenoteSectionId The unique identifier of onenoteSection
      * @returns {OnenoteSectionItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byOnenoteSectionId(onenoteSectionId: string) : OnenoteSectionItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteSectionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SectionsRequestBuilderGetQueryParameters> | undefined) : Promise<OnenoteSectionCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteSection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: OnenoteSection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnenoteSection | undefined>;
     /**
      * The sections in the notebook. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SectionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: OnenoteSection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -43,7 +43,7 @@ export interface GetCloudPcRemoteActionResultsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetCloudPcRemoteActionResultsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters> | undefined) : Promise<GetCloudPcRemoteActionResultsGetResponse | undefined>;
@@ -51,7 +51,7 @@ export interface GetCloudPcRemoteActionResultsRequestBuilder extends BaseRequest
      * Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

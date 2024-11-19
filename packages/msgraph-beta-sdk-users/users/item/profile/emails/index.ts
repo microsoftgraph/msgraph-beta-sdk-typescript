@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EmailsRequestBuilder extends BaseRequestBuilder<EmailsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the emails property of the microsoft.graph.profile entity.
      * @param itemEmailId The unique identifier of itemEmail
      * @returns {ItemEmailItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byItemEmailId(itemEmailId: string) : ItemEmailItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface EmailsRequestBuilder extends BaseRequestBuilder<EmailsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemEmailCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<EmailsRequestBuilderGetQueryParameters> | undefined) : Promise<ItemEmailCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface EmailsRequestBuilder extends BaseRequestBuilder<EmailsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ItemEmail>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ItemEmail, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ItemEmail | undefined>;
     /**
      * Retrieve the properties and relationships of an itemEmail object in a user's profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmailsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface EmailsRequestBuilder extends BaseRequestBuilder<EmailsRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ItemEmail, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

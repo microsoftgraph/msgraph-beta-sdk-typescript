@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsRequestBuilder> {
     /**
      * Provides operations to manage the workingTimeSchedule property of the microsoft.graph.userSolutionRoot entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get workingTimeSchedule(): WorkingTimeScheduleRequestBuilder;
     /**
      * Delete navigation property solutions for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserSolutionRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SolutionsRequestBuilderGetQueryParameters> | undefined) : Promise<UserSolutionRoot | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserSolutionRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: UserSolutionRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserSolutionRoot | undefined>;
     /**
      * Delete navigation property solutions for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents a user's custom solution entity. Read-Only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SolutionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: UserSolutionRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

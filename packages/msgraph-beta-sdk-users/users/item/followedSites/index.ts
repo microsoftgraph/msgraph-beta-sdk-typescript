@@ -22,24 +22,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface FollowedSitesRequestBuilder extends BaseRequestBuilder<FollowedSitesRequestBuilder> {
     /**
      * Provides operations to call the add method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get add(): AddRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the remove method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get remove(): RemoveRequestBuilder;
     /**
      * Provides operations to manage the followedSites property of the microsoft.graph.user entity.
      * @param siteId The unique identifier of site
      * @returns {SiteItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySiteId(siteId: string) : SiteItemRequestBuilder;
     /**
@@ -47,14 +43,12 @@ export interface FollowedSitesRequestBuilder extends BaseRequestBuilder<Followed
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters> | undefined) : Promise<SiteCollectionResponse | undefined>;
     /**
      * Get followedSites from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FollowedSitesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

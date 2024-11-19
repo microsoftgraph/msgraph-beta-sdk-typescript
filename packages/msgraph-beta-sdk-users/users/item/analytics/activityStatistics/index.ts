@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ActivityStatisticsRequestBuilder extends BaseRequestBuilder<ActivityStatisticsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
      * @param activityStatisticsId The unique identifier of activityStatistics
      * @returns {ActivityStatisticsItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byActivityStatisticsId(activityStatisticsId: string) : ActivityStatisticsItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ActivityStatisticsRequestBuilder extends BaseRequestBuilder<Act
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityStatisticsCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ActivityStatisticsRequestBuilderGetQueryParameters> | undefined) : Promise<ActivityStatisticsCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface ActivityStatisticsRequestBuilder extends BaseRequestBuilder<Act
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityStatistics>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: ActivityStatistics, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ActivityStatistics | undefined>;
     /**
      * The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActivityStatisticsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface ActivityStatisticsRequestBuilder extends BaseRequestBuilder<Act
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ActivityStatistics, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

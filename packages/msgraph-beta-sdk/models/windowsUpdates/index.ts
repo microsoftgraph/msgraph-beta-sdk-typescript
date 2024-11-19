@@ -2523,11 +2523,11 @@ export interface QualityUpdateCveSeverityInformation extends AdditionalDataHolde
 }
 export interface QualityUpdateFilter extends Parsable, WindowsUpdateFilter {
     /**
-     * The cadence property
+     * Specifies the cadence for publishing quality updates of the filter. The possible values are: monthly, outOfBand, unknownFutureValue.
      */
     cadence?: QualityUpdateCadence | null;
     /**
-     * The classification property
+     * Specifies the quality update classification of the filter. The possible values are: all, security, nonSecurity, unknownFutureValue.
      */
     classification?: QualityUpdateClassification | null;
 }
@@ -3608,7 +3608,7 @@ export interface UserExperienceSettings extends AdditionalDataHolder, BackedMode
      */
     daysUntilForcedReboot?: number | null;
     /**
-     * The isHotpatchEnabled property
+     * Specifies whether the update is offered as a hotpatch. It can only be set to true on automatic policies that target monthly security updates.
      */
     isHotpatchEnabled?: boolean | null;
     /**

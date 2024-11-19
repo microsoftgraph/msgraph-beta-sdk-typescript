@@ -24,34 +24,28 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceRequestBuilder> {
     /**
      * Provides operations to call the clearPresence method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get clearPresence(): ClearPresenceRequestBuilder;
     /**
      * Provides operations to call the clearUserPreferredPresence method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get clearUserPreferredPresence(): ClearUserPreferredPresenceRequestBuilder;
     /**
      * Provides operations to call the setPresence method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setPresence(): SetPresenceRequestBuilder;
     /**
      * Provides operations to call the setStatusMessage method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setStatusMessage(): SetStatusMessageRequestBuilder;
     /**
      * Provides operations to call the setUserPreferredPresence method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get setUserPreferredPresence(): SetUserPreferredPresenceRequestBuilder;
     /**
      * Delete navigation property presence for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,7 +53,6 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Presence>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PresenceRequestBuilderGetQueryParameters> | undefined) : Promise<Presence | undefined>;
@@ -69,21 +62,18 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Presence>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: Presence, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Presence | undefined>;
     /**
      * Delete navigation property presence for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Set a presence status message for a user. An optional expiration date and time can be supplied.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PresenceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -91,7 +81,6 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: Presence, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

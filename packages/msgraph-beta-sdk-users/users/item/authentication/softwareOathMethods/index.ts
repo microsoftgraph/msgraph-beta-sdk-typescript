@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SoftwareOathMethodsRequestBuilder extends BaseRequestBuilder<SoftwareOathMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
      * @param softwareOathAuthenticationMethodId The unique identifier of softwareOathAuthenticationMethod
      * @returns {SoftwareOathAuthenticationMethodItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      bySoftwareOathAuthenticationMethodId(softwareOathAuthenticationMethodId: string) : SoftwareOathAuthenticationMethodItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface SoftwareOathMethodsRequestBuilder extends BaseRequestBuilder<So
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SoftwareOathAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<SoftwareOathAuthenticationMethodCollectionResponse | undefined>;
     /**
      * The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SoftwareOathMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

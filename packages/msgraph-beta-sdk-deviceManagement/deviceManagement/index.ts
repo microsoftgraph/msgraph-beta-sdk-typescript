@@ -38,6 +38,10 @@ import { CertificateConnectorDetailsRequestBuilderNavigationMetadata, Certificat
 // @ts-ignore
 import { ChromeOSOnboardingSettingsRequestBuilderNavigationMetadata, ChromeOSOnboardingSettingsRequestBuilderRequestsMetadata, type ChromeOSOnboardingSettingsRequestBuilder } from './chromeOSOnboardingSettings/index.js';
 // @ts-ignore
+import { CloudCertificationAuthorityRequestBuilderNavigationMetadata, CloudCertificationAuthorityRequestBuilderRequestsMetadata, type CloudCertificationAuthorityRequestBuilder } from './cloudCertificationAuthority/index.js';
+// @ts-ignore
+import { CloudCertificationAuthorityLeafCertificateRequestBuilderNavigationMetadata, CloudCertificationAuthorityLeafCertificateRequestBuilderRequestsMetadata, type CloudCertificationAuthorityLeafCertificateRequestBuilder } from './cloudCertificationAuthorityLeafCertificate/index.js';
+// @ts-ignore
 import { CloudPCConnectivityIssuesRequestBuilderNavigationMetadata, CloudPCConnectivityIssuesRequestBuilderRequestsMetadata, type CloudPCConnectivityIssuesRequestBuilder } from './cloudPCConnectivityIssues/index.js';
 // @ts-ignore
 import { ComanagedDevicesRequestBuilderNavigationMetadata, ComanagedDevicesRequestBuilderRequestsMetadata, type ComanagedDevicesRequestBuilder } from './comanagedDevices/index.js';
@@ -85,8 +89,6 @@ import { DeviceComplianceScriptsRequestBuilderNavigationMetadata, DeviceComplian
 import { DeviceConfigurationConflictSummaryRequestBuilderNavigationMetadata, DeviceConfigurationConflictSummaryRequestBuilderRequestsMetadata, type DeviceConfigurationConflictSummaryRequestBuilder } from './deviceConfigurationConflictSummary/index.js';
 // @ts-ignore
 import { DeviceConfigurationDeviceStateSummariesRequestBuilderRequestsMetadata, type DeviceConfigurationDeviceStateSummariesRequestBuilder } from './deviceConfigurationDeviceStateSummaries/index.js';
-// @ts-ignore
-import { DeviceConfigurationProfilesRequestBuilderNavigationMetadata, DeviceConfigurationProfilesRequestBuilderRequestsMetadata, type DeviceConfigurationProfilesRequestBuilder } from './deviceConfigurationProfiles/index.js';
 // @ts-ignore
 import { DeviceConfigurationRestrictedAppsViolationsRequestBuilderNavigationMetadata, DeviceConfigurationRestrictedAppsViolationsRequestBuilderRequestsMetadata, type DeviceConfigurationRestrictedAppsViolationsRequestBuilder } from './deviceConfigurationRestrictedAppsViolations/index.js';
 // @ts-ignore
@@ -227,6 +229,8 @@ import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsM
 import { ResourceAccessProfilesRequestBuilderNavigationMetadata, ResourceAccessProfilesRequestBuilderRequestsMetadata, type ResourceAccessProfilesRequestBuilder } from './resourceAccessProfiles/index.js';
 // @ts-ignore
 import { ResourceOperationsRequestBuilderNavigationMetadata, ResourceOperationsRequestBuilderRequestsMetadata, type ResourceOperationsRequestBuilder } from './resourceOperations/index.js';
+// @ts-ignore
+import { RetrieveUserRoleDetailWithUseridRequestBuilderRequestsMetadata, type RetrieveUserRoleDetailWithUseridRequestBuilder } from './retrieveUserRoleDetailWithUserid/index.js';
 // @ts-ignore
 import { ReusablePolicySettingsRequestBuilderNavigationMetadata, ReusablePolicySettingsRequestBuilderRequestsMetadata, type ReusablePolicySettingsRequestBuilder } from './reusablePolicySettings/index.js';
 // @ts-ignore
@@ -459,6 +463,14 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      */
     get chromeOSOnboardingSettings(): ChromeOSOnboardingSettingsRequestBuilder;
     /**
+     * Provides operations to manage the cloudCertificationAuthority property of the microsoft.graph.deviceManagement entity.
+     */
+    get cloudCertificationAuthority(): CloudCertificationAuthorityRequestBuilder;
+    /**
+     * Provides operations to manage the cloudCertificationAuthorityLeafCertificate property of the microsoft.graph.deviceManagement entity.
+     */
+    get cloudCertificationAuthorityLeafCertificate(): CloudCertificationAuthorityLeafCertificateRequestBuilder;
+    /**
      * Provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.
      */
     get cloudPCConnectivityIssues(): CloudPCConnectivityIssuesRequestBuilder;
@@ -554,10 +566,6 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      * Provides operations to manage the deviceConfigurationDeviceStateSummaries property of the microsoft.graph.deviceManagement entity.
      */
     get deviceConfigurationDeviceStateSummaries(): DeviceConfigurationDeviceStateSummariesRequestBuilder;
-    /**
-     * Provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.
-     */
-    get deviceConfigurationProfiles(): DeviceConfigurationProfilesRequestBuilder;
     /**
      * Provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
      */
@@ -1174,6 +1182,12 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      */
      patch(body: DeviceManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceManagement | undefined>;
     /**
+     * Provides operations to call the retrieveUserRoleDetail method.
+     * @param userid Usage: userid='{userid}'
+     * @returns {RetrieveUserRoleDetailWithUseridRequestBuilder}
+     */
+     retrieveUserRoleDetailWithUserid(userid: string | undefined) : RetrieveUserRoleDetailWithUseridRequestBuilder;
+    /**
      * Provides operations to call the scopedForResource method.
      * @param resource Usage: resource='{resource}'
      * @returns {ScopedForResourceWithResourceRequestBuilder}
@@ -1242,6 +1256,10 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     getSuggestedEnrollmentLimitWithEnrollmentType: {
         requestsMetadata: GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderRequestsMetadata,
         pathParametersMappings: ["enrollmentType"],
+    },
+    retrieveUserRoleDetailWithUserid: {
+        requestsMetadata: RetrieveUserRoleDetailWithUseridRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["userid"],
     },
     scopedForResourceWithResource: {
         requestsMetadata: ScopedForResourceWithResourceRequestBuilderRequestsMetadata,
@@ -1314,6 +1332,14 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     chromeOSOnboardingSettings: {
         requestsMetadata: ChromeOSOnboardingSettingsRequestBuilderRequestsMetadata,
         navigationMetadata: ChromeOSOnboardingSettingsRequestBuilderNavigationMetadata,
+    },
+    cloudCertificationAuthority: {
+        requestsMetadata: CloudCertificationAuthorityRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudCertificationAuthorityRequestBuilderNavigationMetadata,
+    },
+    cloudCertificationAuthorityLeafCertificate: {
+        requestsMetadata: CloudCertificationAuthorityLeafCertificateRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudCertificationAuthorityLeafCertificateRequestBuilderNavigationMetadata,
     },
     cloudPCConnectivityIssues: {
         requestsMetadata: CloudPCConnectivityIssuesRequestBuilderRequestsMetadata,
@@ -1407,10 +1433,6 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     },
     deviceConfigurationDeviceStateSummaries: {
         requestsMetadata: DeviceConfigurationDeviceStateSummariesRequestBuilderRequestsMetadata,
-    },
-    deviceConfigurationProfiles: {
-        requestsMetadata: DeviceConfigurationProfilesRequestBuilderRequestsMetadata,
-        navigationMetadata: DeviceConfigurationProfilesRequestBuilderNavigationMetadata,
     },
     deviceConfigurationRestrictedAppsViolations: {
         requestsMetadata: DeviceConfigurationRestrictedAppsViolationsRequestBuilderRequestsMetadata,

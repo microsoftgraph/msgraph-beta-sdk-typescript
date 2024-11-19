@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DetectedAppsRequestBuilder extends BaseRequestBuilder<DetectedAppsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
      * @param detectedAppId The unique identifier of detectedApp
      * @returns {DetectedAppItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byDetectedAppId(detectedAppId: string) : DetectedAppItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface DetectedAppsRequestBuilder extends BaseRequestBuilder<DetectedA
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DetectedAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters> | undefined) : Promise<DetectedAppCollectionResponse | undefined>;
     /**
      * All applications currently installed on the device
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -16,7 +16,6 @@ export interface AssignmentFilterEvaluationStatusDetailsItemRequestBuilder exten
      * Delete navigation property assignmentFilterEvaluationStatusDetails for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface AssignmentFilterEvaluationStatusDetailsItemRequestBuilder exten
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AssignmentFilterEvaluationStatusDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameters> | undefined) : Promise<AssignmentFilterEvaluationStatusDetails | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface AssignmentFilterEvaluationStatusDetailsItemRequestBuilder exten
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AssignmentFilterEvaluationStatusDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: AssignmentFilterEvaluationStatusDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AssignmentFilterEvaluationStatusDetails | undefined>;
     /**
      * Delete navigation property assignmentFilterEvaluationStatusDetails for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Managed device mobile app configuration states for this device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface AssignmentFilterEvaluationStatusDetailsItemRequestBuilder exten
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: AssignmentFilterEvaluationStatusDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

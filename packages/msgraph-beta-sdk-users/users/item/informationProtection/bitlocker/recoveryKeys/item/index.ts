@@ -17,14 +17,12 @@ export interface BitlockerRecoveryKeyItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BitlockerRecoveryKey>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters> | undefined) : Promise<BitlockerRecoveryKey | undefined>;
     /**
      * The recovery keys associated with the bitlocker entity.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

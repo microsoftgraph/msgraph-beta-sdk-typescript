@@ -16,7 +16,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GraphDirectoryRoleRequestBuilder extends BaseRequestBuilder<GraphDirectoryRoleRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
@@ -24,14 +23,12 @@ export interface GraphDirectoryRoleRequestBuilder extends BaseRequestBuilder<Gra
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryRoleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<GraphDirectoryRoleRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryRoleCollectionResponse | undefined>;
     /**
      * Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphDirectoryRoleRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

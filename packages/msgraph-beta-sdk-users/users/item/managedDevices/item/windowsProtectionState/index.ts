@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WindowsProtectionStateRequestBuilder extends BaseRequestBuilder<WindowsProtectionStateRequestBuilder> {
     /**
      * Provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get detectedMalwareState(): DetectedMalwareStateRequestBuilder;
     /**
      * Delete navigation property windowsProtectionState for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface WindowsProtectionStateRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsProtectionState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WindowsProtectionStateRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsProtectionState | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface WindowsProtectionStateRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsProtectionState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: WindowsProtectionState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsProtectionState | undefined>;
     /**
      * Delete navigation property windowsProtectionState for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The device protection status. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WindowsProtectionStateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface WindowsProtectionStateRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: WindowsProtectionState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

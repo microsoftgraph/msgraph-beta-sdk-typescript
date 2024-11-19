@@ -26,34 +26,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LabelsRequestBuilder extends BaseRequestBuilder<LabelsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the evaluateApplication method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
     get evaluateApplication(): EvaluateApplicationRequestBuilder;
     /**
      * Provides operations to call the evaluateClassificationResults method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
     get evaluateClassificationResults(): EvaluateClassificationResultsRequestBuilder;
     /**
      * Provides operations to call the evaluateRemoval method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
     get evaluateRemoval(): EvaluateRemovalRequestBuilder;
     /**
      * Provides operations to call the extractLabel method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
     get extractLabel(): ExtractLabelRequestBuilder;
     /**
      * Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
      * @param informationProtectionLabelId The unique identifier of informationProtectionLabel
      * @returns {InformationProtectionLabelItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      byInformationProtectionLabelId(informationProtectionLabelId: string) : InformationProtectionLabelItemRequestBuilder;
     /**
@@ -61,7 +61,7 @@ export interface LabelsRequestBuilder extends BaseRequestBuilder<LabelsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtectionLabelCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      get(requestConfiguration?: RequestConfiguration<LabelsRequestBuilderGetQueryParameters> | undefined) : Promise<InformationProtectionLabelCollectionResponse | undefined>;
     /**
@@ -70,14 +70,14 @@ export interface LabelsRequestBuilder extends BaseRequestBuilder<LabelsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InformationProtectionLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      post(body: InformationProtectionLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InformationProtectionLabel | undefined>;
     /**
      * Get labels from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LabelsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -85,7 +85,7 @@ export interface LabelsRequestBuilder extends BaseRequestBuilder<LabelsRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toPostRequestInformation(body: InformationProtectionLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
