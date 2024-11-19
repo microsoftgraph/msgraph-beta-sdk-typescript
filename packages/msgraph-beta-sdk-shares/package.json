@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-shares",
-  "version": "1.0.0-preview.27",
+  "version": "1.0.0-preview.28",
   "description": "Shares fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
