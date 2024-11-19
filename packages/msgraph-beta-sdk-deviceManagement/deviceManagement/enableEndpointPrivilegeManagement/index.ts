@@ -11,13 +11,13 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface EnableEndpointPrivilegeManagementRequestBuilder extends BaseRequestBuilder<EnableEndpointPrivilegeManagementRequestBuilder> {
     /**
-     * Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C).
+     * DEPRECATED - DO NOT USE. (Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C)).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C).
+     * DEPRECATED - DO NOT USE. (Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C)).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

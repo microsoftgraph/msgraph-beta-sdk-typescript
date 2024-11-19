@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MethodsRequestBuilder extends BaseRequestBuilder<MethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the methods property of the microsoft.graph.authentication entity.
      * @param authenticationMethodId The unique identifier of authenticationMethod
      * @returns {AuthenticationMethodItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAuthenticationMethodId(authenticationMethodId: string) : AuthenticationMethodItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface MethodsRequestBuilder extends BaseRequestBuilder<MethodsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MethodsRequestBuilderGetQueryParameters> | undefined) : Promise<AuthenticationMethodCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface MethodsRequestBuilder extends BaseRequestBuilder<MethodsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuthenticationMethod | undefined>;
     /**
      * Represents all authentication methods registered to a user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface MethodsRequestBuilder extends BaseRequestBuilder<MethodsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

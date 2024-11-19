@@ -20,20 +20,22 @@ export interface UxSettingRequestBuilder extends BaseRequestBuilder<UxSettingReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get uxSetting from admin
+     * Get the properties and relationships of a uxSetting object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UxSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
+     * @see {@link https://learn.microsoft.com/graph/api/uxsetting-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UxSettingRequestBuilderGetQueryParameters> | undefined) : Promise<UxSetting | undefined>;
     /**
-     * Update the navigation property uxSetting in admin
+     * Update the properties of a uxSetting object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UxSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
+     * @see {@link https://learn.microsoft.com/graph/api/uxsetting-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: UxSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UxSetting | undefined>;
     /**
@@ -44,14 +46,14 @@ export interface UxSettingRequestBuilder extends BaseRequestBuilder<UxSettingReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get uxSetting from admin
+     * Get the properties and relationships of a uxSetting object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UxSettingRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property uxSetting in admin
+     * Update the properties of a uxSetting object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +62,7 @@ export interface UxSettingRequestBuilder extends BaseRequestBuilder<UxSettingReq
      toPatchRequestInformation(body: UxSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get uxSetting from admin
+ * Get the properties and relationships of a uxSetting object.
  */
 export interface UxSettingRequestBuilderGetQueryParameters {
     /**

@@ -35,11 +35,12 @@ export interface FileThreatsRequestBuilder extends BaseRequestBuilder<FileThreat
      */
      get(requestConfiguration?: RequestConfiguration<FileThreatsRequestBuilderGetQueryParameters> | undefined) : Promise<FileThreatSubmissionCollectionResponse | undefined>;
     /**
-     * Create new navigation property to fileThreats for security
+     * Create a new fileThreatSubmission object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FileThreatSubmission>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-filethreatsubmission-post-filethreats?view=graph-rest-beta|Find more info here}
      */
      post(body: FileThreatSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FileThreatSubmission | undefined>;
     /**
@@ -49,7 +50,7 @@ export interface FileThreatsRequestBuilder extends BaseRequestBuilder<FileThreat
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FileThreatsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to fileThreats for security
+     * Create a new fileThreatSubmission object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

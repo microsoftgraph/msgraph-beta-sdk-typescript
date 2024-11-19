@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CalendarPermissionsRequestBuilder extends BaseRequestBuilder<CalendarPermissionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
      * @param calendarPermissionId The unique identifier of calendarPermission
      * @returns {CalendarPermissionItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byCalendarPermissionId(calendarPermissionId: string) : CalendarPermissionItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface CalendarPermissionsRequestBuilder extends BaseRequestBuilder<Ca
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CalendarPermissionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CalendarPermissionsRequestBuilderGetQueryParameters> | undefined) : Promise<CalendarPermissionCollectionResponse | undefined>;
     /**
@@ -42,7 +39,6 @@ export interface CalendarPermissionsRequestBuilder extends BaseRequestBuilder<Ca
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CalendarPermission>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-beta|Find more info here}
      */
      post(body: CalendarPermission, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CalendarPermission | undefined>;
@@ -50,7 +46,6 @@ export interface CalendarPermissionsRequestBuilder extends BaseRequestBuilder<Ca
      * Get the specified permissions object of a user or group calendar that has been shared.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CalendarPermissionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +53,6 @@ export interface CalendarPermissionsRequestBuilder extends BaseRequestBuilder<Ca
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: CalendarPermission, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

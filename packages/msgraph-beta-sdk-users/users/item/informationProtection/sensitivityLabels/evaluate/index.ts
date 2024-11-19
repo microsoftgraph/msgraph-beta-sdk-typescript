@@ -57,7 +57,6 @@ export interface EvaluateRequestBuilder extends BaseRequestBuilder<EvaluateReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EvaluateLabelJobResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: EvaluatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EvaluateLabelJobResponse | undefined>;
     /**
@@ -65,7 +64,6 @@ export interface EvaluateRequestBuilder extends BaseRequestBuilder<EvaluateReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: EvaluatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

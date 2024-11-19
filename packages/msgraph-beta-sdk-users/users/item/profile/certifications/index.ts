@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CertificationsRequestBuilder extends BaseRequestBuilder<CertificationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the certifications property of the microsoft.graph.profile entity.
      * @param personCertificationId The unique identifier of personCertification
      * @returns {PersonCertificationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPersonCertificationId(personCertificationId: string) : PersonCertificationItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface CertificationsRequestBuilder extends BaseRequestBuilder<Certifi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonCertificationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<CertificationsRequestBuilderGetQueryParameters> | undefined) : Promise<PersonCertificationCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface CertificationsRequestBuilder extends BaseRequestBuilder<Certifi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonCertification>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: PersonCertification, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonCertification | undefined>;
     /**
      * Represents the details of certifications associated with a person.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CertificationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface CertificationsRequestBuilder extends BaseRequestBuilder<Certifi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PersonCertification, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

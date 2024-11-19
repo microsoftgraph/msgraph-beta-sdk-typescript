@@ -41,7 +41,7 @@ export interface CreateUploadSessionRequestBuilder extends BaseRequestBuilder<Cr
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      * @see {@link https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta|Find more info here}
      */
      post(body: CreateUploadSessionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UploadSession | undefined>;
@@ -50,7 +50,7 @@ export interface CreateUploadSessionRequestBuilder extends BaseRequestBuilder<Cr
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
      */
      toPostRequestInformation(body: CreateUploadSessionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

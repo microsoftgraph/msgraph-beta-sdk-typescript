@@ -43,7 +43,6 @@ export interface ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder exte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
@@ -51,7 +50,6 @@ export interface ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder exte
      * Return a list of event reminders in a user calendar within the specified start and end times.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

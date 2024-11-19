@@ -63,7 +63,6 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordValidationInformation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-beta|Find more info here}
      */
      post(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordValidationInformation | undefined>;
@@ -72,7 +71,6 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

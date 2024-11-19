@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ManagedAppRegistrationsRequestBuilder extends BaseRequestBuilder<ManagedAppRegistrationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
      * @param managedAppRegistrationId The unique identifier of managedAppRegistration
      * @returns {ManagedAppRegistrationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byManagedAppRegistrationId(managedAppRegistrationId: string) : ManagedAppRegistrationItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface ManagedAppRegistrationsRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ManagedAppRegistrationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters> | undefined) : Promise<ManagedAppRegistrationCollectionResponse | undefined>;
     /**
      * Zero or more managed app registrations that belong to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ManagedAppRegistrationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

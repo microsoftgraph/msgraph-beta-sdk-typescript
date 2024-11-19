@@ -18,19 +18,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ContactFolderItemRequestBuilder extends BaseRequestBuilder<ContactFolderItemRequestBuilder> {
     /**
      * Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get contacts(): ContactsRequestBuilder;
     /**
      * Provides operations to call the permanentDelete method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Delete navigation property childFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -38,7 +35,6 @@ export interface ContactFolderItemRequestBuilder extends BaseRequestBuilder<Cont
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContactFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<ContactFolderItemRequestBuilderGetQueryParameters> | undefined) : Promise<ContactFolder | undefined>;
     /**
@@ -47,21 +43,18 @@ export interface ContactFolderItemRequestBuilder extends BaseRequestBuilder<Cont
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContactFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: ContactFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ContactFolder | undefined>;
     /**
      * Delete navigation property childFolders for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The collection of child folders in the folder. Navigation property. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactFolderItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,7 +62,6 @@ export interface ContactFolderItemRequestBuilder extends BaseRequestBuilder<Cont
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: ContactFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

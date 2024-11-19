@@ -40,74 +40,60 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OnlineMeetingItemRequestBuilder extends BaseRequestBuilder<OnlineMeetingItemRequestBuilder> {
     /**
      * Provides operations to manage the aiInsights property of the microsoft.graph.onlineMeeting entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get aiInsights(): AiInsightsRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get alternativeRecording(): AlternativeRecordingRequestBuilder;
     /**
      * Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get attendanceReports(): AttendanceReportsRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get attendeeReport(): AttendeeReportRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get broadcastRecording(): BroadcastRecordingRequestBuilder;
     /**
      * Provides operations to call the getVirtualAppointmentJoinWebUrl method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get getVirtualAppointmentJoinWebUrl(): GetVirtualAppointmentJoinWebUrlRequestBuilder;
     /**
      * Provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get meetingAttendanceReport(): MeetingAttendanceReportRequestBuilder;
     /**
      * Provides operations to manage the media for the user entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recording(): RecordingRequestBuilder;
     /**
      * Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get recordings(): RecordingsRequestBuilder;
     /**
      * Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get registration(): RegistrationRequestBuilder;
     /**
      * Provides operations to call the sendVirtualAppointmentReminderSms method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendVirtualAppointmentReminderSms(): SendVirtualAppointmentReminderSmsRequestBuilder;
     /**
      * Provides operations to call the sendVirtualAppointmentSms method.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get sendVirtualAppointmentSms(): SendVirtualAppointmentSmsRequestBuilder;
     /**
      * Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get transcripts(): TranscriptsRequestBuilder;
     /**
      * Delete navigation property onlineMeetings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -115,7 +101,6 @@ export interface OnlineMeetingItemRequestBuilder extends BaseRequestBuilder<Onli
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeeting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters> | undefined) : Promise<OnlineMeeting | undefined>;
     /**
@@ -124,21 +109,18 @@ export interface OnlineMeetingItemRequestBuilder extends BaseRequestBuilder<Onli
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeeting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      patch(body: OnlineMeeting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnlineMeeting | undefined>;
     /**
      * Delete navigation property onlineMeetings for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OnlineMeetingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -146,7 +128,6 @@ export interface OnlineMeetingItemRequestBuilder extends BaseRequestBuilder<Onli
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPatchRequestInformation(body: OnlineMeeting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LanguagesRequestBuilder extends BaseRequestBuilder<LanguagesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the languages property of the microsoft.graph.profile entity.
      * @param languageProficiencyId The unique identifier of languageProficiency
      * @returns {LanguageProficiencyItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byLanguageProficiencyId(languageProficiencyId: string) : LanguageProficiencyItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface LanguagesRequestBuilder extends BaseRequestBuilder<LanguagesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LanguageProficiencyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<LanguagesRequestBuilderGetQueryParameters> | undefined) : Promise<LanguageProficiencyCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface LanguagesRequestBuilder extends BaseRequestBuilder<LanguagesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LanguageProficiency>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: LanguageProficiency, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LanguageProficiency | undefined>;
     /**
      * Represents detailed information about languages that a user has added to their profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LanguagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface LanguagesRequestBuilder extends BaseRequestBuilder<LanguagesReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: LanguageProficiency, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

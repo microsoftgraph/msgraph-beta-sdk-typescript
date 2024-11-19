@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the instances property of the microsoft.graph.windowsSetting entity.
      * @param windowsSettingInstanceId The unique identifier of windowsSettingInstance
      * @returns {WindowsSettingInstanceItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byWindowsSettingInstanceId(windowsSettingInstanceId: string) : WindowsSettingInstanceItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsSettingInstanceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InstancesRequestBuilderGetQueryParameters> | undefined) : Promise<WindowsSettingInstanceCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WindowsSettingInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: WindowsSettingInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsSettingInstance | undefined>;
     /**
      * A collection of setting values for a given windowsSetting.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InstancesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: WindowsSettingInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

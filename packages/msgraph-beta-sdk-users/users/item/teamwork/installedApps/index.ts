@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<InstalledAppsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
      * @param userScopeTeamsAppInstallationId The unique identifier of userScopeTeamsAppInstallation
      * @returns {UserScopeTeamsAppInstallationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUserScopeTeamsAppInstallationId(userScopeTeamsAppInstallationId: string) : UserScopeTeamsAppInstallationItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserScopeTeamsAppInstallationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InstalledAppsRequestBuilderGetQueryParameters> | undefined) : Promise<UserScopeTeamsAppInstallationCollectionResponse | undefined>;
@@ -43,7 +40,6 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserScopeTeamsAppInstallation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-beta|Find more info here}
      */
      post(body: UserScopeTeamsAppInstallation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserScopeTeamsAppInstallation | undefined>;
@@ -51,7 +47,6 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * Retrieve the list of apps installed in the personal scope of the specified user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InstalledAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +54,6 @@ export interface InstalledAppsRequestBuilder extends BaseRequestBuilder<Installe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UserScopeTeamsAppInstallation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

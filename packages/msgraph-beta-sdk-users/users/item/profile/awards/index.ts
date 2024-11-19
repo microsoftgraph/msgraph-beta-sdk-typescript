@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AwardsRequestBuilder extends BaseRequestBuilder<AwardsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the awards property of the microsoft.graph.profile entity.
      * @param personAwardId The unique identifier of personAward
      * @returns {PersonAwardItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPersonAwardId(personAwardId: string) : PersonAwardItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AwardsRequestBuilder extends BaseRequestBuilder<AwardsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAwardCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AwardsRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAwardCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AwardsRequestBuilder extends BaseRequestBuilder<AwardsRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAward>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: PersonAward, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAward | undefined>;
     /**
      * Represents the details of awards or honors associated with a person.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AwardsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AwardsRequestBuilder extends BaseRequestBuilder<AwardsRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PersonAward, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

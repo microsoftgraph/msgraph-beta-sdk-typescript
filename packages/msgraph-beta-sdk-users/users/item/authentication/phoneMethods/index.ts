@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PhoneMethodsRequestBuilder extends BaseRequestBuilder<PhoneMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
      * @param phoneAuthenticationMethodId The unique identifier of phoneAuthenticationMethod
      * @returns {PhoneAuthenticationMethodItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPhoneAuthenticationMethodId(phoneAuthenticationMethodId: string) : PhoneAuthenticationMethodItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface PhoneMethodsRequestBuilder extends BaseRequestBuilder<PhoneMeth
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PhoneAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PhoneMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<PhoneAuthenticationMethodCollectionResponse | undefined>;
     /**
@@ -42,7 +39,6 @@ export interface PhoneMethodsRequestBuilder extends BaseRequestBuilder<PhoneMeth
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PhoneAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      * @see {@link https://learn.microsoft.com/graph/api/authentication-post-phonemethods?view=graph-rest-beta|Find more info here}
      */
      post(body: PhoneAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PhoneAuthenticationMethod | undefined>;
@@ -50,7 +46,6 @@ export interface PhoneMethodsRequestBuilder extends BaseRequestBuilder<PhoneMeth
      * Represents the phone registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PhoneMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +53,6 @@ export interface PhoneMethodsRequestBuilder extends BaseRequestBuilder<PhoneMeth
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PhoneAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

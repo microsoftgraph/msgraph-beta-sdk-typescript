@@ -20,21 +20,18 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AppConsentRequestsForApprovalRequestBuilder extends BaseRequestBuilder<AppConsentRequestsForApprovalRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.
      * @param appConsentRequestId The unique identifier of appConsentRequest
      * @returns {AppConsentRequestItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byAppConsentRequestId(appConsentRequestId: string) : AppConsentRequestItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -42,7 +39,6 @@ export interface AppConsentRequestsForApprovalRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppConsentRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AppConsentRequestsForApprovalRequestBuilderGetQueryParameters> | undefined) : Promise<AppConsentRequestCollectionResponse | undefined>;
     /**
@@ -51,14 +47,12 @@ export interface AppConsentRequestsForApprovalRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppConsentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: AppConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AppConsentRequest | undefined>;
     /**
      * Get appConsentRequestsForApproval from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppConsentRequestsForApprovalRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -66,7 +60,6 @@ export interface AppConsentRequestsForApprovalRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: AppConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,7 +18,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DeviceHealthScriptStatesRequestBuilder extends BaseRequestBuilder<DeviceHealthScriptStatesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
@@ -26,7 +25,6 @@ export interface DeviceHealthScriptStatesRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceHealthScriptPolicyStateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<DeviceHealthScriptStatesRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceHealthScriptPolicyStateCollectionResponse | undefined>;
     /**
@@ -35,14 +33,12 @@ export interface DeviceHealthScriptStatesRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceHealthScriptPolicyState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: DeviceHealthScriptPolicyState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceHealthScriptPolicyState | undefined>;
     /**
      * Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceHealthScriptStatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,7 +46,6 @@ export interface DeviceHealthScriptStatesRequestBuilder extends BaseRequestBuild
      * @param body Contains properties for policy run state of the device health script.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: DeviceHealthScriptPolicyState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
@@ -59,7 +54,6 @@ export interface DeviceHealthScriptStatesRequestBuilder extends BaseRequestBuild
      * @param id Property in multi-part unique identifier of deviceHealthScriptPolicyState
      * @param policyId Property in multi-part unique identifier of deviceHealthScriptPolicyState
      * @returns {WithIdWithPolicyIdWithDeviceIdRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      withIdWithPolicyIdWithDeviceId(deviceId: string | undefined, id: string | undefined, policyId: string | undefined) : WithIdWithPolicyIdWithDeviceIdRequestBuilder;
 }

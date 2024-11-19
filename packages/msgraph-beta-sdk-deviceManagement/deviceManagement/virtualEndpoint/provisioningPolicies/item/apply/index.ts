@@ -21,6 +21,10 @@ export interface ApplyPostRequestBody extends AdditionalDataHolder, BackedModel,
      * The policySettings property
      */
     policySettings?: CloudPcPolicySettingType[] | null;
+    /**
+     * The reservePercentage property
+     */
+    reservePercentage?: number | null;
 }
 /**
  * Provides operations to call the apply method.
@@ -60,6 +64,7 @@ export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partia
     return {
         "backingStoreEnabled": n => { applyPostRequestBody.backingStoreEnabled = true; },
         "policySettings": n => { applyPostRequestBody.policySettings = n.getCollectionOfEnumValues<CloudPcPolicySettingType>(CloudPcPolicySettingTypeObject); },
+        "reservePercentage": n => { applyPostRequestBody.reservePercentage = n.getNumberValue(); },
     }
 }
 /**
@@ -70,6 +75,7 @@ export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partia
 export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined | null = {}) : void {
     if (applyPostRequestBody) {
         writer.writeEnumValue<CloudPcPolicySettingType[]>("policySettings", applyPostRequestBody.policySettings);
+        writer.writeNumberValue("reservePercentage", applyPostRequestBody.reservePercentage);
         writer.writeAdditionalData(applyPostRequestBody.additionalData);
     }
 }

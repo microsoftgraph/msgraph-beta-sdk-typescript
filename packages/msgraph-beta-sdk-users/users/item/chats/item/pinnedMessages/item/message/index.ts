@@ -17,14 +17,12 @@ export interface MessageRequestBuilder extends BaseRequestBuilder<MessageRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<MessageRequestBuilderGetQueryParameters> | undefined) : Promise<ChatMessage | undefined>;
     /**
      * Represents details about the chat message that is pinned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessageRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

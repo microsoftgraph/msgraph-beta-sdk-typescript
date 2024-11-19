@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AnniversariesRequestBuilder extends BaseRequestBuilder<AnniversariesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the anniversaries property of the microsoft.graph.profile entity.
      * @param personAnnualEventId The unique identifier of personAnnualEvent
      * @returns {PersonAnnualEventItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPersonAnnualEventId(personAnnualEventId: string) : PersonAnnualEventItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AnniversariesRequestBuilder extends BaseRequestBuilder<Annivers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAnnualEventCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AnniversariesRequestBuilderGetQueryParameters> | undefined) : Promise<PersonAnnualEventCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AnniversariesRequestBuilder extends BaseRequestBuilder<Annivers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PersonAnnualEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: PersonAnnualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PersonAnnualEvent | undefined>;
     /**
      * Represents the details of meaningful dates associated with a person.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AnniversariesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AnniversariesRequestBuilder extends BaseRequestBuilder<Annivers
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: PersonAnnualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

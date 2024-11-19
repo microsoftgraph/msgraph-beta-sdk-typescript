@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder extends BaseRequestBuilder<PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
      * @param passwordlessMicrosoftAuthenticatorAuthenticationMethodId The unique identifier of passwordlessMicrosoftAuthenticatorAuthenticationMethod
      * @returns {PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byPasswordlessMicrosoftAuthenticatorAuthenticationMethodId(passwordlessMicrosoftAuthenticatorAuthenticationMethodId: string) : PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder extends
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse | undefined>;
     /**
      * Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

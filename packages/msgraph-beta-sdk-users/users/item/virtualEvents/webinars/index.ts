@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the webinars property of the microsoft.graph.userVirtualEventsRoot entity.
      * @param virtualEventWebinarId The unique identifier of virtualEventWebinar
      * @returns {VirtualEventWebinarItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byVirtualEventWebinarId(virtualEventWebinarId: string) : VirtualEventWebinarItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventWebinarCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<WebinarsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventWebinarCollectionResponse | undefined>;
     /**
      * Get webinars from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WebinarsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

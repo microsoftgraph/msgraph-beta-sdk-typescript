@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccountRequestBuilder extends BaseRequestBuilder<AccountRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the account property of the microsoft.graph.profile entity.
      * @param userAccountInformationId The unique identifier of userAccountInformation
      * @returns {UserAccountInformationItemRequestBuilder}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      byUserAccountInformationId(userAccountInformationId: string) : UserAccountInformationItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AccountRequestBuilder extends BaseRequestBuilder<AccountRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserAccountInformationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<AccountRequestBuilderGetQueryParameters> | undefined) : Promise<UserAccountInformationCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface AccountRequestBuilder extends BaseRequestBuilder<AccountRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserAccountInformation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      post(body: UserAccountInformation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserAccountInformation | undefined>;
     /**
      * Get account from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccountRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface AccountRequestBuilder extends BaseRequestBuilder<AccountRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toPostRequestInformation(body: UserAccountInformation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -6,18 +6,12 @@ import { createDeviceManagementAutopilotEventFromDiscriminatorValue, serializeDe
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { PolicyStatusDetailsRequestBuilderNavigationMetadata, PolicyStatusDetailsRequestBuilderRequestsMetadata, type PolicyStatusDetailsRequestBuilder } from './policyStatusDetails/index.js';
-// @ts-ignore
-import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.
  */
 export interface DeviceManagementAutopilotEventItemRequestBuilder extends BaseRequestBuilder<DeviceManagementAutopilotEventItemRequestBuilder> {
-    /**
-     * Provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
-     */
-    get policyStatusDetails(): PolicyStatusDetailsRequestBuilder;
     /**
      * Delete navigation property autopilotEvents for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -82,15 +76,6 @@ export const DeviceManagementAutopilotEventItemRequestBuilderUriTemplate = "{+ba
 const DeviceManagementAutopilotEventItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
-};
-/**
- * Metadata for all the navigation properties in the request builder.
- */
-export const DeviceManagementAutopilotEventItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DeviceManagementAutopilotEventItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
-    policyStatusDetails: {
-        requestsMetadata: PolicyStatusDetailsRequestBuilderRequestsMetadata,
-        navigationMetadata: PolicyStatusDetailsRequestBuilderNavigationMetadata,
-    },
 };
 /**
  * Metadata for all the requests in the request builder.

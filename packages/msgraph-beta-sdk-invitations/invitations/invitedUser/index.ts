@@ -18,12 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InvitedUserRequestBuilder extends BaseRequestBuilder<InvitedUserRequestBuilder> {
     /**
      * The mailboxSettings property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get mailboxSettings(): MailboxSettingsRequestBuilder;
     /**
      * The serviceProvisioningErrors property
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
@@ -31,14 +29,12 @@ export interface InvitedUserRequestBuilder extends BaseRequestBuilder<InvitedUse
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      get(requestConfiguration?: RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
     /**
      * The user created as part of the invitation creation. Read-Only. The id property is required in the request body to reset a redemption status.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InvitedUserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

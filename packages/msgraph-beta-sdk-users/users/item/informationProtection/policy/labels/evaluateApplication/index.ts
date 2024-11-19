@@ -83,7 +83,7 @@ export interface EvaluateApplicationRequestBuilder extends BaseRequestBuilder<Ev
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EvaluateApplicationPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      * @see {@link https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta|Find more info here}
      */
      post(body: EvaluateApplicationPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EvaluateApplicationPostResponse | undefined>;
@@ -92,7 +92,7 @@ export interface EvaluateApplicationRequestBuilder extends BaseRequestBuilder<Ev
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-07/PrivatePreview:copilotExportAPI
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
      */
      toPostRequestInformation(body: EvaluateApplicationPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
