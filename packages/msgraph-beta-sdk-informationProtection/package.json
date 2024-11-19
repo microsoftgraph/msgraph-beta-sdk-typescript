@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-informationprotection",
-  "version": "1.0.0-preview.27",
+  "version": "1.0.0-preview.28",
   "description": "InformationProtection fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
