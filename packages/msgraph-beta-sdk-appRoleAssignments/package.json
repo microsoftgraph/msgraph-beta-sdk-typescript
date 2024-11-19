@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-approleassignments",
-  "version": "1.0.0-preview.27",
+  "version": "1.0.0-preview.28",
   "description": "AppRoleAssignments fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
