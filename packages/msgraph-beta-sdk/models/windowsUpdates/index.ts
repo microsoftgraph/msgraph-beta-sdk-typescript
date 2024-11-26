@@ -1829,6 +1829,7 @@ export function deserializeIntoProductRevision(productRevision: Partial<ProductR
         ...deserializeIntoEntity(productRevision),
         "catalogEntry": n => { productRevision.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
         "displayName": n => { productRevision.displayName = n.getStringValue(); },
+        "isHotpatchUpdate": n => { productRevision.isHotpatchUpdate = n.getBooleanValue(); },
         "knowledgeBaseArticle": n => { productRevision.knowledgeBaseArticle = n.getObjectValue<KnowledgeBaseArticle>(createKnowledgeBaseArticleFromDiscriminatorValue); },
         "osBuild": n => { productRevision.osBuild = n.getObjectValue<BuildVersionDetails>(createBuildVersionDetailsFromDiscriminatorValue); },
         "product": n => { productRevision.product = n.getStringValue(); },
@@ -2436,6 +2437,10 @@ export interface ProductRevision extends Entity, Parsable {
      * The display name of the content. Read-only.
      */
     displayName?: string | null;
+    /**
+     * True indicates that the content is hotpatchable; otherwise, false. For more information, see Deploy a hotpatch quality update using Windows Autopatch. Read-only.
+     */
+    isHotpatchUpdate?: boolean | null;
     /**
      * The knowledge base article associated with the product revision.
      */
@@ -3207,6 +3212,7 @@ export function serializeProductRevision(writer: SerializationWriter, productRev
         serializeEntity(writer, productRevision)
         writer.writeObjectValue<CatalogEntry>("catalogEntry", productRevision.catalogEntry, serializeCatalogEntry);
         writer.writeStringValue("displayName", productRevision.displayName);
+        writer.writeBooleanValue("isHotpatchUpdate", productRevision.isHotpatchUpdate);
         writer.writeObjectValue<KnowledgeBaseArticle>("knowledgeBaseArticle", productRevision.knowledgeBaseArticle, serializeKnowledgeBaseArticle);
         writer.writeObjectValue<BuildVersionDetails>("osBuild", productRevision.osBuild, serializeBuildVersionDetails);
         writer.writeStringValue("product", productRevision.product);

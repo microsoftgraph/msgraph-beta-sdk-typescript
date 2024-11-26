@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { ContentSharingSessionItemRequestBuilderRequestsMetadata, type ContentSharingSessionItemRequestBuilder } from './item/index.js';
+import { ContentSharingSessionItemRequestBuilderNavigationMetadata, ContentSharingSessionItemRequestBuilderRequestsMetadata, type ContentSharingSessionItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -116,6 +116,7 @@ const ContentSharingSessionsRequestBuilderGetQueryParametersMapper: Record<strin
 export const ContentSharingSessionsRequestBuilderNavigationMetadata: Record<Exclude<keyof ContentSharingSessionsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byContentSharingSessionId: {
         requestsMetadata: ContentSharingSessionItemRequestBuilderRequestsMetadata,
+        navigationMetadata: ContentSharingSessionItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["contentSharingSession%2Did"],
     },
     count: {

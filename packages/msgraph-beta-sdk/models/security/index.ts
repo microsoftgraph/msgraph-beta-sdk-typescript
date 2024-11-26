@@ -27951,6 +27951,12 @@ export const EvidenceRemediationStatusObject = {
     Blocked: "blocked",
     NotFound: "notFound",
     UnknownFutureValue: "unknownFutureValue",
+    Active: "active",
+    PendingApproval: "pendingApproval",
+    Declined: "declined",
+    Unremediated: "unremediated",
+    Running: "running",
+    PartiallyRemediated: "partiallyRemediated",
 } as const;
 export const EvidenceRoleObject = {
     Unknown: "unknown",

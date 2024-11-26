@@ -16,6 +16,8 @@ import { InactiveUsersByApplicationRequestBuilderNavigationMetadata, InactiveUse
 // @ts-ignore
 import { MfaCompletionsRequestBuilderNavigationMetadata, MfaCompletionsRequestBuilderRequestsMetadata, type MfaCompletionsRequestBuilder } from './mfaCompletions/index.js';
 // @ts-ignore
+import { MfaRegisteredUsersRequestBuilderNavigationMetadata, MfaRegisteredUsersRequestBuilderRequestsMetadata, type MfaRegisteredUsersRequestBuilder } from './mfaRegisteredUsers/index.js';
+// @ts-ignore
 import { RequestsRequestBuilderNavigationMetadata, RequestsRequestBuilderRequestsMetadata, type RequestsRequestBuilder } from './requests/index.js';
 // @ts-ignore
 import { SignUpsRequestBuilderNavigationMetadata, SignUpsRequestBuilderRequestsMetadata, type SignUpsRequestBuilder } from './signUps/index.js';
@@ -48,6 +50,10 @@ export interface MonthlyRequestBuilder extends BaseRequestBuilder<MonthlyRequest
      * Provides operations to manage the mfaCompletions property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
      */
     get mfaCompletions(): MfaCompletionsRequestBuilder;
+    /**
+     * Provides operations to manage the mfaRegisteredUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+     */
+    get mfaRegisteredUsers(): MfaRegisteredUsersRequestBuilder;
     /**
      * Provides operations to manage the requests property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
      */
@@ -148,6 +154,10 @@ export const MonthlyRequestBuilderNavigationMetadata: Record<Exclude<keyof Month
     mfaCompletions: {
         requestsMetadata: MfaCompletionsRequestBuilderRequestsMetadata,
         navigationMetadata: MfaCompletionsRequestBuilderNavigationMetadata,
+    },
+    mfaRegisteredUsers: {
+        requestsMetadata: MfaRegisteredUsersRequestBuilderRequestsMetadata,
+        navigationMetadata: MfaRegisteredUsersRequestBuilderNavigationMetadata,
     },
     requests: {
         requestsMetadata: RequestsRequestBuilderRequestsMetadata,

@@ -6,6 +6,8 @@ import { createAdministrativeUnitFromDiscriminatorValue, serializeAdministrative
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { DeletedMembersRequestBuilderNavigationMetadata, DeletedMembersRequestBuilderRequestsMetadata, type DeletedMembersRequestBuilder } from './deletedMembers/index.js';
+// @ts-ignore
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
 // @ts-ignore
 import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsMetadata, type MembersRequestBuilder } from './members/index.js';
@@ -18,6 +20,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
  */
 export interface AdministrativeUnitItemRequestBuilder extends BaseRequestBuilder<AdministrativeUnitItemRequestBuilder> {
+    /**
+     * Provides operations to manage the deletedMembers property of the microsoft.graph.administrativeUnit entity.
+     */
+    get deletedMembers(): DeletedMembersRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
      */
@@ -99,6 +105,10 @@ const AdministrativeUnitItemRequestBuilderGetQueryParametersMapper: Record<strin
  * Metadata for all the navigation properties in the request builder.
  */
 export const AdministrativeUnitItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AdministrativeUnitItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    deletedMembers: {
+        requestsMetadata: DeletedMembersRequestBuilderRequestsMetadata,
+        navigationMetadata: DeletedMembersRequestBuilderNavigationMetadata,
+    },
     extensions: {
         requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,
         navigationMetadata: ExtensionsRequestBuilderNavigationMetadata,

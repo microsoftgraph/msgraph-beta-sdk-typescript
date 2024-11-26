@@ -16,6 +16,8 @@ import { InactiveUsersByApplicationRequestBuilderNavigationMetadata, InactiveUse
 // @ts-ignore
 import { MfaCompletionsRequestBuilderNavigationMetadata, MfaCompletionsRequestBuilderRequestsMetadata, type MfaCompletionsRequestBuilder } from './mfaCompletions/index.js';
 // @ts-ignore
+import { MfaTelecomFraudRequestBuilderNavigationMetadata, MfaTelecomFraudRequestBuilderRequestsMetadata, type MfaTelecomFraudRequestBuilder } from './mfaTelecomFraud/index.js';
+// @ts-ignore
 import { SignUpsRequestBuilderNavigationMetadata, SignUpsRequestBuilderRequestsMetadata, type SignUpsRequestBuilder } from './signUps/index.js';
 // @ts-ignore
 import { SummaryRequestBuilderNavigationMetadata, SummaryRequestBuilderRequestsMetadata, type SummaryRequestBuilder } from './summary/index.js';
@@ -48,6 +50,10 @@ export interface DailyRequestBuilder extends BaseRequestBuilder<DailyRequestBuil
      * Provides operations to manage the mfaCompletions property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
      */
     get mfaCompletions(): MfaCompletionsRequestBuilder;
+    /**
+     * Provides operations to manage the mfaTelecomFraud property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+     */
+    get mfaTelecomFraud(): MfaTelecomFraudRequestBuilder;
     /**
      * Provides operations to manage the signUps property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
      */
@@ -148,6 +154,10 @@ export const DailyRequestBuilderNavigationMetadata: Record<Exclude<keyof DailyRe
     mfaCompletions: {
         requestsMetadata: MfaCompletionsRequestBuilderRequestsMetadata,
         navigationMetadata: MfaCompletionsRequestBuilderNavigationMetadata,
+    },
+    mfaTelecomFraud: {
+        requestsMetadata: MfaTelecomFraudRequestBuilderRequestsMetadata,
+        navigationMetadata: MfaTelecomFraudRequestBuilderNavigationMetadata,
     },
     signUps: {
         requestsMetadata: SignUpsRequestBuilderRequestsMetadata,
