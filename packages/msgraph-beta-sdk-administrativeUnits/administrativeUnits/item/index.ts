@@ -10,6 +10,8 @@ import { CheckMemberGroupsRequestBuilderRequestsMetadata, type CheckMemberGroups
 // @ts-ignore
 import { CheckMemberObjectsRequestBuilderRequestsMetadata, type CheckMemberObjectsRequestBuilder } from './checkMemberObjects/index.js';
 // @ts-ignore
+import { DeletedMembersRequestBuilderNavigationMetadata, DeletedMembersRequestBuilderRequestsMetadata, type DeletedMembersRequestBuilder } from './deletedMembers/index.js';
+// @ts-ignore
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
 // @ts-ignore
 import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/index.js';
@@ -36,6 +38,10 @@ export interface AdministrativeUnitItemRequestBuilder extends BaseRequestBuilder
      * Provides operations to call the checkMemberObjects method.
      */
     get checkMemberObjects(): CheckMemberObjectsRequestBuilder;
+    /**
+     * Provides operations to manage the deletedMembers property of the microsoft.graph.administrativeUnit entity.
+     */
+    get deletedMembers(): DeletedMembersRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
      */
@@ -137,6 +143,10 @@ export const AdministrativeUnitItemRequestBuilderNavigationMetadata: Record<Excl
     },
     checkMemberObjects: {
         requestsMetadata: CheckMemberObjectsRequestBuilderRequestsMetadata,
+    },
+    deletedMembers: {
+        requestsMetadata: DeletedMembersRequestBuilderRequestsMetadata,
+        navigationMetadata: DeletedMembersRequestBuilderNavigationMetadata,
     },
     extensions: {
         requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,

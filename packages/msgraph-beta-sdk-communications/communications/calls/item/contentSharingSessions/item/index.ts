@@ -6,12 +6,18 @@ import { createContentSharingSessionFromDiscriminatorValue, serializeContentShar
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { PngOfCurrentSlideRequestBuilderRequestsMetadata, type PngOfCurrentSlideRequestBuilder } from './pngOfCurrentSlide/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
  */
 export interface ContentSharingSessionItemRequestBuilder extends BaseRequestBuilder<ContentSharingSessionItemRequestBuilder> {
+    /**
+     * Provides operations to manage the media for the cloudCommunications entity.
+     */
+    get pngOfCurrentSlide(): PngOfCurrentSlideRequestBuilder;
     /**
      * Delete navigation property contentSharingSessions for communications
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -77,6 +83,14 @@ export const ContentSharingSessionItemRequestBuilderUriTemplate = "{+baseurl}/co
 const ContentSharingSessionItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const ContentSharingSessionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ContentSharingSessionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    pngOfCurrentSlide: {
+        requestsMetadata: PngOfCurrentSlideRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

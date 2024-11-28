@@ -29,7 +29,7 @@ export interface AccessPackageResourceRolesRequestBuilder extends BaseRequestBui
      */
      byAccessPackageResourceRoleId(accessPackageResourceRoleId: string) : AccessPackageResourceRoleItemRequestBuilder;
     /**
-     * Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+     * Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when later creating an accessPackageResourceRoleScope.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRoleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -47,7 +47,7 @@ export interface AccessPackageResourceRolesRequestBuilder extends BaseRequestBui
      */
      post(body: AccessPackageResourceRole, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageResourceRole | undefined>;
     /**
-     * Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+     * Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when later creating an accessPackageResourceRoleScope.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
@@ -63,7 +63,7 @@ export interface AccessPackageResourceRolesRequestBuilder extends BaseRequestBui
      toPostRequestInformation(body: AccessPackageResourceRole, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+ * Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when later creating an accessPackageResourceRoleScope.
  */
 export interface AccessPackageResourceRolesRequestBuilderGetQueryParameters {
     /**
