@@ -67,7 +67,7 @@ export interface PrintJobItemRequestBuilder extends BaseRequestBuilder<PrintJobI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get jobs from print
+     * The list of jobs that are queued for printing by the printer/printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrintJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -88,7 +88,7 @@ export interface PrintJobItemRequestBuilder extends BaseRequestBuilder<PrintJobI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get jobs from print
+     * The list of jobs that are queued for printing by the printer/printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -102,7 +102,7 @@ export interface PrintJobItemRequestBuilder extends BaseRequestBuilder<PrintJobI
      toPatchRequestInformation(body: PrintJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get jobs from print
+ * The list of jobs that are queued for printing by the printer/printerShare.
  */
 export interface PrintJobItemRequestBuilderGetQueryParameters {
     /**

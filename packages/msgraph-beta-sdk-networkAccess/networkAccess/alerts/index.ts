@@ -14,6 +14,8 @@ import { MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndD
 // @ts-ignore
 import { MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime/index.js';
 // @ts-ignore
+import { MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -53,6 +55,13 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess
      */
      microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
+    /**
+     * Provides operations to call the getAlertSummaries method.
+     * @param endDateTime Usage: endDateTime={endDateTime}
+     * @param startDateTime Usage: startDateTime={startDateTime}
+     * @returns {MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilder}
+     */
+     microsoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Create new navigation property to alerts for networkAccess
      * @param body The request body
@@ -144,6 +153,10 @@ export const AlertsRequestBuilderNavigationMetadata: Record<Exclude<keyof Alerts
     },
     microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
+    },
+    microsoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTime: {
+        requestsMetadata: MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
         pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     count: {

@@ -39,7 +39,7 @@ export interface TransitiveMemberOfRequestBuilder extends BaseRequestBuilder<Tra
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
-     * Get groups and administrative units that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+     * Get groups and administrative units that a group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -47,14 +47,14 @@ export interface TransitiveMemberOfRequestBuilder extends BaseRequestBuilder<Tra
      */
      get(requestConfiguration?: RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
-     * Get groups and administrative units that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+     * Get groups and administrative units that a group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TransitiveMemberOfRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get groups and administrative units that the group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+ * Get groups and administrative units that a group is a member of. This operation is transitive and will also include all groups that this group is a nested member of. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
  */
 export interface TransitiveMemberOfRequestBuilderGetQueryParameters {
     /**

@@ -14,6 +14,8 @@ import { DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrin
 // @ts-ignore
 import { FilesFolderRequestBuilderNavigationMetadata, FilesFolderRequestBuilderRequestsMetadata, type FilesFolderRequestBuilder } from './filesFolder/index.js';
 // @ts-ignore
+import { GetAllMembersRequestBuilderNavigationMetadata, GetAllMembersRequestBuilderRequestsMetadata, type GetAllMembersRequestBuilder } from './getAllMembers/index.js';
+// @ts-ignore
 import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsMetadata, type MembersRequestBuilder } from './members/index.js';
 // @ts-ignore
 import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequestsMetadata, type MessagesRequestBuilder } from './messages/index.js';
@@ -50,6 +52,10 @@ export interface ChannelItemRequestBuilder extends BaseRequestBuilder<ChannelIte
      * Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
      */
     get filesFolder(): FilesFolderRequestBuilder;
+    /**
+     * Provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.
+     */
+    get getAllMembers(): GetAllMembersRequestBuilder;
     /**
      * Provides operations to manage the members property of the microsoft.graph.channel entity.
      */
@@ -159,6 +165,10 @@ export const ChannelItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     filesFolder: {
         requestsMetadata: FilesFolderRequestBuilderRequestsMetadata,
         navigationMetadata: FilesFolderRequestBuilderNavigationMetadata,
+    },
+    getAllMembers: {
+        requestsMetadata: GetAllMembersRequestBuilderRequestsMetadata,
+        navigationMetadata: GetAllMembersRequestBuilderNavigationMetadata,
     },
     members: {
         requestsMetadata: MembersRequestBuilderRequestsMetadata,
