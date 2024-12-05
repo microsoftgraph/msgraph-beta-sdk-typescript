@@ -29,7 +29,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      */
      byPrintJobId(printJobId: string) : PrintJobItemRequestBuilder;
     /**
-     * Get jobs from print
+     * The list of jobs that are queued for printing by the printer/printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrintJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      */
      post(body: PrintJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrintJob | undefined>;
     /**
-     * Get jobs from print
+     * The list of jobs that are queued for printing by the printer/printerShare.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
@@ -62,7 +62,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      toPostRequestInformation(body: PrintJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get jobs from print
+ * The list of jobs that are queued for printing by the printer/printerShare.
  */
 export interface JobsRequestBuilderGetQueryParameters {
     /**

@@ -10,6 +10,8 @@ import { EmailMethodsRequestBuilderNavigationMetadata, EmailMethodsRequestBuilde
 // @ts-ignore
 import { Fido2MethodsRequestBuilderNavigationMetadata, Fido2MethodsRequestBuilderRequestsMetadata, type Fido2MethodsRequestBuilder } from './fido2Methods/index.js';
 // @ts-ignore
+import { HardwareOathMethodsRequestBuilderNavigationMetadata, HardwareOathMethodsRequestBuilderRequestsMetadata, type HardwareOathMethodsRequestBuilder } from './hardwareOathMethods/index.js';
+// @ts-ignore
 import { MethodsRequestBuilderNavigationMetadata, MethodsRequestBuilderRequestsMetadata, type MethodsRequestBuilder } from './methods/index.js';
 // @ts-ignore
 import { MicrosoftAuthenticatorMethodsRequestBuilderNavigationMetadata, MicrosoftAuthenticatorMethodsRequestBuilderRequestsMetadata, type MicrosoftAuthenticatorMethodsRequestBuilder } from './microsoftAuthenticatorMethods/index.js';
@@ -48,6 +50,10 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
      */
     get fido2Methods(): Fido2MethodsRequestBuilder;
+    /**
+     * Provides operations to manage the hardwareOathMethods property of the microsoft.graph.authentication entity.
+     */
+    get hardwareOathMethods(): HardwareOathMethodsRequestBuilder;
     /**
      * Provides operations to manage the methods property of the microsoft.graph.authentication entity.
      */
@@ -172,6 +178,10 @@ export const AuthenticationRequestBuilderNavigationMetadata: Record<Exclude<keyo
     fido2Methods: {
         requestsMetadata: Fido2MethodsRequestBuilderRequestsMetadata,
         navigationMetadata: Fido2MethodsRequestBuilderNavigationMetadata,
+    },
+    hardwareOathMethods: {
+        requestsMetadata: HardwareOathMethodsRequestBuilderRequestsMetadata,
+        navigationMetadata: HardwareOathMethodsRequestBuilderNavigationMetadata,
     },
     methods: {
         requestsMetadata: MethodsRequestBuilderRequestsMetadata,

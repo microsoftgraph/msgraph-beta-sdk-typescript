@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuilder> {
     /**
      * Provides operations to manage the uxSetting property of the microsoft.graph.entra entity.
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
     get uxSetting(): UxSettingRequestBuilder;
     /**
      * Delete navigation property entra for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Entra>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      get(requestConfiguration?: RequestConfiguration<EntraRequestBuilderGetQueryParameters> | undefined) : Promise<Entra | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Entra>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      patch(body: Entra, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Entra | undefined>;
     /**
      * Delete navigation property entra for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A container for Microsoft Entra resources. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EntraRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface EntraRequestBuilder extends BaseRequestBuilder<EntraRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:BulkJobs
      */
      toPatchRequestInformation(body: Entra, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

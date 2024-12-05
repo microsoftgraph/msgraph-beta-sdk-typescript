@@ -10,6 +10,8 @@ import { AdministrativeUnitsRequestBuilderNavigationMetadata, AdministrativeUnit
 // @ts-ignore
 import { AttributeSetsRequestBuilderNavigationMetadata, AttributeSetsRequestBuilderRequestsMetadata, type AttributeSetsRequestBuilder } from './attributeSets/index.js';
 // @ts-ignore
+import { AuthenticationMethodDevicesRequestBuilderNavigationMetadata, AuthenticationMethodDevicesRequestBuilderRequestsMetadata, type AuthenticationMethodDevicesRequestBuilder } from './authenticationMethodDevices/index.js';
+// @ts-ignore
 import { CertificateAuthoritiesRequestBuilderNavigationMetadata, CertificateAuthoritiesRequestBuilderRequestsMetadata, type CertificateAuthoritiesRequestBuilder } from './certificateAuthorities/index.js';
 // @ts-ignore
 import { CustomSecurityAttributeDefinitionsRequestBuilderNavigationMetadata, CustomSecurityAttributeDefinitionsRequestBuilderRequestsMetadata, type CustomSecurityAttributeDefinitionsRequestBuilder } from './customSecurityAttributeDefinitions/index.js';
@@ -60,6 +62,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
      */
     get attributeSets(): AttributeSetsRequestBuilder;
+    /**
+     * Provides operations to manage the authenticationMethodDevices property of the microsoft.graph.directory entity.
+     */
+    get authenticationMethodDevices(): AuthenticationMethodDevicesRequestBuilder;
     /**
      * Provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.
      */
@@ -208,6 +214,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
     attributeSets: {
         requestsMetadata: AttributeSetsRequestBuilderRequestsMetadata,
         navigationMetadata: AttributeSetsRequestBuilderNavigationMetadata,
+    },
+    authenticationMethodDevices: {
+        requestsMetadata: AuthenticationMethodDevicesRequestBuilderRequestsMetadata,
+        navigationMetadata: AuthenticationMethodDevicesRequestBuilderNavigationMetadata,
     },
     certificateAuthorities: {
         requestsMetadata: CertificateAuthoritiesRequestBuilderRequestsMetadata,

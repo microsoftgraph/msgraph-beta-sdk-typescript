@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder> {
     /**
-     * Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+     * Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/group-delete-owners?view=graph-rest-beta|Find more info here}
@@ -36,7 +36,7 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      */
      post(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+     * Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
      toPostRequestInformation(body: ReferenceCreate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Use this API to remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
+ * Remove an owner from a Microsoft 365 group or a security group through the owners navigation property. When owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
  */
 export interface RefRequestBuilderDeleteQueryParameters {
     /**

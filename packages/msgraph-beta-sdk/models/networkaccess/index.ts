@@ -134,6 +134,32 @@ export interface AlertSeveritySummary extends AdditionalDataHolder, BackedModel,
      */
     severity?: AlertSeverity | null;
 }
+export interface AlertSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * The alertType property
+     */
+    alertType?: AlertType | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The count property
+     */
+    count?: number | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The severity property
+     */
+    severity?: AlertSeverity | null;
+}
 export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
 export type Algorithm = (typeof AlgorithmObject)[keyof typeof AlgorithmObject];
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
@@ -389,6 +415,15 @@ export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefin
 // @ts-ignore
 export function createAlertSeveritySummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertSeveritySummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AlertSummary}
+ */
+// @ts-ignore
+export function createAlertSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAlertSummary;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1601,6 +1636,20 @@ export function deserializeIntoAlertSeveritySummary(alertSeveritySummary: Partia
         "count": n => { alertSeveritySummary.count = n.getNumberValue(); },
         "@odata.type": n => { alertSeveritySummary.odataType = n.getStringValue(); },
         "severity": n => { alertSeveritySummary.severity = n.getEnumValue<AlertSeverity>(AlertSeverityObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAlertSummary(alertSummary: Partial<AlertSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "alertType": n => { alertSummary.alertType = n.getEnumValue<AlertType>(AlertTypeObject); },
+        "backingStoreEnabled": n => { alertSummary.backingStoreEnabled = true; },
+        "count": n => { alertSummary.count = n.getNumberValue(); },
+        "@odata.type": n => { alertSummary.odataType = n.getStringValue(); },
+        "severity": n => { alertSummary.severity = n.getEnumValue<AlertSeverity>(AlertSeverityObject); },
     }
 }
 /**
@@ -4298,6 +4347,20 @@ export function serializeAlertSeveritySummary(writer: SerializationWriter, alert
         writer.writeStringValue("@odata.type", alertSeveritySummary.odataType);
         writer.writeEnumValue<AlertSeverity>("severity", alertSeveritySummary.severity);
         writer.writeAdditionalData(alertSeveritySummary.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAlertSummary(writer: SerializationWriter, alertSummary: Partial<AlertSummary> | undefined | null = {}) : void {
+    if (alertSummary) {
+        writer.writeEnumValue<AlertType>("alertType", alertSummary.alertType);
+        writer.writeNumberValue("count", alertSummary.count);
+        writer.writeStringValue("@odata.type", alertSummary.odataType);
+        writer.writeEnumValue<AlertSeverity>("severity", alertSummary.severity);
+        writer.writeAdditionalData(alertSummary.additionalData);
     }
 }
 /**
