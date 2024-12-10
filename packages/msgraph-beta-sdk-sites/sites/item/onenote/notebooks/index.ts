@@ -35,7 +35,7 @@ export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksReq
      */
      byNotebookId(notebookId: string) : NotebookItemRequestBuilder;
     /**
-     * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+     * The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NotebookCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -56,7 +56,7 @@ export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksReq
      */
      post(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Notebook | undefined>;
     /**
-     * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+     * The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -70,7 +70,7 @@ export interface NotebooksRequestBuilder extends BaseRequestBuilder<NotebooksReq
      toPostRequestInformation(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+ * The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
  */
 export interface NotebooksRequestBuilderGetQueryParameters {
     /**

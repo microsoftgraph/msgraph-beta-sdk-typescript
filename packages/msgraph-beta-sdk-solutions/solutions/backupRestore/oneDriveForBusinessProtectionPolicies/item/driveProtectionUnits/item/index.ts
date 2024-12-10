@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DriveProtectionUnitItemRequestBuilder extends BaseRequestBuilder<DriveProtectionUnitItemRequestBuilder> {
     /**
-     * Contains the protection units associated with a  OneDrive for Business protection policy.
+     * Contains the protection units associated with a  OneDrive for Work or School protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveProtectionUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DriveProtectionUnitItemRequestBuilderGetQueryParameters> | undefined) : Promise<DriveProtectionUnit | undefined>;
     /**
-     * Contains the protection units associated with a  OneDrive for Business protection policy.
+     * Contains the protection units associated with a  OneDrive for Work or School protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveProtectionUnitItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Contains the protection units associated with a  OneDrive for Business protection policy.
+ * Contains the protection units associated with a  OneDrive for Work or School protection policy.
  */
 export interface DriveProtectionUnitItemRequestBuilderGetQueryParameters {
     /**

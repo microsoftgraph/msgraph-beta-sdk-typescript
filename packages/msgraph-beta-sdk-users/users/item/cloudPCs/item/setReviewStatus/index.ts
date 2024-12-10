@@ -58,14 +58,15 @@ export interface SetReviewStatusPostRequestBody extends AdditionalDataHolder, Ba
  */
 export interface SetReviewStatusRequestBuilder extends BaseRequestBuilder<SetReviewStatusRequestBuilder> {
     /**
-     * Invoke action setReviewStatus
+     * Set the review status of a specific Cloud PC device using the Cloud PC ID. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpc-setreviewstatus?view=graph-rest-beta|Find more info here}
      */
      post(body: SetReviewStatusPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action setReviewStatus
+     * Set the review status of a specific Cloud PC device using the Cloud PC ID. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

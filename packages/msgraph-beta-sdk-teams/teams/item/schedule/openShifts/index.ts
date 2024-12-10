@@ -35,7 +35,7 @@ export interface OpenShiftsRequestBuilder extends BaseRequestBuilder<OpenShiftsR
      */
      get(requestConfiguration?: RequestConfiguration<OpenShiftsRequestBuilderGetQueryParameters> | undefined) : Promise<OpenShiftCollectionResponse | undefined>;
     /**
-     * Create an instance of an openshift object.
+     * Create an instance of an openShift object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OpenShift>}
@@ -50,7 +50,7 @@ export interface OpenShiftsRequestBuilder extends BaseRequestBuilder<OpenShiftsR
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OpenShiftsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create an instance of an openshift object.
+     * Create an instance of an openShift object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -35,14 +35,15 @@ export interface AssignAndActivatePostRequestBody extends AdditionalDataHolder, 
  */
 export interface AssignAndActivateRequestBuilder extends BaseRequestBuilder<AssignAndActivateRequestBuilder> {
     /**
-     * Invoke action assignAndActivate
+     * Assign and activate a hardware token at the same time. This operation requires the device ID to activate it.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivate?view=graph-rest-beta|Find more info here}
      */
      post(body: AssignAndActivatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action assignAndActivate
+     * Assign and activate a hardware token at the same time. This operation requires the device ID to activate it.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

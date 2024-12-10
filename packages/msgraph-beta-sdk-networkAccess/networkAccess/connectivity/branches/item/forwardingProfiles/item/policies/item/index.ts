@@ -27,7 +27,7 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Traffic forwarding policies associated with this profile.
+     * The traffic forwarding policies associated with this profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -51,7 +51,7 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Traffic forwarding policies associated with this profile.
+     * The traffic forwarding policies associated with this profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
@@ -67,7 +67,7 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      toPatchRequestInformation(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Traffic forwarding policies associated with this profile.
+ * The traffic forwarding policies associated with this profile.
  */
 export interface PolicyLinkItemRequestBuilderGetQueryParameters {
     /**

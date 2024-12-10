@@ -31,7 +31,7 @@ export interface DeviceRequestBuilder extends BaseRequestBuilder<DeviceRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get device from users
+     * Exposes the hardware OATH method in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface DeviceRequestBuilder extends BaseRequestBuilder<DeviceRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get device from users
+     * Exposes the hardware OATH method in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface DeviceRequestBuilder extends BaseRequestBuilder<DeviceRequestBu
      toPatchRequestInformation(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get device from users
+ * Exposes the hardware OATH method in the directory.
  */
 export interface DeviceRequestBuilderGetQueryParameters {
     /**

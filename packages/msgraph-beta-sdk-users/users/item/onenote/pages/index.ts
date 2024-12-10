@@ -27,7 +27,7 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
      */
      byOnenotePageId(onenotePageId: string) : OnenotePageItemRequestBuilder;
     /**
-     * The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+     * The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenotePageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
      */
      post(body: OnenotePage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OnenotePage | undefined>;
     /**
-     * The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+     * The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
      toPostRequestInformation(body: OnenotePage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+ * The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
  */
 export interface PagesRequestBuilderGetQueryParameters {
     /**

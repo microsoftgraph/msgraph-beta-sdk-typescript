@@ -29,14 +29,15 @@ export interface ActivatePostRequestBody extends AdditionalDataHolder, BackedMod
  */
 export interface ActivateRequestBuilder extends BaseRequestBuilder<ActivateRequestBuilder> {
     /**
-     * Invoke action activate
+     * Activate a hardware OATH token that is already assigned to a user. A user can self-activate their token or an admin can activate for a user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-activate?view=graph-rest-beta|Find more info here}
      */
      post(body: ActivatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action activate
+     * Activate a hardware OATH token that is already assigned to a user. A user can self-activate their token or an admin can activate for a user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

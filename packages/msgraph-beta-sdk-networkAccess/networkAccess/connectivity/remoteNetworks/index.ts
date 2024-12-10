@@ -27,7 +27,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      */
      byRemoteNetworkId(remoteNetworkId: string) : RemoteNetworkItemRequestBuilder;
     /**
-     * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+     * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RemoteNetworkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -43,7 +43,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      */
      post(body: RemoteNetwork, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RemoteNetwork | undefined>;
     /**
-     * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+     * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      toPostRequestInformation(body: RemoteNetwork, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+ * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
  */
 export interface RemoteNetworksRequestBuilderGetQueryParameters {
     /**

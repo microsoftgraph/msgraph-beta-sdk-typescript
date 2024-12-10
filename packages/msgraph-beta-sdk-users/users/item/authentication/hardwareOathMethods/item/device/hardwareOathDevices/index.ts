@@ -27,7 +27,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      byHardwareOathTokenAuthenticationMethodDeviceId(hardwareOathTokenAuthenticationMethodDeviceId: string) : HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder;
     /**
-     * Get hardwareOathDevices from users
+     * Exposes the hardware OATH method in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDeviceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      post(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDevice | undefined>;
     /**
-     * Get hardwareOathDevices from users
+     * Exposes the hardware OATH method in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      toPostRequestInformation(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get hardwareOathDevices from users
+ * Exposes the hardware OATH method in the directory.
  */
 export interface HardwareOathDevicesRequestBuilderGetQueryParameters {
     /**
