@@ -27,28 +27,30 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      byHardwareOathTokenAuthenticationMethodDeviceId(hardwareOathTokenAuthenticationMethodDeviceId: string) : HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder;
     /**
-     * Get hardwareOathDevices from directory
+     * List all hardware OATH tokens in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDeviceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationmethoddevice-list-hardwareoathdevices?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<HardwareOathDevicesRequestBuilderGetQueryParameters> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDeviceCollectionResponse | undefined>;
     /**
-     * Create new navigation property to hardwareOathDevices for directory
+     * Create a new hardwareOathTokenAuthenticationMethodDevice object. Supports bulk creation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationmethoddevice-update?view=graph-rest-beta|Find more info here}
      */
      post(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDevice | undefined>;
     /**
-     * Get hardwareOathDevices from directory
+     * List all hardware OATH tokens in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HardwareOathDevicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to hardwareOathDevices for directory
+     * Create a new hardwareOathTokenAuthenticationMethodDevice object. Supports bulk creation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      toPostRequestInformation(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get hardwareOathDevices from directory
+ * List all hardware OATH tokens in the directory.
  */
 export interface HardwareOathDevicesRequestBuilderGetQueryParameters {
     /**

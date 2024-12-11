@@ -82,7 +82,7 @@ export interface Configuration extends AdditionalDataHolder, BackedModel, Parsab
      */
     additionalData?: Record<string, unknown>;
     /**
-     * A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+     * A collection of application IDs for registered Microsoft Entra apps allowed to manage the externalConnection and index content in the externalConnection.
      */
     authorizedAppIds?: string[] | null;
     /**
@@ -836,7 +836,7 @@ export interface External extends AdditionalDataHolder, BackedModel, Parsable {
      */
     additionalData?: Record<string, unknown>;
     /**
-     * Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+     * Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
      */
     authorizationSystems?: AuthorizationSystem[] | null;
     /**

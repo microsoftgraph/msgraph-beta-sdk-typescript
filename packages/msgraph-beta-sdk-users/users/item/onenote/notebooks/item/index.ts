@@ -37,7 +37,7 @@ export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+     * The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Notebook>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -58,7 +58,7 @@ export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+     * The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -72,7 +72,7 @@ export interface NotebookItemRequestBuilder extends BaseRequestBuilder<NotebookI
      toPatchRequestInformation(body: Notebook, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+ * The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
  */
 export interface NotebookItemRequestBuilderGetQueryParameters {
     /**

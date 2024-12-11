@@ -25,7 +25,7 @@ export interface AuthenticationMethodDevicesRequestBuilder extends BaseRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get authenticationMethodDevices from directory
+     * Exposes the hardware OATH method in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuthenticationMethodDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface AuthenticationMethodDevicesRequestBuilder extends BaseRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get authenticationMethodDevices from directory
+     * Exposes the hardware OATH method in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface AuthenticationMethodDevicesRequestBuilder extends BaseRequestBu
      toPatchRequestInformation(body: AuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get authenticationMethodDevices from directory
+ * Exposes the hardware OATH method in the directory.
  */
 export interface AuthenticationMethodDevicesRequestBuilderGetQueryParameters {
     /**

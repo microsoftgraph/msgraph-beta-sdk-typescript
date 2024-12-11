@@ -39,7 +39,7 @@ export interface HardwareOathMethodsRequestBuilder extends BaseRequestBuilder<Ha
      */
      byHardwareOathAuthenticationMethodId(hardwareOathAuthenticationMethodId: string) : HardwareOathAuthenticationMethodItemRequestBuilder;
     /**
-     * Get hardwareOathMethods from users
+     * The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -54,7 +54,7 @@ export interface HardwareOathMethodsRequestBuilder extends BaseRequestBuilder<Ha
      */
      post(body: HardwareOathAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwareOathAuthenticationMethod | undefined>;
     /**
-     * Get hardwareOathMethods from users
+     * The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -68,7 +68,7 @@ export interface HardwareOathMethodsRequestBuilder extends BaseRequestBuilder<Ha
      toPostRequestInformation(body: HardwareOathAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get hardwareOathMethods from users
+ * The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
  */
 export interface HardwareOathMethodsRequestBuilderGetQueryParameters {
     /**

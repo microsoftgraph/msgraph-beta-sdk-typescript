@@ -55,7 +55,7 @@ export interface OnenotePageItemRequestBuilder extends BaseRequestBuilder<Onenot
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+     * The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenotePage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -76,7 +76,7 @@ export interface OnenotePageItemRequestBuilder extends BaseRequestBuilder<Onenot
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+     * The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -90,7 +90,7 @@ export interface OnenotePageItemRequestBuilder extends BaseRequestBuilder<Onenot
      toPatchRequestInformation(body: OnenotePage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+ * The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
  */
 export interface OnenotePageItemRequestBuilderGetQueryParameters {
     /**

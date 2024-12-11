@@ -37,7 +37,7 @@ export interface RemoteNetworkItemRequestBuilder extends BaseRequestBuilder<Remo
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+     * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RemoteNetwork>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -58,7 +58,7 @@ export interface RemoteNetworkItemRequestBuilder extends BaseRequestBuilder<Remo
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+     * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -72,7 +72,7 @@ export interface RemoteNetworkItemRequestBuilder extends BaseRequestBuilder<Remo
      toPatchRequestInformation(body: RemoteNetwork, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+ * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
  */
 export interface RemoteNetworkItemRequestBuilderGetQueryParameters {
     /**

@@ -37,7 +37,7 @@ export interface HardwareOathAuthenticationMethodItemRequestBuilder extends Base
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get hardwareOathMethods from users
+     * The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -50,14 +50,14 @@ export interface HardwareOathAuthenticationMethodItemRequestBuilder extends Base
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get hardwareOathMethods from users
+     * The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HardwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get hardwareOathMethods from users
+ * The hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.
  */
 export interface HardwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters {
     /**

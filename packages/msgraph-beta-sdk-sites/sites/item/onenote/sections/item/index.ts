@@ -49,7 +49,7 @@ export interface OnenoteSectionItemRequestBuilder extends BaseRequestBuilder<One
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+     * The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnenoteSection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -70,7 +70,7 @@ export interface OnenoteSectionItemRequestBuilder extends BaseRequestBuilder<One
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+     * The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -84,7 +84,7 @@ export interface OnenoteSectionItemRequestBuilder extends BaseRequestBuilder<One
      toPatchRequestInformation(body: OnenoteSection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+ * The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
  */
 export interface OnenoteSectionItemRequestBuilderGetQueryParameters {
     /**

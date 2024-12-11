@@ -27,7 +27,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      byPolicyLinkId(policyLinkId: string) : PolicyLinkItemRequestBuilder;
     /**
-     * Traffic forwarding policies associated with this profile.
+     * The traffic forwarding policies associated with this profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      post(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicyLink | undefined>;
     /**
-     * Traffic forwarding policies associated with this profile.
+     * The traffic forwarding policies associated with this profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      toPostRequestInformation(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Traffic forwarding policies associated with this profile.
+ * The traffic forwarding policies associated with this profile.
  */
 export interface PoliciesRequestBuilderGetQueryParameters {
     /**

@@ -338,11 +338,11 @@ export interface ConditionalAccessSettings extends Entity, Parsable {
 export type ConnectionStatus = (typeof ConnectionStatusObject)[keyof typeof ConnectionStatusObject];
 export interface Connectivity extends Entity, Parsable {
     /**
-     * Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+     * The locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
      */
     branches?: BranchSite[] | null;
     /**
-     * Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+     * The locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
      */
     remoteNetworks?: RemoteNetwork[] | null;
     /**
@@ -3971,15 +3971,15 @@ export interface Profile extends Entity, Parsable {
      */
     description?: string | null;
     /**
-     * Profile last modified time.
+     * The date and time when the profile was last modified.
      */
     lastModifiedDateTime?: Date | null;
     /**
-     * Profile name.
+     * The name of the profile.
      */
     name?: string | null;
     /**
-     * Traffic forwarding policies associated with this profile.
+     * The traffic forwarding policies associated with this profile.
      */
     policies?: PolicyLink[] | null;
     /**

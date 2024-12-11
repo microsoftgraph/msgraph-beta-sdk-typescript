@@ -39,21 +39,22 @@ export interface RetrieveSnapshotsGetResponse extends BaseCollectionPaginationCo
  */
 export interface RetrieveSnapshotsRequestBuilder extends BaseRequestBuilder<RetrieveSnapshotsRequestBuilder> {
     /**
-     * Invoke function retrieveSnapshots
+     * List all cloudPcSnapshot resources for a Cloud PC.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RetrieveSnapshotsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RetrieveSnapshotsRequestBuilderGetQueryParameters> | undefined) : Promise<RetrieveSnapshotsGetResponse | undefined>;
     /**
-     * Invoke function retrieveSnapshots
+     * List all cloudPcSnapshot resources for a Cloud PC.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RetrieveSnapshotsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Invoke function retrieveSnapshots
+ * List all cloudPcSnapshot resources for a Cloud PC.
  */
 export interface RetrieveSnapshotsRequestBuilderGetQueryParameters {
     /**

@@ -19,40 +19,43 @@ export interface HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder e
      */
     get assignTo(): AssignToRequestBuilder;
     /**
-     * Delete navigation property hardwareOathDevices for directory
+     * Delete a Hardware OATH token. Token needs to be unassigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationmethoddevice-delete-hardwareoathdevices?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get hardwareOathDevices from directory
+     * Read the properties and relationships of a hardwareOathTokenAuthenticationMethodDevice object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/hardwareoathtokenauthenticationmethoddevice-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderGetQueryParameters> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDevice | undefined>;
     /**
-     * Update the navigation property hardwareOathDevices in directory
+     * Update the properties of a hardwareOathTokenAuthenticationMethodDevice object. The token needs to unassigned.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/hardwareoathtokenauthenticationmethoddevice-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDevice | undefined>;
     /**
-     * Delete navigation property hardwareOathDevices for directory
+     * Delete a Hardware OATH token. Token needs to be unassigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get hardwareOathDevices from directory
+     * Read the properties and relationships of a hardwareOathTokenAuthenticationMethodDevice object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property hardwareOathDevices in directory
+     * Update the properties of a hardwareOathTokenAuthenticationMethodDevice object. The token needs to unassigned.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +63,7 @@ export interface HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder e
      toPatchRequestInformation(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get hardwareOathDevices from directory
+ * Read the properties and relationships of a hardwareOathTokenAuthenticationMethodDevice object.
  */
 export interface HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderGetQueryParameters {
     /**

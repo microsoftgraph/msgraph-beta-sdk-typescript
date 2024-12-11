@@ -25,21 +25,21 @@ export interface AssignToRequestBuilder extends BaseRequestBuilder<AssignToReque
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
-     * Get assignTo from users
+     * Assign the hardware OATH token to a user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AssignToRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
     /**
-     * Get assignTo from users
+     * Assign the hardware OATH token to a user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignToRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get assignTo from users
+ * Assign the hardware OATH token to a user.
  */
 export interface AssignToRequestBuilderGetQueryParameters {
     /**
