@@ -48,6 +48,8 @@ import { SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetadata, 
 // @ts-ignore
 import { SubscriptionsWithOcpSubscriptionIdRequestBuilderRequestsMetadata, type SubscriptionsWithOcpSubscriptionIdRequestBuilder } from './subscriptionsWithOcpSubscriptionId/index.js';
 // @ts-ignore
+import { TemplatesRequestBuilderNavigationMetadata, TemplatesRequestBuilderRequestsMetadata, type TemplatesRequestBuilder } from './templates/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -130,6 +132,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
      */
     get subscriptions(): SubscriptionsRequestBuilder;
+    /**
+     * Provides operations to manage the templates property of the microsoft.graph.directory entity.
+     */
+    get templates(): TemplatesRequestBuilder;
     /**
      * Get directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -282,6 +288,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
     subscriptions: {
         requestsMetadata: SubscriptionsRequestBuilderRequestsMetadata,
         navigationMetadata: SubscriptionsRequestBuilderNavigationMetadata,
+    },
+    templates: {
+        requestsMetadata: TemplatesRequestBuilderRequestsMetadata,
+        navigationMetadata: TemplatesRequestBuilderNavigationMetadata,
     },
 };
 /**

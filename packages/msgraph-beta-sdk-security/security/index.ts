@@ -20,6 +20,8 @@ import { CloudAppSecurityProfilesRequestBuilderNavigationMetadata, CloudAppSecur
 // @ts-ignore
 import { CollaborationRequestBuilderNavigationMetadata, CollaborationRequestBuilderRequestsMetadata, type CollaborationRequestBuilder } from './collaboration/index.js';
 // @ts-ignore
+import { DataDiscoveryRequestBuilderNavigationMetadata, DataDiscoveryRequestBuilderRequestsMetadata, type DataDiscoveryRequestBuilder } from './dataDiscovery/index.js';
+// @ts-ignore
 import { DomainSecurityProfilesRequestBuilderNavigationMetadata, DomainSecurityProfilesRequestBuilderRequestsMetadata, type DomainSecurityProfilesRequestBuilder } from './domainSecurityProfiles/index.js';
 // @ts-ignore
 import { FileSecurityProfilesRequestBuilderNavigationMetadata, FileSecurityProfilesRequestBuilderRequestsMetadata, type FileSecurityProfilesRequestBuilder } from './fileSecurityProfiles/index.js';
@@ -98,6 +100,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the collaboration property of the microsoft.graph.security entity.
      */
     get collaboration(): CollaborationRequestBuilder;
+    /**
+     * Provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.
+     */
+    get dataDiscovery(): DataDiscoveryRequestBuilder;
     /**
      * Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
      */
@@ -270,6 +276,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     collaboration: {
         requestsMetadata: CollaborationRequestBuilderRequestsMetadata,
         navigationMetadata: CollaborationRequestBuilderNavigationMetadata,
+    },
+    dataDiscovery: {
+        requestsMetadata: DataDiscoveryRequestBuilderRequestsMetadata,
+        navigationMetadata: DataDiscoveryRequestBuilderNavigationMetadata,
     },
     domainSecurityProfiles: {
         requestsMetadata: DomainSecurityProfilesRequestBuilderRequestsMetadata,

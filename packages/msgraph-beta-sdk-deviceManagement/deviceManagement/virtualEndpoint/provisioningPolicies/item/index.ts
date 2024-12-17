@@ -12,6 +12,12 @@ import { AssignRequestBuilderRequestsMetadata, type AssignRequestBuilder } from 
 // @ts-ignore
 import { AssignmentsRequestBuilderNavigationMetadata, AssignmentsRequestBuilderRequestsMetadata, type AssignmentsRequestBuilder } from './assignments/index.js';
 // @ts-ignore
+import { RetrievePolicyApplyActionResultRequestBuilderRequestsMetadata, type RetrievePolicyApplyActionResultRequestBuilder } from './retrievePolicyApplyActionResult/index.js';
+// @ts-ignore
+import { RetrievePolicyApplyScheduleRequestBuilderRequestsMetadata, type RetrievePolicyApplyScheduleRequestBuilder } from './retrievePolicyApplySchedule/index.js';
+// @ts-ignore
+import { SchedulePolicyApplyTaskRequestBuilderRequestsMetadata, type SchedulePolicyApplyTaskRequestBuilder } from './schedulePolicyApplyTask/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -30,6 +36,18 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * Provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.
      */
     get assignments(): AssignmentsRequestBuilder;
+    /**
+     * Provides operations to call the retrievePolicyApplyActionResult method.
+     */
+    get retrievePolicyApplyActionResult(): RetrievePolicyApplyActionResultRequestBuilder;
+    /**
+     * Provides operations to call the retrievePolicyApplySchedule method.
+     */
+    get retrievePolicyApplySchedule(): RetrievePolicyApplyScheduleRequestBuilder;
+    /**
+     * Provides operations to call the schedulePolicyApplyTask method.
+     */
+    get schedulePolicyApplyTask(): SchedulePolicyApplyTaskRequestBuilder;
     /**
      * Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -111,6 +129,15 @@ export const CloudPcProvisioningPolicyItemRequestBuilderNavigationMetadata: Reco
     assignments: {
         requestsMetadata: AssignmentsRequestBuilderRequestsMetadata,
         navigationMetadata: AssignmentsRequestBuilderNavigationMetadata,
+    },
+    retrievePolicyApplyActionResult: {
+        requestsMetadata: RetrievePolicyApplyActionResultRequestBuilderRequestsMetadata,
+    },
+    retrievePolicyApplySchedule: {
+        requestsMetadata: RetrievePolicyApplyScheduleRequestBuilderRequestsMetadata,
+    },
+    schedulePolicyApplyTask: {
+        requestsMetadata: SchedulePolicyApplyTaskRequestBuilderRequestsMetadata,
     },
 };
 /**

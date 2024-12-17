@@ -1141,15 +1141,6 @@ export function createRelatedMalwareFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {RelatedProcess}
- */
-// @ts-ignore
-export function createRelatedProcessFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoRelatedProcess;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RelatedRemoteNetwork}
  */
 // @ts-ignore
@@ -1179,8 +1170,6 @@ export function createRelatedResourceFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoRelatedFileHash;
                 case "#microsoft.graph.networkaccess.relatedMalware":
                     return deserializeIntoRelatedMalware;
-                case "#microsoft.graph.networkaccess.relatedProcess":
-                    return deserializeIntoRelatedProcess;
                 case "#microsoft.graph.networkaccess.relatedRemoteNetwork":
                     return deserializeIntoRelatedRemoteNetwork;
                 case "#microsoft.graph.networkaccess.relatedTenant":
@@ -2597,18 +2586,6 @@ export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMal
         "category": n => { relatedMalware.category = n.getEnumValue<MalwareCategory>(MalwareCategoryObject); },
         "name": n => { relatedMalware.name = n.getStringValue(); },
         "severity": n => { relatedMalware.severity = n.getEnumValue<ThreatSeverity>(ThreatSeverityObject); },
-    }
-}
-/**
- * The deserialization information for the current model
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoRelatedProcess(relatedProcess: Partial<RelatedProcess> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        ...deserializeIntoRelatedResource(relatedProcess),
-        "isSuspicious": n => { relatedProcess.isSuspicious = n.getBooleanValue(); },
-        "processName": n => { relatedProcess.processName = n.getStringValue(); },
     }
 }
 /**
@@ -4077,16 +4054,6 @@ export interface RelatedMalware extends Parsable, RelatedResource {
      */
     severity?: ThreatSeverity | null;
 }
-export interface RelatedProcess extends Parsable, RelatedResource {
-    /**
-     * The isSuspicious property
-     */
-    isSuspicious?: boolean | null;
-    /**
-     * The processName property
-     */
-    processName?: string | null;
-}
 export interface RelatedRemoteNetwork extends Parsable, RelatedResource {
     /**
      * The remoteNetworkId property
@@ -5315,18 +5282,6 @@ export function serializeRelatedMalware(writer: SerializationWriter, relatedMalw
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedProcess(writer: SerializationWriter, relatedProcess: Partial<RelatedProcess> | undefined | null = {}) : void {
-    if (relatedProcess) {
-        serializeRelatedResource(writer, relatedProcess)
-        writer.writeBooleanValue("isSuspicious", relatedProcess.isSuspicious);
-        writer.writeStringValue("processName", relatedProcess.processName);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
 export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined | null = {}) : void {
     if (relatedRemoteNetwork) {
         serializeRelatedResource(writer, relatedRemoteNetwork)
@@ -6008,6 +5963,8 @@ export const AlertTypeObject = {
     UnknownFutureValue: "unknownFutureValue",
     WebContentBlocked: "webContentBlocked",
     Malware: "malware",
+    PatientZero: "patientZero",
+    Dlp: "dlp",
 } as const;
 export const AlgorithmObject = {
     Md5: "md5",

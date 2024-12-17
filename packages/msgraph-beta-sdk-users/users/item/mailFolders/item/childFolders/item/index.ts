@@ -14,7 +14,11 @@ import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequest
 // @ts-ignore
 import { MoveRequestBuilderRequestsMetadata, type MoveRequestBuilder } from './move/index.js';
 // @ts-ignore
+import { OperationsRequestBuilderNavigationMetadata, OperationsRequestBuilderRequestsMetadata, type OperationsRequestBuilder } from './operations/index.js';
+// @ts-ignore
 import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
+// @ts-ignore
+import { type UpdateAllMessagesReadStateRequestBuilder, UpdateAllMessagesReadStateRequestBuilderRequestsMetadata } from './updateAllMessagesReadState/index.js';
 // @ts-ignore
 import { type UserConfigurationsRequestBuilder, UserConfigurationsRequestBuilderNavigationMetadata, UserConfigurationsRequestBuilderRequestsMetadata } from './userConfigurations/index.js';
 // @ts-ignore
@@ -41,9 +45,17 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
      */
     get move(): MoveRequestBuilder;
     /**
+     * Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.
+     */
+    get operations(): OperationsRequestBuilder;
+    /**
      * Provides operations to call the permanentDelete method.
      */
     get permanentDelete(): PermanentDeleteRequestBuilder;
+    /**
+     * Provides operations to call the updateAllMessagesReadState method.
+     */
+    get updateAllMessagesReadState(): UpdateAllMessagesReadStateRequestBuilder;
     /**
      * Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
      */
@@ -135,8 +147,15 @@ export const MailFolderItemRequestBuilderNavigationMetadata: Record<Exclude<keyo
     move: {
         requestsMetadata: MoveRequestBuilderRequestsMetadata,
     },
+    operations: {
+        requestsMetadata: OperationsRequestBuilderRequestsMetadata,
+        navigationMetadata: OperationsRequestBuilderNavigationMetadata,
+    },
     permanentDelete: {
         requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
+    },
+    updateAllMessagesReadState: {
+        requestsMetadata: UpdateAllMessagesReadStateRequestBuilderRequestsMetadata,
     },
     userConfigurations: {
         requestsMetadata: UserConfigurationsRequestBuilderRequestsMetadata,
