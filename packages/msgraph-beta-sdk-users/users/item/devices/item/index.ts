@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CommandsRequestBuilderNavigationMetadata, CommandsRequestBuilderRequestsMetadata, type CommandsRequestBuilder } from './commands/index.js';
 // @ts-ignore
+import { DeviceTemplateRequestBuilderNavigationMetadata, DeviceTemplateRequestBuilderRequestsMetadata, type DeviceTemplateRequestBuilder } from './deviceTemplate/index.js';
+// @ts-ignore
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
 // @ts-ignore
 import { MemberOfRequestBuilderNavigationMetadata, MemberOfRequestBuilderRequestsMetadata, type MemberOfRequestBuilder } from './memberOf/index.js';
@@ -30,6 +32,10 @@ export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemR
      * Provides operations to manage the commands property of the microsoft.graph.device entity.
      */
     get commands(): CommandsRequestBuilder;
+    /**
+     * Provides operations to manage the deviceTemplate property of the microsoft.graph.device entity.
+     */
+    get deviceTemplate(): DeviceTemplateRequestBuilder;
     /**
      * Provides operations to manage the extensions property of the microsoft.graph.device entity.
      */
@@ -126,6 +132,10 @@ export const DeviceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof De
     commands: {
         requestsMetadata: CommandsRequestBuilderRequestsMetadata,
         navigationMetadata: CommandsRequestBuilderNavigationMetadata,
+    },
+    deviceTemplate: {
+        requestsMetadata: DeviceTemplateRequestBuilderRequestsMetadata,
+        navigationMetadata: DeviceTemplateRequestBuilderNavigationMetadata,
     },
     extensions: {
         requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,

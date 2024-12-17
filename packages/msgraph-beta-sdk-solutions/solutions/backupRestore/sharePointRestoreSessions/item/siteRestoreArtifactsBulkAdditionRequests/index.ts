@@ -27,28 +27,30 @@ export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends 
      */
      bySiteRestoreArtifactsBulkAdditionRequestId(siteRestoreArtifactsBulkAdditionRequestId: string) : SiteRestoreArtifactsBulkAdditionRequestItemRequestBuilder;
     /**
-     * Get siteRestoreArtifactsBulkAdditionRequests from solutions
+     * Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteRestoreArtifactsBulkAdditionRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteRestoreArtifactsBulkAdditionRequestCollectionResponse | undefined>;
     /**
-     * Create new navigation property to siteRestoreArtifactsBulkAdditionRequests for solutions
+     * Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteRestoreArtifactsBulkAdditionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      post(body: SiteRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteRestoreArtifactsBulkAdditionRequest | undefined>;
     /**
-     * Get siteRestoreArtifactsBulkAdditionRequests from solutions
+     * Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to siteRestoreArtifactsBulkAdditionRequests for solutions
+     * Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends 
      toPostRequestInformation(body: SiteRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get siteRestoreArtifactsBulkAdditionRequests from solutions
+ * Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
  */
 export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters {
     /**

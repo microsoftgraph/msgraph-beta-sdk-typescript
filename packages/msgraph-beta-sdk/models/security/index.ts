@@ -767,6 +767,15 @@ export interface AnalyzedMessageEvidence extends AlertEvidence, Parsable {
     urn?: string | null;
 }
 export type AntispamDirectionality = (typeof AntispamDirectionalityObject)[keyof typeof AntispamDirectionalityObject];
+export type AppCategory = (typeof AppCategoryObject)[keyof typeof AppCategoryObject];
+export type AppInfoCsaStarLevel = (typeof AppInfoCsaStarLevelObject)[keyof typeof AppInfoCsaStarLevelObject];
+export type AppInfoDataAtRestEncryptionMethod = (typeof AppInfoDataAtRestEncryptionMethodObject)[keyof typeof AppInfoDataAtRestEncryptionMethodObject];
+export type AppInfoDataRetentionPolicy = (typeof AppInfoDataRetentionPolicyObject)[keyof typeof AppInfoDataRetentionPolicyObject];
+export type AppInfoEncryptionProtocol = (typeof AppInfoEncryptionProtocolObject)[keyof typeof AppInfoEncryptionProtocolObject];
+export type AppInfoFedRampLevel = (typeof AppInfoFedRampLevelObject)[keyof typeof AppInfoFedRampLevelObject];
+export type AppInfoHolding = (typeof AppInfoHoldingObject)[keyof typeof AppInfoHoldingObject];
+export type AppInfoPciDssVersion = (typeof AppInfoPciDssVersionObject)[keyof typeof AppInfoPciDssVersionObject];
+export type AppInfoUploadedDataTypes = (typeof AppInfoUploadedDataTypesObject)[keyof typeof AppInfoUploadedDataTypesObject];
 export interface ApplyLabelAction extends InformationProtectionAction, Parsable {
     /**
      * The collection of actions that should be implemented by the caller.
@@ -1272,6 +1281,67 @@ export interface ClassificationResult extends AdditionalDataHolder, BackedModel,
      */
     sensitiveTypeId?: string | null;
 }
+export interface CloudAppDiscoveryReport extends Entity, Parsable {
+    /**
+     * Use 1 if the machine information is anonymized; otherwise use 0.
+     */
+    anonymizeMachineData?: boolean | null;
+    /**
+     * Use 1 if the user information is anonymized; otherwise use 0.
+     */
+    anonymizeUserData?: boolean | null;
+    /**
+     * The date in the format specified. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    createdDateTime?: Date | null;
+    /**
+     * A comment or description for the report.
+     */
+    description?: string | null;
+    /**
+     * The display name of the continuous report.
+     */
+    displayName?: string | null;
+    /**
+     * Use 1 for a snapshot report; otherwise use 0.
+     */
+    isSnapshotReport?: boolean | null;
+    /**
+     * The date when the data was last received. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    lastDataReceivedDateTime?: Date | null;
+    /**
+     * The date when the continuous report was last modified. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    lastModifiedDateTime?: Date | null;
+    /**
+     * The applicable log data provider. Possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.
+     */
+    logDataProvider?: LogDataProvider | null;
+    /**
+     * The count of log files history.
+     */
+    logFileCount?: number | null;
+    /**
+     * The applicable receiver protocol. Possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.
+     */
+    receiverProtocol?: ReceiverProtocol | null;
+    /**
+     * The supported entity type. Possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.
+     */
+    supportedEntityTypes?: EntityType[] | null;
+    /**
+     * The supported traffic type. Possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.
+     */
+    supportedTrafficTypes?: TrafficType[] | null;
+}
+export interface CloudAppDiscoveryReportCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: CloudAppDiscoveryReport[] | null;
+}
+export type CloudAppInfoState = (typeof CloudAppInfoStateObject)[keyof typeof CloudAppInfoStateObject];
 export interface CloudApplicationEvidence extends AlertEvidence, Parsable {
     /**
      * Unique identifier of the application.
@@ -2938,6 +3008,24 @@ export function createClassificationResultFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudAppDiscoveryReportCollectionResponse}
+ */
+// @ts-ignore
+export function createCloudAppDiscoveryReportCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudAppDiscoveryReportCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudAppDiscoveryReport}
+ */
+// @ts-ignore
+export function createCloudAppDiscoveryReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudAppDiscoveryReport;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CloudApplicationEvidence}
  */
 // @ts-ignore
@@ -3325,6 +3413,24 @@ export function createDataCenterSecurityCmdletAuditRecordFromDiscriminatorValue(
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataDiscoveryReport}
+ */
+// @ts-ignore
+export function createDataDiscoveryReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataDiscoveryReport;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DataDiscoveryRoot}
+ */
+// @ts-ignore
+export function createDataDiscoveryRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDataDiscoveryRoot;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DataGovernanceAuditRecord}
  */
 // @ts-ignore
@@ -3576,6 +3682,62 @@ export function createDisableConsentRecordFromDiscriminatorValue(parseNode: Pars
 // @ts-ignore
 export function createDisableUserResponseActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDisableUserResponseAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DiscoveredCloudAppDetail}
+ */
+// @ts-ignore
+export function createDiscoveredCloudAppDetailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.security.endpointDiscoveredCloudAppDetail":
+                    return deserializeIntoEndpointDiscoveredCloudAppDetail;
+            }
+        }
+    }
+    return deserializeIntoDiscoveredCloudAppDetail;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DiscoveredCloudAppDevice}
+ */
+// @ts-ignore
+export function createDiscoveredCloudAppDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDiscoveredCloudAppDevice;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DiscoveredCloudAppInfo}
+ */
+// @ts-ignore
+export function createDiscoveredCloudAppInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDiscoveredCloudAppInfo;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DiscoveredCloudAppIPAddress}
+ */
+// @ts-ignore
+export function createDiscoveredCloudAppIPAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDiscoveredCloudAppIPAddress;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DiscoveredCloudAppUser}
+ */
+// @ts-ignore
+export function createDiscoveredCloudAppUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDiscoveredCloudAppUser;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3994,6 +4156,15 @@ export function createEmailUrlThreatSubmissionFromDiscriminatorValue(parseNode: 
 // @ts-ignore
 export function createEnableConsentRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEnableConsentRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EndpointDiscoveredCloudAppDetail}
+ */
+// @ts-ignore
+export function createEndpointDiscoveredCloudAppDetailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEndpointDiscoveredCloudAppDetail;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -7896,6 +8067,18 @@ export interface DataCenterSecurityBaseAuditRecord extends AuditData, Parsable {
 }
 export interface DataCenterSecurityCmdletAuditRecord extends AuditData, Parsable {
 }
+export interface DataDiscoveryReport extends Entity, Parsable {
+    /**
+     * A collection of streams available for generating cloud discovery report.
+     */
+    uploadedStreams?: CloudAppDiscoveryReport[] | null;
+}
+export interface DataDiscoveryRoot extends Entity, Parsable {
+    /**
+     * The available entities are IP addresses, devices, and users who access a cloud app.
+     */
+    cloudAppDiscovery?: DataDiscoveryReport | null;
+}
 export interface DataGovernanceAuditRecord extends AuditData, Parsable {
 }
 export interface DataInsightsRestApiAuditRecord extends AuditData, Parsable {
@@ -9044,6 +9227,40 @@ export function deserializeIntoClassificationResult(classificationResult: Partia
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoCloudAppDiscoveryReport(cloudAppDiscoveryReport: Partial<CloudAppDiscoveryReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(cloudAppDiscoveryReport),
+        "anonymizeMachineData": n => { cloudAppDiscoveryReport.anonymizeMachineData = n.getBooleanValue(); },
+        "anonymizeUserData": n => { cloudAppDiscoveryReport.anonymizeUserData = n.getBooleanValue(); },
+        "createdDateTime": n => { cloudAppDiscoveryReport.createdDateTime = n.getDateValue(); },
+        "description": n => { cloudAppDiscoveryReport.description = n.getStringValue(); },
+        "displayName": n => { cloudAppDiscoveryReport.displayName = n.getStringValue(); },
+        "isSnapshotReport": n => { cloudAppDiscoveryReport.isSnapshotReport = n.getBooleanValue(); },
+        "lastDataReceivedDateTime": n => { cloudAppDiscoveryReport.lastDataReceivedDateTime = n.getDateValue(); },
+        "lastModifiedDateTime": n => { cloudAppDiscoveryReport.lastModifiedDateTime = n.getDateValue(); },
+        "logDataProvider": n => { cloudAppDiscoveryReport.logDataProvider = n.getEnumValue<LogDataProvider>(LogDataProviderObject); },
+        "logFileCount": n => { cloudAppDiscoveryReport.logFileCount = n.getNumberValue(); },
+        "receiverProtocol": n => { cloudAppDiscoveryReport.receiverProtocol = n.getEnumValue<ReceiverProtocol>(ReceiverProtocolObject); },
+        "supportedEntityTypes": n => { cloudAppDiscoveryReport.supportedEntityTypes = n.getCollectionOfEnumValues<EntityType>(EntityTypeObject); },
+        "supportedTrafficTypes": n => { cloudAppDiscoveryReport.supportedTrafficTypes = n.getCollectionOfEnumValues<TrafficType>(TrafficTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudAppDiscoveryReportCollectionResponse(cloudAppDiscoveryReportCollectionResponse: Partial<CloudAppDiscoveryReportCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(cloudAppDiscoveryReportCollectionResponse),
+        "value": n => { cloudAppDiscoveryReportCollectionResponse.value = n.getCollectionOfObjectValues<CloudAppDiscoveryReport>(createCloudAppDiscoveryReportFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoCloudApplicationEvidence(cloudApplicationEvidence: Partial<CloudApplicationEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAlertEvidence(cloudApplicationEvidence),
@@ -9518,6 +9735,28 @@ export function deserializeIntoDataCenterSecurityCmdletAuditRecord(dataCenterSec
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoDataDiscoveryReport(dataDiscoveryReport: Partial<DataDiscoveryReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(dataDiscoveryReport),
+        "uploadedStreams": n => { dataDiscoveryReport.uploadedStreams = n.getCollectionOfObjectValues<CloudAppDiscoveryReport>(createCloudAppDiscoveryReportFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDataDiscoveryRoot(dataDiscoveryRoot: Partial<DataDiscoveryRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(dataDiscoveryRoot),
+        "cloudAppDiscovery": n => { dataDiscoveryRoot.cloudAppDiscovery = n.getObjectValue<DataDiscoveryReport>(createDataDiscoveryReportFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoDataGovernanceAuditRecord(dataGovernanceAuditRecord: Partial<DataGovernanceAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(dataGovernanceAuditRecord),
@@ -9815,6 +10054,161 @@ export function deserializeIntoDisableUserResponseAction(disableUserResponseActi
     return {
         ...deserializeIntoResponseAction(disableUserResponseAction),
         "identifier": n => { disableUserResponseAction.identifier = n.getCollectionOfEnumValues<DisableUserEntityIdentifier>(DisableUserEntityIdentifierObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDiscoveredCloudAppDetail(discoveredCloudAppDetail: Partial<DiscoveredCloudAppDetail> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(discoveredCloudAppDetail),
+        "appInfo": n => { discoveredCloudAppDetail.appInfo = n.getObjectValue<DiscoveredCloudAppInfo>(createDiscoveredCloudAppInfoFromDiscriminatorValue); },
+        "category": n => { discoveredCloudAppDetail.category = n.getEnumValue<AppCategory>(AppCategoryObject); },
+        "description": n => { discoveredCloudAppDetail.description = n.getStringValue(); },
+        "displayName": n => { discoveredCloudAppDetail.displayName = n.getStringValue(); },
+        "domains": n => { discoveredCloudAppDetail.domains = n.getCollectionOfPrimitiveValues<string>(); },
+        "downloadNetworkTrafficInBytes": n => { discoveredCloudAppDetail.downloadNetworkTrafficInBytes = n.getNumberValue(); },
+        "firstSeenDateTime": n => { discoveredCloudAppDetail.firstSeenDateTime = n.getDateValue(); },
+        "ipAddressCount": n => { discoveredCloudAppDetail.ipAddressCount = n.getNumberValue(); },
+        "ipAddresses": n => { discoveredCloudAppDetail.ipAddresses = n.getCollectionOfObjectValues<DiscoveredCloudAppIPAddress>(createDiscoveredCloudAppIPAddressFromDiscriminatorValue); },
+        "lastSeenDateTime": n => { discoveredCloudAppDetail.lastSeenDateTime = n.getDateValue(); },
+        "riskScore": n => { discoveredCloudAppDetail.riskScore = n.getNumberValue(); },
+        "tags": n => { discoveredCloudAppDetail.tags = n.getCollectionOfPrimitiveValues<string>(); },
+        "transactionCount": n => { discoveredCloudAppDetail.transactionCount = n.getNumberValue(); },
+        "uploadNetworkTrafficInBytes": n => { discoveredCloudAppDetail.uploadNetworkTrafficInBytes = n.getNumberValue(); },
+        "userCount": n => { discoveredCloudAppDetail.userCount = n.getNumberValue(); },
+        "users": n => { discoveredCloudAppDetail.users = n.getCollectionOfObjectValues<DiscoveredCloudAppUser>(createDiscoveredCloudAppUserFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDiscoveredCloudAppDevice(discoveredCloudAppDevice: Partial<DiscoveredCloudAppDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { discoveredCloudAppDevice.backingStoreEnabled = true; },
+        "name": n => { discoveredCloudAppDevice.name = n.getStringValue(); },
+        "@odata.type": n => { discoveredCloudAppDevice.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDiscoveredCloudAppInfo(discoveredCloudAppInfo: Partial<DiscoveredCloudAppInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(discoveredCloudAppInfo),
+        "csaStarLevel": n => { discoveredCloudAppInfo.csaStarLevel = n.getEnumValue<AppInfoCsaStarLevel>(AppInfoCsaStarLevelObject); },
+        "dataAtRestEncryptionMethod": n => { discoveredCloudAppInfo.dataAtRestEncryptionMethod = n.getEnumValue<AppInfoDataAtRestEncryptionMethod>(AppInfoDataAtRestEncryptionMethodObject); },
+        "dataCenter": n => { discoveredCloudAppInfo.dataCenter = n.getStringValue(); },
+        "dataRetentionPolicy": n => { discoveredCloudAppInfo.dataRetentionPolicy = n.getEnumValue<AppInfoDataRetentionPolicy>(AppInfoDataRetentionPolicyObject); },
+        "dataTypes": n => { discoveredCloudAppInfo.dataTypes = n.getEnumValue<AppInfoUploadedDataTypes>(AppInfoUploadedDataTypesObject); },
+        "domainRegistrationDateTime": n => { discoveredCloudAppInfo.domainRegistrationDateTime = n.getDateValue(); },
+        "encryptionProtocol": n => { discoveredCloudAppInfo.encryptionProtocol = n.getEnumValue<AppInfoEncryptionProtocol>(AppInfoEncryptionProtocolObject); },
+        "fedRampLevel": n => { discoveredCloudAppInfo.fedRampLevel = n.getEnumValue<AppInfoFedRampLevel>(AppInfoFedRampLevelObject); },
+        "founded": n => { discoveredCloudAppInfo.founded = n.getNumberValue(); },
+        "gdprReadinessStatement": n => { discoveredCloudAppInfo.gdprReadinessStatement = n.getStringValue(); },
+        "headquarters": n => { discoveredCloudAppInfo.headquarters = n.getStringValue(); },
+        "holding": n => { discoveredCloudAppInfo.holding = n.getEnumValue<AppInfoHolding>(AppInfoHoldingObject); },
+        "hostingCompany": n => { discoveredCloudAppInfo.hostingCompany = n.getStringValue(); },
+        "isAdminAuditTrail": n => { discoveredCloudAppInfo.isAdminAuditTrail = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isCobitCompliant": n => { discoveredCloudAppInfo.isCobitCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isCoppaCompliant": n => { discoveredCloudAppInfo.isCoppaCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isDataAuditTrail": n => { discoveredCloudAppInfo.isDataAuditTrail = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isDataClassification": n => { discoveredCloudAppInfo.isDataClassification = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isDataOwnership": n => { discoveredCloudAppInfo.isDataOwnership = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isDisasterRecoveryPlan": n => { discoveredCloudAppInfo.isDisasterRecoveryPlan = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isDmca": n => { discoveredCloudAppInfo.isDmca = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isFerpaCompliant": n => { discoveredCloudAppInfo.isFerpaCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isFfiecCompliant": n => { discoveredCloudAppInfo.isFfiecCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isFileSharing": n => { discoveredCloudAppInfo.isFileSharing = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isFinraCompliant": n => { discoveredCloudAppInfo.isFinraCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isFismaCompliant": n => { discoveredCloudAppInfo.isFismaCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGaapCompliant": n => { discoveredCloudAppInfo.isGaapCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprDataProtectionImpactAssessment": n => { discoveredCloudAppInfo.isGdprDataProtectionImpactAssessment = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprDataProtectionOfficer": n => { discoveredCloudAppInfo.isGdprDataProtectionOfficer = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprDataProtectionSecureCrossBorderDataTransfer": n => { discoveredCloudAppInfo.isGdprDataProtectionSecureCrossBorderDataTransfer = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprImpactAssessment": n => { discoveredCloudAppInfo.isGdprImpactAssessment = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprLawfulBasisForProcessing": n => { discoveredCloudAppInfo.isGdprLawfulBasisForProcessing = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprReportDataBreaches": n => { discoveredCloudAppInfo.isGdprReportDataBreaches = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightsRelatedToAutomatedDecisionMaking": n => { discoveredCloudAppInfo.isGdprRightsRelatedToAutomatedDecisionMaking = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToAccess": n => { discoveredCloudAppInfo.isGdprRightToAccess = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToBeInformed": n => { discoveredCloudAppInfo.isGdprRightToBeInformed = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToDataPortablility": n => { discoveredCloudAppInfo.isGdprRightToDataPortablility = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToErasure": n => { discoveredCloudAppInfo.isGdprRightToErasure = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToObject": n => { discoveredCloudAppInfo.isGdprRightToObject = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToRectification": n => { discoveredCloudAppInfo.isGdprRightToRectification = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprRightToRestrictionOfProcessing": n => { discoveredCloudAppInfo.isGdprRightToRestrictionOfProcessing = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGdprSecureCrossBorderDataControl": n => { discoveredCloudAppInfo.isGdprSecureCrossBorderDataControl = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isGlbaCompliant": n => { discoveredCloudAppInfo.isGlbaCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHipaaCompliant": n => { discoveredCloudAppInfo.isHipaaCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHitrustCsfCompliant": n => { discoveredCloudAppInfo.isHitrustCsfCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHttpSecurityHeadersContentSecurityPolicy": n => { discoveredCloudAppInfo.isHttpSecurityHeadersContentSecurityPolicy = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHttpSecurityHeadersStrictTransportSecurity": n => { discoveredCloudAppInfo.isHttpSecurityHeadersStrictTransportSecurity = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHttpSecurityHeadersXContentTypeOptions": n => { discoveredCloudAppInfo.isHttpSecurityHeadersXContentTypeOptions = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHttpSecurityHeadersXFrameOptions": n => { discoveredCloudAppInfo.isHttpSecurityHeadersXFrameOptions = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isHttpSecurityHeadersXXssProtection": n => { discoveredCloudAppInfo.isHttpSecurityHeadersXXssProtection = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isIpAddressRestriction": n => { discoveredCloudAppInfo.isIpAddressRestriction = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isIsae3402Compliant": n => { discoveredCloudAppInfo.isIsae3402Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isIso27001Compliant": n => { discoveredCloudAppInfo.isIso27001Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isIso27017Compliant": n => { discoveredCloudAppInfo.isIso27017Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isIso27018Compliant": n => { discoveredCloudAppInfo.isIso27018Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isItarCompliant": n => { discoveredCloudAppInfo.isItarCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isMultiFactorAuthentication": n => { discoveredCloudAppInfo.isMultiFactorAuthentication = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPasswordPolicy": n => { discoveredCloudAppInfo.isPasswordPolicy = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPasswordPolicyChangePasswordPeriod": n => { discoveredCloudAppInfo.isPasswordPolicyChangePasswordPeriod = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPasswordPolicyCharacterCombination": n => { discoveredCloudAppInfo.isPasswordPolicyCharacterCombination = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPasswordPolicyPasswordHistoryAndReuse": n => { discoveredCloudAppInfo.isPasswordPolicyPasswordHistoryAndReuse = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPasswordPolicyPasswordLengthLimit": n => { discoveredCloudAppInfo.isPasswordPolicyPasswordLengthLimit = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPasswordPolicyPersonalInformationUse": n => { discoveredCloudAppInfo.isPasswordPolicyPersonalInformationUse = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPenetrationTesting": n => { discoveredCloudAppInfo.isPenetrationTesting = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isPrivacyShieldCompliant": n => { discoveredCloudAppInfo.isPrivacyShieldCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isRememberPassword": n => { discoveredCloudAppInfo.isRememberPassword = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isRequiresUserAuthentication": n => { discoveredCloudAppInfo.isRequiresUserAuthentication = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSoc1Compliant": n => { discoveredCloudAppInfo.isSoc1Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSoc2Compliant": n => { discoveredCloudAppInfo.isSoc2Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSoc3Compliant": n => { discoveredCloudAppInfo.isSoc3Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSoxCompliant": n => { discoveredCloudAppInfo.isSoxCompliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSp80053Compliant": n => { discoveredCloudAppInfo.isSp80053Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSsae16Compliant": n => { discoveredCloudAppInfo.isSsae16Compliant = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isSupportsSaml": n => { discoveredCloudAppInfo.isSupportsSaml = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isTrustedCertificate": n => { discoveredCloudAppInfo.isTrustedCertificate = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isUserAuditTrail": n => { discoveredCloudAppInfo.isUserAuditTrail = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isUserCanUploadData": n => { discoveredCloudAppInfo.isUserCanUploadData = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isUserRolesSupport": n => { discoveredCloudAppInfo.isUserRolesSupport = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "isValidCertificateName": n => { discoveredCloudAppInfo.isValidCertificateName = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
+        "latestBreachDateTime": n => { discoveredCloudAppInfo.latestBreachDateTime = n.getDateValue(); },
+        "logonUrls": n => { discoveredCloudAppInfo.logonUrls = n.getStringValue(); },
+        "pciDssVersion": n => { discoveredCloudAppInfo.pciDssVersion = n.getEnumValue<AppInfoPciDssVersion>(AppInfoPciDssVersionObject); },
+        "vendor": n => { discoveredCloudAppInfo.vendor = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDiscoveredCloudAppIPAddress(discoveredCloudAppIPAddress: Partial<DiscoveredCloudAppIPAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { discoveredCloudAppIPAddress.backingStoreEnabled = true; },
+        "ipAddress": n => { discoveredCloudAppIPAddress.ipAddress = n.getStringValue(); },
+        "@odata.type": n => { discoveredCloudAppIPAddress.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDiscoveredCloudAppUser(discoveredCloudAppUser: Partial<DiscoveredCloudAppUser> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { discoveredCloudAppUser.backingStoreEnabled = true; },
+        "@odata.type": n => { discoveredCloudAppUser.odataType = n.getStringValue(); },
+        "userIdentifier": n => { discoveredCloudAppUser.userIdentifier = n.getStringValue(); },
     }
 }
 /**
@@ -10383,6 +10777,18 @@ export function deserializeIntoEmailUrlThreatSubmission(emailUrlThreatSubmission
 export function deserializeIntoEnableConsentRecord(enableConsentRecord: Partial<EnableConsentRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(enableConsentRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEndpointDiscoveredCloudAppDetail(endpointDiscoveredCloudAppDetail: Partial<EndpointDiscoveredCloudAppDetail> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoDiscoveredCloudAppDetail(endpointDiscoveredCloudAppDetail),
+        "deviceCount": n => { endpointDiscoveredCloudAppDetail.deviceCount = n.getNumberValue(); },
+        "devices": n => { endpointDiscoveredCloudAppDetail.devices = n.getCollectionOfObjectValues<DiscoveredCloudAppDevice>(createDiscoveredCloudAppDeviceFromDiscriminatorValue); },
     }
 }
 /**
@@ -15365,6 +15771,460 @@ export interface DisableUserResponseAction extends Parsable, ResponseAction {
      */
     identifier?: DisableUserEntityIdentifier[] | null;
 }
+export interface DiscoveredCloudAppDetail extends Entity, Parsable {
+    /**
+     * The application information.
+     */
+    appInfo?: DiscoveredCloudAppInfo | null;
+    /**
+     * The category property
+     */
+    category?: AppCategory | null;
+    /**
+     * The description property
+     */
+    description?: string | null;
+    /**
+     * The app name.
+     */
+    displayName?: string | null;
+    /**
+     * The domain.
+     */
+    domains?: string[] | null;
+    /**
+     * The download traffic size.
+     */
+    downloadNetworkTrafficInBytes?: number | null;
+    /**
+     * The firstSeenDateTime property
+     */
+    firstSeenDateTime?: Date | null;
+    /**
+     * The IP address.
+     */
+    ipAddressCount?: number | null;
+    /**
+     * The list of IP addresses accessed by the app.
+     */
+    ipAddresses?: DiscoveredCloudAppIPAddress[] | null;
+    /**
+     * The last seen date of the discovered app. The Timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    lastSeenDateTime?: Date | null;
+    /**
+     * The risk score of the app.
+     */
+    riskScore?: number | null;
+    /**
+     * The tags applied to an app. Possible values include Unsanctioned, Sanctioned, Monitored, or a custom value.
+     */
+    tags?: string[] | null;
+    /**
+     * The app transaction count.
+     */
+    transactionCount?: number | null;
+    /**
+     * The app upload traffic size, in bytes.
+     */
+    uploadNetworkTrafficInBytes?: number | null;
+    /**
+     * The count of users who use the app.
+     */
+    userCount?: number | null;
+    /**
+     * The list of users who access the app.
+     */
+    users?: DiscoveredCloudAppUser[] | null;
+}
+export interface DiscoveredCloudAppDevice extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The name of the cloud app.
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface DiscoveredCloudAppInfo extends Entity, Parsable {
+    /**
+     * The csaStarLevel property
+     */
+    csaStarLevel?: AppInfoCsaStarLevel | null;
+    /**
+     * The dataAtRestEncryptionMethod property
+     */
+    dataAtRestEncryptionMethod?: AppInfoDataAtRestEncryptionMethod | null;
+    /**
+     * Indicates the countries or regions in which your data center resides.
+     */
+    dataCenter?: string | null;
+    /**
+     * The dataRetentionPolicy property
+     */
+    dataRetentionPolicy?: AppInfoDataRetentionPolicy | null;
+    /**
+     * The dataTypes property
+     */
+    dataTypes?: AppInfoUploadedDataTypes | null;
+    /**
+     * Indicates the date when the app domain was registered.
+     */
+    domainRegistrationDateTime?: Date | null;
+    /**
+     * The encryptionProtocol property
+     */
+    encryptionProtocol?: AppInfoEncryptionProtocol | null;
+    /**
+     * The fedRampLevel property
+     */
+    fedRampLevel?: AppInfoFedRampLevel | null;
+    /**
+     * Indicates the year that the specific app vendor was established.
+     */
+    founded?: number | null;
+    /**
+     * Indicates the GDPR readiness of the app in relation to policies app provides to safeguard personal user data.
+     */
+    gdprReadinessStatement?: string | null;
+    /**
+     * Indicates the location of the headquarters of the app.
+     */
+    headquarters?: string | null;
+    /**
+     * The holding property
+     */
+    holding?: AppInfoHolding | null;
+    /**
+     * Indicates the company name that provides hosting services for the app.
+     */
+    hostingCompany?: string | null;
+    /**
+     * The isAdminAuditTrail property
+     */
+    isAdminAuditTrail?: CloudAppInfoState | null;
+    /**
+     * The isCobitCompliant property
+     */
+    isCobitCompliant?: CloudAppInfoState | null;
+    /**
+     * The isCoppaCompliant property
+     */
+    isCoppaCompliant?: CloudAppInfoState | null;
+    /**
+     * The isDataAuditTrail property
+     */
+    isDataAuditTrail?: CloudAppInfoState | null;
+    /**
+     * The isDataClassification property
+     */
+    isDataClassification?: CloudAppInfoState | null;
+    /**
+     * The isDataOwnership property
+     */
+    isDataOwnership?: CloudAppInfoState | null;
+    /**
+     * The isDisasterRecoveryPlan property
+     */
+    isDisasterRecoveryPlan?: CloudAppInfoState | null;
+    /**
+     * The isDmca property
+     */
+    isDmca?: CloudAppInfoState | null;
+    /**
+     * The isFerpaCompliant property
+     */
+    isFerpaCompliant?: CloudAppInfoState | null;
+    /**
+     * The isFfiecCompliant property
+     */
+    isFfiecCompliant?: CloudAppInfoState | null;
+    /**
+     * The isFileSharing property
+     */
+    isFileSharing?: CloudAppInfoState | null;
+    /**
+     * The isFinraCompliant property
+     */
+    isFinraCompliant?: CloudAppInfoState | null;
+    /**
+     * The isFismaCompliant property
+     */
+    isFismaCompliant?: CloudAppInfoState | null;
+    /**
+     * The isGaapCompliant property
+     */
+    isGaapCompliant?: CloudAppInfoState | null;
+    /**
+     * The isGdprDataProtectionImpactAssessment property
+     */
+    isGdprDataProtectionImpactAssessment?: CloudAppInfoState | null;
+    /**
+     * The isGdprDataProtectionOfficer property
+     */
+    isGdprDataProtectionOfficer?: CloudAppInfoState | null;
+    /**
+     * The isGdprDataProtectionSecureCrossBorderDataTransfer property
+     */
+    isGdprDataProtectionSecureCrossBorderDataTransfer?: CloudAppInfoState | null;
+    /**
+     * The isGdprImpactAssessment property
+     */
+    isGdprImpactAssessment?: CloudAppInfoState | null;
+    /**
+     * The isGdprLawfulBasisForProcessing property
+     */
+    isGdprLawfulBasisForProcessing?: CloudAppInfoState | null;
+    /**
+     * The isGdprReportDataBreaches property
+     */
+    isGdprReportDataBreaches?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightsRelatedToAutomatedDecisionMaking property
+     */
+    isGdprRightsRelatedToAutomatedDecisionMaking?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToAccess property
+     */
+    isGdprRightToAccess?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToBeInformed property
+     */
+    isGdprRightToBeInformed?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToDataPortablility property
+     */
+    isGdprRightToDataPortablility?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToErasure property
+     */
+    isGdprRightToErasure?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToObject property
+     */
+    isGdprRightToObject?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToRectification property
+     */
+    isGdprRightToRectification?: CloudAppInfoState | null;
+    /**
+     * The isGdprRightToRestrictionOfProcessing property
+     */
+    isGdprRightToRestrictionOfProcessing?: CloudAppInfoState | null;
+    /**
+     * The isGdprSecureCrossBorderDataControl property
+     */
+    isGdprSecureCrossBorderDataControl?: CloudAppInfoState | null;
+    /**
+     * The isGlbaCompliant property
+     */
+    isGlbaCompliant?: CloudAppInfoState | null;
+    /**
+     * The isHipaaCompliant property
+     */
+    isHipaaCompliant?: CloudAppInfoState | null;
+    /**
+     * The isHitrustCsfCompliant property
+     */
+    isHitrustCsfCompliant?: CloudAppInfoState | null;
+    /**
+     * The isHttpSecurityHeadersContentSecurityPolicy property
+     */
+    isHttpSecurityHeadersContentSecurityPolicy?: CloudAppInfoState | null;
+    /**
+     * The isHttpSecurityHeadersStrictTransportSecurity property
+     */
+    isHttpSecurityHeadersStrictTransportSecurity?: CloudAppInfoState | null;
+    /**
+     * The isHttpSecurityHeadersXContentTypeOptions property
+     */
+    isHttpSecurityHeadersXContentTypeOptions?: CloudAppInfoState | null;
+    /**
+     * The isHttpSecurityHeadersXFrameOptions property
+     */
+    isHttpSecurityHeadersXFrameOptions?: CloudAppInfoState | null;
+    /**
+     * The isHttpSecurityHeadersXXssProtection property
+     */
+    isHttpSecurityHeadersXXssProtection?: CloudAppInfoState | null;
+    /**
+     * The isIpAddressRestriction property
+     */
+    isIpAddressRestriction?: CloudAppInfoState | null;
+    /**
+     * The isIsae3402Compliant property
+     */
+    isIsae3402Compliant?: CloudAppInfoState | null;
+    /**
+     * The isIso27001Compliant property
+     */
+    isIso27001Compliant?: CloudAppInfoState | null;
+    /**
+     * The isIso27017Compliant property
+     */
+    isIso27017Compliant?: CloudAppInfoState | null;
+    /**
+     * The isIso27018Compliant property
+     */
+    isIso27018Compliant?: CloudAppInfoState | null;
+    /**
+     * The isItarCompliant property
+     */
+    isItarCompliant?: CloudAppInfoState | null;
+    /**
+     * The isMultiFactorAuthentication property
+     */
+    isMultiFactorAuthentication?: CloudAppInfoState | null;
+    /**
+     * The isPasswordPolicy property
+     */
+    isPasswordPolicy?: CloudAppInfoState | null;
+    /**
+     * The isPasswordPolicyChangePasswordPeriod property
+     */
+    isPasswordPolicyChangePasswordPeriod?: CloudAppInfoState | null;
+    /**
+     * The isPasswordPolicyCharacterCombination property
+     */
+    isPasswordPolicyCharacterCombination?: CloudAppInfoState | null;
+    /**
+     * The isPasswordPolicyPasswordHistoryAndReuse property
+     */
+    isPasswordPolicyPasswordHistoryAndReuse?: CloudAppInfoState | null;
+    /**
+     * The isPasswordPolicyPasswordLengthLimit property
+     */
+    isPasswordPolicyPasswordLengthLimit?: CloudAppInfoState | null;
+    /**
+     * The isPasswordPolicyPersonalInformationUse property
+     */
+    isPasswordPolicyPersonalInformationUse?: CloudAppInfoState | null;
+    /**
+     * The isPenetrationTesting property
+     */
+    isPenetrationTesting?: CloudAppInfoState | null;
+    /**
+     * The isPrivacyShieldCompliant property
+     */
+    isPrivacyShieldCompliant?: CloudAppInfoState | null;
+    /**
+     * The isRememberPassword property
+     */
+    isRememberPassword?: CloudAppInfoState | null;
+    /**
+     * The isRequiresUserAuthentication property
+     */
+    isRequiresUserAuthentication?: CloudAppInfoState | null;
+    /**
+     * The isSoc1Compliant property
+     */
+    isSoc1Compliant?: CloudAppInfoState | null;
+    /**
+     * The isSoc2Compliant property
+     */
+    isSoc2Compliant?: CloudAppInfoState | null;
+    /**
+     * The isSoc3Compliant property
+     */
+    isSoc3Compliant?: CloudAppInfoState | null;
+    /**
+     * The isSoxCompliant property
+     */
+    isSoxCompliant?: CloudAppInfoState | null;
+    /**
+     * The isSp80053Compliant property
+     */
+    isSp80053Compliant?: CloudAppInfoState | null;
+    /**
+     * The isSsae16Compliant property
+     */
+    isSsae16Compliant?: CloudAppInfoState | null;
+    /**
+     * The isSupportsSaml property
+     */
+    isSupportsSaml?: CloudAppInfoState | null;
+    /**
+     * The isTrustedCertificate property
+     */
+    isTrustedCertificate?: CloudAppInfoState | null;
+    /**
+     * The isUserAuditTrail property
+     */
+    isUserAuditTrail?: CloudAppInfoState | null;
+    /**
+     * The isUserCanUploadData property
+     */
+    isUserCanUploadData?: CloudAppInfoState | null;
+    /**
+     * The isUserRolesSupport property
+     */
+    isUserRolesSupport?: CloudAppInfoState | null;
+    /**
+     * The isValidCertificateName property
+     */
+    isValidCertificateName?: CloudAppInfoState | null;
+    /**
+     * Indicates the last date of the data breach for the company.
+     */
+    latestBreachDateTime?: Date | null;
+    /**
+     * Indicates the URL that users can use to sign into the app.
+     */
+    logonUrls?: string | null;
+    /**
+     * The pciDssVersion property
+     */
+    pciDssVersion?: AppInfoPciDssVersion | null;
+    /**
+     * Indicates the app vendor.
+     */
+    vendor?: string | null;
+}
+export interface DiscoveredCloudAppIPAddress extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The IP address associated with a discovered cloud app.
+     */
+    ipAddress?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface DiscoveredCloudAppUser extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The identifier of a user who accessed the discovered cloud app.
+     */
+    userIdentifier?: string | null;
+}
 export interface DiscoveryAuditRecord extends AuditData, Parsable {
 }
 export interface DispositionReviewStage extends Entity, Parsable {
@@ -15944,6 +16804,17 @@ export interface EmailUrlThreatSubmission extends EmailThreatSubmission, Parsabl
 }
 export interface EnableConsentRecord extends AuditData, Parsable {
 }
+export interface EndpointDiscoveredCloudAppDetail extends DiscoveredCloudAppDetail, Parsable {
+    /**
+     * The number of devices that accessed the discovered app.
+     */
+    deviceCount?: number | null;
+    /**
+     * Represents the devices that access the discovered apps.
+     */
+    devices?: DiscoveredCloudAppDevice[] | null;
+}
+export type EntityType = (typeof EntityTypeObject)[keyof typeof EntityTypeObject];
 export interface EpicSMSLinkRecord extends AuditData, Parsable {
 }
 export interface EpicSMSSettingsUpdateRecord extends AuditData, Parsable {
@@ -17793,6 +18664,7 @@ export interface LabelsRoot extends Entity, Parsable {
 }
 export interface LargeContentMetadataAuditRecord extends AuditData, Parsable {
 }
+export type LogDataProvider = (typeof LogDataProviderObject)[keyof typeof LogDataProviderObject];
 export interface LoggedOnUser extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * User account name of the logged-on user.
@@ -18433,6 +19305,7 @@ export interface QueryCondition extends AdditionalDataHolder, BackedModel, Parsa
     queryText?: string | null;
 }
 export type QueryType = (typeof QueryTypeObject)[keyof typeof QueryTypeObject];
+export type ReceiverProtocol = (typeof ReceiverProtocolObject)[keyof typeof ReceiverProtocolObject];
 export interface RecommendedHuntingQuery extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -20146,6 +21019,42 @@ export function serializeClassificationResult(writer: SerializationWriter, class
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeCloudAppDiscoveryReport(writer: SerializationWriter, cloudAppDiscoveryReport: Partial<CloudAppDiscoveryReport> | undefined | null = {}) : void {
+    if (cloudAppDiscoveryReport) {
+        serializeEntity(writer, cloudAppDiscoveryReport)
+        writer.writeBooleanValue("anonymizeMachineData", cloudAppDiscoveryReport.anonymizeMachineData);
+        writer.writeBooleanValue("anonymizeUserData", cloudAppDiscoveryReport.anonymizeUserData);
+        writer.writeDateValue("createdDateTime", cloudAppDiscoveryReport.createdDateTime);
+        writer.writeStringValue("description", cloudAppDiscoveryReport.description);
+        writer.writeStringValue("displayName", cloudAppDiscoveryReport.displayName);
+        writer.writeBooleanValue("isSnapshotReport", cloudAppDiscoveryReport.isSnapshotReport);
+        writer.writeDateValue("lastDataReceivedDateTime", cloudAppDiscoveryReport.lastDataReceivedDateTime);
+        writer.writeDateValue("lastModifiedDateTime", cloudAppDiscoveryReport.lastModifiedDateTime);
+        writer.writeEnumValue<LogDataProvider>("logDataProvider", cloudAppDiscoveryReport.logDataProvider);
+        writer.writeNumberValue("logFileCount", cloudAppDiscoveryReport.logFileCount);
+        writer.writeEnumValue<ReceiverProtocol>("receiverProtocol", cloudAppDiscoveryReport.receiverProtocol);
+        if(cloudAppDiscoveryReport.supportedEntityTypes)
+        writer.writeEnumValue<EntityType>("supportedEntityTypes", ...cloudAppDiscoveryReport.supportedEntityTypes);
+        if(cloudAppDiscoveryReport.supportedTrafficTypes)
+        writer.writeEnumValue<TrafficType>("supportedTrafficTypes", ...cloudAppDiscoveryReport.supportedTrafficTypes);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudAppDiscoveryReportCollectionResponse(writer: SerializationWriter, cloudAppDiscoveryReportCollectionResponse: Partial<CloudAppDiscoveryReportCollectionResponse> | undefined | null = {}) : void {
+    if (cloudAppDiscoveryReportCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, cloudAppDiscoveryReportCollectionResponse)
+        writer.writeCollectionOfObjectValues<CloudAppDiscoveryReport>("value", cloudAppDiscoveryReportCollectionResponse.value, serializeCloudAppDiscoveryReport);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeCloudApplicationEvidence(writer: SerializationWriter, cloudApplicationEvidence: Partial<CloudApplicationEvidence> | undefined | null = {}) : void {
     if (cloudApplicationEvidence) {
         serializeAlertEvidence(writer, cloudApplicationEvidence)
@@ -20620,6 +21529,28 @@ export function serializeDataCenterSecurityCmdletAuditRecord(writer: Serializati
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeDataDiscoveryReport(writer: SerializationWriter, dataDiscoveryReport: Partial<DataDiscoveryReport> | undefined | null = {}) : void {
+    if (dataDiscoveryReport) {
+        serializeEntity(writer, dataDiscoveryReport)
+        writer.writeCollectionOfObjectValues<CloudAppDiscoveryReport>("uploadedStreams", dataDiscoveryReport.uploadedStreams, serializeCloudAppDiscoveryReport);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataDiscoveryRoot(writer: SerializationWriter, dataDiscoveryRoot: Partial<DataDiscoveryRoot> | undefined | null = {}) : void {
+    if (dataDiscoveryRoot) {
+        serializeEntity(writer, dataDiscoveryRoot)
+        writer.writeObjectValue<DataDiscoveryReport>("cloudAppDiscovery", dataDiscoveryRoot.cloudAppDiscovery, serializeDataDiscoveryReport);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeDataGovernanceAuditRecord(writer: SerializationWriter, dataGovernanceAuditRecord: Partial<DataGovernanceAuditRecord> | undefined | null = {}) : void {
     if (dataGovernanceAuditRecord) {
         serializeAuditData(writer, dataGovernanceAuditRecord)
@@ -20917,6 +21848,161 @@ export function serializeDisableUserResponseAction(writer: SerializationWriter, 
     if (disableUserResponseAction) {
         serializeResponseAction(writer, disableUserResponseAction)
         writer.writeEnumValue<DisableUserEntityIdentifier[]>("identifier", disableUserResponseAction.identifier);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDiscoveredCloudAppDetail(writer: SerializationWriter, discoveredCloudAppDetail: Partial<DiscoveredCloudAppDetail> | undefined | null = {}) : void {
+    if (discoveredCloudAppDetail) {
+        serializeEntity(writer, discoveredCloudAppDetail)
+        writer.writeObjectValue<DiscoveredCloudAppInfo>("appInfo", discoveredCloudAppDetail.appInfo, serializeDiscoveredCloudAppInfo);
+        writer.writeEnumValue<AppCategory>("category", discoveredCloudAppDetail.category);
+        writer.writeStringValue("description", discoveredCloudAppDetail.description);
+        writer.writeStringValue("displayName", discoveredCloudAppDetail.displayName);
+        writer.writeCollectionOfPrimitiveValues<string>("domains", discoveredCloudAppDetail.domains);
+        writer.writeNumberValue("downloadNetworkTrafficInBytes", discoveredCloudAppDetail.downloadNetworkTrafficInBytes);
+        writer.writeDateValue("firstSeenDateTime", discoveredCloudAppDetail.firstSeenDateTime);
+        writer.writeNumberValue("ipAddressCount", discoveredCloudAppDetail.ipAddressCount);
+        writer.writeCollectionOfObjectValues<DiscoveredCloudAppIPAddress>("ipAddresses", discoveredCloudAppDetail.ipAddresses, serializeDiscoveredCloudAppIPAddress);
+        writer.writeDateValue("lastSeenDateTime", discoveredCloudAppDetail.lastSeenDateTime);
+        writer.writeNumberValue("riskScore", discoveredCloudAppDetail.riskScore);
+        writer.writeCollectionOfPrimitiveValues<string>("tags", discoveredCloudAppDetail.tags);
+        writer.writeNumberValue("transactionCount", discoveredCloudAppDetail.transactionCount);
+        writer.writeNumberValue("uploadNetworkTrafficInBytes", discoveredCloudAppDetail.uploadNetworkTrafficInBytes);
+        writer.writeNumberValue("userCount", discoveredCloudAppDetail.userCount);
+        writer.writeCollectionOfObjectValues<DiscoveredCloudAppUser>("users", discoveredCloudAppDetail.users, serializeDiscoveredCloudAppUser);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDiscoveredCloudAppDevice(writer: SerializationWriter, discoveredCloudAppDevice: Partial<DiscoveredCloudAppDevice> | undefined | null = {}) : void {
+    if (discoveredCloudAppDevice) {
+        writer.writeStringValue("name", discoveredCloudAppDevice.name);
+        writer.writeStringValue("@odata.type", discoveredCloudAppDevice.odataType);
+        writer.writeAdditionalData(discoveredCloudAppDevice.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDiscoveredCloudAppInfo(writer: SerializationWriter, discoveredCloudAppInfo: Partial<DiscoveredCloudAppInfo> | undefined | null = {}) : void {
+    if (discoveredCloudAppInfo) {
+        serializeEntity(writer, discoveredCloudAppInfo)
+        writer.writeEnumValue<AppInfoCsaStarLevel>("csaStarLevel", discoveredCloudAppInfo.csaStarLevel);
+        writer.writeEnumValue<AppInfoDataAtRestEncryptionMethod>("dataAtRestEncryptionMethod", discoveredCloudAppInfo.dataAtRestEncryptionMethod);
+        writer.writeStringValue("dataCenter", discoveredCloudAppInfo.dataCenter);
+        writer.writeEnumValue<AppInfoDataRetentionPolicy>("dataRetentionPolicy", discoveredCloudAppInfo.dataRetentionPolicy);
+        writer.writeEnumValue<AppInfoUploadedDataTypes>("dataTypes", discoveredCloudAppInfo.dataTypes);
+        writer.writeDateValue("domainRegistrationDateTime", discoveredCloudAppInfo.domainRegistrationDateTime);
+        writer.writeEnumValue<AppInfoEncryptionProtocol>("encryptionProtocol", discoveredCloudAppInfo.encryptionProtocol);
+        writer.writeEnumValue<AppInfoFedRampLevel>("fedRampLevel", discoveredCloudAppInfo.fedRampLevel);
+        writer.writeNumberValue("founded", discoveredCloudAppInfo.founded);
+        writer.writeStringValue("gdprReadinessStatement", discoveredCloudAppInfo.gdprReadinessStatement);
+        writer.writeStringValue("headquarters", discoveredCloudAppInfo.headquarters);
+        writer.writeEnumValue<AppInfoHolding>("holding", discoveredCloudAppInfo.holding);
+        writer.writeStringValue("hostingCompany", discoveredCloudAppInfo.hostingCompany);
+        writer.writeEnumValue<CloudAppInfoState>("isAdminAuditTrail", discoveredCloudAppInfo.isAdminAuditTrail);
+        writer.writeEnumValue<CloudAppInfoState>("isCobitCompliant", discoveredCloudAppInfo.isCobitCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isCoppaCompliant", discoveredCloudAppInfo.isCoppaCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isDataAuditTrail", discoveredCloudAppInfo.isDataAuditTrail);
+        writer.writeEnumValue<CloudAppInfoState>("isDataClassification", discoveredCloudAppInfo.isDataClassification);
+        writer.writeEnumValue<CloudAppInfoState>("isDataOwnership", discoveredCloudAppInfo.isDataOwnership);
+        writer.writeEnumValue<CloudAppInfoState>("isDisasterRecoveryPlan", discoveredCloudAppInfo.isDisasterRecoveryPlan);
+        writer.writeEnumValue<CloudAppInfoState>("isDmca", discoveredCloudAppInfo.isDmca);
+        writer.writeEnumValue<CloudAppInfoState>("isFerpaCompliant", discoveredCloudAppInfo.isFerpaCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isFfiecCompliant", discoveredCloudAppInfo.isFfiecCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isFileSharing", discoveredCloudAppInfo.isFileSharing);
+        writer.writeEnumValue<CloudAppInfoState>("isFinraCompliant", discoveredCloudAppInfo.isFinraCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isFismaCompliant", discoveredCloudAppInfo.isFismaCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isGaapCompliant", discoveredCloudAppInfo.isGaapCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprDataProtectionImpactAssessment", discoveredCloudAppInfo.isGdprDataProtectionImpactAssessment);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprDataProtectionOfficer", discoveredCloudAppInfo.isGdprDataProtectionOfficer);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprDataProtectionSecureCrossBorderDataTransfer", discoveredCloudAppInfo.isGdprDataProtectionSecureCrossBorderDataTransfer);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprImpactAssessment", discoveredCloudAppInfo.isGdprImpactAssessment);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprLawfulBasisForProcessing", discoveredCloudAppInfo.isGdprLawfulBasisForProcessing);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprReportDataBreaches", discoveredCloudAppInfo.isGdprReportDataBreaches);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightsRelatedToAutomatedDecisionMaking", discoveredCloudAppInfo.isGdprRightsRelatedToAutomatedDecisionMaking);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToAccess", discoveredCloudAppInfo.isGdprRightToAccess);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToBeInformed", discoveredCloudAppInfo.isGdprRightToBeInformed);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToDataPortablility", discoveredCloudAppInfo.isGdprRightToDataPortablility);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToErasure", discoveredCloudAppInfo.isGdprRightToErasure);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToObject", discoveredCloudAppInfo.isGdprRightToObject);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToRectification", discoveredCloudAppInfo.isGdprRightToRectification);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprRightToRestrictionOfProcessing", discoveredCloudAppInfo.isGdprRightToRestrictionOfProcessing);
+        writer.writeEnumValue<CloudAppInfoState>("isGdprSecureCrossBorderDataControl", discoveredCloudAppInfo.isGdprSecureCrossBorderDataControl);
+        writer.writeEnumValue<CloudAppInfoState>("isGlbaCompliant", discoveredCloudAppInfo.isGlbaCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isHipaaCompliant", discoveredCloudAppInfo.isHipaaCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isHitrustCsfCompliant", discoveredCloudAppInfo.isHitrustCsfCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isHttpSecurityHeadersContentSecurityPolicy", discoveredCloudAppInfo.isHttpSecurityHeadersContentSecurityPolicy);
+        writer.writeEnumValue<CloudAppInfoState>("isHttpSecurityHeadersStrictTransportSecurity", discoveredCloudAppInfo.isHttpSecurityHeadersStrictTransportSecurity);
+        writer.writeEnumValue<CloudAppInfoState>("isHttpSecurityHeadersXContentTypeOptions", discoveredCloudAppInfo.isHttpSecurityHeadersXContentTypeOptions);
+        writer.writeEnumValue<CloudAppInfoState>("isHttpSecurityHeadersXFrameOptions", discoveredCloudAppInfo.isHttpSecurityHeadersXFrameOptions);
+        writer.writeEnumValue<CloudAppInfoState>("isHttpSecurityHeadersXXssProtection", discoveredCloudAppInfo.isHttpSecurityHeadersXXssProtection);
+        writer.writeEnumValue<CloudAppInfoState>("isIpAddressRestriction", discoveredCloudAppInfo.isIpAddressRestriction);
+        writer.writeEnumValue<CloudAppInfoState>("isIsae3402Compliant", discoveredCloudAppInfo.isIsae3402Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isIso27001Compliant", discoveredCloudAppInfo.isIso27001Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isIso27017Compliant", discoveredCloudAppInfo.isIso27017Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isIso27018Compliant", discoveredCloudAppInfo.isIso27018Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isItarCompliant", discoveredCloudAppInfo.isItarCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isMultiFactorAuthentication", discoveredCloudAppInfo.isMultiFactorAuthentication);
+        writer.writeEnumValue<CloudAppInfoState>("isPasswordPolicy", discoveredCloudAppInfo.isPasswordPolicy);
+        writer.writeEnumValue<CloudAppInfoState>("isPasswordPolicyChangePasswordPeriod", discoveredCloudAppInfo.isPasswordPolicyChangePasswordPeriod);
+        writer.writeEnumValue<CloudAppInfoState>("isPasswordPolicyCharacterCombination", discoveredCloudAppInfo.isPasswordPolicyCharacterCombination);
+        writer.writeEnumValue<CloudAppInfoState>("isPasswordPolicyPasswordHistoryAndReuse", discoveredCloudAppInfo.isPasswordPolicyPasswordHistoryAndReuse);
+        writer.writeEnumValue<CloudAppInfoState>("isPasswordPolicyPasswordLengthLimit", discoveredCloudAppInfo.isPasswordPolicyPasswordLengthLimit);
+        writer.writeEnumValue<CloudAppInfoState>("isPasswordPolicyPersonalInformationUse", discoveredCloudAppInfo.isPasswordPolicyPersonalInformationUse);
+        writer.writeEnumValue<CloudAppInfoState>("isPenetrationTesting", discoveredCloudAppInfo.isPenetrationTesting);
+        writer.writeEnumValue<CloudAppInfoState>("isPrivacyShieldCompliant", discoveredCloudAppInfo.isPrivacyShieldCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isRememberPassword", discoveredCloudAppInfo.isRememberPassword);
+        writer.writeEnumValue<CloudAppInfoState>("isRequiresUserAuthentication", discoveredCloudAppInfo.isRequiresUserAuthentication);
+        writer.writeEnumValue<CloudAppInfoState>("isSoc1Compliant", discoveredCloudAppInfo.isSoc1Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isSoc2Compliant", discoveredCloudAppInfo.isSoc2Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isSoc3Compliant", discoveredCloudAppInfo.isSoc3Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isSoxCompliant", discoveredCloudAppInfo.isSoxCompliant);
+        writer.writeEnumValue<CloudAppInfoState>("isSp80053Compliant", discoveredCloudAppInfo.isSp80053Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isSsae16Compliant", discoveredCloudAppInfo.isSsae16Compliant);
+        writer.writeEnumValue<CloudAppInfoState>("isSupportsSaml", discoveredCloudAppInfo.isSupportsSaml);
+        writer.writeEnumValue<CloudAppInfoState>("isTrustedCertificate", discoveredCloudAppInfo.isTrustedCertificate);
+        writer.writeEnumValue<CloudAppInfoState>("isUserAuditTrail", discoveredCloudAppInfo.isUserAuditTrail);
+        writer.writeEnumValue<CloudAppInfoState>("isUserCanUploadData", discoveredCloudAppInfo.isUserCanUploadData);
+        writer.writeEnumValue<CloudAppInfoState>("isUserRolesSupport", discoveredCloudAppInfo.isUserRolesSupport);
+        writer.writeEnumValue<CloudAppInfoState>("isValidCertificateName", discoveredCloudAppInfo.isValidCertificateName);
+        writer.writeDateValue("latestBreachDateTime", discoveredCloudAppInfo.latestBreachDateTime);
+        writer.writeStringValue("logonUrls", discoveredCloudAppInfo.logonUrls);
+        writer.writeEnumValue<AppInfoPciDssVersion>("pciDssVersion", discoveredCloudAppInfo.pciDssVersion);
+        writer.writeStringValue("vendor", discoveredCloudAppInfo.vendor);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDiscoveredCloudAppIPAddress(writer: SerializationWriter, discoveredCloudAppIPAddress: Partial<DiscoveredCloudAppIPAddress> | undefined | null = {}) : void {
+    if (discoveredCloudAppIPAddress) {
+        writer.writeStringValue("ipAddress", discoveredCloudAppIPAddress.ipAddress);
+        writer.writeStringValue("@odata.type", discoveredCloudAppIPAddress.odataType);
+        writer.writeAdditionalData(discoveredCloudAppIPAddress.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDiscoveredCloudAppUser(writer: SerializationWriter, discoveredCloudAppUser: Partial<DiscoveredCloudAppUser> | undefined | null = {}) : void {
+    if (discoveredCloudAppUser) {
+        writer.writeStringValue("@odata.type", discoveredCloudAppUser.odataType);
+        writer.writeStringValue("userIdentifier", discoveredCloudAppUser.userIdentifier);
+        writer.writeAdditionalData(discoveredCloudAppUser.additionalData);
     }
 }
 /**
@@ -21485,6 +22571,18 @@ export function serializeEmailUrlThreatSubmission(writer: SerializationWriter, e
 export function serializeEnableConsentRecord(writer: SerializationWriter, enableConsentRecord: Partial<EnableConsentRecord> | undefined | null = {}) : void {
     if (enableConsentRecord) {
         serializeAuditData(writer, enableConsentRecord)
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEndpointDiscoveredCloudAppDetail(writer: SerializationWriter, endpointDiscoveredCloudAppDetail: Partial<EndpointDiscoveredCloudAppDetail> | undefined | null = {}) : void {
+    if (endpointDiscoveredCloudAppDetail) {
+        serializeDiscoveredCloudAppDetail(writer, endpointDiscoveredCloudAppDetail)
+        writer.writeNumberValue("deviceCount", endpointDiscoveredCloudAppDetail.deviceCount);
+        writer.writeCollectionOfObjectValues<DiscoveredCloudAppDevice>("devices", endpointDiscoveredCloudAppDetail.devices, serializeDiscoveredCloudAppDevice);
     }
 }
 /**
@@ -26875,6 +27973,7 @@ export interface TopicModelingSettings extends AdditionalDataHolder, BackedModel
      */
     topicCount?: number | null;
 }
+export type TrafficType = (typeof TrafficTypeObject)[keyof typeof TrafficTypeObject];
 export interface TriggersRoot extends Entity, Parsable {
     /**
      * The retentionEvents property
@@ -27402,6 +28501,131 @@ export const AntispamDirectionalityObject = {
     IntraOrg: "intraOrg",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const AppCategoryObject = {
+    Security: "security",
+    Collaboration: "collaboration",
+    HostingServices: "hostingServices",
+    OnlineMeetings: "onlineMeetings",
+    NewsAndEntertainment: "newsAndEntertainment",
+    ECommerce: "eCommerce",
+    Education: "education",
+    CloudStorage: "cloudStorage",
+    Marketing: "marketing",
+    OperationsManagement: "operationsManagement",
+    Health: "health",
+    Advertising: "advertising",
+    Productivity: "productivity",
+    AccountingAndFinance: "accountingAndFinance",
+    ContentManagement: "contentManagement",
+    ContentSharing: "contentSharing",
+    BusinessManagement: "businessManagement",
+    Communications: "communications",
+    DataAnalytics: "dataAnalytics",
+    BusinessIntelligence: "businessIntelligence",
+    Webemail: "webemail",
+    CodeHosting: "codeHosting",
+    WebAnalytics: "webAnalytics",
+    SocialNetwork: "socialNetwork",
+    Crm: "crm",
+    Forums: "forums",
+    HumanResourceManagement: "humanResourceManagement",
+    TransportationAndTravel: "transportationAndTravel",
+    ProductDesign: "productDesign",
+    Sales: "sales",
+    CloudComputingPlatform: "cloudComputingPlatform",
+    ProjectManagement: "projectManagement",
+    PersonalInstantMessaging: "personalInstantMessaging",
+    DevelopmentTools: "developmentTools",
+    ItServices: "itServices",
+    SupplyChainAndLogistics: "supplyChainAndLogistics",
+    PropertyManagement: "propertyManagement",
+    CustomerSupport: "customerSupport",
+    InternetOfThings: "internetOfThings",
+    VendorManagementSystems: "vendorManagementSystems",
+    WebsiteMonitoring: "websiteMonitoring",
+    GenerativeAi: "generativeAi",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AppInfoCsaStarLevelObject = {
+    SelfAssessment: "selfAssessment",
+    Certification: "certification",
+    Attestation: "attestation",
+    CStarAssessment: "cStarAssessment",
+    ContinuousMonitoring: "continuousMonitoring",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AppInfoDataAtRestEncryptionMethodObject = {
+    Aes: "aes",
+    BitLocker: "bitLocker",
+    Blowfish: "blowfish",
+    Des3: "des3",
+    Des: "des",
+    Rc4: "rc4",
+    RsA: "rsA",
+    NotSupported: "notSupported",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AppInfoDataRetentionPolicyObject = {
+    DataRetained: "dataRetained",
+    DeletedImmediately: "deletedImmediately",
+    DeletedWithinTwoWeeks: "deletedWithinTwoWeeks",
+    DeletedWithinOneMonth: "deletedWithinOneMonth",
+    DeletedWithinThreeMonths: "deletedWithinThreeMonths",
+    DeletedWithinMoreThanThreeMonths: "deletedWithinMoreThanThreeMonths",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AppInfoEncryptionProtocolObject = {
+    Tls1_0: "tls1_0",
+    Tls1_1: "tls1_1",
+    Tls1_2: "tls1_2",
+    Tls1_3: "tls1_3",
+    NotApplicable: "notApplicable",
+    NotSupported: "notSupported",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+    Ssl3: "ssl3",
+} as const;
+export const AppInfoFedRampLevelObject = {
+    High: "high",
+    Moderate: "moderate",
+    Low: "low",
+    LiSaaS: "liSaaS",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+    NotSupported: "notSupported",
+} as const;
+export const AppInfoHoldingObject = {
+    Private: "private",
+    Public: "public",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const AppInfoPciDssVersionObject = {
+    V1: "v1",
+    V2: "v2",
+    V3: "v3",
+    V3_1: "v3_1",
+    V3_2: "v3_2",
+    V3_2_1: "v3_2_1",
+    NotSupported: "notSupported",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+    V4: "v4",
+} as const;
+export const AppInfoUploadedDataTypesObject = {
+    Documents: "documents",
+    MediaFiles: "mediaFiles",
+    CodingFiles: "codingFiles",
+    CreditCards: "creditCards",
+    DatabaseFiles: "databaseFiles",
+    None: "none",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const AssignmentMethodObject = {
     Standard: "standard",
     Privileged: "privileged",
@@ -27762,6 +28986,12 @@ export const ChildSelectabilityObject = {
     Many: "Many",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const CloudAppInfoStateObject = {
+    TrueEscaped: "true",
+    FalseEscaped: "false",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const ContainerPortProtocolObject = {
     Udp: "udp",
     Tcp: "tcp",
@@ -27934,6 +29164,14 @@ export const DisableUserEntityIdentifierObject = {
 export const EmailEntityIdentifierObject = {
     NetworkMessageId: "networkMessageId",
     RecipientEmailAddress: "recipientEmailAddress",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const EntityTypeObject = {
+    UserName: "userName",
+    IpAddress: "ipAddress",
+    MachineName: "machineName",
+    Other: "other",
+    Unknown: "unknown",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const EventPropagationStatusObject = {
@@ -28177,6 +29415,65 @@ export const KubernetesServiceTypeObject = {
     LoadBalancer: "loadBalancer",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const LogDataProviderObject = {
+    Barracuda: "barracuda",
+    Bluecoat: "bluecoat",
+    Checkpoint: "checkpoint",
+    CiscoAsa: "ciscoAsa",
+    CiscoIronportProxy: "ciscoIronportProxy",
+    Fortigate: "fortigate",
+    PaloAlto: "paloAlto",
+    Squid: "squid",
+    Zscaler: "zscaler",
+    McafeeSwg: "mcafeeSwg",
+    CiscoScanSafe: "ciscoScanSafe",
+    JuniperSrx: "juniperSrx",
+    SophosSg: "sophosSg",
+    WebsenseV75: "websenseV75",
+    WebsenseSiemCef: "websenseSiemCef",
+    MachineZoneMeraki: "machineZoneMeraki",
+    SquidNative: "squidNative",
+    CiscoFwsm: "ciscoFwsm",
+    MicrosoftIsaW3C: "microsoftIsaW3C",
+    Sonicwall: "sonicwall",
+    SophosCyberoam: "sophosCyberoam",
+    Clavister: "clavister",
+    CustomParser: "customParser",
+    JuniperSsg: "juniperSsg",
+    ZscalerQradar: "zscalerQradar",
+    JuniperSrxSd: "juniperSrxSd",
+    JuniperSrxWelf: "juniperSrxWelf",
+    MicrosoftConditionalAppAccess: "microsoftConditionalAppAccess",
+    CiscoAsaFirepower: "ciscoAsaFirepower",
+    GenericCef: "genericCef",
+    GenericLeef: "genericLeef",
+    GenericW3C: "genericW3C",
+    IFilter: "iFilter",
+    CheckpointXml: "checkpointXml",
+    CheckpointSmartViewTracker: "checkpointSmartViewTracker",
+    BarracudaNextGenFw: "barracudaNextGenFw",
+    BarracudaNextGenFwWeblog: "barracudaNextGenFwWeblog",
+    MicrosoftDefenderForEndpoint: "microsoftDefenderForEndpoint",
+    ZscalerCef: "zscalerCef",
+    SophosXg: "sophosXg",
+    Iboss: "iboss",
+    Forcepoint: "forcepoint",
+    Fortios: "fortios",
+    CiscoIronportWsaIi: "ciscoIronportWsaIi",
+    PaloAltoLeef: "paloAltoLeef",
+    ForcepointLeef: "forcepointLeef",
+    Stormshield: "stormshield",
+    Contentkeeper: "contentkeeper",
+    CiscoIronportWsaIii: "ciscoIronportWsaIii",
+    CheckpointCef: "checkpointCef",
+    Corrata: "corrata",
+    CiscoFirepowerV6: "ciscoFirepowerV6",
+    MenloSecurityCef: "menloSecurityCef",
+    WatchguardXtm: "watchguardXtm",
+    OpenSystemsSecureWebGateway: "openSystemsSecureWebGateway",
+    Wandera: "wandera",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const LongRunningOperationStatusObject = {
     NotStarted: "notStarted",
     Running: "running",
@@ -28243,6 +29540,14 @@ export const PurgeTypeObject = {
 export const QueryTypeObject = {
     Files: "files",
     Messages: "messages",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ReceiverProtocolObject = {
+    Ftp: "ftp",
+    Ftps: "ftps",
+    SyslogUdp: "syslogUdp",
+    SyslogTcp: "syslogTcp",
+    SyslogTls: "syslogTls",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const RemediationActionObject = {
@@ -28463,6 +29768,12 @@ export const ThreatTypeObject = {
     Malware: "malware",
     Phish: "phish",
     None: "none",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const TrafficTypeObject = {
+    DownloadedBytes: "downloadedBytes",
+    UploadedBytes: "uploadedBytes",
+    Unknown: "unknown",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const UserAssetIdentifierObject = {

@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CertificateBasedApplicationConfigurationsRequestBuilderNavigationMetadata, CertificateBasedApplicationConfigurationsRequestBuilderRequestsMetadata, type CertificateBasedApplicationConfigurationsRequestBuilder } from './certificateBasedApplicationConfigurations/index.js';
 // @ts-ignore
+import { MutualTlsOauthConfigurationsRequestBuilderNavigationMetadata, MutualTlsOauthConfigurationsRequestBuilderRequestsMetadata, type MutualTlsOauthConfigurationsRequestBuilder } from './mutualTlsOauthConfigurations/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,10 @@ export interface CertificateAuthoritiesRequestBuilder extends BaseRequestBuilder
      * Provides operations to manage the certificateBasedApplicationConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
      */
     get certificateBasedApplicationConfigurations(): CertificateBasedApplicationConfigurationsRequestBuilder;
+    /**
+     * Provides operations to manage the mutualTlsOauthConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
+     */
+    get mutualTlsOauthConfigurations(): MutualTlsOauthConfigurationsRequestBuilder;
     /**
      * Delete navigation property certificateAuthorities for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -90,6 +96,10 @@ export const CertificateAuthoritiesRequestBuilderNavigationMetadata: Record<Excl
     certificateBasedApplicationConfigurations: {
         requestsMetadata: CertificateBasedApplicationConfigurationsRequestBuilderRequestsMetadata,
         navigationMetadata: CertificateBasedApplicationConfigurationsRequestBuilderNavigationMetadata,
+    },
+    mutualTlsOauthConfigurations: {
+        requestsMetadata: MutualTlsOauthConfigurationsRequestBuilderRequestsMetadata,
+        navigationMetadata: MutualTlsOauthConfigurationsRequestBuilderNavigationMetadata,
     },
 };
 /**
