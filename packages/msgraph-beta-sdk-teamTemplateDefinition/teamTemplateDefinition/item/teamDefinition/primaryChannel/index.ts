@@ -6,6 +6,8 @@ import { createChannelFromDiscriminatorValue, serializeChannel, type Channel } f
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AllMembersRequestBuilderNavigationMetadata, AllMembersRequestBuilderRequestsMetadata, type AllMembersRequestBuilder } from './allMembers/index.js';
+// @ts-ignore
 import { ArchiveRequestBuilderRequestsMetadata, type ArchiveRequestBuilder } from './archive/index.js';
 // @ts-ignore
 import { CompleteMigrationRequestBuilderRequestsMetadata, type CompleteMigrationRequestBuilder } from './completeMigration/index.js';
@@ -13,8 +15,6 @@ import { CompleteMigrationRequestBuilderRequestsMetadata, type CompleteMigration
 import { DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderRequestsMetadata, type DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder } from './doesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName/index.js';
 // @ts-ignore
 import { FilesFolderRequestBuilderNavigationMetadata, FilesFolderRequestBuilderRequestsMetadata, type FilesFolderRequestBuilder } from './filesFolder/index.js';
-// @ts-ignore
-import { GetAllMembersRequestBuilderNavigationMetadata, GetAllMembersRequestBuilderRequestsMetadata, type GetAllMembersRequestBuilder } from './getAllMembers/index.js';
 // @ts-ignore
 import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsMetadata, type MembersRequestBuilder } from './members/index.js';
 // @ts-ignore
@@ -37,6 +37,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface PrimaryChannelRequestBuilder extends BaseRequestBuilder<PrimaryChannelRequestBuilder> {
     /**
+     * Provides operations to manage the allMembers property of the microsoft.graph.channel entity.
+     */
+    get allMembers(): AllMembersRequestBuilder;
+    /**
      * Provides operations to call the archive method.
      */
     get archive(): ArchiveRequestBuilder;
@@ -52,10 +56,6 @@ export interface PrimaryChannelRequestBuilder extends BaseRequestBuilder<Primary
      * Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
      */
     get filesFolder(): FilesFolderRequestBuilder;
-    /**
-     * Provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.
-     */
-    get getAllMembers(): GetAllMembersRequestBuilder;
     /**
      * Provides operations to manage the members property of the microsoft.graph.channel entity.
      */
@@ -153,6 +153,10 @@ const PrimaryChannelRequestBuilderGetQueryParametersMapper: Record<string, strin
  * Metadata for all the navigation properties in the request builder.
  */
 export const PrimaryChannelRequestBuilderNavigationMetadata: Record<Exclude<keyof PrimaryChannelRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    allMembers: {
+        requestsMetadata: AllMembersRequestBuilderRequestsMetadata,
+        navigationMetadata: AllMembersRequestBuilderNavigationMetadata,
+    },
     archive: {
         requestsMetadata: ArchiveRequestBuilderRequestsMetadata,
     },
@@ -165,10 +169,6 @@ export const PrimaryChannelRequestBuilderNavigationMetadata: Record<Exclude<keyo
     filesFolder: {
         requestsMetadata: FilesFolderRequestBuilderRequestsMetadata,
         navigationMetadata: FilesFolderRequestBuilderNavigationMetadata,
-    },
-    getAllMembers: {
-        requestsMetadata: GetAllMembersRequestBuilderRequestsMetadata,
-        navigationMetadata: GetAllMembersRequestBuilderNavigationMetadata,
     },
     members: {
         requestsMetadata: MembersRequestBuilderRequestsMetadata,

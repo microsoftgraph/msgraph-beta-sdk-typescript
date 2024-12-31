@@ -30,11 +30,11 @@ import { GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderRequestsMet
 // @ts-ignore
 import { GetRemoteConnectionHistoricalReportsRequestBuilderRequestsMetadata, type GetRemoteConnectionHistoricalReportsRequestBuilder } from './getRemoteConnectionHistoricalReports/index.js';
 // @ts-ignore
-import { GetSharedUseLicenseUsageReportRequestBuilderRequestsMetadata, type GetSharedUseLicenseUsageReportRequestBuilder } from './getSharedUseLicenseUsageReport/index.js';
-// @ts-ignore
 import { GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata, type GetTotalAggregatedRemoteConnectionReportsRequestBuilder } from './getTotalAggregatedRemoteConnectionReports/index.js';
 // @ts-ignore
 import { RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata, type RetrieveBulkActionStatusReportRequestBuilder } from './retrieveBulkActionStatusReport/index.js';
+// @ts-ignore
+import { RetrieveCloudPcTroubleshootReportsRequestBuilderRequestsMetadata, type RetrieveCloudPcTroubleshootReportsRequestBuilder } from './retrieveCloudPcTroubleshootReports/index.js';
 // @ts-ignore
 import { RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata, type RetrieveConnectionQualityReportsRequestBuilder } from './retrieveConnectionQualityReports/index.js';
 // @ts-ignore
@@ -89,10 +89,6 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
     get getRemoteConnectionHistoricalReports(): GetRemoteConnectionHistoricalReportsRequestBuilder;
     /**
-     * Provides operations to call the getSharedUseLicenseUsageReport method.
-     */
-    get getSharedUseLicenseUsageReport(): GetSharedUseLicenseUsageReportRequestBuilder;
-    /**
      * Provides operations to call the getTotalAggregatedRemoteConnectionReports method.
      */
     get getTotalAggregatedRemoteConnectionReports(): GetTotalAggregatedRemoteConnectionReportsRequestBuilder;
@@ -100,6 +96,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the retrieveBulkActionStatusReport method.
      */
     get retrieveBulkActionStatusReport(): RetrieveBulkActionStatusReportRequestBuilder;
+    /**
+     * Provides operations to call the retrieveCloudPcTroubleshootReports method.
+     */
+    get retrieveCloudPcTroubleshootReports(): RetrieveCloudPcTroubleshootReportsRequestBuilder;
     /**
      * Provides operations to call the retrieveConnectionQualityReports method.
      */
@@ -232,14 +232,14 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     getRemoteConnectionHistoricalReports: {
         requestsMetadata: GetRemoteConnectionHistoricalReportsRequestBuilderRequestsMetadata,
     },
-    getSharedUseLicenseUsageReport: {
-        requestsMetadata: GetSharedUseLicenseUsageReportRequestBuilderRequestsMetadata,
-    },
     getTotalAggregatedRemoteConnectionReports: {
         requestsMetadata: GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata,
     },
     retrieveBulkActionStatusReport: {
         requestsMetadata: RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata,
+    },
+    retrieveCloudPcTroubleshootReports: {
+        requestsMetadata: RetrieveCloudPcTroubleshootReportsRequestBuilderRequestsMetadata,
     },
     retrieveConnectionQualityReports: {
         requestsMetadata: RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata,

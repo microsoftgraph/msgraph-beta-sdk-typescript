@@ -27,21 +27,21 @@ export interface ApplicationSegmentsRequestBuilder extends BaseRequestBuilder<Ap
      */
      byIpApplicationSegmentId(ipApplicationSegmentId: string) : IpApplicationSegmentItemRequestBuilder;
     /**
-     * Get applicationSegments from onPremisesPublishingProfiles
+     * Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IpApplicationSegmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ApplicationSegmentsRequestBuilderGetQueryParameters> | undefined) : Promise<IpApplicationSegmentCollectionResponse | undefined>;
     /**
-     * Get applicationSegments from onPremisesPublishingProfiles
+     * Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApplicationSegmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get applicationSegments from onPremisesPublishingProfiles
+ * Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
  */
 export interface ApplicationSegmentsRequestBuilderGetQueryParameters {
     /**
