@@ -30,15 +30,6 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      */
      patch(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
     /**
-     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {Promise<CustomClaimsPolicy>}
-     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta|Find more info here}
-     */
-     put(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
-    /**
      * Get the properties and relationships of a customClaimsPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -51,13 +42,6 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * @returns {RequestInformation}
      */
      toPatchRequestInformation(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
-    /**
-     * Create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {RequestInformation}
-     */
-     toPutRequestInformation(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Get the properties and relationships of a customClaimsPolicy object.
@@ -98,18 +82,6 @@ export const ClaimsPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
         queryParametersMapper: ClaimsPolicyRequestBuilderGetQueryParametersMapper,
     },
     patch: {
-        uriTemplate: ClaimsPolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "send",
-        responseBodyFactory:  createCustomClaimsPolicyFromDiscriminatorValue,
-        requestBodyContentType: "application/json",
-        requestBodySerializer: serializeCustomClaimsPolicy,
-        requestInformationContentSetMethod: "setContentFromParsable",
-    },
-    put: {
         uriTemplate: ClaimsPolicyRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {

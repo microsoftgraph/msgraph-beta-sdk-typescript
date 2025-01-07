@@ -31,7 +31,7 @@ export interface CertificateAuthoritiesRequestBuilder extends BaseRequestBuilder
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get certificateAuthorities from directory
+     * Container for certificate authorities-related configurations for applications in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CertificateAuthorityPath>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface CertificateAuthoritiesRequestBuilder extends BaseRequestBuilder
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get certificateAuthorities from directory
+     * Container for certificate authorities-related configurations for applications in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface CertificateAuthoritiesRequestBuilder extends BaseRequestBuilder
      toPatchRequestInformation(body: CertificateAuthorityPath, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get certificateAuthorities from directory
+ * Container for certificate authorities-related configurations for applications in the tenant.
  */
 export interface CertificateAuthoritiesRequestBuilderGetQueryParameters {
     /**

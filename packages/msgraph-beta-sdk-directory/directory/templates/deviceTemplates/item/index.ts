@@ -33,9 +33,10 @@ export interface DeviceTemplateItemRequestBuilder extends BaseRequestBuilder<Dev
      */
     get owners(): OwnersRequestBuilder;
     /**
-     * Delete navigation property deviceTemplates for directory
+     * Delete a registered deviceTemplate. You must first delete all devices linked to the template before deleting the template itself. Only registered owners of the template can perform this operation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/devicetemplate-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -45,10 +46,11 @@ export interface DeviceTemplateItemRequestBuilder extends BaseRequestBuilder<Dev
      */
      deviceInstancesWithDeviceId(deviceId: string | undefined) : DeviceInstancesWithDeviceIdRequestBuilder;
     /**
-     * Get deviceTemplates from directory
+     * Get the properties and relationships of a deviceTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceTemplate>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/devicetemplate-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DeviceTemplateItemRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceTemplate | undefined>;
     /**
@@ -60,13 +62,13 @@ export interface DeviceTemplateItemRequestBuilder extends BaseRequestBuilder<Dev
      */
      patch(body: DeviceTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceTemplate | undefined>;
     /**
-     * Delete navigation property deviceTemplates for directory
+     * Delete a registered deviceTemplate. You must first delete all devices linked to the template before deleting the template itself. Only registered owners of the template can perform this operation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get deviceTemplates from directory
+     * Get the properties and relationships of a deviceTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -80,7 +82,7 @@ export interface DeviceTemplateItemRequestBuilder extends BaseRequestBuilder<Dev
      toPatchRequestInformation(body: DeviceTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get deviceTemplates from directory
+ * Get the properties and relationships of a deviceTemplate object.
  */
 export interface DeviceTemplateItemRequestBuilderGetQueryParameters {
     /**

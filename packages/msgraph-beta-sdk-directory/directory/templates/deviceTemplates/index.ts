@@ -27,28 +27,30 @@ export interface DeviceTemplatesRequestBuilder extends BaseRequestBuilder<Device
      */
      byDeviceTemplateId(deviceTemplateId: string) : DeviceTemplateItemRequestBuilder;
     /**
-     * Get deviceTemplates from directory
+     * Get a list of deviceTemplate objects registered in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceTemplateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/template-list-devicetemplates?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DeviceTemplatesRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceTemplateCollectionResponse | undefined>;
     /**
-     * Create new navigation property to deviceTemplates for directory
+     * Create a new deviceTemplate used to identify attributes and manage a group of devices with similar characteristics.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceTemplate>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/template-post-devicetemplates?view=graph-rest-beta|Find more info here}
      */
      post(body: DeviceTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceTemplate | undefined>;
     /**
-     * Get deviceTemplates from directory
+     * Get a list of deviceTemplate objects registered in the directory.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceTemplatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to deviceTemplates for directory
+     * Create a new deviceTemplate used to identify attributes and manage a group of devices with similar characteristics.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface DeviceTemplatesRequestBuilder extends BaseRequestBuilder<Device
      toPostRequestInformation(body: DeviceTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get deviceTemplates from directory
+ * Get a list of deviceTemplate objects registered in the directory.
  */
 export interface DeviceTemplatesRequestBuilderGetQueryParameters {
     /**

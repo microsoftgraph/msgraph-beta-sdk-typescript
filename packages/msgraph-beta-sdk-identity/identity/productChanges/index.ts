@@ -27,7 +27,7 @@ export interface ProductChangesRequestBuilder extends BaseRequestBuilder<Product
      */
      byChangeItemBaseId(changeItemBaseId: string) : ChangeItemBaseItemRequestBuilder;
     /**
-     * Get a list of the changeItemBase objects and their properties.
+     * Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChangeItemBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -43,7 +43,7 @@ export interface ProductChangesRequestBuilder extends BaseRequestBuilder<Product
      */
      post(body: ChangeItemBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChangeItemBase | undefined>;
     /**
-     * Get a list of the changeItemBase objects and their properties.
+     * Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface ProductChangesRequestBuilder extends BaseRequestBuilder<Product
      toPostRequestInformation(body: ChangeItemBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the changeItemBase objects and their properties.
+ * Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
  */
 export interface ProductChangesRequestBuilderGetQueryParameters {
     /**

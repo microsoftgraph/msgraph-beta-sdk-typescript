@@ -56,15 +56,16 @@ export interface CreateDeviceFromTemplatePostRequestBody extends AdditionalDataH
  */
 export interface CreateDeviceFromTemplateRequestBuilder extends BaseRequestBuilder<CreateDeviceFromTemplateRequestBuilder> {
     /**
-     * Invoke action createDeviceFromTemplate
+     * Create a new device from a deviceTemplate.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Device>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/devicetemplate-createdevicefromtemplate?view=graph-rest-beta|Find more info here}
      */
      post(body: CreateDeviceFromTemplatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Device | undefined>;
     /**
-     * Invoke action createDeviceFromTemplate
+     * Create a new device from a deviceTemplate.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

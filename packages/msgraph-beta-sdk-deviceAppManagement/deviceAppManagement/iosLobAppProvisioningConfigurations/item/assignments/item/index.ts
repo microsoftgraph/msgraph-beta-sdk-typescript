@@ -19,7 +19,7 @@ export interface IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder 
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+     * The associated group assignments for IosLobAppProvisioningConfiguration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IosLobAppProvisioningConfigurationAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder 
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+     * The associated group assignments for IosLobAppProvisioningConfiguration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder 
      toPatchRequestInformation(body: IosLobAppProvisioningConfigurationAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+ * The associated group assignments for IosLobAppProvisioningConfiguration.
  */
 export interface IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters {
     /**

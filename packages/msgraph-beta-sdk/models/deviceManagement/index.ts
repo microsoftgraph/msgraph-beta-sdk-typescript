@@ -79,7 +79,7 @@ export interface AlertRecordCollectionResponse extends BaseCollectionPaginationC
 }
 export interface AlertRule extends Entity, Parsable {
     /**
-     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, and cloudPcFrontlineConcurrencyScenario.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, and cloudPcFrontlineConcurrencyScenario.
      */
     alertRuleTemplate?: AlertRuleTemplate | null;
     /**
@@ -715,6 +715,7 @@ export const AggregationTypeObject = {
     AffectedCloudPcCount: "affectedCloudPcCount",
     AffectedCloudPcPercentage: "affectedCloudPcPercentage",
     UnknownFutureValue: "unknownFutureValue",
+    DurationInMinutes: "durationInMinutes",
 } as const;
 export const AlertRuleTemplateObject = {
     CloudPcProvisionScenario: "cloudPcProvisionScenario",
@@ -724,6 +725,7 @@ export const AlertRuleTemplateObject = {
     CloudPcInGracePeriodScenario: "cloudPcInGracePeriodScenario",
     CloudPcFrontlineInsufficientLicensesScenario: "cloudPcFrontlineInsufficientLicensesScenario",
     CloudPcInaccessibleScenario: "cloudPcInaccessibleScenario",
+    CloudPcFrontlineConcurrencyScenario: "cloudPcFrontlineConcurrencyScenario",
 } as const;
 export const AlertStatusTypeObject = {
     Active: "active",
@@ -740,6 +742,8 @@ export const ConditionCategoryObject = {
     CloudPcHostHealthCheckFailures: "cloudPcHostHealthCheckFailures",
     CloudPcZoneOutage: "cloudPcZoneOutage",
     UnknownFutureValue: "unknownFutureValue",
+    FrontlineBufferUsageDuration: "frontlineBufferUsageDuration",
+    FrontlineBufferUsageThreshold: "frontlineBufferUsageThreshold",
 } as const;
 export const NotificationChannelTypeObject = {
     Portal: "portal",

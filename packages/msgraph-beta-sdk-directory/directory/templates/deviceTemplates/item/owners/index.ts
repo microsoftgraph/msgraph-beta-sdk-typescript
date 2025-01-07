@@ -27,21 +27,22 @@ export interface OwnersRequestBuilder extends BaseRequestBuilder<OwnersRequestBu
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
-     * Get owners from directory
+     * Get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/devicetemplate-list-owners?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<OwnersRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
-     * Get owners from directory
+     * Get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OwnersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get owners from directory
+ * Get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
  */
 export interface OwnersRequestBuilderGetQueryParameters {
     /**

@@ -27,28 +27,30 @@ export interface MutualTlsOauthConfigurationsRequestBuilder extends BaseRequestB
      */
      byMutualTlsOauthConfigurationId(mutualTlsOauthConfigurationId: string) : MutualTlsOauthConfigurationItemRequestBuilder;
     /**
-     * Get mutualTlsOauthConfigurations from directory
+     * Get a list of the available mutualTlsOauthConfiguration resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MutualTlsOauthConfigurationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/certificateauthoritypath-list-mutualtlsoauthconfigurations?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters> | undefined) : Promise<MutualTlsOauthConfigurationCollectionResponse | undefined>;
     /**
-     * Create new navigation property to mutualTlsOauthConfigurations for directory
+     * Create a mutualTlsOauthConfiguration resource that contains a specified certificate authority object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MutualTlsOauthConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/certificateauthoritypath-post-mutualtlsoauthconfigurations?view=graph-rest-beta|Find more info here}
      */
      post(body: MutualTlsOauthConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MutualTlsOauthConfiguration | undefined>;
     /**
-     * Get mutualTlsOauthConfigurations from directory
+     * Get a list of the available mutualTlsOauthConfiguration resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to mutualTlsOauthConfigurations for directory
+     * Create a mutualTlsOauthConfiguration resource that contains a specified certificate authority object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface MutualTlsOauthConfigurationsRequestBuilder extends BaseRequestB
      toPostRequestInformation(body: MutualTlsOauthConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get mutualTlsOauthConfigurations from directory
+ * Get a list of the available mutualTlsOauthConfiguration resources.
  */
 export interface MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters {
     /**

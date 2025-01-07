@@ -27,21 +27,21 @@ export interface DeviceTemplateRequestBuilder extends BaseRequestBuilder<DeviceT
      */
      byDeviceTemplateId(deviceTemplateId: string) : DeviceTemplateItemRequestBuilder;
     /**
-     * Get deviceTemplate from devices
+     * Device template used to instantiate this device. Nullable. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceTemplateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceTemplateRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceTemplateCollectionResponse | undefined>;
     /**
-     * Get deviceTemplate from devices
+     * Device template used to instantiate this device. Nullable. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceTemplateRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get deviceTemplate from devices
+ * Device template used to instantiate this device. Nullable. Read-only.
  */
 export interface DeviceTemplateRequestBuilderGetQueryParameters {
     /**
