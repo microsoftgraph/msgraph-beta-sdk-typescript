@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface IpApplicationSegmentItemRequestBuilder extends BaseRequestBuilder<IpApplicationSegmentItemRequestBuilder> {
     /**
-     * Get applicationSegments from onPremisesPublishingProfiles
+     * Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IpApplicationSegment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IpApplicationSegmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<IpApplicationSegment | undefined>;
     /**
-     * Get applicationSegments from onPremisesPublishingProfiles
+     * Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IpApplicationSegmentItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get applicationSegments from onPremisesPublishingProfiles
+ * Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
  */
 export interface IpApplicationSegmentItemRequestBuilderGetQueryParameters {
     /**

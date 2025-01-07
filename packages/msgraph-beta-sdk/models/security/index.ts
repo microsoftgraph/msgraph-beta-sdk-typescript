@@ -406,10 +406,6 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     attachments?: AnalyzedEmailAttachment[] | null;
     /**
-     * The number of attachments in the email.
-     */
-    attachmentsCount?: number | null;
-    /**
      * The authentication details associated with the email.
      */
     authenticationDetails?: AnalyzedEmailAuthenticationDetail | null;
@@ -417,6 +413,10 @@ export interface AnalyzedEmail extends Entity, Parsable {
      * The bulk complaint level of the email. A higher level is more likely to be spam.
      */
     bulkComplaintLevel?: string | null;
+    /**
+     * The clientType property
+     */
+    clientType?: string | null;
     /**
      * Provides context of the email.
      */
@@ -434,6 +434,10 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     distributionList?: string | null;
     /**
+     * The dlpRules property
+     */
+    dlpRules?: AnalyzedEmailDlpRuleInfo[] | null;
+    /**
      * The identifier for the group of similar emails clustered based on heuristic analysis of their content.
      */
     emailClusterId?: string | null;
@@ -441,6 +445,14 @@ export interface AnalyzedEmail extends Entity, Parsable {
      * The name of the Exchange transport rules (ETRs) associated with the email.
      */
     exchangeTransportRules?: AnalyzedEmailExchangeTransportRuleInfo[] | null;
+    /**
+     * The forwardingDetail property
+     */
+    forwardingDetail?: string | null;
+    /**
+     * The inboundConnectorFormattedName property
+     */
+    inboundConnectorFormattedName?: string | null;
     /**
      * A public-facing identifier for the email that is sent. The message ID is in the format specified by RFC2822.
      */
@@ -482,6 +494,18 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     policyAction?: string | null;
     /**
+     * The policyType property
+     */
+    policyType?: string | null;
+    /**
+     * The primaryOverrideSource property
+     */
+    primaryOverrideSource?: string | null;
+    /**
+     * The recipientDetail property
+     */
+    recipientDetail?: AnalyzedEmailRecipientDetail | null;
+    /**
      * Contains the email address of the recipient.
      */
     recipientEmailAddress?: string | null;
@@ -506,17 +530,21 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     subject?: string | null;
     /**
+     * The threatDetectionDetails property
+     */
+    threatDetectionDetails?: ThreatDetectionDetail[] | null;
+    /**
      * Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
      */
     threatTypes?: ThreatType[] | null;
     /**
+     * The timelineEvents property
+     */
+    timelineEvents?: TimelineEvent[] | null;
+    /**
      * A collection of the URLs in the email.
      */
     urls?: AnalyzedEmailUrl[] | null;
-    /**
-     * The number of URLs in the email.
-     */
-    urlsCount?: number | null;
 }
 export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -532,13 +560,25 @@ export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedMod
      */
     detonationDetails?: DetonationDetails | null;
     /**
+     * The fileExtension property
+     */
+    fileExtension?: string | null;
+    /**
      * The name of the attachment in the email.
      */
     fileName?: string | null;
     /**
+     * The fileSize property
+     */
+    fileSize?: number | null;
+    /**
      * The type of the attachment in the email.
      */
     fileType?: string | null;
+    /**
+     * The malwareFamily property
+     */
+    malwareFamily?: string | null;
     /**
      * The OdataType property
      */
@@ -548,9 +588,9 @@ export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedMod
      */
     sha256?: string | null;
     /**
-     * The threat name associated with the threat type.
+     * The tenantAllowBlockListDetailInfo property
      */
-    threatName?: string | null;
+    tenantAllowBlockListDetailInfo?: string | null;
     /**
      * The threat type associated with the attachment. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
      */
@@ -606,6 +646,10 @@ export interface AnalyzedEmailDeliveryDetail extends AdditionalDataHolder, Backe
      */
     backingStoreEnabled?: boolean | null;
     /**
+     * The latestThreats property
+     */
+    latestThreats?: string | null;
+    /**
      * The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.
      */
     location?: DeliveryLocation | null;
@@ -613,6 +657,32 @@ export interface AnalyzedEmailDeliveryDetail extends AdditionalDataHolder, Backe
      * The OdataType property
      */
     odataType?: string | null;
+    /**
+     * The originalThreats property
+     */
+    originalThreats?: string | null;
+}
+export interface AnalyzedEmailDlpRuleInfo extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The name property
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The ruleId property
+     */
+    ruleId?: string | null;
 }
 export interface AnalyzedEmailExchangeTransportRuleInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -636,6 +706,28 @@ export interface AnalyzedEmailExchangeTransportRuleInfo extends AdditionalDataHo
      */
     ruleId?: string | null;
 }
+export interface AnalyzedEmailRecipientDetail extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The ccRecipients property
+     */
+    ccRecipients?: string[] | null;
+    /**
+     * The domainName property
+     */
+    domainName?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export interface AnalyzedEmailSenderDetail extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -646,6 +738,22 @@ export interface AnalyzedEmailSenderDetail extends AdditionalDataHolder, BackedM
      */
     backingStoreEnabled?: boolean | null;
     /**
+     * The displayName property
+     */
+    displayName?: string | null;
+    /**
+     * The domainCreationDateTime property
+     */
+    domainCreationDateTime?: Date | null;
+    /**
+     * The domainName property
+     */
+    domainName?: string | null;
+    /**
+     * The domainOwner property
+     */
+    domainOwner?: string | null;
+    /**
      * The sender email address in the mail From header, also known as the envelope sender or the P1 sender.
      */
     fromAddress?: string | null;
@@ -654,9 +762,17 @@ export interface AnalyzedEmailSenderDetail extends AdditionalDataHolder, BackedM
      */
     ipv4?: string | null;
     /**
+     * The location property
+     */
+    location?: string | null;
+    /**
      * The sender email address in the From header, which is visible to email recipients on their email clients. Also known as P2 sender.
      */
     mailFromAddress?: string | null;
+    /**
+     * The mailFromDomainName property
+     */
+    mailFromDomainName?: string | null;
     /**
      * The OdataType property
      */
@@ -683,6 +799,10 @@ export interface AnalyzedEmailUrl extends AdditionalDataHolder, BackedModel, Par
      * The OdataType property
      */
     odataType?: string | null;
+    /**
+     * The tenantAllowBlockListDetailInfo property
+     */
+    tenantAllowBlockListDetailInfo?: string | null;
     /**
      * The type of threat associated with the URL. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
      */
@@ -1464,6 +1584,28 @@ export interface ComplianceSupervisionBaseAuditRecord extends AuditData, Parsabl
 }
 export interface ComplianceSupervisionExchangeAuditRecord extends AuditData, Parsable {
 }
+export interface CompromiseIndicator extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The value property
+     */
+    value?: string | null;
+    /**
+     * The verdict property
+     */
+    verdict?: VerdictCategory | null;
+}
 export interface ConsumptionResourceAuditRecord extends AuditData, Parsable {
 }
 export interface ContainerEvidence extends AlertEvidence, Parsable {
@@ -1913,6 +2055,15 @@ export function createAnalyzedEmailDeliveryDetailFromDiscriminatorValue(parseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AnalyzedEmailDlpRuleInfo}
+ */
+// @ts-ignore
+export function createAnalyzedEmailDlpRuleInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAnalyzedEmailDlpRuleInfo;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AnalyzedEmailExchangeTransportRuleInfo}
  */
 // @ts-ignore
@@ -1927,6 +2078,15 @@ export function createAnalyzedEmailExchangeTransportRuleInfoFromDiscriminatorVal
 // @ts-ignore
 export function createAnalyzedEmailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAnalyzedEmail;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AnalyzedEmailRecipientDetail}
+ */
+// @ts-ignore
+export function createAnalyzedEmailRecipientDetailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAnalyzedEmailRecipientDetail;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -3251,6 +3411,15 @@ export function createComplianceSupervisionExchangeAuditRecordFromDiscriminatorV
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CompromiseIndicator}
+ */
+// @ts-ignore
+export function createCompromiseIndicatorFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCompromiseIndicator;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ConsumptionResourceAuditRecord}
  */
 // @ts-ignore
@@ -3619,6 +3788,15 @@ export function createDetectionRuleCollectionResponseFromDiscriminatorValue(pars
 // @ts-ignore
 export function createDetectionRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDetectionRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DetonationBehaviourDetails}
+ */
+// @ts-ignore
+export function createDetonationBehaviourDetailsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDetonationBehaviourDetails;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -7475,6 +7653,15 @@ export function createTenantAllowOrBlockListActionFromDiscriminatorValue(parseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatDetectionDetail}
+ */
+// @ts-ignore
+export function createThreatDetectionDetailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatDetectionDetail;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ThreatFinderAuditRecord}
  */
 // @ts-ignore
@@ -7557,6 +7744,15 @@ export function createThreatSubmissionFromDiscriminatorValue(parseNode: ParseNod
 // @ts-ignore
 export function createThreatSubmissionRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoThreatSubmissionRoot;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TimelineEvent}
+ */
+// @ts-ignore
+export function createTimelineEventFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTimelineEvent;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -8494,15 +8690,18 @@ export function deserializeIntoAnalyzedEmail(analyzedEmail: Partial<AnalyzedEmai
         ...deserializeIntoEntity(analyzedEmail),
         "alertIds": n => { analyzedEmail.alertIds = n.getCollectionOfPrimitiveValues<string>(); },
         "attachments": n => { analyzedEmail.attachments = n.getCollectionOfObjectValues<AnalyzedEmailAttachment>(createAnalyzedEmailAttachmentFromDiscriminatorValue); },
-        "attachmentsCount": n => { analyzedEmail.attachmentsCount = n.getNumberValue(); },
         "authenticationDetails": n => { analyzedEmail.authenticationDetails = n.getObjectValue<AnalyzedEmailAuthenticationDetail>(createAnalyzedEmailAuthenticationDetailFromDiscriminatorValue); },
         "bulkComplaintLevel": n => { analyzedEmail.bulkComplaintLevel = n.getStringValue(); },
+        "clientType": n => { analyzedEmail.clientType = n.getStringValue(); },
         "contexts": n => { analyzedEmail.contexts = n.getCollectionOfPrimitiveValues<string>(); },
         "detectionMethods": n => { analyzedEmail.detectionMethods = n.getCollectionOfPrimitiveValues<string>(); },
         "directionality": n => { analyzedEmail.directionality = n.getEnumValue<AntispamDirectionality>(AntispamDirectionalityObject); },
         "distributionList": n => { analyzedEmail.distributionList = n.getStringValue(); },
+        "dlpRules": n => { analyzedEmail.dlpRules = n.getCollectionOfObjectValues<AnalyzedEmailDlpRuleInfo>(createAnalyzedEmailDlpRuleInfoFromDiscriminatorValue); },
         "emailClusterId": n => { analyzedEmail.emailClusterId = n.getStringValue(); },
         "exchangeTransportRules": n => { analyzedEmail.exchangeTransportRules = n.getCollectionOfObjectValues<AnalyzedEmailExchangeTransportRuleInfo>(createAnalyzedEmailExchangeTransportRuleInfoFromDiscriminatorValue); },
+        "forwardingDetail": n => { analyzedEmail.forwardingDetail = n.getStringValue(); },
+        "inboundConnectorFormattedName": n => { analyzedEmail.inboundConnectorFormattedName = n.getStringValue(); },
         "internetMessageId": n => { analyzedEmail.internetMessageId = n.getStringValue(); },
         "language": n => { analyzedEmail.language = n.getStringValue(); },
         "latestDelivery": n => { analyzedEmail.latestDelivery = n.getObjectValue<AnalyzedEmailDeliveryDetail>(createAnalyzedEmailDeliveryDetailFromDiscriminatorValue); },
@@ -8513,15 +8712,19 @@ export function deserializeIntoAnalyzedEmail(analyzedEmail: Partial<AnalyzedEmai
         "phishConfidenceLevel": n => { analyzedEmail.phishConfidenceLevel = n.getStringValue(); },
         "policy": n => { analyzedEmail.policy = n.getStringValue(); },
         "policyAction": n => { analyzedEmail.policyAction = n.getStringValue(); },
+        "policyType": n => { analyzedEmail.policyType = n.getStringValue(); },
+        "primaryOverrideSource": n => { analyzedEmail.primaryOverrideSource = n.getStringValue(); },
+        "recipientDetail": n => { analyzedEmail.recipientDetail = n.getObjectValue<AnalyzedEmailRecipientDetail>(createAnalyzedEmailRecipientDetailFromDiscriminatorValue); },
         "recipientEmailAddress": n => { analyzedEmail.recipientEmailAddress = n.getStringValue(); },
         "returnPath": n => { analyzedEmail.returnPath = n.getStringValue(); },
         "senderDetail": n => { analyzedEmail.senderDetail = n.getObjectValue<AnalyzedEmailSenderDetail>(createAnalyzedEmailSenderDetailFromDiscriminatorValue); },
         "sizeInBytes": n => { analyzedEmail.sizeInBytes = n.getNumberValue(); },
         "spamConfidenceLevel": n => { analyzedEmail.spamConfidenceLevel = n.getStringValue(); },
         "subject": n => { analyzedEmail.subject = n.getStringValue(); },
+        "threatDetectionDetails": n => { analyzedEmail.threatDetectionDetails = n.getCollectionOfObjectValues<ThreatDetectionDetail>(createThreatDetectionDetailFromDiscriminatorValue); },
         "threatTypes": n => { analyzedEmail.threatTypes = n.getCollectionOfEnumValues<ThreatType>(ThreatTypeObject); },
+        "timelineEvents": n => { analyzedEmail.timelineEvents = n.getCollectionOfObjectValues<TimelineEvent>(createTimelineEventFromDiscriminatorValue); },
         "urls": n => { analyzedEmail.urls = n.getCollectionOfObjectValues<AnalyzedEmailUrl>(createAnalyzedEmailUrlFromDiscriminatorValue); },
-        "urlsCount": n => { analyzedEmail.urlsCount = n.getNumberValue(); },
     }
 }
 /**
@@ -8533,11 +8736,14 @@ export function deserializeIntoAnalyzedEmailAttachment(analyzedEmailAttachment: 
     return {
         "backingStoreEnabled": n => { analyzedEmailAttachment.backingStoreEnabled = true; },
         "detonationDetails": n => { analyzedEmailAttachment.detonationDetails = n.getObjectValue<DetonationDetails>(createDetonationDetailsFromDiscriminatorValue); },
+        "fileExtension": n => { analyzedEmailAttachment.fileExtension = n.getStringValue(); },
         "fileName": n => { analyzedEmailAttachment.fileName = n.getStringValue(); },
+        "fileSize": n => { analyzedEmailAttachment.fileSize = n.getNumberValue(); },
         "fileType": n => { analyzedEmailAttachment.fileType = n.getStringValue(); },
+        "malwareFamily": n => { analyzedEmailAttachment.malwareFamily = n.getStringValue(); },
         "@odata.type": n => { analyzedEmailAttachment.odataType = n.getStringValue(); },
         "sha256": n => { analyzedEmailAttachment.sha256 = n.getStringValue(); },
-        "threatName": n => { analyzedEmailAttachment.threatName = n.getStringValue(); },
+        "tenantAllowBlockListDetailInfo": n => { analyzedEmailAttachment.tenantAllowBlockListDetailInfo = n.getStringValue(); },
         "threatType": n => { analyzedEmailAttachment.threatType = n.getEnumValue<ThreatType>(ThreatTypeObject); },
     }
 }
@@ -8576,8 +8782,23 @@ export function deserializeIntoAnalyzedEmailDeliveryDetail(analyzedEmailDelivery
     return {
         "action": n => { analyzedEmailDeliveryDetail.action = n.getEnumValue<DeliveryAction>(DeliveryActionObject); },
         "backingStoreEnabled": n => { analyzedEmailDeliveryDetail.backingStoreEnabled = true; },
+        "latestThreats": n => { analyzedEmailDeliveryDetail.latestThreats = n.getStringValue(); },
         "location": n => { analyzedEmailDeliveryDetail.location = n.getEnumValue<DeliveryLocation>(DeliveryLocationObject); },
         "@odata.type": n => { analyzedEmailDeliveryDetail.odataType = n.getStringValue(); },
+        "originalThreats": n => { analyzedEmailDeliveryDetail.originalThreats = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAnalyzedEmailDlpRuleInfo(analyzedEmailDlpRuleInfo: Partial<AnalyzedEmailDlpRuleInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { analyzedEmailDlpRuleInfo.backingStoreEnabled = true; },
+        "name": n => { analyzedEmailDlpRuleInfo.name = n.getStringValue(); },
+        "@odata.type": n => { analyzedEmailDlpRuleInfo.odataType = n.getStringValue(); },
+        "ruleId": n => { analyzedEmailDlpRuleInfo.ruleId = n.getStringValue(); },
     }
 }
 /**
@@ -8598,12 +8819,31 @@ export function deserializeIntoAnalyzedEmailExchangeTransportRuleInfo(analyzedEm
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoAnalyzedEmailRecipientDetail(analyzedEmailRecipientDetail: Partial<AnalyzedEmailRecipientDetail> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { analyzedEmailRecipientDetail.backingStoreEnabled = true; },
+        "ccRecipients": n => { analyzedEmailRecipientDetail.ccRecipients = n.getCollectionOfPrimitiveValues<string>(); },
+        "domainName": n => { analyzedEmailRecipientDetail.domainName = n.getStringValue(); },
+        "@odata.type": n => { analyzedEmailRecipientDetail.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoAnalyzedEmailSenderDetail(analyzedEmailSenderDetail: Partial<AnalyzedEmailSenderDetail> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { analyzedEmailSenderDetail.backingStoreEnabled = true; },
+        "displayName": n => { analyzedEmailSenderDetail.displayName = n.getStringValue(); },
+        "domainCreationDateTime": n => { analyzedEmailSenderDetail.domainCreationDateTime = n.getDateValue(); },
+        "domainName": n => { analyzedEmailSenderDetail.domainName = n.getStringValue(); },
+        "domainOwner": n => { analyzedEmailSenderDetail.domainOwner = n.getStringValue(); },
         "fromAddress": n => { analyzedEmailSenderDetail.fromAddress = n.getStringValue(); },
         "ipv4": n => { analyzedEmailSenderDetail.ipv4 = n.getStringValue(); },
+        "location": n => { analyzedEmailSenderDetail.location = n.getStringValue(); },
         "mailFromAddress": n => { analyzedEmailSenderDetail.mailFromAddress = n.getStringValue(); },
+        "mailFromDomainName": n => { analyzedEmailSenderDetail.mailFromDomainName = n.getStringValue(); },
         "@odata.type": n => { analyzedEmailSenderDetail.odataType = n.getStringValue(); },
     }
 }
@@ -8618,6 +8858,7 @@ export function deserializeIntoAnalyzedEmailUrl(analyzedEmailUrl: Partial<Analyz
         "detectionMethod": n => { analyzedEmailUrl.detectionMethod = n.getStringValue(); },
         "detonationDetails": n => { analyzedEmailUrl.detonationDetails = n.getObjectValue<DetonationDetails>(createDetonationDetailsFromDiscriminatorValue); },
         "@odata.type": n => { analyzedEmailUrl.odataType = n.getStringValue(); },
+        "tenantAllowBlockListDetailInfo": n => { analyzedEmailUrl.tenantAllowBlockListDetailInfo = n.getStringValue(); },
         "threatType": n => { analyzedEmailUrl.threatType = n.getEnumValue<ThreatType>(ThreatTypeObject); },
         "url": n => { analyzedEmailUrl.url = n.getStringValue(); },
     }
@@ -9529,6 +9770,19 @@ export function deserializeIntoComplianceSupervisionExchangeAuditRecord(complian
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoCompromiseIndicator(compromiseIndicator: Partial<CompromiseIndicator> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { compromiseIndicator.backingStoreEnabled = true; },
+        "@odata.type": n => { compromiseIndicator.odataType = n.getStringValue(); },
+        "value": n => { compromiseIndicator.value = n.getStringValue(); },
+        "verdict": n => { compromiseIndicator.verdict = n.getEnumValue<VerdictCategory>(VerdictCategoryObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoConsumptionResourceAuditRecord(consumptionResourceAuditRecord: Partial<ConsumptionResourceAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(consumptionResourceAuditRecord),
@@ -9955,6 +10209,26 @@ export function deserializeIntoDetectionRuleCollectionResponse(detectionRuleColl
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoDetonationBehaviourDetails(detonationBehaviourDetails: Partial<DetonationBehaviourDetails> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "actionStatus": n => { detonationBehaviourDetails.actionStatus = n.getStringValue(); },
+        "backingStoreEnabled": n => { detonationBehaviourDetails.backingStoreEnabled = true; },
+        "behaviourCapability": n => { detonationBehaviourDetails.behaviourCapability = n.getStringValue(); },
+        "behaviourGroup": n => { detonationBehaviourDetails.behaviourGroup = n.getStringValue(); },
+        "details": n => { detonationBehaviourDetails.details = n.getStringValue(); },
+        "eventDateTime": n => { detonationBehaviourDetails.eventDateTime = n.getDateValue(); },
+        "@odata.type": n => { detonationBehaviourDetails.odataType = n.getStringValue(); },
+        "operation": n => { detonationBehaviourDetails.operation = n.getStringValue(); },
+        "processId": n => { detonationBehaviourDetails.processId = n.getStringValue(); },
+        "processName": n => { detonationBehaviourDetails.processName = n.getStringValue(); },
+        "target": n => { detonationBehaviourDetails.target = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoDetonationChain(detonationChain: Partial<DetonationChain> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { detonationChain.backingStoreEnabled = true; },
@@ -9972,8 +10246,11 @@ export function deserializeIntoDetonationDetails(detonationDetails: Partial<Deto
     return {
         "analysisDateTime": n => { detonationDetails.analysisDateTime = n.getDateValue(); },
         "backingStoreEnabled": n => { detonationDetails.backingStoreEnabled = true; },
+        "compromiseIndicators": n => { detonationDetails.compromiseIndicators = n.getCollectionOfObjectValues<CompromiseIndicator>(createCompromiseIndicatorFromDiscriminatorValue); },
+        "detonationBehaviourDetails": n => { detonationDetails.detonationBehaviourDetails = n.getObjectValue<DetonationBehaviourDetails>(createDetonationBehaviourDetailsFromDiscriminatorValue); },
         "detonationChain": n => { detonationDetails.detonationChain = n.getObjectValue<DetonationChain>(createDetonationChainFromDiscriminatorValue); },
         "detonationObservables": n => { detonationDetails.detonationObservables = n.getObjectValue<DetonationObservables>(createDetonationObservablesFromDiscriminatorValue); },
+        "detonationScreenshotUri": n => { detonationDetails.detonationScreenshotUri = n.getStringValue(); },
         "detonationVerdict": n => { detonationDetails.detonationVerdict = n.getStringValue(); },
         "detonationVerdictReason": n => { detonationDetails.detonationVerdictReason = n.getStringValue(); },
         "@odata.type": n => { detonationDetails.odataType = n.getStringValue(); },
@@ -14839,6 +15116,20 @@ export function deserializeIntoTenantAllowOrBlockListAction(tenantAllowOrBlockLi
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoThreatDetectionDetail(threatDetectionDetail: Partial<ThreatDetectionDetail> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { threatDetectionDetail.backingStoreEnabled = true; },
+        "confidenceLevel": n => { threatDetectionDetail.confidenceLevel = n.getStringValue(); },
+        "@odata.type": n => { threatDetectionDetail.odataType = n.getStringValue(); },
+        "priorityAccountProtection": n => { threatDetectionDetail.priorityAccountProtection = n.getStringValue(); },
+        "threats": n => { threatDetectionDetail.threats = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoThreatFinderAuditRecord(threatFinderAuditRecord: Partial<ThreatFinderAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(threatFinderAuditRecord),
@@ -14933,6 +15224,23 @@ export function deserializeIntoThreatSubmissionRoot(threatSubmissionRoot: Partia
         "emailThreatSubmissionPolicies": n => { threatSubmissionRoot.emailThreatSubmissionPolicies = n.getCollectionOfObjectValues<EmailThreatSubmissionPolicy>(createEmailThreatSubmissionPolicyFromDiscriminatorValue); },
         "fileThreats": n => { threatSubmissionRoot.fileThreats = n.getCollectionOfObjectValues<FileThreatSubmission>(createFileThreatSubmissionFromDiscriminatorValue); },
         "urlThreats": n => { threatSubmissionRoot.urlThreats = n.getCollectionOfObjectValues<UrlThreatSubmission>(createUrlThreatSubmissionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTimelineEvent(timelineEvent: Partial<TimelineEvent> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { timelineEvent.backingStoreEnabled = true; },
+        "eventDateTime": n => { timelineEvent.eventDateTime = n.getDateValue(); },
+        "eventDetails": n => { timelineEvent.eventDetails = n.getStringValue(); },
+        "eventResult": n => { timelineEvent.eventResult = n.getStringValue(); },
+        "eventSource": n => { timelineEvent.eventSource = n.getEnumValue<EventSource>(EventSourceObject); },
+        "eventThreats": n => { timelineEvent.eventThreats = n.getCollectionOfPrimitiveValues<string>(); },
+        "eventType": n => { timelineEvent.eventType = n.getEnumValue<TimelineEventType>(TimelineEventTypeObject); },
+        "@odata.type": n => { timelineEvent.odataType = n.getStringValue(); },
     }
 }
 /**
@@ -15576,6 +15884,56 @@ export interface DetectionRuleCollectionResponse extends BaseCollectionPaginatio
 }
 export type DetectionSource = (typeof DetectionSourceObject)[keyof typeof DetectionSourceObject];
 export type DetectionStatus = (typeof DetectionStatusObject)[keyof typeof DetectionStatusObject];
+export interface DetonationBehaviourDetails extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The actionStatus property
+     */
+    actionStatus?: string | null;
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The behaviourCapability property
+     */
+    behaviourCapability?: string | null;
+    /**
+     * The behaviourGroup property
+     */
+    behaviourGroup?: string | null;
+    /**
+     * The details property
+     */
+    details?: string | null;
+    /**
+     * The eventDateTime property
+     */
+    eventDateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The operation property
+     */
+    operation?: string | null;
+    /**
+     * The processId property
+     */
+    processId?: string | null;
+    /**
+     * The processName property
+     */
+    processName?: string | null;
+    /**
+     * The target property
+     */
+    target?: string | null;
+}
 export interface DetonationChain extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -15612,6 +15970,14 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     backingStoreEnabled?: boolean | null;
     /**
+     * The compromiseIndicators property
+     */
+    compromiseIndicators?: CompromiseIndicator[] | null;
+    /**
+     * The detonationBehaviourDetails property
+     */
+    detonationBehaviourDetails?: DetonationBehaviourDetails | null;
+    /**
      * The chain of detonation.
      */
     detonationChain?: DetonationChain | null;
@@ -15619,6 +15985,10 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      * All observables in the detonation tree.
      */
     detonationObservables?: DetonationObservables | null;
+    /**
+     * The detonationScreenshotUri property
+     */
+    detonationScreenshotUri?: string | null;
     /**
      * The verdict of the detonation.
      */
@@ -16874,6 +17244,7 @@ export interface EventQuery extends AdditionalDataHolder, BackedModel, Parsable 
      */
     queryType?: QueryType | null;
 }
+export type EventSource = (typeof EventSourceObject)[keyof typeof EventSourceObject];
 export type EventStatusType = (typeof EventStatusTypeObject)[keyof typeof EventStatusTypeObject];
 export type EvidenceRemediationStatus = (typeof EvidenceRemediationStatusObject)[keyof typeof EvidenceRemediationStatusObject];
 export type EvidenceRole = (typeof EvidenceRoleObject)[keyof typeof EvidenceRoleObject];
@@ -20284,15 +20655,18 @@ export function serializeAnalyzedEmail(writer: SerializationWriter, analyzedEmai
         serializeEntity(writer, analyzedEmail)
         writer.writeCollectionOfPrimitiveValues<string>("alertIds", analyzedEmail.alertIds);
         writer.writeCollectionOfObjectValues<AnalyzedEmailAttachment>("attachments", analyzedEmail.attachments, serializeAnalyzedEmailAttachment);
-        writer.writeNumberValue("attachmentsCount", analyzedEmail.attachmentsCount);
         writer.writeObjectValue<AnalyzedEmailAuthenticationDetail>("authenticationDetails", analyzedEmail.authenticationDetails, serializeAnalyzedEmailAuthenticationDetail);
         writer.writeStringValue("bulkComplaintLevel", analyzedEmail.bulkComplaintLevel);
+        writer.writeStringValue("clientType", analyzedEmail.clientType);
         writer.writeCollectionOfPrimitiveValues<string>("contexts", analyzedEmail.contexts);
         writer.writeCollectionOfPrimitiveValues<string>("detectionMethods", analyzedEmail.detectionMethods);
         writer.writeEnumValue<AntispamDirectionality>("directionality", analyzedEmail.directionality);
         writer.writeStringValue("distributionList", analyzedEmail.distributionList);
+        writer.writeCollectionOfObjectValues<AnalyzedEmailDlpRuleInfo>("dlpRules", analyzedEmail.dlpRules, serializeAnalyzedEmailDlpRuleInfo);
         writer.writeStringValue("emailClusterId", analyzedEmail.emailClusterId);
         writer.writeCollectionOfObjectValues<AnalyzedEmailExchangeTransportRuleInfo>("exchangeTransportRules", analyzedEmail.exchangeTransportRules, serializeAnalyzedEmailExchangeTransportRuleInfo);
+        writer.writeStringValue("forwardingDetail", analyzedEmail.forwardingDetail);
+        writer.writeStringValue("inboundConnectorFormattedName", analyzedEmail.inboundConnectorFormattedName);
         writer.writeStringValue("internetMessageId", analyzedEmail.internetMessageId);
         writer.writeStringValue("language", analyzedEmail.language);
         writer.writeObjectValue<AnalyzedEmailDeliveryDetail>("latestDelivery", analyzedEmail.latestDelivery, serializeAnalyzedEmailDeliveryDetail);
@@ -20303,16 +20677,20 @@ export function serializeAnalyzedEmail(writer: SerializationWriter, analyzedEmai
         writer.writeStringValue("phishConfidenceLevel", analyzedEmail.phishConfidenceLevel);
         writer.writeStringValue("policy", analyzedEmail.policy);
         writer.writeStringValue("policyAction", analyzedEmail.policyAction);
+        writer.writeStringValue("policyType", analyzedEmail.policyType);
+        writer.writeStringValue("primaryOverrideSource", analyzedEmail.primaryOverrideSource);
+        writer.writeObjectValue<AnalyzedEmailRecipientDetail>("recipientDetail", analyzedEmail.recipientDetail, serializeAnalyzedEmailRecipientDetail);
         writer.writeStringValue("recipientEmailAddress", analyzedEmail.recipientEmailAddress);
         writer.writeStringValue("returnPath", analyzedEmail.returnPath);
         writer.writeObjectValue<AnalyzedEmailSenderDetail>("senderDetail", analyzedEmail.senderDetail, serializeAnalyzedEmailSenderDetail);
         writer.writeNumberValue("sizeInBytes", analyzedEmail.sizeInBytes);
         writer.writeStringValue("spamConfidenceLevel", analyzedEmail.spamConfidenceLevel);
         writer.writeStringValue("subject", analyzedEmail.subject);
+        writer.writeCollectionOfObjectValues<ThreatDetectionDetail>("threatDetectionDetails", analyzedEmail.threatDetectionDetails, serializeThreatDetectionDetail);
         if(analyzedEmail.threatTypes)
         writer.writeEnumValue<ThreatType>("threatTypes", ...analyzedEmail.threatTypes);
+        writer.writeCollectionOfObjectValues<TimelineEvent>("timelineEvents", analyzedEmail.timelineEvents, serializeTimelineEvent);
         writer.writeCollectionOfObjectValues<AnalyzedEmailUrl>("urls", analyzedEmail.urls, serializeAnalyzedEmailUrl);
-        writer.writeNumberValue("urlsCount", analyzedEmail.urlsCount);
     }
 }
 /**
@@ -20323,11 +20701,14 @@ export function serializeAnalyzedEmail(writer: SerializationWriter, analyzedEmai
 export function serializeAnalyzedEmailAttachment(writer: SerializationWriter, analyzedEmailAttachment: Partial<AnalyzedEmailAttachment> | undefined | null = {}) : void {
     if (analyzedEmailAttachment) {
         writer.writeObjectValue<DetonationDetails>("detonationDetails", analyzedEmailAttachment.detonationDetails, serializeDetonationDetails);
+        writer.writeStringValue("fileExtension", analyzedEmailAttachment.fileExtension);
         writer.writeStringValue("fileName", analyzedEmailAttachment.fileName);
+        writer.writeNumberValue("fileSize", analyzedEmailAttachment.fileSize);
         writer.writeStringValue("fileType", analyzedEmailAttachment.fileType);
+        writer.writeStringValue("malwareFamily", analyzedEmailAttachment.malwareFamily);
         writer.writeStringValue("@odata.type", analyzedEmailAttachment.odataType);
         writer.writeStringValue("sha256", analyzedEmailAttachment.sha256);
-        writer.writeStringValue("threatName", analyzedEmailAttachment.threatName);
+        writer.writeStringValue("tenantAllowBlockListDetailInfo", analyzedEmailAttachment.tenantAllowBlockListDetailInfo);
         writer.writeEnumValue<ThreatType>("threatType", analyzedEmailAttachment.threatType);
         writer.writeAdditionalData(analyzedEmailAttachment.additionalData);
     }
@@ -20366,9 +20747,24 @@ export function serializeAnalyzedEmailCollectionResponse(writer: SerializationWr
 export function serializeAnalyzedEmailDeliveryDetail(writer: SerializationWriter, analyzedEmailDeliveryDetail: Partial<AnalyzedEmailDeliveryDetail> | undefined | null = {}) : void {
     if (analyzedEmailDeliveryDetail) {
         writer.writeEnumValue<DeliveryAction>("action", analyzedEmailDeliveryDetail.action);
+        writer.writeStringValue("latestThreats", analyzedEmailDeliveryDetail.latestThreats);
         writer.writeEnumValue<DeliveryLocation>("location", analyzedEmailDeliveryDetail.location);
         writer.writeStringValue("@odata.type", analyzedEmailDeliveryDetail.odataType);
+        writer.writeStringValue("originalThreats", analyzedEmailDeliveryDetail.originalThreats);
         writer.writeAdditionalData(analyzedEmailDeliveryDetail.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAnalyzedEmailDlpRuleInfo(writer: SerializationWriter, analyzedEmailDlpRuleInfo: Partial<AnalyzedEmailDlpRuleInfo> | undefined | null = {}) : void {
+    if (analyzedEmailDlpRuleInfo) {
+        writer.writeStringValue("name", analyzedEmailDlpRuleInfo.name);
+        writer.writeStringValue("@odata.type", analyzedEmailDlpRuleInfo.odataType);
+        writer.writeStringValue("ruleId", analyzedEmailDlpRuleInfo.ruleId);
+        writer.writeAdditionalData(analyzedEmailDlpRuleInfo.additionalData);
     }
 }
 /**
@@ -20389,11 +20785,30 @@ export function serializeAnalyzedEmailExchangeTransportRuleInfo(writer: Serializ
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeAnalyzedEmailRecipientDetail(writer: SerializationWriter, analyzedEmailRecipientDetail: Partial<AnalyzedEmailRecipientDetail> | undefined | null = {}) : void {
+    if (analyzedEmailRecipientDetail) {
+        writer.writeCollectionOfPrimitiveValues<string>("ccRecipients", analyzedEmailRecipientDetail.ccRecipients);
+        writer.writeStringValue("domainName", analyzedEmailRecipientDetail.domainName);
+        writer.writeStringValue("@odata.type", analyzedEmailRecipientDetail.odataType);
+        writer.writeAdditionalData(analyzedEmailRecipientDetail.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeAnalyzedEmailSenderDetail(writer: SerializationWriter, analyzedEmailSenderDetail: Partial<AnalyzedEmailSenderDetail> | undefined | null = {}) : void {
     if (analyzedEmailSenderDetail) {
+        writer.writeStringValue("displayName", analyzedEmailSenderDetail.displayName);
+        writer.writeDateValue("domainCreationDateTime", analyzedEmailSenderDetail.domainCreationDateTime);
+        writer.writeStringValue("domainName", analyzedEmailSenderDetail.domainName);
+        writer.writeStringValue("domainOwner", analyzedEmailSenderDetail.domainOwner);
         writer.writeStringValue("fromAddress", analyzedEmailSenderDetail.fromAddress);
         writer.writeStringValue("ipv4", analyzedEmailSenderDetail.ipv4);
+        writer.writeStringValue("location", analyzedEmailSenderDetail.location);
         writer.writeStringValue("mailFromAddress", analyzedEmailSenderDetail.mailFromAddress);
+        writer.writeStringValue("mailFromDomainName", analyzedEmailSenderDetail.mailFromDomainName);
         writer.writeStringValue("@odata.type", analyzedEmailSenderDetail.odataType);
         writer.writeAdditionalData(analyzedEmailSenderDetail.additionalData);
     }
@@ -20408,6 +20823,7 @@ export function serializeAnalyzedEmailUrl(writer: SerializationWriter, analyzedE
         writer.writeStringValue("detectionMethod", analyzedEmailUrl.detectionMethod);
         writer.writeObjectValue<DetonationDetails>("detonationDetails", analyzedEmailUrl.detonationDetails, serializeDetonationDetails);
         writer.writeStringValue("@odata.type", analyzedEmailUrl.odataType);
+        writer.writeStringValue("tenantAllowBlockListDetailInfo", analyzedEmailUrl.tenantAllowBlockListDetailInfo);
         writer.writeEnumValue<ThreatType>("threatType", analyzedEmailUrl.threatType);
         writer.writeStringValue("url", analyzedEmailUrl.url);
         writer.writeAdditionalData(analyzedEmailUrl.additionalData);
@@ -21323,6 +21739,19 @@ export function serializeComplianceSupervisionExchangeAuditRecord(writer: Serial
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeCompromiseIndicator(writer: SerializationWriter, compromiseIndicator: Partial<CompromiseIndicator> | undefined | null = {}) : void {
+    if (compromiseIndicator) {
+        writer.writeStringValue("@odata.type", compromiseIndicator.odataType);
+        writer.writeStringValue("value", compromiseIndicator.value);
+        writer.writeEnumValue<VerdictCategory>("verdict", compromiseIndicator.verdict);
+        writer.writeAdditionalData(compromiseIndicator.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeConsumptionResourceAuditRecord(writer: SerializationWriter, consumptionResourceAuditRecord: Partial<ConsumptionResourceAuditRecord> | undefined | null = {}) : void {
     if (consumptionResourceAuditRecord) {
         serializeAuditData(writer, consumptionResourceAuditRecord)
@@ -21749,6 +22178,26 @@ export function serializeDetectionRuleCollectionResponse(writer: SerializationWr
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeDetonationBehaviourDetails(writer: SerializationWriter, detonationBehaviourDetails: Partial<DetonationBehaviourDetails> | undefined | null = {}) : void {
+    if (detonationBehaviourDetails) {
+        writer.writeStringValue("actionStatus", detonationBehaviourDetails.actionStatus);
+        writer.writeStringValue("behaviourCapability", detonationBehaviourDetails.behaviourCapability);
+        writer.writeStringValue("behaviourGroup", detonationBehaviourDetails.behaviourGroup);
+        writer.writeStringValue("details", detonationBehaviourDetails.details);
+        writer.writeDateValue("eventDateTime", detonationBehaviourDetails.eventDateTime);
+        writer.writeStringValue("@odata.type", detonationBehaviourDetails.odataType);
+        writer.writeStringValue("operation", detonationBehaviourDetails.operation);
+        writer.writeStringValue("processId", detonationBehaviourDetails.processId);
+        writer.writeStringValue("processName", detonationBehaviourDetails.processName);
+        writer.writeStringValue("target", detonationBehaviourDetails.target);
+        writer.writeAdditionalData(detonationBehaviourDetails.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeDetonationChain(writer: SerializationWriter, detonationChain: Partial<DetonationChain> | undefined | null = {}) : void {
     if (detonationChain) {
         writer.writeCollectionOfObjectValues<DetonationChain>("childNodes", detonationChain.childNodes, serializeDetonationChain);
@@ -21765,8 +22214,11 @@ export function serializeDetonationChain(writer: SerializationWriter, detonation
 export function serializeDetonationDetails(writer: SerializationWriter, detonationDetails: Partial<DetonationDetails> | undefined | null = {}) : void {
     if (detonationDetails) {
         writer.writeDateValue("analysisDateTime", detonationDetails.analysisDateTime);
+        writer.writeCollectionOfObjectValues<CompromiseIndicator>("compromiseIndicators", detonationDetails.compromiseIndicators, serializeCompromiseIndicator);
+        writer.writeObjectValue<DetonationBehaviourDetails>("detonationBehaviourDetails", detonationDetails.detonationBehaviourDetails, serializeDetonationBehaviourDetails);
         writer.writeObjectValue<DetonationChain>("detonationChain", detonationDetails.detonationChain, serializeDetonationChain);
         writer.writeObjectValue<DetonationObservables>("detonationObservables", detonationDetails.detonationObservables, serializeDetonationObservables);
+        writer.writeStringValue("detonationScreenshotUri", detonationDetails.detonationScreenshotUri);
         writer.writeStringValue("detonationVerdict", detonationDetails.detonationVerdict);
         writer.writeStringValue("detonationVerdictReason", detonationDetails.detonationVerdictReason);
         writer.writeStringValue("@odata.type", detonationDetails.odataType);
@@ -26633,6 +27085,20 @@ export function serializeTenantAllowOrBlockListAction(writer: SerializationWrite
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeThreatDetectionDetail(writer: SerializationWriter, threatDetectionDetail: Partial<ThreatDetectionDetail> | undefined | null = {}) : void {
+    if (threatDetectionDetail) {
+        writer.writeStringValue("confidenceLevel", threatDetectionDetail.confidenceLevel);
+        writer.writeStringValue("@odata.type", threatDetectionDetail.odataType);
+        writer.writeStringValue("priorityAccountProtection", threatDetectionDetail.priorityAccountProtection);
+        writer.writeStringValue("threats", threatDetectionDetail.threats);
+        writer.writeAdditionalData(threatDetectionDetail.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeThreatFinderAuditRecord(writer: SerializationWriter, threatFinderAuditRecord: Partial<ThreatFinderAuditRecord> | undefined | null = {}) : void {
     if (threatFinderAuditRecord) {
         serializeAuditData(writer, threatFinderAuditRecord)
@@ -26727,6 +27193,23 @@ export function serializeThreatSubmissionRoot(writer: SerializationWriter, threa
         writer.writeCollectionOfObjectValues<EmailThreatSubmissionPolicy>("emailThreatSubmissionPolicies", threatSubmissionRoot.emailThreatSubmissionPolicies, serializeEmailThreatSubmissionPolicy);
         writer.writeCollectionOfObjectValues<FileThreatSubmission>("fileThreats", threatSubmissionRoot.fileThreats, serializeFileThreatSubmission);
         writer.writeCollectionOfObjectValues<UrlThreatSubmission>("urlThreats", threatSubmissionRoot.urlThreats, serializeUrlThreatSubmission);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTimelineEvent(writer: SerializationWriter, timelineEvent: Partial<TimelineEvent> | undefined | null = {}) : void {
+    if (timelineEvent) {
+        writer.writeDateValue("eventDateTime", timelineEvent.eventDateTime);
+        writer.writeStringValue("eventDetails", timelineEvent.eventDetails);
+        writer.writeStringValue("eventResult", timelineEvent.eventResult);
+        writer.writeEnumValue<EventSource>("eventSource", timelineEvent.eventSource);
+        writer.writeCollectionOfPrimitiveValues<string>("eventThreats", timelineEvent.eventThreats);
+        writer.writeEnumValue<TimelineEventType>("eventType", timelineEvent.eventType);
+        writer.writeStringValue("@odata.type", timelineEvent.odataType);
+        writer.writeAdditionalData(timelineEvent.additionalData);
     }
 }
 /**
@@ -27802,6 +28285,32 @@ export interface TenantAllowOrBlockListAction extends AdditionalDataHolder, Back
      */
     results?: TenantAllowBlockListEntryResult[] | null;
 }
+export interface ThreatDetectionDetail extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The confidenceLevel property
+     */
+    confidenceLevel?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The priorityAccountProtection property
+     */
+    priorityAccountProtection?: string | null;
+    /**
+     * The threats property
+     */
+    threats?: string | null;
+}
 export interface ThreatFinderAuditRecord extends AuditData, Parsable {
 }
 export interface ThreatIntelligence extends Entity, Parsable {
@@ -27941,6 +28450,45 @@ export interface ThreatSubmissionRoot extends Entity, Parsable {
     urlThreats?: UrlThreatSubmission[] | null;
 }
 export type ThreatType = (typeof ThreatTypeObject)[keyof typeof ThreatTypeObject];
+export interface TimelineEvent extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The eventDateTime property
+     */
+    eventDateTime?: Date | null;
+    /**
+     * The eventDetails property
+     */
+    eventDetails?: string | null;
+    /**
+     * The eventResult property
+     */
+    eventResult?: string | null;
+    /**
+     * The eventSource property
+     */
+    eventSource?: EventSource | null;
+    /**
+     * The eventThreats property
+     */
+    eventThreats?: string[] | null;
+    /**
+     * The eventType property
+     */
+    eventType?: TimelineEventType | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export type TimelineEventType = (typeof TimelineEventTypeObject)[keyof typeof TimelineEventTypeObject];
 export interface TodoAuditRecord extends AuditData, Parsable {
 }
 export interface TopicModelingSettings extends AdditionalDataHolder, BackedModel, Parsable {
@@ -28118,6 +28666,7 @@ export interface UserSourceCollectionResponse extends BaseCollectionPaginationCo
 }
 export interface UserTrainingAuditRecord extends AuditData, Parsable {
 }
+export type VerdictCategory = (typeof VerdictCategoryObject)[keyof typeof VerdictCategoryObject];
 export interface VfamBasePolicyAuditRecord extends AuditData, Parsable {
 }
 export interface VfamCreatePolicyAuditRecord extends AuditData, Parsable {
@@ -29181,6 +29730,12 @@ export const EventPropagationStatusObject = {
     Success: "success",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const EventSourceObject = {
+    System: "system",
+    Admin: "admin",
+    User: "user",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const EventStatusTypeObject = {
     Pending: "pending",
     ErrorEscaped: "error",
@@ -29770,6 +30325,18 @@ export const ThreatTypeObject = {
     None: "none",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const TimelineEventTypeObject = {
+    OriginalDelivery: "originalDelivery",
+    SystemTimeTravel: "systemTimeTravel",
+    DynamicDelivery: "dynamicDelivery",
+    UserUrlClick: "userUrlClick",
+    Reprocessed: "reprocessed",
+    Zap: "zap",
+    QuarantineRelease: "quarantineRelease",
+    Air: "air",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const TrafficTypeObject = {
     DownloadedBytes: "downloadedBytes",
     UploadedBytes: "uploadedBytes",
@@ -29816,6 +30383,18 @@ export const UserMailboxSettingObject = {
     PriorSeenPass: "priorSeenPass",
     SenderAuthenticationSucceeded: "senderAuthenticationSucceeded",
     IsJunkMailRuleEnabled: "isJunkMailRuleEnabled",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const VerdictCategoryObject = {
+    None: "none",
+    Malware: "malware",
+    Phish: "phish",
+    SiteUnavailable: "siteUnavailable",
+    Spam: "spam",
+    DecryptionFailed: "decryptionFailed",
+    UnsupportedUriScheme: "unsupportedUriScheme",
+    UnsupportedFileType: "unsupportedFileType",
+    Undefined: "undefined",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const VmCloudProviderObject = {

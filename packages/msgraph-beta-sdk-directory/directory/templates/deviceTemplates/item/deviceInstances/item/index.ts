@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemRequestBuilder> {
     /**
-     * Get deviceInstances from directory
+     * Collection of device objects created based on this template.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Device>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceItemRequestBuilderGetQueryParameters> | undefined) : Promise<Device | undefined>;
     /**
-     * Get deviceInstances from directory
+     * Collection of device objects created based on this template.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get deviceInstances from directory
+ * Collection of device objects created based on this template.
  */
 export interface DeviceItemRequestBuilderGetQueryParameters {
     /**

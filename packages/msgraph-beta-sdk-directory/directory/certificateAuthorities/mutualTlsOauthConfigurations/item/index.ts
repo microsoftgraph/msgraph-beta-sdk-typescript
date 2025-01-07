@@ -19,18 +19,20 @@ export interface MutualTlsOauthConfigurationItemRequestBuilder extends BaseReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get mutualTlsOauthConfigurations from directory
+     * Get the properties and relationships of the specified mutualTlsOauthConfiguration resource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MutualTlsOauthConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/mutualtlsoauthconfiguration-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters> | undefined) : Promise<MutualTlsOauthConfiguration | undefined>;
     /**
-     * Update the navigation property mutualTlsOauthConfigurations in directory
+     * Update the specified mutualTlsOauthConfiguration resource. You can only update the following two properties: displayName, certificateAuthority. To update a subset of objects in the certificateAuthorities collection, first get the complete list, make your modifications, and then repost the entire contents of the certificateAuthorities attribute list in the request body. Excluding a subset of objects removes them from the collection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MutualTlsOauthConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/mutualtlsoauthconfiguration-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: MutualTlsOauthConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MutualTlsOauthConfiguration | undefined>;
     /**
@@ -40,13 +42,13 @@ export interface MutualTlsOauthConfigurationItemRequestBuilder extends BaseReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get mutualTlsOauthConfigurations from directory
+     * Get the properties and relationships of the specified mutualTlsOauthConfiguration resource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property mutualTlsOauthConfigurations in directory
+     * Update the specified mutualTlsOauthConfiguration resource. You can only update the following two properties: displayName, certificateAuthority. To update a subset of objects in the certificateAuthorities collection, first get the complete list, make your modifications, and then repost the entire contents of the certificateAuthorities attribute list in the request body. Excluding a subset of objects removes them from the collection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +56,7 @@ export interface MutualTlsOauthConfigurationItemRequestBuilder extends BaseReque
      toPatchRequestInformation(body: MutualTlsOauthConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get mutualTlsOauthConfigurations from directory
+ * Get the properties and relationships of the specified mutualTlsOauthConfiguration resource.
  */
 export interface MutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters {
     /**

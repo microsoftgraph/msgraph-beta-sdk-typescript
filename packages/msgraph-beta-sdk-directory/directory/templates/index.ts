@@ -25,7 +25,7 @@ export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get templates from directory
+     * A container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Template>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get templates from directory
+     * A container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesReq
      toPatchRequestInformation(body: Template, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get templates from directory
+ * A container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
  */
 export interface TemplatesRequestBuilderGetQueryParameters {
     /**

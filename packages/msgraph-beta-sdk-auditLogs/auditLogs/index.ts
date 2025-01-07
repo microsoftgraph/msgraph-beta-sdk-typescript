@@ -16,6 +16,8 @@ import { ProvisioningRequestBuilderNavigationMetadata, ProvisioningRequestBuilde
 // @ts-ignore
 import { SignInsRequestBuilderNavigationMetadata, SignInsRequestBuilderRequestsMetadata, type SignInsRequestBuilder } from './signIns/index.js';
 // @ts-ignore
+import { SignUpsRequestBuilderNavigationMetadata, SignUpsRequestBuilderRequestsMetadata, type SignUpsRequestBuilder } from './signUps/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -42,6 +44,10 @@ export interface AuditLogsRequestBuilder extends BaseRequestBuilder<AuditLogsReq
      * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
      */
     get signIns(): SignInsRequestBuilder;
+    /**
+     * Provides operations to manage the signUps property of the microsoft.graph.auditLogRoot entity.
+     */
+    get signUps(): SignUpsRequestBuilder;
     /**
      * Get auditLogs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -118,6 +124,10 @@ export const AuditLogsRequestBuilderNavigationMetadata: Record<Exclude<keyof Aud
     signIns: {
         requestsMetadata: SignInsRequestBuilderRequestsMetadata,
         navigationMetadata: SignInsRequestBuilderNavigationMetadata,
+    },
+    signUps: {
+        requestsMetadata: SignUpsRequestBuilderRequestsMetadata,
+        navigationMetadata: SignUpsRequestBuilderNavigationMetadata,
     },
 };
 /**
