@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-governanceroleassignments",
-  "version": "1.0.0-preview.32",
+  "version": "1.0.0-preview.33",
   "description": "GovernanceRoleAssignments fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
