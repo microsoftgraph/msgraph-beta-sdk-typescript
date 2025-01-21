@@ -68,9 +68,9 @@ export interface ApplicableContentDeviceMatchCollectionResponse extends BaseColl
 }
 export interface AzureADDevice extends Parsable, UpdatableAsset {
     /**
-     * Specifies areas in which the device is enrolled. Read-only. Returned by default.
+     * The enrollment property
      */
-    enrollments?: UpdatableAssetEnrollment[] | null;
+    enrollment?: UpdateManagementEnrollment | null;
     /**
      * Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
      */
@@ -931,26 +931,6 @@ export function createUpdatableAssetCollectionResponseFromDiscriminatorValue(par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {UpdatableAssetEnrollment}
- */
-// @ts-ignore
-export function createUpdatableAssetEnrollmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    if(!parseNode) throw new Error("parseNode cannot be undefined");
-    const mappingValueNode = parseNode?.getChildNode("@odata.type");
-    if (mappingValueNode) {
-        const mappingValue = mappingValueNode.getStringValue();
-        if (mappingValue) {
-            switch (mappingValue) {
-                case "#microsoft.graph.windowsUpdates.updateManagementEnrollment":
-                    return deserializeIntoUpdateManagementEnrollment;
-            }
-        }
-    }
-    return deserializeIntoUpdatableAssetEnrollment;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdatableAssetError}
  */
 // @ts-ignore
@@ -998,6 +978,15 @@ export function createUpdatableAssetFromDiscriminatorValue(parseNode: ParseNode 
 // @ts-ignore
 export function createUpdatableAssetGroupFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdatableAssetGroup;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UpdateCategoryEnrollmentInformation}
+ */
+// @ts-ignore
+export function createUpdateCategoryEnrollmentInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUpdateCategoryEnrollmentInformation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1289,7 +1278,7 @@ export function deserializeIntoApplicableContentDeviceMatchCollectionResponse(ap
 export function deserializeIntoAzureADDevice(azureADDevice: Partial<AzureADDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoUpdatableAsset(azureADDevice),
-        "enrollments": n => { azureADDevice.enrollments = n.getCollectionOfObjectValues<UpdatableAssetEnrollment>(createUpdatableAssetEnrollmentFromDiscriminatorValue); },
+        "enrollment": n => { azureADDevice.enrollment = n.getObjectValue<UpdateManagementEnrollment>(createUpdateManagementEnrollmentFromDiscriminatorValue); },
         "errors": n => { azureADDevice.errors = n.getCollectionOfObjectValues<UpdatableAssetError>(createUpdatableAssetErrorFromDiscriminatorValue); },
     }
 }
@@ -2021,17 +2010,6 @@ export function deserializeIntoUpdatableAssetCollectionResponse(updatableAssetCo
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
-export function deserializeIntoUpdatableAssetEnrollment(updatableAssetEnrollment: Partial<UpdatableAssetEnrollment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { updatableAssetEnrollment.backingStoreEnabled = true; },
-        "@odata.type": n => { updatableAssetEnrollment.odataType = n.getStringValue(); },
-    }
-}
-/**
- * The deserialization information for the current model
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
 export function deserializeIntoUpdatableAssetError(updatableAssetError: Partial<UpdatableAssetError> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updatableAssetError.backingStoreEnabled = true; },
@@ -2054,10 +2032,26 @@ export function deserializeIntoUpdatableAssetGroup(updatableAssetGroup: Partial<
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoUpdateCategoryEnrollmentInformation(updateCategoryEnrollmentInformation: Partial<UpdateCategoryEnrollmentInformation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { updateCategoryEnrollmentInformation.backingStoreEnabled = true; },
+        "enrollmentState": n => { updateCategoryEnrollmentInformation.enrollmentState = n.getEnumValue<EnrollmentState>(EnrollmentStateObject); },
+        "lastModifiedDateTime": n => { updateCategoryEnrollmentInformation.lastModifiedDateTime = n.getDateValue(); },
+        "@odata.type": n => { updateCategoryEnrollmentInformation.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoUpdateManagementEnrollment(updateManagementEnrollment: Partial<UpdateManagementEnrollment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoUpdatableAssetEnrollment(updateManagementEnrollment),
-        "updateCategory": n => { updateManagementEnrollment.updateCategory = n.getEnumValue<UpdateCategory>(UpdateCategoryObject); },
+        "backingStoreEnabled": n => { updateManagementEnrollment.backingStoreEnabled = true; },
+        "driver": n => { updateManagementEnrollment.driver = n.getObjectValue<UpdateCategoryEnrollmentInformation>(createUpdateCategoryEnrollmentInformationFromDiscriminatorValue); },
+        "feature": n => { updateManagementEnrollment.feature = n.getObjectValue<UpdateCategoryEnrollmentInformation>(createUpdateCategoryEnrollmentInformationFromDiscriminatorValue); },
+        "@odata.type": n => { updateManagementEnrollment.odataType = n.getStringValue(); },
+        "quality": n => { updateManagementEnrollment.quality = n.getObjectValue<UpdateCategoryEnrollmentInformation>(createUpdateCategoryEnrollmentInformationFromDiscriminatorValue); },
     }
 }
 /**
@@ -2184,6 +2178,7 @@ export interface EditionCollectionResponse extends BaseCollectionPaginationCount
      */
     value?: Edition[] | null;
 }
+export type EnrollmentState = (typeof EnrollmentStateObject)[keyof typeof EnrollmentStateObject];
 export interface ExpediteSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -2672,7 +2667,7 @@ export function serializeApplicableContentDeviceMatchCollectionResponse(writer: 
 export function serializeAzureADDevice(writer: SerializationWriter, azureADDevice: Partial<AzureADDevice> | undefined | null = {}) : void {
     if (azureADDevice) {
         serializeUpdatableAsset(writer, azureADDevice)
-        writer.writeCollectionOfObjectValues<UpdatableAssetEnrollment>("enrollments", azureADDevice.enrollments, serializeUpdatableAssetEnrollment);
+        writer.writeObjectValue<UpdateManagementEnrollment>("enrollment", azureADDevice.enrollment, serializeUpdateManagementEnrollment);
         writer.writeCollectionOfObjectValues<UpdatableAssetError>("errors", azureADDevice.errors, serializeUpdatableAssetError);
     }
 }
@@ -3404,17 +3399,6 @@ export function serializeUpdatableAssetCollectionResponse(writer: SerializationW
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdatableAssetEnrollment(writer: SerializationWriter, updatableAssetEnrollment: Partial<UpdatableAssetEnrollment> | undefined | null = {}) : void {
-    if (updatableAssetEnrollment) {
-        writer.writeStringValue("@odata.type", updatableAssetEnrollment.odataType);
-        writer.writeAdditionalData(updatableAssetEnrollment.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
 export function serializeUpdatableAssetError(writer: SerializationWriter, updatableAssetError: Partial<UpdatableAssetError> | undefined | null = {}) : void {
     if (updatableAssetError) {
         writer.writeStringValue("@odata.type", updatableAssetError.odataType);
@@ -3437,10 +3421,26 @@ export function serializeUpdatableAssetGroup(writer: SerializationWriter, updata
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeUpdateCategoryEnrollmentInformation(writer: SerializationWriter, updateCategoryEnrollmentInformation: Partial<UpdateCategoryEnrollmentInformation> | undefined | null = {}) : void {
+    if (updateCategoryEnrollmentInformation) {
+        writer.writeEnumValue<EnrollmentState>("enrollmentState", updateCategoryEnrollmentInformation.enrollmentState);
+        writer.writeDateValue("lastModifiedDateTime", updateCategoryEnrollmentInformation.lastModifiedDateTime);
+        writer.writeStringValue("@odata.type", updateCategoryEnrollmentInformation.odataType);
+        writer.writeAdditionalData(updateCategoryEnrollmentInformation.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeUpdateManagementEnrollment(writer: SerializationWriter, updateManagementEnrollment: Partial<UpdateManagementEnrollment> | undefined | null = {}) : void {
     if (updateManagementEnrollment) {
-        serializeUpdatableAssetEnrollment(writer, updateManagementEnrollment)
-        writer.writeEnumValue<UpdateCategory>("updateCategory", updateManagementEnrollment.updateCategory);
+        writer.writeObjectValue<UpdateCategoryEnrollmentInformation>("driver", updateManagementEnrollment.driver, serializeUpdateCategoryEnrollmentInformation);
+        writer.writeObjectValue<UpdateCategoryEnrollmentInformation>("feature", updateManagementEnrollment.feature, serializeUpdateCategoryEnrollmentInformation);
+        writer.writeStringValue("@odata.type", updateManagementEnrollment.odataType);
+        writer.writeObjectValue<UpdateCategoryEnrollmentInformation>("quality", updateManagementEnrollment.quality, serializeUpdateCategoryEnrollmentInformation);
+        writer.writeAdditionalData(updateManagementEnrollment.additionalData);
     }
 }
 /**
@@ -3531,20 +3531,6 @@ export interface UpdatableAssetCollectionResponse extends BaseCollectionPaginati
      */
     value?: UpdatableAsset[] | null;
 }
-export interface UpdatableAssetEnrollment extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-}
 export interface UpdatableAssetError extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -3566,11 +3552,53 @@ export interface UpdatableAssetGroup extends Parsable, UpdatableAsset {
     members?: UpdatableAsset[] | null;
 }
 export type UpdateCategory = (typeof UpdateCategoryObject)[keyof typeof UpdateCategoryObject];
-export interface UpdateManagementEnrollment extends Parsable, UpdatableAssetEnrollment {
+export interface UpdateCategoryEnrollmentInformation extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The updateCategory property
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
-    updateCategory?: UpdateCategory | null;
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The enrollmentState property
+     */
+    enrollmentState?: EnrollmentState | null;
+    /**
+     * The lastModifiedDateTime property
+     */
+    lastModifiedDateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface UpdateManagementEnrollment extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The driver property
+     */
+    driver?: UpdateCategoryEnrollmentInformation | null;
+    /**
+     * The feature property
+     */
+    feature?: UpdateCategoryEnrollmentInformation | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The quality property
+     */
+    quality?: UpdateCategoryEnrollmentInformation | null;
 }
 export interface UpdatePolicy extends Entity, Parsable {
     /**
@@ -3661,6 +3689,14 @@ export const DeploymentStateValueObject = {
     Paused: "paused",
     Faulted: "faulted",
     Archived: "archived",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const EnrollmentStateObject = {
+    NotEnrolled: "notEnrolled",
+    Enrolled: "enrolled",
+    EnrolledWithPolicy: "enrolledWithPolicy",
+    Enrolling: "enrolling",
+    Unenrolling: "unenrolling",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const MonitoringActionObject = {

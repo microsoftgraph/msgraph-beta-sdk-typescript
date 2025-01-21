@@ -35,12 +35,12 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlowCollectionResponse | undefined>;
     /**
-     * Create a new inboundApiFlow object.
+     * Create a new inboundFileFlow object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InboundFlow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-post?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-beta|Find more info here}
      */
      post(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InboundFlow | undefined>;
     /**
@@ -50,7 +50,7 @@ export interface InboundFlowsRequestBuilder extends BaseRequestBuilder<InboundFl
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new inboundApiFlow object.
+     * Create a new inboundFileFlow object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

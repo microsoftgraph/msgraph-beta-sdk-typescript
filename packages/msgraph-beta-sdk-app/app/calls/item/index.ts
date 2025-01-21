@@ -38,6 +38,14 @@ import { RejectRequestBuilderRequestsMetadata, type RejectRequestBuilder } from 
 // @ts-ignore
 import { SendDtmfTonesRequestBuilderRequestsMetadata, type SendDtmfTonesRequestBuilder } from './sendDtmfTones/index.js';
 // @ts-ignore
+import { StartRecordingRequestBuilderRequestsMetadata, type StartRecordingRequestBuilder } from './startRecording/index.js';
+// @ts-ignore
+import { StartTranscriptionRequestBuilderRequestsMetadata, type StartTranscriptionRequestBuilder } from './startTranscription/index.js';
+// @ts-ignore
+import { StopRecordingRequestBuilderRequestsMetadata, type StopRecordingRequestBuilder } from './stopRecording/index.js';
+// @ts-ignore
+import { StopTranscriptionRequestBuilderRequestsMetadata, type StopTranscriptionRequestBuilder } from './stopTranscription/index.js';
+// @ts-ignore
 import { SubscribeToToneRequestBuilderRequestsMetadata, type SubscribeToToneRequestBuilder } from './subscribeToTone/index.js';
 // @ts-ignore
 import { TransferRequestBuilderRequestsMetadata, type TransferRequestBuilder } from './transfer/index.js';
@@ -116,6 +124,22 @@ export interface CallItemRequestBuilder extends BaseRequestBuilder<CallItemReque
      * Provides operations to call the sendDtmfTones method.
      */
     get sendDtmfTones(): SendDtmfTonesRequestBuilder;
+    /**
+     * Provides operations to call the startRecording method.
+     */
+    get startRecording(): StartRecordingRequestBuilder;
+    /**
+     * Provides operations to call the startTranscription method.
+     */
+    get startTranscription(): StartTranscriptionRequestBuilder;
+    /**
+     * Provides operations to call the stopRecording method.
+     */
+    get stopRecording(): StopRecordingRequestBuilder;
+    /**
+     * Provides operations to call the stopTranscription method.
+     */
+    get stopTranscription(): StopTranscriptionRequestBuilder;
     /**
      * Provides operations to call the subscribeToTone method.
      */
@@ -252,6 +276,18 @@ export const CallItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Call
     },
     sendDtmfTones: {
         requestsMetadata: SendDtmfTonesRequestBuilderRequestsMetadata,
+    },
+    startRecording: {
+        requestsMetadata: StartRecordingRequestBuilderRequestsMetadata,
+    },
+    startTranscription: {
+        requestsMetadata: StartTranscriptionRequestBuilderRequestsMetadata,
+    },
+    stopRecording: {
+        requestsMetadata: StopRecordingRequestBuilderRequestsMetadata,
+    },
+    stopTranscription: {
+        requestsMetadata: StopTranscriptionRequestBuilderRequestsMetadata,
     },
     subscribeToTone: {
         requestsMetadata: SubscribeToToneRequestBuilderRequestsMetadata,

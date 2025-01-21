@@ -160,7 +160,7 @@ export interface Alert extends Entity, Parsable {
      */
     description?: string | null;
     /**
-     * Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
+     * Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
      */
     detectionSource?: DetectionSource | null;
     /**
@@ -1284,7 +1284,7 @@ export interface CaseInvestigation extends AuditData, Parsable {
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
-     * The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
+     * The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
      */
     action?: CaseAction | null;
     /**
@@ -4033,6 +4033,15 @@ export function createEdiscoveryCaseCollectionResponseFromDiscriminatorValue(par
 // @ts-ignore
 export function createEdiscoveryCaseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEdiscoveryCase;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EdiscoveryCaseMember}
+ */
+// @ts-ignore
+export function createEdiscoveryCaseMemberFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEdiscoveryCaseMember;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -10648,6 +10657,19 @@ export function deserializeIntoEdiscoveryCaseCollectionResponse(ediscoveryCaseCo
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoEdiscoveryCaseMember(ediscoveryCaseMember: Partial<EdiscoveryCaseMember> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(ediscoveryCaseMember),
+        "displayName": n => { ediscoveryCaseMember.displayName = n.getStringValue(); },
+        "recipientType": n => { ediscoveryCaseMember.recipientType = n.getCollectionOfEnumValues<RecipientType>(RecipientTypeObject); },
+        "smtpAddress": n => { ediscoveryCaseMember.smtpAddress = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoEdiscoveryCaseSettings(ediscoveryCaseSettings: Partial<EdiscoveryCaseSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(ediscoveryCaseSettings),
@@ -16729,6 +16751,20 @@ export interface EdiscoveryCaseCollectionResponse extends BaseCollectionPaginati
      */
     value?: EdiscoveryCase[] | null;
 }
+export interface EdiscoveryCaseMember extends Entity, Parsable {
+    /**
+     * The displayName property
+     */
+    displayName?: string | null;
+    /**
+     * The recipientType property
+     */
+    recipientType?: RecipientType[] | null;
+    /**
+     * The smtpAddress property
+     */
+    smtpAddress?: string | null;
+}
 export interface EdiscoveryCaseSettings extends Entity, Parsable {
     /**
      * The OCR (Optical Character Recognition) settings for the case.
@@ -19677,6 +19713,7 @@ export interface QueryCondition extends AdditionalDataHolder, BackedModel, Parsa
 }
 export type QueryType = (typeof QueryTypeObject)[keyof typeof QueryTypeObject];
 export type ReceiverProtocol = (typeof ReceiverProtocolObject)[keyof typeof ReceiverProtocolObject];
+export type RecipientType = (typeof RecipientTypeObject)[keyof typeof RecipientTypeObject];
 export interface RecommendedHuntingQuery extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -22610,6 +22647,19 @@ export function serializeEdiscoveryCaseCollectionResponse(writer: SerializationW
     if (ediscoveryCaseCollectionResponse) {
         serializeBaseCollectionPaginationCountResponse(writer, ediscoveryCaseCollectionResponse)
         writer.writeCollectionOfObjectValues<EdiscoveryCase>("value", ediscoveryCaseCollectionResponse.value, serializeEdiscoveryCase);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEdiscoveryCaseMember(writer: SerializationWriter, ediscoveryCaseMember: Partial<EdiscoveryCaseMember> | undefined | null = {}) : void {
+    if (ediscoveryCaseMember) {
+        serializeEntity(writer, ediscoveryCaseMember)
+        writer.writeStringValue("displayName", ediscoveryCaseMember.displayName);
+        writer.writeEnumValue<RecipientType[]>("recipientType", ediscoveryCaseMember.recipientType);
+        writer.writeStringValue("smtpAddress", ediscoveryCaseMember.smtpAddress);
     }
 }
 /**
@@ -30103,6 +30153,11 @@ export const ReceiverProtocolObject = {
     SyslogUdp: "syslogUdp",
     SyslogTcp: "syslogTcp",
     SyslogTls: "syslogTls",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const RecipientTypeObject = {
+    User: "user",
+    RoleGroup: "roleGroup",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const RemediationActionObject = {

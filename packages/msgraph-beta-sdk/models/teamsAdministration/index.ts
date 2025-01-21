@@ -16,6 +16,15 @@ export function createTeamsAdminRootFromDiscriminatorValue(parseNode: ParseNode 
     return deserializeIntoTeamsAdminRoot;
 }
 /**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TeamsPolicyAssignment}
+ */
+// @ts-ignore
+export function createTeamsPolicyAssignmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTeamsPolicyAssignment;
+}
+/**
  * The deserialization information for the current model
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -23,6 +32,17 @@ export function createTeamsAdminRootFromDiscriminatorValue(parseNode: ParseNode 
 export function deserializeIntoTeamsAdminRoot(teamsAdminRoot: Partial<TeamsAdminRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(teamsAdminRoot),
+        "policy": n => { teamsAdminRoot.policy = n.getObjectValue<TeamsPolicyAssignment>(createTeamsPolicyAssignmentFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTeamsPolicyAssignment(teamsPolicyAssignment: Partial<TeamsPolicyAssignment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(teamsPolicyAssignment),
     }
 }
 /**
@@ -33,9 +53,26 @@ export function deserializeIntoTeamsAdminRoot(teamsAdminRoot: Partial<TeamsAdmin
 export function serializeTeamsAdminRoot(writer: SerializationWriter, teamsAdminRoot: Partial<TeamsAdminRoot> | undefined | null = {}) : void {
     if (teamsAdminRoot) {
         serializeEntity(writer, teamsAdminRoot)
+        writer.writeObjectValue<TeamsPolicyAssignment>("policy", teamsAdminRoot.policy, serializeTeamsPolicyAssignment);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTeamsPolicyAssignment(writer: SerializationWriter, teamsPolicyAssignment: Partial<TeamsPolicyAssignment> | undefined | null = {}) : void {
+    if (teamsPolicyAssignment) {
+        serializeEntity(writer, teamsPolicyAssignment)
     }
 }
 export interface TeamsAdminRoot extends Entity, Parsable {
+    /**
+     * The policy property
+     */
+    policy?: TeamsPolicyAssignment | null;
+}
+export interface TeamsPolicyAssignment extends Entity, Parsable {
 }
 /* tslint:enable */
 /* eslint-enable */

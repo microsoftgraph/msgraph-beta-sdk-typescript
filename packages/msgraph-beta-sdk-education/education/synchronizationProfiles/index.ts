@@ -29,12 +29,11 @@ export interface SynchronizationProfilesRequestBuilder extends BaseRequestBuilde
      */
      byEducationSynchronizationProfileId(educationSynchronizationProfileId: string) : EducationSynchronizationProfileItemRequestBuilder;
     /**
-     * Retrieve the collection of school data synchronization profiles in the tenant.
+     * Get synchronizationProfiles from education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationProfileCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
-     * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SynchronizationProfilesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationProfileCollectionResponse | undefined>;
     /**
@@ -47,7 +46,7 @@ export interface SynchronizationProfilesRequestBuilder extends BaseRequestBuilde
      */
      post(body: EducationSynchronizationProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationProfile | undefined>;
     /**
-     * Retrieve the collection of school data synchronization profiles in the tenant.
+     * Get synchronizationProfiles from education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
@@ -63,7 +62,7 @@ export interface SynchronizationProfilesRequestBuilder extends BaseRequestBuilde
      toPostRequestInformation(body: EducationSynchronizationProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the collection of school data synchronization profiles in the tenant.
+ * Get synchronizationProfiles from education
  */
 export interface SynchronizationProfilesRequestBuilderGetQueryParameters {
     /**
