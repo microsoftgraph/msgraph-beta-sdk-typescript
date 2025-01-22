@@ -62,20 +62,18 @@ export interface EducationSynchronizationProfileItemRequestBuilder extends BaseR
      */
     get uploadUrl(): UploadUrlRequestBuilder;
     /**
-     * Delete a school data synchronization profile in the tenant based on the identifier.
+     * Delete navigation property synchronizationProfiles for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
-     * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Retrieve a school data synchronization profile in the tenant based on the identifier.
+     * Get synchronizationProfiles from education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationProfile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
-     * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationProfile | undefined>;
     /**
@@ -88,14 +86,14 @@ export interface EducationSynchronizationProfileItemRequestBuilder extends BaseR
      */
      patch(body: EducationSynchronizationProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationProfile | undefined>;
     /**
-     * Delete a school data synchronization profile in the tenant based on the identifier.
+     * Delete navigation property synchronizationProfiles for education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Retrieve a school data synchronization profile in the tenant based on the identifier.
+     * Get synchronizationProfiles from education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
@@ -111,7 +109,7 @@ export interface EducationSynchronizationProfileItemRequestBuilder extends BaseR
      toPatchRequestInformation(body: EducationSynchronizationProfile, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a school data synchronization profile in the tenant based on the identifier.
+ * Get synchronizationProfiles from education
  */
 export interface EducationSynchronizationProfileItemRequestBuilderGetQueryParameters {
     /**

@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AnalyticsRequestBuilderNavigationMetadata, AnalyticsRequestBuilderRequestsMetadata, type AnalyticsRequestBuilder } from './analytics/index.js';
 // @ts-ignore
+import { ArchiveRequestBuilderRequestsMetadata, type ArchiveRequestBuilder } from './archive/index.js';
+// @ts-ignore
 import { ColumnsRequestBuilderNavigationMetadata, ColumnsRequestBuilderRequestsMetadata, type ColumnsRequestBuilder } from './columns/index.js';
 // @ts-ignore
 import { ContentModelsRequestBuilderNavigationMetadata, ContentModelsRequestBuilderRequestsMetadata, type ContentModelsRequestBuilder } from './contentModels/index.js';
@@ -54,6 +56,8 @@ import { SitesRequestBuilderNavigationMetadata, SitesRequestBuilderRequestsMetad
 // @ts-ignore
 import { TermStoreRequestBuilderNavigationMetadata, TermStoreRequestBuilderRequestsMetadata, type TermStoreRequestBuilder } from './termStore/index.js';
 // @ts-ignore
+import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -64,6 +68,10 @@ export interface SiteItemRequestBuilder extends BaseRequestBuilder<SiteItemReque
      * Provides operations to manage the analytics property of the microsoft.graph.site entity.
      */
     get analytics(): AnalyticsRequestBuilder;
+    /**
+     * Provides operations to call the archive method.
+     */
+    get archive(): ArchiveRequestBuilder;
     /**
      * Provides operations to manage the columns property of the microsoft.graph.site entity.
      */
@@ -144,6 +152,10 @@ export interface SiteItemRequestBuilder extends BaseRequestBuilder<SiteItemReque
      * Provides operations to manage the termStore property of the microsoft.graph.site entity.
      */
     get termStore(): TermStoreRequestBuilder;
+    /**
+     * Provides operations to call the unarchive method.
+     */
+    get unarchive(): UnarchiveRequestBuilder;
     /**
      * The list of SharePoint sites in this group. Access the default site with /sites/root.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -238,6 +250,9 @@ export const SiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Site
         requestsMetadata: AnalyticsRequestBuilderRequestsMetadata,
         navigationMetadata: AnalyticsRequestBuilderNavigationMetadata,
     },
+    archive: {
+        requestsMetadata: ArchiveRequestBuilderRequestsMetadata,
+    },
     columns: {
         requestsMetadata: ColumnsRequestBuilderRequestsMetadata,
         navigationMetadata: ColumnsRequestBuilderNavigationMetadata,
@@ -316,6 +331,9 @@ export const SiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Site
     termStore: {
         requestsMetadata: TermStoreRequestBuilderRequestsMetadata,
         navigationMetadata: TermStoreRequestBuilderNavigationMetadata,
+    },
+    unarchive: {
+        requestsMetadata: UnarchiveRequestBuilderRequestsMetadata,
     },
 };
 /**

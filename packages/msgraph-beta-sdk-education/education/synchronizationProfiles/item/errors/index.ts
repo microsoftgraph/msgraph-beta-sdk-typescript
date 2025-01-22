@@ -29,12 +29,11 @@ export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBu
      */
      byEducationSynchronizationErrorId(educationSynchronizationErrorId: string) : EducationSynchronizationErrorItemRequestBuilder;
     /**
-     * Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+     * Get errors from education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSynchronizationErrorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
-     * @see {@link https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ErrorsRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSynchronizationErrorCollectionResponse | undefined>;
     /**
@@ -47,7 +46,7 @@ export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBu
      */
      post(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSynchronizationError | undefined>;
     /**
-     * Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+     * Get errors from education
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
@@ -63,7 +62,7 @@ export interface ErrorsRequestBuilder extends BaseRequestBuilder<ErrorsRequestBu
      toPostRequestInformation(body: EducationSynchronizationError, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+ * Get errors from education
  */
 export interface ErrorsRequestBuilderGetQueryParameters {
     /**

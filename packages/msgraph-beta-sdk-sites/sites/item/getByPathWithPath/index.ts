@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AnalyticsRequestBuilderRequestsMetadata, type AnalyticsRequestBuilder } from './analytics/index.js';
 // @ts-ignore
+import { ArchiveRequestBuilderRequestsMetadata, type ArchiveRequestBuilder } from './archive/index.js';
+// @ts-ignore
 import { ColumnsRequestBuilderRequestsMetadata, type ColumnsRequestBuilder } from './columns/index.js';
 // @ts-ignore
 import { ContentModelsRequestBuilderRequestsMetadata, type ContentModelsRequestBuilder } from './contentModels/index.js';
@@ -52,6 +54,8 @@ import { SitesRequestBuilderRequestsMetadata, type SitesRequestBuilder } from '.
 // @ts-ignore
 import { TermStoreRequestBuilderRequestsMetadata, type TermStoreRequestBuilder } from './termStore/index.js';
 // @ts-ignore
+import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -62,6 +66,10 @@ export interface GetByPathWithPathRequestBuilder extends BaseRequestBuilder<GetB
      * Provides operations to manage the analytics property of the microsoft.graph.site entity.
      */
     get analytics(): AnalyticsRequestBuilder;
+    /**
+     * Provides operations to call the archive method.
+     */
+    get archive(): ArchiveRequestBuilder;
     /**
      * Provides operations to manage the columns property of the microsoft.graph.site entity.
      */
@@ -143,6 +151,10 @@ export interface GetByPathWithPathRequestBuilder extends BaseRequestBuilder<GetB
      */
     get termStore(): TermStoreRequestBuilder;
     /**
+     * Provides operations to call the unarchive method.
+     */
+    get unarchive(): UnarchiveRequestBuilder;
+    /**
      * Invoke function getByPath
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Site>}
@@ -188,6 +200,9 @@ export const GetByPathWithPathRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     analytics: {
         requestsMetadata: AnalyticsRequestBuilderRequestsMetadata,
+    },
+    archive: {
+        requestsMetadata: ArchiveRequestBuilderRequestsMetadata,
     },
     columns: {
         requestsMetadata: ColumnsRequestBuilderRequestsMetadata,
@@ -248,6 +263,9 @@ export const GetByPathWithPathRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     termStore: {
         requestsMetadata: TermStoreRequestBuilderRequestsMetadata,
+    },
+    unarchive: {
+        requestsMetadata: UnarchiveRequestBuilderRequestsMetadata,
     },
 };
 /**
