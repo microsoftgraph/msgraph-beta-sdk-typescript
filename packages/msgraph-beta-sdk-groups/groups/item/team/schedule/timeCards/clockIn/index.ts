@@ -22,6 +22,10 @@ export interface ClockInPostRequestBody extends AdditionalDataHolder, BackedMode
      */
     backingStoreEnabled?: boolean | null;
     /**
+     * The isAtApprovedLocation property
+     */
+    isAtApprovedLocation?: boolean | null;
+    /**
      * The notes property
      */
     notes?: ItemBody | null;
@@ -69,6 +73,7 @@ export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Pa
     return {
         "atApprovedLocation": n => { clockInPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
         "backingStoreEnabled": n => { clockInPostRequestBody.backingStoreEnabled = true; },
+        "isAtApprovedLocation": n => { clockInPostRequestBody.isAtApprovedLocation = n.getBooleanValue(); },
         "notes": n => { clockInPostRequestBody.notes = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
         "onBehalfOfUserId": n => { clockInPostRequestBody.onBehalfOfUserId = n.getStringValue(); },
     }
@@ -81,6 +86,7 @@ export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Pa
 export function serializeClockInPostRequestBody(writer: SerializationWriter, clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined | null = {}) : void {
     if (clockInPostRequestBody) {
         writer.writeBooleanValue("atApprovedLocation", clockInPostRequestBody.atApprovedLocation);
+        writer.writeBooleanValue("isAtApprovedLocation", clockInPostRequestBody.isAtApprovedLocation);
         writer.writeObjectValue<ItemBody>("notes", clockInPostRequestBody.notes, serializeItemBody);
         writer.writeStringValue("onBehalfOfUserId", clockInPostRequestBody.onBehalfOfUserId);
         writer.writeAdditionalData(clockInPostRequestBody.additionalData);

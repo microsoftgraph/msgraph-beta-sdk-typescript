@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
+import { GraphAppRoleAssignmentRequestBuilderNavigationMetadata, GraphAppRoleAssignmentRequestBuilderRequestsMetadata, type GraphAppRoleAssignmentRequestBuilder } from './graphAppRoleAssignment/index.js';
+// @ts-ignore
 import { GraphDeviceRequestBuilderNavigationMetadata, GraphDeviceRequestBuilderRequestsMetadata, type GraphDeviceRequestBuilder } from './graphDevice/index.js';
 // @ts-ignore
 import { GraphEndpointRequestBuilderNavigationMetadata, GraphEndpointRequestBuilderRequestsMetadata, type GraphEndpointRequestBuilder } from './graphEndpoint/index.js';
@@ -24,6 +26,10 @@ export interface RegisteredDevicesRequestBuilder extends BaseRequestBuilder<Regi
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Casts the previous resource to appRoleAssignment.
+     */
+    get graphAppRoleAssignment(): GraphAppRoleAssignmentRequestBuilder;
     /**
      * Casts the previous resource to device.
      */
@@ -117,6 +123,10 @@ export const RegisteredDevicesRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    graphAppRoleAssignment: {
+        requestsMetadata: GraphAppRoleAssignmentRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphAppRoleAssignmentRequestBuilderNavigationMetadata,
     },
     graphDevice: {
         requestsMetadata: GraphDeviceRequestBuilderRequestsMetadata,

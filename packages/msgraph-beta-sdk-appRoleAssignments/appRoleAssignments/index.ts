@@ -8,7 +8,15 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { AppRoleAssignmentItemRequestBuilderRequestsMetadata, type AppRoleAssignmentItemRequestBuilder } from './item/index.js';
+import { DeltaRequestBuilderRequestsMetadata, type DeltaRequestBuilder } from './delta/index.js';
+// @ts-ignore
+import { GetByIdsRequestBuilderRequestsMetadata, type GetByIdsRequestBuilder } from './getByIds/index.js';
+// @ts-ignore
+import { GetUserOwnedObjectsRequestBuilderRequestsMetadata, type GetUserOwnedObjectsRequestBuilder } from './getUserOwnedObjects/index.js';
+// @ts-ignore
+import { AppRoleAssignmentItemRequestBuilderNavigationMetadata, AppRoleAssignmentItemRequestBuilderRequestsMetadata, type AppRoleAssignmentItemRequestBuilder } from './item/index.js';
+// @ts-ignore
+import { type ValidatePropertiesRequestBuilder, ValidatePropertiesRequestBuilderRequestsMetadata } from './validateProperties/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -20,6 +28,22 @@ export interface AppRoleAssignmentsRequestBuilder extends BaseRequestBuilder<App
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the delta method.
+     */
+    get delta(): DeltaRequestBuilder;
+    /**
+     * Provides operations to call the getByIds method.
+     */
+    get getByIds(): GetByIdsRequestBuilder;
+    /**
+     * Provides operations to call the getUserOwnedObjects method.
+     */
+    get getUserOwnedObjects(): GetUserOwnedObjectsRequestBuilder;
+    /**
+     * Provides operations to call the validateProperties method.
+     */
+    get validateProperties(): ValidatePropertiesRequestBuilder;
     /**
      * Provides operations to manage the collection of appRoleAssignment entities.
      * @param appRoleAssignmentId The unique identifier of appRoleAssignment
@@ -115,10 +139,23 @@ const AppRoleAssignmentsRequestBuilderGetQueryParametersMapper: Record<string, s
 export const AppRoleAssignmentsRequestBuilderNavigationMetadata: Record<Exclude<keyof AppRoleAssignmentsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byAppRoleAssignmentId: {
         requestsMetadata: AppRoleAssignmentItemRequestBuilderRequestsMetadata,
+        navigationMetadata: AppRoleAssignmentItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["appRoleAssignment%2Did"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    delta: {
+        requestsMetadata: DeltaRequestBuilderRequestsMetadata,
+    },
+    getByIds: {
+        requestsMetadata: GetByIdsRequestBuilderRequestsMetadata,
+    },
+    getUserOwnedObjects: {
+        requestsMetadata: GetUserOwnedObjectsRequestBuilderRequestsMetadata,
+    },
+    validateProperties: {
+        requestsMetadata: ValidatePropertiesRequestBuilderRequestsMetadata,
     },
 };
 /**

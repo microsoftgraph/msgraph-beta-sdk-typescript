@@ -26,6 +26,7 @@ export function deserializeIntoEndBreakPostRequestBody(endBreakPostRequestBody: 
     return {
         "atApprovedLocation": n => { endBreakPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
         "backingStoreEnabled": n => { endBreakPostRequestBody.backingStoreEnabled = true; },
+        "isAtApprovedLocation": n => { endBreakPostRequestBody.isAtApprovedLocation = n.getBooleanValue(); },
         "notes": n => { endBreakPostRequestBody.notes = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
     }
 }
@@ -42,6 +43,10 @@ export interface EndBreakPostRequestBody extends AdditionalDataHolder, BackedMod
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * The isAtApprovedLocation property
+     */
+    isAtApprovedLocation?: boolean | null;
     /**
      * The notes property
      */
@@ -76,6 +81,7 @@ export interface EndBreakRequestBuilder extends BaseRequestBuilder<EndBreakReque
 export function serializeEndBreakPostRequestBody(writer: SerializationWriter, endBreakPostRequestBody: Partial<EndBreakPostRequestBody> | undefined | null = {}) : void {
     if (endBreakPostRequestBody) {
         writer.writeBooleanValue("atApprovedLocation", endBreakPostRequestBody.atApprovedLocation);
+        writer.writeBooleanValue("isAtApprovedLocation", endBreakPostRequestBody.isAtApprovedLocation);
         writer.writeObjectValue<ItemBody>("notes", endBreakPostRequestBody.notes, serializeItemBody);
         writer.writeAdditionalData(endBreakPostRequestBody.additionalData);
     }

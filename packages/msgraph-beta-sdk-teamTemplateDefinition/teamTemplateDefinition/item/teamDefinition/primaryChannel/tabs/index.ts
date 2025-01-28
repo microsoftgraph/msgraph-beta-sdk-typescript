@@ -27,7 +27,7 @@ export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilde
      */
      byTeamsTabId(teamsTabId: string) : TeamsTabItemRequestBuilder;
     /**
-     * A collection of all the tabs in the channel. A navigation property.
+     * A collection of all the tabs in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsTabCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilde
      */
      post(body: TeamsTab, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsTab | undefined>;
     /**
-     * A collection of all the tabs in the channel. A navigation property.
+     * A collection of all the tabs in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface TabsRequestBuilder extends BaseRequestBuilder<TabsRequestBuilde
      toPostRequestInformation(body: TeamsTab, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A collection of all the tabs in the channel. A navigation property.
+ * A collection of all the tabs in the channel.
  */
 export interface TabsRequestBuilderGetQueryParameters {
     /**

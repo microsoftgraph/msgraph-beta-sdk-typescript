@@ -6,6 +6,8 @@ import { createDirectoryObjectFromDiscriminatorValue, type DirectoryObject } fro
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { GraphAppRoleAssignmentRequestBuilderRequestsMetadata, type GraphAppRoleAssignmentRequestBuilder } from './graphAppRoleAssignment/index.js';
+// @ts-ignore
 import { GraphDeviceRequestBuilderRequestsMetadata, type GraphDeviceRequestBuilder } from './graphDevice/index.js';
 // @ts-ignore
 import { GraphEndpointRequestBuilderRequestsMetadata, type GraphEndpointRequestBuilder } from './graphEndpoint/index.js';
@@ -16,6 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
  */
 export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<DirectoryObjectItemRequestBuilder> {
+    /**
+     * Casts the previous resource to appRoleAssignment.
+     */
+    get graphAppRoleAssignment(): GraphAppRoleAssignmentRequestBuilder;
     /**
      * Casts the previous resource to device.
      */
@@ -66,6 +72,9 @@ const DirectoryObjectItemRequestBuilderGetQueryParametersMapper: Record<string, 
  * Metadata for all the navigation properties in the request builder.
  */
 export const DirectoryObjectItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DirectoryObjectItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    graphAppRoleAssignment: {
+        requestsMetadata: GraphAppRoleAssignmentRequestBuilderRequestsMetadata,
+    },
     graphDevice: {
         requestsMetadata: GraphDeviceRequestBuilderRequestsMetadata,
     },
