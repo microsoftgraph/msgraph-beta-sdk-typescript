@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
+import { GraphAppRoleAssignmentRequestBuilderNavigationMetadata, GraphAppRoleAssignmentRequestBuilderRequestsMetadata, type GraphAppRoleAssignmentRequestBuilder } from './graphAppRoleAssignment/index.js';
+// @ts-ignore
 import { GraphEndpointRequestBuilderNavigationMetadata, GraphEndpointRequestBuilderRequestsMetadata, type GraphEndpointRequestBuilder } from './graphEndpoint/index.js';
 // @ts-ignore
 import { GraphServicePrincipalRequestBuilderNavigationMetadata, GraphServicePrincipalRequestBuilderRequestsMetadata, type GraphServicePrincipalRequestBuilder } from './graphServicePrincipal/index.js';
@@ -28,6 +30,10 @@ export interface RegisteredUsersRequestBuilder extends BaseRequestBuilder<Regist
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Casts the previous resource to appRoleAssignment.
+     */
+    get graphAppRoleAssignment(): GraphAppRoleAssignmentRequestBuilder;
     /**
      * Casts the previous resource to endpoint.
      */
@@ -129,6 +135,10 @@ export const RegisteredUsersRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    graphAppRoleAssignment: {
+        requestsMetadata: GraphAppRoleAssignmentRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphAppRoleAssignmentRequestBuilderNavigationMetadata,
     },
     graphEndpoint: {
         requestsMetadata: GraphEndpointRequestBuilderRequestsMetadata,

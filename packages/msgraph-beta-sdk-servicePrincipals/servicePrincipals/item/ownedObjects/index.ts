@@ -10,6 +10,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { GraphApplicationRequestBuilderNavigationMetadata, GraphApplicationRequestBuilderRequestsMetadata, type GraphApplicationRequestBuilder } from './graphApplication/index.js';
 // @ts-ignore
+import { GraphAppRoleAssignmentRequestBuilderNavigationMetadata, GraphAppRoleAssignmentRequestBuilderRequestsMetadata, type GraphAppRoleAssignmentRequestBuilder } from './graphAppRoleAssignment/index.js';
+// @ts-ignore
 import { GraphEndpointRequestBuilderNavigationMetadata, GraphEndpointRequestBuilderRequestsMetadata, type GraphEndpointRequestBuilder } from './graphEndpoint/index.js';
 // @ts-ignore
 import { GraphGroupRequestBuilderNavigationMetadata, GraphGroupRequestBuilderRequestsMetadata, type GraphGroupRequestBuilder } from './graphGroup/index.js';
@@ -32,6 +34,10 @@ export interface OwnedObjectsRequestBuilder extends BaseRequestBuilder<OwnedObje
      * Casts the previous resource to application.
      */
     get graphApplication(): GraphApplicationRequestBuilder;
+    /**
+     * Casts the previous resource to appRoleAssignment.
+     */
+    get graphAppRoleAssignment(): GraphAppRoleAssignmentRequestBuilder;
     /**
      * Casts the previous resource to endpoint.
      */
@@ -134,6 +140,10 @@ export const OwnedObjectsRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     graphApplication: {
         requestsMetadata: GraphApplicationRequestBuilderRequestsMetadata,
         navigationMetadata: GraphApplicationRequestBuilderNavigationMetadata,
+    },
+    graphAppRoleAssignment: {
+        requestsMetadata: GraphAppRoleAssignmentRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphAppRoleAssignmentRequestBuilderNavigationMetadata,
     },
     graphEndpoint: {
         requestsMetadata: GraphEndpointRequestBuilderRequestsMetadata,

@@ -12,6 +12,8 @@ import { IndustryDataRunItemRequestBuilderNavigationMetadata, IndustryDataRunIte
 // @ts-ignore
 import { MicrosoftGraphIndustryDataGetStatisticsRequestBuilderRequestsMetadata, type MicrosoftGraphIndustryDataGetStatisticsRequestBuilder } from './microsoftGraphIndustryDataGetStatistics/index.js';
 // @ts-ignore
+import { MicrosoftGraphIndustryDataStartRequestBuilderRequestsMetadata, type MicrosoftGraphIndustryDataStartRequestBuilder } from './microsoftGraphIndustryDataStart/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -26,6 +28,10 @@ export interface RunsRequestBuilder extends BaseRequestBuilder<RunsRequestBuilde
      * Provides operations to call the getStatistics method.
      */
     get microsoftGraphIndustryDataGetStatistics(): MicrosoftGraphIndustryDataGetStatisticsRequestBuilder;
+    /**
+     * Provides operations to call the start method.
+     */
+    get microsoftGraphIndustryDataStart(): MicrosoftGraphIndustryDataStartRequestBuilder;
     /**
      * Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
      * @param industryDataRunId The unique identifier of industryDataRun
@@ -115,6 +121,9 @@ export const RunsRequestBuilderNavigationMetadata: Record<Exclude<keyof RunsRequ
     },
     microsoftGraphIndustryDataGetStatistics: {
         requestsMetadata: MicrosoftGraphIndustryDataGetStatisticsRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphIndustryDataStart: {
+        requestsMetadata: MicrosoftGraphIndustryDataStartRequestBuilderRequestsMetadata,
     },
 };
 /**

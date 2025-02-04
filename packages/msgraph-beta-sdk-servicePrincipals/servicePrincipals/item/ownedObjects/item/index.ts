@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { GraphApplicationRequestBuilderRequestsMetadata, type GraphApplicationRequestBuilder } from './graphApplication/index.js';
 // @ts-ignore
+import { GraphAppRoleAssignmentRequestBuilderRequestsMetadata, type GraphAppRoleAssignmentRequestBuilder } from './graphAppRoleAssignment/index.js';
+// @ts-ignore
 import { GraphEndpointRequestBuilderRequestsMetadata, type GraphEndpointRequestBuilder } from './graphEndpoint/index.js';
 // @ts-ignore
 import { GraphGroupRequestBuilderRequestsMetadata, type GraphGroupRequestBuilder } from './graphGroup/index.js';
@@ -24,6 +26,10 @@ export interface DirectoryObjectItemRequestBuilder extends BaseRequestBuilder<Di
      * Casts the previous resource to application.
      */
     get graphApplication(): GraphApplicationRequestBuilder;
+    /**
+     * Casts the previous resource to appRoleAssignment.
+     */
+    get graphAppRoleAssignment(): GraphAppRoleAssignmentRequestBuilder;
     /**
      * Casts the previous resource to endpoint.
      */
@@ -80,6 +86,9 @@ const DirectoryObjectItemRequestBuilderGetQueryParametersMapper: Record<string, 
 export const DirectoryObjectItemRequestBuilderNavigationMetadata: Record<Exclude<keyof DirectoryObjectItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     graphApplication: {
         requestsMetadata: GraphApplicationRequestBuilderRequestsMetadata,
+    },
+    graphAppRoleAssignment: {
+        requestsMetadata: GraphAppRoleAssignmentRequestBuilderRequestsMetadata,
     },
     graphEndpoint: {
         requestsMetadata: GraphEndpointRequestBuilderRequestsMetadata,

@@ -10,6 +10,10 @@ import { DefaultIosEnrollmentProfileRequestBuilderRequestsMetadata, type Default
 // @ts-ignore
 import { DefaultMacOsEnrollmentProfileRequestBuilderRequestsMetadata, type DefaultMacOsEnrollmentProfileRequestBuilder } from './defaultMacOsEnrollmentProfile/index.js';
 // @ts-ignore
+import { DefaultTvOSEnrollmentProfileRequestBuilderRequestsMetadata, type DefaultTvOSEnrollmentProfileRequestBuilder } from './defaultTvOSEnrollmentProfile/index.js';
+// @ts-ignore
+import { DefaultVisionOSEnrollmentProfileRequestBuilderRequestsMetadata, type DefaultVisionOSEnrollmentProfileRequestBuilder } from './defaultVisionOSEnrollmentProfile/index.js';
+// @ts-ignore
 import { EnrollmentProfilesRequestBuilderNavigationMetadata, EnrollmentProfilesRequestBuilderRequestsMetadata, type EnrollmentProfilesRequestBuilder } from './enrollmentProfiles/index.js';
 // @ts-ignore
 import { GenerateEncryptionPublicKeyRequestBuilderRequestsMetadata, type GenerateEncryptionPublicKeyRequestBuilder } from './generateEncryptionPublicKey/index.js';
@@ -40,6 +44,14 @@ export interface DepOnboardingSettingItemRequestBuilder extends BaseRequestBuild
      * Provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
      */
     get defaultMacOsEnrollmentProfile(): DefaultMacOsEnrollmentProfileRequestBuilder;
+    /**
+     * Provides operations to manage the defaultTvOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+     */
+    get defaultTvOSEnrollmentProfile(): DefaultTvOSEnrollmentProfileRequestBuilder;
+    /**
+     * Provides operations to manage the defaultVisionOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+     */
+    get defaultVisionOSEnrollmentProfile(): DefaultVisionOSEnrollmentProfileRequestBuilder;
     /**
      * Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
      */
@@ -146,6 +158,12 @@ export const DepOnboardingSettingItemRequestBuilderNavigationMetadata: Record<Ex
     },
     defaultMacOsEnrollmentProfile: {
         requestsMetadata: DefaultMacOsEnrollmentProfileRequestBuilderRequestsMetadata,
+    },
+    defaultTvOSEnrollmentProfile: {
+        requestsMetadata: DefaultTvOSEnrollmentProfileRequestBuilderRequestsMetadata,
+    },
+    defaultVisionOSEnrollmentProfile: {
+        requestsMetadata: DefaultVisionOSEnrollmentProfileRequestBuilderRequestsMetadata,
     },
     enrollmentProfiles: {
         requestsMetadata: EnrollmentProfilesRequestBuilderRequestsMetadata,

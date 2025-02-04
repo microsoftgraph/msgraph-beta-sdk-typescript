@@ -6,12 +6,42 @@ import { createAppRoleAssignmentFromDiscriminatorValue, serializeAppRoleAssignme
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { CheckMemberGroupsRequestBuilderRequestsMetadata, type CheckMemberGroupsRequestBuilder } from './checkMemberGroups/index.js';
+// @ts-ignore
+import { CheckMemberObjectsRequestBuilderRequestsMetadata, type CheckMemberObjectsRequestBuilder } from './checkMemberObjects/index.js';
+// @ts-ignore
+import { GetMemberGroupsRequestBuilderRequestsMetadata, type GetMemberGroupsRequestBuilder } from './getMemberGroups/index.js';
+// @ts-ignore
+import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRequestBuilder } from './getMemberObjects/index.js';
+// @ts-ignore
+import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the collection of appRoleAssignment entities.
  */
 export interface AppRoleAssignmentItemRequestBuilder extends BaseRequestBuilder<AppRoleAssignmentItemRequestBuilder> {
+    /**
+     * Provides operations to call the checkMemberGroups method.
+     */
+    get checkMemberGroups(): CheckMemberGroupsRequestBuilder;
+    /**
+     * Provides operations to call the checkMemberObjects method.
+     */
+    get checkMemberObjects(): CheckMemberObjectsRequestBuilder;
+    /**
+     * Provides operations to call the getMemberGroups method.
+     */
+    get getMemberGroups(): GetMemberGroupsRequestBuilder;
+    /**
+     * Provides operations to call the getMemberObjects method.
+     */
+    get getMemberObjects(): GetMemberObjectsRequestBuilder;
+    /**
+     * Provides operations to call the restore method.
+     */
+    get restore(): RestoreRequestBuilder;
     /**
      * Delete entity from appRoleAssignments
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +106,26 @@ export const AppRoleAssignmentItemRequestBuilderUriTemplate = "{+baseurl}/appRol
 const AppRoleAssignmentItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const AppRoleAssignmentItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AppRoleAssignmentItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    checkMemberGroups: {
+        requestsMetadata: CheckMemberGroupsRequestBuilderRequestsMetadata,
+    },
+    checkMemberObjects: {
+        requestsMetadata: CheckMemberObjectsRequestBuilderRequestsMetadata,
+    },
+    getMemberGroups: {
+        requestsMetadata: GetMemberGroupsRequestBuilderRequestsMetadata,
+    },
+    getMemberObjects: {
+        requestsMetadata: GetMemberObjectsRequestBuilderRequestsMetadata,
+    },
+    restore: {
+        requestsMetadata: RestoreRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

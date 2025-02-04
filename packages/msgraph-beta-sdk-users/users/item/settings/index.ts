@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ContactMergeSuggestionsRequestBuilderRequestsMetadata, type ContactMergeSuggestionsRequestBuilder } from './contactMergeSuggestions/index.js';
 // @ts-ignore
+import { ExchangeRequestBuilderRequestsMetadata, type ExchangeRequestBuilder } from './exchange/index.js';
+// @ts-ignore
 import { ItemInsightsRequestBuilderRequestsMetadata, type ItemInsightsRequestBuilder } from './itemInsights/index.js';
 // @ts-ignore
 import { RegionalAndLanguageSettingsRequestBuilderRequestsMetadata, type RegionalAndLanguageSettingsRequestBuilder } from './regionalAndLanguageSettings/index.js';
@@ -28,6 +30,10 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
      */
     get contactMergeSuggestions(): ContactMergeSuggestionsRequestBuilder;
+    /**
+     * Provides operations to manage the exchange property of the microsoft.graph.userSettings entity.
+     */
+    get exchange(): ExchangeRequestBuilder;
     /**
      * Provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.
      */
@@ -119,6 +125,9 @@ const SettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const SettingsRequestBuilderNavigationMetadata: Record<Exclude<keyof SettingsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     contactMergeSuggestions: {
         requestsMetadata: ContactMergeSuggestionsRequestBuilderRequestsMetadata,
+    },
+    exchange: {
+        requestsMetadata: ExchangeRequestBuilderRequestsMetadata,
     },
     itemInsights: {
         requestsMetadata: ItemInsightsRequestBuilderRequestsMetadata,

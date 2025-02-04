@@ -72,7 +72,7 @@ export interface ExportPostRequestBody extends AdditionalDataHolder, BackedModel
  */
 export interface MicrosoftGraphSecurityExportRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityExportRequestBuilder> {
     /**
-     * Initiate an export from a reviewSet.  For details, see Export documents from a review set in eDiscovery (Premium).
+     * Initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -80,7 +80,7 @@ export interface MicrosoftGraphSecurityExportRequestBuilder extends BaseRequestB
      */
      post(body: ExportPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Initiate an export from a reviewSet.  For details, see Export documents from a review set in eDiscovery (Premium).
+     * Initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

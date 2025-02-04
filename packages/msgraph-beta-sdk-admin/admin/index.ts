@@ -14,6 +14,8 @@ import { EdgeRequestBuilderNavigationMetadata, EdgeRequestBuilderRequestsMetadat
 // @ts-ignore
 import { EntraRequestBuilderNavigationMetadata, EntraRequestBuilderRequestsMetadata, type EntraRequestBuilder } from './entra/index.js';
 // @ts-ignore
+import { ExchangeRequestBuilderNavigationMetadata, ExchangeRequestBuilderRequestsMetadata, type ExchangeRequestBuilder } from './exchange/index.js';
+// @ts-ignore
 import { FormsRequestBuilderRequestsMetadata, type FormsRequestBuilder } from './forms/index.js';
 // @ts-ignore
 import { Microsoft365AppsRequestBuilderNavigationMetadata, Microsoft365AppsRequestBuilderRequestsMetadata, type Microsoft365AppsRequestBuilder } from './microsoft365Apps/index.js';
@@ -52,6 +54,10 @@ export interface AdminRequestBuilder extends BaseRequestBuilder<AdminRequestBuil
      * Provides operations to manage the entra property of the microsoft.graph.admin entity.
      */
     get entra(): EntraRequestBuilder;
+    /**
+     * Provides operations to manage the exchange property of the microsoft.graph.admin entity.
+     */
+    get exchange(): ExchangeRequestBuilder;
     /**
      * Provides operations to manage the forms property of the microsoft.graph.admin entity.
      */
@@ -154,6 +160,10 @@ export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRe
     entra: {
         requestsMetadata: EntraRequestBuilderRequestsMetadata,
         navigationMetadata: EntraRequestBuilderNavigationMetadata,
+    },
+    exchange: {
+        requestsMetadata: ExchangeRequestBuilderRequestsMetadata,
+        navigationMetadata: ExchangeRequestBuilderNavigationMetadata,
     },
     forms: {
         requestsMetadata: FormsRequestBuilderRequestsMetadata,
