@@ -150,6 +150,10 @@ import { GetWindowsUpdateAlertSummaryReportRequestBuilderRequestsMetadata, type 
 // @ts-ignore
 import { GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata, type GetZebraFotaDeploymentReportRequestBuilder } from './getZebraFotaDeploymentReport/index.js';
 // @ts-ignore
+import { RetrieveCloudPkiLeafCertificateReportRequestBuilderRequestsMetadata, type RetrieveCloudPkiLeafCertificateReportRequestBuilder } from './retrieveCloudPkiLeafCertificateReport/index.js';
+// @ts-ignore
+import { RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderRequestsMetadata, type RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder } from './retrieveCloudPkiLeafCertificateSummaryReport/index.js';
+// @ts-ignore
 import { RetrieveDeviceAppInstallationStatusReportRequestBuilderRequestsMetadata, type RetrieveDeviceAppInstallationStatusReportRequestBuilder } from './retrieveDeviceAppInstallationStatusReport/index.js';
 // @ts-ignore
 import { RetrieveSecurityTaskAppsReportRequestBuilderRequestsMetadata, type RetrieveSecurityTaskAppsReportRequestBuilder } from './retrieveSecurityTaskAppsReport/index.js';
@@ -451,6 +455,14 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
     get getZebraFotaDeploymentReport(): GetZebraFotaDeploymentReportRequestBuilder;
     /**
+     * Provides operations to call the retrieveCloudPkiLeafCertificateReport method.
+     */
+    get retrieveCloudPkiLeafCertificateReport(): RetrieveCloudPkiLeafCertificateReportRequestBuilder;
+    /**
+     * Provides operations to call the retrieveCloudPkiLeafCertificateSummaryReport method.
+     */
+    get retrieveCloudPkiLeafCertificateSummaryReport(): RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder;
+    /**
      * Provides operations to call the retrieveDeviceAppInstallationStatusReport method.
      */
     get retrieveDeviceAppInstallationStatusReport(): RetrieveDeviceAppInstallationStatusReportRequestBuilder;
@@ -748,6 +760,12 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getZebraFotaDeploymentReport: {
         requestsMetadata: GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata,
+    },
+    retrieveCloudPkiLeafCertificateReport: {
+        requestsMetadata: RetrieveCloudPkiLeafCertificateReportRequestBuilderRequestsMetadata,
+    },
+    retrieveCloudPkiLeafCertificateSummaryReport: {
+        requestsMetadata: RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderRequestsMetadata,
     },
     retrieveDeviceAppInstallationStatusReport: {
         requestsMetadata: RetrieveDeviceAppInstallationStatusReportRequestBuilderRequestsMetadata,

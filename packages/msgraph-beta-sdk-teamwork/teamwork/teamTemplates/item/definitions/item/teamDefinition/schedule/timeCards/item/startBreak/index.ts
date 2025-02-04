@@ -26,6 +26,7 @@ export function deserializeIntoStartBreakPostRequestBody(startBreakPostRequestBo
     return {
         "atApprovedLocation": n => { startBreakPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
         "backingStoreEnabled": n => { startBreakPostRequestBody.backingStoreEnabled = true; },
+        "isAtApprovedLocation": n => { startBreakPostRequestBody.isAtApprovedLocation = n.getBooleanValue(); },
         "notes": n => { startBreakPostRequestBody.notes = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
     }
 }
@@ -37,6 +38,7 @@ export function deserializeIntoStartBreakPostRequestBody(startBreakPostRequestBo
 export function serializeStartBreakPostRequestBody(writer: SerializationWriter, startBreakPostRequestBody: Partial<StartBreakPostRequestBody> | undefined | null = {}) : void {
     if (startBreakPostRequestBody) {
         writer.writeBooleanValue("atApprovedLocation", startBreakPostRequestBody.atApprovedLocation);
+        writer.writeBooleanValue("isAtApprovedLocation", startBreakPostRequestBody.isAtApprovedLocation);
         writer.writeObjectValue<ItemBody>("notes", startBreakPostRequestBody.notes, serializeItemBody);
         writer.writeAdditionalData(startBreakPostRequestBody.additionalData);
     }
@@ -54,6 +56,10 @@ export interface StartBreakPostRequestBody extends AdditionalDataHolder, BackedM
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * The isAtApprovedLocation property
+     */
+    isAtApprovedLocation?: boolean | null;
     /**
      * The notes property
      */

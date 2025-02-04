@@ -22,6 +22,10 @@ export interface ClockOutPostRequestBody extends AdditionalDataHolder, BackedMod
      */
     backingStoreEnabled?: boolean | null;
     /**
+     * The isAtApprovedLocation property
+     */
+    isAtApprovedLocation?: boolean | null;
+    /**
      * The notes property
      */
     notes?: ItemBody | null;
@@ -65,6 +69,7 @@ export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: 
     return {
         "atApprovedLocation": n => { clockOutPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
         "backingStoreEnabled": n => { clockOutPostRequestBody.backingStoreEnabled = true; },
+        "isAtApprovedLocation": n => { clockOutPostRequestBody.isAtApprovedLocation = n.getBooleanValue(); },
         "notes": n => { clockOutPostRequestBody.notes = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
     }
 }
@@ -76,6 +81,7 @@ export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: 
 export function serializeClockOutPostRequestBody(writer: SerializationWriter, clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined | null = {}) : void {
     if (clockOutPostRequestBody) {
         writer.writeBooleanValue("atApprovedLocation", clockOutPostRequestBody.atApprovedLocation);
+        writer.writeBooleanValue("isAtApprovedLocation", clockOutPostRequestBody.isAtApprovedLocation);
         writer.writeObjectValue<ItemBody>("notes", clockOutPostRequestBody.notes, serializeItemBody);
         writer.writeAdditionalData(clockOutPostRequestBody.additionalData);
     }

@@ -25,7 +25,7 @@ export interface TeamsTabItemRequestBuilder extends BaseRequestBuilder<TeamsTabI
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * A collection of all the tabs in the channel. A navigation property.
+     * A collection of all the tabs in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsTab>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface TeamsTabItemRequestBuilder extends BaseRequestBuilder<TeamsTabI
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * A collection of all the tabs in the channel. A navigation property.
+     * A collection of all the tabs in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface TeamsTabItemRequestBuilder extends BaseRequestBuilder<TeamsTabI
      toPatchRequestInformation(body: TeamsTab, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A collection of all the tabs in the channel. A navigation property.
+ * A collection of all the tabs in the channel.
  */
 export interface TeamsTabItemRequestBuilderGetQueryParameters {
     /**

@@ -14,8 +14,6 @@ import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsM
 // @ts-ignore
 import { SchoolsRequestBuilderNavigationMetadata, SchoolsRequestBuilderRequestsMetadata, type SchoolsRequestBuilder } from './schools/index.js';
 // @ts-ignore
-import { SynchronizationProfilesRequestBuilderNavigationMetadata, SynchronizationProfilesRequestBuilderRequestsMetadata, type SynchronizationProfilesRequestBuilder } from './synchronizationProfiles/index.js';
-// @ts-ignore
 import { type UsersRequestBuilder, UsersRequestBuilderNavigationMetadata, UsersRequestBuilderRequestsMetadata } from './users/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -40,10 +38,6 @@ export interface EducationRequestBuilder extends BaseRequestBuilder<EducationReq
      * Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
      */
     get schools(): SchoolsRequestBuilder;
-    /**
-     * Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
-     */
-    get synchronizationProfiles(): SynchronizationProfilesRequestBuilder;
     /**
      * Provides operations to manage the users property of the microsoft.graph.educationRoot entity.
      */
@@ -120,10 +114,6 @@ export const EducationRequestBuilderNavigationMetadata: Record<Exclude<keyof Edu
     schools: {
         requestsMetadata: SchoolsRequestBuilderRequestsMetadata,
         navigationMetadata: SchoolsRequestBuilderNavigationMetadata,
-    },
-    synchronizationProfiles: {
-        requestsMetadata: SynchronizationProfilesRequestBuilderRequestsMetadata,
-        navigationMetadata: SynchronizationProfilesRequestBuilderNavigationMetadata,
     },
     users: {
         requestsMetadata: UsersRequestBuilderRequestsMetadata,
