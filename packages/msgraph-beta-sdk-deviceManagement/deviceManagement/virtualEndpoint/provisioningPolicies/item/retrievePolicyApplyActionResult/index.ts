@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RetrievePolicyApplyActionResultRequestBuilder extends BaseRequestBuilder<RetrievePolicyApplyActionResultRequestBuilder> {
     /**
-     * Invoke function retrievePolicyApplyActionResult
+     * Get the result of the latest apply operation of a provision policy. Frontline shared only. Administrators only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPolicyApplyActionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retrievepolicyapplyactionresult?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcPolicyApplyActionResult | undefined>;
     /**
-     * Invoke function retrievePolicyApplyActionResult
+     * Get the result of the latest apply operation of a provision policy. Frontline shared only. Administrators only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

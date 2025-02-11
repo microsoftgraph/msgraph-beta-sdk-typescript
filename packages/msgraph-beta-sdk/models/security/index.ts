@@ -20632,7 +20632,7 @@ export function serializeAlertEvidence(writer: SerializationWriter, alertEvidenc
         writer.writeEnumValue<EvidenceRemediationStatus>("remediationStatus", alertEvidence.remediationStatus);
         writer.writeStringValue("remediationStatusDetails", alertEvidence.remediationStatusDetails);
         if(alertEvidence.roles)
-        writer.writeEnumValue<EvidenceRole>("roles", ...alertEvidence.roles);
+        writer.writeCollectionOfEnumValues<EvidenceRole>("roles", alertEvidence.roles);
         writer.writeCollectionOfPrimitiveValues<string>("tags", alertEvidence.tags);
         writer.writeEnumValue<EvidenceVerdict>("verdict", alertEvidence.verdict);
         writer.writeAdditionalData(alertEvidence.additionalData);
@@ -20725,7 +20725,7 @@ export function serializeAnalyzedEmail(writer: SerializationWriter, analyzedEmai
         writer.writeStringValue("subject", analyzedEmail.subject);
         writer.writeCollectionOfObjectValues<ThreatDetectionDetail>("threatDetectionDetails", analyzedEmail.threatDetectionDetails, serializeThreatDetectionDetail);
         if(analyzedEmail.threatTypes)
-        writer.writeEnumValue<ThreatType>("threatTypes", ...analyzedEmail.threatTypes);
+        writer.writeCollectionOfEnumValues<ThreatType>("threatTypes", analyzedEmail.threatTypes);
         writer.writeCollectionOfObjectValues<TimelineEvent>("timelineEvents", analyzedEmail.timelineEvents, serializeTimelineEvent);
         writer.writeCollectionOfObjectValues<AnalyzedEmailUrl>("urls", analyzedEmail.urls, serializeAnalyzedEmailUrl);
     }
@@ -21034,7 +21034,7 @@ export function serializeAuditLogQuery(writer: SerializationWriter, auditLogQuer
         writer.writeCollectionOfPrimitiveValues<string>("operationFilters", auditLogQuery.operationFilters);
         writer.writeCollectionOfObjectValues<AuditLogRecord>("records", auditLogQuery.records, serializeAuditLogRecord);
         if(auditLogQuery.recordTypeFilters)
-        writer.writeEnumValue<AuditLogRecordType>("recordTypeFilters", ...auditLogQuery.recordTypeFilters);
+        writer.writeCollectionOfEnumValues<AuditLogRecordType>("recordTypeFilters", auditLogQuery.recordTypeFilters);
         writer.writeCollectionOfPrimitiveValues<string>("serviceFilters", auditLogQuery.serviceFilters);
         writer.writeEnumValue<AuditLogQueryStatus>("status", auditLogQuery.status);
         writer.writeCollectionOfPrimitiveValues<string>("userPrincipalNameFilters", auditLogQuery.userPrincipalNameFilters);
@@ -21487,9 +21487,9 @@ export function serializeCloudAppDiscoveryReport(writer: SerializationWriter, cl
         writer.writeNumberValue("logFileCount", cloudAppDiscoveryReport.logFileCount);
         writer.writeEnumValue<ReceiverProtocol>("receiverProtocol", cloudAppDiscoveryReport.receiverProtocol);
         if(cloudAppDiscoveryReport.supportedEntityTypes)
-        writer.writeEnumValue<EntityType>("supportedEntityTypes", ...cloudAppDiscoveryReport.supportedEntityTypes);
+        writer.writeCollectionOfEnumValues<EntityType>("supportedEntityTypes", cloudAppDiscoveryReport.supportedEntityTypes);
         if(cloudAppDiscoveryReport.supportedTrafficTypes)
-        writer.writeEnumValue<TrafficType>("supportedTrafficTypes", ...cloudAppDiscoveryReport.supportedTrafficTypes);
+        writer.writeCollectionOfEnumValues<TrafficType>("supportedTrafficTypes", cloudAppDiscoveryReport.supportedTrafficTypes);
     }
 }
 /**
