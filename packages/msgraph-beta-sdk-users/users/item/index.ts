@@ -140,7 +140,7 @@ import { ManagedAppRegistrationsRequestBuilderNavigationMetadata, ManagedAppRegi
 // @ts-ignore
 import { ManagedDevicesRequestBuilderNavigationMetadata, ManagedDevicesRequestBuilderRequestsMetadata, type ManagedDevicesRequestBuilder } from './managedDevices/index.js';
 // @ts-ignore
-import { ManagerRequestBuilderNavigationMetadata, ManagerRequestBuilderRequestsMetadata, type ManagerRequestBuilder } from './manager/index.js';
+import { ManagerRequestBuilderRequestsMetadata, type ManagerRequestBuilder } from './manager/index.js';
 // @ts-ignore
 import { MemberOfRequestBuilderNavigationMetadata, MemberOfRequestBuilderRequestsMetadata, type MemberOfRequestBuilder } from './memberOf/index.js';
 // @ts-ignore
@@ -1047,7 +1047,6 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     },
     manager: {
         requestsMetadata: ManagerRequestBuilderRequestsMetadata,
-        navigationMetadata: ManagerRequestBuilderNavigationMetadata,
     },
     memberOf: {
         requestsMetadata: MemberOfRequestBuilderRequestsMetadata,

@@ -2507,7 +2507,7 @@ export function serializeBasicFilter(writer: SerializationWriter, basicFilter: P
 export function serializeClassGroupConfiguration(writer: SerializationWriter, classGroupConfiguration: Partial<ClassGroupConfiguration> | undefined | null = {}) : void {
     if (classGroupConfiguration) {
         if(classGroupConfiguration.additionalAttributes)
-        writer.writeEnumValue<AdditionalClassGroupAttributes>("additionalAttributes", ...classGroupConfiguration.additionalAttributes);
+        writer.writeCollectionOfEnumValues<AdditionalClassGroupAttributes>("additionalAttributes", classGroupConfiguration.additionalAttributes);
         writer.writeObjectValue<AdditionalClassGroupOptions>("additionalOptions", classGroupConfiguration.additionalOptions, serializeAdditionalClassGroupOptions);
         writer.writeObjectValue<EnrollmentMappings>("enrollmentMappings", classGroupConfiguration.enrollmentMappings, serializeEnrollmentMappings);
         writer.writeStringValue("@odata.type", classGroupConfiguration.odataType);
@@ -3102,7 +3102,7 @@ export function serializeUserCreationOptions(writer: SerializationWriter, userCr
 export function serializeUserManagementOptions(writer: SerializationWriter, userManagementOptions: Partial<UserManagementOptions> | undefined | null = {}) : void {
     if (userManagementOptions) {
         if(userManagementOptions.additionalAttributes)
-        writer.writeEnumValue<AdditionalUserAttributes>("additionalAttributes", ...userManagementOptions.additionalAttributes);
+        writer.writeCollectionOfEnumValues<AdditionalUserAttributes>("additionalAttributes", userManagementOptions.additionalAttributes);
         writer.writeObjectValue<AdditionalUserOptions>("additionalOptions", userManagementOptions.additionalOptions, serializeAdditionalUserOptions);
         writer.writeStringValue("@odata.type", userManagementOptions.odataType);
         writer.writeAdditionalData(userManagementOptions.additionalData);

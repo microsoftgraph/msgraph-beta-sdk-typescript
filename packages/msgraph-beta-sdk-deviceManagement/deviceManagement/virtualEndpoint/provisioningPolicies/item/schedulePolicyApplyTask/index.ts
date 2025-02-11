@@ -47,14 +47,15 @@ export interface SchedulePolicyApplyTaskPostRequestBody extends AdditionalDataHo
  */
 export interface SchedulePolicyApplyTaskRequestBuilder extends BaseRequestBuilder<SchedulePolicyApplyTaskRequestBuilder> {
     /**
-     * Invoke action schedulePolicyApplyTask
+     * Set a scheduled auto-reprovision task to do automatic regular apply. Frontline shared only. Administrators only.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-schedulepolicyapplytask?view=graph-rest-beta|Find more info here}
      */
      post(body: SchedulePolicyApplyTaskPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action schedulePolicyApplyTask
+     * Set a scheduled auto-reprovision task to do automatic regular apply. Frontline shared only. Administrators only.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
