@@ -33,7 +33,6 @@
     "@microsoft/msgraph-beta-sdk": "^1.0.0-preview.27",
     "@microsoft/msgraph-beta-sdk-users": "^1.0.0-preview.27",
     "@microsoft/msgraph-sdk-core": "^1.0.0-preview.2",
-    "guid-typescript": "^1.0.9",
     "tslib": "^2.6.2"
   },
   "devDependencies": {

@@ -20,6 +20,8 @@ import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsM
 // @ts-ignore
 import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequestsMetadata, type MessagesRequestBuilder } from './messages/index.js';
 // @ts-ignore
+import { PlannerRequestBuilderNavigationMetadata, PlannerRequestBuilderRequestsMetadata, type PlannerRequestBuilder } from './planner/index.js';
+// @ts-ignore
 import { ProvisionEmailRequestBuilderRequestsMetadata, type ProvisionEmailRequestBuilder } from './provisionEmail/index.js';
 // @ts-ignore
 import { RemoveEmailRequestBuilderRequestsMetadata, type RemoveEmailRequestBuilder } from './removeEmail/index.js';
@@ -64,6 +66,10 @@ export interface ChannelItemRequestBuilder extends BaseRequestBuilder<ChannelIte
      * Provides operations to manage the messages property of the microsoft.graph.channel entity.
      */
     get messages(): MessagesRequestBuilder;
+    /**
+     * Provides operations to manage the planner property of the microsoft.graph.channel entity.
+     */
+    get planner(): PlannerRequestBuilder;
     /**
      * Provides operations to call the provisionEmail method.
      */
@@ -177,6 +183,10 @@ export const ChannelItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     messages: {
         requestsMetadata: MessagesRequestBuilderRequestsMetadata,
         navigationMetadata: MessagesRequestBuilderNavigationMetadata,
+    },
+    planner: {
+        requestsMetadata: PlannerRequestBuilderRequestsMetadata,
+        navigationMetadata: PlannerRequestBuilderNavigationMetadata,
     },
     provisionEmail: {
         requestsMetadata: ProvisionEmailRequestBuilderRequestsMetadata,
