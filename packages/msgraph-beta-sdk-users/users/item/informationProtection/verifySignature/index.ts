@@ -25,8 +25,8 @@ export function createVerifySignaturePostRequestBodyFromDiscriminatorValue(parse
 export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { verifySignaturePostRequestBody.backingStoreEnabled = true; },
-        "digest": n => { verifySignaturePostRequestBody.digest = n.getStringValue(); },
-        "signature": n => { verifySignaturePostRequestBody.signature = n.getStringValue(); },
+        "digest": n => { verifySignaturePostRequestBody.digest = n.getByteArrayValue; },
+        "signature": n => { verifySignaturePostRequestBody.signature = n.getByteArrayValue; },
         "signingKeyId": n => { verifySignaturePostRequestBody.signingKeyId = n.getStringValue(); },
     }
 }
@@ -37,8 +37,8 @@ export function deserializeIntoVerifySignaturePostRequestBody(verifySignaturePos
 // @ts-ignore
 export function serializeVerifySignaturePostRequestBody(writer: SerializationWriter, verifySignaturePostRequestBody: Partial<VerifySignaturePostRequestBody> | undefined | null = {}) : void {
     if (verifySignaturePostRequestBody) {
-        writer.writeObjectValue("digest", verifySignaturePostRequestBody.digest);
-        writer.writeObjectValue("signature", verifySignaturePostRequestBody.signature);
+        writer.writeByteArrayValue("digest", verifySignaturePostRequestBody.digest);
+        writer.writeByteArrayValue("signature", verifySignaturePostRequestBody.signature);
         writer.writeStringValue("signingKeyId", verifySignaturePostRequestBody.signingKeyId);
         writer.writeAdditionalData(verifySignaturePostRequestBody.additionalData);
     }
@@ -55,11 +55,11 @@ export interface VerifySignaturePostRequestBody extends AdditionalDataHolder, Ba
     /**
      * The digest property
      */
-    digest?: String | null;
+    digest?: ArrayBuffer | null;
     /**
      * The signature property
      */
-    signature?: String | null;
+    signature?: ArrayBuffer | null;
     /**
      * The signingKeyId property
      */

@@ -20,7 +20,7 @@ export interface ClassifyFilePostRequestBody extends AdditionalDataHolder, Backe
     /**
      * The file property
      */
-    file?: String | null;
+    file?: ArrayBuffer | null;
     /**
      * The sensitiveTypeIds property
      */
@@ -63,7 +63,7 @@ export function createClassifyFilePostRequestBodyFromDiscriminatorValue(parseNod
 export function deserializeIntoClassifyFilePostRequestBody(classifyFilePostRequestBody: Partial<ClassifyFilePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { classifyFilePostRequestBody.backingStoreEnabled = true; },
-        "file": n => { classifyFilePostRequestBody.file = n.getStringValue(); },
+        "file": n => { classifyFilePostRequestBody.file = n.getByteArrayValue; },
         "sensitiveTypeIds": n => { classifyFilePostRequestBody.sensitiveTypeIds = n.getCollectionOfPrimitiveValues<string>(); },
     }
 }
@@ -74,7 +74,7 @@ export function deserializeIntoClassifyFilePostRequestBody(classifyFilePostReque
 // @ts-ignore
 export function serializeClassifyFilePostRequestBody(writer: SerializationWriter, classifyFilePostRequestBody: Partial<ClassifyFilePostRequestBody> | undefined | null = {}) : void {
     if (classifyFilePostRequestBody) {
-        writer.writeObjectValue("file", classifyFilePostRequestBody.file);
+        writer.writeByteArrayValue("file", classifyFilePostRequestBody.file);
         writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyFilePostRequestBody.sensitiveTypeIds);
         writer.writeAdditionalData(classifyFilePostRequestBody.additionalData);
     }

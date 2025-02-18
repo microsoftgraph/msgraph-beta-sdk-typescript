@@ -25,7 +25,7 @@ export function createSignDigestPostRequestBodyFromDiscriminatorValue(parseNode:
 export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { signDigestPostRequestBody.backingStoreEnabled = true; },
-        "digest": n => { signDigestPostRequestBody.digest = n.getStringValue(); },
+        "digest": n => { signDigestPostRequestBody.digest = n.getByteArrayValue; },
     }
 }
 /**
@@ -35,7 +35,7 @@ export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBo
 // @ts-ignore
 export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined | null = {}) : void {
     if (signDigestPostRequestBody) {
-        writer.writeObjectValue("digest", signDigestPostRequestBody.digest);
+        writer.writeByteArrayValue("digest", signDigestPostRequestBody.digest);
         writer.writeAdditionalData(signDigestPostRequestBody.additionalData);
     }
 }
@@ -51,7 +51,7 @@ export interface SignDigestPostRequestBody extends AdditionalDataHolder, BackedM
     /**
      * The digest property
      */
-    digest?: String | null;
+    digest?: ArrayBuffer | null;
 }
 /**
  * Provides operations to call the signDigest method.
