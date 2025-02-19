@@ -32,7 +32,7 @@ export function createValidateXmlPostResponseFromDiscriminatorValue(parseNode: P
 export function deserializeIntoValidateXmlPostRequestBody(validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateXmlPostRequestBody.backingStoreEnabled = true; },
-        "officeConfigurationXml": n => { validateXmlPostRequestBody.officeConfigurationXml = n.getStringValue(); },
+        "officeConfigurationXml": n => { validateXmlPostRequestBody.officeConfigurationXml = n.getByteArrayValue(); },
     }
 }
 /**
@@ -53,7 +53,7 @@ export function deserializeIntoValidateXmlPostResponse(validateXmlPostResponse: 
 // @ts-ignore
 export function serializeValidateXmlPostRequestBody(writer: SerializationWriter, validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined | null = {}) : void {
     if (validateXmlPostRequestBody) {
-        writer.writeObjectValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
+        writer.writeByteArrayValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
         writer.writeAdditionalData(validateXmlPostRequestBody.additionalData);
     }
 }
@@ -80,7 +80,7 @@ export interface ValidateXmlPostRequestBody extends AdditionalDataHolder, Backed
     /**
      * The officeConfigurationXml property
      */
-    officeConfigurationXml?: String | null;
+    officeConfigurationXml?: ArrayBuffer | null;
 }
 export interface ValidateXmlPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**

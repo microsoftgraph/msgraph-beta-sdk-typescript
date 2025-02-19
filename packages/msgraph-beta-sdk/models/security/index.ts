@@ -11278,10 +11278,10 @@ export function deserializeIntoFhirBaseUrlUpdateRecord(fhirBaseUrlUpdateRecord: 
 export function deserializeIntoFile(file: Partial<File> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(file),
-        "content": n => { file.content = n.getStringValue(); },
+        "content": n => { file.content = n.getByteArrayValue(); },
         "dateTime": n => { file.dateTime = n.getDateValue(); },
         "extension": n => { file.extension = n.getStringValue(); },
-        "extractedTextContent": n => { file.extractedTextContent = n.getStringValue(); },
+        "extractedTextContent": n => { file.extractedTextContent = n.getByteArrayValue(); },
         "mediaType": n => { file.mediaType = n.getStringValue(); },
         "name": n => { file.name = n.getStringValue(); },
         "otherProperties": n => { file.otherProperties = n.getObjectValue<StringValueDictionary>(createStringValueDictionaryFromDiscriminatorValue); },
@@ -17377,7 +17377,7 @@ export interface File extends Entity, Parsable {
     /**
      * The content property
      */
-    content?: String | null;
+    content?: ArrayBuffer | null;
     /**
      * The dateTime property
      */
@@ -17389,7 +17389,7 @@ export interface File extends Entity, Parsable {
     /**
      * The extractedTextContent property
      */
-    extractedTextContent?: String | null;
+    extractedTextContent?: ArrayBuffer | null;
     /**
      * The mediaType property
      */
@@ -23312,10 +23312,10 @@ export function serializeFhirBaseUrlUpdateRecord(writer: SerializationWriter, fh
 export function serializeFile(writer: SerializationWriter, file: Partial<File> | undefined | null = {}) : void {
     if (file) {
         serializeEntity(writer, file)
-        writer.writeObjectValue("content", file.content);
+        writer.writeByteArrayValue("content", file.content);
         writer.writeDateValue("dateTime", file.dateTime);
         writer.writeStringValue("extension", file.extension);
-        writer.writeObjectValue("extractedTextContent", file.extractedTextContent);
+        writer.writeByteArrayValue("extractedTextContent", file.extractedTextContent);
         writer.writeStringValue("mediaType", file.mediaType);
         writer.writeStringValue("name", file.name);
         writer.writeObjectValue<StringValueDictionary>("otherProperties", file.otherProperties, serializeStringValueDictionary);

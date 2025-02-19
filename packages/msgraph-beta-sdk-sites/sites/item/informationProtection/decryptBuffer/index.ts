@@ -29,11 +29,11 @@ export interface DecryptBufferPostRequestBody extends AdditionalDataHolder, Back
     /**
      * The encryptedBuffer property
      */
-    encryptedBuffer?: String | null;
+    encryptedBuffer?: ArrayBuffer | null;
     /**
      * The publishingLicense property
      */
-    publishingLicense?: String | null;
+    publishingLicense?: ArrayBuffer | null;
 }
 /**
  * Provides operations to call the decryptBuffer method.
@@ -65,8 +65,8 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
 export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { decryptBufferPostRequestBody.backingStoreEnabled = true; },
-        "encryptedBuffer": n => { decryptBufferPostRequestBody.encryptedBuffer = n.getStringValue(); },
-        "publishingLicense": n => { decryptBufferPostRequestBody.publishingLicense = n.getStringValue(); },
+        "encryptedBuffer": n => { decryptBufferPostRequestBody.encryptedBuffer = n.getByteArrayValue(); },
+        "publishingLicense": n => { decryptBufferPostRequestBody.publishingLicense = n.getByteArrayValue(); },
     }
 }
 /**
@@ -76,8 +76,8 @@ export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostReq
 // @ts-ignore
 export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined | null = {}) : void {
     if (decryptBufferPostRequestBody) {
-        writer.writeObjectValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
-        writer.writeObjectValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
+        writer.writeByteArrayValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
+        writer.writeByteArrayValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
         writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
     }
 }
