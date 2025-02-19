@@ -25,7 +25,7 @@ export function createEncryptBufferPostRequestBodyFromDiscriminatorValue(parseNo
 export function deserializeIntoEncryptBufferPostRequestBody(encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { encryptBufferPostRequestBody.backingStoreEnabled = true; },
-        "buffer": n => { encryptBufferPostRequestBody.buffer = n.getStringValue(); },
+        "buffer": n => { encryptBufferPostRequestBody.buffer = n.getByteArrayValue(); },
         "labelId": n => { encryptBufferPostRequestBody.labelId = n.getGuidValue(); },
     }
 }
@@ -41,7 +41,7 @@ export interface EncryptBufferPostRequestBody extends AdditionalDataHolder, Back
     /**
      * The buffer property
      */
-    buffer?: String | null;
+    buffer?: ArrayBuffer | null;
     /**
      * The labelId property
      */
@@ -76,7 +76,7 @@ export interface EncryptBufferRequestBuilder extends BaseRequestBuilder<EncryptB
 // @ts-ignore
 export function serializeEncryptBufferPostRequestBody(writer: SerializationWriter, encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined | null = {}) : void {
     if (encryptBufferPostRequestBody) {
-        writer.writeObjectValue("buffer", encryptBufferPostRequestBody.buffer);
+        writer.writeByteArrayValue("buffer", encryptBufferPostRequestBody.buffer);
         writer.writeGuidValue("labelId", encryptBufferPostRequestBody.labelId);
         writer.writeAdditionalData(encryptBufferPostRequestBody.additionalData);
     }

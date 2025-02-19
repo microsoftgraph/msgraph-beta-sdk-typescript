@@ -25,7 +25,7 @@ export function createUploadNewVersionPostRequestBodyFromDiscriminatorValue(pars
 export function deserializeIntoUploadNewVersionPostRequestBody(uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { uploadNewVersionPostRequestBody.backingStoreEnabled = true; },
-        "content": n => { uploadNewVersionPostRequestBody.content = n.getStringValue(); },
+        "content": n => { uploadNewVersionPostRequestBody.content = n.getByteArrayValue(); },
         "groupPolicyUploadedLanguageFiles": n => { uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles = n.getCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(createGroupPolicyUploadedLanguageFileFromDiscriminatorValue); },
     }
 }
@@ -36,7 +36,7 @@ export function deserializeIntoUploadNewVersionPostRequestBody(uploadNewVersionP
 // @ts-ignore
 export function serializeUploadNewVersionPostRequestBody(writer: SerializationWriter, uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined | null = {}) : void {
     if (uploadNewVersionPostRequestBody) {
-        writer.writeObjectValue("content", uploadNewVersionPostRequestBody.content);
+        writer.writeByteArrayValue("content", uploadNewVersionPostRequestBody.content);
         writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
         writer.writeAdditionalData(uploadNewVersionPostRequestBody.additionalData);
     }
@@ -53,7 +53,7 @@ export interface UploadNewVersionPostRequestBody extends AdditionalDataHolder, B
     /**
      * The content property
      */
-    content?: String | null;
+    content?: ArrayBuffer | null;
     /**
      * The groupPolicyUploadedLanguageFiles property
      */
