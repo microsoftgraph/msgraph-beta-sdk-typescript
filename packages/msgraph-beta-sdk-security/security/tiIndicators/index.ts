@@ -26,34 +26,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TiIndicatorsRequestBuilder extends BaseRequestBuilder<TiIndicatorsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the deleteTiIndicators method.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get deleteTiIndicators(): DeleteTiIndicatorsRequestBuilder;
     /**
      * Provides operations to call the deleteTiIndicatorsByExternalId method.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get deleteTiIndicatorsByExternalId(): DeleteTiIndicatorsByExternalIdRequestBuilder;
     /**
      * Provides operations to call the submitTiIndicators method.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get submitTiIndicators(): SubmitTiIndicatorsRequestBuilder;
     /**
      * Provides operations to call the updateTiIndicators method.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get updateTiIndicators(): UpdateTiIndicatorsRequestBuilder;
     /**
      * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
      * @param tiIndicatorId The unique identifier of tiIndicator
      * @returns {TiIndicatorItemRequestBuilder}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      byTiIndicatorId(tiIndicatorId: string) : TiIndicatorItemRequestBuilder;
     /**
@@ -61,7 +61,7 @@ export interface TiIndicatorsRequestBuilder extends BaseRequestBuilder<TiIndicat
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TiIndicatorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/tiindicators-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters> | undefined) : Promise<TiIndicatorCollectionResponse | undefined>;
@@ -71,7 +71,7 @@ export interface TiIndicatorsRequestBuilder extends BaseRequestBuilder<TiIndicat
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TiIndicator>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/tiindicators-post?view=graph-rest-beta|Find more info here}
      */
      post(body: TiIndicator, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TiIndicator | undefined>;
@@ -79,7 +79,7 @@ export interface TiIndicatorsRequestBuilder extends BaseRequestBuilder<TiIndicat
      * Retrieve a list of tiIndicator objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -87,7 +87,7 @@ export interface TiIndicatorsRequestBuilder extends BaseRequestBuilder<TiIndicat
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toPostRequestInformation(body: TiIndicator, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

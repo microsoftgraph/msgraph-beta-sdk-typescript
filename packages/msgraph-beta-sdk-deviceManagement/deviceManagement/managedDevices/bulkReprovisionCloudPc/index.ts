@@ -32,7 +32,7 @@ export interface BulkReprovisionCloudPcRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcBulkRemoteActionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
+     * @deprecated The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
      * @see {@link https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-beta|Find more info here}
      */
      post(body: BulkReprovisionCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcBulkRemoteActionResult | undefined>;
@@ -41,7 +41,7 @@ export interface BulkReprovisionCloudPcRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
+     * @deprecated The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
      */
      toPostRequestInformation(body: BulkReprovisionCloudPcPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

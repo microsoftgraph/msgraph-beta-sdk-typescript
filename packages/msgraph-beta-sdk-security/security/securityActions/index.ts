@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SecurityActionsRequestBuilder extends BaseRequestBuilder<SecurityActionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the securityActions property of the microsoft.graph.security entity.
      * @param securityActionId The unique identifier of securityAction
      * @returns {SecurityActionItemRequestBuilder}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      bySecurityActionId(securityActionId: string) : SecurityActionItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface SecurityActionsRequestBuilder extends BaseRequestBuilder<Securi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityActionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/securityactions-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SecurityActionsRequestBuilderGetQueryParameters> | undefined) : Promise<SecurityActionCollectionResponse | undefined>;
@@ -43,7 +43,7 @@ export interface SecurityActionsRequestBuilder extends BaseRequestBuilder<Securi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityAction>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/securityactions-post?view=graph-rest-beta|Find more info here}
      */
      post(body: SecurityAction, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SecurityAction | undefined>;
@@ -51,7 +51,7 @@ export interface SecurityActionsRequestBuilder extends BaseRequestBuilder<Securi
      * Retrieve a list of securityAction objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SecurityActionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +59,7 @@ export interface SecurityActionsRequestBuilder extends BaseRequestBuilder<Securi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toPostRequestInformation(body: SecurityAction, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

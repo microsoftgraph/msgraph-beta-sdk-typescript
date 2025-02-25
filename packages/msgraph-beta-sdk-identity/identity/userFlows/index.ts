@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserFlowsRequestBuilder extends BaseRequestBuilder<UserFlowsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
      * @param identityUserFlowId The unique identifier of identityUserFlow
      * @returns {IdentityUserFlowItemRequestBuilder}
-     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      */
      byIdentityUserFlowId(identityUserFlowId: string) : IdentityUserFlowItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface UserFlowsRequestBuilder extends BaseRequestBuilder<UserFlowsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityUserFlowCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      * @see {@link https://learn.microsoft.com/graph/api/identityuserflow-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserFlowsRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityUserFlowCollectionResponse | undefined>;
@@ -43,7 +43,7 @@ export interface UserFlowsRequestBuilder extends BaseRequestBuilder<UserFlowsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityUserFlow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      * @see {@link https://learn.microsoft.com/graph/api/identityuserflow-post-userflows?view=graph-rest-beta|Find more info here}
      */
      post(body: IdentityUserFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IdentityUserFlow | undefined>;
@@ -51,7 +51,7 @@ export interface UserFlowsRequestBuilder extends BaseRequestBuilder<UserFlowsReq
      * Retrieve a list of userflows.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserFlowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +59,7 @@ export interface UserFlowsRequestBuilder extends BaseRequestBuilder<UserFlowsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      */
      toPostRequestInformation(body: IdentityUserFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

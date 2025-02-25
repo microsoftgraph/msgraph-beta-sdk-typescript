@@ -32,7 +32,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to call the findByMethodMode method.
      * @param authenticationMethodModes Usage: authenticationMethodModes={authenticationMethodModes}
      * @returns {FindByMethodModeWithAuthenticationMethodModesRequestBuilder}
-     * @deprecated The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove
+     * @deprecated The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31
      */
      findByMethodModeWithAuthenticationMethodModes(authenticationMethodModes: string | undefined) : FindByMethodModeWithAuthenticationMethodModesRequestBuilder;
     /**

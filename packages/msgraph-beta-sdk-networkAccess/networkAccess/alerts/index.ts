@@ -44,7 +44,7 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      * @param endDateTime Usage: endDateTime={endDateTime}
      * @param startDateTime Usage: startDateTime={startDateTime}
      * @returns {MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder}
-     * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
      */
      microsoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
@@ -52,7 +52,7 @@ export interface AlertsRequestBuilder extends BaseRequestBuilder<AlertsRequestBu
      * @param endDateTime Usage: endDateTime={endDateTime}
      * @param startDateTime Usage: startDateTime={startDateTime}
      * @returns {MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder}
-     * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
      */
      microsoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
