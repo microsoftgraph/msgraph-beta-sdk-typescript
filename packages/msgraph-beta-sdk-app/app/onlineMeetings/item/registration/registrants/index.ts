@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RegistrantsRequestBuilder extends BaseRequestBuilder<RegistrantsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.
      * @param meetingRegistrantBaseId The unique identifier of meetingRegistrantBase
      * @returns {MeetingRegistrantBaseItemRequestBuilder}
-     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
      byMeetingRegistrantBaseId(meetingRegistrantBaseId: string) : MeetingRegistrantBaseItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface RegistrantsRequestBuilder extends BaseRequestBuilder<Registrant
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingRegistrantBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
      get(requestConfiguration?: RequestConfiguration<RegistrantsRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingRegistrantBaseCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface RegistrantsRequestBuilder extends BaseRequestBuilder<Registrant
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingRegistrantBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
      post(body: MeetingRegistrantBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingRegistrantBase | undefined>;
     /**
      * Registrants of the online meeting.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RegistrantsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface RegistrantsRequestBuilder extends BaseRequestBuilder<Registrant
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
      toPostRequestInformation(body: MeetingRegistrantBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

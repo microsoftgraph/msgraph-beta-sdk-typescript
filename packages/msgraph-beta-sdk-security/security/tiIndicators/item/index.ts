@@ -16,7 +16,7 @@ export interface TiIndicatorItemRequestBuilder extends BaseRequestBuilder<TiIndi
      * Delete a tiIndicator object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -25,7 +25,7 @@ export interface TiIndicatorItemRequestBuilder extends BaseRequestBuilder<TiIndi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TiIndicator>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/tiindicator-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TiIndicatorItemRequestBuilderGetQueryParameters> | undefined) : Promise<TiIndicator | undefined>;
@@ -35,7 +35,7 @@ export interface TiIndicatorItemRequestBuilder extends BaseRequestBuilder<TiIndi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TiIndicator>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      * @see {@link https://learn.microsoft.com/graph/api/tiindicator-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: TiIndicator, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TiIndicator | undefined>;
@@ -43,14 +43,14 @@ export interface TiIndicatorItemRequestBuilder extends BaseRequestBuilder<TiIndi
      * Delete a tiIndicator object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a tiIndicator object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TiIndicatorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +58,7 @@ export interface TiIndicatorItemRequestBuilder extends BaseRequestBuilder<TiIndi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toPatchRequestInformation(body: TiIndicator, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

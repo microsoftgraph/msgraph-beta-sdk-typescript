@@ -17,14 +17,14 @@ export interface ConnectedOrganizationRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConnectedOrganization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      get(requestConfiguration?: RequestConfiguration<ConnectedOrganizationRequestBuilderGetQueryParameters> | undefined) : Promise<ConnectedOrganization | undefined>;
     /**
      * The connected organization of the subject. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConnectedOrganizationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -20,19 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface FoldersRequestBuilder extends BaseRequestBuilder<FoldersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the folders property of the microsoft.graph.mailbox entity.
      * @param mailboxFolderId The unique identifier of mailboxFolder
      * @returns {MailboxFolderItemRequestBuilder}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      byMailboxFolderId(mailboxFolderId: string) : MailboxFolderItemRequestBuilder;
     /**
@@ -40,7 +40,7 @@ export interface FoldersRequestBuilder extends BaseRequestBuilder<FoldersRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxFolderCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailbox-list-folders?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FoldersRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxFolderCollectionResponse | undefined>;
@@ -48,7 +48,7 @@ export interface FoldersRequestBuilder extends BaseRequestBuilder<FoldersRequest
      * Get all the mailboxFolder objects in the specified mailbox, including any search folders.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FoldersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

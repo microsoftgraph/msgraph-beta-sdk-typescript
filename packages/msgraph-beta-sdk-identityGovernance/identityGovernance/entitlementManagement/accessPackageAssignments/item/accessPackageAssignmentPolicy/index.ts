@@ -22,29 +22,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageAssignmentPolicyRequestBuilder extends BaseRequestBuilder<AccessPackageAssignmentPolicyRequestBuilder> {
     /**
      * Provides operations to manage the accessPackage property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackage(): AccessPackageRequestBuilder;
     /**
      * Provides operations to manage the accessPackageCatalog property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackageCatalog(): AccessPackageCatalogRequestBuilder;
     /**
      * Provides operations to manage the customExtensionHandlers property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get customExtensionHandlers(): CustomExtensionHandlersRequestBuilder;
     /**
      * Provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get customExtensionStageSettings(): CustomExtensionStageSettingsRequestBuilder;
     /**
      * Delete navigation property accessPackageAssignmentPolicy for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -52,7 +52,7 @@ export interface AccessPackageAssignmentPolicyRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageAssignmentPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageAssignmentPolicy | undefined>;
     /**
@@ -61,21 +61,21 @@ export interface AccessPackageAssignmentPolicyRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageAssignmentPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      patch(body: AccessPackageAssignmentPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageAssignmentPolicy | undefined>;
     /**
      * Delete navigation property accessPackageAssignmentPolicy for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read-only. Nullable. Supports $filter (eq) on the id property
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageAssignmentPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,7 +83,7 @@ export interface AccessPackageAssignmentPolicyRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toPatchRequestInformation(body: AccessPackageAssignmentPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

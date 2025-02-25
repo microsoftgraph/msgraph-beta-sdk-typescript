@@ -16,14 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<ReviewSetQueryItemRequestBuilder> {
     /**
      * Provides operations to call the applyTags method.
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
     get microsoftGraphEdiscoveryApplyTags(): MicrosoftGraphEdiscoveryApplyTagsRequestBuilder;
     /**
      * Delete a reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -32,7 +32,7 @@ export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<Rev
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReviewSetQuery>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ReviewSetQueryItemRequestBuilderGetQueryParameters> | undefined) : Promise<ReviewSetQuery | undefined>;
@@ -42,7 +42,7 @@ export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<Rev
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReviewSetQuery>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      * @see {@link https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ReviewSetQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ReviewSetQuery | undefined>;
@@ -50,14 +50,14 @@ export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<Rev
      * Delete a reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReviewSetQueryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -65,7 +65,7 @@ export interface ReviewSetQueryItemRequestBuilder extends BaseRequestBuilder<Rev
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      toPatchRequestInformation(body: ReviewSetQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

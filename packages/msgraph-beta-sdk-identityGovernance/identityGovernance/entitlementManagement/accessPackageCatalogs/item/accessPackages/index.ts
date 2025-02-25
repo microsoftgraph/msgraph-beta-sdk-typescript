@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackagesRequestBuilder extends BaseRequestBuilder<AccessPackagesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
      * @param accessPackageId The unique identifier of accessPackage
      * @returns {AccessPackageItemRequestBuilder}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      byAccessPackageId(accessPackageId: string) : AccessPackageItemRequestBuilder;
     /**
@@ -33,14 +33,14 @@ export interface AccessPackagesRequestBuilder extends BaseRequestBuilder<AccessP
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageCollectionResponse | undefined>;
     /**
      * The access packages in this catalog. Read-only. Nullable. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

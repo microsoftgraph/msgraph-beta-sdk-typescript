@@ -16778,15 +16778,15 @@ export interface EdiscoveryCaseCollectionResponse extends BaseCollectionPaginati
 }
 export interface EdiscoveryCaseMember extends Entity, Parsable {
     /**
-     * The displayName property
+     * The display name of the eDiscovery case member. Allowed only for case members of type roleGroup.
      */
     displayName?: string | null;
     /**
-     * The recipientType property
+     * Specifies the recipient type of the eDiscovery case member. The possible values are: user, roleGroup, unknownFutureValue.
      */
     recipientType?: RecipientType[] | null;
     /**
-     * The smtpAddress property
+     * The smtp address of the eDiscovery case member. Allowed only for case members of type user.
      */
     smtpAddress?: string | null;
 }

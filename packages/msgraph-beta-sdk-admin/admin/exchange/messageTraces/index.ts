@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageTracesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the messageTraces property of the microsoft.graph.exchangeAdmin entity.
      * @param messageTraceId The unique identifier of messageTrace
      * @returns {MessageTraceItemRequestBuilder}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      byMessageTraceId(messageTraceId: string) : MessageTraceItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageT
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageTraceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      get(requestConfiguration?: RequestConfiguration<MessageTracesRequestBuilderGetQueryParameters> | undefined) : Promise<MessageTraceCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageT
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageTrace>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      post(body: MessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MessageTrace | undefined>;
     /**
      * Get messageTraces from admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessageTracesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageT
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toPostRequestInformation(body: MessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -34,6 +34,8 @@ import { GetTotalAggregatedRemoteConnectionReportsRequestBuilderRequestsMetadata
 // @ts-ignore
 import { RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata, type RetrieveBulkActionStatusReportRequestBuilder } from './retrieveBulkActionStatusReport/index.js';
 // @ts-ignore
+import { RetrieveCloudPcTenantMetricsReportRequestBuilderRequestsMetadata, type RetrieveCloudPcTenantMetricsReportRequestBuilder } from './retrieveCloudPcTenantMetricsReport/index.js';
+// @ts-ignore
 import { RetrieveCloudPcTroubleshootReportsRequestBuilderRequestsMetadata, type RetrieveCloudPcTroubleshootReportsRequestBuilder } from './retrieveCloudPcTroubleshootReports/index.js';
 // @ts-ignore
 import { RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata, type RetrieveConnectionQualityReportsRequestBuilder } from './retrieveConnectionQualityReports/index.js';
@@ -96,6 +98,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the retrieveBulkActionStatusReport method.
      */
     get retrieveBulkActionStatusReport(): RetrieveBulkActionStatusReportRequestBuilder;
+    /**
+     * Provides operations to call the retrieveCloudPcTenantMetricsReport method.
+     */
+    get retrieveCloudPcTenantMetricsReport(): RetrieveCloudPcTenantMetricsReportRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPcTroubleshootReports method.
      */
@@ -237,6 +243,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     retrieveBulkActionStatusReport: {
         requestsMetadata: RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata,
+    },
+    retrieveCloudPcTenantMetricsReport: {
+        requestsMetadata: RetrieveCloudPcTenantMetricsReportRequestBuilderRequestsMetadata,
     },
     retrieveCloudPcTroubleshootReports: {
         requestsMetadata: RetrieveCloudPcTroubleshootReportsRequestBuilderRequestsMetadata,

@@ -43,7 +43,7 @@ export interface FindByMethodModeWithAuthenticationMethodModesRequestBuilder ext
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FindByMethodModeWithAuthenticationMethodModesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+     * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31
      * @see {@link https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters> | undefined) : Promise<FindByMethodModeWithAuthenticationMethodModesGetResponse | undefined>;
@@ -51,7 +51,7 @@ export interface FindByMethodModeWithAuthenticationMethodModesRequestBuilder ext
      * Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+     * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

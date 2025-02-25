@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PrinterSharesRequestBuilder extends BaseRequestBuilder<PrinterSharesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the printerShares property of the microsoft.graph.print entity.
      * @param printerShareId The unique identifier of printerShare
      * @returns {PrinterShareItemRequestBuilder}
-     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
      byPrinterShareId(printerShareId: string) : PrinterShareItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface PrinterSharesRequestBuilder extends BaseRequestBuilder<PrinterS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrinterShareCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
      get(requestConfiguration?: RequestConfiguration<PrinterSharesRequestBuilderGetQueryParameters> | undefined) : Promise<PrinterShareCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface PrinterSharesRequestBuilder extends BaseRequestBuilder<PrinterS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrinterShare>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
      post(body: PrinterShare, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrinterShare | undefined>;
     /**
      * Get printerShares from print
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrinterSharesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface PrinterSharesRequestBuilder extends BaseRequestBuilder<PrinterS
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+     * @deprecated The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
      toPostRequestInformation(body: PrinterShare, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

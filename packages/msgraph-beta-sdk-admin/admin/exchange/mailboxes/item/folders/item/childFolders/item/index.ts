@@ -16,7 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<MailboxFolderItemRequestBuilder> {
     /**
      * Provides operations to manage the items property of the microsoft.graph.mailboxFolder entity.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get items(): ItemsRequestBuilder;
     /**
@@ -24,14 +24,14 @@ export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<Mail
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      get(requestConfiguration?: RequestConfiguration<MailboxFolderItemRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxFolder | undefined>;
     /**
      * The collection of child folders in this folder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxFolderItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

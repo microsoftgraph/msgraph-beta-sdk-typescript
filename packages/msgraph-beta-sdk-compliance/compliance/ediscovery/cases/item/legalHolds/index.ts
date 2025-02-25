@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LegalHoldsRequestBuilder extends BaseRequestBuilder<LegalHoldsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
      * @param legalHoldId The unique identifier of legalHold
      * @returns {LegalHoldItemRequestBuilder}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      byLegalHoldId(legalHoldId: string) : LegalHoldItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface LegalHoldsRequestBuilder extends BaseRequestBuilder<LegalHoldsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LegalHoldCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      get(requestConfiguration?: RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters> | undefined) : Promise<LegalHoldCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface LegalHoldsRequestBuilder extends BaseRequestBuilder<LegalHoldsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LegalHold>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      post(body: LegalHold, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LegalHold | undefined>;
     /**
      * Read the properties and relationships of a legalHold object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LegalHoldsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface LegalHoldsRequestBuilder extends BaseRequestBuilder<LegalHoldsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      toPostRequestInformation(body: LegalHold, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

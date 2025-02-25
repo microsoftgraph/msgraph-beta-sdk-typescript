@@ -66,7 +66,7 @@ export interface UpdateAllMessagesReadStateRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+     * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
      */
      post(body: UpdateAllMessagesReadStatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -74,7 +74,7 @@ export interface UpdateAllMessagesReadStateRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+     * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
      */
      toPostRequestInformation(body: UpdateAllMessagesReadStatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RecipientsRequestBuilder extends BaseRequestBuilder<RecipientsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.
      * @param messageRecipientId The unique identifier of messageRecipient
      * @returns {MessageRecipientItemRequestBuilder}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      byMessageRecipientId(messageRecipientId: string) : MessageRecipientItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface RecipientsRequestBuilder extends BaseRequestBuilder<RecipientsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageRecipientCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      get(requestConfiguration?: RequestConfiguration<RecipientsRequestBuilderGetQueryParameters> | undefined) : Promise<MessageRecipientCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface RecipientsRequestBuilder extends BaseRequestBuilder<RecipientsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageRecipient>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      post(body: MessageRecipient, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MessageRecipient | undefined>;
     /**
      * Get recipients from admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RecipientsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface RecipientsRequestBuilder extends BaseRequestBuilder<RecipientsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toPostRequestInformation(body: MessageRecipient, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

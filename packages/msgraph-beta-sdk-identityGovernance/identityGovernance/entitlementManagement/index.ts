@@ -112,7 +112,7 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
      * @param uniqueName Alternate key of accessPackageCatalog
      * @returns {AccessPackageCatalogsWithUniqueNameRequestBuilder}
-     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      accessPackageCatalogsWithUniqueName(uniqueName: string | undefined) : AccessPackageCatalogsWithUniqueNameRequestBuilder;
     /**

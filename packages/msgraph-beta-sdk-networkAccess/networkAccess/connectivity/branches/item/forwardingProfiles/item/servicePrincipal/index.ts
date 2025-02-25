@@ -17,14 +17,14 @@ export interface ServicePrincipalRequestBuilder extends BaseRequestBuilder<Servi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
      */
      get(requestConfiguration?: RequestConfiguration<ServicePrincipalRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipal | undefined>;
     /**
      * Get servicePrincipal from networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicePrincipalRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

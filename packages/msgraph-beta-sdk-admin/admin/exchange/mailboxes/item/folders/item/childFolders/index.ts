@@ -20,19 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ChildFoldersRequestBuilder extends BaseRequestBuilder<ChildFoldersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to manage the childFolders property of the microsoft.graph.mailboxFolder entity.
      * @param mailboxFolderId1 The unique identifier of mailboxFolder
      * @returns {MailboxFolderItemRequestBuilder}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      byMailboxFolderId1(mailboxFolderId1: string) : MailboxFolderItemRequestBuilder;
     /**
@@ -40,7 +40,7 @@ export interface ChildFoldersRequestBuilder extends BaseRequestBuilder<ChildFold
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxFolderCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailboxfolder-list-childfolders?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxFolderCollectionResponse | undefined>;
@@ -48,7 +48,7 @@ export interface ChildFoldersRequestBuilder extends BaseRequestBuilder<ChildFold
      * Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChildFoldersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

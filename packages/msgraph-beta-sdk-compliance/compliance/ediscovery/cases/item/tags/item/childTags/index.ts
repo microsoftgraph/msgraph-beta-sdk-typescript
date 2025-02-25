@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ChildTagsRequestBuilder extends BaseRequestBuilder<ChildTagsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
      * @param tagId1 The unique identifier of tag
      * @returns {TagItemRequestBuilder}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      byTagId1(tagId1: string) : TagItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface ChildTagsRequestBuilder extends BaseRequestBuilder<ChildTagsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TagCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      * @see {@link https://learn.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters> | undefined) : Promise<TagCollectionResponse | undefined>;
@@ -41,7 +41,7 @@ export interface ChildTagsRequestBuilder extends BaseRequestBuilder<ChildTagsReq
      * Get a list of child tag objects associated with a tag.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+     * @deprecated The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface NotificationsRequestBuilder extends BaseRequestBuilder<NotificationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the notifications property of the microsoft.graph.user entity.
      * @param notificationId The unique identifier of notification
      * @returns {NotificationItemRequestBuilder}
-     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
      byNotificationId(notificationId: string) : NotificationItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface NotificationsRequestBuilder extends BaseRequestBuilder<Notifica
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NotificationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
      get(requestConfiguration?: RequestConfiguration<NotificationsRequestBuilderGetQueryParameters> | undefined) : Promise<NotificationCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface NotificationsRequestBuilder extends BaseRequestBuilder<Notifica
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Notification>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
      post(body: Notification, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Notification | undefined>;
     /**
      * Get notifications from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<NotificationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface NotificationsRequestBuilder extends BaseRequestBuilder<Notifica
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
      toPostRequestInformation(body: Notification, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

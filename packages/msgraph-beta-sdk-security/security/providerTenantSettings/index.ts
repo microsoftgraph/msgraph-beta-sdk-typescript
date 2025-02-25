@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProviderTenantSettingsRequestBuilder extends BaseRequestBuilder<ProviderTenantSettingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
      * @param providerTenantSettingId The unique identifier of providerTenantSetting
      * @returns {ProviderTenantSettingItemRequestBuilder}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      byProviderTenantSettingId(providerTenantSettingId: string) : ProviderTenantSettingItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface ProviderTenantSettingsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProviderTenantSettingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      get(requestConfiguration?: RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<ProviderTenantSettingCollectionResponse | undefined>;
     /**
@@ -42,14 +42,14 @@ export interface ProviderTenantSettingsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProviderTenantSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      post(body: ProviderTenantSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProviderTenantSetting | undefined>;
     /**
      * Get providerTenantSettings from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProviderTenantSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +57,7 @@ export interface ProviderTenantSettingsRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
      toPostRequestInformation(body: ProviderTenantSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

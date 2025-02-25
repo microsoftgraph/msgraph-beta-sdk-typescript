@@ -43,7 +43,7 @@ export interface GetAttackSimulationTrainingUserCoverageRequestBuilder extends B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetAttackSimulationTrainingUserCoverageGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
+     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
      * @see {@link https://learn.microsoft.com/graph/api/reportroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters> | undefined) : Promise<GetAttackSimulationTrainingUserCoverageGetResponse | undefined>;
@@ -51,7 +51,7 @@ export interface GetAttackSimulationTrainingUserCoverageRequestBuilder extends B
      * List training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
+     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -77,15 +77,16 @@ export interface RetrieveCloudPcTroubleshootReportsPostRequestBody extends Addit
  */
 export interface RetrieveCloudPcTroubleshootReportsRequestBuilder extends BaseRequestBuilder<RetrieveCloudPcTroubleshootReportsRequestBuilder> {
     /**
-     * Invoke action retrieveCloudPcTroubleshootReports
+     * Get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-retrievecloudpctroubleshootreports?view=graph-rest-beta|Find more info here}
      */
      post(body: RetrieveCloudPcTroubleshootReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Invoke action retrieveCloudPcTroubleshootReports
+     * Get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
