@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ItemInsightsRequestBuilderRequestsMetadata, type ItemInsightsRequestBuilder } from './itemInsights/index.js';
 // @ts-ignore
+import { NamePronunciationRequestBuilderRequestsMetadata, type NamePronunciationRequestBuilder } from './namePronunciation/index.js';
+// @ts-ignore
 import { ProfileCardPropertiesRequestBuilderNavigationMetadata, ProfileCardPropertiesRequestBuilderRequestsMetadata, type ProfileCardPropertiesRequestBuilder } from './profileCardProperties/index.js';
 // @ts-ignore
 import { PronounsRequestBuilderRequestsMetadata, type PronounsRequestBuilder } from './pronouns/index.js';
@@ -22,6 +24,10 @@ export interface PeopleRequestBuilder extends BaseRequestBuilder<PeopleRequestBu
      * Provides operations to manage the itemInsights property of the microsoft.graph.peopleAdminSettings entity.
      */
     get itemInsights(): ItemInsightsRequestBuilder;
+    /**
+     * Provides operations to manage the namePronunciation property of the microsoft.graph.peopleAdminSettings entity.
+     */
+    get namePronunciation(): NamePronunciationRequestBuilder;
     /**
      * Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
      */
@@ -102,6 +108,9 @@ const PeopleRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const PeopleRequestBuilderNavigationMetadata: Record<Exclude<keyof PeopleRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     itemInsights: {
         requestsMetadata: ItemInsightsRequestBuilderRequestsMetadata,
+    },
+    namePronunciation: {
+        requestsMetadata: NamePronunciationRequestBuilderRequestsMetadata,
     },
     profileCardProperties: {
         requestsMetadata: ProfileCardPropertiesRequestBuilderRequestsMetadata,
