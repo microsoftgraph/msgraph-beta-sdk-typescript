@@ -10,7 +10,11 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { DeltaRequestBuilderRequestsMetadata, type DeltaRequestBuilder } from './delta/index.js';
 // @ts-ignore
+import { ForwardToChatRequestBuilderRequestsMetadata, type ForwardToChatRequestBuilder } from './forwardToChat/index.js';
+// @ts-ignore
 import { ChatMessageItemRequestBuilderNavigationMetadata, ChatMessageItemRequestBuilderRequestsMetadata, type ChatMessageItemRequestBuilder } from './item/index.js';
+// @ts-ignore
+import { ReplyWithQuoteRequestBuilderRequestsMetadata, type ReplyWithQuoteRequestBuilder } from './replyWithQuote/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -26,6 +30,14 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      * Provides operations to call the delta method.
      */
     get delta(): DeltaRequestBuilder;
+    /**
+     * Provides operations to call the forwardToChat method.
+     */
+    get forwardToChat(): ForwardToChatRequestBuilder;
+    /**
+     * Provides operations to call the replyWithQuote method.
+     */
+    get replyWithQuote(): ReplyWithQuoteRequestBuilder;
     /**
      * Provides operations to manage the messages property of the microsoft.graph.chat entity.
      * @param chatMessageId The unique identifier of chatMessage
@@ -129,6 +141,12 @@ export const MessagesRequestBuilderNavigationMetadata: Record<Exclude<keyof Mess
     },
     delta: {
         requestsMetadata: DeltaRequestBuilderRequestsMetadata,
+    },
+    forwardToChat: {
+        requestsMetadata: ForwardToChatRequestBuilderRequestsMetadata,
+    },
+    replyWithQuote: {
+        requestsMetadata: ReplyWithQuoteRequestBuilderRequestsMetadata,
     },
 };
 /**

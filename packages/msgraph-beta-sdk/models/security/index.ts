@@ -4041,6 +4041,15 @@ export function createEdiscoveryCaseFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EdiscoveryCaseMemberCollectionResponse}
+ */
+// @ts-ignore
+export function createEdiscoveryCaseMemberCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEdiscoveryCaseMemberCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EdiscoveryCaseMember}
  */
 // @ts-ignore
@@ -10645,6 +10654,7 @@ export function deserializeIntoEdiscoveryAddToReviewSetOperation(ediscoveryAddTo
 export function deserializeIntoEdiscoveryCase(ediscoveryCase: Partial<EdiscoveryCase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseEscaped(ediscoveryCase),
+        "caseMembers": n => { ediscoveryCase.caseMembers = n.getCollectionOfObjectValues<EdiscoveryCaseMember>(createEdiscoveryCaseMemberFromDiscriminatorValue); },
         "closedBy": n => { ediscoveryCase.closedBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
         "closedDateTime": n => { ediscoveryCase.closedDateTime = n.getDateValue(); },
         "custodians": n => { ediscoveryCase.custodians = n.getCollectionOfObjectValues<EdiscoveryCustodian>(createEdiscoveryCustodianFromDiscriminatorValue); },
@@ -10680,6 +10690,17 @@ export function deserializeIntoEdiscoveryCaseMember(ediscoveryCaseMember: Partia
         "displayName": n => { ediscoveryCaseMember.displayName = n.getStringValue(); },
         "recipientType": n => { ediscoveryCaseMember.recipientType = n.getCollectionOfEnumValues<RecipientType>(RecipientTypeObject); },
         "smtpAddress": n => { ediscoveryCaseMember.smtpAddress = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEdiscoveryCaseMemberCollectionResponse(ediscoveryCaseMemberCollectionResponse: Partial<EdiscoveryCaseMemberCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(ediscoveryCaseMemberCollectionResponse),
+        "value": n => { ediscoveryCaseMemberCollectionResponse.value = n.getCollectionOfObjectValues<EdiscoveryCaseMember>(createEdiscoveryCaseMemberFromDiscriminatorValue); },
     }
 }
 /**
@@ -16773,6 +16794,10 @@ export interface EdiscoveryAddToReviewSetOperation extends CaseOperation, Parsab
 }
 export interface EdiscoveryCase extends CaseEscaped, Parsable {
     /**
+     * Returns a list of ediscoveryCaseMember objects associated to this case.
+     */
+    caseMembers?: EdiscoveryCaseMember[] | null;
+    /**
      * The user who closed the case.
      */
     closedBy?: IdentitySet | null;
@@ -16836,6 +16861,12 @@ export interface EdiscoveryCaseMember extends Entity, Parsable {
      * The smtp address of the eDiscovery case member. Allowed only for case members of type user.
      */
     smtpAddress?: string | null;
+}
+export interface EdiscoveryCaseMemberCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: EdiscoveryCaseMember[] | null;
 }
 export interface EdiscoveryCaseSettings extends Entity, Parsable {
     /**
@@ -22718,6 +22749,7 @@ export function serializeEdiscoveryAddToReviewSetOperation(writer: Serialization
 export function serializeEdiscoveryCase(writer: SerializationWriter, ediscoveryCase: Partial<EdiscoveryCase> | undefined | null = {}) : void {
     if (ediscoveryCase) {
         serializeCaseEscaped(writer, ediscoveryCase)
+        writer.writeCollectionOfObjectValues<EdiscoveryCaseMember>("caseMembers", ediscoveryCase.caseMembers, serializeEdiscoveryCaseMember);
         writer.writeObjectValue<IdentitySet>("closedBy", ediscoveryCase.closedBy, serializeIdentitySet);
         writer.writeDateValue("closedDateTime", ediscoveryCase.closedDateTime);
         writer.writeCollectionOfObjectValues<EdiscoveryCustodian>("custodians", ediscoveryCase.custodians, serializeEdiscoveryCustodian);
@@ -22753,6 +22785,17 @@ export function serializeEdiscoveryCaseMember(writer: SerializationWriter, edisc
         writer.writeStringValue("displayName", ediscoveryCaseMember.displayName);
         writer.writeEnumValue<RecipientType[]>("recipientType", ediscoveryCaseMember.recipientType);
         writer.writeStringValue("smtpAddress", ediscoveryCaseMember.smtpAddress);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEdiscoveryCaseMemberCollectionResponse(writer: SerializationWriter, ediscoveryCaseMemberCollectionResponse: Partial<EdiscoveryCaseMemberCollectionResponse> | undefined | null = {}) : void {
+    if (ediscoveryCaseMemberCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, ediscoveryCaseMemberCollectionResponse)
+        writer.writeCollectionOfObjectValues<EdiscoveryCaseMember>("value", ediscoveryCaseMemberCollectionResponse.value, serializeEdiscoveryCaseMember);
     }
 }
 /**
