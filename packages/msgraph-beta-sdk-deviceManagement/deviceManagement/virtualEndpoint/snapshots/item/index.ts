@@ -19,11 +19,10 @@ export interface CloudPcSnapshotItemRequestBuilder extends BaseRequestBuilder<Cl
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a cloudPcSnapshot object.
+     * Cloud PC snapshots.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcSnapshot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcSnapshotItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcSnapshot | undefined>;
     /**
@@ -41,7 +40,7 @@ export interface CloudPcSnapshotItemRequestBuilder extends BaseRequestBuilder<Cl
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a cloudPcSnapshot object.
+     * Cloud PC snapshots.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -55,7 +54,7 @@ export interface CloudPcSnapshotItemRequestBuilder extends BaseRequestBuilder<Cl
      toPatchRequestInformation(body: CloudPcSnapshot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a cloudPcSnapshot object.
+ * Cloud PC snapshots.
  */
 export interface CloudPcSnapshotItemRequestBuilderGetQueryParameters {
     /**

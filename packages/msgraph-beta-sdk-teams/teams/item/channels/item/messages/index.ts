@@ -10,7 +10,11 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { DeltaRequestBuilderRequestsMetadata, type DeltaRequestBuilder } from './delta/index.js';
 // @ts-ignore
+import { ForwardToChatRequestBuilderRequestsMetadata, type ForwardToChatRequestBuilder } from './forwardToChat/index.js';
+// @ts-ignore
 import { ChatMessageItemRequestBuilderNavigationMetadata, ChatMessageItemRequestBuilderRequestsMetadata, type ChatMessageItemRequestBuilder } from './item/index.js';
+// @ts-ignore
+import { ReplyWithQuoteRequestBuilderRequestsMetadata, type ReplyWithQuoteRequestBuilder } from './replyWithQuote/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -27,6 +31,14 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      */
     get delta(): DeltaRequestBuilder;
     /**
+     * Provides operations to call the forwardToChat method.
+     */
+    get forwardToChat(): ForwardToChatRequestBuilder;
+    /**
+     * Provides operations to call the replyWithQuote method.
+     */
+    get replyWithQuote(): ReplyWithQuoteRequestBuilder;
+    /**
      * Provides operations to manage the messages property of the microsoft.graph.channel entity.
      * @param chatMessageId The unique identifier of chatMessage
      * @returns {ChatMessageItemRequestBuilder}
@@ -41,12 +53,12 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      */
      get(requestConfiguration?: RequestConfiguration<MessagesRequestBuilderGetQueryParameters> | undefined) : Promise<ChatMessageCollectionResponse | undefined>;
     /**
-     * Send a new chatMessage in the specified channel.
+     * Send a new chatMessage in the specified channel or a chat.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta|Find more info here}
      */
      post(body: ChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChatMessage | undefined>;
     /**
@@ -56,7 +68,7 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Send a new chatMessage in the specified channel.
+     * Send a new chatMessage in the specified channel or a chat.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -131,6 +143,12 @@ export const MessagesRequestBuilderNavigationMetadata: Record<Exclude<keyof Mess
     },
     delta: {
         requestsMetadata: DeltaRequestBuilderRequestsMetadata,
+    },
+    forwardToChat: {
+        requestsMetadata: ForwardToChatRequestBuilderRequestsMetadata,
+    },
+    replyWithQuote: {
+        requestsMetadata: ReplyWithQuoteRequestBuilderRequestsMetadata,
     },
 };
 /**
