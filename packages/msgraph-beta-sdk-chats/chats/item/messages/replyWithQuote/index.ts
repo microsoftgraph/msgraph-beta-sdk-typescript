@@ -52,15 +52,16 @@ export interface ReplyWithQuotePostRequestBody extends AdditionalDataHolder, Bac
  */
 export interface ReplyWithQuoteRequestBuilder extends BaseRequestBuilder<ReplyWithQuoteRequestBuilder> {
     /**
-     * Invoke action replyWithQuote
+     * Reply with quote to a single chat message or multiple chat messages in a chat.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-beta|Find more info here}
      */
      post(body: ReplyWithQuotePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChatMessage | undefined>;
     /**
-     * Invoke action replyWithQuote
+     * Reply with quote to a single chat message or multiple chat messages in a chat.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
