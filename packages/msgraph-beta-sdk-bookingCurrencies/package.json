@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-bookingcurrencies",
-  "version": "1.0.0-preview.43",
+  "version": "1.0.0-preview.44",
   "description": "BookingCurrencies fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
