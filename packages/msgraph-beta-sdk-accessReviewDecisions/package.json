@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-accessreviewdecisions",
-  "version": "1.0.0-preview.44",
+  "version": "1.0.0-preview.45",
   "description": "AccessReviewDecisions fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
