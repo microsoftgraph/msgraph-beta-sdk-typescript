@@ -29,7 +29,7 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      */
      byMailFolderOperationId(mailFolderOperationId: string) : MailFolderOperationItemRequestBuilder;
     /**
-     * Get operations from users
+     * The collection of long-running operations in the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailFolderOperationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      */
      get(requestConfiguration?: RequestConfiguration<OperationsRequestBuilderGetQueryParameters> | undefined) : Promise<MailFolderOperationCollectionResponse | undefined>;
     /**
-     * Get operations from users
+     * The collection of long-running operations in the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
@@ -45,7 +45,7 @@ export interface OperationsRequestBuilder extends BaseRequestBuilder<OperationsR
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OperationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get operations from users
+ * The collection of long-running operations in the mailFolder.
  */
 export interface OperationsRequestBuilderGetQueryParameters {
     /**

@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MailFolderOperationItemRequestBuilder extends BaseRequestBuilder<MailFolderOperationItemRequestBuilder> {
     /**
-     * Get operations from users
+     * The collection of long-running operations in the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailFolderOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,7 +21,7 @@ export interface MailFolderOperationItemRequestBuilder extends BaseRequestBuilde
      */
      get(requestConfiguration?: RequestConfiguration<MailFolderOperationItemRequestBuilderGetQueryParameters> | undefined) : Promise<MailFolderOperation | undefined>;
     /**
-     * Get operations from users
+     * The collection of long-running operations in the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
@@ -29,7 +29,7 @@ export interface MailFolderOperationItemRequestBuilder extends BaseRequestBuilde
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailFolderOperationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get operations from users
+ * The collection of long-running operations in the mailFolder.
  */
 export interface MailFolderOperationItemRequestBuilderGetQueryParameters {
     /**
