@@ -10414,7 +10414,7 @@ export function deserializeIntoDiscoveredCloudAppInfo(discoveredCloudAppInfo: Pa
         "dataAtRestEncryptionMethod": n => { discoveredCloudAppInfo.dataAtRestEncryptionMethod = n.getEnumValue<AppInfoDataAtRestEncryptionMethod>(AppInfoDataAtRestEncryptionMethodObject); },
         "dataCenter": n => { discoveredCloudAppInfo.dataCenter = n.getStringValue(); },
         "dataRetentionPolicy": n => { discoveredCloudAppInfo.dataRetentionPolicy = n.getEnumValue<AppInfoDataRetentionPolicy>(AppInfoDataRetentionPolicyObject); },
-        "dataTypes": n => { discoveredCloudAppInfo.dataTypes = n.getEnumValue<AppInfoUploadedDataTypes>(AppInfoUploadedDataTypesObject); },
+        "dataTypes": n => { discoveredCloudAppInfo.dataTypes = n.getCollectionOfEnumValues<AppInfoUploadedDataTypes>(AppInfoUploadedDataTypesObject); },
         "domainRegistrationDateTime": n => { discoveredCloudAppInfo.domainRegistrationDateTime = n.getDateValue(); },
         "encryptionProtocol": n => { discoveredCloudAppInfo.encryptionProtocol = n.getEnumValue<AppInfoEncryptionProtocol>(AppInfoEncryptionProtocolObject); },
         "fedRampLevel": n => { discoveredCloudAppInfo.fedRampLevel = n.getEnumValue<AppInfoFedRampLevel>(AppInfoFedRampLevelObject); },
@@ -10490,7 +10490,7 @@ export function deserializeIntoDiscoveredCloudAppInfo(discoveredCloudAppInfo: Pa
         "isUserRolesSupport": n => { discoveredCloudAppInfo.isUserRolesSupport = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
         "isValidCertificateName": n => { discoveredCloudAppInfo.isValidCertificateName = n.getEnumValue<CloudAppInfoState>(CloudAppInfoStateObject); },
         "latestBreachDateTime": n => { discoveredCloudAppInfo.latestBreachDateTime = n.getDateValue(); },
-        "logonUrls": n => { discoveredCloudAppInfo.logonUrls = n.getStringValue(); },
+        "logonUrls": n => { discoveredCloudAppInfo.logonUrls = n.getCollectionOfPrimitiveValues<string>(); },
         "pciDssVersion": n => { discoveredCloudAppInfo.pciDssVersion = n.getEnumValue<AppInfoPciDssVersion>(AppInfoPciDssVersionObject); },
         "vendor": n => { discoveredCloudAppInfo.vendor = n.getStringValue(); },
     }
@@ -16341,9 +16341,9 @@ export interface DiscoveredCloudAppInfo extends Entity, Parsable {
      */
     dataRetentionPolicy?: AppInfoDataRetentionPolicy | null;
     /**
-     * The dataTypes property
+     * Indicates the data types that an end user can upload to the app. The possible values are: documents, mediaFiles, codingFiles, creditCards, databaseFiles, none, unknown, unknownFutureValue.
      */
-    dataTypes?: AppInfoUploadedDataTypes | null;
+    dataTypes?: AppInfoUploadedDataTypes[] | null;
     /**
      * Indicates the date when the app domain was registered.
      */
@@ -16647,7 +16647,7 @@ export interface DiscoveredCloudAppInfo extends Entity, Parsable {
     /**
      * Indicates the URL that users can use to sign into the app.
      */
-    logonUrls?: string | null;
+    logonUrls?: string[] | null;
     /**
      * The pciDssVersion property
      */
@@ -22509,7 +22509,8 @@ export function serializeDiscoveredCloudAppInfo(writer: SerializationWriter, dis
         writer.writeEnumValue<AppInfoDataAtRestEncryptionMethod>("dataAtRestEncryptionMethod", discoveredCloudAppInfo.dataAtRestEncryptionMethod);
         writer.writeStringValue("dataCenter", discoveredCloudAppInfo.dataCenter);
         writer.writeEnumValue<AppInfoDataRetentionPolicy>("dataRetentionPolicy", discoveredCloudAppInfo.dataRetentionPolicy);
-        writer.writeEnumValue<AppInfoUploadedDataTypes>("dataTypes", discoveredCloudAppInfo.dataTypes);
+        if(discoveredCloudAppInfo.dataTypes)
+        writer.writeCollectionOfEnumValues<AppInfoUploadedDataTypes>("dataTypes", discoveredCloudAppInfo.dataTypes);
         writer.writeDateValue("domainRegistrationDateTime", discoveredCloudAppInfo.domainRegistrationDateTime);
         writer.writeEnumValue<AppInfoEncryptionProtocol>("encryptionProtocol", discoveredCloudAppInfo.encryptionProtocol);
         writer.writeEnumValue<AppInfoFedRampLevel>("fedRampLevel", discoveredCloudAppInfo.fedRampLevel);
@@ -22585,7 +22586,7 @@ export function serializeDiscoveredCloudAppInfo(writer: SerializationWriter, dis
         writer.writeEnumValue<CloudAppInfoState>("isUserRolesSupport", discoveredCloudAppInfo.isUserRolesSupport);
         writer.writeEnumValue<CloudAppInfoState>("isValidCertificateName", discoveredCloudAppInfo.isValidCertificateName);
         writer.writeDateValue("latestBreachDateTime", discoveredCloudAppInfo.latestBreachDateTime);
-        writer.writeStringValue("logonUrls", discoveredCloudAppInfo.logonUrls);
+        writer.writeCollectionOfPrimitiveValues<string>("logonUrls", discoveredCloudAppInfo.logonUrls);
         writer.writeEnumValue<AppInfoPciDssVersion>("pciDssVersion", discoveredCloudAppInfo.pciDssVersion);
         writer.writeStringValue("vendor", discoveredCloudAppInfo.vendor);
     }

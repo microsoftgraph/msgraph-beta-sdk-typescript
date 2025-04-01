@@ -36,6 +36,8 @@ import { DeltaWithTokenRequestBuilderRequestsMetadata, type DeltaWithTokenReques
 // @ts-ignore
 import { DiscardCheckoutRequestBuilderRequestsMetadata, type DiscardCheckoutRequestBuilder } from './discardCheckout/index.js';
 // @ts-ignore
+import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
+// @ts-ignore
 import { ExtractSensitivityLabelsRequestBuilderRequestsMetadata, type ExtractSensitivityLabelsRequestBuilder } from './extractSensitivityLabels/index.js';
 // @ts-ignore
 import { FollowRequestBuilderRequestsMetadata, type FollowRequestBuilder } from './follow/index.js';
@@ -134,6 +136,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      * Provides operations to call the discardCheckout method.
      */
     get discardCheckout(): DiscardCheckoutRequestBuilder;
+    /**
+     * Provides operations to manage the extensions property of the microsoft.graph.driveItem entity.
+     */
+    get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to call the extractSensitivityLabels method.
      */
@@ -344,6 +350,10 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
     },
     discardCheckout: {
         requestsMetadata: DiscardCheckoutRequestBuilderRequestsMetadata,
+    },
+    extensions: {
+        requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,
+        navigationMetadata: ExtensionsRequestBuilderNavigationMetadata,
     },
     extractSensitivityLabels: {
         requestsMetadata: ExtractSensitivityLabelsRequestBuilderRequestsMetadata,

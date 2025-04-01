@@ -62,15 +62,16 @@ export interface UpdateAllMessagesReadStatePostRequestBody extends AdditionalDat
  */
 export interface UpdateAllMessagesReadStateRequestBuilder extends BaseRequestBuilder<UpdateAllMessagesReadStateRequestBuilder> {
     /**
-     * Invoke action updateAllMessagesReadState
+     * Update the read state of all messages in a mailFolder object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
+     * @see {@link https://learn.microsoft.com/graph/api/mailfolder-updateallmessagesreadstate?view=graph-rest-beta|Find more info here}
      */
      post(body: UpdateAllMessagesReadStatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action updateAllMessagesReadState
+     * Update the read state of all messages in a mailFolder object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
