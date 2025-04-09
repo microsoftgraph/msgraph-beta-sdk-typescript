@@ -83,7 +83,6 @@ const SymantecCodeSigningCertificateRequestBuilderGetQueryParametersMapper: Reco
 export const SymantecCodeSigningCertificateRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SymantecCodeSigningCertificateRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

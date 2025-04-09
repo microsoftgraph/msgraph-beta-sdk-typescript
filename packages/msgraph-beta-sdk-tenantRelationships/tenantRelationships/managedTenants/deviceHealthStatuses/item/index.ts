@@ -83,7 +83,6 @@ const DeviceHealthStatusItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const DeviceHealthStatusItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceHealthStatusItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

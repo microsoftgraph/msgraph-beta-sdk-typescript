@@ -125,7 +125,7 @@ export const RetrieveConnectionQualityReportsRequestBuilderUriTemplate = "{+base
 export const RetrieveConnectionQualityReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveConnectionQualityReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

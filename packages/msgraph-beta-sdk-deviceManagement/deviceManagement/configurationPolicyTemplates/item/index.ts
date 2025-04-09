@@ -98,7 +98,6 @@ export const DeviceManagementConfigurationPolicyTemplateItemRequestBuilderNaviga
 export const DeviceManagementConfigurationPolicyTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementConfigurationPolicyTemplateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

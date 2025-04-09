@@ -97,7 +97,6 @@ export const JournalLineItemRequestBuilderNavigationMetadata: Record<Exclude<key
 export const JournalLineItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: JournalLineItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -107,7 +107,6 @@ export const PrivilegedRoleAssignmentRequestItemRequestBuilderNavigationMetadata
 export const PrivilegedRoleAssignmentRequestItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrivilegedRoleAssignmentRequestItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

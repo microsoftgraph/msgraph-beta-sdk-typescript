@@ -82,7 +82,6 @@ export const TriggerConfigurationManagerActionRequestBuilderUriTemplate = "{+bas
 export const TriggerConfigurationManagerActionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: TriggerConfigurationManagerActionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

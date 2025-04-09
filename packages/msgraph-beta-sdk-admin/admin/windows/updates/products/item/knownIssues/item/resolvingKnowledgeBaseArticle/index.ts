@@ -83,7 +83,6 @@ const ResolvingKnowledgeBaseArticleRequestBuilderGetQueryParametersMapper: Recor
 export const ResolvingKnowledgeBaseArticleRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ResolvingKnowledgeBaseArticleRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -61,7 +61,6 @@ export const BroadcastRecordingRequestBuilderUriTemplate = "{+baseurl}/communica
 export const BroadcastRecordingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BroadcastRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -69,7 +68,7 @@ export const BroadcastRecordingRequestBuilderRequestsMetadata: RequestsMetadata 
     },
     get: {
         uriTemplate: BroadcastRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -78,7 +77,6 @@ export const BroadcastRecordingRequestBuilderRequestsMetadata: RequestsMetadata 
     },
     put: {
         uriTemplate: BroadcastRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

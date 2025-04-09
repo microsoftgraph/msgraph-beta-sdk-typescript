@@ -87,7 +87,7 @@ export const RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderUriTempla
 export const RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

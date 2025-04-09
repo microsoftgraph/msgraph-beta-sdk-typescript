@@ -86,7 +86,6 @@ export const RevokeLicensesRequestBuilderUriTemplate = "{+baseurl}/deviceAppMana
 export const RevokeLicensesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RevokeLicensesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

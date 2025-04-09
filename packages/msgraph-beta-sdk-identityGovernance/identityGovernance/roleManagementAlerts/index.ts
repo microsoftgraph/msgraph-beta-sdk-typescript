@@ -128,7 +128,6 @@ export const RoleManagementAlertsRequestBuilderNavigationMetadata: Record<Exclud
 export const RoleManagementAlertsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoleManagementAlertsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

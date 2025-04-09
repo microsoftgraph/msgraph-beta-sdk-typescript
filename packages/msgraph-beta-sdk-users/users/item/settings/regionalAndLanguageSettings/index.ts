@@ -83,7 +83,6 @@ const RegionalAndLanguageSettingsRequestBuilderGetQueryParametersMapper: Record<
 export const RegionalAndLanguageSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RegionalAndLanguageSettingsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

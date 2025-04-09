@@ -83,7 +83,6 @@ const SkillProficiencyItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const SkillProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SkillProficiencyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

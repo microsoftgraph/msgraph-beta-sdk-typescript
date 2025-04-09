@@ -33,7 +33,6 @@ export const LocateDeviceRequestBuilderUriTemplate = "{+baseurl}/deviceManagemen
 export const LocateDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: LocateDeviceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

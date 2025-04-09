@@ -85,7 +85,6 @@ const NamePronunciationRequestBuilderGetQueryParametersMapper: Record<string, st
 export const NamePronunciationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NamePronunciationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

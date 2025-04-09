@@ -80,7 +80,6 @@ export const DeleteUserFromSharedAppleDeviceRequestBuilderUriTemplate = "{+baseu
 export const DeleteUserFromSharedAppleDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DeleteUserFromSharedAppleDeviceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

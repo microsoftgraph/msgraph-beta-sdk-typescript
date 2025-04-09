@@ -84,7 +84,6 @@ const CloudPcOverviewTenantItemRequestBuilderGetQueryParametersMapper: Record<st
 export const CloudPcOverviewTenantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcOverviewTenantItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const DeviceHealthScriptAssignmentItemRequestBuilderGetQueryParametersMapper: Re
 export const DeviceHealthScriptAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceHealthScriptAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,7 +33,6 @@ export const BeginOnboardingRequestBuilderUriTemplate = "{+baseurl}/deviceManage
 export const BeginOnboardingRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: BeginOnboardingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

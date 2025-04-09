@@ -98,7 +98,6 @@ export const WindowsRequestBuilderNavigationMetadata: Record<Exclude<keyof Windo
 export const WindowsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

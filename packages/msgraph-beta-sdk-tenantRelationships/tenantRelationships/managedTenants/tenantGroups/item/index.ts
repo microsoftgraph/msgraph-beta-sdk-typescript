@@ -84,7 +84,6 @@ const TenantGroupItemRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const TenantGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TenantGroupItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -108,7 +108,6 @@ export const PartnerRequestBuilderNavigationMetadata: Record<Exclude<keyof Partn
 export const PartnerRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PartnerRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,7 +33,6 @@ export const MicrosoftGraphIndustryDataStartRequestBuilderUriTemplate = "{+baseu
 export const MicrosoftGraphIndustryDataStartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphIndustryDataStartRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,7 +84,6 @@ const RoleGroupItemRequestBuilderGetQueryParametersMapper: Record<string, string
 export const RoleGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoleGroupItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

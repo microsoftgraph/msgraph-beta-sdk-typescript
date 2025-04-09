@@ -113,7 +113,6 @@ export const RedirectRequestBuilderUriTemplate = "{+baseurl}/app/calls/{call%2Di
 export const RedirectRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RedirectRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

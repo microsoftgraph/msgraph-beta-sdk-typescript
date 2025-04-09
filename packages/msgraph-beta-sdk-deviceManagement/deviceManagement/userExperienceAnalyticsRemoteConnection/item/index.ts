@@ -83,7 +83,6 @@ const UserExperienceAnalyticsRemoteConnectionItemRequestBuilderGetQueryParameter
 export const UserExperienceAnalyticsRemoteConnectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserExperienceAnalyticsRemoteConnectionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -293,7 +293,6 @@ export const TeamDefinitionRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const TeamDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamDefinitionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -108,7 +108,6 @@ export const ConnectivityRequestBuilderNavigationMetadata: Record<Exclude<keyof 
 export const ConnectivityRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConnectivityRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

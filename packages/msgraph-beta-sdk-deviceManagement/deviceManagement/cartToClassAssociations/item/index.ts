@@ -83,7 +83,6 @@ const CartToClassAssociationItemRequestBuilderGetQueryParametersMapper: Record<s
 export const CartToClassAssociationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CartToClassAssociationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

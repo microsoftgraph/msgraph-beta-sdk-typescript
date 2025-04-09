@@ -83,7 +83,6 @@ const AllowedDataLocationItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const AllowedDataLocationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AllowedDataLocationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

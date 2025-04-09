@@ -98,7 +98,6 @@ export const HostedContentRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const HostedContentRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: HostedContentRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

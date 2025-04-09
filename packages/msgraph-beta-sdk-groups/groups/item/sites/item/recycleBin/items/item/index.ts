@@ -108,7 +108,6 @@ export const RecycleBinItemItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const RecycleBinItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RecycleBinItemItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

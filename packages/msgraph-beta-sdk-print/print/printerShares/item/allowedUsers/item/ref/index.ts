@@ -36,7 +36,6 @@ export const RefRequestBuilderUriTemplate = "{+baseurl}/print/printerShares/{pri
 export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RefRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

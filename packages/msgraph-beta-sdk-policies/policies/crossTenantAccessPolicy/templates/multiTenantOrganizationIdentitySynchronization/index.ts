@@ -99,7 +99,6 @@ export const MultiTenantOrganizationIdentitySynchronizationRequestBuilderNavigat
 export const MultiTenantOrganizationIdentitySynchronizationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MultiTenantOrganizationIdentitySynchronizationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

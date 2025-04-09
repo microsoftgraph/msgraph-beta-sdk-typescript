@@ -85,7 +85,6 @@ const AlertItemRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const AlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AlertItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

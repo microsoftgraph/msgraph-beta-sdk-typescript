@@ -68,7 +68,6 @@ const MentionItemRequestBuilderGetQueryParametersMapper: Record<string, string> 
 export const MentionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MentionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -81,7 +81,6 @@ export const MoveToCatalogRequestBuilderUriTemplate = "{+baseurl}/identityGovern
 export const MoveToCatalogRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MoveToCatalogRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

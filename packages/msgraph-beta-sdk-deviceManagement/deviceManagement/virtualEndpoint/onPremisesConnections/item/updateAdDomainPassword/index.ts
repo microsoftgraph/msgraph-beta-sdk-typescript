@@ -81,7 +81,6 @@ export const UpdateAdDomainPasswordRequestBuilderUriTemplate = "{+baseurl}/devic
 export const UpdateAdDomainPasswordRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateAdDomainPasswordRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

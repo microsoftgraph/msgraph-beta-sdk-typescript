@@ -83,7 +83,6 @@ const TelecomExpenseManagementPartnerItemRequestBuilderGetQueryParametersMapper:
 export const TelecomExpenseManagementPartnerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TelecomExpenseManagementPartnerItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

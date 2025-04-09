@@ -83,7 +83,6 @@ const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderGetQuer
 export const UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

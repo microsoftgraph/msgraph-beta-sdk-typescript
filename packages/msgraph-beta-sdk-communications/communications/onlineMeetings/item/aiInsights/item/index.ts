@@ -83,7 +83,6 @@ const CallAiInsightItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const CallAiInsightItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CallAiInsightItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

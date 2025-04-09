@@ -97,7 +97,6 @@ export const PictureItemRequestBuilderNavigationMetadata: Record<Exclude<keyof P
 export const PictureItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PictureItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

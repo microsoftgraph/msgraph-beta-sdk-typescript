@@ -83,7 +83,6 @@ const DeviceManagementDomainJoinConnectorItemRequestBuilderGetQueryParametersMap
 export const DeviceManagementDomainJoinConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementDomainJoinConnectorItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

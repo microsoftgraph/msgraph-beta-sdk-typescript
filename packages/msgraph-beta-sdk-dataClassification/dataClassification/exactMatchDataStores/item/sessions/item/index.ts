@@ -124,7 +124,6 @@ export const ExactMatchSessionItemRequestBuilderNavigationMetadata: Record<Exclu
 export const ExactMatchSessionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExactMatchSessionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

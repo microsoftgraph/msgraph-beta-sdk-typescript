@@ -33,7 +33,6 @@ export const SyncLicenseCountsRequestBuilderUriTemplate = "{+baseurl}/deviceAppM
 export const SyncLicenseCountsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SyncLicenseCountsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

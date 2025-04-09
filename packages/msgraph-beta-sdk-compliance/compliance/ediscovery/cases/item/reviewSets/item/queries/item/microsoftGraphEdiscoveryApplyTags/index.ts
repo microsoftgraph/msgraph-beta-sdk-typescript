@@ -91,7 +91,6 @@ export const MicrosoftGraphEdiscoveryApplyTagsRequestBuilderUriTemplate = "{+bas
 export const MicrosoftGraphEdiscoveryApplyTagsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryApplyTagsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,7 +34,6 @@ export const UndoSoftDeleteRequestBuilderUriTemplate = "{+baseurl}/teamwork/team
 export const UndoSoftDeleteRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UndoSoftDeleteRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

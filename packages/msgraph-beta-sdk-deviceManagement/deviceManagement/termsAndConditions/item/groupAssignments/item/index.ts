@@ -97,7 +97,6 @@ export const TermsAndConditionsGroupAssignmentItemRequestBuilderNavigationMetada
 export const TermsAndConditionsGroupAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TermsAndConditionsGroupAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -97,7 +97,6 @@ export const PermissionsCreepIndexDistributionItemRequestBuilderNavigationMetada
 export const PermissionsCreepIndexDistributionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PermissionsCreepIndexDistributionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

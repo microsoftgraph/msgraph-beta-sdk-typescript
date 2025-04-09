@@ -153,7 +153,6 @@ export const GroupPolicyUploadedDefinitionFileItemRequestBuilderNavigationMetada
 export const GroupPolicyUploadedDefinitionFileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GroupPolicyUploadedDefinitionFileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

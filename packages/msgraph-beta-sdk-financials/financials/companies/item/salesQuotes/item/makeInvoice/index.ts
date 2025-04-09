@@ -33,7 +33,6 @@ export const MakeInvoiceRequestBuilderUriTemplate = "{+baseurl}/financials/compa
 export const MakeInvoiceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MakeInvoiceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

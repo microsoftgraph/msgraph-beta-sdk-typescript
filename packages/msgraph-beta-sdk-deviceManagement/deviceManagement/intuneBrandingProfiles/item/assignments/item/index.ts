@@ -83,7 +83,6 @@ const IntuneBrandingProfileAssignmentItemRequestBuilderGetQueryParametersMapper:
 export const IntuneBrandingProfileAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IntuneBrandingProfileAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

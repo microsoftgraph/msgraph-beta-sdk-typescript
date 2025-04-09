@@ -105,7 +105,6 @@ export const UnifiedGroupSourceItemRequestBuilderNavigationMetadata: Record<Excl
 export const UnifiedGroupSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UnifiedGroupSourceItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

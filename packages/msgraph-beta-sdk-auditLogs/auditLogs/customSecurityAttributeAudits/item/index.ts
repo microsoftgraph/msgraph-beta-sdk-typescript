@@ -83,7 +83,6 @@ const CustomSecurityAttributeAuditItemRequestBuilderGetQueryParametersMapper: Re
 export const CustomSecurityAttributeAuditItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomSecurityAttributeAuditItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

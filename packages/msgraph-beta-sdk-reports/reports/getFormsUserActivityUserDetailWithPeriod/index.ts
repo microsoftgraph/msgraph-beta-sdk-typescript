@@ -34,7 +34,7 @@ export const GetFormsUserActivityUserDetailWithPeriodRequestBuilderUriTemplate =
 export const GetFormsUserActivityUserDetailWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetFormsUserActivityUserDetailWithPeriodRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -97,7 +97,6 @@ export const DeviceConfigurationGroupAssignmentItemRequestBuilderNavigationMetad
 export const DeviceConfigurationGroupAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceConfigurationGroupAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

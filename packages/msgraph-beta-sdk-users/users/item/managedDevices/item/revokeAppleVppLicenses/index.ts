@@ -33,7 +33,6 @@ export const RevokeAppleVppLicensesRequestBuilderUriTemplate = "{+baseurl}/users
 export const RevokeAppleVppLicensesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RevokeAppleVppLicensesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

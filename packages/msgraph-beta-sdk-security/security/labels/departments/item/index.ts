@@ -84,7 +84,6 @@ const DepartmentTemplateItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const DepartmentTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DepartmentTemplateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

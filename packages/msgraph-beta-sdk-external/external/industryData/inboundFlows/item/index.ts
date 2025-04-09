@@ -109,7 +109,6 @@ export const InboundFlowItemRequestBuilderNavigationMetadata: Record<Exclude<key
 export const InboundFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: InboundFlowItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

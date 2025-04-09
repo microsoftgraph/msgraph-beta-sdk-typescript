@@ -83,7 +83,6 @@ const UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder
 export const UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

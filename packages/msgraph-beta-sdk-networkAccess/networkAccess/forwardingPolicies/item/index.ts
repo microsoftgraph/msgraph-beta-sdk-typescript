@@ -108,7 +108,6 @@ export const ForwardingPolicyItemRequestBuilderNavigationMetadata: Record<Exclud
 export const ForwardingPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ForwardingPolicyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

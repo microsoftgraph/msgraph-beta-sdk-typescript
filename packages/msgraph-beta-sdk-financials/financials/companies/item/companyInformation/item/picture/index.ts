@@ -61,7 +61,6 @@ export const PictureRequestBuilderUriTemplate = "{+baseurl}/financials/companies
 export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PictureRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -69,7 +68,7 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     get: {
         uriTemplate: PictureRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -78,7 +77,6 @@ export const PictureRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     put: {
         uriTemplate: PictureRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

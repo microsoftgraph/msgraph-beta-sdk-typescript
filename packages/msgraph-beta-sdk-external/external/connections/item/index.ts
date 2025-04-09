@@ -139,7 +139,6 @@ export const ExternalConnectionItemRequestBuilderNavigationMetadata: Record<Excl
 export const ExternalConnectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExternalConnectionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

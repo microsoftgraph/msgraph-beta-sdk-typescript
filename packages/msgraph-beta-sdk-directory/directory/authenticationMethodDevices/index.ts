@@ -98,7 +98,6 @@ export const AuthenticationMethodDevicesRequestBuilderNavigationMetadata: Record
 export const AuthenticationMethodDevicesRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuthenticationMethodDevicesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

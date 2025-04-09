@@ -29,13 +29,13 @@ export interface CustomCalloutExtensionItemRequestBuilder extends BaseRequestBui
      */
      get(requestConfiguration?: RequestConfiguration<CustomCalloutExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomCalloutExtension | undefined>;
     /**
-     * Update the properties of an accessPackageAssignmentWorkflowExtension object.
+     * Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomCalloutExtension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
-     * @see {@link https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomCalloutExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomCalloutExtension | undefined>;
     /**
@@ -53,7 +53,7 @@ export interface CustomCalloutExtensionItemRequestBuilder extends BaseRequestBui
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomCalloutExtensionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an accessPackageAssignmentWorkflowExtension object.
+     * Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -91,7 +91,6 @@ const CustomCalloutExtensionItemRequestBuilderGetQueryParametersMapper: Record<s
 export const CustomCalloutExtensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomCalloutExtensionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

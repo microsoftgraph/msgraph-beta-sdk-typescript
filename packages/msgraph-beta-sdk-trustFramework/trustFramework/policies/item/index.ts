@@ -98,7 +98,6 @@ export const TrustFrameworkPolicyItemRequestBuilderNavigationMetadata: Record<Ex
 export const TrustFrameworkPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TrustFrameworkPolicyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

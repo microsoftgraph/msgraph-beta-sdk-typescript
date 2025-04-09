@@ -126,7 +126,6 @@ export const PeopleRequestBuilderNavigationMetadata: Record<Exclude<keyof People
 export const PeopleRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PeopleRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

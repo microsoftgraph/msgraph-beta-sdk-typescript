@@ -83,7 +83,6 @@ const RoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParametersMapper: Reco
 export const RoleScopeTagAutoAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoleScopeTagAutoAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

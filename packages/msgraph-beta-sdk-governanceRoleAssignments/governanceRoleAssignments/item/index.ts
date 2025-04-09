@@ -125,7 +125,6 @@ export const GovernanceRoleAssignmentItemRequestBuilderNavigationMetadata: Recor
 export const GovernanceRoleAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GovernanceRoleAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

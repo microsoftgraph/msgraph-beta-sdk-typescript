@@ -33,7 +33,6 @@ export const RebootNowRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/c
 export const RebootNowRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RebootNowRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

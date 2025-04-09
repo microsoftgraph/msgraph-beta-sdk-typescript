@@ -33,7 +33,6 @@ export const SetDefaultProfileRequestBuilderUriTemplate = "{+baseurl}/deviceMana
 export const SetDefaultProfileRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetDefaultProfileRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

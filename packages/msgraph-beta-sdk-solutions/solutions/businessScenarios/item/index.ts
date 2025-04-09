@@ -101,7 +101,6 @@ export const BusinessScenarioItemRequestBuilderNavigationMetadata: Record<Exclud
 export const BusinessScenarioItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BusinessScenarioItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

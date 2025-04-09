@@ -92,7 +92,6 @@ const CustomAccessPackageWorkflowExtensionItemRequestBuilderGetQueryParametersMa
 export const CustomAccessPackageWorkflowExtensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomAccessPackageWorkflowExtensionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

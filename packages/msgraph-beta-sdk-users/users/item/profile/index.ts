@@ -278,7 +278,6 @@ export const ProfileRequestBuilderNavigationMetadata: Record<Exclude<keyof Profi
 export const ProfileRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProfileRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

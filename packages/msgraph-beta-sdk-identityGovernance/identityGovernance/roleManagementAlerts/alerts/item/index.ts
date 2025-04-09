@@ -125,7 +125,6 @@ export const UnifiedRoleManagementAlertItemRequestBuilderNavigationMetadata: Rec
 export const UnifiedRoleManagementAlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UnifiedRoleManagementAlertItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

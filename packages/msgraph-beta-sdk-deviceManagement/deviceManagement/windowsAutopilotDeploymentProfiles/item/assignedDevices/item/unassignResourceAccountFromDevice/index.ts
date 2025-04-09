@@ -33,7 +33,6 @@ export const UnassignResourceAccountFromDeviceRequestBuilderUriTemplate = "{+bas
 export const UnassignResourceAccountFromDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UnassignResourceAccountFromDeviceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

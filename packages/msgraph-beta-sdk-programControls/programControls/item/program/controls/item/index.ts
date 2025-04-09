@@ -83,7 +83,6 @@ const ProgramControlItemRequestBuilderGetQueryParametersMapper: Record<string, s
 export const ProgramControlItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProgramControlItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

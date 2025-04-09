@@ -89,7 +89,6 @@ export const UpdateSoftwareRequestBuilderUriTemplate = "{+baseurl}/teamwork/devi
 export const UpdateSoftwareRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateSoftwareRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

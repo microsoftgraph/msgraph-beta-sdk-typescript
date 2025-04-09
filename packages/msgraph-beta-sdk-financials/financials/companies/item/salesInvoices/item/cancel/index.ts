@@ -33,7 +33,6 @@ export const CancelRequestBuilderUriTemplate = "{+baseurl}/financials/companies/
 export const CancelRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CancelRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

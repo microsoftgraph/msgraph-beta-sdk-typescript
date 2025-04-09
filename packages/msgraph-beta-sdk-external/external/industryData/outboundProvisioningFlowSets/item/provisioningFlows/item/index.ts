@@ -97,7 +97,6 @@ export const ProvisioningFlowItemRequestBuilderNavigationMetadata: Record<Exclud
 export const ProvisioningFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProvisioningFlowItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

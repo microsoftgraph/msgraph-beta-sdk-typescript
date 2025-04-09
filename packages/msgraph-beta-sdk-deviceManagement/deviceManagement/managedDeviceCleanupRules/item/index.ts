@@ -83,7 +83,6 @@ const ManagedDeviceCleanupRuleItemRequestBuilderGetQueryParametersMapper: Record
 export const ManagedDeviceCleanupRuleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedDeviceCleanupRuleItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

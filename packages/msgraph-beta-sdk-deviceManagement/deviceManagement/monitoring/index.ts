@@ -108,7 +108,6 @@ export const MonitoringRequestBuilderNavigationMetadata: Record<Exclude<keyof Mo
 export const MonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MonitoringRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

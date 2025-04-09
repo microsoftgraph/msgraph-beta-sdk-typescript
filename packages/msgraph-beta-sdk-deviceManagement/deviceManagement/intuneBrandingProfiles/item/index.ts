@@ -107,7 +107,6 @@ export const IntuneBrandingProfileItemRequestBuilderNavigationMetadata: Record<E
 export const IntuneBrandingProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IntuneBrandingProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

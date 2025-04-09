@@ -85,7 +85,6 @@ const CrossTenantAccessRequestBuilderGetQueryParametersMapper: Record<string, st
 export const CrossTenantAccessRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CrossTenantAccessRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

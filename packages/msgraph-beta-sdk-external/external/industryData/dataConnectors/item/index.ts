@@ -109,7 +109,6 @@ export const IndustryDataConnectorItemRequestBuilderNavigationMetadata: Record<E
 export const IndustryDataConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IndustryDataConnectorItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

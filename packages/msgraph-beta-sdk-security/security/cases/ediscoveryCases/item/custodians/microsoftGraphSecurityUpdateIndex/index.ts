@@ -81,7 +81,6 @@ export const MicrosoftGraphSecurityUpdateIndexRequestBuilderUriTemplate = "{+bas
 export const MicrosoftGraphSecurityUpdateIndexRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphSecurityUpdateIndexRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,7 +84,6 @@ const WindowsProtectionStateItemRequestBuilderGetQueryParametersMapper: Record<s
 export const WindowsProtectionStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsProtectionStateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

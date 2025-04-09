@@ -80,7 +80,6 @@ export const CompleteSignupRequestBuilderUriTemplate = "{+baseurl}/deviceManagem
 export const CompleteSignupRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CompleteSignupRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

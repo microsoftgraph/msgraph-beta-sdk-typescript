@@ -83,7 +83,6 @@ const DeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParamet
 export const DeviceManagementCachedReportConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementCachedReportConfigurationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

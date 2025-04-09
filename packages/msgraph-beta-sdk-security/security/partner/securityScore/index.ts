@@ -119,7 +119,6 @@ export const SecurityScoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const SecurityScoreRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecurityScoreRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

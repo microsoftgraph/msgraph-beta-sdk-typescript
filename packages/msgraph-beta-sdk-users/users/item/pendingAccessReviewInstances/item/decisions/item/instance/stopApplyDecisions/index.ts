@@ -33,7 +33,6 @@ export const StopApplyDecisionsRequestBuilderUriTemplate = "{+baseurl}/users/{us
 export const StopApplyDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: StopApplyDecisionsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -117,7 +117,6 @@ export const EmbeddedSIMActivationCodePoolItemRequestBuilderNavigationMetadata: 
 export const EmbeddedSIMActivationCodePoolItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EmbeddedSIMActivationCodePoolItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

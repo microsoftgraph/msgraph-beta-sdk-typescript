@@ -83,7 +83,6 @@ const EnrollmentConfigurationAssignmentItemRequestBuilderGetQueryParametersMappe
 export const EnrollmentConfigurationAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EnrollmentConfigurationAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

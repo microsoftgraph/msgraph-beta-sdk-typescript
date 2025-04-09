@@ -34,7 +34,6 @@ export const StopRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtua
 export const StopRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: StopRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

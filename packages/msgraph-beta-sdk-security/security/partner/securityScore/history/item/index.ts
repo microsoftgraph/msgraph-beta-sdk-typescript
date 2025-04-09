@@ -84,7 +84,6 @@ const SecurityScoreHistoryItemRequestBuilderGetQueryParametersMapper: Record<str
 export const SecurityScoreHistoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecurityScoreHistoryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

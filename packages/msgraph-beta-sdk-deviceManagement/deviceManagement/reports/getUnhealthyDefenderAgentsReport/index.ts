@@ -129,7 +129,7 @@ export const GetUnhealthyDefenderAgentsReportRequestBuilderUriTemplate = "{+base
 export const GetUnhealthyDefenderAgentsReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetUnhealthyDefenderAgentsReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

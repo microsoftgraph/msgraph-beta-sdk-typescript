@@ -92,7 +92,6 @@ export const EnableLostModeRequestBuilderUriTemplate = "{+baseurl}/users/{user%2
 export const EnableLostModeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableLostModeRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

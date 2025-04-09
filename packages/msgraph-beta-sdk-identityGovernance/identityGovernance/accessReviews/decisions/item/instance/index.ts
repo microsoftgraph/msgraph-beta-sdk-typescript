@@ -190,7 +190,6 @@ export const InstanceRequestBuilderNavigationMetadata: Record<Exclude<keyof Inst
 export const InstanceRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: InstanceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

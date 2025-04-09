@@ -83,7 +83,6 @@ const SensitivityPolicySettingsRequestBuilderGetQueryParametersMapper: Record<st
 export const SensitivityPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SensitivityPolicySettingsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

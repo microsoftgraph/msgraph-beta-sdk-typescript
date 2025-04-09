@@ -108,7 +108,6 @@ export const WorkbookDocumentTaskItemRequestBuilderNavigationMetadata: Record<Ex
 export const WorkbookDocumentTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WorkbookDocumentTaskItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

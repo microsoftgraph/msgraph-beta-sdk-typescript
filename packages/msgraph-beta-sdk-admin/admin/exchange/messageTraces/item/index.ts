@@ -105,7 +105,6 @@ export const MessageTraceItemRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const MessageTraceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MessageTraceItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,7 +33,6 @@ export const InitiateMobileDeviceManagementKeyRecoveryRequestBuilderUriTemplate 
 export const InitiateMobileDeviceManagementKeyRecoveryRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: InitiateMobileDeviceManagementKeyRecoveryRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,7 +84,6 @@ const SubscriptionsWithOcpSubscriptionIdRequestBuilderGetQueryParametersMapper: 
 export const SubscriptionsWithOcpSubscriptionIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SubscriptionsWithOcpSubscriptionIdRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

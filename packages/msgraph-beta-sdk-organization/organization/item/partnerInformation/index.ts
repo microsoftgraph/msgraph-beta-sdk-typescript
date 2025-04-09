@@ -83,7 +83,6 @@ const PartnerInformationRequestBuilderGetQueryParametersMapper: Record<string, s
 export const PartnerInformationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PartnerInformationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

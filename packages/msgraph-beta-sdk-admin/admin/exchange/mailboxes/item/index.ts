@@ -125,7 +125,6 @@ export const MailboxItemRequestBuilderNavigationMetadata: Record<Exclude<keyof M
 export const MailboxItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MailboxItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -100,7 +100,6 @@ export const ResourceOperationItemRequestBuilderNavigationMetadata: Record<Exclu
 export const ResourceOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ResourceOperationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

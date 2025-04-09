@@ -83,7 +83,6 @@ const ReadingAssignmentSubmissionItemRequestBuilderGetQueryParametersMapper: Rec
 export const ReadingAssignmentSubmissionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ReadingAssignmentSubmissionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

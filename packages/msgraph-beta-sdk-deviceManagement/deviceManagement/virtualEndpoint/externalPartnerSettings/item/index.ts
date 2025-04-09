@@ -85,7 +85,6 @@ const CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParametersMapper: R
 export const CloudPcExternalPartnerSettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcExternalPartnerSettingItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

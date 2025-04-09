@@ -98,7 +98,6 @@ export const OutboundProvisioningFlowSetItemRequestBuilderNavigationMetadata: Re
 export const OutboundProvisioningFlowSetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OutboundProvisioningFlowSetItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

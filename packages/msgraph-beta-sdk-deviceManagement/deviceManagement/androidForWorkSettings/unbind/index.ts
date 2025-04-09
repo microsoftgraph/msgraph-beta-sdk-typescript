@@ -33,7 +33,6 @@ export const UnbindRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/andr
 export const UnbindRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UnbindRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

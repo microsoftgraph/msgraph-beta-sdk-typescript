@@ -98,7 +98,6 @@ export const SecurityBaselineStateItemRequestBuilderNavigationMetadata: Record<E
 export const SecurityBaselineStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecurityBaselineStateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

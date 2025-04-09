@@ -216,7 +216,6 @@ export const RbacApplicationItemRequestBuilderNavigationMetadata: Record<Exclude
 export const RbacApplicationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RbacApplicationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

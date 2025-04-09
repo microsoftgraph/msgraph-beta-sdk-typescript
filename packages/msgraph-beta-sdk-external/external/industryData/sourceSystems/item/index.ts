@@ -86,7 +86,6 @@ const SourceSystemDefinitionItemRequestBuilderGetQueryParametersMapper: Record<s
 export const SourceSystemDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SourceSystemDefinitionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
