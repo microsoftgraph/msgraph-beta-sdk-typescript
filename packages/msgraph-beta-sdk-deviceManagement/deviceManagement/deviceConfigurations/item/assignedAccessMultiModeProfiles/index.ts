@@ -82,7 +82,6 @@ export const AssignedAccessMultiModeProfilesRequestBuilderUriTemplate = "{+baseu
 export const AssignedAccessMultiModeProfilesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: AssignedAccessMultiModeProfilesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

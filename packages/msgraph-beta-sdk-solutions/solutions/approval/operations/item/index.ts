@@ -84,7 +84,6 @@ const ApprovalOperationItemRequestBuilderGetQueryParametersMapper: Record<string
 export const ApprovalOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ApprovalOperationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

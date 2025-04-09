@@ -84,7 +84,6 @@ const EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParametersMapper: Rec
 export const EmailThreatSubmissionPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EmailThreatSubmissionPolicyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

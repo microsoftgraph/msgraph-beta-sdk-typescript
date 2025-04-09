@@ -83,7 +83,6 @@ const EnterpriseCodeSigningCertificateItemRequestBuilderGetQueryParametersMapper
 export const EnterpriseCodeSigningCertificateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EnterpriseCodeSigningCertificateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

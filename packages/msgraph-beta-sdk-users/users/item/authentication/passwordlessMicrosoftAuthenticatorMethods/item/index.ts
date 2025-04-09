@@ -83,7 +83,6 @@ export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBu
 export const PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

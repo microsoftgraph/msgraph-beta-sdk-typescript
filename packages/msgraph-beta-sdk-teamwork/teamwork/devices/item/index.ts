@@ -153,7 +153,6 @@ export const TeamworkDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const TeamworkDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamworkDeviceItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

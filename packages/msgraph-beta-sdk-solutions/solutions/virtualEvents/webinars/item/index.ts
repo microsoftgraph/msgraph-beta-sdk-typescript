@@ -168,7 +168,6 @@ export const VirtualEventWebinarItemRequestBuilderNavigationMetadata: Record<Exc
 export const VirtualEventWebinarItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: VirtualEventWebinarItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

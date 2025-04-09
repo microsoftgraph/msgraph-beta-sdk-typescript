@@ -80,7 +80,6 @@ export const SetDeviceNameRequestBuilderUriTemplate = "{+baseurl}/users/{user%2D
 export const SetDeviceNameRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetDeviceNameRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

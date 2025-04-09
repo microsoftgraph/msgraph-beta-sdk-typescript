@@ -86,7 +86,6 @@ const PendingExternalUserProfileItemRequestBuilderGetQueryParametersMapper: Reco
 export const PendingExternalUserProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PendingExternalUserProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

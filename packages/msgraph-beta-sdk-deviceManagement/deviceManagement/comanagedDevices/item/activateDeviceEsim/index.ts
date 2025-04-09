@@ -80,7 +80,6 @@ export const ActivateDeviceEsimRequestBuilderUriTemplate = "{+baseurl}/deviceMan
 export const ActivateDeviceEsimRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ActivateDeviceEsimRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

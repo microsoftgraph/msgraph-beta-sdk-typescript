@@ -124,7 +124,6 @@ export const AndroidForWorkSettingsRequestBuilderNavigationMetadata: Record<Excl
 export const AndroidForWorkSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AndroidForWorkSettingsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

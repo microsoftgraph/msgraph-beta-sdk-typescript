@@ -83,7 +83,6 @@ const ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderGetQueryParameters
 export const ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ImportedWindowsAutopilotDeviceIdentityItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

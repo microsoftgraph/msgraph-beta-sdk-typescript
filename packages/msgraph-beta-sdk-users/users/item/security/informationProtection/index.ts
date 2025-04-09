@@ -107,7 +107,6 @@ export const InformationProtectionRequestBuilderNavigationMetadata: Record<Exclu
 export const InformationProtectionRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: InformationProtectionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

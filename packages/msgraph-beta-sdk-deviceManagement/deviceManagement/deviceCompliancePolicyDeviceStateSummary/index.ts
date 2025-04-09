@@ -83,7 +83,6 @@ const DeviceCompliancePolicyDeviceStateSummaryRequestBuilderGetQueryParametersMa
 export const DeviceCompliancePolicyDeviceStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceCompliancePolicyDeviceStateSummaryRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

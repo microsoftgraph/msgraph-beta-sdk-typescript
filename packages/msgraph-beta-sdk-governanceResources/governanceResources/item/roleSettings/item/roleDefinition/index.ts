@@ -106,7 +106,6 @@ export const RoleDefinitionRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const RoleDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoleDefinitionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

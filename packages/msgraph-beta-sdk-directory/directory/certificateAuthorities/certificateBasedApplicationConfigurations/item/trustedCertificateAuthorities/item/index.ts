@@ -86,7 +86,6 @@ const CertificateAuthorityAsEntityItemRequestBuilderGetQueryParametersMapper: Re
 export const CertificateAuthorityAsEntityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CertificateAuthorityAsEntityItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

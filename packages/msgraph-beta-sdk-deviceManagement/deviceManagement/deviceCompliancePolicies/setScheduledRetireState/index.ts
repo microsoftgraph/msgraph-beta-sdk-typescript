@@ -94,7 +94,6 @@ export const SetScheduledRetireStateRequestBuilderUriTemplate = "{+baseurl}/devi
 export const SetScheduledRetireStateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetScheduledRetireStateRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

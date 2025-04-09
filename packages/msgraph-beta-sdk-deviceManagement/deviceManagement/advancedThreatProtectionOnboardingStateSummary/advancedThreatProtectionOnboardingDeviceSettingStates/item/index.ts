@@ -83,7 +83,6 @@ const AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetQ
 export const AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -85,7 +85,6 @@ const ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParametersMapper: Re
 export const ContinuousAccessEvaluationPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContinuousAccessEvaluationPolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -113,7 +113,6 @@ export const MicrosoftGraphSecurityRemediateRequestBuilderUriTemplate = "{+baseu
 export const MicrosoftGraphSecurityRemediateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphSecurityRemediateRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

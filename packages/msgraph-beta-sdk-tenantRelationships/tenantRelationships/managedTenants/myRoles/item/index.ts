@@ -83,7 +83,6 @@ const MyRoleTenantItemRequestBuilderGetQueryParametersMapper: Record<string, str
 export const MyRoleTenantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MyRoleTenantItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

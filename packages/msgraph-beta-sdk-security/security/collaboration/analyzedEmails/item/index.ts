@@ -84,7 +84,6 @@ const AnalyzedEmailItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const AnalyzedEmailItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AnalyzedEmailItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

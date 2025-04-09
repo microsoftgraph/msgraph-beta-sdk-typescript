@@ -34,7 +34,6 @@ export const StartRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/clou
 export const StartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: StartRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

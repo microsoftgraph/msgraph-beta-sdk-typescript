@@ -19,7 +19,7 @@ export interface ExtensionItemRequestBuilder extends BaseRequestBuilder<Extensio
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get extensions from drives
+     * The collection of open extensions defined for this item. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Extension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ExtensionItemRequestBuilder extends BaseRequestBuilder<Extensio
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get extensions from drives
+     * The collection of open extensions defined for this item. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ExtensionItemRequestBuilder extends BaseRequestBuilder<Extensio
      toPatchRequestInformation(body: Extension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get extensions from drives
+ * The collection of open extensions defined for this item. Nullable.
  */
 export interface ExtensionItemRequestBuilderGetQueryParameters {
     /**
@@ -83,7 +83,6 @@ const ExtensionItemRequestBuilderGetQueryParametersMapper: Record<string, string
 export const ExtensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExtensionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

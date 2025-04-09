@@ -104,7 +104,6 @@ export const CustomExtensionStageSettingItemRequestBuilderNavigationMetadata: Re
 export const CustomExtensionStageSettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomExtensionStageSettingItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

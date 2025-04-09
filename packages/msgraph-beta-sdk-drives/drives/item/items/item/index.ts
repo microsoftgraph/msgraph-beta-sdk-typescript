@@ -416,7 +416,6 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const DriveItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DriveItemItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

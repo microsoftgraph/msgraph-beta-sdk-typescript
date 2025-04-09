@@ -106,7 +106,6 @@ export const ProductRevisionItemRequestBuilderNavigationMetadata: Record<Exclude
 export const ProductRevisionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProductRevisionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

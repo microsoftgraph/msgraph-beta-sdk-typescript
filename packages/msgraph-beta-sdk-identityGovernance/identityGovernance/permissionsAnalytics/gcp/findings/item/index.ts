@@ -83,7 +83,6 @@ const FindingItemRequestBuilderGetQueryParametersMapper: Record<string, string> 
 export const FindingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: FindingItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

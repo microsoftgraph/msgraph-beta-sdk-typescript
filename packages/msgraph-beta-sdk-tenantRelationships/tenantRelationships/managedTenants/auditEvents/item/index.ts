@@ -84,7 +84,6 @@ const AuditEventItemRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const AuditEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuditEventItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

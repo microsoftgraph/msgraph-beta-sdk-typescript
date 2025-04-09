@@ -115,7 +115,6 @@ export const EnrollmentProfileItemRequestBuilderNavigationMetadata: Record<Exclu
 export const EnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EnrollmentProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

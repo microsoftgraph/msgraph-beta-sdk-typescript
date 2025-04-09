@@ -120,7 +120,7 @@ export const RetrieveCloudPcTroubleshootReportsRequestBuilderUriTemplate = "{+ba
 export const RetrieveCloudPcTroubleshootReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveCloudPcTroubleshootReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

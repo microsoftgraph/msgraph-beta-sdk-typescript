@@ -80,7 +80,6 @@ export const WipeManagedAppRegistrationsByDeviceTagRequestBuilderUriTemplate = "
 export const WipeManagedAppRegistrationsByDeviceTagRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: WipeManagedAppRegistrationsByDeviceTagRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

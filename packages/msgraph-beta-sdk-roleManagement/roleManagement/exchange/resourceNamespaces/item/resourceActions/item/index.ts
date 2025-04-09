@@ -106,7 +106,6 @@ export const UnifiedRbacResourceActionItemRequestBuilderNavigationMetadata: Reco
 export const UnifiedRbacResourceActionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UnifiedRbacResourceActionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

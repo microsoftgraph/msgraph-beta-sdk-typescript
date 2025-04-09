@@ -89,7 +89,6 @@ export const ReprovisionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement
 export const ReprovisionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ReprovisionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,7 +34,7 @@ export const GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestB
 export const GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -86,7 +86,6 @@ const IdentitySynchronizationRequestBuilderGetQueryParametersMapper: Record<stri
 export const IdentitySynchronizationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IdentitySynchronizationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

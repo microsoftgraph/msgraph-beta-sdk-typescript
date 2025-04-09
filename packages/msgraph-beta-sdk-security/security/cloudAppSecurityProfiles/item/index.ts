@@ -89,7 +89,6 @@ const CloudAppSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<
 export const CloudAppSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudAppSecurityProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

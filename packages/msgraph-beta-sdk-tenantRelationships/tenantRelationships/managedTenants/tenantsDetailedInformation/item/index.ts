@@ -84,7 +84,6 @@ const TenantDetailedInformationItemRequestBuilderGetQueryParametersMapper: Recor
 export const TenantDetailedInformationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TenantDetailedInformationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

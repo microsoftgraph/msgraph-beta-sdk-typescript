@@ -19,10 +19,10 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
     get updatePolicy(): UpdatePolicyRequestBuilder;
     /**
-     * Delete a contentApproval object.
+     * Delete a complianceChange object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -43,7 +43,7 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      patch(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComplianceChange | undefined>;
     /**
-     * Delete a contentApproval object.
+     * Delete a complianceChange object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -100,7 +100,6 @@ export const ComplianceChangeItemRequestBuilderNavigationMetadata: Record<Exclud
 export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ComplianceChangeItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

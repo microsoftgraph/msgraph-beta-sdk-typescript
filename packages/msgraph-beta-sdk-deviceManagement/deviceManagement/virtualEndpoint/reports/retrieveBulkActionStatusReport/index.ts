@@ -118,7 +118,7 @@ export const RetrieveBulkActionStatusReportRequestBuilderUriTemplate = "{+baseur
 export const RetrieveBulkActionStatusReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveBulkActionStatusReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

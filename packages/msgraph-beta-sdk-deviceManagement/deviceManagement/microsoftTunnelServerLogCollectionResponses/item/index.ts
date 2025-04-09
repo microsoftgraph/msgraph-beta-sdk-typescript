@@ -106,7 +106,6 @@ export const MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderNavigat
 export const MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MicrosoftTunnelServerLogCollectionResponseItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

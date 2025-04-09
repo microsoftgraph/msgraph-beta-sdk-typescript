@@ -98,7 +98,6 @@ export const AuditLogRequestBuilderNavigationMetadata: Record<Exclude<keyof Audi
 export const AuditLogRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuditLogRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

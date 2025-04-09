@@ -83,7 +83,6 @@ const CountryRegionItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const CountryRegionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CountryRegionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

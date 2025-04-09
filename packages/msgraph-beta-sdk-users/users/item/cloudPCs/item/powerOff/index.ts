@@ -34,7 +34,6 @@ export const PowerOffRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/c
 export const PowerOffRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PowerOffRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

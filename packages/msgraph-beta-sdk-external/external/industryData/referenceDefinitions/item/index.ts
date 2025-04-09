@@ -84,7 +84,6 @@ const ReferenceDefinitionItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const ReferenceDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ReferenceDefinitionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

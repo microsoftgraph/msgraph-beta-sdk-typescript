@@ -33,7 +33,6 @@ export const RetireRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/coma
 export const RetireRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetireRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

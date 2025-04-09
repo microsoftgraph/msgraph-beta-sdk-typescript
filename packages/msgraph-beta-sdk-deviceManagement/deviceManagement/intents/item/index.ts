@@ -223,7 +223,6 @@ export const DeviceManagementIntentItemRequestBuilderNavigationMetadata: Record<
 export const DeviceManagementIntentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementIntentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

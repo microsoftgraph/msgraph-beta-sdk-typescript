@@ -110,7 +110,6 @@ export const CertificateBasedAuthPkiItemRequestBuilderNavigationMetadata: Record
 export const CertificateBasedAuthPkiItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CertificateBasedAuthPkiItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

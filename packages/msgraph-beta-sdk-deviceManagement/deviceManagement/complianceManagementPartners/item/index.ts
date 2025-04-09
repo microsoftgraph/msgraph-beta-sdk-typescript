@@ -83,7 +83,6 @@ const ComplianceManagementPartnerItemRequestBuilderGetQueryParametersMapper: Rec
 export const ComplianceManagementPartnerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ComplianceManagementPartnerItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

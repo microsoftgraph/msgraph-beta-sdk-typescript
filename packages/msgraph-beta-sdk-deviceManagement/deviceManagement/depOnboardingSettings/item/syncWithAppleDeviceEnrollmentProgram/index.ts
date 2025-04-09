@@ -33,7 +33,6 @@ export const SyncWithAppleDeviceEnrollmentProgramRequestBuilderUriTemplate = "{+
 export const SyncWithAppleDeviceEnrollmentProgramRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SyncWithAppleDeviceEnrollmentProgramRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -135,7 +135,7 @@ export const GetGroupPolicySettingsDeviceSettingsReportRequestBuilderUriTemplate
 export const GetGroupPolicySettingsDeviceSettingsReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetGroupPolicySettingsDeviceSettingsReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

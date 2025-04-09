@@ -83,7 +83,6 @@ const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParameter
 export const EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

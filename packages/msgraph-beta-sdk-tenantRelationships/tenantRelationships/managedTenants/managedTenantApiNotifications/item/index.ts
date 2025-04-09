@@ -97,7 +97,6 @@ export const ManagedTenantApiNotificationItemRequestBuilderNavigationMetadata: R
 export const ManagedTenantApiNotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedTenantApiNotificationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const AccessReviewDecisionItemRequestBuilderGetQueryParametersMapper: Record<str
 export const AccessReviewDecisionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessReviewDecisionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

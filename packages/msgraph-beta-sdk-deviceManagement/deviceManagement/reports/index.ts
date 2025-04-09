@@ -64,8 +64,6 @@ import { GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderRequests
 // @ts-ignore
 import { GetDeviceConfigurationPolicyStatusSummaryRequestBuilderRequestsMetadata, type GetDeviceConfigurationPolicyStatusSummaryRequestBuilder } from './getDeviceConfigurationPolicyStatusSummary/index.js';
 // @ts-ignore
-import { GetDeviceInstallStatusReportRequestBuilderRequestsMetadata, type GetDeviceInstallStatusReportRequestBuilder } from './getDeviceInstallStatusReport/index.js';
-// @ts-ignore
 import { GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderRequestsMetadata, type GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder } from './getDeviceManagementIntentPerSettingContributingProfiles/index.js';
 // @ts-ignore
 import { GetDeviceManagementIntentSettingsReportRequestBuilderRequestsMetadata, type GetDeviceManagementIntentSettingsReportRequestBuilder } from './getDeviceManagementIntentSettingsReport/index.js';
@@ -282,10 +280,6 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the getDeviceConfigurationPolicyStatusSummary method.
      */
     get getDeviceConfigurationPolicyStatusSummary(): GetDeviceConfigurationPolicyStatusSummaryRequestBuilder;
-    /**
-     * Provides operations to call the getDeviceInstallStatusReport method.
-     */
-    get getDeviceInstallStatusReport(): GetDeviceInstallStatusReportRequestBuilder;
     /**
      * Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.
      */
@@ -632,9 +626,6 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     getDeviceConfigurationPolicyStatusSummary: {
         requestsMetadata: GetDeviceConfigurationPolicyStatusSummaryRequestBuilderRequestsMetadata,
     },
-    getDeviceInstallStatusReport: {
-        requestsMetadata: GetDeviceInstallStatusReportRequestBuilderRequestsMetadata,
-    },
     getDeviceManagementIntentPerSettingContributingProfiles: {
         requestsMetadata: GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderRequestsMetadata,
     },
@@ -783,7 +774,6 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
 export const ReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

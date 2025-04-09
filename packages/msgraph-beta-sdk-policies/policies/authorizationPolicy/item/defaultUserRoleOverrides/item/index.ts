@@ -83,7 +83,6 @@ const DefaultUserRoleOverrideItemRequestBuilderGetQueryParametersMapper: Record<
 export const DefaultUserRoleOverrideItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DefaultUserRoleOverrideItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

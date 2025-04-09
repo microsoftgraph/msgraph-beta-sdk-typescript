@@ -98,7 +98,6 @@ export const PublicKeyInfrastructureRequestBuilderNavigationMetadata: Record<Exc
 export const PublicKeyInfrastructureRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PublicKeyInfrastructureRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

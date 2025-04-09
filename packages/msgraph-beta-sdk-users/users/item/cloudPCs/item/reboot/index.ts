@@ -34,7 +34,6 @@ export const RebootRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/clo
 export const RebootRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RebootRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

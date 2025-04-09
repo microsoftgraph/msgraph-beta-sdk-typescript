@@ -127,7 +127,6 @@ export const AccessReviewsRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const AccessReviewsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessReviewsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

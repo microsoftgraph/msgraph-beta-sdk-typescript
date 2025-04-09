@@ -83,7 +83,6 @@ const ZebraFotaArtifactItemRequestBuilderGetQueryParametersMapper: Record<string
 export const ZebraFotaArtifactItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ZebraFotaArtifactItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

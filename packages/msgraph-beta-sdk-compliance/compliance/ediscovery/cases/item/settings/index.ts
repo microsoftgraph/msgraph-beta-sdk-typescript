@@ -106,7 +106,6 @@ export const SettingsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sett
 export const SettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SettingsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetQueryParametersMa
 export const AndroidForWorkAppConfigurationSchemaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AndroidForWorkAppConfigurationSchemaItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

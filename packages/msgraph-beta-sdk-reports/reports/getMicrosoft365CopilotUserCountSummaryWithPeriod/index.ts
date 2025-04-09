@@ -35,7 +35,7 @@ export const GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderUriTe
 export const GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

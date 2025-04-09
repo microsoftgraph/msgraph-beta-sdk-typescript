@@ -83,7 +83,6 @@ const PaymentTermItemRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const PaymentTermItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PaymentTermItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

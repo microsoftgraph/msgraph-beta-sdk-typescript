@@ -61,7 +61,6 @@ export const ContentStreamRequestBuilderUriTemplate = "{+baseurl}/drives/{drive%
 export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -69,7 +68,7 @@ export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     get: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -78,7 +77,6 @@ export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     put: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

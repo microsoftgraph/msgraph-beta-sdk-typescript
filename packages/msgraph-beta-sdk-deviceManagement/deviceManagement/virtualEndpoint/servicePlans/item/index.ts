@@ -83,7 +83,6 @@ const CloudPcServicePlanItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const CloudPcServicePlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcServicePlanItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

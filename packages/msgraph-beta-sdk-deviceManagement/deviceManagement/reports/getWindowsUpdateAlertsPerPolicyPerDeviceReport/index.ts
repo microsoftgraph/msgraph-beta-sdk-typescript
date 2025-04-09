@@ -129,7 +129,7 @@ export const GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderUriTemp
 export const GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

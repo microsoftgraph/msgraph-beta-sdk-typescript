@@ -83,7 +83,6 @@ const HardwarePasswordInfoItemRequestBuilderGetQueryParametersMapper: Record<str
 export const HardwarePasswordInfoItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: HardwarePasswordInfoItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

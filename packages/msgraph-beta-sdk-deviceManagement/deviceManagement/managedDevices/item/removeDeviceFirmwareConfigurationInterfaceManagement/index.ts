@@ -33,7 +33,6 @@ export const RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderU
 export const RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

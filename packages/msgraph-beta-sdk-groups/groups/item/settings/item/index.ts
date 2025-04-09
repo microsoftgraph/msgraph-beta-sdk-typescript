@@ -83,7 +83,6 @@ const DirectorySettingItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const DirectorySettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DirectorySettingItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

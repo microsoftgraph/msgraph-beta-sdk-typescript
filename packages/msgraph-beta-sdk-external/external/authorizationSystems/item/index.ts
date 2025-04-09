@@ -97,7 +97,6 @@ export const AuthorizationSystemItemRequestBuilderNavigationMetadata: Record<Exc
 export const AuthorizationSystemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuthorizationSystemItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

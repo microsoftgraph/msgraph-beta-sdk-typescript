@@ -84,7 +84,6 @@ const SecurityRequirementItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const SecurityRequirementItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecurityRequirementItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

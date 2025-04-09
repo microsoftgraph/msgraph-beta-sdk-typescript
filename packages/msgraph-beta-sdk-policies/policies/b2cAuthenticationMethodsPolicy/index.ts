@@ -85,7 +85,6 @@ const B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParametersMapper: Reco
 export const B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: B2cAuthenticationMethodsPolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

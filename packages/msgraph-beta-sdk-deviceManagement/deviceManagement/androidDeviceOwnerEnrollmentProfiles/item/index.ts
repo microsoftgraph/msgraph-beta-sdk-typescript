@@ -106,7 +106,6 @@ export const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderNavigationMeta
 export const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const CloudCertificationAuthorityLeafCertificateItemRequestBuilderGetQueryParame
 export const CloudCertificationAuthorityLeafCertificateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudCertificationAuthorityLeafCertificateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

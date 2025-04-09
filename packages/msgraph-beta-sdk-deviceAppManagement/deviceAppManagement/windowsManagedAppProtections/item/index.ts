@@ -135,7 +135,6 @@ export const WindowsManagedAppProtectionItemRequestBuilderNavigationMetadata: Re
 export const WindowsManagedAppProtectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsManagedAppProtectionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

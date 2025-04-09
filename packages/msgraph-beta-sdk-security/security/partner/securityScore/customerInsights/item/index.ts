@@ -83,7 +83,6 @@ const CustomerInsightTenantItemRequestBuilderGetQueryParametersMapper: Record<st
 export const CustomerInsightTenantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomerInsightTenantItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

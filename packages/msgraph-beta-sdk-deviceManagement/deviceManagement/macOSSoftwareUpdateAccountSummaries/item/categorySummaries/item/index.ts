@@ -98,7 +98,6 @@ export const MacOSSoftwareUpdateCategorySummaryItemRequestBuilderNavigationMetad
 export const MacOSSoftwareUpdateCategorySummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MacOSSoftwareUpdateCategorySummaryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

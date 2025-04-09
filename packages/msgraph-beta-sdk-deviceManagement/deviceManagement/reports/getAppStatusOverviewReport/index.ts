@@ -129,7 +129,7 @@ export const GetAppStatusOverviewReportRequestBuilderUriTemplate = "{+baseurl}/d
 export const GetAppStatusOverviewReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetAppStatusOverviewReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

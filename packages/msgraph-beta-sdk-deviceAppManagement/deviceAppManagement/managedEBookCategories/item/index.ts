@@ -83,7 +83,6 @@ const ManagedEBookCategoryItemRequestBuilderGetQueryParametersMapper: Record<str
 export const ManagedEBookCategoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedEBookCategoryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

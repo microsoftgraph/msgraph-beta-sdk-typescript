@@ -146,7 +146,6 @@ export const DeviceShellScriptItemRequestBuilderNavigationMetadata: Record<Exclu
 export const DeviceShellScriptItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceShellScriptItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

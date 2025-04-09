@@ -61,7 +61,6 @@ export const PngOfCurrentSlideRequestBuilderUriTemplate = "{+baseurl}/communicat
 export const PngOfCurrentSlideRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PngOfCurrentSlideRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -69,7 +68,7 @@ export const PngOfCurrentSlideRequestBuilderRequestsMetadata: RequestsMetadata =
     },
     get: {
         uriTemplate: PngOfCurrentSlideRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -78,7 +77,6 @@ export const PngOfCurrentSlideRequestBuilderRequestsMetadata: RequestsMetadata =
     },
     put: {
         uriTemplate: PngOfCurrentSlideRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

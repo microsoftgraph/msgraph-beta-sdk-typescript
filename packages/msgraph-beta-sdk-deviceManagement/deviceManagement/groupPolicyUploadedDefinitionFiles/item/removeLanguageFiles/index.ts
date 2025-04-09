@@ -82,7 +82,6 @@ export const RemoveLanguageFilesRequestBuilderUriTemplate = "{+baseurl}/deviceMa
 export const RemoveLanguageFilesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveLanguageFilesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

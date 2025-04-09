@@ -86,7 +86,6 @@ export const RecordDecisionsRequestBuilderUriTemplate = "{+baseurl}/approvalWork
 export const RecordDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RecordDecisionsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

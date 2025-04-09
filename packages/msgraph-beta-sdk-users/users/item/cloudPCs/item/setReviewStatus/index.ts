@@ -83,7 +83,6 @@ export const SetReviewStatusRequestBuilderUriTemplate = "{+baseurl}/users/{user%
 export const SetReviewStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetReviewStatusRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

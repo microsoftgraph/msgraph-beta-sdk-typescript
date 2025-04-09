@@ -97,7 +97,6 @@ export const ResumeRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/en
 export const ResumeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ResumeRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

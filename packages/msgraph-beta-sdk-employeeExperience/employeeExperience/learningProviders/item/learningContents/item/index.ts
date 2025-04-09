@@ -86,7 +86,6 @@ const LearningContentItemRequestBuilderGetQueryParametersMapper: Record<string, 
 export const LearningContentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LearningContentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

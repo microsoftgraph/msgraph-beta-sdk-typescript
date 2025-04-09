@@ -130,7 +130,6 @@ export const BranchSiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const BranchSiteItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BranchSiteItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

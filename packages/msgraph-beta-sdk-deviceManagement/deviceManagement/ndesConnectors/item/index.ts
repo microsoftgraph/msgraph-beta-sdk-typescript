@@ -83,7 +83,6 @@ const NdesConnectorItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const NdesConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NdesConnectorItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -88,7 +88,6 @@ export const UploadNewVersionRequestBuilderUriTemplate = "{+baseurl}/deviceManag
 export const UploadNewVersionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UploadNewVersionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

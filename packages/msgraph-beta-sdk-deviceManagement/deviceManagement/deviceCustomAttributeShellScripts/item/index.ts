@@ -146,7 +146,6 @@ export const DeviceCustomAttributeShellScriptItemRequestBuilderNavigationMetadat
 export const DeviceCustomAttributeShellScriptItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceCustomAttributeShellScriptItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -108,7 +108,6 @@ export const AzureRequestBuilderNavigationMetadata: Record<Exclude<keyof AzureRe
 export const AzureRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AzureRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

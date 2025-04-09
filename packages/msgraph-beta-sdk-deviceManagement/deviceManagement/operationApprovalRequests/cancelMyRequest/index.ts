@@ -80,7 +80,6 @@ export const CancelMyRequestRequestBuilderUriTemplate = "{+baseurl}/deviceManage
 export const CancelMyRequestRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CancelMyRequestRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

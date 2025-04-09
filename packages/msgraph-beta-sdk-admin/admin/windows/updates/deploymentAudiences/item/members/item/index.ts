@@ -124,7 +124,6 @@ export const UpdatableAssetItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const UpdatableAssetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UpdatableAssetItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

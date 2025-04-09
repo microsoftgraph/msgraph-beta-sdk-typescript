@@ -36,7 +36,6 @@ export const CancelSecurityActionRequestBuilderUriTemplate = "{+baseurl}/securit
 export const CancelSecurityActionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CancelSecurityActionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

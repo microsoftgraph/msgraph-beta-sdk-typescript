@@ -83,7 +83,6 @@ const MfaUserCountMetricItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const MfaUserCountMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MfaUserCountMetricItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

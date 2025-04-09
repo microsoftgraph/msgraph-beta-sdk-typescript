@@ -83,7 +83,6 @@ const ServiceNowConnectionItemRequestBuilderGetQueryParametersMapper: Record<str
 export const ServiceNowConnectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ServiceNowConnectionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

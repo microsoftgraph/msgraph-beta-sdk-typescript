@@ -83,7 +83,6 @@ const AggregatedPolicyComplianceItemRequestBuilderGetQueryParametersMapper: Reco
 export const AggregatedPolicyComplianceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AggregatedPolicyComplianceItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

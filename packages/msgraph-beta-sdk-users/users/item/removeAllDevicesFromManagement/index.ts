@@ -33,7 +33,6 @@ export const RemoveAllDevicesFromManagementRequestBuilderUriTemplate = "{+baseur
 export const RemoveAllDevicesFromManagementRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveAllDevicesFromManagementRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

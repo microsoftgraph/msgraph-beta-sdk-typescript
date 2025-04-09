@@ -83,7 +83,6 @@ const ManagedDeviceEncryptionStateItemRequestBuilderGetQueryParametersMapper: Re
 export const ManagedDeviceEncryptionStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedDeviceEncryptionStateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

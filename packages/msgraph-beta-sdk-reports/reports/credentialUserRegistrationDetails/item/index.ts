@@ -89,7 +89,6 @@ const CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParametersMappe
 export const CredentialUserRegistrationDetailsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CredentialUserRegistrationDetailsItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

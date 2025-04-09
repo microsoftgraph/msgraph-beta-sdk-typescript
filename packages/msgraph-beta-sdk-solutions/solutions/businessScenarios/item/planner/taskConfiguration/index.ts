@@ -85,7 +85,6 @@ const TaskConfigurationRequestBuilderGetQueryParametersMapper: Record<string, st
 export const TaskConfigurationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TaskConfigurationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

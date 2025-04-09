@@ -85,7 +85,6 @@ const MutualTlsOauthConfigurationItemRequestBuilderGetQueryParametersMapper: Rec
 export const MutualTlsOauthConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MutualTlsOauthConfigurationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

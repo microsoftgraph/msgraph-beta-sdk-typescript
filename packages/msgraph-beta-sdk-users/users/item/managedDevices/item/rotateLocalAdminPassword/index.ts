@@ -33,7 +33,6 @@ export const RotateLocalAdminPasswordRequestBuilderUriTemplate = "{+baseurl}/use
 export const RotateLocalAdminPasswordRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RotateLocalAdminPasswordRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

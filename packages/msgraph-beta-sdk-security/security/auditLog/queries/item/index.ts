@@ -99,7 +99,6 @@ export const AuditLogQueryItemRequestBuilderNavigationMetadata: Record<Exclude<k
 export const AuditLogQueryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuditLogQueryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

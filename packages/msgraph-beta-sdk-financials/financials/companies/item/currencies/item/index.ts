@@ -83,7 +83,6 @@ const CurrencyItemRequestBuilderGetQueryParametersMapper: Record<string, string>
 export const CurrencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CurrencyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

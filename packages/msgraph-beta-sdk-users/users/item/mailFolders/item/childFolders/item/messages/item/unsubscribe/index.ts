@@ -34,7 +34,6 @@ export const UnsubscribeRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did
 export const UnsubscribeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UnsubscribeRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,7 +34,6 @@ export const StopRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/pendi
 export const StopRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: StopRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

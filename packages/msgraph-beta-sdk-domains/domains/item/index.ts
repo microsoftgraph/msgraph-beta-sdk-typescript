@@ -186,7 +186,6 @@ export const DomainItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Do
 export const DomainItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DomainItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

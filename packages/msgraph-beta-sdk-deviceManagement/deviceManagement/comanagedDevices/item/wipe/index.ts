@@ -112,7 +112,6 @@ export const WipeRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/comana
 export const WipeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: WipeRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -146,7 +146,6 @@ export const CloudPcProvisioningPolicyItemRequestBuilderNavigationMetadata: Reco
 export const CloudPcProvisioningPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcProvisioningPolicyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

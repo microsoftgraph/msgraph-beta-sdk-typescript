@@ -98,7 +98,6 @@ export const ManagedTenantAlertRuleDefinitionItemRequestBuilderNavigationMetadat
 export const ManagedTenantAlertRuleDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedTenantAlertRuleDefinitionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

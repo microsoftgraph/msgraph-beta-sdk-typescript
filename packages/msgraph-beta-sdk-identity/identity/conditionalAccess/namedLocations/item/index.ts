@@ -86,7 +86,6 @@ const NamedLocationItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const NamedLocationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NamedLocationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

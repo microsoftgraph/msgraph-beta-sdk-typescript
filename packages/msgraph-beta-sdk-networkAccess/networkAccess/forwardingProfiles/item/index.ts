@@ -109,7 +109,6 @@ export const ForwardingProfileItemRequestBuilderNavigationMetadata: Record<Exclu
 export const ForwardingProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ForwardingProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

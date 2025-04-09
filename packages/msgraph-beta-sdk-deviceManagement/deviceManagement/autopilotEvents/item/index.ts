@@ -83,7 +83,6 @@ const DeviceManagementAutopilotEventItemRequestBuilderGetQueryParametersMapper: 
 export const DeviceManagementAutopilotEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementAutopilotEventItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
