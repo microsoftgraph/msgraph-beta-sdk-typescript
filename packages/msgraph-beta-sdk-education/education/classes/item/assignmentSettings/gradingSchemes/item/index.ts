@@ -85,7 +85,6 @@ const EducationGradingSchemeItemRequestBuilderGetQueryParametersMapper: Record<s
 export const EducationGradingSchemeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EducationGradingSchemeItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

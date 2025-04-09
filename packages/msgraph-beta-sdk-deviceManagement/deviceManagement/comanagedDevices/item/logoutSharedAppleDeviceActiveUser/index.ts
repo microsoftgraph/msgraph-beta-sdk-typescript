@@ -33,7 +33,6 @@ export const LogoutSharedAppleDeviceActiveUserRequestBuilderUriTemplate = "{+bas
 export const LogoutSharedAppleDeviceActiveUserRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: LogoutSharedAppleDeviceActiveUserRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

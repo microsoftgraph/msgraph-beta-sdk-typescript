@@ -89,7 +89,6 @@ const ProviderTenantSettingItemRequestBuilderGetQueryParametersMapper: Record<st
 export const ProviderTenantSettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProviderTenantSettingItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

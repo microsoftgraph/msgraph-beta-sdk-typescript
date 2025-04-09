@@ -83,7 +83,6 @@ const PrintUsageItemRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const PrintUsageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrintUsageItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

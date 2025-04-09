@@ -80,7 +80,6 @@ export const UnsetReactionRequestBuilderUriTemplate = "{+baseurl}/teamTemplateDe
 export const UnsetReactionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UnsetReactionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

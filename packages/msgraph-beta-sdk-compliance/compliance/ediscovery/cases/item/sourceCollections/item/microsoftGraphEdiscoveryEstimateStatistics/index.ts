@@ -36,7 +36,6 @@ export const MicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilderUriTemplate
 export const MicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryEstimateStatisticsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

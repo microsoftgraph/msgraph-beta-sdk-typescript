@@ -82,7 +82,6 @@ export const ChangeAssignmentsRequestBuilderUriTemplate = "{+baseurl}/users/{use
 export const ChangeAssignmentsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ChangeAssignmentsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -91,7 +91,6 @@ const IdentityUserFlowItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const IdentityUserFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IdentityUserFlowItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

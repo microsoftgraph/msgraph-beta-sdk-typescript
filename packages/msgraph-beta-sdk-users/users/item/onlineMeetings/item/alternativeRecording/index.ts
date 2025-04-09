@@ -61,7 +61,6 @@ export const AlternativeRecordingRequestBuilderUriTemplate = "{+baseurl}/users/{
 export const AlternativeRecordingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AlternativeRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -69,7 +68,7 @@ export const AlternativeRecordingRequestBuilderRequestsMetadata: RequestsMetadat
     },
     get: {
         uriTemplate: AlternativeRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -78,7 +77,6 @@ export const AlternativeRecordingRequestBuilderRequestsMetadata: RequestsMetadat
     },
     put: {
         uriTemplate: AlternativeRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

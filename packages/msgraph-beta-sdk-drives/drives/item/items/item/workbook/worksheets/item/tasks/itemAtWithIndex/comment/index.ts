@@ -83,7 +83,6 @@ const CommentRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const CommentRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CommentRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

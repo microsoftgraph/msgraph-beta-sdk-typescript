@@ -97,7 +97,6 @@ export const SensitivityLabelItemRequestBuilderNavigationMetadata: Record<Exclud
 export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SensitivityLabelItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

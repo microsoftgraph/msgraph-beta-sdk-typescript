@@ -83,7 +83,6 @@ const CloudPcSnapshotItemRequestBuilderGetQueryParametersMapper: Record<string, 
 export const CloudPcSnapshotItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcSnapshotItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

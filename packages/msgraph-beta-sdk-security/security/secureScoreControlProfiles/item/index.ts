@@ -84,7 +84,6 @@ const SecureScoreControlProfileItemRequestBuilderGetQueryParametersMapper: Recor
 export const SecureScoreControlProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecureScoreControlProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

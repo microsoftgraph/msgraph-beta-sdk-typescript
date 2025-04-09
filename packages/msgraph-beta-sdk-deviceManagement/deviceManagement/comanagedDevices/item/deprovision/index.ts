@@ -80,7 +80,6 @@ export const DeprovisionRequestBuilderUriTemplate = "{+baseurl}/deviceManagement
 export const DeprovisionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DeprovisionRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

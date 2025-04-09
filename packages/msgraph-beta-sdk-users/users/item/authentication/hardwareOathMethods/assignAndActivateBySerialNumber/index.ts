@@ -93,7 +93,6 @@ export const AssignAndActivateBySerialNumberRequestBuilderUriTemplate = "{+baseu
 export const AssignAndActivateBySerialNumberRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: AssignAndActivateBySerialNumberRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

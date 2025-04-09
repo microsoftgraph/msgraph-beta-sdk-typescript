@@ -90,7 +90,6 @@ const ItemInsightsRequestBuilderGetQueryParametersMapper: Record<string, string>
 export const ItemInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ItemInsightsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

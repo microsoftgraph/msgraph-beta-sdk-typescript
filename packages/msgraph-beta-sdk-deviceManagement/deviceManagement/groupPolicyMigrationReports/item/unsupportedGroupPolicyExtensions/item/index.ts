@@ -83,7 +83,6 @@ const UnsupportedGroupPolicyExtensionItemRequestBuilderGetQueryParametersMapper:
 export const UnsupportedGroupPolicyExtensionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UnsupportedGroupPolicyExtensionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

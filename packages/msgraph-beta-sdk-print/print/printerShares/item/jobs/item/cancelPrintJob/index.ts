@@ -35,7 +35,6 @@ export const CancelPrintJobRequestBuilderUriTemplate = "{+baseurl}/print/printer
 export const CancelPrintJobRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CancelPrintJobRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

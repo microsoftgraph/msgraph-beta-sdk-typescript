@@ -83,7 +83,6 @@ const MicrosoftTunnelConfigurationItemRequestBuilderGetQueryParametersMapper: Re
 export const MicrosoftTunnelConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MicrosoftTunnelConfigurationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

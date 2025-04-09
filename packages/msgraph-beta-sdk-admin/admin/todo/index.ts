@@ -85,7 +85,6 @@ const TodoRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const TodoRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TodoRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderGetQueryPa
 export const WindowsInformationProtectionAppLearningSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsInformationProtectionAppLearningSummaryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

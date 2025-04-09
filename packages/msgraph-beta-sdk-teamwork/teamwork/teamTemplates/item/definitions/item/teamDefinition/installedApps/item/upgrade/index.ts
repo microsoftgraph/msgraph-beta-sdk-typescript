@@ -83,7 +83,6 @@ export const UpgradeRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTemplat
 export const UpgradeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpgradeRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

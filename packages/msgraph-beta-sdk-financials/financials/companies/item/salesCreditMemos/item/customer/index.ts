@@ -134,7 +134,6 @@ export const CustomerRequestBuilderNavigationMetadata: Record<Exclude<keyof Cust
 export const CustomerRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomerRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

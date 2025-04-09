@@ -129,7 +129,7 @@ export const RetrieveWin32CatalogAppsUpdateReportRequestBuilderUriTemplate = "{+
 export const RetrieveWin32CatalogAppsUpdateReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveWin32CatalogAppsUpdateReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

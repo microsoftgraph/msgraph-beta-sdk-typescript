@@ -98,7 +98,6 @@ export const CloudPcBulkActionItemRequestBuilderNavigationMetadata: Record<Exclu
 export const CloudPcBulkActionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcBulkActionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

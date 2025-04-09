@@ -97,7 +97,6 @@ export const ManagedDeviceWindowsOperatingSystemImageItemRequestBuilderNavigatio
 export const ManagedDeviceWindowsOperatingSystemImageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedDeviceWindowsOperatingSystemImageItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

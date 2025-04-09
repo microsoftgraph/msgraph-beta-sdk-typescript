@@ -85,7 +85,6 @@ const AccessReviewPolicyRequestBuilderGetQueryParametersMapper: Record<string, s
 export const AccessReviewPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessReviewPolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

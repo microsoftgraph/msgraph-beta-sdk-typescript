@@ -85,7 +85,6 @@ const PartnerSecurityAlertItemRequestBuilderGetQueryParametersMapper: Record<str
 export const PartnerSecurityAlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PartnerSecurityAlertItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

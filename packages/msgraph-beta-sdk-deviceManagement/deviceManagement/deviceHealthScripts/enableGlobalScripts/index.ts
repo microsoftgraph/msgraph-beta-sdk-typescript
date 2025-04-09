@@ -33,7 +33,6 @@ export const EnableGlobalScriptsRequestBuilderUriTemplate = "{+baseurl}/deviceMa
 export const EnableGlobalScriptsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableGlobalScriptsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

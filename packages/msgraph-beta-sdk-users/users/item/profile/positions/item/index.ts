@@ -83,7 +83,6 @@ const WorkPositionItemRequestBuilderGetQueryParametersMapper: Record<string, str
 export const WorkPositionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WorkPositionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

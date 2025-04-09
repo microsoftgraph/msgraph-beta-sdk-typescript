@@ -129,7 +129,6 @@ export const SetItemRequestBuilderNavigationMetadata: Record<Exclude<keyof SetIt
 export const SetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SetItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

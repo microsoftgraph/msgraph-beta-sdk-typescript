@@ -86,7 +86,6 @@ const BusinessScenariosWithUniqueNameRequestBuilderGetQueryParametersMapper: Rec
 export const BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BusinessScenariosWithUniqueNameRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

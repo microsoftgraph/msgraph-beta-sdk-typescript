@@ -136,7 +136,6 @@ export const HardwareConfigurationItemRequestBuilderNavigationMetadata: Record<E
 export const HardwareConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: HardwareConfigurationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,7 +33,6 @@ export const WipeAndBlockManagedAppsRequestBuilderUriTemplate = "{+baseurl}/user
 export const WipeAndBlockManagedAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: WipeAndBlockManagedAppsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

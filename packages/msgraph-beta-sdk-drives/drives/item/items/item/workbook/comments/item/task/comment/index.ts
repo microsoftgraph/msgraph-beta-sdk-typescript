@@ -98,7 +98,6 @@ export const CommentRequestBuilderNavigationMetadata: Record<Exclude<keyof Comme
 export const CommentRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CommentRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,7 @@ export const EvaluateAssignmentFilterRequestBuilderUriTemplate = "{+baseurl}/dev
 export const EvaluateAssignmentFilterRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EvaluateAssignmentFilterRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

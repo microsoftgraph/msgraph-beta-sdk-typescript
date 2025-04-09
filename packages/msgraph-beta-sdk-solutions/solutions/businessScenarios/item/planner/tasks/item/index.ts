@@ -127,7 +127,6 @@ export const BusinessScenarioTaskItemRequestBuilderNavigationMetadata: Record<Ex
 export const BusinessScenarioTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BusinessScenarioTaskItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

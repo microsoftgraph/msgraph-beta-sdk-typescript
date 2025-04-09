@@ -98,7 +98,6 @@ export const CollaborationRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const CollaborationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CollaborationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

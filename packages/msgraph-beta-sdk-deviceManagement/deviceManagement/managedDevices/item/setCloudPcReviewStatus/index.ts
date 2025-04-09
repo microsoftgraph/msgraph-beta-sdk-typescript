@@ -85,7 +85,6 @@ export const SetCloudPcReviewStatusRequestBuilderUriTemplate = "{+baseurl}/devic
 export const SetCloudPcReviewStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetCloudPcReviewStatusRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

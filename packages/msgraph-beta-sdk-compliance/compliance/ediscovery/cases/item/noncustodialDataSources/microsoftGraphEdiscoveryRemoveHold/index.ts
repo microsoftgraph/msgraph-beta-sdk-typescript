@@ -82,7 +82,6 @@ export const MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderUriTemplate = "{+ba
 export const MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryRemoveHoldRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

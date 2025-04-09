@@ -83,7 +83,6 @@ const SensitivityLabelItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const SensitivityLabelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SensitivityLabelItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

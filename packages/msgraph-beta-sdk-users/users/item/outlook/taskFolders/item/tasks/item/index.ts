@@ -125,7 +125,6 @@ export const OutlookTaskItemRequestBuilderNavigationMetadata: Record<Exclude<key
 export const OutlookTaskItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OutlookTaskItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -178,7 +178,6 @@ export const DailyRequestBuilderNavigationMetadata: Record<Exclude<keyof DailyRe
 export const DailyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DailyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

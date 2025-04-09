@@ -33,7 +33,6 @@ export const MicrosoftGraphNetworkaccessOnboardRequestBuilderUriTemplate = "{+ba
 export const MicrosoftGraphNetworkaccessOnboardRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphNetworkaccessOnboardRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

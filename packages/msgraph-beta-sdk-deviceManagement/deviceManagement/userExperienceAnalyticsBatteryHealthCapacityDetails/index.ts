@@ -83,7 +83,6 @@ const UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderGetQueryP
 export const UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

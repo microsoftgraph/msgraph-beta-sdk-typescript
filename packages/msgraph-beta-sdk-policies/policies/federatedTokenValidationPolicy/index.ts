@@ -85,7 +85,6 @@ const FederatedTokenValidationPolicyRequestBuilderGetQueryParametersMapper: Reco
 export const FederatedTokenValidationPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: FederatedTokenValidationPolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

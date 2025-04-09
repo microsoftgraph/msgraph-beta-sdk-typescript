@@ -84,7 +84,6 @@ const ManagementIntentItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const ManagementIntentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagementIntentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

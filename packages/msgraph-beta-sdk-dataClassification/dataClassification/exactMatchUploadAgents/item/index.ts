@@ -83,7 +83,6 @@ const ExactMatchUploadAgentItemRequestBuilderGetQueryParametersMapper: Record<st
 export const ExactMatchUploadAgentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExactMatchUploadAgentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

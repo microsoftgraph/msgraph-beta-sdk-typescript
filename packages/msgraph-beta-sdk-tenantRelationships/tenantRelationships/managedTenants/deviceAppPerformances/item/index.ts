@@ -83,7 +83,6 @@ const DeviceAppPerformanceItemRequestBuilderGetQueryParametersMapper: Record<str
 export const DeviceAppPerformanceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceAppPerformanceItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -87,7 +87,6 @@ export const MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderUriTemplate
 export const MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

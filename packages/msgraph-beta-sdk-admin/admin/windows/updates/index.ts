@@ -158,7 +158,6 @@ export const UpdatesRequestBuilderNavigationMetadata: Record<Exclude<keyof Updat
 export const UpdatesRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UpdatesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -97,7 +97,6 @@ export const ProgramControlItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const ProgramControlItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProgramControlItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

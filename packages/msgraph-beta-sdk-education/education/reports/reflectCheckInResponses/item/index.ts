@@ -83,7 +83,6 @@ const ReflectCheckInResponseItemRequestBuilderGetQueryParametersMapper: Record<s
 export const ReflectCheckInResponseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ReflectCheckInResponseItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

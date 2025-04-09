@@ -124,7 +124,6 @@ export const PrivilegeManagementElevationRequestItemRequestBuilderNavigationMeta
 export const PrivilegeManagementElevationRequestItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrivilegeManagementElevationRequestItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

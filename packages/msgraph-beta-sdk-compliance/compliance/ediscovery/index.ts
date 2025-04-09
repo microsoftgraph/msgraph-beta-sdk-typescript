@@ -105,7 +105,6 @@ export const EdiscoveryRequestBuilderNavigationMetadata: Record<Exclude<keyof Ed
 export const EdiscoveryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EdiscoveryRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

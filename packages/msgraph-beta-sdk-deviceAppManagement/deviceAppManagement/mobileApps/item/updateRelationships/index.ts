@@ -82,7 +82,6 @@ export const UpdateRelationshipsRequestBuilderUriTemplate = "{+baseurl}/deviceAp
 export const UpdateRelationshipsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateRelationshipsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

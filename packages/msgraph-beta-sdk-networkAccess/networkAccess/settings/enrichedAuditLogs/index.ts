@@ -84,7 +84,6 @@ const EnrichedAuditLogsRequestBuilderGetQueryParametersMapper: Record<string, st
 export const EnrichedAuditLogsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EnrichedAuditLogsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

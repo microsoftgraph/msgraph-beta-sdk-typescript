@@ -126,7 +126,7 @@ export const GetInaccessibleCloudPcReportsRequestBuilderUriTemplate = "{+baseurl
 export const GetInaccessibleCloudPcReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetInaccessibleCloudPcReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParametersMa
 export const ServicePrincipalCreationConditionSetItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ServicePrincipalCreationConditionSetItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

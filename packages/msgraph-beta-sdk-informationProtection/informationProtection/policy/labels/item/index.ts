@@ -89,7 +89,6 @@ const InformationProtectionLabelItemRequestBuilderGetQueryParametersMapper: Reco
 export const InformationProtectionLabelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: InformationProtectionLabelItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

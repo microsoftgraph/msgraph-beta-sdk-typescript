@@ -91,7 +91,6 @@ const DeviceLinkItemRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const DeviceLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceLinkItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

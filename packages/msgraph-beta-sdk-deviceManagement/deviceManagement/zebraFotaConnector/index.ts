@@ -124,7 +124,6 @@ export const ZebraFotaConnectorRequestBuilderNavigationMetadata: Record<Exclude<
 export const ZebraFotaConnectorRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ZebraFotaConnectorRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

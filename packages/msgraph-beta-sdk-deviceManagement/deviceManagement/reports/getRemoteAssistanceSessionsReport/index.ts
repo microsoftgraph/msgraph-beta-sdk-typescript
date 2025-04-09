@@ -129,7 +129,7 @@ export const GetRemoteAssistanceSessionsReportRequestBuilderUriTemplate = "{+bas
 export const GetRemoteAssistanceSessionsReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetRemoteAssistanceSessionsReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

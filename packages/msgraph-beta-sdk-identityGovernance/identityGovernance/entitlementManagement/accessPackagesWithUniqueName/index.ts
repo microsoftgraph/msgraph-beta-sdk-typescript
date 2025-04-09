@@ -109,7 +109,6 @@ export const AccessPackagesWithUniqueNameRequestBuilderNavigationMetadata: Recor
 export const AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessPackagesWithUniqueNameRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

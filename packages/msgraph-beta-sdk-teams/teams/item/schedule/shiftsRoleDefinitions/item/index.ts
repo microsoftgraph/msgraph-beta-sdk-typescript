@@ -83,7 +83,6 @@ const ShiftsRoleDefinitionItemRequestBuilderGetQueryParametersMapper: Record<str
 export const ShiftsRoleDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ShiftsRoleDefinitionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,7 +34,6 @@ export const RestartRequestBuilderUriTemplate = "{+baseurl}/teamwork/devices/{te
 export const RestartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RestartRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

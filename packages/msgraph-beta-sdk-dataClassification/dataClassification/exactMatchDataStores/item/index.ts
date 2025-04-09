@@ -107,7 +107,6 @@ export const ExactMatchDataStoreItemRequestBuilderNavigationMetadata: Record<Exc
 export const ExactMatchDataStoreItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExactMatchDataStoreItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

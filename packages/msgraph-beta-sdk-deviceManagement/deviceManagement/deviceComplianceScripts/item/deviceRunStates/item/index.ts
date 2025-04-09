@@ -97,7 +97,6 @@ export const DeviceComplianceScriptDeviceStateItemRequestBuilderNavigationMetada
 export const DeviceComplianceScriptDeviceStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceComplianceScriptDeviceStateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

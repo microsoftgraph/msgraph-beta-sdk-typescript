@@ -83,7 +83,6 @@ export const RemoveAllAccessForUserRequestBuilderUriTemplate = "{+baseurl}/chats
 export const RemoveAllAccessForUserRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveAllAccessForUserRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

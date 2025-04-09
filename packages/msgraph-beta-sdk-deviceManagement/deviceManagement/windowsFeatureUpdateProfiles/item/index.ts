@@ -107,7 +107,6 @@ export const WindowsFeatureUpdateProfileItemRequestBuilderNavigationMetadata: Re
 export const WindowsFeatureUpdateProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsFeatureUpdateProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

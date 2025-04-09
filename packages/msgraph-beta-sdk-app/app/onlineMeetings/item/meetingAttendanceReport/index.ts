@@ -98,7 +98,6 @@ export const MeetingAttendanceReportRequestBuilderNavigationMetadata: Record<Exc
 export const MeetingAttendanceReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MeetingAttendanceReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

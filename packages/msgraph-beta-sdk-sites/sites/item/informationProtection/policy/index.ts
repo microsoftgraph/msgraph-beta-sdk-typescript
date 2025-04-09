@@ -105,7 +105,6 @@ export const PolicyRequestBuilderNavigationMetadata: Record<Exclude<keyof Policy
 export const PolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PolicyRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

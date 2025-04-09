@@ -115,7 +115,6 @@ export const MicrosoftGraphEdiscoveryExportRequestBuilderUriTemplate = "{+baseur
 export const MicrosoftGraphEdiscoveryExportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryExportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

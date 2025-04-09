@@ -83,7 +83,6 @@ const EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParametersMapper: Record<s
 export const EmbeddedSIMDeviceStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EmbeddedSIMDeviceStateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -35,7 +35,7 @@ export const GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderUriTem
 export const GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -108,7 +108,6 @@ export const DeviceRequestBuilderNavigationMetadata: Record<Exclude<keyof Device
 export const DeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

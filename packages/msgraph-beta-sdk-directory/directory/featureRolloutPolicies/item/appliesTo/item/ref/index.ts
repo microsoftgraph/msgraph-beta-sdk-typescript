@@ -35,7 +35,6 @@ export const RefRequestBuilderUriTemplate = "{+baseurl}/directory/featureRollout
 export const RefRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RefRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

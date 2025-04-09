@@ -89,7 +89,6 @@ const NotificationItemRequestBuilderGetQueryParametersMapper: Record<string, str
 export const NotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NotificationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const RemoteNetworkHealthEventItemRequestBuilderGetQueryParametersMapper: Record
 export const RemoteNetworkHealthEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RemoteNetworkHealthEventItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

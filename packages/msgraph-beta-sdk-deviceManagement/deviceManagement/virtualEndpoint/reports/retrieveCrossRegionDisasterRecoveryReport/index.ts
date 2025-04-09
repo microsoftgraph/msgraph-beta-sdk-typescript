@@ -126,7 +126,7 @@ export const RetrieveCrossRegionDisasterRecoveryReportRequestBuilderUriTemplate 
 export const RetrieveCrossRegionDisasterRecoveryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveCrossRegionDisasterRecoveryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

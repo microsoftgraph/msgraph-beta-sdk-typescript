@@ -34,7 +34,6 @@ export const MicrosoftGraphIndustryDataValidateRequestBuilderUriTemplate = "{+ba
 export const MicrosoftGraphIndustryDataValidateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphIndustryDataValidateRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

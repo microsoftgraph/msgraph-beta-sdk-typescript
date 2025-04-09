@@ -83,7 +83,6 @@ const RemoteActionAuditItemRequestBuilderGetQueryParametersMapper: Record<string
 export const RemoteActionAuditItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RemoteActionAuditItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -86,7 +86,6 @@ export const MigrateToTemplateRequestBuilderUriTemplate = "{+baseurl}/deviceMana
 export const MigrateToTemplateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MigrateToTemplateRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

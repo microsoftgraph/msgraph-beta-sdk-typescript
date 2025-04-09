@@ -134,7 +134,6 @@ export const DirectorySettingTemplateItemRequestBuilderNavigationMetadata: Recor
 export const DirectorySettingTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DirectorySettingTemplateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

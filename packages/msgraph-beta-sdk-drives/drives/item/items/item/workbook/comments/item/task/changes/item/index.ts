@@ -83,7 +83,6 @@ const WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParametersMapper: Reco
 export const WorkbookDocumentTaskChangeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WorkbookDocumentTaskChangeItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

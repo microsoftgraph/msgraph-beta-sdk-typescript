@@ -99,7 +99,6 @@ export const CloudPcDeviceImageItemRequestBuilderNavigationMetadata: Record<Excl
 export const CloudPcDeviceImageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcDeviceImageItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

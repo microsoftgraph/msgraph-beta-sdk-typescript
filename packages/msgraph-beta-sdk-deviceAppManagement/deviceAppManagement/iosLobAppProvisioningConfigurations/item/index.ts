@@ -137,7 +137,6 @@ export const IosLobAppProvisioningConfigurationItemRequestBuilderNavigationMetad
 export const IosLobAppProvisioningConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IosLobAppProvisioningConfigurationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,7 +84,6 @@ const TenantStatusRequestBuilderGetQueryParametersMapper: Record<string, string>
 export const TenantStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TenantStatusRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

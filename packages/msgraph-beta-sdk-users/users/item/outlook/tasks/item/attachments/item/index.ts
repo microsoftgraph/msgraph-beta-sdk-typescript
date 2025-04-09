@@ -72,7 +72,6 @@ const AttachmentItemRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const AttachmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AttachmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

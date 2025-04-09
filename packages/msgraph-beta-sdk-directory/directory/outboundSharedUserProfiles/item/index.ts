@@ -99,7 +99,6 @@ export const OutboundSharedUserProfileUserItemRequestBuilderNavigationMetadata: 
 export const OutboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OutboundSharedUserProfileUserItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const ManagedTenantTicketingEndpointItemRequestBuilderGetQueryParametersMapper: 
 export const ManagedTenantTicketingEndpointItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedTenantTicketingEndpointItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

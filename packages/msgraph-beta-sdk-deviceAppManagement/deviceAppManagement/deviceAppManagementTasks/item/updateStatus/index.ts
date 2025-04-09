@@ -88,7 +88,6 @@ export const UpdateStatusRequestBuilderUriTemplate = "{+baseurl}/deviceAppManage
 export const UpdateStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateStatusRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

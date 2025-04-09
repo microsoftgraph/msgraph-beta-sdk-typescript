@@ -97,7 +97,6 @@ export const BusinessFlowItemRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const BusinessFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BusinessFlowItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

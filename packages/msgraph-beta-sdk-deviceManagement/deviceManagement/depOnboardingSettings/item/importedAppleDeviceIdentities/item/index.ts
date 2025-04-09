@@ -83,7 +83,6 @@ const ImportedAppleDeviceIdentityItemRequestBuilderGetQueryParametersMapper: Rec
 export const ImportedAppleDeviceIdentityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ImportedAppleDeviceIdentityItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const ConfigManagerCollectionItemRequestBuilderGetQueryParametersMapper: Record<
 export const ConfigManagerCollectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConfigManagerCollectionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

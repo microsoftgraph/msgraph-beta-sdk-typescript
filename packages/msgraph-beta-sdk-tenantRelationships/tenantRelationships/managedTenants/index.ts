@@ -458,7 +458,6 @@ export const ManagedTenantsRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const ManagedTenantsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedTenantsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

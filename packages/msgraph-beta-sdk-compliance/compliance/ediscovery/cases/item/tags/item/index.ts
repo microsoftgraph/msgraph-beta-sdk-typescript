@@ -118,7 +118,6 @@ export const TagItemRequestBuilderNavigationMetadata: Record<Exclude<keyof TagIt
 export const TagItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TagItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

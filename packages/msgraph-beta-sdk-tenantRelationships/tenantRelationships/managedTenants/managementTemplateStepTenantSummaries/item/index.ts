@@ -83,7 +83,6 @@ const ManagementTemplateStepTenantSummaryItemRequestBuilderGetQueryParametersMap
 export const ManagementTemplateStepTenantSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagementTemplateStepTenantSummaryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

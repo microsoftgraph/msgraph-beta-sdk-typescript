@@ -107,7 +107,6 @@ export const GroupPolicyDefinitionValueItemRequestBuilderNavigationMetadata: Rec
 export const GroupPolicyDefinitionValueItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GroupPolicyDefinitionValueItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

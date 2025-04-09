@@ -85,7 +85,6 @@ const PronounsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const PronounsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PronounsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

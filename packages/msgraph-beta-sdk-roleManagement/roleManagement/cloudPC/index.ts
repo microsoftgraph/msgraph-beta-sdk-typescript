@@ -118,7 +118,6 @@ export const CloudPCRequestBuilderNavigationMetadata: Record<Exclude<keyof Cloud
 export const CloudPCRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPCRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

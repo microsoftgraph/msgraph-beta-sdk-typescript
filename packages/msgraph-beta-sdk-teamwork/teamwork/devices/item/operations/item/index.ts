@@ -84,7 +84,6 @@ const TeamworkDeviceOperationItemRequestBuilderGetQueryParametersMapper: Record<
 export const TeamworkDeviceOperationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamworkDeviceOperationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

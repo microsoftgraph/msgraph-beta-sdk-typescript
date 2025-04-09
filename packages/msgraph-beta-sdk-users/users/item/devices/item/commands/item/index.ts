@@ -97,7 +97,6 @@ export const CommandItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
 export const CommandItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CommandItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

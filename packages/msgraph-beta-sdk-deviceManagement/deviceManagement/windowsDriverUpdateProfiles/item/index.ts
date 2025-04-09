@@ -135,7 +135,6 @@ export const WindowsDriverUpdateProfileItemRequestBuilderNavigationMetadata: Rec
 export const WindowsDriverUpdateProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsDriverUpdateProfileItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

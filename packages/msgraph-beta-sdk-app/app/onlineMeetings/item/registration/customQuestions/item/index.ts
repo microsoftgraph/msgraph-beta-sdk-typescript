@@ -89,7 +89,6 @@ const MeetingRegistrationQuestionItemRequestBuilderGetQueryParametersMapper: Rec
 export const MeetingRegistrationQuestionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MeetingRegistrationQuestionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

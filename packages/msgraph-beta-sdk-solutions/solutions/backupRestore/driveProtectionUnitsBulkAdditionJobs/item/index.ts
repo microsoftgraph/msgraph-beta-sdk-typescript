@@ -83,7 +83,6 @@ const DriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParametersMap
 export const DriveProtectionUnitsBulkAdditionJobItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DriveProtectionUnitsBulkAdditionJobItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

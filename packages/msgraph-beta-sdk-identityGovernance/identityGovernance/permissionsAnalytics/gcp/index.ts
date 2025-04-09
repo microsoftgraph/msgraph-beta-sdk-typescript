@@ -108,7 +108,6 @@ export const GcpRequestBuilderNavigationMetadata: Record<Exclude<keyof GcpReques
 export const GcpRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GcpRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

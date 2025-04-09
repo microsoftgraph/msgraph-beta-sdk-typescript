@@ -83,7 +83,6 @@ const UserCredentialUsageDetailsItemRequestBuilderGetQueryParametersMapper: Reco
 export const UserCredentialUsageDetailsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserCredentialUsageDetailsItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

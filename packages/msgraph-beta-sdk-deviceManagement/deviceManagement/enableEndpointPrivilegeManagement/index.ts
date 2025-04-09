@@ -33,7 +33,6 @@ export const EnableEndpointPrivilegeManagementRequestBuilderUriTemplate = "{+bas
 export const EnableEndpointPrivilegeManagementRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableEndpointPrivilegeManagementRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

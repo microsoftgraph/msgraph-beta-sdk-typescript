@@ -131,7 +131,6 @@ export const B2cIdentityUserFlowItemRequestBuilderNavigationMetadata: Record<Exc
 export const B2cIdentityUserFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: B2cIdentityUserFlowItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,7 +84,6 @@ const PermissionsRequestChangeItemRequestBuilderGetQueryParametersMapper: Record
 export const PermissionsRequestChangeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PermissionsRequestChangeItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

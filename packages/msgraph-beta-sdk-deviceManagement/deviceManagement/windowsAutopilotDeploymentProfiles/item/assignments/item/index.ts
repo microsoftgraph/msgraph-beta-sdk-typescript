@@ -83,7 +83,6 @@ const WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParam
 export const WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

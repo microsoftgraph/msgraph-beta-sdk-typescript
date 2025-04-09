@@ -118,7 +118,7 @@ export const GetRemoteConnectionHistoricalReportsRequestBuilderUriTemplate = "{+
 export const GetRemoteConnectionHistoricalReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetRemoteConnectionHistoricalReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

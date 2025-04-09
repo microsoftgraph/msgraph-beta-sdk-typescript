@@ -83,7 +83,6 @@ const GroupPolicyConfigurationAssignmentItemRequestBuilderGetQueryParametersMapp
 export const GroupPolicyConfigurationAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GroupPolicyConfigurationAssignmentItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

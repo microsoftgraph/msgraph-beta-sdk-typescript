@@ -85,7 +85,6 @@ export const ConversationItemRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const ConversationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConversationItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

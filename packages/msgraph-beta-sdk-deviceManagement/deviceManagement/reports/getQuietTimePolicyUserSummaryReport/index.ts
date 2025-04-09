@@ -129,7 +129,7 @@ export const GetQuietTimePolicyUserSummaryReportRequestBuilderUriTemplate = "{+b
 export const GetQuietTimePolicyUserSummaryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetQuietTimePolicyUserSummaryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

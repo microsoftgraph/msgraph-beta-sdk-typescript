@@ -91,7 +91,6 @@ export const MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilderUriTemplate = "
 export const MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -85,7 +85,6 @@ const ForwardingOptionsRequestBuilderGetQueryParametersMapper: Record<string, st
 export const ForwardingOptionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ForwardingOptionsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

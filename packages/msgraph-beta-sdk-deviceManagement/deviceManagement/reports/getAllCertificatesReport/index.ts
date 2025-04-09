@@ -129,7 +129,7 @@ export const GetAllCertificatesReportRequestBuilderUriTemplate = "{+baseurl}/dev
 export const GetAllCertificatesReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetAllCertificatesReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream, application/json",
+        responseBodyContentType: "application/octet-stream",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

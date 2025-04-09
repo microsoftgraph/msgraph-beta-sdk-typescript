@@ -34,7 +34,6 @@ export const RetryPartnerAgentInstallationRequestBuilderUriTemplate = "{+baseurl
 export const RetryPartnerAgentInstallationRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetryPartnerAgentInstallationRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

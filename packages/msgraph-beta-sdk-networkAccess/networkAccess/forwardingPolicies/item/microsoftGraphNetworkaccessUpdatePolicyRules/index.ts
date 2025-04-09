@@ -83,7 +83,6 @@ export const MicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderUriTempla
 export const MicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

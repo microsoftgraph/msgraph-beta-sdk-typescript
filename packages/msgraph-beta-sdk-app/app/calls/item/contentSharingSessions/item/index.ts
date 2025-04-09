@@ -97,7 +97,6 @@ export const ContentSharingSessionItemRequestBuilderNavigationMetadata: Record<E
 export const ContentSharingSessionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContentSharingSessionItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

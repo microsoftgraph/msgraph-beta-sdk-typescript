@@ -108,7 +108,6 @@ export const EdiscoveryHoldPolicyItemRequestBuilderNavigationMetadata: Record<Ex
 export const EdiscoveryHoldPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EdiscoveryHoldPolicyItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

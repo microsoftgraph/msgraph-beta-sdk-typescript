@@ -99,7 +99,6 @@ export const ColorIconRequestBuilderNavigationMetadata: Record<Exclude<keyof Col
 export const ColorIconRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ColorIconRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,7 +83,6 @@ const UserPFXCertificateItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const UserPFXCertificateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserPFXCertificateItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

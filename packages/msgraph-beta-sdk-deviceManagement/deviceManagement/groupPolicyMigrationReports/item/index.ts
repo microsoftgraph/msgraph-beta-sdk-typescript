@@ -117,7 +117,6 @@ export const GroupPolicyMigrationReportItemRequestBuilderNavigationMetadata: Rec
 export const GroupPolicyMigrationReportItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GroupPolicyMigrationReportItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
