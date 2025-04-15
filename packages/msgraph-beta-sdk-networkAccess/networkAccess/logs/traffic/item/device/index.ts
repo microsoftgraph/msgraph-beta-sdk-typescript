@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DeviceRequestBuilder extends BaseRequestBuilder<DeviceRequestBuilder> {
     /**
-     * Get device from networkAccess
+     * Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Device>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DeviceRequestBuilderGetQueryParameters> | undefined) : Promise<Device | undefined>;
     /**
-     * Get device from networkAccess
+     * Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get device from networkAccess
+ * Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
  */
 export interface DeviceRequestBuilderGetQueryParameters {
     /**

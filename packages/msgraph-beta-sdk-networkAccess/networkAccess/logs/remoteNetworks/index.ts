@@ -27,10 +27,11 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      */
      byRemoteNetworkHealthEventId(remoteNetworkHealthEventId: string) : RemoteNetworkHealthEventItemRequestBuilder;
     /**
-     * A collection of remote network health events.
+     * Get a list of the remoteNetworkHealthEvent objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RemoteNetworkHealthEventCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-logs-list-remotenetworks?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RemoteNetworksRequestBuilderGetQueryParameters> | undefined) : Promise<RemoteNetworkHealthEventCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      */
      post(body: RemoteNetworkHealthEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RemoteNetworkHealthEvent | undefined>;
     /**
-     * A collection of remote network health events.
+     * Get a list of the remoteNetworkHealthEvent objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface RemoteNetworksRequestBuilder extends BaseRequestBuilder<RemoteN
      toPostRequestInformation(body: RemoteNetworkHealthEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A collection of remote network health events.
+ * Get a list of the remoteNetworkHealthEvent objects and their properties.
  */
 export interface RemoteNetworksRequestBuilderGetQueryParameters {
     /**

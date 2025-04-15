@@ -156,6 +156,10 @@ export interface Alert extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
+     * The customDetails property
+     */
+    customDetails?: Dictionary | null;
+    /**
      * String value describing each alert.
      */
     description?: string | null;
@@ -8599,6 +8603,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
         "classification": n => { alert.classification = n.getEnumValue<AlertClassification>(AlertClassificationObject); },
         "comments": n => { alert.comments = n.getCollectionOfObjectValues<AlertComment>(createAlertCommentFromDiscriminatorValue); },
         "createdDateTime": n => { alert.createdDateTime = n.getDateValue(); },
+        "customDetails": n => { alert.customDetails = n.getObjectValue<Dictionary>(createDictionaryFromDiscriminatorValue); },
         "description": n => { alert.description = n.getStringValue(); },
         "detectionSource": n => { alert.detectionSource = n.getEnumValue<DetectionSource>(DetectionSourceObject); },
         "detectorId": n => { alert.detectorId = n.getStringValue(); },
@@ -20699,6 +20704,7 @@ export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert
         writer.writeEnumValue<AlertClassification>("classification", alert.classification);
         writer.writeCollectionOfObjectValues<AlertComment>("comments", alert.comments, serializeAlertComment);
         writer.writeDateValue("createdDateTime", alert.createdDateTime);
+        writer.writeObjectValue<Dictionary>("customDetails", alert.customDetails, serializeDictionary);
         writer.writeStringValue("description", alert.description);
         writer.writeEnumValue<DetectionSource>("detectionSource", alert.detectionSource);
         writer.writeStringValue("detectorId", alert.detectorId);
