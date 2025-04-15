@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-messagetraces",
-  "version": "1.0.0-preview.47",
+  "version": "1.0.0-preview.48",
   "description": "MessageTraces fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
