@@ -168,7 +168,7 @@ export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, 
      */
     additionalData?: Record<string, unknown>;
     /**
-     * The appId property
+     * The unique identifier of the application accessed during the transaction.
      */
     appId?: string | null;
     /**
@@ -3164,7 +3164,7 @@ export type DeviceVendor = (typeof DeviceVendorObject)[keyof typeof DeviceVendor
 export type DhGroup = (typeof DhGroupObject)[keyof typeof DhGroupObject];
 export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The accessType property
+     * The type of access used to connect to this application segment. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.
      */
     accessType?: AccessType | null;
     /**
@@ -3176,27 +3176,27 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The deviceCount property
+     * The number of unique devices that have accessed this application segment.
      */
     deviceCount?: number | null;
     /**
-     * The discoveredApplicationSegmentId property
+     * The unique identifier for this discovered application segment.
      */
     discoveredApplicationSegmentId?: string | null;
     /**
-     * The firstAccessDateTime property
+     * The date and time when this application segment was first accessed.
      */
     firstAccessDateTime?: Date | null;
     /**
-     * The fqdn property
+     * The fully qualified domain name associated with this application segment.
      */
     fqdn?: string | null;
     /**
-     * The ip property
+     * The IP address associated with this application segment.
      */
     ip?: string | null;
     /**
-     * The lastAccessDateTime property
+     * The date and time when this application segment was last accessed.
      */
     lastAccessDateTime?: Date | null;
     /**
@@ -3204,19 +3204,19 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      */
     odataType?: string | null;
     /**
-     * The port property
+     * The port number used to access this application segment.
      */
     port?: number | null;
     /**
-     * The totalBytesReceived property
+     * The total number of bytes received from this application segment.
      */
     totalBytesReceived?: number | null;
     /**
-     * The totalBytesSent property
+     * The total number of bytes sent to this application segment.
      */
     totalBytesSent?: number | null;
     /**
-     * The transactionCount property
+     * The number of transactions recorded for this application segment.
      */
     transactionCount?: number | null;
     /**
@@ -3224,7 +3224,7 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      */
     transportProtocol?: NetworkingProtocol | null;
     /**
-     * The userCount property
+     * The number of unique users who have accessed this application segment.
      */
     userCount?: number | null;
 }
@@ -3589,7 +3589,7 @@ export interface NetworkAccessRoot extends Entity, Parsable {
 }
 export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Indicates what action to take based on filtering policies. The possible values are: block, allow.
+     * Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): bypass , alert.
      */
     action?: FilteringPolicyAction | null;
     /**
@@ -3597,11 +3597,11 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     additionalData?: Record<string, unknown>;
     /**
-     * Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.
+     * Represents the version of the Global Secure Access (GSA) client agent software. Supports $filter (eq) and $orderby.
      */
     agentVersion?: string | null;
     /**
-     * The applicationSnapshot property
+     * Destination Application ID accessed in Azure AD during the transaction. Supports $filter (eq) and $orderby.
      */
     applicationSnapshot?: ApplicationSnapshot | null;
     /**
@@ -3617,7 +3617,7 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     createdDateTime?: Date | null;
     /**
-     * The description property
+     * Informational error message. For example: 'Threat intelligence detected a transaction and triggered an alert.' or 'The Global Secure Access (GSA) policy blocked the destination and triggered an alert.' Supports $filter (eq) and $orderby.
      */
     description?: string | null;
     /**
@@ -3633,15 +3633,15 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     destinationPort?: number | null;
     /**
-     * The destinationUrl property
+     * Represents the URL of the destination in a network communication. Supports $filter (eq) and $orderby.
      */
     destinationUrl?: string | null;
     /**
-     * The destinationWebCategory property
+     * The destination FQDN's Web Category (e.g., Gambling). Supports $filter (eq) and $orderby.
      */
     destinationWebCategory?: WebCategory | null;
     /**
-     * The device property
+     * Represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
      */
     device?: I353170b9ab043a51be0a29bf9ffeadaa40f51ff6511c066ae82d223c77decf60 | null;
     /**
@@ -3661,11 +3661,11 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     deviceOperatingSystemVersion?: string | null;
     /**
-     * The filteringProfileId property
+     * The ID of the Filtering Profile associated with the action performed on traffic. Supports $filter (eq) and $orderby.
      */
     filteringProfileId?: string | null;
     /**
-     * The filteringProfileName property
+     * The name of the Filtering Profile associated with the action performed on traffic. Supports $filter (eq) and $orderby.
      */
     filteringProfileName?: string | null;
     /**
@@ -3673,15 +3673,15 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     headers?: Headers | null;
     /**
-     * The httpMethod property
+     * The HTTP method inspected in the intercepted HTTP traffic. Supports $filter (eq) and $orderby.
      */
     httpMethod?: HttpMethod | null;
     /**
-     * The initiatingProcessName property
+     * The process initiating the traffic transaction. Supports $filter (eq) and $orderby.
      */
     initiatingProcessName?: string | null;
     /**
-     * Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
+     * Represents the networking protocol used for communication. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
      */
     networkProtocol?: NetworkingProtocol | null;
     /**
@@ -3689,7 +3689,7 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     odataType?: string | null;
     /**
-     * The operationStatus property
+     * Indication if traffic was successfully processed. The possible values are: success, failure, unknownFutureValue. Supports $filter (eq) and $orderby.
      */
     operationStatus?: NetworkTrafficOperationStatus | null;
     /**
@@ -3697,7 +3697,7 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     policyId?: string | null;
     /**
-     * The policyName property
+     * The name of the filtering policy associated with the action performed on traffic. Supports $filter (eq) and $orderby.
      */
     policyName?: string | null;
     /**
@@ -3705,15 +3705,15 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     policyRuleId?: string | null;
     /**
-     * The policyRuleName property
+     * The name of the rule associated with the action performed on traffic. Supports $filter (eq) and $orderby.
      */
     policyRuleName?: string | null;
     /**
-     * The popProcessingRegion property
+     * The Point-of-Presence processing region of the traffic. Supports $filter (eq) and $orderby.
      */
     popProcessingRegion?: string | null;
     /**
-     * The privateAccessDetails property
+     * Details about private access traffic. Supports $filter (eq) and $orderby.
      */
     privateAccessDetails?: PrivateAccessDetails | null;
     /**
@@ -3721,15 +3721,15 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     receivedBytes?: number | null;
     /**
-     * The remoteNetworkId property
+     * The ID from which traffic was sent or received, providing visibility into the origin of the traffic. Supports $filter (eq) and $orderby.
      */
     remoteNetworkId?: string | null;
     /**
-     * The resourceTenantId property
+     * Tenant ID that owns the resource. Supports $filter (eq) and $orderby.
      */
     resourceTenantId?: string | null;
     /**
-     * The responseCode property
+     * The HTTP response code inspected in the intercepted HTTP traffic. Supports $filter (eq) and $orderby.
      */
     responseCode?: number | null;
     /**
@@ -3753,7 +3753,7 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     tenantId?: string | null;
     /**
-     * The threatType property
+     * The type of threat detected in the traffic. Supports $filter (eq) and $orderby.
      */
     threatType?: string | null;
     /**
@@ -3765,11 +3765,11 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     transactionId?: string | null;
     /**
-     * Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
+     * Represents the transport protocol used for communication. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
      */
     transportProtocol?: NetworkingProtocol | null;
     /**
-     * The user property
+     * Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
      */
     user?: I4bfcbb20fa90605575bab96c7572912b314f024f9b0899d027a654508ef72465 | null;
     /**
@@ -3781,7 +3781,7 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      */
     userPrincipalName?: string | null;
     /**
-     * The vendorNames property
+     * The name of the vendors who detected the threat. Supports $filter (eq) and $orderby.
      */
     vendorNames?: string[] | null;
 }
@@ -3896,7 +3896,7 @@ export interface PolicyRuleDelta extends AdditionalDataHolder, BackedModel, Pars
 }
 export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The accessType property
+     * Type of accessed application. Access type options: QuickAccess, PrivateAccess.
      */
     accessType?: AccessType | null;
     /**
@@ -3904,7 +3904,7 @@ export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel,
      */
     additionalData?: Record<string, unknown>;
     /**
-     * The appSegmentId property
+     * The unique identifier for Application segment ID from Azure AD.
      */
     appSegmentId?: string | null;
     /**
@@ -3912,19 +3912,19 @@ export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel,
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The connectionStatus property
+     * Status of a connection. Status options: Open, Active, Closed.
      */
     connectionStatus?: ConnectionStatus | null;
     /**
-     * The connectorId property
+     * Private access connector ID.
      */
     connectorId?: string | null;
     /**
-     * The connectorIp property
+     * Private access connector IP address.
      */
     connectorIp?: string | null;
     /**
-     * The connectorName property
+     * Private access connector name.
      */
     connectorName?: string | null;
     /**
@@ -3932,11 +3932,11 @@ export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel,
      */
     odataType?: string | null;
     /**
-     * The processingRegion property
+     * Region where the request was processed by the backend service.
      */
     processingRegion?: string | null;
     /**
-     * The thirdPartyTokenDetails property
+     * Details about third-party tokens used in the transaction.
      */
     thirdPartyTokenDetails?: ThirdPartyTokenDetails | null;
 }
@@ -5691,11 +5691,11 @@ export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedMode
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The expirationDateTime property
+     * Time the token will expire.
      */
     expirationDateTime?: Date | null;
     /**
-     * The issuedAtDateTime property
+     * Time the token was issued at.
      */
     issuedAtDateTime?: Date | null;
     /**
@@ -5703,11 +5703,11 @@ export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedMode
      */
     odataType?: string | null;
     /**
-     * The uniqueTokenIdentifier property
+     * Unique token identifier.
      */
     uniqueTokenIdentifier?: string | null;
     /**
-     * The validFromDateTime property
+     * Time the token is valid from.
      */
     validFromDateTime?: Date | null;
 }
@@ -5810,11 +5810,11 @@ export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, 
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The internetAccessTrafficCount property
+     * The count of traffic requests directed to general internet destinations.
      */
     internetAccessTrafficCount?: number | null;
     /**
-     * The microsoft365AccessTrafficCount property
+     * The count of traffic requests directed to Microsoft 365 services.
      */
     microsoft365AccessTrafficCount?: number | null;
     /**
@@ -5822,15 +5822,15 @@ export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, 
      */
     odataType?: string | null;
     /**
-     * The privateAccessTrafficCount property
+     * The count of traffic requests directed to internal private network destinations.
      */
     privateAccessTrafficCount?: number | null;
     /**
-     * The timeStampDateTime property
+     * The date and time of this data point.
      */
     timeStampDateTime?: Date | null;
     /**
-     * The totalTrafficCount property
+     * The total count of all traffic requests across all access types.
      */
     totalTrafficCount?: number | null;
 }

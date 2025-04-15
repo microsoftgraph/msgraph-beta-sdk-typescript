@@ -88,16 +88,17 @@ export interface EvaluatePostResponse extends BaseCollectionPaginationCountRespo
  */
 export interface EvaluateRequestBuilder extends BaseRequestBuilder<EvaluateRequestBuilder> {
     /**
-     * Invoke action evaluate
+     * Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EvaluatePostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated Private preview for conditional access what If API as of 2024-07/PrivatePreview:WhatIfEvaluation on 2024-07-25 and will be removed 2025-02-01
+     * @see {@link https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta|Find more info here}
      */
      post(body: EvaluatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EvaluatePostResponse | undefined>;
     /**
-     * Invoke action evaluate
+     * Evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

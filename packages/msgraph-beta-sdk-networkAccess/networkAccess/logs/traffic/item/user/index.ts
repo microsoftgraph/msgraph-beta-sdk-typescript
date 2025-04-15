@@ -25,21 +25,21 @@ export interface UserRequestBuilder extends BaseRequestBuilder<UserRequestBuilde
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
-     * Get user from networkAccess
+     * Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
     /**
-     * Get user from networkAccess
+     * Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get user from networkAccess
+ * Represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
  */
 export interface UserRequestBuilderGetQueryParameters {
     /**
