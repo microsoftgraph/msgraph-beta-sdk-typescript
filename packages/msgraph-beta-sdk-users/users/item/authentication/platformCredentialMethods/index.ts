@@ -27,21 +27,21 @@ export interface PlatformCredentialMethodsRequestBuilder extends BaseRequestBuil
      */
      byPlatformCredentialAuthenticationMethodId(platformCredentialAuthenticationMethodId: string) : PlatformCredentialAuthenticationMethodItemRequestBuilder;
     /**
-     * Get platformCredentialMethods from users
+     * Represents a platform credential instance registered to a user on Mac OS.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlatformCredentialAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<PlatformCredentialAuthenticationMethodCollectionResponse | undefined>;
     /**
-     * Get platformCredentialMethods from users
+     * Represents a platform credential instance registered to a user on Mac OS.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlatformCredentialMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get platformCredentialMethods from users
+ * Represents a platform credential instance registered to a user on Mac OS.
  */
 export interface PlatformCredentialMethodsRequestBuilderGetQueryParameters {
     /**

@@ -465,6 +465,8 @@ export function createContentFilterFromDiscriminatorValue(parseNode: ParseNode |
                     return deserializeIntoDriverUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
                     return deserializeIntoQualityUpdateFilter;
+                case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
+                    return deserializeIntoRemediationUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.softwareUpdateFilter":
                     return deserializeIntoSoftwareUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
@@ -809,6 +811,15 @@ export function createRateDrivenRolloutSettingsFromDiscriminatorValue(parseNode:
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RemediationUpdateFilter}
+ */
+// @ts-ignore
+export function createRemediationUpdateFilterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRemediationUpdateFilter;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ResourceConnectionCollectionResponse}
  */
 // @ts-ignore
@@ -912,6 +923,8 @@ export function createSoftwareUpdateFilterFromDiscriminatorValue(parseNode: Pars
                     return deserializeIntoDriverUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
                     return deserializeIntoQualityUpdateFilter;
+                case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
+                    return deserializeIntoRemediationUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
                     return deserializeIntoWindowsUpdateFilter;
             }
@@ -1041,6 +1054,8 @@ export function createWindowsUpdateFilterFromDiscriminatorValue(parseNode: Parse
                     return deserializeIntoDriverUpdateFilter;
                 case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
                     return deserializeIntoQualityUpdateFilter;
+                case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
+                    return deserializeIntoRemediationUpdateFilter;
             }
         }
     }
@@ -1896,6 +1911,17 @@ export function deserializeIntoRateDrivenRolloutSettings(rateDrivenRolloutSettin
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoRemediationUpdateFilter(remediationUpdateFilter: Partial<RemediationUpdateFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoWindowsUpdateFilter(remediationUpdateFilter),
+        "remediationType": n => { remediationUpdateFilter.remediationType = n.getEnumValue<RemediationType>(RemediationTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoResourceConnection(resourceConnection: Partial<ResourceConnection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(resourceConnection),
@@ -2536,6 +2562,13 @@ export interface RateDrivenRolloutSettings extends GradualRolloutSettings, Parsa
      * Specifies the number of devices that are offered at the same time. When not set, all devices in the deployment are offered content at the same time.
      */
     devicesPerOffer?: number | null;
+}
+export type RemediationType = (typeof RemediationTypeObject)[keyof typeof RemediationTypeObject];
+export interface RemediationUpdateFilter extends Parsable, WindowsUpdateFilter {
+    /**
+     * The remediationType property
+     */
+    remediationType?: RemediationType | null;
 }
 export type RequestedDeploymentStateValue = (typeof RequestedDeploymentStateValueObject)[keyof typeof RequestedDeploymentStateValueObject];
 export interface ResourceConnection extends Entity, Parsable {
@@ -3285,6 +3318,17 @@ export function serializeRateDrivenRolloutSettings(writer: SerializationWriter, 
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeRemediationUpdateFilter(writer: SerializationWriter, remediationUpdateFilter: Partial<RemediationUpdateFilter> | undefined | null = {}) : void {
+    if (remediationUpdateFilter) {
+        serializeWindowsUpdateFilter(writer, remediationUpdateFilter)
+        writer.writeEnumValue<RemediationType>("remediationType", remediationUpdateFilter.remediationType);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeResourceConnection(writer: SerializationWriter, resourceConnection: Partial<ResourceConnection> | undefined | null = {}) : void {
     if (resourceConnection) {
         serializeEntity(writer, resourceConnection)
@@ -3719,6 +3763,10 @@ export const QualityUpdateClassificationObject = {
     All: "all",
     Security: "security",
     NonSecurity: "nonSecurity",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const RemediationTypeObject = {
+    InPlaceUpgrade: "inPlaceUpgrade",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const RequestedDeploymentStateValueObject = {
