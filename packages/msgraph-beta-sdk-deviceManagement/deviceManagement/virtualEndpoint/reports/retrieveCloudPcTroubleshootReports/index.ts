@@ -26,6 +26,7 @@ export function deserializeIntoRetrieveCloudPcTroubleshootReportsPostRequestBody
     return {
         "backingStoreEnabled": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.filter = n.getStringValue(); },
+        "groupBy": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
         "orderBy": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
         "reportName": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.reportName = n.getEnumValue<CloudPCTroubleshootReportType>(CloudPCTroubleshootReportTypeObject); },
         "search": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.search = n.getStringValue(); },
@@ -47,6 +48,10 @@ export interface RetrieveCloudPcTroubleshootReportsPostRequestBody extends Addit
      * The filter property
      */
     filter?: string | null;
+    /**
+     * The groupBy property
+     */
+    groupBy?: string[] | null;
     /**
      * The orderBy property
      */
@@ -101,6 +106,7 @@ export interface RetrieveCloudPcTroubleshootReportsRequestBuilder extends BaseRe
 export function serializeRetrieveCloudPcTroubleshootReportsPostRequestBody(writer: SerializationWriter, retrieveCloudPcTroubleshootReportsPostRequestBody: Partial<RetrieveCloudPcTroubleshootReportsPostRequestBody> | undefined | null = {}) : void {
     if (retrieveCloudPcTroubleshootReportsPostRequestBody) {
         writer.writeStringValue("filter", retrieveCloudPcTroubleshootReportsPostRequestBody.filter);
+        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcTroubleshootReportsPostRequestBody.groupBy);
         writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcTroubleshootReportsPostRequestBody.orderBy);
         writer.writeEnumValue<CloudPCTroubleshootReportType>("reportName", retrieveCloudPcTroubleshootReportsPostRequestBody.reportName);
         writer.writeStringValue("search", retrieveCloudPcTroubleshootReportsPostRequestBody.search);

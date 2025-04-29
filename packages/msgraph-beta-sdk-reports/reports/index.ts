@@ -28,6 +28,8 @@ import { DeviceConfigurationDeviceActivityRequestBuilderRequestsMetadata, type D
 // @ts-ignore
 import { DeviceConfigurationUserActivityRequestBuilderRequestsMetadata, type DeviceConfigurationUserActivityRequestBuilder } from './deviceConfigurationUserActivity/index.js';
 // @ts-ignore
+import { GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderRequestsMetadata, type GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder } from './getApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId/index.js';
+// @ts-ignore
 import { GetAttackSimulationRepeatOffendersRequestBuilderRequestsMetadata, type GetAttackSimulationRepeatOffendersRequestBuilder } from './getAttackSimulationRepeatOffenders/index.js';
 // @ts-ignore
 import { GetAttackSimulationSimulationUserCoverageRequestBuilderRequestsMetadata, type GetAttackSimulationSimulationUserCoverageRequestBuilder } from './getAttackSimulationSimulationUserCoverage/index.js';
@@ -354,6 +356,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the deviceConfigurationUserActivity method.
      */
     get deviceConfigurationUserActivity(): DeviceConfigurationUserActivityRequestBuilder;
+    /**
+     * Provides operations to call the getApiUsage method.
+     */
+    get getApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId(): GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder;
     /**
      * Provides operations to call the getAttackSimulationRepeatOffenders method.
      */
@@ -1715,6 +1721,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     deviceConfigurationUserActivity: {
         requestsMetadata: DeviceConfigurationUserActivityRequestBuilderRequestsMetadata,
+    },
+    getApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId: {
+        requestsMetadata: GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderRequestsMetadata,
     },
     getAttackSimulationRepeatOffenders: {
         requestsMetadata: GetAttackSimulationRepeatOffendersRequestBuilderRequestsMetadata,

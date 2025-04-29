@@ -26,7 +26,7 @@ export interface PlatformCredentialAuthenticationMethodItemRequestBuilder extend
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get platformCredentialMethods from users
+     * Represents a platform credential instance registered to a user on Mac OS.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlatformCredentialAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -39,14 +39,14 @@ export interface PlatformCredentialAuthenticationMethodItemRequestBuilder extend
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get platformCredentialMethods from users
+     * Represents a platform credential instance registered to a user on Mac OS.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get platformCredentialMethods from users
+ * Represents a platform credential instance registered to a user on Mac OS.
  */
 export interface PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters {
     /**

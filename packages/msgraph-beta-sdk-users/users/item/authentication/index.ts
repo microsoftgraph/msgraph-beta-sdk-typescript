@@ -26,6 +26,8 @@ import { PhoneMethodsRequestBuilderNavigationMetadata, PhoneMethodsRequestBuilde
 // @ts-ignore
 import { PlatformCredentialMethodsRequestBuilderNavigationMetadata, PlatformCredentialMethodsRequestBuilderRequestsMetadata, type PlatformCredentialMethodsRequestBuilder } from './platformCredentialMethods/index.js';
 // @ts-ignore
+import { QrCodePinMethodRequestBuilderNavigationMetadata, QrCodePinMethodRequestBuilderRequestsMetadata, type QrCodePinMethodRequestBuilder } from './qrCodePinMethod/index.js';
+// @ts-ignore
 import { RequirementsRequestBuilderRequestsMetadata, type RequirementsRequestBuilder } from './requirements/index.js';
 // @ts-ignore
 import { SignInPreferencesRequestBuilderRequestsMetadata, type SignInPreferencesRequestBuilder } from './signInPreferences/index.js';
@@ -82,6 +84,10 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
      */
     get platformCredentialMethods(): PlatformCredentialMethodsRequestBuilder;
+    /**
+     * Provides operations to manage the qrCodePinMethod property of the microsoft.graph.authentication entity.
+     */
+    get qrCodePinMethod(): QrCodePinMethodRequestBuilder;
     /**
      * The requirements property
      */
@@ -210,6 +216,10 @@ export const AuthenticationRequestBuilderNavigationMetadata: Record<Exclude<keyo
     platformCredentialMethods: {
         requestsMetadata: PlatformCredentialMethodsRequestBuilderRequestsMetadata,
         navigationMetadata: PlatformCredentialMethodsRequestBuilderNavigationMetadata,
+    },
+    qrCodePinMethod: {
+        requestsMetadata: QrCodePinMethodRequestBuilderRequestsMetadata,
+        navigationMetadata: QrCodePinMethodRequestBuilderNavigationMetadata,
     },
     requirements: {
         requestsMetadata: RequirementsRequestBuilderRequestsMetadata,
