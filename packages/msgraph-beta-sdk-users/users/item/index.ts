@@ -56,6 +56,8 @@ import { ConvertExternalToInternalMemberUserRequestBuilderRequestsMetadata, type
 // @ts-ignore
 import { CreatedObjectsRequestBuilderNavigationMetadata, CreatedObjectsRequestBuilderRequestsMetadata, type CreatedObjectsRequestBuilder } from './createdObjects/index.js';
 // @ts-ignore
+import { DataSecurityAndGovernanceRequestBuilderNavigationMetadata, DataSecurityAndGovernanceRequestBuilderRequestsMetadata, type DataSecurityAndGovernanceRequestBuilder } from './dataSecurityAndGovernance/index.js';
+// @ts-ignore
 import { DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type DeletePasswordSingleSignOnCredentialsRequestBuilder } from './deletePasswordSingleSignOnCredentials/index.js';
 // @ts-ignore
 import { DeviceEnrollmentConfigurationsRequestBuilderNavigationMetadata, DeviceEnrollmentConfigurationsRequestBuilderRequestsMetadata, type DeviceEnrollmentConfigurationsRequestBuilder } from './deviceEnrollmentConfigurations/index.js';
@@ -342,6 +344,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the createdObjects property of the microsoft.graph.user entity.
      */
     get createdObjects(): CreatedObjectsRequestBuilder;
+    /**
+     * Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.user entity.
+     */
+    get dataSecurityAndGovernance(): DataSecurityAndGovernanceRequestBuilder;
     /**
      * Provides operations to call the deletePasswordSingleSignOnCredentials method.
      */
@@ -915,6 +921,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     createdObjects: {
         requestsMetadata: CreatedObjectsRequestBuilderRequestsMetadata,
         navigationMetadata: CreatedObjectsRequestBuilderNavigationMetadata,
+    },
+    dataSecurityAndGovernance: {
+        requestsMetadata: DataSecurityAndGovernanceRequestBuilderRequestsMetadata,
+        navigationMetadata: DataSecurityAndGovernanceRequestBuilderNavigationMetadata,
     },
     deletePasswordSingleSignOnCredentials: {
         requestsMetadata: DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata,

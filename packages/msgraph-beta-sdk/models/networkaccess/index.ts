@@ -335,7 +335,149 @@ export interface ConditionalAccessSettings extends Entity, Parsable {
      */
     signalingStatus?: Status | null;
 }
+export interface Connection extends Entity, Parsable {
+    /**
+     * The agentVersion property
+     */
+    agentVersion?: string | null;
+    /**
+     * The applicationSnapshot property
+     */
+    applicationSnapshot?: ApplicationSnapshot | null;
+    /**
+     * The createdDateTime property
+     */
+    createdDateTime?: Date | null;
+    /**
+     * The destinationFqdn property
+     */
+    destinationFqdn?: string | null;
+    /**
+     * The destinationIp property
+     */
+    destinationIp?: string | null;
+    /**
+     * The destinationPort property
+     */
+    destinationPort?: number | null;
+    /**
+     * The deviceCategory property
+     */
+    deviceCategory?: DeviceCategory | null;
+    /**
+     * The deviceId property
+     */
+    deviceId?: string | null;
+    /**
+     * The deviceOperatingSystem property
+     */
+    deviceOperatingSystem?: string | null;
+    /**
+     * The deviceOperatingSystemVersion property
+     */
+    deviceOperatingSystemVersion?: string | null;
+    /**
+     * The endDateTime property
+     */
+    endDateTime?: Date | null;
+    /**
+     * The initiatingProcessName property
+     */
+    initiatingProcessName?: string | null;
+    /**
+     * The lastUpdateDateTime property
+     */
+    lastUpdateDateTime?: Date | null;
+    /**
+     * The networkProtocol property
+     */
+    networkProtocol?: NetworkingProtocol | null;
+    /**
+     * The popProcessingRegion property
+     */
+    popProcessingRegion?: string | null;
+    /**
+     * The privateAccessDetails property
+     */
+    privateAccessDetails?: PrivateAccessDetails | null;
+    /**
+     * The receivedBytes property
+     */
+    receivedBytes?: number | null;
+    /**
+     * The sentBytes property
+     */
+    sentBytes?: number | null;
+    /**
+     * The sourceIp property
+     */
+    sourceIp?: string | null;
+    /**
+     * The sourcePort property
+     */
+    sourcePort?: number | null;
+    /**
+     * The status property
+     */
+    status?: ConnectionStatus | null;
+    /**
+     * The tenantId property
+     */
+    tenantId?: string | null;
+    /**
+     * The trafficType property
+     */
+    trafficType?: TrafficType | null;
+    /**
+     * The transactionBlockCount property
+     */
+    transactionBlockCount?: number | null;
+    /**
+     * The transactionCount property
+     */
+    transactionCount?: number | null;
+    /**
+     * The transportProtocol property
+     */
+    transportProtocol?: NetworkingProtocol | null;
+    /**
+     * The userId property
+     */
+    userId?: string | null;
+    /**
+     * The userPrincipalName property
+     */
+    userPrincipalName?: string | null;
+}
+export interface ConnectionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Connection[] | null;
+}
 export type ConnectionStatus = (typeof ConnectionStatusObject)[keyof typeof ConnectionStatusObject];
+export interface ConnectionSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    additionalData?: Record<string, unknown>;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The totalCount property
+     */
+    totalCount?: number | null;
+    /**
+     * The trafficType property
+     */
+    trafficType?: TrafficType | null;
+}
 export interface Connectivity extends Entity, Parsable {
     /**
      * The locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
@@ -525,6 +667,33 @@ export function createConditionalAccessPolicyFromDiscriminatorValue(parseNode: P
 // @ts-ignore
 export function createConditionalAccessSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoConditionalAccessSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ConnectionCollectionResponse}
+ */
+// @ts-ignore
+export function createConnectionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoConnectionCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Connection}
+ */
+// @ts-ignore
+export function createConnectionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoConnection;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ConnectionSummary}
+ */
+// @ts-ignore
+export function createConnectionSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoConnectionSummary;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1776,6 +1945,68 @@ export function deserializeIntoConditionalAccessSettings(conditionalAccessSettin
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
+export function deserializeIntoConnection(connection: Partial<Connection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(connection),
+        "agentVersion": n => { connection.agentVersion = n.getStringValue(); },
+        "applicationSnapshot": n => { connection.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
+        "createdDateTime": n => { connection.createdDateTime = n.getDateValue(); },
+        "destinationFqdn": n => { connection.destinationFqdn = n.getStringValue(); },
+        "destinationIp": n => { connection.destinationIp = n.getStringValue(); },
+        "destinationPort": n => { connection.destinationPort = n.getNumberValue(); },
+        "deviceCategory": n => { connection.deviceCategory = n.getEnumValue<DeviceCategory>(DeviceCategoryObject); },
+        "deviceId": n => { connection.deviceId = n.getStringValue(); },
+        "deviceOperatingSystem": n => { connection.deviceOperatingSystem = n.getStringValue(); },
+        "deviceOperatingSystemVersion": n => { connection.deviceOperatingSystemVersion = n.getStringValue(); },
+        "endDateTime": n => { connection.endDateTime = n.getDateValue(); },
+        "initiatingProcessName": n => { connection.initiatingProcessName = n.getStringValue(); },
+        "lastUpdateDateTime": n => { connection.lastUpdateDateTime = n.getDateValue(); },
+        "networkProtocol": n => { connection.networkProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
+        "popProcessingRegion": n => { connection.popProcessingRegion = n.getStringValue(); },
+        "privateAccessDetails": n => { connection.privateAccessDetails = n.getObjectValue<PrivateAccessDetails>(createPrivateAccessDetailsFromDiscriminatorValue); },
+        "receivedBytes": n => { connection.receivedBytes = n.getNumberValue(); },
+        "sentBytes": n => { connection.sentBytes = n.getNumberValue(); },
+        "sourceIp": n => { connection.sourceIp = n.getStringValue(); },
+        "sourcePort": n => { connection.sourcePort = n.getNumberValue(); },
+        "status": n => { connection.status = n.getEnumValue<ConnectionStatus>(ConnectionStatusObject); },
+        "tenantId": n => { connection.tenantId = n.getStringValue(); },
+        "trafficType": n => { connection.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+        "transactionBlockCount": n => { connection.transactionBlockCount = n.getNumberValue(); },
+        "transactionCount": n => { connection.transactionCount = n.getNumberValue(); },
+        "transportProtocol": n => { connection.transportProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
+        "userId": n => { connection.userId = n.getStringValue(); },
+        "userPrincipalName": n => { connection.userPrincipalName = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoConnectionCollectionResponse(connectionCollectionResponse: Partial<ConnectionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(connectionCollectionResponse),
+        "value": n => { connectionCollectionResponse.value = n.getCollectionOfObjectValues<Connection>(createConnectionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoConnectionSummary(connectionSummary: Partial<ConnectionSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { connectionSummary.backingStoreEnabled = true; },
+        "@odata.type": n => { connectionSummary.odataType = n.getStringValue(); },
+        "totalCount": n => { connectionSummary.totalCount = n.getNumberValue(); },
+        "trafficType": n => { connectionSummary.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
 export function deserializeIntoConnectivity(connectivity: Partial<Connectivity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectivity),
@@ -2275,6 +2506,7 @@ export function deserializeIntoLocalConnectivityConfiguration(localConnectivityC
 export function deserializeIntoLogs(logs: Partial<Logs> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(logs),
+        "connections": n => { logs.connections = n.getCollectionOfObjectValues<Connection>(createConnectionFromDiscriminatorValue); },
         "remoteNetworks": n => { logs.remoteNetworks = n.getCollectionOfObjectValues<RemoteNetworkHealthEvent>(createRemoteNetworkHealthEventFromDiscriminatorValue); },
         "traffic": n => { logs.traffic = n.getCollectionOfObjectValues<NetworkAccessTraffic>(createNetworkAccessTrafficFromDiscriminatorValue); },
     }
@@ -3522,6 +3754,10 @@ export interface LocalConnectivityConfiguration extends AdditionalDataHolder, Ba
 }
 export interface Logs extends Entity, Parsable {
     /**
+     * The connections property
+     */
+    connections?: Connection[] | null;
+    /**
      * A collection of remote network health events.
      */
     remoteNetworks?: RemoteNetworkHealthEvent[] | null;
@@ -4465,6 +4701,68 @@ export function serializeConditionalAccessSettings(writer: SerializationWriter, 
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
+export function serializeConnection(writer: SerializationWriter, connection: Partial<Connection> | undefined | null = {}) : void {
+    if (connection) {
+        serializeEntity(writer, connection)
+        writer.writeStringValue("agentVersion", connection.agentVersion);
+        writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", connection.applicationSnapshot, serializeApplicationSnapshot);
+        writer.writeDateValue("createdDateTime", connection.createdDateTime);
+        writer.writeStringValue("destinationFqdn", connection.destinationFqdn);
+        writer.writeStringValue("destinationIp", connection.destinationIp);
+        writer.writeNumberValue("destinationPort", connection.destinationPort);
+        writer.writeEnumValue<DeviceCategory>("deviceCategory", connection.deviceCategory);
+        writer.writeStringValue("deviceId", connection.deviceId);
+        writer.writeStringValue("deviceOperatingSystem", connection.deviceOperatingSystem);
+        writer.writeStringValue("deviceOperatingSystemVersion", connection.deviceOperatingSystemVersion);
+        writer.writeDateValue("endDateTime", connection.endDateTime);
+        writer.writeStringValue("initiatingProcessName", connection.initiatingProcessName);
+        writer.writeDateValue("lastUpdateDateTime", connection.lastUpdateDateTime);
+        writer.writeEnumValue<NetworkingProtocol>("networkProtocol", connection.networkProtocol);
+        writer.writeStringValue("popProcessingRegion", connection.popProcessingRegion);
+        writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", connection.privateAccessDetails, serializePrivateAccessDetails);
+        writer.writeNumberValue("receivedBytes", connection.receivedBytes);
+        writer.writeNumberValue("sentBytes", connection.sentBytes);
+        writer.writeStringValue("sourceIp", connection.sourceIp);
+        writer.writeNumberValue("sourcePort", connection.sourcePort);
+        writer.writeEnumValue<ConnectionStatus>("status", connection.status);
+        writer.writeStringValue("tenantId", connection.tenantId);
+        writer.writeEnumValue<TrafficType>("trafficType", connection.trafficType);
+        writer.writeNumberValue("transactionBlockCount", connection.transactionBlockCount);
+        writer.writeNumberValue("transactionCount", connection.transactionCount);
+        writer.writeEnumValue<NetworkingProtocol>("transportProtocol", connection.transportProtocol);
+        writer.writeStringValue("userId", connection.userId);
+        writer.writeStringValue("userPrincipalName", connection.userPrincipalName);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConnectionCollectionResponse(writer: SerializationWriter, connectionCollectionResponse: Partial<ConnectionCollectionResponse> | undefined | null = {}) : void {
+    if (connectionCollectionResponse) {
+        serializeBaseCollectionPaginationCountResponse(writer, connectionCollectionResponse)
+        writer.writeCollectionOfObjectValues<Connection>("value", connectionCollectionResponse.value, serializeConnection);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConnectionSummary(writer: SerializationWriter, connectionSummary: Partial<ConnectionSummary> | undefined | null = {}) : void {
+    if (connectionSummary) {
+        writer.writeStringValue("@odata.type", connectionSummary.odataType);
+        writer.writeNumberValue("totalCount", connectionSummary.totalCount);
+        writer.writeEnumValue<TrafficType>("trafficType", connectionSummary.trafficType);
+        writer.writeAdditionalData(connectionSummary.additionalData);
+    }
+}
+/**
+ * Serializes information the current object
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
 export function serializeConnectivity(writer: SerializationWriter, connectivity: Partial<Connectivity> | undefined | null = {}) : void {
     if (connectivity) {
         serializeEntity(writer, connectivity)
@@ -4964,6 +5262,7 @@ export function serializeLocalConnectivityConfiguration(writer: SerializationWri
 export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> | undefined | null = {}) : void {
     if (logs) {
         serializeEntity(writer, logs)
+        writer.writeCollectionOfObjectValues<Connection>("connections", logs.connections, serializeConnection);
         writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", logs.remoteNetworks, serializeRemoteNetworkHealthEvent);
         writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("traffic", logs.traffic, serializeNetworkAccessTraffic);
     }

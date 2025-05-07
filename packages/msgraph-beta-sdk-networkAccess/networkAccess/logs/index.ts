@@ -6,6 +6,8 @@ import { createLogsFromDiscriminatorValue, serializeLogs, type Logs } from '@mic
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ConnectionsRequestBuilderNavigationMetadata, ConnectionsRequestBuilderRequestsMetadata, type ConnectionsRequestBuilder } from './connections/index.js';
+// @ts-ignore
 import { RemoteNetworksRequestBuilderNavigationMetadata, RemoteNetworksRequestBuilderRequestsMetadata, type RemoteNetworksRequestBuilder } from './remoteNetworks/index.js';
 // @ts-ignore
 import { TrafficRequestBuilderNavigationMetadata, TrafficRequestBuilderRequestsMetadata, type TrafficRequestBuilder } from './traffic/index.js';
@@ -16,6 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.
  */
 export interface LogsRequestBuilder extends BaseRequestBuilder<LogsRequestBuilder> {
+    /**
+     * Provides operations to manage the connections property of the microsoft.graph.networkaccess.logs entity.
+     */
+    get connections(): ConnectionsRequestBuilder;
     /**
      * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
      */
@@ -93,6 +99,10 @@ const LogsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the navigation properties in the request builder.
  */
 export const LogsRequestBuilderNavigationMetadata: Record<Exclude<keyof LogsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    connections: {
+        requestsMetadata: ConnectionsRequestBuilderRequestsMetadata,
+        navigationMetadata: ConnectionsRequestBuilderNavigationMetadata,
+    },
     remoteNetworks: {
         requestsMetadata: RemoteNetworksRequestBuilderRequestsMetadata,
         navigationMetadata: RemoteNetworksRequestBuilderNavigationMetadata,

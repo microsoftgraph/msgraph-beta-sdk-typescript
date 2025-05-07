@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProductChangesRequestBuilder extends BaseRequestBuilder<ProductChangesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the productChanges property of the microsoft.graph.identityContainer entity.
      * @param changeItemBaseId The unique identifier of changeItemBase
      * @returns {ChangeItemBaseItemRequestBuilder}
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      byChangeItemBaseId(changeItemBaseId: string) : ChangeItemBaseItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ProductChangesRequestBuilder extends BaseRequestBuilder<Product
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChangeItemBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      * @see {@link https://learn.microsoft.com/graph/api/identitycontainer-list-productchanges?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ProductChangesRequestBuilderGetQueryParameters> | undefined) : Promise<ChangeItemBaseCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface ProductChangesRequestBuilder extends BaseRequestBuilder<Product
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChangeItemBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      post(body: ChangeItemBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChangeItemBase | undefined>;
     /**
      * Get a list of the changeItemBase objects and their properties. The API returns both Microsoft Entra change announcements and releases.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProductChangesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface ProductChangesRequestBuilder extends BaseRequestBuilder<Product
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      toPostRequestInformation(body: ChangeItemBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

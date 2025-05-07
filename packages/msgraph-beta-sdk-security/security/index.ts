@@ -22,6 +22,8 @@ import { CollaborationRequestBuilderNavigationMetadata, CollaborationRequestBuil
 // @ts-ignore
 import { DataDiscoveryRequestBuilderNavigationMetadata, DataDiscoveryRequestBuilderRequestsMetadata, type DataDiscoveryRequestBuilder } from './dataDiscovery/index.js';
 // @ts-ignore
+import { DataSecurityAndGovernanceRequestBuilderNavigationMetadata, DataSecurityAndGovernanceRequestBuilderRequestsMetadata, type DataSecurityAndGovernanceRequestBuilder } from './dataSecurityAndGovernance/index.js';
+// @ts-ignore
 import { DomainSecurityProfilesRequestBuilderNavigationMetadata, DomainSecurityProfilesRequestBuilderRequestsMetadata, type DomainSecurityProfilesRequestBuilder } from './domainSecurityProfiles/index.js';
 // @ts-ignore
 import { FileSecurityProfilesRequestBuilderNavigationMetadata, FileSecurityProfilesRequestBuilderRequestsMetadata, type FileSecurityProfilesRequestBuilder } from './fileSecurityProfiles/index.js';
@@ -104,6 +106,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.
      */
     get dataDiscovery(): DataDiscoveryRequestBuilder;
+    /**
+     * Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.
+     */
+    get dataSecurityAndGovernance(): DataSecurityAndGovernanceRequestBuilder;
     /**
      * Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
      */
@@ -280,6 +286,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     dataDiscovery: {
         requestsMetadata: DataDiscoveryRequestBuilderRequestsMetadata,
         navigationMetadata: DataDiscoveryRequestBuilderNavigationMetadata,
+    },
+    dataSecurityAndGovernance: {
+        requestsMetadata: DataSecurityAndGovernanceRequestBuilderRequestsMetadata,
+        navigationMetadata: DataSecurityAndGovernanceRequestBuilderNavigationMetadata,
     },
     domainSecurityProfiles: {
         requestsMetadata: DomainSecurityProfilesRequestBuilderRequestsMetadata,

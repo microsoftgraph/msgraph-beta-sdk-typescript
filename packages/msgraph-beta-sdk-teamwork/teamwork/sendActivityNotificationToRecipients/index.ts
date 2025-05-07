@@ -27,6 +27,7 @@ export function deserializeIntoSendActivityNotificationToRecipientsPostRequestBo
         "activityType": n => { sendActivityNotificationToRecipientsPostRequestBody.activityType = n.getStringValue(); },
         "backingStoreEnabled": n => { sendActivityNotificationToRecipientsPostRequestBody.backingStoreEnabled = true; },
         "chainId": n => { sendActivityNotificationToRecipientsPostRequestBody.chainId = n.getNumberValue(); },
+        "iconId": n => { sendActivityNotificationToRecipientsPostRequestBody.iconId = n.getStringValue(); },
         "previewText": n => { sendActivityNotificationToRecipientsPostRequestBody.previewText = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
         "recipients": n => { sendActivityNotificationToRecipientsPostRequestBody.recipients = n.getCollectionOfObjectValues<TeamworkNotificationRecipient>(createTeamworkNotificationRecipientFromDiscriminatorValue); },
         "teamsAppId": n => { sendActivityNotificationToRecipientsPostRequestBody.teamsAppId = n.getStringValue(); },
@@ -51,6 +52,10 @@ export interface SendActivityNotificationToRecipientsPostRequestBody extends Add
      * The chainId property
      */
     chainId?: number | null;
+    /**
+     * The iconId property
+     */
+    iconId?: string | null;
     /**
      * The previewText property
      */
@@ -101,6 +106,7 @@ export function serializeSendActivityNotificationToRecipientsPostRequestBody(wri
     if (sendActivityNotificationToRecipientsPostRequestBody) {
         writer.writeStringValue("activityType", sendActivityNotificationToRecipientsPostRequestBody.activityType);
         writer.writeNumberValue("chainId", sendActivityNotificationToRecipientsPostRequestBody.chainId);
+        writer.writeStringValue("iconId", sendActivityNotificationToRecipientsPostRequestBody.iconId);
         writer.writeObjectValue<ItemBody>("previewText", sendActivityNotificationToRecipientsPostRequestBody.previewText, serializeItemBody);
         writer.writeCollectionOfObjectValues<TeamworkNotificationRecipient>("recipients", sendActivityNotificationToRecipientsPostRequestBody.recipients, serializeTeamworkNotificationRecipient);
         writer.writeStringValue("teamsAppId", sendActivityNotificationToRecipientsPostRequestBody.teamsAppId);
