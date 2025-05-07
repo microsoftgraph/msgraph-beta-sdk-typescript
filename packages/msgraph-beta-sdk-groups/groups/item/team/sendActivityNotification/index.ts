@@ -27,6 +27,7 @@ export function deserializeIntoSendActivityNotificationPostRequestBody(sendActiv
         "activityType": n => { sendActivityNotificationPostRequestBody.activityType = n.getStringValue(); },
         "backingStoreEnabled": n => { sendActivityNotificationPostRequestBody.backingStoreEnabled = true; },
         "chainId": n => { sendActivityNotificationPostRequestBody.chainId = n.getNumberValue(); },
+        "iconId": n => { sendActivityNotificationPostRequestBody.iconId = n.getStringValue(); },
         "previewText": n => { sendActivityNotificationPostRequestBody.previewText = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
         "recipient": n => { sendActivityNotificationPostRequestBody.recipient = n.getObjectValue<TeamworkNotificationRecipient>(createTeamworkNotificationRecipientFromDiscriminatorValue); },
         "teamsAppId": n => { sendActivityNotificationPostRequestBody.teamsAppId = n.getStringValue(); },
@@ -51,6 +52,10 @@ export interface SendActivityNotificationPostRequestBody extends AdditionalDataH
      * The chainId property
      */
     chainId?: number | null;
+    /**
+     * The iconId property
+     */
+    iconId?: string | null;
     /**
      * The previewText property
      */
@@ -101,6 +106,7 @@ export function serializeSendActivityNotificationPostRequestBody(writer: Seriali
     if (sendActivityNotificationPostRequestBody) {
         writer.writeStringValue("activityType", sendActivityNotificationPostRequestBody.activityType);
         writer.writeNumberValue("chainId", sendActivityNotificationPostRequestBody.chainId);
+        writer.writeStringValue("iconId", sendActivityNotificationPostRequestBody.iconId);
         writer.writeObjectValue<ItemBody>("previewText", sendActivityNotificationPostRequestBody.previewText, serializeItemBody);
         writer.writeObjectValue<TeamworkNotificationRecipient>("recipient", sendActivityNotificationPostRequestBody.recipient, serializeTeamworkNotificationRecipient);
         writer.writeStringValue("teamsAppId", sendActivityNotificationPostRequestBody.teamsAppId);

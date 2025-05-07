@@ -14,6 +14,8 @@ import { MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTime
 // @ts-ignore
 import { MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime/index.js';
 // @ts-ignore
+import { MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime/index.js';
+// @ts-ignore
 import { MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime/index.js';
 // @ts-ignore
 import { MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder } from './microsoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy/index.js';
@@ -77,6 +79,13 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @returns {MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder}
      */
      microsoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
+    /**
+     * Provides operations to call the getConnectionSummaries method.
+     * @param endDateTime Usage: endDateTime={endDateTime}
+     * @param startDateTime Usage: startDateTime={startDateTime}
+     * @returns {MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder}
+     */
+     microsoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Provides operations to call the getCrossTenantSummary method.
      * @param discoveryPivotDateTime Usage: discoveryPivotDateTime={discoveryPivotDateTime}
@@ -207,6 +216,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     microsoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime: {
         requestsMetadata: MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
+    },
+    microsoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTime: {
+        requestsMetadata: MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
         pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime: {

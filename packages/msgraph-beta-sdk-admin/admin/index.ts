@@ -28,6 +28,8 @@ import { ServiceAnnouncementRequestBuilderNavigationMetadata, ServiceAnnouncemen
 // @ts-ignore
 import { SharepointRequestBuilderNavigationMetadata, SharepointRequestBuilderRequestsMetadata, type SharepointRequestBuilder } from './sharepoint/index.js';
 // @ts-ignore
+import { TeamsRequestBuilderNavigationMetadata, TeamsRequestBuilderRequestsMetadata, type TeamsRequestBuilder } from './teams/index.js';
+// @ts-ignore
 import { TodoRequestBuilderRequestsMetadata, type TodoRequestBuilder } from './todo/index.js';
 // @ts-ignore
 import { type WindowsRequestBuilder, WindowsRequestBuilderNavigationMetadata, WindowsRequestBuilderRequestsMetadata } from './windows/index.js';
@@ -82,6 +84,10 @@ export interface AdminRequestBuilder extends BaseRequestBuilder<AdminRequestBuil
      * Provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
      */
     get sharepoint(): SharepointRequestBuilder;
+    /**
+     * Provides operations to manage the teams property of the microsoft.graph.admin entity.
+     */
+    get teams(): TeamsRequestBuilder;
     /**
      * Provides operations to manage the todo property of the microsoft.graph.admin entity.
      */
@@ -186,6 +192,10 @@ export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRe
     sharepoint: {
         requestsMetadata: SharepointRequestBuilderRequestsMetadata,
         navigationMetadata: SharepointRequestBuilderNavigationMetadata,
+    },
+    teams: {
+        requestsMetadata: TeamsRequestBuilderRequestsMetadata,
+        navigationMetadata: TeamsRequestBuilderNavigationMetadata,
     },
     todo: {
         requestsMetadata: TodoRequestBuilderRequestsMetadata,

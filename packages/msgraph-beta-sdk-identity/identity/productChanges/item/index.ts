@@ -16,6 +16,7 @@ export interface ChangeItemBaseItemRequestBuilder extends BaseRequestBuilder<Cha
      * Delete navigation property productChanges for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface ChangeItemBaseItemRequestBuilder extends BaseRequestBuilder<Cha
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChangeItemBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      get(requestConfiguration?: RequestConfiguration<ChangeItemBaseItemRequestBuilderGetQueryParameters> | undefined) : Promise<ChangeItemBase | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface ChangeItemBaseItemRequestBuilder extends BaseRequestBuilder<Cha
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChangeItemBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      patch(body: ChangeItemBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChangeItemBase | undefined>;
     /**
      * Delete navigation property productChanges for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents entry point for Microsoft Entra product changes and planned new features.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChangeItemBaseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface ChangeItemBaseItemRequestBuilder extends BaseRequestBuilder<Cha
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
      */
      toPatchRequestInformation(body: ChangeItemBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

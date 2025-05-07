@@ -16775,19 +16775,19 @@ export interface Dynamics365BusinessCentralAuditRecord extends AuditData, Parsab
 }
 export interface EdiscoveryAddToReviewSetOperation extends CaseOperation, Parsable {
     /**
-     * The additionalDataOptions property
+     * The options to add items to the review set. Possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder.
      */
     additionalDataOptions?: AdditionalDataOptions[] | null;
     /**
-     * The cloudAttachmentVersion property
+     * Specifies the number of most recent versions of cloud attachments to collect. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
      */
     cloudAttachmentVersion?: CloudAttachmentVersion | null;
     /**
-     * The documentVersion property
+     * Specifies the number of most recent versions of SharePoint documents to collect. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
      */
     documentVersion?: DocumentVersion | null;
     /**
-     * The itemsToInclude property
+     * The items to include in the review set. Possible values are: searchHits, partiallyIndexed, unknownFutureValue.
      */
     itemsToInclude?: ItemsToInclude[] | null;
     /**
@@ -16943,7 +16943,7 @@ export interface EdiscoveryEstimateOperation extends CaseOperation, Parsable {
      */
     siteCount?: number | null;
     /**
-     * The statisticsOptions property
+     * The options to generate statistics. Possible values are: includeRefiners, includeQueryStats, includeUnindexedStats, advancedIndexing, locationsWithoutHits, unknownFutureValue.
      */
     statisticsOptions?: StatisticsOptions[] | null;
     /**
@@ -17145,7 +17145,7 @@ export interface EdiscoverySearchExportOperation extends CaseOperation, Parsable
      */
     additionalOptions?: AdditionalOptions[] | null;
     /**
-     * The cloudAttachmentVersion property
+     * The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
      */
     cloudAttachmentVersion?: CloudAttachmentVersion | null;
     /**
@@ -17157,7 +17157,7 @@ export interface EdiscoverySearchExportOperation extends CaseOperation, Parsable
      */
     displayName?: string | null;
     /**
-     * The documentVersion property
+     * The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.
      */
     documentVersion?: DocumentVersion | null;
     /**

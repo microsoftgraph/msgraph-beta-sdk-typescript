@@ -40,12 +40,12 @@ export interface ExternalItemItemRequestBuilder extends BaseRequestBuilder<Exter
      */
      get(requestConfiguration?: RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters> | undefined) : Promise<ExternalItem | undefined>;
     /**
-     * Update the properties of an externalitem.
+     * Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-beta|Find more info here}
      */
      put(body: ExternalItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExternalItem | undefined>;
     /**
@@ -61,7 +61,7 @@ export interface ExternalItemItemRequestBuilder extends BaseRequestBuilder<Exter
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalItemItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an externalitem.
+     * Create a new externalItem. This API can be used to create a custom item. The containing externalConnection must have a schema registered of the corresponding type.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
