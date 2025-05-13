@@ -16,6 +16,7 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
      * Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      * @see {@link https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -24,6 +25,7 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomAppScope>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      * @see {@link https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomAppScopeItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomAppScope | undefined>;
@@ -33,6 +35,7 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomAppScope>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      * @see {@link https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomAppScope, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomAppScope | undefined>;
@@ -40,12 +43,14 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
      * Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomAppScopeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface CustomAppScopeItemRequestBuilder extends BaseRequestBuilder<Cus
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toPatchRequestInformation(body: CustomAppScope, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

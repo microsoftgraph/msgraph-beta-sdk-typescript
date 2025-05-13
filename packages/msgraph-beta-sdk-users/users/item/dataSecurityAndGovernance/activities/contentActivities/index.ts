@@ -27,7 +27,7 @@ export interface ContentActivitiesRequestBuilder extends BaseRequestBuilder<Cont
      */
      byContentActivityId(contentActivityId: string) : ContentActivityItemRequestBuilder;
     /**
-     * Get contentActivities from users
+     * Collection of activity logs related to content processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContentActivityCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface ContentActivitiesRequestBuilder extends BaseRequestBuilder<Cont
      */
      post(body: ContentActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ContentActivity | undefined>;
     /**
-     * Get contentActivities from users
+     * Collection of activity logs related to content processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface ContentActivitiesRequestBuilder extends BaseRequestBuilder<Cont
      toPostRequestInformation(body: ContentActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get contentActivities from users
+ * Collection of activity logs related to content processing.
  */
 export interface ContentActivitiesRequestBuilderGetQueryParameters {
     /**

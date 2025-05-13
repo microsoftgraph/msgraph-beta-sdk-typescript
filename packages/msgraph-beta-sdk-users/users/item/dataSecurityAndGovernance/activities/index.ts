@@ -25,7 +25,7 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get activities from users
+     * Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivitiesContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get activities from users
+     * Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface ActivitiesRequestBuilder extends BaseRequestBuilder<ActivitiesR
      toPatchRequestInformation(body: ActivitiesContainer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get activities from users
+ * Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
  */
 export interface ActivitiesRequestBuilderGetQueryParameters {
     /**

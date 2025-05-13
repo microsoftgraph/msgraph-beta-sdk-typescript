@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RoleScopeTagItemRequestBuilder extends BaseRequestBuilder<RoleScopeTagItemRequestBuilder> {
     /**
-     * The set of Role Scope Tags defined on the Role Assignment.
+     * Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RoleScopeTag>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters> | undefined) : Promise<RoleScopeTag | undefined>;
     /**
-     * The set of Role Scope Tags defined on the Role Assignment.
+     * Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The set of Role Scope Tags defined on the Role Assignment.
+ * Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
  */
 export interface RoleScopeTagItemRequestBuilderGetQueryParameters {
     /**

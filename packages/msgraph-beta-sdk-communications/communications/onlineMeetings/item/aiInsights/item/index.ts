@@ -19,7 +19,7 @@ export interface CallAiInsightItemRequestBuilder extends BaseRequestBuilder<Call
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get aiInsights from communications
+     * The AI insights generated for an online meeting. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CallAiInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface CallAiInsightItemRequestBuilder extends BaseRequestBuilder<Call
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get aiInsights from communications
+     * The AI insights generated for an online meeting. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface CallAiInsightItemRequestBuilder extends BaseRequestBuilder<Call
      toPatchRequestInformation(body: CallAiInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get aiInsights from communications
+ * The AI insights generated for an online meeting. Read-only.
  */
 export interface CallAiInsightItemRequestBuilderGetQueryParameters {
     /**

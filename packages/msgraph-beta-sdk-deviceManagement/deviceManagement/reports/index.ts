@@ -148,6 +148,8 @@ import { GetWindowsUpdateAlertSummaryReportRequestBuilderRequestsMetadata, type 
 // @ts-ignore
 import { GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata, type GetZebraFotaDeploymentReportRequestBuilder } from './getZebraFotaDeploymentReport/index.js';
 // @ts-ignore
+import { RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata, type RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder } from './retrieveAndroidWorkProfileDeviceMigrationStatuses/index.js';
+// @ts-ignore
 import { RetrieveCloudPkiLeafCertificateReportRequestBuilderRequestsMetadata, type RetrieveCloudPkiLeafCertificateReportRequestBuilder } from './retrieveCloudPkiLeafCertificateReport/index.js';
 // @ts-ignore
 import { RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderRequestsMetadata, type RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder } from './retrieveCloudPkiLeafCertificateSummaryReport/index.js';
@@ -448,6 +450,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the getZebraFotaDeploymentReport method.
      */
     get getZebraFotaDeploymentReport(): GetZebraFotaDeploymentReportRequestBuilder;
+    /**
+     * Provides operations to call the retrieveAndroidWorkProfileDeviceMigrationStatuses method.
+     */
+    get retrieveAndroidWorkProfileDeviceMigrationStatuses(): RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPkiLeafCertificateReport method.
      */
@@ -751,6 +757,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getZebraFotaDeploymentReport: {
         requestsMetadata: GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata,
+    },
+    retrieveAndroidWorkProfileDeviceMigrationStatuses: {
+        requestsMetadata: RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata,
     },
     retrieveCloudPkiLeafCertificateReport: {
         requestsMetadata: RetrieveCloudPkiLeafCertificateReportRequestBuilderRequestsMetadata,

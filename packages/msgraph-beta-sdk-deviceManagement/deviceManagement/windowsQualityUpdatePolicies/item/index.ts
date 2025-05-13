@@ -10,6 +10,10 @@ import { AssignRequestBuilderRequestsMetadata, type AssignRequestBuilder } from 
 // @ts-ignore
 import { AssignmentsRequestBuilderNavigationMetadata, AssignmentsRequestBuilderRequestsMetadata, type AssignmentsRequestBuilder } from './assignments/index.js';
 // @ts-ignore
+import { BulkActionRequestBuilderRequestsMetadata, type BulkActionRequestBuilder } from './bulkAction/index.js';
+// @ts-ignore
+import { RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilderRequestsMetadata, type RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder } from './retrieveWindowsQualityUpdateCatalogItemDetailsWithIds/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -24,6 +28,10 @@ export interface WindowsQualityUpdatePolicyItemRequestBuilder extends BaseReques
      * Provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdatePolicy entity.
      */
     get assignments(): AssignmentsRequestBuilder;
+    /**
+     * Provides operations to call the bulkAction method.
+     */
+    get bulkAction(): BulkActionRequestBuilder;
     /**
      * Delete navigation property windowsQualityUpdatePolicies for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -45,6 +53,12 @@ export interface WindowsQualityUpdatePolicyItemRequestBuilder extends BaseReques
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: WindowsQualityUpdatePolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WindowsQualityUpdatePolicy | undefined>;
+    /**
+     * Provides operations to call the retrieveWindowsQualityUpdateCatalogItemDetails method.
+     * @param ids Usage: ids={ids}
+     * @returns {RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder}
+     */
+     retrieveWindowsQualityUpdateCatalogItemDetailsWithIds(ids: string | undefined) : RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder;
     /**
      * Delete navigation property windowsQualityUpdatePolicies for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -93,12 +107,19 @@ const WindowsQualityUpdatePolicyItemRequestBuilderGetQueryParametersMapper: Reco
  * Metadata for all the navigation properties in the request builder.
  */
 export const WindowsQualityUpdatePolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof WindowsQualityUpdatePolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    retrieveWindowsQualityUpdateCatalogItemDetailsWithIds: {
+        requestsMetadata: RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["ids"],
+    },
     assign: {
         requestsMetadata: AssignRequestBuilderRequestsMetadata,
     },
     assignments: {
         requestsMetadata: AssignmentsRequestBuilderRequestsMetadata,
         navigationMetadata: AssignmentsRequestBuilderNavigationMetadata,
+    },
+    bulkAction: {
+        requestsMetadata: BulkActionRequestBuilderRequestsMetadata,
     },
 };
 /**
