@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-tests",
-  "version": "1.0.0-preview.50",
+  "version": "1.0.0-preview.51",
   "description": "integration test project for all the packages",
   "author": "Microsoft <graphsdkpub+javascript@microsoft.com>",
   "homepage": "https://github.com/microsoftgraph/msgraph-beta-sdk-typescript#readme",
