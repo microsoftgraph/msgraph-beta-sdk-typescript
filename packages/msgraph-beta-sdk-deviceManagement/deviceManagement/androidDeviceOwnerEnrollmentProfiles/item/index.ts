@@ -6,9 +6,15 @@ import { createAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue, serial
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata, type ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder } from './clearEnrollmentTimeDeviceMembershipTarget/index.js';
+// @ts-ignore
 import { CreateTokenRequestBuilderRequestsMetadata, type CreateTokenRequestBuilder } from './createToken/index.js';
 // @ts-ignore
+import { RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata, type RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder } from './retrieveEnrollmentTimeDeviceMembershipTarget/index.js';
+// @ts-ignore
 import { RevokeTokenRequestBuilderRequestsMetadata, type RevokeTokenRequestBuilder } from './revokeToken/index.js';
+// @ts-ignore
+import { SetEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata, type SetEnrollmentTimeDeviceMembershipTargetRequestBuilder } from './setEnrollmentTimeDeviceMembershipTarget/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -17,13 +23,25 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder extends BaseRequestBuilder<AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder> {
     /**
+     * Provides operations to call the clearEnrollmentTimeDeviceMembershipTarget method.
+     */
+    get clearEnrollmentTimeDeviceMembershipTarget(): ClearEnrollmentTimeDeviceMembershipTargetRequestBuilder;
+    /**
      * Provides operations to call the createToken method.
      */
     get createToken(): CreateTokenRequestBuilder;
     /**
+     * Provides operations to call the retrieveEnrollmentTimeDeviceMembershipTarget method.
+     */
+    get retrieveEnrollmentTimeDeviceMembershipTarget(): RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilder;
+    /**
      * Provides operations to call the revokeToken method.
      */
     get revokeToken(): RevokeTokenRequestBuilder;
+    /**
+     * Provides operations to call the setEnrollmentTimeDeviceMembershipTarget method.
+     */
+    get setEnrollmentTimeDeviceMembershipTarget(): SetEnrollmentTimeDeviceMembershipTargetRequestBuilder;
     /**
      * Delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -93,11 +111,20 @@ const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetQueryParametersMap
  * Metadata for all the navigation properties in the request builder.
  */
 export const AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    clearEnrollmentTimeDeviceMembershipTarget: {
+        requestsMetadata: ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata,
+    },
     createToken: {
         requestsMetadata: CreateTokenRequestBuilderRequestsMetadata,
     },
+    retrieveEnrollmentTimeDeviceMembershipTarget: {
+        requestsMetadata: RetrieveEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata,
+    },
     revokeToken: {
         requestsMetadata: RevokeTokenRequestBuilderRequestsMetadata,
+    },
+    setEnrollmentTimeDeviceMembershipTarget: {
+        requestsMetadata: SetEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata,
     },
 };
 /**

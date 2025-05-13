@@ -337,91 +337,91 @@ export interface ConditionalAccessSettings extends Entity, Parsable {
 }
 export interface Connection extends Entity, Parsable {
     /**
-     * The agentVersion property
+     * The version of the client that initiated the connection.
      */
     agentVersion?: string | null;
     /**
-     * The applicationSnapshot property
+     * appId (or client ID) of the destination Microsoft Entra application.
      */
     applicationSnapshot?: ApplicationSnapshot | null;
     /**
-     * The createdDateTime property
+     * The time the connection was created.
      */
     createdDateTime?: Date | null;
     /**
-     * The destinationFqdn property
+     * The destination FQDN of the connection.
      */
     destinationFqdn?: string | null;
     /**
-     * The destinationIp property
+     * The destination IP of the connection.
      */
     destinationIp?: string | null;
     /**
-     * The destinationPort property
+     * The destination port of the connection.
      */
     destinationPort?: number | null;
     /**
-     * The deviceCategory property
+     * The category of the device. The possible values are: client, branch, unknownFutureValue, remoteNetwork. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: remoteNetwork.
      */
     deviceCategory?: DeviceCategory | null;
     /**
-     * The deviceId property
+     * The DeviceID.
      */
     deviceId?: string | null;
     /**
-     * The deviceOperatingSystem property
+     * The device operating system type.
      */
     deviceOperatingSystem?: string | null;
     /**
-     * The deviceOperatingSystemVersion property
+     * The device operating system version.
      */
     deviceOperatingSystemVersion?: string | null;
     /**
-     * The endDateTime property
+     * The time the connection was terminated.
      */
     endDateTime?: Date | null;
     /**
-     * The initiatingProcessName property
+     * The process initiating the traffic connection.
      */
     initiatingProcessName?: string | null;
     /**
-     * The lastUpdateDateTime property
+     * When the connection was last updated.
      */
     lastUpdateDateTime?: Date | null;
     /**
-     * The networkProtocol property
+     * The network protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
      */
     networkProtocol?: NetworkingProtocol | null;
     /**
-     * The popProcessingRegion property
+     * The Point-of-Presence processing region of the traffic.
      */
     popProcessingRegion?: string | null;
     /**
-     * The privateAccessDetails property
+     * Private access details.
      */
     privateAccessDetails?: PrivateAccessDetails | null;
     /**
-     * The receivedBytes property
+     * Accumulative bytes received.
      */
     receivedBytes?: number | null;
     /**
-     * The sentBytes property
+     * Accumulative bytes sent.
      */
     sentBytes?: number | null;
     /**
-     * The sourceIp property
+     * The source IP of the connection.
      */
     sourceIp?: string | null;
     /**
-     * The sourcePort property
+     * The source port of the connection.
      */
     sourcePort?: number | null;
     /**
-     * The status property
+     * Status of the connection. The possible values are: open, active, closed, unknownFutureValue.
      */
     status?: ConnectionStatus | null;
     /**
-     * The tenantId property
+     * The ID of the tenant where the connection was initiated.
      */
     tenantId?: string | null;
     /**
@@ -429,23 +429,23 @@ export interface Connection extends Entity, Parsable {
      */
     trafficType?: TrafficType | null;
     /**
-     * The transactionBlockCount property
+     * The number of blocked transactions belonging to the connection.
      */
     transactionBlockCount?: number | null;
     /**
-     * The transactionCount property
+     * The number of transactions belonging to the connection.
      */
     transactionCount?: number | null;
     /**
-     * The transportProtocol property
+     * The transport protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
      */
     transportProtocol?: NetworkingProtocol | null;
     /**
-     * The userId property
+     * The user ID.
      */
     userId?: string | null;
     /**
-     * The userPrincipalName property
+     * The principal name of the user.
      */
     userPrincipalName?: string | null;
 }
@@ -470,7 +470,7 @@ export interface ConnectionSummary extends AdditionalDataHolder, BackedModel, Pa
      */
     odataType?: string | null;
     /**
-     * The totalCount property
+     * Total number of connections for the specified traffic type.
      */
     totalCount?: number | null;
     /**
@@ -3754,7 +3754,7 @@ export interface LocalConnectivityConfiguration extends AdditionalDataHolder, Ba
 }
 export interface Logs extends Entity, Parsable {
     /**
-     * The connections property
+     * An aggregated log entry that contains comprehensive information about network traffic events.
      */
     connections?: Connection[] | null;
     /**

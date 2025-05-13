@@ -28,30 +28,37 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RoleManagementRequestBuilder extends BaseRequestBuilder<RoleManagementRequestBuilder> {
     /**
      * Provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get cloudPC(): CloudPCRequestBuilder;
     /**
      * Provides operations to manage the defender property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get defender(): DefenderRequestBuilder;
     /**
      * Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get deviceManagement(): DeviceManagementRequestBuilder;
     /**
      * Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get directory(): DirectoryRequestBuilder;
     /**
      * Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get enterpriseApps(): EnterpriseAppsRequestBuilder;
     /**
      * Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get entitlementManagement(): EntitlementManagementRequestBuilder;
     /**
      * Provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get exchange(): ExchangeRequestBuilder;
     /**
@@ -59,6 +66,7 @@ export interface RoleManagementRequestBuilder extends BaseRequestBuilder<RoleMan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RoleManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      get(requestConfiguration?: RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters> | undefined) : Promise<RoleManagement | undefined>;
     /**
@@ -67,12 +75,14 @@ export interface RoleManagementRequestBuilder extends BaseRequestBuilder<RoleMan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RoleManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      patch(body: RoleManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RoleManagement | undefined>;
     /**
      * Get roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -80,6 +90,7 @@ export interface RoleManagementRequestBuilder extends BaseRequestBuilder<RoleMan
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toPatchRequestInformation(body: RoleManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -43,7 +43,7 @@ export interface DataSecurityAndGovernanceRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get dataSecurityAndGovernance from users
+     * The data security and governance settings for the user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserDataSecurityAndGovernance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -64,7 +64,7 @@ export interface DataSecurityAndGovernanceRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get dataSecurityAndGovernance from users
+     * The data security and governance settings for the user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -78,7 +78,7 @@ export interface DataSecurityAndGovernanceRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: UserDataSecurityAndGovernance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dataSecurityAndGovernance from users
+ * The data security and governance settings for the user. Read-only. Nullable.
  */
 export interface DataSecurityAndGovernanceRequestBuilderGetQueryParameters {
     /**

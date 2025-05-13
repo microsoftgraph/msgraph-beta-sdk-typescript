@@ -47,15 +47,16 @@ export interface ProcessContentPostRequestBody extends AdditionalDataHolder, Bac
  */
 export interface ProcessContentRequestBuilder extends BaseRequestBuilder<ProcessContentRequestBuilder> {
     /**
-     * Invoke action processContent
+     * Process content against data protection policies in the context of the current user. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProcessContentResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-processcontent?view=graph-rest-beta|Find more info here}
      */
      post(body: ProcessContentPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProcessContentResponse | undefined>;
     /**
-     * Invoke action processContent
+     * Process content against data protection policies in the context of the current user. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

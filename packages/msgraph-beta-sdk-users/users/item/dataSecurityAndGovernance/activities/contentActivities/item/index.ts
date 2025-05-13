@@ -19,7 +19,7 @@ export interface ContentActivityItemRequestBuilder extends BaseRequestBuilder<Co
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get contentActivities from users
+     * Collection of activity logs related to content processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContentActivity>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ContentActivityItemRequestBuilder extends BaseRequestBuilder<Co
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get contentActivities from users
+     * Collection of activity logs related to content processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ContentActivityItemRequestBuilder extends BaseRequestBuilder<Co
      toPatchRequestInformation(body: ContentActivity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get contentActivities from users
+ * Collection of activity logs related to content processing.
  */
 export interface ContentActivityItemRequestBuilderGetQueryParameters {
     /**

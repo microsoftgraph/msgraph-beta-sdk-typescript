@@ -27,10 +27,11 @@ export interface ConnectionsRequestBuilder extends BaseRequestBuilder<Connection
      */
      byConnectionId(connectionId: string) : ConnectionItemRequestBuilder;
     /**
-     * Get connections from networkAccess
+     * Get a list of connection objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConnectionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-logs-list-connections?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConnectionsRequestBuilderGetQueryParameters> | undefined) : Promise<ConnectionCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface ConnectionsRequestBuilder extends BaseRequestBuilder<Connection
      */
      post(body: Connection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Connection | undefined>;
     /**
-     * Get connections from networkAccess
+     * Get a list of connection objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface ConnectionsRequestBuilder extends BaseRequestBuilder<Connection
      toPostRequestInformation(body: Connection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get connections from networkAccess
+ * Get a list of connection objects and their properties.
  */
 export interface ConnectionsRequestBuilderGetQueryParameters {
     /**

@@ -41,21 +41,22 @@ export interface GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetRespon
  */
 export interface MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder> {
     /**
-     * Invoke function getConnectionSummaries
+     * An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-reports-getconnectionsummaries?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
     /**
-     * Invoke function getConnectionSummaries
+     * An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Invoke function getConnectionSummaries
+ * An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
  */
 export interface MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters {
     /**

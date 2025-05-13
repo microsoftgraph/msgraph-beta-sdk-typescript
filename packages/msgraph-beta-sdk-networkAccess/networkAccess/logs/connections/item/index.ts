@@ -19,10 +19,11 @@ export interface ConnectionItemRequestBuilder extends BaseRequestBuilder<Connect
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get connections from networkAccess
+     * Read the properties and relationships of a connection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Connection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-connection-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConnectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<Connection | undefined>;
     /**
@@ -40,7 +41,7 @@ export interface ConnectionItemRequestBuilder extends BaseRequestBuilder<Connect
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get connections from networkAccess
+     * Read the properties and relationships of a connection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface ConnectionItemRequestBuilder extends BaseRequestBuilder<Connect
      toPatchRequestInformation(body: Connection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get connections from networkAccess
+ * Read the properties and relationships of a connection object.
  */
 export interface ConnectionItemRequestBuilderGetQueryParameters {
     /**
