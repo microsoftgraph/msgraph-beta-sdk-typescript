@@ -24,7 +24,7 @@ npm install @microsoft/msgraph-beta-sdk-$packageName
 Here is an example of how to use the package:
 
 ```typescript
-import "npm install @microsoft/msgraph-beta-sdk-$packageName"
+import "@microsoft/msgraph-beta-sdk-$packageName";
 
 // Use the GraphServiceClient to make requests by including the appropriate API calls package
 const $packageName = graphServiceClient.$packageName.get();
