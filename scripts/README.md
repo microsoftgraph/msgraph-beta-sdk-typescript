@@ -13,8 +13,6 @@ This package provides a fluent API for interacting with Microsoft Graph administ
 To install the package, use npm:
 
 ```shell
-# this will install the main package
-npm install @microsoft/msgraph-beta-sdk
 # this will install the authentication provider for Azure Identity / Microsoft Entra
 npm install @microsoft/kiota-authentication-azure @azure/identity
 # this will install the fluent API package for the administrative API paths
