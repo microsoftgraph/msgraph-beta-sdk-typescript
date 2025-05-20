@@ -6,6 +6,8 @@ import { createSensitivityLabelFromDiscriminatorValue, serializeSensitivityLabel
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { RightsRequestBuilderRequestsMetadata, type RightsRequestBuilder } from './rights/index.js';
+// @ts-ignore
 import { SublabelsRequestBuilderNavigationMetadata, SublabelsRequestBuilderRequestsMetadata, type SublabelsRequestBuilder } from './sublabels/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataSecurityAndGovernance entity.
  */
 export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<SensitivityLabelItemRequestBuilder> {
+    /**
+     * Provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.
+     */
+    get rights(): RightsRequestBuilder;
     /**
      * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
      */
@@ -25,10 +31,11 @@ export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<S
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get sensitivityLabels from security
+     * Get a sensitivity label available for the entire tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SensitivityLabelItemRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
@@ -46,7 +53,7 @@ export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<S
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get sensitivityLabels from security
+     * Get a sensitivity label available for the entire tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +67,7 @@ export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<S
      toPatchRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensitivityLabels from security
+ * Get a sensitivity label available for the entire tenant.
  */
 export interface SensitivityLabelItemRequestBuilderGetQueryParameters {
     /**
@@ -87,6 +94,9 @@ const SensitivityLabelItemRequestBuilderGetQueryParametersMapper: Record<string,
  * Metadata for all the navigation properties in the request builder.
  */
 export const SensitivityLabelItemRequestBuilderNavigationMetadata: Record<Exclude<keyof SensitivityLabelItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    rights: {
+        requestsMetadata: RightsRequestBuilderRequestsMetadata,
+    },
     sublabels: {
         requestsMetadata: SublabelsRequestBuilderRequestsMetadata,
         navigationMetadata: SublabelsRequestBuilderNavigationMetadata,

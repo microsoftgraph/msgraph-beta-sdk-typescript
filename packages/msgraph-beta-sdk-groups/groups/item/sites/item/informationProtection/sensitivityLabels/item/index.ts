@@ -6,6 +6,8 @@ import { createSensitivityLabelFromDiscriminatorValue, serializeSensitivityLabel
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { RightsRequestBuilderRequestsMetadata, type RightsRequestBuilder } from './rights/index.js';
+// @ts-ignore
 import { SublabelsRequestBuilderNavigationMetadata, SublabelsRequestBuilderRequestsMetadata, type SublabelsRequestBuilder } from './sublabels/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
  */
 export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<SensitivityLabelItemRequestBuilder> {
+    /**
+     * Provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.
+     */
+    get rights(): RightsRequestBuilder;
     /**
      * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
      */
@@ -87,6 +93,9 @@ const SensitivityLabelItemRequestBuilderGetQueryParametersMapper: Record<string,
  * Metadata for all the navigation properties in the request builder.
  */
 export const SensitivityLabelItemRequestBuilderNavigationMetadata: Record<Exclude<keyof SensitivityLabelItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    rights: {
+        requestsMetadata: RightsRequestBuilderRequestsMetadata,
+    },
     sublabels: {
         requestsMetadata: SublabelsRequestBuilderRequestsMetadata,
         navigationMetadata: SublabelsRequestBuilderNavigationMetadata,

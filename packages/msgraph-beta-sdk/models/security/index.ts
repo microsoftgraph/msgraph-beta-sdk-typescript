@@ -20407,7 +20407,7 @@ export interface SensitivityLabel extends Entity, Parsable {
      */
     name?: string | null;
     /**
-     * The parent label associated with a child label. Null if the label has no parent.
+     * The parent property
      */
     parent?: SensitivityLabel | null;
     /**

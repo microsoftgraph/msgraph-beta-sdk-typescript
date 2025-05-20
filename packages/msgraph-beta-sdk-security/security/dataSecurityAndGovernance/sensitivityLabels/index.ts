@@ -6,6 +6,10 @@ import { createSensitivityLabelCollectionResponseFromDiscriminatorValue, createS
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderRequestsMetadata, type ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder } from './computeInheritanceWithLabelIdsWithLocaleWithContentFormats/index.js';
+// @ts-ignore
+import { ComputeRightsAndInheritanceRequestBuilderRequestsMetadata, type ComputeRightsAndInheritanceRequestBuilder } from './computeRightsAndInheritance/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { EvaluateRequestBuilderRequestsMetadata, type EvaluateRequestBuilder } from './evaluate/index.js';
@@ -18,6 +22,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataSecurityAndGovernance entity.
  */
 export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<SensitivityLabelsRequestBuilder> {
+    /**
+     * Provides operations to call the computeRightsAndInheritance method.
+     */
+    get computeRightsAndInheritance(): ComputeRightsAndInheritanceRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -33,10 +41,19 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      */
      bySensitivityLabelId(sensitivityLabelId: string) : SensitivityLabelItemRequestBuilder;
     /**
-     * Get sensitivityLabels from security
+     * Provides operations to call the computeInheritance method.
+     * @param contentFormats Usage: contentFormats={contentFormats}
+     * @param labelIds Usage: labelIds={labelIds}
+     * @param locale Usage: locale='{locale}'
+     * @returns {ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder}
+     */
+     computeInheritanceWithLabelIdsWithLocaleWithContentFormats(contentFormats: string | undefined, labelIds: string | undefined, locale: string | undefined) : ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder;
+    /**
+     * List the sensitivity labels available to a specific user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabelCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabelCollectionResponse | undefined>;
     /**
@@ -48,7 +65,7 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      */
      post(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
-     * Get sensitivityLabels from security
+     * List the sensitivity labels available to a specific user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -62,7 +79,7 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      toPostRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensitivityLabels from security
+ * List the sensitivity labels available to a specific user.
  */
 export interface SensitivityLabelsRequestBuilderGetQueryParameters {
     /**
@@ -123,6 +140,13 @@ export const SensitivityLabelsRequestBuilderNavigationMetadata: Record<Exclude<k
         requestsMetadata: SensitivityLabelItemRequestBuilderRequestsMetadata,
         navigationMetadata: SensitivityLabelItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["sensitivityLabel%2Did"],
+    },
+    computeInheritanceWithLabelIdsWithLocaleWithContentFormats: {
+        requestsMetadata: ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["contentFormats", "labelIds", "locale"],
+    },
+    computeRightsAndInheritance: {
+        requestsMetadata: ComputeRightsAndInheritanceRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

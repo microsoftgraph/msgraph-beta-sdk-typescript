@@ -19,7 +19,7 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The parent label associated with a child label. Null if the label has no parent.
+     * Get parent from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabel>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The parent label associated with a child label. Null if the label has no parent.
+     * Get parent from users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ParentRequestBuilder extends BaseRequestBuilder<ParentRequestBu
      toPatchRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The parent label associated with a child label. Null if the label has no parent.
+ * Get parent from users
  */
 export interface ParentRequestBuilderGetQueryParameters {
     /**

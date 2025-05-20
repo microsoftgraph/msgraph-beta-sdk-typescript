@@ -79,11 +79,11 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the list of richLongRunningOperations associated with a list.
+     * Return the metadata for a list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<List>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/list-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ListItemRequestBuilderGetQueryParameters> | undefined) : Promise<List | undefined>;
     /**
@@ -101,7 +101,7 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the list of richLongRunningOperations associated with a list.
+     * Return the metadata for a list.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -115,7 +115,7 @@ export interface ListItemRequestBuilder extends BaseRequestBuilder<ListItemReque
      toPatchRequestInformation(body: List, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of richLongRunningOperations associated with a list.
+ * Return the metadata for a list.
  */
 export interface ListItemRequestBuilderGetQueryParameters {
     /**
