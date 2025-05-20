@@ -6,11 +6,15 @@ import { createSensitivityLabelCollectionResponseFromDiscriminatorValue, createS
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderRequestsMetadata, type ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder } from './computeInheritanceWithLabelIdsWithLocaleWithContentFormats/index.js';
+// @ts-ignore
+import { ComputeRightsAndInheritanceRequestBuilderRequestsMetadata, type ComputeRightsAndInheritanceRequestBuilder } from './computeRightsAndInheritance/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { EvaluateRequestBuilderRequestsMetadata, type EvaluateRequestBuilder } from './evaluate/index.js';
 // @ts-ignore
-import { SensitivityLabelItemRequestBuilderRequestsMetadata, type SensitivityLabelItemRequestBuilder } from './item/index.js';
+import { SensitivityLabelItemRequestBuilderNavigationMetadata, SensitivityLabelItemRequestBuilderRequestsMetadata, type SensitivityLabelItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -18,6 +22,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
  */
 export interface SublabelsRequestBuilder extends BaseRequestBuilder<SublabelsRequestBuilder> {
+    /**
+     * Provides operations to call the computeRightsAndInheritance method.
+     */
+    get computeRightsAndInheritance(): ComputeRightsAndInheritanceRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -32,6 +40,14 @@ export interface SublabelsRequestBuilder extends BaseRequestBuilder<SublabelsReq
      * @returns {SensitivityLabelItemRequestBuilder}
      */
      bySensitivityLabelId1(sensitivityLabelId1: string) : SensitivityLabelItemRequestBuilder;
+    /**
+     * Provides operations to call the computeInheritance method.
+     * @param contentFormats Usage: contentFormats={contentFormats}
+     * @param labelIds Usage: labelIds={labelIds}
+     * @param locale Usage: locale='{locale}'
+     * @returns {ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder}
+     */
+     computeInheritanceWithLabelIdsWithLocaleWithContentFormats(contentFormats: string | undefined, labelIds: string | undefined, locale: string | undefined) : ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder;
     /**
      * Get sublabels from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -121,7 +137,15 @@ const SublabelsRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const SublabelsRequestBuilderNavigationMetadata: Record<Exclude<keyof SublabelsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     bySensitivityLabelId1: {
         requestsMetadata: SensitivityLabelItemRequestBuilderRequestsMetadata,
+        navigationMetadata: SensitivityLabelItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["sensitivityLabel%2Did1"],
+    },
+    computeInheritanceWithLabelIdsWithLocaleWithContentFormats: {
+        requestsMetadata: ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["contentFormats", "labelIds", "locale"],
+    },
+    computeRightsAndInheritance: {
+        requestsMetadata: ComputeRightsAndInheritanceRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

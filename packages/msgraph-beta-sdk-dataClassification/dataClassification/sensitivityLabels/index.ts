@@ -6,6 +6,10 @@ import { createSensitivityLabelCollectionResponseFromDiscriminatorValue, createS
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderRequestsMetadata, type ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder } from './computeInheritanceWithLabelIdsWithLocaleWithContentFormats/index.js';
+// @ts-ignore
+import { ComputeRightsAndInheritanceRequestBuilderRequestsMetadata, type ComputeRightsAndInheritanceRequestBuilder } from './computeRightsAndInheritance/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { EvaluateRequestBuilderRequestsMetadata, type EvaluateRequestBuilder } from './evaluate/index.js';
@@ -18,6 +22,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.
  */
 export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<SensitivityLabelsRequestBuilder> {
+    /**
+     * Provides operations to call the computeRightsAndInheritance method.
+     */
+    get computeRightsAndInheritance(): ComputeRightsAndInheritanceRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -32,6 +40,14 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      * @returns {SensitivityLabelItemRequestBuilder}
      */
      bySensitivityLabelId(sensitivityLabelId: string) : SensitivityLabelItemRequestBuilder;
+    /**
+     * Provides operations to call the computeInheritance method.
+     * @param contentFormats Usage: contentFormats={contentFormats}
+     * @param labelIds Usage: labelIds={labelIds}
+     * @param locale Usage: locale='{locale}'
+     * @returns {ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder}
+     */
+     computeInheritanceWithLabelIdsWithLocaleWithContentFormats(contentFormats: string | undefined, labelIds: string | undefined, locale: string | undefined) : ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder;
     /**
      * Get sensitivityLabels from dataClassification
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -123,6 +139,13 @@ export const SensitivityLabelsRequestBuilderNavigationMetadata: Record<Exclude<k
         requestsMetadata: SensitivityLabelItemRequestBuilderRequestsMetadata,
         navigationMetadata: SensitivityLabelItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["sensitivityLabel%2Did"],
+    },
+    computeInheritanceWithLabelIdsWithLocaleWithContentFormats: {
+        requestsMetadata: ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["contentFormats", "labelIds", "locale"],
+    },
+    computeRightsAndInheritance: {
+        requestsMetadata: ComputeRightsAndInheritanceRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

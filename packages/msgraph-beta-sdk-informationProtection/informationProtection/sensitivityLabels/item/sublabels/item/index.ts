@@ -6,12 +6,18 @@ import { createSensitivityLabelFromDiscriminatorValue, serializeSensitivityLabel
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { RightsRequestBuilderRequestsMetadata, type RightsRequestBuilder } from './rights/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
  */
 export interface SensitivityLabelItemRequestBuilder extends BaseRequestBuilder<SensitivityLabelItemRequestBuilder> {
+    /**
+     * Provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.
+     */
+    get rights(): RightsRequestBuilder;
     /**
      * Delete navigation property sublabels for informationProtection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +82,14 @@ export const SensitivityLabelItemRequestBuilderUriTemplate = "{+baseurl}/informa
 const SensitivityLabelItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const SensitivityLabelItemRequestBuilderNavigationMetadata: Record<Exclude<keyof SensitivityLabelItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    rights: {
+        requestsMetadata: RightsRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

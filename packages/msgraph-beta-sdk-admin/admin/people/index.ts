@@ -12,6 +12,8 @@ import { NamePronunciationRequestBuilderRequestsMetadata, type NamePronunciation
 // @ts-ignore
 import { ProfileCardPropertiesRequestBuilderNavigationMetadata, ProfileCardPropertiesRequestBuilderRequestsMetadata, type ProfileCardPropertiesRequestBuilder } from './profileCardProperties/index.js';
 // @ts-ignore
+import { ProfilePropertySettingsRequestBuilderNavigationMetadata, ProfilePropertySettingsRequestBuilderRequestsMetadata, type ProfilePropertySettingsRequestBuilder } from './profilePropertySettings/index.js';
+// @ts-ignore
 import { PronounsRequestBuilderRequestsMetadata, type PronounsRequestBuilder } from './pronouns/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -32,6 +34,10 @@ export interface PeopleRequestBuilder extends BaseRequestBuilder<PeopleRequestBu
      * Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
      */
     get profileCardProperties(): ProfileCardPropertiesRequestBuilder;
+    /**
+     * Provides operations to manage the profilePropertySettings property of the microsoft.graph.peopleAdminSettings entity.
+     */
+    get profilePropertySettings(): ProfilePropertySettingsRequestBuilder;
     /**
      * Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
      */
@@ -115,6 +121,10 @@ export const PeopleRequestBuilderNavigationMetadata: Record<Exclude<keyof People
     profileCardProperties: {
         requestsMetadata: ProfileCardPropertiesRequestBuilderRequestsMetadata,
         navigationMetadata: ProfileCardPropertiesRequestBuilderNavigationMetadata,
+    },
+    profilePropertySettings: {
+        requestsMetadata: ProfilePropertySettingsRequestBuilderRequestsMetadata,
+        navigationMetadata: ProfilePropertySettingsRequestBuilderNavigationMetadata,
     },
     pronouns: {
         requestsMetadata: PronounsRequestBuilderRequestsMetadata,
