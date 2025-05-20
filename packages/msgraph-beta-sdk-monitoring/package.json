@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-monitoring",
-  "version": "1.0.0-preview.51",
+  "version": "1.0.0-preview.52",
   "description": "Monitoring fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
