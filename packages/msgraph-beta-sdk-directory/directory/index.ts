@@ -38,6 +38,8 @@ import { PendingExternalUserProfilesRequestBuilderNavigationMetadata, PendingExt
 // @ts-ignore
 import { PublicKeyInfrastructureRequestBuilderNavigationMetadata, PublicKeyInfrastructureRequestBuilderRequestsMetadata, type PublicKeyInfrastructureRequestBuilder } from './publicKeyInfrastructure/index.js';
 // @ts-ignore
+import { RecommendationConfigurationRequestBuilderRequestsMetadata, type RecommendationConfigurationRequestBuilder } from './recommendationConfiguration/index.js';
+// @ts-ignore
 import { RecommendationsRequestBuilderNavigationMetadata, RecommendationsRequestBuilderRequestsMetadata, type RecommendationsRequestBuilder } from './recommendations/index.js';
 // @ts-ignore
 import { SharedEmailDomainsRequestBuilderNavigationMetadata, SharedEmailDomainsRequestBuilderRequestsMetadata, type SharedEmailDomainsRequestBuilder } from './sharedEmailDomains/index.js';
@@ -120,6 +122,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the publicKeyInfrastructure property of the microsoft.graph.directory entity.
      */
     get publicKeyInfrastructure(): PublicKeyInfrastructureRequestBuilder;
+    /**
+     * Provides operations to manage the recommendationConfiguration property of the microsoft.graph.directory entity.
+     */
+    get recommendationConfiguration(): RecommendationConfigurationRequestBuilder;
     /**
      * Provides operations to manage the recommendations property of the microsoft.graph.directory entity.
      */
@@ -276,6 +282,9 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
     publicKeyInfrastructure: {
         requestsMetadata: PublicKeyInfrastructureRequestBuilderRequestsMetadata,
         navigationMetadata: PublicKeyInfrastructureRequestBuilderNavigationMetadata,
+    },
+    recommendationConfiguration: {
+        requestsMetadata: RecommendationConfigurationRequestBuilderRequestsMetadata,
     },
     recommendations: {
         requestsMetadata: RecommendationsRequestBuilderRequestsMetadata,

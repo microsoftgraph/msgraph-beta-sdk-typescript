@@ -10,6 +10,8 @@ import { ClockOutRequestBuilderRequestsMetadata, type ClockOutRequestBuilder } f
 // @ts-ignore
 import { ConfirmRequestBuilderRequestsMetadata, type ConfirmRequestBuilder } from './confirm/index.js';
 // @ts-ignore
+import { ConfirmForUserRequestBuilderRequestsMetadata, type ConfirmForUserRequestBuilder } from './confirmForUser/index.js';
+// @ts-ignore
 import { EndBreakRequestBuilderRequestsMetadata, type EndBreakRequestBuilder } from './endBreak/index.js';
 // @ts-ignore
 import { StartBreakRequestBuilderRequestsMetadata, type StartBreakRequestBuilder } from './startBreak/index.js';
@@ -28,6 +30,10 @@ export interface TimeCardItemRequestBuilder extends BaseRequestBuilder<TimeCardI
      * Provides operations to call the confirm method.
      */
     get confirm(): ConfirmRequestBuilder;
+    /**
+     * Provides operations to call the confirmForUser method.
+     */
+    get confirmForUser(): ConfirmForUserRequestBuilder;
     /**
      * Provides operations to call the endBreak method.
      */
@@ -110,6 +116,9 @@ export const TimeCardItemRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     },
     confirm: {
         requestsMetadata: ConfirmRequestBuilderRequestsMetadata,
+    },
+    confirmForUser: {
+        requestsMetadata: ConfirmForUserRequestBuilderRequestsMetadata,
     },
     endBreak: {
         requestsMetadata: EndBreakRequestBuilderRequestsMetadata,
