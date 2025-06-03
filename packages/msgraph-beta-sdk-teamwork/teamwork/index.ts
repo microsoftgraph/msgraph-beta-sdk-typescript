@@ -10,6 +10,8 @@ import { DeletedChatsRequestBuilderNavigationMetadata, DeletedChatsRequestBuilde
 // @ts-ignore
 import { DeletedTeamsRequestBuilderNavigationMetadata, DeletedTeamsRequestBuilderRequestsMetadata, type DeletedTeamsRequestBuilder } from './deletedTeams/index.js';
 // @ts-ignore
+import { DetermineIfInteractionIsAllowedRequestBuilderRequestsMetadata, type DetermineIfInteractionIsAllowedRequestBuilder } from './determineIfInteractionIsAllowed/index.js';
+// @ts-ignore
 import { DevicesRequestBuilderNavigationMetadata, DevicesRequestBuilderRequestsMetadata, type DevicesRequestBuilder } from './devices/index.js';
 // @ts-ignore
 import { SendActivityNotificationToRecipientsRequestBuilderRequestsMetadata, type SendActivityNotificationToRecipientsRequestBuilder } from './sendActivityNotificationToRecipients/index.js';
@@ -34,6 +36,10 @@ export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkReque
      * Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
      */
     get deletedTeams(): DeletedTeamsRequestBuilder;
+    /**
+     * Provides operations to call the determineIfInteractionIsAllowed method.
+     */
+    get determineIfInteractionIsAllowed(): DetermineIfInteractionIsAllowedRequestBuilder;
     /**
      * Provides operations to manage the devices property of the microsoft.graph.teamwork entity.
      */
@@ -119,6 +125,9 @@ export const TeamworkRequestBuilderNavigationMetadata: Record<Exclude<keyof Team
     deletedTeams: {
         requestsMetadata: DeletedTeamsRequestBuilderRequestsMetadata,
         navigationMetadata: DeletedTeamsRequestBuilderNavigationMetadata,
+    },
+    determineIfInteractionIsAllowed: {
+        requestsMetadata: DetermineIfInteractionIsAllowedRequestBuilderRequestsMetadata,
     },
     devices: {
         requestsMetadata: DevicesRequestBuilderRequestsMetadata,

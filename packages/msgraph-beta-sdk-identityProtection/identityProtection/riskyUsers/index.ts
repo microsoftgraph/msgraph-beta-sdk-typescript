@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ConfirmCompromisedRequestBuilderRequestsMetadata, type ConfirmCompromisedRequestBuilder } from './confirmCompromised/index.js';
 // @ts-ignore
+import { ConfirmSafeRequestBuilderRequestsMetadata, type ConfirmSafeRequestBuilder } from './confirmSafe/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { DismissRequestBuilderRequestsMetadata, type DismissRequestBuilder } from './dismiss/index.js';
@@ -25,6 +27,10 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      */
     get confirmCompromised(): ConfirmCompromisedRequestBuilder;
     /**
+     * Provides operations to call the confirmSafe method.
+     */
+    get confirmSafe(): ConfirmSafeRequestBuilder;
+    /**
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
@@ -39,11 +45,11 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      */
      byRiskyUserId(riskyUserId: string) : RiskyUserItemRequestBuilder;
     /**
-     * Retrieve the properties and relationships of a collection of riskyUser objects.
+     * Retrieve the properties and relationships of a riskyUser object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RiskyUserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RiskyUsersRequestBuilderGetQueryParameters> | undefined) : Promise<RiskyUserCollectionResponse | undefined>;
     /**
@@ -55,7 +61,7 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      */
      post(body: RiskyUser, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RiskyUser | undefined>;
     /**
-     * Retrieve the properties and relationships of a collection of riskyUser objects.
+     * Retrieve the properties and relationships of a riskyUser object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -69,7 +75,7 @@ export interface RiskyUsersRequestBuilder extends BaseRequestBuilder<RiskyUsersR
      toPostRequestInformation(body: RiskyUser, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties and relationships of a collection of riskyUser objects.
+ * Retrieve the properties and relationships of a riskyUser object.
  */
 export interface RiskyUsersRequestBuilderGetQueryParameters {
     /**
@@ -133,6 +139,9 @@ export const RiskyUsersRequestBuilderNavigationMetadata: Record<Exclude<keyof Ri
     },
     confirmCompromised: {
         requestsMetadata: ConfirmCompromisedRequestBuilderRequestsMetadata,
+    },
+    confirmSafe: {
+        requestsMetadata: ConfirmSafeRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

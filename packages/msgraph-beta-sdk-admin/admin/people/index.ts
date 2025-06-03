@@ -14,6 +14,10 @@ import { ProfileCardPropertiesRequestBuilderNavigationMetadata, ProfileCardPrope
 // @ts-ignore
 import { ProfilePropertySettingsRequestBuilderNavigationMetadata, ProfilePropertySettingsRequestBuilderRequestsMetadata, type ProfilePropertySettingsRequestBuilder } from './profilePropertySettings/index.js';
 // @ts-ignore
+import { ProfileSourcesRequestBuilderNavigationMetadata, ProfileSourcesRequestBuilderRequestsMetadata, type ProfileSourcesRequestBuilder } from './profileSources/index.js';
+// @ts-ignore
+import { ProfileSourcesWithSourceIdRequestBuilderRequestsMetadata, type ProfileSourcesWithSourceIdRequestBuilder } from './profileSourcesWithSourceId/index.js';
+// @ts-ignore
 import { PronounsRequestBuilderRequestsMetadata, type PronounsRequestBuilder } from './pronouns/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -38,6 +42,10 @@ export interface PeopleRequestBuilder extends BaseRequestBuilder<PeopleRequestBu
      * Provides operations to manage the profilePropertySettings property of the microsoft.graph.peopleAdminSettings entity.
      */
     get profilePropertySettings(): ProfilePropertySettingsRequestBuilder;
+    /**
+     * Provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+     */
+    get profileSources(): ProfileSourcesRequestBuilder;
     /**
      * Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
      */
@@ -64,6 +72,12 @@ export interface PeopleRequestBuilder extends BaseRequestBuilder<PeopleRequestBu
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      patch(body: PeopleAdminSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PeopleAdminSettings | undefined>;
+    /**
+     * Provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+     * @param sourceId Alternate key of profileSource
+     * @returns {ProfileSourcesWithSourceIdRequestBuilder}
+     */
+     profileSourcesWithSourceId(sourceId: string | undefined) : ProfileSourcesWithSourceIdRequestBuilder;
     /**
      * Delete navigation property people for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -112,6 +126,10 @@ const PeopleRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the navigation properties in the request builder.
  */
 export const PeopleRequestBuilderNavigationMetadata: Record<Exclude<keyof PeopleRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    profileSourcesWithSourceId: {
+        requestsMetadata: ProfileSourcesWithSourceIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["sourceId"],
+    },
     itemInsights: {
         requestsMetadata: ItemInsightsRequestBuilderRequestsMetadata,
     },
@@ -125,6 +143,10 @@ export const PeopleRequestBuilderNavigationMetadata: Record<Exclude<keyof People
     profilePropertySettings: {
         requestsMetadata: ProfilePropertySettingsRequestBuilderRequestsMetadata,
         navigationMetadata: ProfilePropertySettingsRequestBuilderNavigationMetadata,
+    },
+    profileSources: {
+        requestsMetadata: ProfileSourcesRequestBuilderRequestsMetadata,
+        navigationMetadata: ProfileSourcesRequestBuilderNavigationMetadata,
     },
     pronouns: {
         requestsMetadata: PronounsRequestBuilderRequestsMetadata,

@@ -18,6 +18,8 @@ import { LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderReque
 // @ts-ignore
 import { LearningProvidersRequestBuilderNavigationMetadata, LearningProvidersRequestBuilderRequestsMetadata, type LearningProvidersRequestBuilder } from './learningProviders/index.js';
 // @ts-ignore
+import { RolesRequestBuilderNavigationMetadata, RolesRequestBuilderRequestsMetadata, type RolesRequestBuilder } from './roles/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -45,6 +47,10 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      */
     get learningProviders(): LearningProvidersRequestBuilder;
     /**
+     * Provides operations to manage the roles property of the microsoft.graph.employeeExperience entity.
+     */
+    get roles(): RolesRequestBuilder;
+    /**
      * Get employeeExperience
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmployeeExperience>}
@@ -59,7 +65,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      learningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId: string | undefined) : LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder;
     /**
      * Update employeeExperience
-     * @param body Represents a container that exposes navigation properties for employee experience resources.
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmployeeExperience>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -73,7 +79,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmployeeExperienceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update employeeExperience
-     * @param body Represents a container that exposes navigation properties for employee experience resources.
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -125,6 +131,10 @@ export const EmployeeExperienceRequestBuilderNavigationMetadata: Record<Exclude<
     learningProviders: {
         requestsMetadata: LearningProvidersRequestBuilderRequestsMetadata,
         navigationMetadata: LearningProvidersRequestBuilderNavigationMetadata,
+    },
+    roles: {
+        requestsMetadata: RolesRequestBuilderRequestsMetadata,
+        navigationMetadata: RolesRequestBuilderNavigationMetadata,
     },
 };
 /**

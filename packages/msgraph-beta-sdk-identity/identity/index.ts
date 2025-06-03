@@ -24,8 +24,6 @@ import { CustomAuthenticationExtensionsRequestBuilderNavigationMetadata, CustomA
 // @ts-ignore
 import { IdentityProvidersRequestBuilderNavigationMetadata, IdentityProvidersRequestBuilderRequestsMetadata, type IdentityProvidersRequestBuilder } from './identityProviders/index.js';
 // @ts-ignore
-import { ProductChangesRequestBuilderNavigationMetadata, ProductChangesRequestBuilderRequestsMetadata, type ProductChangesRequestBuilder } from './productChanges/index.js';
-// @ts-ignore
 import { type UserFlowAttributesRequestBuilder, UserFlowAttributesRequestBuilderNavigationMetadata, UserFlowAttributesRequestBuilderRequestsMetadata } from './userFlowAttributes/index.js';
 // @ts-ignore
 import { type UserFlowsRequestBuilder, UserFlowsRequestBuilderNavigationMetadata, UserFlowsRequestBuilderRequestsMetadata } from './userFlows/index.js';
@@ -72,10 +70,6 @@ export interface IdentityRequestBuilder extends BaseRequestBuilder<IdentityReque
      * Provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
      */
     get identityProviders(): IdentityProvidersRequestBuilder;
-    /**
-     * Provides operations to manage the productChanges property of the microsoft.graph.identityContainer entity.
-     */
-    get productChanges(): ProductChangesRequestBuilder;
     /**
      * Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
      */
@@ -174,10 +168,6 @@ export const IdentityRequestBuilderNavigationMetadata: Record<Exclude<keyof Iden
     identityProviders: {
         requestsMetadata: IdentityProvidersRequestBuilderRequestsMetadata,
         navigationMetadata: IdentityProvidersRequestBuilderNavigationMetadata,
-    },
-    productChanges: {
-        requestsMetadata: ProductChangesRequestBuilderRequestsMetadata,
-        navigationMetadata: ProductChangesRequestBuilderNavigationMetadata,
     },
     userFlowAttributes: {
         requestsMetadata: UserFlowAttributesRequestBuilderRequestsMetadata,

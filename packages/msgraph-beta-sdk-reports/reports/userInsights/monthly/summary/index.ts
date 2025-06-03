@@ -27,21 +27,22 @@ export interface SummaryRequestBuilder extends BaseRequestBuilder<SummaryRequest
      */
      byInsightSummaryId(insightSummaryId: string) : InsightSummaryItemRequestBuilder;
     /**
-     * Summary of all usage insights on apps registered in the tenant for a specified period.
+     * Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InsightSummaryCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-summary?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SummaryRequestBuilderGetQueryParameters> | undefined) : Promise<InsightSummaryCollectionResponse | undefined>;
     /**
-     * Summary of all usage insights on apps registered in the tenant for a specified period.
+     * Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SummaryRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Summary of all usage insights on apps registered in the tenant for a specified period.
+ * Get a list of monthly  insightSummary objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
  */
 export interface SummaryRequestBuilderGetQueryParameters {
     /**

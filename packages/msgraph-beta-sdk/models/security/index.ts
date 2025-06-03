@@ -156,7 +156,7 @@ export interface Alert extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
-     * The customDetails property
+     * User defined custom fields with string values.
      */
     customDetails?: Dictionary | null;
     /**
@@ -164,7 +164,7 @@ export interface Alert extends Entity, Parsable {
      */
     description?: string | null;
     /**
-     * Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
+     * Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence.
      */
     detectionSource?: DetectionSource | null;
     /**
@@ -418,7 +418,7 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     bulkComplaintLevel?: string | null;
     /**
-     * The clientType property
+     * Shows the type of client that sent the message (for example, REST).
      */
     clientType?: string | null;
     /**
@@ -438,7 +438,7 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     distributionList?: string | null;
     /**
-     * The dlpRules property
+     * Data loss prevention rules configured in purview.
      */
     dlpRules?: AnalyzedEmailDlpRuleInfo[] | null;
     /**
@@ -450,11 +450,11 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     exchangeTransportRules?: AnalyzedEmailExchangeTransportRuleInfo[] | null;
     /**
-     * The forwardingDetail property
+     * Email smtp forwarding details.
      */
     forwardingDetail?: string | null;
     /**
-     * The inboundConnectorFormattedName property
+     * Custom instructions name that defines organizational mail flow and how the email was routed.
      */
     inboundConnectorFormattedName?: string | null;
     /**
@@ -498,15 +498,15 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     policyAction?: string | null;
     /**
-     * The policyType property
+     * Type of policy configured that defines the delivery action on email.
      */
     policyType?: string | null;
     /**
-     * The primaryOverrideSource property
+     * Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).
      */
     primaryOverrideSource?: string | null;
     /**
-     * The recipientDetail property
+     * Details of the recipients.
      */
     recipientDetail?: AnalyzedEmailRecipientDetail | null;
     /**
@@ -534,7 +534,7 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     subject?: string | null;
     /**
-     * The threatDetectionDetails property
+     * Information about threats detected in the email.
      */
     threatDetectionDetails?: ThreatDetectionDetail[] | null;
     /**
@@ -542,7 +542,7 @@ export interface AnalyzedEmail extends Entity, Parsable {
      */
     threatTypes?: ThreatType[] | null;
     /**
-     * The timelineEvents property
+     * Delivery and post-delivery events that happened to the email.
      */
     timelineEvents?: TimelineEvent[] | null;
     /**
@@ -564,7 +564,7 @@ export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedMod
      */
     detonationDetails?: DetonationDetails | null;
     /**
-     * The fileExtension property
+     * Extension of the file.
      */
     fileExtension?: string | null;
     /**
@@ -572,7 +572,7 @@ export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedMod
      */
     fileName?: string | null;
     /**
-     * The fileSize property
+     * Size of the file.
      */
     fileSize?: number | null;
     /**
@@ -580,7 +580,7 @@ export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedMod
      */
     fileType?: string | null;
     /**
-     * The malwareFamily property
+     * The threat name associated with the threat type.
      */
     malwareFamily?: string | null;
     /**
@@ -592,7 +592,7 @@ export interface AnalyzedEmailAttachment extends AdditionalDataHolder, BackedMod
      */
     sha256?: string | null;
     /**
-     * The tenantAllowBlockListDetailInfo property
+     * Details of entries in tenant allow/block list configured by tenant.
      */
     tenantAllowBlockListDetailInfo?: string | null;
     /**
@@ -650,7 +650,7 @@ export interface AnalyzedEmailDeliveryDetail extends AdditionalDataHolder, Backe
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The latestThreats property
+     * Latest known threat on the email.
      */
     latestThreats?: string | null;
     /**
@@ -662,7 +662,7 @@ export interface AnalyzedEmailDeliveryDetail extends AdditionalDataHolder, Backe
      */
     odataType?: string | null;
     /**
-     * The originalThreats property
+     * Threats identified at the time of delivery.
      */
     originalThreats?: string | null;
 }
@@ -676,7 +676,7 @@ export interface AnalyzedEmailDlpRuleInfo extends AdditionalDataHolder, BackedMo
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The name property
+     * Name of the the data loss prevention rule.
      */
     name?: string | null;
     /**
@@ -684,7 +684,7 @@ export interface AnalyzedEmailDlpRuleInfo extends AdditionalDataHolder, BackedMo
      */
     odataType?: string | null;
     /**
-     * The ruleId property
+     * Unique identifier of the data loss prevention rule.
      */
     ruleId?: string | null;
 }
@@ -720,11 +720,11 @@ export interface AnalyzedEmailRecipientDetail extends AdditionalDataHolder, Back
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The ccRecipients property
+     * Recipient address in the cc field.
      */
     ccRecipients?: string[] | null;
     /**
-     * The domainName property
+     * Domain name of the recipient.
      */
     domainName?: string | null;
     /**
@@ -742,19 +742,19 @@ export interface AnalyzedEmailSenderDetail extends AdditionalDataHolder, BackedM
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The displayName property
+     * Display name of sender from address.
      */
     displayName?: string | null;
     /**
-     * The domainCreationDateTime property
+     * Date and time of creation of the sender domain.
      */
     domainCreationDateTime?: Date | null;
     /**
-     * The domainName property
+     * Registered name of the domain.
      */
     domainName?: string | null;
     /**
-     * The domainOwner property
+     * Owner of the domain.
      */
     domainOwner?: string | null;
     /**
@@ -766,7 +766,7 @@ export interface AnalyzedEmailSenderDetail extends AdditionalDataHolder, BackedM
      */
     ipv4?: string | null;
     /**
-     * The location property
+     * Location of the domain.
      */
     location?: string | null;
     /**
@@ -774,7 +774,7 @@ export interface AnalyzedEmailSenderDetail extends AdditionalDataHolder, BackedM
      */
     mailFromAddress?: string | null;
     /**
-     * The mailFromDomainName property
+     * Domain name of sender mail from address.
      */
     mailFromDomainName?: string | null;
     /**
@@ -804,7 +804,7 @@ export interface AnalyzedEmailUrl extends AdditionalDataHolder, BackedModel, Par
      */
     odataType?: string | null;
     /**
-     * The tenantAllowBlockListDetailInfo property
+     * Details of entries in tenant allow/block list configured by tenant.
      */
     tenantAllowBlockListDetailInfo?: string | null;
     /**
@@ -1604,11 +1604,11 @@ export interface CompromiseIndicator extends AdditionalDataHolder, BackedModel, 
      */
     odataType?: string | null;
     /**
-     * The value property
+     * Indicator.
      */
     value?: string | null;
     /**
-     * The verdict property
+     * .The possible values are: none, malware, phish, siteUnavailable, spam, decryptionFailed, unsupportedUriScheme, unsupportedFileType, undefined, unknownFutureValue.
      */
     verdict?: VerdictCategory | null;
 }
@@ -15991,7 +15991,7 @@ export type DetectionSource = (typeof DetectionSourceObject)[keyof typeof Detect
 export type DetectionStatus = (typeof DetectionStatusObject)[keyof typeof DetectionStatusObject];
 export interface DetonationBehaviourDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The actionStatus property
+     * The status of the action performed during detonation (e.g., 'Successful', 'Failed', 'Blocked').
      */
     actionStatus?: string | null;
     /**
@@ -16003,19 +16003,19 @@ export interface DetonationBehaviourDetails extends AdditionalDataHolder, Backed
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The behaviourCapability property
+     * Categorizes the capability or type of behavior observed.
      */
     behaviourCapability?: string | null;
     /**
-     * The behaviourGroup property
+     * Groups related behaviors together for classification purposes.
      */
     behaviourGroup?: string | null;
     /**
-     * The details property
+     * More contextual information about the observed behavior or action.
      */
     details?: string | null;
     /**
-     * The eventDateTime property
+     * The date and time when the behavior or action was observed during detonation.
      */
     eventDateTime?: Date | null;
     /**
@@ -16023,19 +16023,19 @@ export interface DetonationBehaviourDetails extends AdditionalDataHolder, Backed
      */
     odataType?: string | null;
     /**
-     * The operation property
+     * The specific operation or action that was performed.
      */
     operation?: string | null;
     /**
-     * The processId property
+     * The unique identifier of the process involved in the behavior.
      */
     processId?: string | null;
     /**
-     * The processName property
+     * The name of the process that performed or was involved in the behavior.
      */
     processName?: string | null;
     /**
-     * The target property
+     * The target of the operation.
      */
     target?: string | null;
 }
@@ -16075,11 +16075,11 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The compromiseIndicators property
+     * Represents indicators and its associated verdict that suggests whether an email is compromised.
      */
     compromiseIndicators?: CompromiseIndicator[] | null;
     /**
-     * The detonationBehaviourDetails property
+     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
      */
     detonationBehaviourDetails?: DetonationBehaviourDetails | null;
     /**
@@ -16091,7 +16091,7 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     detonationObservables?: DetonationObservables | null;
     /**
-     * The detonationScreenshotUri property
+     * Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.
      */
     detonationScreenshotUri?: string | null;
     /**
@@ -28639,7 +28639,7 @@ export interface ThreatDetectionDetail extends AdditionalDataHolder, BackedModel
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The confidenceLevel property
+     * Indicates the confidence level in the threat detection.
      */
     confidenceLevel?: string | null;
     /**
@@ -28647,11 +28647,11 @@ export interface ThreatDetectionDetail extends AdditionalDataHolder, BackedModel
      */
     odataType?: string | null;
     /**
-     * The priorityAccountProtection property
+     * Indicates if the account has priority protection enabled.
      */
     priorityAccountProtection?: string | null;
     /**
-     * The threats property
+     * Lists the detected threats.
      */
     threats?: string | null;
 }
@@ -28804,27 +28804,27 @@ export interface TimelineEvent extends AdditionalDataHolder, BackedModel, Parsab
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The eventDateTime property
+     * The date and time when the event occurred.
      */
     eventDateTime?: Date | null;
     /**
-     * The eventDetails property
+     * Additional details or context about the event.
      */
     eventDetails?: string | null;
     /**
-     * The eventResult property
+     * The outcome or result of the event, such as delivery location or action taken.
      */
     eventResult?: string | null;
     /**
-     * The eventSource property
+     * The origin or actor that triggered the event. The possible values are: system, admin, user, unknownFutureValue.
      */
     eventSource?: EventSource | null;
     /**
-     * The eventThreats property
+     * Collection of threats identified or associated with this event.
      */
     eventThreats?: string[] | null;
     /**
-     * The eventType property
+     * The type of event that occurred. The possible values are: originalDelivery, systemTimeTravel, dynamicDelivery, userUrlClick, reprocessed, zap, quarantineRelease, air, unknown, unknownFutureValue.
      */
     eventType?: TimelineEventType | null;
     /**

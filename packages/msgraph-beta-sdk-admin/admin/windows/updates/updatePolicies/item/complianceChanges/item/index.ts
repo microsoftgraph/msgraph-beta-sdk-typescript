@@ -26,11 +26,11 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a contentApproval object.
+     * Read the properties and relationships of a complianceChange object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ComplianceChange>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ComplianceChangeItemRequestBuilderGetQueryParameters> | undefined) : Promise<ComplianceChange | undefined>;
     /**
@@ -49,7 +49,7 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a contentApproval object.
+     * Read the properties and relationships of a complianceChange object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -63,7 +63,7 @@ export interface ComplianceChangeItemRequestBuilder extends BaseRequestBuilder<C
      toPatchRequestInformation(body: ComplianceChange, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a contentApproval object.
+ * Read the properties and relationships of a complianceChange object.
  */
 export interface ComplianceChangeItemRequestBuilderGetQueryParameters {
     /**
