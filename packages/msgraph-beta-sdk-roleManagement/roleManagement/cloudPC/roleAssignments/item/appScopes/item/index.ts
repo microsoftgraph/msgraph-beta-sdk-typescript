@@ -89,6 +89,7 @@ const AppScopeItemRequestBuilderGetQueryParametersMapper: Record<string, string>
 export const AppScopeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AppScopeItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

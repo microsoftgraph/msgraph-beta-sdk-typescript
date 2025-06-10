@@ -83,6 +83,7 @@ const TaxGroupItemRequestBuilderGetQueryParametersMapper: Record<string, string>
 export const TaxGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TaxGroupItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

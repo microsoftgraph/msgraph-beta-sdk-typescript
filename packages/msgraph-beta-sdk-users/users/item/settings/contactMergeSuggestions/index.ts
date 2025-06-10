@@ -83,6 +83,7 @@ const ContactMergeSuggestionsRequestBuilderGetQueryParametersMapper: Record<stri
 export const ContactMergeSuggestionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContactMergeSuggestionsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,6 +84,7 @@ const ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParametersMapper
 export const ApplicationSignInDetailedSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ApplicationSignInDetailedSummaryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

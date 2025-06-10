@@ -84,6 +84,7 @@ const AzureADAuthenticationRequestBuilderGetQueryParametersMapper: Record<string
 export const AzureADAuthenticationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AzureADAuthenticationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

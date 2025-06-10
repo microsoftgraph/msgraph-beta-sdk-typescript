@@ -106,6 +106,7 @@ export const TenantAttachRBACRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const TenantAttachRBACRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TenantAttachRBACRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

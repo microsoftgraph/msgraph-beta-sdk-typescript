@@ -140,6 +140,7 @@ export const UnifiedRoleAssignmentMultipleItemRequestBuilderNavigationMetadata: 
 export const UnifiedRoleAssignmentMultipleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UnifiedRoleAssignmentMultipleItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

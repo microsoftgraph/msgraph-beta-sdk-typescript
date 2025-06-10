@@ -118,6 +118,7 @@ export const LogsRequestBuilderNavigationMetadata: Record<Exclude<keyof LogsRequ
 export const LogsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LogsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

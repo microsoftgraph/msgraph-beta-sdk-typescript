@@ -97,6 +97,7 @@ export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderNav
 export const WindowsInformationProtectionDeviceRegistrationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsInformationProtectionDeviceRegistrationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

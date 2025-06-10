@@ -198,6 +198,7 @@ export const DepOnboardingSettingItemRequestBuilderNavigationMetadata: Record<Ex
 export const DepOnboardingSettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DepOnboardingSettingItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

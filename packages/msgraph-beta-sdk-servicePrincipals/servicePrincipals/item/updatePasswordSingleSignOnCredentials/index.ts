@@ -89,6 +89,7 @@ export const UpdatePasswordSingleSignOnCredentialsRequestBuilderUriTemplate = "{
 export const UpdatePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdatePasswordSingleSignOnCredentialsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

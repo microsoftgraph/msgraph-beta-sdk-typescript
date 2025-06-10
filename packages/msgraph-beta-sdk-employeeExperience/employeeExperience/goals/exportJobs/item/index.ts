@@ -97,6 +97,7 @@ export const GoalsExportJobItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const GoalsExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GoalsExportJobItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

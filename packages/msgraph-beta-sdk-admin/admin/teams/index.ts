@@ -107,6 +107,7 @@ export const TeamsRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamsRe
 export const TeamsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

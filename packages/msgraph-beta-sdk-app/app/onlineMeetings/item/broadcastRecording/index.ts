@@ -61,6 +61,7 @@ export const BroadcastRecordingRequestBuilderUriTemplate = "{+baseurl}/app/onlin
 export const BroadcastRecordingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BroadcastRecordingRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -68,7 +69,7 @@ export const BroadcastRecordingRequestBuilderRequestsMetadata: RequestsMetadata 
     },
     get: {
         uriTemplate: BroadcastRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -77,6 +78,7 @@ export const BroadcastRecordingRequestBuilderRequestsMetadata: RequestsMetadata 
     },
     put: {
         uriTemplate: BroadcastRecordingRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

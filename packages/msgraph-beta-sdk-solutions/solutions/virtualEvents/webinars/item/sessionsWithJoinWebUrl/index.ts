@@ -84,6 +84,7 @@ const SessionsWithJoinWebUrlRequestBuilderGetQueryParametersMapper: Record<strin
 export const SessionsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SessionsWithJoinWebUrlRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

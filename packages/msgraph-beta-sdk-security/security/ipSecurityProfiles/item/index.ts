@@ -89,6 +89,7 @@ const IpSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<string
 export const IpSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IpSecurityProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -80,6 +80,7 @@ export const EnableRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/tena
 export const EnableRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

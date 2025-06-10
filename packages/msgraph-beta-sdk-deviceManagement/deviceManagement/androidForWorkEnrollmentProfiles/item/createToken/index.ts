@@ -80,6 +80,7 @@ export const CreateTokenRequestBuilderUriTemplate = "{+baseurl}/deviceManagement
 export const CreateTokenRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CreateTokenRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

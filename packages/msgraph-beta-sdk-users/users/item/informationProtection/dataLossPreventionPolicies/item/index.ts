@@ -83,6 +83,7 @@ const DataLossPreventionPolicyItemRequestBuilderGetQueryParametersMapper: Record
 export const DataLossPreventionPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DataLossPreventionPolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

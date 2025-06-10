@@ -99,6 +99,7 @@ export const RecordAllDecisionsRequestBuilderUriTemplate = "{+baseurl}/users/{us
 export const RecordAllDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RecordAllDecisionsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -197,6 +197,7 @@ export const CloudCertificationAuthorityItemRequestBuilderNavigationMetadata: Re
 export const CloudCertificationAuthorityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudCertificationAuthorityItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

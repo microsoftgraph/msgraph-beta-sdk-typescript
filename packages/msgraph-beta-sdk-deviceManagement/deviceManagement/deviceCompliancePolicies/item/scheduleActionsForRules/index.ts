@@ -82,6 +82,7 @@ export const ScheduleActionsForRulesRequestBuilderUriTemplate = "{+baseurl}/devi
 export const ScheduleActionsForRulesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ScheduleActionsForRulesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

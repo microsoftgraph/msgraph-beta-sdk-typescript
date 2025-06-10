@@ -169,6 +169,7 @@ export const SourceCollectionItemRequestBuilderNavigationMetadata: Record<Exclud
 export const SourceCollectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SourceCollectionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

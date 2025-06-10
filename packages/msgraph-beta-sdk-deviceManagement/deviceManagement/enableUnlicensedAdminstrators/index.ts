@@ -33,6 +33,7 @@ export const EnableUnlicensedAdminstratorsRequestBuilderUriTemplate = "{+baseurl
 export const EnableUnlicensedAdminstratorsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableUnlicensedAdminstratorsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

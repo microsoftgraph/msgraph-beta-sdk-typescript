@@ -83,6 +83,7 @@ const BusinessFlowTemplateItemRequestBuilderGetQueryParametersMapper: Record<str
 export const BusinessFlowTemplateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BusinessFlowTemplateItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -128,7 +128,7 @@ export const GetCloudPcPerformanceReportRequestBuilderUriTemplate = "{+baseurl}/
 export const GetCloudPcPerformanceReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetCloudPcPerformanceReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

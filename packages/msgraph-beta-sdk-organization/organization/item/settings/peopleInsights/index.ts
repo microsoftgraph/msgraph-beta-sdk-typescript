@@ -85,6 +85,7 @@ const PeopleInsightsRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const PeopleInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PeopleInsightsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

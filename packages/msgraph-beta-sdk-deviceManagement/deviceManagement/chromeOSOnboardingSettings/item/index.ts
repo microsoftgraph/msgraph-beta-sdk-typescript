@@ -83,6 +83,7 @@ const ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParametersMapper: Reco
 export const ChromeOSOnboardingSettingsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ChromeOSOnboardingSettingsItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

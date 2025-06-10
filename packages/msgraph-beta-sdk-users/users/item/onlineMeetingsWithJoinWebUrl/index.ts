@@ -115,6 +115,7 @@ export const OnlineMeetingsWithJoinWebUrlRequestBuilderNavigationMetadata: Recor
 export const OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OnlineMeetingsWithJoinWebUrlRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

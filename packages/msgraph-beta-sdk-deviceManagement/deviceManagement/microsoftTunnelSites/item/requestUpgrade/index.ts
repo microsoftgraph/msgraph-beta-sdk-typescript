@@ -33,6 +33,7 @@ export const RequestUpgradeRequestBuilderUriTemplate = "{+baseurl}/deviceManagem
 export const RequestUpgradeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RequestUpgradeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

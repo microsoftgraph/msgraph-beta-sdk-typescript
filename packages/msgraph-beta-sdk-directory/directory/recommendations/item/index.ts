@@ -135,6 +135,7 @@ export const RecommendationItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const RecommendationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RecommendationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

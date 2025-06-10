@@ -83,6 +83,7 @@ const CloudPcSupportedRegionItemRequestBuilderGetQueryParametersMapper: Record<s
 export const CloudPcSupportedRegionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcSupportedRegionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

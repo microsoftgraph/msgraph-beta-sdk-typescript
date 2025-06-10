@@ -105,6 +105,7 @@ export const SecurityActionItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const SecurityActionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecurityActionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -129,7 +129,7 @@ export const GetComplianceSettingsReportRequestBuilderUriTemplate = "{+baseurl}/
 export const GetComplianceSettingsReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetComplianceSettingsReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

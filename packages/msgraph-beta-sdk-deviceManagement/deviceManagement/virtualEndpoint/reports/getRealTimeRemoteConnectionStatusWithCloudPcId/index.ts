@@ -35,7 +35,7 @@ export const GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderUriTemp
 export const GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

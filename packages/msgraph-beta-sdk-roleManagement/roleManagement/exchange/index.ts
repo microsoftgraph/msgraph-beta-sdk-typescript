@@ -149,6 +149,7 @@ export const ExchangeRequestBuilderNavigationMetadata: Record<Exclude<keyof Exch
 export const ExchangeRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExchangeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

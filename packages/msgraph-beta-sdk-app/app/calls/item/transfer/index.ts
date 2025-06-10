@@ -89,6 +89,7 @@ export const TransferRequestBuilderUriTemplate = "{+baseurl}/app/calls/{call%2Di
 export const TransferRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: TransferRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

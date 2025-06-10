@@ -83,6 +83,7 @@ const DirectoryRoleAccessReviewPolicyRequestBuilderGetQueryParametersMapper: Rec
 export const DirectoryRoleAccessReviewPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DirectoryRoleAccessReviewPolicyRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -148,6 +148,7 @@ export const OnPremisesPublishingProfileItemRequestBuilderNavigationMetadata: Re
 export const OnPremisesPublishingProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OnPremisesPublishingProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

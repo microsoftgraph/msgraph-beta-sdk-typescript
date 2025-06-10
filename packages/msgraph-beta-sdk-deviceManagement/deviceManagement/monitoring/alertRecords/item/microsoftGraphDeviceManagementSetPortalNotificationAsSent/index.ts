@@ -34,6 +34,7 @@ export const MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBui
 export const MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphDeviceManagementSetPortalNotificationAsSentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

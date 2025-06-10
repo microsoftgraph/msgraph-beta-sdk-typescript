@@ -123,7 +123,7 @@ export const GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilderUriTempl
 export const GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetDeviceStatusSummaryByCompliacePolicyReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

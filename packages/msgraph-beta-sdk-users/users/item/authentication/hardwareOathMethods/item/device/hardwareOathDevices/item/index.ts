@@ -98,6 +98,7 @@ export const HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderNaviga
 export const HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: HardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

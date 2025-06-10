@@ -83,6 +83,7 @@ const SelfServiceSignUpItemRequestBuilderGetQueryParametersMapper: Record<string
 export const SelfServiceSignUpItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SelfServiceSignUpItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

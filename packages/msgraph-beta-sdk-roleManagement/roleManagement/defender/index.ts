@@ -127,6 +127,7 @@ export const DefenderRequestBuilderNavigationMetadata: Record<Exclude<keyof Defe
 export const DefenderRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DefenderRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

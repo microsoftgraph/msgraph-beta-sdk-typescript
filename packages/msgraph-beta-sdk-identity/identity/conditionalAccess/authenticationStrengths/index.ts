@@ -116,6 +116,7 @@ export const AuthenticationStrengthsRequestBuilderNavigationMetadata: Record<Exc
 export const AuthenticationStrengthsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuthenticationStrengthsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

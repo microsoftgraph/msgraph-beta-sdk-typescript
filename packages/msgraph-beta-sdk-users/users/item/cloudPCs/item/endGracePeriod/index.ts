@@ -34,6 +34,7 @@ export const EndGracePeriodRequestBuilderUriTemplate = "{+baseurl}/users/{user%2
 export const EndGracePeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EndGracePeriodRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

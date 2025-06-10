@@ -83,6 +83,7 @@ const PolicySetAssignmentItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const PolicySetAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PolicySetAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,6 +83,7 @@ const MacOSSoftwareUpdateStateSummaryItemRequestBuilderGetQueryParametersMapper:
 export const MacOSSoftwareUpdateStateSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MacOSSoftwareUpdateStateSummaryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

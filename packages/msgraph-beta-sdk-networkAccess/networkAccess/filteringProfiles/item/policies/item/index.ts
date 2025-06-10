@@ -97,6 +97,7 @@ export const PolicyLinkItemRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const PolicyLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PolicyLinkItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,6 +84,7 @@ const AccessReviewReviewerItemRequestBuilderGetQueryParametersMapper: Record<str
 export const AccessReviewReviewerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessReviewReviewerItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

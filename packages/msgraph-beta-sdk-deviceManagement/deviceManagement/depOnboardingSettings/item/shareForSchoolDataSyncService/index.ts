@@ -33,6 +33,7 @@ export const ShareForSchoolDataSyncServiceRequestBuilderUriTemplate = "{+baseurl
 export const ShareForSchoolDataSyncServiceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ShareForSchoolDataSyncServiceRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

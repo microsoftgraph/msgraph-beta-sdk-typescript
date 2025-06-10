@@ -84,6 +84,7 @@ const CloudPcFrontLineServicePlanItemRequestBuilderGetQueryParametersMapper: Rec
 export const CloudPcFrontLineServicePlanItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcFrontLineServicePlanItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

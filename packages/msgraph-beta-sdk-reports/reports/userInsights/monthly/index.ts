@@ -178,6 +178,7 @@ export const MonthlyRequestBuilderNavigationMetadata: Record<Exclude<keyof Month
 export const MonthlyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MonthlyRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

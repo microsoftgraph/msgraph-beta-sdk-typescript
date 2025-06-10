@@ -84,6 +84,7 @@ const ServicePrincipalSignInActivityItemRequestBuilderGetQueryParametersMapper: 
 export const ServicePrincipalSignInActivityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ServicePrincipalSignInActivityItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -81,6 +81,7 @@ export const ArchiveRequestBuilderUriTemplate = "{+baseurl}/planner/plans/{plann
 export const ArchiveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ArchiveRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

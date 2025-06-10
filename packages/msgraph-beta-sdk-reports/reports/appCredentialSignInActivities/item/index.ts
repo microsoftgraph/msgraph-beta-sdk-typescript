@@ -84,6 +84,7 @@ const AppCredentialSignInActivityItemRequestBuilderGetQueryParametersMapper: Rec
 export const AppCredentialSignInActivityItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AppCredentialSignInActivityItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,6 +83,7 @@ const PrivilegedOperationEventItemRequestBuilderGetQueryParametersMapper: Record
 export const PrivilegedOperationEventItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrivilegedOperationEventItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

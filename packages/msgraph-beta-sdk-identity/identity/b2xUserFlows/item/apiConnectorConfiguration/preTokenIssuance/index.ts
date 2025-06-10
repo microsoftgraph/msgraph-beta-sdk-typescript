@@ -97,6 +97,7 @@ export const PreTokenIssuanceRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const PreTokenIssuanceRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PreTokenIssuanceRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

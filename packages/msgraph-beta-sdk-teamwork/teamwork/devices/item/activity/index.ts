@@ -84,6 +84,7 @@ const ActivityRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const ActivityRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ActivityRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

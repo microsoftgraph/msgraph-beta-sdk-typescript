@@ -83,6 +83,7 @@ const ApplicableContentDeviceMatchDeviceItemRequestBuilderGetQueryParametersMapp
 export const ApplicableContentDeviceMatchDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ApplicableContentDeviceMatchDeviceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

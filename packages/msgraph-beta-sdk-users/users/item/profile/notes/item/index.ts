@@ -85,6 +85,7 @@ const PersonAnnotationItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const PersonAnnotationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PersonAnnotationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

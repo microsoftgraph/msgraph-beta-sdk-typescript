@@ -83,6 +83,7 @@ const BookingStaffMemberItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const BookingStaffMemberItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BookingStaffMemberItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

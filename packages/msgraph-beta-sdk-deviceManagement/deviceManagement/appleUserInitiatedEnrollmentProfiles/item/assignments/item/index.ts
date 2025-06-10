@@ -83,6 +83,7 @@ const AppleEnrollmentProfileAssignmentItemRequestBuilderGetQueryParametersMapper
 export const AppleEnrollmentProfileAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AppleEnrollmentProfileAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

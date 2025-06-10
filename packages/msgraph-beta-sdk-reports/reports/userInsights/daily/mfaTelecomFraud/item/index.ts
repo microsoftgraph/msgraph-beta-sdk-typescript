@@ -83,6 +83,7 @@ const MfaTelecomFraudMetricItemRequestBuilderGetQueryParametersMapper: Record<st
 export const MfaTelecomFraudMetricItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MfaTelecomFraudMetricItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

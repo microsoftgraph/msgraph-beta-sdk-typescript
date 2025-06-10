@@ -155,6 +155,7 @@ export const NoncustodialDataSourceItemRequestBuilderNavigationMetadata: Record<
 export const NoncustodialDataSourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NoncustodialDataSourceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,6 +34,7 @@ export const ReuploadRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/vi
 export const ReuploadRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ReuploadRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

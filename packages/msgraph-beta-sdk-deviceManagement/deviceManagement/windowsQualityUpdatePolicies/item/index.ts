@@ -128,6 +128,7 @@ export const WindowsQualityUpdatePolicyItemRequestBuilderNavigationMetadata: Rec
 export const WindowsQualityUpdatePolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsQualityUpdatePolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

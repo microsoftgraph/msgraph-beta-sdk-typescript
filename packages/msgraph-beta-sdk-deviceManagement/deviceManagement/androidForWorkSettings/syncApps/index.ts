@@ -33,6 +33,7 @@ export const SyncAppsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/an
 export const SyncAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SyncAppsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

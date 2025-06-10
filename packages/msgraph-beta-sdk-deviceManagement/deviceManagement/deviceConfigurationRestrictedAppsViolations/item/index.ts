@@ -83,6 +83,7 @@ const RestrictedAppsViolationItemRequestBuilderGetQueryParametersMapper: Record<
 export const RestrictedAppsViolationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RestrictedAppsViolationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

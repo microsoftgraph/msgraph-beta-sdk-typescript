@@ -34,7 +34,7 @@ export const GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderUriTempla
 export const GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

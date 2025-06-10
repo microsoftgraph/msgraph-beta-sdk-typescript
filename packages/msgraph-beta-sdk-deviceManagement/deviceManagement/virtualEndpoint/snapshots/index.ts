@@ -35,11 +35,10 @@ export interface SnapshotsRequestBuilder extends BaseRequestBuilder<SnapshotsReq
      */
      byCloudPcSnapshotId(cloudPcSnapshotId: string) : CloudPcSnapshotItemRequestBuilder;
     /**
-     * Get a list of cloudPcSnapshot objects and their properties.
+     * Cloud PC snapshots.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcSnapshotCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SnapshotsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcSnapshotCollectionResponse | undefined>;
     /**
@@ -57,7 +56,7 @@ export interface SnapshotsRequestBuilder extends BaseRequestBuilder<SnapshotsReq
      */
      post(body: CloudPcSnapshot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcSnapshot | undefined>;
     /**
-     * Get a list of cloudPcSnapshot objects and their properties.
+     * Cloud PC snapshots.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -71,7 +70,7 @@ export interface SnapshotsRequestBuilder extends BaseRequestBuilder<SnapshotsReq
      toPostRequestInformation(body: CloudPcSnapshot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of cloudPcSnapshot objects and their properties.
+ * Cloud PC snapshots.
  */
 export interface SnapshotsRequestBuilderGetQueryParameters {
     /**

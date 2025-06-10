@@ -123,7 +123,7 @@ export const GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderUriTemplate
 export const GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

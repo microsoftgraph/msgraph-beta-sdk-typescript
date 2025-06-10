@@ -35,7 +35,7 @@ export const GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderUriTem
 export const GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

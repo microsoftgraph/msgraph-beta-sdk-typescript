@@ -97,6 +97,7 @@ export const DataSharingConsentItemRequestBuilderNavigationMetadata: Record<Excl
 export const DataSharingConsentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DataSharingConsentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

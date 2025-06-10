@@ -128,6 +128,7 @@ export const ManagedAppRegistrationItemRequestBuilderNavigationMetadata: Record<
 export const ManagedAppRegistrationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedAppRegistrationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

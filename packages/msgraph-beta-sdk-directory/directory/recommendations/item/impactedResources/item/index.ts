@@ -125,6 +125,7 @@ export const ImpactedResourceItemRequestBuilderNavigationMetadata: Record<Exclud
 export const ImpactedResourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ImpactedResourceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

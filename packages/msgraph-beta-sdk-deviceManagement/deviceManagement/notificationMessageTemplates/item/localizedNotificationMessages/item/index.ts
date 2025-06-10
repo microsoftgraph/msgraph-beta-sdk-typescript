@@ -83,6 +83,7 @@ const LocalizedNotificationMessageItemRequestBuilderGetQueryParametersMapper: Re
 export const LocalizedNotificationMessageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LocalizedNotificationMessageItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -85,6 +85,7 @@ const AppsAndServicesRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const AppsAndServicesRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AppsAndServicesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

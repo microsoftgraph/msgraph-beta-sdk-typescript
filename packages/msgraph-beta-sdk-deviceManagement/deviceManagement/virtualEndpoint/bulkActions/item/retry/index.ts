@@ -80,6 +80,7 @@ export const RetryRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtu
 export const RetryRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetryRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

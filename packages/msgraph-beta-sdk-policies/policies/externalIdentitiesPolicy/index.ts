@@ -85,6 +85,7 @@ const ExternalIdentitiesPolicyRequestBuilderGetQueryParametersMapper: Record<str
 export const ExternalIdentitiesPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExternalIdentitiesPolicyRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

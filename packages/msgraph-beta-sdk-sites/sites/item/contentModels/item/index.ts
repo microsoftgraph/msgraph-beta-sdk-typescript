@@ -116,6 +116,7 @@ export const ContentModelItemRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const ContentModelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContentModelItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

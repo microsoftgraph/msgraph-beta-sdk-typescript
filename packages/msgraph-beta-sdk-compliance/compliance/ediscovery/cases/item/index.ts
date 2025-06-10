@@ -205,6 +205,7 @@ export const CaseItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Case
 export const CaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CaseItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

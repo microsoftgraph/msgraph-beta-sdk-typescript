@@ -80,6 +80,7 @@ export const MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationA
 export const MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

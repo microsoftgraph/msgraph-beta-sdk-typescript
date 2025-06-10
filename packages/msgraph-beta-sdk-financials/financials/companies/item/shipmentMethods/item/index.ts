@@ -83,6 +83,7 @@ const ShipmentMethodItemRequestBuilderGetQueryParametersMapper: Record<string, s
 export const ShipmentMethodItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ShipmentMethodItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

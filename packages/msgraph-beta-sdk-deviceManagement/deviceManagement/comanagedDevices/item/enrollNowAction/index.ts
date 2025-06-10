@@ -33,6 +33,7 @@ export const EnrollNowActionRequestBuilderUriTemplate = "{+baseurl}/deviceManage
 export const EnrollNowActionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnrollNowActionRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

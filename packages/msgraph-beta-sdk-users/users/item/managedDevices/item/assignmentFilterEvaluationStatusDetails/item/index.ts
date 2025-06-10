@@ -83,6 +83,7 @@ const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetQueryParameter
 export const AssignmentFilterEvaluationStatusDetailsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AssignmentFilterEvaluationStatusDetailsItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -99,6 +99,7 @@ export const FilteringPolicyItemRequestBuilderNavigationMetadata: Record<Exclude
 export const FilteringPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: FilteringPolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

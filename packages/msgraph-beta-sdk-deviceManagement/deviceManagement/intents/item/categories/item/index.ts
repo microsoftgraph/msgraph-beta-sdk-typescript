@@ -108,6 +108,7 @@ export const DeviceManagementIntentSettingCategoryItemRequestBuilderNavigationMe
 export const DeviceManagementIntentSettingCategoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementIntentSettingCategoryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

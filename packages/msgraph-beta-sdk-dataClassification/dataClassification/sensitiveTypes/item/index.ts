@@ -83,6 +83,7 @@ const SensitiveTypeItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const SensitiveTypeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SensitiveTypeItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

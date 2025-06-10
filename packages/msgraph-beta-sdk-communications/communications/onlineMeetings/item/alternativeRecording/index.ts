@@ -61,6 +61,7 @@ export const AlternativeRecordingRequestBuilderUriTemplate = "{+baseurl}/communi
 export const AlternativeRecordingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AlternativeRecordingRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -68,7 +69,7 @@ export const AlternativeRecordingRequestBuilderRequestsMetadata: RequestsMetadat
     },
     get: {
         uriTemplate: AlternativeRecordingRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -77,6 +78,7 @@ export const AlternativeRecordingRequestBuilderRequestsMetadata: RequestsMetadat
     },
     put: {
         uriTemplate: AlternativeRecordingRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,6 +33,7 @@ export const AllowNextEnrollmentRequestBuilderUriTemplate = "{+baseurl}/deviceMa
 export const AllowNextEnrollmentRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: AllowNextEnrollmentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

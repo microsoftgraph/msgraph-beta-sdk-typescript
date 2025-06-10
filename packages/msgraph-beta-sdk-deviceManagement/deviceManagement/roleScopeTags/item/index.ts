@@ -107,6 +107,7 @@ export const RoleScopeTagItemRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const RoleScopeTagItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoleScopeTagItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -98,6 +98,7 @@ export const CustomerPaymentItemRequestBuilderNavigationMetadata: Record<Exclude
 export const CustomerPaymentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomerPaymentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

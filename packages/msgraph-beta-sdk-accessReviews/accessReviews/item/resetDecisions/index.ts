@@ -34,6 +34,7 @@ export const ResetDecisionsRequestBuilderUriTemplate = "{+baseurl}/accessReviews
 export const ResetDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ResetDecisionsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,6 +84,7 @@ const CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParametersMap
 export const CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CrossCloudGovernmentOrganizationMappingRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

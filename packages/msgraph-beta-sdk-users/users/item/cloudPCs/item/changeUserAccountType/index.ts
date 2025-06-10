@@ -83,6 +83,7 @@ export const ChangeUserAccountTypeRequestBuilderUriTemplate = "{+baseurl}/users/
 export const ChangeUserAccountTypeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ChangeUserAccountTypeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

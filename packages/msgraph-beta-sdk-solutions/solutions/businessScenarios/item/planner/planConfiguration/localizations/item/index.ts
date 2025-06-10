@@ -83,6 +83,7 @@ const PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParametersMa
 export const PlannerPlanConfigurationLocalizationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PlannerPlanConfigurationLocalizationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -83,6 +83,7 @@ const SecurityBaselineSettingStateItemRequestBuilderGetQueryParametersMapper: Re
 export const SecurityBaselineSettingStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SecurityBaselineSettingStateItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

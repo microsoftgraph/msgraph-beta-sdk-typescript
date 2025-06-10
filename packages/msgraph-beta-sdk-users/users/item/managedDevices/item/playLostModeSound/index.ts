@@ -80,6 +80,7 @@ export const PlayLostModeSoundRequestBuilderUriTemplate = "{+baseurl}/users/{use
 export const PlayLostModeSoundRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PlayLostModeSoundRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

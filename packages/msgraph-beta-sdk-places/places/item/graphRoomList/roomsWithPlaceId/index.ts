@@ -83,6 +83,7 @@ const RoomsWithPlaceIdRequestBuilderGetQueryParametersMapper: Record<string, str
 export const RoomsWithPlaceIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoomsWithPlaceIdRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

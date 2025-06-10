@@ -33,6 +33,7 @@ export const InitiateDeviceAttestationRequestBuilderUriTemplate = "{+baseurl}/us
 export const InitiateDeviceAttestationRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: InitiateDeviceAttestationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -129,7 +129,7 @@ export const GetZebraFotaDeploymentReportRequestBuilderUriTemplate = "{+baseurl}
 export const GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetZebraFotaDeploymentReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

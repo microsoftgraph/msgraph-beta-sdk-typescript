@@ -80,6 +80,7 @@ export const SetPriorityRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did
 export const SetPriorityRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetPriorityRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

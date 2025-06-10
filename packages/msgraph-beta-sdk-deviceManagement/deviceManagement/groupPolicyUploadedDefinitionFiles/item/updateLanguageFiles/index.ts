@@ -82,6 +82,7 @@ export const UpdateLanguageFilesRequestBuilderUriTemplate = "{+baseurl}/deviceMa
 export const UpdateLanguageFilesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateLanguageFilesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

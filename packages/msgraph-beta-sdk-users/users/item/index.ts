@@ -1247,6 +1247,7 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
 export const UserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

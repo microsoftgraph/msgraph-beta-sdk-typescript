@@ -85,6 +85,7 @@ const ItemPhoneItemRequestBuilderGetQueryParametersMapper: Record<string, string
 export const ItemPhoneItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ItemPhoneItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

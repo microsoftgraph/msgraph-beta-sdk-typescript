@@ -83,7 +83,7 @@ export const DownloadAppDiagnosticsRequestBuilderUriTemplate = "{+baseurl}/users
 export const DownloadAppDiagnosticsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DownloadAppDiagnosticsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

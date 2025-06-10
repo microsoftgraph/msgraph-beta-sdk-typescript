@@ -83,6 +83,7 @@ const LanguageProficiencyItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const LanguageProficiencyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LanguageProficiencyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

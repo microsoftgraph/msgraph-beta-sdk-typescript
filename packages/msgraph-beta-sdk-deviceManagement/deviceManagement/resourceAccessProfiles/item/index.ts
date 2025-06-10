@@ -107,6 +107,7 @@ export const DeviceManagementResourceAccessProfileBaseItemRequestBuilderNavigati
 export const DeviceManagementResourceAccessProfileBaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementResourceAccessProfileBaseItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

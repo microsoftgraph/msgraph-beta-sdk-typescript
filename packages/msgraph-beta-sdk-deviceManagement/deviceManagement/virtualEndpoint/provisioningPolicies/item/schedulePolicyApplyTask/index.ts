@@ -83,6 +83,7 @@ export const SchedulePolicyApplyTaskRequestBuilderUriTemplate = "{+baseurl}/devi
 export const SchedulePolicyApplyTaskRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SchedulePolicyApplyTaskRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

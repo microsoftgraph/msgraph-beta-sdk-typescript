@@ -83,6 +83,7 @@ const WindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetQueryParametersM
 export const WindowsFeatureUpdateProfileAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsFeatureUpdateProfileAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -108,6 +108,7 @@ export const CertificateAuthoritiesRequestBuilderNavigationMetadata: Record<Excl
 export const CertificateAuthoritiesRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CertificateAuthoritiesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

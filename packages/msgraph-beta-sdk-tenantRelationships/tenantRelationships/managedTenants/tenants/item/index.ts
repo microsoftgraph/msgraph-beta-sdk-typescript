@@ -107,6 +107,7 @@ export const TenantItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Te
 export const TenantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TenantItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

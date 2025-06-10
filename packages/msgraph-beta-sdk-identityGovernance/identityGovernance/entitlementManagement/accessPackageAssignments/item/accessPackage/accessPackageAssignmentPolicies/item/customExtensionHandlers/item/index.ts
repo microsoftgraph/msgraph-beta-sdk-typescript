@@ -104,6 +104,7 @@ export const CustomExtensionHandlerItemRequestBuilderNavigationMetadata: Record<
 export const CustomExtensionHandlerItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustomExtensionHandlerItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

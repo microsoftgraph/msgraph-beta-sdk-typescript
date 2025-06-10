@@ -106,6 +106,7 @@ export const KnownIssueItemRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const KnownIssueItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: KnownIssueItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

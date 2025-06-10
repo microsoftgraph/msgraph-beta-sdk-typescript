@@ -108,6 +108,7 @@ export const AwsRequestBuilderNavigationMetadata: Record<Exclude<keyof AwsReques
 export const AwsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AwsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

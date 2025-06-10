@@ -36,6 +36,7 @@ export const MicrosoftGraphEdiscoveryPurgeDataRequestBuilderUriTemplate = "{+bas
 export const MicrosoftGraphEdiscoveryPurgeDataRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryPurgeDataRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

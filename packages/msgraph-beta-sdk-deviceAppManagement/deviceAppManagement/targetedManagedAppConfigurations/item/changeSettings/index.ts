@@ -82,6 +82,7 @@ export const ChangeSettingsRequestBuilderUriTemplate = "{+baseurl}/deviceAppMana
 export const ChangeSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ChangeSettingsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

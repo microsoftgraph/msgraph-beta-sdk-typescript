@@ -88,6 +88,7 @@ export const OverrideComplianceStateRequestBuilderUriTemplate = "{+baseurl}/user
 export const OverrideComplianceStateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: OverrideComplianceStateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

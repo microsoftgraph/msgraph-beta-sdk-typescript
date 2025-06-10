@@ -97,6 +97,7 @@ export const WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
 export const WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -40,12 +40,12 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
-     * Update the properties of a oneRosterApiDataConnector object.
+     * Update the properties of an azureDataLakeConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IndustryDataConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-onerosterapidataconnector-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: IndustryDataConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IndustryDataConnector | undefined>;
     /**
@@ -61,7 +61,7 @@ export interface IndustryDataConnectorItemRequestBuilder extends BaseRequestBuil
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a oneRosterApiDataConnector object.
+     * Update the properties of an azureDataLakeConnector object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -109,6 +109,7 @@ export const IndustryDataConnectorItemRequestBuilderNavigationMetadata: Record<E
 export const IndustryDataConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IndustryDataConnectorItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

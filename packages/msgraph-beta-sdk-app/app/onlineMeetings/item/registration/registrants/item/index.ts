@@ -89,6 +89,7 @@ const MeetingRegistrantBaseItemRequestBuilderGetQueryParametersMapper: Record<st
 export const MeetingRegistrantBaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MeetingRegistrantBaseItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

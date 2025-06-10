@@ -176,6 +176,7 @@ export const BookingBusinessItemRequestBuilderNavigationMetadata: Record<Exclude
 export const BookingBusinessItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: BookingBusinessItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

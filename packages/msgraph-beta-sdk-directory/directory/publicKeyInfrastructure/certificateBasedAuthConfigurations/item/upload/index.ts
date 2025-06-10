@@ -87,6 +87,7 @@ export const UploadRequestBuilderUriTemplate = "{+baseurl}/directory/publicKeyIn
 export const UploadRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UploadRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

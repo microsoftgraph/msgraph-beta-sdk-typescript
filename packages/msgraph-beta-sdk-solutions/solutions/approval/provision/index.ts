@@ -34,6 +34,7 @@ export const ProvisionRequestBuilderUriTemplate = "{+baseurl}/solutions/approval
 export const ProvisionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ProvisionRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

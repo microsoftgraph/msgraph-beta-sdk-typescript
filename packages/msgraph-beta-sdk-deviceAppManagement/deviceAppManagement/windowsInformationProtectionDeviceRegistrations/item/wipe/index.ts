@@ -33,6 +33,7 @@ export const WipeRequestBuilderUriTemplate = "{+baseurl}/deviceAppManagement/win
 export const WipeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: WipeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,6 +33,7 @@ export const StopApplyDecisionsRequestBuilderUriTemplate = "{+baseurl}/identityG
 export const StopApplyDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: StopApplyDecisionsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

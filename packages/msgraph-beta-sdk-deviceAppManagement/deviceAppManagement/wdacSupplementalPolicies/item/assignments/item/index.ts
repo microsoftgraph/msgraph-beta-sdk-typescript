@@ -83,6 +83,7 @@ const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBu
 export const WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

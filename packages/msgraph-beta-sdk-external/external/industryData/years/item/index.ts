@@ -86,6 +86,7 @@ const YearTimePeriodDefinitionItemRequestBuilderGetQueryParametersMapper: Record
 export const YearTimePeriodDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: YearTimePeriodDefinitionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

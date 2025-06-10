@@ -81,6 +81,7 @@ export const ResizeRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virt
 export const ResizeRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ResizeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,6 +34,7 @@ export const RunDiagnosticsRequestBuilderUriTemplate = "{+baseurl}/teamwork/devi
 export const RunDiagnosticsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RunDiagnosticsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

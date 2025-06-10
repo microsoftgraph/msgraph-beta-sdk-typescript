@@ -83,6 +83,7 @@ const JobResponseBaseItemRequestBuilderGetQueryParametersMapper: Record<string, 
 export const JobResponseBaseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: JobResponseBaseItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

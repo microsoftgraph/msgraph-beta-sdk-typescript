@@ -85,6 +85,7 @@ const ContactInsightsRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const ContactInsightsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContactInsightsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

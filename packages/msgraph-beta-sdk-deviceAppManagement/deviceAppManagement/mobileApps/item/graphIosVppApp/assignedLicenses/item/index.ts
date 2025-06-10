@@ -83,6 +83,7 @@ const IosVppAppAssignedLicenseItemRequestBuilderGetQueryParametersMapper: Record
 export const IosVppAppAssignedLicenseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IosVppAppAssignedLicenseItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

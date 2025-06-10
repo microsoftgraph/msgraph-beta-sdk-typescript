@@ -97,6 +97,7 @@ export const TenantReferenceTenantItemRequestBuilderNavigationMetadata: Record<E
 export const TenantReferenceTenantItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TenantReferenceTenantItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

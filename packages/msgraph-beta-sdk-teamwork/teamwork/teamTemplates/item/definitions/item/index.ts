@@ -99,6 +99,7 @@ export const TeamTemplateDefinitionItemRequestBuilderNavigationMetadata: Record<
 export const TeamTemplateDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamTemplateDefinitionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

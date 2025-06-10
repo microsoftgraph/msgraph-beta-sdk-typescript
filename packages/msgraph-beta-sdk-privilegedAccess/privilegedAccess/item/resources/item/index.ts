@@ -137,6 +137,7 @@ export const GovernanceResourceItemRequestBuilderNavigationMetadata: Record<Excl
 export const GovernanceResourceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: GovernanceResourceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

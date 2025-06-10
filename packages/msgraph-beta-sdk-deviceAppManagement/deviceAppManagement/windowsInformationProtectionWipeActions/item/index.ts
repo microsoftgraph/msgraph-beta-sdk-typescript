@@ -83,6 +83,7 @@ const WindowsInformationProtectionWipeActionItemRequestBuilderGetQueryParameters
 export const WindowsInformationProtectionWipeActionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsInformationProtectionWipeActionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

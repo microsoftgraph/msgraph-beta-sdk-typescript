@@ -98,6 +98,7 @@ export const ManagementTemplateCollectionItemRequestBuilderNavigationMetadata: R
 export const ManagementTemplateCollectionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagementTemplateCollectionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

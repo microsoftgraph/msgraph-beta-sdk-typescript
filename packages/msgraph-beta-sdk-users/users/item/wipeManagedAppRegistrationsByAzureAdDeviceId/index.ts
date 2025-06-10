@@ -80,6 +80,7 @@ export const WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderUriTempla
 export const WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

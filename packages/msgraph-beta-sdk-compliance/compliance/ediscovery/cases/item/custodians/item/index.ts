@@ -189,6 +189,7 @@ export const CustodianItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const CustodianItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CustodianItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

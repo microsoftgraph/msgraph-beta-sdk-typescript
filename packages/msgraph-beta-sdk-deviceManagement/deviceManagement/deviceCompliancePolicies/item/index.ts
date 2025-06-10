@@ -174,6 +174,7 @@ export const DeviceCompliancePolicyItemRequestBuilderNavigationMetadata: Record<
 export const DeviceCompliancePolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceCompliancePolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

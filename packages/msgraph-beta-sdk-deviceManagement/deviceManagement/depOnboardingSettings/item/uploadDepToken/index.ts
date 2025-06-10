@@ -86,6 +86,7 @@ export const UploadDepTokenRequestBuilderUriTemplate = "{+baseurl}/deviceManagem
 export const UploadDepTokenRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UploadDepTokenRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

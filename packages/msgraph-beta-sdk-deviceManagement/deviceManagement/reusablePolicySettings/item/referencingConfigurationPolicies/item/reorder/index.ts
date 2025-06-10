@@ -80,6 +80,7 @@ export const ReorderRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/reu
 export const ReorderRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ReorderRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

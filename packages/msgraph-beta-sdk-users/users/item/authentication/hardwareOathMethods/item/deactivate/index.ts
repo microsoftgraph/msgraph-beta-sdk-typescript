@@ -34,6 +34,7 @@ export const DeactivateRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}
 export const DeactivateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DeactivateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

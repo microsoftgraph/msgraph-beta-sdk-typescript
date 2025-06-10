@@ -167,6 +167,7 @@ export const PrinterItemRequestBuilderNavigationMetadata: Record<Exclude<keyof P
 export const PrinterItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrinterItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

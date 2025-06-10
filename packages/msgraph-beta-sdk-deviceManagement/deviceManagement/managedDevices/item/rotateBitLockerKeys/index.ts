@@ -33,6 +33,7 @@ export const RotateBitLockerKeysRequestBuilderUriTemplate = "{+baseurl}/deviceMa
 export const RotateBitLockerKeysRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RotateBitLockerKeysRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

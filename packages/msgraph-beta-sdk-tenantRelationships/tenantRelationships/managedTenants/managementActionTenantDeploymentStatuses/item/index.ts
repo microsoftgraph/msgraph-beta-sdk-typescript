@@ -84,6 +84,7 @@ const ManagementActionTenantDeploymentStatusItemRequestBuilderGetQueryParameters
 export const ManagementActionTenantDeploymentStatusItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagementActionTenantDeploymentStatusItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

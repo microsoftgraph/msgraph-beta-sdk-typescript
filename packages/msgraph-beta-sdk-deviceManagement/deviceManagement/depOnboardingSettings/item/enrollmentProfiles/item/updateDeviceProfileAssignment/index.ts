@@ -80,6 +80,7 @@ export const UpdateDeviceProfileAssignmentRequestBuilderUriTemplate = "{+baseurl
 export const UpdateDeviceProfileAssignmentRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateDeviceProfileAssignmentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

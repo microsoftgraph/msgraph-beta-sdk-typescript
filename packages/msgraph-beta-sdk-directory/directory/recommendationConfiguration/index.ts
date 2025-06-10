@@ -85,6 +85,7 @@ const RecommendationConfigurationRequestBuilderGetQueryParametersMapper: Record<
 export const RecommendationConfigurationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RecommendationConfigurationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

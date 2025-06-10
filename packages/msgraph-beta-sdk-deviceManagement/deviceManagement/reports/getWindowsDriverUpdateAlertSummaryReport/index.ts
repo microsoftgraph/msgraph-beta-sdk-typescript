@@ -129,7 +129,7 @@ export const GetWindowsDriverUpdateAlertSummaryReportRequestBuilderUriTemplate =
 export const GetWindowsDriverUpdateAlertSummaryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetWindowsDriverUpdateAlertSummaryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

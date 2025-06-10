@@ -83,6 +83,7 @@ const SharedEmailDomainInvitationItemRequestBuilderGetQueryParametersMapper: Rec
 export const SharedEmailDomainInvitationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SharedEmailDomainInvitationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -97,6 +97,7 @@ export const EntraRequestBuilderNavigationMetadata: Record<Exclude<keyof EntraRe
 export const EntraRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EntraRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,6 +33,7 @@ export const PromoteToInitialRequestBuilderUriTemplate = "{+baseurl}/domains/{do
 export const PromoteToInitialRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PromoteToInitialRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

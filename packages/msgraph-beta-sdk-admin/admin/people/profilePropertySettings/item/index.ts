@@ -86,6 +86,7 @@ const ProfilePropertySettingItemRequestBuilderGetQueryParametersMapper: Record<s
 export const ProfilePropertySettingItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProfilePropertySettingItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

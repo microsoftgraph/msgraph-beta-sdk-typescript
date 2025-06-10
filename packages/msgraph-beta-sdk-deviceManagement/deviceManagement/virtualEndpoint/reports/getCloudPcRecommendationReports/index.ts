@@ -128,7 +128,7 @@ export const GetCloudPcRecommendationReportsRequestBuilderUriTemplate = "{+baseu
 export const GetCloudPcRecommendationReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetCloudPcRecommendationReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

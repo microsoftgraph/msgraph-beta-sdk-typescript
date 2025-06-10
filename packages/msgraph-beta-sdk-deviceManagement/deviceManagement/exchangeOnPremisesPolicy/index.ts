@@ -97,6 +97,7 @@ export const ExchangeOnPremisesPolicyRequestBuilderNavigationMetadata: Record<Ex
 export const ExchangeOnPremisesPolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExchangeOnPremisesPolicyRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

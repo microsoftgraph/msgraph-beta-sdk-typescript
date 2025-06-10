@@ -108,6 +108,7 @@ export const OnPremisesAgentGroupItemRequestBuilderNavigationMetadata: Record<Ex
 export const OnPremisesAgentGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OnPremisesAgentGroupItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

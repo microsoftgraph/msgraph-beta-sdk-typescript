@@ -107,6 +107,7 @@ export const PrivilegedApprovalItemRequestBuilderNavigationMetadata: Record<Excl
 export const PrivilegedApprovalItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrivilegedApprovalItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

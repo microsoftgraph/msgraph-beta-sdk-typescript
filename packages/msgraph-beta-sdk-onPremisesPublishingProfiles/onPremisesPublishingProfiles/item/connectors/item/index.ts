@@ -98,6 +98,7 @@ export const ConnectorItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const ConnectorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConnectorItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,6 +84,7 @@ const ConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParametersMapper:
 export const ConditionalAccessPolicyCoverageItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConditionalAccessPolicyCoverageItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -129,7 +129,7 @@ export const GetAppsInstallSummaryReportRequestBuilderUriTemplate = "{+baseurl}/
 export const GetAppsInstallSummaryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetAppsInstallSummaryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

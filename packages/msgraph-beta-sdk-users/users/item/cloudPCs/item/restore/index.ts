@@ -81,6 +81,7 @@ export const RestoreRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cl
 export const RestoreRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RestoreRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

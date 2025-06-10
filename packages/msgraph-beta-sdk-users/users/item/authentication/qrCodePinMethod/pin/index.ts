@@ -98,6 +98,7 @@ export const PinRequestBuilderNavigationMetadata: Record<Exclude<keyof PinReques
 export const PinRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PinRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

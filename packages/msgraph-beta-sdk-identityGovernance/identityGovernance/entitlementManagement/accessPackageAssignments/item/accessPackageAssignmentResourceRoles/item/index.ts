@@ -128,6 +128,7 @@ export const AccessPackageAssignmentResourceRoleItemRequestBuilderNavigationMeta
 export const AccessPackageAssignmentResourceRoleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessPackageAssignmentResourceRoleItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

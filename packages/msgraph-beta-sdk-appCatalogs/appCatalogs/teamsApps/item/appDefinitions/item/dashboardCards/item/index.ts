@@ -83,6 +83,7 @@ const TeamsAppDashboardCardDefinitionItemRequestBuilderGetQueryParametersMapper:
 export const TeamsAppDashboardCardDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamsAppDashboardCardDefinitionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

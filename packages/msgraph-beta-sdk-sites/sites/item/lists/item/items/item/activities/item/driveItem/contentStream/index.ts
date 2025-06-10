@@ -49,7 +49,7 @@ export const ContentStreamRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2D
 export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -58,6 +58,7 @@ export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     put: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

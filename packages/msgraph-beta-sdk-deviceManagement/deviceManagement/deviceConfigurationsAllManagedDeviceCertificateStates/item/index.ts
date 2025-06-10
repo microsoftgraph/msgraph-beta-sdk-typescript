@@ -83,6 +83,7 @@ const ManagedAllDeviceCertificateStateItemRequestBuilderGetQueryParametersMapper
 export const ManagedAllDeviceCertificateStateItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedAllDeviceCertificateStateItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,6 +34,7 @@ export const StartRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/virtu
 export const StartRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: StartRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

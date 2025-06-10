@@ -346,6 +346,7 @@ export const MobileAppItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const MobileAppItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MobileAppItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

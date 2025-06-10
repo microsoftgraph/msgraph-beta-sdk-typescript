@@ -35,6 +35,7 @@ export const ResetDefaultsRequestBuilderUriTemplate = "{+baseurl}/print/printers
 export const ResetDefaultsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ResetDefaultsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

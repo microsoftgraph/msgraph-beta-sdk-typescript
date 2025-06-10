@@ -33,6 +33,7 @@ export const UnblockManagedAppsRequestBuilderUriTemplate = "{+baseurl}/users/{us
 export const UnblockManagedAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UnblockManagedAppsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

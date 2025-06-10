@@ -83,6 +83,7 @@ const CloudPCConnectivityIssueItemRequestBuilderGetQueryParametersMapper: Record
 export const CloudPCConnectivityIssueItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPCConnectivityIssueItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -6,8 +6,6 @@ import { createCloudPCCollectionResponseFromDiscriminatorValue, createCloudPCFro
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { BulkResizeRequestBuilderRequestsMetadata, type BulkResizeRequestBuilder } from './bulkResize/index.js';
-// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderRequestsMetadata, type GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder } from './getProvisionedCloudPCsWithGroupIdWithServicePlanId/index.js';
@@ -22,10 +20,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
  */
 export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsRequestBuilder> {
-    /**
-     * Provides operations to call the bulkResize method.
-     */
-    get bulkResize(): BulkResizeRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -142,9 +136,6 @@ export const CloudPCsRequestBuilderNavigationMetadata: Record<Exclude<keyof Clou
     getProvisionedCloudPCsWithGroupIdWithServicePlanId: {
         requestsMetadata: GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderRequestsMetadata,
         pathParametersMappings: ["groupId", "servicePlanId"],
-    },
-    bulkResize: {
-        requestsMetadata: BulkResizeRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

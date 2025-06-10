@@ -176,6 +176,7 @@ export const AccessPackageCatalogItemRequestBuilderNavigationMetadata: Record<Ex
 export const AccessPackageCatalogItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessPackageCatalogItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

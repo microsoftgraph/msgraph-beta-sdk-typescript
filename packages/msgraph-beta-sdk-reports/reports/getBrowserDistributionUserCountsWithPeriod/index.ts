@@ -34,7 +34,7 @@ export const GetBrowserDistributionUserCountsWithPeriodRequestBuilderUriTemplate
 export const GetBrowserDistributionUserCountsWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetBrowserDistributionUserCountsWithPeriodRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
