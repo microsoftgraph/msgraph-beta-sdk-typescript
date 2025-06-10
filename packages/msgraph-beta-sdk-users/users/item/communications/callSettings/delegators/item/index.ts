@@ -83,6 +83,7 @@ const DelegationSettingsItemRequestBuilderGetQueryParametersMapper: Record<strin
 export const DelegationSettingsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DelegationSettingsItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

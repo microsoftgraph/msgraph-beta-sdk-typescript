@@ -83,6 +83,7 @@ const PrivilegeManagementElevationItemRequestBuilderGetQueryParametersMapper: Re
 export const PrivilegeManagementElevationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrivilegeManagementElevationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

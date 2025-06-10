@@ -33,6 +33,7 @@ export const ReenableRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/ma
 export const ReenableRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ReenableRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

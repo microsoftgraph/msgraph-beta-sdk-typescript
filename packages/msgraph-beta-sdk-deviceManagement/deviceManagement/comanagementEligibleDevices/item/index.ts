@@ -83,6 +83,7 @@ const ComanagementEligibleDeviceItemRequestBuilderGetQueryParametersMapper: Reco
 export const ComanagementEligibleDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ComanagementEligibleDeviceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

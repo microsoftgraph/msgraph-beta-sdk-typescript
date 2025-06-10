@@ -80,6 +80,7 @@ export const DeleteRequestBuilderUriTemplate = "{+baseurl}/groups/{group%2Did}/s
 export const DeleteRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DeleteRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

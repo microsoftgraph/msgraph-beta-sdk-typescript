@@ -34,6 +34,7 @@ export const ApplyDecisionsRequestBuilderUriTemplate = "{+baseurl}/accessReviews
 export const ApplyDecisionsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ApplyDecisionsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

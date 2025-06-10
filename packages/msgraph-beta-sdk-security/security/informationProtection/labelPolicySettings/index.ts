@@ -83,6 +83,7 @@ const LabelPolicySettingsRequestBuilderGetQueryParametersMapper: Record<string, 
 export const LabelPolicySettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LabelPolicySettingsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

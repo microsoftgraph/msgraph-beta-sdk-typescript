@@ -413,6 +413,7 @@ export const ServiceActivityRequestBuilderNavigationMetadata: Record<Exclude<key
 export const ServiceActivityRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ServiceActivityRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -92,6 +92,7 @@ export const AssignResourceAccountToDeviceRequestBuilderUriTemplate = "{+baseurl
 export const AssignResourceAccountToDeviceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: AssignResourceAccountToDeviceRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,6 +84,7 @@ const ManagedDeviceComplianceItemRequestBuilderGetQueryParametersMapper: Record<
 export const ManagedDeviceComplianceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedDeviceComplianceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

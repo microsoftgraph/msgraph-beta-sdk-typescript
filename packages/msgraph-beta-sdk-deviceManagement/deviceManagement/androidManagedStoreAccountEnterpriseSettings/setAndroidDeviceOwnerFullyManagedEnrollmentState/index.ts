@@ -80,6 +80,7 @@ export const SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderUriTe
 export const SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

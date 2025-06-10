@@ -98,6 +98,7 @@ export const AuthorizationPolicyItemRequestBuilderNavigationMetadata: Record<Exc
 export const AuthorizationPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuthorizationPolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

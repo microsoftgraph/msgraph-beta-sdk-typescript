@@ -92,6 +92,7 @@ export const SendCustomNotificationToCompanyPortalRequestBuilderUriTemplate = "{
 export const SendCustomNotificationToCompanyPortalRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SendCustomNotificationToCompanyPortalRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

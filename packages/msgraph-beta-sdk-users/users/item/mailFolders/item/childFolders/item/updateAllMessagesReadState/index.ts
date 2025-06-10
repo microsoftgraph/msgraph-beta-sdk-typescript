@@ -89,6 +89,7 @@ export const UpdateAllMessagesReadStateRequestBuilderUriTemplate = "{+baseurl}/u
 export const UpdateAllMessagesReadStateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateAllMessagesReadStateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

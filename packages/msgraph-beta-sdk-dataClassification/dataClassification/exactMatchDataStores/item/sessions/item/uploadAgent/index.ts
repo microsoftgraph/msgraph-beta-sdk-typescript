@@ -83,6 +83,7 @@ const UploadAgentRequestBuilderGetQueryParametersMapper: Record<string, string> 
 export const UploadAgentRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UploadAgentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

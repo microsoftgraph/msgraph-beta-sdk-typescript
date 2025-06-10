@@ -33,6 +33,7 @@ export const EnableAndroidDeviceAdministratorEnrollmentRequestBuilderUriTemplate
 export const EnableAndroidDeviceAdministratorEnrollmentRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableAndroidDeviceAdministratorEnrollmentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

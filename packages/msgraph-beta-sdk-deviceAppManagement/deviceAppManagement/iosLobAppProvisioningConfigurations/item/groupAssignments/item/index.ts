@@ -83,6 +83,7 @@ const MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetQueryParame
 export const MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

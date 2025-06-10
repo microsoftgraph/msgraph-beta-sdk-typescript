@@ -86,6 +86,7 @@ export const ApproveAppsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement
 export const ApproveAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ApproveAppsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

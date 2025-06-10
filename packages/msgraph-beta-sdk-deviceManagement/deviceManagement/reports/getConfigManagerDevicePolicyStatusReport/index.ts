@@ -129,7 +129,7 @@ export const GetConfigManagerDevicePolicyStatusReportRequestBuilderUriTemplate =
 export const GetConfigManagerDevicePolicyStatusReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetConfigManagerDevicePolicyStatusReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

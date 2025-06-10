@@ -83,6 +83,7 @@ const AuditLogRecordItemRequestBuilderGetQueryParametersMapper: Record<string, s
 export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AuditLogRecordItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

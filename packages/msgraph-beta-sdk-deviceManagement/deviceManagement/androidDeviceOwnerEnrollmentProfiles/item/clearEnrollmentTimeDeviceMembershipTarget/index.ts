@@ -33,6 +33,7 @@ export const ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderUriTemplate 
 export const ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ClearEnrollmentTimeDeviceMembershipTargetRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

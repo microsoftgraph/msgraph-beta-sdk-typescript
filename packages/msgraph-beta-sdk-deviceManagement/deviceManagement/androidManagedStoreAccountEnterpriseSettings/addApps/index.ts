@@ -80,6 +80,7 @@ export const AddAppsRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/and
 export const AddAppsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: AddAppsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

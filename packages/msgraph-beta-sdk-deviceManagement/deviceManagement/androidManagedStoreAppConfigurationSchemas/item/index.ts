@@ -83,6 +83,7 @@ const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetQueryParamet
 export const AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

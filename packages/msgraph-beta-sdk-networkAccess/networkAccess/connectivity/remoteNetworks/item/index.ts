@@ -118,6 +118,7 @@ export const RemoteNetworkItemRequestBuilderNavigationMetadata: Record<Exclude<k
 export const RemoteNetworkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RemoteNetworkItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -40,10 +40,6 @@ import { EnableLostModeRequestBuilderRequestsMetadata, type EnableLostModeReques
 // @ts-ignore
 import { EnrollNowActionRequestBuilderRequestsMetadata, type EnrollNowActionRequestBuilder } from './enrollNowAction/index.js';
 // @ts-ignore
-import { GetCloudPcRemoteActionResultsRequestBuilderRequestsMetadata, type GetCloudPcRemoteActionResultsRequestBuilder } from './getCloudPcRemoteActionResults/index.js';
-// @ts-ignore
-import { GetCloudPcReviewStatusRequestBuilderRequestsMetadata, type GetCloudPcReviewStatusRequestBuilder } from './getCloudPcReviewStatus/index.js';
-// @ts-ignore
 import { GetFileVaultKeyRequestBuilderRequestsMetadata, type GetFileVaultKeyRequestBuilder } from './getFileVaultKey/index.js';
 // @ts-ignore
 import { GetNonCompliantSettingsRequestBuilderRequestsMetadata, type GetNonCompliantSettingsRequestBuilder } from './getNonCompliantSettings/index.js';
@@ -95,8 +91,6 @@ import { RotateLocalAdminPasswordRequestBuilderRequestsMetadata, type RotateLoca
 import { SecurityBaselineStatesRequestBuilderNavigationMetadata, SecurityBaselineStatesRequestBuilderRequestsMetadata, type SecurityBaselineStatesRequestBuilder } from './securityBaselineStates/index.js';
 // @ts-ignore
 import { SendCustomNotificationToCompanyPortalRequestBuilderRequestsMetadata, type SendCustomNotificationToCompanyPortalRequestBuilder } from './sendCustomNotificationToCompanyPortal/index.js';
-// @ts-ignore
-import { SetCloudPcReviewStatusRequestBuilderRequestsMetadata, type SetCloudPcReviewStatusRequestBuilder } from './setCloudPcReviewStatus/index.js';
 // @ts-ignore
 import { SetDeviceNameRequestBuilderRequestsMetadata, type SetDeviceNameRequestBuilder } from './setDeviceName/index.js';
 // @ts-ignore
@@ -192,14 +186,6 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the enrollNowAction method.
      */
     get enrollNowAction(): EnrollNowActionRequestBuilder;
-    /**
-     * Provides operations to call the getCloudPcRemoteActionResults method.
-     */
-    get getCloudPcRemoteActionResults(): GetCloudPcRemoteActionResultsRequestBuilder;
-    /**
-     * Provides operations to call the getCloudPcReviewStatus method.
-     */
-    get getCloudPcReviewStatus(): GetCloudPcReviewStatusRequestBuilder;
     /**
      * Provides operations to call the getFileVaultKey method.
      */
@@ -304,10 +290,6 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the sendCustomNotificationToCompanyPortal method.
      */
     get sendCustomNotificationToCompanyPortal(): SendCustomNotificationToCompanyPortalRequestBuilder;
-    /**
-     * Provides operations to call the setCloudPcReviewStatus method.
-     */
-    get setCloudPcReviewStatus(): SetCloudPcReviewStatusRequestBuilder;
     /**
      * Provides operations to call the setDeviceName method.
      */
@@ -474,12 +456,6 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     enrollNowAction: {
         requestsMetadata: EnrollNowActionRequestBuilderRequestsMetadata,
     },
-    getCloudPcRemoteActionResults: {
-        requestsMetadata: GetCloudPcRemoteActionResultsRequestBuilderRequestsMetadata,
-    },
-    getCloudPcReviewStatus: {
-        requestsMetadata: GetCloudPcReviewStatusRequestBuilderRequestsMetadata,
-    },
     getFileVaultKey: {
         requestsMetadata: GetFileVaultKeyRequestBuilderRequestsMetadata,
     },
@@ -561,9 +537,6 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     sendCustomNotificationToCompanyPortal: {
         requestsMetadata: SendCustomNotificationToCompanyPortalRequestBuilderRequestsMetadata,
     },
-    setCloudPcReviewStatus: {
-        requestsMetadata: SetCloudPcReviewStatusRequestBuilderRequestsMetadata,
-    },
     setDeviceName: {
         requestsMetadata: SetDeviceNameRequestBuilderRequestsMetadata,
     },
@@ -602,6 +575,7 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
 export const ManagedDeviceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedDeviceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

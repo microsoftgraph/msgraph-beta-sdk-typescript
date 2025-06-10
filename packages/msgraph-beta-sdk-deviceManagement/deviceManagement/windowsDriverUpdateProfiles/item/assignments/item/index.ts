@@ -83,6 +83,7 @@ const WindowsDriverUpdateProfileAssignmentItemRequestBuilderGetQueryParametersMa
 export const WindowsDriverUpdateProfileAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsDriverUpdateProfileAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

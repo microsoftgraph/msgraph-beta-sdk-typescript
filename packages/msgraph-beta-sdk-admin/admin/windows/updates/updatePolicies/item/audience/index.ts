@@ -136,6 +136,7 @@ export const AudienceRequestBuilderNavigationMetadata: Record<Exclude<keyof Audi
 export const AudienceRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AudienceRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -98,6 +98,7 @@ export const DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderN
 export const DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementComplianceScheduledActionForRuleItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

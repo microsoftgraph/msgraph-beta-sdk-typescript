@@ -98,6 +98,7 @@ export const RoleDefinitionItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const RoleDefinitionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RoleDefinitionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

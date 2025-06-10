@@ -33,6 +33,7 @@ export const PostAndSendRequestBuilderUriTemplate = "{+baseurl}/financials/compa
 export const PostAndSendRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PostAndSendRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

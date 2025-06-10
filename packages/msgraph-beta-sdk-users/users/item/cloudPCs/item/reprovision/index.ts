@@ -89,6 +89,7 @@ export const ReprovisionRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did
 export const ReprovisionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ReprovisionRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

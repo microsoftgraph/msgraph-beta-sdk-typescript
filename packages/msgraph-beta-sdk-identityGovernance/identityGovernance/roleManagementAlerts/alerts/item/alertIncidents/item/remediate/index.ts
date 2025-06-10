@@ -33,6 +33,7 @@ export const RemediateRequestBuilderUriTemplate = "{+baseurl}/identityGovernance
 export const RemediateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemediateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -136,6 +136,7 @@ export const SynchronizationRequestBuilderNavigationMetadata: Record<Exclude<key
 export const SynchronizationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SynchronizationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

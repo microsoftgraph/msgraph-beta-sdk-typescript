@@ -85,6 +85,7 @@ const DynamicsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const DynamicsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DynamicsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

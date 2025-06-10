@@ -36,6 +36,7 @@ export const MicrosoftGraphEdiscoveryCloseRequestBuilderUriTemplate = "{+baseurl
 export const MicrosoftGraphEdiscoveryCloseRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MicrosoftGraphEdiscoveryCloseRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -89,6 +89,7 @@ const ConnectivityConfigurationLinkItemRequestBuilderGetQueryParametersMapper: R
 export const ConnectivityConfigurationLinkItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConnectivityConfigurationLinkItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

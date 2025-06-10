@@ -115,6 +115,7 @@ export const OutlookTaskFolderItemRequestBuilderNavigationMetadata: Record<Exclu
 export const OutlookTaskFolderItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OutlookTaskFolderItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

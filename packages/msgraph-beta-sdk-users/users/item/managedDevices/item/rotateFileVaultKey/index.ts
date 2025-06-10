@@ -33,6 +33,7 @@ export const RotateFileVaultKeyRequestBuilderUriTemplate = "{+baseurl}/users/{us
 export const RotateFileVaultKeyRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RotateFileVaultKeyRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -34,6 +34,7 @@ export const PowerOnRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/cl
 export const PowerOnRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PowerOnRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

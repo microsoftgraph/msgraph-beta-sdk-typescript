@@ -97,6 +97,7 @@ export const ManagedTenantEmailNotificationItemRequestBuilderNavigationMetadata:
 export const ManagedTenantEmailNotificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedTenantEmailNotificationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

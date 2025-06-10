@@ -138,6 +138,7 @@ export const DeploymentAudienceItemRequestBuilderNavigationMetadata: Record<Excl
 export const DeploymentAudienceItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeploymentAudienceItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -106,6 +106,7 @@ export const AndroidForWorkEnrollmentProfileItemRequestBuilderNavigationMetadata
 export const AndroidForWorkEnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AndroidForWorkEnrollmentProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

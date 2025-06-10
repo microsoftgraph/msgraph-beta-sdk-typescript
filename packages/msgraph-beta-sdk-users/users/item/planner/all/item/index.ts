@@ -83,6 +83,7 @@ const PlannerDeltaItemRequestBuilderGetQueryParametersMapper: Record<string, str
 export const PlannerDeltaItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PlannerDeltaItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

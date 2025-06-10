@@ -80,6 +80,7 @@ export const PauseConfigurationRefreshRequestBuilderUriTemplate = "{+baseurl}/us
 export const PauseConfigurationRefreshRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PauseConfigurationRefreshRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

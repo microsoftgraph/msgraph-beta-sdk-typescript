@@ -33,6 +33,7 @@ export const TerminateRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/d
 export const TerminateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: TerminateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

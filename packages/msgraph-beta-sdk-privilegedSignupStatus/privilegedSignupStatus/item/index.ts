@@ -83,6 +83,7 @@ const PrivilegedSignupStatusItemRequestBuilderGetQueryParametersMapper: Record<s
 export const PrivilegedSignupStatusItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PrivilegedSignupStatusItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

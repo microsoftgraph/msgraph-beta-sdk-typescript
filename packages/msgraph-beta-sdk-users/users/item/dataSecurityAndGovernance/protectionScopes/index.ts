@@ -83,6 +83,7 @@ const ProtectionScopesRequestBuilderGetQueryParametersMapper: Record<string, str
 export const ProtectionScopesRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ProtectionScopesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -82,6 +82,7 @@ export const ChangeAssignmentsRequestBuilderUriTemplate = "{+baseurl}/deviceMana
 export const ChangeAssignmentsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: ChangeAssignmentsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

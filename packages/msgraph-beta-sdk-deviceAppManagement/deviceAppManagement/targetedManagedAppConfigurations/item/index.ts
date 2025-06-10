@@ -154,6 +154,7 @@ export const TargetedManagedAppConfigurationItemRequestBuilderNavigationMetadata
 export const TargetedManagedAppConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TargetedManagedAppConfigurationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

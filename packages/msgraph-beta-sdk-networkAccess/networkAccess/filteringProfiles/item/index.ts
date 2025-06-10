@@ -109,6 +109,7 @@ export const FilteringProfileItemRequestBuilderNavigationMetadata: Record<Exclud
 export const FilteringProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: FilteringProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

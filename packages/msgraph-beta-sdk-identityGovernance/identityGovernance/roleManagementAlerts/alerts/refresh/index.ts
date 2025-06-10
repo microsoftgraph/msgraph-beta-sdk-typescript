@@ -87,6 +87,7 @@ export const RefreshRequestBuilderUriTemplate = "{+baseurl}/identityGovernance/r
 export const RefreshRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RefreshRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

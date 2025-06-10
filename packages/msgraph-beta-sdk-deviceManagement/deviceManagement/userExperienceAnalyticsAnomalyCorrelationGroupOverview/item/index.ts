@@ -83,6 +83,7 @@ const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGe
 export const UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

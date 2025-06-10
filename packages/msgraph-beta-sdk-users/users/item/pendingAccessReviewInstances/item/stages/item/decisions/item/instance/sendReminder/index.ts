@@ -34,6 +34,7 @@ export const SendReminderRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Di
 export const SendReminderRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SendReminderRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

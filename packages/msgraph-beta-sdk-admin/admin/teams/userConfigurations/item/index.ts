@@ -99,6 +99,7 @@ export const TeamsUserConfigurationItemRequestBuilderNavigationMetadata: Record<
 export const TeamsUserConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TeamsUserConfigurationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

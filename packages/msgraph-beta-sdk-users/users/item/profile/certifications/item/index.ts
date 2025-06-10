@@ -85,6 +85,7 @@ const PersonCertificationItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const PersonCertificationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PersonCertificationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

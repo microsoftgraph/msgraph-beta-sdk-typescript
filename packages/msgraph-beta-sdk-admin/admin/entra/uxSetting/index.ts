@@ -85,6 +85,7 @@ const UxSettingRequestBuilderGetQueryParametersMapper: Record<string, string> = 
 export const UxSettingRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UxSettingRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

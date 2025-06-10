@@ -83,6 +83,7 @@ const DeviceManagementDerivedCredentialSettingsItemRequestBuilderGetQueryParamet
 export const DeviceManagementDerivedCredentialSettingsItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceManagementDerivedCredentialSettingsItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

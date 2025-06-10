@@ -61,6 +61,7 @@ export const ExtractedTextContentRequestBuilderUriTemplate = "{+baseurl}/securit
 export const ExtractedTextContentRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExtractedTextContentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -68,7 +69,7 @@ export const ExtractedTextContentRequestBuilderRequestsMetadata: RequestsMetadat
     },
     get: {
         uriTemplate: ExtractedTextContentRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -77,6 +78,7 @@ export const ExtractedTextContentRequestBuilderRequestsMetadata: RequestsMetadat
     },
     put: {
         uriTemplate: ExtractedTextContentRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

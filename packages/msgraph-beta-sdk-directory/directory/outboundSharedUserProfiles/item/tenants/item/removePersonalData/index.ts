@@ -34,6 +34,7 @@ export const RemovePersonalDataRequestBuilderUriTemplate = "{+baseurl}/directory
 export const RemovePersonalDataRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemovePersonalDataRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

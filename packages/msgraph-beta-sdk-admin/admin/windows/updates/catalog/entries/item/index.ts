@@ -83,6 +83,7 @@ const CatalogEntryItemRequestBuilderGetQueryParametersMapper: Record<string, str
 export const CatalogEntryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CatalogEntryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

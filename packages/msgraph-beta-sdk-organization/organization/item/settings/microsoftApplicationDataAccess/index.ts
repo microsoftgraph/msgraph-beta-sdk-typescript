@@ -85,6 +85,7 @@ const MicrosoftApplicationDataAccessRequestBuilderGetQueryParametersMapper: Reco
 export const MicrosoftApplicationDataAccessRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MicrosoftApplicationDataAccessRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

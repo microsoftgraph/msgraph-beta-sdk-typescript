@@ -33,6 +33,7 @@ export const DisconnectRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/
 export const DisconnectRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DisconnectRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

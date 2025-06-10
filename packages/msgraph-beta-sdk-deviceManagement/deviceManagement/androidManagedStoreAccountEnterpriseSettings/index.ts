@@ -160,6 +160,7 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderNavigatio
 export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -129,7 +129,7 @@ export const GetFailedMobileAppsSummaryReportRequestBuilderUriTemplate = "{+base
 export const GetFailedMobileAppsSummaryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetFailedMobileAppsSummaryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

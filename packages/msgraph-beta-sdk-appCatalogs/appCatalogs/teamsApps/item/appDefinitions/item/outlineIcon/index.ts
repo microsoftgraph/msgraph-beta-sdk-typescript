@@ -99,6 +99,7 @@ export const OutlineIconRequestBuilderNavigationMetadata: Record<Exclude<keyof O
 export const OutlineIconRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OutlineIconRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

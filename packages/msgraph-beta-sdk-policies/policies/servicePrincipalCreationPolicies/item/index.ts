@@ -108,6 +108,7 @@ export const ServicePrincipalCreationPolicyItemRequestBuilderNavigationMetadata:
 export const ServicePrincipalCreationPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ServicePrincipalCreationPolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -107,6 +107,7 @@ export const ReviewSetQueryItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const ReviewSetQueryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ReviewSetQueryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

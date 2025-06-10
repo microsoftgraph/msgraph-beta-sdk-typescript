@@ -83,6 +83,7 @@ const WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParametersMapper: Reco
 export const WithIdWithPolicyIdWithDeviceIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WithIdWithPolicyIdWithDeviceIdRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

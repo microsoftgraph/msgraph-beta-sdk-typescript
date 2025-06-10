@@ -98,6 +98,7 @@ export const DeviceCompliancePolicySettingStateSummaryItemRequestBuilderNavigati
 export const DeviceCompliancePolicySettingStateSummaryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceCompliancePolicySettingStateSummaryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

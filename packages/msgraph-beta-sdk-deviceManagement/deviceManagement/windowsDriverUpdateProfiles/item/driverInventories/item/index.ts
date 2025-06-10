@@ -83,6 +83,7 @@ const WindowsDriverUpdateInventoryItemRequestBuilderGetQueryParametersMapper: Re
 export const WindowsDriverUpdateInventoryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsDriverUpdateInventoryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

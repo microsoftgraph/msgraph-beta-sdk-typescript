@@ -33,6 +33,7 @@ export const EnableLegacyPcManagementRequestBuilderUriTemplate = "{+baseurl}/dev
 export const EnableLegacyPcManagementRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: EnableLegacyPcManagementRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

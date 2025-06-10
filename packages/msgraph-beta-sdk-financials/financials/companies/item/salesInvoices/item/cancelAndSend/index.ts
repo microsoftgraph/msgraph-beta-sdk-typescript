@@ -33,6 +33,7 @@ export const CancelAndSendRequestBuilderUriTemplate = "{+baseurl}/financials/com
 export const CancelAndSendRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CancelAndSendRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

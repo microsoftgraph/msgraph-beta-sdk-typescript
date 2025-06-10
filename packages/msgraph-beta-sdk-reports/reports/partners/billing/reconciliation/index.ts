@@ -108,6 +108,7 @@ export const ReconciliationRequestBuilderNavigationMetadata: Record<Exclude<keyo
 export const ReconciliationRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ReconciliationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

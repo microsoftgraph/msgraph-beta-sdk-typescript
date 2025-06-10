@@ -107,6 +107,7 @@ export const InboundSharedUserProfileUserItemRequestBuilderNavigationMetadata: R
 export const InboundSharedUserProfileUserItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: InboundSharedUserProfileUserItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

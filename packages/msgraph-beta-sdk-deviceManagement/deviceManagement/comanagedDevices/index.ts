@@ -8,12 +8,6 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AppDiagnosticsWithUpnRequestBuilderRequestsMetadata, type AppDiagnosticsWithUpnRequestBuilder } from './appDiagnosticsWithUpn/index.js';
 // @ts-ignore
-import { BulkReprovisionCloudPcRequestBuilderRequestsMetadata, type BulkReprovisionCloudPcRequestBuilder } from './bulkReprovisionCloudPc/index.js';
-// @ts-ignore
-import { BulkRestoreCloudPcRequestBuilderRequestsMetadata, type BulkRestoreCloudPcRequestBuilder } from './bulkRestoreCloudPc/index.js';
-// @ts-ignore
-import { BulkSetCloudPcReviewStatusRequestBuilderRequestsMetadata, type BulkSetCloudPcReviewStatusRequestBuilder } from './bulkSetCloudPcReviewStatus/index.js';
-// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { DownloadAppDiagnosticsRequestBuilderRequestsMetadata, type DownloadAppDiagnosticsRequestBuilder } from './downloadAppDiagnostics/index.js';
@@ -34,18 +28,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
  */
 export interface ComanagedDevicesRequestBuilder extends BaseRequestBuilder<ComanagedDevicesRequestBuilder> {
-    /**
-     * Provides operations to call the bulkReprovisionCloudPc method.
-     */
-    get bulkReprovisionCloudPc(): BulkReprovisionCloudPcRequestBuilder;
-    /**
-     * Provides operations to call the bulkRestoreCloudPc method.
-     */
-    get bulkRestoreCloudPc(): BulkRestoreCloudPcRequestBuilder;
-    /**
-     * Provides operations to call the bulkSetCloudPcReviewStatus method.
-     */
-    get bulkSetCloudPcReviewStatus(): BulkSetCloudPcReviewStatusRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -183,15 +165,6 @@ export const ComanagedDevicesRequestBuilderNavigationMetadata: Record<Exclude<ke
     retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName: {
         requestsMetadata: RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilderRequestsMetadata,
         pathParametersMappings: ["userPrincipalName"],
-    },
-    bulkReprovisionCloudPc: {
-        requestsMetadata: BulkReprovisionCloudPcRequestBuilderRequestsMetadata,
-    },
-    bulkRestoreCloudPc: {
-        requestsMetadata: BulkRestoreCloudPcRequestBuilderRequestsMetadata,
-    },
-    bulkSetCloudPcReviewStatus: {
-        requestsMetadata: BulkSetCloudPcReviewStatusRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

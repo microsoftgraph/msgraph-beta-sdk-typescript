@@ -82,6 +82,7 @@ export const WindowsPrivacyAccessControlsRequestBuilderUriTemplate = "{+baseurl}
 export const WindowsPrivacyAccessControlsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: WindowsPrivacyAccessControlsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

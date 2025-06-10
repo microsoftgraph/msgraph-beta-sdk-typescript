@@ -83,6 +83,7 @@ const RemoteAssistanceSettingsRequestBuilderGetQueryParametersMapper: Record<str
 export const RemoteAssistanceSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: RemoteAssistanceSettingsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

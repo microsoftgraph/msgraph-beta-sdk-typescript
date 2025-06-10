@@ -212,6 +212,7 @@ export const ChannelItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
 export const ChannelItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ChannelItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

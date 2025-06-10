@@ -33,6 +33,7 @@ export const UnshareForSchoolDataSyncServiceRequestBuilderUriTemplate = "{+baseu
 export const UnshareForSchoolDataSyncServiceRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UnshareForSchoolDataSyncServiceRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

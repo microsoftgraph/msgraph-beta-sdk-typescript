@@ -128,6 +128,7 @@ export const ThreatSubmissionRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const ThreatSubmissionRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ThreatSubmissionRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

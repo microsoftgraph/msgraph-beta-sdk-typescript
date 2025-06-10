@@ -98,6 +98,7 @@ export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderNavigat
 export const AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

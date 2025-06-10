@@ -85,6 +85,7 @@ const PolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const PolicyRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PolicyRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

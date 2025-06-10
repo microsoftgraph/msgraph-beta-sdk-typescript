@@ -92,6 +92,7 @@ const AccessPackageCatalogsWithUniqueNameRequestBuilderGetQueryParametersMapper:
 export const AccessPackageCatalogsWithUniqueNameRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AccessPackageCatalogsWithUniqueNameRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -81,6 +81,7 @@ export const RemoveFromDriveRequestBuilderUriTemplate = "{+baseurl}/sites/{site%
 export const RemoveFromDriveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveFromDriveRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -125,6 +125,7 @@ export const VendorRequestBuilderNavigationMetadata: Record<Exclude<keyof Vendor
 export const VendorRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: VendorRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

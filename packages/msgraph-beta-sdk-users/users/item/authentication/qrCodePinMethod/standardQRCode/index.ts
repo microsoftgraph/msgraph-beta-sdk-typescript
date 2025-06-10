@@ -86,6 +86,7 @@ const StandardQRCodeRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const StandardQRCodeRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: StandardQRCodeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

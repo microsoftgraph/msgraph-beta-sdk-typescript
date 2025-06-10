@@ -87,6 +87,7 @@ export const UpdatePinRequestBuilderUriTemplate = "{+baseurl}/users/{user%2Did}/
 export const UpdatePinRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdatePinRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

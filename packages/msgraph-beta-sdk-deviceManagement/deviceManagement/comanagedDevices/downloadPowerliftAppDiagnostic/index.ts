@@ -83,7 +83,7 @@ export const DownloadPowerliftAppDiagnosticRequestBuilderUriTemplate = "{+baseur
 export const DownloadPowerliftAppDiagnosticRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DownloadPowerliftAppDiagnosticRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

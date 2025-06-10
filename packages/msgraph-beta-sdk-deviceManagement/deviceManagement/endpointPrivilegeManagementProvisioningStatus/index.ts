@@ -83,6 +83,7 @@ const EndpointPrivilegeManagementProvisioningStatusRequestBuilderGetQueryParamet
 export const EndpointPrivilegeManagementProvisioningStatusRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EndpointPrivilegeManagementProvisioningStatusRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

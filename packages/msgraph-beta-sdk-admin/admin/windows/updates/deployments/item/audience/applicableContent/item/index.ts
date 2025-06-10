@@ -107,6 +107,7 @@ export const ApplicableContentCatalogEntryItemRequestBuilderNavigationMetadata: 
 export const ApplicableContentCatalogEntryItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ApplicableContentCatalogEntryItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

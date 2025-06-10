@@ -132,6 +132,7 @@ export const ConnectorGroupItemRequestBuilderNavigationMetadata: Record<Exclude<
 export const ConnectorGroupItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ConnectorGroupItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

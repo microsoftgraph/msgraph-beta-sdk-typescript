@@ -97,6 +97,7 @@ export const SlaRequestBuilderNavigationMetadata: Record<Exclude<keyof SlaReques
 export const SlaRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: SlaRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

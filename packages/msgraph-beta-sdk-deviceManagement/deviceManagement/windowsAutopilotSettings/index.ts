@@ -97,6 +97,7 @@ export const WindowsAutopilotSettingsRequestBuilderNavigationMetadata: Record<Ex
 export const WindowsAutopilotSettingsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsAutopilotSettingsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

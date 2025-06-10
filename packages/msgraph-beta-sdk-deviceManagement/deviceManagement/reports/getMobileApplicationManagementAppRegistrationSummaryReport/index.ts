@@ -129,7 +129,7 @@ export const GetMobileApplicationManagementAppRegistrationSummaryReportRequestBu
 export const GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: GetMobileApplicationManagementAppRegistrationSummaryReportRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

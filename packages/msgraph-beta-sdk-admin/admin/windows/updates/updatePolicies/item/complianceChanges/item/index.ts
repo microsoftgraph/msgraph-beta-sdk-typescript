@@ -100,6 +100,7 @@ export const ComplianceChangeItemRequestBuilderNavigationMetadata: Record<Exclud
 export const ComplianceChangeItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ComplianceChangeItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

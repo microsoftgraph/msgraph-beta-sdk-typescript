@@ -83,6 +83,7 @@ const PayloadResponseItemRequestBuilderGetQueryParametersMapper: Record<string, 
 export const PayloadResponseItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PayloadResponseItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

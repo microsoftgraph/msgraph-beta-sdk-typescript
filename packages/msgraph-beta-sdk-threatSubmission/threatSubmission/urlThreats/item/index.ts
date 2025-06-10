@@ -83,6 +83,7 @@ const UrlThreatSubmissionItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const UrlThreatSubmissionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UrlThreatSubmissionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

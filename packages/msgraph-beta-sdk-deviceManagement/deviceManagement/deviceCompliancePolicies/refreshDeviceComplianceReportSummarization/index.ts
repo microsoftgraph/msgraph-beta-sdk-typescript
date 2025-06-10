@@ -33,6 +33,7 @@ export const RefreshDeviceComplianceReportSummarizationRequestBuilderUriTemplate
 export const RefreshDeviceComplianceReportSummarizationRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RefreshDeviceComplianceReportSummarizationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

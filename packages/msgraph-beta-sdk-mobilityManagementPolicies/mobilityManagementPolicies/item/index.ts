@@ -98,6 +98,7 @@ export const MobilityManagementPolicyItemRequestBuilderNavigationMetadata: Recor
 export const MobilityManagementPolicyItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MobilityManagementPolicyItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

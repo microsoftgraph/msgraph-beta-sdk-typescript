@@ -82,6 +82,7 @@ export const CreateEnrollmentNotificationConfigurationRequestBuilderUriTemplate 
 export const CreateEnrollmentNotificationConfigurationRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CreateEnrollmentNotificationConfigurationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

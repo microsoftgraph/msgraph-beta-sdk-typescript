@@ -129,7 +129,7 @@ export const RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderUriT
 export const RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

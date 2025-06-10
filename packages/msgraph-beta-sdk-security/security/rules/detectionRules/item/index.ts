@@ -83,6 +83,7 @@ const DetectionRuleItemRequestBuilderGetQueryParametersMapper: Record<string, st
 export const DetectionRuleItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DetectionRuleItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -61,6 +61,7 @@ export const ContentStreamRequestBuilderUriTemplate = "{+baseurl}/shares/{shared
 export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -68,7 +69,7 @@ export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     get: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
@@ -77,6 +78,7 @@ export const ContentStreamRequestBuilderRequestsMetadata: RequestsMetadata = {
     },
     put: {
         uriTemplate: ContentStreamRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

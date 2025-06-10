@@ -130,6 +130,7 @@ export const LegalHoldItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
 export const LegalHoldItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LegalHoldItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

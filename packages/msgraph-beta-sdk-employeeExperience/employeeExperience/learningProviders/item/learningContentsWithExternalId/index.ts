@@ -86,6 +86,7 @@ const LearningContentsWithExternalIdRequestBuilderGetQueryParametersMapper: Reco
 export const LearningContentsWithExternalIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: LearningContentsWithExternalIdRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

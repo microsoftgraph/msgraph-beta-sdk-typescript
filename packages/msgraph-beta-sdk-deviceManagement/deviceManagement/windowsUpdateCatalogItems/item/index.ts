@@ -83,6 +83,7 @@ const WindowsUpdateCatalogItemItemRequestBuilderGetQueryParametersMapper: Record
 export const WindowsUpdateCatalogItemItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WindowsUpdateCatalogItemItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

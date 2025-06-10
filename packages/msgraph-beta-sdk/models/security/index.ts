@@ -29461,6 +29461,9 @@ export const AppCategoryObject = {
     GenerativeAi: "generativeAi",
     Unknown: "unknown",
     UnknownFutureValue: "unknownFutureValue",
+    AiModelProvider: "aiModelProvider",
+    McpServer: "mcpServer",
+    ClientAiApp: "clientAiApp",
 } as const;
 export const AppInfoCsaStarLevelObject = {
     SelfAssessment: "selfAssessment",
@@ -30039,6 +30042,7 @@ export const DetectionSourceObject = {
     MicrosoftDefenderThreatIntelligenceAnalytics: "microsoftDefenderThreatIntelligenceAnalytics",
     BuiltInMl: "builtInMl",
     MicrosoftInsiderRiskManagement: "microsoftInsiderRiskManagement",
+    MicrosoftThreatIntelligence: "microsoftThreatIntelligence",
     MicrosoftSentinel: "microsoftSentinel",
 } as const;
 export const DetectionStatusObject = {
@@ -30562,6 +30566,7 @@ export const ServiceSourceObject = {
     MicrosoftDefenderForCloud: "microsoftDefenderForCloud",
     MicrosoftSentinel: "microsoftSentinel",
     MicrosoftInsiderRiskManagement: "microsoftInsiderRiskManagement",
+    MicrosoftThreatIntelligence: "microsoftThreatIntelligence",
 } as const;
 export const SourceTypeObject = {
     Mailbox: "mailbox",

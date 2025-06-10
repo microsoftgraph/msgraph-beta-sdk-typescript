@@ -89,6 +89,7 @@ const DomainSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<st
 export const DomainSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DomainSecurityProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

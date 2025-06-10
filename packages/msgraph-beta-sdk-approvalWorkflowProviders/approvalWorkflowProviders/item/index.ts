@@ -118,6 +118,7 @@ export const ApprovalWorkflowProviderItemRequestBuilderNavigationMetadata: Recor
 export const ApprovalWorkflowProviderItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ApprovalWorkflowProviderItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -89,6 +89,7 @@ const FileSecurityProfileItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const FileSecurityProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: FileSecurityProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

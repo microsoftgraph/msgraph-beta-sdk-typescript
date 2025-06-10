@@ -126,6 +126,7 @@ export const NextVersionDefinitionRequestBuilderNavigationMetadata: Record<Exclu
 export const NextVersionDefinitionRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NextVersionDefinitionRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

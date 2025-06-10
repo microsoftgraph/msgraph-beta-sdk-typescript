@@ -86,6 +86,7 @@ const ExternalUserProfileItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const ExternalUserProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ExternalUserProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

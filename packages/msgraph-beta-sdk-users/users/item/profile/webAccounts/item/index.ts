@@ -83,6 +83,7 @@ const WebAccountItemRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const WebAccountItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: WebAccountItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

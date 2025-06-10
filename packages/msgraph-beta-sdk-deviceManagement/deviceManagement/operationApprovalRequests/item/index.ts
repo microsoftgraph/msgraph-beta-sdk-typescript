@@ -115,6 +115,7 @@ export const OperationApprovalRequestItemRequestBuilderNavigationMetadata: Recor
 export const OperationApprovalRequestItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: OperationApprovalRequestItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -33,6 +33,7 @@ export const RevokeAppleVppLicensesRequestBuilderUriTemplate = "{+baseurl}/devic
 export const RevokeAppleVppLicensesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RevokeAppleVppLicensesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

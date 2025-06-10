@@ -33,6 +33,7 @@ export const RevokeTokenRequestBuilderUriTemplate = "{+baseurl}/deviceManagement
 export const RevokeTokenRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RevokeTokenRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -80,6 +80,7 @@ export const InitiateOnDemandProactiveRemediationRequestBuilderUriTemplate = "{+
 export const InitiateOnDemandProactiveRemediationRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: InitiateOnDemandProactiveRemediationRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

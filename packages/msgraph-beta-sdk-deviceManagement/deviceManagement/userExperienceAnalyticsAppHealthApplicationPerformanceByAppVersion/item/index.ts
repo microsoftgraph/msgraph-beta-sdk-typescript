@@ -83,6 +83,7 @@ const UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuild
 export const UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

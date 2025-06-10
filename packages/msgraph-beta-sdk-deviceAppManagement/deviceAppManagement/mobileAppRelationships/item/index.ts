@@ -83,6 +83,7 @@ const MobileAppRelationshipItemRequestBuilderGetQueryParametersMapper: Record<st
 export const MobileAppRelationshipItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MobileAppRelationshipItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

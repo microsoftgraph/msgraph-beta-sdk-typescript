@@ -84,6 +84,7 @@ const ManagedDeviceComplianceTrendItemRequestBuilderGetQueryParametersMapper: Re
 export const ManagedDeviceComplianceTrendItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedDeviceComplianceTrendItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

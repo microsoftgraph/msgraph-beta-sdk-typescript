@@ -118,6 +118,7 @@ export const PermissionsAnalyticsRequestBuilderNavigationMetadata: Record<Exclud
 export const PermissionsAnalyticsRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PermissionsAnalyticsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

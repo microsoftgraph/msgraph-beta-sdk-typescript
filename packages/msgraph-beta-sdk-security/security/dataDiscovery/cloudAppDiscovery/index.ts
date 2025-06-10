@@ -98,6 +98,7 @@ export const CloudAppDiscoveryRequestBuilderNavigationMetadata: Record<Exclude<k
 export const CloudAppDiscoveryRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudAppDiscoveryRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

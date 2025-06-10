@@ -83,6 +83,7 @@ const ManagedAppLogCollectionRequestItemRequestBuilderGetQueryParametersMapper: 
 export const ManagedAppLogCollectionRequestItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedAppLogCollectionRequestItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

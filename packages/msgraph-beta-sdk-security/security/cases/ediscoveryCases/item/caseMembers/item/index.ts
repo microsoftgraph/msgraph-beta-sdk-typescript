@@ -84,6 +84,7 @@ const EdiscoveryCaseMemberItemRequestBuilderGetQueryParametersMapper: Record<str
 export const EdiscoveryCaseMemberItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: EdiscoveryCaseMemberItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -85,6 +85,7 @@ const PlannerRosterMemberItemRequestBuilderGetQueryParametersMapper: Record<stri
 export const PlannerRosterMemberItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PlannerRosterMemberItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

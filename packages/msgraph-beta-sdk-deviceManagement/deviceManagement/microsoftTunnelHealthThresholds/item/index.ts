@@ -83,6 +83,7 @@ const MicrosoftTunnelHealthThresholdItemRequestBuilderGetQueryParametersMapper: 
 export const MicrosoftTunnelHealthThresholdItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: MicrosoftTunnelHealthThresholdItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

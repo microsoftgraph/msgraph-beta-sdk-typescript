@@ -108,6 +108,7 @@ export const HealthMonitoringRequestBuilderNavigationMetadata: Record<Exclude<ke
 export const HealthMonitoringRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: HealthMonitoringRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

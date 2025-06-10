@@ -34,6 +34,7 @@ export const PowerOffRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/vi
 export const PowerOffRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: PowerOffRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

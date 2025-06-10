@@ -107,6 +107,7 @@ export const AppleUserInitiatedEnrollmentProfileItemRequestBuilderNavigationMeta
 export const AppleUserInitiatedEnrollmentProfileItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: AppleUserInitiatedEnrollmentProfileItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

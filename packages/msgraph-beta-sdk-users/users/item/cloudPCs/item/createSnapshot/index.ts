@@ -89,6 +89,7 @@ export const CreateSnapshotRequestBuilderUriTemplate = "{+baseurl}/users/{user%2
 export const CreateSnapshotRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: CreateSnapshotRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

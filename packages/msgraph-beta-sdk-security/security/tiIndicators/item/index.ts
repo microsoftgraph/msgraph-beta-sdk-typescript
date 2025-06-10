@@ -92,6 +92,7 @@ const TiIndicatorItemRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const TiIndicatorItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TiIndicatorItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

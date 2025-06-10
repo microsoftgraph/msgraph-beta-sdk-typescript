@@ -80,6 +80,7 @@ export const RegisterRequestBuilderUriTemplate = "{+baseurl}/governanceResources
 export const RegisterRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RegisterRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

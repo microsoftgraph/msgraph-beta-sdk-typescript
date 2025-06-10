@@ -40,12 +40,12 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      */
      get(requestConfiguration?: RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters> | undefined) : Promise<InboundFlow | undefined>;
     /**
-     * Update the properties of an inboundFileFlow object.
+     * Update the properties of an inboundApiFlow object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InboundFlow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/industrydata-inboundapiflow-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: InboundFlow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InboundFlow | undefined>;
     /**
@@ -61,7 +61,7 @@ export interface InboundFlowItemRequestBuilder extends BaseRequestBuilder<Inboun
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of an inboundFileFlow object.
+     * Update the properties of an inboundApiFlow object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -109,6 +109,7 @@ export const InboundFlowItemRequestBuilderNavigationMetadata: Record<Exclude<key
 export const InboundFlowItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: InboundFlowItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

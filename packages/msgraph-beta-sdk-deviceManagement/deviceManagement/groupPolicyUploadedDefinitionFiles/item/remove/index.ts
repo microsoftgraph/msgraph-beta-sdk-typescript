@@ -33,6 +33,7 @@ export const RemoveRequestBuilderUriTemplate = "{+baseurl}/deviceManagement/grou
 export const RemoveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

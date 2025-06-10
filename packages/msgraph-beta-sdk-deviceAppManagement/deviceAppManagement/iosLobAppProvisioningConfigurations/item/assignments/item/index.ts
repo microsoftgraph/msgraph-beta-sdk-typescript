@@ -83,6 +83,7 @@ const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryPara
 export const IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

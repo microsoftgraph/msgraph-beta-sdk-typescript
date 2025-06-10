@@ -34,6 +34,7 @@ export const RemoveEmailRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTem
 export const RemoveEmailRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RemoveEmailRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

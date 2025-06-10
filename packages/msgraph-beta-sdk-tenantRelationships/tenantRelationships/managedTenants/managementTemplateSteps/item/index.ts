@@ -116,6 +116,7 @@ export const ManagementTemplateStepItemRequestBuilderNavigationMetadata: Record<
 export const ManagementTemplateStepItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagementTemplateStepItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

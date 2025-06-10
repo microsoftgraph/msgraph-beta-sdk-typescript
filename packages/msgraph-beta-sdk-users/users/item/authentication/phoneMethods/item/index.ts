@@ -84,6 +84,7 @@ const PhoneAuthenticationMethodItemRequestBuilderGetQueryParametersMapper: Recor
 export const PhoneAuthenticationMethodItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: PhoneAuthenticationMethodItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

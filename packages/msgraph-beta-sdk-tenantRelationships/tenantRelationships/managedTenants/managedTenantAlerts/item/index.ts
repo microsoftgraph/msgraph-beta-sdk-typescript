@@ -136,6 +136,7 @@ export const ManagedTenantAlertItemRequestBuilderNavigationMetadata: Record<Excl
 export const ManagedTenantAlertItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: ManagedTenantAlertItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -84,6 +84,7 @@ const CloudPcExportJobItemRequestBuilderGetQueryParametersMapper: Record<string,
 export const CloudPcExportJobItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: CloudPcExportJobItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

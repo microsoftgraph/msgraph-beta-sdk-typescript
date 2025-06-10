@@ -107,6 +107,7 @@ export const NetworkAccessTrafficTransactionItemRequestBuilderNavigationMetadata
 export const NetworkAccessTrafficTransactionItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: NetworkAccessTrafficTransactionItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -51,7 +51,7 @@ export const GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuild
 export const GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
         uriTemplate: GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

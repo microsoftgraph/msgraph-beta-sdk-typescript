@@ -125,7 +125,7 @@ export const RetrieveFrontlineReportsRequestBuilderUriTemplate = "{+baseurl}/dev
 export const RetrieveFrontlineReportsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: RetrieveFrontlineReportsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/octet-stream",
+        responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

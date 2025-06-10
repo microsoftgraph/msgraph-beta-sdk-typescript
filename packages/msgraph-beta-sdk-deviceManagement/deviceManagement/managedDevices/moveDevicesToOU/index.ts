@@ -86,6 +86,7 @@ export const MoveDevicesToOURequestBuilderUriTemplate = "{+baseurl}/deviceManage
 export const MoveDevicesToOURequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: MoveDevicesToOURequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

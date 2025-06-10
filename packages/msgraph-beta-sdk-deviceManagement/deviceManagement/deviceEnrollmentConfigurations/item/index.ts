@@ -116,6 +116,7 @@ export const DeviceEnrollmentConfigurationItemRequestBuilderNavigationMetadata: 
 export const DeviceEnrollmentConfigurationItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: DeviceEnrollmentConfigurationItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

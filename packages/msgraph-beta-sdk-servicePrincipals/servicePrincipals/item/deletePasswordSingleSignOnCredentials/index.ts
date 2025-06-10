@@ -81,6 +81,7 @@ export const DeletePasswordSingleSignOnCredentialsRequestBuilderUriTemplate = "{
 export const DeletePasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DeletePasswordSingleSignOnCredentialsRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -97,6 +97,7 @@ export const IdentityUserFlowAttributeAssignmentItemRequestBuilderNavigationMeta
 export const IdentityUserFlowAttributeAssignmentItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: IdentityUserFlowAttributeAssignmentItemRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

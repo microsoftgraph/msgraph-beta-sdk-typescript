@@ -103,6 +103,7 @@ export const QrCodePinMethodRequestBuilderNavigationMetadata: Record<Exclude<key
 export const QrCodePinMethodRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: QrCodePinMethodRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

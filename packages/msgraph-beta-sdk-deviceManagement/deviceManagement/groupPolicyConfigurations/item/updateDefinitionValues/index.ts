@@ -94,6 +94,7 @@ export const UpdateDefinitionValuesRequestBuilderUriTemplate = "{+baseurl}/devic
 export const UpdateDefinitionValuesRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: UpdateDefinitionValuesRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

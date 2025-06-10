@@ -80,6 +80,7 @@ export const DeleteRequestBuilderUriTemplate = "{+baseurl}/sites/{site%2Did}/rec
 export const DeleteRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: DeleteRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

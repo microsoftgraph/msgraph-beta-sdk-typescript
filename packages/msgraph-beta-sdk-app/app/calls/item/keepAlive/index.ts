@@ -34,6 +34,7 @@ export const KeepAliveRequestBuilderUriTemplate = "{+baseurl}/app/calls/{call%2D
 export const KeepAliveRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: KeepAliveRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

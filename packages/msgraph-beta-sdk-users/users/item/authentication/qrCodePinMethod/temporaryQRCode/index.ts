@@ -83,6 +83,7 @@ const TemporaryQRCodeRequestBuilderGetQueryParametersMapper: Record<string, stri
 export const TemporaryQRCodeRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
         uriTemplate: TemporaryQRCodeRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

@@ -95,6 +95,7 @@ export const AssignAndActivateRequestBuilderUriTemplate = "{+baseurl}/users/{use
 export const AssignAndActivateRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: AssignAndActivateRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },

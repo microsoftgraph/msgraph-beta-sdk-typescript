@@ -80,6 +80,7 @@ export const SetReactionRequestBuilderUriTemplate = "{+baseurl}/teamwork/teamTem
 export const SetReactionRequestBuilderRequestsMetadata: RequestsMetadata = {
     post: {
         uriTemplate: SetReactionRequestBuilderUriTemplate,
+        responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
