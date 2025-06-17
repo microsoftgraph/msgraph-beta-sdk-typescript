@@ -14,6 +14,8 @@ import { DisconnectRequestBuilderRequestsMetadata, type DisconnectRequestBuilder
 // @ts-ignore
 import { HasActiveDeploymentsRequestBuilderRequestsMetadata, type HasActiveDeploymentsRequestBuilder } from './hasActiveDeployments/index.js';
 // @ts-ignore
+import { RetrieveZebraFotaDeviceModelsRequestBuilderRequestsMetadata, type RetrieveZebraFotaDeviceModelsRequestBuilder } from './retrieveZebraFotaDeviceModels/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -36,6 +38,10 @@ export interface ZebraFotaConnectorRequestBuilder extends BaseRequestBuilder<Zeb
      * Provides operations to call the hasActiveDeployments method.
      */
     get hasActiveDeployments(): HasActiveDeploymentsRequestBuilder;
+    /**
+     * Provides operations to call the retrieveZebraFotaDeviceModels method.
+     */
+    get retrieveZebraFotaDeviceModels(): RetrieveZebraFotaDeviceModelsRequestBuilder;
     /**
      * Delete navigation property zebraFotaConnector for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -116,6 +122,9 @@ export const ZebraFotaConnectorRequestBuilderNavigationMetadata: Record<Exclude<
     },
     hasActiveDeployments: {
         requestsMetadata: HasActiveDeploymentsRequestBuilderRequestsMetadata,
+    },
+    retrieveZebraFotaDeviceModels: {
+        requestsMetadata: RetrieveZebraFotaDeviceModelsRequestBuilderRequestsMetadata,
     },
 };
 /**
