@@ -8318,19 +8318,19 @@ export interface DataLakeExportOperationAuditRecord extends AuditData, Parsable 
 }
 export interface DataSet extends Entity, Parsable {
     /**
-     * The createdBy property
+     * The user who created the data set. Read-only.
      */
     createdBy?: IdentitySet | null;
     /**
-     * The createdDateTime property
+     * The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
      */
     createdDateTime?: Date | null;
     /**
-     * The description property
+     * The description of the data set.
      */
     description?: string | null;
     /**
-     * The displayName property
+     * The name of the data set. The name is unique with a maximum limit of 64 characters.
      */
     displayName?: string | null;
 }
