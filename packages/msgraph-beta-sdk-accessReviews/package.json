@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-accessreviews",
-  "version": "1.0.0-preview.55",
+  "version": "1.0.0-preview.56",
   "description": "AccessReviews fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
