@@ -6,12 +6,18 @@ import { createUserProtectionScopeContainerFromDiscriminatorValue, serializeUser
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { ComputeRequestBuilderRequestsMetadata, type ComputeRequestBuilder } from './compute/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the protectionScopes property of the microsoft.graph.userDataSecurityAndGovernance entity.
  */
 export interface ProtectionScopesRequestBuilder extends BaseRequestBuilder<ProtectionScopesRequestBuilder> {
+    /**
+     * Provides operations to call the compute method.
+     */
+    get compute(): ComputeRequestBuilder;
     /**
      * Delete navigation property protectionScopes for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +82,14 @@ export const ProtectionScopesRequestBuilderUriTemplate = "{+baseurl}/users/{user
 const ProtectionScopesRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const ProtectionScopesRequestBuilderNavigationMetadata: Record<Exclude<keyof ProtectionScopesRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    compute: {
+        requestsMetadata: ComputeRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

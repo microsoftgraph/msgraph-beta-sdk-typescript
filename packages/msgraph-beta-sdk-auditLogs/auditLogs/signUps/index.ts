@@ -27,10 +27,11 @@ export interface SignUpsRequestBuilder extends BaseRequestBuilder<SignUpsRequest
      */
      bySelfServiceSignUpId(selfServiceSignUpId: string) : SelfServiceSignUpItemRequestBuilder;
     /**
-     * Get signUps from auditLogs
+     * Retrieve the Microsoft Entra External ID user selfServiceSignUps events for your tenant.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ups are returned first. Only sign-up events that occurred within the Microsoft Entra ID default retention period are available.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SelfServiceSignUpCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/auditlogroot-list-signups?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SignUpsRequestBuilderGetQueryParameters> | undefined) : Promise<SelfServiceSignUpCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface SignUpsRequestBuilder extends BaseRequestBuilder<SignUpsRequest
      */
      post(body: SelfServiceSignUp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SelfServiceSignUp | undefined>;
     /**
-     * Get signUps from auditLogs
+     * Retrieve the Microsoft Entra External ID user selfServiceSignUps events for your tenant.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ups are returned first. Only sign-up events that occurred within the Microsoft Entra ID default retention period are available.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface SignUpsRequestBuilder extends BaseRequestBuilder<SignUpsRequest
      toPostRequestInformation(body: SelfServiceSignUp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get signUps from auditLogs
+ * Retrieve the Microsoft Entra External ID user selfServiceSignUps events for your tenant.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ups are returned first. Only sign-up events that occurred within the Microsoft Entra ID default retention period are available.
  */
 export interface SignUpsRequestBuilderGetQueryParameters {
     /**

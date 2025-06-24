@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AppsAndServicesRequestBuilderRequestsMetadata, type AppsAndServicesRequestBuilder } from './appsAndServices/index.js';
 // @ts-ignore
+import { ConfigurationManagementRequestBuilderNavigationMetadata, ConfigurationManagementRequestBuilderRequestsMetadata, type ConfigurationManagementRequestBuilder } from './configurationManagement/index.js';
+// @ts-ignore
 import { DynamicsRequestBuilderRequestsMetadata, type DynamicsRequestBuilder } from './dynamics/index.js';
 // @ts-ignore
 import { EdgeRequestBuilderNavigationMetadata, EdgeRequestBuilderRequestsMetadata, type EdgeRequestBuilder } from './edge/index.js';
@@ -44,6 +46,10 @@ export interface AdminRequestBuilder extends BaseRequestBuilder<AdminRequestBuil
      * Provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.
      */
     get appsAndServices(): AppsAndServicesRequestBuilder;
+    /**
+     * Provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
+     */
+    get configurationManagement(): ConfigurationManagementRequestBuilder;
     /**
      * Provides operations to manage the dynamics property of the microsoft.graph.admin entity.
      */
@@ -155,6 +161,10 @@ const AdminRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     appsAndServices: {
         requestsMetadata: AppsAndServicesRequestBuilderRequestsMetadata,
+    },
+    configurationManagement: {
+        requestsMetadata: ConfigurationManagementRequestBuilderRequestsMetadata,
+        navigationMetadata: ConfigurationManagementRequestBuilderNavigationMetadata,
     },
     dynamics: {
         requestsMetadata: DynamicsRequestBuilderRequestsMetadata,
