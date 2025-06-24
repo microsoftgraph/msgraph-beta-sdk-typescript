@@ -19,10 +19,11 @@ export interface SelfServiceSignUpItemRequestBuilder extends BaseRequestBuilder<
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get signUps from auditLogs
+     * Retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SelfServiceSignUp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/selfservicesignup-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SelfServiceSignUpItemRequestBuilderGetQueryParameters> | undefined) : Promise<SelfServiceSignUp | undefined>;
     /**
@@ -40,7 +41,7 @@ export interface SelfServiceSignUpItemRequestBuilder extends BaseRequestBuilder<
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get signUps from auditLogs
+     * Retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface SelfServiceSignUpItemRequestBuilder extends BaseRequestBuilder<
      toPatchRequestInformation(body: SelfServiceSignUp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get signUps from auditLogs
+ * Retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
  */
 export interface SelfServiceSignUpItemRequestBuilderGetQueryParameters {
     /**

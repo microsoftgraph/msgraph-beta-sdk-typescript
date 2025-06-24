@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ProcessContentAsyncRequestBuilderRequestsMetadata, type ProcessContentAsyncRequestBuilder } from './processContentAsync/index.js';
 // @ts-ignore
-import { ProtectionScopesRequestBuilderRequestsMetadata, type ProtectionScopesRequestBuilder } from './protectionScopes/index.js';
+import { ProtectionScopesRequestBuilderNavigationMetadata, ProtectionScopesRequestBuilderRequestsMetadata, type ProtectionScopesRequestBuilder } from './protectionScopes/index.js';
 // @ts-ignore
 import { SensitivityLabelsRequestBuilderNavigationMetadata, SensitivityLabelsRequestBuilderRequestsMetadata, type SensitivityLabelsRequestBuilder } from './sensitivityLabels/index.js';
 // @ts-ignore
@@ -104,6 +104,7 @@ export const DataSecurityAndGovernanceRequestBuilderNavigationMetadata: Record<E
     },
     protectionScopes: {
         requestsMetadata: ProtectionScopesRequestBuilderRequestsMetadata,
+        navigationMetadata: ProtectionScopesRequestBuilderNavigationMetadata,
     },
     sensitivityLabels: {
         requestsMetadata: SensitivityLabelsRequestBuilderRequestsMetadata,

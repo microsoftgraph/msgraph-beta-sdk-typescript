@@ -49,11 +49,11 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      */
      computeInheritanceWithLabelIdsWithLocaleWithContentFormats(contentFormats: string | undefined, labelIds: string | undefined, locale: string | undefined) : ComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder;
     /**
-     * List the sensitivity labels available for the entire tenant.
+     * List the sensitivity labels available to a specific user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensitivityLabelCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/tenantdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-list-sensitivitylabels?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters> | undefined) : Promise<SensitivityLabelCollectionResponse | undefined>;
     /**
@@ -65,7 +65,7 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      */
      post(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensitivityLabel | undefined>;
     /**
-     * List the sensitivity labels available for the entire tenant.
+     * List the sensitivity labels available to a specific user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -79,7 +79,7 @@ export interface SensitivityLabelsRequestBuilder extends BaseRequestBuilder<Sens
      toPostRequestInformation(body: SensitivityLabel, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List the sensitivity labels available for the entire tenant.
+ * List the sensitivity labels available to a specific user.
  */
 export interface SensitivityLabelsRequestBuilderGetQueryParameters {
     /**

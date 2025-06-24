@@ -12,6 +12,8 @@ import { DriveProtectionUnitsRequestBuilderNavigationMetadata, DriveProtectionUn
 // @ts-ignore
 import { DriveProtectionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, DriveProtectionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type DriveProtectionUnitsBulkAdditionJobsRequestBuilder } from './driveProtectionUnitsBulkAdditionJobs/index.js';
 // @ts-ignore
+import { EmailNotificationsSettingRequestBuilderRequestsMetadata, type EmailNotificationsSettingRequestBuilder } from './emailNotificationsSetting/index.js';
+// @ts-ignore
 import { EnableRequestBuilderRequestsMetadata, type EnableRequestBuilder } from './enable/index.js';
 // @ts-ignore
 import { ExchangeProtectionPoliciesRequestBuilderNavigationMetadata, ExchangeProtectionPoliciesRequestBuilderRequestsMetadata, type ExchangeProtectionPoliciesRequestBuilder } from './exchangeProtectionPolicies/index.js';
@@ -66,6 +68,10 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * Provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
      */
     get driveProtectionUnitsBulkAdditionJobs(): DriveProtectionUnitsBulkAdditionJobsRequestBuilder;
+    /**
+     * Provides operations to manage the emailNotificationsSetting property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get emailNotificationsSetting(): EmailNotificationsSettingRequestBuilder;
     /**
      * Provides operations to call the enable method.
      */
@@ -219,6 +225,9 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
     driveProtectionUnitsBulkAdditionJobs: {
         requestsMetadata: DriveProtectionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
         navigationMetadata: DriveProtectionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
+    },
+    emailNotificationsSetting: {
+        requestsMetadata: EmailNotificationsSettingRequestBuilderRequestsMetadata,
     },
     enable: {
         requestsMetadata: EnableRequestBuilderRequestsMetadata,
