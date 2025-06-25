@@ -13,7 +13,7 @@ export interface GraphBetaServiceClient extends BaseRequestBuilder<GraphBetaServ
  */
 export function createGraphBetaServiceClient(requestAdapter: RequestAdapter) {
     if (requestAdapter.baseUrl === undefined || requestAdapter.baseUrl === "") {
-        requestAdapter.baseUrl = "https://graph.microsoft.com/v1.0";
+        requestAdapter.baseUrl = "https://graph.microsoft.com/beta";
     }
     const pathParameters: Record<string, unknown> = {
         "baseurl": requestAdapter.baseUrl,
