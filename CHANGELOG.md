@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.58](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.57...v1.0.0-preview.58) (2025-06-26)
+
+
+### Bug Fixes
+
+* Beta SDK default base URL to use beta endpoint instead of v1.0 ([2b0c098](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/2b0c098fffb144c682732c5da02706f2c90511d0))
+
 ## [1.0.0-preview.57](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.56...v1.0.0-preview.57) (2025-06-24)
 
 
