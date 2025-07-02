@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ExchangeRequestBuilder extends BaseRequestBuilder<ExchangeRequestBuilder> {
     /**
-     * Get a list of Exchange settings, including mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary and in-place archive. To learn how to get a list of users in a tenant, see List users.
+     * Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -22,7 +22,7 @@ export interface ExchangeRequestBuilder extends BaseRequestBuilder<ExchangeReque
      */
      get(requestConfiguration?: RequestConfiguration<ExchangeRequestBuilderGetQueryParameters> | undefined) : Promise<ExchangeSettings | undefined>;
     /**
-     * Get a list of Exchange settings, including mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary and in-place archive. To learn how to get a list of users in a tenant, see List users.
+     * Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
@@ -30,7 +30,7 @@ export interface ExchangeRequestBuilder extends BaseRequestBuilder<ExchangeReque
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExchangeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get a list of Exchange settings, including mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary and in-place archive. To learn how to get a list of users in a tenant, see List users.
+ * Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user's primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
  */
 export interface ExchangeRequestBuilderGetQueryParameters {
     /**

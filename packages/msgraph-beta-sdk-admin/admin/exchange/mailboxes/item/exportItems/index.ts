@@ -73,7 +73,7 @@ export interface ExportItemsPostResponse extends BaseCollectionPaginationCountRe
  */
 export interface ExportItemsRequestBuilder extends BaseRequestBuilder<ExportItemsRequestBuilder> {
     /**
-     * Export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
+     * Export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExportItemsPostResponse>}
@@ -83,7 +83,7 @@ export interface ExportItemsRequestBuilder extends BaseRequestBuilder<ExportItem
      */
      post(body: ExportItemsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExportItemsPostResponse | undefined>;
     /**
-     * Export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
+     * Export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

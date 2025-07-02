@@ -872,6 +872,7 @@ export const AlertTypeObject = {
     CompliantDeviceSignInFailure: "compliantDeviceSignInFailure",
     UnknownFutureValue: "unknownFutureValue",
     ConditionalAccessBlockedSignIn: "conditionalAccessBlockedSignIn",
+    SamlSignInFailure: "samlSignInFailure",
 } as const;
 export const CategoryObject = {
     Unknown: "unknown",
@@ -890,6 +891,7 @@ export const ScenarioObject = {
     Devices: "devices",
     UnknownFutureValue: "unknownFutureValue",
     ConditionalAccess: "conditionalAccess",
+    Saml: "saml",
 } as const;
 /* tslint:enable */
 /* eslint-enable */
