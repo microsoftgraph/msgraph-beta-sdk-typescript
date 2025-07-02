@@ -47,7 +47,7 @@ export interface ProcessContentPostRequestBody extends AdditionalDataHolder, Bac
  */
 export interface ProcessContentRequestBuilder extends BaseRequestBuilder<ProcessContentRequestBuilder> {
     /**
-     * Process content against data protection policies in the context of the current user. 
+     * Process content against data protection policies in the context of the current, or specified, user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProcessContentResponse>}
@@ -56,7 +56,7 @@ export interface ProcessContentRequestBuilder extends BaseRequestBuilder<Process
      */
      post(body: ProcessContentPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProcessContentResponse | undefined>;
     /**
-     * Process content against data protection policies in the context of the current user. 
+     * Process content against data protection policies in the context of the current, or specified, user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
