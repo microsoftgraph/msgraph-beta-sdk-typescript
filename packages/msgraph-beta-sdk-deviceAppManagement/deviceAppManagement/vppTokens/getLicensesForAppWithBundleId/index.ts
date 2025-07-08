@@ -19,6 +19,7 @@ export function createGetLicensesForAppWithBundleIdGetResponseFromDiscriminatorV
 }
 /**
  * The deserialization information for the current model
+ * @param GetLicensesForAppWithBundleIdGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetLicensesForAppWithBundleIdRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetLicensesForAppWithBundleIdGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetLicensesForAppWithBundleIdGetResponse(writer: SerializationWriter, getLicensesForAppWithBundleIdGetResponse: Partial<GetLicensesForAppWithBundleIdGetResponse> | undefined | null = {}) : void {
-    if (getLicensesForAppWithBundleIdGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getLicensesForAppWithBundleIdGetResponse)
-        writer.writeCollectionOfObjectValues<VppTokenLicenseSummary>("value", getLicensesForAppWithBundleIdGetResponse.value, serializeVppTokenLicenseSummary);
-    }
+export function serializeGetLicensesForAppWithBundleIdGetResponse(writer: SerializationWriter, getLicensesForAppWithBundleIdGetResponse: Partial<GetLicensesForAppWithBundleIdGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getLicensesForAppWithBundleIdGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getLicensesForAppWithBundleIdGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<VppTokenLicenseSummary>("value", getLicensesForAppWithBundleIdGetResponse.value, serializeVppTokenLicenseSummary);
 }
 /**
  * Uri template for the request builder.

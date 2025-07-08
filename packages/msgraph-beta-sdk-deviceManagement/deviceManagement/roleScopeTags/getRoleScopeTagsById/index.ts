@@ -28,6 +28,7 @@ export function createGetRoleScopeTagsByIdPostResponseFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param GetRoleScopeTagsByIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoGetRoleScopeTagsByIdPostRequestBody(getRoleScopeT
 }
 /**
  * The deserialization information for the current model
+ * @param GetRoleScopeTagsByIdPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoGetRoleScopeTagsByIdPostResponse(getRoleScopeTags
     }
 }
 export interface GetRoleScopeTagsByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface GetRoleScopeTagsByIdRequestBuilder extends BaseRequestBuilder<G
 }
 /**
  * Serializes information the current object
+ * @param GetRoleScopeTagsByIdPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetRoleScopeTagsByIdPostRequestBody(writer: SerializationWriter, getRoleScopeTagsByIdPostRequestBody: Partial<GetRoleScopeTagsByIdPostRequestBody> | undefined | null = {}) : void {
-    if (getRoleScopeTagsByIdPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", getRoleScopeTagsByIdPostRequestBody.roleScopeTagIds);
-        writer.writeAdditionalData(getRoleScopeTagsByIdPostRequestBody.additionalData);
-    }
+export function serializeGetRoleScopeTagsByIdPostRequestBody(writer: SerializationWriter, getRoleScopeTagsByIdPostRequestBody: Partial<GetRoleScopeTagsByIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getRoleScopeTagsByIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", getRoleScopeTagsByIdPostRequestBody.roleScopeTagIds);
+    writer.writeAdditionalData(getRoleScopeTagsByIdPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param GetRoleScopeTagsByIdPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetRoleScopeTagsByIdPostResponse(writer: SerializationWriter, getRoleScopeTagsByIdPostResponse: Partial<GetRoleScopeTagsByIdPostResponse> | undefined | null = {}) : void {
-    if (getRoleScopeTagsByIdPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByIdPostResponse)
-        writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByIdPostResponse.value, serializeRoleScopeTag);
-    }
+export function serializeGetRoleScopeTagsByIdPostResponse(writer: SerializationWriter, getRoleScopeTagsByIdPostResponse: Partial<GetRoleScopeTagsByIdPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getRoleScopeTagsByIdPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByIdPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByIdPostResponse.value, serializeRoleScopeTag);
 }
 /**
  * Uri template for the request builder.

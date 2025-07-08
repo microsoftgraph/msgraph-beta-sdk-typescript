@@ -19,6 +19,7 @@ export function createOverrideComplianceStatePostRequestBodyFromDiscriminatorVal
 }
 /**
  * The deserialization information for the current model
+ * @param OverrideComplianceStatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoOverrideComplianceStatePostRequestBody(overrideCo
     }
 }
 export interface OverrideComplianceStatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -68,15 +65,16 @@ export interface OverrideComplianceStateRequestBuilder extends BaseRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OverrideComplianceStatePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOverrideComplianceStatePostRequestBody(writer: SerializationWriter, overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined | null = {}) : void {
-    if (overrideComplianceStatePostRequestBody) {
-        writer.writeEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", overrideComplianceStatePostRequestBody.complianceState);
-        writer.writeStringValue("remediationUrl", overrideComplianceStatePostRequestBody.remediationUrl);
-        writer.writeAdditionalData(overrideComplianceStatePostRequestBody.additionalData);
-    }
+export function serializeOverrideComplianceStatePostRequestBody(writer: SerializationWriter, overrideComplianceStatePostRequestBody: Partial<OverrideComplianceStatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!overrideComplianceStatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", overrideComplianceStatePostRequestBody.complianceState);
+    writer.writeStringValue("remediationUrl", overrideComplianceStatePostRequestBody.remediationUrl);
+    writer.writeAdditionalData(overrideComplianceStatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

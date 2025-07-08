@@ -26,6 +26,7 @@ export function createRequestSignupUrlPostResponseFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param RequestSignupUrlPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -37,6 +38,7 @@ export function deserializeIntoRequestSignupUrlPostRequestBody(requestSignupUrlP
 }
 /**
  * The deserialization information for the current model
+ * @param RequestSignupUrlPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -48,10 +50,6 @@ export function deserializeIntoRequestSignupUrlPostResponse(requestSignupUrlPost
 }
 export interface RequestSignupUrlPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -61,10 +59,6 @@ export interface RequestSignupUrlPostRequestBody extends AdditionalDataHolder, B
     hostName?: string | null;
 }
 export interface RequestSignupUrlPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -96,25 +90,27 @@ export interface RequestSignupUrlRequestBuilder extends BaseRequestBuilder<Reque
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RequestSignupUrlPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRequestSignupUrlPostRequestBody(writer: SerializationWriter, requestSignupUrlPostRequestBody: Partial<RequestSignupUrlPostRequestBody> | undefined | null = {}) : void {
-    if (requestSignupUrlPostRequestBody) {
-        writer.writeStringValue("hostName", requestSignupUrlPostRequestBody.hostName);
-        writer.writeAdditionalData(requestSignupUrlPostRequestBody.additionalData);
-    }
+export function serializeRequestSignupUrlPostRequestBody(writer: SerializationWriter, requestSignupUrlPostRequestBody: Partial<RequestSignupUrlPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!requestSignupUrlPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("hostName", requestSignupUrlPostRequestBody.hostName);
+    writer.writeAdditionalData(requestSignupUrlPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RequestSignupUrlPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRequestSignupUrlPostResponse(writer: SerializationWriter, requestSignupUrlPostResponse: Partial<RequestSignupUrlPostResponse> | undefined | null = {}) : void {
-    if (requestSignupUrlPostResponse) {
-        writer.writeStringValue("value", requestSignupUrlPostResponse.value);
-        writer.writeAdditionalData(requestSignupUrlPostResponse.additionalData);
-    }
+export function serializeRequestSignupUrlPostResponse(writer: SerializationWriter, requestSignupUrlPostResponse: Partial<RequestSignupUrlPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!requestSignupUrlPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", requestSignupUrlPostResponse.value);
+    writer.writeAdditionalData(requestSignupUrlPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

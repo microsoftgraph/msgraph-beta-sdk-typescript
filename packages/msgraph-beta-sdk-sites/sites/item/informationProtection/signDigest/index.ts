@@ -19,6 +19,7 @@ export function createSignDigestPostRequestBodyFromDiscriminatorValue(parseNode:
 }
 /**
  * The deserialization information for the current model
+ * @param SignDigestPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,20 +31,17 @@ export function deserializeIntoSignDigestPostRequestBody(signDigestPostRequestBo
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SignDigestPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined | null = {}) : void {
-    if (signDigestPostRequestBody) {
-        writer.writeByteArrayValue("digest", signDigestPostRequestBody.digest);
-        writer.writeAdditionalData(signDigestPostRequestBody.additionalData);
-    }
+export function serializeSignDigestPostRequestBody(writer: SerializationWriter, signDigestPostRequestBody: Partial<SignDigestPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!signDigestPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeByteArrayValue("digest", signDigestPostRequestBody.digest);
+    writer.writeAdditionalData(signDigestPostRequestBody.additionalData);
 }
 export interface SignDigestPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

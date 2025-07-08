@@ -17,6 +17,7 @@ export function createGetRemoteAssistanceSessionsReportPostRequestBodyFromDiscri
 }
 /**
  * The deserialization information for the current model
+ * @param GetRemoteAssistanceSessionsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetRemoteAssistanceSessionsReportPostRequestBody(
     }
 }
 export interface GetRemoteAssistanceSessionsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetRemoteAssistanceSessionsReportRequestBuilder extends BaseReq
 }
 /**
  * Serializes information the current object
+ * @param GetRemoteAssistanceSessionsReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetRemoteAssistanceSessionsReportPostRequestBody(writer: SerializationWriter, getRemoteAssistanceSessionsReportPostRequestBody: Partial<GetRemoteAssistanceSessionsReportPostRequestBody> | undefined | null = {}) : void {
-    if (getRemoteAssistanceSessionsReportPostRequestBody) {
-        writer.writeStringValue("filter", getRemoteAssistanceSessionsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRemoteAssistanceSessionsReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getRemoteAssistanceSessionsReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRemoteAssistanceSessionsReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getRemoteAssistanceSessionsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getRemoteAssistanceSessionsReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getRemoteAssistanceSessionsReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getRemoteAssistanceSessionsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getRemoteAssistanceSessionsReportPostRequestBody.top);
-        writer.writeAdditionalData(getRemoteAssistanceSessionsReportPostRequestBody.additionalData);
-    }
+export function serializeGetRemoteAssistanceSessionsReportPostRequestBody(writer: SerializationWriter, getRemoteAssistanceSessionsReportPostRequestBody: Partial<GetRemoteAssistanceSessionsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getRemoteAssistanceSessionsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getRemoteAssistanceSessionsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRemoteAssistanceSessionsReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getRemoteAssistanceSessionsReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRemoteAssistanceSessionsReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getRemoteAssistanceSessionsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getRemoteAssistanceSessionsReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getRemoteAssistanceSessionsReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getRemoteAssistanceSessionsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getRemoteAssistanceSessionsReportPostRequestBody.top);
+    writer.writeAdditionalData(getRemoteAssistanceSessionsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

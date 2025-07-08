@@ -17,6 +17,7 @@ export function createRetryPostRequestBodyFromDiscriminatorValue(parseNode: Pars
 }
 /**
  * The deserialization information for the current model
+ * @param RetryPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoRetryPostRequestBody(retryPostRequestBody: Partia
     }
 }
 export interface RetryPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -61,14 +58,15 @@ export interface RetryRequestBuilder extends BaseRequestBuilder<RetryRequestBuil
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetryPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetryPostRequestBody(writer: SerializationWriter, retryPostRequestBody: Partial<RetryPostRequestBody> | undefined | null = {}) : void {
-    if (retryPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", retryPostRequestBody.cloudPcIds);
-        writer.writeAdditionalData(retryPostRequestBody.additionalData);
-    }
+export function serializeRetryPostRequestBody(writer: SerializationWriter, retryPostRequestBody: Partial<RetryPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retryPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", retryPostRequestBody.cloudPcIds);
+    writer.writeAdditionalData(retryPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

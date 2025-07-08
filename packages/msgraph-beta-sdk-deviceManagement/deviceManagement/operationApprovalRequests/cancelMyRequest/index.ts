@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CancelMyRequestPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -50,6 +46,7 @@ export function createCancelMyRequestPostRequestBodyFromDiscriminatorValue(parse
 }
 /**
  * The deserialization information for the current model
+ * @param CancelMyRequestPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -61,14 +58,15 @@ export function deserializeIntoCancelMyRequestPostRequestBody(cancelMyRequestPos
 }
 /**
  * Serializes information the current object
+ * @param CancelMyRequestPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCancelMyRequestPostRequestBody(writer: SerializationWriter, cancelMyRequestPostRequestBody: Partial<CancelMyRequestPostRequestBody> | undefined | null = {}) : void {
-    if (cancelMyRequestPostRequestBody) {
-        writer.writeStringValue("id", cancelMyRequestPostRequestBody.id);
-        writer.writeAdditionalData(cancelMyRequestPostRequestBody.additionalData);
-    }
+export function serializeCancelMyRequestPostRequestBody(writer: SerializationWriter, cancelMyRequestPostRequestBody: Partial<CancelMyRequestPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cancelMyRequestPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("id", cancelMyRequestPostRequestBody.id);
+    writer.writeAdditionalData(cancelMyRequestPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createSetDeviceNamePostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param SetDeviceNamePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,20 +29,17 @@ export function deserializeIntoSetDeviceNamePostRequestBody(setDeviceNamePostReq
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SetDeviceNamePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSetDeviceNamePostRequestBody(writer: SerializationWriter, setDeviceNamePostRequestBody: Partial<SetDeviceNamePostRequestBody> | undefined | null = {}) : void {
-    if (setDeviceNamePostRequestBody) {
-        writer.writeStringValue("deviceName", setDeviceNamePostRequestBody.deviceName);
-        writer.writeAdditionalData(setDeviceNamePostRequestBody.additionalData);
-    }
+export function serializeSetDeviceNamePostRequestBody(writer: SerializationWriter, setDeviceNamePostRequestBody: Partial<SetDeviceNamePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!setDeviceNamePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("deviceName", setDeviceNamePostRequestBody.deviceName);
+    writer.writeAdditionalData(setDeviceNamePostRequestBody.additionalData);
 }
 export interface SetDeviceNamePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

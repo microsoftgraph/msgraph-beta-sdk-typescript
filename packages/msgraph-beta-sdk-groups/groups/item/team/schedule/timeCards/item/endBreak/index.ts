@@ -19,6 +19,7 @@ export function createEndBreakPostRequestBodyFromDiscriminatorValue(parseNode: P
 }
 /**
  * The deserialization information for the current model
+ * @param EndBreakPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -31,10 +32,6 @@ export function deserializeIntoEndBreakPostRequestBody(endBreakPostRequestBody: 
     }
 }
 export interface EndBreakPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The atApprovedLocation property
      */
@@ -75,16 +72,17 @@ export interface EndBreakRequestBuilder extends BaseRequestBuilder<EndBreakReque
 }
 /**
  * Serializes information the current object
+ * @param EndBreakPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEndBreakPostRequestBody(writer: SerializationWriter, endBreakPostRequestBody: Partial<EndBreakPostRequestBody> | undefined | null = {}) : void {
-    if (endBreakPostRequestBody) {
-        writer.writeBooleanValue("atApprovedLocation", endBreakPostRequestBody.atApprovedLocation);
-        writer.writeBooleanValue("isAtApprovedLocation", endBreakPostRequestBody.isAtApprovedLocation);
-        writer.writeObjectValue<ItemBody>("notes", endBreakPostRequestBody.notes, serializeItemBody);
-        writer.writeAdditionalData(endBreakPostRequestBody.additionalData);
-    }
+export function serializeEndBreakPostRequestBody(writer: SerializationWriter, endBreakPostRequestBody: Partial<EndBreakPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!endBreakPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("atApprovedLocation", endBreakPostRequestBody.atApprovedLocation);
+    writer.writeBooleanValue("isAtApprovedLocation", endBreakPostRequestBody.isAtApprovedLocation);
+    writer.writeObjectValue<ItemBody>("notes", endBreakPostRequestBody.notes, serializeItemBody);
+    writer.writeAdditionalData(endBreakPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

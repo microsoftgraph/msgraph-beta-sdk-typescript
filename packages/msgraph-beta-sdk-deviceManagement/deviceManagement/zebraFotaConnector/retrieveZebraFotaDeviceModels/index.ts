@@ -19,6 +19,7 @@ export function createRetrieveZebraFotaDeviceModelsGetResponseFromDiscriminatorV
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveZebraFotaDeviceModelsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface RetrieveZebraFotaDeviceModelsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveZebraFotaDeviceModelsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveZebraFotaDeviceModelsGetResponse(writer: SerializationWriter, retrieveZebraFotaDeviceModelsGetResponse: Partial<RetrieveZebraFotaDeviceModelsGetResponse> | undefined | null = {}) : void {
-    if (retrieveZebraFotaDeviceModelsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveZebraFotaDeviceModelsGetResponse)
-        writer.writeCollectionOfPrimitiveValues<string>("value", retrieveZebraFotaDeviceModelsGetResponse.value);
-    }
+export function serializeRetrieveZebraFotaDeviceModelsGetResponse(writer: SerializationWriter, retrieveZebraFotaDeviceModelsGetResponse: Partial<RetrieveZebraFotaDeviceModelsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveZebraFotaDeviceModelsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveZebraFotaDeviceModelsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("value", retrieveZebraFotaDeviceModelsGetResponse.value);
 }
 /**
  * Uri template for the request builder.

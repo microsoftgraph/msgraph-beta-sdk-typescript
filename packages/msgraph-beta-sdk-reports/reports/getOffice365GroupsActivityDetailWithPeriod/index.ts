@@ -19,6 +19,7 @@ export function createGetOffice365GroupsActivityDetailWithPeriodGetResponseFromD
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365GroupsActivityDetailWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQuer
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365GroupsActivityDetailWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365GroupsActivityDetailWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithPeriodGetResponse: Partial<GetOffice365GroupsActivityDetailWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getOffice365GroupsActivityDetailWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithPeriodGetResponse.value, serializeOffice365GroupsActivityDetail);
-    }
+export function serializeGetOffice365GroupsActivityDetailWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithPeriodGetResponse: Partial<GetOffice365GroupsActivityDetailWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365GroupsActivityDetailWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithPeriodGetResponse.value, serializeOffice365GroupsActivityDetail);
 }
 /**
  * Uri template for the request builder.

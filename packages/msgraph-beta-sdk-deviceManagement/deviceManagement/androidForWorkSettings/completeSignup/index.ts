@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CompleteSignupPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -50,6 +46,7 @@ export function createCompleteSignupPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param CompleteSignupPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -61,14 +58,15 @@ export function deserializeIntoCompleteSignupPostRequestBody(completeSignupPostR
 }
 /**
  * Serializes information the current object
+ * @param CompleteSignupPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCompleteSignupPostRequestBody(writer: SerializationWriter, completeSignupPostRequestBody: Partial<CompleteSignupPostRequestBody> | undefined | null = {}) : void {
-    if (completeSignupPostRequestBody) {
-        writer.writeStringValue("enterpriseToken", completeSignupPostRequestBody.enterpriseToken);
-        writer.writeAdditionalData(completeSignupPostRequestBody.additionalData);
-    }
+export function serializeCompleteSignupPostRequestBody(writer: SerializationWriter, completeSignupPostRequestBody: Partial<CompleteSignupPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!completeSignupPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("enterpriseToken", completeSignupPostRequestBody.enterpriseToken);
+    writer.writeAdditionalData(completeSignupPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

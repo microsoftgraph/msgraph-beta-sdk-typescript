@@ -19,6 +19,7 @@ export function createRetrieveOperationsRequiringApprovalGetResponseFromDiscrimi
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveOperationsRequiringApprovalGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParame
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveOperationsRequiringApprovalGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveOperationsRequiringApprovalGetResponse(writer: SerializationWriter, retrieveOperationsRequiringApprovalGetResponse: Partial<RetrieveOperationsRequiringApprovalGetResponse> | undefined | null = {}) : void {
-    if (retrieveOperationsRequiringApprovalGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveOperationsRequiringApprovalGetResponse)
-        writer.writeCollectionOfObjectValues<OperationApprovalPolicySet>("value", retrieveOperationsRequiringApprovalGetResponse.value, serializeOperationApprovalPolicySet);
-    }
+export function serializeRetrieveOperationsRequiringApprovalGetResponse(writer: SerializationWriter, retrieveOperationsRequiringApprovalGetResponse: Partial<RetrieveOperationsRequiringApprovalGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveOperationsRequiringApprovalGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveOperationsRequiringApprovalGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<OperationApprovalPolicySet>("value", retrieveOperationsRequiringApprovalGetResponse.value, serializeOperationApprovalPolicySet);
 }
 /**
  * Uri template for the request builder.

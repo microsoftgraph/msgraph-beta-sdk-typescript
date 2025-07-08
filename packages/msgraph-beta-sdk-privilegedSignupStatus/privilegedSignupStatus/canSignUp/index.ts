@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CanSignUpGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -49,6 +45,7 @@ export function createCanSignUpGetResponseFromDiscriminatorValue(parseNode: Pars
 }
 /**
  * The deserialization information for the current model
+ * @param CanSignUpGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -60,14 +57,15 @@ export function deserializeIntoCanSignUpGetResponse(canSignUpGetResponse: Partia
 }
 /**
  * Serializes information the current object
+ * @param CanSignUpGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCanSignUpGetResponse(writer: SerializationWriter, canSignUpGetResponse: Partial<CanSignUpGetResponse> | undefined | null = {}) : void {
-    if (canSignUpGetResponse) {
-        writer.writeBooleanValue("value", canSignUpGetResponse.value);
-        writer.writeAdditionalData(canSignUpGetResponse.additionalData);
-    }
+export function serializeCanSignUpGetResponse(writer: SerializationWriter, canSignUpGetResponse: Partial<CanSignUpGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!canSignUpGetResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", canSignUpGetResponse.value);
+    writer.writeAdditionalData(canSignUpGetResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

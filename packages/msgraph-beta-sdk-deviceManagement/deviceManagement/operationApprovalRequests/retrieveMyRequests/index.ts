@@ -19,6 +19,7 @@ export function createRetrieveMyRequestsGetResponseFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveMyRequestsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface RetrieveMyRequestsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveMyRequestsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveMyRequestsGetResponse(writer: SerializationWriter, retrieveMyRequestsGetResponse: Partial<RetrieveMyRequestsGetResponse> | undefined | null = {}) : void {
-    if (retrieveMyRequestsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveMyRequestsGetResponse)
-        writer.writeCollectionOfObjectValues<OperationApprovalRequest>("value", retrieveMyRequestsGetResponse.value, serializeOperationApprovalRequest);
-    }
+export function serializeRetrieveMyRequestsGetResponse(writer: SerializationWriter, retrieveMyRequestsGetResponse: Partial<RetrieveMyRequestsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveMyRequestsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveMyRequestsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<OperationApprovalRequest>("value", retrieveMyRequestsGetResponse.value, serializeOperationApprovalRequest);
 }
 /**
  * Uri template for the request builder.

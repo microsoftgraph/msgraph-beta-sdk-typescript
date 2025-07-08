@@ -19,6 +19,7 @@ export function createGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetRespo
 }
 /**
  * The deserialization information for the current model
+ * @param GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(writer: SerializationWriter, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined | null = {}) : void {
-    if (getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPC>("value", getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.value, serializeCloudPC);
-    }
+export function serializeGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(writer: SerializationWriter, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse: Partial<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPC>("value", getProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.value, serializeCloudPC);
 }
 /**
  * Uri template for the request builder.

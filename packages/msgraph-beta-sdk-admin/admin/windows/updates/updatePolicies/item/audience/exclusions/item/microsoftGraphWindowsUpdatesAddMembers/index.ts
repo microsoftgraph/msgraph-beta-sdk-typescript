@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AddMembersPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The assets property
      */
     assets?: UpdatableAsset[] | null;
@@ -33,6 +29,7 @@ export function createAddMembersPostRequestBodyFromDiscriminatorValue(parseNode:
 }
 /**
  * The deserialization information for the current model
+ * @param AddMembersPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -64,14 +61,15 @@ export interface MicrosoftGraphWindowsUpdatesAddMembersRequestBuilder extends Ba
 }
 /**
  * Serializes information the current object
+ * @param AddMembersPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAddMembersPostRequestBody(writer: SerializationWriter, addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined | null = {}) : void {
-    if (addMembersPostRequestBody) {
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", addMembersPostRequestBody.assets, serializeUpdatableAsset);
-        writer.writeAdditionalData(addMembersPostRequestBody.additionalData);
-    }
+export function serializeAddMembersPostRequestBody(writer: SerializationWriter, addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!addMembersPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", addMembersPostRequestBody.assets, serializeUpdatableAsset);
+    writer.writeAdditionalData(addMembersPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

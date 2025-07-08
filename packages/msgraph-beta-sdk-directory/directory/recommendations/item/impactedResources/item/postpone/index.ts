@@ -19,6 +19,7 @@ export function createPostponePostRequestBodyFromDiscriminatorValue(parseNode: P
 }
 /**
  * The deserialization information for the current model
+ * @param PostponePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoPostponePostRequestBody(postponePostRequestBody: 
     }
 }
 export interface PostponePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -65,14 +62,15 @@ export interface PostponeRequestBuilder extends BaseRequestBuilder<PostponeReque
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PostponePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePostponePostRequestBody(writer: SerializationWriter, postponePostRequestBody: Partial<PostponePostRequestBody> | undefined | null = {}) : void {
-    if (postponePostRequestBody) {
-        writer.writeDateValue("postponeUntilDateTime", postponePostRequestBody.postponeUntilDateTime);
-        writer.writeAdditionalData(postponePostRequestBody.additionalData);
-    }
+export function serializePostponePostRequestBody(writer: SerializationWriter, postponePostRequestBody: Partial<PostponePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!postponePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeDateValue("postponeUntilDateTime", postponePostRequestBody.postponeUntilDateTime);
+    writer.writeAdditionalData(postponePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

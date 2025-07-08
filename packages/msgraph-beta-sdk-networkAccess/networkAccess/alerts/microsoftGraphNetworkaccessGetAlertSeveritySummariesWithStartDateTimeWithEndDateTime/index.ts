@@ -21,6 +21,7 @@ export function createGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeG
 }
 /**
  * The deserialization information for the current model
+ * @param GetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -83,14 +84,15 @@ export interface MicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDa
 }
 /**
  * Serializes information the current object
+ * @param GetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<AlertSeveritySummary>("value", getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeAlertSeveritySummary);
-    }
+export function serializeGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertSeveritySummary>("value", getAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeAlertSeveritySummary);
 }
 /**
  * Uri template for the request builder.

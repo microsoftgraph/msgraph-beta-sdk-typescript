@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ApplyPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -53,6 +49,7 @@ export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: Pars
 }
 /**
  * The deserialization information for the current model
+ * @param ApplyPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -90,19 +87,20 @@ export interface MicrosoftGraphManagedTenantsApplyRequestBuilder extends BaseReq
 }
 /**
  * Serializes information the current object
+ * @param ApplyPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined | null = {}) : void {
-    if (applyPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", applyPostRequestBody.excludeGroups);
-        writer.writeBooleanValue("includeAllUsers", applyPostRequestBody.includeAllUsers);
-        writer.writeCollectionOfPrimitiveValues<string>("includeGroups", applyPostRequestBody.includeGroups);
-        writer.writeStringValue("managementTemplateId", applyPostRequestBody.managementTemplateId);
-        writer.writeStringValue("tenantGroupId", applyPostRequestBody.tenantGroupId);
-        writer.writeStringValue("tenantId", applyPostRequestBody.tenantId);
-        writer.writeAdditionalData(applyPostRequestBody.additionalData);
-    }
+export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applyPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", applyPostRequestBody.excludeGroups);
+    writer.writeBooleanValue("includeAllUsers", applyPostRequestBody.includeAllUsers);
+    writer.writeCollectionOfPrimitiveValues<string>("includeGroups", applyPostRequestBody.includeGroups);
+    writer.writeStringValue("managementTemplateId", applyPostRequestBody.managementTemplateId);
+    writer.writeStringValue("tenantGroupId", applyPostRequestBody.tenantGroupId);
+    writer.writeStringValue("tenantId", applyPostRequestBody.tenantId);
+    writer.writeAdditionalData(applyPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

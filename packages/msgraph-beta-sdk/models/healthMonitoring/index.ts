@@ -308,6 +308,7 @@ export function createUserImpactSummaryFromDiscriminatorValue(parseNode: ParseNo
 }
 /**
  * The deserialization information for the current model
+ * @param Alert The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -326,6 +327,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
 }
 /**
  * The deserialization information for the current model
+ * @param AlertCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -337,6 +339,7 @@ export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: 
 }
 /**
  * The deserialization information for the current model
+ * @param AlertConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -348,6 +351,7 @@ export function deserializeIntoAlertConfiguration(alertConfiguration: Partial<Al
 }
 /**
  * The deserialization information for the current model
+ * @param AlertConfigurationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -359,6 +363,7 @@ export function deserializeIntoAlertConfigurationCollectionResponse(alertConfigu
 }
 /**
  * The deserialization information for the current model
+ * @param ApplicationImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -369,6 +374,7 @@ export function deserializeIntoApplicationImpactSummary(applicationImpactSummary
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -379,6 +385,7 @@ export function deserializeIntoDeviceImpactSummary(deviceImpactSummary: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param Dictionary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -390,6 +397,7 @@ export function deserializeIntoDictionary(dictionary: Partial<Dictionary> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param DirectoryObjectImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -401,6 +409,7 @@ export function deserializeIntoDirectoryObjectImpactSummary(directoryObjectImpac
 }
 /**
  * The deserialization information for the current model
+ * @param Documentation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -411,6 +420,7 @@ export function deserializeIntoDocumentation(documentation: Partial<Documentatio
 }
 /**
  * The deserialization information for the current model
+ * @param EmailNotificationConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -424,6 +434,7 @@ export function deserializeIntoEmailNotificationConfiguration(emailNotificationC
 }
 /**
  * The deserialization information for the current model
+ * @param Enrichment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -438,6 +449,7 @@ export function deserializeIntoEnrichment(enrichment: Partial<Enrichment> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param GroupImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -448,6 +460,7 @@ export function deserializeIntoGroupImpactSummary(groupImpactSummary: Partial<Gr
 }
 /**
  * The deserialization information for the current model
+ * @param HealthMonitoringDictionary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -458,6 +471,7 @@ export function deserializeIntoHealthMonitoringDictionary(healthMonitoringDictio
 }
 /**
  * The deserialization information for the current model
+ * @param HealthMonitoringRoot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -470,6 +484,7 @@ export function deserializeIntoHealthMonitoringRoot(healthMonitoringRoot: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ResourceImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -484,6 +499,7 @@ export function deserializeIntoResourceImpactSummary(resourceImpactSummary: Part
 }
 /**
  * The deserialization information for the current model
+ * @param ServicePrincipalImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -494,6 +510,7 @@ export function deserializeIntoServicePrincipalImpactSummary(servicePrincipalImp
 }
 /**
  * The deserialization information for the current model
+ * @param Signals The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -504,6 +521,7 @@ export function deserializeIntoSignals(signals: Partial<Signals> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param SupportingData The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -514,6 +532,7 @@ export function deserializeIntoSupportingData(supportingData: Partial<Supporting
 }
 /**
  * The deserialization information for the current model
+ * @param UserImpactSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -525,10 +544,6 @@ export function deserializeIntoUserImpactSummary(userImpactSummary: Partial<User
 export interface DeviceImpactSummary extends DirectoryObjectImpactSummary, Parsable {
 }
 export interface Dictionary extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -548,10 +563,6 @@ export interface Documentation extends HealthMonitoringDictionary, Parsable {
 }
 export interface EmailNotificationConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -569,10 +580,6 @@ export interface EmailNotificationConfiguration extends AdditionalDataHolder, Ba
     odataType?: string | null;
 }
 export interface Enrichment extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -611,10 +618,6 @@ export interface HealthMonitoringRoot extends Entity, Parsable {
 }
 export interface ResourceImpactSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -638,219 +641,300 @@ export interface ResourceImpactSummary extends AdditionalDataHolder, BackedModel
 export type Scenario = (typeof ScenarioObject)[keyof typeof ScenarioObject];
 /**
  * Serializes information the current object
+ * @param Alert The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined | null = {}) : void {
-    if (alert) {
-        serializeEntity(writer, alert)
-        writer.writeEnumValue<AlertType>("alertType", alert.alertType);
-        writer.writeEnumValue<Category>("category", alert.category);
-        writer.writeDateValue("createdDateTime", alert.createdDateTime);
-        writer.writeObjectValue<Documentation>("documentation", alert.documentation, serializeDocumentation);
-        writer.writeObjectValue<Enrichment>("enrichment", alert.enrichment, serializeEnrichment);
-        writer.writeEnumValue<Scenario>("scenario", alert.scenario);
-        writer.writeObjectValue<Signals>("signals", alert.signals, serializeSignals);
-        writer.writeEnumValue<AlertState>("state", alert.state);
+export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alert || isSerializingDerivedType) { return; }
+    serializeEntity(writer, alert, isSerializingDerivedType)
+    writer.writeEnumValue<AlertType>("alertType", alert.alertType);
+    writer.writeEnumValue<Category>("category", alert.category);
+    writer.writeDateValue("createdDateTime", alert.createdDateTime);
+    writer.writeObjectValue<Documentation>("documentation", alert.documentation, serializeDocumentation);
+    writer.writeObjectValue<Enrichment>("enrichment", alert.enrichment, serializeEnrichment);
+    writer.writeEnumValue<Scenario>("scenario", alert.scenario);
+    writer.writeObjectValue<Signals>("signals", alert.signals, serializeSignals);
+    writer.writeEnumValue<AlertState>("state", alert.state);
+}
+/**
+ * Serializes information the current object
+ * @param AlertCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
+}
+/**
+ * Serializes information the current object
+ * @param AlertConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAlertConfiguration(writer: SerializationWriter, alertConfiguration: Partial<AlertConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, alertConfiguration, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<EmailNotificationConfiguration>("emailNotificationConfigurations", alertConfiguration.emailNotificationConfigurations, serializeEmailNotificationConfiguration);
+}
+/**
+ * Serializes information the current object
+ * @param AlertConfigurationCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAlertConfigurationCollectionResponse(writer: SerializationWriter, alertConfigurationCollectionResponse: Partial<AlertConfigurationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertConfigurationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, alertConfigurationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertConfiguration>("value", alertConfigurationCollectionResponse.value, serializeAlertConfiguration);
+}
+/**
+ * Serializes information the current object
+ * @param ApplicationImpactSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicationImpactSummary(writer: SerializationWriter, applicationImpactSummary: Partial<ApplicationImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicationImpactSummary || isSerializingDerivedType) { return; }
+    serializeDirectoryObjectImpactSummary(writer, applicationImpactSummary, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param DeviceImpactSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeviceImpactSummary(writer: SerializationWriter, deviceImpactSummary: Partial<DeviceImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceImpactSummary || isSerializingDerivedType) { return; }
+    serializeDirectoryObjectImpactSummary(writer, deviceImpactSummary, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param Dictionary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDictionary(writer: SerializationWriter, dictionary: Partial<Dictionary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!dictionary || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", dictionary.odataType);
+    writer.writeAdditionalData(dictionary.additionalData);
+    switch (dictionary.odataType) {
+        case "#microsoft.graph.healthMonitoring.documentation":
+            serializeDocumentation(writer, dictionary as Documentation, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.healthMonitoringDictionary":
+            serializeHealthMonitoringDictionary(writer, dictionary as HealthMonitoringDictionary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.signals":
+            serializeSignals(writer, dictionary as Signals, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.supportingData":
+            serializeSupportingData(writer, dictionary as SupportingData, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param DirectoryObjectImpactSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined | null = {}) : void {
-    if (alertCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse)
-        writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
+export function serializeDirectoryObjectImpactSummary(writer: SerializationWriter, directoryObjectImpactSummary: Partial<DirectoryObjectImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!directoryObjectImpactSummary || isSerializingDerivedType) { return; }
+    serializeResourceImpactSummary(writer, directoryObjectImpactSummary, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DirectoryObject>("resourceSampling", directoryObjectImpactSummary.resourceSampling, serializeDirectoryObject);
+    switch (directoryObjectImpactSummary.odataType) {
+        case "#microsoft.graph.healthMonitoring.applicationImpactSummary":
+            serializeApplicationImpactSummary(writer, directoryObjectImpactSummary as ApplicationImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.deviceImpactSummary":
+            serializeDeviceImpactSummary(writer, directoryObjectImpactSummary as DeviceImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.groupImpactSummary":
+            serializeGroupImpactSummary(writer, directoryObjectImpactSummary as GroupImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.servicePrincipalImpactSummary":
+            serializeServicePrincipalImpactSummary(writer, directoryObjectImpactSummary as ServicePrincipalImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.userImpactSummary":
+            serializeUserImpactSummary(writer, directoryObjectImpactSummary as UserImpactSummary, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param Documentation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertConfiguration(writer: SerializationWriter, alertConfiguration: Partial<AlertConfiguration> | undefined | null = {}) : void {
-    if (alertConfiguration) {
-        serializeEntity(writer, alertConfiguration)
-        writer.writeCollectionOfObjectValues<EmailNotificationConfiguration>("emailNotificationConfigurations", alertConfiguration.emailNotificationConfigurations, serializeEmailNotificationConfiguration);
+export function serializeDocumentation(writer: SerializationWriter, documentation: Partial<Documentation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!documentation || isSerializingDerivedType) { return; }
+    serializeHealthMonitoringDictionary(writer, documentation, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param EmailNotificationConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEmailNotificationConfiguration(writer: SerializationWriter, emailNotificationConfiguration: Partial<EmailNotificationConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!emailNotificationConfiguration || isSerializingDerivedType) { return; }
+    writer.writeStringValue("groupId", emailNotificationConfiguration.groupId);
+    writer.writeBooleanValue("isEnabled", emailNotificationConfiguration.isEnabled);
+    writer.writeStringValue("@odata.type", emailNotificationConfiguration.odataType);
+    writer.writeAdditionalData(emailNotificationConfiguration.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param Enrichment The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnrichment(writer: SerializationWriter, enrichment: Partial<Enrichment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enrichment || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ResourceImpactSummary>("impacts", enrichment.impacts, serializeResourceImpactSummary);
+    writer.writeStringValue("@odata.type", enrichment.odataType);
+    writer.writeEnumValue<EnrichmentState>("state", enrichment.state);
+    writer.writeObjectValue<SupportingData>("supportingData", enrichment.supportingData, serializeSupportingData);
+    writer.writeAdditionalData(enrichment.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param GroupImpactSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeGroupImpactSummary(writer: SerializationWriter, groupImpactSummary: Partial<GroupImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!groupImpactSummary || isSerializingDerivedType) { return; }
+    serializeDirectoryObjectImpactSummary(writer, groupImpactSummary, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param HealthMonitoringDictionary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeHealthMonitoringDictionary(writer: SerializationWriter, healthMonitoringDictionary: Partial<HealthMonitoringDictionary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!healthMonitoringDictionary || isSerializingDerivedType) { return; }
+    serializeDictionary(writer, healthMonitoringDictionary, isSerializingDerivedType)
+    switch (healthMonitoringDictionary.odataType) {
+        case "#microsoft.graph.healthMonitoring.documentation":
+            serializeDocumentation(writer, healthMonitoringDictionary as Documentation, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.signals":
+            serializeSignals(writer, healthMonitoringDictionary as Signals, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.supportingData":
+            serializeSupportingData(writer, healthMonitoringDictionary as SupportingData, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param HealthMonitoringRoot The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertConfigurationCollectionResponse(writer: SerializationWriter, alertConfigurationCollectionResponse: Partial<AlertConfigurationCollectionResponse> | undefined | null = {}) : void {
-    if (alertConfigurationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, alertConfigurationCollectionResponse)
-        writer.writeCollectionOfObjectValues<AlertConfiguration>("value", alertConfigurationCollectionResponse.value, serializeAlertConfiguration);
+export function serializeHealthMonitoringRoot(writer: SerializationWriter, healthMonitoringRoot: Partial<HealthMonitoringRoot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!healthMonitoringRoot || isSerializingDerivedType) { return; }
+    serializeEntity(writer, healthMonitoringRoot, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertConfiguration>("alertConfigurations", healthMonitoringRoot.alertConfigurations, serializeAlertConfiguration);
+    writer.writeCollectionOfObjectValues<Alert>("alerts", healthMonitoringRoot.alerts, serializeAlert);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ResourceImpactSummary The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeResourceImpactSummary(writer: SerializationWriter, resourceImpactSummary: Partial<ResourceImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!resourceImpactSummary || isSerializingDerivedType) { return; }
+    writer.writeStringValue("impactedCount", resourceImpactSummary.impactedCount);
+    writer.writeBooleanValue("impactedCountLimitExceeded", resourceImpactSummary.impactedCountLimitExceeded);
+    writer.writeStringValue("@odata.type", resourceImpactSummary.odataType);
+    writer.writeStringValue("resourceType", resourceImpactSummary.resourceType);
+    writer.writeAdditionalData(resourceImpactSummary.additionalData);
+    switch (resourceImpactSummary.odataType) {
+        case "#microsoft.graph.healthMonitoring.applicationImpactSummary":
+            serializeApplicationImpactSummary(writer, resourceImpactSummary as ApplicationImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.deviceImpactSummary":
+            serializeDeviceImpactSummary(writer, resourceImpactSummary as DeviceImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.directoryObjectImpactSummary":
+            serializeDirectoryObjectImpactSummary(writer, resourceImpactSummary as DirectoryObjectImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.groupImpactSummary":
+            serializeGroupImpactSummary(writer, resourceImpactSummary as GroupImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.servicePrincipalImpactSummary":
+            serializeServicePrincipalImpactSummary(writer, resourceImpactSummary as ServicePrincipalImpactSummary, true);
+        break;
+        case "#microsoft.graph.healthMonitoring.userImpactSummary":
+            serializeUserImpactSummary(writer, resourceImpactSummary as UserImpactSummary, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ServicePrincipalImpactSummary The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApplicationImpactSummary(writer: SerializationWriter, applicationImpactSummary: Partial<ApplicationImpactSummary> | undefined | null = {}) : void {
-    if (applicationImpactSummary) {
-        serializeDirectoryObjectImpactSummary(writer, applicationImpactSummary)
-    }
+export function serializeServicePrincipalImpactSummary(writer: SerializationWriter, servicePrincipalImpactSummary: Partial<ServicePrincipalImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!servicePrincipalImpactSummary || isSerializingDerivedType) { return; }
+    serializeDirectoryObjectImpactSummary(writer, servicePrincipalImpactSummary, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Signals The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceImpactSummary(writer: SerializationWriter, deviceImpactSummary: Partial<DeviceImpactSummary> | undefined | null = {}) : void {
-    if (deviceImpactSummary) {
-        serializeDirectoryObjectImpactSummary(writer, deviceImpactSummary)
-    }
+export function serializeSignals(writer: SerializationWriter, signals: Partial<Signals> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!signals || isSerializingDerivedType) { return; }
+    serializeHealthMonitoringDictionary(writer, signals, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SupportingData The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDictionary(writer: SerializationWriter, dictionary: Partial<Dictionary> | undefined | null = {}) : void {
-    if (dictionary) {
-        writer.writeStringValue("@odata.type", dictionary.odataType);
-        writer.writeAdditionalData(dictionary.additionalData);
-    }
+export function serializeSupportingData(writer: SerializationWriter, supportingData: Partial<SupportingData> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!supportingData || isSerializingDerivedType) { return; }
+    serializeHealthMonitoringDictionary(writer, supportingData, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserImpactSummary The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDirectoryObjectImpactSummary(writer: SerializationWriter, directoryObjectImpactSummary: Partial<DirectoryObjectImpactSummary> | undefined | null = {}) : void {
-    if (directoryObjectImpactSummary) {
-        serializeResourceImpactSummary(writer, directoryObjectImpactSummary)
-        writer.writeCollectionOfObjectValues<DirectoryObject>("resourceSampling", directoryObjectImpactSummary.resourceSampling, serializeDirectoryObject);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeDocumentation(writer: SerializationWriter, documentation: Partial<Documentation> | undefined | null = {}) : void {
-    if (documentation) {
-        serializeHealthMonitoringDictionary(writer, documentation)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeEmailNotificationConfiguration(writer: SerializationWriter, emailNotificationConfiguration: Partial<EmailNotificationConfiguration> | undefined | null = {}) : void {
-    if (emailNotificationConfiguration) {
-        writer.writeStringValue("groupId", emailNotificationConfiguration.groupId);
-        writer.writeBooleanValue("isEnabled", emailNotificationConfiguration.isEnabled);
-        writer.writeStringValue("@odata.type", emailNotificationConfiguration.odataType);
-        writer.writeAdditionalData(emailNotificationConfiguration.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeEnrichment(writer: SerializationWriter, enrichment: Partial<Enrichment> | undefined | null = {}) : void {
-    if (enrichment) {
-        writer.writeCollectionOfObjectValues<ResourceImpactSummary>("impacts", enrichment.impacts, serializeResourceImpactSummary);
-        writer.writeStringValue("@odata.type", enrichment.odataType);
-        writer.writeEnumValue<EnrichmentState>("state", enrichment.state);
-        writer.writeObjectValue<SupportingData>("supportingData", enrichment.supportingData, serializeSupportingData);
-        writer.writeAdditionalData(enrichment.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeGroupImpactSummary(writer: SerializationWriter, groupImpactSummary: Partial<GroupImpactSummary> | undefined | null = {}) : void {
-    if (groupImpactSummary) {
-        serializeDirectoryObjectImpactSummary(writer, groupImpactSummary)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeHealthMonitoringDictionary(writer: SerializationWriter, healthMonitoringDictionary: Partial<HealthMonitoringDictionary> | undefined | null = {}) : void {
-    if (healthMonitoringDictionary) {
-        serializeDictionary(writer, healthMonitoringDictionary)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeHealthMonitoringRoot(writer: SerializationWriter, healthMonitoringRoot: Partial<HealthMonitoringRoot> | undefined | null = {}) : void {
-    if (healthMonitoringRoot) {
-        serializeEntity(writer, healthMonitoringRoot)
-        writer.writeCollectionOfObjectValues<AlertConfiguration>("alertConfigurations", healthMonitoringRoot.alertConfigurations, serializeAlertConfiguration);
-        writer.writeCollectionOfObjectValues<Alert>("alerts", healthMonitoringRoot.alerts, serializeAlert);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeResourceImpactSummary(writer: SerializationWriter, resourceImpactSummary: Partial<ResourceImpactSummary> | undefined | null = {}) : void {
-    if (resourceImpactSummary) {
-        writer.writeStringValue("impactedCount", resourceImpactSummary.impactedCount);
-        writer.writeBooleanValue("impactedCountLimitExceeded", resourceImpactSummary.impactedCountLimitExceeded);
-        writer.writeStringValue("@odata.type", resourceImpactSummary.odataType);
-        writer.writeStringValue("resourceType", resourceImpactSummary.resourceType);
-        writer.writeAdditionalData(resourceImpactSummary.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeServicePrincipalImpactSummary(writer: SerializationWriter, servicePrincipalImpactSummary: Partial<ServicePrincipalImpactSummary> | undefined | null = {}) : void {
-    if (servicePrincipalImpactSummary) {
-        serializeDirectoryObjectImpactSummary(writer, servicePrincipalImpactSummary)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSignals(writer: SerializationWriter, signals: Partial<Signals> | undefined | null = {}) : void {
-    if (signals) {
-        serializeHealthMonitoringDictionary(writer, signals)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSupportingData(writer: SerializationWriter, supportingData: Partial<SupportingData> | undefined | null = {}) : void {
-    if (supportingData) {
-        serializeHealthMonitoringDictionary(writer, supportingData)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserImpactSummary(writer: SerializationWriter, userImpactSummary: Partial<UserImpactSummary> | undefined | null = {}) : void {
-    if (userImpactSummary) {
-        serializeDirectoryObjectImpactSummary(writer, userImpactSummary)
-    }
+export function serializeUserImpactSummary(writer: SerializationWriter, userImpactSummary: Partial<UserImpactSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userImpactSummary || isSerializingDerivedType) { return; }
+    serializeDirectoryObjectImpactSummary(writer, userImpactSummary, isSerializingDerivedType)
 }
 export interface ServicePrincipalImpactSummary extends DirectoryObjectImpactSummary, Parsable {
 }

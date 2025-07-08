@@ -17,6 +17,7 @@ export function createGetGlobalScriptHighestAvailableVersionPostResponseFromDisc
 }
 /**
  * The deserialization information for the current model
+ * @param GetGlobalScriptHighestAvailableVersionPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoGetGlobalScriptHighestAvailableVersionPostRespons
     }
 }
 export interface GetGlobalScriptHighestAvailableVersionPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface GetGlobalScriptHighestAvailableVersionRequestBuilder extends Ba
 }
 /**
  * Serializes information the current object
+ * @param GetGlobalScriptHighestAvailableVersionPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetGlobalScriptHighestAvailableVersionPostResponse(writer: SerializationWriter, getGlobalScriptHighestAvailableVersionPostResponse: Partial<GetGlobalScriptHighestAvailableVersionPostResponse> | undefined | null = {}) : void {
-    if (getGlobalScriptHighestAvailableVersionPostResponse) {
-        writer.writeStringValue("value", getGlobalScriptHighestAvailableVersionPostResponse.value);
-        writer.writeAdditionalData(getGlobalScriptHighestAvailableVersionPostResponse.additionalData);
-    }
+export function serializeGetGlobalScriptHighestAvailableVersionPostResponse(writer: SerializationWriter, getGlobalScriptHighestAvailableVersionPostResponse: Partial<GetGlobalScriptHighestAvailableVersionPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getGlobalScriptHighestAvailableVersionPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", getGlobalScriptHighestAvailableVersionPostResponse.value);
+    writer.writeAdditionalData(getGlobalScriptHighestAvailableVersionPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ApplyConfigPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -57,6 +53,7 @@ export function createApplyConfigPostRequestBodyFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param ApplyConfigPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -69,15 +66,16 @@ export function deserializeIntoApplyConfigPostRequestBody(applyConfigPostRequest
 }
 /**
  * Serializes information the current object
+ * @param ApplyConfigPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApplyConfigPostRequestBody(writer: SerializationWriter, applyConfigPostRequestBody: Partial<ApplyConfigPostRequestBody> | undefined | null = {}) : void {
-    if (applyConfigPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", applyConfigPostRequestBody.cloudPcIds);
-        writer.writeEnumValue<CloudPcPolicySettingType[]>("policySettings", applyConfigPostRequestBody.policySettings);
-        writer.writeAdditionalData(applyConfigPostRequestBody.additionalData);
-    }
+export function serializeApplyConfigPostRequestBody(writer: SerializationWriter, applyConfigPostRequestBody: Partial<ApplyConfigPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applyConfigPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", applyConfigPostRequestBody.cloudPcIds);
+    writer.writeEnumValue<CloudPcPolicySettingType[]>("policySettings", applyConfigPostRequestBody.policySettings);
+    writer.writeAdditionalData(applyConfigPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

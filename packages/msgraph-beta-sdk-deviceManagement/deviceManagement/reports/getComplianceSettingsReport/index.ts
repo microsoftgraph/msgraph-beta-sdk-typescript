@@ -17,6 +17,7 @@ export function createGetComplianceSettingsReportPostRequestBodyFromDiscriminato
 }
 /**
  * The deserialization information for the current model
+ * @param GetComplianceSettingsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetComplianceSettingsReportPostRequestBody(getCom
     }
 }
 export interface GetComplianceSettingsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetComplianceSettingsReportRequestBuilder extends BaseRequestBu
 }
 /**
  * Serializes information the current object
+ * @param GetComplianceSettingsReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetComplianceSettingsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingsReportPostRequestBody: Partial<GetComplianceSettingsReportPostRequestBody> | undefined | null = {}) : void {
-    if (getComplianceSettingsReportPostRequestBody) {
-        writer.writeStringValue("filter", getComplianceSettingsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingsReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getComplianceSettingsReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getComplianceSettingsReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getComplianceSettingsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getComplianceSettingsReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getComplianceSettingsReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getComplianceSettingsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getComplianceSettingsReportPostRequestBody.top);
-        writer.writeAdditionalData(getComplianceSettingsReportPostRequestBody.additionalData);
-    }
+export function serializeGetComplianceSettingsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingsReportPostRequestBody: Partial<GetComplianceSettingsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getComplianceSettingsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getComplianceSettingsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingsReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getComplianceSettingsReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getComplianceSettingsReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getComplianceSettingsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getComplianceSettingsReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getComplianceSettingsReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getComplianceSettingsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getComplianceSettingsReportPostRequestBody.top);
+    writer.writeAdditionalData(getComplianceSettingsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

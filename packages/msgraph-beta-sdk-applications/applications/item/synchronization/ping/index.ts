@@ -17,6 +17,7 @@ export function createPingGetResponseFromDiscriminatorValue(parseNode: ParseNode
 }
 /**
  * The deserialization information for the current model
+ * @param PingGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoPingGetResponse(pingGetResponse: Partial<PingGetR
     }
 }
 export interface PingGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface PingRequestBuilder extends BaseRequestBuilder<PingRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PingGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePingGetResponse(writer: SerializationWriter, pingGetResponse: Partial<PingGetResponse> | undefined | null = {}) : void {
-    if (pingGetResponse) {
-        writer.writeStringValue("value", pingGetResponse.value);
-        writer.writeAdditionalData(pingGetResponse.additionalData);
-    }
+export function serializePingGetResponse(writer: SerializationWriter, pingGetResponse: Partial<PingGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!pingGetResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", pingGetResponse.value);
+    writer.writeAdditionalData(pingGetResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

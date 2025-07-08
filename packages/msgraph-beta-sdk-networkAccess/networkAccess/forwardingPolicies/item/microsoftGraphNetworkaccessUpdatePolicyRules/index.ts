@@ -19,6 +19,7 @@ export function createUpdatePolicyRulesPostRequestBodyFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param UpdatePolicyRulesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,20 +51,17 @@ export interface MicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder exte
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdatePolicyRulesPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdatePolicyRulesPostRequestBody(writer: SerializationWriter, updatePolicyRulesPostRequestBody: Partial<UpdatePolicyRulesPostRequestBody> | undefined | null = {}) : void {
-    if (updatePolicyRulesPostRequestBody) {
-        writer.writeCollectionOfObjectValues<PolicyRuleDelta>("rules", updatePolicyRulesPostRequestBody.rules, serializePolicyRuleDelta);
-        writer.writeAdditionalData(updatePolicyRulesPostRequestBody.additionalData);
-    }
+export function serializeUpdatePolicyRulesPostRequestBody(writer: SerializationWriter, updatePolicyRulesPostRequestBody: Partial<UpdatePolicyRulesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updatePolicyRulesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<PolicyRuleDelta>("rules", updatePolicyRulesPostRequestBody.rules, serializePolicyRuleDelta);
+    writer.writeAdditionalData(updatePolicyRulesPostRequestBody.additionalData);
 }
 export interface UpdatePolicyRulesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -19,6 +19,7 @@ export function createUploadPkcs12PostRequestBodyFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param UploadPkcs12PostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -31,21 +32,18 @@ export function deserializeIntoUploadPkcs12PostRequestBody(uploadPkcs12PostReque
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UploadPkcs12PostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUploadPkcs12PostRequestBody(writer: SerializationWriter, uploadPkcs12PostRequestBody: Partial<UploadPkcs12PostRequestBody> | undefined | null = {}) : void {
-    if (uploadPkcs12PostRequestBody) {
-        writer.writeStringValue("key", uploadPkcs12PostRequestBody.key);
-        writer.writeStringValue("password", uploadPkcs12PostRequestBody.password);
-        writer.writeAdditionalData(uploadPkcs12PostRequestBody.additionalData);
-    }
+export function serializeUploadPkcs12PostRequestBody(writer: SerializationWriter, uploadPkcs12PostRequestBody: Partial<UploadPkcs12PostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!uploadPkcs12PostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("key", uploadPkcs12PostRequestBody.key);
+    writer.writeStringValue("password", uploadPkcs12PostRequestBody.password);
+    writer.writeAdditionalData(uploadPkcs12PostRequestBody.additionalData);
 }
 export interface UploadPkcs12PostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

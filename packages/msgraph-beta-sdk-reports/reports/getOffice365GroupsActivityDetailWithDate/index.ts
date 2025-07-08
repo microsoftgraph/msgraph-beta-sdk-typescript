@@ -19,6 +19,7 @@ export function createGetOffice365GroupsActivityDetailWithDateGetResponseFromDis
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365GroupsActivityDetailWithDateGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365GroupsActivityDetailWithDateRequestBuilderGetQueryP
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365GroupsActivityDetailWithDateGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365GroupsActivityDetailWithDateGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithDateGetResponse: Partial<GetOffice365GroupsActivityDetailWithDateGetResponse> | undefined | null = {}) : void {
-    if (getOffice365GroupsActivityDetailWithDateGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithDateGetResponse)
-        writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithDateGetResponse.value, serializeOffice365GroupsActivityDetail);
-    }
+export function serializeGetOffice365GroupsActivityDetailWithDateGetResponse(writer: SerializationWriter, getOffice365GroupsActivityDetailWithDateGetResponse: Partial<GetOffice365GroupsActivityDetailWithDateGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365GroupsActivityDetailWithDateGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityDetailWithDateGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365GroupsActivityDetail>("value", getOffice365GroupsActivityDetailWithDateGetResponse.value, serializeOffice365GroupsActivityDetail);
 }
 /**
  * Uri template for the request builder.

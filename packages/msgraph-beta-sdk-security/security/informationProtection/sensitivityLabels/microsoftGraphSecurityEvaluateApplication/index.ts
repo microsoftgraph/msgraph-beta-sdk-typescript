@@ -30,6 +30,7 @@ export function createEvaluateApplicationPostResponseFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluateApplicationPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -42,6 +43,7 @@ export function deserializeIntoEvaluateApplicationPostRequestBody(evaluateApplic
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluateApplicationPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -52,10 +54,6 @@ export function deserializeIntoEvaluateApplicationPostResponse(evaluateApplicati
     }
 }
 export interface EvaluateApplicationPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -98,26 +96,28 @@ export interface MicrosoftGraphSecurityEvaluateApplicationRequestBuilder extends
 }
 /**
  * Serializes information the current object
+ * @param EvaluateApplicationPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluateApplicationPostRequestBody(writer: SerializationWriter, evaluateApplicationPostRequestBody: Partial<EvaluateApplicationPostRequestBody> | undefined | null = {}) : void {
-    if (evaluateApplicationPostRequestBody) {
-        writer.writeObjectValue<ContentInfo>("contentInfo", evaluateApplicationPostRequestBody.contentInfo, serializeContentInfo);
-        writer.writeObjectValue<LabelingOptions>("labelingOptions", evaluateApplicationPostRequestBody.labelingOptions, serializeLabelingOptions);
-        writer.writeAdditionalData(evaluateApplicationPostRequestBody.additionalData);
-    }
+export function serializeEvaluateApplicationPostRequestBody(writer: SerializationWriter, evaluateApplicationPostRequestBody: Partial<EvaluateApplicationPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluateApplicationPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<ContentInfo>("contentInfo", evaluateApplicationPostRequestBody.contentInfo, serializeContentInfo);
+    writer.writeObjectValue<LabelingOptions>("labelingOptions", evaluateApplicationPostRequestBody.labelingOptions, serializeLabelingOptions);
+    writer.writeAdditionalData(evaluateApplicationPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param EvaluateApplicationPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluateApplicationPostResponse(writer: SerializationWriter, evaluateApplicationPostResponse: Partial<EvaluateApplicationPostResponse> | undefined | null = {}) : void {
-    if (evaluateApplicationPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, evaluateApplicationPostResponse)
-        writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateApplicationPostResponse.value, serializeInformationProtectionAction);
-    }
+export function serializeEvaluateApplicationPostResponse(writer: SerializationWriter, evaluateApplicationPostResponse: Partial<EvaluateApplicationPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluateApplicationPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, evaluateApplicationPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateApplicationPostResponse.value, serializeInformationProtectionAction);
 }
 /**
  * Uri template for the request builder.

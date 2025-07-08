@@ -21,6 +21,7 @@ export function createGetAlertSummariesWithStartDateTimeWithEndDateTimeGetRespon
 }
 /**
  * The deserialization information for the current model
+ * @param GetAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphNetworkaccessGetAlertSummariesWithStartDateTimeWi
 }
 /**
  * Serializes information the current object
+ * @param GetAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<AlertSummary>("value", getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeAlertSummary);
-    }
+export function serializeGetAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertSummary>("value", getAlertSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeAlertSummary);
 }
 /**
  * Uri template for the request builder.

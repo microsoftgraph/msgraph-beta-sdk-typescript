@@ -35,7 +35,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      get(requestConfiguration?: RequestConfiguration<HardwareOathDevicesRequestBuilderGetQueryParameters> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDeviceCollectionResponse | undefined>;
     /**
-     * Create a new hardwareOathTokenAuthenticationMethodDevice object. You can optionally create and assign to a user in the same request; Or assign to a user via the assign API.
+     * Create a new hardwareOathTokenAuthenticationMethodDevice object. This API supports two scenarios:- Create the new hardware token without assigning to a user. You can then assign to a user.- Create and assign a hardware token to a user in the same request. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDevice>}
@@ -50,7 +50,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HardwareOathDevicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new hardwareOathTokenAuthenticationMethodDevice object. You can optionally create and assign to a user in the same request; Or assign to a user via the assign API.
+     * Create a new hardwareOathTokenAuthenticationMethodDevice object. This API supports two scenarios:- Create the new hardware token without assigning to a user. You can then assign to a user.- Create and assign a hardware token to a user in the same request. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

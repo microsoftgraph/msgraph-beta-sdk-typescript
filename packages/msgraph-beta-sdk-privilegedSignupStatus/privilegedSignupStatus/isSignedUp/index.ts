@@ -17,6 +17,7 @@ export function createIsSignedUpGetResponseFromDiscriminatorValue(parseNode: Par
 }
 /**
  * The deserialization information for the current model
+ * @param IsSignedUpGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoIsSignedUpGetResponse(isSignedUpGetResponse: Part
     }
 }
 export interface IsSignedUpGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface IsSignedUpRequestBuilder extends BaseRequestBuilder<IsSignedUpR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param IsSignedUpGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIsSignedUpGetResponse(writer: SerializationWriter, isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined | null = {}) : void {
-    if (isSignedUpGetResponse) {
-        writer.writeBooleanValue("value", isSignedUpGetResponse.value);
-        writer.writeAdditionalData(isSignedUpGetResponse.additionalData);
-    }
+export function serializeIsSignedUpGetResponse(writer: SerializationWriter, isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!isSignedUpGetResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", isSignedUpGetResponse.value);
+    writer.writeAdditionalData(isSignedUpGetResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

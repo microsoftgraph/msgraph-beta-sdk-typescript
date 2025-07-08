@@ -19,6 +19,7 @@ export function createGetFrontlineReportPostRequestBodyFromDiscriminatorValue(pa
 }
 /**
  * The deserialization information for the current model
+ * @param GetFrontlineReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoGetFrontlineReportPostRequestBody(getFrontlineRep
     }
 }
 export interface GetFrontlineReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,21 +99,22 @@ export interface GetFrontlineReportRequestBuilder extends BaseRequestBuilder<Get
 }
 /**
  * Serializes information the current object
+ * @param GetFrontlineReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetFrontlineReportPostRequestBody(writer: SerializationWriter, getFrontlineReportPostRequestBody: Partial<GetFrontlineReportPostRequestBody> | undefined | null = {}) : void {
-    if (getFrontlineReportPostRequestBody) {
-        writer.writeStringValue("filter", getFrontlineReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFrontlineReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFrontlineReportPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPcReportName>("reportName", getFrontlineReportPostRequestBody.reportName);
-        writer.writeStringValue("search", getFrontlineReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getFrontlineReportPostRequestBody.select);
-        writer.writeNumberValue("skip", getFrontlineReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getFrontlineReportPostRequestBody.top);
-        writer.writeAdditionalData(getFrontlineReportPostRequestBody.additionalData);
-    }
+export function serializeGetFrontlineReportPostRequestBody(writer: SerializationWriter, getFrontlineReportPostRequestBody: Partial<GetFrontlineReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getFrontlineReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getFrontlineReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFrontlineReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFrontlineReportPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPcReportName>("reportName", getFrontlineReportPostRequestBody.reportName);
+    writer.writeStringValue("search", getFrontlineReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getFrontlineReportPostRequestBody.select);
+    writer.writeNumberValue("skip", getFrontlineReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getFrontlineReportPostRequestBody.top);
+    writer.writeAdditionalData(getFrontlineReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

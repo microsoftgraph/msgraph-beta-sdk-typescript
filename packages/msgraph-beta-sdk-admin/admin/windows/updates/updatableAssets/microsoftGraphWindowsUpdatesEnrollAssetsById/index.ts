@@ -19,6 +19,7 @@ export function createEnrollAssetsByIdPostRequestBodyFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param EnrollAssetsByIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -31,10 +32,6 @@ export function deserializeIntoEnrollAssetsByIdPostRequestBody(enrollAssetsByIdP
     }
 }
 export interface EnrollAssetsByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -73,16 +70,17 @@ export interface MicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder exte
 }
 /**
  * Serializes information the current object
+ * @param EnrollAssetsByIdPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEnrollAssetsByIdPostRequestBody(writer: SerializationWriter, enrollAssetsByIdPostRequestBody: Partial<EnrollAssetsByIdPostRequestBody> | undefined | null = {}) : void {
-    if (enrollAssetsByIdPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("ids", enrollAssetsByIdPostRequestBody.ids);
-        writer.writeStringValue("memberEntityType", enrollAssetsByIdPostRequestBody.memberEntityType);
-        writer.writeEnumValue<UpdateCategory>("updateCategory", enrollAssetsByIdPostRequestBody.updateCategory);
-        writer.writeAdditionalData(enrollAssetsByIdPostRequestBody.additionalData);
-    }
+export function serializeEnrollAssetsByIdPostRequestBody(writer: SerializationWriter, enrollAssetsByIdPostRequestBody: Partial<EnrollAssetsByIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enrollAssetsByIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("ids", enrollAssetsByIdPostRequestBody.ids);
+    writer.writeStringValue("memberEntityType", enrollAssetsByIdPostRequestBody.memberEntityType);
+    writer.writeEnumValue<UpdateCategory>("updateCategory", enrollAssetsByIdPostRequestBody.updateCategory);
+    writer.writeAdditionalData(enrollAssetsByIdPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

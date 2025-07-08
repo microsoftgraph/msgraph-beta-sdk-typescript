@@ -19,6 +19,7 @@ export function createGetOffice365GroupsActivityStorageWithPeriodGetResponseFrom
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365GroupsActivityStorageWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetQue
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365GroupsActivityStorageWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365GroupsActivityStorageWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityStorageWithPeriodGetResponse: Partial<GetOffice365GroupsActivityStorageWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getOffice365GroupsActivityStorageWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityStorageWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<Office365GroupsActivityStorage>("value", getOffice365GroupsActivityStorageWithPeriodGetResponse.value, serializeOffice365GroupsActivityStorage);
-    }
+export function serializeGetOffice365GroupsActivityStorageWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityStorageWithPeriodGetResponse: Partial<GetOffice365GroupsActivityStorageWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365GroupsActivityStorageWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityStorageWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365GroupsActivityStorage>("value", getOffice365GroupsActivityStorageWithPeriodGetResponse.value, serializeOffice365GroupsActivityStorage);
 }
 /**
  * Uri template for the request builder.

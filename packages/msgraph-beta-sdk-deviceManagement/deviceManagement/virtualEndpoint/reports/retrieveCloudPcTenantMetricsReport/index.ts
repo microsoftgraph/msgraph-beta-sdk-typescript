@@ -19,6 +19,7 @@ export function createRetrieveCloudPcTenantMetricsReportPostRequestBodyFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveCloudPcTenantMetricsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoRetrieveCloudPcTenantMetricsReportPostRequestBody
     }
 }
 export interface RetrieveCloudPcTenantMetricsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -100,21 +97,22 @@ export interface RetrieveCloudPcTenantMetricsReportRequestBuilder extends BaseRe
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveCloudPcTenantMetricsReportPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveCloudPcTenantMetricsReportPostRequestBody(writer: SerializationWriter, retrieveCloudPcTenantMetricsReportPostRequestBody: Partial<RetrieveCloudPcTenantMetricsReportPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveCloudPcTenantMetricsReportPostRequestBody) {
-        writer.writeStringValue("filter", retrieveCloudPcTenantMetricsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcTenantMetricsReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcTenantMetricsReportPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPCPerformanceReportName>("reportName", retrieveCloudPcTenantMetricsReportPostRequestBody.reportName);
-        writer.writeStringValue("search", retrieveCloudPcTenantMetricsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPcTenantMetricsReportPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveCloudPcTenantMetricsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveCloudPcTenantMetricsReportPostRequestBody.top);
-        writer.writeAdditionalData(retrieveCloudPcTenantMetricsReportPostRequestBody.additionalData);
-    }
+export function serializeRetrieveCloudPcTenantMetricsReportPostRequestBody(writer: SerializationWriter, retrieveCloudPcTenantMetricsReportPostRequestBody: Partial<RetrieveCloudPcTenantMetricsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveCloudPcTenantMetricsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveCloudPcTenantMetricsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcTenantMetricsReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcTenantMetricsReportPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPCPerformanceReportName>("reportName", retrieveCloudPcTenantMetricsReportPostRequestBody.reportName);
+    writer.writeStringValue("search", retrieveCloudPcTenantMetricsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPcTenantMetricsReportPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveCloudPcTenantMetricsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveCloudPcTenantMetricsReportPostRequestBody.top);
+    writer.writeAdditionalData(retrieveCloudPcTenantMetricsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

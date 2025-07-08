@@ -19,6 +19,7 @@ export function createGetSupportedPropertiesGetResponseFromDiscriminatorValue(pa
 }
 /**
  * The deserialization information for the current model
+ * @param GetSupportedPropertiesGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetSupportedPropertiesRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetSupportedPropertiesGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetSupportedPropertiesGetResponse(writer: SerializationWriter, getSupportedPropertiesGetResponse: Partial<GetSupportedPropertiesGetResponse> | undefined | null = {}) : void {
-    if (getSupportedPropertiesGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getSupportedPropertiesGetResponse)
-        writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getSupportedPropertiesGetResponse.value, serializeAssignmentFilterSupportedProperty);
-    }
+export function serializeGetSupportedPropertiesGetResponse(writer: SerializationWriter, getSupportedPropertiesGetResponse: Partial<GetSupportedPropertiesGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getSupportedPropertiesGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getSupportedPropertiesGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getSupportedPropertiesGetResponse.value, serializeAssignmentFilterSupportedProperty);
 }
 /**
  * Uri template for the request builder.

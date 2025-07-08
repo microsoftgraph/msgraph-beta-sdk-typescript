@@ -27,6 +27,7 @@ export function createAggregatedAppsDetailsWithPeriodGetResponseFromDiscriminato
 }
 /**
  * The deserialization information for the current model
+ * @param AggregatedAppsDetailsWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -93,14 +94,15 @@ export interface MicrosoftGraphSecurityAggregatedAppsDetailsWithPeriodRequestBui
 }
 /**
  * Serializes information the current object
+ * @param AggregatedAppsDetailsWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAggregatedAppsDetailsWithPeriodGetResponse(writer: SerializationWriter, aggregatedAppsDetailsWithPeriodGetResponse: Partial<AggregatedAppsDetailsWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (aggregatedAppsDetailsWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, aggregatedAppsDetailsWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<DiscoveredCloudAppDetail>("value", aggregatedAppsDetailsWithPeriodGetResponse.value, serializeDiscoveredCloudAppDetail);
-    }
+export function serializeAggregatedAppsDetailsWithPeriodGetResponse(writer: SerializationWriter, aggregatedAppsDetailsWithPeriodGetResponse: Partial<AggregatedAppsDetailsWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aggregatedAppsDetailsWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, aggregatedAppsDetailsWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DiscoveredCloudAppDetail>("value", aggregatedAppsDetailsWithPeriodGetResponse.value, serializeDiscoveredCloudAppDetail);
 }
 /**
  * Uri template for the request builder.

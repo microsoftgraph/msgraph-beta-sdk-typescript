@@ -19,6 +19,7 @@ export function createUnenrollAssetsPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param UnenrollAssetsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,21 +51,18 @@ export interface MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder extend
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UnenrollAssetsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUnenrollAssetsPostRequestBody(writer: SerializationWriter, unenrollAssetsPostRequestBody: Partial<UnenrollAssetsPostRequestBody> | undefined | null = {}) : void {
-    if (unenrollAssetsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", unenrollAssetsPostRequestBody.assets, serializeUpdatableAsset);
-        writer.writeEnumValue<UpdateCategory>("updateCategory", unenrollAssetsPostRequestBody.updateCategory);
-        writer.writeAdditionalData(unenrollAssetsPostRequestBody.additionalData);
-    }
+export function serializeUnenrollAssetsPostRequestBody(writer: SerializationWriter, unenrollAssetsPostRequestBody: Partial<UnenrollAssetsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!unenrollAssetsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", unenrollAssetsPostRequestBody.assets, serializeUpdatableAsset);
+    writer.writeEnumValue<UpdateCategory>("updateCategory", unenrollAssetsPostRequestBody.updateCategory);
+    writer.writeAdditionalData(unenrollAssetsPostRequestBody.additionalData);
 }
 export interface UnenrollAssetsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The assets property
      */

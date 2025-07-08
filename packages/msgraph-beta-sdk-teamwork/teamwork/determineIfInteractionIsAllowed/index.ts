@@ -28,6 +28,7 @@ export function createDetermineIfInteractionIsAllowedPostResponseFromDiscriminat
 }
 /**
  * The deserialization information for the current model
+ * @param DetermineIfInteractionIsAllowedPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -40,6 +41,7 @@ export function deserializeIntoDetermineIfInteractionIsAllowedPostRequestBody(de
 }
 /**
  * The deserialization information for the current model
+ * @param DetermineIfInteractionIsAllowedPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,10 +52,6 @@ export function deserializeIntoDetermineIfInteractionIsAllowedPostResponse(deter
     }
 }
 export interface DetermineIfInteractionIsAllowedPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -68,10 +66,6 @@ export interface DetermineIfInteractionIsAllowedPostRequestBody extends Addition
     users?: Identity[] | null;
 }
 export interface DetermineIfInteractionIsAllowedPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -104,26 +98,28 @@ export interface DetermineIfInteractionIsAllowedRequestBuilder extends BaseReque
 }
 /**
  * Serializes information the current object
+ * @param DetermineIfInteractionIsAllowedPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDetermineIfInteractionIsAllowedPostRequestBody(writer: SerializationWriter, determineIfInteractionIsAllowedPostRequestBody: Partial<DetermineIfInteractionIsAllowedPostRequestBody> | undefined | null = {}) : void {
-    if (determineIfInteractionIsAllowedPostRequestBody) {
-        writer.writeEnumValue<TeamworkInteractionType>("interactionType", determineIfInteractionIsAllowedPostRequestBody.interactionType);
-        writer.writeCollectionOfObjectValues<Identity>("users", determineIfInteractionIsAllowedPostRequestBody.users, serializeIdentity);
-        writer.writeAdditionalData(determineIfInteractionIsAllowedPostRequestBody.additionalData);
-    }
+export function serializeDetermineIfInteractionIsAllowedPostRequestBody(writer: SerializationWriter, determineIfInteractionIsAllowedPostRequestBody: Partial<DetermineIfInteractionIsAllowedPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!determineIfInteractionIsAllowedPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<TeamworkInteractionType>("interactionType", determineIfInteractionIsAllowedPostRequestBody.interactionType);
+    writer.writeCollectionOfObjectValues<Identity>("users", determineIfInteractionIsAllowedPostRequestBody.users, serializeIdentity);
+    writer.writeAdditionalData(determineIfInteractionIsAllowedPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param DetermineIfInteractionIsAllowedPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDetermineIfInteractionIsAllowedPostResponse(writer: SerializationWriter, determineIfInteractionIsAllowedPostResponse: Partial<DetermineIfInteractionIsAllowedPostResponse> | undefined | null = {}) : void {
-    if (determineIfInteractionIsAllowedPostResponse) {
-        writer.writeBooleanValue("value", determineIfInteractionIsAllowedPostResponse.value);
-        writer.writeAdditionalData(determineIfInteractionIsAllowedPostResponse.additionalData);
-    }
+export function serializeDetermineIfInteractionIsAllowedPostResponse(writer: SerializationWriter, determineIfInteractionIsAllowedPostResponse: Partial<DetermineIfInteractionIsAllowedPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!determineIfInteractionIsAllowedPostResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", determineIfInteractionIsAllowedPostResponse.value);
+    writer.writeAdditionalData(determineIfInteractionIsAllowedPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

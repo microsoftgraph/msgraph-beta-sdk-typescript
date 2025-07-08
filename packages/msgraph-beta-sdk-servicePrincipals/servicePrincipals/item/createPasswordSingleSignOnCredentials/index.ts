@@ -19,10 +19,6 @@ export function createCreatePasswordSingleSignOnCredentialsPostRequestBodyFromDi
 }
 export interface CreatePasswordSingleSignOnCredentialsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -58,6 +54,7 @@ export interface CreatePasswordSingleSignOnCredentialsRequestBuilder extends Bas
 }
 /**
  * The deserialization information for the current model
+ * @param CreatePasswordSingleSignOnCredentialsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -70,15 +67,16 @@ export function deserializeIntoCreatePasswordSingleSignOnCredentialsPostRequestB
 }
 /**
  * Serializes information the current object
+ * @param CreatePasswordSingleSignOnCredentialsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreatePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, createPasswordSingleSignOnCredentialsPostRequestBody: Partial<CreatePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}) : void {
-    if (createPasswordSingleSignOnCredentialsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<Credential>("credentials", createPasswordSingleSignOnCredentialsPostRequestBody.credentials, serializeCredential);
-        writer.writeStringValue("id", createPasswordSingleSignOnCredentialsPostRequestBody.id);
-        writer.writeAdditionalData(createPasswordSingleSignOnCredentialsPostRequestBody.additionalData);
-    }
+export function serializeCreatePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, createPasswordSingleSignOnCredentialsPostRequestBody: Partial<CreatePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createPasswordSingleSignOnCredentialsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<Credential>("credentials", createPasswordSingleSignOnCredentialsPostRequestBody.credentials, serializeCredential);
+    writer.writeStringValue("id", createPasswordSingleSignOnCredentialsPostRequestBody.id);
+    writer.writeAdditionalData(createPasswordSingleSignOnCredentialsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

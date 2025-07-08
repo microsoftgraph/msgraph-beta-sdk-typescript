@@ -19,6 +19,7 @@ export function createRetrieveScopedPermissionsGetResponseFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveScopedPermissionsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface RetrieveScopedPermissionsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveScopedPermissionsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveScopedPermissionsGetResponse(writer: SerializationWriter, retrieveScopedPermissionsGetResponse: Partial<RetrieveScopedPermissionsGetResponse> | undefined | null = {}) : void {
-    if (retrieveScopedPermissionsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveScopedPermissionsGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcScopedPermission>("value", retrieveScopedPermissionsGetResponse.value, serializeCloudPcScopedPermission);
-    }
+export function serializeRetrieveScopedPermissionsGetResponse(writer: SerializationWriter, retrieveScopedPermissionsGetResponse: Partial<RetrieveScopedPermissionsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveScopedPermissionsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveScopedPermissionsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcScopedPermission>("value", retrieveScopedPermissionsGetResponse.value, serializeCloudPcScopedPermission);
 }
 /**
  * Uri template for the request builder.

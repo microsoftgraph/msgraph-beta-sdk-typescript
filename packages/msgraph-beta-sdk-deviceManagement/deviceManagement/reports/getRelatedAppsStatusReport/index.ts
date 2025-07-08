@@ -17,6 +17,7 @@ export function createGetRelatedAppsStatusReportPostRequestBodyFromDiscriminator
 }
 /**
  * The deserialization information for the current model
+ * @param GetRelatedAppsStatusReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetRelatedAppsStatusReportPostRequestBody(getRela
     }
 }
 export interface GetRelatedAppsStatusReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetRelatedAppsStatusReportRequestBuilder extends BaseRequestBui
 }
 /**
  * Serializes information the current object
+ * @param GetRelatedAppsStatusReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetRelatedAppsStatusReportPostRequestBody(writer: SerializationWriter, getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined | null = {}) : void {
-    if (getRelatedAppsStatusReportPostRequestBody) {
-        writer.writeStringValue("filter", getRelatedAppsStatusReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRelatedAppsStatusReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getRelatedAppsStatusReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRelatedAppsStatusReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getRelatedAppsStatusReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getRelatedAppsStatusReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getRelatedAppsStatusReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getRelatedAppsStatusReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getRelatedAppsStatusReportPostRequestBody.top);
-        writer.writeAdditionalData(getRelatedAppsStatusReportPostRequestBody.additionalData);
-    }
+export function serializeGetRelatedAppsStatusReportPostRequestBody(writer: SerializationWriter, getRelatedAppsStatusReportPostRequestBody: Partial<GetRelatedAppsStatusReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getRelatedAppsStatusReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getRelatedAppsStatusReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRelatedAppsStatusReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getRelatedAppsStatusReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRelatedAppsStatusReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getRelatedAppsStatusReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getRelatedAppsStatusReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getRelatedAppsStatusReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getRelatedAppsStatusReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getRelatedAppsStatusReportPostRequestBody.top);
+    writer.writeAdditionalData(getRelatedAppsStatusReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

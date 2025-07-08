@@ -28,6 +28,7 @@ export function createValidateBulkResizePostResponseFromDiscriminatorValue(parse
 }
 /**
  * The deserialization information for the current model
+ * @param ValidateBulkResizePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -40,6 +41,7 @@ export function deserializeIntoValidateBulkResizePostRequestBody(validateBulkRes
 }
 /**
  * The deserialization information for the current model
+ * @param ValidateBulkResizePostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -51,32 +53,30 @@ export function deserializeIntoValidateBulkResizePostResponse(validateBulkResize
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidateBulkResizePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeValidateBulkResizePostRequestBody(writer: SerializationWriter, validateBulkResizePostRequestBody: Partial<ValidateBulkResizePostRequestBody> | undefined | null = {}) : void {
-    if (validateBulkResizePostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", validateBulkResizePostRequestBody.cloudPcIds);
-        writer.writeStringValue("targetServicePlanId", validateBulkResizePostRequestBody.targetServicePlanId);
-        writer.writeAdditionalData(validateBulkResizePostRequestBody.additionalData);
-    }
+export function serializeValidateBulkResizePostRequestBody(writer: SerializationWriter, validateBulkResizePostRequestBody: Partial<ValidateBulkResizePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validateBulkResizePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("cloudPcIds", validateBulkResizePostRequestBody.cloudPcIds);
+    writer.writeStringValue("targetServicePlanId", validateBulkResizePostRequestBody.targetServicePlanId);
+    writer.writeAdditionalData(validateBulkResizePostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidateBulkResizePostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeValidateBulkResizePostResponse(writer: SerializationWriter, validateBulkResizePostResponse: Partial<ValidateBulkResizePostResponse> | undefined | null = {}) : void {
-    if (validateBulkResizePostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, validateBulkResizePostResponse)
-        writer.writeCollectionOfObjectValues<CloudPcResizeValidationResult>("value", validateBulkResizePostResponse.value, serializeCloudPcResizeValidationResult);
-    }
+export function serializeValidateBulkResizePostResponse(writer: SerializationWriter, validateBulkResizePostResponse: Partial<ValidateBulkResizePostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validateBulkResizePostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, validateBulkResizePostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcResizeValidationResult>("value", validateBulkResizePostResponse.value, serializeCloudPcResizeValidationResult);
 }
 export interface ValidateBulkResizePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

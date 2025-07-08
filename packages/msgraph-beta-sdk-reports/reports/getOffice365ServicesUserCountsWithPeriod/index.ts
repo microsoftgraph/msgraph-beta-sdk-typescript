@@ -19,6 +19,7 @@ export function createGetOffice365ServicesUserCountsWithPeriodGetResponseFromDis
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365ServicesUserCountsWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryP
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365ServicesUserCountsWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365ServicesUserCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365ServicesUserCountsWithPeriodGetResponse: Partial<GetOffice365ServicesUserCountsWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getOffice365ServicesUserCountsWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365ServicesUserCountsWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<Office365ServicesUserCounts>("value", getOffice365ServicesUserCountsWithPeriodGetResponse.value, serializeOffice365ServicesUserCounts);
-    }
+export function serializeGetOffice365ServicesUserCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365ServicesUserCountsWithPeriodGetResponse: Partial<GetOffice365ServicesUserCountsWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365ServicesUserCountsWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365ServicesUserCountsWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365ServicesUserCounts>("value", getOffice365ServicesUserCountsWithPeriodGetResponse.value, serializeOffice365ServicesUserCounts);
 }
 /**
  * Uri template for the request builder.

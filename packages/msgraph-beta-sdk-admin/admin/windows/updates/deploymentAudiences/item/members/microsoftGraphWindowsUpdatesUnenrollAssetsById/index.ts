@@ -19,6 +19,7 @@ export function createUnenrollAssetsByIdPostRequestBodyFromDiscriminatorValue(pa
 }
 /**
  * The deserialization information for the current model
+ * @param UnenrollAssetsByIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -51,22 +52,19 @@ export interface MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder ex
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UnenrollAssetsByIdPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUnenrollAssetsByIdPostRequestBody(writer: SerializationWriter, unenrollAssetsByIdPostRequestBody: Partial<UnenrollAssetsByIdPostRequestBody> | undefined | null = {}) : void {
-    if (unenrollAssetsByIdPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("ids", unenrollAssetsByIdPostRequestBody.ids);
-        writer.writeStringValue("memberEntityType", unenrollAssetsByIdPostRequestBody.memberEntityType);
-        writer.writeEnumValue<UpdateCategory>("updateCategory", unenrollAssetsByIdPostRequestBody.updateCategory);
-        writer.writeAdditionalData(unenrollAssetsByIdPostRequestBody.additionalData);
-    }
+export function serializeUnenrollAssetsByIdPostRequestBody(writer: SerializationWriter, unenrollAssetsByIdPostRequestBody: Partial<UnenrollAssetsByIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!unenrollAssetsByIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("ids", unenrollAssetsByIdPostRequestBody.ids);
+    writer.writeStringValue("memberEntityType", unenrollAssetsByIdPostRequestBody.memberEntityType);
+    writer.writeEnumValue<UpdateCategory>("updateCategory", unenrollAssetsByIdPostRequestBody.updateCategory);
+    writer.writeAdditionalData(unenrollAssetsByIdPostRequestBody.additionalData);
 }
 export interface UnenrollAssetsByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

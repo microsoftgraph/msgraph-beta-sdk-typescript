@@ -17,6 +17,7 @@ export function createGetRawRemoteConnectionReportsPostRequestBodyFromDiscrimina
 }
 /**
  * The deserialization information for the current model
+ * @param GetRawRemoteConnectionReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,10 +34,6 @@ export function deserializeIntoGetRawRemoteConnectionReportsPostRequestBody(getR
     }
 }
 export interface GetRawRemoteConnectionReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -93,20 +90,21 @@ export interface GetRawRemoteConnectionReportsRequestBuilder extends BaseRequest
 }
 /**
  * Serializes information the current object
+ * @param GetRawRemoteConnectionReportsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetRawRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getRawRemoteConnectionReportsPostRequestBody: Partial<GetRawRemoteConnectionReportsPostRequestBody> | undefined | null = {}) : void {
-    if (getRawRemoteConnectionReportsPostRequestBody) {
-        writer.writeStringValue("filter", getRawRemoteConnectionReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRawRemoteConnectionReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRawRemoteConnectionReportsPostRequestBody.orderBy);
-        writer.writeStringValue("search", getRawRemoteConnectionReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getRawRemoteConnectionReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", getRawRemoteConnectionReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", getRawRemoteConnectionReportsPostRequestBody.top);
-        writer.writeAdditionalData(getRawRemoteConnectionReportsPostRequestBody.additionalData);
-    }
+export function serializeGetRawRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getRawRemoteConnectionReportsPostRequestBody: Partial<GetRawRemoteConnectionReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getRawRemoteConnectionReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getRawRemoteConnectionReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getRawRemoteConnectionReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getRawRemoteConnectionReportsPostRequestBody.orderBy);
+    writer.writeStringValue("search", getRawRemoteConnectionReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getRawRemoteConnectionReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", getRawRemoteConnectionReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", getRawRemoteConnectionReportsPostRequestBody.top);
+    writer.writeAdditionalData(getRawRemoteConnectionReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

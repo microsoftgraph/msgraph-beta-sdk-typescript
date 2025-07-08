@@ -27,6 +27,7 @@ export interface CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetRespo
 }
 /**
  * The deserialization information for the current model
+ * @param CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDate
 }
 /**
  * Serializes information the current object
+ * @param CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<CrossTenantAccess>("value", crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeCrossTenantAccess);
-    }
+export function serializeCrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CrossTenantAccess>("value", crossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeCrossTenantAccess);
 }
 /**
  * Uri template for the request builder.

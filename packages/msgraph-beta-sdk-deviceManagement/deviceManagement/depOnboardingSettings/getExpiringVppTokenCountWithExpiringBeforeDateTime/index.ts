@@ -17,6 +17,7 @@ export function createGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetRespo
 }
 /**
  * The deserialization information for the current model
+ * @param GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoGetExpiringVppTokenCountWithExpiringBeforeDateTim
     }
 }
 export interface GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse(writer: SerializationWriter, getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse: Partial<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse) {
-        writer.writeNumberValue("value", getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.value);
-        writer.writeAdditionalData(getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.additionalData);
-    }
+export function serializeGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse(writer: SerializationWriter, getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse: Partial<GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("value", getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.value);
+    writer.writeAdditionalData(getExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

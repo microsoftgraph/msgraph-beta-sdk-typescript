@@ -19,6 +19,7 @@ export function createGetDevicesScheduledToRetireGetResponseFromDiscriminatorVal
 }
 /**
  * The deserialization information for the current model
+ * @param GetDevicesScheduledToRetireGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetDevicesScheduledToRetireRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetDevicesScheduledToRetireGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDevicesScheduledToRetireGetResponse(writer: SerializationWriter, getDevicesScheduledToRetireGetResponse: Partial<GetDevicesScheduledToRetireGetResponse> | undefined | null = {}) : void {
-    if (getDevicesScheduledToRetireGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getDevicesScheduledToRetireGetResponse)
-        writer.writeCollectionOfObjectValues<RetireScheduledManagedDevice>("value", getDevicesScheduledToRetireGetResponse.value, serializeRetireScheduledManagedDevice);
-    }
+export function serializeGetDevicesScheduledToRetireGetResponse(writer: SerializationWriter, getDevicesScheduledToRetireGetResponse: Partial<GetDevicesScheduledToRetireGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDevicesScheduledToRetireGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getDevicesScheduledToRetireGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RetireScheduledManagedDevice>("value", getDevicesScheduledToRetireGetResponse.value, serializeRetireScheduledManagedDevice);
 }
 /**
  * Uri template for the request builder.

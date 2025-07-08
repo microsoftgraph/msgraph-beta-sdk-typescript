@@ -19,6 +19,7 @@ export function createRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyFr
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveCrossRegionDisasterRecoveryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequ
     }
 }
 export interface RetrieveCrossRegionDisasterRecoveryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -100,21 +97,22 @@ export interface RetrieveCrossRegionDisasterRecoveryReportRequestBuilder extends
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveCrossRegionDisasterRecoveryReportPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(writer: SerializationWriter, retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveCrossRegionDisasterRecoveryReportPostRequestBody) {
-        writer.writeStringValue("filter", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPcDisasterRecoveryReportName>("reportName", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.reportName);
-        writer.writeStringValue("search", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.top);
-        writer.writeAdditionalData(retrieveCrossRegionDisasterRecoveryReportPostRequestBody.additionalData);
-    }
+export function serializeRetrieveCrossRegionDisasterRecoveryReportPostRequestBody(writer: SerializationWriter, retrieveCrossRegionDisasterRecoveryReportPostRequestBody: Partial<RetrieveCrossRegionDisasterRecoveryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveCrossRegionDisasterRecoveryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPcDisasterRecoveryReportName>("reportName", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.reportName);
+    writer.writeStringValue("search", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveCrossRegionDisasterRecoveryReportPostRequestBody.top);
+    writer.writeAdditionalData(retrieveCrossRegionDisasterRecoveryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

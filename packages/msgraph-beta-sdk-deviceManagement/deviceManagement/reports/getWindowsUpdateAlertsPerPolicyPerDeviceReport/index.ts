@@ -17,6 +17,7 @@ export function createGetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestB
 }
 /**
  * The deserialization information for the current model
+ * @param GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetWindowsUpdateAlertsPerPolicyPerDeviceReportPos
     }
 }
 export interface GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder ex
 }
 /**
  * Serializes information the current object
+ * @param GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(writer: SerializationWriter, getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined | null = {}) : void {
-    if (getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody) {
-        writer.writeStringValue("filter", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.top);
-        writer.writeAdditionalData(getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.additionalData);
-    }
+export function serializeGetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(writer: SerializationWriter, getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.top);
+    writer.writeAdditionalData(getWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

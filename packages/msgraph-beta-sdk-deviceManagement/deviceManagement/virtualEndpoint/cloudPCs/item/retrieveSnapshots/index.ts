@@ -19,6 +19,7 @@ export function createRetrieveSnapshotsGetResponseFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveSnapshotsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface RetrieveSnapshotsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveSnapshotsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveSnapshotsGetResponse(writer: SerializationWriter, retrieveSnapshotsGetResponse: Partial<RetrieveSnapshotsGetResponse> | undefined | null = {}) : void {
-    if (retrieveSnapshotsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveSnapshotsGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcSnapshot>("value", retrieveSnapshotsGetResponse.value, serializeCloudPcSnapshot);
-    }
+export function serializeRetrieveSnapshotsGetResponse(writer: SerializationWriter, retrieveSnapshotsGetResponse: Partial<RetrieveSnapshotsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveSnapshotsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveSnapshotsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcSnapshot>("value", retrieveSnapshotsGetResponse.value, serializeCloudPcSnapshot);
 }
 /**
  * Uri template for the request builder.

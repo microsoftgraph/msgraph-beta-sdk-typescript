@@ -28,6 +28,7 @@ export function createImportDeviceIdentityListPostResponseFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param ImportDeviceIdentityListPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -40,6 +41,7 @@ export function deserializeIntoImportDeviceIdentityListPostRequestBody(importDev
 }
 /**
  * The deserialization information for the current model
+ * @param ImportDeviceIdentityListPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,10 +52,6 @@ export function deserializeIntoImportDeviceIdentityListPostResponse(importDevice
     }
 }
 export interface ImportDeviceIdentityListPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -95,26 +93,28 @@ export interface ImportDeviceIdentityListRequestBuilder extends BaseRequestBuild
 }
 /**
  * Serializes information the current object
+ * @param ImportDeviceIdentityListPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeImportDeviceIdentityListPostRequestBody(writer: SerializationWriter, importDeviceIdentityListPostRequestBody: Partial<ImportDeviceIdentityListPostRequestBody> | undefined | null = {}) : void {
-    if (importDeviceIdentityListPostRequestBody) {
-        writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", importDeviceIdentityListPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
-        writer.writeBooleanValue("overwriteImportedDeviceIdentities", importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
-        writer.writeAdditionalData(importDeviceIdentityListPostRequestBody.additionalData);
-    }
+export function serializeImportDeviceIdentityListPostRequestBody(writer: SerializationWriter, importDeviceIdentityListPostRequestBody: Partial<ImportDeviceIdentityListPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!importDeviceIdentityListPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", importDeviceIdentityListPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
+    writer.writeBooleanValue("overwriteImportedDeviceIdentities", importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
+    writer.writeAdditionalData(importDeviceIdentityListPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ImportDeviceIdentityListPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeImportDeviceIdentityListPostResponse(writer: SerializationWriter, importDeviceIdentityListPostResponse: Partial<ImportDeviceIdentityListPostResponse> | undefined | null = {}) : void {
-    if (importDeviceIdentityListPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, importDeviceIdentityListPostResponse)
-        writer.writeCollectionOfObjectValues<ImportedDeviceIdentityResult>("value", importDeviceIdentityListPostResponse.value, serializeImportedDeviceIdentityResult);
-    }
+export function serializeImportDeviceIdentityListPostResponse(writer: SerializationWriter, importDeviceIdentityListPostResponse: Partial<ImportDeviceIdentityListPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!importDeviceIdentityListPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, importDeviceIdentityListPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ImportedDeviceIdentityResult>("value", importDeviceIdentityListPostResponse.value, serializeImportedDeviceIdentityResult);
 }
 /**
  * Uri template for the request builder.

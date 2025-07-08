@@ -19,6 +19,7 @@ export function createPreviewPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param PreviewPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,10 +34,6 @@ export function deserializeIntoPreviewPostRequestBody(previewPostRequestBody: Pa
     }
 }
 export interface PreviewPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The allowEdit property
      */
@@ -84,18 +81,19 @@ export interface PreviewRequestBuilder extends BaseRequestBuilder<PreviewRequest
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PreviewPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePreviewPostRequestBody(writer: SerializationWriter, previewPostRequestBody: Partial<PreviewPostRequestBody> | undefined | null = {}) : void {
-    if (previewPostRequestBody) {
-        writer.writeBooleanValue("allowEdit", previewPostRequestBody.allowEdit);
-        writer.writeBooleanValue("chromeless", previewPostRequestBody.chromeless);
-        writer.writeStringValue("page", previewPostRequestBody.page);
-        writer.writeStringValue("viewer", previewPostRequestBody.viewer);
-        writer.writeNumberValue("zoom", previewPostRequestBody.zoom);
-        writer.writeAdditionalData(previewPostRequestBody.additionalData);
-    }
+export function serializePreviewPostRequestBody(writer: SerializationWriter, previewPostRequestBody: Partial<PreviewPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!previewPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("allowEdit", previewPostRequestBody.allowEdit);
+    writer.writeBooleanValue("chromeless", previewPostRequestBody.chromeless);
+    writer.writeStringValue("page", previewPostRequestBody.page);
+    writer.writeStringValue("viewer", previewPostRequestBody.viewer);
+    writer.writeNumberValue("zoom", previewPostRequestBody.zoom);
+    writer.writeAdditionalData(previewPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

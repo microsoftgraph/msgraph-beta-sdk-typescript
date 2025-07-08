@@ -19,6 +19,7 @@ export function createRevokeCloudCertificationAuthorityCertificatePostRequestBod
 }
 /**
  * The deserialization information for the current model
+ * @param RevokeCloudCertificationAuthorityCertificatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoRevokeCloudCertificationAuthorityCertificatePostR
     }
 }
 export interface RevokeCloudCertificationAuthorityCertificatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -64,14 +61,15 @@ export interface RevokeCloudCertificationAuthorityCertificateRequestBuilder exte
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RevokeCloudCertificationAuthorityCertificatePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRevokeCloudCertificationAuthorityCertificatePostRequestBody(writer: SerializationWriter, revokeCloudCertificationAuthorityCertificatePostRequestBody: Partial<RevokeCloudCertificationAuthorityCertificatePostRequestBody> | undefined | null = {}) : void {
-    if (revokeCloudCertificationAuthorityCertificatePostRequestBody) {
-        writer.writeNumberValue("certificationAuthorityVersion", revokeCloudCertificationAuthorityCertificatePostRequestBody.certificationAuthorityVersion);
-        writer.writeAdditionalData(revokeCloudCertificationAuthorityCertificatePostRequestBody.additionalData);
-    }
+export function serializeRevokeCloudCertificationAuthorityCertificatePostRequestBody(writer: SerializationWriter, revokeCloudCertificationAuthorityCertificatePostRequestBody: Partial<RevokeCloudCertificationAuthorityCertificatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!revokeCloudCertificationAuthorityCertificatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("certificationAuthorityVersion", revokeCloudCertificationAuthorityCertificatePostRequestBody.certificationAuthorityVersion);
+    writer.writeAdditionalData(revokeCloudCertificationAuthorityCertificatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

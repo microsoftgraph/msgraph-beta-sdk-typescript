@@ -28,6 +28,7 @@ export function createSearchExistingIdentitiesPostResponseFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param SearchExistingIdentitiesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoSearchExistingIdentitiesPostRequestBody(searchExi
 }
 /**
  * The deserialization information for the current model
+ * @param SearchExistingIdentitiesPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoSearchExistingIdentitiesPostResponse(searchExisti
     }
 }
 export interface SearchExistingIdentitiesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface SearchExistingIdentitiesRequestBuilder extends BaseRequestBuild
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SearchExistingIdentitiesPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSearchExistingIdentitiesPostRequestBody(writer: SerializationWriter, searchExistingIdentitiesPostRequestBody: Partial<SearchExistingIdentitiesPostRequestBody> | undefined | null = {}) : void {
-    if (searchExistingIdentitiesPostRequestBody) {
-        writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", searchExistingIdentitiesPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
-        writer.writeAdditionalData(searchExistingIdentitiesPostRequestBody.additionalData);
-    }
+export function serializeSearchExistingIdentitiesPostRequestBody(writer: SerializationWriter, searchExistingIdentitiesPostRequestBody: Partial<SearchExistingIdentitiesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!searchExistingIdentitiesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", searchExistingIdentitiesPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
+    writer.writeAdditionalData(searchExistingIdentitiesPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SearchExistingIdentitiesPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSearchExistingIdentitiesPostResponse(writer: SerializationWriter, searchExistingIdentitiesPostResponse: Partial<SearchExistingIdentitiesPostResponse> | undefined | null = {}) : void {
-    if (searchExistingIdentitiesPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, searchExistingIdentitiesPostResponse)
-        writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("value", searchExistingIdentitiesPostResponse.value, serializeImportedDeviceIdentity);
-    }
+export function serializeSearchExistingIdentitiesPostResponse(writer: SerializationWriter, searchExistingIdentitiesPostResponse: Partial<SearchExistingIdentitiesPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!searchExistingIdentitiesPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, searchExistingIdentitiesPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("value", searchExistingIdentitiesPostResponse.value, serializeImportedDeviceIdentity);
 }
 /**
  * Uri template for the request builder.

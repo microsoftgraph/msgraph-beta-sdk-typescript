@@ -17,6 +17,7 @@ export function createRetrieveCloudPkiLeafCertificateSummaryReportPostRequestBod
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,10 +29,6 @@ export function deserializeIntoRetrieveCloudPkiLeafCertificateSummaryReportPostR
     }
 }
 export interface RetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -67,15 +64,16 @@ export interface RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder exte
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody(writer: SerializationWriter, retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody: Partial<RetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody) {
-        writer.writeStringValue("certificationAuthorityId", retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.certificationAuthorityId);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.select);
-        writer.writeAdditionalData(retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.additionalData);
-    }
+export function serializeRetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody(writer: SerializationWriter, retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody: Partial<RetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("certificationAuthorityId", retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.certificationAuthorityId);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.select);
+    writer.writeAdditionalData(retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

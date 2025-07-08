@@ -26,6 +26,7 @@ export function createRenewGroupPostResponseFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param RenewGroupPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -37,6 +38,7 @@ export function deserializeIntoRenewGroupPostRequestBody(renewGroupPostRequestBo
 }
 /**
  * The deserialization information for the current model
+ * @param RenewGroupPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -48,10 +50,6 @@ export function deserializeIntoRenewGroupPostResponse(renewGroupPostResponse: Pa
 }
 export interface RenewGroupPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -61,10 +59,6 @@ export interface RenewGroupPostRequestBody extends AdditionalDataHolder, BackedM
     groupId?: string | null;
 }
 export interface RenewGroupPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -97,25 +91,27 @@ export interface RenewGroupRequestBuilder extends BaseRequestBuilder<RenewGroupR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RenewGroupPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRenewGroupPostRequestBody(writer: SerializationWriter, renewGroupPostRequestBody: Partial<RenewGroupPostRequestBody> | undefined | null = {}) : void {
-    if (renewGroupPostRequestBody) {
-        writer.writeStringValue("groupId", renewGroupPostRequestBody.groupId);
-        writer.writeAdditionalData(renewGroupPostRequestBody.additionalData);
-    }
+export function serializeRenewGroupPostRequestBody(writer: SerializationWriter, renewGroupPostRequestBody: Partial<RenewGroupPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!renewGroupPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("groupId", renewGroupPostRequestBody.groupId);
+    writer.writeAdditionalData(renewGroupPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RenewGroupPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRenewGroupPostResponse(writer: SerializationWriter, renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined | null = {}) : void {
-    if (renewGroupPostResponse) {
-        writer.writeBooleanValue("value", renewGroupPostResponse.value);
-        writer.writeAdditionalData(renewGroupPostResponse.additionalData);
-    }
+export function serializeRenewGroupPostResponse(writer: SerializationWriter, renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!renewGroupPostResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", renewGroupPostResponse.value);
+    writer.writeAdditionalData(renewGroupPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createRecordAllDecisionsPostRequestBodyFromDiscriminatorValue(pa
 }
 /**
  * The deserialization information for the current model
+ * @param RecordAllDecisionsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoRecordAllDecisionsPostRequestBody(recordAllDecisi
     }
 }
 export interface RecordAllDecisionsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -77,17 +74,18 @@ export interface RecordAllDecisionsRequestBuilder extends BaseRequestBuilder<Rec
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RecordAllDecisionsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRecordAllDecisionsPostRequestBody(writer: SerializationWriter, recordAllDecisionsPostRequestBody: Partial<RecordAllDecisionsPostRequestBody> | undefined | null = {}) : void {
-    if (recordAllDecisionsPostRequestBody) {
-        writer.writeStringValue("decision", recordAllDecisionsPostRequestBody.decision);
-        writer.writeStringValue("justification", recordAllDecisionsPostRequestBody.justification);
-        writer.writeStringValue("principalId", recordAllDecisionsPostRequestBody.principalId);
-        writer.writeStringValue("resourceId", recordAllDecisionsPostRequestBody.resourceId);
-        writer.writeAdditionalData(recordAllDecisionsPostRequestBody.additionalData);
-    }
+export function serializeRecordAllDecisionsPostRequestBody(writer: SerializationWriter, recordAllDecisionsPostRequestBody: Partial<RecordAllDecisionsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!recordAllDecisionsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("decision", recordAllDecisionsPostRequestBody.decision);
+    writer.writeStringValue("justification", recordAllDecisionsPostRequestBody.justification);
+    writer.writeStringValue("principalId", recordAllDecisionsPostRequestBody.principalId);
+    writer.writeStringValue("resourceId", recordAllDecisionsPostRequestBody.resourceId);
+    writer.writeAdditionalData(recordAllDecisionsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

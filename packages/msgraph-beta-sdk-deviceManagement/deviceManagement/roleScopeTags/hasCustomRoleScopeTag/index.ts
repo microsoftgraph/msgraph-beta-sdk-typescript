@@ -17,6 +17,7 @@ export function createHasCustomRoleScopeTagGetResponseFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param HasCustomRoleScopeTagGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoHasCustomRoleScopeTagGetResponse(hasCustomRoleSco
     }
 }
 export interface HasCustomRoleScopeTagGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface HasCustomRoleScopeTagRequestBuilder extends BaseRequestBuilder<
 }
 /**
  * Serializes information the current object
+ * @param HasCustomRoleScopeTagGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeHasCustomRoleScopeTagGetResponse(writer: SerializationWriter, hasCustomRoleScopeTagGetResponse: Partial<HasCustomRoleScopeTagGetResponse> | undefined | null = {}) : void {
-    if (hasCustomRoleScopeTagGetResponse) {
-        writer.writeBooleanValue("value", hasCustomRoleScopeTagGetResponse.value);
-        writer.writeAdditionalData(hasCustomRoleScopeTagGetResponse.additionalData);
-    }
+export function serializeHasCustomRoleScopeTagGetResponse(writer: SerializationWriter, hasCustomRoleScopeTagGetResponse: Partial<HasCustomRoleScopeTagGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!hasCustomRoleScopeTagGetResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", hasCustomRoleScopeTagGetResponse.value);
+    writer.writeAdditionalData(hasCustomRoleScopeTagGetResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

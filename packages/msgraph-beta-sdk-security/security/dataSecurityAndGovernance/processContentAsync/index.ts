@@ -28,6 +28,7 @@ export function createProcessContentAsyncPostResponseFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param ProcessContentAsyncPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoProcessContentAsyncPostRequestBody(processContent
 }
 /**
  * The deserialization information for the current model
+ * @param ProcessContentAsyncPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoProcessContentAsyncPostResponse(processContentAsy
     }
 }
 export interface ProcessContentAsyncPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface ProcessContentAsyncRequestBuilder extends BaseRequestBuilder<Pr
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ProcessContentAsyncPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeProcessContentAsyncPostRequestBody(writer: SerializationWriter, processContentAsyncPostRequestBody: Partial<ProcessContentAsyncPostRequestBody> | undefined | null = {}) : void {
-    if (processContentAsyncPostRequestBody) {
-        writer.writeCollectionOfObjectValues<ProcessContentBatchRequest>("processContentRequests", processContentAsyncPostRequestBody.processContentRequests, serializeProcessContentBatchRequest);
-        writer.writeAdditionalData(processContentAsyncPostRequestBody.additionalData);
-    }
+export function serializeProcessContentAsyncPostRequestBody(writer: SerializationWriter, processContentAsyncPostRequestBody: Partial<ProcessContentAsyncPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!processContentAsyncPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ProcessContentBatchRequest>("processContentRequests", processContentAsyncPostRequestBody.processContentRequests, serializeProcessContentBatchRequest);
+    writer.writeAdditionalData(processContentAsyncPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ProcessContentAsyncPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeProcessContentAsyncPostResponse(writer: SerializationWriter, processContentAsyncPostResponse: Partial<ProcessContentAsyncPostResponse> | undefined | null = {}) : void {
-    if (processContentAsyncPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, processContentAsyncPostResponse)
-        writer.writeCollectionOfObjectValues<ProcessContentResponses>("value", processContentAsyncPostResponse.value, serializeProcessContentResponses);
-    }
+export function serializeProcessContentAsyncPostResponse(writer: SerializationWriter, processContentAsyncPostResponse: Partial<ProcessContentAsyncPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!processContentAsyncPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, processContentAsyncPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ProcessContentResponses>("value", processContentAsyncPostResponse.value, serializeProcessContentResponses);
 }
 /**
  * Uri template for the request builder.

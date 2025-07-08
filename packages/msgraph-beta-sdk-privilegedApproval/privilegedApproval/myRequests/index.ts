@@ -19,6 +19,7 @@ export function createMyRequestsGetResponseFromDiscriminatorValue(parseNode: Par
 }
 /**
  * The deserialization information for the current model
+ * @param MyRequestsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface MyRequestsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MyRequestsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMyRequestsGetResponse(writer: SerializationWriter, myRequestsGetResponse: Partial<MyRequestsGetResponse> | undefined | null = {}) : void {
-    if (myRequestsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, myRequestsGetResponse)
-        writer.writeCollectionOfObjectValues<PrivilegedApproval>("value", myRequestsGetResponse.value, serializePrivilegedApproval);
-    }
+export function serializeMyRequestsGetResponse(writer: SerializationWriter, myRequestsGetResponse: Partial<MyRequestsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!myRequestsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, myRequestsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PrivilegedApproval>("value", myRequestsGetResponse.value, serializePrivilegedApproval);
 }
 /**
  * Uri template for the request builder.

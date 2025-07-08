@@ -19,6 +19,7 @@ export function createGenerateKeyPostRequestBodyFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param GenerateKeyPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -32,10 +33,6 @@ export function deserializeIntoGenerateKeyPostRequestBody(generateKeyPostRequest
     }
 }
 export interface GenerateKeyPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -80,17 +77,18 @@ export interface GenerateKeyRequestBuilder extends BaseRequestBuilder<GenerateKe
 }
 /**
  * Serializes information the current object
+ * @param GenerateKeyPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGenerateKeyPostRequestBody(writer: SerializationWriter, generateKeyPostRequestBody: Partial<GenerateKeyPostRequestBody> | undefined | null = {}) : void {
-    if (generateKeyPostRequestBody) {
-        writer.writeNumberValue("exp", generateKeyPostRequestBody.exp);
-        writer.writeStringValue("kty", generateKeyPostRequestBody.kty);
-        writer.writeNumberValue("nbf", generateKeyPostRequestBody.nbf);
-        writer.writeStringValue("use", generateKeyPostRequestBody.use);
-        writer.writeAdditionalData(generateKeyPostRequestBody.additionalData);
-    }
+export function serializeGenerateKeyPostRequestBody(writer: SerializationWriter, generateKeyPostRequestBody: Partial<GenerateKeyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!generateKeyPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("exp", generateKeyPostRequestBody.exp);
+    writer.writeStringValue("kty", generateKeyPostRequestBody.kty);
+    writer.writeNumberValue("nbf", generateKeyPostRequestBody.nbf);
+    writer.writeStringValue("use", generateKeyPostRequestBody.use);
+    writer.writeAdditionalData(generateKeyPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

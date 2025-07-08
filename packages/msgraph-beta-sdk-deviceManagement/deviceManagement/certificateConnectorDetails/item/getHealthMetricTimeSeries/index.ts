@@ -28,6 +28,7 @@ export function createGetHealthMetricTimeSeriesPostResponseFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param GetHealthMetricTimeSeriesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoGetHealthMetricTimeSeriesPostRequestBody(getHealt
 }
 /**
  * The deserialization information for the current model
+ * @param GetHealthMetricTimeSeriesPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoGetHealthMetricTimeSeriesPostResponse(getHealthMe
     }
 }
 export interface GetHealthMetricTimeSeriesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface GetHealthMetricTimeSeriesRequestBuilder extends BaseRequestBuil
 }
 /**
  * Serializes information the current object
+ * @param GetHealthMetricTimeSeriesPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetHealthMetricTimeSeriesPostRequestBody(writer: SerializationWriter, getHealthMetricTimeSeriesPostRequestBody: Partial<GetHealthMetricTimeSeriesPostRequestBody> | undefined | null = {}) : void {
-    if (getHealthMetricTimeSeriesPostRequestBody) {
-        writer.writeObjectValue<TimeSeriesParameter>("timeSeries", getHealthMetricTimeSeriesPostRequestBody.timeSeries, serializeTimeSeriesParameter);
-        writer.writeAdditionalData(getHealthMetricTimeSeriesPostRequestBody.additionalData);
-    }
+export function serializeGetHealthMetricTimeSeriesPostRequestBody(writer: SerializationWriter, getHealthMetricTimeSeriesPostRequestBody: Partial<GetHealthMetricTimeSeriesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getHealthMetricTimeSeriesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<TimeSeriesParameter>("timeSeries", getHealthMetricTimeSeriesPostRequestBody.timeSeries, serializeTimeSeriesParameter);
+    writer.writeAdditionalData(getHealthMetricTimeSeriesPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param GetHealthMetricTimeSeriesPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetHealthMetricTimeSeriesPostResponse(writer: SerializationWriter, getHealthMetricTimeSeriesPostResponse: Partial<GetHealthMetricTimeSeriesPostResponse> | undefined | null = {}) : void {
-    if (getHealthMetricTimeSeriesPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricTimeSeriesPostResponse)
-        writer.writeCollectionOfObjectValues<CertificateConnectorHealthMetricValue>("value", getHealthMetricTimeSeriesPostResponse.value, serializeCertificateConnectorHealthMetricValue);
-    }
+export function serializeGetHealthMetricTimeSeriesPostResponse(writer: SerializationWriter, getHealthMetricTimeSeriesPostResponse: Partial<GetHealthMetricTimeSeriesPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getHealthMetricTimeSeriesPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricTimeSeriesPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CertificateConnectorHealthMetricValue>("value", getHealthMetricTimeSeriesPostResponse.value, serializeCertificateConnectorHealthMetricValue);
 }
 /**
  * Uri template for the request builder.

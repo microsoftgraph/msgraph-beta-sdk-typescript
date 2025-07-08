@@ -17,6 +17,7 @@ export function createResizePostRequestBodyFromDiscriminatorValue(parseNode: Par
 }
 /**
  * The deserialization information for the current model
+ * @param ResizePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoResizePostRequestBody(resizePostRequestBody: Part
     }
 }
 export interface ResizePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -62,14 +59,15 @@ export interface ResizeRequestBuilder extends BaseRequestBuilder<ResizeRequestBu
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ResizePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeResizePostRequestBody(writer: SerializationWriter, resizePostRequestBody: Partial<ResizePostRequestBody> | undefined | null = {}) : void {
-    if (resizePostRequestBody) {
-        writer.writeStringValue("targetServicePlanId", resizePostRequestBody.targetServicePlanId);
-        writer.writeAdditionalData(resizePostRequestBody.additionalData);
-    }
+export function serializeResizePostRequestBody(writer: SerializationWriter, resizePostRequestBody: Partial<ResizePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!resizePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("targetServicePlanId", resizePostRequestBody.targetServicePlanId);
+    writer.writeAdditionalData(resizePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

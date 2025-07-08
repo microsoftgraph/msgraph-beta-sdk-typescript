@@ -19,10 +19,6 @@ export function createDenyPostRequestBodyFromDiscriminatorValue(parseNode: Parse
 }
 export interface DenyPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -53,6 +49,7 @@ export interface DenyRequestBuilder extends BaseRequestBuilder<DenyRequestBuilde
 }
 /**
  * The deserialization information for the current model
+ * @param DenyPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -64,14 +61,15 @@ export function deserializeIntoDenyPostRequestBody(denyPostRequestBody: Partial<
 }
 /**
  * Serializes information the current object
+ * @param DenyPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDenyPostRequestBody(writer: SerializationWriter, denyPostRequestBody: Partial<DenyPostRequestBody> | undefined | null = {}) : void {
-    if (denyPostRequestBody) {
-        writer.writeStringValue("reviewerJustification", denyPostRequestBody.reviewerJustification);
-        writer.writeAdditionalData(denyPostRequestBody.additionalData);
-    }
+export function serializeDenyPostRequestBody(writer: SerializationWriter, denyPostRequestBody: Partial<DenyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!denyPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("reviewerJustification", denyPostRequestBody.reviewerJustification);
+    writer.writeAdditionalData(denyPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

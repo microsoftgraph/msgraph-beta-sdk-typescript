@@ -19,6 +19,7 @@ export function createImportOffice365DeviceConfigurationPoliciesPostResponseFrom
 }
 /**
  * The deserialization information for the current model
+ * @param ImportOffice365DeviceConfigurationPoliciesPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -54,14 +55,15 @@ export interface ImportOffice365DeviceConfigurationPoliciesRequestBuilder extend
 }
 /**
  * Serializes information the current object
+ * @param ImportOffice365DeviceConfigurationPoliciesPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeImportOffice365DeviceConfigurationPoliciesPostResponse(writer: SerializationWriter, importOffice365DeviceConfigurationPoliciesPostResponse: Partial<ImportOffice365DeviceConfigurationPoliciesPostResponse> | undefined | null = {}) : void {
-    if (importOffice365DeviceConfigurationPoliciesPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, importOffice365DeviceConfigurationPoliciesPostResponse)
-        writer.writeCollectionOfObjectValues<DeviceManagementIntent>("value", importOffice365DeviceConfigurationPoliciesPostResponse.value, serializeDeviceManagementIntent);
-    }
+export function serializeImportOffice365DeviceConfigurationPoliciesPostResponse(writer: SerializationWriter, importOffice365DeviceConfigurationPoliciesPostResponse: Partial<ImportOffice365DeviceConfigurationPoliciesPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!importOffice365DeviceConfigurationPoliciesPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, importOffice365DeviceConfigurationPoliciesPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceManagementIntent>("value", importOffice365DeviceConfigurationPoliciesPostResponse.value, serializeDeviceManagementIntent);
 }
 /**
  * Uri template for the request builder.

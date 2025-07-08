@@ -19,6 +19,7 @@ export function createRetrieveFrontlineReportsPostRequestBodyFromDiscriminatorVa
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveFrontlineReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoRetrieveFrontlineReportsPostRequestBody(retrieveF
     }
 }
 export interface RetrieveFrontlineReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -99,21 +96,22 @@ export interface RetrieveFrontlineReportsRequestBuilder extends BaseRequestBuild
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveFrontlineReportsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveFrontlineReportsPostRequestBody(writer: SerializationWriter, retrieveFrontlineReportsPostRequestBody: Partial<RetrieveFrontlineReportsPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveFrontlineReportsPostRequestBody) {
-        writer.writeStringValue("filter", retrieveFrontlineReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveFrontlineReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveFrontlineReportsPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPCFrontlineReportType>("reportName", retrieveFrontlineReportsPostRequestBody.reportName);
-        writer.writeStringValue("search", retrieveFrontlineReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveFrontlineReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveFrontlineReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveFrontlineReportsPostRequestBody.top);
-        writer.writeAdditionalData(retrieveFrontlineReportsPostRequestBody.additionalData);
-    }
+export function serializeRetrieveFrontlineReportsPostRequestBody(writer: SerializationWriter, retrieveFrontlineReportsPostRequestBody: Partial<RetrieveFrontlineReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveFrontlineReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveFrontlineReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveFrontlineReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveFrontlineReportsPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPCFrontlineReportType>("reportName", retrieveFrontlineReportsPostRequestBody.reportName);
+    writer.writeStringValue("search", retrieveFrontlineReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveFrontlineReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveFrontlineReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveFrontlineReportsPostRequestBody.top);
+    writer.writeAdditionalData(retrieveFrontlineReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.
