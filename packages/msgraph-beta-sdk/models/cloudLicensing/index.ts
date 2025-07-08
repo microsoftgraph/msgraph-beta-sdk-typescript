@@ -45,6 +45,7 @@ export function createUserCloudLicensingFromDiscriminatorValue(parseNode: ParseN
 }
 /**
  * The deserialization information for the current model
+ * @param GroupCloudLicensing The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -57,6 +58,7 @@ export function deserializeIntoGroupCloudLicensing(groupCloudLicensing: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param Service The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -71,6 +73,7 @@ export function deserializeIntoService(service: Partial<Service> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param UsageRight The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -84,6 +87,7 @@ export function deserializeIntoUsageRight(usageRight: Partial<UsageRight> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param UserCloudLicensing The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -95,10 +99,6 @@ export function deserializeIntoUserCloudLicensing(userCloudLicensing: Partial<Us
     }
 }
 export interface GroupCloudLicensing extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -114,60 +114,60 @@ export interface GroupCloudLicensing extends AdditionalDataHolder, BackedModel, 
 }
 /**
  * Serializes information the current object
+ * @param GroupCloudLicensing The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGroupCloudLicensing(writer: SerializationWriter, groupCloudLicensing: Partial<GroupCloudLicensing> | undefined | null = {}) : void {
-    if (groupCloudLicensing) {
-        writer.writeStringValue("@odata.type", groupCloudLicensing.odataType);
-        writer.writeCollectionOfObjectValues<UsageRight>("usageRights", groupCloudLicensing.usageRights, serializeUsageRight);
-        writer.writeAdditionalData(groupCloudLicensing.additionalData);
-    }
+export function serializeGroupCloudLicensing(writer: SerializationWriter, groupCloudLicensing: Partial<GroupCloudLicensing> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!groupCloudLicensing || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", groupCloudLicensing.odataType);
+    writer.writeCollectionOfObjectValues<UsageRight>("usageRights", groupCloudLicensing.usageRights, serializeUsageRight);
+    writer.writeAdditionalData(groupCloudLicensing.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Service The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeService(writer: SerializationWriter, service: Partial<Service> | undefined | null = {}) : void {
-    if (service) {
-        writer.writeEnumValue<AssigneeTypes[]>("assignableTo", service.assignableTo);
-        writer.writeStringValue("@odata.type", service.odataType);
-        writer.writeGuidValue("planId", service.planId);
-        writer.writeStringValue("planName", service.planName);
-        writer.writeAdditionalData(service.additionalData);
-    }
+export function serializeService(writer: SerializationWriter, service: Partial<Service> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!service || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AssigneeTypes[]>("assignableTo", service.assignableTo);
+    writer.writeStringValue("@odata.type", service.odataType);
+    writer.writeGuidValue("planId", service.planId);
+    writer.writeStringValue("planName", service.planName);
+    writer.writeAdditionalData(service.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UsageRight The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUsageRight(writer: SerializationWriter, usageRight: Partial<UsageRight> | undefined | null = {}) : void {
-    if (usageRight) {
-        serializeEntity(writer, usageRight)
-        writer.writeCollectionOfObjectValues<Service>("services", usageRight.services, serializeService);
-        writer.writeGuidValue("skuId", usageRight.skuId);
-        writer.writeStringValue("skuPartNumber", usageRight.skuPartNumber);
-    }
+export function serializeUsageRight(writer: SerializationWriter, usageRight: Partial<UsageRight> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!usageRight || isSerializingDerivedType) { return; }
+    serializeEntity(writer, usageRight, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Service>("services", usageRight.services, serializeService);
+    writer.writeGuidValue("skuId", usageRight.skuId);
+    writer.writeStringValue("skuPartNumber", usageRight.skuPartNumber);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserCloudLicensing The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserCloudLicensing(writer: SerializationWriter, userCloudLicensing: Partial<UserCloudLicensing> | undefined | null = {}) : void {
-    if (userCloudLicensing) {
-        writer.writeStringValue("@odata.type", userCloudLicensing.odataType);
-        writer.writeCollectionOfObjectValues<UsageRight>("usageRights", userCloudLicensing.usageRights, serializeUsageRight);
-        writer.writeAdditionalData(userCloudLicensing.additionalData);
-    }
+export function serializeUserCloudLicensing(writer: SerializationWriter, userCloudLicensing: Partial<UserCloudLicensing> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userCloudLicensing || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", userCloudLicensing.odataType);
+    writer.writeCollectionOfObjectValues<UsageRight>("usageRights", userCloudLicensing.usageRights, serializeUsageRight);
+    writer.writeAdditionalData(userCloudLicensing.additionalData);
 }
 export interface Service extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The assignableTo property
      */
@@ -204,10 +204,6 @@ export interface UsageRight extends Entity, Parsable {
     skuPartNumber?: string | null;
 }
 export interface UserCloudLicensing extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -17,6 +17,7 @@ export function createGetMobileApplicationManagementAppRegistrationSummaryReport
 }
 /**
  * The deserialization information for the current model
+ * @param GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetMobileApplicationManagementAppRegistrationSumm
     }
 }
 export interface GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetMobileApplicationManagementAppRegistrationSummaryReportReque
 }
 /**
  * Serializes information the current object
+ * @param GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined | null = {}) : void {
-    if (getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody) {
-        writer.writeStringValue("filter", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.top);
-        writer.writeAdditionalData(getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.additionalData);
-    }
+export function serializeGetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody(writer: SerializationWriter, getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody: Partial<GetMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.top);
+    writer.writeAdditionalData(getMobileApplicationManagementAppRegistrationSummaryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

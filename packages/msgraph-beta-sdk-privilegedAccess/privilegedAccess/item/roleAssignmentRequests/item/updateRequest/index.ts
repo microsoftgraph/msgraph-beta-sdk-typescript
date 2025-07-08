@@ -19,6 +19,7 @@ export function createUpdateRequestPostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateRequestPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,23 +34,20 @@ export function deserializeIntoUpdateRequestPostRequestBody(updateRequestPostReq
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateRequestPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateRequestPostRequestBody(writer: SerializationWriter, updateRequestPostRequestBody: Partial<UpdateRequestPostRequestBody> | undefined | null = {}) : void {
-    if (updateRequestPostRequestBody) {
-        writer.writeStringValue("assignmentState", updateRequestPostRequestBody.assignmentState);
-        writer.writeStringValue("decision", updateRequestPostRequestBody.decision);
-        writer.writeStringValue("reason", updateRequestPostRequestBody.reason);
-        writer.writeObjectValue<GovernanceSchedule>("schedule", updateRequestPostRequestBody.schedule, serializeGovernanceSchedule);
-        writer.writeAdditionalData(updateRequestPostRequestBody.additionalData);
-    }
+export function serializeUpdateRequestPostRequestBody(writer: SerializationWriter, updateRequestPostRequestBody: Partial<UpdateRequestPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateRequestPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("assignmentState", updateRequestPostRequestBody.assignmentState);
+    writer.writeStringValue("decision", updateRequestPostRequestBody.decision);
+    writer.writeStringValue("reason", updateRequestPostRequestBody.reason);
+    writer.writeObjectValue<GovernanceSchedule>("schedule", updateRequestPostRequestBody.schedule, serializeGovernanceSchedule);
+    writer.writeAdditionalData(updateRequestPostRequestBody.additionalData);
 }
 export interface UpdateRequestPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The assignmentState property
      */

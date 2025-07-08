@@ -19,6 +19,7 @@ export function createGetAllCloudCertificationAuthorityLeafCertificatesPostRespo
 }
 /**
  * The deserialization information for the current model
+ * @param GetAllCloudCertificationAuthorityLeafCertificatesPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -54,14 +55,15 @@ export interface GetAllCloudCertificationAuthorityLeafCertificatesRequestBuilder
 }
 /**
  * Serializes information the current object
+ * @param GetAllCloudCertificationAuthorityLeafCertificatesPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAllCloudCertificationAuthorityLeafCertificatesPostResponse(writer: SerializationWriter, getAllCloudCertificationAuthorityLeafCertificatesPostResponse: Partial<GetAllCloudCertificationAuthorityLeafCertificatesPostResponse> | undefined | null = {}) : void {
-    if (getAllCloudCertificationAuthorityLeafCertificatesPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAllCloudCertificationAuthorityLeafCertificatesPostResponse)
-        writer.writeCollectionOfObjectValues<CloudCertificationAuthorityLeafCertificate>("value", getAllCloudCertificationAuthorityLeafCertificatesPostResponse.value, serializeCloudCertificationAuthorityLeafCertificate);
-    }
+export function serializeGetAllCloudCertificationAuthorityLeafCertificatesPostResponse(writer: SerializationWriter, getAllCloudCertificationAuthorityLeafCertificatesPostResponse: Partial<GetAllCloudCertificationAuthorityLeafCertificatesPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAllCloudCertificationAuthorityLeafCertificatesPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAllCloudCertificationAuthorityLeafCertificatesPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudCertificationAuthorityLeafCertificate>("value", getAllCloudCertificationAuthorityLeafCertificatesPostResponse.value, serializeCloudCertificationAuthorityLeafCertificate);
 }
 /**
  * Uri template for the request builder.

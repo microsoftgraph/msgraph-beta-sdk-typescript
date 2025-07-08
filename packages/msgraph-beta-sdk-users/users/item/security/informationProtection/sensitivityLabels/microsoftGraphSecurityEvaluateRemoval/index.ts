@@ -30,6 +30,7 @@ export function createEvaluateRemovalPostResponseFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluateRemovalPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -42,6 +43,7 @@ export function deserializeIntoEvaluateRemovalPostRequestBody(evaluateRemovalPos
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluateRemovalPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -52,10 +54,6 @@ export function deserializeIntoEvaluateRemovalPostResponse(evaluateRemovalPostRe
     }
 }
 export interface EvaluateRemovalPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -98,26 +96,28 @@ export interface MicrosoftGraphSecurityEvaluateRemovalRequestBuilder extends Bas
 }
 /**
  * Serializes information the current object
+ * @param EvaluateRemovalPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluateRemovalPostRequestBody(writer: SerializationWriter, evaluateRemovalPostRequestBody: Partial<EvaluateRemovalPostRequestBody> | undefined | null = {}) : void {
-    if (evaluateRemovalPostRequestBody) {
-        writer.writeObjectValue<ContentInfo>("contentInfo", evaluateRemovalPostRequestBody.contentInfo, serializeContentInfo);
-        writer.writeObjectValue<DowngradeJustification>("downgradeJustification", evaluateRemovalPostRequestBody.downgradeJustification, serializeDowngradeJustification);
-        writer.writeAdditionalData(evaluateRemovalPostRequestBody.additionalData);
-    }
+export function serializeEvaluateRemovalPostRequestBody(writer: SerializationWriter, evaluateRemovalPostRequestBody: Partial<EvaluateRemovalPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluateRemovalPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<ContentInfo>("contentInfo", evaluateRemovalPostRequestBody.contentInfo, serializeContentInfo);
+    writer.writeObjectValue<DowngradeJustification>("downgradeJustification", evaluateRemovalPostRequestBody.downgradeJustification, serializeDowngradeJustification);
+    writer.writeAdditionalData(evaluateRemovalPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param EvaluateRemovalPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluateRemovalPostResponse(writer: SerializationWriter, evaluateRemovalPostResponse: Partial<EvaluateRemovalPostResponse> | undefined | null = {}) : void {
-    if (evaluateRemovalPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, evaluateRemovalPostResponse)
-        writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateRemovalPostResponse.value, serializeInformationProtectionAction);
-    }
+export function serializeEvaluateRemovalPostResponse(writer: SerializationWriter, evaluateRemovalPostResponse: Partial<EvaluateRemovalPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluateRemovalPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, evaluateRemovalPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateRemovalPostResponse.value, serializeInformationProtectionAction);
 }
 /**
  * Uri template for the request builder.

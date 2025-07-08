@@ -19,6 +19,7 @@ export function createExportGetResponseFromDiscriminatorValue(parseNode: ParseNo
 }
 /**
  * The deserialization information for the current model
+ * @param ExportGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface ExportRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param ExportGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExportGetResponse(writer: SerializationWriter, exportGetResponse: Partial<ExportGetResponse> | undefined | null = {}) : void {
-    if (exportGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, exportGetResponse)
-        writer.writeCollectionOfPrimitiveValues<string>("value", exportGetResponse.value);
-    }
+export function serializeExportGetResponse(writer: SerializationWriter, exportGetResponse: Partial<ExportGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!exportGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, exportGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("value", exportGetResponse.value);
 }
 /**
  * Uri template for the request builder.

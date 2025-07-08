@@ -19,10 +19,6 @@ export function createDecryptBufferPostRequestBodyFromDiscriminatorValue(parseNo
 }
 export interface DecryptBufferPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -59,6 +55,7 @@ export interface DecryptBufferRequestBuilder extends BaseRequestBuilder<DecryptB
 }
 /**
  * The deserialization information for the current model
+ * @param DecryptBufferPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -71,15 +68,16 @@ export function deserializeIntoDecryptBufferPostRequestBody(decryptBufferPostReq
 }
 /**
  * Serializes information the current object
+ * @param DecryptBufferPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined | null = {}) : void {
-    if (decryptBufferPostRequestBody) {
-        writer.writeByteArrayValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
-        writer.writeByteArrayValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
-        writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
-    }
+export function serializeDecryptBufferPostRequestBody(writer: SerializationWriter, decryptBufferPostRequestBody: Partial<DecryptBufferPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!decryptBufferPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeByteArrayValue("encryptedBuffer", decryptBufferPostRequestBody.encryptedBuffer);
+    writer.writeByteArrayValue("publishingLicense", decryptBufferPostRequestBody.publishingLicense);
+    writer.writeAdditionalData(decryptBufferPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

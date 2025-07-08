@@ -19,6 +19,7 @@ export function createGetCloudPcConnectivityHistoryGetResponseFromDiscriminatorV
 }
 /**
  * The deserialization information for the current model
+ * @param GetCloudPcConnectivityHistoryGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface GetCloudPcConnectivityHistoryRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetCloudPcConnectivityHistoryGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetCloudPcConnectivityHistoryGetResponse(writer: SerializationWriter, getCloudPcConnectivityHistoryGetResponse: Partial<GetCloudPcConnectivityHistoryGetResponse> | undefined | null = {}) : void {
-    if (getCloudPcConnectivityHistoryGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getCloudPcConnectivityHistoryGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcConnectivityEvent>("value", getCloudPcConnectivityHistoryGetResponse.value, serializeCloudPcConnectivityEvent);
-    }
+export function serializeGetCloudPcConnectivityHistoryGetResponse(writer: SerializationWriter, getCloudPcConnectivityHistoryGetResponse: Partial<GetCloudPcConnectivityHistoryGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getCloudPcConnectivityHistoryGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getCloudPcConnectivityHistoryGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcConnectivityEvent>("value", getCloudPcConnectivityHistoryGetResponse.value, serializeCloudPcConnectivityEvent);
 }
 /**
  * Uri template for the request builder.

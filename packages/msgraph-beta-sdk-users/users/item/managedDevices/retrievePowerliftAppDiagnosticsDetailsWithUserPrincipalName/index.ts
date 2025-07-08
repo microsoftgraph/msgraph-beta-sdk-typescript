@@ -19,6 +19,7 @@ export function createRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNam
 }
 /**
  * The deserialization information for the current model
+ * @param RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequ
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse(writer: SerializationWriter, retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse: Partial<RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse> | undefined | null = {}) : void {
-    if (retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse)
-        writer.writeCollectionOfObjectValues<PowerliftIncidentDetail>("value", retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse.value, serializePowerliftIncidentDetail);
-    }
+export function serializeRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse(writer: SerializationWriter, retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse: Partial<RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PowerliftIncidentDetail>("value", retrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameGetResponse.value, serializePowerliftIncidentDetail);
 }
 /**
  * Uri template for the request builder.

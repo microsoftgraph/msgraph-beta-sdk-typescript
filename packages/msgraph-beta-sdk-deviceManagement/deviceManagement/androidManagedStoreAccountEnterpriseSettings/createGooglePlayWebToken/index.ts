@@ -26,10 +26,6 @@ export function createCreateGooglePlayWebTokenPostResponseFromDiscriminatorValue
 }
 export interface CreateGooglePlayWebTokenPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -39,10 +35,6 @@ export interface CreateGooglePlayWebTokenPostRequestBody extends AdditionalDataH
     parentUri?: string | null;
 }
 export interface CreateGooglePlayWebTokenPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -74,6 +66,7 @@ export interface CreateGooglePlayWebTokenRequestBuilder extends BaseRequestBuild
 }
 /**
  * The deserialization information for the current model
+ * @param CreateGooglePlayWebTokenPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -85,6 +78,7 @@ export function deserializeIntoCreateGooglePlayWebTokenPostRequestBody(createGoo
 }
 /**
  * The deserialization information for the current model
+ * @param CreateGooglePlayWebTokenPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -96,25 +90,27 @@ export function deserializeIntoCreateGooglePlayWebTokenPostResponse(createGoogle
 }
 /**
  * Serializes information the current object
+ * @param CreateGooglePlayWebTokenPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateGooglePlayWebTokenPostRequestBody(writer: SerializationWriter, createGooglePlayWebTokenPostRequestBody: Partial<CreateGooglePlayWebTokenPostRequestBody> | undefined | null = {}) : void {
-    if (createGooglePlayWebTokenPostRequestBody) {
-        writer.writeStringValue("parentUri", createGooglePlayWebTokenPostRequestBody.parentUri);
-        writer.writeAdditionalData(createGooglePlayWebTokenPostRequestBody.additionalData);
-    }
+export function serializeCreateGooglePlayWebTokenPostRequestBody(writer: SerializationWriter, createGooglePlayWebTokenPostRequestBody: Partial<CreateGooglePlayWebTokenPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createGooglePlayWebTokenPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("parentUri", createGooglePlayWebTokenPostRequestBody.parentUri);
+    writer.writeAdditionalData(createGooglePlayWebTokenPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param CreateGooglePlayWebTokenPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateGooglePlayWebTokenPostResponse(writer: SerializationWriter, createGooglePlayWebTokenPostResponse: Partial<CreateGooglePlayWebTokenPostResponse> | undefined | null = {}) : void {
-    if (createGooglePlayWebTokenPostResponse) {
-        writer.writeStringValue("value", createGooglePlayWebTokenPostResponse.value);
-        writer.writeAdditionalData(createGooglePlayWebTokenPostResponse.additionalData);
-    }
+export function serializeCreateGooglePlayWebTokenPostResponse(writer: SerializationWriter, createGooglePlayWebTokenPostResponse: Partial<CreateGooglePlayWebTokenPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createGooglePlayWebTokenPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", createGooglePlayWebTokenPostResponse.value);
+    writer.writeAdditionalData(createGooglePlayWebTokenPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

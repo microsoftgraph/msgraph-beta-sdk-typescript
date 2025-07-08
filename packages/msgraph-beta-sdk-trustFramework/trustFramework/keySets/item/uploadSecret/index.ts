@@ -19,6 +19,7 @@ export function createUploadSecretPostRequestBodyFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param UploadSecretPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,23 +34,20 @@ export function deserializeIntoUploadSecretPostRequestBody(uploadSecretPostReque
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UploadSecretPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUploadSecretPostRequestBody(writer: SerializationWriter, uploadSecretPostRequestBody: Partial<UploadSecretPostRequestBody> | undefined | null = {}) : void {
-    if (uploadSecretPostRequestBody) {
-        writer.writeNumberValue("exp", uploadSecretPostRequestBody.exp);
-        writer.writeStringValue("k", uploadSecretPostRequestBody.k);
-        writer.writeNumberValue("nbf", uploadSecretPostRequestBody.nbf);
-        writer.writeStringValue("use", uploadSecretPostRequestBody.use);
-        writer.writeAdditionalData(uploadSecretPostRequestBody.additionalData);
-    }
+export function serializeUploadSecretPostRequestBody(writer: SerializationWriter, uploadSecretPostRequestBody: Partial<UploadSecretPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!uploadSecretPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("exp", uploadSecretPostRequestBody.exp);
+    writer.writeStringValue("k", uploadSecretPostRequestBody.k);
+    writer.writeNumberValue("nbf", uploadSecretPostRequestBody.nbf);
+    writer.writeStringValue("use", uploadSecretPostRequestBody.use);
+    writer.writeAdditionalData(uploadSecretPostRequestBody.additionalData);
 }
 export interface UploadSecretPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

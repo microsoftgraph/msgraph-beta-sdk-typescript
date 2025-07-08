@@ -17,6 +17,7 @@ export function createUpdateAdDomainPasswordPostRequestBodyFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateAdDomainPasswordPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,20 +29,17 @@ export function deserializeIntoUpdateAdDomainPasswordPostRequestBody(updateAdDom
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateAdDomainPasswordPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateAdDomainPasswordPostRequestBody(writer: SerializationWriter, updateAdDomainPasswordPostRequestBody: Partial<UpdateAdDomainPasswordPostRequestBody> | undefined | null = {}) : void {
-    if (updateAdDomainPasswordPostRequestBody) {
-        writer.writeStringValue("adDomainPassword", updateAdDomainPasswordPostRequestBody.adDomainPassword);
-        writer.writeAdditionalData(updateAdDomainPasswordPostRequestBody.additionalData);
-    }
+export function serializeUpdateAdDomainPasswordPostRequestBody(writer: SerializationWriter, updateAdDomainPasswordPostRequestBody: Partial<UpdateAdDomainPasswordPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateAdDomainPasswordPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("adDomainPassword", updateAdDomainPasswordPostRequestBody.adDomainPassword);
+    writer.writeAdditionalData(updateAdDomainPasswordPostRequestBody.additionalData);
 }
 export interface UpdateAdDomainPasswordPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The adDomainPassword property
      */

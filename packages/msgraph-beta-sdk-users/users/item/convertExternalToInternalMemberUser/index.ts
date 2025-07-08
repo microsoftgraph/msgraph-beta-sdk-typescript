@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ConvertExternalToInternalMemberUserPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -62,6 +58,7 @@ export function createConvertExternalToInternalMemberUserPostRequestBodyFromDisc
 }
 /**
  * The deserialization information for the current model
+ * @param ConvertExternalToInternalMemberUserPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -75,16 +72,17 @@ export function deserializeIntoConvertExternalToInternalMemberUserPostRequestBod
 }
 /**
  * Serializes information the current object
+ * @param ConvertExternalToInternalMemberUserPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConvertExternalToInternalMemberUserPostRequestBody(writer: SerializationWriter, convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined | null = {}) : void {
-    if (convertExternalToInternalMemberUserPostRequestBody) {
-        writer.writeStringValue("mail", convertExternalToInternalMemberUserPostRequestBody.mail);
-        writer.writeObjectValue<PasswordProfile>("passwordProfile", convertExternalToInternalMemberUserPostRequestBody.passwordProfile, serializePasswordProfile);
-        writer.writeStringValue("userPrincipalName", convertExternalToInternalMemberUserPostRequestBody.userPrincipalName);
-        writer.writeAdditionalData(convertExternalToInternalMemberUserPostRequestBody.additionalData);
-    }
+export function serializeConvertExternalToInternalMemberUserPostRequestBody(writer: SerializationWriter, convertExternalToInternalMemberUserPostRequestBody: Partial<ConvertExternalToInternalMemberUserPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!convertExternalToInternalMemberUserPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("mail", convertExternalToInternalMemberUserPostRequestBody.mail);
+    writer.writeObjectValue<PasswordProfile>("passwordProfile", convertExternalToInternalMemberUserPostRequestBody.passwordProfile, serializePasswordProfile);
+    writer.writeStringValue("userPrincipalName", convertExternalToInternalMemberUserPostRequestBody.userPrincipalName);
+    writer.writeAdditionalData(convertExternalToInternalMemberUserPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

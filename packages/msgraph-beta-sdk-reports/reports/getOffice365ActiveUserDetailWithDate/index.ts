@@ -19,6 +19,7 @@ export function createGetOffice365ActiveUserDetailWithDateGetResponseFromDiscrim
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365ActiveUserDetailWithDateGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365ActiveUserDetailWithDateRequestBuilderGetQueryParam
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365ActiveUserDetailWithDateGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365ActiveUserDetailWithDateGetResponse(writer: SerializationWriter, getOffice365ActiveUserDetailWithDateGetResponse: Partial<GetOffice365ActiveUserDetailWithDateGetResponse> | undefined | null = {}) : void {
-    if (getOffice365ActiveUserDetailWithDateGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserDetailWithDateGetResponse)
-        writer.writeCollectionOfObjectValues<Office365ActiveUserDetail>("value", getOffice365ActiveUserDetailWithDateGetResponse.value, serializeOffice365ActiveUserDetail);
-    }
+export function serializeGetOffice365ActiveUserDetailWithDateGetResponse(writer: SerializationWriter, getOffice365ActiveUserDetailWithDateGetResponse: Partial<GetOffice365ActiveUserDetailWithDateGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365ActiveUserDetailWithDateGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserDetailWithDateGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365ActiveUserDetail>("value", getOffice365ActiveUserDetailWithDateGetResponse.value, serializeOffice365ActiveUserDetail);
 }
 /**
  * Uri template for the request builder.

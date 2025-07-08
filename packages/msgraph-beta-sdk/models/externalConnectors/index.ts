@@ -15,10 +15,6 @@ export interface Acl extends AdditionalDataHolder, BackedModel, Parsable {
      */
     accessType?: AccessType | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -42,10 +38,6 @@ export interface Acl extends AdditionalDataHolder, BackedModel, Parsable {
 export type AclType = (typeof AclTypeObject)[keyof typeof AclTypeObject];
 export interface ActivitySettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -60,10 +52,6 @@ export interface ActivitySettings extends AdditionalDataHolder, BackedModel, Par
 }
 export interface ComplianceSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -77,10 +65,6 @@ export interface ComplianceSettings extends AdditionalDataHolder, BackedModel, P
     odataType?: string | null;
 }
 export interface Configuration extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * A collection of application IDs for registered Microsoft Entra apps allowed to manage the externalConnection and index content in the externalConnection.
      */
@@ -413,6 +397,7 @@ export function createUrlToItemResolverBaseFromDiscriminatorValue(parseNode: Par
 }
 /**
  * The deserialization information for the current model
+ * @param Acl The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -428,6 +413,7 @@ export function deserializeIntoAcl(acl: Partial<Acl> | undefined = {}) : Record<
 }
 /**
  * The deserialization information for the current model
+ * @param ActivitySettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -440,6 +426,7 @@ export function deserializeIntoActivitySettings(activitySettings: Partial<Activi
 }
 /**
  * The deserialization information for the current model
+ * @param ComplianceSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -452,6 +439,7 @@ export function deserializeIntoComplianceSettings(complianceSettings: Partial<Co
 }
 /**
  * The deserialization information for the current model
+ * @param Configuration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -464,6 +452,7 @@ export function deserializeIntoConfiguration(configuration: Partial<Configuratio
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectionOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -476,6 +465,7 @@ export function deserializeIntoConnectionOperation(connectionOperation: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectionOperationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -487,6 +477,7 @@ export function deserializeIntoConnectionOperationCollectionResponse(connectionO
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectionQuota The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -498,6 +489,7 @@ export function deserializeIntoConnectionQuota(connectionQuota: Partial<Connecti
 }
 /**
  * The deserialization information for the current model
+ * @param DisplayTemplate The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -513,6 +505,7 @@ export function deserializeIntoDisplayTemplate(displayTemplate: Partial<DisplayT
 }
 /**
  * The deserialization information for the current model
+ * @param External The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -527,6 +520,7 @@ export function deserializeIntoExternal(external: Partial<External> | undefined 
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalActivity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -540,6 +534,7 @@ export function deserializeIntoExternalActivity(externalActivity: Partial<Extern
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalActivityCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -551,6 +546,7 @@ export function deserializeIntoExternalActivityCollectionResponse(externalActivi
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalActivityResult The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -562,6 +558,7 @@ export function deserializeIntoExternalActivityResult(externalActivityResult: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalConnection The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -587,6 +584,7 @@ export function deserializeIntoExternalConnection(externalConnection: Partial<Ex
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalConnectionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -598,6 +596,7 @@ export function deserializeIntoExternalConnectionCollectionResponse(externalConn
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalGroup The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -611,6 +610,7 @@ export function deserializeIntoExternalGroup(externalGroup: Partial<ExternalGrou
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalGroupCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -622,6 +622,7 @@ export function deserializeIntoExternalGroupCollectionResponse(externalGroupColl
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalItem The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -636,6 +637,7 @@ export function deserializeIntoExternalItem(externalItem: Partial<ExternalItem> 
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalItemCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -647,6 +649,7 @@ export function deserializeIntoExternalItemCollectionResponse(externalItemCollec
 }
 /**
  * The deserialization information for the current model
+ * @param ExternalItemContent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -660,6 +663,7 @@ export function deserializeIntoExternalItemContent(externalItemContent: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param Identity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -671,6 +675,7 @@ export function deserializeIntoIdentity(identity: Partial<Identity> | undefined 
 }
 /**
  * The deserialization information for the current model
+ * @param IdentityCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -682,6 +687,7 @@ export function deserializeIntoIdentityCollectionResponse(identityCollectionResp
 }
 /**
  * The deserialization information for the current model
+ * @param ItemIdResolver The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -694,6 +700,7 @@ export function deserializeIntoItemIdResolver(itemIdResolver: Partial<ItemIdReso
 }
 /**
  * The deserialization information for the current model
+ * @param Properties The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -705,6 +712,7 @@ export function deserializeIntoProperties(properties: Partial<Properties> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param Property The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -726,6 +734,7 @@ export function deserializeIntoProperty(property: Partial<Property> | undefined 
 }
 /**
  * The deserialization information for the current model
+ * @param PropertyRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -741,6 +750,7 @@ export function deserializeIntoPropertyRule(propertyRule: Partial<PropertyRule> 
 }
 /**
  * The deserialization information for the current model
+ * @param RankingHint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -753,6 +763,7 @@ export function deserializeIntoRankingHint(rankingHint: Partial<RankingHint> | u
 }
 /**
  * The deserialization information for the current model
+ * @param Schema The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -765,6 +776,7 @@ export function deserializeIntoSchema(schema: Partial<Schema> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
+ * @param SearchSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -777,6 +789,7 @@ export function deserializeIntoSearchSettings(searchSettings: Partial<SearchSett
 }
 /**
  * The deserialization information for the current model
+ * @param UrlMatchInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -790,6 +803,7 @@ export function deserializeIntoUrlMatchInfo(urlMatchInfo: Partial<UrlMatchInfo> 
 }
 /**
  * The deserialization information for the current model
+ * @param UrlToItemResolverBase The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -801,10 +815,6 @@ export function deserializeIntoUrlToItemResolverBase(urlToItemResolverBase: Part
     }
 }
 export interface DisplayTemplate extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -831,10 +841,6 @@ export interface DisplayTemplate extends AdditionalDataHolder, BackedModel, Pars
     rules?: PropertyRule[] | null;
 }
 export interface External extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
      */
@@ -997,10 +1003,6 @@ export interface ExternalItemCollectionResponse extends BaseCollectionPagination
 }
 export interface ExternalItemContent extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1046,10 +1048,6 @@ export interface ItemIdResolver extends Parsable, UrlToItemResolverBase {
 export type Label = (typeof LabelObject)[keyof typeof LabelObject];
 export interface Properties extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1059,10 +1057,6 @@ export interface Properties extends AdditionalDataHolder, BackedModel, Parsable 
     odataType?: string | null;
 }
 export interface Property extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
      */
@@ -1114,10 +1108,6 @@ export interface Property extends AdditionalDataHolder, BackedModel, Parsable {
 }
 export interface PropertyRule extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1145,10 +1135,6 @@ export interface PropertyRule extends AdditionalDataHolder, BackedModel, Parsabl
 export type PropertyType = (typeof PropertyTypeObject)[keyof typeof PropertyTypeObject];
 export interface RankingHint extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1174,10 +1160,6 @@ export interface Schema extends Entity, Parsable {
 }
 export interface SearchSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1192,398 +1174,434 @@ export interface SearchSettings extends AdditionalDataHolder, BackedModel, Parsa
 }
 /**
  * Serializes information the current object
+ * @param Acl The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAcl(writer: SerializationWriter, acl: Partial<Acl> | undefined | null = {}) : void {
-    if (acl) {
-        writer.writeEnumValue<AccessType>("accessType", acl.accessType);
-        writer.writeEnumValue<IdentitySourceType>("identitySource", acl.identitySource);
-        writer.writeStringValue("@odata.type", acl.odataType);
-        writer.writeEnumValue<AclType>("type", acl.type);
-        writer.writeStringValue("value", acl.value);
-        writer.writeAdditionalData(acl.additionalData);
+export function serializeAcl(writer: SerializationWriter, acl: Partial<Acl> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!acl || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AccessType>("accessType", acl.accessType);
+    writer.writeEnumValue<IdentitySourceType>("identitySource", acl.identitySource);
+    writer.writeStringValue("@odata.type", acl.odataType);
+    writer.writeEnumValue<AclType>("type", acl.type);
+    writer.writeStringValue("value", acl.value);
+    writer.writeAdditionalData(acl.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param ActivitySettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeActivitySettings(writer: SerializationWriter, activitySettings: Partial<ActivitySettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!activitySettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", activitySettings.odataType);
+    writer.writeCollectionOfObjectValues<UrlToItemResolverBase>("urlToItemResolvers", activitySettings.urlToItemResolvers, serializeUrlToItemResolverBase);
+    writer.writeAdditionalData(activitySettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param ComplianceSettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceSettings(writer: SerializationWriter, complianceSettings: Partial<ComplianceSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!complianceSettings || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<DisplayTemplate>("eDiscoveryResultTemplates", complianceSettings.eDiscoveryResultTemplates, serializeDisplayTemplate);
+    writer.writeStringValue("@odata.type", complianceSettings.odataType);
+    writer.writeAdditionalData(complianceSettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param Configuration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConfiguration(writer: SerializationWriter, configuration: Partial<Configuration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!configuration || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("authorizedAppIds", configuration.authorizedAppIds);
+    writer.writeStringValue("@odata.type", configuration.odataType);
+    writer.writeAdditionalData(configuration.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param ConnectionOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConnectionOperation(writer: SerializationWriter, connectionOperation: Partial<ConnectionOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectionOperation || isSerializingDerivedType) { return; }
+    serializeEntity(writer, connectionOperation, isSerializingDerivedType)
+    writer.writeObjectValue<PublicError>("error", connectionOperation.errorEscaped, serializePublicError);
+    writer.writeEnumValue<ConnectionOperationStatus>("status", connectionOperation.status);
+}
+/**
+ * Serializes information the current object
+ * @param ConnectionOperationCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConnectionOperationCollectionResponse(writer: SerializationWriter, connectionOperationCollectionResponse: Partial<ConnectionOperationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectionOperationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, connectionOperationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ConnectionOperation>("value", connectionOperationCollectionResponse.value, serializeConnectionOperation);
+}
+/**
+ * Serializes information the current object
+ * @param ConnectionQuota The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeConnectionQuota(writer: SerializationWriter, connectionQuota: Partial<ConnectionQuota> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectionQuota || isSerializingDerivedType) { return; }
+    serializeEntity(writer, connectionQuota, isSerializingDerivedType)
+    writer.writeNumberValue("itemsRemaining", connectionQuota.itemsRemaining);
+}
+/**
+ * Serializes information the current object
+ * @param DisplayTemplate The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDisplayTemplate(writer: SerializationWriter, displayTemplate: Partial<DisplayTemplate> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!displayTemplate || isSerializingDerivedType) { return; }
+    writer.writeStringValue("id", displayTemplate.id);
+    writer.writeObjectValue("layout", displayTemplate.layout);
+    writer.writeStringValue("@odata.type", displayTemplate.odataType);
+    writer.writeNumberValue("priority", displayTemplate.priority);
+    writer.writeCollectionOfObjectValues<PropertyRule>("rules", displayTemplate.rules, serializePropertyRule);
+    writer.writeAdditionalData(displayTemplate.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param External The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExternal(writer: SerializationWriter, external: Partial<External> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!external || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<AuthorizationSystem>("authorizationSystems", external.authorizationSystems, serializeAuthorizationSystem);
+    writer.writeCollectionOfObjectValues<ExternalConnection>("connections", external.connections, serializeExternalConnection);
+    writer.writeObjectValue<IndustryDataRoot>("industryData", external.industryData, serializeIndustryDataRoot);
+    writer.writeStringValue("@odata.type", external.odataType);
+    writer.writeAdditionalData(external.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param ExternalActivity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExternalActivity(writer: SerializationWriter, externalActivity: Partial<ExternalActivity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalActivity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, externalActivity, isSerializingDerivedType)
+    writer.writeObjectValue<Identity>("performedBy", externalActivity.performedBy, serializeIdentity);
+    writer.writeDateValue("startDateTime", externalActivity.startDateTime);
+    writer.writeEnumValue<ExternalActivityType>("type", externalActivity.type);
+    switch (externalActivity.odataType) {
+        case "#microsoft.graph.externalConnectors.externalActivityResult":
+            serializeExternalActivityResult(writer, externalActivity as ExternalActivityResult, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param ExternalActivityCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeActivitySettings(writer: SerializationWriter, activitySettings: Partial<ActivitySettings> | undefined | null = {}) : void {
-    if (activitySettings) {
-        writer.writeStringValue("@odata.type", activitySettings.odataType);
-        writer.writeCollectionOfObjectValues<UrlToItemResolverBase>("urlToItemResolvers", activitySettings.urlToItemResolvers, serializeUrlToItemResolverBase);
-        writer.writeAdditionalData(activitySettings.additionalData);
-    }
+export function serializeExternalActivityCollectionResponse(writer: SerializationWriter, externalActivityCollectionResponse: Partial<ExternalActivityCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalActivityCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, externalActivityCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExternalActivity>("value", externalActivityCollectionResponse.value, serializeExternalActivity);
 }
 /**
  * Serializes information the current object
+ * @param ExternalActivityResult The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeComplianceSettings(writer: SerializationWriter, complianceSettings: Partial<ComplianceSettings> | undefined | null = {}) : void {
-    if (complianceSettings) {
-        writer.writeCollectionOfObjectValues<DisplayTemplate>("eDiscoveryResultTemplates", complianceSettings.eDiscoveryResultTemplates, serializeDisplayTemplate);
-        writer.writeStringValue("@odata.type", complianceSettings.odataType);
-        writer.writeAdditionalData(complianceSettings.additionalData);
-    }
+export function serializeExternalActivityResult(writer: SerializationWriter, externalActivityResult: Partial<ExternalActivityResult> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalActivityResult || isSerializingDerivedType) { return; }
+    serializeExternalActivity(writer, externalActivityResult, isSerializingDerivedType)
+    writer.writeObjectValue<PublicError>("error", externalActivityResult.errorEscaped, serializePublicError);
 }
 /**
  * Serializes information the current object
+ * @param ExternalConnection The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConfiguration(writer: SerializationWriter, configuration: Partial<Configuration> | undefined | null = {}) : void {
-    if (configuration) {
-        writer.writeCollectionOfPrimitiveValues<string>("authorizedAppIds", configuration.authorizedAppIds);
-        writer.writeStringValue("@odata.type", configuration.odataType);
-        writer.writeAdditionalData(configuration.additionalData);
-    }
+export function serializeExternalConnection(writer: SerializationWriter, externalConnection: Partial<ExternalConnection> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalConnection || isSerializingDerivedType) { return; }
+    serializeEntity(writer, externalConnection, isSerializingDerivedType)
+    writer.writeObjectValue<ActivitySettings>("activitySettings", externalConnection.activitySettings, serializeActivitySettings);
+    writer.writeObjectValue<ComplianceSettings>("complianceSettings", externalConnection.complianceSettings, serializeComplianceSettings);
+    writer.writeObjectValue<Configuration>("configuration", externalConnection.configuration, serializeConfiguration);
+    writer.writeStringValue("connectorId", externalConnection.connectorId);
+    writer.writeStringValue("description", externalConnection.description);
+    writer.writeEnumValue<ContentExperienceType[]>("enabledContentExperiences", externalConnection.enabledContentExperiences);
+    writer.writeCollectionOfObjectValues<ExternalGroup>("groups", externalConnection.groups, serializeExternalGroup);
+    writer.writeNumberValue("ingestedItemsCount", externalConnection.ingestedItemsCount);
+    writer.writeCollectionOfObjectValues<ExternalItem>("items", externalConnection.items, serializeExternalItem);
+    writer.writeStringValue("name", externalConnection.name);
+    writer.writeCollectionOfObjectValues<ConnectionOperation>("operations", externalConnection.operations, serializeConnectionOperation);
+    writer.writeObjectValue<ConnectionQuota>("quota", externalConnection.quota, serializeConnectionQuota);
+    writer.writeObjectValue<Schema>("schema", externalConnection.schema, serializeSchema);
+    writer.writeObjectValue<SearchSettings>("searchSettings", externalConnection.searchSettings, serializeSearchSettings);
 }
 /**
  * Serializes information the current object
+ * @param ExternalConnectionCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectionOperation(writer: SerializationWriter, connectionOperation: Partial<ConnectionOperation> | undefined | null = {}) : void {
-    if (connectionOperation) {
-        serializeEntity(writer, connectionOperation)
-        writer.writeObjectValue<PublicError>("error", connectionOperation.errorEscaped, serializePublicError);
-        writer.writeEnumValue<ConnectionOperationStatus>("status", connectionOperation.status);
-    }
+export function serializeExternalConnectionCollectionResponse(writer: SerializationWriter, externalConnectionCollectionResponse: Partial<ExternalConnectionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalConnectionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, externalConnectionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExternalConnection>("value", externalConnectionCollectionResponse.value, serializeExternalConnection);
 }
 /**
  * Serializes information the current object
+ * @param ExternalGroup The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectionOperationCollectionResponse(writer: SerializationWriter, connectionOperationCollectionResponse: Partial<ConnectionOperationCollectionResponse> | undefined | null = {}) : void {
-    if (connectionOperationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, connectionOperationCollectionResponse)
-        writer.writeCollectionOfObjectValues<ConnectionOperation>("value", connectionOperationCollectionResponse.value, serializeConnectionOperation);
-    }
+export function serializeExternalGroup(writer: SerializationWriter, externalGroup: Partial<ExternalGroup> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalGroup || isSerializingDerivedType) { return; }
+    serializeEntity(writer, externalGroup, isSerializingDerivedType)
+    writer.writeStringValue("description", externalGroup.description);
+    writer.writeStringValue("displayName", externalGroup.displayName);
+    writer.writeCollectionOfObjectValues<Identity>("members", externalGroup.members, serializeIdentity);
 }
 /**
  * Serializes information the current object
+ * @param ExternalGroupCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectionQuota(writer: SerializationWriter, connectionQuota: Partial<ConnectionQuota> | undefined | null = {}) : void {
-    if (connectionQuota) {
-        serializeEntity(writer, connectionQuota)
-        writer.writeNumberValue("itemsRemaining", connectionQuota.itemsRemaining);
-    }
+export function serializeExternalGroupCollectionResponse(writer: SerializationWriter, externalGroupCollectionResponse: Partial<ExternalGroupCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalGroupCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, externalGroupCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExternalGroup>("value", externalGroupCollectionResponse.value, serializeExternalGroup);
 }
 /**
  * Serializes information the current object
+ * @param ExternalItem The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDisplayTemplate(writer: SerializationWriter, displayTemplate: Partial<DisplayTemplate> | undefined | null = {}) : void {
-    if (displayTemplate) {
-        writer.writeStringValue("id", displayTemplate.id);
-        writer.writeObjectValue("layout", displayTemplate.layout);
-        writer.writeStringValue("@odata.type", displayTemplate.odataType);
-        writer.writeNumberValue("priority", displayTemplate.priority);
-        writer.writeCollectionOfObjectValues<PropertyRule>("rules", displayTemplate.rules, serializePropertyRule);
-        writer.writeAdditionalData(displayTemplate.additionalData);
-    }
+export function serializeExternalItem(writer: SerializationWriter, externalItem: Partial<ExternalItem> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalItem || isSerializingDerivedType) { return; }
+    serializeEntity(writer, externalItem, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Acl>("acl", externalItem.acl, serializeAcl);
+    writer.writeCollectionOfObjectValues<ExternalActivity>("activities", externalItem.activities, serializeExternalActivity);
+    writer.writeObjectValue<ExternalItemContent>("content", externalItem.content, serializeExternalItemContent);
+    writer.writeObjectValue<Properties>("properties", externalItem.properties, serializeProperties);
 }
 /**
  * Serializes information the current object
+ * @param ExternalItemCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternal(writer: SerializationWriter, external: Partial<External> | undefined | null = {}) : void {
-    if (external) {
-        writer.writeCollectionOfObjectValues<AuthorizationSystem>("authorizationSystems", external.authorizationSystems, serializeAuthorizationSystem);
-        writer.writeCollectionOfObjectValues<ExternalConnection>("connections", external.connections, serializeExternalConnection);
-        writer.writeObjectValue<IndustryDataRoot>("industryData", external.industryData, serializeIndustryDataRoot);
-        writer.writeStringValue("@odata.type", external.odataType);
-        writer.writeAdditionalData(external.additionalData);
-    }
+export function serializeExternalItemCollectionResponse(writer: SerializationWriter, externalItemCollectionResponse: Partial<ExternalItemCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalItemCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, externalItemCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExternalItem>("value", externalItemCollectionResponse.value, serializeExternalItem);
 }
 /**
  * Serializes information the current object
+ * @param ExternalItemContent The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalActivity(writer: SerializationWriter, externalActivity: Partial<ExternalActivity> | undefined | null = {}) : void {
-    if (externalActivity) {
-        serializeEntity(writer, externalActivity)
-        writer.writeObjectValue<Identity>("performedBy", externalActivity.performedBy, serializeIdentity);
-        writer.writeDateValue("startDateTime", externalActivity.startDateTime);
-        writer.writeEnumValue<ExternalActivityType>("type", externalActivity.type);
-    }
+export function serializeExternalItemContent(writer: SerializationWriter, externalItemContent: Partial<ExternalItemContent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalItemContent || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", externalItemContent.odataType);
+    writer.writeEnumValue<ExternalItemContentType>("type", externalItemContent.type);
+    writer.writeStringValue("value", externalItemContent.value);
+    writer.writeAdditionalData(externalItemContent.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param Identity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalActivityCollectionResponse(writer: SerializationWriter, externalActivityCollectionResponse: Partial<ExternalActivityCollectionResponse> | undefined | null = {}) : void {
-    if (externalActivityCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, externalActivityCollectionResponse)
-        writer.writeCollectionOfObjectValues<ExternalActivity>("value", externalActivityCollectionResponse.value, serializeExternalActivity);
-    }
+export function serializeIdentity(writer: SerializationWriter, identity: Partial<Identity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!identity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, identity, isSerializingDerivedType)
+    writer.writeEnumValue<IdentityType>("type", identity.type);
 }
 /**
  * Serializes information the current object
+ * @param IdentityCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalActivityResult(writer: SerializationWriter, externalActivityResult: Partial<ExternalActivityResult> | undefined | null = {}) : void {
-    if (externalActivityResult) {
-        serializeExternalActivity(writer, externalActivityResult)
-        writer.writeObjectValue<PublicError>("error", externalActivityResult.errorEscaped, serializePublicError);
-    }
+export function serializeIdentityCollectionResponse(writer: SerializationWriter, identityCollectionResponse: Partial<IdentityCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!identityCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, identityCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Identity>("value", identityCollectionResponse.value, serializeIdentity);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ItemIdResolver The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalConnection(writer: SerializationWriter, externalConnection: Partial<ExternalConnection> | undefined | null = {}) : void {
-    if (externalConnection) {
-        serializeEntity(writer, externalConnection)
-        writer.writeObjectValue<ActivitySettings>("activitySettings", externalConnection.activitySettings, serializeActivitySettings);
-        writer.writeObjectValue<ComplianceSettings>("complianceSettings", externalConnection.complianceSettings, serializeComplianceSettings);
-        writer.writeObjectValue<Configuration>("configuration", externalConnection.configuration, serializeConfiguration);
-        writer.writeStringValue("connectorId", externalConnection.connectorId);
-        writer.writeStringValue("description", externalConnection.description);
-        writer.writeEnumValue<ContentExperienceType[]>("enabledContentExperiences", externalConnection.enabledContentExperiences);
-        writer.writeCollectionOfObjectValues<ExternalGroup>("groups", externalConnection.groups, serializeExternalGroup);
-        writer.writeNumberValue("ingestedItemsCount", externalConnection.ingestedItemsCount);
-        writer.writeCollectionOfObjectValues<ExternalItem>("items", externalConnection.items, serializeExternalItem);
-        writer.writeStringValue("name", externalConnection.name);
-        writer.writeCollectionOfObjectValues<ConnectionOperation>("operations", externalConnection.operations, serializeConnectionOperation);
-        writer.writeObjectValue<ConnectionQuota>("quota", externalConnection.quota, serializeConnectionQuota);
-        writer.writeObjectValue<Schema>("schema", externalConnection.schema, serializeSchema);
-        writer.writeObjectValue<SearchSettings>("searchSettings", externalConnection.searchSettings, serializeSearchSettings);
-    }
+export function serializeItemIdResolver(writer: SerializationWriter, itemIdResolver: Partial<ItemIdResolver> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!itemIdResolver || isSerializingDerivedType) { return; }
+    serializeUrlToItemResolverBase(writer, itemIdResolver, isSerializingDerivedType)
+    writer.writeStringValue("itemId", itemIdResolver.itemId);
+    writer.writeObjectValue<UrlMatchInfo>("urlMatchInfo", itemIdResolver.urlMatchInfo, serializeUrlMatchInfo);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Properties The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalConnectionCollectionResponse(writer: SerializationWriter, externalConnectionCollectionResponse: Partial<ExternalConnectionCollectionResponse> | undefined | null = {}) : void {
-    if (externalConnectionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, externalConnectionCollectionResponse)
-        writer.writeCollectionOfObjectValues<ExternalConnection>("value", externalConnectionCollectionResponse.value, serializeExternalConnection);
-    }
+export function serializeProperties(writer: SerializationWriter, properties: Partial<Properties> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!properties || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", properties.odataType);
+    writer.writeAdditionalData(properties.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Property The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalGroup(writer: SerializationWriter, externalGroup: Partial<ExternalGroup> | undefined | null = {}) : void {
-    if (externalGroup) {
-        serializeEntity(writer, externalGroup)
-        writer.writeStringValue("description", externalGroup.description);
-        writer.writeStringValue("displayName", externalGroup.displayName);
-        writer.writeCollectionOfObjectValues<Identity>("members", externalGroup.members, serializeIdentity);
-    }
+export function serializeProperty(writer: SerializationWriter, property: Partial<Property> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!property || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("aliases", property.aliases);
+    writer.writeBooleanValue("isExactMatchRequired", property.isExactMatchRequired);
+    writer.writeBooleanValue("isQueryable", property.isQueryable);
+    writer.writeBooleanValue("isRefinable", property.isRefinable);
+    writer.writeBooleanValue("isRetrievable", property.isRetrievable);
+    writer.writeBooleanValue("isSearchable", property.isSearchable);
+    if(property.labels)
+    writer.writeCollectionOfEnumValues<Label>("labels", property.labels);
+    writer.writeStringValue("name", property.name);
+    writer.writeStringValue("@odata.type", property.odataType);
+    writer.writeObjectValue<RankingHint>("rankingHint", property.rankingHint, serializeRankingHint);
+    writer.writeEnumValue<PropertyType>("type", property.type);
+    writer.writeAdditionalData(property.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PropertyRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalGroupCollectionResponse(writer: SerializationWriter, externalGroupCollectionResponse: Partial<ExternalGroupCollectionResponse> | undefined | null = {}) : void {
-    if (externalGroupCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, externalGroupCollectionResponse)
-        writer.writeCollectionOfObjectValues<ExternalGroup>("value", externalGroupCollectionResponse.value, serializeExternalGroup);
-    }
+export function serializePropertyRule(writer: SerializationWriter, propertyRule: Partial<PropertyRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!propertyRule || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", propertyRule.odataType);
+    writer.writeEnumValue<RuleOperation>("operation", propertyRule.operation);
+    writer.writeStringValue("property", propertyRule.property);
+    writer.writeCollectionOfPrimitiveValues<string>("values", propertyRule.values);
+    writer.writeEnumValue<BinaryOperator>("valuesJoinedBy", propertyRule.valuesJoinedBy);
+    writer.writeAdditionalData(propertyRule.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RankingHint The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalItem(writer: SerializationWriter, externalItem: Partial<ExternalItem> | undefined | null = {}) : void {
-    if (externalItem) {
-        serializeEntity(writer, externalItem)
-        writer.writeCollectionOfObjectValues<Acl>("acl", externalItem.acl, serializeAcl);
-        writer.writeCollectionOfObjectValues<ExternalActivity>("activities", externalItem.activities, serializeExternalActivity);
-        writer.writeObjectValue<ExternalItemContent>("content", externalItem.content, serializeExternalItemContent);
-        writer.writeObjectValue<Properties>("properties", externalItem.properties, serializeProperties);
-    }
+export function serializeRankingHint(writer: SerializationWriter, rankingHint: Partial<RankingHint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!rankingHint || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<ImportanceScore>("importanceScore", rankingHint.importanceScore);
+    writer.writeStringValue("@odata.type", rankingHint.odataType);
+    writer.writeAdditionalData(rankingHint.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Schema The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalItemCollectionResponse(writer: SerializationWriter, externalItemCollectionResponse: Partial<ExternalItemCollectionResponse> | undefined | null = {}) : void {
-    if (externalItemCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, externalItemCollectionResponse)
-        writer.writeCollectionOfObjectValues<ExternalItem>("value", externalItemCollectionResponse.value, serializeExternalItem);
-    }
+export function serializeSchema(writer: SerializationWriter, schema: Partial<Schema> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!schema || isSerializingDerivedType) { return; }
+    serializeEntity(writer, schema, isSerializingDerivedType)
+    writer.writeStringValue("baseType", schema.baseType);
+    writer.writeCollectionOfObjectValues<Property>("properties", schema.properties, serializeProperty);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SearchSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExternalItemContent(writer: SerializationWriter, externalItemContent: Partial<ExternalItemContent> | undefined | null = {}) : void {
-    if (externalItemContent) {
-        writer.writeStringValue("@odata.type", externalItemContent.odataType);
-        writer.writeEnumValue<ExternalItemContentType>("type", externalItemContent.type);
-        writer.writeStringValue("value", externalItemContent.value);
-        writer.writeAdditionalData(externalItemContent.additionalData);
-    }
+export function serializeSearchSettings(writer: SerializationWriter, searchSettings: Partial<SearchSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!searchSettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", searchSettings.odataType);
+    writer.writeCollectionOfObjectValues<DisplayTemplate>("searchResultTemplates", searchSettings.searchResultTemplates, serializeDisplayTemplate);
+    writer.writeAdditionalData(searchSettings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UrlMatchInfo The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIdentity(writer: SerializationWriter, identity: Partial<Identity> | undefined | null = {}) : void {
-    if (identity) {
-        serializeEntity(writer, identity)
-        writer.writeEnumValue<IdentityType>("type", identity.type);
-    }
+export function serializeUrlMatchInfo(writer: SerializationWriter, urlMatchInfo: Partial<UrlMatchInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!urlMatchInfo || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("baseUrls", urlMatchInfo.baseUrls);
+    writer.writeStringValue("@odata.type", urlMatchInfo.odataType);
+    writer.writeStringValue("urlPattern", urlMatchInfo.urlPattern);
+    writer.writeAdditionalData(urlMatchInfo.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UrlToItemResolverBase The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIdentityCollectionResponse(writer: SerializationWriter, identityCollectionResponse: Partial<IdentityCollectionResponse> | undefined | null = {}) : void {
-    if (identityCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, identityCollectionResponse)
-        writer.writeCollectionOfObjectValues<Identity>("value", identityCollectionResponse.value, serializeIdentity);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeItemIdResolver(writer: SerializationWriter, itemIdResolver: Partial<ItemIdResolver> | undefined | null = {}) : void {
-    if (itemIdResolver) {
-        serializeUrlToItemResolverBase(writer, itemIdResolver)
-        writer.writeStringValue("itemId", itemIdResolver.itemId);
-        writer.writeObjectValue<UrlMatchInfo>("urlMatchInfo", itemIdResolver.urlMatchInfo, serializeUrlMatchInfo);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeProperties(writer: SerializationWriter, properties: Partial<Properties> | undefined | null = {}) : void {
-    if (properties) {
-        writer.writeStringValue("@odata.type", properties.odataType);
-        writer.writeAdditionalData(properties.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeProperty(writer: SerializationWriter, property: Partial<Property> | undefined | null = {}) : void {
-    if (property) {
-        writer.writeCollectionOfPrimitiveValues<string>("aliases", property.aliases);
-        writer.writeBooleanValue("isExactMatchRequired", property.isExactMatchRequired);
-        writer.writeBooleanValue("isQueryable", property.isQueryable);
-        writer.writeBooleanValue("isRefinable", property.isRefinable);
-        writer.writeBooleanValue("isRetrievable", property.isRetrievable);
-        writer.writeBooleanValue("isSearchable", property.isSearchable);
-        if(property.labels)
-        writer.writeCollectionOfEnumValues<Label>("labels", property.labels);
-        writer.writeStringValue("name", property.name);
-        writer.writeStringValue("@odata.type", property.odataType);
-        writer.writeObjectValue<RankingHint>("rankingHint", property.rankingHint, serializeRankingHint);
-        writer.writeEnumValue<PropertyType>("type", property.type);
-        writer.writeAdditionalData(property.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePropertyRule(writer: SerializationWriter, propertyRule: Partial<PropertyRule> | undefined | null = {}) : void {
-    if (propertyRule) {
-        writer.writeStringValue("@odata.type", propertyRule.odataType);
-        writer.writeEnumValue<RuleOperation>("operation", propertyRule.operation);
-        writer.writeStringValue("property", propertyRule.property);
-        writer.writeCollectionOfPrimitiveValues<string>("values", propertyRule.values);
-        writer.writeEnumValue<BinaryOperator>("valuesJoinedBy", propertyRule.valuesJoinedBy);
-        writer.writeAdditionalData(propertyRule.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeRankingHint(writer: SerializationWriter, rankingHint: Partial<RankingHint> | undefined | null = {}) : void {
-    if (rankingHint) {
-        writer.writeEnumValue<ImportanceScore>("importanceScore", rankingHint.importanceScore);
-        writer.writeStringValue("@odata.type", rankingHint.odataType);
-        writer.writeAdditionalData(rankingHint.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSchema(writer: SerializationWriter, schema: Partial<Schema> | undefined | null = {}) : void {
-    if (schema) {
-        serializeEntity(writer, schema)
-        writer.writeStringValue("baseType", schema.baseType);
-        writer.writeCollectionOfObjectValues<Property>("properties", schema.properties, serializeProperty);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSearchSettings(writer: SerializationWriter, searchSettings: Partial<SearchSettings> | undefined | null = {}) : void {
-    if (searchSettings) {
-        writer.writeStringValue("@odata.type", searchSettings.odataType);
-        writer.writeCollectionOfObjectValues<DisplayTemplate>("searchResultTemplates", searchSettings.searchResultTemplates, serializeDisplayTemplate);
-        writer.writeAdditionalData(searchSettings.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUrlMatchInfo(writer: SerializationWriter, urlMatchInfo: Partial<UrlMatchInfo> | undefined | null = {}) : void {
-    if (urlMatchInfo) {
-        writer.writeCollectionOfPrimitiveValues<string>("baseUrls", urlMatchInfo.baseUrls);
-        writer.writeStringValue("@odata.type", urlMatchInfo.odataType);
-        writer.writeStringValue("urlPattern", urlMatchInfo.urlPattern);
-        writer.writeAdditionalData(urlMatchInfo.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUrlToItemResolverBase(writer: SerializationWriter, urlToItemResolverBase: Partial<UrlToItemResolverBase> | undefined | null = {}) : void {
-    if (urlToItemResolverBase) {
-        writer.writeStringValue("@odata.type", urlToItemResolverBase.odataType);
-        writer.writeNumberValue("priority", urlToItemResolverBase.priority);
-        writer.writeAdditionalData(urlToItemResolverBase.additionalData);
+export function serializeUrlToItemResolverBase(writer: SerializationWriter, urlToItemResolverBase: Partial<UrlToItemResolverBase> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!urlToItemResolverBase || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", urlToItemResolverBase.odataType);
+    writer.writeNumberValue("priority", urlToItemResolverBase.priority);
+    writer.writeAdditionalData(urlToItemResolverBase.additionalData);
+    switch (urlToItemResolverBase.odataType) {
+        case "#microsoft.graph.externalConnectors.itemIdResolver":
+            serializeItemIdResolver(writer, urlToItemResolverBase as ItemIdResolver, true);
+        break;
     }
 }
 export interface UrlMatchInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1602,10 +1620,6 @@ export interface UrlMatchInfo extends AdditionalDataHolder, BackedModel, Parsabl
     urlPattern?: string | null;
 }
 export interface UrlToItemResolverBase extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

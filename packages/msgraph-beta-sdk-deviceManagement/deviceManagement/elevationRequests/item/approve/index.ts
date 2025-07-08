@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ApprovePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -53,6 +49,7 @@ export function createApprovePostRequestBodyFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ApprovePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -64,14 +61,15 @@ export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Pa
 }
 /**
  * Serializes information the current object
+ * @param ApprovePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApprovePostRequestBody(writer: SerializationWriter, approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined | null = {}) : void {
-    if (approvePostRequestBody) {
-        writer.writeStringValue("reviewerJustification", approvePostRequestBody.reviewerJustification);
-        writer.writeAdditionalData(approvePostRequestBody.additionalData);
-    }
+export function serializeApprovePostRequestBody(writer: SerializationWriter, approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!approvePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("reviewerJustification", approvePostRequestBody.reviewerJustification);
+    writer.writeAdditionalData(approvePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

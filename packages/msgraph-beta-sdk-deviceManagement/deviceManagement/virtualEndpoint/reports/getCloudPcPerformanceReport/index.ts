@@ -19,6 +19,7 @@ export function createGetCloudPcPerformanceReportPostRequestBodyFromDiscriminato
 }
 /**
  * The deserialization information for the current model
+ * @param GetCloudPcPerformanceReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoGetCloudPcPerformanceReportPostRequestBody(getClo
     }
 }
 export interface GetCloudPcPerformanceReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,21 +99,22 @@ export interface GetCloudPcPerformanceReportRequestBuilder extends BaseRequestBu
 }
 /**
  * Serializes information the current object
+ * @param GetCloudPcPerformanceReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetCloudPcPerformanceReportPostRequestBody(writer: SerializationWriter, getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined | null = {}) : void {
-    if (getCloudPcPerformanceReportPostRequestBody) {
-        writer.writeStringValue("filter", getCloudPcPerformanceReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcPerformanceReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCloudPcPerformanceReportPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPCPerformanceReportName>("reportName", getCloudPcPerformanceReportPostRequestBody.reportName);
-        writer.writeStringValue("search", getCloudPcPerformanceReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getCloudPcPerformanceReportPostRequestBody.select);
-        writer.writeNumberValue("skip", getCloudPcPerformanceReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getCloudPcPerformanceReportPostRequestBody.top);
-        writer.writeAdditionalData(getCloudPcPerformanceReportPostRequestBody.additionalData);
-    }
+export function serializeGetCloudPcPerformanceReportPostRequestBody(writer: SerializationWriter, getCloudPcPerformanceReportPostRequestBody: Partial<GetCloudPcPerformanceReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getCloudPcPerformanceReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getCloudPcPerformanceReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCloudPcPerformanceReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCloudPcPerformanceReportPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPCPerformanceReportName>("reportName", getCloudPcPerformanceReportPostRequestBody.reportName);
+    writer.writeStringValue("search", getCloudPcPerformanceReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getCloudPcPerformanceReportPostRequestBody.select);
+    writer.writeNumberValue("skip", getCloudPcPerformanceReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getCloudPcPerformanceReportPostRequestBody.top);
+    writer.writeAdditionalData(getCloudPcPerformanceReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

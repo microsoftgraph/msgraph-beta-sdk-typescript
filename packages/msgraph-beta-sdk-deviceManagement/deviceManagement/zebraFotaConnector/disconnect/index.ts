@@ -17,6 +17,7 @@ export function createDisconnectPostResponseFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param DisconnectPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoDisconnectPostResponse(disconnectPostResponse: Pa
     }
 }
 export interface DisconnectPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface DisconnectRequestBuilder extends BaseRequestBuilder<DisconnectR
 }
 /**
  * Serializes information the current object
+ * @param DisconnectPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDisconnectPostResponse(writer: SerializationWriter, disconnectPostResponse: Partial<DisconnectPostResponse> | undefined | null = {}) : void {
-    if (disconnectPostResponse) {
-        writer.writeBooleanValue("value", disconnectPostResponse.value);
-        writer.writeAdditionalData(disconnectPostResponse.additionalData);
-    }
+export function serializeDisconnectPostResponse(writer: SerializationWriter, disconnectPostResponse: Partial<DisconnectPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!disconnectPostResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", disconnectPostResponse.value);
+    writer.writeAdditionalData(disconnectPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

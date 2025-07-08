@@ -21,6 +21,7 @@ export function createGetDiscoveredApplicationSegmentReportWithStartDateTimeWith
 }
 /**
  * The deserialization information for the current model
+ * @param GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -86,14 +87,15 @@ export interface MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentRepor
 }
 /**
  * Serializes information the current object
+ * @param GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse(writer: SerializationWriter, getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse: Partial<GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse> | undefined | null = {}) : void {
-    if (getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse)
-        writer.writeCollectionOfObjectValues<DiscoveredApplicationSegmentReport>("value", getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse.value, serializeDiscoveredApplicationSegmentReport);
-    }
+export function serializeGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse(writer: SerializationWriter, getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse: Partial<GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DiscoveredApplicationSegmentReport>("value", getDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse.value, serializeDiscoveredApplicationSegmentReport);
 }
 /**
  * Uri template for the request builder.

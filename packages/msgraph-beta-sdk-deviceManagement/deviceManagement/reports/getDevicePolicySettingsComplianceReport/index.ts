@@ -17,6 +17,7 @@ export function createGetDevicePolicySettingsComplianceReportPostRequestBodyFrom
 }
 /**
  * The deserialization information for the current model
+ * @param GetDevicePolicySettingsComplianceReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -34,10 +35,6 @@ export function deserializeIntoGetDevicePolicySettingsComplianceReportPostReques
     }
 }
 export interface GetDevicePolicySettingsComplianceReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -97,21 +94,22 @@ export interface GetDevicePolicySettingsComplianceReportRequestBuilder extends B
 }
 /**
  * Serializes information the current object
+ * @param GetDevicePolicySettingsComplianceReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDevicePolicySettingsComplianceReportPostRequestBody(writer: SerializationWriter, getDevicePolicySettingsComplianceReportPostRequestBody: Partial<GetDevicePolicySettingsComplianceReportPostRequestBody> | undefined | null = {}) : void {
-    if (getDevicePolicySettingsComplianceReportPostRequestBody) {
-        writer.writeStringValue("filter", getDevicePolicySettingsComplianceReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDevicePolicySettingsComplianceReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDevicePolicySettingsComplianceReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getDevicePolicySettingsComplianceReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getDevicePolicySettingsComplianceReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getDevicePolicySettingsComplianceReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getDevicePolicySettingsComplianceReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getDevicePolicySettingsComplianceReportPostRequestBody.top);
-        writer.writeAdditionalData(getDevicePolicySettingsComplianceReportPostRequestBody.additionalData);
-    }
+export function serializeGetDevicePolicySettingsComplianceReportPostRequestBody(writer: SerializationWriter, getDevicePolicySettingsComplianceReportPostRequestBody: Partial<GetDevicePolicySettingsComplianceReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDevicePolicySettingsComplianceReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getDevicePolicySettingsComplianceReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDevicePolicySettingsComplianceReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDevicePolicySettingsComplianceReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getDevicePolicySettingsComplianceReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getDevicePolicySettingsComplianceReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getDevicePolicySettingsComplianceReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getDevicePolicySettingsComplianceReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getDevicePolicySettingsComplianceReportPostRequestBody.top);
+    writer.writeAdditionalData(getDevicePolicySettingsComplianceReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

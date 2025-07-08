@@ -19,6 +19,7 @@ export function createSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseF
 }
 /**
  * The deserialization information for the current model
+ * @param SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,14 +31,15 @@ export function deserializeIntoSummarizeDeviceRemoteConnectionWithSummarizeByGet
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse(writer: SerializationWriter, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse: Partial<SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse> | undefined | null = {}) : void {
-    if (summarizeDeviceRemoteConnectionWithSummarizeByGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse)
-        writer.writeCollectionOfObjectValues<UserExperienceAnalyticsRemoteConnection>("value", summarizeDeviceRemoteConnectionWithSummarizeByGetResponse.value, serializeUserExperienceAnalyticsRemoteConnection);
-    }
+export function serializeSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse(writer: SerializationWriter, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse: Partial<SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!summarizeDeviceRemoteConnectionWithSummarizeByGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, summarizeDeviceRemoteConnectionWithSummarizeByGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<UserExperienceAnalyticsRemoteConnection>("value", summarizeDeviceRemoteConnectionWithSummarizeByGetResponse.value, serializeUserExperienceAnalyticsRemoteConnection);
 }
 export interface SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**

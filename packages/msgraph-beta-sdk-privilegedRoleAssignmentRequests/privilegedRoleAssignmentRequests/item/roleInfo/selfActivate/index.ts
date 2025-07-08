@@ -19,6 +19,7 @@ export function createSelfActivatePostRequestBodyFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param SelfActivatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -32,10 +33,6 @@ export function deserializeIntoSelfActivatePostRequestBody(selfActivatePostReque
     }
 }
 export interface SelfActivatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -79,17 +76,18 @@ export interface SelfActivateRequestBuilder extends BaseRequestBuilder<SelfActiv
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SelfActivatePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSelfActivatePostRequestBody(writer: SerializationWriter, selfActivatePostRequestBody: Partial<SelfActivatePostRequestBody> | undefined | null = {}) : void {
-    if (selfActivatePostRequestBody) {
-        writer.writeStringValue("duration", selfActivatePostRequestBody.duration);
-        writer.writeStringValue("reason", selfActivatePostRequestBody.reason);
-        writer.writeStringValue("ticketNumber", selfActivatePostRequestBody.ticketNumber);
-        writer.writeStringValue("ticketSystem", selfActivatePostRequestBody.ticketSystem);
-        writer.writeAdditionalData(selfActivatePostRequestBody.additionalData);
-    }
+export function serializeSelfActivatePostRequestBody(writer: SerializationWriter, selfActivatePostRequestBody: Partial<SelfActivatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!selfActivatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("duration", selfActivatePostRequestBody.duration);
+    writer.writeStringValue("reason", selfActivatePostRequestBody.reason);
+    writer.writeStringValue("ticketNumber", selfActivatePostRequestBody.ticketNumber);
+    writer.writeStringValue("ticketSystem", selfActivatePostRequestBody.ticketSystem);
+    writer.writeAdditionalData(selfActivatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

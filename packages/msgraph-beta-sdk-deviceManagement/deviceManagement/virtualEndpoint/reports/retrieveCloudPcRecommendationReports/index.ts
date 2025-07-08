@@ -19,6 +19,7 @@ export function createRetrieveCloudPcRecommendationReportsPostRequestBodyFromDis
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveCloudPcRecommendationReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoRetrieveCloudPcRecommendationReportsPostRequestBo
     }
 }
 export interface RetrieveCloudPcRecommendationReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -99,21 +96,22 @@ export interface RetrieveCloudPcRecommendationReportsRequestBuilder extends Base
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveCloudPcRecommendationReportsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveCloudPcRecommendationReportsPostRequestBody(writer: SerializationWriter, retrieveCloudPcRecommendationReportsPostRequestBody: Partial<RetrieveCloudPcRecommendationReportsPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveCloudPcRecommendationReportsPostRequestBody) {
-        writer.writeStringValue("filter", retrieveCloudPcRecommendationReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcRecommendationReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcRecommendationReportsPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPcRecommendationReportType>("reportName", retrieveCloudPcRecommendationReportsPostRequestBody.reportName);
-        writer.writeStringValue("search", retrieveCloudPcRecommendationReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPcRecommendationReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveCloudPcRecommendationReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveCloudPcRecommendationReportsPostRequestBody.top);
-        writer.writeAdditionalData(retrieveCloudPcRecommendationReportsPostRequestBody.additionalData);
-    }
+export function serializeRetrieveCloudPcRecommendationReportsPostRequestBody(writer: SerializationWriter, retrieveCloudPcRecommendationReportsPostRequestBody: Partial<RetrieveCloudPcRecommendationReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveCloudPcRecommendationReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveCloudPcRecommendationReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcRecommendationReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcRecommendationReportsPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPcRecommendationReportType>("reportName", retrieveCloudPcRecommendationReportsPostRequestBody.reportName);
+    writer.writeStringValue("search", retrieveCloudPcRecommendationReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPcRecommendationReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveCloudPcRecommendationReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveCloudPcRecommendationReportsPostRequestBody.top);
+    writer.writeAdditionalData(retrieveCloudPcRecommendationReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

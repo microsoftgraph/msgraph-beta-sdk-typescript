@@ -21,6 +21,7 @@ export function createDeviceReportWithStartDateTimeWithEndDateTimeGetResponseFro
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceReportWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEnd
 }
 /**
  * Serializes information the current object
+ * @param DeviceReportWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, deviceReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DeviceReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (deviceReportWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deviceReportWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<Device>("value", deviceReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeDevice);
-    }
+export function serializeDeviceReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, deviceReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DeviceReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceReportWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deviceReportWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Device>("value", deviceReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeDevice);
 }
 /**
  * Uri template for the request builder.

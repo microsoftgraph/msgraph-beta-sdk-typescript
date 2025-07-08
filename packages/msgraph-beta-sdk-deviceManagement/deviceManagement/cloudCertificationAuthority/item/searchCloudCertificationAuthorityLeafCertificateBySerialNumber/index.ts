@@ -19,6 +19,7 @@ export function createSearchCloudCertificationAuthorityLeafCertificateBySerialNu
 }
 /**
  * The deserialization information for the current model
+ * @param SearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoSearchCloudCertificationAuthorityLeafCertificateB
     }
 }
 export interface SearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -64,14 +61,15 @@ export interface SearchCloudCertificationAuthorityLeafCertificateBySerialNumberR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody(writer: SerializationWriter, searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody: Partial<SearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody> | undefined | null = {}) : void {
-    if (searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody) {
-        writer.writeStringValue("certificateSerialNumber", searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody.certificateSerialNumber);
-        writer.writeAdditionalData(searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody.additionalData);
-    }
+export function serializeSearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody(writer: SerializationWriter, searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody: Partial<SearchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("certificateSerialNumber", searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody.certificateSerialNumber);
+    writer.writeAdditionalData(searchCloudCertificationAuthorityLeafCertificateBySerialNumberPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

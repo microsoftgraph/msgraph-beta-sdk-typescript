@@ -26,6 +26,7 @@ export function createUpdateGlobalScriptPostResponseFromDiscriminatorValue(parse
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateGlobalScriptPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -37,6 +38,7 @@ export function deserializeIntoUpdateGlobalScriptPostRequestBody(updateGlobalScr
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateGlobalScriptPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -48,31 +50,29 @@ export function deserializeIntoUpdateGlobalScriptPostResponse(updateGlobalScript
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateGlobalScriptPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateGlobalScriptPostRequestBody(writer: SerializationWriter, updateGlobalScriptPostRequestBody: Partial<UpdateGlobalScriptPostRequestBody> | undefined | null = {}) : void {
-    if (updateGlobalScriptPostRequestBody) {
-        writer.writeStringValue("version", updateGlobalScriptPostRequestBody.version);
-        writer.writeAdditionalData(updateGlobalScriptPostRequestBody.additionalData);
-    }
+export function serializeUpdateGlobalScriptPostRequestBody(writer: SerializationWriter, updateGlobalScriptPostRequestBody: Partial<UpdateGlobalScriptPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateGlobalScriptPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("version", updateGlobalScriptPostRequestBody.version);
+    writer.writeAdditionalData(updateGlobalScriptPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateGlobalScriptPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateGlobalScriptPostResponse(writer: SerializationWriter, updateGlobalScriptPostResponse: Partial<UpdateGlobalScriptPostResponse> | undefined | null = {}) : void {
-    if (updateGlobalScriptPostResponse) {
-        writer.writeStringValue("value", updateGlobalScriptPostResponse.value);
-        writer.writeAdditionalData(updateGlobalScriptPostResponse.additionalData);
-    }
+export function serializeUpdateGlobalScriptPostResponse(writer: SerializationWriter, updateGlobalScriptPostResponse: Partial<UpdateGlobalScriptPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateGlobalScriptPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", updateGlobalScriptPostResponse.value);
+    writer.writeAdditionalData(updateGlobalScriptPostResponse.additionalData);
 }
 export interface UpdateGlobalScriptPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -83,10 +83,6 @@ export interface UpdateGlobalScriptPostRequestBody extends AdditionalDataHolder,
     version?: string | null;
 }
 export interface UpdateGlobalScriptPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

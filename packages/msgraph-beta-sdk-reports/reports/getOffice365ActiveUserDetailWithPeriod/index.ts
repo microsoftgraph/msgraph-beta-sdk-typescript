@@ -19,6 +19,7 @@ export function createGetOffice365ActiveUserDetailWithPeriodGetResponseFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365ActiveUserDetailWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryPar
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365ActiveUserDetailWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365ActiveUserDetailWithPeriodGetResponse(writer: SerializationWriter, getOffice365ActiveUserDetailWithPeriodGetResponse: Partial<GetOffice365ActiveUserDetailWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getOffice365ActiveUserDetailWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserDetailWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<Office365ActiveUserDetail>("value", getOffice365ActiveUserDetailWithPeriodGetResponse.value, serializeOffice365ActiveUserDetail);
-    }
+export function serializeGetOffice365ActiveUserDetailWithPeriodGetResponse(writer: SerializationWriter, getOffice365ActiveUserDetailWithPeriodGetResponse: Partial<GetOffice365ActiveUserDetailWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365ActiveUserDetailWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserDetailWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365ActiveUserDetail>("value", getOffice365ActiveUserDetailWithPeriodGetResponse.value, serializeOffice365ActiveUserDetail);
 }
 /**
  * Uri template for the request builder.

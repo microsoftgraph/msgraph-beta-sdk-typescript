@@ -19,6 +19,7 @@ export function createGetAppliedDrivesGetResponseFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param GetAppliedDrivesGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface GetAppliedDrivesRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetAppliedDrivesGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAppliedDrivesGetResponse(writer: SerializationWriter, getAppliedDrivesGetResponse: Partial<GetAppliedDrivesGetResponse> | undefined | null = {}) : void {
-    if (getAppliedDrivesGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAppliedDrivesGetResponse)
-        writer.writeCollectionOfObjectValues<ContentModelUsage>("value", getAppliedDrivesGetResponse.value, serializeContentModelUsage);
-    }
+export function serializeGetAppliedDrivesGetResponse(writer: SerializationWriter, getAppliedDrivesGetResponse: Partial<GetAppliedDrivesGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAppliedDrivesGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAppliedDrivesGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ContentModelUsage>("value", getAppliedDrivesGetResponse.value, serializeContentModelUsage);
 }
 /**
  * Uri template for the request builder.

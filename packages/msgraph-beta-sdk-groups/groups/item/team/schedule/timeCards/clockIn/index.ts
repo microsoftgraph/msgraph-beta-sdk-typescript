@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ClockInPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The atApprovedLocation property
      */
     atApprovedLocation?: boolean | null;
@@ -66,6 +62,7 @@ export function createClockInPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ClockInPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,17 +77,18 @@ export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Pa
 }
 /**
  * Serializes information the current object
+ * @param ClockInPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeClockInPostRequestBody(writer: SerializationWriter, clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined | null = {}) : void {
-    if (clockInPostRequestBody) {
-        writer.writeBooleanValue("atApprovedLocation", clockInPostRequestBody.atApprovedLocation);
-        writer.writeBooleanValue("isAtApprovedLocation", clockInPostRequestBody.isAtApprovedLocation);
-        writer.writeObjectValue<ItemBody>("notes", clockInPostRequestBody.notes, serializeItemBody);
-        writer.writeStringValue("onBehalfOfUserId", clockInPostRequestBody.onBehalfOfUserId);
-        writer.writeAdditionalData(clockInPostRequestBody.additionalData);
-    }
+export function serializeClockInPostRequestBody(writer: SerializationWriter, clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!clockInPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("atApprovedLocation", clockInPostRequestBody.atApprovedLocation);
+    writer.writeBooleanValue("isAtApprovedLocation", clockInPostRequestBody.isAtApprovedLocation);
+    writer.writeObjectValue<ItemBody>("notes", clockInPostRequestBody.notes, serializeItemBody);
+    writer.writeStringValue("onBehalfOfUserId", clockInPostRequestBody.onBehalfOfUserId);
+    writer.writeAdditionalData(clockInPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

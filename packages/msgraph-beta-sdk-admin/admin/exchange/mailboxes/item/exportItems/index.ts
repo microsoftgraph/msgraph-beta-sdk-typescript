@@ -28,6 +28,7 @@ export function createExportItemsPostResponseFromDiscriminatorValue(parseNode: P
 }
 /**
  * The deserialization information for the current model
+ * @param ExportItemsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoExportItemsPostRequestBody(exportItemsPostRequest
 }
 /**
  * The deserialization information for the current model
+ * @param ExportItemsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoExportItemsPostResponse(exportItemsPostResponse: 
     }
 }
 export interface ExportItemsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -93,25 +91,27 @@ export interface ExportItemsRequestBuilder extends BaseRequestBuilder<ExportItem
 }
 /**
  * Serializes information the current object
+ * @param ExportItemsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExportItemsPostRequestBody(writer: SerializationWriter, exportItemsPostRequestBody: Partial<ExportItemsPostRequestBody> | undefined | null = {}) : void {
-    if (exportItemsPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("ItemIds", exportItemsPostRequestBody.itemIds);
-        writer.writeAdditionalData(exportItemsPostRequestBody.additionalData);
-    }
+export function serializeExportItemsPostRequestBody(writer: SerializationWriter, exportItemsPostRequestBody: Partial<ExportItemsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!exportItemsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("ItemIds", exportItemsPostRequestBody.itemIds);
+    writer.writeAdditionalData(exportItemsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ExportItemsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExportItemsPostResponse(writer: SerializationWriter, exportItemsPostResponse: Partial<ExportItemsPostResponse> | undefined | null = {}) : void {
-    if (exportItemsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, exportItemsPostResponse)
-        writer.writeCollectionOfObjectValues<ExportItemResponse>("value", exportItemsPostResponse.value, serializeExportItemResponse);
-    }
+export function serializeExportItemsPostResponse(writer: SerializationWriter, exportItemsPostResponse: Partial<ExportItemsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!exportItemsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, exportItemsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExportItemResponse>("value", exportItemsPostResponse.value, serializeExportItemResponse);
 }
 /**
  * Uri template for the request builder.

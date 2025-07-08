@@ -17,6 +17,7 @@ export function createGetTotalAggregatedRemoteConnectionReportsPostRequestBodyFr
 }
 /**
  * The deserialization information for the current model
+ * @param GetTotalAggregatedRemoteConnectionReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,10 +34,6 @@ export function deserializeIntoGetTotalAggregatedRemoteConnectionReportsPostRequ
     }
 }
 export interface GetTotalAggregatedRemoteConnectionReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -93,20 +90,21 @@ export interface GetTotalAggregatedRemoteConnectionReportsRequestBuilder extends
 }
 /**
  * Serializes information the current object
+ * @param GetTotalAggregatedRemoteConnectionReportsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetTotalAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getTotalAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetTotalAggregatedRemoteConnectionReportsPostRequestBody> | undefined | null = {}) : void {
-    if (getTotalAggregatedRemoteConnectionReportsPostRequestBody) {
-        writer.writeStringValue("filter", getTotalAggregatedRemoteConnectionReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
-        writer.writeStringValue("search", getTotalAggregatedRemoteConnectionReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getTotalAggregatedRemoteConnectionReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", getTotalAggregatedRemoteConnectionReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", getTotalAggregatedRemoteConnectionReportsPostRequestBody.top);
-        writer.writeAdditionalData(getTotalAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
-    }
+export function serializeGetTotalAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getTotalAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetTotalAggregatedRemoteConnectionReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getTotalAggregatedRemoteConnectionReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getTotalAggregatedRemoteConnectionReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getTotalAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
+    writer.writeStringValue("search", getTotalAggregatedRemoteConnectionReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getTotalAggregatedRemoteConnectionReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", getTotalAggregatedRemoteConnectionReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", getTotalAggregatedRemoteConnectionReportsPostRequestBody.top);
+    writer.writeAdditionalData(getTotalAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

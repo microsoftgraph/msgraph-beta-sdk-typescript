@@ -19,6 +19,7 @@ export function createUpdateSettingsPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateSettingsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,20 +31,17 @@ export function deserializeIntoUpdateSettingsPostRequestBody(updateSettingsPostR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateSettingsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateSettingsPostRequestBody(writer: SerializationWriter, updateSettingsPostRequestBody: Partial<UpdateSettingsPostRequestBody> | undefined | null = {}) : void {
-    if (updateSettingsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", updateSettingsPostRequestBody.settings, serializeDeviceManagementSettingInstance);
-        writer.writeAdditionalData(updateSettingsPostRequestBody.additionalData);
-    }
+export function serializeUpdateSettingsPostRequestBody(writer: SerializationWriter, updateSettingsPostRequestBody: Partial<UpdateSettingsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateSettingsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", updateSettingsPostRequestBody.settings, serializeDeviceManagementSettingInstance);
+    writer.writeAdditionalData(updateSettingsPostRequestBody.additionalData);
 }
 export interface UpdateSettingsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

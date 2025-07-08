@@ -19,6 +19,7 @@ export function createRetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetRe
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBui
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse(writer: SerializationWriter, retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse: Partial<RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse> | undefined | null = {}) : void {
-    if (retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse)
-        writer.writeCollectionOfObjectValues<WindowsQualityUpdateCatalogItemPolicyDetail>("value", retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse.value, serializeWindowsQualityUpdateCatalogItemPolicyDetail);
-    }
+export function serializeRetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse(writer: SerializationWriter, retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse: Partial<RetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<WindowsQualityUpdateCatalogItemPolicyDetail>("value", retrieveWindowsQualityUpdateCatalogItemDetailsWithIdsGetResponse.value, serializeWindowsQualityUpdateCatalogItemPolicyDetail);
 }
 /**
  * Uri template for the request builder.

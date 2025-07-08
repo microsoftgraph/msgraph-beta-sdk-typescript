@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ApproveFotaAppsPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -49,6 +45,7 @@ export function createApproveFotaAppsPostResponseFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param ApproveFotaAppsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -60,14 +57,15 @@ export function deserializeIntoApproveFotaAppsPostResponse(approveFotaAppsPostRe
 }
 /**
  * Serializes information the current object
+ * @param ApproveFotaAppsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApproveFotaAppsPostResponse(writer: SerializationWriter, approveFotaAppsPostResponse: Partial<ApproveFotaAppsPostResponse> | undefined | null = {}) : void {
-    if (approveFotaAppsPostResponse) {
-        writer.writeBooleanValue("value", approveFotaAppsPostResponse.value);
-        writer.writeAdditionalData(approveFotaAppsPostResponse.additionalData);
-    }
+export function serializeApproveFotaAppsPostResponse(writer: SerializationWriter, approveFotaAppsPostResponse: Partial<ApproveFotaAppsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!approveFotaAppsPostResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", approveFotaAppsPostResponse.value);
+    writer.writeAdditionalData(approveFotaAppsPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

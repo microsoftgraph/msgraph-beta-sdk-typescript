@@ -28,6 +28,7 @@ export function createGetPolicySetsPostResponseFromDiscriminatorValue(parseNode:
 }
 /**
  * The deserialization information for the current model
+ * @param GetPolicySetsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoGetPolicySetsPostRequestBody(getPolicySetsPostReq
 }
 /**
  * The deserialization information for the current model
+ * @param GetPolicySetsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoGetPolicySetsPostResponse(getPolicySetsPostRespon
     }
 }
 export interface GetPolicySetsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface GetPolicySetsRequestBuilder extends BaseRequestBuilder<GetPolic
 }
 /**
  * Serializes information the current object
+ * @param GetPolicySetsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetPolicySetsPostRequestBody(writer: SerializationWriter, getPolicySetsPostRequestBody: Partial<GetPolicySetsPostRequestBody> | undefined | null = {}) : void {
-    if (getPolicySetsPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("policySetIds", getPolicySetsPostRequestBody.policySetIds);
-        writer.writeAdditionalData(getPolicySetsPostRequestBody.additionalData);
-    }
+export function serializeGetPolicySetsPostRequestBody(writer: SerializationWriter, getPolicySetsPostRequestBody: Partial<GetPolicySetsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getPolicySetsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("policySetIds", getPolicySetsPostRequestBody.policySetIds);
+    writer.writeAdditionalData(getPolicySetsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param GetPolicySetsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetPolicySetsPostResponse(writer: SerializationWriter, getPolicySetsPostResponse: Partial<GetPolicySetsPostResponse> | undefined | null = {}) : void {
-    if (getPolicySetsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getPolicySetsPostResponse)
-        writer.writeCollectionOfObjectValues<PolicySet>("value", getPolicySetsPostResponse.value, serializePolicySet);
-    }
+export function serializeGetPolicySetsPostResponse(writer: SerializationWriter, getPolicySetsPostResponse: Partial<GetPolicySetsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getPolicySetsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getPolicySetsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PolicySet>("value", getPolicySetsPostResponse.value, serializePolicySet);
 }
 /**
  * Uri template for the request builder.

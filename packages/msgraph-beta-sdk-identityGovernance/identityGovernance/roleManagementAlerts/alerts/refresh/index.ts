@@ -17,6 +17,7 @@ export function createRefreshPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param RefreshPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,10 +29,6 @@ export function deserializeIntoRefreshPostRequestBody(refreshPostRequestBody: Pa
     }
 }
 export interface RefreshPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -67,15 +64,16 @@ export interface RefreshRequestBuilder extends BaseRequestBuilder<RefreshRequest
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RefreshPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRefreshPostRequestBody(writer: SerializationWriter, refreshPostRequestBody: Partial<RefreshPostRequestBody> | undefined | null = {}) : void {
-    if (refreshPostRequestBody) {
-        writer.writeStringValue("scopeId", refreshPostRequestBody.scopeId);
-        writer.writeStringValue("scopeType", refreshPostRequestBody.scopeType);
-        writer.writeAdditionalData(refreshPostRequestBody.additionalData);
-    }
+export function serializeRefreshPostRequestBody(writer: SerializationWriter, refreshPostRequestBody: Partial<RefreshPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!refreshPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("scopeId", refreshPostRequestBody.scopeId);
+    writer.writeStringValue("scopeType", refreshPostRequestBody.scopeType);
+    writer.writeAdditionalData(refreshPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

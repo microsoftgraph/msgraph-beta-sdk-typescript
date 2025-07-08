@@ -35,12 +35,12 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      get(requestConfiguration?: RequestConfiguration<HardwareOathDevicesRequestBuilderGetQueryParameters> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDeviceCollectionResponse | undefined>;
     /**
-     * Create a new hardwareOathTokenAuthenticationMethodDevice object. You can optionally create and assign to a user in the same request; Or assign to a user via the assign API.
+     * Create one or more hardwareOathTokenAuthenticationMethodDevice objects. This API supports two scenarios:- Create the new hardware tokens without assigning to users. You can then assign to a user.- Create and assign any individual hardware tokens to users in the same request.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HardwareOathTokenAuthenticationMethodDevice>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/authenticationmethoddevice-update?view=graph-rest-beta|Find more info here}
      */
      post(body: HardwareOathTokenAuthenticationMethodDevice, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HardwareOathTokenAuthenticationMethodDevice | undefined>;
     /**
@@ -50,7 +50,7 @@ export interface HardwareOathDevicesRequestBuilder extends BaseRequestBuilder<Ha
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HardwareOathDevicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new hardwareOathTokenAuthenticationMethodDevice object. You can optionally create and assign to a user in the same request; Or assign to a user via the assign API.
+     * Create one or more hardwareOathTokenAuthenticationMethodDevice objects. This API supports two scenarios:- Create the new hardware tokens without assigning to users. You can then assign to a user.- Create and assign any individual hardware tokens to users in the same request.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

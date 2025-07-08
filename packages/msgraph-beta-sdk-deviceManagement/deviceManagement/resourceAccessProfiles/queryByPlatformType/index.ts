@@ -28,6 +28,7 @@ export function createQueryByPlatformTypePostResponseFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param QueryByPlatformTypePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoQueryByPlatformTypePostRequestBody(queryByPlatfor
 }
 /**
  * The deserialization information for the current model
+ * @param QueryByPlatformTypePostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoQueryByPlatformTypePostResponse(queryByPlatformTy
     }
 }
 export interface QueryByPlatformTypePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface QueryByPlatformTypeRequestBuilder extends BaseRequestBuilder<Qu
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param QueryByPlatformTypePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeQueryByPlatformTypePostRequestBody(writer: SerializationWriter, queryByPlatformTypePostRequestBody: Partial<QueryByPlatformTypePostRequestBody> | undefined | null = {}) : void {
-    if (queryByPlatformTypePostRequestBody) {
-        writer.writeEnumValue<PolicyPlatformType>("platformType", queryByPlatformTypePostRequestBody.platformType);
-        writer.writeAdditionalData(queryByPlatformTypePostRequestBody.additionalData);
-    }
+export function serializeQueryByPlatformTypePostRequestBody(writer: SerializationWriter, queryByPlatformTypePostRequestBody: Partial<QueryByPlatformTypePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!queryByPlatformTypePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<PolicyPlatformType>("platformType", queryByPlatformTypePostRequestBody.platformType);
+    writer.writeAdditionalData(queryByPlatformTypePostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param QueryByPlatformTypePostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeQueryByPlatformTypePostResponse(writer: SerializationWriter, queryByPlatformTypePostResponse: Partial<QueryByPlatformTypePostResponse> | undefined | null = {}) : void {
-    if (queryByPlatformTypePostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, queryByPlatformTypePostResponse)
-        writer.writeCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>("value", queryByPlatformTypePostResponse.value, serializeDeviceManagementResourceAccessProfileBase);
-    }
+export function serializeQueryByPlatformTypePostResponse(writer: SerializationWriter, queryByPlatformTypePostResponse: Partial<QueryByPlatformTypePostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!queryByPlatformTypePostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, queryByPlatformTypePostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>("value", queryByPlatformTypePostResponse.value, serializeDeviceManagementResourceAccessProfileBase);
 }
 /**
  * Uri template for the request builder.

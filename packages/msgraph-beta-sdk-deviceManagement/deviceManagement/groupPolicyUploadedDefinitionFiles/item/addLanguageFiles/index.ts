@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AddLanguageFilesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -52,6 +48,7 @@ export function createAddLanguageFilesPostRequestBodyFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param AddLanguageFilesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -63,14 +60,15 @@ export function deserializeIntoAddLanguageFilesPostRequestBody(addLanguageFilesP
 }
 /**
  * Serializes information the current object
+ * @param AddLanguageFilesPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAddLanguageFilesPostRequestBody(writer: SerializationWriter, addLanguageFilesPostRequestBody: Partial<AddLanguageFilesPostRequestBody> | undefined | null = {}) : void {
-    if (addLanguageFilesPostRequestBody) {
-        writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", addLanguageFilesPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
-        writer.writeAdditionalData(addLanguageFilesPostRequestBody.additionalData);
-    }
+export function serializeAddLanguageFilesPostRequestBody(writer: SerializationWriter, addLanguageFilesPostRequestBody: Partial<AddLanguageFilesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!addLanguageFilesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", addLanguageFilesPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
+    writer.writeAdditionalData(addLanguageFilesPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

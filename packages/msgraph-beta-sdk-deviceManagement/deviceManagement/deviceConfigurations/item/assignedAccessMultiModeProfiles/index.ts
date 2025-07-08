@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AssignedAccessMultiModeProfilesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The assignedAccessMultiModeProfiles property
      */
     assignedAccessMultiModeProfiles?: WindowsAssignedAccessProfile[] | null;
@@ -52,6 +48,7 @@ export function createAssignedAccessMultiModeProfilesPostRequestBodyFromDiscrimi
 }
 /**
  * The deserialization information for the current model
+ * @param AssignedAccessMultiModeProfilesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -63,14 +60,15 @@ export function deserializeIntoAssignedAccessMultiModeProfilesPostRequestBody(as
 }
 /**
  * Serializes information the current object
+ * @param AssignedAccessMultiModeProfilesPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAssignedAccessMultiModeProfilesPostRequestBody(writer: SerializationWriter, assignedAccessMultiModeProfilesPostRequestBody: Partial<AssignedAccessMultiModeProfilesPostRequestBody> | undefined | null = {}) : void {
-    if (assignedAccessMultiModeProfilesPostRequestBody) {
-        writer.writeCollectionOfObjectValues<WindowsAssignedAccessProfile>("assignedAccessMultiModeProfiles", assignedAccessMultiModeProfilesPostRequestBody.assignedAccessMultiModeProfiles, serializeWindowsAssignedAccessProfile);
-        writer.writeAdditionalData(assignedAccessMultiModeProfilesPostRequestBody.additionalData);
-    }
+export function serializeAssignedAccessMultiModeProfilesPostRequestBody(writer: SerializationWriter, assignedAccessMultiModeProfilesPostRequestBody: Partial<AssignedAccessMultiModeProfilesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!assignedAccessMultiModeProfilesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<WindowsAssignedAccessProfile>("assignedAccessMultiModeProfiles", assignedAccessMultiModeProfilesPostRequestBody.assignedAccessMultiModeProfiles, serializeWindowsAssignedAccessProfile);
+    writer.writeAdditionalData(assignedAccessMultiModeProfilesPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

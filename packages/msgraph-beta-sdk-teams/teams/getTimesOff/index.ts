@@ -19,6 +19,7 @@ export function createGetTimesOffGetResponseFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param GetTimesOffGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetTimesOffRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetTimesOffGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetTimesOffGetResponse(writer: SerializationWriter, getTimesOffGetResponse: Partial<GetTimesOffGetResponse> | undefined | null = {}) : void {
-    if (getTimesOffGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getTimesOffGetResponse)
-        writer.writeCollectionOfObjectValues<TimeOff>("value", getTimesOffGetResponse.value, serializeTimeOff);
-    }
+export function serializeGetTimesOffGetResponse(writer: SerializationWriter, getTimesOffGetResponse: Partial<GetTimesOffGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getTimesOffGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getTimesOffGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TimeOff>("value", getTimesOffGetResponse.value, serializeTimeOff);
 }
 /**
  * Uri template for the request builder.

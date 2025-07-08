@@ -19,6 +19,7 @@ export function createFindByMethodModeWithAuthenticationMethodModesGetResponseFr
 }
 /**
  * The deserialization information for the current model
+ * @param FindByMethodModeWithAuthenticationMethodModesGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -94,14 +95,15 @@ export interface FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQ
 }
 /**
  * Serializes information the current object
+ * @param FindByMethodModeWithAuthenticationMethodModesGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFindByMethodModeWithAuthenticationMethodModesGetResponse(writer: SerializationWriter, findByMethodModeWithAuthenticationMethodModesGetResponse: Partial<FindByMethodModeWithAuthenticationMethodModesGetResponse> | undefined | null = {}) : void {
-    if (findByMethodModeWithAuthenticationMethodModesGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, findByMethodModeWithAuthenticationMethodModesGetResponse)
-        writer.writeCollectionOfObjectValues<AuthenticationStrengthPolicy>("value", findByMethodModeWithAuthenticationMethodModesGetResponse.value, serializeAuthenticationStrengthPolicy);
-    }
+export function serializeFindByMethodModeWithAuthenticationMethodModesGetResponse(writer: SerializationWriter, findByMethodModeWithAuthenticationMethodModesGetResponse: Partial<FindByMethodModeWithAuthenticationMethodModesGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!findByMethodModeWithAuthenticationMethodModesGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, findByMethodModeWithAuthenticationMethodModesGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AuthenticationStrengthPolicy>("value", findByMethodModeWithAuthenticationMethodModesGetResponse.value, serializeAuthenticationStrengthPolicy);
 }
 /**
  * Uri template for the request builder.

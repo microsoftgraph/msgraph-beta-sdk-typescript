@@ -17,6 +17,7 @@ export function createGetConfigurationSettingsReportPostRequestBodyFromDiscrimin
 }
 /**
  * The deserialization information for the current model
+ * @param GetConfigurationSettingsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetConfigurationSettingsReportPostRequestBody(get
     }
 }
 export interface GetConfigurationSettingsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetConfigurationSettingsReportRequestBuilder extends BaseReques
 }
 /**
  * Serializes information the current object
+ * @param GetConfigurationSettingsReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetConfigurationSettingsReportPostRequestBody(writer: SerializationWriter, getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined | null = {}) : void {
-    if (getConfigurationSettingsReportPostRequestBody) {
-        writer.writeStringValue("filter", getConfigurationSettingsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationSettingsReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getConfigurationSettingsReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigurationSettingsReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getConfigurationSettingsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getConfigurationSettingsReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getConfigurationSettingsReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getConfigurationSettingsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getConfigurationSettingsReportPostRequestBody.top);
-        writer.writeAdditionalData(getConfigurationSettingsReportPostRequestBody.additionalData);
-    }
+export function serializeGetConfigurationSettingsReportPostRequestBody(writer: SerializationWriter, getConfigurationSettingsReportPostRequestBody: Partial<GetConfigurationSettingsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getConfigurationSettingsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getConfigurationSettingsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationSettingsReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getConfigurationSettingsReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigurationSettingsReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getConfigurationSettingsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getConfigurationSettingsReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getConfigurationSettingsReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getConfigurationSettingsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getConfigurationSettingsReportPostRequestBody.top);
+    writer.writeAdditionalData(getConfigurationSettingsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

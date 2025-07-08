@@ -23,10 +23,6 @@ export interface CreateDeviceFromTemplatePostRequestBody extends AdditionalDataH
      */
     accountEnabled?: boolean | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The alternativeNames property
      */
     alternativeNames?: string[] | null;
@@ -74,6 +70,7 @@ export interface CreateDeviceFromTemplateRequestBuilder extends BaseRequestBuild
 }
 /**
  * The deserialization information for the current model
+ * @param CreateDeviceFromTemplatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -90,19 +87,20 @@ export function deserializeIntoCreateDeviceFromTemplatePostRequestBody(createDev
 }
 /**
  * Serializes information the current object
+ * @param CreateDeviceFromTemplatePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateDeviceFromTemplatePostRequestBody(writer: SerializationWriter, createDeviceFromTemplatePostRequestBody: Partial<CreateDeviceFromTemplatePostRequestBody> | undefined | null = {}) : void {
-    if (createDeviceFromTemplatePostRequestBody) {
-        writer.writeBooleanValue("accountEnabled", createDeviceFromTemplatePostRequestBody.accountEnabled);
-        writer.writeCollectionOfPrimitiveValues<string>("alternativeNames", createDeviceFromTemplatePostRequestBody.alternativeNames);
-        writer.writeStringValue("externalDeviceId", createDeviceFromTemplatePostRequestBody.externalDeviceId);
-        writer.writeStringValue("externalSourceName", createDeviceFromTemplatePostRequestBody.externalSourceName);
-        writer.writeObjectValue<KeyCredential>("keyCredential", createDeviceFromTemplatePostRequestBody.keyCredential, serializeKeyCredential);
-        writer.writeStringValue("operatingSystemVersion", createDeviceFromTemplatePostRequestBody.operatingSystemVersion);
-        writer.writeAdditionalData(createDeviceFromTemplatePostRequestBody.additionalData);
-    }
+export function serializeCreateDeviceFromTemplatePostRequestBody(writer: SerializationWriter, createDeviceFromTemplatePostRequestBody: Partial<CreateDeviceFromTemplatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createDeviceFromTemplatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("accountEnabled", createDeviceFromTemplatePostRequestBody.accountEnabled);
+    writer.writeCollectionOfPrimitiveValues<string>("alternativeNames", createDeviceFromTemplatePostRequestBody.alternativeNames);
+    writer.writeStringValue("externalDeviceId", createDeviceFromTemplatePostRequestBody.externalDeviceId);
+    writer.writeStringValue("externalSourceName", createDeviceFromTemplatePostRequestBody.externalSourceName);
+    writer.writeObjectValue<KeyCredential>("keyCredential", createDeviceFromTemplatePostRequestBody.keyCredential, serializeKeyCredential);
+    writer.writeStringValue("operatingSystemVersion", createDeviceFromTemplatePostRequestBody.operatingSystemVersion);
+    writer.writeAdditionalData(createDeviceFromTemplatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

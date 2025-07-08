@@ -19,6 +19,7 @@ export function createMarkAsNotJunkPostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param MarkAsNotJunkPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoMarkAsNotJunkPostRequestBody(markAsNotJunkPostReq
     }
 }
 export interface MarkAsNotJunkPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -65,14 +62,15 @@ export interface MarkAsNotJunkRequestBuilder extends BaseRequestBuilder<MarkAsNo
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MarkAsNotJunkPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMarkAsNotJunkPostRequestBody(writer: SerializationWriter, markAsNotJunkPostRequestBody: Partial<MarkAsNotJunkPostRequestBody> | undefined | null = {}) : void {
-    if (markAsNotJunkPostRequestBody) {
-        writer.writeBooleanValue("MoveToInbox", markAsNotJunkPostRequestBody.moveToInbox);
-        writer.writeAdditionalData(markAsNotJunkPostRequestBody.additionalData);
-    }
+export function serializeMarkAsNotJunkPostRequestBody(writer: SerializationWriter, markAsNotJunkPostRequestBody: Partial<MarkAsNotJunkPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!markAsNotJunkPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("MoveToInbox", markAsNotJunkPostRequestBody.moveToInbox);
+    writer.writeAdditionalData(markAsNotJunkPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

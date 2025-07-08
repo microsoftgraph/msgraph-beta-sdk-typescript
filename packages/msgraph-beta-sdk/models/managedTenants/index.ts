@@ -60,10 +60,6 @@ export interface AggregatedPolicyComplianceCollectionResponse extends BaseCollec
 }
 export interface AlertData extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -77,10 +73,6 @@ export interface AlertData extends AdditionalDataHolder, BackedModel, Parsable {
     odataType?: string | null;
 }
 export interface AlertDataReferenceString extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -96,10 +88,6 @@ export interface AlertDataReferenceString extends AdditionalDataHolder, BackedMo
 }
 export interface AlertLogContent extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -113,10 +101,6 @@ export interface AlertLogContent extends AdditionalDataHolder, BackedModel, Pars
     odataType?: string | null;
 }
 export interface AlertRuleDefinitionTemplate extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1390,6 +1374,7 @@ export interface CredentialUserRegistrationsSummaryCollectionResponse extends Ba
 export type DelegatedPrivilegeStatus = (typeof DelegatedPrivilegeStatusObject)[keyof typeof DelegatedPrivilegeStatusObject];
 /**
  * The deserialization information for the current model
+ * @param AggregatedPolicyCompliance The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1411,6 +1396,7 @@ export function deserializeIntoAggregatedPolicyCompliance(aggregatedPolicyCompli
 }
 /**
  * The deserialization information for the current model
+ * @param AggregatedPolicyComplianceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1422,6 +1408,7 @@ export function deserializeIntoAggregatedPolicyComplianceCollectionResponse(aggr
 }
 /**
  * The deserialization information for the current model
+ * @param AlertData The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1434,6 +1421,7 @@ export function deserializeIntoAlertData(alertData: Partial<AlertData> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param AlertDataReferenceString The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1446,6 +1434,7 @@ export function deserializeIntoAlertDataReferenceString(alertDataReferenceString
 }
 /**
  * The deserialization information for the current model
+ * @param AlertLogContent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1458,6 +1447,7 @@ export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLog
 }
 /**
  * The deserialization information for the current model
+ * @param AlertRuleDefinitionTemplate The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1470,6 +1460,7 @@ export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTe
 }
 /**
  * The deserialization information for the current model
+ * @param AppPerformance The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1490,6 +1481,7 @@ export function deserializeIntoAppPerformance(appPerformance: Partial<AppPerform
 }
 /**
  * The deserialization information for the current model
+ * @param AppPerformanceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1501,6 +1493,7 @@ export function deserializeIntoAppPerformanceCollectionResponse(appPerformanceCo
 }
 /**
  * The deserialization information for the current model
+ * @param AuditEvent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1524,6 +1517,7 @@ export function deserializeIntoAuditEvent(auditEvent: Partial<AuditEvent> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param AuditEventCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1535,6 +1529,7 @@ export function deserializeIntoAuditEventCollectionResponse(auditEventCollection
 }
 /**
  * The deserialization information for the current model
+ * @param CloudPcConnection The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1550,6 +1545,7 @@ export function deserializeIntoCloudPcConnection(cloudPcConnection: Partial<Clou
 }
 /**
  * The deserialization information for the current model
+ * @param CloudPcConnectionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1561,6 +1557,7 @@ export function deserializeIntoCloudPcConnectionCollectionResponse(cloudPcConnec
 }
 /**
  * The deserialization information for the current model
+ * @param CloudPcDevice The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1583,6 +1580,7 @@ export function deserializeIntoCloudPcDevice(cloudPcDevice: Partial<CloudPcDevic
 }
 /**
  * The deserialization information for the current model
+ * @param CloudPcDeviceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1594,6 +1592,7 @@ export function deserializeIntoCloudPcDeviceCollectionResponse(cloudPcDeviceColl
 }
 /**
  * The deserialization information for the current model
+ * @param CloudPcOverview The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1625,6 +1624,7 @@ export function deserializeIntoCloudPcOverview(cloudPcOverview: Partial<CloudPcO
 }
 /**
  * The deserialization information for the current model
+ * @param CloudPcOverviewCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1636,6 +1636,7 @@ export function deserializeIntoCloudPcOverviewCollectionResponse(cloudPcOverview
 }
 /**
  * The deserialization information for the current model
+ * @param ConditionalAccessPolicyCoverage The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1650,6 +1651,7 @@ export function deserializeIntoConditionalAccessPolicyCoverage(conditionalAccess
 }
 /**
  * The deserialization information for the current model
+ * @param ConditionalAccessPolicyCoverageCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1661,6 +1663,7 @@ export function deserializeIntoConditionalAccessPolicyCoverageCollectionResponse
 }
 /**
  * The deserialization information for the current model
+ * @param CredentialUserRegistrationsSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1683,6 +1686,7 @@ export function deserializeIntoCredentialUserRegistrationsSummary(credentialUser
 }
 /**
  * The deserialization information for the current model
+ * @param CredentialUserRegistrationsSummaryCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1694,6 +1698,7 @@ export function deserializeIntoCredentialUserRegistrationsSummaryCollectionRespo
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceAppPerformance The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1720,6 +1725,7 @@ export function deserializeIntoDeviceAppPerformance(deviceAppPerformance: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceAppPerformanceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1731,6 +1737,7 @@ export function deserializeIntoDeviceAppPerformanceCollectionResponse(deviceAppP
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceCompliancePolicySettingStateSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1754,6 +1761,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummary(deviceC
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceCompliancePolicySettingStateSummaryCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1765,6 +1773,7 @@ export function deserializeIntoDeviceCompliancePolicySettingStateSummaryCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceHealthStatus The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1790,6 +1799,7 @@ export function deserializeIntoDeviceHealthStatus(deviceHealthStatus: Partial<De
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceHealthStatusCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1801,6 +1811,7 @@ export function deserializeIntoDeviceHealthStatusCollectionResponse(deviceHealth
 }
 /**
  * The deserialization information for the current model
+ * @param Email The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1813,6 +1824,7 @@ export function deserializeIntoEmail(email: Partial<Email> | undefined = {}) : R
 }
 /**
  * The deserialization information for the current model
+ * @param GraphAPIErrorDetails The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1826,6 +1838,7 @@ export function deserializeIntoGraphAPIErrorDetails(graphAPIErrorDetails: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedDeviceCompliance The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1850,6 +1863,7 @@ export function deserializeIntoManagedDeviceCompliance(managedDeviceCompliance: 
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedDeviceComplianceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1861,6 +1875,7 @@ export function deserializeIntoManagedDeviceComplianceCollectionResponse(managed
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedDeviceComplianceTrend The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1880,6 +1895,7 @@ export function deserializeIntoManagedDeviceComplianceTrend(managedDeviceComplia
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedDeviceComplianceTrendCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1891,6 +1907,7 @@ export function deserializeIntoManagedDeviceComplianceTrendCollectionResponse(ma
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenant The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1938,6 +1955,7 @@ export function deserializeIntoManagedTenant(managedTenant: Partial<ManagedTenan
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlert The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1967,6 +1985,7 @@ export function deserializeIntoManagedTenantAlert(managedTenantAlert: Partial<Ma
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1978,6 +1997,7 @@ export function deserializeIntoManagedTenantAlertCollectionResponse(managedTenan
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertLog The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1994,6 +2014,7 @@ export function deserializeIntoManagedTenantAlertLog(managedTenantAlertLog: Part
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertLogCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2005,6 +2026,7 @@ export function deserializeIntoManagedTenantAlertLogCollectionResponse(managedTe
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2030,6 +2052,7 @@ export function deserializeIntoManagedTenantAlertRule(managedTenantAlertRule: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertRuleCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2041,6 +2064,7 @@ export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedT
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertRuleDefinition The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2058,6 +2082,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAle
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantAlertRuleDefinitionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2069,6 +2094,7 @@ export function deserializeIntoManagedTenantAlertRuleDefinitionCollectionRespons
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantApiNotification The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2088,6 +2114,7 @@ export function deserializeIntoManagedTenantApiNotification(managedTenantApiNoti
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantApiNotificationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2099,6 +2126,7 @@ export function deserializeIntoManagedTenantApiNotificationCollectionResponse(ma
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantEmailNotification The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2117,6 +2145,7 @@ export function deserializeIntoManagedTenantEmailNotification(managedTenantEmail
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantEmailNotificationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2128,6 +2157,7 @@ export function deserializeIntoManagedTenantEmailNotificationCollectionResponse(
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantTicketingEndpoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2145,6 +2175,7 @@ export function deserializeIntoManagedTenantTicketingEndpoint(managedTenantTicke
 }
 /**
  * The deserialization information for the current model
+ * @param ManagedTenantTicketingEndpointCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2156,6 +2187,7 @@ export function deserializeIntoManagedTenantTicketingEndpointCollectionResponse(
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementAction The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2172,6 +2204,7 @@ export function deserializeIntoManagementAction(managementAction: Partial<Manage
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementActionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2183,6 +2216,7 @@ export function deserializeIntoManagementActionCollectionResponse(managementActi
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementActionDeploymentStatus The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2199,6 +2233,7 @@ export function deserializeIntoManagementActionDeploymentStatus(managementAction
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementActionInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2213,6 +2248,7 @@ export function deserializeIntoManagementActionInfo(managementActionInfo: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementActionTenantDeploymentStatus The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2226,6 +2262,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatus(management
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementActionTenantDeploymentStatusCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2237,6 +2274,7 @@ export function deserializeIntoManagementActionTenantDeploymentStatusCollectionR
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementIntent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2250,6 +2288,7 @@ export function deserializeIntoManagementIntent(managementIntent: Partial<Manage
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementIntentCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2261,6 +2300,7 @@ export function deserializeIntoManagementIntentCollectionResponse(managementInte
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementIntentInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2275,6 +2315,7 @@ export function deserializeIntoManagementIntentInfo(managementIntentInfo: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplate The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2301,6 +2342,7 @@ export function deserializeIntoManagementTemplate(managementTemplate: Partial<Ma
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateCollection The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2318,6 +2360,7 @@ export function deserializeIntoManagementTemplateCollection(managementTemplateCo
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateCollectionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2329,6 +2372,7 @@ export function deserializeIntoManagementTemplateCollectionCollectionResponse(ma
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2340,6 +2384,7 @@ export function deserializeIntoManagementTemplateCollectionResponse(managementTe
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateCollectionTenantSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2369,6 +2414,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummary(managem
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateCollectionTenantSummaryCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2380,6 +2426,7 @@ export function deserializeIntoManagementTemplateCollectionTenantSummaryCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateDetailedInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2395,6 +2442,7 @@ export function deserializeIntoManagementTemplateDetailedInfo(managementTemplate
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStep The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2419,6 +2467,7 @@ export function deserializeIntoManagementTemplateStep(managementTemplateStep: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2430,6 +2479,7 @@ export function deserializeIntoManagementTemplateStepCollectionResponse(manageme
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepDeployment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2448,6 +2498,7 @@ export function deserializeIntoManagementTemplateStepDeployment(managementTempla
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepDeploymentCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2459,6 +2510,7 @@ export function deserializeIntoManagementTemplateStepDeploymentCollectionRespons
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepTenantSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2484,6 +2536,7 @@ export function deserializeIntoManagementTemplateStepTenantSummary(managementTem
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepTenantSummaryCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2495,6 +2548,7 @@ export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResp
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepVersion The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2516,6 +2570,7 @@ export function deserializeIntoManagementTemplateStepVersion(managementTemplateS
 }
 /**
  * The deserialization information for the current model
+ * @param ManagementTemplateStepVersionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2527,6 +2582,7 @@ export function deserializeIntoManagementTemplateStepVersionCollectionResponse(m
 }
 /**
  * The deserialization information for the current model
+ * @param MyRole The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2540,6 +2596,7 @@ export function deserializeIntoMyRole(myRole: Partial<MyRole> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
+ * @param MyRoleCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2551,6 +2608,7 @@ export function deserializeIntoMyRoleCollectionResponse(myRoleCollectionResponse
 }
 /**
  * The deserialization information for the current model
+ * @param NotificationTarget The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2563,6 +2621,7 @@ export function deserializeIntoNotificationTarget(notificationTarget: Partial<No
 }
 /**
  * The deserialization information for the current model
+ * @param RoleAssignment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2576,6 +2635,7 @@ export function deserializeIntoRoleAssignment(roleAssignment: Partial<RoleAssign
 }
 /**
  * The deserialization information for the current model
+ * @param RoleDefinition The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2590,6 +2650,7 @@ export function deserializeIntoRoleDefinition(roleDefinition: Partial<RoleDefini
 }
 /**
  * The deserialization information for the current model
+ * @param Setting The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2606,6 +2667,7 @@ export function deserializeIntoSetting(setting: Partial<Setting> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param TemplateParameter The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2622,6 +2684,7 @@ export function deserializeIntoTemplateParameter(templateParameter: Partial<Temp
 }
 /**
  * The deserialization information for the current model
+ * @param Tenant The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2638,6 +2701,7 @@ export function deserializeIntoTenant(tenant: Partial<Tenant> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
+ * @param TenantCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2649,6 +2713,7 @@ export function deserializeIntoTenantCollectionResponse(tenantCollectionResponse
 }
 /**
  * The deserialization information for the current model
+ * @param TenantContactInformation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2665,6 +2730,7 @@ export function deserializeIntoTenantContactInformation(tenantContactInformation
 }
 /**
  * The deserialization information for the current model
+ * @param TenantContract The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2679,6 +2745,7 @@ export function deserializeIntoTenantContract(tenantContract: Partial<TenantCont
 }
 /**
  * The deserialization information for the current model
+ * @param TenantCustomizedInformation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2699,6 +2766,7 @@ export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInfor
 }
 /**
  * The deserialization information for the current model
+ * @param TenantCustomizedInformationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2710,6 +2778,7 @@ export function deserializeIntoTenantCustomizedInformationCollectionResponse(ten
 }
 /**
  * The deserialization information for the current model
+ * @param TenantDetailedInformation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2730,6 +2799,7 @@ export function deserializeIntoTenantDetailedInformation(tenantDetailedInformati
 }
 /**
  * The deserialization information for the current model
+ * @param TenantDetailedInformationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2741,6 +2811,7 @@ export function deserializeIntoTenantDetailedInformationCollectionResponse(tenan
 }
 /**
  * The deserialization information for the current model
+ * @param TenantGroup The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2756,6 +2827,7 @@ export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | u
 }
 /**
  * The deserialization information for the current model
+ * @param TenantGroupCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2767,6 +2839,7 @@ export function deserializeIntoTenantGroupCollectionResponse(tenantGroupCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param TenantInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2779,6 +2852,7 @@ export function deserializeIntoTenantInfo(tenantInfo: Partial<TenantInfo> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param TenantStatusInformation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2799,6 +2873,7 @@ export function deserializeIntoTenantStatusInformation(tenantStatusInformation: 
 }
 /**
  * The deserialization information for the current model
+ * @param TenantTag The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2817,6 +2892,7 @@ export function deserializeIntoTenantTag(tenantTag: Partial<TenantTag> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param TenantTagCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2828,6 +2904,7 @@ export function deserializeIntoTenantTagCollectionResponse(tenantTagCollectionRe
 }
 /**
  * The deserialization information for the current model
+ * @param WindowsDeviceMalwareState The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2854,6 +2931,7 @@ export function deserializeIntoWindowsDeviceMalwareState(windowsDeviceMalwareSta
 }
 /**
  * The deserialization information for the current model
+ * @param WindowsDeviceMalwareStateCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2865,6 +2943,7 @@ export function deserializeIntoWindowsDeviceMalwareStateCollectionResponse(windo
 }
 /**
  * The deserialization information for the current model
+ * @param WindowsProtectionState The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2900,6 +2979,7 @@ export function deserializeIntoWindowsProtectionState(windowsProtectionState: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param WindowsProtectionStateCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2911,6 +2991,7 @@ export function deserializeIntoWindowsProtectionStateCollectionResponse(windowsP
 }
 /**
  * The deserialization information for the current model
+ * @param WorkloadAction The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2929,6 +3010,7 @@ export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAc
 }
 /**
  * The deserialization information for the current model
+ * @param WorkloadActionDeploymentStatus The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2948,6 +3030,7 @@ export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDepl
 }
 /**
  * The deserialization information for the current model
+ * @param WorkloadStatus The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3163,10 +3246,6 @@ export interface DeviceHealthStatusCollectionResponse extends BaseCollectionPagi
 }
 export interface Email extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3180,10 +3259,6 @@ export interface Email extends AdditionalDataHolder, BackedModel, Parsable {
     odataType?: string | null;
 }
 export interface GraphAPIErrorDetails extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3833,10 +3908,6 @@ export interface ManagementActionCollectionResponse extends BaseCollectionPagina
 }
 export interface ManagementActionDeploymentStatus extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3866,10 +3937,6 @@ export interface ManagementActionDeploymentStatus extends AdditionalDataHolder, 
     workloadActionDeploymentStatuses?: WorkloadActionDeploymentStatus[] | null;
 }
 export interface ManagementActionInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3934,10 +4001,6 @@ export interface ManagementIntentCollectionResponse extends BaseCollectionPagina
     value?: ManagementIntent[] | null;
 }
 export interface ManagementIntentInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -4155,10 +4218,6 @@ export interface ManagementTemplateCollectionTenantSummaryCollectionResponse ext
 }
 export type ManagementTemplateDeploymentStatus = (typeof ManagementTemplateDeploymentStatusObject)[keyof typeof ManagementTemplateDeploymentStatusObject];
 export interface ManagementTemplateDetailedInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -4410,10 +4469,6 @@ export interface ManagementTemplateStepVersionCollectionResponse extends BaseCol
 }
 export interface MyRole extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * A collection of role assignments for the managed tenant.
      */
     assignments?: RoleAssignment[] | null;
@@ -4439,10 +4494,6 @@ export interface MyRoleCollectionResponse extends BaseCollectionPaginationCountR
 export type NotificationDestination = (typeof NotificationDestinationObject)[keyof typeof NotificationDestinationObject];
 export interface NotificationTarget extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -4456,10 +4507,6 @@ export interface NotificationTarget extends AdditionalDataHolder, BackedModel, P
     odataType?: string | null;
 }
 export interface RoleAssignment extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
      */
@@ -4478,10 +4525,6 @@ export interface RoleAssignment extends AdditionalDataHolder, BackedModel, Parsa
     roles?: RoleDefinition[] | null;
 }
 export interface RoleDefinition extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -4505,1582 +4548,1677 @@ export interface RoleDefinition extends AdditionalDataHolder, BackedModel, Parsa
 }
 /**
  * Serializes information the current object
+ * @param AggregatedPolicyCompliance The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAggregatedPolicyCompliance(writer: SerializationWriter, aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined | null = {}) : void {
-    if (aggregatedPolicyCompliance) {
-        serializeEntity(writer, aggregatedPolicyCompliance)
-        writer.writeStringValue("compliancePolicyId", aggregatedPolicyCompliance.compliancePolicyId);
-        writer.writeStringValue("compliancePolicyName", aggregatedPolicyCompliance.compliancePolicyName);
-        writer.writeStringValue("compliancePolicyPlatform", aggregatedPolicyCompliance.compliancePolicyPlatform);
-        writer.writeStringValue("compliancePolicyType", aggregatedPolicyCompliance.compliancePolicyType);
-        writer.writeDateValue("lastRefreshedDateTime", aggregatedPolicyCompliance.lastRefreshedDateTime);
-        writer.writeNumberValue("numberOfCompliantDevices", aggregatedPolicyCompliance.numberOfCompliantDevices);
-        writer.writeNumberValue("numberOfErrorDevices", aggregatedPolicyCompliance.numberOfErrorDevices);
-        writer.writeNumberValue("numberOfNonCompliantDevices", aggregatedPolicyCompliance.numberOfNonCompliantDevices);
-        writer.writeDateValue("policyModifiedDateTime", aggregatedPolicyCompliance.policyModifiedDateTime);
-        writer.writeStringValue("tenantDisplayName", aggregatedPolicyCompliance.tenantDisplayName);
-        writer.writeStringValue("tenantId", aggregatedPolicyCompliance.tenantId);
-    }
+export function serializeAggregatedPolicyCompliance(writer: SerializationWriter, aggregatedPolicyCompliance: Partial<AggregatedPolicyCompliance> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aggregatedPolicyCompliance || isSerializingDerivedType) { return; }
+    serializeEntity(writer, aggregatedPolicyCompliance, isSerializingDerivedType)
+    writer.writeStringValue("compliancePolicyId", aggregatedPolicyCompliance.compliancePolicyId);
+    writer.writeStringValue("compliancePolicyName", aggregatedPolicyCompliance.compliancePolicyName);
+    writer.writeStringValue("compliancePolicyPlatform", aggregatedPolicyCompliance.compliancePolicyPlatform);
+    writer.writeStringValue("compliancePolicyType", aggregatedPolicyCompliance.compliancePolicyType);
+    writer.writeDateValue("lastRefreshedDateTime", aggregatedPolicyCompliance.lastRefreshedDateTime);
+    writer.writeNumberValue("numberOfCompliantDevices", aggregatedPolicyCompliance.numberOfCompliantDevices);
+    writer.writeNumberValue("numberOfErrorDevices", aggregatedPolicyCompliance.numberOfErrorDevices);
+    writer.writeNumberValue("numberOfNonCompliantDevices", aggregatedPolicyCompliance.numberOfNonCompliantDevices);
+    writer.writeDateValue("policyModifiedDateTime", aggregatedPolicyCompliance.policyModifiedDateTime);
+    writer.writeStringValue("tenantDisplayName", aggregatedPolicyCompliance.tenantDisplayName);
+    writer.writeStringValue("tenantId", aggregatedPolicyCompliance.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param AggregatedPolicyComplianceCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAggregatedPolicyComplianceCollectionResponse(writer: SerializationWriter, aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined | null = {}) : void {
-    if (aggregatedPolicyComplianceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, aggregatedPolicyComplianceCollectionResponse)
-        writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("value", aggregatedPolicyComplianceCollectionResponse.value, serializeAggregatedPolicyCompliance);
-    }
+export function serializeAggregatedPolicyComplianceCollectionResponse(writer: SerializationWriter, aggregatedPolicyComplianceCollectionResponse: Partial<AggregatedPolicyComplianceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aggregatedPolicyComplianceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, aggregatedPolicyComplianceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("value", aggregatedPolicyComplianceCollectionResponse.value, serializeAggregatedPolicyCompliance);
 }
 /**
  * Serializes information the current object
+ * @param AlertData The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertData(writer: SerializationWriter, alertData: Partial<AlertData> | undefined | null = {}) : void {
-    if (alertData) {
-        writer.writeStringValue("displayName", alertData.displayName);
-        writer.writeStringValue("@odata.type", alertData.odataType);
-        writer.writeAdditionalData(alertData.additionalData);
-    }
+export function serializeAlertData(writer: SerializationWriter, alertData: Partial<AlertData> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertData || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", alertData.displayName);
+    writer.writeStringValue("@odata.type", alertData.odataType);
+    writer.writeAdditionalData(alertData.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertDataReferenceString The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertDataReferenceString(writer: SerializationWriter, alertDataReferenceString: Partial<AlertDataReferenceString> | undefined | null = {}) : void {
-    if (alertDataReferenceString) {
-        writer.writeStringValue("displayName", alertDataReferenceString.displayName);
-        writer.writeStringValue("@odata.type", alertDataReferenceString.odataType);
-        writer.writeAdditionalData(alertDataReferenceString.additionalData);
-    }
+export function serializeAlertDataReferenceString(writer: SerializationWriter, alertDataReferenceString: Partial<AlertDataReferenceString> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertDataReferenceString || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", alertDataReferenceString.displayName);
+    writer.writeStringValue("@odata.type", alertDataReferenceString.odataType);
+    writer.writeAdditionalData(alertDataReferenceString.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertLogContent The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertLogContent(writer: SerializationWriter, alertLogContent: Partial<AlertLogContent> | undefined | null = {}) : void {
-    if (alertLogContent) {
-        writer.writeStringValue("displayName", alertLogContent.displayName);
-        writer.writeStringValue("@odata.type", alertLogContent.odataType);
-        writer.writeAdditionalData(alertLogContent.additionalData);
-    }
+export function serializeAlertLogContent(writer: SerializationWriter, alertLogContent: Partial<AlertLogContent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertLogContent || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", alertLogContent.displayName);
+    writer.writeStringValue("@odata.type", alertLogContent.odataType);
+    writer.writeAdditionalData(alertLogContent.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertRuleDefinitionTemplate The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter, alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined | null = {}) : void {
-    if (alertRuleDefinitionTemplate) {
-        writer.writeEnumValue<AlertSeverity>("defaultSeverity", alertRuleDefinitionTemplate.defaultSeverity);
-        writer.writeStringValue("@odata.type", alertRuleDefinitionTemplate.odataType);
-        writer.writeAdditionalData(alertRuleDefinitionTemplate.additionalData);
-    }
+export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter, alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertRuleDefinitionTemplate || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AlertSeverity>("defaultSeverity", alertRuleDefinitionTemplate.defaultSeverity);
+    writer.writeStringValue("@odata.type", alertRuleDefinitionTemplate.odataType);
+    writer.writeAdditionalData(alertRuleDefinitionTemplate.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AppPerformance The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAppPerformance(writer: SerializationWriter, appPerformance: Partial<AppPerformance> | undefined | null = {}) : void {
-    if (appPerformance) {
-        serializeEntity(writer, appPerformance)
-        writer.writeStringValue("appFriendlyName", appPerformance.appFriendlyName);
-        writer.writeStringValue("appName", appPerformance.appName);
-        writer.writeStringValue("appPublisher", appPerformance.appPublisher);
-        writer.writeDateValue("lastUpdatedDateTime", appPerformance.lastUpdatedDateTime);
-        writer.writeNumberValue("meanTimeToFailureInMinutes", appPerformance.meanTimeToFailureInMinutes);
-        writer.writeStringValue("tenantDisplayName", appPerformance.tenantDisplayName);
-        writer.writeStringValue("tenantId", appPerformance.tenantId);
-        writer.writeNumberValue("totalActiveDeviceCount", appPerformance.totalActiveDeviceCount);
-        writer.writeNumberValue("totalAppCrashCount", appPerformance.totalAppCrashCount);
-        writer.writeNumberValue("totalAppFreezeCount", appPerformance.totalAppFreezeCount);
-    }
+export function serializeAppPerformance(writer: SerializationWriter, appPerformance: Partial<AppPerformance> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!appPerformance || isSerializingDerivedType) { return; }
+    serializeEntity(writer, appPerformance, isSerializingDerivedType)
+    writer.writeStringValue("appFriendlyName", appPerformance.appFriendlyName);
+    writer.writeStringValue("appName", appPerformance.appName);
+    writer.writeStringValue("appPublisher", appPerformance.appPublisher);
+    writer.writeDateValue("lastUpdatedDateTime", appPerformance.lastUpdatedDateTime);
+    writer.writeNumberValue("meanTimeToFailureInMinutes", appPerformance.meanTimeToFailureInMinutes);
+    writer.writeStringValue("tenantDisplayName", appPerformance.tenantDisplayName);
+    writer.writeStringValue("tenantId", appPerformance.tenantId);
+    writer.writeNumberValue("totalActiveDeviceCount", appPerformance.totalActiveDeviceCount);
+    writer.writeNumberValue("totalAppCrashCount", appPerformance.totalAppCrashCount);
+    writer.writeNumberValue("totalAppFreezeCount", appPerformance.totalAppFreezeCount);
 }
 /**
  * Serializes information the current object
+ * @param AppPerformanceCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAppPerformanceCollectionResponse(writer: SerializationWriter, appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined | null = {}) : void {
-    if (appPerformanceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, appPerformanceCollectionResponse)
-        writer.writeCollectionOfObjectValues<AppPerformance>("value", appPerformanceCollectionResponse.value, serializeAppPerformance);
-    }
+export function serializeAppPerformanceCollectionResponse(writer: SerializationWriter, appPerformanceCollectionResponse: Partial<AppPerformanceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!appPerformanceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, appPerformanceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AppPerformance>("value", appPerformanceCollectionResponse.value, serializeAppPerformance);
 }
 /**
  * Serializes information the current object
+ * @param AuditEvent The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAuditEvent(writer: SerializationWriter, auditEvent: Partial<AuditEvent> | undefined | null = {}) : void {
-    if (auditEvent) {
-        serializeEntity(writer, auditEvent)
-        writer.writeStringValue("activity", auditEvent.activity);
-        writer.writeDateValue("activityDateTime", auditEvent.activityDateTime);
-        writer.writeStringValue("activityId", auditEvent.activityId);
-        writer.writeStringValue("category", auditEvent.category);
-        writer.writeStringValue("httpVerb", auditEvent.httpVerb);
-        writer.writeStringValue("initiatedByAppId", auditEvent.initiatedByAppId);
-        writer.writeStringValue("initiatedByUpn", auditEvent.initiatedByUpn);
-        writer.writeStringValue("initiatedByUserId", auditEvent.initiatedByUserId);
-        writer.writeStringValue("ipAddress", auditEvent.ipAddress);
-        writer.writeStringValue("requestBody", auditEvent.requestBody);
-        writer.writeStringValue("requestUrl", auditEvent.requestUrl);
-        writer.writeStringValue("tenantIds", auditEvent.tenantIds);
-        writer.writeStringValue("tenantNames", auditEvent.tenantNames);
-    }
+export function serializeAuditEvent(writer: SerializationWriter, auditEvent: Partial<AuditEvent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!auditEvent || isSerializingDerivedType) { return; }
+    serializeEntity(writer, auditEvent, isSerializingDerivedType)
+    writer.writeStringValue("activity", auditEvent.activity);
+    writer.writeDateValue("activityDateTime", auditEvent.activityDateTime);
+    writer.writeStringValue("activityId", auditEvent.activityId);
+    writer.writeStringValue("category", auditEvent.category);
+    writer.writeStringValue("httpVerb", auditEvent.httpVerb);
+    writer.writeStringValue("initiatedByAppId", auditEvent.initiatedByAppId);
+    writer.writeStringValue("initiatedByUpn", auditEvent.initiatedByUpn);
+    writer.writeStringValue("initiatedByUserId", auditEvent.initiatedByUserId);
+    writer.writeStringValue("ipAddress", auditEvent.ipAddress);
+    writer.writeStringValue("requestBody", auditEvent.requestBody);
+    writer.writeStringValue("requestUrl", auditEvent.requestUrl);
+    writer.writeStringValue("tenantIds", auditEvent.tenantIds);
+    writer.writeStringValue("tenantNames", auditEvent.tenantNames);
 }
 /**
  * Serializes information the current object
+ * @param AuditEventCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAuditEventCollectionResponse(writer: SerializationWriter, auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined | null = {}) : void {
-    if (auditEventCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, auditEventCollectionResponse)
-        writer.writeCollectionOfObjectValues<AuditEvent>("value", auditEventCollectionResponse.value, serializeAuditEvent);
-    }
+export function serializeAuditEventCollectionResponse(writer: SerializationWriter, auditEventCollectionResponse: Partial<AuditEventCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!auditEventCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, auditEventCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AuditEvent>("value", auditEventCollectionResponse.value, serializeAuditEvent);
 }
 /**
  * Serializes information the current object
+ * @param CloudPcConnection The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCloudPcConnection(writer: SerializationWriter, cloudPcConnection: Partial<CloudPcConnection> | undefined | null = {}) : void {
-    if (cloudPcConnection) {
-        serializeEntity(writer, cloudPcConnection)
-        writer.writeStringValue("displayName", cloudPcConnection.displayName);
-        writer.writeStringValue("healthCheckStatus", cloudPcConnection.healthCheckStatus);
-        writer.writeDateValue("lastRefreshedDateTime", cloudPcConnection.lastRefreshedDateTime);
-        writer.writeStringValue("tenantDisplayName", cloudPcConnection.tenantDisplayName);
-        writer.writeStringValue("tenantId", cloudPcConnection.tenantId);
-    }
+export function serializeCloudPcConnection(writer: SerializationWriter, cloudPcConnection: Partial<CloudPcConnection> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudPcConnection || isSerializingDerivedType) { return; }
+    serializeEntity(writer, cloudPcConnection, isSerializingDerivedType)
+    writer.writeStringValue("displayName", cloudPcConnection.displayName);
+    writer.writeStringValue("healthCheckStatus", cloudPcConnection.healthCheckStatus);
+    writer.writeDateValue("lastRefreshedDateTime", cloudPcConnection.lastRefreshedDateTime);
+    writer.writeStringValue("tenantDisplayName", cloudPcConnection.tenantDisplayName);
+    writer.writeStringValue("tenantId", cloudPcConnection.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param CloudPcConnectionCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCloudPcConnectionCollectionResponse(writer: SerializationWriter, cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined | null = {}) : void {
-    if (cloudPcConnectionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, cloudPcConnectionCollectionResponse)
-        writer.writeCollectionOfObjectValues<CloudPcConnection>("value", cloudPcConnectionCollectionResponse.value, serializeCloudPcConnection);
-    }
+export function serializeCloudPcConnectionCollectionResponse(writer: SerializationWriter, cloudPcConnectionCollectionResponse: Partial<CloudPcConnectionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudPcConnectionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, cloudPcConnectionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcConnection>("value", cloudPcConnectionCollectionResponse.value, serializeCloudPcConnection);
 }
 /**
  * Serializes information the current object
+ * @param CloudPcDevice The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCloudPcDevice(writer: SerializationWriter, cloudPcDevice: Partial<CloudPcDevice> | undefined | null = {}) : void {
-    if (cloudPcDevice) {
-        serializeEntity(writer, cloudPcDevice)
-        writer.writeStringValue("cloudPcStatus", cloudPcDevice.cloudPcStatus);
-        writer.writeStringValue("deviceSpecification", cloudPcDevice.deviceSpecification);
-        writer.writeStringValue("displayName", cloudPcDevice.displayName);
-        writer.writeDateValue("lastRefreshedDateTime", cloudPcDevice.lastRefreshedDateTime);
-        writer.writeStringValue("managedDeviceId", cloudPcDevice.managedDeviceId);
-        writer.writeStringValue("managedDeviceName", cloudPcDevice.managedDeviceName);
-        writer.writeStringValue("provisioningPolicyId", cloudPcDevice.provisioningPolicyId);
-        writer.writeStringValue("servicePlanName", cloudPcDevice.servicePlanName);
-        writer.writeStringValue("servicePlanType", cloudPcDevice.servicePlanType);
-        writer.writeStringValue("tenantDisplayName", cloudPcDevice.tenantDisplayName);
-        writer.writeStringValue("tenantId", cloudPcDevice.tenantId);
-        writer.writeStringValue("userPrincipalName", cloudPcDevice.userPrincipalName);
-    }
+export function serializeCloudPcDevice(writer: SerializationWriter, cloudPcDevice: Partial<CloudPcDevice> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudPcDevice || isSerializingDerivedType) { return; }
+    serializeEntity(writer, cloudPcDevice, isSerializingDerivedType)
+    writer.writeStringValue("cloudPcStatus", cloudPcDevice.cloudPcStatus);
+    writer.writeStringValue("deviceSpecification", cloudPcDevice.deviceSpecification);
+    writer.writeStringValue("displayName", cloudPcDevice.displayName);
+    writer.writeDateValue("lastRefreshedDateTime", cloudPcDevice.lastRefreshedDateTime);
+    writer.writeStringValue("managedDeviceId", cloudPcDevice.managedDeviceId);
+    writer.writeStringValue("managedDeviceName", cloudPcDevice.managedDeviceName);
+    writer.writeStringValue("provisioningPolicyId", cloudPcDevice.provisioningPolicyId);
+    writer.writeStringValue("servicePlanName", cloudPcDevice.servicePlanName);
+    writer.writeStringValue("servicePlanType", cloudPcDevice.servicePlanType);
+    writer.writeStringValue("tenantDisplayName", cloudPcDevice.tenantDisplayName);
+    writer.writeStringValue("tenantId", cloudPcDevice.tenantId);
+    writer.writeStringValue("userPrincipalName", cloudPcDevice.userPrincipalName);
 }
 /**
  * Serializes information the current object
+ * @param CloudPcDeviceCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCloudPcDeviceCollectionResponse(writer: SerializationWriter, cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined | null = {}) : void {
-    if (cloudPcDeviceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, cloudPcDeviceCollectionResponse)
-        writer.writeCollectionOfObjectValues<CloudPcDevice>("value", cloudPcDeviceCollectionResponse.value, serializeCloudPcDevice);
-    }
+export function serializeCloudPcDeviceCollectionResponse(writer: SerializationWriter, cloudPcDeviceCollectionResponse: Partial<CloudPcDeviceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudPcDeviceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, cloudPcDeviceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcDevice>("value", cloudPcDeviceCollectionResponse.value, serializeCloudPcDevice);
 }
 /**
  * Serializes information the current object
+ * @param CloudPcOverview The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCloudPcOverview(writer: SerializationWriter, cloudPcOverview: Partial<CloudPcOverview> | undefined | null = {}) : void {
-    if (cloudPcOverview) {
-        serializeEntity(writer, cloudPcOverview)
-        writer.writeNumberValue("frontlineLicensesCount", cloudPcOverview.frontlineLicensesCount);
-        writer.writeDateValue("lastRefreshedDateTime", cloudPcOverview.lastRefreshedDateTime);
-        writer.writeNumberValue("numberOfCloudPcConnectionStatusFailed", cloudPcOverview.numberOfCloudPcConnectionStatusFailed);
-        writer.writeNumberValue("numberOfCloudPcConnectionStatusPassed", cloudPcOverview.numberOfCloudPcConnectionStatusPassed);
-        writer.writeNumberValue("numberOfCloudPcConnectionStatusPending", cloudPcOverview.numberOfCloudPcConnectionStatusPending);
-        writer.writeNumberValue("numberOfCloudPcConnectionStatusRunning", cloudPcOverview.numberOfCloudPcConnectionStatusRunning);
-        writer.writeNumberValue("numberOfCloudPcConnectionStatusUnkownFutureValue", cloudPcOverview.numberOfCloudPcConnectionStatusUnkownFutureValue);
-        writer.writeNumberValue("numberOfCloudPcStatusDeprovisioning", cloudPcOverview.numberOfCloudPcStatusDeprovisioning);
-        writer.writeNumberValue("numberOfCloudPcStatusFailed", cloudPcOverview.numberOfCloudPcStatusFailed);
-        writer.writeNumberValue("numberOfCloudPcStatusInGracePeriod", cloudPcOverview.numberOfCloudPcStatusInGracePeriod);
-        writer.writeNumberValue("numberOfCloudPcStatusNotProvisioned", cloudPcOverview.numberOfCloudPcStatusNotProvisioned);
-        writer.writeNumberValue("numberOfCloudPcStatusProvisioned", cloudPcOverview.numberOfCloudPcStatusProvisioned);
-        writer.writeNumberValue("numberOfCloudPcStatusProvisioning", cloudPcOverview.numberOfCloudPcStatusProvisioning);
-        writer.writeNumberValue("numberOfCloudPcStatusUnknown", cloudPcOverview.numberOfCloudPcStatusUnknown);
-        writer.writeNumberValue("numberOfCloudPcStatusUpgrading", cloudPcOverview.numberOfCloudPcStatusUpgrading);
-        writer.writeStringValue("tenantDisplayName", cloudPcOverview.tenantDisplayName);
-        writer.writeStringValue("tenantId", cloudPcOverview.tenantId);
-        writer.writeNumberValue("totalBusinessLicenses", cloudPcOverview.totalBusinessLicenses);
-        writer.writeNumberValue("totalCloudPcConnectionStatus", cloudPcOverview.totalCloudPcConnectionStatus);
-        writer.writeNumberValue("totalCloudPcStatus", cloudPcOverview.totalCloudPcStatus);
-        writer.writeNumberValue("totalEnterpriseLicenses", cloudPcOverview.totalEnterpriseLicenses);
-    }
+export function serializeCloudPcOverview(writer: SerializationWriter, cloudPcOverview: Partial<CloudPcOverview> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudPcOverview || isSerializingDerivedType) { return; }
+    serializeEntity(writer, cloudPcOverview, isSerializingDerivedType)
+    writer.writeNumberValue("frontlineLicensesCount", cloudPcOverview.frontlineLicensesCount);
+    writer.writeDateValue("lastRefreshedDateTime", cloudPcOverview.lastRefreshedDateTime);
+    writer.writeNumberValue("numberOfCloudPcConnectionStatusFailed", cloudPcOverview.numberOfCloudPcConnectionStatusFailed);
+    writer.writeNumberValue("numberOfCloudPcConnectionStatusPassed", cloudPcOverview.numberOfCloudPcConnectionStatusPassed);
+    writer.writeNumberValue("numberOfCloudPcConnectionStatusPending", cloudPcOverview.numberOfCloudPcConnectionStatusPending);
+    writer.writeNumberValue("numberOfCloudPcConnectionStatusRunning", cloudPcOverview.numberOfCloudPcConnectionStatusRunning);
+    writer.writeNumberValue("numberOfCloudPcConnectionStatusUnkownFutureValue", cloudPcOverview.numberOfCloudPcConnectionStatusUnkownFutureValue);
+    writer.writeNumberValue("numberOfCloudPcStatusDeprovisioning", cloudPcOverview.numberOfCloudPcStatusDeprovisioning);
+    writer.writeNumberValue("numberOfCloudPcStatusFailed", cloudPcOverview.numberOfCloudPcStatusFailed);
+    writer.writeNumberValue("numberOfCloudPcStatusInGracePeriod", cloudPcOverview.numberOfCloudPcStatusInGracePeriod);
+    writer.writeNumberValue("numberOfCloudPcStatusNotProvisioned", cloudPcOverview.numberOfCloudPcStatusNotProvisioned);
+    writer.writeNumberValue("numberOfCloudPcStatusProvisioned", cloudPcOverview.numberOfCloudPcStatusProvisioned);
+    writer.writeNumberValue("numberOfCloudPcStatusProvisioning", cloudPcOverview.numberOfCloudPcStatusProvisioning);
+    writer.writeNumberValue("numberOfCloudPcStatusUnknown", cloudPcOverview.numberOfCloudPcStatusUnknown);
+    writer.writeNumberValue("numberOfCloudPcStatusUpgrading", cloudPcOverview.numberOfCloudPcStatusUpgrading);
+    writer.writeStringValue("tenantDisplayName", cloudPcOverview.tenantDisplayName);
+    writer.writeStringValue("tenantId", cloudPcOverview.tenantId);
+    writer.writeNumberValue("totalBusinessLicenses", cloudPcOverview.totalBusinessLicenses);
+    writer.writeNumberValue("totalCloudPcConnectionStatus", cloudPcOverview.totalCloudPcConnectionStatus);
+    writer.writeNumberValue("totalCloudPcStatus", cloudPcOverview.totalCloudPcStatus);
+    writer.writeNumberValue("totalEnterpriseLicenses", cloudPcOverview.totalEnterpriseLicenses);
 }
 /**
  * Serializes information the current object
+ * @param CloudPcOverviewCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCloudPcOverviewCollectionResponse(writer: SerializationWriter, cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined | null = {}) : void {
-    if (cloudPcOverviewCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, cloudPcOverviewCollectionResponse)
-        writer.writeCollectionOfObjectValues<CloudPcOverview>("value", cloudPcOverviewCollectionResponse.value, serializeCloudPcOverview);
-    }
+export function serializeCloudPcOverviewCollectionResponse(writer: SerializationWriter, cloudPcOverviewCollectionResponse: Partial<CloudPcOverviewCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudPcOverviewCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, cloudPcOverviewCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcOverview>("value", cloudPcOverviewCollectionResponse.value, serializeCloudPcOverview);
 }
 /**
  * Serializes information the current object
+ * @param ConditionalAccessPolicyCoverage The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConditionalAccessPolicyCoverage(writer: SerializationWriter, conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined | null = {}) : void {
-    if (conditionalAccessPolicyCoverage) {
-        serializeEntity(writer, conditionalAccessPolicyCoverage)
-        writer.writeStringValue("conditionalAccessPolicyState", conditionalAccessPolicyCoverage.conditionalAccessPolicyState);
-        writer.writeDateValue("latestPolicyModifiedDateTime", conditionalAccessPolicyCoverage.latestPolicyModifiedDateTime);
-        writer.writeBooleanValue("requiresDeviceCompliance", conditionalAccessPolicyCoverage.requiresDeviceCompliance);
-        writer.writeStringValue("tenantDisplayName", conditionalAccessPolicyCoverage.tenantDisplayName);
-    }
+export function serializeConditionalAccessPolicyCoverage(writer: SerializationWriter, conditionalAccessPolicyCoverage: Partial<ConditionalAccessPolicyCoverage> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!conditionalAccessPolicyCoverage || isSerializingDerivedType) { return; }
+    serializeEntity(writer, conditionalAccessPolicyCoverage, isSerializingDerivedType)
+    writer.writeStringValue("conditionalAccessPolicyState", conditionalAccessPolicyCoverage.conditionalAccessPolicyState);
+    writer.writeDateValue("latestPolicyModifiedDateTime", conditionalAccessPolicyCoverage.latestPolicyModifiedDateTime);
+    writer.writeBooleanValue("requiresDeviceCompliance", conditionalAccessPolicyCoverage.requiresDeviceCompliance);
+    writer.writeStringValue("tenantDisplayName", conditionalAccessPolicyCoverage.tenantDisplayName);
 }
 /**
  * Serializes information the current object
+ * @param ConditionalAccessPolicyCoverageCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConditionalAccessPolicyCoverageCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined | null = {}) : void {
-    if (conditionalAccessPolicyCoverageCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCoverageCollectionResponse)
-        writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("value", conditionalAccessPolicyCoverageCollectionResponse.value, serializeConditionalAccessPolicyCoverage);
-    }
+export function serializeConditionalAccessPolicyCoverageCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCoverageCollectionResponse: Partial<ConditionalAccessPolicyCoverageCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!conditionalAccessPolicyCoverageCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCoverageCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("value", conditionalAccessPolicyCoverageCollectionResponse.value, serializeConditionalAccessPolicyCoverage);
 }
 /**
  * Serializes information the current object
+ * @param CredentialUserRegistrationsSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCredentialUserRegistrationsSummary(writer: SerializationWriter, credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined | null = {}) : void {
-    if (credentialUserRegistrationsSummary) {
-        serializeEntity(writer, credentialUserRegistrationsSummary)
-        writer.writeDateValue("lastRefreshedDateTime", credentialUserRegistrationsSummary.lastRefreshedDateTime);
-        writer.writeNumberValue("mfaAndSsprCapableUserCount", credentialUserRegistrationsSummary.mfaAndSsprCapableUserCount);
-        writer.writeStringValue("mfaConditionalAccessPolicyState", credentialUserRegistrationsSummary.mfaConditionalAccessPolicyState);
-        writer.writeNumberValue("mfaExcludedUserCount", credentialUserRegistrationsSummary.mfaExcludedUserCount);
-        writer.writeNumberValue("mfaRegisteredUserCount", credentialUserRegistrationsSummary.mfaRegisteredUserCount);
-        writer.writeBooleanValue("securityDefaultsEnabled", credentialUserRegistrationsSummary.securityDefaultsEnabled);
-        writer.writeNumberValue("ssprEnabledUserCount", credentialUserRegistrationsSummary.ssprEnabledUserCount);
-        writer.writeNumberValue("ssprRegisteredUserCount", credentialUserRegistrationsSummary.ssprRegisteredUserCount);
-        writer.writeStringValue("tenantDisplayName", credentialUserRegistrationsSummary.tenantDisplayName);
-        writer.writeStringValue("tenantId", credentialUserRegistrationsSummary.tenantId);
-        writer.writeStringValue("tenantLicenseType", credentialUserRegistrationsSummary.tenantLicenseType);
-        writer.writeNumberValue("totalUserCount", credentialUserRegistrationsSummary.totalUserCount);
-    }
+export function serializeCredentialUserRegistrationsSummary(writer: SerializationWriter, credentialUserRegistrationsSummary: Partial<CredentialUserRegistrationsSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!credentialUserRegistrationsSummary || isSerializingDerivedType) { return; }
+    serializeEntity(writer, credentialUserRegistrationsSummary, isSerializingDerivedType)
+    writer.writeDateValue("lastRefreshedDateTime", credentialUserRegistrationsSummary.lastRefreshedDateTime);
+    writer.writeNumberValue("mfaAndSsprCapableUserCount", credentialUserRegistrationsSummary.mfaAndSsprCapableUserCount);
+    writer.writeStringValue("mfaConditionalAccessPolicyState", credentialUserRegistrationsSummary.mfaConditionalAccessPolicyState);
+    writer.writeNumberValue("mfaExcludedUserCount", credentialUserRegistrationsSummary.mfaExcludedUserCount);
+    writer.writeNumberValue("mfaRegisteredUserCount", credentialUserRegistrationsSummary.mfaRegisteredUserCount);
+    writer.writeBooleanValue("securityDefaultsEnabled", credentialUserRegistrationsSummary.securityDefaultsEnabled);
+    writer.writeNumberValue("ssprEnabledUserCount", credentialUserRegistrationsSummary.ssprEnabledUserCount);
+    writer.writeNumberValue("ssprRegisteredUserCount", credentialUserRegistrationsSummary.ssprRegisteredUserCount);
+    writer.writeStringValue("tenantDisplayName", credentialUserRegistrationsSummary.tenantDisplayName);
+    writer.writeStringValue("tenantId", credentialUserRegistrationsSummary.tenantId);
+    writer.writeStringValue("tenantLicenseType", credentialUserRegistrationsSummary.tenantLicenseType);
+    writer.writeNumberValue("totalUserCount", credentialUserRegistrationsSummary.totalUserCount);
 }
 /**
  * Serializes information the current object
+ * @param CredentialUserRegistrationsSummaryCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCredentialUserRegistrationsSummaryCollectionResponse(writer: SerializationWriter, credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined | null = {}) : void {
-    if (credentialUserRegistrationsSummaryCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, credentialUserRegistrationsSummaryCollectionResponse)
-        writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("value", credentialUserRegistrationsSummaryCollectionResponse.value, serializeCredentialUserRegistrationsSummary);
-    }
+export function serializeCredentialUserRegistrationsSummaryCollectionResponse(writer: SerializationWriter, credentialUserRegistrationsSummaryCollectionResponse: Partial<CredentialUserRegistrationsSummaryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!credentialUserRegistrationsSummaryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, credentialUserRegistrationsSummaryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("value", credentialUserRegistrationsSummaryCollectionResponse.value, serializeCredentialUserRegistrationsSummary);
 }
 /**
  * Serializes information the current object
+ * @param DeviceAppPerformance The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceAppPerformance(writer: SerializationWriter, deviceAppPerformance: Partial<DeviceAppPerformance> | undefined | null = {}) : void {
-    if (deviceAppPerformance) {
-        serializeEntity(writer, deviceAppPerformance)
-        writer.writeStringValue("appFriendlyName", deviceAppPerformance.appFriendlyName);
-        writer.writeStringValue("appName", deviceAppPerformance.appName);
-        writer.writeStringValue("appPublisher", deviceAppPerformance.appPublisher);
-        writer.writeStringValue("appVersion", deviceAppPerformance.appVersion);
-        writer.writeStringValue("deviceId", deviceAppPerformance.deviceId);
-        writer.writeStringValue("deviceManufacturer", deviceAppPerformance.deviceManufacturer);
-        writer.writeStringValue("deviceModel", deviceAppPerformance.deviceModel);
-        writer.writeStringValue("deviceName", deviceAppPerformance.deviceName);
-        writer.writeStringValue("healthStatus", deviceAppPerformance.healthStatus);
-        writer.writeNumberValue("isLatestUsedVersion", deviceAppPerformance.isLatestUsedVersion);
-        writer.writeNumberValue("isMostUsedVersion", deviceAppPerformance.isMostUsedVersion);
-        writer.writeDateValue("lastUpdatedDateTime", deviceAppPerformance.lastUpdatedDateTime);
-        writer.writeStringValue("tenantDisplayName", deviceAppPerformance.tenantDisplayName);
-        writer.writeStringValue("tenantId", deviceAppPerformance.tenantId);
-        writer.writeNumberValue("totalAppCrashCount", deviceAppPerformance.totalAppCrashCount);
-        writer.writeNumberValue("totalAppFreezeCount", deviceAppPerformance.totalAppFreezeCount);
-    }
+export function serializeDeviceAppPerformance(writer: SerializationWriter, deviceAppPerformance: Partial<DeviceAppPerformance> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceAppPerformance || isSerializingDerivedType) { return; }
+    serializeEntity(writer, deviceAppPerformance, isSerializingDerivedType)
+    writer.writeStringValue("appFriendlyName", deviceAppPerformance.appFriendlyName);
+    writer.writeStringValue("appName", deviceAppPerformance.appName);
+    writer.writeStringValue("appPublisher", deviceAppPerformance.appPublisher);
+    writer.writeStringValue("appVersion", deviceAppPerformance.appVersion);
+    writer.writeStringValue("deviceId", deviceAppPerformance.deviceId);
+    writer.writeStringValue("deviceManufacturer", deviceAppPerformance.deviceManufacturer);
+    writer.writeStringValue("deviceModel", deviceAppPerformance.deviceModel);
+    writer.writeStringValue("deviceName", deviceAppPerformance.deviceName);
+    writer.writeStringValue("healthStatus", deviceAppPerformance.healthStatus);
+    writer.writeNumberValue("isLatestUsedVersion", deviceAppPerformance.isLatestUsedVersion);
+    writer.writeNumberValue("isMostUsedVersion", deviceAppPerformance.isMostUsedVersion);
+    writer.writeDateValue("lastUpdatedDateTime", deviceAppPerformance.lastUpdatedDateTime);
+    writer.writeStringValue("tenantDisplayName", deviceAppPerformance.tenantDisplayName);
+    writer.writeStringValue("tenantId", deviceAppPerformance.tenantId);
+    writer.writeNumberValue("totalAppCrashCount", deviceAppPerformance.totalAppCrashCount);
+    writer.writeNumberValue("totalAppFreezeCount", deviceAppPerformance.totalAppFreezeCount);
 }
 /**
  * Serializes information the current object
+ * @param DeviceAppPerformanceCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceAppPerformanceCollectionResponse(writer: SerializationWriter, deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined | null = {}) : void {
-    if (deviceAppPerformanceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deviceAppPerformanceCollectionResponse)
-        writer.writeCollectionOfObjectValues<DeviceAppPerformance>("value", deviceAppPerformanceCollectionResponse.value, serializeDeviceAppPerformance);
-    }
+export function serializeDeviceAppPerformanceCollectionResponse(writer: SerializationWriter, deviceAppPerformanceCollectionResponse: Partial<DeviceAppPerformanceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceAppPerformanceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deviceAppPerformanceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceAppPerformance>("value", deviceAppPerformanceCollectionResponse.value, serializeDeviceAppPerformance);
 }
 /**
  * Serializes information the current object
+ * @param DeviceCompliancePolicySettingStateSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceCompliancePolicySettingStateSummary(writer: SerializationWriter, deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined | null = {}) : void {
-    if (deviceCompliancePolicySettingStateSummary) {
-        serializeEntity(writer, deviceCompliancePolicySettingStateSummary)
-        writer.writeNumberValue("conflictDeviceCount", deviceCompliancePolicySettingStateSummary.conflictDeviceCount);
-        writer.writeNumberValue("errorDeviceCount", deviceCompliancePolicySettingStateSummary.errorDeviceCount);
-        writer.writeNumberValue("failedDeviceCount", deviceCompliancePolicySettingStateSummary.failedDeviceCount);
-        writer.writeStringValue("intuneAccountId", deviceCompliancePolicySettingStateSummary.intuneAccountId);
-        writer.writeStringValue("intuneSettingId", deviceCompliancePolicySettingStateSummary.intuneSettingId);
-        writer.writeDateValue("lastRefreshedDateTime", deviceCompliancePolicySettingStateSummary.lastRefreshedDateTime);
-        writer.writeNumberValue("notApplicableDeviceCount", deviceCompliancePolicySettingStateSummary.notApplicableDeviceCount);
-        writer.writeNumberValue("pendingDeviceCount", deviceCompliancePolicySettingStateSummary.pendingDeviceCount);
-        writer.writeStringValue("policyType", deviceCompliancePolicySettingStateSummary.policyType);
-        writer.writeStringValue("settingName", deviceCompliancePolicySettingStateSummary.settingName);
-        writer.writeNumberValue("succeededDeviceCount", deviceCompliancePolicySettingStateSummary.succeededDeviceCount);
-        writer.writeStringValue("tenantDisplayName", deviceCompliancePolicySettingStateSummary.tenantDisplayName);
-        writer.writeStringValue("tenantId", deviceCompliancePolicySettingStateSummary.tenantId);
-    }
+export function serializeDeviceCompliancePolicySettingStateSummary(writer: SerializationWriter, deviceCompliancePolicySettingStateSummary: Partial<DeviceCompliancePolicySettingStateSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceCompliancePolicySettingStateSummary || isSerializingDerivedType) { return; }
+    serializeEntity(writer, deviceCompliancePolicySettingStateSummary, isSerializingDerivedType)
+    writer.writeNumberValue("conflictDeviceCount", deviceCompliancePolicySettingStateSummary.conflictDeviceCount);
+    writer.writeNumberValue("errorDeviceCount", deviceCompliancePolicySettingStateSummary.errorDeviceCount);
+    writer.writeNumberValue("failedDeviceCount", deviceCompliancePolicySettingStateSummary.failedDeviceCount);
+    writer.writeStringValue("intuneAccountId", deviceCompliancePolicySettingStateSummary.intuneAccountId);
+    writer.writeStringValue("intuneSettingId", deviceCompliancePolicySettingStateSummary.intuneSettingId);
+    writer.writeDateValue("lastRefreshedDateTime", deviceCompliancePolicySettingStateSummary.lastRefreshedDateTime);
+    writer.writeNumberValue("notApplicableDeviceCount", deviceCompliancePolicySettingStateSummary.notApplicableDeviceCount);
+    writer.writeNumberValue("pendingDeviceCount", deviceCompliancePolicySettingStateSummary.pendingDeviceCount);
+    writer.writeStringValue("policyType", deviceCompliancePolicySettingStateSummary.policyType);
+    writer.writeStringValue("settingName", deviceCompliancePolicySettingStateSummary.settingName);
+    writer.writeNumberValue("succeededDeviceCount", deviceCompliancePolicySettingStateSummary.succeededDeviceCount);
+    writer.writeStringValue("tenantDisplayName", deviceCompliancePolicySettingStateSummary.tenantDisplayName);
+    writer.writeStringValue("tenantId", deviceCompliancePolicySettingStateSummary.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param DeviceCompliancePolicySettingStateSummaryCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceCompliancePolicySettingStateSummaryCollectionResponse(writer: SerializationWriter, deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined | null = {}) : void {
-    if (deviceCompliancePolicySettingStateSummaryCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deviceCompliancePolicySettingStateSummaryCollectionResponse)
-        writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("value", deviceCompliancePolicySettingStateSummaryCollectionResponse.value, serializeDeviceCompliancePolicySettingStateSummary);
-    }
+export function serializeDeviceCompliancePolicySettingStateSummaryCollectionResponse(writer: SerializationWriter, deviceCompliancePolicySettingStateSummaryCollectionResponse: Partial<DeviceCompliancePolicySettingStateSummaryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceCompliancePolicySettingStateSummaryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deviceCompliancePolicySettingStateSummaryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("value", deviceCompliancePolicySettingStateSummaryCollectionResponse.value, serializeDeviceCompliancePolicySettingStateSummary);
 }
 /**
  * Serializes information the current object
+ * @param DeviceHealthStatus The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceHealthStatus(writer: SerializationWriter, deviceHealthStatus: Partial<DeviceHealthStatus> | undefined | null = {}) : void {
-    if (deviceHealthStatus) {
-        serializeEntity(writer, deviceHealthStatus)
-        writer.writeNumberValue("blueScreenCount", deviceHealthStatus.blueScreenCount);
-        writer.writeNumberValue("bootTotalDurationInSeconds", deviceHealthStatus.bootTotalDurationInSeconds);
-        writer.writeStringValue("deviceId", deviceHealthStatus.deviceId);
-        writer.writeStringValue("deviceMake", deviceHealthStatus.deviceMake);
-        writer.writeStringValue("deviceModel", deviceHealthStatus.deviceModel);
-        writer.writeStringValue("deviceName", deviceHealthStatus.deviceName);
-        writer.writeStringValue("healthStatus", deviceHealthStatus.healthStatus);
-        writer.writeDateValue("lastUpdatedDateTime", deviceHealthStatus.lastUpdatedDateTime);
-        writer.writeStringValue("osVersion", deviceHealthStatus.osVersion);
-        writer.writeStringValue("primaryDiskType", deviceHealthStatus.primaryDiskType);
-        writer.writeNumberValue("restartCount", deviceHealthStatus.restartCount);
-        writer.writeNumberValue("startupPerformanceScore", deviceHealthStatus.startupPerformanceScore);
-        writer.writeStringValue("tenantDisplayName", deviceHealthStatus.tenantDisplayName);
-        writer.writeStringValue("tenantId", deviceHealthStatus.tenantId);
-        writer.writeStringValue("topProcesses", deviceHealthStatus.topProcesses);
-    }
+export function serializeDeviceHealthStatus(writer: SerializationWriter, deviceHealthStatus: Partial<DeviceHealthStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceHealthStatus || isSerializingDerivedType) { return; }
+    serializeEntity(writer, deviceHealthStatus, isSerializingDerivedType)
+    writer.writeNumberValue("blueScreenCount", deviceHealthStatus.blueScreenCount);
+    writer.writeNumberValue("bootTotalDurationInSeconds", deviceHealthStatus.bootTotalDurationInSeconds);
+    writer.writeStringValue("deviceId", deviceHealthStatus.deviceId);
+    writer.writeStringValue("deviceMake", deviceHealthStatus.deviceMake);
+    writer.writeStringValue("deviceModel", deviceHealthStatus.deviceModel);
+    writer.writeStringValue("deviceName", deviceHealthStatus.deviceName);
+    writer.writeStringValue("healthStatus", deviceHealthStatus.healthStatus);
+    writer.writeDateValue("lastUpdatedDateTime", deviceHealthStatus.lastUpdatedDateTime);
+    writer.writeStringValue("osVersion", deviceHealthStatus.osVersion);
+    writer.writeStringValue("primaryDiskType", deviceHealthStatus.primaryDiskType);
+    writer.writeNumberValue("restartCount", deviceHealthStatus.restartCount);
+    writer.writeNumberValue("startupPerformanceScore", deviceHealthStatus.startupPerformanceScore);
+    writer.writeStringValue("tenantDisplayName", deviceHealthStatus.tenantDisplayName);
+    writer.writeStringValue("tenantId", deviceHealthStatus.tenantId);
+    writer.writeStringValue("topProcesses", deviceHealthStatus.topProcesses);
 }
 /**
  * Serializes information the current object
+ * @param DeviceHealthStatusCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceHealthStatusCollectionResponse(writer: SerializationWriter, deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined | null = {}) : void {
-    if (deviceHealthStatusCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deviceHealthStatusCollectionResponse)
-        writer.writeCollectionOfObjectValues<DeviceHealthStatus>("value", deviceHealthStatusCollectionResponse.value, serializeDeviceHealthStatus);
-    }
+export function serializeDeviceHealthStatusCollectionResponse(writer: SerializationWriter, deviceHealthStatusCollectionResponse: Partial<DeviceHealthStatusCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceHealthStatusCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deviceHealthStatusCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceHealthStatus>("value", deviceHealthStatusCollectionResponse.value, serializeDeviceHealthStatus);
 }
 /**
  * Serializes information the current object
+ * @param Email The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEmail(writer: SerializationWriter, email: Partial<Email> | undefined | null = {}) : void {
-    if (email) {
-        writer.writeStringValue("emailAddress", email.emailAddress);
-        writer.writeStringValue("@odata.type", email.odataType);
-        writer.writeAdditionalData(email.additionalData);
-    }
+export function serializeEmail(writer: SerializationWriter, email: Partial<Email> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!email || isSerializingDerivedType) { return; }
+    writer.writeStringValue("emailAddress", email.emailAddress);
+    writer.writeStringValue("@odata.type", email.odataType);
+    writer.writeAdditionalData(email.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param GraphAPIErrorDetails The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGraphAPIErrorDetails(writer: SerializationWriter, graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined | null = {}) : void {
-    if (graphAPIErrorDetails) {
-        writer.writeStringValue("code", graphAPIErrorDetails.code);
-        writer.writeStringValue("message", graphAPIErrorDetails.message);
-        writer.writeStringValue("@odata.type", graphAPIErrorDetails.odataType);
-        writer.writeAdditionalData(graphAPIErrorDetails.additionalData);
-    }
+export function serializeGraphAPIErrorDetails(writer: SerializationWriter, graphAPIErrorDetails: Partial<GraphAPIErrorDetails> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!graphAPIErrorDetails || isSerializingDerivedType) { return; }
+    writer.writeStringValue("code", graphAPIErrorDetails.code);
+    writer.writeStringValue("message", graphAPIErrorDetails.message);
+    writer.writeStringValue("@odata.type", graphAPIErrorDetails.odataType);
+    writer.writeAdditionalData(graphAPIErrorDetails.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedDeviceCompliance The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedDeviceCompliance(writer: SerializationWriter, managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined | null = {}) : void {
-    if (managedDeviceCompliance) {
-        serializeEntity(writer, managedDeviceCompliance)
-        writer.writeStringValue("complianceStatus", managedDeviceCompliance.complianceStatus);
-        writer.writeStringValue("deviceType", managedDeviceCompliance.deviceType);
-        writer.writeDateValue("inGracePeriodUntilDateTime", managedDeviceCompliance.inGracePeriodUntilDateTime);
-        writer.writeDateValue("lastRefreshedDateTime", managedDeviceCompliance.lastRefreshedDateTime);
-        writer.writeDateValue("lastSyncDateTime", managedDeviceCompliance.lastSyncDateTime);
-        writer.writeStringValue("managedDeviceId", managedDeviceCompliance.managedDeviceId);
-        writer.writeStringValue("managedDeviceName", managedDeviceCompliance.managedDeviceName);
-        writer.writeStringValue("manufacturer", managedDeviceCompliance.manufacturer);
-        writer.writeStringValue("model", managedDeviceCompliance.model);
-        writer.writeStringValue("osDescription", managedDeviceCompliance.osDescription);
-        writer.writeStringValue("osVersion", managedDeviceCompliance.osVersion);
-        writer.writeStringValue("ownerType", managedDeviceCompliance.ownerType);
-        writer.writeStringValue("tenantDisplayName", managedDeviceCompliance.tenantDisplayName);
-        writer.writeStringValue("tenantId", managedDeviceCompliance.tenantId);
-    }
+export function serializeManagedDeviceCompliance(writer: SerializationWriter, managedDeviceCompliance: Partial<ManagedDeviceCompliance> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedDeviceCompliance || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedDeviceCompliance, isSerializingDerivedType)
+    writer.writeStringValue("complianceStatus", managedDeviceCompliance.complianceStatus);
+    writer.writeStringValue("deviceType", managedDeviceCompliance.deviceType);
+    writer.writeDateValue("inGracePeriodUntilDateTime", managedDeviceCompliance.inGracePeriodUntilDateTime);
+    writer.writeDateValue("lastRefreshedDateTime", managedDeviceCompliance.lastRefreshedDateTime);
+    writer.writeDateValue("lastSyncDateTime", managedDeviceCompliance.lastSyncDateTime);
+    writer.writeStringValue("managedDeviceId", managedDeviceCompliance.managedDeviceId);
+    writer.writeStringValue("managedDeviceName", managedDeviceCompliance.managedDeviceName);
+    writer.writeStringValue("manufacturer", managedDeviceCompliance.manufacturer);
+    writer.writeStringValue("model", managedDeviceCompliance.model);
+    writer.writeStringValue("osDescription", managedDeviceCompliance.osDescription);
+    writer.writeStringValue("osVersion", managedDeviceCompliance.osVersion);
+    writer.writeStringValue("ownerType", managedDeviceCompliance.ownerType);
+    writer.writeStringValue("tenantDisplayName", managedDeviceCompliance.tenantDisplayName);
+    writer.writeStringValue("tenantId", managedDeviceCompliance.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedDeviceComplianceCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedDeviceComplianceCollectionResponse(writer: SerializationWriter, managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined | null = {}) : void {
-    if (managedDeviceComplianceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("value", managedDeviceComplianceCollectionResponse.value, serializeManagedDeviceCompliance);
-    }
+export function serializeManagedDeviceComplianceCollectionResponse(writer: SerializationWriter, managedDeviceComplianceCollectionResponse: Partial<ManagedDeviceComplianceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedDeviceComplianceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("value", managedDeviceComplianceCollectionResponse.value, serializeManagedDeviceCompliance);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedDeviceComplianceTrend The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedDeviceComplianceTrend(writer: SerializationWriter, managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined | null = {}) : void {
-    if (managedDeviceComplianceTrend) {
-        serializeEntity(writer, managedDeviceComplianceTrend)
-        writer.writeNumberValue("compliantDeviceCount", managedDeviceComplianceTrend.compliantDeviceCount);
-        writer.writeNumberValue("configManagerDeviceCount", managedDeviceComplianceTrend.configManagerDeviceCount);
-        writer.writeStringValue("countDateTime", managedDeviceComplianceTrend.countDateTime);
-        writer.writeNumberValue("errorDeviceCount", managedDeviceComplianceTrend.errorDeviceCount);
-        writer.writeNumberValue("inGracePeriodDeviceCount", managedDeviceComplianceTrend.inGracePeriodDeviceCount);
-        writer.writeNumberValue("noncompliantDeviceCount", managedDeviceComplianceTrend.noncompliantDeviceCount);
-        writer.writeStringValue("tenantDisplayName", managedDeviceComplianceTrend.tenantDisplayName);
-        writer.writeStringValue("tenantId", managedDeviceComplianceTrend.tenantId);
-        writer.writeNumberValue("unknownDeviceCount", managedDeviceComplianceTrend.unknownDeviceCount);
-    }
+export function serializeManagedDeviceComplianceTrend(writer: SerializationWriter, managedDeviceComplianceTrend: Partial<ManagedDeviceComplianceTrend> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedDeviceComplianceTrend || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedDeviceComplianceTrend, isSerializingDerivedType)
+    writer.writeNumberValue("compliantDeviceCount", managedDeviceComplianceTrend.compliantDeviceCount);
+    writer.writeNumberValue("configManagerDeviceCount", managedDeviceComplianceTrend.configManagerDeviceCount);
+    writer.writeStringValue("countDateTime", managedDeviceComplianceTrend.countDateTime);
+    writer.writeNumberValue("errorDeviceCount", managedDeviceComplianceTrend.errorDeviceCount);
+    writer.writeNumberValue("inGracePeriodDeviceCount", managedDeviceComplianceTrend.inGracePeriodDeviceCount);
+    writer.writeNumberValue("noncompliantDeviceCount", managedDeviceComplianceTrend.noncompliantDeviceCount);
+    writer.writeStringValue("tenantDisplayName", managedDeviceComplianceTrend.tenantDisplayName);
+    writer.writeStringValue("tenantId", managedDeviceComplianceTrend.tenantId);
+    writer.writeNumberValue("unknownDeviceCount", managedDeviceComplianceTrend.unknownDeviceCount);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedDeviceComplianceTrendCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedDeviceComplianceTrendCollectionResponse(writer: SerializationWriter, managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined | null = {}) : void {
-    if (managedDeviceComplianceTrendCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceTrendCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("value", managedDeviceComplianceTrendCollectionResponse.value, serializeManagedDeviceComplianceTrend);
-    }
+export function serializeManagedDeviceComplianceTrendCollectionResponse(writer: SerializationWriter, managedDeviceComplianceTrendCollectionResponse: Partial<ManagedDeviceComplianceTrendCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedDeviceComplianceTrendCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedDeviceComplianceTrendCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("value", managedDeviceComplianceTrendCollectionResponse.value, serializeManagedDeviceComplianceTrend);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenant The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenant(writer: SerializationWriter, managedTenant: Partial<ManagedTenant> | undefined | null = {}) : void {
-    if (managedTenant) {
-        serializeEntity(writer, managedTenant)
-        writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("aggregatedPolicyCompliances", managedTenant.aggregatedPolicyCompliances, serializeAggregatedPolicyCompliance);
-        writer.writeCollectionOfObjectValues<AppPerformance>("appPerformances", managedTenant.appPerformances, serializeAppPerformance);
-        writer.writeCollectionOfObjectValues<AuditEvent>("auditEvents", managedTenant.auditEvents, serializeAuditEvent);
-        writer.writeCollectionOfObjectValues<CloudPcConnection>("cloudPcConnections", managedTenant.cloudPcConnections, serializeCloudPcConnection);
-        writer.writeCollectionOfObjectValues<CloudPcDevice>("cloudPcDevices", managedTenant.cloudPcDevices, serializeCloudPcDevice);
-        writer.writeCollectionOfObjectValues<CloudPcOverview>("cloudPcsOverview", managedTenant.cloudPcsOverview, serializeCloudPcOverview);
-        writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("conditionalAccessPolicyCoverages", managedTenant.conditionalAccessPolicyCoverages, serializeConditionalAccessPolicyCoverage);
-        writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("credentialUserRegistrationsSummaries", managedTenant.credentialUserRegistrationsSummaries, serializeCredentialUserRegistrationsSummary);
-        writer.writeCollectionOfObjectValues<DeviceAppPerformance>("deviceAppPerformances", managedTenant.deviceAppPerformances, serializeDeviceAppPerformance);
-        writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", managedTenant.deviceCompliancePolicySettingStateSummaries, serializeDeviceCompliancePolicySettingStateSummary);
-        writer.writeCollectionOfObjectValues<DeviceHealthStatus>("deviceHealthStatuses", managedTenant.deviceHealthStatuses, serializeDeviceHealthStatus);
-        writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("managedDeviceCompliances", managedTenant.managedDeviceCompliances, serializeManagedDeviceCompliance);
-        writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("managedDeviceComplianceTrends", managedTenant.managedDeviceComplianceTrends, serializeManagedDeviceComplianceTrend);
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("managedTenantAlertLogs", managedTenant.managedTenantAlertLogs, serializeManagedTenantAlertLog);
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("managedTenantAlertRuleDefinitions", managedTenant.managedTenantAlertRuleDefinitions, serializeManagedTenantAlertRuleDefinition);
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("managedTenantAlertRules", managedTenant.managedTenantAlertRules, serializeManagedTenantAlertRule);
-        writer.writeCollectionOfObjectValues<ManagedTenantAlert>("managedTenantAlerts", managedTenant.managedTenantAlerts, serializeManagedTenantAlert);
-        writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("managedTenantApiNotifications", managedTenant.managedTenantApiNotifications, serializeManagedTenantApiNotification);
-        writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("managedTenantEmailNotifications", managedTenant.managedTenantEmailNotifications, serializeManagedTenantEmailNotification);
-        writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("managedTenantTicketingEndpoints", managedTenant.managedTenantTicketingEndpoints, serializeManagedTenantTicketingEndpoint);
-        writer.writeCollectionOfObjectValues<ManagementAction>("managementActions", managedTenant.managementActions, serializeManagementAction);
-        writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", managedTenant.managementActionTenantDeploymentStatuses, serializeManagementActionTenantDeploymentStatus);
-        writer.writeCollectionOfObjectValues<ManagementIntent>("managementIntents", managedTenant.managementIntents, serializeManagementIntent);
-        writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managedTenant.managementTemplateCollections, serializeManagementTemplateCollection);
-        writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("managementTemplateCollectionTenantSummaries", managedTenant.managementTemplateCollectionTenantSummaries, serializeManagementTemplateCollectionTenantSummary);
-        writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managedTenant.managementTemplates, serializeManagementTemplate);
-        writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managedTenant.managementTemplateSteps, serializeManagementTemplateStep);
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("managementTemplateStepTenantSummaries", managedTenant.managementTemplateStepTenantSummaries, serializeManagementTemplateStepTenantSummary);
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", managedTenant.managementTemplateStepVersions, serializeManagementTemplateStepVersion);
-        writer.writeCollectionOfObjectValues<MyRole>("myRoles", managedTenant.myRoles, serializeMyRole);
-        writer.writeCollectionOfObjectValues<TenantGroup>("tenantGroups", managedTenant.tenantGroups, serializeTenantGroup);
-        writer.writeCollectionOfObjectValues<Tenant>("tenants", managedTenant.tenants, serializeTenant);
-        writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("tenantsCustomizedInformation", managedTenant.tenantsCustomizedInformation, serializeTenantCustomizedInformation);
-        writer.writeCollectionOfObjectValues<TenantDetailedInformation>("tenantsDetailedInformation", managedTenant.tenantsDetailedInformation, serializeTenantDetailedInformation);
-        writer.writeCollectionOfObjectValues<TenantTag>("tenantTags", managedTenant.tenantTags, serializeTenantTag);
-        writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("windowsDeviceMalwareStates", managedTenant.windowsDeviceMalwareStates, serializeWindowsDeviceMalwareState);
-        writer.writeCollectionOfObjectValues<WindowsProtectionState>("windowsProtectionStates", managedTenant.windowsProtectionStates, serializeWindowsProtectionState);
-    }
+export function serializeManagedTenant(writer: SerializationWriter, managedTenant: Partial<ManagedTenant> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenant || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenant, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AggregatedPolicyCompliance>("aggregatedPolicyCompliances", managedTenant.aggregatedPolicyCompliances, serializeAggregatedPolicyCompliance);
+    writer.writeCollectionOfObjectValues<AppPerformance>("appPerformances", managedTenant.appPerformances, serializeAppPerformance);
+    writer.writeCollectionOfObjectValues<AuditEvent>("auditEvents", managedTenant.auditEvents, serializeAuditEvent);
+    writer.writeCollectionOfObjectValues<CloudPcConnection>("cloudPcConnections", managedTenant.cloudPcConnections, serializeCloudPcConnection);
+    writer.writeCollectionOfObjectValues<CloudPcDevice>("cloudPcDevices", managedTenant.cloudPcDevices, serializeCloudPcDevice);
+    writer.writeCollectionOfObjectValues<CloudPcOverview>("cloudPcsOverview", managedTenant.cloudPcsOverview, serializeCloudPcOverview);
+    writer.writeCollectionOfObjectValues<ConditionalAccessPolicyCoverage>("conditionalAccessPolicyCoverages", managedTenant.conditionalAccessPolicyCoverages, serializeConditionalAccessPolicyCoverage);
+    writer.writeCollectionOfObjectValues<CredentialUserRegistrationsSummary>("credentialUserRegistrationsSummaries", managedTenant.credentialUserRegistrationsSummaries, serializeCredentialUserRegistrationsSummary);
+    writer.writeCollectionOfObjectValues<DeviceAppPerformance>("deviceAppPerformances", managedTenant.deviceAppPerformances, serializeDeviceAppPerformance);
+    writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", managedTenant.deviceCompliancePolicySettingStateSummaries, serializeDeviceCompliancePolicySettingStateSummary);
+    writer.writeCollectionOfObjectValues<DeviceHealthStatus>("deviceHealthStatuses", managedTenant.deviceHealthStatuses, serializeDeviceHealthStatus);
+    writer.writeCollectionOfObjectValues<ManagedDeviceCompliance>("managedDeviceCompliances", managedTenant.managedDeviceCompliances, serializeManagedDeviceCompliance);
+    writer.writeCollectionOfObjectValues<ManagedDeviceComplianceTrend>("managedDeviceComplianceTrends", managedTenant.managedDeviceComplianceTrends, serializeManagedDeviceComplianceTrend);
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("managedTenantAlertLogs", managedTenant.managedTenantAlertLogs, serializeManagedTenantAlertLog);
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("managedTenantAlertRuleDefinitions", managedTenant.managedTenantAlertRuleDefinitions, serializeManagedTenantAlertRuleDefinition);
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("managedTenantAlertRules", managedTenant.managedTenantAlertRules, serializeManagedTenantAlertRule);
+    writer.writeCollectionOfObjectValues<ManagedTenantAlert>("managedTenantAlerts", managedTenant.managedTenantAlerts, serializeManagedTenantAlert);
+    writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("managedTenantApiNotifications", managedTenant.managedTenantApiNotifications, serializeManagedTenantApiNotification);
+    writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("managedTenantEmailNotifications", managedTenant.managedTenantEmailNotifications, serializeManagedTenantEmailNotification);
+    writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("managedTenantTicketingEndpoints", managedTenant.managedTenantTicketingEndpoints, serializeManagedTenantTicketingEndpoint);
+    writer.writeCollectionOfObjectValues<ManagementAction>("managementActions", managedTenant.managementActions, serializeManagementAction);
+    writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", managedTenant.managementActionTenantDeploymentStatuses, serializeManagementActionTenantDeploymentStatus);
+    writer.writeCollectionOfObjectValues<ManagementIntent>("managementIntents", managedTenant.managementIntents, serializeManagementIntent);
+    writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managedTenant.managementTemplateCollections, serializeManagementTemplateCollection);
+    writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("managementTemplateCollectionTenantSummaries", managedTenant.managementTemplateCollectionTenantSummaries, serializeManagementTemplateCollectionTenantSummary);
+    writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managedTenant.managementTemplates, serializeManagementTemplate);
+    writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managedTenant.managementTemplateSteps, serializeManagementTemplateStep);
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("managementTemplateStepTenantSummaries", managedTenant.managementTemplateStepTenantSummaries, serializeManagementTemplateStepTenantSummary);
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", managedTenant.managementTemplateStepVersions, serializeManagementTemplateStepVersion);
+    writer.writeCollectionOfObjectValues<MyRole>("myRoles", managedTenant.myRoles, serializeMyRole);
+    writer.writeCollectionOfObjectValues<TenantGroup>("tenantGroups", managedTenant.tenantGroups, serializeTenantGroup);
+    writer.writeCollectionOfObjectValues<Tenant>("tenants", managedTenant.tenants, serializeTenant);
+    writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("tenantsCustomizedInformation", managedTenant.tenantsCustomizedInformation, serializeTenantCustomizedInformation);
+    writer.writeCollectionOfObjectValues<TenantDetailedInformation>("tenantsDetailedInformation", managedTenant.tenantsDetailedInformation, serializeTenantDetailedInformation);
+    writer.writeCollectionOfObjectValues<TenantTag>("tenantTags", managedTenant.tenantTags, serializeTenantTag);
+    writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("windowsDeviceMalwareStates", managedTenant.windowsDeviceMalwareStates, serializeWindowsDeviceMalwareState);
+    writer.writeCollectionOfObjectValues<WindowsProtectionState>("windowsProtectionStates", managedTenant.windowsProtectionStates, serializeWindowsProtectionState);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlert The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlert(writer: SerializationWriter, managedTenantAlert: Partial<ManagedTenantAlert> | undefined | null = {}) : void {
-    if (managedTenantAlert) {
-        serializeEntity(writer, managedTenantAlert)
-        writer.writeObjectValue<AlertData>("alertData", managedTenantAlert.alertData, serializeAlertData);
-        writer.writeCollectionOfObjectValues<AlertDataReferenceString>("alertDataReferenceStrings", managedTenantAlert.alertDataReferenceStrings, serializeAlertDataReferenceString);
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("alertLogs", managedTenantAlert.alertLogs, serializeManagedTenantAlertLog);
-        writer.writeObjectValue<ManagedTenantAlertRule>("alertRule", managedTenantAlert.alertRule, serializeManagedTenantAlertRule);
-        writer.writeStringValue("alertRuleDisplayName", managedTenantAlert.alertRuleDisplayName);
-        writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("apiNotifications", managedTenantAlert.apiNotifications, serializeManagedTenantApiNotification);
-        writer.writeStringValue("assignedToUserId", managedTenantAlert.assignedToUserId);
-        writer.writeNumberValue("correlationCount", managedTenantAlert.correlationCount);
-        writer.writeStringValue("correlationId", managedTenantAlert.correlationId);
-        writer.writeStringValue("createdByUserId", managedTenantAlert.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantAlert.createdDateTime);
-        writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("emailNotifications", managedTenantAlert.emailNotifications, serializeManagedTenantEmailNotification);
-        writer.writeStringValue("lastActionByUserId", managedTenantAlert.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantAlert.lastActionDateTime);
-        writer.writeStringValue("message", managedTenantAlert.message);
-        writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlert.severity);
-        writer.writeEnumValue<AlertStatus>("status", managedTenantAlert.status);
-        writer.writeStringValue("tenantId", managedTenantAlert.tenantId);
-        writer.writeStringValue("title", managedTenantAlert.title);
-    }
+export function serializeManagedTenantAlert(writer: SerializationWriter, managedTenantAlert: Partial<ManagedTenantAlert> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlert || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantAlert, isSerializingDerivedType)
+    writer.writeObjectValue<AlertData>("alertData", managedTenantAlert.alertData, serializeAlertData);
+    writer.writeCollectionOfObjectValues<AlertDataReferenceString>("alertDataReferenceStrings", managedTenantAlert.alertDataReferenceStrings, serializeAlertDataReferenceString);
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("alertLogs", managedTenantAlert.alertLogs, serializeManagedTenantAlertLog);
+    writer.writeObjectValue<ManagedTenantAlertRule>("alertRule", managedTenantAlert.alertRule, serializeManagedTenantAlertRule);
+    writer.writeStringValue("alertRuleDisplayName", managedTenantAlert.alertRuleDisplayName);
+    writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("apiNotifications", managedTenantAlert.apiNotifications, serializeManagedTenantApiNotification);
+    writer.writeStringValue("assignedToUserId", managedTenantAlert.assignedToUserId);
+    writer.writeNumberValue("correlationCount", managedTenantAlert.correlationCount);
+    writer.writeStringValue("correlationId", managedTenantAlert.correlationId);
+    writer.writeStringValue("createdByUserId", managedTenantAlert.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantAlert.createdDateTime);
+    writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("emailNotifications", managedTenantAlert.emailNotifications, serializeManagedTenantEmailNotification);
+    writer.writeStringValue("lastActionByUserId", managedTenantAlert.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantAlert.lastActionDateTime);
+    writer.writeStringValue("message", managedTenantAlert.message);
+    writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlert.severity);
+    writer.writeEnumValue<AlertStatus>("status", managedTenantAlert.status);
+    writer.writeStringValue("tenantId", managedTenantAlert.tenantId);
+    writer.writeStringValue("title", managedTenantAlert.title);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertCollectionResponse(writer: SerializationWriter, managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantAlertCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantAlert>("value", managedTenantAlertCollectionResponse.value, serializeManagedTenantAlert);
-    }
+export function serializeManagedTenantAlertCollectionResponse(writer: SerializationWriter, managedTenantAlertCollectionResponse: Partial<ManagedTenantAlertCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantAlert>("value", managedTenantAlertCollectionResponse.value, serializeManagedTenantAlert);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertLog The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertLog(writer: SerializationWriter, managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined | null = {}) : void {
-    if (managedTenantAlertLog) {
-        serializeEntity(writer, managedTenantAlertLog)
-        writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantAlertLog.alert, serializeManagedTenantAlert);
-        writer.writeObjectValue<AlertLogContent>("content", managedTenantAlertLog.content, serializeAlertLogContent);
-        writer.writeStringValue("createdByUserId", managedTenantAlertLog.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantAlertLog.createdDateTime);
-        writer.writeStringValue("lastActionByUserId", managedTenantAlertLog.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantAlertLog.lastActionDateTime);
-    }
+export function serializeManagedTenantAlertLog(writer: SerializationWriter, managedTenantAlertLog: Partial<ManagedTenantAlertLog> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertLog || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantAlertLog, isSerializingDerivedType)
+    writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantAlertLog.alert, serializeManagedTenantAlert);
+    writer.writeObjectValue<AlertLogContent>("content", managedTenantAlertLog.content, serializeAlertLogContent);
+    writer.writeStringValue("createdByUserId", managedTenantAlertLog.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantAlertLog.createdDateTime);
+    writer.writeStringValue("lastActionByUserId", managedTenantAlertLog.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantAlertLog.lastActionDateTime);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertLogCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertLogCollectionResponse(writer: SerializationWriter, managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantAlertLogCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertLogCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("value", managedTenantAlertLogCollectionResponse.value, serializeManagedTenantAlertLog);
-    }
+export function serializeManagedTenantAlertLogCollectionResponse(writer: SerializationWriter, managedTenantAlertLogCollectionResponse: Partial<ManagedTenantAlertLogCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertLogCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertLogCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertLog>("value", managedTenantAlertLogCollectionResponse.value, serializeManagedTenantAlertLog);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertRule(writer: SerializationWriter, managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined | null = {}) : void {
-    if (managedTenantAlertRule) {
-        serializeEntity(writer, managedTenantAlertRule)
-        writer.writeStringValue("alertDisplayName", managedTenantAlertRule.alertDisplayName);
-        writer.writeCollectionOfObjectValues<ManagedTenantAlert>("alerts", managedTenantAlertRule.alerts, serializeManagedTenantAlert);
-        writer.writeNumberValue("alertTTL", managedTenantAlertRule.alertTTL);
-        writer.writeStringValue("createdByUserId", managedTenantAlertRule.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantAlertRule.createdDateTime);
-        writer.writeStringValue("description", managedTenantAlertRule.description);
-        writer.writeStringValue("displayName", managedTenantAlertRule.displayName);
-        writer.writeStringValue("lastActionByUserId", managedTenantAlertRule.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantAlertRule.lastActionDateTime);
-        writer.writeDateValue("lastRunDateTime", managedTenantAlertRule.lastRunDateTime);
-        writer.writeEnumValue<NotificationDestination[]>("notificationFinalDestinations", managedTenantAlertRule.notificationFinalDestinations);
-        writer.writeObjectValue<ManagedTenantAlertRuleDefinition>("ruleDefinition", managedTenantAlertRule.ruleDefinition, serializeManagedTenantAlertRuleDefinition);
-        writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlertRule.severity);
-        writer.writeCollectionOfObjectValues<NotificationTarget>("targets", managedTenantAlertRule.targets, serializeNotificationTarget);
-        writer.writeCollectionOfObjectValues<TenantInfo>("tenantIds", managedTenantAlertRule.tenantIds, serializeTenantInfo);
-    }
+export function serializeManagedTenantAlertRule(writer: SerializationWriter, managedTenantAlertRule: Partial<ManagedTenantAlertRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertRule || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantAlertRule, isSerializingDerivedType)
+    writer.writeStringValue("alertDisplayName", managedTenantAlertRule.alertDisplayName);
+    writer.writeCollectionOfObjectValues<ManagedTenantAlert>("alerts", managedTenantAlertRule.alerts, serializeManagedTenantAlert);
+    writer.writeNumberValue("alertTTL", managedTenantAlertRule.alertTTL);
+    writer.writeStringValue("createdByUserId", managedTenantAlertRule.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantAlertRule.createdDateTime);
+    writer.writeStringValue("description", managedTenantAlertRule.description);
+    writer.writeStringValue("displayName", managedTenantAlertRule.displayName);
+    writer.writeStringValue("lastActionByUserId", managedTenantAlertRule.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantAlertRule.lastActionDateTime);
+    writer.writeDateValue("lastRunDateTime", managedTenantAlertRule.lastRunDateTime);
+    writer.writeEnumValue<NotificationDestination[]>("notificationFinalDestinations", managedTenantAlertRule.notificationFinalDestinations);
+    writer.writeObjectValue<ManagedTenantAlertRuleDefinition>("ruleDefinition", managedTenantAlertRule.ruleDefinition, serializeManagedTenantAlertRuleDefinition);
+    writer.writeEnumValue<AlertSeverity>("severity", managedTenantAlertRule.severity);
+    writer.writeCollectionOfObjectValues<NotificationTarget>("targets", managedTenantAlertRule.targets, serializeNotificationTarget);
+    writer.writeCollectionOfObjectValues<TenantInfo>("tenantIds", managedTenantAlertRule.tenantIds, serializeTenantInfo);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertRuleCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertRuleCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantAlertRuleCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("value", managedTenantAlertRuleCollectionResponse.value, serializeManagedTenantAlertRule);
-    }
+export function serializeManagedTenantAlertRuleCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleCollectionResponse: Partial<ManagedTenantAlertRuleCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertRuleCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("value", managedTenantAlertRuleCollectionResponse.value, serializeManagedTenantAlertRule);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertRuleDefinition The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertRuleDefinition(writer: SerializationWriter, managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined | null = {}) : void {
-    if (managedTenantAlertRuleDefinition) {
-        serializeEntity(writer, managedTenantAlertRuleDefinition)
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("alertRules", managedTenantAlertRuleDefinition.alertRules, serializeManagedTenantAlertRule);
-        writer.writeStringValue("createdByUserId", managedTenantAlertRuleDefinition.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantAlertRuleDefinition.createdDateTime);
-        writer.writeObjectValue<AlertRuleDefinitionTemplate>("definitionTemplate", managedTenantAlertRuleDefinition.definitionTemplate, serializeAlertRuleDefinitionTemplate);
-        writer.writeStringValue("displayName", managedTenantAlertRuleDefinition.displayName);
-        writer.writeStringValue("lastActionByUserId", managedTenantAlertRuleDefinition.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantAlertRuleDefinition.lastActionDateTime);
-    }
+export function serializeManagedTenantAlertRuleDefinition(writer: SerializationWriter, managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertRuleDefinition || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantAlertRuleDefinition, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("alertRules", managedTenantAlertRuleDefinition.alertRules, serializeManagedTenantAlertRule);
+    writer.writeStringValue("createdByUserId", managedTenantAlertRuleDefinition.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantAlertRuleDefinition.createdDateTime);
+    writer.writeObjectValue<AlertRuleDefinitionTemplate>("definitionTemplate", managedTenantAlertRuleDefinition.definitionTemplate, serializeAlertRuleDefinitionTemplate);
+    writer.writeStringValue("displayName", managedTenantAlertRuleDefinition.displayName);
+    writer.writeStringValue("lastActionByUserId", managedTenantAlertRuleDefinition.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantAlertRuleDefinition.lastActionDateTime);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantAlertRuleDefinitionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantAlertRuleDefinitionCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantAlertRuleDefinitionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleDefinitionCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("value", managedTenantAlertRuleDefinitionCollectionResponse.value, serializeManagedTenantAlertRuleDefinition);
-    }
+export function serializeManagedTenantAlertRuleDefinitionCollectionResponse(writer: SerializationWriter, managedTenantAlertRuleDefinitionCollectionResponse: Partial<ManagedTenantAlertRuleDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantAlertRuleDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantAlertRuleDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("value", managedTenantAlertRuleDefinitionCollectionResponse.value, serializeManagedTenantAlertRuleDefinition);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantApiNotification The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantApiNotification(writer: SerializationWriter, managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined | null = {}) : void {
-    if (managedTenantApiNotification) {
-        serializeEntity(writer, managedTenantApiNotification)
-        writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantApiNotification.alert, serializeManagedTenantAlert);
-        writer.writeStringValue("createdByUserId", managedTenantApiNotification.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantApiNotification.createdDateTime);
-        writer.writeBooleanValue("isAcknowledged", managedTenantApiNotification.isAcknowledged);
-        writer.writeStringValue("lastActionByUserId", managedTenantApiNotification.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantApiNotification.lastActionDateTime);
-        writer.writeStringValue("message", managedTenantApiNotification.message);
-        writer.writeStringValue("title", managedTenantApiNotification.title);
-        writer.writeStringValue("userId", managedTenantApiNotification.userId);
-    }
+export function serializeManagedTenantApiNotification(writer: SerializationWriter, managedTenantApiNotification: Partial<ManagedTenantApiNotification> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantApiNotification || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantApiNotification, isSerializingDerivedType)
+    writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantApiNotification.alert, serializeManagedTenantAlert);
+    writer.writeStringValue("createdByUserId", managedTenantApiNotification.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantApiNotification.createdDateTime);
+    writer.writeBooleanValue("isAcknowledged", managedTenantApiNotification.isAcknowledged);
+    writer.writeStringValue("lastActionByUserId", managedTenantApiNotification.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantApiNotification.lastActionDateTime);
+    writer.writeStringValue("message", managedTenantApiNotification.message);
+    writer.writeStringValue("title", managedTenantApiNotification.title);
+    writer.writeStringValue("userId", managedTenantApiNotification.userId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantApiNotificationCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantApiNotificationCollectionResponse(writer: SerializationWriter, managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantApiNotificationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantApiNotificationCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("value", managedTenantApiNotificationCollectionResponse.value, serializeManagedTenantApiNotification);
-    }
+export function serializeManagedTenantApiNotificationCollectionResponse(writer: SerializationWriter, managedTenantApiNotificationCollectionResponse: Partial<ManagedTenantApiNotificationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantApiNotificationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantApiNotificationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantApiNotification>("value", managedTenantApiNotificationCollectionResponse.value, serializeManagedTenantApiNotification);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantEmailNotification The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantEmailNotification(writer: SerializationWriter, managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined | null = {}) : void {
-    if (managedTenantEmailNotification) {
-        serializeEntity(writer, managedTenantEmailNotification)
-        writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantEmailNotification.alert, serializeManagedTenantAlert);
-        writer.writeStringValue("createdByUserId", managedTenantEmailNotification.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantEmailNotification.createdDateTime);
-        writer.writeCollectionOfObjectValues<Email>("emailAddresses", managedTenantEmailNotification.emailAddresses, serializeEmail);
-        writer.writeStringValue("emailBody", managedTenantEmailNotification.emailBody);
-        writer.writeStringValue("lastActionByUserId", managedTenantEmailNotification.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantEmailNotification.lastActionDateTime);
-        writer.writeStringValue("subject", managedTenantEmailNotification.subject);
-    }
+export function serializeManagedTenantEmailNotification(writer: SerializationWriter, managedTenantEmailNotification: Partial<ManagedTenantEmailNotification> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantEmailNotification || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantEmailNotification, isSerializingDerivedType)
+    writer.writeObjectValue<ManagedTenantAlert>("alert", managedTenantEmailNotification.alert, serializeManagedTenantAlert);
+    writer.writeStringValue("createdByUserId", managedTenantEmailNotification.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantEmailNotification.createdDateTime);
+    writer.writeCollectionOfObjectValues<Email>("emailAddresses", managedTenantEmailNotification.emailAddresses, serializeEmail);
+    writer.writeStringValue("emailBody", managedTenantEmailNotification.emailBody);
+    writer.writeStringValue("lastActionByUserId", managedTenantEmailNotification.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantEmailNotification.lastActionDateTime);
+    writer.writeStringValue("subject", managedTenantEmailNotification.subject);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantEmailNotificationCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantEmailNotificationCollectionResponse(writer: SerializationWriter, managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantEmailNotificationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantEmailNotificationCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("value", managedTenantEmailNotificationCollectionResponse.value, serializeManagedTenantEmailNotification);
-    }
+export function serializeManagedTenantEmailNotificationCollectionResponse(writer: SerializationWriter, managedTenantEmailNotificationCollectionResponse: Partial<ManagedTenantEmailNotificationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantEmailNotificationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantEmailNotificationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantEmailNotification>("value", managedTenantEmailNotificationCollectionResponse.value, serializeManagedTenantEmailNotification);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantTicketingEndpoint The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantTicketingEndpoint(writer: SerializationWriter, managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined | null = {}) : void {
-    if (managedTenantTicketingEndpoint) {
-        serializeEntity(writer, managedTenantTicketingEndpoint)
-        writer.writeStringValue("createdByUserId", managedTenantTicketingEndpoint.createdByUserId);
-        writer.writeDateValue("createdDateTime", managedTenantTicketingEndpoint.createdDateTime);
-        writer.writeStringValue("displayName", managedTenantTicketingEndpoint.displayName);
-        writer.writeStringValue("emailAddress", managedTenantTicketingEndpoint.emailAddress);
-        writer.writeStringValue("lastActionByUserId", managedTenantTicketingEndpoint.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managedTenantTicketingEndpoint.lastActionDateTime);
-        writer.writeStringValue("phoneNumber", managedTenantTicketingEndpoint.phoneNumber);
-    }
+export function serializeManagedTenantTicketingEndpoint(writer: SerializationWriter, managedTenantTicketingEndpoint: Partial<ManagedTenantTicketingEndpoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantTicketingEndpoint || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managedTenantTicketingEndpoint, isSerializingDerivedType)
+    writer.writeStringValue("createdByUserId", managedTenantTicketingEndpoint.createdByUserId);
+    writer.writeDateValue("createdDateTime", managedTenantTicketingEndpoint.createdDateTime);
+    writer.writeStringValue("displayName", managedTenantTicketingEndpoint.displayName);
+    writer.writeStringValue("emailAddress", managedTenantTicketingEndpoint.emailAddress);
+    writer.writeStringValue("lastActionByUserId", managedTenantTicketingEndpoint.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managedTenantTicketingEndpoint.lastActionDateTime);
+    writer.writeStringValue("phoneNumber", managedTenantTicketingEndpoint.phoneNumber);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagedTenantTicketingEndpointCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagedTenantTicketingEndpointCollectionResponse(writer: SerializationWriter, managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined | null = {}) : void {
-    if (managedTenantTicketingEndpointCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managedTenantTicketingEndpointCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("value", managedTenantTicketingEndpointCollectionResponse.value, serializeManagedTenantTicketingEndpoint);
-    }
+export function serializeManagedTenantTicketingEndpointCollectionResponse(writer: SerializationWriter, managedTenantTicketingEndpointCollectionResponse: Partial<ManagedTenantTicketingEndpointCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managedTenantTicketingEndpointCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managedTenantTicketingEndpointCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("value", managedTenantTicketingEndpointCollectionResponse.value, serializeManagedTenantTicketingEndpoint);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementAction The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementAction(writer: SerializationWriter, managementAction: Partial<ManagementAction> | undefined | null = {}) : void {
-    if (managementAction) {
-        serializeEntity(writer, managementAction)
-        writer.writeEnumValue<ManagementCategory>("category", managementAction.category);
-        writer.writeStringValue("description", managementAction.description);
-        writer.writeStringValue("displayName", managementAction.displayName);
-        writer.writeStringValue("referenceTemplateId", managementAction.referenceTemplateId);
-        writer.writeNumberValue("referenceTemplateVersion", managementAction.referenceTemplateVersion);
-        writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementAction.workloadActions, serializeWorkloadAction);
-    }
+export function serializeManagementAction(writer: SerializationWriter, managementAction: Partial<ManagementAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementAction || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementAction, isSerializingDerivedType)
+    writer.writeEnumValue<ManagementCategory>("category", managementAction.category);
+    writer.writeStringValue("description", managementAction.description);
+    writer.writeStringValue("displayName", managementAction.displayName);
+    writer.writeStringValue("referenceTemplateId", managementAction.referenceTemplateId);
+    writer.writeNumberValue("referenceTemplateVersion", managementAction.referenceTemplateVersion);
+    writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementAction.workloadActions, serializeWorkloadAction);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementActionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementActionCollectionResponse(writer: SerializationWriter, managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined | null = {}) : void {
-    if (managementActionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementActionCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementAction>("value", managementActionCollectionResponse.value, serializeManagementAction);
-    }
+export function serializeManagementActionCollectionResponse(writer: SerializationWriter, managementActionCollectionResponse: Partial<ManagementActionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementActionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementActionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementAction>("value", managementActionCollectionResponse.value, serializeManagementAction);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementActionDeploymentStatus The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementActionDeploymentStatus(writer: SerializationWriter, managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined | null = {}) : void {
-    if (managementActionDeploymentStatus) {
-        writer.writeStringValue("managementActionId", managementActionDeploymentStatus.managementActionId);
-        writer.writeStringValue("managementTemplateId", managementActionDeploymentStatus.managementTemplateId);
-        writer.writeNumberValue("managementTemplateVersion", managementActionDeploymentStatus.managementTemplateVersion);
-        writer.writeStringValue("@odata.type", managementActionDeploymentStatus.odataType);
-        writer.writeEnumValue<ManagementActionStatus>("status", managementActionDeploymentStatus.status);
-        writer.writeCollectionOfObjectValues<WorkloadActionDeploymentStatus>("workloadActionDeploymentStatuses", managementActionDeploymentStatus.workloadActionDeploymentStatuses, serializeWorkloadActionDeploymentStatus);
-        writer.writeAdditionalData(managementActionDeploymentStatus.additionalData);
-    }
+export function serializeManagementActionDeploymentStatus(writer: SerializationWriter, managementActionDeploymentStatus: Partial<ManagementActionDeploymentStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementActionDeploymentStatus || isSerializingDerivedType) { return; }
+    writer.writeStringValue("managementActionId", managementActionDeploymentStatus.managementActionId);
+    writer.writeStringValue("managementTemplateId", managementActionDeploymentStatus.managementTemplateId);
+    writer.writeNumberValue("managementTemplateVersion", managementActionDeploymentStatus.managementTemplateVersion);
+    writer.writeStringValue("@odata.type", managementActionDeploymentStatus.odataType);
+    writer.writeEnumValue<ManagementActionStatus>("status", managementActionDeploymentStatus.status);
+    writer.writeCollectionOfObjectValues<WorkloadActionDeploymentStatus>("workloadActionDeploymentStatuses", managementActionDeploymentStatus.workloadActionDeploymentStatuses, serializeWorkloadActionDeploymentStatus);
+    writer.writeAdditionalData(managementActionDeploymentStatus.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementActionInfo The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementActionInfo(writer: SerializationWriter, managementActionInfo: Partial<ManagementActionInfo> | undefined | null = {}) : void {
-    if (managementActionInfo) {
-        writer.writeStringValue("managementActionId", managementActionInfo.managementActionId);
-        writer.writeStringValue("managementTemplateId", managementActionInfo.managementTemplateId);
-        writer.writeNumberValue("managementTemplateVersion", managementActionInfo.managementTemplateVersion);
-        writer.writeStringValue("@odata.type", managementActionInfo.odataType);
-        writer.writeAdditionalData(managementActionInfo.additionalData);
-    }
+export function serializeManagementActionInfo(writer: SerializationWriter, managementActionInfo: Partial<ManagementActionInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementActionInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("managementActionId", managementActionInfo.managementActionId);
+    writer.writeStringValue("managementTemplateId", managementActionInfo.managementTemplateId);
+    writer.writeNumberValue("managementTemplateVersion", managementActionInfo.managementTemplateVersion);
+    writer.writeStringValue("@odata.type", managementActionInfo.odataType);
+    writer.writeAdditionalData(managementActionInfo.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementActionTenantDeploymentStatus The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementActionTenantDeploymentStatus(writer: SerializationWriter, managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined | null = {}) : void {
-    if (managementActionTenantDeploymentStatus) {
-        serializeEntity(writer, managementActionTenantDeploymentStatus)
-        writer.writeCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", managementActionTenantDeploymentStatus.statuses, serializeManagementActionDeploymentStatus);
-        writer.writeStringValue("tenantGroupId", managementActionTenantDeploymentStatus.tenantGroupId);
-        writer.writeStringValue("tenantId", managementActionTenantDeploymentStatus.tenantId);
-    }
+export function serializeManagementActionTenantDeploymentStatus(writer: SerializationWriter, managementActionTenantDeploymentStatus: Partial<ManagementActionTenantDeploymentStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementActionTenantDeploymentStatus || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementActionTenantDeploymentStatus, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", managementActionTenantDeploymentStatus.statuses, serializeManagementActionDeploymentStatus);
+    writer.writeStringValue("tenantGroupId", managementActionTenantDeploymentStatus.tenantGroupId);
+    writer.writeStringValue("tenantId", managementActionTenantDeploymentStatus.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementActionTenantDeploymentStatusCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementActionTenantDeploymentStatusCollectionResponse(writer: SerializationWriter, managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined | null = {}) : void {
-    if (managementActionTenantDeploymentStatusCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementActionTenantDeploymentStatusCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("value", managementActionTenantDeploymentStatusCollectionResponse.value, serializeManagementActionTenantDeploymentStatus);
-    }
+export function serializeManagementActionTenantDeploymentStatusCollectionResponse(writer: SerializationWriter, managementActionTenantDeploymentStatusCollectionResponse: Partial<ManagementActionTenantDeploymentStatusCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementActionTenantDeploymentStatusCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementActionTenantDeploymentStatusCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("value", managementActionTenantDeploymentStatusCollectionResponse.value, serializeManagementActionTenantDeploymentStatus);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementIntent The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementIntent(writer: SerializationWriter, managementIntent: Partial<ManagementIntent> | undefined | null = {}) : void {
-    if (managementIntent) {
-        serializeEntity(writer, managementIntent)
-        writer.writeStringValue("displayName", managementIntent.displayName);
-        writer.writeBooleanValue("isGlobal", managementIntent.isGlobal);
-        writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntent.managementTemplates, serializeManagementTemplateDetailedInfo);
-    }
+export function serializeManagementIntent(writer: SerializationWriter, managementIntent: Partial<ManagementIntent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementIntent || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementIntent, isSerializingDerivedType)
+    writer.writeStringValue("displayName", managementIntent.displayName);
+    writer.writeBooleanValue("isGlobal", managementIntent.isGlobal);
+    writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntent.managementTemplates, serializeManagementTemplateDetailedInfo);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementIntentCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementIntentCollectionResponse(writer: SerializationWriter, managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined | null = {}) : void {
-    if (managementIntentCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementIntentCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementIntent>("value", managementIntentCollectionResponse.value, serializeManagementIntent);
-    }
+export function serializeManagementIntentCollectionResponse(writer: SerializationWriter, managementIntentCollectionResponse: Partial<ManagementIntentCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementIntentCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementIntentCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementIntent>("value", managementIntentCollectionResponse.value, serializeManagementIntent);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementIntentInfo The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementIntentInfo(writer: SerializationWriter, managementIntentInfo: Partial<ManagementIntentInfo> | undefined | null = {}) : void {
-    if (managementIntentInfo) {
-        writer.writeStringValue("managementIntentDisplayName", managementIntentInfo.managementIntentDisplayName);
-        writer.writeStringValue("managementIntentId", managementIntentInfo.managementIntentId);
-        writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntentInfo.managementTemplates, serializeManagementTemplateDetailedInfo);
-        writer.writeStringValue("@odata.type", managementIntentInfo.odataType);
-        writer.writeAdditionalData(managementIntentInfo.additionalData);
-    }
+export function serializeManagementIntentInfo(writer: SerializationWriter, managementIntentInfo: Partial<ManagementIntentInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementIntentInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("managementIntentDisplayName", managementIntentInfo.managementIntentDisplayName);
+    writer.writeStringValue("managementIntentId", managementIntentInfo.managementIntentId);
+    writer.writeCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", managementIntentInfo.managementTemplates, serializeManagementTemplateDetailedInfo);
+    writer.writeStringValue("@odata.type", managementIntentInfo.odataType);
+    writer.writeAdditionalData(managementIntentInfo.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplate The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplate(writer: SerializationWriter, managementTemplate: Partial<ManagementTemplate> | undefined | null = {}) : void {
-    if (managementTemplate) {
-        serializeEntity(writer, managementTemplate)
-        writer.writeEnumValue<ManagementCategory>("category", managementTemplate.category);
-        writer.writeStringValue("createdByUserId", managementTemplate.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplate.createdDateTime);
-        writer.writeStringValue("description", managementTemplate.description);
-        writer.writeStringValue("displayName", managementTemplate.displayName);
-        writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplate.informationLinks, serializeActionUrl);
-        writer.writeStringValue("lastActionByUserId", managementTemplate.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplate.lastActionDateTime);
-        writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managementTemplate.managementTemplateCollections, serializeManagementTemplateCollection);
-        writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managementTemplate.managementTemplateSteps, serializeManagementTemplateStep);
-        writer.writeCollectionOfObjectValues<TemplateParameter>("parameters", managementTemplate.parameters, serializeTemplateParameter);
-        writer.writeNumberValue("priority", managementTemplate.priority);
-        writer.writeEnumValue<ManagementProvider>("provider", managementTemplate.provider);
-        writer.writeStringValue("userImpact", managementTemplate.userImpact);
-        writer.writeNumberValue("version", managementTemplate.version);
-        writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementTemplate.workloadActions, serializeWorkloadAction);
-    }
+export function serializeManagementTemplate(writer: SerializationWriter, managementTemplate: Partial<ManagementTemplate> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplate || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplate, isSerializingDerivedType)
+    writer.writeEnumValue<ManagementCategory>("category", managementTemplate.category);
+    writer.writeStringValue("createdByUserId", managementTemplate.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplate.createdDateTime);
+    writer.writeStringValue("description", managementTemplate.description);
+    writer.writeStringValue("displayName", managementTemplate.displayName);
+    writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplate.informationLinks, serializeActionUrl);
+    writer.writeStringValue("lastActionByUserId", managementTemplate.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplate.lastActionDateTime);
+    writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", managementTemplate.managementTemplateCollections, serializeManagementTemplateCollection);
+    writer.writeCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", managementTemplate.managementTemplateSteps, serializeManagementTemplateStep);
+    writer.writeCollectionOfObjectValues<TemplateParameter>("parameters", managementTemplate.parameters, serializeTemplateParameter);
+    writer.writeNumberValue("priority", managementTemplate.priority);
+    writer.writeEnumValue<ManagementProvider>("provider", managementTemplate.provider);
+    writer.writeStringValue("userImpact", managementTemplate.userImpact);
+    writer.writeNumberValue("version", managementTemplate.version);
+    writer.writeCollectionOfObjectValues<WorkloadAction>("workloadActions", managementTemplate.workloadActions, serializeWorkloadAction);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateCollection The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateCollection(writer: SerializationWriter, managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined | null = {}) : void {
-    if (managementTemplateCollection) {
-        serializeEntity(writer, managementTemplateCollection)
-        writer.writeStringValue("createdByUserId", managementTemplateCollection.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplateCollection.createdDateTime);
-        writer.writeStringValue("description", managementTemplateCollection.description);
-        writer.writeStringValue("displayName", managementTemplateCollection.displayName);
-        writer.writeStringValue("lastActionByUserId", managementTemplateCollection.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplateCollection.lastActionDateTime);
-        writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managementTemplateCollection.managementTemplates, serializeManagementTemplate);
-    }
+export function serializeManagementTemplateCollection(writer: SerializationWriter, managementTemplateCollection: Partial<ManagementTemplateCollection> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateCollection || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplateCollection, isSerializingDerivedType)
+    writer.writeStringValue("createdByUserId", managementTemplateCollection.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplateCollection.createdDateTime);
+    writer.writeStringValue("description", managementTemplateCollection.description);
+    writer.writeStringValue("displayName", managementTemplateCollection.displayName);
+    writer.writeStringValue("lastActionByUserId", managementTemplateCollection.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplateCollection.lastActionDateTime);
+    writer.writeCollectionOfObjectValues<ManagementTemplate>("managementTemplates", managementTemplateCollection.managementTemplates, serializeManagementTemplate);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateCollectionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateCollectionCollectionResponse(writer: SerializationWriter, managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateCollectionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("value", managementTemplateCollectionCollectionResponse.value, serializeManagementTemplateCollection);
-    }
+export function serializeManagementTemplateCollectionCollectionResponse(writer: SerializationWriter, managementTemplateCollectionCollectionResponse: Partial<ManagementTemplateCollectionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateCollectionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplateCollection>("value", managementTemplateCollectionCollectionResponse.value, serializeManagementTemplateCollection);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateCollectionResponse(writer: SerializationWriter, managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplate>("value", managementTemplateCollectionResponse.value, serializeManagementTemplate);
-    }
+export function serializeManagementTemplateCollectionResponse(writer: SerializationWriter, managementTemplateCollectionResponse: Partial<ManagementTemplateCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplate>("value", managementTemplateCollectionResponse.value, serializeManagementTemplate);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateCollectionTenantSummary The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateCollectionTenantSummary(writer: SerializationWriter, managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined | null = {}) : void {
-    if (managementTemplateCollectionTenantSummary) {
-        serializeEntity(writer, managementTemplateCollectionTenantSummary)
-        writer.writeNumberValue("completeStepsCount", managementTemplateCollectionTenantSummary.completeStepsCount);
-        writer.writeNumberValue("completeUsersCount", managementTemplateCollectionTenantSummary.completeUsersCount);
-        writer.writeStringValue("createdByUserId", managementTemplateCollectionTenantSummary.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplateCollectionTenantSummary.createdDateTime);
-        writer.writeNumberValue("dismissedStepsCount", managementTemplateCollectionTenantSummary.dismissedStepsCount);
-        writer.writeNumberValue("excludedUsersCount", managementTemplateCollectionTenantSummary.excludedUsersCount);
-        writer.writeNumberValue("excludedUsersDistinctCount", managementTemplateCollectionTenantSummary.excludedUsersDistinctCount);
-        writer.writeNumberValue("incompleteStepsCount", managementTemplateCollectionTenantSummary.incompleteStepsCount);
-        writer.writeNumberValue("incompleteUsersCount", managementTemplateCollectionTenantSummary.incompleteUsersCount);
-        writer.writeNumberValue("ineligibleStepsCount", managementTemplateCollectionTenantSummary.ineligibleStepsCount);
-        writer.writeBooleanValue("isComplete", managementTemplateCollectionTenantSummary.isComplete);
-        writer.writeStringValue("lastActionByUserId", managementTemplateCollectionTenantSummary.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplateCollectionTenantSummary.lastActionDateTime);
-        writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateCollectionTenantSummary.managementTemplateCollectionDisplayName);
-        writer.writeStringValue("managementTemplateCollectionId", managementTemplateCollectionTenantSummary.managementTemplateCollectionId);
-        writer.writeNumberValue("regressedStepsCount", managementTemplateCollectionTenantSummary.regressedStepsCount);
-        writer.writeNumberValue("regressedUsersCount", managementTemplateCollectionTenantSummary.regressedUsersCount);
-        writer.writeStringValue("tenantId", managementTemplateCollectionTenantSummary.tenantId);
-        writer.writeNumberValue("unlicensedUsersCount", managementTemplateCollectionTenantSummary.unlicensedUsersCount);
-    }
+export function serializeManagementTemplateCollectionTenantSummary(writer: SerializationWriter, managementTemplateCollectionTenantSummary: Partial<ManagementTemplateCollectionTenantSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateCollectionTenantSummary || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplateCollectionTenantSummary, isSerializingDerivedType)
+    writer.writeNumberValue("completeStepsCount", managementTemplateCollectionTenantSummary.completeStepsCount);
+    writer.writeNumberValue("completeUsersCount", managementTemplateCollectionTenantSummary.completeUsersCount);
+    writer.writeStringValue("createdByUserId", managementTemplateCollectionTenantSummary.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplateCollectionTenantSummary.createdDateTime);
+    writer.writeNumberValue("dismissedStepsCount", managementTemplateCollectionTenantSummary.dismissedStepsCount);
+    writer.writeNumberValue("excludedUsersCount", managementTemplateCollectionTenantSummary.excludedUsersCount);
+    writer.writeNumberValue("excludedUsersDistinctCount", managementTemplateCollectionTenantSummary.excludedUsersDistinctCount);
+    writer.writeNumberValue("incompleteStepsCount", managementTemplateCollectionTenantSummary.incompleteStepsCount);
+    writer.writeNumberValue("incompleteUsersCount", managementTemplateCollectionTenantSummary.incompleteUsersCount);
+    writer.writeNumberValue("ineligibleStepsCount", managementTemplateCollectionTenantSummary.ineligibleStepsCount);
+    writer.writeBooleanValue("isComplete", managementTemplateCollectionTenantSummary.isComplete);
+    writer.writeStringValue("lastActionByUserId", managementTemplateCollectionTenantSummary.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplateCollectionTenantSummary.lastActionDateTime);
+    writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateCollectionTenantSummary.managementTemplateCollectionDisplayName);
+    writer.writeStringValue("managementTemplateCollectionId", managementTemplateCollectionTenantSummary.managementTemplateCollectionId);
+    writer.writeNumberValue("regressedStepsCount", managementTemplateCollectionTenantSummary.regressedStepsCount);
+    writer.writeNumberValue("regressedUsersCount", managementTemplateCollectionTenantSummary.regressedUsersCount);
+    writer.writeStringValue("tenantId", managementTemplateCollectionTenantSummary.tenantId);
+    writer.writeNumberValue("unlicensedUsersCount", managementTemplateCollectionTenantSummary.unlicensedUsersCount);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateCollectionTenantSummaryCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateCollectionTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateCollectionTenantSummaryCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionTenantSummaryCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("value", managementTemplateCollectionTenantSummaryCollectionResponse.value, serializeManagementTemplateCollectionTenantSummary);
-    }
+export function serializeManagementTemplateCollectionTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateCollectionTenantSummaryCollectionResponse: Partial<ManagementTemplateCollectionTenantSummaryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateCollectionTenantSummaryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateCollectionTenantSummaryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("value", managementTemplateCollectionTenantSummaryCollectionResponse.value, serializeManagementTemplateCollectionTenantSummary);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateDetailedInfo The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateDetailedInfo(writer: SerializationWriter, managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined | null = {}) : void {
-    if (managementTemplateDetailedInfo) {
-        writer.writeEnumValue<ManagementCategory>("category", managementTemplateDetailedInfo.category);
-        writer.writeStringValue("displayName", managementTemplateDetailedInfo.displayName);
-        writer.writeStringValue("managementTemplateId", managementTemplateDetailedInfo.managementTemplateId);
-        writer.writeStringValue("@odata.type", managementTemplateDetailedInfo.odataType);
-        writer.writeNumberValue("version", managementTemplateDetailedInfo.version);
-        writer.writeAdditionalData(managementTemplateDetailedInfo.additionalData);
-    }
+export function serializeManagementTemplateDetailedInfo(writer: SerializationWriter, managementTemplateDetailedInfo: Partial<ManagementTemplateDetailedInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateDetailedInfo || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<ManagementCategory>("category", managementTemplateDetailedInfo.category);
+    writer.writeStringValue("displayName", managementTemplateDetailedInfo.displayName);
+    writer.writeStringValue("managementTemplateId", managementTemplateDetailedInfo.managementTemplateId);
+    writer.writeStringValue("@odata.type", managementTemplateDetailedInfo.odataType);
+    writer.writeNumberValue("version", managementTemplateDetailedInfo.version);
+    writer.writeAdditionalData(managementTemplateDetailedInfo.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStep The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStep(writer: SerializationWriter, managementTemplateStep: Partial<ManagementTemplateStep> | undefined | null = {}) : void {
-    if (managementTemplateStep) {
-        serializeEntity(writer, managementTemplateStep)
-        writer.writeObjectValue<ManagementTemplateStepVersion>("acceptedVersion", managementTemplateStep.acceptedVersion, serializeManagementTemplateStepVersion);
-        writer.writeEnumValue<ManagementCategory>("category", managementTemplateStep.category);
-        writer.writeStringValue("createdByUserId", managementTemplateStep.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplateStep.createdDateTime);
-        writer.writeStringValue("description", managementTemplateStep.description);
-        writer.writeStringValue("displayName", managementTemplateStep.displayName);
-        writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplateStep.informationLinks, serializeActionUrl);
-        writer.writeStringValue("lastActionByUserId", managementTemplateStep.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplateStep.lastActionDateTime);
-        writer.writeObjectValue<ManagementTemplate>("managementTemplate", managementTemplateStep.managementTemplate, serializeManagementTemplate);
-        writer.writeObjectValue<ActionUrl>("portalLink", managementTemplateStep.portalLink, serializeActionUrl);
-        writer.writeNumberValue("priority", managementTemplateStep.priority);
-        writer.writeStringValue("userImpact", managementTemplateStep.userImpact);
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", managementTemplateStep.versions, serializeManagementTemplateStepVersion);
-    }
+export function serializeManagementTemplateStep(writer: SerializationWriter, managementTemplateStep: Partial<ManagementTemplateStep> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStep || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplateStep, isSerializingDerivedType)
+    writer.writeObjectValue<ManagementTemplateStepVersion>("acceptedVersion", managementTemplateStep.acceptedVersion, serializeManagementTemplateStepVersion);
+    writer.writeEnumValue<ManagementCategory>("category", managementTemplateStep.category);
+    writer.writeStringValue("createdByUserId", managementTemplateStep.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplateStep.createdDateTime);
+    writer.writeStringValue("description", managementTemplateStep.description);
+    writer.writeStringValue("displayName", managementTemplateStep.displayName);
+    writer.writeCollectionOfObjectValues<ActionUrl>("informationLinks", managementTemplateStep.informationLinks, serializeActionUrl);
+    writer.writeStringValue("lastActionByUserId", managementTemplateStep.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplateStep.lastActionDateTime);
+    writer.writeObjectValue<ManagementTemplate>("managementTemplate", managementTemplateStep.managementTemplate, serializeManagementTemplate);
+    writer.writeObjectValue<ActionUrl>("portalLink", managementTemplateStep.portalLink, serializeActionUrl);
+    writer.writeNumberValue("priority", managementTemplateStep.priority);
+    writer.writeStringValue("userImpact", managementTemplateStep.userImpact);
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", managementTemplateStep.versions, serializeManagementTemplateStepVersion);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepCollectionResponse(writer: SerializationWriter, managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateStepCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplateStep>("value", managementTemplateStepCollectionResponse.value, serializeManagementTemplateStep);
-    }
+export function serializeManagementTemplateStepCollectionResponse(writer: SerializationWriter, managementTemplateStepCollectionResponse: Partial<ManagementTemplateStepCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplateStep>("value", managementTemplateStepCollectionResponse.value, serializeManagementTemplateStep);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepDeployment The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepDeployment(writer: SerializationWriter, managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined | null = {}) : void {
-    if (managementTemplateStepDeployment) {
-        serializeEntity(writer, managementTemplateStepDeployment)
-        writer.writeStringValue("createdByUserId", managementTemplateStepDeployment.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplateStepDeployment.createdDateTime);
-        writer.writeObjectValue<GraphAPIErrorDetails>("error", managementTemplateStepDeployment.errorEscaped, serializeGraphAPIErrorDetails);
-        writer.writeStringValue("lastActionByUserId", managementTemplateStepDeployment.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplateStepDeployment.lastActionDateTime);
-        writer.writeEnumValue<ManagementTemplateDeploymentStatus>("status", managementTemplateStepDeployment.status);
-        writer.writeObjectValue<ManagementTemplateStepVersion>("templateStepVersion", managementTemplateStepDeployment.templateStepVersion, serializeManagementTemplateStepVersion);
-        writer.writeStringValue("tenantId", managementTemplateStepDeployment.tenantId);
-    }
+export function serializeManagementTemplateStepDeployment(writer: SerializationWriter, managementTemplateStepDeployment: Partial<ManagementTemplateStepDeployment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepDeployment || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplateStepDeployment, isSerializingDerivedType)
+    writer.writeStringValue("createdByUserId", managementTemplateStepDeployment.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplateStepDeployment.createdDateTime);
+    writer.writeObjectValue<GraphAPIErrorDetails>("error", managementTemplateStepDeployment.errorEscaped, serializeGraphAPIErrorDetails);
+    writer.writeStringValue("lastActionByUserId", managementTemplateStepDeployment.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplateStepDeployment.lastActionDateTime);
+    writer.writeEnumValue<ManagementTemplateDeploymentStatus>("status", managementTemplateStepDeployment.status);
+    writer.writeObjectValue<ManagementTemplateStepVersion>("templateStepVersion", managementTemplateStepDeployment.templateStepVersion, serializeManagementTemplateStepVersion);
+    writer.writeStringValue("tenantId", managementTemplateStepDeployment.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepDeploymentCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepDeploymentCollectionResponse(writer: SerializationWriter, managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateStepDeploymentCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepDeploymentCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("value", managementTemplateStepDeploymentCollectionResponse.value, serializeManagementTemplateStepDeployment);
-    }
+export function serializeManagementTemplateStepDeploymentCollectionResponse(writer: SerializationWriter, managementTemplateStepDeploymentCollectionResponse: Partial<ManagementTemplateStepDeploymentCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepDeploymentCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepDeploymentCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("value", managementTemplateStepDeploymentCollectionResponse.value, serializeManagementTemplateStepDeployment);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepTenantSummary The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepTenantSummary(writer: SerializationWriter, managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined | null = {}) : void {
-    if (managementTemplateStepTenantSummary) {
-        serializeEntity(writer, managementTemplateStepTenantSummary)
-        writer.writeNumberValue("assignedTenantsCount", managementTemplateStepTenantSummary.assignedTenantsCount);
-        writer.writeNumberValue("compliantTenantsCount", managementTemplateStepTenantSummary.compliantTenantsCount);
-        writer.writeStringValue("createdByUserId", managementTemplateStepTenantSummary.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplateStepTenantSummary.createdDateTime);
-        writer.writeNumberValue("dismissedTenantsCount", managementTemplateStepTenantSummary.dismissedTenantsCount);
-        writer.writeNumberValue("ineligibleTenantsCount", managementTemplateStepTenantSummary.ineligibleTenantsCount);
-        writer.writeStringValue("lastActionByUserId", managementTemplateStepTenantSummary.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplateStepTenantSummary.lastActionDateTime);
-        writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateStepTenantSummary.managementTemplateCollectionDisplayName);
-        writer.writeStringValue("managementTemplateCollectionId", managementTemplateStepTenantSummary.managementTemplateCollectionId);
-        writer.writeStringValue("managementTemplateDisplayName", managementTemplateStepTenantSummary.managementTemplateDisplayName);
-        writer.writeStringValue("managementTemplateId", managementTemplateStepTenantSummary.managementTemplateId);
-        writer.writeStringValue("managementTemplateStepDisplayName", managementTemplateStepTenantSummary.managementTemplateStepDisplayName);
-        writer.writeStringValue("managementTemplateStepId", managementTemplateStepTenantSummary.managementTemplateStepId);
-        writer.writeNumberValue("notCompliantTenantsCount", managementTemplateStepTenantSummary.notCompliantTenantsCount);
-    }
+export function serializeManagementTemplateStepTenantSummary(writer: SerializationWriter, managementTemplateStepTenantSummary: Partial<ManagementTemplateStepTenantSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepTenantSummary || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplateStepTenantSummary, isSerializingDerivedType)
+    writer.writeNumberValue("assignedTenantsCount", managementTemplateStepTenantSummary.assignedTenantsCount);
+    writer.writeNumberValue("compliantTenantsCount", managementTemplateStepTenantSummary.compliantTenantsCount);
+    writer.writeStringValue("createdByUserId", managementTemplateStepTenantSummary.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplateStepTenantSummary.createdDateTime);
+    writer.writeNumberValue("dismissedTenantsCount", managementTemplateStepTenantSummary.dismissedTenantsCount);
+    writer.writeNumberValue("ineligibleTenantsCount", managementTemplateStepTenantSummary.ineligibleTenantsCount);
+    writer.writeStringValue("lastActionByUserId", managementTemplateStepTenantSummary.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplateStepTenantSummary.lastActionDateTime);
+    writer.writeStringValue("managementTemplateCollectionDisplayName", managementTemplateStepTenantSummary.managementTemplateCollectionDisplayName);
+    writer.writeStringValue("managementTemplateCollectionId", managementTemplateStepTenantSummary.managementTemplateCollectionId);
+    writer.writeStringValue("managementTemplateDisplayName", managementTemplateStepTenantSummary.managementTemplateDisplayName);
+    writer.writeStringValue("managementTemplateId", managementTemplateStepTenantSummary.managementTemplateId);
+    writer.writeStringValue("managementTemplateStepDisplayName", managementTemplateStepTenantSummary.managementTemplateStepDisplayName);
+    writer.writeStringValue("managementTemplateStepId", managementTemplateStepTenantSummary.managementTemplateStepId);
+    writer.writeNumberValue("notCompliantTenantsCount", managementTemplateStepTenantSummary.notCompliantTenantsCount);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepTenantSummaryCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateStepTenantSummaryCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepTenantSummaryCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("value", managementTemplateStepTenantSummaryCollectionResponse.value, serializeManagementTemplateStepTenantSummary);
-    }
+export function serializeManagementTemplateStepTenantSummaryCollectionResponse(writer: SerializationWriter, managementTemplateStepTenantSummaryCollectionResponse: Partial<ManagementTemplateStepTenantSummaryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepTenantSummaryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepTenantSummaryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("value", managementTemplateStepTenantSummaryCollectionResponse.value, serializeManagementTemplateStepTenantSummary);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepVersion The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepVersion(writer: SerializationWriter, managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined | null = {}) : void {
-    if (managementTemplateStepVersion) {
-        serializeEntity(writer, managementTemplateStepVersion)
-        writer.writeObjectValue<ManagementTemplateStep>("acceptedFor", managementTemplateStepVersion.acceptedFor, serializeManagementTemplateStep);
-        writer.writeStringValue("contentMarkdown", managementTemplateStepVersion.contentMarkdown);
-        writer.writeStringValue("createdByUserId", managementTemplateStepVersion.createdByUserId);
-        writer.writeDateValue("createdDateTime", managementTemplateStepVersion.createdDateTime);
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("deployments", managementTemplateStepVersion.deployments, serializeManagementTemplateStepDeployment);
-        writer.writeStringValue("lastActionByUserId", managementTemplateStepVersion.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", managementTemplateStepVersion.lastActionDateTime);
-        writer.writeStringValue("name", managementTemplateStepVersion.name);
-        writer.writeObjectValue<ManagementTemplateStep>("templateStep", managementTemplateStepVersion.templateStep, serializeManagementTemplateStep);
-        writer.writeNumberValue("version", managementTemplateStepVersion.version);
-        writer.writeStringValue("versionInformation", managementTemplateStepVersion.versionInformation);
-    }
+export function serializeManagementTemplateStepVersion(writer: SerializationWriter, managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepVersion || isSerializingDerivedType) { return; }
+    serializeEntity(writer, managementTemplateStepVersion, isSerializingDerivedType)
+    writer.writeObjectValue<ManagementTemplateStep>("acceptedFor", managementTemplateStepVersion.acceptedFor, serializeManagementTemplateStep);
+    writer.writeStringValue("contentMarkdown", managementTemplateStepVersion.contentMarkdown);
+    writer.writeStringValue("createdByUserId", managementTemplateStepVersion.createdByUserId);
+    writer.writeDateValue("createdDateTime", managementTemplateStepVersion.createdDateTime);
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("deployments", managementTemplateStepVersion.deployments, serializeManagementTemplateStepDeployment);
+    writer.writeStringValue("lastActionByUserId", managementTemplateStepVersion.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", managementTemplateStepVersion.lastActionDateTime);
+    writer.writeStringValue("name", managementTemplateStepVersion.name);
+    writer.writeObjectValue<ManagementTemplateStep>("templateStep", managementTemplateStepVersion.templateStep, serializeManagementTemplateStep);
+    writer.writeNumberValue("version", managementTemplateStepVersion.version);
+    writer.writeStringValue("versionInformation", managementTemplateStepVersion.versionInformation);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ManagementTemplateStepVersionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeManagementTemplateStepVersionCollectionResponse(writer: SerializationWriter, managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined | null = {}) : void {
-    if (managementTemplateStepVersionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepVersionCollectionResponse)
-        writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("value", managementTemplateStepVersionCollectionResponse.value, serializeManagementTemplateStepVersion);
-    }
+export function serializeManagementTemplateStepVersionCollectionResponse(writer: SerializationWriter, managementTemplateStepVersionCollectionResponse: Partial<ManagementTemplateStepVersionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!managementTemplateStepVersionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, managementTemplateStepVersionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagementTemplateStepVersion>("value", managementTemplateStepVersionCollectionResponse.value, serializeManagementTemplateStepVersion);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MyRole The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMyRole(writer: SerializationWriter, myRole: Partial<MyRole> | undefined | null = {}) : void {
-    if (myRole) {
-        writer.writeCollectionOfObjectValues<RoleAssignment>("assignments", myRole.assignments, serializeRoleAssignment);
-        writer.writeStringValue("@odata.type", myRole.odataType);
-        writer.writeStringValue("tenantId", myRole.tenantId);
-        writer.writeAdditionalData(myRole.additionalData);
-    }
+export function serializeMyRole(writer: SerializationWriter, myRole: Partial<MyRole> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!myRole || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<RoleAssignment>("assignments", myRole.assignments, serializeRoleAssignment);
+    writer.writeStringValue("@odata.type", myRole.odataType);
+    writer.writeStringValue("tenantId", myRole.tenantId);
+    writer.writeAdditionalData(myRole.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MyRoleCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMyRoleCollectionResponse(writer: SerializationWriter, myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined | null = {}) : void {
-    if (myRoleCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, myRoleCollectionResponse)
-        writer.writeCollectionOfObjectValues<MyRole>("value", myRoleCollectionResponse.value, serializeMyRole);
-    }
+export function serializeMyRoleCollectionResponse(writer: SerializationWriter, myRoleCollectionResponse: Partial<MyRoleCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!myRoleCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, myRoleCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<MyRole>("value", myRoleCollectionResponse.value, serializeMyRole);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NotificationTarget The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNotificationTarget(writer: SerializationWriter, notificationTarget: Partial<NotificationTarget> | undefined | null = {}) : void {
-    if (notificationTarget) {
-        writer.writeStringValue("displayName", notificationTarget.displayName);
-        writer.writeStringValue("@odata.type", notificationTarget.odataType);
-        writer.writeAdditionalData(notificationTarget.additionalData);
-    }
+export function serializeNotificationTarget(writer: SerializationWriter, notificationTarget: Partial<NotificationTarget> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!notificationTarget || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", notificationTarget.displayName);
+    writer.writeStringValue("@odata.type", notificationTarget.odataType);
+    writer.writeAdditionalData(notificationTarget.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RoleAssignment The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRoleAssignment(writer: SerializationWriter, roleAssignment: Partial<RoleAssignment> | undefined | null = {}) : void {
-    if (roleAssignment) {
-        writer.writeEnumValue<DelegatedPrivilegeStatus>("assignmentType", roleAssignment.assignmentType);
-        writer.writeStringValue("@odata.type", roleAssignment.odataType);
-        writer.writeCollectionOfObjectValues<RoleDefinition>("roles", roleAssignment.roles, serializeRoleDefinition);
-        writer.writeAdditionalData(roleAssignment.additionalData);
-    }
+export function serializeRoleAssignment(writer: SerializationWriter, roleAssignment: Partial<RoleAssignment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!roleAssignment || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<DelegatedPrivilegeStatus>("assignmentType", roleAssignment.assignmentType);
+    writer.writeStringValue("@odata.type", roleAssignment.odataType);
+    writer.writeCollectionOfObjectValues<RoleDefinition>("roles", roleAssignment.roles, serializeRoleDefinition);
+    writer.writeAdditionalData(roleAssignment.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RoleDefinition The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRoleDefinition(writer: SerializationWriter, roleDefinition: Partial<RoleDefinition> | undefined | null = {}) : void {
-    if (roleDefinition) {
-        writer.writeStringValue("description", roleDefinition.description);
-        writer.writeStringValue("displayName", roleDefinition.displayName);
-        writer.writeStringValue("@odata.type", roleDefinition.odataType);
-        writer.writeStringValue("templateId", roleDefinition.templateId);
-        writer.writeAdditionalData(roleDefinition.additionalData);
-    }
+export function serializeRoleDefinition(writer: SerializationWriter, roleDefinition: Partial<RoleDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!roleDefinition || isSerializingDerivedType) { return; }
+    writer.writeStringValue("description", roleDefinition.description);
+    writer.writeStringValue("displayName", roleDefinition.displayName);
+    writer.writeStringValue("@odata.type", roleDefinition.odataType);
+    writer.writeStringValue("templateId", roleDefinition.templateId);
+    writer.writeAdditionalData(roleDefinition.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Setting The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSetting(writer: SerializationWriter, setting: Partial<Setting> | undefined | null = {}) : void {
-    if (setting) {
-        writer.writeStringValue("displayName", setting.displayName);
-        writer.writeStringValue("jsonValue", setting.jsonValue);
-        writer.writeStringValue("@odata.type", setting.odataType);
-        writer.writeBooleanValue("overwriteAllowed", setting.overwriteAllowed);
-        writer.writeStringValue("settingId", setting.settingId);
-        writer.writeEnumValue<ManagementParameterValueType>("valueType", setting.valueType);
-        writer.writeAdditionalData(setting.additionalData);
-    }
+export function serializeSetting(writer: SerializationWriter, setting: Partial<Setting> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!setting || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", setting.displayName);
+    writer.writeStringValue("jsonValue", setting.jsonValue);
+    writer.writeStringValue("@odata.type", setting.odataType);
+    writer.writeBooleanValue("overwriteAllowed", setting.overwriteAllowed);
+    writer.writeStringValue("settingId", setting.settingId);
+    writer.writeEnumValue<ManagementParameterValueType>("valueType", setting.valueType);
+    writer.writeAdditionalData(setting.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TemplateParameter The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTemplateParameter(writer: SerializationWriter, templateParameter: Partial<TemplateParameter> | undefined | null = {}) : void {
-    if (templateParameter) {
-        writer.writeStringValue("description", templateParameter.description);
-        writer.writeStringValue("displayName", templateParameter.displayName);
-        writer.writeStringValue("jsonAllowedValues", templateParameter.jsonAllowedValues);
-        writer.writeStringValue("jsonDefaultValue", templateParameter.jsonDefaultValue);
-        writer.writeStringValue("@odata.type", templateParameter.odataType);
-        writer.writeEnumValue<ManagementParameterValueType>("valueType", templateParameter.valueType);
-        writer.writeAdditionalData(templateParameter.additionalData);
-    }
+export function serializeTemplateParameter(writer: SerializationWriter, templateParameter: Partial<TemplateParameter> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!templateParameter || isSerializingDerivedType) { return; }
+    writer.writeStringValue("description", templateParameter.description);
+    writer.writeStringValue("displayName", templateParameter.displayName);
+    writer.writeStringValue("jsonAllowedValues", templateParameter.jsonAllowedValues);
+    writer.writeStringValue("jsonDefaultValue", templateParameter.jsonDefaultValue);
+    writer.writeStringValue("@odata.type", templateParameter.odataType);
+    writer.writeEnumValue<ManagementParameterValueType>("valueType", templateParameter.valueType);
+    writer.writeAdditionalData(templateParameter.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Tenant The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenant(writer: SerializationWriter, tenant: Partial<Tenant> | undefined | null = {}) : void {
-    if (tenant) {
-        serializeEntity(writer, tenant)
-        writer.writeObjectValue<TenantContract>("contract", tenant.contract, serializeTenantContract);
-        writer.writeDateValue("createdDateTime", tenant.createdDateTime);
-        writer.writeStringValue("displayName", tenant.displayName);
-        writer.writeDateValue("lastUpdatedDateTime", tenant.lastUpdatedDateTime);
-        writer.writeStringValue("tenantId", tenant.tenantId);
-        writer.writeObjectValue<TenantStatusInformation>("tenantStatusInformation", tenant.tenantStatusInformation, serializeTenantStatusInformation);
-    }
+export function serializeTenant(writer: SerializationWriter, tenant: Partial<Tenant> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenant || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenant, isSerializingDerivedType)
+    writer.writeObjectValue<TenantContract>("contract", tenant.contract, serializeTenantContract);
+    writer.writeDateValue("createdDateTime", tenant.createdDateTime);
+    writer.writeStringValue("displayName", tenant.displayName);
+    writer.writeDateValue("lastUpdatedDateTime", tenant.lastUpdatedDateTime);
+    writer.writeStringValue("tenantId", tenant.tenantId);
+    writer.writeObjectValue<TenantStatusInformation>("tenantStatusInformation", tenant.tenantStatusInformation, serializeTenantStatusInformation);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantCollectionResponse(writer: SerializationWriter, tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined | null = {}) : void {
-    if (tenantCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tenantCollectionResponse)
-        writer.writeCollectionOfObjectValues<Tenant>("value", tenantCollectionResponse.value, serializeTenant);
-    }
+export function serializeTenantCollectionResponse(writer: SerializationWriter, tenantCollectionResponse: Partial<TenantCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tenantCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Tenant>("value", tenantCollectionResponse.value, serializeTenant);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantContactInformation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantContactInformation(writer: SerializationWriter, tenantContactInformation: Partial<TenantContactInformation> | undefined | null = {}) : void {
-    if (tenantContactInformation) {
-        writer.writeStringValue("email", tenantContactInformation.email);
-        writer.writeStringValue("name", tenantContactInformation.name);
-        writer.writeStringValue("notes", tenantContactInformation.notes);
-        writer.writeStringValue("@odata.type", tenantContactInformation.odataType);
-        writer.writeStringValue("phone", tenantContactInformation.phone);
-        writer.writeStringValue("title", tenantContactInformation.title);
-        writer.writeAdditionalData(tenantContactInformation.additionalData);
-    }
+export function serializeTenantContactInformation(writer: SerializationWriter, tenantContactInformation: Partial<TenantContactInformation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantContactInformation || isSerializingDerivedType) { return; }
+    writer.writeStringValue("email", tenantContactInformation.email);
+    writer.writeStringValue("name", tenantContactInformation.name);
+    writer.writeStringValue("notes", tenantContactInformation.notes);
+    writer.writeStringValue("@odata.type", tenantContactInformation.odataType);
+    writer.writeStringValue("phone", tenantContactInformation.phone);
+    writer.writeStringValue("title", tenantContactInformation.title);
+    writer.writeAdditionalData(tenantContactInformation.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantContract The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantContract(writer: SerializationWriter, tenantContract: Partial<TenantContract> | undefined | null = {}) : void {
-    if (tenantContract) {
-        writer.writeNumberValue("contractType", tenantContract.contractType);
-        writer.writeStringValue("defaultDomainName", tenantContract.defaultDomainName);
-        writer.writeStringValue("displayName", tenantContract.displayName);
-        writer.writeStringValue("@odata.type", tenantContract.odataType);
-        writer.writeAdditionalData(tenantContract.additionalData);
-    }
+export function serializeTenantContract(writer: SerializationWriter, tenantContract: Partial<TenantContract> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantContract || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("contractType", tenantContract.contractType);
+    writer.writeStringValue("defaultDomainName", tenantContract.defaultDomainName);
+    writer.writeStringValue("displayName", tenantContract.displayName);
+    writer.writeStringValue("@odata.type", tenantContract.odataType);
+    writer.writeAdditionalData(tenantContract.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantCustomizedInformation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantCustomizedInformation(writer: SerializationWriter, tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined | null = {}) : void {
-    if (tenantCustomizedInformation) {
-        serializeEntity(writer, tenantCustomizedInformation)
-        writer.writeStringValue("businessRelationship", tenantCustomizedInformation.businessRelationship);
-        writer.writeCollectionOfPrimitiveValues<string>("complianceRequirements", tenantCustomizedInformation.complianceRequirements);
-        writer.writeCollectionOfObjectValues<TenantContactInformation>("contacts", tenantCustomizedInformation.contacts, serializeTenantContactInformation);
-        writer.writeStringValue("displayName", tenantCustomizedInformation.displayName);
-        writer.writeCollectionOfPrimitiveValues<string>("managedServicesPlans", tenantCustomizedInformation.managedServicesPlans);
-        writer.writeStringValue("note", tenantCustomizedInformation.note);
-        writer.writeDateValue("noteLastModifiedDateTime", tenantCustomizedInformation.noteLastModifiedDateTime);
-        writer.writeCollectionOfPrimitiveValues<string>("partnerRelationshipManagerUserIds", tenantCustomizedInformation.partnerRelationshipManagerUserIds);
-        writer.writeStringValue("tenantId", tenantCustomizedInformation.tenantId);
-        writer.writeStringValue("website", tenantCustomizedInformation.website);
-    }
+export function serializeTenantCustomizedInformation(writer: SerializationWriter, tenantCustomizedInformation: Partial<TenantCustomizedInformation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantCustomizedInformation || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenantCustomizedInformation, isSerializingDerivedType)
+    writer.writeStringValue("businessRelationship", tenantCustomizedInformation.businessRelationship);
+    writer.writeCollectionOfPrimitiveValues<string>("complianceRequirements", tenantCustomizedInformation.complianceRequirements);
+    writer.writeCollectionOfObjectValues<TenantContactInformation>("contacts", tenantCustomizedInformation.contacts, serializeTenantContactInformation);
+    writer.writeStringValue("displayName", tenantCustomizedInformation.displayName);
+    writer.writeCollectionOfPrimitiveValues<string>("managedServicesPlans", tenantCustomizedInformation.managedServicesPlans);
+    writer.writeStringValue("note", tenantCustomizedInformation.note);
+    writer.writeDateValue("noteLastModifiedDateTime", tenantCustomizedInformation.noteLastModifiedDateTime);
+    writer.writeCollectionOfPrimitiveValues<string>("partnerRelationshipManagerUserIds", tenantCustomizedInformation.partnerRelationshipManagerUserIds);
+    writer.writeStringValue("tenantId", tenantCustomizedInformation.tenantId);
+    writer.writeStringValue("website", tenantCustomizedInformation.website);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantCustomizedInformationCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantCustomizedInformationCollectionResponse(writer: SerializationWriter, tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined | null = {}) : void {
-    if (tenantCustomizedInformationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tenantCustomizedInformationCollectionResponse)
-        writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("value", tenantCustomizedInformationCollectionResponse.value, serializeTenantCustomizedInformation);
-    }
+export function serializeTenantCustomizedInformationCollectionResponse(writer: SerializationWriter, tenantCustomizedInformationCollectionResponse: Partial<TenantCustomizedInformationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantCustomizedInformationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tenantCustomizedInformationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TenantCustomizedInformation>("value", tenantCustomizedInformationCollectionResponse.value, serializeTenantCustomizedInformation);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantDetailedInformation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantDetailedInformation(writer: SerializationWriter, tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined | null = {}) : void {
-    if (tenantDetailedInformation) {
-        serializeEntity(writer, tenantDetailedInformation)
-        writer.writeStringValue("city", tenantDetailedInformation.city);
-        writer.writeStringValue("countryCode", tenantDetailedInformation.countryCode);
-        writer.writeStringValue("countryName", tenantDetailedInformation.countryName);
-        writer.writeStringValue("defaultDomainName", tenantDetailedInformation.defaultDomainName);
-        writer.writeStringValue("displayName", tenantDetailedInformation.displayName);
-        writer.writeStringValue("industryName", tenantDetailedInformation.industryName);
-        writer.writeStringValue("region", tenantDetailedInformation.region);
-        writer.writeStringValue("segmentName", tenantDetailedInformation.segmentName);
-        writer.writeStringValue("tenantId", tenantDetailedInformation.tenantId);
-        writer.writeStringValue("verticalName", tenantDetailedInformation.verticalName);
-    }
+export function serializeTenantDetailedInformation(writer: SerializationWriter, tenantDetailedInformation: Partial<TenantDetailedInformation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantDetailedInformation || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenantDetailedInformation, isSerializingDerivedType)
+    writer.writeStringValue("city", tenantDetailedInformation.city);
+    writer.writeStringValue("countryCode", tenantDetailedInformation.countryCode);
+    writer.writeStringValue("countryName", tenantDetailedInformation.countryName);
+    writer.writeStringValue("defaultDomainName", tenantDetailedInformation.defaultDomainName);
+    writer.writeStringValue("displayName", tenantDetailedInformation.displayName);
+    writer.writeStringValue("industryName", tenantDetailedInformation.industryName);
+    writer.writeStringValue("region", tenantDetailedInformation.region);
+    writer.writeStringValue("segmentName", tenantDetailedInformation.segmentName);
+    writer.writeStringValue("tenantId", tenantDetailedInformation.tenantId);
+    writer.writeStringValue("verticalName", tenantDetailedInformation.verticalName);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantDetailedInformationCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantDetailedInformationCollectionResponse(writer: SerializationWriter, tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined | null = {}) : void {
-    if (tenantDetailedInformationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tenantDetailedInformationCollectionResponse)
-        writer.writeCollectionOfObjectValues<TenantDetailedInformation>("value", tenantDetailedInformationCollectionResponse.value, serializeTenantDetailedInformation);
-    }
+export function serializeTenantDetailedInformationCollectionResponse(writer: SerializationWriter, tenantDetailedInformationCollectionResponse: Partial<TenantDetailedInformationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantDetailedInformationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tenantDetailedInformationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TenantDetailedInformation>("value", tenantDetailedInformationCollectionResponse.value, serializeTenantDetailedInformation);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantGroup The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantGroup(writer: SerializationWriter, tenantGroup: Partial<TenantGroup> | undefined | null = {}) : void {
-    if (tenantGroup) {
-        serializeEntity(writer, tenantGroup)
-        writer.writeBooleanValue("allTenantsIncluded", tenantGroup.allTenantsIncluded);
-        writer.writeStringValue("displayName", tenantGroup.displayName);
-        writer.writeCollectionOfObjectValues<ManagementActionInfo>("managementActions", tenantGroup.managementActions, serializeManagementActionInfo);
-        writer.writeCollectionOfObjectValues<ManagementIntentInfo>("managementIntents", tenantGroup.managementIntents, serializeManagementIntentInfo);
-        writer.writeCollectionOfPrimitiveValues<string>("tenantIds", tenantGroup.tenantIds);
-    }
+export function serializeTenantGroup(writer: SerializationWriter, tenantGroup: Partial<TenantGroup> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantGroup || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenantGroup, isSerializingDerivedType)
+    writer.writeBooleanValue("allTenantsIncluded", tenantGroup.allTenantsIncluded);
+    writer.writeStringValue("displayName", tenantGroup.displayName);
+    writer.writeCollectionOfObjectValues<ManagementActionInfo>("managementActions", tenantGroup.managementActions, serializeManagementActionInfo);
+    writer.writeCollectionOfObjectValues<ManagementIntentInfo>("managementIntents", tenantGroup.managementIntents, serializeManagementIntentInfo);
+    writer.writeCollectionOfPrimitiveValues<string>("tenantIds", tenantGroup.tenantIds);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantGroupCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantGroupCollectionResponse(writer: SerializationWriter, tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined | null = {}) : void {
-    if (tenantGroupCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tenantGroupCollectionResponse)
-        writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantGroupCollectionResponse.value, serializeTenantGroup);
-    }
+export function serializeTenantGroupCollectionResponse(writer: SerializationWriter, tenantGroupCollectionResponse: Partial<TenantGroupCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantGroupCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tenantGroupCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantGroupCollectionResponse.value, serializeTenantGroup);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantInfo The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantInfo(writer: SerializationWriter, tenantInfo: Partial<TenantInfo> | undefined | null = {}) : void {
-    if (tenantInfo) {
-        writer.writeStringValue("@odata.type", tenantInfo.odataType);
-        writer.writeStringValue("tenantId", tenantInfo.tenantId);
-        writer.writeAdditionalData(tenantInfo.additionalData);
-    }
+export function serializeTenantInfo(writer: SerializationWriter, tenantInfo: Partial<TenantInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", tenantInfo.odataType);
+    writer.writeStringValue("tenantId", tenantInfo.tenantId);
+    writer.writeAdditionalData(tenantInfo.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantStatusInformation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantStatusInformation(writer: SerializationWriter, tenantStatusInformation: Partial<TenantStatusInformation> | undefined | null = {}) : void {
-    if (tenantStatusInformation) {
-        writer.writeEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", tenantStatusInformation.delegatedPrivilegeStatus);
-        writer.writeDateValue("lastDelegatedPrivilegeRefreshDateTime", tenantStatusInformation.lastDelegatedPrivilegeRefreshDateTime);
-        writer.writeStringValue("@odata.type", tenantStatusInformation.odataType);
-        writer.writeStringValue("offboardedByUserId", tenantStatusInformation.offboardedByUserId);
-        writer.writeDateValue("offboardedDateTime", tenantStatusInformation.offboardedDateTime);
-        writer.writeStringValue("onboardedByUserId", tenantStatusInformation.onboardedByUserId);
-        writer.writeDateValue("onboardedDateTime", tenantStatusInformation.onboardedDateTime);
-        writer.writeEnumValue<TenantOnboardingStatus>("onboardingStatus", tenantStatusInformation.onboardingStatus);
-        writer.writeEnumValue<TenantOnboardingEligibilityReason>("tenantOnboardingEligibilityReason", tenantStatusInformation.tenantOnboardingEligibilityReason);
-        writer.writeCollectionOfObjectValues<WorkloadStatus>("workloadStatuses", tenantStatusInformation.workloadStatuses, serializeWorkloadStatus);
-        writer.writeAdditionalData(tenantStatusInformation.additionalData);
-    }
+export function serializeTenantStatusInformation(writer: SerializationWriter, tenantStatusInformation: Partial<TenantStatusInformation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantStatusInformation || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<DelegatedPrivilegeStatus>("delegatedPrivilegeStatus", tenantStatusInformation.delegatedPrivilegeStatus);
+    writer.writeDateValue("lastDelegatedPrivilegeRefreshDateTime", tenantStatusInformation.lastDelegatedPrivilegeRefreshDateTime);
+    writer.writeStringValue("@odata.type", tenantStatusInformation.odataType);
+    writer.writeStringValue("offboardedByUserId", tenantStatusInformation.offboardedByUserId);
+    writer.writeDateValue("offboardedDateTime", tenantStatusInformation.offboardedDateTime);
+    writer.writeStringValue("onboardedByUserId", tenantStatusInformation.onboardedByUserId);
+    writer.writeDateValue("onboardedDateTime", tenantStatusInformation.onboardedDateTime);
+    writer.writeEnumValue<TenantOnboardingStatus>("onboardingStatus", tenantStatusInformation.onboardingStatus);
+    writer.writeEnumValue<TenantOnboardingEligibilityReason>("tenantOnboardingEligibilityReason", tenantStatusInformation.tenantOnboardingEligibilityReason);
+    writer.writeCollectionOfObjectValues<WorkloadStatus>("workloadStatuses", tenantStatusInformation.workloadStatuses, serializeWorkloadStatus);
+    writer.writeAdditionalData(tenantStatusInformation.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantTag The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantTag(writer: SerializationWriter, tenantTag: Partial<TenantTag> | undefined | null = {}) : void {
-    if (tenantTag) {
-        serializeEntity(writer, tenantTag)
-        writer.writeStringValue("createdByUserId", tenantTag.createdByUserId);
-        writer.writeDateValue("createdDateTime", tenantTag.createdDateTime);
-        writer.writeDateValue("deletedDateTime", tenantTag.deletedDateTime);
-        writer.writeStringValue("description", tenantTag.description);
-        writer.writeStringValue("displayName", tenantTag.displayName);
-        writer.writeStringValue("lastActionByUserId", tenantTag.lastActionByUserId);
-        writer.writeDateValue("lastActionDateTime", tenantTag.lastActionDateTime);
-        writer.writeCollectionOfObjectValues<TenantInfo>("tenants", tenantTag.tenants, serializeTenantInfo);
-    }
+export function serializeTenantTag(writer: SerializationWriter, tenantTag: Partial<TenantTag> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantTag || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenantTag, isSerializingDerivedType)
+    writer.writeStringValue("createdByUserId", tenantTag.createdByUserId);
+    writer.writeDateValue("createdDateTime", tenantTag.createdDateTime);
+    writer.writeDateValue("deletedDateTime", tenantTag.deletedDateTime);
+    writer.writeStringValue("description", tenantTag.description);
+    writer.writeStringValue("displayName", tenantTag.displayName);
+    writer.writeStringValue("lastActionByUserId", tenantTag.lastActionByUserId);
+    writer.writeDateValue("lastActionDateTime", tenantTag.lastActionDateTime);
+    writer.writeCollectionOfObjectValues<TenantInfo>("tenants", tenantTag.tenants, serializeTenantInfo);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantTagCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantTagCollectionResponse(writer: SerializationWriter, tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined | null = {}) : void {
-    if (tenantTagCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tenantTagCollectionResponse)
-        writer.writeCollectionOfObjectValues<TenantTag>("value", tenantTagCollectionResponse.value, serializeTenantTag);
-    }
+export function serializeTenantTagCollectionResponse(writer: SerializationWriter, tenantTagCollectionResponse: Partial<TenantTagCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantTagCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tenantTagCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TenantTag>("value", tenantTagCollectionResponse.value, serializeTenantTag);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WindowsDeviceMalwareState The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWindowsDeviceMalwareState(writer: SerializationWriter, windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined | null = {}) : void {
-    if (windowsDeviceMalwareState) {
-        serializeEntity(writer, windowsDeviceMalwareState)
-        writer.writeStringValue("additionalInformationUrl", windowsDeviceMalwareState.additionalInformationUrl);
-        writer.writeNumberValue("detectionCount", windowsDeviceMalwareState.detectionCount);
-        writer.writeBooleanValue("deviceDeleted", windowsDeviceMalwareState.deviceDeleted);
-        writer.writeDateValue("initialDetectionDateTime", windowsDeviceMalwareState.initialDetectionDateTime);
-        writer.writeDateValue("lastRefreshedDateTime", windowsDeviceMalwareState.lastRefreshedDateTime);
-        writer.writeDateValue("lastStateChangeDateTime", windowsDeviceMalwareState.lastStateChangeDateTime);
-        writer.writeStringValue("malwareCategory", windowsDeviceMalwareState.malwareCategory);
-        writer.writeStringValue("malwareDisplayName", windowsDeviceMalwareState.malwareDisplayName);
-        writer.writeStringValue("malwareExecutionState", windowsDeviceMalwareState.malwareExecutionState);
-        writer.writeStringValue("malwareId", windowsDeviceMalwareState.malwareId);
-        writer.writeStringValue("malwareSeverity", windowsDeviceMalwareState.malwareSeverity);
-        writer.writeStringValue("malwareThreatState", windowsDeviceMalwareState.malwareThreatState);
-        writer.writeStringValue("managedDeviceId", windowsDeviceMalwareState.managedDeviceId);
-        writer.writeStringValue("managedDeviceName", windowsDeviceMalwareState.managedDeviceName);
-        writer.writeStringValue("tenantDisplayName", windowsDeviceMalwareState.tenantDisplayName);
-        writer.writeStringValue("tenantId", windowsDeviceMalwareState.tenantId);
-    }
+export function serializeWindowsDeviceMalwareState(writer: SerializationWriter, windowsDeviceMalwareState: Partial<WindowsDeviceMalwareState> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!windowsDeviceMalwareState || isSerializingDerivedType) { return; }
+    serializeEntity(writer, windowsDeviceMalwareState, isSerializingDerivedType)
+    writer.writeStringValue("additionalInformationUrl", windowsDeviceMalwareState.additionalInformationUrl);
+    writer.writeNumberValue("detectionCount", windowsDeviceMalwareState.detectionCount);
+    writer.writeBooleanValue("deviceDeleted", windowsDeviceMalwareState.deviceDeleted);
+    writer.writeDateValue("initialDetectionDateTime", windowsDeviceMalwareState.initialDetectionDateTime);
+    writer.writeDateValue("lastRefreshedDateTime", windowsDeviceMalwareState.lastRefreshedDateTime);
+    writer.writeDateValue("lastStateChangeDateTime", windowsDeviceMalwareState.lastStateChangeDateTime);
+    writer.writeStringValue("malwareCategory", windowsDeviceMalwareState.malwareCategory);
+    writer.writeStringValue("malwareDisplayName", windowsDeviceMalwareState.malwareDisplayName);
+    writer.writeStringValue("malwareExecutionState", windowsDeviceMalwareState.malwareExecutionState);
+    writer.writeStringValue("malwareId", windowsDeviceMalwareState.malwareId);
+    writer.writeStringValue("malwareSeverity", windowsDeviceMalwareState.malwareSeverity);
+    writer.writeStringValue("malwareThreatState", windowsDeviceMalwareState.malwareThreatState);
+    writer.writeStringValue("managedDeviceId", windowsDeviceMalwareState.managedDeviceId);
+    writer.writeStringValue("managedDeviceName", windowsDeviceMalwareState.managedDeviceName);
+    writer.writeStringValue("tenantDisplayName", windowsDeviceMalwareState.tenantDisplayName);
+    writer.writeStringValue("tenantId", windowsDeviceMalwareState.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WindowsDeviceMalwareStateCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWindowsDeviceMalwareStateCollectionResponse(writer: SerializationWriter, windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined | null = {}) : void {
-    if (windowsDeviceMalwareStateCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, windowsDeviceMalwareStateCollectionResponse)
-        writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("value", windowsDeviceMalwareStateCollectionResponse.value, serializeWindowsDeviceMalwareState);
-    }
+export function serializeWindowsDeviceMalwareStateCollectionResponse(writer: SerializationWriter, windowsDeviceMalwareStateCollectionResponse: Partial<WindowsDeviceMalwareStateCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!windowsDeviceMalwareStateCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, windowsDeviceMalwareStateCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<WindowsDeviceMalwareState>("value", windowsDeviceMalwareStateCollectionResponse.value, serializeWindowsDeviceMalwareState);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WindowsProtectionState The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWindowsProtectionState(writer: SerializationWriter, windowsProtectionState: Partial<WindowsProtectionState> | undefined | null = {}) : void {
-    if (windowsProtectionState) {
-        serializeEntity(writer, windowsProtectionState)
-        writer.writeStringValue("antiMalwareVersion", windowsProtectionState.antiMalwareVersion);
-        writer.writeBooleanValue("attentionRequired", windowsProtectionState.attentionRequired);
-        writer.writeBooleanValue("deviceDeleted", windowsProtectionState.deviceDeleted);
-        writer.writeDateValue("devicePropertyRefreshDateTime", windowsProtectionState.devicePropertyRefreshDateTime);
-        writer.writeStringValue("engineVersion", windowsProtectionState.engineVersion);
-        writer.writeBooleanValue("fullScanOverdue", windowsProtectionState.fullScanOverdue);
-        writer.writeBooleanValue("fullScanRequired", windowsProtectionState.fullScanRequired);
-        writer.writeDateValue("lastFullScanDateTime", windowsProtectionState.lastFullScanDateTime);
-        writer.writeStringValue("lastFullScanSignatureVersion", windowsProtectionState.lastFullScanSignatureVersion);
-        writer.writeDateValue("lastQuickScanDateTime", windowsProtectionState.lastQuickScanDateTime);
-        writer.writeStringValue("lastQuickScanSignatureVersion", windowsProtectionState.lastQuickScanSignatureVersion);
-        writer.writeDateValue("lastRefreshedDateTime", windowsProtectionState.lastRefreshedDateTime);
-        writer.writeDateValue("lastReportedDateTime", windowsProtectionState.lastReportedDateTime);
-        writer.writeBooleanValue("malwareProtectionEnabled", windowsProtectionState.malwareProtectionEnabled);
-        writer.writeStringValue("managedDeviceHealthState", windowsProtectionState.managedDeviceHealthState);
-        writer.writeStringValue("managedDeviceId", windowsProtectionState.managedDeviceId);
-        writer.writeStringValue("managedDeviceName", windowsProtectionState.managedDeviceName);
-        writer.writeBooleanValue("networkInspectionSystemEnabled", windowsProtectionState.networkInspectionSystemEnabled);
-        writer.writeBooleanValue("quickScanOverdue", windowsProtectionState.quickScanOverdue);
-        writer.writeBooleanValue("realTimeProtectionEnabled", windowsProtectionState.realTimeProtectionEnabled);
-        writer.writeBooleanValue("rebootRequired", windowsProtectionState.rebootRequired);
-        writer.writeBooleanValue("signatureUpdateOverdue", windowsProtectionState.signatureUpdateOverdue);
-        writer.writeStringValue("signatureVersion", windowsProtectionState.signatureVersion);
-        writer.writeStringValue("tenantDisplayName", windowsProtectionState.tenantDisplayName);
-        writer.writeStringValue("tenantId", windowsProtectionState.tenantId);
-    }
+export function serializeWindowsProtectionState(writer: SerializationWriter, windowsProtectionState: Partial<WindowsProtectionState> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!windowsProtectionState || isSerializingDerivedType) { return; }
+    serializeEntity(writer, windowsProtectionState, isSerializingDerivedType)
+    writer.writeStringValue("antiMalwareVersion", windowsProtectionState.antiMalwareVersion);
+    writer.writeBooleanValue("attentionRequired", windowsProtectionState.attentionRequired);
+    writer.writeBooleanValue("deviceDeleted", windowsProtectionState.deviceDeleted);
+    writer.writeDateValue("devicePropertyRefreshDateTime", windowsProtectionState.devicePropertyRefreshDateTime);
+    writer.writeStringValue("engineVersion", windowsProtectionState.engineVersion);
+    writer.writeBooleanValue("fullScanOverdue", windowsProtectionState.fullScanOverdue);
+    writer.writeBooleanValue("fullScanRequired", windowsProtectionState.fullScanRequired);
+    writer.writeDateValue("lastFullScanDateTime", windowsProtectionState.lastFullScanDateTime);
+    writer.writeStringValue("lastFullScanSignatureVersion", windowsProtectionState.lastFullScanSignatureVersion);
+    writer.writeDateValue("lastQuickScanDateTime", windowsProtectionState.lastQuickScanDateTime);
+    writer.writeStringValue("lastQuickScanSignatureVersion", windowsProtectionState.lastQuickScanSignatureVersion);
+    writer.writeDateValue("lastRefreshedDateTime", windowsProtectionState.lastRefreshedDateTime);
+    writer.writeDateValue("lastReportedDateTime", windowsProtectionState.lastReportedDateTime);
+    writer.writeBooleanValue("malwareProtectionEnabled", windowsProtectionState.malwareProtectionEnabled);
+    writer.writeStringValue("managedDeviceHealthState", windowsProtectionState.managedDeviceHealthState);
+    writer.writeStringValue("managedDeviceId", windowsProtectionState.managedDeviceId);
+    writer.writeStringValue("managedDeviceName", windowsProtectionState.managedDeviceName);
+    writer.writeBooleanValue("networkInspectionSystemEnabled", windowsProtectionState.networkInspectionSystemEnabled);
+    writer.writeBooleanValue("quickScanOverdue", windowsProtectionState.quickScanOverdue);
+    writer.writeBooleanValue("realTimeProtectionEnabled", windowsProtectionState.realTimeProtectionEnabled);
+    writer.writeBooleanValue("rebootRequired", windowsProtectionState.rebootRequired);
+    writer.writeBooleanValue("signatureUpdateOverdue", windowsProtectionState.signatureUpdateOverdue);
+    writer.writeStringValue("signatureVersion", windowsProtectionState.signatureVersion);
+    writer.writeStringValue("tenantDisplayName", windowsProtectionState.tenantDisplayName);
+    writer.writeStringValue("tenantId", windowsProtectionState.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WindowsProtectionStateCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWindowsProtectionStateCollectionResponse(writer: SerializationWriter, windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined | null = {}) : void {
-    if (windowsProtectionStateCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, windowsProtectionStateCollectionResponse)
-        writer.writeCollectionOfObjectValues<WindowsProtectionState>("value", windowsProtectionStateCollectionResponse.value, serializeWindowsProtectionState);
-    }
+export function serializeWindowsProtectionStateCollectionResponse(writer: SerializationWriter, windowsProtectionStateCollectionResponse: Partial<WindowsProtectionStateCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!windowsProtectionStateCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, windowsProtectionStateCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<WindowsProtectionState>("value", windowsProtectionStateCollectionResponse.value, serializeWindowsProtectionState);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WorkloadAction The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWorkloadAction(writer: SerializationWriter, workloadAction: Partial<WorkloadAction> | undefined | null = {}) : void {
-    if (workloadAction) {
-        writer.writeStringValue("actionId", workloadAction.actionId);
-        writer.writeEnumValue<WorkloadActionCategory>("category", workloadAction.category);
-        writer.writeStringValue("description", workloadAction.description);
-        writer.writeStringValue("displayName", workloadAction.displayName);
-        writer.writeCollectionOfPrimitiveValues<string>("licenses", workloadAction.licenses);
-        writer.writeStringValue("@odata.type", workloadAction.odataType);
-        writer.writeStringValue("service", workloadAction.service);
-        writer.writeCollectionOfObjectValues<Setting>("settings", workloadAction.settings, serializeSetting);
-        writer.writeAdditionalData(workloadAction.additionalData);
-    }
+export function serializeWorkloadAction(writer: SerializationWriter, workloadAction: Partial<WorkloadAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!workloadAction || isSerializingDerivedType) { return; }
+    writer.writeStringValue("actionId", workloadAction.actionId);
+    writer.writeEnumValue<WorkloadActionCategory>("category", workloadAction.category);
+    writer.writeStringValue("description", workloadAction.description);
+    writer.writeStringValue("displayName", workloadAction.displayName);
+    writer.writeCollectionOfPrimitiveValues<string>("licenses", workloadAction.licenses);
+    writer.writeStringValue("@odata.type", workloadAction.odataType);
+    writer.writeStringValue("service", workloadAction.service);
+    writer.writeCollectionOfObjectValues<Setting>("settings", workloadAction.settings, serializeSetting);
+    writer.writeAdditionalData(workloadAction.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WorkloadActionDeploymentStatus The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWorkloadActionDeploymentStatus(writer: SerializationWriter, workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined | null = {}) : void {
-    if (workloadActionDeploymentStatus) {
-        writer.writeStringValue("actionId", workloadActionDeploymentStatus.actionId);
-        writer.writeStringValue("deployedPolicyId", workloadActionDeploymentStatus.deployedPolicyId);
-        writer.writeObjectValue<GenericError>("error", workloadActionDeploymentStatus.errorEscaped, serializeGenericError);
-        writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", workloadActionDeploymentStatus.excludeGroups);
-        writer.writeBooleanValue("includeAllUsers", workloadActionDeploymentStatus.includeAllUsers);
-        writer.writeCollectionOfPrimitiveValues<string>("includeGroups", workloadActionDeploymentStatus.includeGroups);
-        writer.writeDateValue("lastDeploymentDateTime", workloadActionDeploymentStatus.lastDeploymentDateTime);
-        writer.writeStringValue("@odata.type", workloadActionDeploymentStatus.odataType);
-        writer.writeEnumValue<WorkloadActionStatus>("status", workloadActionDeploymentStatus.status);
-        writer.writeAdditionalData(workloadActionDeploymentStatus.additionalData);
-    }
+export function serializeWorkloadActionDeploymentStatus(writer: SerializationWriter, workloadActionDeploymentStatus: Partial<WorkloadActionDeploymentStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!workloadActionDeploymentStatus || isSerializingDerivedType) { return; }
+    writer.writeStringValue("actionId", workloadActionDeploymentStatus.actionId);
+    writer.writeStringValue("deployedPolicyId", workloadActionDeploymentStatus.deployedPolicyId);
+    writer.writeObjectValue<GenericError>("error", workloadActionDeploymentStatus.errorEscaped, serializeGenericError);
+    writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", workloadActionDeploymentStatus.excludeGroups);
+    writer.writeBooleanValue("includeAllUsers", workloadActionDeploymentStatus.includeAllUsers);
+    writer.writeCollectionOfPrimitiveValues<string>("includeGroups", workloadActionDeploymentStatus.includeGroups);
+    writer.writeDateValue("lastDeploymentDateTime", workloadActionDeploymentStatus.lastDeploymentDateTime);
+    writer.writeStringValue("@odata.type", workloadActionDeploymentStatus.odataType);
+    writer.writeEnumValue<WorkloadActionStatus>("status", workloadActionDeploymentStatus.status);
+    writer.writeAdditionalData(workloadActionDeploymentStatus.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WorkloadStatus The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWorkloadStatus(writer: SerializationWriter, workloadStatus: Partial<WorkloadStatus> | undefined | null = {}) : void {
-    if (workloadStatus) {
-        writer.writeStringValue("displayName", workloadStatus.displayName);
-        writer.writeStringValue("@odata.type", workloadStatus.odataType);
-        writer.writeDateValue("offboardedDateTime", workloadStatus.offboardedDateTime);
-        writer.writeDateValue("onboardedDateTime", workloadStatus.onboardedDateTime);
-        writer.writeEnumValue<WorkloadOnboardingStatus>("onboardingStatus", workloadStatus.onboardingStatus);
-        writer.writeAdditionalData(workloadStatus.additionalData);
-    }
+export function serializeWorkloadStatus(writer: SerializationWriter, workloadStatus: Partial<WorkloadStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!workloadStatus || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", workloadStatus.displayName);
+    writer.writeStringValue("@odata.type", workloadStatus.odataType);
+    writer.writeDateValue("offboardedDateTime", workloadStatus.offboardedDateTime);
+    writer.writeDateValue("onboardedDateTime", workloadStatus.onboardedDateTime);
+    writer.writeEnumValue<WorkloadOnboardingStatus>("onboardingStatus", workloadStatus.onboardingStatus);
+    writer.writeAdditionalData(workloadStatus.additionalData);
 }
 export interface Setting extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6111,10 +6249,6 @@ export interface Setting extends AdditionalDataHolder, BackedModel, Parsable {
     valueType?: ManagementParameterValueType | null;
 }
 export interface TemplateParameter extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6178,10 +6312,6 @@ export interface TenantCollectionResponse extends BaseCollectionPaginationCountR
 }
 export interface TenantContactInformation extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -6211,10 +6341,6 @@ export interface TenantContactInformation extends AdditionalDataHolder, BackedMo
     title?: string | null;
 }
 export interface TenantContract extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6362,10 +6488,6 @@ export interface TenantGroupCollectionResponse extends BaseCollectionPaginationC
 }
 export interface TenantInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -6381,10 +6503,6 @@ export interface TenantInfo extends AdditionalDataHolder, BackedModel, Parsable 
 export type TenantOnboardingEligibilityReason = (typeof TenantOnboardingEligibilityReasonObject)[keyof typeof TenantOnboardingEligibilityReasonObject];
 export type TenantOnboardingStatus = (typeof TenantOnboardingStatusObject)[keyof typeof TenantOnboardingStatusObject];
 export interface TenantStatusInformation extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6656,10 +6774,6 @@ export interface WorkloadAction extends AdditionalDataHolder, BackedModel, Parsa
      */
     actionId?: string | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -6698,10 +6812,6 @@ export interface WorkloadActionDeploymentStatus extends AdditionalDataHolder, Ba
      * The unique identifier for the workload action. Required. Read-only.
      */
     actionId?: string | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6742,10 +6852,6 @@ export interface WorkloadActionDeploymentStatus extends AdditionalDataHolder, Ba
 export type WorkloadActionStatus = (typeof WorkloadActionStatusObject)[keyof typeof WorkloadActionStatusObject];
 export type WorkloadOnboardingStatus = (typeof WorkloadOnboardingStatusObject)[keyof typeof WorkloadOnboardingStatusObject];
 export interface WorkloadStatus extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

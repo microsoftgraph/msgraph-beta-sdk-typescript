@@ -19,6 +19,7 @@ export function createGetStorageAccountsWithSubscriptionIdGetResponseFromDiscrim
 }
 /**
  * The deserialization information for the current model
+ * @param GetStorageAccountsWithSubscriptionIdGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParam
 }
 /**
  * Serializes information the current object
+ * @param GetStorageAccountsWithSubscriptionIdGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetStorageAccountsWithSubscriptionIdGetResponse(writer: SerializationWriter, getStorageAccountsWithSubscriptionIdGetResponse: Partial<GetStorageAccountsWithSubscriptionIdGetResponse> | undefined | null = {}) : void {
-    if (getStorageAccountsWithSubscriptionIdGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getStorageAccountsWithSubscriptionIdGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcForensicStorageAccount>("value", getStorageAccountsWithSubscriptionIdGetResponse.value, serializeCloudPcForensicStorageAccount);
-    }
+export function serializeGetStorageAccountsWithSubscriptionIdGetResponse(writer: SerializationWriter, getStorageAccountsWithSubscriptionIdGetResponse: Partial<GetStorageAccountsWithSubscriptionIdGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getStorageAccountsWithSubscriptionIdGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getStorageAccountsWithSubscriptionIdGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcForensicStorageAccount>("value", getStorageAccountsWithSubscriptionIdGetResponse.value, serializeCloudPcForensicStorageAccount);
 }
 /**
  * Uri template for the request builder.

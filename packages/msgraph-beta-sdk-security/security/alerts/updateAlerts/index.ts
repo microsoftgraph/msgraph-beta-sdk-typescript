@@ -28,6 +28,7 @@ export function createUpdateAlertsPostResponseFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateAlertsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoUpdateAlertsPostRequestBody(updateAlertsPostReque
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateAlertsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,31 +52,29 @@ export function deserializeIntoUpdateAlertsPostResponse(updateAlertsPostResponse
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateAlertsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateAlertsPostRequestBody(writer: SerializationWriter, updateAlertsPostRequestBody: Partial<UpdateAlertsPostRequestBody> | undefined | null = {}) : void {
-    if (updateAlertsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<Alert>("value", updateAlertsPostRequestBody.value, serializeAlert);
-        writer.writeAdditionalData(updateAlertsPostRequestBody.additionalData);
-    }
+export function serializeUpdateAlertsPostRequestBody(writer: SerializationWriter, updateAlertsPostRequestBody: Partial<UpdateAlertsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateAlertsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<Alert>("value", updateAlertsPostRequestBody.value, serializeAlert);
+    writer.writeAdditionalData(updateAlertsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateAlertsPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateAlertsPostResponse(writer: SerializationWriter, updateAlertsPostResponse: Partial<UpdateAlertsPostResponse> | undefined | null = {}) : void {
-    if (updateAlertsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, updateAlertsPostResponse)
-        writer.writeCollectionOfObjectValues<Alert>("value", updateAlertsPostResponse.value, serializeAlert);
-    }
+export function serializeUpdateAlertsPostResponse(writer: SerializationWriter, updateAlertsPostResponse: Partial<UpdateAlertsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateAlertsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, updateAlertsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Alert>("value", updateAlertsPostResponse.value, serializeAlert);
 }
 export interface UpdateAlertsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CancelPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -49,6 +45,7 @@ export function createCancelPostResponseFromDiscriminatorValue(parseNode: ParseN
 }
 /**
  * The deserialization information for the current model
+ * @param CancelPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -60,14 +57,15 @@ export function deserializeIntoCancelPostResponse(cancelPostResponse: Partial<Ca
 }
 /**
  * Serializes information the current object
+ * @param CancelPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCancelPostResponse(writer: SerializationWriter, cancelPostResponse: Partial<CancelPostResponse> | undefined | null = {}) : void {
-    if (cancelPostResponse) {
-        writer.writeBooleanValue("value", cancelPostResponse.value);
-        writer.writeAdditionalData(cancelPostResponse.additionalData);
-    }
+export function serializeCancelPostResponse(writer: SerializationWriter, cancelPostResponse: Partial<CancelPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cancelPostResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", cancelPostResponse.value);
+    writer.writeAdditionalData(cancelPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param GetManagedAppBlockedUsersGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetManagedAppBlockedUsersRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetManagedAppBlockedUsersGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetManagedAppBlockedUsersGetResponse(writer: SerializationWriter, getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined | null = {}) : void {
-    if (getManagedAppBlockedUsersGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getManagedAppBlockedUsersGetResponse)
-        writer.writeCollectionOfPrimitiveValues<string>("value", getManagedAppBlockedUsersGetResponse.value);
-    }
+export function serializeGetManagedAppBlockedUsersGetResponse(writer: SerializationWriter, getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getManagedAppBlockedUsersGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getManagedAppBlockedUsersGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("value", getManagedAppBlockedUsersGetResponse.value);
 }
 /**
  * Uri template for the request builder.

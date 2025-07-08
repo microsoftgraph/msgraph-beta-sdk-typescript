@@ -21,6 +21,7 @@ export function createWebCategoryReportWithStartDateTimeWithEndDateTimeGetRespon
 }
 /**
  * The deserialization information for the current model
+ * @param WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -75,14 +76,15 @@ export interface MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWi
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<WebCategoriesSummary>("value", webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeWebCategoriesSummary);
-    }
+export function serializeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<WebCategoriesSummary>("value", webCategoryReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeWebCategoriesSummary);
 }
 export interface WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**

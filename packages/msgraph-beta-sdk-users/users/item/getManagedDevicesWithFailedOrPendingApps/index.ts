@@ -19,6 +19,7 @@ export function createGetManagedDevicesWithFailedOrPendingAppsGetResponseFromDis
 }
 /**
  * The deserialization information for the current model
+ * @param GetManagedDevicesWithFailedOrPendingAppsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryP
 }
 /**
  * Serializes information the current object
+ * @param GetManagedDevicesWithFailedOrPendingAppsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetManagedDevicesWithFailedOrPendingAppsGetResponse(writer: SerializationWriter, getManagedDevicesWithFailedOrPendingAppsGetResponse: Partial<GetManagedDevicesWithFailedOrPendingAppsGetResponse> | undefined | null = {}) : void {
-    if (getManagedDevicesWithFailedOrPendingAppsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getManagedDevicesWithFailedOrPendingAppsGetResponse)
-        writer.writeCollectionOfObjectValues<ManagedDeviceSummarizedAppState>("value", getManagedDevicesWithFailedOrPendingAppsGetResponse.value, serializeManagedDeviceSummarizedAppState);
-    }
+export function serializeGetManagedDevicesWithFailedOrPendingAppsGetResponse(writer: SerializationWriter, getManagedDevicesWithFailedOrPendingAppsGetResponse: Partial<GetManagedDevicesWithFailedOrPendingAppsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getManagedDevicesWithFailedOrPendingAppsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getManagedDevicesWithFailedOrPendingAppsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedDeviceSummarizedAppState>("value", getManagedDevicesWithFailedOrPendingAppsGetResponse.value, serializeManagedDeviceSummarizedAppState);
 }
 /**
  * Uri template for the request builder.

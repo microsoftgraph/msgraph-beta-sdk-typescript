@@ -19,6 +19,7 @@ export function createGetAllManagedDeviceWindowsOSImagesGetResponseFromDiscrimin
 }
 /**
  * The deserialization information for the current model
+ * @param GetAllManagedDeviceWindowsOSImagesGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetAllManagedDeviceWindowsOSImagesRequestBuilderGetQueryParamet
 }
 /**
  * Serializes information the current object
+ * @param GetAllManagedDeviceWindowsOSImagesGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAllManagedDeviceWindowsOSImagesGetResponse(writer: SerializationWriter, getAllManagedDeviceWindowsOSImagesGetResponse: Partial<GetAllManagedDeviceWindowsOSImagesGetResponse> | undefined | null = {}) : void {
-    if (getAllManagedDeviceWindowsOSImagesGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAllManagedDeviceWindowsOSImagesGetResponse)
-        writer.writeCollectionOfObjectValues<ManagedDeviceWindowsOperatingSystemImage>("value", getAllManagedDeviceWindowsOSImagesGetResponse.value, serializeManagedDeviceWindowsOperatingSystemImage);
-    }
+export function serializeGetAllManagedDeviceWindowsOSImagesGetResponse(writer: SerializationWriter, getAllManagedDeviceWindowsOSImagesGetResponse: Partial<GetAllManagedDeviceWindowsOSImagesGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAllManagedDeviceWindowsOSImagesGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAllManagedDeviceWindowsOSImagesGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedDeviceWindowsOperatingSystemImage>("value", getAllManagedDeviceWindowsOSImagesGetResponse.value, serializeManagedDeviceWindowsOperatingSystemImage);
 }
 /**
  * Uri template for the request builder.

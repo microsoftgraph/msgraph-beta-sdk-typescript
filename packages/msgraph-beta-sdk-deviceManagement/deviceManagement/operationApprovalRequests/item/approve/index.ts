@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ApprovePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The approvalSource property
      */
     approvalSource?: OperationApprovalSource | null;
@@ -27,10 +23,6 @@ export interface ApprovePostRequestBody extends AdditionalDataHolder, BackedMode
     justification?: string | null;
 }
 export interface ApprovePostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -80,6 +72,7 @@ export function createApprovePostResponseFromDiscriminatorValue(parseNode: Parse
 }
 /**
  * The deserialization information for the current model
+ * @param ApprovePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,6 +85,7 @@ export function deserializeIntoApprovePostRequestBody(approvePostRequestBody: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ApprovePostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -103,26 +97,28 @@ export function deserializeIntoApprovePostResponse(approvePostResponse: Partial<
 }
 /**
  * Serializes information the current object
+ * @param ApprovePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApprovePostRequestBody(writer: SerializationWriter, approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined | null = {}) : void {
-    if (approvePostRequestBody) {
-        writer.writeEnumValue<OperationApprovalSource>("approvalSource", approvePostRequestBody.approvalSource);
-        writer.writeStringValue("justification", approvePostRequestBody.justification);
-        writer.writeAdditionalData(approvePostRequestBody.additionalData);
-    }
+export function serializeApprovePostRequestBody(writer: SerializationWriter, approvePostRequestBody: Partial<ApprovePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!approvePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<OperationApprovalSource>("approvalSource", approvePostRequestBody.approvalSource);
+    writer.writeStringValue("justification", approvePostRequestBody.justification);
+    writer.writeAdditionalData(approvePostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ApprovePostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApprovePostResponse(writer: SerializationWriter, approvePostResponse: Partial<ApprovePostResponse> | undefined | null = {}) : void {
-    if (approvePostResponse) {
-        writer.writeStringValue("value", approvePostResponse.value);
-        writer.writeAdditionalData(approvePostResponse.additionalData);
-    }
+export function serializeApprovePostResponse(writer: SerializationWriter, approvePostResponse: Partial<ApprovePostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!approvePostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", approvePostResponse.value);
+    writer.writeAdditionalData(approvePostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createHasActiveDeploymentsPostResponseFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param HasActiveDeploymentsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoHasActiveDeploymentsPostResponse(hasActiveDeploym
     }
 }
 export interface HasActiveDeploymentsPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface HasActiveDeploymentsRequestBuilder extends BaseRequestBuilder<H
 }
 /**
  * Serializes information the current object
+ * @param HasActiveDeploymentsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeHasActiveDeploymentsPostResponse(writer: SerializationWriter, hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined | null = {}) : void {
-    if (hasActiveDeploymentsPostResponse) {
-        writer.writeBooleanValue("value", hasActiveDeploymentsPostResponse.value);
-        writer.writeAdditionalData(hasActiveDeploymentsPostResponse.additionalData);
-    }
+export function serializeHasActiveDeploymentsPostResponse(writer: SerializationWriter, hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!hasActiveDeploymentsPostResponse || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("value", hasActiveDeploymentsPostResponse.value);
+    writer.writeAdditionalData(hasActiveDeploymentsPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

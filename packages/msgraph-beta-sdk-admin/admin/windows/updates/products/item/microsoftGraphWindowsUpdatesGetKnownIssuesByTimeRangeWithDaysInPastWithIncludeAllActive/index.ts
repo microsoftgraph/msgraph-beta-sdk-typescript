@@ -21,6 +21,7 @@ export function createGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiv
 }
 /**
  * The deserialization information for the current model
+ * @param GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -98,14 +99,15 @@ export interface MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysIn
 }
 /**
  * Serializes information the current object
+ * @param GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse(writer: SerializationWriter, getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse: Partial<GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse> | undefined | null = {}) : void {
-    if (getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse)
-        writer.writeCollectionOfObjectValues<KnownIssue>("value", getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse.value, serializeKnownIssue);
-    }
+export function serializeGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse(writer: SerializationWriter, getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse: Partial<GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<KnownIssue>("value", getKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse.value, serializeKnownIssue);
 }
 /**
  * Uri template for the request builder.

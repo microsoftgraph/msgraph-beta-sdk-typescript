@@ -68,6 +68,7 @@ export function createAppDiagnosticsWithUpnGetResponseFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param AppDiagnosticsWithUpnGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export function deserializeIntoAppDiagnosticsWithUpnGetResponse(appDiagnosticsWi
 }
 /**
  * Serializes information the current object
+ * @param AppDiagnosticsWithUpnGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAppDiagnosticsWithUpnGetResponse(writer: SerializationWriter, appDiagnosticsWithUpnGetResponse: Partial<AppDiagnosticsWithUpnGetResponse> | undefined | null = {}) : void {
-    if (appDiagnosticsWithUpnGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, appDiagnosticsWithUpnGetResponse)
-        writer.writeCollectionOfObjectValues<PowerliftIncidentMetadata>("value", appDiagnosticsWithUpnGetResponse.value, serializePowerliftIncidentMetadata);
-    }
+export function serializeAppDiagnosticsWithUpnGetResponse(writer: SerializationWriter, appDiagnosticsWithUpnGetResponse: Partial<AppDiagnosticsWithUpnGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!appDiagnosticsWithUpnGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, appDiagnosticsWithUpnGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PowerliftIncidentMetadata>("value", appDiagnosticsWithUpnGetResponse.value, serializePowerliftIncidentMetadata);
 }
 /**
  * Uri template for the request builder.

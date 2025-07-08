@@ -19,6 +19,7 @@ export function createUpdateSoftwarePostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateSoftwarePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -31,21 +32,18 @@ export function deserializeIntoUpdateSoftwarePostRequestBody(updateSoftwarePostR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateSoftwarePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateSoftwarePostRequestBody(writer: SerializationWriter, updateSoftwarePostRequestBody: Partial<UpdateSoftwarePostRequestBody> | undefined | null = {}) : void {
-    if (updateSoftwarePostRequestBody) {
-        writer.writeEnumValue<TeamworkSoftwareType>("softwareType", updateSoftwarePostRequestBody.softwareType);
-        writer.writeStringValue("softwareVersion", updateSoftwarePostRequestBody.softwareVersion);
-        writer.writeAdditionalData(updateSoftwarePostRequestBody.additionalData);
-    }
+export function serializeUpdateSoftwarePostRequestBody(writer: SerializationWriter, updateSoftwarePostRequestBody: Partial<UpdateSoftwarePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateSoftwarePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<TeamworkSoftwareType>("softwareType", updateSoftwarePostRequestBody.softwareType);
+    writer.writeStringValue("softwareVersion", updateSoftwarePostRequestBody.softwareVersion);
+    writer.writeAdditionalData(updateSoftwarePostRequestBody.additionalData);
 }
 export interface UpdateSoftwarePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -21,6 +21,7 @@ export function createGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetRes
 }
 /**
  * The deserialization information for the current model
+ * @param GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTime
 }
 /**
  * Serializes information the current object
+ * @param GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<PstnBlockedUsersLogRow>("value", getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse.value, serializePstnBlockedUsersLogRow);
-    }
+export function serializeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PstnBlockedUsersLogRow>("value", getPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse.value, serializePstnBlockedUsersLogRow);
 }
 /**
  * Uri template for the request builder.

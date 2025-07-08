@@ -28,10 +28,6 @@ export function createCreateMigrationReportPostResponseFromDiscriminatorValue(pa
 }
 export interface CreateMigrationReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -41,10 +37,6 @@ export interface CreateMigrationReportPostRequestBody extends AdditionalDataHold
     groupPolicyObjectFile?: GroupPolicyObjectFile | null;
 }
 export interface CreateMigrationReportPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -76,6 +68,7 @@ export interface CreateMigrationReportRequestBuilder extends BaseRequestBuilder<
 }
 /**
  * The deserialization information for the current model
+ * @param CreateMigrationReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -87,6 +80,7 @@ export function deserializeIntoCreateMigrationReportPostRequestBody(createMigrat
 }
 /**
  * The deserialization information for the current model
+ * @param CreateMigrationReportPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -98,25 +92,27 @@ export function deserializeIntoCreateMigrationReportPostResponse(createMigration
 }
 /**
  * Serializes information the current object
+ * @param CreateMigrationReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateMigrationReportPostRequestBody(writer: SerializationWriter, createMigrationReportPostRequestBody: Partial<CreateMigrationReportPostRequestBody> | undefined | null = {}) : void {
-    if (createMigrationReportPostRequestBody) {
-        writer.writeObjectValue<GroupPolicyObjectFile>("groupPolicyObjectFile", createMigrationReportPostRequestBody.groupPolicyObjectFile, serializeGroupPolicyObjectFile);
-        writer.writeAdditionalData(createMigrationReportPostRequestBody.additionalData);
-    }
+export function serializeCreateMigrationReportPostRequestBody(writer: SerializationWriter, createMigrationReportPostRequestBody: Partial<CreateMigrationReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createMigrationReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<GroupPolicyObjectFile>("groupPolicyObjectFile", createMigrationReportPostRequestBody.groupPolicyObjectFile, serializeGroupPolicyObjectFile);
+    writer.writeAdditionalData(createMigrationReportPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param CreateMigrationReportPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateMigrationReportPostResponse(writer: SerializationWriter, createMigrationReportPostResponse: Partial<CreateMigrationReportPostResponse> | undefined | null = {}) : void {
-    if (createMigrationReportPostResponse) {
-        writer.writeStringValue("value", createMigrationReportPostResponse.value);
-        writer.writeAdditionalData(createMigrationReportPostResponse.additionalData);
-    }
+export function serializeCreateMigrationReportPostResponse(writer: SerializationWriter, createMigrationReportPostResponse: Partial<CreateMigrationReportPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createMigrationReportPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", createMigrationReportPostResponse.value);
+    writer.writeAdditionalData(createMigrationReportPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.
