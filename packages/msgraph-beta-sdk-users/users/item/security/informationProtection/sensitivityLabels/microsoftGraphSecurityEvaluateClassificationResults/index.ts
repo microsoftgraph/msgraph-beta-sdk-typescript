@@ -30,6 +30,7 @@ export function createEvaluateClassificationResultsPostResponseFromDiscriminator
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluateClassificationResultsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -42,6 +43,7 @@ export function deserializeIntoEvaluateClassificationResultsPostRequestBody(eval
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluateClassificationResultsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -52,10 +54,6 @@ export function deserializeIntoEvaluateClassificationResultsPostResponse(evaluat
     }
 }
 export interface EvaluateClassificationResultsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -98,26 +96,28 @@ export interface MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuild
 }
 /**
  * Serializes information the current object
+ * @param EvaluateClassificationResultsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluateClassificationResultsPostRequestBody(writer: SerializationWriter, evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined | null = {}) : void {
-    if (evaluateClassificationResultsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<ClassificationResult>("classificationResults", evaluateClassificationResultsPostRequestBody.classificationResults, serializeClassificationResult);
-        writer.writeObjectValue<ContentInfo>("contentInfo", evaluateClassificationResultsPostRequestBody.contentInfo, serializeContentInfo);
-        writer.writeAdditionalData(evaluateClassificationResultsPostRequestBody.additionalData);
-    }
+export function serializeEvaluateClassificationResultsPostRequestBody(writer: SerializationWriter, evaluateClassificationResultsPostRequestBody: Partial<EvaluateClassificationResultsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluateClassificationResultsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ClassificationResult>("classificationResults", evaluateClassificationResultsPostRequestBody.classificationResults, serializeClassificationResult);
+    writer.writeObjectValue<ContentInfo>("contentInfo", evaluateClassificationResultsPostRequestBody.contentInfo, serializeContentInfo);
+    writer.writeAdditionalData(evaluateClassificationResultsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param EvaluateClassificationResultsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluateClassificationResultsPostResponse(writer: SerializationWriter, evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined | null = {}) : void {
-    if (evaluateClassificationResultsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, evaluateClassificationResultsPostResponse)
-        writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateClassificationResultsPostResponse.value, serializeInformationProtectionAction);
-    }
+export function serializeEvaluateClassificationResultsPostResponse(writer: SerializationWriter, evaluateClassificationResultsPostResponse: Partial<EvaluateClassificationResultsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluateClassificationResultsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, evaluateClassificationResultsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<InformationProtectionAction>("value", evaluateClassificationResultsPostResponse.value, serializeInformationProtectionAction);
 }
 /**
  * Uri template for the request builder.

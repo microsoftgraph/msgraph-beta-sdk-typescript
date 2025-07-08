@@ -19,10 +19,6 @@ export function createCreateDeviceLogCollectionRequestPostRequestBodyFromDiscrim
 }
 export interface CreateDeviceLogCollectionRequestPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -53,6 +49,7 @@ export interface CreateDeviceLogCollectionRequestRequestBuilder extends BaseRequ
 }
 /**
  * The deserialization information for the current model
+ * @param CreateDeviceLogCollectionRequestPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -64,14 +61,15 @@ export function deserializeIntoCreateDeviceLogCollectionRequestPostRequestBody(c
 }
 /**
  * Serializes information the current object
+ * @param CreateDeviceLogCollectionRequestPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateDeviceLogCollectionRequestPostRequestBody(writer: SerializationWriter, createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined | null = {}) : void {
-    if (createDeviceLogCollectionRequestPostRequestBody) {
-        writer.writeObjectValue<DeviceLogCollectionRequest>("templateType", createDeviceLogCollectionRequestPostRequestBody.templateType, serializeDeviceLogCollectionRequest);
-        writer.writeAdditionalData(createDeviceLogCollectionRequestPostRequestBody.additionalData);
-    }
+export function serializeCreateDeviceLogCollectionRequestPostRequestBody(writer: SerializationWriter, createDeviceLogCollectionRequestPostRequestBody: Partial<CreateDeviceLogCollectionRequestPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createDeviceLogCollectionRequestPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<DeviceLogCollectionRequest>("templateType", createDeviceLogCollectionRequestPostRequestBody.templateType, serializeDeviceLogCollectionRequest);
+    writer.writeAdditionalData(createDeviceLogCollectionRequestPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createEvaluatePostRequestBodyFromDiscriminatorValue(parseNode: P
 }
 /**
  * The deserialization information for the current model
+ * @param EvaluatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoEvaluatePostRequestBody(evaluatePostRequestBody: 
     }
 }
 export interface EvaluatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -69,15 +66,16 @@ export interface EvaluateRequestBuilder extends BaseRequestBuilder<EvaluateReque
 }
 /**
  * Serializes information the current object
+ * @param EvaluatePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEvaluatePostRequestBody(writer: SerializationWriter, evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined | null = {}) : void {
-    if (evaluatePostRequestBody) {
-        writer.writeObjectValue<CurrentLabel>("currentLabel", evaluatePostRequestBody.currentLabel, serializeCurrentLabel);
-        writer.writeCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", evaluatePostRequestBody.discoveredSensitiveTypes, serializeDiscoveredSensitiveType);
-        writer.writeAdditionalData(evaluatePostRequestBody.additionalData);
-    }
+export function serializeEvaluatePostRequestBody(writer: SerializationWriter, evaluatePostRequestBody: Partial<EvaluatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!evaluatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<CurrentLabel>("currentLabel", evaluatePostRequestBody.currentLabel, serializeCurrentLabel);
+    writer.writeCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", evaluatePostRequestBody.discoveredSensitiveTypes, serializeDiscoveredSensitiveType);
+    writer.writeAdditionalData(evaluatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

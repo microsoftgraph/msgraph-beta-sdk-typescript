@@ -19,6 +19,7 @@ export function createRetrieveConnectionQualityReportsPostRequestBodyFromDiscrim
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveConnectionQualityReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoRetrieveConnectionQualityReportsPostRequestBody(r
     }
 }
 export interface RetrieveConnectionQualityReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -99,21 +96,22 @@ export interface RetrieveConnectionQualityReportsRequestBuilder extends BaseRequ
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveConnectionQualityReportsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveConnectionQualityReportsPostRequestBody(writer: SerializationWriter, retrieveConnectionQualityReportsPostRequestBody: Partial<RetrieveConnectionQualityReportsPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveConnectionQualityReportsPostRequestBody) {
-        writer.writeStringValue("filter", retrieveConnectionQualityReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveConnectionQualityReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveConnectionQualityReportsPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPCConnectionQualityReportType>("reportName", retrieveConnectionQualityReportsPostRequestBody.reportName);
-        writer.writeStringValue("search", retrieveConnectionQualityReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveConnectionQualityReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveConnectionQualityReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveConnectionQualityReportsPostRequestBody.top);
-        writer.writeAdditionalData(retrieveConnectionQualityReportsPostRequestBody.additionalData);
-    }
+export function serializeRetrieveConnectionQualityReportsPostRequestBody(writer: SerializationWriter, retrieveConnectionQualityReportsPostRequestBody: Partial<RetrieveConnectionQualityReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveConnectionQualityReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveConnectionQualityReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveConnectionQualityReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveConnectionQualityReportsPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPCConnectionQualityReportType>("reportName", retrieveConnectionQualityReportsPostRequestBody.reportName);
+    writer.writeStringValue("search", retrieveConnectionQualityReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveConnectionQualityReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveConnectionQualityReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveConnectionQualityReportsPostRequestBody.top);
+    writer.writeAdditionalData(retrieveConnectionQualityReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -21,6 +21,7 @@ export function createGetSmsLogWithFromDateTimeWithToDateTimeGetResponseFromDisc
 }
 /**
  * The deserialization information for the current model
+ * @param GetSmsLogWithFromDateTimeWithToDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTim
 }
 /**
  * Serializes information the current object
+ * @param GetSmsLogWithFromDateTimeWithToDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getSmsLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getSmsLogWithFromDateTimeWithToDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getSmsLogWithFromDateTimeWithToDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<SmsLogRow>("value", getSmsLogWithFromDateTimeWithToDateTimeGetResponse.value, serializeSmsLogRow);
-    }
+export function serializeGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(writer: SerializationWriter, getSmsLogWithFromDateTimeWithToDateTimeGetResponse: Partial<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getSmsLogWithFromDateTimeWithToDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getSmsLogWithFromDateTimeWithToDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SmsLogRow>("value", getSmsLogWithFromDateTimeWithToDateTimeGetResponse.value, serializeSmsLogRow);
 }
 /**
  * Uri template for the request builder.

@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CreateCopyPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -57,6 +53,7 @@ export function createCreateCopyPostRequestBodyFromDiscriminatorValue(parseNode:
 }
 /**
  * The deserialization information for the current model
+ * @param CreateCopyPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -69,15 +66,16 @@ export function deserializeIntoCreateCopyPostRequestBody(createCopyPostRequestBo
 }
 /**
  * Serializes information the current object
+ * @param CreateCopyPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCreateCopyPostRequestBody(writer: SerializationWriter, createCopyPostRequestBody: Partial<CreateCopyPostRequestBody> | undefined | null = {}) : void {
-    if (createCopyPostRequestBody) {
-        writer.writeStringValue("description", createCopyPostRequestBody.description);
-        writer.writeStringValue("displayName", createCopyPostRequestBody.displayName);
-        writer.writeAdditionalData(createCopyPostRequestBody.additionalData);
-    }
+export function serializeCreateCopyPostRequestBody(writer: SerializationWriter, createCopyPostRequestBody: Partial<CreateCopyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createCopyPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("description", createCopyPostRequestBody.description);
+    writer.writeStringValue("displayName", createCopyPostRequestBody.displayName);
+    writer.writeAdditionalData(createCopyPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

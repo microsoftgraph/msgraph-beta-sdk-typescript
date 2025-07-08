@@ -19,6 +19,7 @@ export function createRemediatePostRequestBodyFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param RemediatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -59,10 +60,6 @@ export interface RemediatePostRequestBody extends AdditionalDataHolder, BackedMo
      */
     action?: RemediationAction | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The analyzedEmails property
      */
     analyzedEmails?: AnalyzedEmail[] | null;
@@ -89,19 +86,20 @@ export interface RemediatePostRequestBody extends AdditionalDataHolder, BackedMo
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemediatePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemediatePostRequestBody(writer: SerializationWriter, remediatePostRequestBody: Partial<RemediatePostRequestBody> | undefined | null = {}) : void {
-    if (remediatePostRequestBody) {
-        writer.writeEnumValue<RemediationAction>("action", remediatePostRequestBody.action);
-        writer.writeCollectionOfObjectValues<AnalyzedEmail>("analyzedEmails", remediatePostRequestBody.analyzedEmails, serializeAnalyzedEmail);
-        writer.writeStringValue("description", remediatePostRequestBody.description);
-        writer.writeStringValue("displayName", remediatePostRequestBody.displayName);
-        writer.writeBooleanValue("remediateSendersCopy", remediatePostRequestBody.remediateSendersCopy);
-        writer.writeEnumValue<RemediationSeverity>("severity", remediatePostRequestBody.severity);
-        writer.writeAdditionalData(remediatePostRequestBody.additionalData);
-    }
+export function serializeRemediatePostRequestBody(writer: SerializationWriter, remediatePostRequestBody: Partial<RemediatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!remediatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<RemediationAction>("action", remediatePostRequestBody.action);
+    writer.writeCollectionOfObjectValues<AnalyzedEmail>("analyzedEmails", remediatePostRequestBody.analyzedEmails, serializeAnalyzedEmail);
+    writer.writeStringValue("description", remediatePostRequestBody.description);
+    writer.writeStringValue("displayName", remediatePostRequestBody.displayName);
+    writer.writeBooleanValue("remediateSendersCopy", remediatePostRequestBody.remediateSendersCopy);
+    writer.writeEnumValue<RemediationSeverity>("severity", remediatePostRequestBody.severity);
+    writer.writeAdditionalData(remediatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

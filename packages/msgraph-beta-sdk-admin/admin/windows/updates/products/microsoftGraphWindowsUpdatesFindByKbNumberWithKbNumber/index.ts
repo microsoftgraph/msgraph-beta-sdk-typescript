@@ -21,6 +21,7 @@ export function createFindByKbNumberWithKbNumberGetResponseFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param FindByKbNumberWithKbNumberGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -93,14 +94,15 @@ export interface MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumberRequestBu
 }
 /**
  * Serializes information the current object
+ * @param FindByKbNumberWithKbNumberGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFindByKbNumberWithKbNumberGetResponse(writer: SerializationWriter, findByKbNumberWithKbNumberGetResponse: Partial<FindByKbNumberWithKbNumberGetResponse> | undefined | null = {}) : void {
-    if (findByKbNumberWithKbNumberGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, findByKbNumberWithKbNumberGetResponse)
-        writer.writeCollectionOfObjectValues<Product>("value", findByKbNumberWithKbNumberGetResponse.value, serializeProduct);
-    }
+export function serializeFindByKbNumberWithKbNumberGetResponse(writer: SerializationWriter, findByKbNumberWithKbNumberGetResponse: Partial<FindByKbNumberWithKbNumberGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!findByKbNumberWithKbNumberGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, findByKbNumberWithKbNumberGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Product>("value", findByKbNumberWithKbNumberGetResponse.value, serializeProduct);
 }
 /**
  * Uri template for the request builder.

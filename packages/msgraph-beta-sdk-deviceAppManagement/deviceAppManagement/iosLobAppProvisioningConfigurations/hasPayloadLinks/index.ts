@@ -28,6 +28,7 @@ export function createHasPayloadLinksPostResponseFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param HasPayloadLinksPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoHasPayloadLinksPostRequestBody(hasPayloadLinksPos
 }
 /**
  * The deserialization information for the current model
+ * @param HasPayloadLinksPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoHasPayloadLinksPostResponse(hasPayloadLinksPostRe
     }
 }
 export interface HasPayloadLinksPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface HasPayloadLinksRequestBuilder extends BaseRequestBuilder<HasPay
 }
 /**
  * Serializes information the current object
+ * @param HasPayloadLinksPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeHasPayloadLinksPostRequestBody(writer: SerializationWriter, hasPayloadLinksPostRequestBody: Partial<HasPayloadLinksPostRequestBody> | undefined | null = {}) : void {
-    if (hasPayloadLinksPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("payloadIds", hasPayloadLinksPostRequestBody.payloadIds);
-        writer.writeAdditionalData(hasPayloadLinksPostRequestBody.additionalData);
-    }
+export function serializeHasPayloadLinksPostRequestBody(writer: SerializationWriter, hasPayloadLinksPostRequestBody: Partial<HasPayloadLinksPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!hasPayloadLinksPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("payloadIds", hasPayloadLinksPostRequestBody.payloadIds);
+    writer.writeAdditionalData(hasPayloadLinksPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param HasPayloadLinksPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeHasPayloadLinksPostResponse(writer: SerializationWriter, hasPayloadLinksPostResponse: Partial<HasPayloadLinksPostResponse> | undefined | null = {}) : void {
-    if (hasPayloadLinksPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, hasPayloadLinksPostResponse)
-        writer.writeCollectionOfObjectValues<HasPayloadLinkResultItem>("value", hasPayloadLinksPostResponse.value, serializeHasPayloadLinkResultItem);
-    }
+export function serializeHasPayloadLinksPostResponse(writer: SerializationWriter, hasPayloadLinksPostResponse: Partial<HasPayloadLinksPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!hasPayloadLinksPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, hasPayloadLinksPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<HasPayloadLinkResultItem>("value", hasPayloadLinksPostResponse.value, serializeHasPayloadLinkResultItem);
 }
 /**
  * Uri template for the request builder.

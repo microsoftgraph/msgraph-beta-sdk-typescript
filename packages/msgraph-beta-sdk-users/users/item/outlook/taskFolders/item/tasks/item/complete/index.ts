@@ -46,6 +46,7 @@ export function createCompletePostResponseFromDiscriminatorValue(parseNode: Pars
 }
 /**
  * The deserialization information for the current model
+ * @param CompletePostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -57,14 +58,15 @@ export function deserializeIntoCompletePostResponse(completePostResponse: Partia
 }
 /**
  * Serializes information the current object
+ * @param CompletePostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCompletePostResponse(writer: SerializationWriter, completePostResponse: Partial<CompletePostResponse> | undefined | null = {}) : void {
-    if (completePostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, completePostResponse)
-        writer.writeCollectionOfObjectValues<OutlookTask>("value", completePostResponse.value, serializeOutlookTask);
-    }
+export function serializeCompletePostResponse(writer: SerializationWriter, completePostResponse: Partial<CompletePostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!completePostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, completePostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<OutlookTask>("value", completePostResponse.value, serializeOutlookTask);
 }
 /**
  * Uri template for the request builder.

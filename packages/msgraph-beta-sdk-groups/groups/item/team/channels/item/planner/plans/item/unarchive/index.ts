@@ -17,6 +17,7 @@ export function createUnarchivePostRequestBodyFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param UnarchivePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,20 +29,17 @@ export function deserializeIntoUnarchivePostRequestBody(unarchivePostRequestBody
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UnarchivePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUnarchivePostRequestBody(writer: SerializationWriter, unarchivePostRequestBody: Partial<UnarchivePostRequestBody> | undefined | null = {}) : void {
-    if (unarchivePostRequestBody) {
-        writer.writeStringValue("justification", unarchivePostRequestBody.justification);
-        writer.writeAdditionalData(unarchivePostRequestBody.additionalData);
-    }
+export function serializeUnarchivePostRequestBody(writer: SerializationWriter, unarchivePostRequestBody: Partial<UnarchivePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!unarchivePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("justification", unarchivePostRequestBody.justification);
+    writer.writeAdditionalData(unarchivePostRequestBody.additionalData);
 }
 export interface UnarchivePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

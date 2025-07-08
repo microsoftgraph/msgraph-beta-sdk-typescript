@@ -19,6 +19,7 @@ export function createGetLoggedOnManagedDevicesGetResponseFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param GetLoggedOnManagedDevicesGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetLoggedOnManagedDevicesRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetLoggedOnManagedDevicesGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetLoggedOnManagedDevicesGetResponse(writer: SerializationWriter, getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined | null = {}) : void {
-    if (getLoggedOnManagedDevicesGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getLoggedOnManagedDevicesGetResponse)
-        writer.writeCollectionOfObjectValues<ManagedDevice>("value", getLoggedOnManagedDevicesGetResponse.value, serializeManagedDevice);
-    }
+export function serializeGetLoggedOnManagedDevicesGetResponse(writer: SerializationWriter, getLoggedOnManagedDevicesGetResponse: Partial<GetLoggedOnManagedDevicesGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getLoggedOnManagedDevicesGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getLoggedOnManagedDevicesGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedDevice>("value", getLoggedOnManagedDevicesGetResponse.value, serializeManagedDevice);
 }
 /**
  * Uri template for the request builder.

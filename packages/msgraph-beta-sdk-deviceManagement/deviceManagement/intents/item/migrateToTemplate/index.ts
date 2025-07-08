@@ -17,6 +17,7 @@ export function createMigrateToTemplatePostRequestBodyFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param MigrateToTemplatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,10 +29,6 @@ export function deserializeIntoMigrateToTemplatePostRequestBody(migrateToTemplat
     }
 }
 export interface MigrateToTemplatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -66,15 +63,16 @@ export interface MigrateToTemplateRequestBuilder extends BaseRequestBuilder<Migr
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MigrateToTemplatePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMigrateToTemplatePostRequestBody(writer: SerializationWriter, migrateToTemplatePostRequestBody: Partial<MigrateToTemplatePostRequestBody> | undefined | null = {}) : void {
-    if (migrateToTemplatePostRequestBody) {
-        writer.writeStringValue("newTemplateId", migrateToTemplatePostRequestBody.newTemplateId);
-        writer.writeBooleanValue("preserveCustomValues", migrateToTemplatePostRequestBody.preserveCustomValues);
-        writer.writeAdditionalData(migrateToTemplatePostRequestBody.additionalData);
-    }
+export function serializeMigrateToTemplatePostRequestBody(writer: SerializationWriter, migrateToTemplatePostRequestBody: Partial<MigrateToTemplatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!migrateToTemplatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("newTemplateId", migrateToTemplatePostRequestBody.newTemplateId);
+    writer.writeBooleanValue("preserveCustomValues", migrateToTemplatePostRequestBody.preserveCustomValues);
+    writer.writeAdditionalData(migrateToTemplatePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createRevokeLicensesPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param RevokeLicensesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,10 +29,6 @@ export function deserializeIntoRevokeLicensesPostRequestBody(revokeLicensesPostR
     }
 }
 export interface RevokeLicensesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -66,15 +63,16 @@ export interface RevokeLicensesRequestBuilder extends BaseRequestBuilder<RevokeL
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RevokeLicensesPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRevokeLicensesPostRequestBody(writer: SerializationWriter, revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined | null = {}) : void {
-    if (revokeLicensesPostRequestBody) {
-        writer.writeBooleanValue("notifyManagedDevices", revokeLicensesPostRequestBody.notifyManagedDevices);
-        writer.writeBooleanValue("revokeUntrackedLicenses", revokeLicensesPostRequestBody.revokeUntrackedLicenses);
-        writer.writeAdditionalData(revokeLicensesPostRequestBody.additionalData);
-    }
+export function serializeRevokeLicensesPostRequestBody(writer: SerializationWriter, revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!revokeLicensesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("notifyManagedDevices", revokeLicensesPostRequestBody.notifyManagedDevices);
+    writer.writeBooleanValue("revokeUntrackedLicenses", revokeLicensesPostRequestBody.revokeUntrackedLicenses);
+    writer.writeAdditionalData(revokeLicensesPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createRevokePostRequestBodyFromDiscriminatorValue(parseNode: Par
 }
 /**
  * The deserialization information for the current model
+ * @param RevokePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoRevokePostRequestBody(revokePostRequestBody: Part
     }
 }
 export interface RevokePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -64,14 +61,15 @@ export interface RevokeRequestBuilder extends BaseRequestBuilder<RevokeRequestBu
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RevokePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRevokePostRequestBody(writer: SerializationWriter, revokePostRequestBody: Partial<RevokePostRequestBody> | undefined | null = {}) : void {
-    if (revokePostRequestBody) {
-        writer.writeStringValue("reviewerJustification", revokePostRequestBody.reviewerJustification);
-        writer.writeAdditionalData(revokePostRequestBody.additionalData);
-    }
+export function serializeRevokePostRequestBody(writer: SerializationWriter, revokePostRequestBody: Partial<RevokePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!revokePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("reviewerJustification", revokePostRequestBody.reviewerJustification);
+    writer.writeAdditionalData(revokePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

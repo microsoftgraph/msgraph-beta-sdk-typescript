@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CancelApprovalPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The approvalSource property
      */
     approvalSource?: OperationApprovalSource | null;
@@ -27,10 +23,6 @@ export interface CancelApprovalPostRequestBody extends AdditionalDataHolder, Bac
     justification?: string | null;
 }
 export interface CancelApprovalPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -80,6 +72,7 @@ export function createCancelApprovalPostResponseFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param CancelApprovalPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,6 +85,7 @@ export function deserializeIntoCancelApprovalPostRequestBody(cancelApprovalPostR
 }
 /**
  * The deserialization information for the current model
+ * @param CancelApprovalPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -103,26 +97,28 @@ export function deserializeIntoCancelApprovalPostResponse(cancelApprovalPostResp
 }
 /**
  * Serializes information the current object
+ * @param CancelApprovalPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCancelApprovalPostRequestBody(writer: SerializationWriter, cancelApprovalPostRequestBody: Partial<CancelApprovalPostRequestBody> | undefined | null = {}) : void {
-    if (cancelApprovalPostRequestBody) {
-        writer.writeEnumValue<OperationApprovalSource>("approvalSource", cancelApprovalPostRequestBody.approvalSource);
-        writer.writeStringValue("justification", cancelApprovalPostRequestBody.justification);
-        writer.writeAdditionalData(cancelApprovalPostRequestBody.additionalData);
-    }
+export function serializeCancelApprovalPostRequestBody(writer: SerializationWriter, cancelApprovalPostRequestBody: Partial<CancelApprovalPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cancelApprovalPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<OperationApprovalSource>("approvalSource", cancelApprovalPostRequestBody.approvalSource);
+    writer.writeStringValue("justification", cancelApprovalPostRequestBody.justification);
+    writer.writeAdditionalData(cancelApprovalPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param CancelApprovalPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCancelApprovalPostResponse(writer: SerializationWriter, cancelApprovalPostResponse: Partial<CancelApprovalPostResponse> | undefined | null = {}) : void {
-    if (cancelApprovalPostResponse) {
-        writer.writeStringValue("value", cancelApprovalPostResponse.value);
-        writer.writeAdditionalData(cancelApprovalPostResponse.additionalData);
-    }
+export function serializeCancelApprovalPostResponse(writer: SerializationWriter, cancelApprovalPostResponse: Partial<CancelApprovalPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cancelApprovalPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", cancelApprovalPostResponse.value);
+    writer.writeAdditionalData(cancelApprovalPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

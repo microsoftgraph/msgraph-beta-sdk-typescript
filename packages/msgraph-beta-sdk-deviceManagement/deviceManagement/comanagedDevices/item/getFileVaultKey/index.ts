@@ -17,6 +17,7 @@ export function createGetFileVaultKeyGetResponseFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param GetFileVaultKeyGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoGetFileVaultKeyGetResponse(getFileVaultKeyGetResp
     }
 }
 export interface GetFileVaultKeyGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -60,14 +57,15 @@ export interface GetFileVaultKeyRequestBuilder extends BaseRequestBuilder<GetFil
 }
 /**
  * Serializes information the current object
+ * @param GetFileVaultKeyGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetFileVaultKeyGetResponse(writer: SerializationWriter, getFileVaultKeyGetResponse: Partial<GetFileVaultKeyGetResponse> | undefined | null = {}) : void {
-    if (getFileVaultKeyGetResponse) {
-        writer.writeStringValue("value", getFileVaultKeyGetResponse.value);
-        writer.writeAdditionalData(getFileVaultKeyGetResponse.additionalData);
-    }
+export function serializeGetFileVaultKeyGetResponse(writer: SerializationWriter, getFileVaultKeyGetResponse: Partial<GetFileVaultKeyGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getFileVaultKeyGetResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", getFileVaultKeyGetResponse.value);
+    writer.writeAdditionalData(getFileVaultKeyGetResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createValidatePasswordPostRequestBodyFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param ValidatePasswordPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,20 +31,17 @@ export function deserializeIntoValidatePasswordPostRequestBody(validatePasswordP
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidatePasswordPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeValidatePasswordPostRequestBody(writer: SerializationWriter, validatePasswordPostRequestBody: Partial<ValidatePasswordPostRequestBody> | undefined | null = {}) : void {
-    if (validatePasswordPostRequestBody) {
-        writer.writeStringValue("password", validatePasswordPostRequestBody.password);
-        writer.writeAdditionalData(validatePasswordPostRequestBody.additionalData);
-    }
+export function serializeValidatePasswordPostRequestBody(writer: SerializationWriter, validatePasswordPostRequestBody: Partial<ValidatePasswordPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validatePasswordPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("password", validatePasswordPostRequestBody.password);
+    writer.writeAdditionalData(validatePasswordPostRequestBody.additionalData);
 }
 export interface ValidatePasswordPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

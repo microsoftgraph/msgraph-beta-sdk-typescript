@@ -17,6 +17,7 @@ export function createGetConfigurationPoliciesReportForDevicePostRequestBodyFrom
 }
 /**
  * The deserialization information for the current model
+ * @param GetConfigurationPoliciesReportForDevicePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetConfigurationPoliciesReportForDevicePostReques
     }
 }
 export interface GetConfigurationPoliciesReportForDevicePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetConfigurationPoliciesReportForDeviceRequestBuilder extends B
 }
 /**
  * Serializes information the current object
+ * @param GetConfigurationPoliciesReportForDevicePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetConfigurationPoliciesReportForDevicePostRequestBody(writer: SerializationWriter, getConfigurationPoliciesReportForDevicePostRequestBody: Partial<GetConfigurationPoliciesReportForDevicePostRequestBody> | undefined | null = {}) : void {
-    if (getConfigurationPoliciesReportForDevicePostRequestBody) {
-        writer.writeStringValue("filter", getConfigurationPoliciesReportForDevicePostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationPoliciesReportForDevicePostRequestBody.groupBy);
-        writer.writeStringValue("name", getConfigurationPoliciesReportForDevicePostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigurationPoliciesReportForDevicePostRequestBody.orderBy);
-        writer.writeStringValue("search", getConfigurationPoliciesReportForDevicePostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getConfigurationPoliciesReportForDevicePostRequestBody.select);
-        writer.writeStringValue("sessionId", getConfigurationPoliciesReportForDevicePostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getConfigurationPoliciesReportForDevicePostRequestBody.skip);
-        writer.writeNumberValue("top", getConfigurationPoliciesReportForDevicePostRequestBody.top);
-        writer.writeAdditionalData(getConfigurationPoliciesReportForDevicePostRequestBody.additionalData);
-    }
+export function serializeGetConfigurationPoliciesReportForDevicePostRequestBody(writer: SerializationWriter, getConfigurationPoliciesReportForDevicePostRequestBody: Partial<GetConfigurationPoliciesReportForDevicePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getConfigurationPoliciesReportForDevicePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getConfigurationPoliciesReportForDevicePostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigurationPoliciesReportForDevicePostRequestBody.groupBy);
+    writer.writeStringValue("name", getConfigurationPoliciesReportForDevicePostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigurationPoliciesReportForDevicePostRequestBody.orderBy);
+    writer.writeStringValue("search", getConfigurationPoliciesReportForDevicePostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getConfigurationPoliciesReportForDevicePostRequestBody.select);
+    writer.writeStringValue("sessionId", getConfigurationPoliciesReportForDevicePostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getConfigurationPoliciesReportForDevicePostRequestBody.skip);
+    writer.writeNumberValue("top", getConfigurationPoliciesReportForDevicePostRequestBody.top);
+    writer.writeAdditionalData(getConfigurationPoliciesReportForDevicePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

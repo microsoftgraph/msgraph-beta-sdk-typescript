@@ -28,10 +28,6 @@ export function createDeleteTiIndicatorsPostResponseFromDiscriminatorValue(parse
 }
 export interface DeleteTiIndicatorsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -71,6 +67,7 @@ export interface DeleteTiIndicatorsRequestBuilder extends BaseRequestBuilder<Del
 }
 /**
  * The deserialization information for the current model
+ * @param DeleteTiIndicatorsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -82,6 +79,7 @@ export function deserializeIntoDeleteTiIndicatorsPostRequestBody(deleteTiIndicat
 }
 /**
  * The deserialization information for the current model
+ * @param DeleteTiIndicatorsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -93,25 +91,27 @@ export function deserializeIntoDeleteTiIndicatorsPostResponse(deleteTiIndicators
 }
 /**
  * Serializes information the current object
+ * @param DeleteTiIndicatorsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeleteTiIndicatorsPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined | null = {}) : void {
-    if (deleteTiIndicatorsPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsPostRequestBody.value);
-        writer.writeAdditionalData(deleteTiIndicatorsPostRequestBody.additionalData);
-    }
+export function serializeDeleteTiIndicatorsPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deleteTiIndicatorsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsPostRequestBody.value);
+    writer.writeAdditionalData(deleteTiIndicatorsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param DeleteTiIndicatorsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeleteTiIndicatorsPostResponse(writer: SerializationWriter, deleteTiIndicatorsPostResponse: Partial<DeleteTiIndicatorsPostResponse> | undefined | null = {}) : void {
-    if (deleteTiIndicatorsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsPostResponse)
-        writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsPostResponse.value, serializeResultInfo);
-    }
+export function serializeDeleteTiIndicatorsPostResponse(writer: SerializationWriter, deleteTiIndicatorsPostResponse: Partial<DeleteTiIndicatorsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deleteTiIndicatorsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsPostResponse.value, serializeResultInfo);
 }
 /**
  * Uri template for the request builder.

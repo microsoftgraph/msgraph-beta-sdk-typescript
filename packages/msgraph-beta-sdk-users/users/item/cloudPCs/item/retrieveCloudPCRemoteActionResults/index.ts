@@ -19,6 +19,7 @@ export function createRetrieveCloudPCRemoteActionResultsGetResponseFromDiscrimin
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveCloudPCRemoteActionResultsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface RetrieveCloudPCRemoteActionResultsRequestBuilderGetQueryParamet
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveCloudPCRemoteActionResultsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveCloudPCRemoteActionResultsGetResponse(writer: SerializationWriter, retrieveCloudPCRemoteActionResultsGetResponse: Partial<RetrieveCloudPCRemoteActionResultsGetResponse> | undefined | null = {}) : void {
-    if (retrieveCloudPCRemoteActionResultsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveCloudPCRemoteActionResultsGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", retrieveCloudPCRemoteActionResultsGetResponse.value, serializeCloudPcRemoteActionResult);
-    }
+export function serializeRetrieveCloudPCRemoteActionResultsGetResponse(writer: SerializationWriter, retrieveCloudPCRemoteActionResultsGetResponse: Partial<RetrieveCloudPCRemoteActionResultsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveCloudPCRemoteActionResultsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveCloudPCRemoteActionResultsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcRemoteActionResult>("value", retrieveCloudPCRemoteActionResultsGetResponse.value, serializeCloudPcRemoteActionResult);
 }
 /**
  * Uri template for the request builder.

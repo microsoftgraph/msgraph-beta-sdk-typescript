@@ -17,6 +17,7 @@ export function createUploadDepTokenPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param UploadDepTokenPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,21 +30,18 @@ export function deserializeIntoUploadDepTokenPostRequestBody(uploadDepTokenPostR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UploadDepTokenPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUploadDepTokenPostRequestBody(writer: SerializationWriter, uploadDepTokenPostRequestBody: Partial<UploadDepTokenPostRequestBody> | undefined | null = {}) : void {
-    if (uploadDepTokenPostRequestBody) {
-        writer.writeStringValue("appleId", uploadDepTokenPostRequestBody.appleId);
-        writer.writeStringValue("depToken", uploadDepTokenPostRequestBody.depToken);
-        writer.writeAdditionalData(uploadDepTokenPostRequestBody.additionalData);
-    }
+export function serializeUploadDepTokenPostRequestBody(writer: SerializationWriter, uploadDepTokenPostRequestBody: Partial<UploadDepTokenPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!uploadDepTokenPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("appleId", uploadDepTokenPostRequestBody.appleId);
+    writer.writeStringValue("depToken", uploadDepTokenPostRequestBody.depToken);
+    writer.writeAdditionalData(uploadDepTokenPostRequestBody.additionalData);
 }
 export interface UploadDepTokenPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The appleId property
      */

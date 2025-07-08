@@ -19,6 +19,7 @@ export function createGetCredentialUserRegistrationCountGetResponseFromDiscrimin
 }
 /**
  * The deserialization information for the current model
+ * @param GetCredentialUserRegistrationCountGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetCredentialUserRegistrationCountRequestBuilderGetQueryParamet
 }
 /**
  * Serializes information the current object
+ * @param GetCredentialUserRegistrationCountGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetCredentialUserRegistrationCountGetResponse(writer: SerializationWriter, getCredentialUserRegistrationCountGetResponse: Partial<GetCredentialUserRegistrationCountGetResponse> | undefined | null = {}) : void {
-    if (getCredentialUserRegistrationCountGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getCredentialUserRegistrationCountGetResponse)
-        writer.writeCollectionOfObjectValues<CredentialUserRegistrationCount>("value", getCredentialUserRegistrationCountGetResponse.value, serializeCredentialUserRegistrationCount);
-    }
+export function serializeGetCredentialUserRegistrationCountGetResponse(writer: SerializationWriter, getCredentialUserRegistrationCountGetResponse: Partial<GetCredentialUserRegistrationCountGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getCredentialUserRegistrationCountGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getCredentialUserRegistrationCountGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CredentialUserRegistrationCount>("value", getCredentialUserRegistrationCountGetResponse.value, serializeCredentialUserRegistrationCount);
 }
 /**
  * Uri template for the request builder.

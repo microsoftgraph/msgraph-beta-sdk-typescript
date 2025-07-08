@@ -14,10 +14,6 @@ export interface ComputePostRequestBody extends AdditionalDataHolder, BackedMode
      */
     activities?: UserActivityTypes[] | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -84,6 +80,7 @@ export function createComputePostResponseFromDiscriminatorValue(parseNode: Parse
 }
 /**
  * The deserialization information for the current model
+ * @param ComputePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -99,6 +96,7 @@ export function deserializeIntoComputePostRequestBody(computePostRequestBody: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ComputePostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -110,29 +108,31 @@ export function deserializeIntoComputePostResponse(computePostResponse: Partial<
 }
 /**
  * Serializes information the current object
+ * @param ComputePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeComputePostRequestBody(writer: SerializationWriter, computePostRequestBody: Partial<ComputePostRequestBody> | undefined | null = {}) : void {
-    if (computePostRequestBody) {
-        writer.writeEnumValue<UserActivityTypes[]>("activities", computePostRequestBody.activities);
-        writer.writeObjectValue<DeviceMetadata>("deviceMetadata", computePostRequestBody.deviceMetadata, serializeDeviceMetadata);
-        writer.writeObjectValue<IntegratedApplicationMetadata>("integratedAppMetadata", computePostRequestBody.integratedAppMetadata, serializeIntegratedApplicationMetadata);
-        writer.writeCollectionOfObjectValues<PolicyLocation>("locations", computePostRequestBody.locations, serializePolicyLocation);
-        writer.writeEnumValue<PolicyPivotProperty>("pivotOn", computePostRequestBody.pivotOn);
-        writer.writeAdditionalData(computePostRequestBody.additionalData);
-    }
+export function serializeComputePostRequestBody(writer: SerializationWriter, computePostRequestBody: Partial<ComputePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!computePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<UserActivityTypes[]>("activities", computePostRequestBody.activities);
+    writer.writeObjectValue<DeviceMetadata>("deviceMetadata", computePostRequestBody.deviceMetadata, serializeDeviceMetadata);
+    writer.writeObjectValue<IntegratedApplicationMetadata>("integratedAppMetadata", computePostRequestBody.integratedAppMetadata, serializeIntegratedApplicationMetadata);
+    writer.writeCollectionOfObjectValues<PolicyLocation>("locations", computePostRequestBody.locations, serializePolicyLocation);
+    writer.writeEnumValue<PolicyPivotProperty>("pivotOn", computePostRequestBody.pivotOn);
+    writer.writeAdditionalData(computePostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ComputePostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeComputePostResponse(writer: SerializationWriter, computePostResponse: Partial<ComputePostResponse> | undefined | null = {}) : void {
-    if (computePostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, computePostResponse)
-        writer.writeCollectionOfObjectValues<PolicyTenantScope>("value", computePostResponse.value, serializePolicyTenantScope);
-    }
+export function serializeComputePostResponse(writer: SerializationWriter, computePostResponse: Partial<ComputePostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!computePostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, computePostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PolicyTenantScope>("value", computePostResponse.value, serializePolicyTenantScope);
 }
 /**
  * Uri template for the request builder.

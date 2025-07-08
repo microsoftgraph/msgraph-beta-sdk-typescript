@@ -17,6 +17,7 @@ export function createInitiateOnDemandProactiveRemediationPostRequestBodyFromDis
 }
 /**
  * The deserialization information for the current model
+ * @param InitiateOnDemandProactiveRemediationPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoInitiateOnDemandProactiveRemediationPostRequestBo
     }
 }
 export interface InitiateOnDemandProactiveRemediationPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -61,14 +58,15 @@ export interface InitiateOnDemandProactiveRemediationRequestBuilder extends Base
 }
 /**
  * Serializes information the current object
+ * @param InitiateOnDemandProactiveRemediationPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInitiateOnDemandProactiveRemediationPostRequestBody(writer: SerializationWriter, initiateOnDemandProactiveRemediationPostRequestBody: Partial<InitiateOnDemandProactiveRemediationPostRequestBody> | undefined | null = {}) : void {
-    if (initiateOnDemandProactiveRemediationPostRequestBody) {
-        writer.writeStringValue("scriptPolicyId", initiateOnDemandProactiveRemediationPostRequestBody.scriptPolicyId);
-        writer.writeAdditionalData(initiateOnDemandProactiveRemediationPostRequestBody.additionalData);
-    }
+export function serializeInitiateOnDemandProactiveRemediationPostRequestBody(writer: SerializationWriter, initiateOnDemandProactiveRemediationPostRequestBody: Partial<InitiateOnDemandProactiveRemediationPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!initiateOnDemandProactiveRemediationPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("scriptPolicyId", initiateOnDemandProactiveRemediationPostRequestBody.scriptPolicyId);
+    writer.writeAdditionalData(initiateOnDemandProactiveRemediationPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

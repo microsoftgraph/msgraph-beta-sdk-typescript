@@ -17,6 +17,7 @@ export function createGetCertificatesReportPostRequestBodyFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param GetCertificatesReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetCertificatesReportPostRequestBody(getCertifica
     }
 }
 export interface GetCertificatesReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetCertificatesReportRequestBuilder extends BaseRequestBuilder<
 }
 /**
  * Serializes information the current object
+ * @param GetCertificatesReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetCertificatesReportPostRequestBody(writer: SerializationWriter, getCertificatesReportPostRequestBody: Partial<GetCertificatesReportPostRequestBody> | undefined | null = {}) : void {
-    if (getCertificatesReportPostRequestBody) {
-        writer.writeStringValue("filter", getCertificatesReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCertificatesReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getCertificatesReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCertificatesReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getCertificatesReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getCertificatesReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getCertificatesReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getCertificatesReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getCertificatesReportPostRequestBody.top);
-        writer.writeAdditionalData(getCertificatesReportPostRequestBody.additionalData);
-    }
+export function serializeGetCertificatesReportPostRequestBody(writer: SerializationWriter, getCertificatesReportPostRequestBody: Partial<GetCertificatesReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getCertificatesReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getCertificatesReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getCertificatesReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getCertificatesReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getCertificatesReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getCertificatesReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getCertificatesReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getCertificatesReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getCertificatesReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getCertificatesReportPostRequestBody.top);
+    writer.writeAdditionalData(getCertificatesReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

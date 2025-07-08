@@ -17,6 +17,7 @@ export function createGetWindowsDriverUpdateAlertSummaryReportPostRequestBodyFro
 }
 /**
  * The deserialization information for the current model
+ * @param GetWindowsDriverUpdateAlertSummaryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetWindowsDriverUpdateAlertSummaryReportPostReque
     }
 }
 export interface GetWindowsDriverUpdateAlertSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetWindowsDriverUpdateAlertSummaryReportRequestBuilder extends 
 }
 /**
  * Serializes information the current object
+ * @param GetWindowsDriverUpdateAlertSummaryReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetWindowsDriverUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsDriverUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsDriverUpdateAlertSummaryReportPostRequestBody> | undefined | null = {}) : void {
-    if (getWindowsDriverUpdateAlertSummaryReportPostRequestBody) {
-        writer.writeStringValue("filter", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.top);
-        writer.writeAdditionalData(getWindowsDriverUpdateAlertSummaryReportPostRequestBody.additionalData);
-    }
+export function serializeGetWindowsDriverUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsDriverUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsDriverUpdateAlertSummaryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getWindowsDriverUpdateAlertSummaryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getWindowsDriverUpdateAlertSummaryReportPostRequestBody.top);
+    writer.writeAdditionalData(getWindowsDriverUpdateAlertSummaryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createImportResourceActionsPostRequestBodyFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param ImportResourceActionsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -31,10 +32,6 @@ export function deserializeIntoImportResourceActionsPostRequestBody(importResour
     }
 }
 export interface ImportResourceActionsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -76,16 +73,17 @@ export interface ImportResourceActionsRequestBuilder extends BaseRequestBuilder<
 }
 /**
  * Serializes information the current object
+ * @param ImportResourceActionsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeImportResourceActionsPostRequestBody(writer: SerializationWriter, importResourceActionsPostRequestBody: Partial<ImportResourceActionsPostRequestBody> | undefined | null = {}) : void {
-    if (importResourceActionsPostRequestBody) {
-        writer.writeStringValue("format", importResourceActionsPostRequestBody.format);
-        writer.writeBooleanValue("overwriteResourceNamespace", importResourceActionsPostRequestBody.overwriteResourceNamespace);
-        writer.writeStringValue("value", importResourceActionsPostRequestBody.value);
-        writer.writeAdditionalData(importResourceActionsPostRequestBody.additionalData);
-    }
+export function serializeImportResourceActionsPostRequestBody(writer: SerializationWriter, importResourceActionsPostRequestBody: Partial<ImportResourceActionsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!importResourceActionsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("format", importResourceActionsPostRequestBody.format);
+    writer.writeBooleanValue("overwriteResourceNamespace", importResourceActionsPostRequestBody.overwriteResourceNamespace);
+    writer.writeStringValue("value", importResourceActionsPostRequestBody.value);
+    writer.writeAdditionalData(importResourceActionsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

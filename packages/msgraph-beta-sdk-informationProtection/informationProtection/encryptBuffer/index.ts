@@ -19,6 +19,7 @@ export function createEncryptBufferPostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param EncryptBufferPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoEncryptBufferPostRequestBody(encryptBufferPostReq
     }
 }
 export interface EncryptBufferPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -71,15 +68,16 @@ export interface EncryptBufferRequestBuilder extends BaseRequestBuilder<EncryptB
 }
 /**
  * Serializes information the current object
+ * @param EncryptBufferPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEncryptBufferPostRequestBody(writer: SerializationWriter, encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined | null = {}) : void {
-    if (encryptBufferPostRequestBody) {
-        writer.writeByteArrayValue("buffer", encryptBufferPostRequestBody.buffer);
-        writer.writeGuidValue("labelId", encryptBufferPostRequestBody.labelId);
-        writer.writeAdditionalData(encryptBufferPostRequestBody.additionalData);
-    }
+export function serializeEncryptBufferPostRequestBody(writer: SerializationWriter, encryptBufferPostRequestBody: Partial<EncryptBufferPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!encryptBufferPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeByteArrayValue("buffer", encryptBufferPostRequestBody.buffer);
+    writer.writeGuidValue("labelId", encryptBufferPostRequestBody.labelId);
+    writer.writeAdditionalData(encryptBufferPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

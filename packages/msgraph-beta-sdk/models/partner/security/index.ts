@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Pa
 
 export interface ActivityLog extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -77,10 +73,6 @@ export interface AdminsMfaEnforcedSecurityRequirement extends Parsable, Security
     usersRequiredNotUsingMfaCount?: number | null;
 }
 export interface AffectedResource extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -280,10 +272,6 @@ export function createSecurityScoreHistoryFromDiscriminatorValue(parseNode: Pars
 }
 export interface CustomerInsight extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -307,10 +295,6 @@ export interface CustomerInsightCollectionResponse extends BaseCollectionPaginat
     value?: CustomerInsight[] | null;
 }
 export interface CustomerMfaInsight extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -366,6 +350,7 @@ export interface CustomersSpendingBudgetSecurityRequirement extends Parsable, Se
 }
 /**
  * The deserialization information for the current model
+ * @param ActivityLog The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -381,6 +366,7 @@ export function deserializeIntoActivityLog(activityLog: Partial<ActivityLog> | u
 }
 /**
  * The deserialization information for the current model
+ * @param AdditionalDataDictionary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -391,6 +377,7 @@ export function deserializeIntoAdditionalDataDictionary(additionalDataDictionary
 }
 /**
  * The deserialization information for the current model
+ * @param AdminsMfaEnforcedSecurityRequirement The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -410,6 +397,7 @@ export function deserializeIntoAdminsMfaEnforcedSecurityRequirement(adminsMfaEnf
 }
 /**
  * The deserialization information for the current model
+ * @param AffectedResource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -423,6 +411,7 @@ export function deserializeIntoAffectedResource(affectedResource: Partial<Affect
 }
 /**
  * The deserialization information for the current model
+ * @param CustomerInsight The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -436,6 +425,7 @@ export function deserializeIntoCustomerInsight(customerInsight: Partial<Customer
 }
 /**
  * The deserialization information for the current model
+ * @param CustomerInsightCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -447,6 +437,7 @@ export function deserializeIntoCustomerInsightCollectionResponse(customerInsight
 }
 /**
  * The deserialization information for the current model
+ * @param CustomerMfaInsight The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -464,6 +455,7 @@ export function deserializeIntoCustomerMfaInsight(customerMfaInsight: Partial<Cu
 }
 /**
  * The deserialization information for the current model
+ * @param CustomersMfaEnforcedSecurityRequirement The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -476,6 +468,7 @@ export function deserializeIntoCustomersMfaEnforcedSecurityRequirement(customers
 }
 /**
  * The deserialization information for the current model
+ * @param CustomersSpendingBudgetSecurityRequirement The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -488,6 +481,7 @@ export function deserializeIntoCustomersSpendingBudgetSecurityRequirement(custom
 }
 /**
  * The deserialization information for the current model
+ * @param PartnerSecurity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -500,6 +494,7 @@ export function deserializeIntoPartnerSecurity(partnerSecurity: Partial<PartnerS
 }
 /**
  * The deserialization information for the current model
+ * @param PartnerSecurityAlert The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -530,6 +525,7 @@ export function deserializeIntoPartnerSecurityAlert(partnerSecurityAlert: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param PartnerSecurityAlertCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -541,6 +537,7 @@ export function deserializeIntoPartnerSecurityAlertCollectionResponse(partnerSec
 }
 /**
  * The deserialization information for the current model
+ * @param PartnerSecurityScore The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -558,6 +555,7 @@ export function deserializeIntoPartnerSecurityScore(partnerSecurityScore: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ResponseTimeSecurityRequirement The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -569,6 +567,7 @@ export function deserializeIntoResponseTimeSecurityRequirement(responseTimeSecur
 }
 /**
  * The deserialization information for the current model
+ * @param SecurityRequirement The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -587,6 +586,7 @@ export function deserializeIntoSecurityRequirement(securityRequirement: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param SecurityRequirementCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -598,6 +598,7 @@ export function deserializeIntoSecurityRequirementCollectionResponse(securityReq
 }
 /**
  * The deserialization information for the current model
+ * @param SecurityScoreHistory The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -612,6 +613,7 @@ export function deserializeIntoSecurityScoreHistory(securityScoreHistory: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param SecurityScoreHistoryCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -828,260 +830,292 @@ export interface SecurityScoreHistoryCollectionResponse extends BaseCollectionPa
 }
 /**
  * Serializes information the current object
+ * @param ActivityLog The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeActivityLog(writer: SerializationWriter, activityLog: Partial<ActivityLog> | undefined | null = {}) : void {
-    if (activityLog) {
-        writer.writeStringValue("@odata.type", activityLog.odataType);
-        writer.writeEnumValue<SecurityAlertStatus>("statusFrom", activityLog.statusFrom);
-        writer.writeEnumValue<SecurityAlertStatus>("statusTo", activityLog.statusTo);
-        writer.writeStringValue("updatedBy", activityLog.updatedBy);
-        writer.writeDateValue("updatedDateTime", activityLog.updatedDateTime);
-        writer.writeAdditionalData(activityLog.additionalData);
+export function serializeActivityLog(writer: SerializationWriter, activityLog: Partial<ActivityLog> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!activityLog || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", activityLog.odataType);
+    writer.writeEnumValue<SecurityAlertStatus>("statusFrom", activityLog.statusFrom);
+    writer.writeEnumValue<SecurityAlertStatus>("statusTo", activityLog.statusTo);
+    writer.writeStringValue("updatedBy", activityLog.updatedBy);
+    writer.writeDateValue("updatedDateTime", activityLog.updatedDateTime);
+    writer.writeAdditionalData(activityLog.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param AdditionalDataDictionary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAdditionalDataDictionary(writer: SerializationWriter, additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!additionalDataDictionary || isSerializingDerivedType) { return; }
+    serializeDictionary(writer, additionalDataDictionary, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param AdminsMfaEnforcedSecurityRequirement The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAdminsMfaEnforcedSecurityRequirement(writer: SerializationWriter, adminsMfaEnforcedSecurityRequirement: Partial<AdminsMfaEnforcedSecurityRequirement> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!adminsMfaEnforcedSecurityRequirement || isSerializingDerivedType) { return; }
+    serializeSecurityRequirement(writer, adminsMfaEnforcedSecurityRequirement, isSerializingDerivedType)
+    writer.writeNumberValue("adminsRequiredNotUsingMfaCount", adminsMfaEnforcedSecurityRequirement.adminsRequiredNotUsingMfaCount);
+    writer.writeEnumValue<PolicyStatus>("legacyPerUserMfaStatus", adminsMfaEnforcedSecurityRequirement.legacyPerUserMfaStatus);
+    writer.writeEnumValue<PolicyStatus>("mfaConditionalAccessPolicyStatus", adminsMfaEnforcedSecurityRequirement.mfaConditionalAccessPolicyStatus);
+    writer.writeNumberValue("mfaEnabledAdminsCount", adminsMfaEnforcedSecurityRequirement.mfaEnabledAdminsCount);
+    writer.writeNumberValue("mfaEnabledUsersCount", adminsMfaEnforcedSecurityRequirement.mfaEnabledUsersCount);
+    writer.writeEnumValue<PolicyStatus>("securityDefaultsStatus", adminsMfaEnforcedSecurityRequirement.securityDefaultsStatus);
+    writer.writeNumberValue("totalAdminsCount", adminsMfaEnforcedSecurityRequirement.totalAdminsCount);
+    writer.writeNumberValue("totalUsersCount", adminsMfaEnforcedSecurityRequirement.totalUsersCount);
+    writer.writeNumberValue("usersRequiredNotUsingMfaCount", adminsMfaEnforcedSecurityRequirement.usersRequiredNotUsingMfaCount);
+}
+/**
+ * Serializes information the current object
+ * @param AffectedResource The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAffectedResource(writer: SerializationWriter, affectedResource: Partial<AffectedResource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!affectedResource || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", affectedResource.odataType);
+    writer.writeStringValue("resourceId", affectedResource.resourceId);
+    writer.writeStringValue("resourceType", affectedResource.resourceType);
+    writer.writeAdditionalData(affectedResource.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CustomerInsight The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomerInsight(writer: SerializationWriter, customerInsight: Partial<CustomerInsight> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customerInsight || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<CustomerMfaInsight>("mfa", customerInsight.mfa, serializeCustomerMfaInsight);
+    writer.writeStringValue("@odata.type", customerInsight.odataType);
+    writer.writeStringValue("tenantId", customerInsight.tenantId);
+    writer.writeAdditionalData(customerInsight.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CustomerInsightCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomerInsightCollectionResponse(writer: SerializationWriter, customerInsightCollectionResponse: Partial<CustomerInsightCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customerInsightCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, customerInsightCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CustomerInsight>("value", customerInsightCollectionResponse.value, serializeCustomerInsight);
+}
+/**
+ * Serializes information the current object
+ * @param CustomerMfaInsight The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomerMfaInsight(writer: SerializationWriter, customerMfaInsight: Partial<CustomerMfaInsight> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customerMfaInsight || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("compliantAdminsCount", customerMfaInsight.compliantAdminsCount);
+    writer.writeNumberValue("compliantNonAdminsCount", customerMfaInsight.compliantNonAdminsCount);
+    writer.writeEnumValue<PolicyStatus>("legacyPerUserMfaStatus", customerMfaInsight.legacyPerUserMfaStatus);
+    writer.writeEnumValue<PolicyStatus>("mfaConditionalAccessPolicyStatus", customerMfaInsight.mfaConditionalAccessPolicyStatus);
+    writer.writeStringValue("@odata.type", customerMfaInsight.odataType);
+    writer.writeEnumValue<PolicyStatus>("securityDefaultsStatus", customerMfaInsight.securityDefaultsStatus);
+    writer.writeNumberValue("totalUsersCount", customerMfaInsight.totalUsersCount);
+    writer.writeAdditionalData(customerMfaInsight.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CustomersMfaEnforcedSecurityRequirement The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomersMfaEnforcedSecurityRequirement(writer: SerializationWriter, customersMfaEnforcedSecurityRequirement: Partial<CustomersMfaEnforcedSecurityRequirement> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customersMfaEnforcedSecurityRequirement || isSerializingDerivedType) { return; }
+    serializeSecurityRequirement(writer, customersMfaEnforcedSecurityRequirement, isSerializingDerivedType)
+    writer.writeNumberValue("compliantTenantCount", customersMfaEnforcedSecurityRequirement.compliantTenantCount);
+    writer.writeNumberValue("totalTenantCount", customersMfaEnforcedSecurityRequirement.totalTenantCount);
+}
+/**
+ * Serializes information the current object
+ * @param CustomersSpendingBudgetSecurityRequirement The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomersSpendingBudgetSecurityRequirement(writer: SerializationWriter, customersSpendingBudgetSecurityRequirement: Partial<CustomersSpendingBudgetSecurityRequirement> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customersSpendingBudgetSecurityRequirement || isSerializingDerivedType) { return; }
+    serializeSecurityRequirement(writer, customersSpendingBudgetSecurityRequirement, isSerializingDerivedType)
+    writer.writeNumberValue("customersWithSpendBudgetCount", customersSpendingBudgetSecurityRequirement.customersWithSpendBudgetCount);
+    writer.writeNumberValue("totalCustomersCount", customersSpendingBudgetSecurityRequirement.totalCustomersCount);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PartnerSecurity The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePartnerSecurity(writer: SerializationWriter, partnerSecurity: Partial<PartnerSecurity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!partnerSecurity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, partnerSecurity, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", partnerSecurity.securityAlerts, serializePartnerSecurityAlert);
+    writer.writeObjectValue<PartnerSecurityScore>("securityScore", partnerSecurity.securityScore, serializePartnerSecurityScore);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PartnerSecurityAlert The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePartnerSecurityAlert(writer: SerializationWriter, partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!partnerSecurityAlert || isSerializingDerivedType) { return; }
+    serializeEntity(writer, partnerSecurityAlert, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ActivityLog>("activityLogs", partnerSecurityAlert.activityLogs, serializeActivityLog);
+    writer.writeObjectValue<AdditionalDataDictionary>("additionalDetails", partnerSecurityAlert.additionalDetails, serializeAdditionalDataDictionary);
+    writer.writeCollectionOfObjectValues<AffectedResource>("affectedResources", partnerSecurityAlert.affectedResources, serializeAffectedResource);
+    writer.writeStringValue("alertType", partnerSecurityAlert.alertType);
+    writer.writeStringValue("catalogOfferId", partnerSecurityAlert.catalogOfferId);
+    writer.writeEnumValue<SecurityAlertConfidence>("confidenceLevel", partnerSecurityAlert.confidenceLevel);
+    writer.writeStringValue("customerTenantId", partnerSecurityAlert.customerTenantId);
+    writer.writeStringValue("description", partnerSecurityAlert.description);
+    writer.writeDateValue("detectedDateTime", partnerSecurityAlert.detectedDateTime);
+    writer.writeStringValue("displayName", partnerSecurityAlert.displayName);
+    writer.writeDateValue("firstObservedDateTime", partnerSecurityAlert.firstObservedDateTime);
+    writer.writeBooleanValue("isTest", partnerSecurityAlert.isTest);
+    writer.writeDateValue("lastObservedDateTime", partnerSecurityAlert.lastObservedDateTime);
+    writer.writeStringValue("resolvedBy", partnerSecurityAlert.resolvedBy);
+    writer.writeDateValue("resolvedOnDateTime", partnerSecurityAlert.resolvedOnDateTime);
+    writer.writeEnumValue<SecurityAlertResolvedReason>("resolvedReason", partnerSecurityAlert.resolvedReason);
+    writer.writeEnumValue<SecurityAlertSeverity>("severity", partnerSecurityAlert.severity);
+    writer.writeEnumValue<SecurityAlertStatus>("status", partnerSecurityAlert.status);
+    writer.writeStringValue("subscriptionId", partnerSecurityAlert.subscriptionId);
+    writer.writeStringValue("valueAddedResellerTenantId", partnerSecurityAlert.valueAddedResellerTenantId);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PartnerSecurityAlertCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePartnerSecurityAlertCollectionResponse(writer: SerializationWriter, partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!partnerSecurityAlertCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, partnerSecurityAlertCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("value", partnerSecurityAlertCollectionResponse.value, serializePartnerSecurityAlert);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PartnerSecurityScore The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePartnerSecurityScore(writer: SerializationWriter, partnerSecurityScore: Partial<PartnerSecurityScore> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!partnerSecurityScore || isSerializingDerivedType) { return; }
+    serializeEntity(writer, partnerSecurityScore, isSerializingDerivedType)
+    writer.writeNumberValue("currentScore", partnerSecurityScore.currentScore);
+    writer.writeCollectionOfObjectValues<CustomerInsight>("customerInsights", partnerSecurityScore.customerInsights, serializeCustomerInsight);
+    writer.writeCollectionOfObjectValues<SecurityScoreHistory>("history", partnerSecurityScore.history, serializeSecurityScoreHistory);
+    writer.writeDateValue("lastRefreshDateTime", partnerSecurityScore.lastRefreshDateTime);
+    writer.writeNumberValue("maxScore", partnerSecurityScore.maxScore);
+    writer.writeCollectionOfObjectValues<SecurityRequirement>("requirements", partnerSecurityScore.requirements, serializeSecurityRequirement);
+    writer.writeDateValue("updatedDateTime", partnerSecurityScore.updatedDateTime);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ResponseTimeSecurityRequirement The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeResponseTimeSecurityRequirement(writer: SerializationWriter, responseTimeSecurityRequirement: Partial<ResponseTimeSecurityRequirement> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!responseTimeSecurityRequirement || isSerializingDerivedType) { return; }
+    serializeSecurityRequirement(writer, responseTimeSecurityRequirement, isSerializingDerivedType)
+    writer.writeNumberValue("averageResponseTimeInHours", responseTimeSecurityRequirement.averageResponseTimeInHours);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SecurityRequirement The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSecurityRequirement(writer: SerializationWriter, securityRequirement: Partial<SecurityRequirement> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!securityRequirement || isSerializingDerivedType) { return; }
+    serializeEntity(writer, securityRequirement, isSerializingDerivedType)
+    writer.writeStringValue("actionUrl", securityRequirement.actionUrl);
+    writer.writeEnumValue<ComplianceStatus>("complianceStatus", securityRequirement.complianceStatus);
+    writer.writeStringValue("helpUrl", securityRequirement.helpUrl);
+    writer.writeNumberValue("maxScore", securityRequirement.maxScore);
+    writer.writeEnumValue<SecurityRequirementType>("requirementType", securityRequirement.requirementType);
+    writer.writeNumberValue("score", securityRequirement.score);
+    writer.writeEnumValue<SecurityRequirementState>("state", securityRequirement.state);
+    writer.writeDateValue("updatedDateTime", securityRequirement.updatedDateTime);
+    switch (securityRequirement.odataType) {
+        case "#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement":
+            serializeAdminsMfaEnforcedSecurityRequirement(writer, securityRequirement as AdminsMfaEnforcedSecurityRequirement, true);
+        break;
+        case "#microsoft.graph.partner.security.customersMfaEnforcedSecurityRequirement":
+            serializeCustomersMfaEnforcedSecurityRequirement(writer, securityRequirement as CustomersMfaEnforcedSecurityRequirement, true);
+        break;
+        case "#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement":
+            serializeCustomersSpendingBudgetSecurityRequirement(writer, securityRequirement as CustomersSpendingBudgetSecurityRequirement, true);
+        break;
+        case "#microsoft.graph.partner.security.responseTimeSecurityRequirement":
+            serializeResponseTimeSecurityRequirement(writer, securityRequirement as ResponseTimeSecurityRequirement, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SecurityRequirementCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdditionalDataDictionary(writer: SerializationWriter, additionalDataDictionary: Partial<AdditionalDataDictionary> | undefined | null = {}) : void {
-    if (additionalDataDictionary) {
-        serializeDictionary(writer, additionalDataDictionary)
-    }
+export function serializeSecurityRequirementCollectionResponse(writer: SerializationWriter, securityRequirementCollectionResponse: Partial<SecurityRequirementCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!securityRequirementCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, securityRequirementCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SecurityRequirement>("value", securityRequirementCollectionResponse.value, serializeSecurityRequirement);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SecurityScoreHistory The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdminsMfaEnforcedSecurityRequirement(writer: SerializationWriter, adminsMfaEnforcedSecurityRequirement: Partial<AdminsMfaEnforcedSecurityRequirement> | undefined | null = {}) : void {
-    if (adminsMfaEnforcedSecurityRequirement) {
-        serializeSecurityRequirement(writer, adminsMfaEnforcedSecurityRequirement)
-        writer.writeNumberValue("adminsRequiredNotUsingMfaCount", adminsMfaEnforcedSecurityRequirement.adminsRequiredNotUsingMfaCount);
-        writer.writeEnumValue<PolicyStatus>("legacyPerUserMfaStatus", adminsMfaEnforcedSecurityRequirement.legacyPerUserMfaStatus);
-        writer.writeEnumValue<PolicyStatus>("mfaConditionalAccessPolicyStatus", adminsMfaEnforcedSecurityRequirement.mfaConditionalAccessPolicyStatus);
-        writer.writeNumberValue("mfaEnabledAdminsCount", adminsMfaEnforcedSecurityRequirement.mfaEnabledAdminsCount);
-        writer.writeNumberValue("mfaEnabledUsersCount", adminsMfaEnforcedSecurityRequirement.mfaEnabledUsersCount);
-        writer.writeEnumValue<PolicyStatus>("securityDefaultsStatus", adminsMfaEnforcedSecurityRequirement.securityDefaultsStatus);
-        writer.writeNumberValue("totalAdminsCount", adminsMfaEnforcedSecurityRequirement.totalAdminsCount);
-        writer.writeNumberValue("totalUsersCount", adminsMfaEnforcedSecurityRequirement.totalUsersCount);
-        writer.writeNumberValue("usersRequiredNotUsingMfaCount", adminsMfaEnforcedSecurityRequirement.usersRequiredNotUsingMfaCount);
-    }
+export function serializeSecurityScoreHistory(writer: SerializationWriter, securityScoreHistory: Partial<SecurityScoreHistory> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!securityScoreHistory || isSerializingDerivedType) { return; }
+    serializeEntity(writer, securityScoreHistory, isSerializingDerivedType)
+    writer.writeNumberValue("compliantRequirementsCount", securityScoreHistory.compliantRequirementsCount);
+    writer.writeDateValue("createdDateTime", securityScoreHistory.createdDateTime);
+    writer.writeNumberValue("score", securityScoreHistory.score);
+    writer.writeNumberValue("totalRequirementsCount", securityScoreHistory.totalRequirementsCount);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SecurityScoreHistoryCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAffectedResource(writer: SerializationWriter, affectedResource: Partial<AffectedResource> | undefined | null = {}) : void {
-    if (affectedResource) {
-        writer.writeStringValue("@odata.type", affectedResource.odataType);
-        writer.writeStringValue("resourceId", affectedResource.resourceId);
-        writer.writeStringValue("resourceType", affectedResource.resourceType);
-        writer.writeAdditionalData(affectedResource.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeCustomerInsight(writer: SerializationWriter, customerInsight: Partial<CustomerInsight> | undefined | null = {}) : void {
-    if (customerInsight) {
-        writer.writeObjectValue<CustomerMfaInsight>("mfa", customerInsight.mfa, serializeCustomerMfaInsight);
-        writer.writeStringValue("@odata.type", customerInsight.odataType);
-        writer.writeStringValue("tenantId", customerInsight.tenantId);
-        writer.writeAdditionalData(customerInsight.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeCustomerInsightCollectionResponse(writer: SerializationWriter, customerInsightCollectionResponse: Partial<CustomerInsightCollectionResponse> | undefined | null = {}) : void {
-    if (customerInsightCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, customerInsightCollectionResponse)
-        writer.writeCollectionOfObjectValues<CustomerInsight>("value", customerInsightCollectionResponse.value, serializeCustomerInsight);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeCustomerMfaInsight(writer: SerializationWriter, customerMfaInsight: Partial<CustomerMfaInsight> | undefined | null = {}) : void {
-    if (customerMfaInsight) {
-        writer.writeNumberValue("compliantAdminsCount", customerMfaInsight.compliantAdminsCount);
-        writer.writeNumberValue("compliantNonAdminsCount", customerMfaInsight.compliantNonAdminsCount);
-        writer.writeEnumValue<PolicyStatus>("legacyPerUserMfaStatus", customerMfaInsight.legacyPerUserMfaStatus);
-        writer.writeEnumValue<PolicyStatus>("mfaConditionalAccessPolicyStatus", customerMfaInsight.mfaConditionalAccessPolicyStatus);
-        writer.writeStringValue("@odata.type", customerMfaInsight.odataType);
-        writer.writeEnumValue<PolicyStatus>("securityDefaultsStatus", customerMfaInsight.securityDefaultsStatus);
-        writer.writeNumberValue("totalUsersCount", customerMfaInsight.totalUsersCount);
-        writer.writeAdditionalData(customerMfaInsight.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeCustomersMfaEnforcedSecurityRequirement(writer: SerializationWriter, customersMfaEnforcedSecurityRequirement: Partial<CustomersMfaEnforcedSecurityRequirement> | undefined | null = {}) : void {
-    if (customersMfaEnforcedSecurityRequirement) {
-        serializeSecurityRequirement(writer, customersMfaEnforcedSecurityRequirement)
-        writer.writeNumberValue("compliantTenantCount", customersMfaEnforcedSecurityRequirement.compliantTenantCount);
-        writer.writeNumberValue("totalTenantCount", customersMfaEnforcedSecurityRequirement.totalTenantCount);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeCustomersSpendingBudgetSecurityRequirement(writer: SerializationWriter, customersSpendingBudgetSecurityRequirement: Partial<CustomersSpendingBudgetSecurityRequirement> | undefined | null = {}) : void {
-    if (customersSpendingBudgetSecurityRequirement) {
-        serializeSecurityRequirement(writer, customersSpendingBudgetSecurityRequirement)
-        writer.writeNumberValue("customersWithSpendBudgetCount", customersSpendingBudgetSecurityRequirement.customersWithSpendBudgetCount);
-        writer.writeNumberValue("totalCustomersCount", customersSpendingBudgetSecurityRequirement.totalCustomersCount);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePartnerSecurity(writer: SerializationWriter, partnerSecurity: Partial<PartnerSecurity> | undefined | null = {}) : void {
-    if (partnerSecurity) {
-        serializeEntity(writer, partnerSecurity)
-        writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("securityAlerts", partnerSecurity.securityAlerts, serializePartnerSecurityAlert);
-        writer.writeObjectValue<PartnerSecurityScore>("securityScore", partnerSecurity.securityScore, serializePartnerSecurityScore);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePartnerSecurityAlert(writer: SerializationWriter, partnerSecurityAlert: Partial<PartnerSecurityAlert> | undefined | null = {}) : void {
-    if (partnerSecurityAlert) {
-        serializeEntity(writer, partnerSecurityAlert)
-        writer.writeCollectionOfObjectValues<ActivityLog>("activityLogs", partnerSecurityAlert.activityLogs, serializeActivityLog);
-        writer.writeObjectValue<AdditionalDataDictionary>("additionalDetails", partnerSecurityAlert.additionalDetails, serializeAdditionalDataDictionary);
-        writer.writeCollectionOfObjectValues<AffectedResource>("affectedResources", partnerSecurityAlert.affectedResources, serializeAffectedResource);
-        writer.writeStringValue("alertType", partnerSecurityAlert.alertType);
-        writer.writeStringValue("catalogOfferId", partnerSecurityAlert.catalogOfferId);
-        writer.writeEnumValue<SecurityAlertConfidence>("confidenceLevel", partnerSecurityAlert.confidenceLevel);
-        writer.writeStringValue("customerTenantId", partnerSecurityAlert.customerTenantId);
-        writer.writeStringValue("description", partnerSecurityAlert.description);
-        writer.writeDateValue("detectedDateTime", partnerSecurityAlert.detectedDateTime);
-        writer.writeStringValue("displayName", partnerSecurityAlert.displayName);
-        writer.writeDateValue("firstObservedDateTime", partnerSecurityAlert.firstObservedDateTime);
-        writer.writeBooleanValue("isTest", partnerSecurityAlert.isTest);
-        writer.writeDateValue("lastObservedDateTime", partnerSecurityAlert.lastObservedDateTime);
-        writer.writeStringValue("resolvedBy", partnerSecurityAlert.resolvedBy);
-        writer.writeDateValue("resolvedOnDateTime", partnerSecurityAlert.resolvedOnDateTime);
-        writer.writeEnumValue<SecurityAlertResolvedReason>("resolvedReason", partnerSecurityAlert.resolvedReason);
-        writer.writeEnumValue<SecurityAlertSeverity>("severity", partnerSecurityAlert.severity);
-        writer.writeEnumValue<SecurityAlertStatus>("status", partnerSecurityAlert.status);
-        writer.writeStringValue("subscriptionId", partnerSecurityAlert.subscriptionId);
-        writer.writeStringValue("valueAddedResellerTenantId", partnerSecurityAlert.valueAddedResellerTenantId);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePartnerSecurityAlertCollectionResponse(writer: SerializationWriter, partnerSecurityAlertCollectionResponse: Partial<PartnerSecurityAlertCollectionResponse> | undefined | null = {}) : void {
-    if (partnerSecurityAlertCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, partnerSecurityAlertCollectionResponse)
-        writer.writeCollectionOfObjectValues<PartnerSecurityAlert>("value", partnerSecurityAlertCollectionResponse.value, serializePartnerSecurityAlert);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePartnerSecurityScore(writer: SerializationWriter, partnerSecurityScore: Partial<PartnerSecurityScore> | undefined | null = {}) : void {
-    if (partnerSecurityScore) {
-        serializeEntity(writer, partnerSecurityScore)
-        writer.writeNumberValue("currentScore", partnerSecurityScore.currentScore);
-        writer.writeCollectionOfObjectValues<CustomerInsight>("customerInsights", partnerSecurityScore.customerInsights, serializeCustomerInsight);
-        writer.writeCollectionOfObjectValues<SecurityScoreHistory>("history", partnerSecurityScore.history, serializeSecurityScoreHistory);
-        writer.writeDateValue("lastRefreshDateTime", partnerSecurityScore.lastRefreshDateTime);
-        writer.writeNumberValue("maxScore", partnerSecurityScore.maxScore);
-        writer.writeCollectionOfObjectValues<SecurityRequirement>("requirements", partnerSecurityScore.requirements, serializeSecurityRequirement);
-        writer.writeDateValue("updatedDateTime", partnerSecurityScore.updatedDateTime);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeResponseTimeSecurityRequirement(writer: SerializationWriter, responseTimeSecurityRequirement: Partial<ResponseTimeSecurityRequirement> | undefined | null = {}) : void {
-    if (responseTimeSecurityRequirement) {
-        serializeSecurityRequirement(writer, responseTimeSecurityRequirement)
-        writer.writeNumberValue("averageResponseTimeInHours", responseTimeSecurityRequirement.averageResponseTimeInHours);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSecurityRequirement(writer: SerializationWriter, securityRequirement: Partial<SecurityRequirement> | undefined | null = {}) : void {
-    if (securityRequirement) {
-        serializeEntity(writer, securityRequirement)
-        writer.writeStringValue("actionUrl", securityRequirement.actionUrl);
-        writer.writeEnumValue<ComplianceStatus>("complianceStatus", securityRequirement.complianceStatus);
-        writer.writeStringValue("helpUrl", securityRequirement.helpUrl);
-        writer.writeNumberValue("maxScore", securityRequirement.maxScore);
-        writer.writeEnumValue<SecurityRequirementType>("requirementType", securityRequirement.requirementType);
-        writer.writeNumberValue("score", securityRequirement.score);
-        writer.writeEnumValue<SecurityRequirementState>("state", securityRequirement.state);
-        writer.writeDateValue("updatedDateTime", securityRequirement.updatedDateTime);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSecurityRequirementCollectionResponse(writer: SerializationWriter, securityRequirementCollectionResponse: Partial<SecurityRequirementCollectionResponse> | undefined | null = {}) : void {
-    if (securityRequirementCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, securityRequirementCollectionResponse)
-        writer.writeCollectionOfObjectValues<SecurityRequirement>("value", securityRequirementCollectionResponse.value, serializeSecurityRequirement);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSecurityScoreHistory(writer: SerializationWriter, securityScoreHistory: Partial<SecurityScoreHistory> | undefined | null = {}) : void {
-    if (securityScoreHistory) {
-        serializeEntity(writer, securityScoreHistory)
-        writer.writeNumberValue("compliantRequirementsCount", securityScoreHistory.compliantRequirementsCount);
-        writer.writeDateValue("createdDateTime", securityScoreHistory.createdDateTime);
-        writer.writeNumberValue("score", securityScoreHistory.score);
-        writer.writeNumberValue("totalRequirementsCount", securityScoreHistory.totalRequirementsCount);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSecurityScoreHistoryCollectionResponse(writer: SerializationWriter, securityScoreHistoryCollectionResponse: Partial<SecurityScoreHistoryCollectionResponse> | undefined | null = {}) : void {
-    if (securityScoreHistoryCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, securityScoreHistoryCollectionResponse)
-        writer.writeCollectionOfObjectValues<SecurityScoreHistory>("value", securityScoreHistoryCollectionResponse.value, serializeSecurityScoreHistory);
-    }
+export function serializeSecurityScoreHistoryCollectionResponse(writer: SerializationWriter, securityScoreHistoryCollectionResponse: Partial<SecurityScoreHistoryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!securityScoreHistoryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, securityScoreHistoryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SecurityScoreHistory>("value", securityScoreHistoryCollectionResponse.value, serializeSecurityScoreHistory);
 }
 export const ComplianceStatusObject = {
     Compliant: "compliant",

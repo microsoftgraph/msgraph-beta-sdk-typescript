@@ -28,6 +28,7 @@ export function createUpdateTiIndicatorsPostResponseFromDiscriminatorValue(parse
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateTiIndicatorsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoUpdateTiIndicatorsPostRequestBody(updateTiIndicat
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateTiIndicatorsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,31 +52,29 @@ export function deserializeIntoUpdateTiIndicatorsPostResponse(updateTiIndicators
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateTiIndicatorsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateTiIndicatorsPostRequestBody(writer: SerializationWriter, updateTiIndicatorsPostRequestBody: Partial<UpdateTiIndicatorsPostRequestBody> | undefined | null = {}) : void {
-    if (updateTiIndicatorsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<TiIndicator>("value", updateTiIndicatorsPostRequestBody.value, serializeTiIndicator);
-        writer.writeAdditionalData(updateTiIndicatorsPostRequestBody.additionalData);
-    }
+export function serializeUpdateTiIndicatorsPostRequestBody(writer: SerializationWriter, updateTiIndicatorsPostRequestBody: Partial<UpdateTiIndicatorsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateTiIndicatorsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<TiIndicator>("value", updateTiIndicatorsPostRequestBody.value, serializeTiIndicator);
+    writer.writeAdditionalData(updateTiIndicatorsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateTiIndicatorsPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateTiIndicatorsPostResponse(writer: SerializationWriter, updateTiIndicatorsPostResponse: Partial<UpdateTiIndicatorsPostResponse> | undefined | null = {}) : void {
-    if (updateTiIndicatorsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, updateTiIndicatorsPostResponse)
-        writer.writeCollectionOfObjectValues<TiIndicator>("value", updateTiIndicatorsPostResponse.value, serializeTiIndicator);
-    }
+export function serializeUpdateTiIndicatorsPostResponse(writer: SerializationWriter, updateTiIndicatorsPostResponse: Partial<UpdateTiIndicatorsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateTiIndicatorsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, updateTiIndicatorsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TiIndicator>("value", updateTiIndicatorsPostResponse.value, serializeTiIndicator);
 }
 export interface UpdateTiIndicatorsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

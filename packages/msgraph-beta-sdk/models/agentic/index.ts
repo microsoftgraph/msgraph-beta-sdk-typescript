@@ -6,10 +6,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Pa
 
 export interface AgentSignIn extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The agentType property
      */
     agentType?: AgentType | null;
@@ -38,6 +34,7 @@ export function createAgentSignInFromDiscriminatorValue(parseNode: ParseNode | u
 }
 /**
  * The deserialization information for the current model
+ * @param AgentSignIn The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -51,16 +48,17 @@ export function deserializeIntoAgentSignIn(agentSignIn: Partial<AgentSignIn> | u
 }
 /**
  * Serializes information the current object
+ * @param AgentSignIn The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAgentSignIn(writer: SerializationWriter, agentSignIn: Partial<AgentSignIn> | undefined | null = {}) : void {
-    if (agentSignIn) {
-        writer.writeEnumValue<AgentType>("agentType", agentSignIn.agentType);
-        writer.writeStringValue("@odata.type", agentSignIn.odataType);
-        writer.writeStringValue("parentAppId", agentSignIn.parentAppId);
-        writer.writeAdditionalData(agentSignIn.additionalData);
-    }
+export function serializeAgentSignIn(writer: SerializationWriter, agentSignIn: Partial<AgentSignIn> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!agentSignIn || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AgentType>("agentType", agentSignIn.agentType);
+    writer.writeStringValue("@odata.type", agentSignIn.odataType);
+    writer.writeStringValue("parentAppId", agentSignIn.parentAppId);
+    writer.writeAdditionalData(agentSignIn.additionalData);
 }
 export const AgentTypeObject = {
     NotAgentic: "notAgentic",

@@ -65,7 +65,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      learningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId: string | undefined) : LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder;
     /**
      * Update employeeExperience
-     * @param body The request body
+     * @param body Represents a container that exposes navigation properties for employee experience resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmployeeExperience>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -79,7 +79,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EmployeeExperienceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update employeeExperience
-     * @param body The request body
+     * @param body Represents a container that exposes navigation properties for employee experience resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

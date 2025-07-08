@@ -21,6 +21,7 @@ export function createGetDestinationSummariesWithStartDateTimeWithEndDateTimeWit
 }
 /**
  * The deserialization information for the current model
+ * @param GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDate
 }
 /**
  * Serializes information the current object
+ * @param GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse(writer: SerializationWriter, getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse: Partial<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse> | undefined | null = {}) : void {
-    if (getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse)
-        writer.writeCollectionOfObjectValues<DestinationSummary>("value", getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse.value, serializeDestinationSummary);
-    }
+export function serializeGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse(writer: SerializationWriter, getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse: Partial<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DestinationSummary>("value", getDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse.value, serializeDestinationSummary);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createSchedulePolicyApplyTaskPostRequestBodyFromDiscriminatorVal
 }
 /**
  * The deserialization information for the current model
+ * @param SchedulePolicyApplyTaskPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoSchedulePolicyApplyTaskPostRequestBody(schedulePo
     }
 }
 export interface SchedulePolicyApplyTaskPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -64,14 +61,15 @@ export interface SchedulePolicyApplyTaskRequestBuilder extends BaseRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SchedulePolicyApplyTaskPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSchedulePolicyApplyTaskPostRequestBody(writer: SerializationWriter, schedulePolicyApplyTaskPostRequestBody: Partial<SchedulePolicyApplyTaskPostRequestBody> | undefined | null = {}) : void {
-    if (schedulePolicyApplyTaskPostRequestBody) {
-        writer.writeObjectValue<CloudPcPolicyScheduledApplyActionDetail>("scheduledRule", schedulePolicyApplyTaskPostRequestBody.scheduledRule, serializeCloudPcPolicyScheduledApplyActionDetail);
-        writer.writeAdditionalData(schedulePolicyApplyTaskPostRequestBody.additionalData);
-    }
+export function serializeSchedulePolicyApplyTaskPostRequestBody(writer: SerializationWriter, schedulePolicyApplyTaskPostRequestBody: Partial<SchedulePolicyApplyTaskPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!schedulePolicyApplyTaskPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<CloudPcPolicyScheduledApplyActionDetail>("scheduledRule", schedulePolicyApplyTaskPostRequestBody.scheduledRule, serializeCloudPcPolicyScheduledApplyActionDetail);
+    writer.writeAdditionalData(schedulePolicyApplyTaskPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

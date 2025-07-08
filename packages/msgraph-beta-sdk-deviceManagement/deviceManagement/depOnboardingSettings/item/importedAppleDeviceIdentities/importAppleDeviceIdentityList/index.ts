@@ -28,6 +28,7 @@ export function createImportAppleDeviceIdentityListPostResponseFromDiscriminator
 }
 /**
  * The deserialization information for the current model
+ * @param ImportAppleDeviceIdentityListPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -40,6 +41,7 @@ export function deserializeIntoImportAppleDeviceIdentityListPostRequestBody(impo
 }
 /**
  * The deserialization information for the current model
+ * @param ImportAppleDeviceIdentityListPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,10 +52,6 @@ export function deserializeIntoImportAppleDeviceIdentityListPostResponse(importA
     }
 }
 export interface ImportAppleDeviceIdentityListPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -95,26 +93,28 @@ export interface ImportAppleDeviceIdentityListRequestBuilder extends BaseRequest
 }
 /**
  * Serializes information the current object
+ * @param ImportAppleDeviceIdentityListPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeImportAppleDeviceIdentityListPostRequestBody(writer: SerializationWriter, importAppleDeviceIdentityListPostRequestBody: Partial<ImportAppleDeviceIdentityListPostRequestBody> | undefined | null = {}) : void {
-    if (importAppleDeviceIdentityListPostRequestBody) {
-        writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.importedAppleDeviceIdentities, serializeImportedAppleDeviceIdentity);
-        writer.writeBooleanValue("overwriteImportedDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
-        writer.writeAdditionalData(importAppleDeviceIdentityListPostRequestBody.additionalData);
-    }
+export function serializeImportAppleDeviceIdentityListPostRequestBody(writer: SerializationWriter, importAppleDeviceIdentityListPostRequestBody: Partial<ImportAppleDeviceIdentityListPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!importAppleDeviceIdentityListPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.importedAppleDeviceIdentities, serializeImportedAppleDeviceIdentity);
+    writer.writeBooleanValue("overwriteImportedDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
+    writer.writeAdditionalData(importAppleDeviceIdentityListPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ImportAppleDeviceIdentityListPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeImportAppleDeviceIdentityListPostResponse(writer: SerializationWriter, importAppleDeviceIdentityListPostResponse: Partial<ImportAppleDeviceIdentityListPostResponse> | undefined | null = {}) : void {
-    if (importAppleDeviceIdentityListPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, importAppleDeviceIdentityListPostResponse)
-        writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>("value", importAppleDeviceIdentityListPostResponse.value, serializeImportedAppleDeviceIdentityResult);
-    }
+export function serializeImportAppleDeviceIdentityListPostResponse(writer: SerializationWriter, importAppleDeviceIdentityListPostResponse: Partial<ImportAppleDeviceIdentityListPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!importAppleDeviceIdentityListPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, importAppleDeviceIdentityListPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>("value", importAppleDeviceIdentityListPostResponse.value, serializeImportedAppleDeviceIdentityResult);
 }
 /**
  * Uri template for the request builder.

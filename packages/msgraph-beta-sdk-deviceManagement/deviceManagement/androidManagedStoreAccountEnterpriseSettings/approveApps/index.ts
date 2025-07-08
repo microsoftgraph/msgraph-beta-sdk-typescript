@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ApproveAppsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The approveAllPermissions property
      */
     approveAllPermissions?: boolean | null;
@@ -54,6 +50,7 @@ export function createApproveAppsPostRequestBodyFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param ApproveAppsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -66,15 +63,16 @@ export function deserializeIntoApproveAppsPostRequestBody(approveAppsPostRequest
 }
 /**
  * Serializes information the current object
+ * @param ApproveAppsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApproveAppsPostRequestBody(writer: SerializationWriter, approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined | null = {}) : void {
-    if (approveAppsPostRequestBody) {
-        writer.writeBooleanValue("approveAllPermissions", approveAppsPostRequestBody.approveAllPermissions);
-        writer.writeCollectionOfPrimitiveValues<string>("packageIds", approveAppsPostRequestBody.packageIds);
-        writer.writeAdditionalData(approveAppsPostRequestBody.additionalData);
-    }
+export function serializeApproveAppsPostRequestBody(writer: SerializationWriter, approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!approveAppsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("approveAllPermissions", approveAppsPostRequestBody.approveAllPermissions);
+    writer.writeCollectionOfPrimitiveValues<string>("packageIds", approveAppsPostRequestBody.packageIds);
+    writer.writeAdditionalData(approveAppsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -21,6 +21,7 @@ export function createGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetR
 }
 /**
  * The deserialization information for the current model
+ * @param GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -82,14 +83,15 @@ export interface MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateT
 }
 /**
  * Serializes information the current object
+ * @param GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<ConnectionSummary>("value", getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeConnectionSummary);
-    }
+export function serializeGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ConnectionSummary>("value", getConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeConnectionSummary);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createGetAllElevationRequestsPostResponseFromDiscriminatorValue(
 }
 /**
  * The deserialization information for the current model
+ * @param GetAllElevationRequestsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -54,14 +55,15 @@ export interface GetAllElevationRequestsRequestBuilder extends BaseRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param GetAllElevationRequestsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAllElevationRequestsPostResponse(writer: SerializationWriter, getAllElevationRequestsPostResponse: Partial<GetAllElevationRequestsPostResponse> | undefined | null = {}) : void {
-    if (getAllElevationRequestsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAllElevationRequestsPostResponse)
-        writer.writeCollectionOfObjectValues<PrivilegeManagementElevationRequest>("value", getAllElevationRequestsPostResponse.value, serializePrivilegeManagementElevationRequest);
-    }
+export function serializeGetAllElevationRequestsPostResponse(writer: SerializationWriter, getAllElevationRequestsPostResponse: Partial<GetAllElevationRequestsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAllElevationRequestsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAllElevationRequestsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PrivilegeManagementElevationRequest>("value", getAllElevationRequestsPostResponse.value, serializePrivilegeManagementElevationRequest);
 }
 /**
  * Uri template for the request builder.

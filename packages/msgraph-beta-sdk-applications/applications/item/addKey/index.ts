@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AddKeyPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -62,6 +58,7 @@ export function createAddKeyPostRequestBodyFromDiscriminatorValue(parseNode: Par
 }
 /**
  * The deserialization information for the current model
+ * @param AddKeyPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -75,16 +72,17 @@ export function deserializeIntoAddKeyPostRequestBody(addKeyPostRequestBody: Part
 }
 /**
  * Serializes information the current object
+ * @param AddKeyPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAddKeyPostRequestBody(writer: SerializationWriter, addKeyPostRequestBody: Partial<AddKeyPostRequestBody> | undefined | null = {}) : void {
-    if (addKeyPostRequestBody) {
-        writer.writeObjectValue<KeyCredential>("keyCredential", addKeyPostRequestBody.keyCredential, serializeKeyCredential);
-        writer.writeObjectValue<PasswordCredential>("passwordCredential", addKeyPostRequestBody.passwordCredential, serializePasswordCredential);
-        writer.writeStringValue("proof", addKeyPostRequestBody.proof);
-        writer.writeAdditionalData(addKeyPostRequestBody.additionalData);
-    }
+export function serializeAddKeyPostRequestBody(writer: SerializationWriter, addKeyPostRequestBody: Partial<AddKeyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!addKeyPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<KeyCredential>("keyCredential", addKeyPostRequestBody.keyCredential, serializeKeyCredential);
+    writer.writeObjectValue<PasswordCredential>("passwordCredential", addKeyPostRequestBody.passwordCredential, serializePasswordCredential);
+    writer.writeStringValue("proof", addKeyPostRequestBody.proof);
+    writer.writeAdditionalData(addKeyPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

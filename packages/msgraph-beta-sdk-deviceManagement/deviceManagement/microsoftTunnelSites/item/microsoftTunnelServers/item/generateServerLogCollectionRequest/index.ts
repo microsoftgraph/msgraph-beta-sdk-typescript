@@ -19,6 +19,7 @@ export function createGenerateServerLogCollectionRequestPostRequestBodyFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param GenerateServerLogCollectionRequestPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoGenerateServerLogCollectionRequestPostRequestBody
     }
 }
 export interface GenerateServerLogCollectionRequestPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -69,15 +66,16 @@ export interface GenerateServerLogCollectionRequestRequestBuilder extends BaseRe
 }
 /**
  * Serializes information the current object
+ * @param GenerateServerLogCollectionRequestPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGenerateServerLogCollectionRequestPostRequestBody(writer: SerializationWriter, generateServerLogCollectionRequestPostRequestBody: Partial<GenerateServerLogCollectionRequestPostRequestBody> | undefined | null = {}) : void {
-    if (generateServerLogCollectionRequestPostRequestBody) {
-        writer.writeDateValue("endDateTime", generateServerLogCollectionRequestPostRequestBody.endDateTime);
-        writer.writeDateValue("startDateTime", generateServerLogCollectionRequestPostRequestBody.startDateTime);
-        writer.writeAdditionalData(generateServerLogCollectionRequestPostRequestBody.additionalData);
-    }
+export function serializeGenerateServerLogCollectionRequestPostRequestBody(writer: SerializationWriter, generateServerLogCollectionRequestPostRequestBody: Partial<GenerateServerLogCollectionRequestPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!generateServerLogCollectionRequestPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeDateValue("endDateTime", generateServerLogCollectionRequestPostRequestBody.endDateTime);
+    writer.writeDateValue("startDateTime", generateServerLogCollectionRequestPostRequestBody.startDateTime);
+    writer.writeAdditionalData(generateServerLogCollectionRequestPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

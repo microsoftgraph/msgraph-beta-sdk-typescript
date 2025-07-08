@@ -19,6 +19,7 @@ export function createGetSubscriptionsGetResponseFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param GetSubscriptionsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface GetSubscriptionsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetSubscriptionsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetSubscriptionsGetResponse(writer: SerializationWriter, getSubscriptionsGetResponse: Partial<GetSubscriptionsGetResponse> | undefined | null = {}) : void {
-    if (getSubscriptionsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getSubscriptionsGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcSubscription>("value", getSubscriptionsGetResponse.value, serializeCloudPcSubscription);
-    }
+export function serializeGetSubscriptionsGetResponse(writer: SerializationWriter, getSubscriptionsGetResponse: Partial<GetSubscriptionsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getSubscriptionsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getSubscriptionsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcSubscription>("value", getSubscriptionsGetResponse.value, serializeCloudPcSubscription);
 }
 /**
  * Uri template for the request builder.

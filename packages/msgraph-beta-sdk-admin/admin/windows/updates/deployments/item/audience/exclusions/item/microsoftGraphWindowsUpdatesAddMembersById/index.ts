@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AddMembersByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -35,6 +31,7 @@ export function createAddMembersByIdPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param AddMembersByIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -67,15 +64,16 @@ export interface MicrosoftGraphWindowsUpdatesAddMembersByIdRequestBuilder extend
 }
 /**
  * Serializes information the current object
+ * @param AddMembersByIdPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAddMembersByIdPostRequestBody(writer: SerializationWriter, addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined | null = {}) : void {
-    if (addMembersByIdPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("ids", addMembersByIdPostRequestBody.ids);
-        writer.writeStringValue("memberEntityType", addMembersByIdPostRequestBody.memberEntityType);
-        writer.writeAdditionalData(addMembersByIdPostRequestBody.additionalData);
-    }
+export function serializeAddMembersByIdPostRequestBody(writer: SerializationWriter, addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!addMembersByIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("ids", addMembersByIdPostRequestBody.ids);
+    writer.writeStringValue("memberEntityType", addMembersByIdPostRequestBody.memberEntityType);
+    writer.writeAdditionalData(addMembersByIdPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

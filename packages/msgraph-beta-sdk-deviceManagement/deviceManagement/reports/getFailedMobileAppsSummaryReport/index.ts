@@ -17,6 +17,7 @@ export function createGetFailedMobileAppsSummaryReportPostRequestBodyFromDiscrim
 }
 /**
  * The deserialization information for the current model
+ * @param GetFailedMobileAppsSummaryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetFailedMobileAppsSummaryReportPostRequestBody(g
     }
 }
 export interface GetFailedMobileAppsSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetFailedMobileAppsSummaryReportRequestBuilder extends BaseRequ
 }
 /**
  * Serializes information the current object
+ * @param GetFailedMobileAppsSummaryReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetFailedMobileAppsSummaryReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsSummaryReportPostRequestBody: Partial<GetFailedMobileAppsSummaryReportPostRequestBody> | undefined | null = {}) : void {
-    if (getFailedMobileAppsSummaryReportPostRequestBody) {
-        writer.writeStringValue("filter", getFailedMobileAppsSummaryReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsSummaryReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getFailedMobileAppsSummaryReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFailedMobileAppsSummaryReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getFailedMobileAppsSummaryReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getFailedMobileAppsSummaryReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getFailedMobileAppsSummaryReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getFailedMobileAppsSummaryReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getFailedMobileAppsSummaryReportPostRequestBody.top);
-        writer.writeAdditionalData(getFailedMobileAppsSummaryReportPostRequestBody.additionalData);
-    }
+export function serializeGetFailedMobileAppsSummaryReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsSummaryReportPostRequestBody: Partial<GetFailedMobileAppsSummaryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getFailedMobileAppsSummaryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getFailedMobileAppsSummaryReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsSummaryReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getFailedMobileAppsSummaryReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFailedMobileAppsSummaryReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getFailedMobileAppsSummaryReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getFailedMobileAppsSummaryReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getFailedMobileAppsSummaryReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getFailedMobileAppsSummaryReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getFailedMobileAppsSummaryReportPostRequestBody.top);
+    writer.writeAdditionalData(getFailedMobileAppsSummaryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

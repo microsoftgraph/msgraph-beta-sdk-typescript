@@ -19,6 +19,7 @@ export function createGetAzureADApplicationSignInSummaryWithPeriodGetResponseFro
 }
 /**
  * The deserialization information for the current model
+ * @param GetAzureADApplicationSignInSummaryWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQu
 }
 /**
  * Serializes information the current object
+ * @param GetAzureADApplicationSignInSummaryWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAzureADApplicationSignInSummaryWithPeriodGetResponse(writer: SerializationWriter, getAzureADApplicationSignInSummaryWithPeriodGetResponse: Partial<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getAzureADApplicationSignInSummaryWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAzureADApplicationSignInSummaryWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<ApplicationSignInSummary>("value", getAzureADApplicationSignInSummaryWithPeriodGetResponse.value, serializeApplicationSignInSummary);
-    }
+export function serializeGetAzureADApplicationSignInSummaryWithPeriodGetResponse(writer: SerializationWriter, getAzureADApplicationSignInSummaryWithPeriodGetResponse: Partial<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAzureADApplicationSignInSummaryWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAzureADApplicationSignInSummaryWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicationSignInSummary>("value", getAzureADApplicationSignInSummaryWithPeriodGetResponse.value, serializeApplicationSignInSummary);
 }
 /**
  * Uri template for the request builder.

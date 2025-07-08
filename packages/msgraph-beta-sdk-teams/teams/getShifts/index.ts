@@ -19,6 +19,7 @@ export function createGetShiftsGetResponseFromDiscriminatorValue(parseNode: Pars
 }
 /**
  * The deserialization information for the current model
+ * @param GetShiftsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetShiftsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetShiftsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetShiftsGetResponse(writer: SerializationWriter, getShiftsGetResponse: Partial<GetShiftsGetResponse> | undefined | null = {}) : void {
-    if (getShiftsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getShiftsGetResponse)
-        writer.writeCollectionOfObjectValues<Shift>("value", getShiftsGetResponse.value, serializeShift);
-    }
+export function serializeGetShiftsGetResponse(writer: SerializationWriter, getShiftsGetResponse: Partial<GetShiftsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getShiftsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getShiftsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Shift>("value", getShiftsGetResponse.value, serializeShift);
 }
 /**
  * Uri template for the request builder.

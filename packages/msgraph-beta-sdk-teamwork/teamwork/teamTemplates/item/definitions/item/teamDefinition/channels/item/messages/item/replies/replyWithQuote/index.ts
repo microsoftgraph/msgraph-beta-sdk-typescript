@@ -19,6 +19,7 @@ export function createReplyWithQuotePostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param ReplyWithQuotePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoReplyWithQuotePostRequestBody(replyWithQuotePostR
     }
 }
 export interface ReplyWithQuotePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -70,15 +67,16 @@ export interface ReplyWithQuoteRequestBuilder extends BaseRequestBuilder<ReplyWi
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReplyWithQuotePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReplyWithQuotePostRequestBody(writer: SerializationWriter, replyWithQuotePostRequestBody: Partial<ReplyWithQuotePostRequestBody> | undefined | null = {}) : void {
-    if (replyWithQuotePostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("messageIds", replyWithQuotePostRequestBody.messageIds);
-        writer.writeObjectValue<ChatMessage>("replyMessage", replyWithQuotePostRequestBody.replyMessage, serializeChatMessage);
-        writer.writeAdditionalData(replyWithQuotePostRequestBody.additionalData);
-    }
+export function serializeReplyWithQuotePostRequestBody(writer: SerializationWriter, replyWithQuotePostRequestBody: Partial<ReplyWithQuotePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!replyWithQuotePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("messageIds", replyWithQuotePostRequestBody.messageIds);
+    writer.writeObjectValue<ChatMessage>("replyMessage", replyWithQuotePostRequestBody.replyMessage, serializeChatMessage);
+    writer.writeAdditionalData(replyWithQuotePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

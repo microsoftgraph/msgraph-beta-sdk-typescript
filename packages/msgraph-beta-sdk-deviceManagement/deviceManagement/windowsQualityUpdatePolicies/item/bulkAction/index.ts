@@ -14,10 +14,6 @@ export interface BulkActionPostRequestBody extends AdditionalDataHolder, BackedM
      */
     action?: WindowsQualityUpdatePolicyActionType | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -57,6 +53,7 @@ export function createBulkActionPostRequestBodyFromDiscriminatorValue(parseNode:
 }
 /**
  * The deserialization information for the current model
+ * @param BulkActionPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -69,15 +66,16 @@ export function deserializeIntoBulkActionPostRequestBody(bulkActionPostRequestBo
 }
 /**
  * Serializes information the current object
+ * @param BulkActionPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeBulkActionPostRequestBody(writer: SerializationWriter, bulkActionPostRequestBody: Partial<BulkActionPostRequestBody> | undefined | null = {}) : void {
-    if (bulkActionPostRequestBody) {
-        writer.writeEnumValue<WindowsQualityUpdatePolicyActionType>("action", bulkActionPostRequestBody.action);
-        writer.writeCollectionOfPrimitiveValues<string>("ids", bulkActionPostRequestBody.ids);
-        writer.writeAdditionalData(bulkActionPostRequestBody.additionalData);
-    }
+export function serializeBulkActionPostRequestBody(writer: SerializationWriter, bulkActionPostRequestBody: Partial<BulkActionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!bulkActionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<WindowsQualityUpdatePolicyActionType>("action", bulkActionPostRequestBody.action);
+    writer.writeCollectionOfPrimitiveValues<string>("ids", bulkActionPostRequestBody.ids);
+    writer.writeAdditionalData(bulkActionPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

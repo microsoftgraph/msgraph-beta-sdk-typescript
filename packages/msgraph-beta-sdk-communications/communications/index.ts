@@ -10,7 +10,11 @@ import { CallRecordsRequestBuilderNavigationMetadata, CallRecordsRequestBuilderR
 // @ts-ignore
 import { CallsRequestBuilderNavigationMetadata, CallsRequestBuilderRequestsMetadata, type CallsRequestBuilder } from './calls/index.js';
 // @ts-ignore
+import { GetAllOnlineMeetingMessagesRequestBuilderRequestsMetadata, type GetAllOnlineMeetingMessagesRequestBuilder } from './getAllOnlineMeetingMessages/index.js';
+// @ts-ignore
 import { GetPresencesByUserIdRequestBuilderRequestsMetadata, type GetPresencesByUserIdRequestBuilder } from './getPresencesByUserId/index.js';
+// @ts-ignore
+import { OnlineMeetingConversationsRequestBuilderNavigationMetadata, OnlineMeetingConversationsRequestBuilderRequestsMetadata, type OnlineMeetingConversationsRequestBuilder } from './onlineMeetingConversations/index.js';
 // @ts-ignore
 import { OnlineMeetingsRequestBuilderNavigationMetadata, OnlineMeetingsRequestBuilderRequestsMetadata, type OnlineMeetingsRequestBuilder } from './onlineMeetings/index.js';
 // @ts-ignore
@@ -33,9 +37,17 @@ export interface CommunicationsRequestBuilder extends BaseRequestBuilder<Communi
      */
     get calls(): CallsRequestBuilder;
     /**
+     * Provides operations to call the getAllOnlineMeetingMessages method.
+     */
+    get getAllOnlineMeetingMessages(): GetAllOnlineMeetingMessagesRequestBuilder;
+    /**
      * Provides operations to call the getPresencesByUserId method.
      */
     get getPresencesByUserId(): GetPresencesByUserIdRequestBuilder;
+    /**
+     * Provides operations to manage the onlineMeetingConversations property of the microsoft.graph.cloudCommunications entity.
+     */
+    get onlineMeetingConversations(): OnlineMeetingConversationsRequestBuilder;
     /**
      * Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
      */
@@ -59,7 +71,7 @@ export interface CommunicationsRequestBuilder extends BaseRequestBuilder<Communi
      onlineMeetingsWithJoinWebUrl(joinWebUrl: string | undefined) : OnlineMeetingsWithJoinWebUrlRequestBuilder;
     /**
      * Update communications
-     * @param body The request body
+     * @param body Represents a container that exposes navigation properties for cloud communications resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudCommunications>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -73,7 +85,7 @@ export interface CommunicationsRequestBuilder extends BaseRequestBuilder<Communi
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CommunicationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update communications
-     * @param body The request body
+     * @param body Represents a container that exposes navigation properties for cloud communications resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -120,8 +132,15 @@ export const CommunicationsRequestBuilderNavigationMetadata: Record<Exclude<keyo
         requestsMetadata: CallsRequestBuilderRequestsMetadata,
         navigationMetadata: CallsRequestBuilderNavigationMetadata,
     },
+    getAllOnlineMeetingMessages: {
+        requestsMetadata: GetAllOnlineMeetingMessagesRequestBuilderRequestsMetadata,
+    },
     getPresencesByUserId: {
         requestsMetadata: GetPresencesByUserIdRequestBuilderRequestsMetadata,
+    },
+    onlineMeetingConversations: {
+        requestsMetadata: OnlineMeetingConversationsRequestBuilderRequestsMetadata,
+        navigationMetadata: OnlineMeetingConversationsRequestBuilderNavigationMetadata,
     },
     onlineMeetings: {
         requestsMetadata: OnlineMeetingsRequestBuilderRequestsMetadata,

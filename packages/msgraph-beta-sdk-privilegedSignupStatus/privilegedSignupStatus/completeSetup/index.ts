@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface CompleteSetupPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -68,6 +64,7 @@ export function createCompleteSetupPostResponseFromDiscriminatorValue(parseNode:
 }
 /**
  * The deserialization information for the current model
+ * @param CompleteSetupPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,6 +76,7 @@ export function deserializeIntoCompleteSetupPostRequestBody(completeSetupPostReq
 }
 /**
  * The deserialization information for the current model
+ * @param CompleteSetupPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -90,25 +88,27 @@ export function deserializeIntoCompleteSetupPostResponse(completeSetupPostRespon
 }
 /**
  * Serializes information the current object
+ * @param CompleteSetupPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCompleteSetupPostRequestBody(writer: SerializationWriter, completeSetupPostRequestBody: Partial<CompleteSetupPostRequestBody> | undefined | null = {}) : void {
-    if (completeSetupPostRequestBody) {
-        writer.writeObjectValue<TenantSetupInfo>("tenantSetupInfo", completeSetupPostRequestBody.tenantSetupInfo, serializeTenantSetupInfo);
-        writer.writeAdditionalData(completeSetupPostRequestBody.additionalData);
-    }
+export function serializeCompleteSetupPostRequestBody(writer: SerializationWriter, completeSetupPostRequestBody: Partial<CompleteSetupPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!completeSetupPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<TenantSetupInfo>("tenantSetupInfo", completeSetupPostRequestBody.tenantSetupInfo, serializeTenantSetupInfo);
+    writer.writeAdditionalData(completeSetupPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param CompleteSetupPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCompleteSetupPostResponse(writer: SerializationWriter, completeSetupPostResponse: Partial<CompleteSetupPostResponse> | undefined | null = {}) : void {
-    if (completeSetupPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, completeSetupPostResponse)
-        writer.writeCollectionOfObjectValues<RoleSuccessStatistics>("value", completeSetupPostResponse.value, serializeRoleSuccessStatistics);
-    }
+export function serializeCompleteSetupPostResponse(writer: SerializationWriter, completeSetupPostResponse: Partial<CompleteSetupPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!completeSetupPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, completeSetupPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RoleSuccessStatistics>("value", completeSetupPostResponse.value, serializeRoleSuccessStatistics);
 }
 /**
  * Uri template for the request builder.

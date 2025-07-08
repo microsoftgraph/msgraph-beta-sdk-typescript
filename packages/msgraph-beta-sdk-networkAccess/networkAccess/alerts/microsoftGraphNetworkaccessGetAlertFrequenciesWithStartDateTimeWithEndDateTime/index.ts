@@ -21,6 +21,7 @@ export function createGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResp
 }
 /**
  * The deserialization information for the current model
+ * @param GetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -83,14 +84,15 @@ export interface MicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTime
 }
 /**
  * Serializes information the current object
+ * @param GetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<AlertFrequencyPoint>("value", getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeAlertFrequencyPoint);
-    }
+export function serializeGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse: Partial<GetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertFrequencyPoint>("value", getAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeAlertFrequencyPoint);
 }
 /**
  * Uri template for the request builder.

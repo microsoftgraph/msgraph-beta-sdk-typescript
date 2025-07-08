@@ -17,6 +17,7 @@ export function createGetUserInstallStatusReportPostRequestBodyFromDiscriminator
 }
 /**
  * The deserialization information for the current model
+ * @param GetUserInstallStatusReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetUserInstallStatusReportPostRequestBody(getUser
     }
 }
 export interface GetUserInstallStatusReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetUserInstallStatusReportRequestBuilder extends BaseRequestBui
 }
 /**
  * Serializes information the current object
+ * @param GetUserInstallStatusReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetUserInstallStatusReportPostRequestBody(writer: SerializationWriter, getUserInstallStatusReportPostRequestBody: Partial<GetUserInstallStatusReportPostRequestBody> | undefined | null = {}) : void {
-    if (getUserInstallStatusReportPostRequestBody) {
-        writer.writeStringValue("filter", getUserInstallStatusReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUserInstallStatusReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getUserInstallStatusReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getUserInstallStatusReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getUserInstallStatusReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getUserInstallStatusReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getUserInstallStatusReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getUserInstallStatusReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getUserInstallStatusReportPostRequestBody.top);
-        writer.writeAdditionalData(getUserInstallStatusReportPostRequestBody.additionalData);
-    }
+export function serializeGetUserInstallStatusReportPostRequestBody(writer: SerializationWriter, getUserInstallStatusReportPostRequestBody: Partial<GetUserInstallStatusReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getUserInstallStatusReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getUserInstallStatusReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUserInstallStatusReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getUserInstallStatusReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getUserInstallStatusReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getUserInstallStatusReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getUserInstallStatusReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getUserInstallStatusReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getUserInstallStatusReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getUserInstallStatusReportPostRequestBody.top);
+    writer.writeAdditionalData(getUserInstallStatusReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

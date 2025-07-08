@@ -17,6 +17,7 @@ export function createGetDeviceStatusByCompliacePolicyReportPostRequestBodyFromD
 }
 /**
  * The deserialization information for the current model
+ * @param GetDeviceStatusByCompliacePolicyReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -34,10 +35,6 @@ export function deserializeIntoGetDeviceStatusByCompliacePolicyReportPostRequest
     }
 }
 export interface GetDeviceStatusByCompliacePolicyReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -97,21 +94,22 @@ export interface GetDeviceStatusByCompliacePolicyReportRequestBuilder extends Ba
 }
 /**
  * Serializes information the current object
+ * @param GetDeviceStatusByCompliacePolicyReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDeviceStatusByCompliacePolicyReportPostRequestBody(writer: SerializationWriter, getDeviceStatusByCompliacePolicyReportPostRequestBody: Partial<GetDeviceStatusByCompliacePolicyReportPostRequestBody> | undefined | null = {}) : void {
-    if (getDeviceStatusByCompliacePolicyReportPostRequestBody) {
-        writer.writeStringValue("filter", getDeviceStatusByCompliacePolicyReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusByCompliacePolicyReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDeviceStatusByCompliacePolicyReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getDeviceStatusByCompliacePolicyReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getDeviceStatusByCompliacePolicyReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getDeviceStatusByCompliacePolicyReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getDeviceStatusByCompliacePolicyReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getDeviceStatusByCompliacePolicyReportPostRequestBody.top);
-        writer.writeAdditionalData(getDeviceStatusByCompliacePolicyReportPostRequestBody.additionalData);
-    }
+export function serializeGetDeviceStatusByCompliacePolicyReportPostRequestBody(writer: SerializationWriter, getDeviceStatusByCompliacePolicyReportPostRequestBody: Partial<GetDeviceStatusByCompliacePolicyReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDeviceStatusByCompliacePolicyReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getDeviceStatusByCompliacePolicyReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusByCompliacePolicyReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDeviceStatusByCompliacePolicyReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getDeviceStatusByCompliacePolicyReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getDeviceStatusByCompliacePolicyReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getDeviceStatusByCompliacePolicyReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getDeviceStatusByCompliacePolicyReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getDeviceStatusByCompliacePolicyReportPostRequestBody.top);
+    writer.writeAdditionalData(getDeviceStatusByCompliacePolicyReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ChangeSettingsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -52,6 +48,7 @@ export function createChangeSettingsPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param ChangeSettingsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -63,14 +60,15 @@ export function deserializeIntoChangeSettingsPostRequestBody(changeSettingsPostR
 }
 /**
  * Serializes information the current object
+ * @param ChangeSettingsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeChangeSettingsPostRequestBody(writer: SerializationWriter, changeSettingsPostRequestBody: Partial<ChangeSettingsPostRequestBody> | undefined | null = {}) : void {
-    if (changeSettingsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", changeSettingsPostRequestBody.settings, serializeDeviceManagementConfigurationSetting);
-        writer.writeAdditionalData(changeSettingsPostRequestBody.additionalData);
-    }
+export function serializeChangeSettingsPostRequestBody(writer: SerializationWriter, changeSettingsPostRequestBody: Partial<ChangeSettingsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!changeSettingsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", changeSettingsPostRequestBody.settings, serializeDeviceManagementConfigurationSetting);
+    writer.writeAdditionalData(changeSettingsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

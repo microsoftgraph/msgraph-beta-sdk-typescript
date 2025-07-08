@@ -19,6 +19,7 @@ export function createTriggerConfigurationManagerActionPostRequestBodyFromDiscri
 }
 /**
  * The deserialization information for the current model
+ * @param TriggerConfigurationManagerActionPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,20 +31,17 @@ export function deserializeIntoTriggerConfigurationManagerActionPostRequestBody(
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TriggerConfigurationManagerActionPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTriggerConfigurationManagerActionPostRequestBody(writer: SerializationWriter, triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined | null = {}) : void {
-    if (triggerConfigurationManagerActionPostRequestBody) {
-        writer.writeObjectValue<ConfigurationManagerAction>("configurationManagerAction", triggerConfigurationManagerActionPostRequestBody.configurationManagerAction, serializeConfigurationManagerAction);
-        writer.writeAdditionalData(triggerConfigurationManagerActionPostRequestBody.additionalData);
-    }
+export function serializeTriggerConfigurationManagerActionPostRequestBody(writer: SerializationWriter, triggerConfigurationManagerActionPostRequestBody: Partial<TriggerConfigurationManagerActionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!triggerConfigurationManagerActionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<ConfigurationManagerAction>("configurationManagerAction", triggerConfigurationManagerActionPostRequestBody.configurationManagerAction, serializeConfigurationManagerAction);
+    writer.writeAdditionalData(triggerConfigurationManagerActionPostRequestBody.additionalData);
 }
 export interface TriggerConfigurationManagerActionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

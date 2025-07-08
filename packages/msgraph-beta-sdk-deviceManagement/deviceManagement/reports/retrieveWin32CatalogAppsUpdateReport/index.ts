@@ -17,6 +17,7 @@ export function createRetrieveWin32CatalogAppsUpdateReportPostRequestBodyFromDis
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveWin32CatalogAppsUpdateReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoRetrieveWin32CatalogAppsUpdateReportPostRequestBo
     }
 }
 export interface RetrieveWin32CatalogAppsUpdateReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface RetrieveWin32CatalogAppsUpdateReportRequestBuilder extends Base
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveWin32CatalogAppsUpdateReportPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveWin32CatalogAppsUpdateReportPostRequestBody(writer: SerializationWriter, retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveWin32CatalogAppsUpdateReportPostRequestBody) {
-        writer.writeStringValue("filter", retrieveWin32CatalogAppsUpdateReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", retrieveWin32CatalogAppsUpdateReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", retrieveWin32CatalogAppsUpdateReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveWin32CatalogAppsUpdateReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", retrieveWin32CatalogAppsUpdateReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", retrieveWin32CatalogAppsUpdateReportPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveWin32CatalogAppsUpdateReportPostRequestBody.top);
-        writer.writeAdditionalData(retrieveWin32CatalogAppsUpdateReportPostRequestBody.additionalData);
-    }
+export function serializeRetrieveWin32CatalogAppsUpdateReportPostRequestBody(writer: SerializationWriter, retrieveWin32CatalogAppsUpdateReportPostRequestBody: Partial<RetrieveWin32CatalogAppsUpdateReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveWin32CatalogAppsUpdateReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveWin32CatalogAppsUpdateReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", retrieveWin32CatalogAppsUpdateReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveWin32CatalogAppsUpdateReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", retrieveWin32CatalogAppsUpdateReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveWin32CatalogAppsUpdateReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", retrieveWin32CatalogAppsUpdateReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", retrieveWin32CatalogAppsUpdateReportPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveWin32CatalogAppsUpdateReportPostRequestBody.top);
+    writer.writeAdditionalData(retrieveWin32CatalogAppsUpdateReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

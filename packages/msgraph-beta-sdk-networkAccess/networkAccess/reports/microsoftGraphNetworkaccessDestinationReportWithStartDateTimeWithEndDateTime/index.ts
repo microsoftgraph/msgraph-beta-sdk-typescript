@@ -21,6 +21,7 @@ export function createDestinationReportWithStartDateTimeWithEndDateTimeGetRespon
 }
 /**
  * The deserialization information for the current model
+ * @param DestinationReportWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWi
 }
 /**
  * Serializes information the current object
+ * @param DestinationReportWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDestinationReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, destinationReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DestinationReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (destinationReportWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, destinationReportWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<Destination>("value", destinationReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeDestination);
-    }
+export function serializeDestinationReportWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, destinationReportWithStartDateTimeWithEndDateTimeGetResponse: Partial<DestinationReportWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!destinationReportWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, destinationReportWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Destination>("value", destinationReportWithStartDateTimeWithEndDateTimeGetResponse.value, serializeDestination);
 }
 /**
  * Uri template for the request builder.

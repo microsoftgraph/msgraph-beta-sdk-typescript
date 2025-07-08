@@ -19,6 +19,7 @@ export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param ExecuteActionPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, Back
      * An enum type to represent approval actions of single or list of drivers.
      */
     actionName?: DriverApprovalAction | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -74,16 +71,17 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
 }
 /**
  * Serializes information the current object
+ * @param ExecuteActionPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined | null = {}) : void {
-    if (executeActionPostRequestBody) {
-        writer.writeEnumValue<DriverApprovalAction>("actionName", executeActionPostRequestBody.actionName);
-        writer.writeDateValue("deploymentDate", executeActionPostRequestBody.deploymentDate);
-        writer.writeCollectionOfPrimitiveValues<string>("driverIds", executeActionPostRequestBody.driverIds);
-        writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
-    }
+export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!executeActionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<DriverApprovalAction>("actionName", executeActionPostRequestBody.actionName);
+    writer.writeDateValue("deploymentDate", executeActionPostRequestBody.deploymentDate);
+    writer.writeCollectionOfPrimitiveValues<string>("driverIds", executeActionPostRequestBody.driverIds);
+    writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createRetrieveAndroidWorkProfileDeviceMigrationStatusesPostReque
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoRetrieveAndroidWorkProfileDeviceMigrationStatuses
     }
 }
 export interface RetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody(writer: SerializationWriter, retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody: Partial<RetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody) {
-        writer.writeStringValue("filter", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.groupBy);
-        writer.writeStringValue("name", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.orderBy);
-        writer.writeStringValue("search", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.select);
-        writer.writeStringValue("sessionId", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.top);
-        writer.writeAdditionalData(retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.additionalData);
-    }
+export function serializeRetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody(writer: SerializationWriter, retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody: Partial<RetrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.groupBy);
+    writer.writeStringValue("name", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.orderBy);
+    writer.writeStringValue("search", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.select);
+    writer.writeStringValue("sessionId", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.top);
+    writer.writeAdditionalData(retrieveAndroidWorkProfileDeviceMigrationStatusesPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

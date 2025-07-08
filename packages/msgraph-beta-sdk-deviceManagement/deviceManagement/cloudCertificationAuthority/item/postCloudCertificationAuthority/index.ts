@@ -19,6 +19,7 @@ export function createPostCloudCertificationAuthorityPostResponseFromDiscriminat
 }
 /**
  * The deserialization information for the current model
+ * @param PostCloudCertificationAuthorityPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -54,14 +55,15 @@ export interface PostCloudCertificationAuthorityRequestBuilder extends BaseReque
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PostCloudCertificationAuthorityPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePostCloudCertificationAuthorityPostResponse(writer: SerializationWriter, postCloudCertificationAuthorityPostResponse: Partial<PostCloudCertificationAuthorityPostResponse> | undefined | null = {}) : void {
-    if (postCloudCertificationAuthorityPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, postCloudCertificationAuthorityPostResponse)
-        writer.writeCollectionOfObjectValues<CloudCertificationAuthority>("value", postCloudCertificationAuthorityPostResponse.value, serializeCloudCertificationAuthority);
-    }
+export function serializePostCloudCertificationAuthorityPostResponse(writer: SerializationWriter, postCloudCertificationAuthorityPostResponse: Partial<PostCloudCertificationAuthorityPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!postCloudCertificationAuthorityPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, postCloudCertificationAuthorityPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudCertificationAuthority>("value", postCloudCertificationAuthorityPostResponse.value, serializeCloudCertificationAuthority);
 }
 /**
  * Uri template for the request builder.

@@ -17,10 +17,6 @@ export function createDeletePasswordSingleSignOnCredentialsPostRequestBodyFromDi
 }
 export interface DeletePasswordSingleSignOnCredentialsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -51,6 +47,7 @@ export interface DeletePasswordSingleSignOnCredentialsRequestBuilder extends Bas
 }
 /**
  * The deserialization information for the current model
+ * @param DeletePasswordSingleSignOnCredentialsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -62,14 +59,15 @@ export function deserializeIntoDeletePasswordSingleSignOnCredentialsPostRequestB
 }
 /**
  * Serializes information the current object
+ * @param DeletePasswordSingleSignOnCredentialsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeletePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}) : void {
-    if (deletePasswordSingleSignOnCredentialsPostRequestBody) {
-        writer.writeStringValue("id", deletePasswordSingleSignOnCredentialsPostRequestBody.id);
-        writer.writeAdditionalData(deletePasswordSingleSignOnCredentialsPostRequestBody.additionalData);
-    }
+export function serializeDeletePasswordSingleSignOnCredentialsPostRequestBody(writer: SerializationWriter, deletePasswordSingleSignOnCredentialsPostRequestBody: Partial<DeletePasswordSingleSignOnCredentialsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deletePasswordSingleSignOnCredentialsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("id", deletePasswordSingleSignOnCredentialsPostRequestBody.id);
+    writer.writeAdditionalData(deletePasswordSingleSignOnCredentialsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

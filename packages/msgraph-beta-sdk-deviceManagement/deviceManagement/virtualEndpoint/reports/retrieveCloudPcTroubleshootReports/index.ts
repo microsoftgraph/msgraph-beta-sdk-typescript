@@ -19,6 +19,7 @@ export function createRetrieveCloudPcTroubleshootReportsPostRequestBodyFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveCloudPcTroubleshootReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoRetrieveCloudPcTroubleshootReportsPostRequestBody
     }
 }
 export interface RetrieveCloudPcTroubleshootReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -100,21 +97,22 @@ export interface RetrieveCloudPcTroubleshootReportsRequestBuilder extends BaseRe
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveCloudPcTroubleshootReportsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveCloudPcTroubleshootReportsPostRequestBody(writer: SerializationWriter, retrieveCloudPcTroubleshootReportsPostRequestBody: Partial<RetrieveCloudPcTroubleshootReportsPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveCloudPcTroubleshootReportsPostRequestBody) {
-        writer.writeStringValue("filter", retrieveCloudPcTroubleshootReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcTroubleshootReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcTroubleshootReportsPostRequestBody.orderBy);
-        writer.writeEnumValue<CloudPCTroubleshootReportType>("reportName", retrieveCloudPcTroubleshootReportsPostRequestBody.reportName);
-        writer.writeStringValue("search", retrieveCloudPcTroubleshootReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPcTroubleshootReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveCloudPcTroubleshootReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveCloudPcTroubleshootReportsPostRequestBody.top);
-        writer.writeAdditionalData(retrieveCloudPcTroubleshootReportsPostRequestBody.additionalData);
-    }
+export function serializeRetrieveCloudPcTroubleshootReportsPostRequestBody(writer: SerializationWriter, retrieveCloudPcTroubleshootReportsPostRequestBody: Partial<RetrieveCloudPcTroubleshootReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveCloudPcTroubleshootReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveCloudPcTroubleshootReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveCloudPcTroubleshootReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveCloudPcTroubleshootReportsPostRequestBody.orderBy);
+    writer.writeEnumValue<CloudPCTroubleshootReportType>("reportName", retrieveCloudPcTroubleshootReportsPostRequestBody.reportName);
+    writer.writeStringValue("search", retrieveCloudPcTroubleshootReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveCloudPcTroubleshootReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveCloudPcTroubleshootReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveCloudPcTroubleshootReportsPostRequestBody.top);
+    writer.writeAdditionalData(retrieveCloudPcTroubleshootReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

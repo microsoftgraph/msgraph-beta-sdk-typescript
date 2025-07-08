@@ -19,6 +19,7 @@ export function createMuteAllPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param MuteAllPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoMuteAllPostRequestBody(muteAllPostRequestBody: Pa
     }
 }
 export interface MuteAllPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -70,15 +67,16 @@ export interface MuteAllRequestBuilder extends BaseRequestBuilder<MuteAllRequest
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MuteAllPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMuteAllPostRequestBody(writer: SerializationWriter, muteAllPostRequestBody: Partial<MuteAllPostRequestBody> | undefined | null = {}) : void {
-    if (muteAllPostRequestBody) {
-        writer.writeStringValue("clientContext", muteAllPostRequestBody.clientContext);
-        writer.writeCollectionOfPrimitiveValues<string>("participants", muteAllPostRequestBody.participants);
-        writer.writeAdditionalData(muteAllPostRequestBody.additionalData);
-    }
+export function serializeMuteAllPostRequestBody(writer: SerializationWriter, muteAllPostRequestBody: Partial<MuteAllPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!muteAllPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("clientContext", muteAllPostRequestBody.clientContext);
+    writer.writeCollectionOfPrimitiveValues<string>("participants", muteAllPostRequestBody.participants);
+    writer.writeAdditionalData(muteAllPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

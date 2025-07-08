@@ -12,6 +12,8 @@ import { ConfirmSafeRequestBuilderRequestsMetadata, type ConfirmSafeRequestBuild
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
+import { DismissRequestBuilderRequestsMetadata, type DismissRequestBuilder } from './dismiss/index.js';
+// @ts-ignore
 import { SignInItemRequestBuilderRequestsMetadata, type SignInItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -32,6 +34,10 @@ export interface SignInsRequestBuilder extends BaseRequestBuilder<SignInsRequest
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the dismiss method.
+     */
+    get dismiss(): DismissRequestBuilder;
     /**
      * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
      * @param signInId The unique identifier of signIn
@@ -138,6 +144,9 @@ export const SignInsRequestBuilderNavigationMetadata: Record<Exclude<keyof SignI
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    dismiss: {
+        requestsMetadata: DismissRequestBuilderRequestsMetadata,
     },
 };
 /**

@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AddToReviewSetPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The additionalDataOptions property
      */
     additionalDataOptions?: AdditionalDataOptions[] | null;
@@ -37,6 +33,7 @@ export function createAddToReviewSetPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param AddToReviewSetPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -71,15 +68,16 @@ export interface MicrosoftGraphEdiscoveryAddToReviewSetRequestBuilder extends Ba
 }
 /**
  * Serializes information the current object
+ * @param AddToReviewSetPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAddToReviewSetPostRequestBody(writer: SerializationWriter, addToReviewSetPostRequestBody: Partial<AddToReviewSetPostRequestBody> | undefined | null = {}) : void {
-    if (addToReviewSetPostRequestBody) {
-        writer.writeEnumValue<AdditionalDataOptions[]>("additionalDataOptions", addToReviewSetPostRequestBody.additionalDataOptions);
-        writer.writeObjectValue<SourceCollection>("sourceCollection", addToReviewSetPostRequestBody.sourceCollection, serializeSourceCollection);
-        writer.writeAdditionalData(addToReviewSetPostRequestBody.additionalData);
-    }
+export function serializeAddToReviewSetPostRequestBody(writer: SerializationWriter, addToReviewSetPostRequestBody: Partial<AddToReviewSetPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!addToReviewSetPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AdditionalDataOptions[]>("additionalDataOptions", addToReviewSetPostRequestBody.additionalDataOptions);
+    writer.writeObjectValue<SourceCollection>("sourceCollection", addToReviewSetPostRequestBody.sourceCollection, serializeSourceCollection);
+    writer.writeAdditionalData(addToReviewSetPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

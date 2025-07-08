@@ -693,6 +693,7 @@ export type DataSourceHoldStatus = (typeof DataSourceHoldStatusObject)[keyof typ
 export type DataSourceScopes = (typeof DataSourceScopesObject)[keyof typeof DataSourceScopesObject];
 /**
  * The deserialization information for the current model
+ * @param AddToReviewSetOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -705,6 +706,7 @@ export function deserializeIntoAddToReviewSetOperation(addToReviewSetOperation: 
 }
 /**
  * The deserialization information for the current model
+ * @param CaseCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -716,6 +718,7 @@ export function deserializeIntoCaseCollectionResponse(caseCollectionResponse: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param CaseEscaped The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -743,6 +746,7 @@ export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | u
 }
 /**
  * The deserialization information for the current model
+ * @param CaseExportOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -761,6 +765,7 @@ export function deserializeIntoCaseExportOperation(caseExportOperation: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param CaseExportOperationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -772,6 +777,7 @@ export function deserializeIntoCaseExportOperationCollectionResponse(caseExportO
 }
 /**
  * The deserialization information for the current model
+ * @param CaseHoldOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -782,6 +788,7 @@ export function deserializeIntoCaseHoldOperation(caseHoldOperation: Partial<Case
 }
 /**
  * The deserialization information for the current model
+ * @param CaseIndexOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -792,6 +799,7 @@ export function deserializeIntoCaseIndexOperation(caseIndexOperation: Partial<Ca
 }
 /**
  * The deserialization information for the current model
+ * @param CaseOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -809,6 +817,7 @@ export function deserializeIntoCaseOperation(caseOperation: Partial<CaseOperatio
 }
 /**
  * The deserialization information for the current model
+ * @param CaseOperationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -820,6 +829,7 @@ export function deserializeIntoCaseOperationCollectionResponse(caseOperationColl
 }
 /**
  * The deserialization information for the current model
+ * @param CaseSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -833,6 +843,7 @@ export function deserializeIntoCaseSettings(caseSettings: Partial<CaseSettings> 
 }
 /**
  * The deserialization information for the current model
+ * @param Custodian The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -849,6 +860,7 @@ export function deserializeIntoCustodian(custodian: Partial<Custodian> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param CustodianCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -860,6 +872,7 @@ export function deserializeIntoCustodianCollectionResponse(custodianCollectionRe
 }
 /**
  * The deserialization information for the current model
+ * @param DataSource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -874,6 +887,7 @@ export function deserializeIntoDataSource(dataSource: Partial<DataSource> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param DataSourceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -885,6 +899,7 @@ export function deserializeIntoDataSourceCollectionResponse(dataSourceCollection
 }
 /**
  * The deserialization information for the current model
+ * @param DataSourceContainer The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -902,6 +917,7 @@ export function deserializeIntoDataSourceContainer(dataSourceContainer: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param Ediscoveryroot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -913,6 +929,7 @@ export function deserializeIntoEdiscoveryroot(ediscoveryroot: Partial<Ediscovery
 }
 /**
  * The deserialization information for the current model
+ * @param EstimateStatisticsOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -930,6 +947,7 @@ export function deserializeIntoEstimateStatisticsOperation(estimateStatisticsOpe
 }
 /**
  * The deserialization information for the current model
+ * @param LegalHold The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -953,6 +971,7 @@ export function deserializeIntoLegalHold(legalHold: Partial<LegalHold> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param LegalHoldCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -964,6 +983,7 @@ export function deserializeIntoLegalHoldCollectionResponse(legalHoldCollectionRe
 }
 /**
  * The deserialization information for the current model
+ * @param NoncustodialDataSource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -976,6 +996,7 @@ export function deserializeIntoNoncustodialDataSource(noncustodialDataSource: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param NoncustodialDataSourceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -987,6 +1008,7 @@ export function deserializeIntoNoncustodialDataSourceCollectionResponse(noncusto
 }
 /**
  * The deserialization information for the current model
+ * @param OcrSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1001,6 +1023,7 @@ export function deserializeIntoOcrSettings(ocrSettings: Partial<OcrSettings> | u
 }
 /**
  * The deserialization information for the current model
+ * @param PurgeDataOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1011,6 +1034,7 @@ export function deserializeIntoPurgeDataOperation(purgeDataOperation: Partial<Pu
 }
 /**
  * The deserialization information for the current model
+ * @param RedundancyDetectionSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1026,6 +1050,7 @@ export function deserializeIntoRedundancyDetectionSettings(redundancyDetectionSe
 }
 /**
  * The deserialization information for the current model
+ * @param ReviewSet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1040,6 +1065,7 @@ export function deserializeIntoReviewSet(reviewSet: Partial<ReviewSet> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param ReviewSetCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1051,6 +1077,7 @@ export function deserializeIntoReviewSetCollectionResponse(reviewSetCollectionRe
 }
 /**
  * The deserialization information for the current model
+ * @param ReviewSetQuery The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1067,6 +1094,7 @@ export function deserializeIntoReviewSetQuery(reviewSetQuery: Partial<ReviewSetQ
 }
 /**
  * The deserialization information for the current model
+ * @param ReviewSetQueryCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1078,6 +1106,7 @@ export function deserializeIntoReviewSetQueryCollectionResponse(reviewSetQueryCo
 }
 /**
  * The deserialization information for the current model
+ * @param SiteSource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1089,6 +1118,7 @@ export function deserializeIntoSiteSource(siteSource: Partial<SiteSource> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param SiteSourceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1100,6 +1130,7 @@ export function deserializeIntoSiteSourceCollectionResponse(siteSourceCollection
 }
 /**
  * The deserialization information for the current model
+ * @param SourceCollection The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1123,6 +1154,7 @@ export function deserializeIntoSourceCollection(sourceCollection: Partial<Source
 }
 /**
  * The deserialization information for the current model
+ * @param SourceCollectionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1134,6 +1166,7 @@ export function deserializeIntoSourceCollectionCollectionResponse(sourceCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param Tag The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1151,6 +1184,7 @@ export function deserializeIntoTag(tag: Partial<Tag> | undefined = {}) : Record<
 }
 /**
  * The deserialization information for the current model
+ * @param TagCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1162,6 +1196,7 @@ export function deserializeIntoTagCollectionResponse(tagCollectionResponse: Part
 }
 /**
  * The deserialization information for the current model
+ * @param TagOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1172,6 +1207,7 @@ export function deserializeIntoTagOperation(tagOperation: Partial<TagOperation> 
 }
 /**
  * The deserialization information for the current model
+ * @param TopicModelingSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1187,6 +1223,7 @@ export function deserializeIntoTopicModelingSettings(topicModelingSettings: Part
 }
 /**
  * The deserialization information for the current model
+ * @param UnifiedGroupSource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1199,6 +1236,7 @@ export function deserializeIntoUnifiedGroupSource(unifiedGroupSource: Partial<Un
 }
 /**
  * The deserialization information for the current model
+ * @param UnifiedGroupSourceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1210,6 +1248,7 @@ export function deserializeIntoUnifiedGroupSourceCollectionResponse(unifiedGroup
 }
 /**
  * The deserialization information for the current model
+ * @param UserSource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1223,6 +1262,7 @@ export function deserializeIntoUserSource(userSource: Partial<UserSource> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param UserSourceCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1349,10 +1389,6 @@ export interface NoncustodialDataSourceCollectionResponse extends BaseCollection
 }
 export interface OcrSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1376,10 +1412,6 @@ export interface OcrSettings extends AdditionalDataHolder, BackedModel, Parsable
 export interface PurgeDataOperation extends CaseOperation, Parsable {
 }
 export interface RedundancyDetectionSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1463,544 +1495,626 @@ export interface ReviewSetQueryCollectionResponse extends BaseCollectionPaginati
 }
 /**
  * Serializes information the current object
+ * @param AddToReviewSetOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAddToReviewSetOperation(writer: SerializationWriter, addToReviewSetOperation: Partial<AddToReviewSetOperation> | undefined | null = {}) : void {
-    if (addToReviewSetOperation) {
-        serializeCaseOperation(writer, addToReviewSetOperation)
-        writer.writeObjectValue<ReviewSet>("reviewSet", addToReviewSetOperation.reviewSet, serializeReviewSet);
-        writer.writeObjectValue<SourceCollection>("sourceCollection", addToReviewSetOperation.sourceCollection, serializeSourceCollection);
+export function serializeAddToReviewSetOperation(writer: SerializationWriter, addToReviewSetOperation: Partial<AddToReviewSetOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!addToReviewSetOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, addToReviewSetOperation, isSerializingDerivedType)
+    writer.writeObjectValue<ReviewSet>("reviewSet", addToReviewSetOperation.reviewSet, serializeReviewSet);
+    writer.writeObjectValue<SourceCollection>("sourceCollection", addToReviewSetOperation.sourceCollection, serializeSourceCollection);
+}
+/**
+ * Serializes information the current object
+ * @param CaseCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseCollectionResponse(writer: SerializationWriter, caseCollectionResponse: Partial<CaseCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, caseCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CaseEscaped>("value", caseCollectionResponse.value, serializeCaseEscaped);
+}
+/**
+ * Serializes information the current object
+ * @param CaseEscaped The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: Partial<CaseEscaped> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseEscaped || isSerializingDerivedType) { return; }
+    serializeEntity(writer, caseEscaped, isSerializingDerivedType)
+    writer.writeObjectValue<IdentitySet>("closedBy", caseEscaped.closedBy, serializeIdentitySet);
+    writer.writeDateValue("closedDateTime", caseEscaped.closedDateTime);
+    writer.writeDateValue("createdDateTime", caseEscaped.createdDateTime);
+    writer.writeCollectionOfObjectValues<Custodian>("custodians", caseEscaped.custodians, serializeCustodian);
+    writer.writeStringValue("description", caseEscaped.description);
+    writer.writeStringValue("displayName", caseEscaped.displayName);
+    writer.writeStringValue("externalId", caseEscaped.externalId);
+    writer.writeObjectValue<IdentitySet>("lastModifiedBy", caseEscaped.lastModifiedBy, serializeIdentitySet);
+    writer.writeDateValue("lastModifiedDateTime", caseEscaped.lastModifiedDateTime);
+    writer.writeCollectionOfObjectValues<LegalHold>("legalHolds", caseEscaped.legalHolds, serializeLegalHold);
+    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialDataSources", caseEscaped.noncustodialDataSources, serializeNoncustodialDataSource);
+    writer.writeCollectionOfObjectValues<CaseOperation>("operations", caseEscaped.operations, serializeCaseOperation);
+    writer.writeCollectionOfObjectValues<ReviewSet>("reviewSets", caseEscaped.reviewSets, serializeReviewSet);
+    writer.writeObjectValue<CaseSettings>("settings", caseEscaped.settings, serializeCaseSettings);
+    writer.writeCollectionOfObjectValues<SourceCollection>("sourceCollections", caseEscaped.sourceCollections, serializeSourceCollection);
+    writer.writeEnumValue<CaseStatus>("status", caseEscaped.status);
+    writer.writeCollectionOfObjectValues<Tag>("tags", caseEscaped.tags, serializeTag);
+}
+/**
+ * Serializes information the current object
+ * @param CaseExportOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseExportOperation(writer: SerializationWriter, caseExportOperation: Partial<CaseExportOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseExportOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, caseExportOperation, isSerializingDerivedType)
+    writer.writeStringValue("azureBlobContainer", caseExportOperation.azureBlobContainer);
+    writer.writeStringValue("azureBlobToken", caseExportOperation.azureBlobToken);
+    writer.writeStringValue("description", caseExportOperation.description);
+    writer.writeEnumValue<ExportOptions[]>("exportOptions", caseExportOperation.exportOptions);
+    writer.writeEnumValue<ExportFileStructure>("exportStructure", caseExportOperation.exportStructure);
+    writer.writeStringValue("outputFolderId", caseExportOperation.outputFolderId);
+    writer.writeStringValue("outputName", caseExportOperation.outputName);
+    writer.writeObjectValue<ReviewSet>("reviewSet", caseExportOperation.reviewSet, serializeReviewSet);
+}
+/**
+ * Serializes information the current object
+ * @param CaseExportOperationCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseExportOperationCollectionResponse(writer: SerializationWriter, caseExportOperationCollectionResponse: Partial<CaseExportOperationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseExportOperationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, caseExportOperationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CaseExportOperation>("value", caseExportOperationCollectionResponse.value, serializeCaseExportOperation);
+}
+/**
+ * Serializes information the current object
+ * @param CaseHoldOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseHoldOperation(writer: SerializationWriter, caseHoldOperation: Partial<CaseHoldOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseHoldOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, caseHoldOperation, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param CaseIndexOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseIndexOperation(writer: SerializationWriter, caseIndexOperation: Partial<CaseIndexOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseIndexOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, caseIndexOperation, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param CaseOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseOperation(writer: SerializationWriter, caseOperation: Partial<CaseOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseOperation || isSerializingDerivedType) { return; }
+    serializeEntity(writer, caseOperation, isSerializingDerivedType)
+    writer.writeEnumValue<CaseAction>("action", caseOperation.action);
+    writer.writeDateValue("completedDateTime", caseOperation.completedDateTime);
+    writer.writeObjectValue<IdentitySet>("createdBy", caseOperation.createdBy, serializeIdentitySet);
+    writer.writeDateValue("createdDateTime", caseOperation.createdDateTime);
+    writer.writeNumberValue("percentProgress", caseOperation.percentProgress);
+    writer.writeObjectValue<ResultInfo>("resultInfo", caseOperation.resultInfo, serializeResultInfo);
+    writer.writeEnumValue<CaseOperationStatus>("status", caseOperation.status);
+    switch (caseOperation.odataType) {
+        case "#microsoft.graph.ediscovery.addToReviewSetOperation":
+            serializeAddToReviewSetOperation(writer, caseOperation as AddToReviewSetOperation, true);
+        break;
+        case "#microsoft.graph.ediscovery.caseExportOperation":
+            serializeCaseExportOperation(writer, caseOperation as CaseExportOperation, true);
+        break;
+        case "#microsoft.graph.ediscovery.caseHoldOperation":
+            serializeCaseHoldOperation(writer, caseOperation as CaseHoldOperation, true);
+        break;
+        case "#microsoft.graph.ediscovery.caseIndexOperation":
+            serializeCaseIndexOperation(writer, caseOperation as CaseIndexOperation, true);
+        break;
+        case "#microsoft.graph.ediscovery.estimateStatisticsOperation":
+            serializeEstimateStatisticsOperation(writer, caseOperation as EstimateStatisticsOperation, true);
+        break;
+        case "#microsoft.graph.ediscovery.purgeDataOperation":
+            serializePurgeDataOperation(writer, caseOperation as PurgeDataOperation, true);
+        break;
+        case "#microsoft.graph.ediscovery.tagOperation":
+            serializeTagOperation(writer, caseOperation as TagOperation, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param CaseOperationCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseCollectionResponse(writer: SerializationWriter, caseCollectionResponse: Partial<CaseCollectionResponse> | undefined | null = {}) : void {
-    if (caseCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, caseCollectionResponse)
-        writer.writeCollectionOfObjectValues<CaseEscaped>("value", caseCollectionResponse.value, serializeCaseEscaped);
+export function serializeCaseOperationCollectionResponse(writer: SerializationWriter, caseOperationCollectionResponse: Partial<CaseOperationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseOperationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, caseOperationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CaseOperation>("value", caseOperationCollectionResponse.value, serializeCaseOperation);
+}
+/**
+ * Serializes information the current object
+ * @param CaseSettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseSettings(writer: SerializationWriter, caseSettings: Partial<CaseSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseSettings || isSerializingDerivedType) { return; }
+    serializeEntity(writer, caseSettings, isSerializingDerivedType)
+    writer.writeObjectValue<OcrSettings>("ocr", caseSettings.ocr, serializeOcrSettings);
+    writer.writeObjectValue<RedundancyDetectionSettings>("redundancyDetection", caseSettings.redundancyDetection, serializeRedundancyDetectionSettings);
+    writer.writeObjectValue<TopicModelingSettings>("topicModeling", caseSettings.topicModeling, serializeTopicModelingSettings);
+}
+/**
+ * Serializes information the current object
+ * @param Custodian The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustodian(writer: SerializationWriter, custodian: Partial<Custodian> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!custodian || isSerializingDerivedType) { return; }
+    serializeDataSourceContainer(writer, custodian, isSerializingDerivedType)
+    writer.writeDateValue("acknowledgedDateTime", custodian.acknowledgedDateTime);
+    writer.writeBooleanValue("applyHoldToSources", custodian.applyHoldToSources);
+    writer.writeStringValue("email", custodian.email);
+    writer.writeCollectionOfObjectValues<SiteSource>("siteSources", custodian.siteSources, serializeSiteSource);
+    writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", custodian.unifiedGroupSources, serializeUnifiedGroupSource);
+    writer.writeCollectionOfObjectValues<UserSource>("userSources", custodian.userSources, serializeUserSource);
+}
+/**
+ * Serializes information the current object
+ * @param CustodianCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustodianCollectionResponse(writer: SerializationWriter, custodianCollectionResponse: Partial<CustodianCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!custodianCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, custodianCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Custodian>("value", custodianCollectionResponse.value, serializeCustodian);
+}
+/**
+ * Serializes information the current object
+ * @param DataSource The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataSource(writer: SerializationWriter, dataSource: Partial<DataSource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!dataSource || isSerializingDerivedType) { return; }
+    serializeEntity(writer, dataSource, isSerializingDerivedType)
+    writer.writeObjectValue<IdentitySet>("createdBy", dataSource.createdBy, serializeIdentitySet);
+    writer.writeDateValue("createdDateTime", dataSource.createdDateTime);
+    writer.writeStringValue("displayName", dataSource.displayName);
+    writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSource.holdStatus);
+    switch (dataSource.odataType) {
+        case "#microsoft.graph.ediscovery.siteSource":
+            serializeSiteSource(writer, dataSource as SiteSource, true);
+        break;
+        case "#microsoft.graph.ediscovery.unifiedGroupSource":
+            serializeUnifiedGroupSource(writer, dataSource as UnifiedGroupSource, true);
+        break;
+        case "#microsoft.graph.ediscovery.userSource":
+            serializeUserSource(writer, dataSource as UserSource, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param DataSourceCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: Partial<CaseEscaped> | undefined | null = {}) : void {
-    if (caseEscaped) {
-        serializeEntity(writer, caseEscaped)
-        writer.writeObjectValue<IdentitySet>("closedBy", caseEscaped.closedBy, serializeIdentitySet);
-        writer.writeDateValue("closedDateTime", caseEscaped.closedDateTime);
-        writer.writeDateValue("createdDateTime", caseEscaped.createdDateTime);
-        writer.writeCollectionOfObjectValues<Custodian>("custodians", caseEscaped.custodians, serializeCustodian);
-        writer.writeStringValue("description", caseEscaped.description);
-        writer.writeStringValue("displayName", caseEscaped.displayName);
-        writer.writeStringValue("externalId", caseEscaped.externalId);
-        writer.writeObjectValue<IdentitySet>("lastModifiedBy", caseEscaped.lastModifiedBy, serializeIdentitySet);
-        writer.writeDateValue("lastModifiedDateTime", caseEscaped.lastModifiedDateTime);
-        writer.writeCollectionOfObjectValues<LegalHold>("legalHolds", caseEscaped.legalHolds, serializeLegalHold);
-        writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialDataSources", caseEscaped.noncustodialDataSources, serializeNoncustodialDataSource);
-        writer.writeCollectionOfObjectValues<CaseOperation>("operations", caseEscaped.operations, serializeCaseOperation);
-        writer.writeCollectionOfObjectValues<ReviewSet>("reviewSets", caseEscaped.reviewSets, serializeReviewSet);
-        writer.writeObjectValue<CaseSettings>("settings", caseEscaped.settings, serializeCaseSettings);
-        writer.writeCollectionOfObjectValues<SourceCollection>("sourceCollections", caseEscaped.sourceCollections, serializeSourceCollection);
-        writer.writeEnumValue<CaseStatus>("status", caseEscaped.status);
-        writer.writeCollectionOfObjectValues<Tag>("tags", caseEscaped.tags, serializeTag);
+export function serializeDataSourceCollectionResponse(writer: SerializationWriter, dataSourceCollectionResponse: Partial<DataSourceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!dataSourceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, dataSourceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DataSource>("value", dataSourceCollectionResponse.value, serializeDataSource);
+}
+/**
+ * Serializes information the current object
+ * @param DataSourceContainer The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDataSourceContainer(writer: SerializationWriter, dataSourceContainer: Partial<DataSourceContainer> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!dataSourceContainer || isSerializingDerivedType) { return; }
+    serializeEntity(writer, dataSourceContainer, isSerializingDerivedType)
+    writer.writeDateValue("createdDateTime", dataSourceContainer.createdDateTime);
+    writer.writeStringValue("displayName", dataSourceContainer.displayName);
+    writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSourceContainer.holdStatus);
+    writer.writeObjectValue<CaseIndexOperation>("lastIndexOperation", dataSourceContainer.lastIndexOperation, serializeCaseIndexOperation);
+    writer.writeDateValue("lastModifiedDateTime", dataSourceContainer.lastModifiedDateTime);
+    writer.writeDateValue("releasedDateTime", dataSourceContainer.releasedDateTime);
+    writer.writeEnumValue<DataSourceContainerStatus>("status", dataSourceContainer.status);
+    switch (dataSourceContainer.odataType) {
+        case "#microsoft.graph.ediscovery.custodian":
+            serializeCustodian(writer, dataSourceContainer as Custodian, true);
+        break;
+        case "#microsoft.graph.ediscovery.noncustodialDataSource":
+            serializeNoncustodialDataSource(writer, dataSourceContainer as NoncustodialDataSource, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param Ediscoveryroot The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseExportOperation(writer: SerializationWriter, caseExportOperation: Partial<CaseExportOperation> | undefined | null = {}) : void {
-    if (caseExportOperation) {
-        serializeCaseOperation(writer, caseExportOperation)
-        writer.writeStringValue("azureBlobContainer", caseExportOperation.azureBlobContainer);
-        writer.writeStringValue("azureBlobToken", caseExportOperation.azureBlobToken);
-        writer.writeStringValue("description", caseExportOperation.description);
-        writer.writeEnumValue<ExportOptions[]>("exportOptions", caseExportOperation.exportOptions);
-        writer.writeEnumValue<ExportFileStructure>("exportStructure", caseExportOperation.exportStructure);
-        writer.writeStringValue("outputFolderId", caseExportOperation.outputFolderId);
-        writer.writeStringValue("outputName", caseExportOperation.outputName);
-        writer.writeObjectValue<ReviewSet>("reviewSet", caseExportOperation.reviewSet, serializeReviewSet);
-    }
+export function serializeEdiscoveryroot(writer: SerializationWriter, ediscoveryroot: Partial<Ediscoveryroot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ediscoveryroot || isSerializingDerivedType) { return; }
+    serializeEntity(writer, ediscoveryroot, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CaseEscaped>("cases", ediscoveryroot.cases, serializeCaseEscaped);
 }
 /**
  * Serializes information the current object
+ * @param EstimateStatisticsOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseExportOperationCollectionResponse(writer: SerializationWriter, caseExportOperationCollectionResponse: Partial<CaseExportOperationCollectionResponse> | undefined | null = {}) : void {
-    if (caseExportOperationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, caseExportOperationCollectionResponse)
-        writer.writeCollectionOfObjectValues<CaseExportOperation>("value", caseExportOperationCollectionResponse.value, serializeCaseExportOperation);
-    }
+export function serializeEstimateStatisticsOperation(writer: SerializationWriter, estimateStatisticsOperation: Partial<EstimateStatisticsOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!estimateStatisticsOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, estimateStatisticsOperation, isSerializingDerivedType)
+    writer.writeNumberValue("indexedItemCount", estimateStatisticsOperation.indexedItemCount);
+    writer.writeNumberValue("indexedItemsSize", estimateStatisticsOperation.indexedItemsSize);
+    writer.writeNumberValue("mailboxCount", estimateStatisticsOperation.mailboxCount);
+    writer.writeNumberValue("siteCount", estimateStatisticsOperation.siteCount);
+    writer.writeObjectValue<SourceCollection>("sourceCollection", estimateStatisticsOperation.sourceCollection, serializeSourceCollection);
+    writer.writeNumberValue("unindexedItemCount", estimateStatisticsOperation.unindexedItemCount);
+    writer.writeNumberValue("unindexedItemsSize", estimateStatisticsOperation.unindexedItemsSize);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LegalHold The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseHoldOperation(writer: SerializationWriter, caseHoldOperation: Partial<CaseHoldOperation> | undefined | null = {}) : void {
-    if (caseHoldOperation) {
-        serializeCaseOperation(writer, caseHoldOperation)
-    }
+export function serializeLegalHold(writer: SerializationWriter, legalHold: Partial<LegalHold> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!legalHold || isSerializingDerivedType) { return; }
+    serializeEntity(writer, legalHold, isSerializingDerivedType)
+    writer.writeStringValue("contentQuery", legalHold.contentQuery);
+    writer.writeObjectValue<IdentitySet>("createdBy", legalHold.createdBy, serializeIdentitySet);
+    writer.writeDateValue("createdDateTime", legalHold.createdDateTime);
+    writer.writeStringValue("description", legalHold.description);
+    writer.writeStringValue("displayName", legalHold.displayName);
+    writer.writeCollectionOfPrimitiveValues<string>("errors", legalHold.errors);
+    writer.writeBooleanValue("isEnabled", legalHold.isEnabled);
+    writer.writeObjectValue<IdentitySet>("lastModifiedBy", legalHold.lastModifiedBy, serializeIdentitySet);
+    writer.writeDateValue("lastModifiedDateTime", legalHold.lastModifiedDateTime);
+    writer.writeCollectionOfObjectValues<SiteSource>("siteSources", legalHold.siteSources, serializeSiteSource);
+    writer.writeEnumValue<LegalHoldStatus>("status", legalHold.status);
+    writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", legalHold.unifiedGroupSources, serializeUnifiedGroupSource);
+    writer.writeCollectionOfObjectValues<UserSource>("userSources", legalHold.userSources, serializeUserSource);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LegalHoldCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseIndexOperation(writer: SerializationWriter, caseIndexOperation: Partial<CaseIndexOperation> | undefined | null = {}) : void {
-    if (caseIndexOperation) {
-        serializeCaseOperation(writer, caseIndexOperation)
-    }
+export function serializeLegalHoldCollectionResponse(writer: SerializationWriter, legalHoldCollectionResponse: Partial<LegalHoldCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!legalHoldCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, legalHoldCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<LegalHold>("value", legalHoldCollectionResponse.value, serializeLegalHold);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NoncustodialDataSource The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseOperation(writer: SerializationWriter, caseOperation: Partial<CaseOperation> | undefined | null = {}) : void {
-    if (caseOperation) {
-        serializeEntity(writer, caseOperation)
-        writer.writeEnumValue<CaseAction>("action", caseOperation.action);
-        writer.writeDateValue("completedDateTime", caseOperation.completedDateTime);
-        writer.writeObjectValue<IdentitySet>("createdBy", caseOperation.createdBy, serializeIdentitySet);
-        writer.writeDateValue("createdDateTime", caseOperation.createdDateTime);
-        writer.writeNumberValue("percentProgress", caseOperation.percentProgress);
-        writer.writeObjectValue<ResultInfo>("resultInfo", caseOperation.resultInfo, serializeResultInfo);
-        writer.writeEnumValue<CaseOperationStatus>("status", caseOperation.status);
-    }
+export function serializeNoncustodialDataSource(writer: SerializationWriter, noncustodialDataSource: Partial<NoncustodialDataSource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!noncustodialDataSource || isSerializingDerivedType) { return; }
+    serializeDataSourceContainer(writer, noncustodialDataSource, isSerializingDerivedType)
+    writer.writeBooleanValue("applyHoldToSource", noncustodialDataSource.applyHoldToSource);
+    writer.writeObjectValue<DataSource>("dataSource", noncustodialDataSource.dataSource, serializeDataSource);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NoncustodialDataSourceCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseOperationCollectionResponse(writer: SerializationWriter, caseOperationCollectionResponse: Partial<CaseOperationCollectionResponse> | undefined | null = {}) : void {
-    if (caseOperationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, caseOperationCollectionResponse)
-        writer.writeCollectionOfObjectValues<CaseOperation>("value", caseOperationCollectionResponse.value, serializeCaseOperation);
-    }
+export function serializeNoncustodialDataSourceCollectionResponse(writer: SerializationWriter, noncustodialDataSourceCollectionResponse: Partial<NoncustodialDataSourceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!noncustodialDataSourceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, noncustodialDataSourceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("value", noncustodialDataSourceCollectionResponse.value, serializeNoncustodialDataSource);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OcrSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCaseSettings(writer: SerializationWriter, caseSettings: Partial<CaseSettings> | undefined | null = {}) : void {
-    if (caseSettings) {
-        serializeEntity(writer, caseSettings)
-        writer.writeObjectValue<OcrSettings>("ocr", caseSettings.ocr, serializeOcrSettings);
-        writer.writeObjectValue<RedundancyDetectionSettings>("redundancyDetection", caseSettings.redundancyDetection, serializeRedundancyDetectionSettings);
-        writer.writeObjectValue<TopicModelingSettings>("topicModeling", caseSettings.topicModeling, serializeTopicModelingSettings);
-    }
+export function serializeOcrSettings(writer: SerializationWriter, ocrSettings: Partial<OcrSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ocrSettings || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("isEnabled", ocrSettings.isEnabled);
+    writer.writeNumberValue("maxImageSize", ocrSettings.maxImageSize);
+    writer.writeStringValue("@odata.type", ocrSettings.odataType);
+    writer.writeDurationValue("timeout", ocrSettings.timeout);
+    writer.writeAdditionalData(ocrSettings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PurgeDataOperation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCustodian(writer: SerializationWriter, custodian: Partial<Custodian> | undefined | null = {}) : void {
-    if (custodian) {
-        serializeDataSourceContainer(writer, custodian)
-        writer.writeDateValue("acknowledgedDateTime", custodian.acknowledgedDateTime);
-        writer.writeBooleanValue("applyHoldToSources", custodian.applyHoldToSources);
-        writer.writeStringValue("email", custodian.email);
-        writer.writeCollectionOfObjectValues<SiteSource>("siteSources", custodian.siteSources, serializeSiteSource);
-        writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", custodian.unifiedGroupSources, serializeUnifiedGroupSource);
-        writer.writeCollectionOfObjectValues<UserSource>("userSources", custodian.userSources, serializeUserSource);
-    }
+export function serializePurgeDataOperation(writer: SerializationWriter, purgeDataOperation: Partial<PurgeDataOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!purgeDataOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, purgeDataOperation, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RedundancyDetectionSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCustodianCollectionResponse(writer: SerializationWriter, custodianCollectionResponse: Partial<CustodianCollectionResponse> | undefined | null = {}) : void {
-    if (custodianCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, custodianCollectionResponse)
-        writer.writeCollectionOfObjectValues<Custodian>("value", custodianCollectionResponse.value, serializeCustodian);
-    }
+export function serializeRedundancyDetectionSettings(writer: SerializationWriter, redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!redundancyDetectionSettings || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("isEnabled", redundancyDetectionSettings.isEnabled);
+    writer.writeNumberValue("maxWords", redundancyDetectionSettings.maxWords);
+    writer.writeNumberValue("minWords", redundancyDetectionSettings.minWords);
+    writer.writeStringValue("@odata.type", redundancyDetectionSettings.odataType);
+    writer.writeNumberValue("similarityThreshold", redundancyDetectionSettings.similarityThreshold);
+    writer.writeAdditionalData(redundancyDetectionSettings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReviewSet The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDataSource(writer: SerializationWriter, dataSource: Partial<DataSource> | undefined | null = {}) : void {
-    if (dataSource) {
-        serializeEntity(writer, dataSource)
-        writer.writeObjectValue<IdentitySet>("createdBy", dataSource.createdBy, serializeIdentitySet);
-        writer.writeDateValue("createdDateTime", dataSource.createdDateTime);
-        writer.writeStringValue("displayName", dataSource.displayName);
-        writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSource.holdStatus);
-    }
+export function serializeReviewSet(writer: SerializationWriter, reviewSet: Partial<ReviewSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!reviewSet || isSerializingDerivedType) { return; }
+    serializeEntity(writer, reviewSet, isSerializingDerivedType)
+    writer.writeObjectValue<IdentitySet>("createdBy", reviewSet.createdBy, serializeIdentitySet);
+    writer.writeDateValue("createdDateTime", reviewSet.createdDateTime);
+    writer.writeStringValue("displayName", reviewSet.displayName);
+    writer.writeCollectionOfObjectValues<ReviewSetQuery>("queries", reviewSet.queries, serializeReviewSetQuery);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReviewSetCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDataSourceCollectionResponse(writer: SerializationWriter, dataSourceCollectionResponse: Partial<DataSourceCollectionResponse> | undefined | null = {}) : void {
-    if (dataSourceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, dataSourceCollectionResponse)
-        writer.writeCollectionOfObjectValues<DataSource>("value", dataSourceCollectionResponse.value, serializeDataSource);
-    }
+export function serializeReviewSetCollectionResponse(writer: SerializationWriter, reviewSetCollectionResponse: Partial<ReviewSetCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!reviewSetCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, reviewSetCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ReviewSet>("value", reviewSetCollectionResponse.value, serializeReviewSet);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReviewSetQuery The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDataSourceContainer(writer: SerializationWriter, dataSourceContainer: Partial<DataSourceContainer> | undefined | null = {}) : void {
-    if (dataSourceContainer) {
-        serializeEntity(writer, dataSourceContainer)
-        writer.writeDateValue("createdDateTime", dataSourceContainer.createdDateTime);
-        writer.writeStringValue("displayName", dataSourceContainer.displayName);
-        writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSourceContainer.holdStatus);
-        writer.writeObjectValue<CaseIndexOperation>("lastIndexOperation", dataSourceContainer.lastIndexOperation, serializeCaseIndexOperation);
-        writer.writeDateValue("lastModifiedDateTime", dataSourceContainer.lastModifiedDateTime);
-        writer.writeDateValue("releasedDateTime", dataSourceContainer.releasedDateTime);
-        writer.writeEnumValue<DataSourceContainerStatus>("status", dataSourceContainer.status);
-    }
+export function serializeReviewSetQuery(writer: SerializationWriter, reviewSetQuery: Partial<ReviewSetQuery> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!reviewSetQuery || isSerializingDerivedType) { return; }
+    serializeEntity(writer, reviewSetQuery, isSerializingDerivedType)
+    writer.writeObjectValue<IdentitySet>("createdBy", reviewSetQuery.createdBy, serializeIdentitySet);
+    writer.writeDateValue("createdDateTime", reviewSetQuery.createdDateTime);
+    writer.writeStringValue("displayName", reviewSetQuery.displayName);
+    writer.writeObjectValue<IdentitySet>("lastModifiedBy", reviewSetQuery.lastModifiedBy, serializeIdentitySet);
+    writer.writeDateValue("lastModifiedDateTime", reviewSetQuery.lastModifiedDateTime);
+    writer.writeStringValue("query", reviewSetQuery.query);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReviewSetQueryCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEdiscoveryroot(writer: SerializationWriter, ediscoveryroot: Partial<Ediscoveryroot> | undefined | null = {}) : void {
-    if (ediscoveryroot) {
-        serializeEntity(writer, ediscoveryroot)
-        writer.writeCollectionOfObjectValues<CaseEscaped>("cases", ediscoveryroot.cases, serializeCaseEscaped);
-    }
+export function serializeReviewSetQueryCollectionResponse(writer: SerializationWriter, reviewSetQueryCollectionResponse: Partial<ReviewSetQueryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!reviewSetQueryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, reviewSetQueryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ReviewSetQuery>("value", reviewSetQueryCollectionResponse.value, serializeReviewSetQuery);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SiteSource The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEstimateStatisticsOperation(writer: SerializationWriter, estimateStatisticsOperation: Partial<EstimateStatisticsOperation> | undefined | null = {}) : void {
-    if (estimateStatisticsOperation) {
-        serializeCaseOperation(writer, estimateStatisticsOperation)
-        writer.writeNumberValue("indexedItemCount", estimateStatisticsOperation.indexedItemCount);
-        writer.writeNumberValue("indexedItemsSize", estimateStatisticsOperation.indexedItemsSize);
-        writer.writeNumberValue("mailboxCount", estimateStatisticsOperation.mailboxCount);
-        writer.writeNumberValue("siteCount", estimateStatisticsOperation.siteCount);
-        writer.writeObjectValue<SourceCollection>("sourceCollection", estimateStatisticsOperation.sourceCollection, serializeSourceCollection);
-        writer.writeNumberValue("unindexedItemCount", estimateStatisticsOperation.unindexedItemCount);
-        writer.writeNumberValue("unindexedItemsSize", estimateStatisticsOperation.unindexedItemsSize);
-    }
+export function serializeSiteSource(writer: SerializationWriter, siteSource: Partial<SiteSource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!siteSource || isSerializingDerivedType) { return; }
+    serializeDataSource(writer, siteSource, isSerializingDerivedType)
+    writer.writeObjectValue<Site>("site", siteSource.site, serializeSite);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SiteSourceCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeLegalHold(writer: SerializationWriter, legalHold: Partial<LegalHold> | undefined | null = {}) : void {
-    if (legalHold) {
-        serializeEntity(writer, legalHold)
-        writer.writeStringValue("contentQuery", legalHold.contentQuery);
-        writer.writeObjectValue<IdentitySet>("createdBy", legalHold.createdBy, serializeIdentitySet);
-        writer.writeDateValue("createdDateTime", legalHold.createdDateTime);
-        writer.writeStringValue("description", legalHold.description);
-        writer.writeStringValue("displayName", legalHold.displayName);
-        writer.writeCollectionOfPrimitiveValues<string>("errors", legalHold.errors);
-        writer.writeBooleanValue("isEnabled", legalHold.isEnabled);
-        writer.writeObjectValue<IdentitySet>("lastModifiedBy", legalHold.lastModifiedBy, serializeIdentitySet);
-        writer.writeDateValue("lastModifiedDateTime", legalHold.lastModifiedDateTime);
-        writer.writeCollectionOfObjectValues<SiteSource>("siteSources", legalHold.siteSources, serializeSiteSource);
-        writer.writeEnumValue<LegalHoldStatus>("status", legalHold.status);
-        writer.writeCollectionOfObjectValues<UnifiedGroupSource>("unifiedGroupSources", legalHold.unifiedGroupSources, serializeUnifiedGroupSource);
-        writer.writeCollectionOfObjectValues<UserSource>("userSources", legalHold.userSources, serializeUserSource);
-    }
+export function serializeSiteSourceCollectionResponse(writer: SerializationWriter, siteSourceCollectionResponse: Partial<SiteSourceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!siteSourceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, siteSourceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SiteSource>("value", siteSourceCollectionResponse.value, serializeSiteSource);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SourceCollection The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeLegalHoldCollectionResponse(writer: SerializationWriter, legalHoldCollectionResponse: Partial<LegalHoldCollectionResponse> | undefined | null = {}) : void {
-    if (legalHoldCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, legalHoldCollectionResponse)
-        writer.writeCollectionOfObjectValues<LegalHold>("value", legalHoldCollectionResponse.value, serializeLegalHold);
-    }
+export function serializeSourceCollection(writer: SerializationWriter, sourceCollection: Partial<SourceCollection> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sourceCollection || isSerializingDerivedType) { return; }
+    serializeEntity(writer, sourceCollection, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DataSource>("additionalSources", sourceCollection.additionalSources, serializeDataSource);
+    writer.writeObjectValue<AddToReviewSetOperation>("addToReviewSetOperation", sourceCollection.addToReviewSetOperation, serializeAddToReviewSetOperation);
+    writer.writeStringValue("contentQuery", sourceCollection.contentQuery);
+    writer.writeObjectValue<IdentitySet>("createdBy", sourceCollection.createdBy, serializeIdentitySet);
+    writer.writeDateValue("createdDateTime", sourceCollection.createdDateTime);
+    writer.writeCollectionOfObjectValues<DataSource>("custodianSources", sourceCollection.custodianSources, serializeDataSource);
+    writer.writeEnumValue<DataSourceScopes[]>("dataSourceScopes", sourceCollection.dataSourceScopes);
+    writer.writeStringValue("description", sourceCollection.description);
+    writer.writeStringValue("displayName", sourceCollection.displayName);
+    writer.writeObjectValue<EstimateStatisticsOperation>("lastEstimateStatisticsOperation", sourceCollection.lastEstimateStatisticsOperation, serializeEstimateStatisticsOperation);
+    writer.writeObjectValue<IdentitySet>("lastModifiedBy", sourceCollection.lastModifiedBy, serializeIdentitySet);
+    writer.writeDateValue("lastModifiedDateTime", sourceCollection.lastModifiedDateTime);
+    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialSources", sourceCollection.noncustodialSources, serializeNoncustodialDataSource);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SourceCollectionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNoncustodialDataSource(writer: SerializationWriter, noncustodialDataSource: Partial<NoncustodialDataSource> | undefined | null = {}) : void {
-    if (noncustodialDataSource) {
-        serializeDataSourceContainer(writer, noncustodialDataSource)
-        writer.writeBooleanValue("applyHoldToSource", noncustodialDataSource.applyHoldToSource);
-        writer.writeObjectValue<DataSource>("dataSource", noncustodialDataSource.dataSource, serializeDataSource);
-    }
+export function serializeSourceCollectionCollectionResponse(writer: SerializationWriter, sourceCollectionCollectionResponse: Partial<SourceCollectionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sourceCollectionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, sourceCollectionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SourceCollection>("value", sourceCollectionCollectionResponse.value, serializeSourceCollection);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Tag The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNoncustodialDataSourceCollectionResponse(writer: SerializationWriter, noncustodialDataSourceCollectionResponse: Partial<NoncustodialDataSourceCollectionResponse> | undefined | null = {}) : void {
-    if (noncustodialDataSourceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, noncustodialDataSourceCollectionResponse)
-        writer.writeCollectionOfObjectValues<NoncustodialDataSource>("value", noncustodialDataSourceCollectionResponse.value, serializeNoncustodialDataSource);
-    }
+export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tag || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tag, isSerializingDerivedType)
+    writer.writeEnumValue<ChildSelectability>("childSelectability", tag.childSelectability);
+    writer.writeCollectionOfObjectValues<Tag>("childTags", tag.childTags, serializeTag);
+    writer.writeObjectValue<IdentitySet>("createdBy", tag.createdBy, serializeIdentitySet);
+    writer.writeStringValue("description", tag.description);
+    writer.writeStringValue("displayName", tag.displayName);
+    writer.writeDateValue("lastModifiedDateTime", tag.lastModifiedDateTime);
+    writer.writeObjectValue<Tag>("parent", tag.parent, serializeTag);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TagCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOcrSettings(writer: SerializationWriter, ocrSettings: Partial<OcrSettings> | undefined | null = {}) : void {
-    if (ocrSettings) {
-        writer.writeBooleanValue("isEnabled", ocrSettings.isEnabled);
-        writer.writeNumberValue("maxImageSize", ocrSettings.maxImageSize);
-        writer.writeStringValue("@odata.type", ocrSettings.odataType);
-        writer.writeDurationValue("timeout", ocrSettings.timeout);
-        writer.writeAdditionalData(ocrSettings.additionalData);
-    }
+export function serializeTagCollectionResponse(writer: SerializationWriter, tagCollectionResponse: Partial<TagCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tagCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tagCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Tag>("value", tagCollectionResponse.value, serializeTag);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TagOperation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePurgeDataOperation(writer: SerializationWriter, purgeDataOperation: Partial<PurgeDataOperation> | undefined | null = {}) : void {
-    if (purgeDataOperation) {
-        serializeCaseOperation(writer, purgeDataOperation)
-    }
+export function serializeTagOperation(writer: SerializationWriter, tagOperation: Partial<TagOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tagOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, tagOperation, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TopicModelingSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRedundancyDetectionSettings(writer: SerializationWriter, redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined | null = {}) : void {
-    if (redundancyDetectionSettings) {
-        writer.writeBooleanValue("isEnabled", redundancyDetectionSettings.isEnabled);
-        writer.writeNumberValue("maxWords", redundancyDetectionSettings.maxWords);
-        writer.writeNumberValue("minWords", redundancyDetectionSettings.minWords);
-        writer.writeStringValue("@odata.type", redundancyDetectionSettings.odataType);
-        writer.writeNumberValue("similarityThreshold", redundancyDetectionSettings.similarityThreshold);
-        writer.writeAdditionalData(redundancyDetectionSettings.additionalData);
-    }
+export function serializeTopicModelingSettings(writer: SerializationWriter, topicModelingSettings: Partial<TopicModelingSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!topicModelingSettings || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("dynamicallyAdjustTopicCount", topicModelingSettings.dynamicallyAdjustTopicCount);
+    writer.writeBooleanValue("ignoreNumbers", topicModelingSettings.ignoreNumbers);
+    writer.writeBooleanValue("isEnabled", topicModelingSettings.isEnabled);
+    writer.writeStringValue("@odata.type", topicModelingSettings.odataType);
+    writer.writeNumberValue("topicCount", topicModelingSettings.topicCount);
+    writer.writeAdditionalData(topicModelingSettings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UnifiedGroupSource The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReviewSet(writer: SerializationWriter, reviewSet: Partial<ReviewSet> | undefined | null = {}) : void {
-    if (reviewSet) {
-        serializeEntity(writer, reviewSet)
-        writer.writeObjectValue<IdentitySet>("createdBy", reviewSet.createdBy, serializeIdentitySet);
-        writer.writeDateValue("createdDateTime", reviewSet.createdDateTime);
-        writer.writeStringValue("displayName", reviewSet.displayName);
-        writer.writeCollectionOfObjectValues<ReviewSetQuery>("queries", reviewSet.queries, serializeReviewSetQuery);
-    }
+export function serializeUnifiedGroupSource(writer: SerializationWriter, unifiedGroupSource: Partial<UnifiedGroupSource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!unifiedGroupSource || isSerializingDerivedType) { return; }
+    serializeDataSource(writer, unifiedGroupSource, isSerializingDerivedType)
+    writer.writeObjectValue<Group>("group", unifiedGroupSource.group, serializeGroup);
+    writer.writeEnumValue<SourceType[]>("includedSources", unifiedGroupSource.includedSources);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UnifiedGroupSourceCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReviewSetCollectionResponse(writer: SerializationWriter, reviewSetCollectionResponse: Partial<ReviewSetCollectionResponse> | undefined | null = {}) : void {
-    if (reviewSetCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, reviewSetCollectionResponse)
-        writer.writeCollectionOfObjectValues<ReviewSet>("value", reviewSetCollectionResponse.value, serializeReviewSet);
-    }
+export function serializeUnifiedGroupSourceCollectionResponse(writer: SerializationWriter, unifiedGroupSourceCollectionResponse: Partial<UnifiedGroupSourceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!unifiedGroupSourceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, unifiedGroupSourceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<UnifiedGroupSource>("value", unifiedGroupSourceCollectionResponse.value, serializeUnifiedGroupSource);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserSource The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReviewSetQuery(writer: SerializationWriter, reviewSetQuery: Partial<ReviewSetQuery> | undefined | null = {}) : void {
-    if (reviewSetQuery) {
-        serializeEntity(writer, reviewSetQuery)
-        writer.writeObjectValue<IdentitySet>("createdBy", reviewSetQuery.createdBy, serializeIdentitySet);
-        writer.writeDateValue("createdDateTime", reviewSetQuery.createdDateTime);
-        writer.writeStringValue("displayName", reviewSetQuery.displayName);
-        writer.writeObjectValue<IdentitySet>("lastModifiedBy", reviewSetQuery.lastModifiedBy, serializeIdentitySet);
-        writer.writeDateValue("lastModifiedDateTime", reviewSetQuery.lastModifiedDateTime);
-        writer.writeStringValue("query", reviewSetQuery.query);
-    }
+export function serializeUserSource(writer: SerializationWriter, userSource: Partial<UserSource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userSource || isSerializingDerivedType) { return; }
+    serializeDataSource(writer, userSource, isSerializingDerivedType)
+    writer.writeStringValue("email", userSource.email);
+    writer.writeEnumValue<SourceType[]>("includedSources", userSource.includedSources);
+    writer.writeStringValue("siteWebUrl", userSource.siteWebUrl);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserSourceCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReviewSetQueryCollectionResponse(writer: SerializationWriter, reviewSetQueryCollectionResponse: Partial<ReviewSetQueryCollectionResponse> | undefined | null = {}) : void {
-    if (reviewSetQueryCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, reviewSetQueryCollectionResponse)
-        writer.writeCollectionOfObjectValues<ReviewSetQuery>("value", reviewSetQueryCollectionResponse.value, serializeReviewSetQuery);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSiteSource(writer: SerializationWriter, siteSource: Partial<SiteSource> | undefined | null = {}) : void {
-    if (siteSource) {
-        serializeDataSource(writer, siteSource)
-        writer.writeObjectValue<Site>("site", siteSource.site, serializeSite);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSiteSourceCollectionResponse(writer: SerializationWriter, siteSourceCollectionResponse: Partial<SiteSourceCollectionResponse> | undefined | null = {}) : void {
-    if (siteSourceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, siteSourceCollectionResponse)
-        writer.writeCollectionOfObjectValues<SiteSource>("value", siteSourceCollectionResponse.value, serializeSiteSource);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSourceCollection(writer: SerializationWriter, sourceCollection: Partial<SourceCollection> | undefined | null = {}) : void {
-    if (sourceCollection) {
-        serializeEntity(writer, sourceCollection)
-        writer.writeCollectionOfObjectValues<DataSource>("additionalSources", sourceCollection.additionalSources, serializeDataSource);
-        writer.writeObjectValue<AddToReviewSetOperation>("addToReviewSetOperation", sourceCollection.addToReviewSetOperation, serializeAddToReviewSetOperation);
-        writer.writeStringValue("contentQuery", sourceCollection.contentQuery);
-        writer.writeObjectValue<IdentitySet>("createdBy", sourceCollection.createdBy, serializeIdentitySet);
-        writer.writeDateValue("createdDateTime", sourceCollection.createdDateTime);
-        writer.writeCollectionOfObjectValues<DataSource>("custodianSources", sourceCollection.custodianSources, serializeDataSource);
-        writer.writeEnumValue<DataSourceScopes[]>("dataSourceScopes", sourceCollection.dataSourceScopes);
-        writer.writeStringValue("description", sourceCollection.description);
-        writer.writeStringValue("displayName", sourceCollection.displayName);
-        writer.writeObjectValue<EstimateStatisticsOperation>("lastEstimateStatisticsOperation", sourceCollection.lastEstimateStatisticsOperation, serializeEstimateStatisticsOperation);
-        writer.writeObjectValue<IdentitySet>("lastModifiedBy", sourceCollection.lastModifiedBy, serializeIdentitySet);
-        writer.writeDateValue("lastModifiedDateTime", sourceCollection.lastModifiedDateTime);
-        writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialSources", sourceCollection.noncustodialSources, serializeNoncustodialDataSource);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSourceCollectionCollectionResponse(writer: SerializationWriter, sourceCollectionCollectionResponse: Partial<SourceCollectionCollectionResponse> | undefined | null = {}) : void {
-    if (sourceCollectionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, sourceCollectionCollectionResponse)
-        writer.writeCollectionOfObjectValues<SourceCollection>("value", sourceCollectionCollectionResponse.value, serializeSourceCollection);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | undefined | null = {}) : void {
-    if (tag) {
-        serializeEntity(writer, tag)
-        writer.writeEnumValue<ChildSelectability>("childSelectability", tag.childSelectability);
-        writer.writeCollectionOfObjectValues<Tag>("childTags", tag.childTags, serializeTag);
-        writer.writeObjectValue<IdentitySet>("createdBy", tag.createdBy, serializeIdentitySet);
-        writer.writeStringValue("description", tag.description);
-        writer.writeStringValue("displayName", tag.displayName);
-        writer.writeDateValue("lastModifiedDateTime", tag.lastModifiedDateTime);
-        writer.writeObjectValue<Tag>("parent", tag.parent, serializeTag);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeTagCollectionResponse(writer: SerializationWriter, tagCollectionResponse: Partial<TagCollectionResponse> | undefined | null = {}) : void {
-    if (tagCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tagCollectionResponse)
-        writer.writeCollectionOfObjectValues<Tag>("value", tagCollectionResponse.value, serializeTag);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeTagOperation(writer: SerializationWriter, tagOperation: Partial<TagOperation> | undefined | null = {}) : void {
-    if (tagOperation) {
-        serializeCaseOperation(writer, tagOperation)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeTopicModelingSettings(writer: SerializationWriter, topicModelingSettings: Partial<TopicModelingSettings> | undefined | null = {}) : void {
-    if (topicModelingSettings) {
-        writer.writeBooleanValue("dynamicallyAdjustTopicCount", topicModelingSettings.dynamicallyAdjustTopicCount);
-        writer.writeBooleanValue("ignoreNumbers", topicModelingSettings.ignoreNumbers);
-        writer.writeBooleanValue("isEnabled", topicModelingSettings.isEnabled);
-        writer.writeStringValue("@odata.type", topicModelingSettings.odataType);
-        writer.writeNumberValue("topicCount", topicModelingSettings.topicCount);
-        writer.writeAdditionalData(topicModelingSettings.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUnifiedGroupSource(writer: SerializationWriter, unifiedGroupSource: Partial<UnifiedGroupSource> | undefined | null = {}) : void {
-    if (unifiedGroupSource) {
-        serializeDataSource(writer, unifiedGroupSource)
-        writer.writeObjectValue<Group>("group", unifiedGroupSource.group, serializeGroup);
-        writer.writeEnumValue<SourceType[]>("includedSources", unifiedGroupSource.includedSources);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUnifiedGroupSourceCollectionResponse(writer: SerializationWriter, unifiedGroupSourceCollectionResponse: Partial<UnifiedGroupSourceCollectionResponse> | undefined | null = {}) : void {
-    if (unifiedGroupSourceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, unifiedGroupSourceCollectionResponse)
-        writer.writeCollectionOfObjectValues<UnifiedGroupSource>("value", unifiedGroupSourceCollectionResponse.value, serializeUnifiedGroupSource);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserSource(writer: SerializationWriter, userSource: Partial<UserSource> | undefined | null = {}) : void {
-    if (userSource) {
-        serializeDataSource(writer, userSource)
-        writer.writeStringValue("email", userSource.email);
-        writer.writeEnumValue<SourceType[]>("includedSources", userSource.includedSources);
-        writer.writeStringValue("siteWebUrl", userSource.siteWebUrl);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserSourceCollectionResponse(writer: SerializationWriter, userSourceCollectionResponse: Partial<UserSourceCollectionResponse> | undefined | null = {}) : void {
-    if (userSourceCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, userSourceCollectionResponse)
-        writer.writeCollectionOfObjectValues<UserSource>("value", userSourceCollectionResponse.value, serializeUserSource);
-    }
+export function serializeUserSourceCollectionResponse(writer: SerializationWriter, userSourceCollectionResponse: Partial<UserSourceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userSourceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, userSourceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<UserSource>("value", userSourceCollectionResponse.value, serializeUserSource);
 }
 export interface SiteSource extends DataSource, Parsable {
     /**
@@ -2114,10 +2228,6 @@ export interface TagCollectionResponse extends BaseCollectionPaginationCountResp
 export interface TagOperation extends CaseOperation, Parsable {
 }
 export interface TopicModelingSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

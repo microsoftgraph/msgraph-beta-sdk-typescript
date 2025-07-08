@@ -28,6 +28,7 @@ export function createLookupPostResponseFromDiscriminatorValue(parseNode: ParseN
 }
 /**
  * The deserialization information for the current model
+ * @param LookupPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -41,6 +42,7 @@ export function deserializeIntoLookupPostRequestBody(lookupPostRequestBody: Part
 }
 /**
  * The deserialization information for the current model
+ * @param LookupPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -51,10 +53,6 @@ export function deserializeIntoLookupPostResponse(lookupPostResponse: Partial<Lo
     }
 }
 export interface LookupPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -100,27 +98,29 @@ export interface LookupRequestBuilder extends BaseRequestBuilder<LookupRequestBu
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LookupPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeLookupPostRequestBody(writer: SerializationWriter, lookupPostRequestBody: Partial<LookupPostRequestBody> | undefined | null = {}) : void {
-    if (lookupPostRequestBody) {
-        writer.writeStringValue("key", lookupPostRequestBody.key);
-        writer.writeCollectionOfPrimitiveValues<string>("resultColumnNames", lookupPostRequestBody.resultColumnNames);
-        writer.writeCollectionOfPrimitiveValues<string>("values", lookupPostRequestBody.values);
-        writer.writeAdditionalData(lookupPostRequestBody.additionalData);
-    }
+export function serializeLookupPostRequestBody(writer: SerializationWriter, lookupPostRequestBody: Partial<LookupPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lookupPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("key", lookupPostRequestBody.key);
+    writer.writeCollectionOfPrimitiveValues<string>("resultColumnNames", lookupPostRequestBody.resultColumnNames);
+    writer.writeCollectionOfPrimitiveValues<string>("values", lookupPostRequestBody.values);
+    writer.writeAdditionalData(lookupPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LookupPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeLookupPostResponse(writer: SerializationWriter, lookupPostResponse: Partial<LookupPostResponse> | undefined | null = {}) : void {
-    if (lookupPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, lookupPostResponse)
-        writer.writeCollectionOfPrimitiveValues<string>("value", lookupPostResponse.value);
-    }
+export function serializeLookupPostResponse(writer: SerializationWriter, lookupPostResponse: Partial<LookupPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lookupPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, lookupPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("value", lookupPostResponse.value);
 }
 /**
  * Uri template for the request builder.

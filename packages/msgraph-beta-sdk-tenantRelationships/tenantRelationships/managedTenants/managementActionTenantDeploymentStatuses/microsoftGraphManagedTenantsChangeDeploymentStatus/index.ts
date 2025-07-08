@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ChangeDeploymentStatusPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -53,6 +49,7 @@ export function createChangeDeploymentStatusPostRequestBodyFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param ChangeDeploymentStatusPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -89,19 +86,20 @@ export interface MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilde
 }
 /**
  * Serializes information the current object
+ * @param ChangeDeploymentStatusPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeChangeDeploymentStatusPostRequestBody(writer: SerializationWriter, changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined | null = {}) : void {
-    if (changeDeploymentStatusPostRequestBody) {
-        writer.writeStringValue("managementActionId", changeDeploymentStatusPostRequestBody.managementActionId);
-        writer.writeStringValue("managementTemplateId", changeDeploymentStatusPostRequestBody.managementTemplateId);
-        writer.writeNumberValue("managementTemplateVersion", changeDeploymentStatusPostRequestBody.managementTemplateVersion);
-        writer.writeStringValue("status", changeDeploymentStatusPostRequestBody.status);
-        writer.writeStringValue("tenantGroupId", changeDeploymentStatusPostRequestBody.tenantGroupId);
-        writer.writeStringValue("tenantId", changeDeploymentStatusPostRequestBody.tenantId);
-        writer.writeAdditionalData(changeDeploymentStatusPostRequestBody.additionalData);
-    }
+export function serializeChangeDeploymentStatusPostRequestBody(writer: SerializationWriter, changeDeploymentStatusPostRequestBody: Partial<ChangeDeploymentStatusPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!changeDeploymentStatusPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("managementActionId", changeDeploymentStatusPostRequestBody.managementActionId);
+    writer.writeStringValue("managementTemplateId", changeDeploymentStatusPostRequestBody.managementTemplateId);
+    writer.writeNumberValue("managementTemplateVersion", changeDeploymentStatusPostRequestBody.managementTemplateVersion);
+    writer.writeStringValue("status", changeDeploymentStatusPostRequestBody.status);
+    writer.writeStringValue("tenantGroupId", changeDeploymentStatusPostRequestBody.tenantGroupId);
+    writer.writeStringValue("tenantId", changeDeploymentStatusPostRequestBody.tenantId);
+    writer.writeAdditionalData(changeDeploymentStatusPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

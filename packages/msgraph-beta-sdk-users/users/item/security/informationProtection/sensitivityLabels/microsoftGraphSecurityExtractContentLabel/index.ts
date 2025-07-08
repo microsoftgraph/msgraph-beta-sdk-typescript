@@ -19,6 +19,7 @@ export function createExtractContentLabelPostRequestBodyFromDiscriminatorValue(p
 }
 /**
  * The deserialization information for the current model
+ * @param ExtractContentLabelPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoExtractContentLabelPostRequestBody(extractContent
     }
 }
 export interface ExtractContentLabelPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -65,14 +62,15 @@ export interface MicrosoftGraphSecurityExtractContentLabelRequestBuilder extends
 }
 /**
  * Serializes information the current object
+ * @param ExtractContentLabelPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExtractContentLabelPostRequestBody(writer: SerializationWriter, extractContentLabelPostRequestBody: Partial<ExtractContentLabelPostRequestBody> | undefined | null = {}) : void {
-    if (extractContentLabelPostRequestBody) {
-        writer.writeObjectValue<ContentInfo>("contentInfo", extractContentLabelPostRequestBody.contentInfo, serializeContentInfo);
-        writer.writeAdditionalData(extractContentLabelPostRequestBody.additionalData);
-    }
+export function serializeExtractContentLabelPostRequestBody(writer: SerializationWriter, extractContentLabelPostRequestBody: Partial<ExtractContentLabelPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!extractContentLabelPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<ContentInfo>("contentInfo", extractContentLabelPostRequestBody.contentInfo, serializeContentInfo);
+    writer.writeAdditionalData(extractContentLabelPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

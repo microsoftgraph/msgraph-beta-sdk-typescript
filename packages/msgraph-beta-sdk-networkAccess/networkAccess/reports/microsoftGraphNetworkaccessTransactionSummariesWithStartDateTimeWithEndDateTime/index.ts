@@ -21,6 +21,7 @@ export function createTransactionSummariesWithStartDateTimeWithEndDateTimeGetRes
 }
 /**
  * The deserialization information for the current model
+ * @param TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -76,14 +77,15 @@ export interface MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTim
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<TransactionSummary>("value", transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeTransactionSummary);
-    }
+export function serializeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TransactionSummary>("value", transactionSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeTransactionSummary);
 }
 export interface TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
