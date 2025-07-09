@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.60](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.59...v1.0.0-preview.60) (2025-07-09)
+
+
+### Features
+
+* **generation:** update request builders and models ([b4355fc](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/b4355fc97d4223ec695a64402b36542bcc0e4465))
+
+
+### Bug Fixes
+
+* polymorphic serialization, removes the unnecessary cast ([47bcb72](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/47bcb72a0768998402e1d86a8f01943524d30235))
+
 ## [1.0.0-preview.59](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.58...v1.0.0-preview.59) (2025-07-02)
 
 
