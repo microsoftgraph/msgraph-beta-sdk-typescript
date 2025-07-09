@@ -1310,7 +1310,7 @@ export function serializeExternalActivity(writer: SerializationWriter, externalA
     writer.writeEnumValue<ExternalActivityType>("type", externalActivity.type);
     switch (externalActivity.odataType) {
         case "#microsoft.graph.externalConnectors.externalActivityResult":
-            serializeExternalActivityResult(writer, externalActivity as ExternalActivityResult, true);
+            serializeExternalActivityResult(writer, externalActivity, true);
         break;
     }
 }
@@ -1597,7 +1597,7 @@ export function serializeUrlToItemResolverBase(writer: SerializationWriter, urlT
     writer.writeAdditionalData(urlToItemResolverBase.additionalData);
     switch (urlToItemResolverBase.odataType) {
         case "#microsoft.graph.externalConnectors.itemIdResolver":
-            serializeItemIdResolver(writer, urlToItemResolverBase as ItemIdResolver, true);
+            serializeItemIdResolver(writer, urlToItemResolverBase, true);
         break;
     }
 }

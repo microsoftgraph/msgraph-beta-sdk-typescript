@@ -21139,142 +21139,142 @@ export function serializeAlertEvidence(writer: SerializationWriter, alertEvidenc
     writer.writeAdditionalData(alertEvidence.additionalData);
     switch (alertEvidence.odataType) {
         case "#microsoft.graph.security.amazonResourceEvidence":
-            serializeAmazonResourceEvidence(writer, alertEvidence as AmazonResourceEvidence, true);
+            serializeAmazonResourceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.analyzedMessageEvidence":
-            serializeAnalyzedMessageEvidence(writer, alertEvidence as AnalyzedMessageEvidence, true);
+            serializeAnalyzedMessageEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.azureResourceEvidence":
-            serializeAzureResourceEvidence(writer, alertEvidence as AzureResourceEvidence, true);
+            serializeAzureResourceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.blobContainerEvidence":
-            serializeBlobContainerEvidence(writer, alertEvidence as BlobContainerEvidence, true);
+            serializeBlobContainerEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.blobEvidence":
-            serializeBlobEvidence(writer, alertEvidence as BlobEvidence, true);
+            serializeBlobEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.cloudApplicationEvidence":
-            serializeCloudApplicationEvidence(writer, alertEvidence as CloudApplicationEvidence, true);
+            serializeCloudApplicationEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.cloudLogonRequestEvidence":
-            serializeCloudLogonRequestEvidence(writer, alertEvidence as CloudLogonRequestEvidence, true);
+            serializeCloudLogonRequestEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.cloudLogonSessionEvidence":
-            serializeCloudLogonSessionEvidence(writer, alertEvidence as CloudLogonSessionEvidence, true);
+            serializeCloudLogonSessionEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.containerEvidence":
-            serializeContainerEvidence(writer, alertEvidence as ContainerEvidence, true);
+            serializeContainerEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.containerImageEvidence":
-            serializeContainerImageEvidence(writer, alertEvidence as ContainerImageEvidence, true);
+            serializeContainerImageEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.containerRegistryEvidence":
-            serializeContainerRegistryEvidence(writer, alertEvidence as ContainerRegistryEvidence, true);
+            serializeContainerRegistryEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.deviceEvidence":
-            serializeDeviceEvidence(writer, alertEvidence as DeviceEvidence, true);
+            serializeDeviceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.dnsEvidence":
-            serializeDnsEvidence(writer, alertEvidence as DnsEvidence, true);
+            serializeDnsEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.fileEvidence":
-            serializeFileEvidence(writer, alertEvidence as FileEvidence, true);
+            serializeFileEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.fileHashEvidence":
-            serializeFileHashEvidence(writer, alertEvidence as FileHashEvidence, true);
+            serializeFileHashEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.gitHubOrganizationEvidence":
-            serializeGitHubOrganizationEvidence(writer, alertEvidence as GitHubOrganizationEvidence, true);
+            serializeGitHubOrganizationEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.gitHubRepoEvidence":
-            serializeGitHubRepoEvidence(writer, alertEvidence as GitHubRepoEvidence, true);
+            serializeGitHubRepoEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.gitHubUserEvidence":
-            serializeGitHubUserEvidence(writer, alertEvidence as GitHubUserEvidence, true);
+            serializeGitHubUserEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.googleCloudResourceEvidence":
-            serializeGoogleCloudResourceEvidence(writer, alertEvidence as GoogleCloudResourceEvidence, true);
+            serializeGoogleCloudResourceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.hostLogonSessionEvidence":
-            serializeHostLogonSessionEvidence(writer, alertEvidence as HostLogonSessionEvidence, true);
+            serializeHostLogonSessionEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.ioTDeviceEvidence":
-            serializeIoTDeviceEvidence(writer, alertEvidence as IoTDeviceEvidence, true);
+            serializeIoTDeviceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.ipEvidence":
-            serializeIpEvidence(writer, alertEvidence as IpEvidence, true);
+            serializeIpEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesClusterEvidence":
-            serializeKubernetesClusterEvidence(writer, alertEvidence as KubernetesClusterEvidence, true);
+            serializeKubernetesClusterEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesControllerEvidence":
-            serializeKubernetesControllerEvidence(writer, alertEvidence as KubernetesControllerEvidence, true);
+            serializeKubernetesControllerEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesNamespaceEvidence":
-            serializeKubernetesNamespaceEvidence(writer, alertEvidence as KubernetesNamespaceEvidence, true);
+            serializeKubernetesNamespaceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesPodEvidence":
-            serializeKubernetesPodEvidence(writer, alertEvidence as KubernetesPodEvidence, true);
+            serializeKubernetesPodEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesSecretEvidence":
-            serializeKubernetesSecretEvidence(writer, alertEvidence as KubernetesSecretEvidence, true);
+            serializeKubernetesSecretEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesServiceAccountEvidence":
-            serializeKubernetesServiceAccountEvidence(writer, alertEvidence as KubernetesServiceAccountEvidence, true);
+            serializeKubernetesServiceAccountEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.kubernetesServiceEvidence":
-            serializeKubernetesServiceEvidence(writer, alertEvidence as KubernetesServiceEvidence, true);
+            serializeKubernetesServiceEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.mailboxConfigurationEvidence":
-            serializeMailboxConfigurationEvidence(writer, alertEvidence as MailboxConfigurationEvidence, true);
+            serializeMailboxConfigurationEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.mailboxEvidence":
-            serializeMailboxEvidence(writer, alertEvidence as MailboxEvidence, true);
+            serializeMailboxEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.mailClusterEvidence":
-            serializeMailClusterEvidence(writer, alertEvidence as MailClusterEvidence, true);
+            serializeMailClusterEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.malwareEvidence":
-            serializeMalwareEvidence(writer, alertEvidence as MalwareEvidence, true);
+            serializeMalwareEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.networkConnectionEvidence":
-            serializeNetworkConnectionEvidence(writer, alertEvidence as NetworkConnectionEvidence, true);
+            serializeNetworkConnectionEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.nicEvidence":
-            serializeNicEvidence(writer, alertEvidence as NicEvidence, true);
+            serializeNicEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.oauthApplicationEvidence":
-            serializeOauthApplicationEvidence(writer, alertEvidence as OauthApplicationEvidence, true);
+            serializeOauthApplicationEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.processEvidence":
-            serializeProcessEvidence(writer, alertEvidence as ProcessEvidence, true);
+            serializeProcessEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.registryKeyEvidence":
-            serializeRegistryKeyEvidence(writer, alertEvidence as RegistryKeyEvidence, true);
+            serializeRegistryKeyEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.registryValueEvidence":
-            serializeRegistryValueEvidence(writer, alertEvidence as RegistryValueEvidence, true);
+            serializeRegistryValueEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.sasTokenEvidence":
-            serializeSasTokenEvidence(writer, alertEvidence as SasTokenEvidence, true);
+            serializeSasTokenEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.securityGroupEvidence":
-            serializeSecurityGroupEvidence(writer, alertEvidence as SecurityGroupEvidence, true);
+            serializeSecurityGroupEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.servicePrincipalEvidence":
-            serializeServicePrincipalEvidence(writer, alertEvidence as ServicePrincipalEvidence, true);
+            serializeServicePrincipalEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.submissionMailEvidence":
-            serializeSubmissionMailEvidence(writer, alertEvidence as SubmissionMailEvidence, true);
+            serializeSubmissionMailEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.teamsMessageEvidence":
-            serializeTeamsMessageEvidence(writer, alertEvidence as TeamsMessageEvidence, true);
+            serializeTeamsMessageEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.urlEvidence":
-            serializeUrlEvidence(writer, alertEvidence as UrlEvidence, true);
+            serializeUrlEvidence(writer, alertEvidence, true);
         break;
         case "#microsoft.graph.security.userEvidence":
-            serializeUserEvidence(writer, alertEvidence as UserEvidence, true);
+            serializeUserEvidence(writer, alertEvidence, true);
         break;
     }
 }
@@ -21630,34 +21630,34 @@ export function serializeArtifact(writer: SerializationWriter, artifact: Partial
     serializeEntity(writer, artifact, isSerializingDerivedType)
     switch (artifact.odataType) {
         case "#microsoft.graph.security.host":
-            serializeHost(writer, artifact as Host, true);
+            serializeHost(writer, artifact, true);
         break;
         case "#microsoft.graph.security.hostComponent":
-            serializeHostComponent(writer, artifact as HostComponent, true);
+            serializeHostComponent(writer, artifact, true);
         break;
         case "#microsoft.graph.security.hostCookie":
-            serializeHostCookie(writer, artifact as HostCookie, true);
+            serializeHostCookie(writer, artifact, true);
         break;
         case "#microsoft.graph.security.hostname":
-            serializeHostname(writer, artifact as Hostname, true);
+            serializeHostname(writer, artifact, true);
         break;
         case "#microsoft.graph.security.hostSslCertificate":
-            serializeHostSslCertificate(writer, artifact as HostSslCertificate, true);
+            serializeHostSslCertificate(writer, artifact, true);
         break;
         case "#microsoft.graph.security.hostTracker":
-            serializeHostTracker(writer, artifact as HostTracker, true);
+            serializeHostTracker(writer, artifact, true);
         break;
         case "#microsoft.graph.security.ipAddress":
-            serializeIpAddress(writer, artifact as IpAddress, true);
+            serializeIpAddress(writer, artifact, true);
         break;
         case "#microsoft.graph.security.passiveDnsRecord":
-            serializePassiveDnsRecord(writer, artifact as PassiveDnsRecord, true);
+            serializePassiveDnsRecord(writer, artifact, true);
         break;
         case "#microsoft.graph.security.sslCertificate":
-            serializeSslCertificate(writer, artifact as SslCertificate, true);
+            serializeSslCertificate(writer, artifact, true);
         break;
         case "#microsoft.graph.security.unclassifiedArtifact":
-            serializeUnclassifiedArtifact(writer, artifact as UnclassifiedArtifact, true);
+            serializeUnclassifiedArtifact(writer, artifact, true);
         break;
     }
 }
@@ -21713,820 +21713,820 @@ export function serializeAuditData(writer: SerializationWriter, auditData: Parti
     writer.writeAdditionalData(auditData.additionalData);
     switch (auditData.odataType) {
         case "#microsoft.graph.security.aadRiskDetectionAuditRecord":
-            serializeAadRiskDetectionAuditRecord(writer, auditData as AadRiskDetectionAuditRecord, true);
+            serializeAadRiskDetectionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aedAuditRecord":
-            serializeAedAuditRecord(writer, auditData as AedAuditRecord, true);
+            serializeAedAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aiAppInteractionAuditRecord":
-            serializeAiAppInteractionAuditRecord(writer, auditData as AiAppInteractionAuditRecord, true);
+            serializeAiAppInteractionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aipFileDeleted":
-            serializeAipFileDeleted(writer, auditData as AipFileDeleted, true);
+            serializeAipFileDeleted(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aipHeartBeat":
-            serializeAipHeartBeat(writer, auditData as AipHeartBeat, true);
+            serializeAipHeartBeat(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aipProtectionActionLogRequest":
-            serializeAipProtectionActionLogRequest(writer, auditData as AipProtectionActionLogRequest, true);
+            serializeAipProtectionActionLogRequest(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aipScannerDiscoverEvent":
-            serializeAipScannerDiscoverEvent(writer, auditData as AipScannerDiscoverEvent, true);
+            serializeAipScannerDiscoverEvent(writer, auditData, true);
         break;
         case "#microsoft.graph.security.aipSensitivityLabelActionLogRequest":
-            serializeAipSensitivityLabelActionLogRequest(writer, auditData as AipSensitivityLabelActionLogRequest, true);
+            serializeAipSensitivityLabelActionLogRequest(writer, auditData, true);
         break;
         case "#microsoft.graph.security.airAdminActionInvestigationData":
-            serializeAirAdminActionInvestigationData(writer, auditData as AirAdminActionInvestigationData, true);
+            serializeAirAdminActionInvestigationData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.airInvestigationData":
-            serializeAirInvestigationData(writer, auditData as AirInvestigationData, true);
+            serializeAirInvestigationData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.airManualInvestigationData":
-            serializeAirManualInvestigationData(writer, auditData as AirManualInvestigationData, true);
+            serializeAirManualInvestigationData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.attackSimAdminAuditRecord":
-            serializeAttackSimAdminAuditRecord(writer, auditData as AttackSimAdminAuditRecord, true);
+            serializeAttackSimAdminAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.auditSearchAuditRecord":
-            serializeAuditSearchAuditRecord(writer, auditData as AuditSearchAuditRecord, true);
+            serializeAuditSearchAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.azureActiveDirectoryAccountLogonAuditRecord":
-            serializeAzureActiveDirectoryAccountLogonAuditRecord(writer, auditData as AzureActiveDirectoryAccountLogonAuditRecord, true);
+            serializeAzureActiveDirectoryAccountLogonAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.azureActiveDirectoryAuditRecord":
-            serializeAzureActiveDirectoryAuditRecord(writer, auditData as AzureActiveDirectoryAuditRecord, true);
+            serializeAzureActiveDirectoryAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.azureActiveDirectoryBaseAuditRecord":
-            serializeAzureActiveDirectoryBaseAuditRecord(writer, auditData as AzureActiveDirectoryBaseAuditRecord, true);
+            serializeAzureActiveDirectoryBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.azureActiveDirectoryStsLogonAuditRecord":
-            serializeAzureActiveDirectoryStsLogonAuditRecord(writer, auditData as AzureActiveDirectoryStsLogonAuditRecord, true);
+            serializeAzureActiveDirectoryStsLogonAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.campaignAuditRecord":
-            serializeCampaignAuditRecord(writer, auditData as CampaignAuditRecord, true);
+            serializeCampaignAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.caseAuditRecord":
-            serializeCaseAuditRecord(writer, auditData as CaseAuditRecord, true);
+            serializeCaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.caseInvestigation":
-            serializeCaseInvestigation(writer, auditData as CaseInvestigation, true);
+            serializeCaseInvestigation(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpColdCrawlStatusRecord":
-            serializeCdpColdCrawlStatusRecord(writer, auditData as CdpColdCrawlStatusRecord, true);
+            serializeCdpColdCrawlStatusRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpContentExplorerAggregateRecord":
-            serializeCdpContentExplorerAggregateRecord(writer, auditData as CdpContentExplorerAggregateRecord, true);
+            serializeCdpContentExplorerAggregateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpDlpSensitiveAuditRecord":
-            serializeCdpDlpSensitiveAuditRecord(writer, auditData as CdpDlpSensitiveAuditRecord, true);
+            serializeCdpDlpSensitiveAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpDlpSensitiveEndpointAuditRecord":
-            serializeCdpDlpSensitiveEndpointAuditRecord(writer, auditData as CdpDlpSensitiveEndpointAuditRecord, true);
+            serializeCdpDlpSensitiveEndpointAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpLogRecord":
-            serializeCdpLogRecord(writer, auditData as CdpLogRecord, true);
+            serializeCdpLogRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpOcrBillingRecord":
-            serializeCdpOcrBillingRecord(writer, auditData as CdpOcrBillingRecord, true);
+            serializeCdpOcrBillingRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cdpResourceScopeChangeEventRecord":
-            serializeCdpResourceScopeChangeEventRecord(writer, auditData as CdpResourceScopeChangeEventRecord, true);
+            serializeCdpResourceScopeChangeEventRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cernerSMSLinkRecord":
-            serializeCernerSMSLinkRecord(writer, auditData as CernerSMSLinkRecord, true);
+            serializeCernerSMSLinkRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cernerSMSSettingsUpdateRecord":
-            serializeCernerSMSSettingsUpdateRecord(writer, auditData as CernerSMSSettingsUpdateRecord, true);
+            serializeCernerSMSSettingsUpdateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cernerSMSUnlinkRecord":
-            serializeCernerSMSUnlinkRecord(writer, auditData as CernerSMSUnlinkRecord, true);
+            serializeCernerSMSUnlinkRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceConnectorAuditRecord":
-            serializeComplianceConnectorAuditRecord(writer, auditData as ComplianceConnectorAuditRecord, true);
+            serializeComplianceConnectorAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDLMExchangeAuditRecord":
-            serializeComplianceDLMExchangeAuditRecord(writer, auditData as ComplianceDLMExchangeAuditRecord, true);
+            serializeComplianceDLMExchangeAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDLMSharePointAuditRecord":
-            serializeComplianceDLMSharePointAuditRecord(writer, auditData as ComplianceDLMSharePointAuditRecord, true);
+            serializeComplianceDLMSharePointAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpApplicationsAuditRecord":
-            serializeComplianceDlpApplicationsAuditRecord(writer, auditData as ComplianceDlpApplicationsAuditRecord, true);
+            serializeComplianceDlpApplicationsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpApplicationsClassificationAuditRecord":
-            serializeComplianceDlpApplicationsClassificationAuditRecord(writer, auditData as ComplianceDlpApplicationsClassificationAuditRecord, true);
+            serializeComplianceDlpApplicationsClassificationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpBaseAuditRecord":
-            serializeComplianceDlpBaseAuditRecord(writer, auditData as ComplianceDlpBaseAuditRecord, true);
+            serializeComplianceDlpBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpClassificationBaseAuditRecord":
-            serializeComplianceDlpClassificationBaseAuditRecord(writer, auditData as ComplianceDlpClassificationBaseAuditRecord, true);
+            serializeComplianceDlpClassificationBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpClassificationBaseCdpRecord":
-            serializeComplianceDlpClassificationBaseCdpRecord(writer, auditData as ComplianceDlpClassificationBaseCdpRecord, true);
+            serializeComplianceDlpClassificationBaseCdpRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpEndpointAuditRecord":
-            serializeComplianceDlpEndpointAuditRecord(writer, auditData as ComplianceDlpEndpointAuditRecord, true);
+            serializeComplianceDlpEndpointAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpEndpointDiscoveryAuditRecord":
-            serializeComplianceDlpEndpointDiscoveryAuditRecord(writer, auditData as ComplianceDlpEndpointDiscoveryAuditRecord, true);
+            serializeComplianceDlpEndpointDiscoveryAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpExchangeAuditRecord":
-            serializeComplianceDlpExchangeAuditRecord(writer, auditData as ComplianceDlpExchangeAuditRecord, true);
+            serializeComplianceDlpExchangeAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpExchangeClassificationAuditRecord":
-            serializeComplianceDlpExchangeClassificationAuditRecord(writer, auditData as ComplianceDlpExchangeClassificationAuditRecord, true);
+            serializeComplianceDlpExchangeClassificationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpExchangeClassificationCdpRecord":
-            serializeComplianceDlpExchangeClassificationCdpRecord(writer, auditData as ComplianceDlpExchangeClassificationCdpRecord, true);
+            serializeComplianceDlpExchangeClassificationCdpRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpExchangeDiscoveryAuditRecord":
-            serializeComplianceDlpExchangeDiscoveryAuditRecord(writer, auditData as ComplianceDlpExchangeDiscoveryAuditRecord, true);
+            serializeComplianceDlpExchangeDiscoveryAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpSharePointAuditRecord":
-            serializeComplianceDlpSharePointAuditRecord(writer, auditData as ComplianceDlpSharePointAuditRecord, true);
+            serializeComplianceDlpSharePointAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpSharePointClassificationAuditRecord":
-            serializeComplianceDlpSharePointClassificationAuditRecord(writer, auditData as ComplianceDlpSharePointClassificationAuditRecord, true);
+            serializeComplianceDlpSharePointClassificationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceDlpSharePointClassificationExtendedAuditRecord":
-            serializeComplianceDlpSharePointClassificationExtendedAuditRecord(writer, auditData as ComplianceDlpSharePointClassificationExtendedAuditRecord, true);
+            serializeComplianceDlpSharePointClassificationExtendedAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceManagerActionRecord":
-            serializeComplianceManagerActionRecord(writer, auditData as ComplianceManagerActionRecord, true);
+            serializeComplianceManagerActionRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceSupervisionBaseAuditRecord":
-            serializeComplianceSupervisionBaseAuditRecord(writer, auditData as ComplianceSupervisionBaseAuditRecord, true);
+            serializeComplianceSupervisionBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.complianceSupervisionExchangeAuditRecord":
-            serializeComplianceSupervisionExchangeAuditRecord(writer, auditData as ComplianceSupervisionExchangeAuditRecord, true);
+            serializeComplianceSupervisionExchangeAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.consumptionResourceAuditRecord":
-            serializeConsumptionResourceAuditRecord(writer, auditData as ConsumptionResourceAuditRecord, true);
+            serializeConsumptionResourceAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.copilotInteractionAuditRecord":
-            serializeCopilotInteractionAuditRecord(writer, auditData as CopilotInteractionAuditRecord, true);
+            serializeCopilotInteractionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.coreReportingSettingsAuditRecord":
-            serializeCoreReportingSettingsAuditRecord(writer, auditData as CoreReportingSettingsAuditRecord, true);
+            serializeCoreReportingSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cortanaBriefingAuditRecord":
-            serializeCortanaBriefingAuditRecord(writer, auditData as CortanaBriefingAuditRecord, true);
+            serializeCortanaBriefingAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cpsCommonPolicyAuditRecord":
-            serializeCpsCommonPolicyAuditRecord(writer, auditData as CpsCommonPolicyAuditRecord, true);
+            serializeCpsCommonPolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.cpsPolicyConfigAuditRecord":
-            serializeCpsPolicyConfigAuditRecord(writer, auditData as CpsPolicyConfigAuditRecord, true);
+            serializeCpsPolicyConfigAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.crmBaseAuditRecord":
-            serializeCrmBaseAuditRecord(writer, auditData as CrmBaseAuditRecord, true);
+            serializeCrmBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.crmEntityOperationAuditRecord":
-            serializeCrmEntityOperationAuditRecord(writer, auditData as CrmEntityOperationAuditRecord, true);
+            serializeCrmEntityOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.customerKeyServiceEncryptionAuditRecord":
-            serializeCustomerKeyServiceEncryptionAuditRecord(writer, auditData as CustomerKeyServiceEncryptionAuditRecord, true);
+            serializeCustomerKeyServiceEncryptionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dataCenterSecurityBaseAuditRecord":
-            serializeDataCenterSecurityBaseAuditRecord(writer, auditData as DataCenterSecurityBaseAuditRecord, true);
+            serializeDataCenterSecurityBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dataCenterSecurityCmdletAuditRecord":
-            serializeDataCenterSecurityCmdletAuditRecord(writer, auditData as DataCenterSecurityCmdletAuditRecord, true);
+            serializeDataCenterSecurityCmdletAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dataGovernanceAuditRecord":
-            serializeDataGovernanceAuditRecord(writer, auditData as DataGovernanceAuditRecord, true);
+            serializeDataGovernanceAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dataInsightsRestApiAuditRecord":
-            serializeDataInsightsRestApiAuditRecord(writer, auditData as DataInsightsRestApiAuditRecord, true);
+            serializeDataInsightsRestApiAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dataLakeExportOperationAuditRecord":
-            serializeDataLakeExportOperationAuditRecord(writer, auditData as DataLakeExportOperationAuditRecord, true);
+            serializeDataLakeExportOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dataShareOperationAuditRecord":
-            serializeDataShareOperationAuditRecord(writer, auditData as DataShareOperationAuditRecord, true);
+            serializeDataShareOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.defaultAuditData":
-            serializeDefaultAuditData(writer, auditData as DefaultAuditData, true);
+            serializeDefaultAuditData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.defenderSecurityAlertBaseRecord":
-            serializeDefenderSecurityAlertBaseRecord(writer, auditData as DefenderSecurityAlertBaseRecord, true);
+            serializeDefenderSecurityAlertBaseRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.deleteCertificateRecord":
-            serializeDeleteCertificateRecord(writer, auditData as DeleteCertificateRecord, true);
+            serializeDeleteCertificateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.disableConsentRecord":
-            serializeDisableConsentRecord(writer, auditData as DisableConsentRecord, true);
+            serializeDisableConsentRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.discoveryAuditRecord":
-            serializeDiscoveryAuditRecord(writer, auditData as DiscoveryAuditRecord, true);
+            serializeDiscoveryAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dlpEndpointAuditRecord":
-            serializeDlpEndpointAuditRecord(writer, auditData as DlpEndpointAuditRecord, true);
+            serializeDlpEndpointAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dlpSensitiveInformationTypeCmdletRecord":
-            serializeDlpSensitiveInformationTypeCmdletRecord(writer, auditData as DlpSensitiveInformationTypeCmdletRecord, true);
+            serializeDlpSensitiveInformationTypeCmdletRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dlpSensitiveInformationTypeRulePackageCmdletRecord":
-            serializeDlpSensitiveInformationTypeRulePackageCmdletRecord(writer, auditData as DlpSensitiveInformationTypeRulePackageCmdletRecord, true);
+            serializeDlpSensitiveInformationTypeRulePackageCmdletRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.downloadCertificateRecord":
-            serializeDownloadCertificateRecord(writer, auditData as DownloadCertificateRecord, true);
+            serializeDownloadCertificateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.dynamics365BusinessCentralAuditRecord":
-            serializeDynamics365BusinessCentralAuditRecord(writer, auditData as Dynamics365BusinessCentralAuditRecord, true);
+            serializeDynamics365BusinessCentralAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.enableConsentRecord":
-            serializeEnableConsentRecord(writer, auditData as EnableConsentRecord, true);
+            serializeEnableConsentRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.epicSMSLinkRecord":
-            serializeEpicSMSLinkRecord(writer, auditData as EpicSMSLinkRecord, true);
+            serializeEpicSMSLinkRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.epicSMSSettingsUpdateRecord":
-            serializeEpicSMSSettingsUpdateRecord(writer, auditData as EpicSMSSettingsUpdateRecord, true);
+            serializeEpicSMSSettingsUpdateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.epicSMSUnlinkRecord":
-            serializeEpicSMSUnlinkRecord(writer, auditData as EpicSMSUnlinkRecord, true);
+            serializeEpicSMSUnlinkRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.exchangeAdminAuditRecord":
-            serializeExchangeAdminAuditRecord(writer, auditData as ExchangeAdminAuditRecord, true);
+            serializeExchangeAdminAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.exchangeAggregatedMailboxAuditRecord":
-            serializeExchangeAggregatedMailboxAuditRecord(writer, auditData as ExchangeAggregatedMailboxAuditRecord, true);
+            serializeExchangeAggregatedMailboxAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.exchangeAggregatedOperationRecord":
-            serializeExchangeAggregatedOperationRecord(writer, auditData as ExchangeAggregatedOperationRecord, true);
+            serializeExchangeAggregatedOperationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.exchangeMailboxAuditBaseRecord":
-            serializeExchangeMailboxAuditBaseRecord(writer, auditData as ExchangeMailboxAuditBaseRecord, true);
+            serializeExchangeMailboxAuditBaseRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.exchangeMailboxAuditGroupRecord":
-            serializeExchangeMailboxAuditGroupRecord(writer, auditData as ExchangeMailboxAuditGroupRecord, true);
+            serializeExchangeMailboxAuditGroupRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.exchangeMailboxAuditRecord":
-            serializeExchangeMailboxAuditRecord(writer, auditData as ExchangeMailboxAuditRecord, true);
+            serializeExchangeMailboxAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.fhirBaseUrlAddRecord":
-            serializeFhirBaseUrlAddRecord(writer, auditData as FhirBaseUrlAddRecord, true);
+            serializeFhirBaseUrlAddRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.fhirBaseUrlApproveRecord":
-            serializeFhirBaseUrlApproveRecord(writer, auditData as FhirBaseUrlApproveRecord, true);
+            serializeFhirBaseUrlApproveRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.fhirBaseUrlDeleteRecord":
-            serializeFhirBaseUrlDeleteRecord(writer, auditData as FhirBaseUrlDeleteRecord, true);
+            serializeFhirBaseUrlDeleteRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.fhirBaseUrlUpdateRecord":
-            serializeFhirBaseUrlUpdateRecord(writer, auditData as FhirBaseUrlUpdateRecord, true);
+            serializeFhirBaseUrlUpdateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.healthcareSignalRecord":
-            serializeHealthcareSignalRecord(writer, auditData as HealthcareSignalRecord, true);
+            serializeHealthcareSignalRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.hostedRpaAuditRecord":
-            serializeHostedRpaAuditRecord(writer, auditData as HostedRpaAuditRecord, true);
+            serializeHostedRpaAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.hrSignalAuditRecord":
-            serializeHrSignalAuditRecord(writer, auditData as HrSignalAuditRecord, true);
+            serializeHrSignalAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.hygieneEventRecord":
-            serializeHygieneEventRecord(writer, auditData as HygieneEventRecord, true);
+            serializeHygieneEventRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.informationBarrierPolicyApplicationAuditRecord":
-            serializeInformationBarrierPolicyApplicationAuditRecord(writer, auditData as InformationBarrierPolicyApplicationAuditRecord, true);
+            serializeInformationBarrierPolicyApplicationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.informationWorkerProtectionAuditRecord":
-            serializeInformationWorkerProtectionAuditRecord(writer, auditData as InformationWorkerProtectionAuditRecord, true);
+            serializeInformationWorkerProtectionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.insiderRiskScopedUserInsightsRecord":
-            serializeInsiderRiskScopedUserInsightsRecord(writer, auditData as InsiderRiskScopedUserInsightsRecord, true);
+            serializeInsiderRiskScopedUserInsightsRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.insiderRiskScopedUsersRecord":
-            serializeInsiderRiskScopedUsersRecord(writer, auditData as InsiderRiskScopedUsersRecord, true);
+            serializeInsiderRiskScopedUsersRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.irmSecurityAlertRecord":
-            serializeIrmSecurityAlertRecord(writer, auditData as IrmSecurityAlertRecord, true);
+            serializeIrmSecurityAlertRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.irmUserDefinedDetectionRecord":
-            serializeIrmUserDefinedDetectionRecord(writer, auditData as IrmUserDefinedDetectionRecord, true);
+            serializeIrmUserDefinedDetectionRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.kaizalaAuditRecord":
-            serializeKaizalaAuditRecord(writer, auditData as KaizalaAuditRecord, true);
+            serializeKaizalaAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.labelAnalyticsAggregateAuditRecord":
-            serializeLabelAnalyticsAggregateAuditRecord(writer, auditData as LabelAnalyticsAggregateAuditRecord, true);
+            serializeLabelAnalyticsAggregateAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.labelContentExplorerAuditRecord":
-            serializeLabelContentExplorerAuditRecord(writer, auditData as LabelContentExplorerAuditRecord, true);
+            serializeLabelContentExplorerAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.largeContentMetadataAuditRecord":
-            serializeLargeContentMetadataAuditRecord(writer, auditData as LargeContentMetadataAuditRecord, true);
+            serializeLargeContentMetadataAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.m365ComplianceConnectorAuditRecord":
-            serializeM365ComplianceConnectorAuditRecord(writer, auditData as M365ComplianceConnectorAuditRecord, true);
+            serializeM365ComplianceConnectorAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.m365DAADAuditRecord":
-            serializeM365DAADAuditRecord(writer, auditData as M365DAADAuditRecord, true);
+            serializeM365DAADAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mailSubmissionData":
-            serializeMailSubmissionData(writer, auditData as MailSubmissionData, true);
+            serializeMailSubmissionData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.managedServicesAuditRecord":
-            serializeManagedServicesAuditRecord(writer, auditData as ManagedServicesAuditRecord, true);
+            serializeManagedServicesAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.managedTenantsAuditRecord":
-            serializeManagedTenantsAuditRecord(writer, auditData as ManagedTenantsAuditRecord, true);
+            serializeManagedTenantsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mapgAlertsAuditRecord":
-            serializeMapgAlertsAuditRecord(writer, auditData as MapgAlertsAuditRecord, true);
+            serializeMapgAlertsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mapgOnboardAuditRecord":
-            serializeMapgOnboardAuditRecord(writer, auditData as MapgOnboardAuditRecord, true);
+            serializeMapgOnboardAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mapgPolicyAuditRecord":
-            serializeMapgPolicyAuditRecord(writer, auditData as MapgPolicyAuditRecord, true);
+            serializeMapgPolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mcasAlertsAuditRecord":
-            serializeMcasAlertsAuditRecord(writer, auditData as McasAlertsAuditRecord, true);
+            serializeMcasAlertsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mdaDataSecuritySignalRecord":
-            serializeMdaDataSecuritySignalRecord(writer, auditData as MdaDataSecuritySignalRecord, true);
+            serializeMdaDataSecuritySignalRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mdatpAuditRecord":
-            serializeMdatpAuditRecord(writer, auditData as MdatpAuditRecord, true);
+            serializeMdatpAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mdcEventsRecord":
-            serializeMdcEventsRecord(writer, auditData as MdcEventsRecord, true);
+            serializeMdcEventsRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mdiAuditRecord":
-            serializeMdiAuditRecord(writer, auditData as MdiAuditRecord, true);
+            serializeMdiAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.meshWorldsAuditRecord":
-            serializeMeshWorldsAuditRecord(writer, auditData as MeshWorldsAuditRecord, true);
+            serializeMeshWorldsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoft365BackupBackupItemAuditRecord":
-            serializeMicrosoft365BackupBackupItemAuditRecord(writer, auditData as Microsoft365BackupBackupItemAuditRecord, true);
+            serializeMicrosoft365BackupBackupItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoft365BackupBackupPolicyAuditRecord":
-            serializeMicrosoft365BackupBackupPolicyAuditRecord(writer, auditData as Microsoft365BackupBackupPolicyAuditRecord, true);
+            serializeMicrosoft365BackupBackupPolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoft365BackupRestoreItemAuditRecord":
-            serializeMicrosoft365BackupRestoreItemAuditRecord(writer, auditData as Microsoft365BackupRestoreItemAuditRecord, true);
+            serializeMicrosoft365BackupRestoreItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoft365BackupRestoreTaskAuditRecord":
-            serializeMicrosoft365BackupRestoreTaskAuditRecord(writer, auditData as Microsoft365BackupRestoreTaskAuditRecord, true);
+            serializeMicrosoft365BackupRestoreTaskAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftDefenderExpertsBaseAuditRecord":
-            serializeMicrosoftDefenderExpertsBaseAuditRecord(writer, auditData as MicrosoftDefenderExpertsBaseAuditRecord, true);
+            serializeMicrosoftDefenderExpertsBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftDefenderExpertsXDRAuditRecord":
-            serializeMicrosoftDefenderExpertsXDRAuditRecord(writer, auditData as MicrosoftDefenderExpertsXDRAuditRecord, true);
+            serializeMicrosoftDefenderExpertsXDRAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftFlowAuditRecord":
-            serializeMicrosoftFlowAuditRecord(writer, auditData as MicrosoftFlowAuditRecord, true);
+            serializeMicrosoftFlowAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftFormsAuditRecord":
-            serializeMicrosoftFormsAuditRecord(writer, auditData as MicrosoftFormsAuditRecord, true);
+            serializeMicrosoftFormsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftGraphDataConnectConsent":
-            serializeMicrosoftGraphDataConnectConsent(writer, auditData as MicrosoftGraphDataConnectConsent, true);
+            serializeMicrosoftGraphDataConnectConsent(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftGraphDataConnectOperation":
-            serializeMicrosoftGraphDataConnectOperation(writer, auditData as MicrosoftGraphDataConnectOperation, true);
+            serializeMicrosoftGraphDataConnectOperation(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftPurviewDataMapOperationRecord":
-            serializeMicrosoftPurviewDataMapOperationRecord(writer, auditData as MicrosoftPurviewDataMapOperationRecord, true);
+            serializeMicrosoftPurviewDataMapOperationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftPurviewMetadataPolicyOperationRecord":
-            serializeMicrosoftPurviewMetadataPolicyOperationRecord(writer, auditData as MicrosoftPurviewMetadataPolicyOperationRecord, true);
+            serializeMicrosoftPurviewMetadataPolicyOperationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftPurviewPolicyOperationRecord":
-            serializeMicrosoftPurviewPolicyOperationRecord(writer, auditData as MicrosoftPurviewPolicyOperationRecord, true);
+            serializeMicrosoftPurviewPolicyOperationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftPurviewPrivacyAuditEvent":
-            serializeMicrosoftPurviewPrivacyAuditEvent(writer, auditData as MicrosoftPurviewPrivacyAuditEvent, true);
+            serializeMicrosoftPurviewPrivacyAuditEvent(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftStreamAuditRecord":
-            serializeMicrosoftStreamAuditRecord(writer, auditData as MicrosoftStreamAuditRecord, true);
+            serializeMicrosoftStreamAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsAdminAuditRecord":
-            serializeMicrosoftTeamsAdminAuditRecord(writer, auditData as MicrosoftTeamsAdminAuditRecord, true);
+            serializeMicrosoftTeamsAdminAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsAnalyticsAuditRecord":
-            serializeMicrosoftTeamsAnalyticsAuditRecord(writer, auditData as MicrosoftTeamsAnalyticsAuditRecord, true);
+            serializeMicrosoftTeamsAnalyticsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsAuditRecord":
-            serializeMicrosoftTeamsAuditRecord(writer, auditData as MicrosoftTeamsAuditRecord, true);
+            serializeMicrosoftTeamsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsDeviceAuditRecord":
-            serializeMicrosoftTeamsDeviceAuditRecord(writer, auditData as MicrosoftTeamsDeviceAuditRecord, true);
+            serializeMicrosoftTeamsDeviceAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsRetentionLabelActionAuditRecord":
-            serializeMicrosoftTeamsRetentionLabelActionAuditRecord(writer, auditData as MicrosoftTeamsRetentionLabelActionAuditRecord, true);
+            serializeMicrosoftTeamsRetentionLabelActionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsSensitivityLabelActionAuditRecord":
-            serializeMicrosoftTeamsSensitivityLabelActionAuditRecord(writer, auditData as MicrosoftTeamsSensitivityLabelActionAuditRecord, true);
+            serializeMicrosoftTeamsSensitivityLabelActionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.microsoftTeamsShiftsAuditRecord":
-            serializeMicrosoftTeamsShiftsAuditRecord(writer, auditData as MicrosoftTeamsShiftsAuditRecord, true);
+            serializeMicrosoftTeamsShiftsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelExchangeItemAuditRecord":
-            serializeMipAutoLabelExchangeItemAuditRecord(writer, auditData as MipAutoLabelExchangeItemAuditRecord, true);
+            serializeMipAutoLabelExchangeItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelItemAuditRecord":
-            serializeMipAutoLabelItemAuditRecord(writer, auditData as MipAutoLabelItemAuditRecord, true);
+            serializeMipAutoLabelItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelPolicyAuditRecord":
-            serializeMipAutoLabelPolicyAuditRecord(writer, auditData as MipAutoLabelPolicyAuditRecord, true);
+            serializeMipAutoLabelPolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelProgressFeedbackAuditRecord":
-            serializeMipAutoLabelProgressFeedbackAuditRecord(writer, auditData as MipAutoLabelProgressFeedbackAuditRecord, true);
+            serializeMipAutoLabelProgressFeedbackAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelSharePointItemAuditRecord":
-            serializeMipAutoLabelSharePointItemAuditRecord(writer, auditData as MipAutoLabelSharePointItemAuditRecord, true);
+            serializeMipAutoLabelSharePointItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelSharePointPolicyLocationAuditRecord":
-            serializeMipAutoLabelSharePointPolicyLocationAuditRecord(writer, auditData as MipAutoLabelSharePointPolicyLocationAuditRecord, true);
+            serializeMipAutoLabelSharePointPolicyLocationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelSimulationSharePointCompletionRecord":
-            serializeMipAutoLabelSimulationSharePointCompletionRecord(writer, auditData as MipAutoLabelSimulationSharePointCompletionRecord, true);
+            serializeMipAutoLabelSimulationSharePointCompletionRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelSimulationSharePointProgressRecord":
-            serializeMipAutoLabelSimulationSharePointProgressRecord(writer, auditData as MipAutoLabelSimulationSharePointProgressRecord, true);
+            serializeMipAutoLabelSimulationSharePointProgressRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelSimulationStatisticsRecord":
-            serializeMipAutoLabelSimulationStatisticsRecord(writer, auditData as MipAutoLabelSimulationStatisticsRecord, true);
+            serializeMipAutoLabelSimulationStatisticsRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipAutoLabelSimulationStatusRecord":
-            serializeMipAutoLabelSimulationStatusRecord(writer, auditData as MipAutoLabelSimulationStatusRecord, true);
+            serializeMipAutoLabelSimulationStatusRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipExactDataMatchAuditRecord":
-            serializeMipExactDataMatchAuditRecord(writer, auditData as MipExactDataMatchAuditRecord, true);
+            serializeMipExactDataMatchAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipLabelAnalyticsAuditRecord":
-            serializeMipLabelAnalyticsAuditRecord(writer, auditData as MipLabelAnalyticsAuditRecord, true);
+            serializeMipLabelAnalyticsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mipLabelAuditRecord":
-            serializeMipLabelAuditRecord(writer, auditData as MipLabelAuditRecord, true);
+            serializeMipLabelAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mS365DCustomDetectionAuditRecord":
-            serializeMS365DCustomDetectionAuditRecord(writer, auditData as MS365DCustomDetectionAuditRecord, true);
+            serializeMS365DCustomDetectionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mS365DIncidentAuditRecord":
-            serializeMS365DIncidentAuditRecord(writer, auditData as MS365DIncidentAuditRecord, true);
+            serializeMS365DIncidentAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.mS365DSuppressionRuleAuditRecord":
-            serializeMS365DSuppressionRuleAuditRecord(writer, auditData as MS365DSuppressionRuleAuditRecord, true);
+            serializeMS365DSuppressionRuleAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.msdeGeneralSettingsAuditRecord":
-            serializeMsdeGeneralSettingsAuditRecord(writer, auditData as MsdeGeneralSettingsAuditRecord, true);
+            serializeMsdeGeneralSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.msdeIndicatorsSettingsAuditRecord":
-            serializeMsdeIndicatorsSettingsAuditRecord(writer, auditData as MsdeIndicatorsSettingsAuditRecord, true);
+            serializeMsdeIndicatorsSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.msdeResponseActionsAuditRecord":
-            serializeMsdeResponseActionsAuditRecord(writer, auditData as MsdeResponseActionsAuditRecord, true);
+            serializeMsdeResponseActionsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.msdeRolesSettingsAuditRecord":
-            serializeMsdeRolesSettingsAuditRecord(writer, auditData as MsdeRolesSettingsAuditRecord, true);
+            serializeMsdeRolesSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.msticNationStateNotificationRecord":
-            serializeMsticNationStateNotificationRecord(writer, auditData as MsticNationStateNotificationRecord, true);
+            serializeMsticNationStateNotificationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.multiStageDispositionAuditRecord":
-            serializeMultiStageDispositionAuditRecord(writer, auditData as MultiStageDispositionAuditRecord, true);
+            serializeMultiStageDispositionAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.myAnalyticsSettingsAuditRecord":
-            serializeMyAnalyticsSettingsAuditRecord(writer, auditData as MyAnalyticsSettingsAuditRecord, true);
+            serializeMyAnalyticsSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.officeNativeAuditRecord":
-            serializeOfficeNativeAuditRecord(writer, auditData as OfficeNativeAuditRecord, true);
+            serializeOfficeNativeAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.omePortalAuditRecord":
-            serializeOmePortalAuditRecord(writer, auditData as OmePortalAuditRecord, true);
+            serializeOmePortalAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.oneDriveAuditRecord":
-            serializeOneDriveAuditRecord(writer, auditData as OneDriveAuditRecord, true);
+            serializeOneDriveAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.onPremisesFileShareScannerDlpAuditRecord":
-            serializeOnPremisesFileShareScannerDlpAuditRecord(writer, auditData as OnPremisesFileShareScannerDlpAuditRecord, true);
+            serializeOnPremisesFileShareScannerDlpAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.onPremisesScannerDlpAuditRecord":
-            serializeOnPremisesScannerDlpAuditRecord(writer, auditData as OnPremisesScannerDlpAuditRecord, true);
+            serializeOnPremisesScannerDlpAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.onPremisesSharePointScannerDlpAuditRecord":
-            serializeOnPremisesSharePointScannerDlpAuditRecord(writer, auditData as OnPremisesSharePointScannerDlpAuditRecord, true);
+            serializeOnPremisesSharePointScannerDlpAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.owaGetAccessTokenForResourceAuditRecord":
-            serializeOwaGetAccessTokenForResourceAuditRecord(writer, auditData as OwaGetAccessTokenForResourceAuditRecord, true);
+            serializeOwaGetAccessTokenForResourceAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.peopleAdminSettingsAuditRecord":
-            serializePeopleAdminSettingsAuditRecord(writer, auditData as PeopleAdminSettingsAuditRecord, true);
+            serializePeopleAdminSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.physicalBadgingSignalAuditRecord":
-            serializePhysicalBadgingSignalAuditRecord(writer, auditData as PhysicalBadgingSignalAuditRecord, true);
+            serializePhysicalBadgingSignalAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerCopyPlanAuditRecord":
-            serializePlannerCopyPlanAuditRecord(writer, auditData as PlannerCopyPlanAuditRecord, true);
+            serializePlannerCopyPlanAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerPlanAuditRecord":
-            serializePlannerPlanAuditRecord(writer, auditData as PlannerPlanAuditRecord, true);
+            serializePlannerPlanAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerPlanListAuditRecord":
-            serializePlannerPlanListAuditRecord(writer, auditData as PlannerPlanListAuditRecord, true);
+            serializePlannerPlanListAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerRosterAuditRecord":
-            serializePlannerRosterAuditRecord(writer, auditData as PlannerRosterAuditRecord, true);
+            serializePlannerRosterAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerRosterSensitivityLabelAuditRecord":
-            serializePlannerRosterSensitivityLabelAuditRecord(writer, auditData as PlannerRosterSensitivityLabelAuditRecord, true);
+            serializePlannerRosterSensitivityLabelAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerTaskAuditRecord":
-            serializePlannerTaskAuditRecord(writer, auditData as PlannerTaskAuditRecord, true);
+            serializePlannerTaskAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerTaskListAuditRecord":
-            serializePlannerTaskListAuditRecord(writer, auditData as PlannerTaskListAuditRecord, true);
+            serializePlannerTaskListAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.plannerTenantSettingsAuditRecord":
-            serializePlannerTenantSettingsAuditRecord(writer, auditData as PlannerTenantSettingsAuditRecord, true);
+            serializePlannerTenantSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerAppsAuditAppRecord":
-            serializePowerAppsAuditAppRecord(writer, auditData as PowerAppsAuditAppRecord, true);
+            serializePowerAppsAuditAppRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerAppsAuditPlanRecord":
-            serializePowerAppsAuditPlanRecord(writer, auditData as PowerAppsAuditPlanRecord, true);
+            serializePowerAppsAuditPlanRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerAppsAuditResourceRecord":
-            serializePowerAppsAuditResourceRecord(writer, auditData as PowerAppsAuditResourceRecord, true);
+            serializePowerAppsAuditResourceRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerBiAuditRecord":
-            serializePowerBiAuditRecord(writer, auditData as PowerBiAuditRecord, true);
+            serializePowerBiAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerBiDlpAuditRecord":
-            serializePowerBiDlpAuditRecord(writer, auditData as PowerBiDlpAuditRecord, true);
+            serializePowerBiDlpAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPagesSiteAuditRecord":
-            serializePowerPagesSiteAuditRecord(writer, auditData as PowerPagesSiteAuditRecord, true);
+            serializePowerPagesSiteAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPlatformAdminDlpAuditRecord":
-            serializePowerPlatformAdminDlpAuditRecord(writer, auditData as PowerPlatformAdminDlpAuditRecord, true);
+            serializePowerPlatformAdminDlpAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPlatformAdminEnvironmentAuditRecord":
-            serializePowerPlatformAdminEnvironmentAuditRecord(writer, auditData as PowerPlatformAdminEnvironmentAuditRecord, true);
+            serializePowerPlatformAdminEnvironmentAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPlatformAdministratorActivityRecord":
-            serializePowerPlatformAdministratorActivityRecord(writer, auditData as PowerPlatformAdministratorActivityRecord, true);
+            serializePowerPlatformAdministratorActivityRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPlatformLockboxResourceAccessRequestAuditRecord":
-            serializePowerPlatformLockboxResourceAccessRequestAuditRecord(writer, auditData as PowerPlatformLockboxResourceAccessRequestAuditRecord, true);
+            serializePowerPlatformLockboxResourceAccessRequestAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPlatformLockboxResourceCommandAuditRecord":
-            serializePowerPlatformLockboxResourceCommandAuditRecord(writer, auditData as PowerPlatformLockboxResourceCommandAuditRecord, true);
+            serializePowerPlatformLockboxResourceCommandAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.powerPlatformServiceActivityAuditRecord":
-            serializePowerPlatformServiceActivityAuditRecord(writer, auditData as PowerPlatformServiceActivityAuditRecord, true);
+            serializePowerPlatformServiceActivityAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyDataMatchAuditRecord":
-            serializePrivacyDataMatchAuditRecord(writer, auditData as PrivacyDataMatchAuditRecord, true);
+            serializePrivacyDataMatchAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyDataMinimizationRecord":
-            serializePrivacyDataMinimizationRecord(writer, auditData as PrivacyDataMinimizationRecord, true);
+            serializePrivacyDataMinimizationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyDigestEmailRecord":
-            serializePrivacyDigestEmailRecord(writer, auditData as PrivacyDigestEmailRecord, true);
+            serializePrivacyDigestEmailRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyOpenAccessAuditRecord":
-            serializePrivacyOpenAccessAuditRecord(writer, auditData as PrivacyOpenAccessAuditRecord, true);
+            serializePrivacyOpenAccessAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyPortalAuditRecord":
-            serializePrivacyPortalAuditRecord(writer, auditData as PrivacyPortalAuditRecord, true);
+            serializePrivacyPortalAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyRemediationActionRecord":
-            serializePrivacyRemediationActionRecord(writer, auditData as PrivacyRemediationActionRecord, true);
+            serializePrivacyRemediationActionRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyRemediationRecord":
-            serializePrivacyRemediationRecord(writer, auditData as PrivacyRemediationRecord, true);
+            serializePrivacyRemediationRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.privacyTenantAuditHistoryRecord":
-            serializePrivacyTenantAuditHistoryRecord(writer, auditData as PrivacyTenantAuditHistoryRecord, true);
+            serializePrivacyTenantAuditHistoryRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectAuditRecord":
-            serializeProjectAuditRecord(writer, auditData as ProjectAuditRecord, true);
+            serializeProjectAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebAssignedToMeSettingsAuditRecord":
-            serializeProjectForTheWebAssignedToMeSettingsAuditRecord(writer, auditData as ProjectForTheWebAssignedToMeSettingsAuditRecord, true);
+            serializeProjectForTheWebAssignedToMeSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebProjectAuditRecord":
-            serializeProjectForTheWebProjectAuditRecord(writer, auditData as ProjectForTheWebProjectAuditRecord, true);
+            serializeProjectForTheWebProjectAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebProjectSettingsAuditRecord":
-            serializeProjectForTheWebProjectSettingsAuditRecord(writer, auditData as ProjectForTheWebProjectSettingsAuditRecord, true);
+            serializeProjectForTheWebProjectSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebRoadmapAuditRecord":
-            serializeProjectForTheWebRoadmapAuditRecord(writer, auditData as ProjectForTheWebRoadmapAuditRecord, true);
+            serializeProjectForTheWebRoadmapAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebRoadmapItemAuditRecord":
-            serializeProjectForTheWebRoadmapItemAuditRecord(writer, auditData as ProjectForTheWebRoadmapItemAuditRecord, true);
+            serializeProjectForTheWebRoadmapItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebRoadmapSettingsAuditRecord":
-            serializeProjectForTheWebRoadmapSettingsAuditRecord(writer, auditData as ProjectForTheWebRoadmapSettingsAuditRecord, true);
+            serializeProjectForTheWebRoadmapSettingsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.projectForTheWebTaskAuditRecord":
-            serializeProjectForTheWebTaskAuditRecord(writer, auditData as ProjectForTheWebTaskAuditRecord, true);
+            serializeProjectForTheWebTaskAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.publicFolderAuditRecord":
-            serializePublicFolderAuditRecord(writer, auditData as PublicFolderAuditRecord, true);
+            serializePublicFolderAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.purviewInsiderRiskAlertsRecord":
-            serializePurviewInsiderRiskAlertsRecord(writer, auditData as PurviewInsiderRiskAlertsRecord, true);
+            serializePurviewInsiderRiskAlertsRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.purviewInsiderRiskCasesRecord":
-            serializePurviewInsiderRiskCasesRecord(writer, auditData as PurviewInsiderRiskCasesRecord, true);
+            serializePurviewInsiderRiskCasesRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.quarantineAuditRecord":
-            serializeQuarantineAuditRecord(writer, auditData as QuarantineAuditRecord, true);
+            serializeQuarantineAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.recordsManagementAuditRecord":
-            serializeRecordsManagementAuditRecord(writer, auditData as RecordsManagementAuditRecord, true);
+            serializeRecordsManagementAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.retentionPolicyAuditRecord":
-            serializeRetentionPolicyAuditRecord(writer, auditData as RetentionPolicyAuditRecord, true);
+            serializeRetentionPolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.scoreEvidence":
-            serializeScoreEvidence(writer, auditData as ScoreEvidence, true);
+            serializeScoreEvidence(writer, auditData, true);
         break;
         case "#microsoft.graph.security.scorePlatformGenericAuditRecord":
-            serializeScorePlatformGenericAuditRecord(writer, auditData as ScorePlatformGenericAuditRecord, true);
+            serializeScorePlatformGenericAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.scriptRunAuditRecord":
-            serializeScriptRunAuditRecord(writer, auditData as ScriptRunAuditRecord, true);
+            serializeScriptRunAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.searchAuditRecord":
-            serializeSearchAuditRecord(writer, auditData as SearchAuditRecord, true);
+            serializeSearchAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.securityComplianceAlertRecord":
-            serializeSecurityComplianceAlertRecord(writer, auditData as SecurityComplianceAlertRecord, true);
+            serializeSecurityComplianceAlertRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.securityComplianceCenterEOPCmdletAuditRecord":
-            serializeSecurityComplianceCenterEOPCmdletAuditRecord(writer, auditData as SecurityComplianceCenterEOPCmdletAuditRecord, true);
+            serializeSecurityComplianceCenterEOPCmdletAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.securityComplianceInsightsAuditRecord":
-            serializeSecurityComplianceInsightsAuditRecord(writer, auditData as SecurityComplianceInsightsAuditRecord, true);
+            serializeSecurityComplianceInsightsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.securityComplianceRBACAuditRecord":
-            serializeSecurityComplianceRBACAuditRecord(writer, auditData as SecurityComplianceRBACAuditRecord, true);
+            serializeSecurityComplianceRBACAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.securityComplianceUserChangeAuditRecord":
-            serializeSecurityComplianceUserChangeAuditRecord(writer, auditData as SecurityComplianceUserChangeAuditRecord, true);
+            serializeSecurityComplianceUserChangeAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointAppPermissionOperationAuditRecord":
-            serializeSharePointAppPermissionOperationAuditRecord(writer, auditData as SharePointAppPermissionOperationAuditRecord, true);
+            serializeSharePointAppPermissionOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointAuditRecord":
-            serializeSharePointAuditRecord(writer, auditData as SharePointAuditRecord, true);
+            serializeSharePointAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointCommentOperationAuditRecord":
-            serializeSharePointCommentOperationAuditRecord(writer, auditData as SharePointCommentOperationAuditRecord, true);
+            serializeSharePointCommentOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointContentTypeOperationAuditRecord":
-            serializeSharePointContentTypeOperationAuditRecord(writer, auditData as SharePointContentTypeOperationAuditRecord, true);
+            serializeSharePointContentTypeOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointESignatureAuditRecord":
-            serializeSharePointESignatureAuditRecord(writer, auditData as SharePointESignatureAuditRecord, true);
+            serializeSharePointESignatureAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointFieldOperationAuditRecord":
-            serializeSharePointFieldOperationAuditRecord(writer, auditData as SharePointFieldOperationAuditRecord, true);
+            serializeSharePointFieldOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointFileOperationAuditRecord":
-            serializeSharePointFileOperationAuditRecord(writer, auditData as SharePointFileOperationAuditRecord, true);
+            serializeSharePointFileOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointListOperationAuditRecord":
-            serializeSharePointListOperationAuditRecord(writer, auditData as SharePointListOperationAuditRecord, true);
+            serializeSharePointListOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.sharePointSharingOperationAuditRecord":
-            serializeSharePointSharingOperationAuditRecord(writer, auditData as SharePointSharingOperationAuditRecord, true);
+            serializeSharePointSharingOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.skypeForBusinessBaseAuditRecord":
-            serializeSkypeForBusinessBaseAuditRecord(writer, auditData as SkypeForBusinessBaseAuditRecord, true);
+            serializeSkypeForBusinessBaseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.skypeForBusinessCmdletsAuditRecord":
-            serializeSkypeForBusinessCmdletsAuditRecord(writer, auditData as SkypeForBusinessCmdletsAuditRecord, true);
+            serializeSkypeForBusinessCmdletsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.skypeForBusinessPSTNUsageAuditRecord":
-            serializeSkypeForBusinessPSTNUsageAuditRecord(writer, auditData as SkypeForBusinessPSTNUsageAuditRecord, true);
+            serializeSkypeForBusinessPSTNUsageAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.skypeForBusinessUsersBlockedAuditRecord":
-            serializeSkypeForBusinessUsersBlockedAuditRecord(writer, auditData as SkypeForBusinessUsersBlockedAuditRecord, true);
+            serializeSkypeForBusinessUsersBlockedAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.smsCreatePhoneNumberRecord":
-            serializeSmsCreatePhoneNumberRecord(writer, auditData as SmsCreatePhoneNumberRecord, true);
+            serializeSmsCreatePhoneNumberRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.smsDeletePhoneNumberRecord":
-            serializeSmsDeletePhoneNumberRecord(writer, auditData as SmsDeletePhoneNumberRecord, true);
+            serializeSmsDeletePhoneNumberRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.supervisoryReviewDayXInsightsAuditRecord":
-            serializeSupervisoryReviewDayXInsightsAuditRecord(writer, auditData as SupervisoryReviewDayXInsightsAuditRecord, true);
+            serializeSupervisoryReviewDayXInsightsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.syntheticProbeAuditRecord":
-            serializeSyntheticProbeAuditRecord(writer, auditData as SyntheticProbeAuditRecord, true);
+            serializeSyntheticProbeAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.teamsEasyApprovalsAuditRecord":
-            serializeTeamsEasyApprovalsAuditRecord(writer, auditData as TeamsEasyApprovalsAuditRecord, true);
+            serializeTeamsEasyApprovalsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.teamsHealthcareAuditRecord":
-            serializeTeamsHealthcareAuditRecord(writer, auditData as TeamsHealthcareAuditRecord, true);
+            serializeTeamsHealthcareAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.teamsUpdatesAuditRecord":
-            serializeTeamsUpdatesAuditRecord(writer, auditData as TeamsUpdatesAuditRecord, true);
+            serializeTeamsUpdatesAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.tenantAllowBlockListAuditRecord":
-            serializeTenantAllowBlockListAuditRecord(writer, auditData as TenantAllowBlockListAuditRecord, true);
+            serializeTenantAllowBlockListAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.threatFinderAuditRecord":
-            serializeThreatFinderAuditRecord(writer, auditData as ThreatFinderAuditRecord, true);
+            serializeThreatFinderAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.threatIntelligenceAtpContentData":
-            serializeThreatIntelligenceAtpContentData(writer, auditData as ThreatIntelligenceAtpContentData, true);
+            serializeThreatIntelligenceAtpContentData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.threatIntelligenceMailData":
-            serializeThreatIntelligenceMailData(writer, auditData as ThreatIntelligenceMailData, true);
+            serializeThreatIntelligenceMailData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.threatIntelligenceUrlClickData":
-            serializeThreatIntelligenceUrlClickData(writer, auditData as ThreatIntelligenceUrlClickData, true);
+            serializeThreatIntelligenceUrlClickData(writer, auditData, true);
         break;
         case "#microsoft.graph.security.todoAuditRecord":
-            serializeTodoAuditRecord(writer, auditData as TodoAuditRecord, true);
+            serializeTodoAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.uamOperationAuditRecord":
-            serializeUamOperationAuditRecord(writer, auditData as UamOperationAuditRecord, true);
+            serializeUamOperationAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.unifiedGroupAuditRecord":
-            serializeUnifiedGroupAuditRecord(writer, auditData as UnifiedGroupAuditRecord, true);
+            serializeUnifiedGroupAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.unifiedSimulationMatchedItemAuditRecord":
-            serializeUnifiedSimulationMatchedItemAuditRecord(writer, auditData as UnifiedSimulationMatchedItemAuditRecord, true);
+            serializeUnifiedSimulationMatchedItemAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.unifiedSimulationSummaryAuditRecord":
-            serializeUnifiedSimulationSummaryAuditRecord(writer, auditData as UnifiedSimulationSummaryAuditRecord, true);
+            serializeUnifiedSimulationSummaryAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.uploadCertificateRecord":
-            serializeUploadCertificateRecord(writer, auditData as UploadCertificateRecord, true);
+            serializeUploadCertificateRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.urbacAssignmentAuditRecord":
-            serializeUrbacAssignmentAuditRecord(writer, auditData as UrbacAssignmentAuditRecord, true);
+            serializeUrbacAssignmentAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.urbacEnableStateAuditRecord":
-            serializeUrbacEnableStateAuditRecord(writer, auditData as UrbacEnableStateAuditRecord, true);
+            serializeUrbacEnableStateAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.urbacRoleAuditRecord":
-            serializeUrbacRoleAuditRecord(writer, auditData as UrbacRoleAuditRecord, true);
+            serializeUrbacRoleAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.userTrainingAuditRecord":
-            serializeUserTrainingAuditRecord(writer, auditData as UserTrainingAuditRecord, true);
+            serializeUserTrainingAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vfamBasePolicyAuditRecord":
-            serializeVfamBasePolicyAuditRecord(writer, auditData as VfamBasePolicyAuditRecord, true);
+            serializeVfamBasePolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vfamCreatePolicyAuditRecord":
-            serializeVfamCreatePolicyAuditRecord(writer, auditData as VfamCreatePolicyAuditRecord, true);
+            serializeVfamCreatePolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vfamDeletePolicyAuditRecord":
-            serializeVfamDeletePolicyAuditRecord(writer, auditData as VfamDeletePolicyAuditRecord, true);
+            serializeVfamDeletePolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vfamUpdatePolicyAuditRecord":
-            serializeVfamUpdatePolicyAuditRecord(writer, auditData as VfamUpdatePolicyAuditRecord, true);
+            serializeVfamUpdatePolicyAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaGoalsAuditRecord":
-            serializeVivaGoalsAuditRecord(writer, auditData as VivaGoalsAuditRecord, true);
+            serializeVivaGoalsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaLearningAdminAuditRecord":
-            serializeVivaLearningAdminAuditRecord(writer, auditData as VivaLearningAdminAuditRecord, true);
+            serializeVivaLearningAdminAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaLearningAuditRecord":
-            serializeVivaLearningAuditRecord(writer, auditData as VivaLearningAuditRecord, true);
+            serializeVivaLearningAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaPulseAdminAuditRecord":
-            serializeVivaPulseAdminAuditRecord(writer, auditData as VivaPulseAdminAuditRecord, true);
+            serializeVivaPulseAdminAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaPulseOrganizerAuditRecord":
-            serializeVivaPulseOrganizerAuditRecord(writer, auditData as VivaPulseOrganizerAuditRecord, true);
+            serializeVivaPulseOrganizerAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaPulseReportAuditRecord":
-            serializeVivaPulseReportAuditRecord(writer, auditData as VivaPulseReportAuditRecord, true);
+            serializeVivaPulseReportAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.vivaPulseResponseAuditRecord":
-            serializeVivaPulseResponseAuditRecord(writer, auditData as VivaPulseResponseAuditRecord, true);
+            serializeVivaPulseResponseAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.wdatpAlertsAuditRecord":
-            serializeWdatpAlertsAuditRecord(writer, auditData as WdatpAlertsAuditRecord, true);
+            serializeWdatpAlertsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.windows365CustomerLockboxAuditRecord":
-            serializeWindows365CustomerLockboxAuditRecord(writer, auditData as Windows365CustomerLockboxAuditRecord, true);
+            serializeWindows365CustomerLockboxAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.workplaceAnalyticsAuditRecord":
-            serializeWorkplaceAnalyticsAuditRecord(writer, auditData as WorkplaceAnalyticsAuditRecord, true);
+            serializeWorkplaceAnalyticsAuditRecord(writer, auditData, true);
         break;
         case "#microsoft.graph.security.yammerAuditRecord":
-            serializeYammerAuditRecord(writer, auditData as YammerAuditRecord, true);
+            serializeYammerAuditRecord(writer, auditData, true);
         break;
     }
 }
@@ -22793,7 +22793,7 @@ export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: P
     writer.writeEnumValue<CaseStatus>("status", caseEscaped.status);
     switch (caseEscaped.odataType) {
         case "#microsoft.graph.security.ediscoveryCase":
-            serializeEdiscoveryCase(writer, caseEscaped as EdiscoveryCase, true);
+            serializeEdiscoveryCase(writer, caseEscaped, true);
         break;
     }
 }
@@ -22827,28 +22827,28 @@ export function serializeCaseOperation(writer: SerializationWriter, caseOperatio
     writer.writeEnumValue<CaseOperationStatus>("status", caseOperation.status);
     switch (caseOperation.odataType) {
         case "#microsoft.graph.security.ediscoveryAddToReviewSetOperation":
-            serializeEdiscoveryAddToReviewSetOperation(writer, caseOperation as EdiscoveryAddToReviewSetOperation, true);
+            serializeEdiscoveryAddToReviewSetOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoveryEstimateOperation":
-            serializeEdiscoveryEstimateOperation(writer, caseOperation as EdiscoveryEstimateOperation, true);
+            serializeEdiscoveryEstimateOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoveryExportOperation":
-            serializeEdiscoveryExportOperation(writer, caseOperation as EdiscoveryExportOperation, true);
+            serializeEdiscoveryExportOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoveryHoldOperation":
-            serializeEdiscoveryHoldOperation(writer, caseOperation as EdiscoveryHoldOperation, true);
+            serializeEdiscoveryHoldOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoveryIndexOperation":
-            serializeEdiscoveryIndexOperation(writer, caseOperation as EdiscoveryIndexOperation, true);
+            serializeEdiscoveryIndexOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoveryPurgeDataOperation":
-            serializeEdiscoveryPurgeDataOperation(writer, caseOperation as EdiscoveryPurgeDataOperation, true);
+            serializeEdiscoveryPurgeDataOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoverySearchExportOperation":
-            serializeEdiscoverySearchExportOperation(writer, caseOperation as EdiscoverySearchExportOperation, true);
+            serializeEdiscoverySearchExportOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.security.ediscoveryTagOperation":
-            serializeEdiscoveryTagOperation(writer, caseOperation as EdiscoveryTagOperation, true);
+            serializeEdiscoveryTagOperation(writer, caseOperation, true);
         break;
     }
 }
@@ -23692,7 +23692,7 @@ export function serializeDataSet(writer: SerializationWriter, dataSet: Partial<D
     writer.writeStringValue("displayName", dataSet.displayName);
     switch (dataSet.odataType) {
         case "#microsoft.graph.security.ediscoveryReviewSet":
-            serializeEdiscoveryReviewSet(writer, dataSet as EdiscoveryReviewSet, true);
+            serializeEdiscoveryReviewSet(writer, dataSet, true);
         break;
     }
 }
@@ -23723,13 +23723,13 @@ export function serializeDataSource(writer: SerializationWriter, dataSource: Par
     writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSource.holdStatus);
     switch (dataSource.odataType) {
         case "#microsoft.graph.security.siteSource":
-            serializeSiteSource(writer, dataSource as SiteSource, true);
+            serializeSiteSource(writer, dataSource, true);
         break;
         case "#microsoft.graph.security.unifiedGroupSource":
-            serializeUnifiedGroupSource(writer, dataSource as UnifiedGroupSource, true);
+            serializeUnifiedGroupSource(writer, dataSource, true);
         break;
         case "#microsoft.graph.security.userSource":
-            serializeUserSource(writer, dataSource as UserSource, true);
+            serializeUserSource(writer, dataSource, true);
         break;
     }
 }
@@ -23763,10 +23763,10 @@ export function serializeDataSourceContainer(writer: SerializationWriter, dataSo
     writer.writeEnumValue<DataSourceContainerStatus>("status", dataSourceContainer.status);
     switch (dataSourceContainer.odataType) {
         case "#microsoft.graph.security.ediscoveryCustodian":
-            serializeEdiscoveryCustodian(writer, dataSourceContainer as EdiscoveryCustodian, true);
+            serializeEdiscoveryCustodian(writer, dataSourceContainer, true);
         break;
         case "#microsoft.graph.security.ediscoveryNoncustodialDataSource":
-            serializeEdiscoveryNoncustodialDataSource(writer, dataSourceContainer as EdiscoveryNoncustodialDataSource, true);
+            serializeEdiscoveryNoncustodialDataSource(writer, dataSourceContainer, true);
         break;
     }
 }
@@ -24047,7 +24047,7 @@ export function serializeDiscoveredCloudAppDetail(writer: SerializationWriter, d
     writer.writeCollectionOfObjectValues<DiscoveredCloudAppUser>("users", discoveredCloudAppDetail.users, serializeDiscoveredCloudAppUser);
     switch (discoveredCloudAppDetail.odataType) {
         case "#microsoft.graph.security.endpointDiscoveredCloudAppDetail":
-            serializeEndpointDiscoveredCloudAppDetail(writer, discoveredCloudAppDetail as EndpointDiscoveredCloudAppDetail, true);
+            serializeEndpointDiscoveredCloudAppDetail(writer, discoveredCloudAppDetail, true);
         break;
     }
 }
@@ -24762,10 +24762,10 @@ export function serializeEmailThreatSubmission(writer: SerializationWriter, emai
     writer.writeObjectValue<TenantAllowOrBlockListAction>("tenantAllowOrBlockListAction", emailThreatSubmission.tenantAllowOrBlockListAction, serializeTenantAllowOrBlockListAction);
     switch (emailThreatSubmission.odataType) {
         case "#microsoft.graph.security.emailContentThreatSubmission":
-            serializeEmailContentThreatSubmission(writer, emailThreatSubmission as EmailContentThreatSubmission, true);
+            serializeEmailContentThreatSubmission(writer, emailThreatSubmission, true);
         break;
         case "#microsoft.graph.security.emailUrlThreatSubmission":
-            serializeEmailUrlThreatSubmission(writer, emailThreatSubmission as EmailUrlThreatSubmission, true);
+            serializeEmailUrlThreatSubmission(writer, emailThreatSubmission, true);
         break;
     }
 }
@@ -25065,7 +25065,7 @@ export function serializeFile(writer: SerializationWriter, file: Partial<File> |
     writer.writeStringValue("subjectTitle", file.subjectTitle);
     switch (file.odataType) {
         case "#microsoft.graph.security.ediscoveryFile":
-            serializeEdiscoveryFile(writer, file as EdiscoveryFile, true);
+            serializeEdiscoveryFile(writer, file, true);
         break;
     }
 }
@@ -25226,22 +25226,22 @@ export function serializeFilePlanDescriptorBase(writer: SerializationWriter, fil
     writer.writeAdditionalData(filePlanDescriptorBase.additionalData);
     switch (filePlanDescriptorBase.odataType) {
         case "#microsoft.graph.security.filePlanAppliedCategory":
-            serializeFilePlanAppliedCategory(writer, filePlanDescriptorBase as FilePlanAppliedCategory, true);
+            serializeFilePlanAppliedCategory(writer, filePlanDescriptorBase, true);
         break;
         case "#microsoft.graph.security.filePlanAuthority":
-            serializeFilePlanAuthority(writer, filePlanDescriptorBase as FilePlanAuthority, true);
+            serializeFilePlanAuthority(writer, filePlanDescriptorBase, true);
         break;
         case "#microsoft.graph.security.filePlanCitation":
-            serializeFilePlanCitation(writer, filePlanDescriptorBase as FilePlanCitation, true);
+            serializeFilePlanCitation(writer, filePlanDescriptorBase, true);
         break;
         case "#microsoft.graph.security.filePlanDepartment":
-            serializeFilePlanDepartment(writer, filePlanDescriptorBase as FilePlanDepartment, true);
+            serializeFilePlanDepartment(writer, filePlanDescriptorBase, true);
         break;
         case "#microsoft.graph.security.filePlanReference":
-            serializeFilePlanReference(writer, filePlanDescriptorBase as FilePlanReference, true);
+            serializeFilePlanReference(writer, filePlanDescriptorBase, true);
         break;
         case "#microsoft.graph.security.filePlanSubcategory":
-            serializeFilePlanSubcategory(writer, filePlanDescriptorBase as FilePlanSubcategory, true);
+            serializeFilePlanSubcategory(writer, filePlanDescriptorBase, true);
         break;
     }
 }
@@ -25260,22 +25260,22 @@ export function serializeFilePlanDescriptorTemplate(writer: SerializationWriter,
     writer.writeStringValue("displayName", filePlanDescriptorTemplate.displayName);
     switch (filePlanDescriptorTemplate.odataType) {
         case "#microsoft.graph.security.authorityTemplate":
-            serializeAuthorityTemplate(writer, filePlanDescriptorTemplate as AuthorityTemplate, true);
+            serializeAuthorityTemplate(writer, filePlanDescriptorTemplate, true);
         break;
         case "#microsoft.graph.security.categoryTemplate":
-            serializeCategoryTemplate(writer, filePlanDescriptorTemplate as CategoryTemplate, true);
+            serializeCategoryTemplate(writer, filePlanDescriptorTemplate, true);
         break;
         case "#microsoft.graph.security.citationTemplate":
-            serializeCitationTemplate(writer, filePlanDescriptorTemplate as CitationTemplate, true);
+            serializeCitationTemplate(writer, filePlanDescriptorTemplate, true);
         break;
         case "#microsoft.graph.security.departmentTemplate":
-            serializeDepartmentTemplate(writer, filePlanDescriptorTemplate as DepartmentTemplate, true);
+            serializeDepartmentTemplate(writer, filePlanDescriptorTemplate, true);
         break;
         case "#microsoft.graph.security.filePlanReferenceTemplate":
-            serializeFilePlanReferenceTemplate(writer, filePlanDescriptorTemplate as FilePlanReferenceTemplate, true);
+            serializeFilePlanReferenceTemplate(writer, filePlanDescriptorTemplate, true);
         break;
         case "#microsoft.graph.security.subcategoryTemplate":
-            serializeSubcategoryTemplate(writer, filePlanDescriptorTemplate as SubcategoryTemplate, true);
+            serializeSubcategoryTemplate(writer, filePlanDescriptorTemplate, true);
         break;
     }
 }
@@ -25337,10 +25337,10 @@ export function serializeFileThreatSubmission(writer: SerializationWriter, fileT
     writer.writeStringValue("fileName", fileThreatSubmission.fileName);
     switch (fileThreatSubmission.odataType) {
         case "#microsoft.graph.security.fileContentThreatSubmission":
-            serializeFileContentThreatSubmission(writer, fileThreatSubmission as FileContentThreatSubmission, true);
+            serializeFileContentThreatSubmission(writer, fileThreatSubmission, true);
         break;
         case "#microsoft.graph.security.fileUrlThreatSubmission":
-            serializeFileUrlThreatSubmission(writer, fileThreatSubmission as FileUrlThreatSubmission, true);
+            serializeFileUrlThreatSubmission(writer, fileThreatSubmission, true);
         break;
     }
 }
@@ -25564,10 +25564,10 @@ export function serializeHost(writer: SerializationWriter, host: Partial<Host> |
     writer.writeObjectValue<WhoisRecord>("whois", host.whois, serializeWhoisRecord);
     switch (host.odataType) {
         case "#microsoft.graph.security.hostname":
-            serializeHostname(writer, host as Hostname, true);
+            serializeHostname(writer, host, true);
         break;
         case "#microsoft.graph.security.ipAddress":
-            serializeIpAddress(writer, host as IpAddress, true);
+            serializeIpAddress(writer, host, true);
         break;
     }
 }
@@ -25964,13 +25964,13 @@ export function serializeImpactedAsset(writer: SerializationWriter, impactedAsse
     writer.writeAdditionalData(impactedAsset.additionalData);
     switch (impactedAsset.odataType) {
         case "#microsoft.graph.security.impactedDeviceAsset":
-            serializeImpactedDeviceAsset(writer, impactedAsset as ImpactedDeviceAsset, true);
+            serializeImpactedDeviceAsset(writer, impactedAsset, true);
         break;
         case "#microsoft.graph.security.impactedMailboxAsset":
-            serializeImpactedMailboxAsset(writer, impactedAsset as ImpactedMailboxAsset, true);
+            serializeImpactedMailboxAsset(writer, impactedAsset, true);
         break;
         case "#microsoft.graph.security.impactedUserAsset":
-            serializeImpactedUserAsset(writer, impactedAsset as ImpactedUserAsset, true);
+            serializeImpactedUserAsset(writer, impactedAsset, true);
         break;
     }
 }
@@ -26068,10 +26068,10 @@ export function serializeIndicator(writer: SerializationWriter, indicator: Parti
     writer.writeEnumValue<IndicatorSource>("source", indicator.source);
     switch (indicator.odataType) {
         case "#microsoft.graph.security.articleIndicator":
-            serializeArticleIndicator(writer, indicator as ArticleIndicator, true);
+            serializeArticleIndicator(writer, indicator, true);
         break;
         case "#microsoft.graph.security.intelligenceProfileIndicator":
-            serializeIntelligenceProfileIndicator(writer, indicator as IntelligenceProfileIndicator, true);
+            serializeIntelligenceProfileIndicator(writer, indicator, true);
         break;
     }
 }
@@ -26112,49 +26112,49 @@ export function serializeInformationProtectionAction(writer: SerializationWriter
     writer.writeAdditionalData(informationProtectionAction.additionalData);
     switch (informationProtectionAction.odataType) {
         case "#microsoft.graph.security.addContentFooterAction":
-            serializeAddContentFooterAction(writer, informationProtectionAction as AddContentFooterAction, true);
+            serializeAddContentFooterAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.addContentHeaderAction":
-            serializeAddContentHeaderAction(writer, informationProtectionAction as AddContentHeaderAction, true);
+            serializeAddContentHeaderAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.addWatermarkAction":
-            serializeAddWatermarkAction(writer, informationProtectionAction as AddWatermarkAction, true);
+            serializeAddWatermarkAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.applyLabelAction":
-            serializeApplyLabelAction(writer, informationProtectionAction as ApplyLabelAction, true);
+            serializeApplyLabelAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.customAction":
-            serializeCustomAction(writer, informationProtectionAction as CustomAction, true);
+            serializeCustomAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.justifyAction":
-            serializeJustifyAction(writer, informationProtectionAction as JustifyAction, true);
+            serializeJustifyAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.metadataAction":
-            serializeMetadataAction(writer, informationProtectionAction as MetadataAction, true);
+            serializeMetadataAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.protectAdhocAction":
-            serializeProtectAdhocAction(writer, informationProtectionAction as ProtectAdhocAction, true);
+            serializeProtectAdhocAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.protectByTemplateAction":
-            serializeProtectByTemplateAction(writer, informationProtectionAction as ProtectByTemplateAction, true);
+            serializeProtectByTemplateAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.protectDoNotForwardAction":
-            serializeProtectDoNotForwardAction(writer, informationProtectionAction as ProtectDoNotForwardAction, true);
+            serializeProtectDoNotForwardAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.recommendLabelAction":
-            serializeRecommendLabelAction(writer, informationProtectionAction as RecommendLabelAction, true);
+            serializeRecommendLabelAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.removeContentFooterAction":
-            serializeRemoveContentFooterAction(writer, informationProtectionAction as RemoveContentFooterAction, true);
+            serializeRemoveContentFooterAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.removeContentHeaderAction":
-            serializeRemoveContentHeaderAction(writer, informationProtectionAction as RemoveContentHeaderAction, true);
+            serializeRemoveContentHeaderAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.removeProtectionAction":
-            serializeRemoveProtectionAction(writer, informationProtectionAction as RemoveProtectionAction, true);
+            serializeRemoveProtectionAction(writer, informationProtectionAction, true);
         break;
         case "#microsoft.graph.security.removeWatermarkAction":
-            serializeRemoveWatermarkAction(writer, informationProtectionAction as RemoveWatermarkAction, true);
+            serializeRemoveWatermarkAction(writer, informationProtectionAction, true);
         break;
     }
 }
@@ -27733,7 +27733,7 @@ export function serializePolicyBase(writer: SerializationWriter, policyBase: Par
     writer.writeEnumValue<PolicyStatus>("status", policyBase.status);
     switch (policyBase.odataType) {
         case "#microsoft.graph.security.ediscoveryHoldPolicy":
-            serializeEdiscoveryHoldPolicy(writer, policyBase as EdiscoveryHoldPolicy, true);
+            serializeEdiscoveryHoldPolicy(writer, policyBase, true);
         break;
     }
 }
@@ -28118,7 +28118,7 @@ export function serializeProtectionRule(writer: SerializationWriter, protectionR
     writer.writeDateValue("lastModifiedDateTime", protectionRule.lastModifiedDateTime);
     switch (protectionRule.odataType) {
         case "#microsoft.graph.security.detectionRule":
-            serializeDetectionRule(writer, protectionRule as DetectionRule, true);
+            serializeDetectionRule(writer, protectionRule, true);
         break;
     }
 }
@@ -28325,52 +28325,52 @@ export function serializeResponseAction(writer: SerializationWriter, responseAct
     writer.writeAdditionalData(responseAction.additionalData);
     switch (responseAction.odataType) {
         case "#microsoft.graph.security.allowFileResponseAction":
-            serializeAllowFileResponseAction(writer, responseAction as AllowFileResponseAction, true);
+            serializeAllowFileResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.blockFileResponseAction":
-            serializeBlockFileResponseAction(writer, responseAction as BlockFileResponseAction, true);
+            serializeBlockFileResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.collectInvestigationPackageResponseAction":
-            serializeCollectInvestigationPackageResponseAction(writer, responseAction as CollectInvestigationPackageResponseAction, true);
+            serializeCollectInvestigationPackageResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.disableUserResponseAction":
-            serializeDisableUserResponseAction(writer, responseAction as DisableUserResponseAction, true);
+            serializeDisableUserResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.forceUserPasswordResetResponseAction":
-            serializeForceUserPasswordResetResponseAction(writer, responseAction as ForceUserPasswordResetResponseAction, true);
+            serializeForceUserPasswordResetResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.hardDeleteResponseAction":
-            serializeHardDeleteResponseAction(writer, responseAction as HardDeleteResponseAction, true);
+            serializeHardDeleteResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.initiateInvestigationResponseAction":
-            serializeInitiateInvestigationResponseAction(writer, responseAction as InitiateInvestigationResponseAction, true);
+            serializeInitiateInvestigationResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.isolateDeviceResponseAction":
-            serializeIsolateDeviceResponseAction(writer, responseAction as IsolateDeviceResponseAction, true);
+            serializeIsolateDeviceResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.markUserAsCompromisedResponseAction":
-            serializeMarkUserAsCompromisedResponseAction(writer, responseAction as MarkUserAsCompromisedResponseAction, true);
+            serializeMarkUserAsCompromisedResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.moveToDeletedItemsResponseAction":
-            serializeMoveToDeletedItemsResponseAction(writer, responseAction as MoveToDeletedItemsResponseAction, true);
+            serializeMoveToDeletedItemsResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.moveToInboxResponseAction":
-            serializeMoveToInboxResponseAction(writer, responseAction as MoveToInboxResponseAction, true);
+            serializeMoveToInboxResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.moveToJunkResponseAction":
-            serializeMoveToJunkResponseAction(writer, responseAction as MoveToJunkResponseAction, true);
+            serializeMoveToJunkResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.restrictAppExecutionResponseAction":
-            serializeRestrictAppExecutionResponseAction(writer, responseAction as RestrictAppExecutionResponseAction, true);
+            serializeRestrictAppExecutionResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.runAntivirusScanResponseAction":
-            serializeRunAntivirusScanResponseAction(writer, responseAction as RunAntivirusScanResponseAction, true);
+            serializeRunAntivirusScanResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.softDeleteResponseAction":
-            serializeSoftDeleteResponseAction(writer, responseAction as SoftDeleteResponseAction, true);
+            serializeSoftDeleteResponseAction(writer, responseAction, true);
         break;
         case "#microsoft.graph.security.stopAndQuarantineFileResponseAction":
-            serializeStopAndQuarantineFileResponseAction(writer, responseAction as StopAndQuarantineFileResponseAction, true);
+            serializeStopAndQuarantineFileResponseAction(writer, responseAction, true);
         break;
     }
 }
@@ -28399,10 +28399,10 @@ export function serializeRetentionDuration(writer: SerializationWriter, retentio
     writer.writeAdditionalData(retentionDuration.additionalData);
     switch (retentionDuration.odataType) {
         case "#microsoft.graph.security.retentionDurationForever":
-            serializeRetentionDurationForever(writer, retentionDuration as RetentionDurationForever, true);
+            serializeRetentionDurationForever(writer, retentionDuration, true);
         break;
         case "#microsoft.graph.security.retentionDurationInDays":
-            serializeRetentionDurationInDays(writer, retentionDuration as RetentionDurationInDays, true);
+            serializeRetentionDurationInDays(writer, retentionDuration, true);
         break;
     }
 }
@@ -28685,10 +28685,10 @@ export function serializeSearch(writer: SerializationWriter, search: Partial<Sea
     writer.writeDateValue("lastModifiedDateTime", search.lastModifiedDateTime);
     switch (search.odataType) {
         case "#microsoft.graph.security.ediscoveryReviewSetQuery":
-            serializeEdiscoveryReviewSetQuery(writer, search as EdiscoveryReviewSetQuery, true);
+            serializeEdiscoveryReviewSetQuery(writer, search, true);
         break;
         case "#microsoft.graph.security.ediscoverySearch":
-            serializeEdiscoverySearch(writer, search as EdiscoverySearch, true);
+            serializeEdiscoverySearch(writer, search, true);
         break;
     }
 }
@@ -29366,7 +29366,7 @@ export function serializeTag(writer: SerializationWriter, tag: Partial<Tag> | un
     writer.writeDateValue("lastModifiedDateTime", tag.lastModifiedDateTime);
     switch (tag.odataType) {
         case "#microsoft.graph.security.ediscoveryReviewTag":
-            serializeEdiscoveryReviewTag(writer, tag as EdiscoveryReviewTag, true);
+            serializeEdiscoveryReviewTag(writer, tag, true);
         break;
     }
 }
@@ -29591,25 +29591,25 @@ export function serializeThreatSubmission(writer: SerializationWriter, threatSub
     writer.writeStringValue("tenantId", threatSubmission.tenantId);
     switch (threatSubmission.odataType) {
         case "#microsoft.graph.security.emailContentThreatSubmission":
-            serializeEmailContentThreatSubmission(writer, threatSubmission as EmailContentThreatSubmission, true);
+            serializeEmailContentThreatSubmission(writer, threatSubmission, true);
         break;
         case "#microsoft.graph.security.emailThreatSubmission":
-            serializeEmailThreatSubmission(writer, threatSubmission as EmailThreatSubmission, true);
+            serializeEmailThreatSubmission(writer, threatSubmission, true);
         break;
         case "#microsoft.graph.security.emailUrlThreatSubmission":
-            serializeEmailUrlThreatSubmission(writer, threatSubmission as EmailUrlThreatSubmission, true);
+            serializeEmailUrlThreatSubmission(writer, threatSubmission, true);
         break;
         case "#microsoft.graph.security.fileContentThreatSubmission":
-            serializeFileContentThreatSubmission(writer, threatSubmission as FileContentThreatSubmission, true);
+            serializeFileContentThreatSubmission(writer, threatSubmission, true);
         break;
         case "#microsoft.graph.security.fileThreatSubmission":
-            serializeFileThreatSubmission(writer, threatSubmission as FileThreatSubmission, true);
+            serializeFileThreatSubmission(writer, threatSubmission, true);
         break;
         case "#microsoft.graph.security.fileUrlThreatSubmission":
-            serializeFileUrlThreatSubmission(writer, threatSubmission as FileUrlThreatSubmission, true);
+            serializeFileUrlThreatSubmission(writer, threatSubmission, true);
         break;
         case "#microsoft.graph.security.urlThreatSubmission":
-            serializeUrlThreatSubmission(writer, threatSubmission as UrlThreatSubmission, true);
+            serializeUrlThreatSubmission(writer, threatSubmission, true);
         break;
     }
 }
@@ -30169,10 +30169,10 @@ export function serializeWhoisBaseRecord(writer: SerializationWriter, whoisBaseR
     writer.writeObjectValue<WhoisContact>("zone", whoisBaseRecord.zone, serializeWhoisContact);
     switch (whoisBaseRecord.odataType) {
         case "#microsoft.graph.security.whoisHistoryRecord":
-            serializeWhoisHistoryRecord(writer, whoisBaseRecord as WhoisHistoryRecord, true);
+            serializeWhoisHistoryRecord(writer, whoisBaseRecord, true);
         break;
         case "#microsoft.graph.security.whoisRecord":
-            serializeWhoisRecord(writer, whoisBaseRecord as WhoisRecord, true);
+            serializeWhoisRecord(writer, whoisBaseRecord, true);
         break;
     }
 }

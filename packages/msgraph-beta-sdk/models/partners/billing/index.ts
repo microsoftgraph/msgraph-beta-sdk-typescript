@@ -642,13 +642,13 @@ export function serializeOperation(writer: SerializationWriter, operation: Parti
     writer.writeEnumValue<LongRunningOperationStatus>("status", operation.status);
     switch (operation.odataType) {
         case "#microsoft.graph.partners.billing.exportSuccessOperation":
-            serializeExportSuccessOperation(writer, operation as ExportSuccessOperation, true);
+            serializeExportSuccessOperation(writer, operation, true);
         break;
         case "#microsoft.graph.partners.billing.failedOperation":
-            serializeFailedOperation(writer, operation as FailedOperation, true);
+            serializeFailedOperation(writer, operation, true);
         break;
         case "#microsoft.graph.partners.billing.runningOperation":
-            serializeRunningOperation(writer, operation as RunningOperation, true);
+            serializeRunningOperation(writer, operation, true);
         break;
     }
 }

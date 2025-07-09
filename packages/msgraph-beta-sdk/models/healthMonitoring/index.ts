@@ -729,16 +729,16 @@ export function serializeDictionary(writer: SerializationWriter, dictionary: Par
     writer.writeAdditionalData(dictionary.additionalData);
     switch (dictionary.odataType) {
         case "#microsoft.graph.healthMonitoring.documentation":
-            serializeDocumentation(writer, dictionary as Documentation, true);
+            serializeDocumentation(writer, dictionary, true);
         break;
         case "#microsoft.graph.healthMonitoring.healthMonitoringDictionary":
-            serializeHealthMonitoringDictionary(writer, dictionary as HealthMonitoringDictionary, true);
+            serializeHealthMonitoringDictionary(writer, dictionary, true);
         break;
         case "#microsoft.graph.healthMonitoring.signals":
-            serializeSignals(writer, dictionary as Signals, true);
+            serializeSignals(writer, dictionary, true);
         break;
         case "#microsoft.graph.healthMonitoring.supportingData":
-            serializeSupportingData(writer, dictionary as SupportingData, true);
+            serializeSupportingData(writer, dictionary, true);
         break;
     }
 }
@@ -755,19 +755,19 @@ export function serializeDirectoryObjectImpactSummary(writer: SerializationWrite
     writer.writeCollectionOfObjectValues<DirectoryObject>("resourceSampling", directoryObjectImpactSummary.resourceSampling, serializeDirectoryObject);
     switch (directoryObjectImpactSummary.odataType) {
         case "#microsoft.graph.healthMonitoring.applicationImpactSummary":
-            serializeApplicationImpactSummary(writer, directoryObjectImpactSummary as ApplicationImpactSummary, true);
+            serializeApplicationImpactSummary(writer, directoryObjectImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.deviceImpactSummary":
-            serializeDeviceImpactSummary(writer, directoryObjectImpactSummary as DeviceImpactSummary, true);
+            serializeDeviceImpactSummary(writer, directoryObjectImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.groupImpactSummary":
-            serializeGroupImpactSummary(writer, directoryObjectImpactSummary as GroupImpactSummary, true);
+            serializeGroupImpactSummary(writer, directoryObjectImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.servicePrincipalImpactSummary":
-            serializeServicePrincipalImpactSummary(writer, directoryObjectImpactSummary as ServicePrincipalImpactSummary, true);
+            serializeServicePrincipalImpactSummary(writer, directoryObjectImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.userImpactSummary":
-            serializeUserImpactSummary(writer, directoryObjectImpactSummary as UserImpactSummary, true);
+            serializeUserImpactSummary(writer, directoryObjectImpactSummary, true);
         break;
     }
 }
@@ -834,13 +834,13 @@ export function serializeHealthMonitoringDictionary(writer: SerializationWriter,
     serializeDictionary(writer, healthMonitoringDictionary, isSerializingDerivedType)
     switch (healthMonitoringDictionary.odataType) {
         case "#microsoft.graph.healthMonitoring.documentation":
-            serializeDocumentation(writer, healthMonitoringDictionary as Documentation, true);
+            serializeDocumentation(writer, healthMonitoringDictionary, true);
         break;
         case "#microsoft.graph.healthMonitoring.signals":
-            serializeSignals(writer, healthMonitoringDictionary as Signals, true);
+            serializeSignals(writer, healthMonitoringDictionary, true);
         break;
         case "#microsoft.graph.healthMonitoring.supportingData":
-            serializeSupportingData(writer, healthMonitoringDictionary as SupportingData, true);
+            serializeSupportingData(writer, healthMonitoringDictionary, true);
         break;
     }
 }
@@ -873,22 +873,22 @@ export function serializeResourceImpactSummary(writer: SerializationWriter, reso
     writer.writeAdditionalData(resourceImpactSummary.additionalData);
     switch (resourceImpactSummary.odataType) {
         case "#microsoft.graph.healthMonitoring.applicationImpactSummary":
-            serializeApplicationImpactSummary(writer, resourceImpactSummary as ApplicationImpactSummary, true);
+            serializeApplicationImpactSummary(writer, resourceImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.deviceImpactSummary":
-            serializeDeviceImpactSummary(writer, resourceImpactSummary as DeviceImpactSummary, true);
+            serializeDeviceImpactSummary(writer, resourceImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.directoryObjectImpactSummary":
-            serializeDirectoryObjectImpactSummary(writer, resourceImpactSummary as DirectoryObjectImpactSummary, true);
+            serializeDirectoryObjectImpactSummary(writer, resourceImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.groupImpactSummary":
-            serializeGroupImpactSummary(writer, resourceImpactSummary as GroupImpactSummary, true);
+            serializeGroupImpactSummary(writer, resourceImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.servicePrincipalImpactSummary":
-            serializeServicePrincipalImpactSummary(writer, resourceImpactSummary as ServicePrincipalImpactSummary, true);
+            serializeServicePrincipalImpactSummary(writer, resourceImpactSummary, true);
         break;
         case "#microsoft.graph.healthMonitoring.userImpactSummary":
-            serializeUserImpactSummary(writer, resourceImpactSummary as UserImpactSummary, true);
+            serializeUserImpactSummary(writer, resourceImpactSummary, true);
         break;
     }
 }

@@ -2490,7 +2490,7 @@ export function serializeApiDataConnector(writer: SerializationWriter, apiDataCo
     writer.writeObjectValue<Credential>("credential", apiDataConnector.credential, serializeCredential);
     switch (apiDataConnector.odataType) {
         case "#microsoft.graph.industryData.oneRosterApiDataConnector":
-            serializeOneRosterApiDataConnector(writer, apiDataConnector as OneRosterApiDataConnector, true);
+            serializeOneRosterApiDataConnector(writer, apiDataConnector, true);
         break;
     }
 }
@@ -2561,13 +2561,13 @@ export function serializeCredential(writer: SerializationWriter, credential: Par
     writer.writeAdditionalData(credential.additionalData);
     switch (credential.odataType) {
         case "#microsoft.graph.industryData.oAuth1ClientCredential":
-            serializeOAuth1ClientCredential(writer, credential as OAuth1ClientCredential, true);
+            serializeOAuth1ClientCredential(writer, credential, true);
         break;
         case "#microsoft.graph.industryData.oAuth2ClientCredential":
-            serializeOAuth2ClientCredential(writer, credential as OAuth2ClientCredential, true);
+            serializeOAuth2ClientCredential(writer, credential, true);
         break;
         case "#microsoft.graph.industryData.oAuthClientCredential":
-            serializeOAuthClientCredential(writer, credential as OAuthClientCredential, true);
+            serializeOAuthClientCredential(writer, credential, true);
         break;
     }
 }
@@ -2597,7 +2597,7 @@ export function serializeFileDataConnector(writer: SerializationWriter, fileData
     serializeIndustryDataConnector(writer, fileDataConnector, isSerializingDerivedType)
     switch (fileDataConnector.odataType) {
         case "#microsoft.graph.industryData.azureDataLakeConnector":
-            serializeAzureDataLakeConnector(writer, fileDataConnector as AzureDataLakeConnector, true);
+            serializeAzureDataLakeConnector(writer, fileDataConnector, true);
         break;
     }
 }
@@ -2636,7 +2636,7 @@ export function serializeFilter(writer: SerializationWriter, filter: Partial<Fil
     writer.writeAdditionalData(filter.additionalData);
     switch (filter.odataType) {
         case "#microsoft.graph.industryData.basicFilter":
-            serializeBasicFilter(writer, filter as BasicFilter, true);
+            serializeBasicFilter(writer, filter, true);
         break;
     }
 }
@@ -2701,10 +2701,10 @@ export function serializeInboundFlow(writer: SerializationWriter, inboundFlow: P
     writer.writeObjectValue<YearTimePeriodDefinition>("year", inboundFlow.year, serializeYearTimePeriodDefinition);
     switch (inboundFlow.odataType) {
         case "#microsoft.graph.industryData.inboundApiFlow":
-            serializeInboundApiFlow(writer, inboundFlow as InboundApiFlow, true);
+            serializeInboundApiFlow(writer, inboundFlow, true);
         break;
         case "#microsoft.graph.industryData.inboundFileFlow":
-            serializeInboundFileFlow(writer, inboundFlow as InboundFileFlow, true);
+            serializeInboundFileFlow(writer, inboundFlow, true);
         break;
     }
 }
@@ -2745,13 +2745,13 @@ export function serializeIndustryDataActivity(writer: SerializationWriter, indus
     writer.writeEnumValue<ReadinessStatus>("readinessStatus", industryDataActivity.readinessStatus);
     switch (industryDataActivity.odataType) {
         case "#microsoft.graph.industryData.inboundApiFlow":
-            serializeInboundApiFlow(writer, industryDataActivity as InboundApiFlow, true);
+            serializeInboundApiFlow(writer, industryDataActivity, true);
         break;
         case "#microsoft.graph.industryData.inboundFileFlow":
-            serializeInboundFileFlow(writer, industryDataActivity as InboundFileFlow, true);
+            serializeInboundFileFlow(writer, industryDataActivity, true);
         break;
         case "#microsoft.graph.industryData.inboundFlow":
-            serializeInboundFlow(writer, industryDataActivity as InboundFlow, true);
+            serializeInboundFlow(writer, industryDataActivity, true);
         break;
     }
 }
@@ -2769,7 +2769,7 @@ export function serializeIndustryDataActivityStatistics(writer: SerializationWri
     writer.writeAdditionalData(industryDataActivityStatistics.additionalData);
     switch (industryDataActivityStatistics.odataType) {
         case "#microsoft.graph.industryData.inboundActivityResults":
-            serializeInboundActivityResults(writer, industryDataActivityStatistics as InboundActivityResults, true);
+            serializeInboundActivityResults(writer, industryDataActivityStatistics, true);
         break;
     }
 }
@@ -2787,16 +2787,16 @@ export function serializeIndustryDataConnector(writer: SerializationWriter, indu
     writer.writeObjectValue<SourceSystemDefinition>("sourceSystem", industryDataConnector.sourceSystem, serializeSourceSystemDefinition);
     switch (industryDataConnector.odataType) {
         case "#microsoft.graph.industryData.apiDataConnector":
-            serializeApiDataConnector(writer, industryDataConnector as ApiDataConnector, true);
+            serializeApiDataConnector(writer, industryDataConnector, true);
         break;
         case "#microsoft.graph.industryData.azureDataLakeConnector":
-            serializeAzureDataLakeConnector(writer, industryDataConnector as AzureDataLakeConnector, true);
+            serializeAzureDataLakeConnector(writer, industryDataConnector, true);
         break;
         case "#microsoft.graph.industryData.fileDataConnector":
-            serializeFileDataConnector(writer, industryDataConnector as FileDataConnector, true);
+            serializeFileDataConnector(writer, industryDataConnector, true);
         break;
         case "#microsoft.graph.industryData.oneRosterApiDataConnector":
-            serializeOneRosterApiDataConnector(writer, industryDataConnector as OneRosterApiDataConnector, true);
+            serializeOneRosterApiDataConnector(writer, industryDataConnector, true);
         break;
     }
 }
@@ -2859,10 +2859,10 @@ export function serializeIndustryDataRunActivity(writer: SerializationWriter, in
     writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataRunActivity.status);
     switch (industryDataRunActivity.odataType) {
         case "#microsoft.graph.industryData.inboundFlowActivity":
-            serializeInboundFlowActivity(writer, industryDataRunActivity as InboundFlowActivity, true);
+            serializeInboundFlowActivity(writer, industryDataRunActivity, true);
         break;
         case "#microsoft.graph.industryData.outboundFlowActivity":
-            serializeOutboundFlowActivity(writer, industryDataRunActivity as OutboundFlowActivity, true);
+            serializeOutboundFlowActivity(writer, industryDataRunActivity, true);
         break;
     }
 }
@@ -2965,10 +2965,10 @@ export function serializeOAuthClientCredential(writer: SerializationWriter, oAut
     writer.writeStringValue("clientSecret", oAuthClientCredential.clientSecret);
     switch (oAuthClientCredential.odataType) {
         case "#microsoft.graph.industryData.oAuth1ClientCredential":
-            serializeOAuth1ClientCredential(writer, oAuthClientCredential as OAuth1ClientCredential, true);
+            serializeOAuth1ClientCredential(writer, oAuthClientCredential, true);
         break;
         case "#microsoft.graph.industryData.oAuth2ClientCredential":
-            serializeOAuth2ClientCredential(writer, oAuthClientCredential as OAuth2ClientCredential, true);
+            serializeOAuth2ClientCredential(writer, oAuthClientCredential, true);
         break;
     }
 }
@@ -3037,7 +3037,7 @@ export function serializePasswordSettings(writer: SerializationWriter, passwordS
     writer.writeAdditionalData(passwordSettings.additionalData);
     switch (passwordSettings.odataType) {
         case "#microsoft.graph.industryData.simplePasswordSettings":
-            serializeSimplePasswordSettings(writer, passwordSettings as SimplePasswordSettings, true);
+            serializeSimplePasswordSettings(writer, passwordSettings, true);
         break;
     }
 }
@@ -3053,16 +3053,16 @@ export function serializeProvisioningFlow(writer: SerializationWriter, provision
     serializeEntity(writer, provisioningFlow, isSerializingDerivedType)
     switch (provisioningFlow.odataType) {
         case "#microsoft.graph.industryData.administrativeUnitProvisioningFlow":
-            serializeAdministrativeUnitProvisioningFlow(writer, provisioningFlow as AdministrativeUnitProvisioningFlow, true);
+            serializeAdministrativeUnitProvisioningFlow(writer, provisioningFlow, true);
         break;
         case "#microsoft.graph.industryData.classGroupProvisioningFlow":
-            serializeClassGroupProvisioningFlow(writer, provisioningFlow as ClassGroupProvisioningFlow, true);
+            serializeClassGroupProvisioningFlow(writer, provisioningFlow, true);
         break;
         case "#microsoft.graph.industryData.securityGroupProvisioningFlow":
-            serializeSecurityGroupProvisioningFlow(writer, provisioningFlow as SecurityGroupProvisioningFlow, true);
+            serializeSecurityGroupProvisioningFlow(writer, provisioningFlow, true);
         break;
         case "#microsoft.graph.industryData.userProvisioningFlow":
-            serializeUserProvisioningFlow(writer, provisioningFlow as UserProvisioningFlow, true);
+            serializeUserProvisioningFlow(writer, provisioningFlow, true);
         break;
     }
 }
@@ -3121,22 +3121,22 @@ export function serializeReferenceValue(writer: SerializationWriter, referenceVa
     writer.writeAdditionalData(referenceValue.additionalData);
     switch (referenceValue.odataType) {
         case "#microsoft.graph.industryData.fileFormatReferenceValue":
-            serializeFileFormatReferenceValue(writer, referenceValue as FileFormatReferenceValue, true);
+            serializeFileFormatReferenceValue(writer, referenceValue, true);
         break;
         case "#microsoft.graph.industryData.identifierTypeReferenceValue":
-            serializeIdentifierTypeReferenceValue(writer, referenceValue as IdentifierTypeReferenceValue, true);
+            serializeIdentifierTypeReferenceValue(writer, referenceValue, true);
         break;
         case "#microsoft.graph.industryData.roleReferenceValue":
-            serializeRoleReferenceValue(writer, referenceValue as RoleReferenceValue, true);
+            serializeRoleReferenceValue(writer, referenceValue, true);
         break;
         case "#microsoft.graph.industryData.sectionRoleReferenceValue":
-            serializeSectionRoleReferenceValue(writer, referenceValue as SectionRoleReferenceValue, true);
+            serializeSectionRoleReferenceValue(writer, referenceValue, true);
         break;
         case "#microsoft.graph.industryData.userMatchTargetReferenceValue":
-            serializeUserMatchTargetReferenceValue(writer, referenceValue as UserMatchTargetReferenceValue, true);
+            serializeUserMatchTargetReferenceValue(writer, referenceValue, true);
         break;
         case "#microsoft.graph.industryData.yearReferenceValue":
-            serializeYearReferenceValue(writer, referenceValue as YearReferenceValue, true);
+            serializeYearReferenceValue(writer, referenceValue, true);
         break;
     }
 }
@@ -3347,7 +3347,7 @@ export function serializeValidateOperation(writer: SerializationWriter, validate
     serializeLongRunningOperation(writer, validateOperation, isSerializingDerivedType)
     switch (validateOperation.odataType) {
         case "#microsoft.graph.industryData.fileValidateOperation":
-            serializeFileValidateOperation(writer, validateOperation as FileValidateOperation, true);
+            serializeFileValidateOperation(writer, validateOperation, true);
         break;
     }
 }

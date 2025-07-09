@@ -1065,16 +1065,16 @@ export function serializeSecurityRequirement(writer: SerializationWriter, securi
     writer.writeDateValue("updatedDateTime", securityRequirement.updatedDateTime);
     switch (securityRequirement.odataType) {
         case "#microsoft.graph.partner.security.adminsMfaEnforcedSecurityRequirement":
-            serializeAdminsMfaEnforcedSecurityRequirement(writer, securityRequirement as AdminsMfaEnforcedSecurityRequirement, true);
+            serializeAdminsMfaEnforcedSecurityRequirement(writer, securityRequirement, true);
         break;
         case "#microsoft.graph.partner.security.customersMfaEnforcedSecurityRequirement":
-            serializeCustomersMfaEnforcedSecurityRequirement(writer, securityRequirement as CustomersMfaEnforcedSecurityRequirement, true);
+            serializeCustomersMfaEnforcedSecurityRequirement(writer, securityRequirement, true);
         break;
         case "#microsoft.graph.partner.security.customersSpendingBudgetSecurityRequirement":
-            serializeCustomersSpendingBudgetSecurityRequirement(writer, securityRequirement as CustomersSpendingBudgetSecurityRequirement, true);
+            serializeCustomersSpendingBudgetSecurityRequirement(writer, securityRequirement, true);
         break;
         case "#microsoft.graph.partner.security.responseTimeSecurityRequirement":
-            serializeResponseTimeSecurityRequirement(writer, securityRequirement as ResponseTimeSecurityRequirement, true);
+            serializeResponseTimeSecurityRequirement(writer, securityRequirement, true);
         break;
     }
 }

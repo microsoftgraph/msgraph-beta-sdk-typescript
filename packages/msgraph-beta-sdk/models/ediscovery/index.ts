@@ -1618,25 +1618,25 @@ export function serializeCaseOperation(writer: SerializationWriter, caseOperatio
     writer.writeEnumValue<CaseOperationStatus>("status", caseOperation.status);
     switch (caseOperation.odataType) {
         case "#microsoft.graph.ediscovery.addToReviewSetOperation":
-            serializeAddToReviewSetOperation(writer, caseOperation as AddToReviewSetOperation, true);
+            serializeAddToReviewSetOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.ediscovery.caseExportOperation":
-            serializeCaseExportOperation(writer, caseOperation as CaseExportOperation, true);
+            serializeCaseExportOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.ediscovery.caseHoldOperation":
-            serializeCaseHoldOperation(writer, caseOperation as CaseHoldOperation, true);
+            serializeCaseHoldOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.ediscovery.caseIndexOperation":
-            serializeCaseIndexOperation(writer, caseOperation as CaseIndexOperation, true);
+            serializeCaseIndexOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.ediscovery.estimateStatisticsOperation":
-            serializeEstimateStatisticsOperation(writer, caseOperation as EstimateStatisticsOperation, true);
+            serializeEstimateStatisticsOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.ediscovery.purgeDataOperation":
-            serializePurgeDataOperation(writer, caseOperation as PurgeDataOperation, true);
+            serializePurgeDataOperation(writer, caseOperation, true);
         break;
         case "#microsoft.graph.ediscovery.tagOperation":
-            serializeTagOperation(writer, caseOperation as TagOperation, true);
+            serializeTagOperation(writer, caseOperation, true);
         break;
     }
 }
@@ -1711,13 +1711,13 @@ export function serializeDataSource(writer: SerializationWriter, dataSource: Par
     writer.writeEnumValue<DataSourceHoldStatus>("holdStatus", dataSource.holdStatus);
     switch (dataSource.odataType) {
         case "#microsoft.graph.ediscovery.siteSource":
-            serializeSiteSource(writer, dataSource as SiteSource, true);
+            serializeSiteSource(writer, dataSource, true);
         break;
         case "#microsoft.graph.ediscovery.unifiedGroupSource":
-            serializeUnifiedGroupSource(writer, dataSource as UnifiedGroupSource, true);
+            serializeUnifiedGroupSource(writer, dataSource, true);
         break;
         case "#microsoft.graph.ediscovery.userSource":
-            serializeUserSource(writer, dataSource as UserSource, true);
+            serializeUserSource(writer, dataSource, true);
         break;
     }
 }
@@ -1752,10 +1752,10 @@ export function serializeDataSourceContainer(writer: SerializationWriter, dataSo
     writer.writeEnumValue<DataSourceContainerStatus>("status", dataSourceContainer.status);
     switch (dataSourceContainer.odataType) {
         case "#microsoft.graph.ediscovery.custodian":
-            serializeCustodian(writer, dataSourceContainer as Custodian, true);
+            serializeCustodian(writer, dataSourceContainer, true);
         break;
         case "#microsoft.graph.ediscovery.noncustodialDataSource":
-            serializeNoncustodialDataSource(writer, dataSourceContainer as NoncustodialDataSource, true);
+            serializeNoncustodialDataSource(writer, dataSourceContainer, true);
         break;
     }
 }

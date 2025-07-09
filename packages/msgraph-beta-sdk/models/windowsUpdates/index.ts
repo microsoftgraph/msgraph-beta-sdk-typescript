@@ -2763,16 +2763,16 @@ export function serializeCatalogEntry(writer: SerializationWriter, catalogEntry:
     writer.writeDateValue("releaseDateTime", catalogEntry.releaseDateTime);
     switch (catalogEntry.odataType) {
         case "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry":
-            serializeDriverUpdateCatalogEntry(writer, catalogEntry as DriverUpdateCatalogEntry, true);
+            serializeDriverUpdateCatalogEntry(writer, catalogEntry, true);
         break;
         case "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry":
-            serializeFeatureUpdateCatalogEntry(writer, catalogEntry as FeatureUpdateCatalogEntry, true);
+            serializeFeatureUpdateCatalogEntry(writer, catalogEntry, true);
         break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry":
-            serializeQualityUpdateCatalogEntry(writer, catalogEntry as QualityUpdateCatalogEntry, true);
+            serializeQualityUpdateCatalogEntry(writer, catalogEntry, true);
         break;
         case "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry":
-            serializeSoftwareUpdateCatalogEntry(writer, catalogEntry as SoftwareUpdateCatalogEntry, true);
+            serializeSoftwareUpdateCatalogEntry(writer, catalogEntry, true);
         break;
     }
 }
@@ -2804,7 +2804,7 @@ export function serializeComplianceChange(writer: SerializationWriter, complianc
     writer.writeObjectValue<UpdatePolicy>("updatePolicy", complianceChange.updatePolicy, serializeUpdatePolicy);
     switch (complianceChange.odataType) {
         case "#microsoft.graph.windowsUpdates.contentApproval":
-            serializeContentApproval(writer, complianceChange as ContentApproval, true);
+            serializeContentApproval(writer, complianceChange, true);
         break;
     }
 }
@@ -2836,7 +2836,7 @@ export function serializeComplianceChangeRule(writer: SerializationWriter, compl
     writer.writeAdditionalData(complianceChangeRule.additionalData);
     switch (complianceChangeRule.odataType) {
         case "#microsoft.graph.windowsUpdates.contentApprovalRule":
-            serializeContentApprovalRule(writer, complianceChangeRule as ContentApprovalRule, true);
+            serializeContentApprovalRule(writer, complianceChangeRule, true);
         break;
     }
 }
@@ -2894,19 +2894,19 @@ export function serializeContentFilter(writer: SerializationWriter, contentFilte
     writer.writeAdditionalData(contentFilter.additionalData);
     switch (contentFilter.odataType) {
         case "#microsoft.graph.windowsUpdates.driverUpdateFilter":
-            serializeDriverUpdateFilter(writer, contentFilter as DriverUpdateFilter, true);
+            serializeDriverUpdateFilter(writer, contentFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
-            serializeQualityUpdateFilter(writer, contentFilter as QualityUpdateFilter, true);
+            serializeQualityUpdateFilter(writer, contentFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
-            serializeRemediationUpdateFilter(writer, contentFilter as RemediationUpdateFilter, true);
+            serializeRemediationUpdateFilter(writer, contentFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.softwareUpdateFilter":
-            serializeSoftwareUpdateFilter(writer, contentFilter as SoftwareUpdateFilter, true);
+            serializeSoftwareUpdateFilter(writer, contentFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
-            serializeWindowsUpdateFilter(writer, contentFilter as WindowsUpdateFilter, true);
+            serializeWindowsUpdateFilter(writer, contentFilter, true);
         break;
     }
 }
@@ -2949,7 +2949,7 @@ export function serializeDeployableContent(writer: SerializationWriter, deployab
     writer.writeAdditionalData(deployableContent.additionalData);
     switch (deployableContent.odataType) {
         case "#microsoft.graph.windowsUpdates.catalogContent":
-            serializeCatalogContent(writer, deployableContent as CatalogContent, true);
+            serializeCatalogContent(writer, deployableContent, true);
         break;
     }
 }
@@ -3165,13 +3165,13 @@ export function serializeGradualRolloutSettings(writer: SerializationWriter, gra
     writer.writeAdditionalData(gradualRolloutSettings.additionalData);
     switch (gradualRolloutSettings.odataType) {
         case "#microsoft.graph.windowsUpdates.dateDrivenRolloutSettings":
-            serializeDateDrivenRolloutSettings(writer, gradualRolloutSettings as DateDrivenRolloutSettings, true);
+            serializeDateDrivenRolloutSettings(writer, gradualRolloutSettings, true);
         break;
         case "#microsoft.graph.windowsUpdates.durationDrivenRolloutSettings":
-            serializeDurationDrivenRolloutSettings(writer, gradualRolloutSettings as DurationDrivenRolloutSettings, true);
+            serializeDurationDrivenRolloutSettings(writer, gradualRolloutSettings, true);
         break;
         case "#microsoft.graph.windowsUpdates.rateDrivenRolloutSettings":
-            serializeRateDrivenRolloutSettings(writer, gradualRolloutSettings as RateDrivenRolloutSettings, true);
+            serializeRateDrivenRolloutSettings(writer, gradualRolloutSettings, true);
         break;
     }
 }
@@ -3434,7 +3434,7 @@ export function serializeResourceConnection(writer: SerializationWriter, resourc
     writer.writeEnumValue<ResourceConnectionState>("state", resourceConnection.state);
     switch (resourceConnection.odataType) {
         case "#microsoft.graph.windowsUpdates.operationalInsightsConnection":
-            serializeOperationalInsightsConnection(writer, resourceConnection as OperationalInsightsConnection, true);
+            serializeOperationalInsightsConnection(writer, resourceConnection, true);
         break;
     }
 }
@@ -3517,13 +3517,13 @@ export function serializeSoftwareUpdateCatalogEntry(writer: SerializationWriter,
     serializeCatalogEntry(writer, softwareUpdateCatalogEntry, isSerializingDerivedType)
     switch (softwareUpdateCatalogEntry.odataType) {
         case "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry":
-            serializeDriverUpdateCatalogEntry(writer, softwareUpdateCatalogEntry as DriverUpdateCatalogEntry, true);
+            serializeDriverUpdateCatalogEntry(writer, softwareUpdateCatalogEntry, true);
         break;
         case "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry":
-            serializeFeatureUpdateCatalogEntry(writer, softwareUpdateCatalogEntry as FeatureUpdateCatalogEntry, true);
+            serializeFeatureUpdateCatalogEntry(writer, softwareUpdateCatalogEntry, true);
         break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry":
-            serializeQualityUpdateCatalogEntry(writer, softwareUpdateCatalogEntry as QualityUpdateCatalogEntry, true);
+            serializeQualityUpdateCatalogEntry(writer, softwareUpdateCatalogEntry, true);
         break;
     }
 }
@@ -3539,16 +3539,16 @@ export function serializeSoftwareUpdateFilter(writer: SerializationWriter, softw
     serializeContentFilter(writer, softwareUpdateFilter, isSerializingDerivedType)
     switch (softwareUpdateFilter.odataType) {
         case "#microsoft.graph.windowsUpdates.driverUpdateFilter":
-            serializeDriverUpdateFilter(writer, softwareUpdateFilter as DriverUpdateFilter, true);
+            serializeDriverUpdateFilter(writer, softwareUpdateFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
-            serializeQualityUpdateFilter(writer, softwareUpdateFilter as QualityUpdateFilter, true);
+            serializeQualityUpdateFilter(writer, softwareUpdateFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
-            serializeRemediationUpdateFilter(writer, softwareUpdateFilter as RemediationUpdateFilter, true);
+            serializeRemediationUpdateFilter(writer, softwareUpdateFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
-            serializeWindowsUpdateFilter(writer, softwareUpdateFilter as WindowsUpdateFilter, true);
+            serializeWindowsUpdateFilter(writer, softwareUpdateFilter, true);
         break;
     }
 }
@@ -3564,10 +3564,10 @@ export function serializeUpdatableAsset(writer: SerializationWriter, updatableAs
     serializeEntity(writer, updatableAsset, isSerializingDerivedType)
     switch (updatableAsset.odataType) {
         case "#microsoft.graph.windowsUpdates.azureADDevice":
-            serializeAzureADDevice(writer, updatableAsset as AzureADDevice, true);
+            serializeAzureADDevice(writer, updatableAsset, true);
         break;
         case "#microsoft.graph.windowsUpdates.updatableAssetGroup":
-            serializeUpdatableAssetGroup(writer, updatableAsset as UpdatableAssetGroup, true);
+            serializeUpdatableAssetGroup(writer, updatableAsset, true);
         break;
     }
 }
@@ -3596,7 +3596,7 @@ export function serializeUpdatableAssetError(writer: SerializationWriter, updata
     writer.writeAdditionalData(updatableAssetError.additionalData);
     switch (updatableAssetError.odataType) {
         case "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError":
-            serializeAzureADDeviceRegistrationError(writer, updatableAssetError as AzureADDeviceRegistrationError, true);
+            serializeAzureADDeviceRegistrationError(writer, updatableAssetError, true);
         break;
     }
 }
@@ -3696,13 +3696,13 @@ export function serializeWindowsUpdateFilter(writer: SerializationWriter, window
     serializeSoftwareUpdateFilter(writer, windowsUpdateFilter, isSerializingDerivedType)
     switch (windowsUpdateFilter.odataType) {
         case "#microsoft.graph.windowsUpdates.driverUpdateFilter":
-            serializeDriverUpdateFilter(writer, windowsUpdateFilter as DriverUpdateFilter, true);
+            serializeDriverUpdateFilter(writer, windowsUpdateFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
-            serializeQualityUpdateFilter(writer, windowsUpdateFilter as QualityUpdateFilter, true);
+            serializeQualityUpdateFilter(writer, windowsUpdateFilter, true);
         break;
         case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
-            serializeRemediationUpdateFilter(writer, windowsUpdateFilter as RemediationUpdateFilter, true);
+            serializeRemediationUpdateFilter(writer, windowsUpdateFilter, true);
         break;
     }
 }

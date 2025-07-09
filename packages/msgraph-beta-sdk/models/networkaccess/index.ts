@@ -4824,7 +4824,7 @@ export function serializeAssociation(writer: SerializationWriter, association: P
     writer.writeAdditionalData(association.additionalData);
     switch (association.odataType) {
         case "#microsoft.graph.networkaccess.associatedBranch":
-            serializeAssociatedBranch(writer, association as AssociatedBranch, true);
+            serializeAssociatedBranch(writer, association, true);
         break;
     }
 }
@@ -5338,10 +5338,10 @@ export function serializeFilteringRule(writer: SerializationWriter, filteringRul
     writer.writeEnumValue<NetworkDestinationType>("ruleType", filteringRule.ruleType);
     switch (filteringRule.odataType) {
         case "#microsoft.graph.networkaccess.fqdnFilteringRule":
-            serializeFqdnFilteringRule(writer, filteringRule as FqdnFilteringRule, true);
+            serializeFqdnFilteringRule(writer, filteringRule, true);
         break;
         case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
-            serializeWebCategoryFilteringRule(writer, filteringRule as WebCategoryFilteringRule, true);
+            serializeWebCategoryFilteringRule(writer, filteringRule, true);
         break;
     }
 }
@@ -5434,13 +5434,13 @@ export function serializeForwardingRule(writer: SerializationWriter, forwardingR
     writer.writeEnumValue<NetworkDestinationType>("ruleType", forwardingRule.ruleType);
     switch (forwardingRule.odataType) {
         case "#microsoft.graph.networkaccess.internetAccessForwardingRule":
-            serializeInternetAccessForwardingRule(writer, forwardingRule as InternetAccessForwardingRule, true);
+            serializeInternetAccessForwardingRule(writer, forwardingRule, true);
         break;
         case "#microsoft.graph.networkaccess.m365ForwardingRule":
-            serializeM365ForwardingRule(writer, forwardingRule as M365ForwardingRule, true);
+            serializeM365ForwardingRule(writer, forwardingRule, true);
         break;
         case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
-            serializePrivateAccessForwardingRule(writer, forwardingRule as PrivateAccessForwardingRule, true);
+            serializePrivateAccessForwardingRule(writer, forwardingRule, true);
         break;
     }
 }
@@ -5699,13 +5699,13 @@ export function serializePolicy(writer: SerializationWriter, policy: Partial<Pol
     writer.writeStringValue("version", policy.version);
     switch (policy.odataType) {
         case "#microsoft.graph.networkaccess.filteringPolicy":
-            serializeFilteringPolicy(writer, policy as FilteringPolicy, true);
+            serializeFilteringPolicy(writer, policy, true);
         break;
         case "#microsoft.graph.networkaccess.forwardingPolicy":
-            serializeForwardingPolicy(writer, policy as ForwardingPolicy, true);
+            serializeForwardingPolicy(writer, policy, true);
         break;
         case "#microsoft.graph.networkaccess.threatIntelligencePolicy":
-            serializeThreatIntelligencePolicy(writer, policy as ThreatIntelligencePolicy, true);
+            serializeThreatIntelligencePolicy(writer, policy, true);
         break;
     }
 }
@@ -5724,13 +5724,13 @@ export function serializePolicyLink(writer: SerializationWriter, policyLink: Par
     writer.writeStringValue("version", policyLink.version);
     switch (policyLink.odataType) {
         case "#microsoft.graph.networkaccess.filteringPolicyLink":
-            serializeFilteringPolicyLink(writer, policyLink as FilteringPolicyLink, true);
+            serializeFilteringPolicyLink(writer, policyLink, true);
         break;
         case "#microsoft.graph.networkaccess.forwardingPolicyLink":
-            serializeForwardingPolicyLink(writer, policyLink as ForwardingPolicyLink, true);
+            serializeForwardingPolicyLink(writer, policyLink, true);
         break;
         case "#microsoft.graph.networkaccess.threatIntelligencePolicyLink":
-            serializeThreatIntelligencePolicyLink(writer, policyLink as ThreatIntelligencePolicyLink, true);
+            serializeThreatIntelligencePolicyLink(writer, policyLink, true);
         break;
     }
 }
@@ -5759,28 +5759,28 @@ export function serializePolicyRule(writer: SerializationWriter, policyRule: Par
     writer.writeStringValue("name", policyRule.name);
     switch (policyRule.odataType) {
         case "#microsoft.graph.networkaccess.filteringRule":
-            serializeFilteringRule(writer, policyRule as FilteringRule, true);
+            serializeFilteringRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.forwardingRule":
-            serializeForwardingRule(writer, policyRule as ForwardingRule, true);
+            serializeForwardingRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.fqdnFilteringRule":
-            serializeFqdnFilteringRule(writer, policyRule as FqdnFilteringRule, true);
+            serializeFqdnFilteringRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.internetAccessForwardingRule":
-            serializeInternetAccessForwardingRule(writer, policyRule as InternetAccessForwardingRule, true);
+            serializeInternetAccessForwardingRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.m365ForwardingRule":
-            serializeM365ForwardingRule(writer, policyRule as M365ForwardingRule, true);
+            serializeM365ForwardingRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
-            serializePrivateAccessForwardingRule(writer, policyRule as PrivateAccessForwardingRule, true);
+            serializePrivateAccessForwardingRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.threatIntelligenceRule":
-            serializeThreatIntelligenceRule(writer, policyRule as ThreatIntelligenceRule, true);
+            serializeThreatIntelligenceRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
-            serializeWebCategoryFilteringRule(writer, policyRule as WebCategoryFilteringRule, true);
+            serializeWebCategoryFilteringRule(writer, policyRule, true);
         break;
     }
 }
@@ -5859,10 +5859,10 @@ export function serializeProfile(writer: SerializationWriter, profile: Partial<P
     writer.writeStringValue("version", profile.version);
     switch (profile.odataType) {
         case "#microsoft.graph.networkaccess.filteringProfile":
-            serializeFilteringProfile(writer, profile as FilteringProfile, true);
+            serializeFilteringProfile(writer, profile, true);
         break;
         case "#microsoft.graph.networkaccess.forwardingProfile":
-            serializeForwardingProfile(writer, profile as ForwardingProfile, true);
+            serializeForwardingProfile(writer, profile, true);
         break;
     }
 }
@@ -5973,43 +5973,43 @@ export function serializeRelatedResource(writer: SerializationWriter, relatedRes
     writer.writeAdditionalData(relatedResource.additionalData);
     switch (relatedResource.odataType) {
         case "#microsoft.graph.networkaccess.relatedDestination":
-            serializeRelatedDestination(writer, relatedResource as RelatedDestination, true);
+            serializeRelatedDestination(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedDevice":
-            serializeRelatedDevice(writer, relatedResource as RelatedDevice, true);
+            serializeRelatedDevice(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedFile":
-            serializeRelatedFile(writer, relatedResource as RelatedFile, true);
+            serializeRelatedFile(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedFileHash":
-            serializeRelatedFileHash(writer, relatedResource as RelatedFileHash, true);
+            serializeRelatedFileHash(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedMalware":
-            serializeRelatedMalware(writer, relatedResource as RelatedMalware, true);
+            serializeRelatedMalware(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedRemoteNetwork":
-            serializeRelatedRemoteNetwork(writer, relatedResource as RelatedRemoteNetwork, true);
+            serializeRelatedRemoteNetwork(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedTenant":
-            serializeRelatedTenant(writer, relatedResource as RelatedTenant, true);
+            serializeRelatedTenant(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedThreatIntelligence":
-            serializeRelatedThreatIntelligence(writer, relatedResource as RelatedThreatIntelligence, true);
+            serializeRelatedThreatIntelligence(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedToken":
-            serializeRelatedToken(writer, relatedResource as RelatedToken, true);
+            serializeRelatedToken(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedTransaction":
-            serializeRelatedTransaction(writer, relatedResource as RelatedTransaction, true);
+            serializeRelatedTransaction(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedUrl":
-            serializeRelatedUrl(writer, relatedResource as RelatedUrl, true);
+            serializeRelatedUrl(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedUser":
-            serializeRelatedUser(writer, relatedResource as RelatedUser, true);
+            serializeRelatedUser(writer, relatedResource, true);
         break;
         case "#microsoft.graph.networkaccess.relatedWebCategory":
-            serializeRelatedWebCategory(writer, relatedResource as RelatedWebCategory, true);
+            serializeRelatedWebCategory(writer, relatedResource, true);
         break;
     }
 }
@@ -6199,22 +6199,22 @@ export function serializeRuleDestination(writer: SerializationWriter, ruleDestin
     writer.writeAdditionalData(ruleDestination.additionalData);
     switch (ruleDestination.odataType) {
         case "#microsoft.graph.networkaccess.fqdn":
-            serializeFqdn(writer, ruleDestination as Fqdn, true);
+            serializeFqdn(writer, ruleDestination, true);
         break;
         case "#microsoft.graph.networkaccess.ipAddress":
-            serializeIpAddress(writer, ruleDestination as IpAddress, true);
+            serializeIpAddress(writer, ruleDestination, true);
         break;
         case "#microsoft.graph.networkaccess.ipRange":
-            serializeIpRange(writer, ruleDestination as IpRange, true);
+            serializeIpRange(writer, ruleDestination, true);
         break;
         case "#microsoft.graph.networkaccess.ipSubnet":
-            serializeIpSubnet(writer, ruleDestination as IpSubnet, true);
+            serializeIpSubnet(writer, ruleDestination, true);
         break;
         case "#microsoft.graph.networkaccess.url":
-            serializeUrl(writer, ruleDestination as Url, true);
+            serializeUrl(writer, ruleDestination, true);
         break;
         case "#microsoft.graph.networkaccess.webCategory":
-            serializeWebCategory(writer, ruleDestination as WebCategory, true);
+            serializeWebCategory(writer, ruleDestination, true);
         break;
     }
 }
@@ -6275,7 +6275,7 @@ export function serializeThreatIntelligenceDestination(writer: SerializationWrit
     writer.writeAdditionalData(threatIntelligenceDestination.additionalData);
     switch (threatIntelligenceDestination.odataType) {
         case "#microsoft.graph.networkaccess.threatIntelligenceFqdnDestination":
-            serializeThreatIntelligenceFqdnDestination(writer, threatIntelligenceDestination as ThreatIntelligenceFqdnDestination, true);
+            serializeThreatIntelligenceFqdnDestination(writer, threatIntelligenceDestination, true);
         break;
     }
 }
@@ -6413,10 +6413,10 @@ export function serializeTunnelConfiguration(writer: SerializationWriter, tunnel
     writer.writeAdditionalData(tunnelConfiguration.additionalData);
     switch (tunnelConfiguration.odataType) {
         case "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Custom":
-            serializeTunnelConfigurationIKEv2Custom(writer, tunnelConfiguration as TunnelConfigurationIKEv2Custom, true);
+            serializeTunnelConfigurationIKEv2Custom(writer, tunnelConfiguration, true);
         break;
         case "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default":
-            serializeTunnelConfigurationIKEv2Default(writer, tunnelConfiguration as TunnelConfigurationIKEv2Default, true);
+            serializeTunnelConfigurationIKEv2Default(writer, tunnelConfiguration, true);
         break;
     }
 }

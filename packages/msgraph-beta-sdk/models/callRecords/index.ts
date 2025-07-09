@@ -1853,13 +1853,13 @@ export function serializeCallLogRow(writer: SerializationWriter, callLogRow: Par
     writer.writeAdditionalData(callLogRow.additionalData);
     switch (callLogRow.odataType) {
         case "#microsoft.graph.callRecords.directRoutingLogRow":
-            serializeDirectRoutingLogRow(writer, callLogRow as DirectRoutingLogRow, true);
+            serializeDirectRoutingLogRow(writer, callLogRow, true);
         break;
         case "#microsoft.graph.callRecords.pstnCallLogRow":
-            serializePstnCallLogRow(writer, callLogRow as PstnCallLogRow, true);
+            serializePstnCallLogRow(writer, callLogRow, true);
         break;
         case "#microsoft.graph.callRecords.smsLogRow":
-            serializeSmsLogRow(writer, callLogRow as SmsLogRow, true);
+            serializeSmsLogRow(writer, callLogRow, true);
         break;
     }
 }
@@ -1991,10 +1991,10 @@ export function serializeEndpoint(writer: SerializationWriter, endpoint: Partial
     writer.writeAdditionalData(endpoint.additionalData);
     switch (endpoint.odataType) {
         case "#microsoft.graph.callRecords.participantEndpoint":
-            serializeParticipantEndpoint(writer, endpoint as ParticipantEndpoint, true);
+            serializeParticipantEndpoint(writer, endpoint, true);
         break;
         case "#microsoft.graph.callRecords.serviceEndpoint":
-            serializeServiceEndpoint(writer, endpoint as ServiceEndpoint, true);
+            serializeServiceEndpoint(writer, endpoint, true);
         break;
     }
 }
@@ -2158,10 +2158,10 @@ export function serializeParticipantBase(writer: SerializationWriter, participan
     writer.writeObjectValue<CommunicationsIdentitySet>("identity", participantBase.identity, serializeCommunicationsIdentitySet);
     switch (participantBase.odataType) {
         case "#microsoft.graph.callRecords.organizer":
-            serializeOrganizer(writer, participantBase as Organizer, true);
+            serializeOrganizer(writer, participantBase, true);
         break;
         case "#microsoft.graph.callRecords.participant":
-            serializeParticipant(writer, participantBase as Participant, true);
+            serializeParticipant(writer, participantBase, true);
         break;
     }
 }
@@ -2408,10 +2408,10 @@ export function serializeUserAgent(writer: SerializationWriter, userAgent: Parti
     writer.writeAdditionalData(userAgent.additionalData);
     switch (userAgent.odataType) {
         case "#microsoft.graph.callRecords.clientUserAgent":
-            serializeClientUserAgent(writer, userAgent as ClientUserAgent, true);
+            serializeClientUserAgent(writer, userAgent, true);
         break;
         case "#microsoft.graph.callRecords.serviceUserAgent":
-            serializeServiceUserAgent(writer, userAgent as ServiceUserAgent, true);
+            serializeServiceUserAgent(writer, userAgent, true);
         break;
     }
 }
