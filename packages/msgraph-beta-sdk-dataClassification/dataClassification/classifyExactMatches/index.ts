@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ClassifyExactMatchesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -65,6 +61,7 @@ export function createClassifyExactMatchesPostRequestBodyFromDiscriminatorValue(
 }
 /**
  * The deserialization information for the current model
+ * @param ClassifyExactMatchesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,17 +76,18 @@ export function deserializeIntoClassifyExactMatchesPostRequestBody(classifyExact
 }
 /**
  * Serializes information the current object
+ * @param ClassifyExactMatchesPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeClassifyExactMatchesPostRequestBody(writer: SerializationWriter, classifyExactMatchesPostRequestBody: Partial<ClassifyExactMatchesPostRequestBody> | undefined | null = {}) : void {
-    if (classifyExactMatchesPostRequestBody) {
-        writer.writeCollectionOfObjectValues<ContentClassification>("contentClassifications", classifyExactMatchesPostRequestBody.contentClassifications, serializeContentClassification);
-        writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyExactMatchesPostRequestBody.sensitiveTypeIds);
-        writer.writeStringValue("text", classifyExactMatchesPostRequestBody.text);
-        writer.writeStringValue("timeoutInMs", classifyExactMatchesPostRequestBody.timeoutInMs);
-        writer.writeAdditionalData(classifyExactMatchesPostRequestBody.additionalData);
-    }
+export function serializeClassifyExactMatchesPostRequestBody(writer: SerializationWriter, classifyExactMatchesPostRequestBody: Partial<ClassifyExactMatchesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!classifyExactMatchesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ContentClassification>("contentClassifications", classifyExactMatchesPostRequestBody.contentClassifications, serializeContentClassification);
+    writer.writeCollectionOfPrimitiveValues<string>("sensitiveTypeIds", classifyExactMatchesPostRequestBody.sensitiveTypeIds);
+    writer.writeStringValue("text", classifyExactMatchesPostRequestBody.text);
+    writer.writeStringValue("timeoutInMs", classifyExactMatchesPostRequestBody.timeoutInMs);
+    writer.writeAdditionalData(classifyExactMatchesPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

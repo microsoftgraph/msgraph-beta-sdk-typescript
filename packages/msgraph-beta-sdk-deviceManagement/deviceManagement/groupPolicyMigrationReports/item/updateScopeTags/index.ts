@@ -26,6 +26,7 @@ export function createUpdateScopeTagsPostResponseFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateScopeTagsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -37,6 +38,7 @@ export function deserializeIntoUpdateScopeTagsPostRequestBody(updateScopeTagsPos
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateScopeTagsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -48,31 +50,29 @@ export function deserializeIntoUpdateScopeTagsPostResponse(updateScopeTagsPostRe
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateScopeTagsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateScopeTagsPostRequestBody(writer: SerializationWriter, updateScopeTagsPostRequestBody: Partial<UpdateScopeTagsPostRequestBody> | undefined | null = {}) : void {
-    if (updateScopeTagsPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", updateScopeTagsPostRequestBody.roleScopeTagIds);
-        writer.writeAdditionalData(updateScopeTagsPostRequestBody.additionalData);
-    }
+export function serializeUpdateScopeTagsPostRequestBody(writer: SerializationWriter, updateScopeTagsPostRequestBody: Partial<UpdateScopeTagsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateScopeTagsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("roleScopeTagIds", updateScopeTagsPostRequestBody.roleScopeTagIds);
+    writer.writeAdditionalData(updateScopeTagsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateScopeTagsPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateScopeTagsPostResponse(writer: SerializationWriter, updateScopeTagsPostResponse: Partial<UpdateScopeTagsPostResponse> | undefined | null = {}) : void {
-    if (updateScopeTagsPostResponse) {
-        writer.writeStringValue("value", updateScopeTagsPostResponse.value);
-        writer.writeAdditionalData(updateScopeTagsPostResponse.additionalData);
-    }
+export function serializeUpdateScopeTagsPostResponse(writer: SerializationWriter, updateScopeTagsPostResponse: Partial<UpdateScopeTagsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateScopeTagsPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", updateScopeTagsPostResponse.value);
+    writer.writeAdditionalData(updateScopeTagsPostResponse.additionalData);
 }
 export interface UpdateScopeTagsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -83,10 +83,6 @@ export interface UpdateScopeTagsPostRequestBody extends AdditionalDataHolder, Ba
     roleScopeTagIds?: string[] | null;
 }
 export interface UpdateScopeTagsPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

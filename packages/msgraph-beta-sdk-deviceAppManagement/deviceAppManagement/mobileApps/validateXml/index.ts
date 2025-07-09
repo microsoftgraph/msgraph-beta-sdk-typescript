@@ -26,6 +26,7 @@ export function createValidateXmlPostResponseFromDiscriminatorValue(parseNode: P
 }
 /**
  * The deserialization information for the current model
+ * @param ValidateXmlPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -37,6 +38,7 @@ export function deserializeIntoValidateXmlPostRequestBody(validateXmlPostRequest
 }
 /**
  * The deserialization information for the current model
+ * @param ValidateXmlPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -48,31 +50,29 @@ export function deserializeIntoValidateXmlPostResponse(validateXmlPostResponse: 
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidateXmlPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeValidateXmlPostRequestBody(writer: SerializationWriter, validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined | null = {}) : void {
-    if (validateXmlPostRequestBody) {
-        writer.writeByteArrayValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
-        writer.writeAdditionalData(validateXmlPostRequestBody.additionalData);
-    }
+export function serializeValidateXmlPostRequestBody(writer: SerializationWriter, validateXmlPostRequestBody: Partial<ValidateXmlPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validateXmlPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeByteArrayValue("officeConfigurationXml", validateXmlPostRequestBody.officeConfigurationXml);
+    writer.writeAdditionalData(validateXmlPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidateXmlPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeValidateXmlPostResponse(writer: SerializationWriter, validateXmlPostResponse: Partial<ValidateXmlPostResponse> | undefined | null = {}) : void {
-    if (validateXmlPostResponse) {
-        writer.writeStringValue("value", validateXmlPostResponse.value);
-        writer.writeAdditionalData(validateXmlPostResponse.additionalData);
-    }
+export function serializeValidateXmlPostResponse(writer: SerializationWriter, validateXmlPostResponse: Partial<ValidateXmlPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validateXmlPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", validateXmlPostResponse.value);
+    writer.writeAdditionalData(validateXmlPostResponse.additionalData);
 }
 export interface ValidateXmlPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -83,10 +83,6 @@ export interface ValidateXmlPostRequestBody extends AdditionalDataHolder, Backed
     officeConfigurationXml?: ArrayBuffer | null;
 }
 export interface ValidateXmlPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -19,6 +19,7 @@ export function createGetEffectivePermissionsGetResponseFromDiscriminatorValue(p
 }
 /**
  * The deserialization information for the current model
+ * @param GetEffectivePermissionsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetEffectivePermissionsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetEffectivePermissionsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetEffectivePermissionsGetResponse(writer: SerializationWriter, getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined | null = {}) : void {
-    if (getEffectivePermissionsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getEffectivePermissionsGetResponse)
-        writer.writeCollectionOfPrimitiveValues<string>("value", getEffectivePermissionsGetResponse.value);
-    }
+export function serializeGetEffectivePermissionsGetResponse(writer: SerializationWriter, getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getEffectivePermissionsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getEffectivePermissionsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("value", getEffectivePermissionsGetResponse.value);
 }
 /**
  * Uri template for the request builder.

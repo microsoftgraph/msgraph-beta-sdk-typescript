@@ -27,7 +27,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      byDirectorySettingId(directorySettingId: string) : DirectorySettingItemRequestBuilder;
     /**
-     * Retrieve a list of tenant-level or group-specific group settings objects.
+     * Retrieve a list of tenant-level or group-specific directory settings objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectorySettingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      get(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : Promise<DirectorySettingCollectionResponse | undefined>;
     /**
-     * Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+     * Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectorySetting>}
@@ -44,13 +44,13 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      post(body: DirectorySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectorySetting | undefined>;
     /**
-     * Retrieve a list of tenant-level or group-specific group settings objects.
+     * Retrieve a list of tenant-level or group-specific directory settings objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+     * Create a new directory setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      toPostRequestInformation(body: DirectorySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of tenant-level or group-specific group settings objects.
+ * Retrieve a list of tenant-level or group-specific directory settings objects.
  */
 export interface SettingsRequestBuilderGetQueryParameters {
     /**

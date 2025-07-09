@@ -9,10 +9,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Pa
 export type AccountType = (typeof AccountTypeObject)[keyof typeof AccountTypeObject];
 export interface AssignedTelephoneNumber extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The assignmentCategory property
      */
     assignmentCategory?: AssignmentCategory | null;
@@ -96,6 +92,7 @@ export function createTeamsUserConfigurationFromDiscriminatorValue(parseNode: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param AssignedTelephoneNumber The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -109,6 +106,7 @@ export function deserializeIntoAssignedTelephoneNumber(assignedTelephoneNumber: 
 }
 /**
  * The deserialization information for the current model
+ * @param EffectivePolicyAssignment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -122,6 +120,7 @@ export function deserializeIntoEffectivePolicyAssignment(effectivePolicyAssignme
 }
 /**
  * The deserialization information for the current model
+ * @param PolicyAssignment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -137,6 +136,7 @@ export function deserializeIntoPolicyAssignment(policyAssignment: Partial<Policy
 }
 /**
  * The deserialization information for the current model
+ * @param TeamsAdminRoot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -149,6 +149,7 @@ export function deserializeIntoTeamsAdminRoot(teamsAdminRoot: Partial<TeamsAdmin
 }
 /**
  * The deserialization information for the current model
+ * @param TeamsPolicyAssignment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -159,6 +160,7 @@ export function deserializeIntoTeamsPolicyAssignment(teamsPolicyAssignment: Part
 }
 /**
  * The deserialization information for the current model
+ * @param TeamsUserConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -179,6 +181,7 @@ export function deserializeIntoTeamsUserConfiguration(teamsUserConfiguration: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param TeamsUserConfigurationCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -189,10 +192,6 @@ export function deserializeIntoTeamsUserConfigurationCollectionResponse(teamsUse
     }
 }
 export interface EffectivePolicyAssignment extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -211,10 +210,6 @@ export interface EffectivePolicyAssignment extends AdditionalDataHolder, BackedM
     policyType?: string | null;
 }
 export interface PolicyAssignment extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The assignmentType property
      */
@@ -242,97 +237,104 @@ export interface PolicyAssignment extends AdditionalDataHolder, BackedModel, Par
 }
 /**
  * Serializes information the current object
+ * @param AssignedTelephoneNumber The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAssignedTelephoneNumber(writer: SerializationWriter, assignedTelephoneNumber: Partial<AssignedTelephoneNumber> | undefined | null = {}) : void {
-    if (assignedTelephoneNumber) {
-        writer.writeEnumValue<AssignmentCategory>("assignmentCategory", assignedTelephoneNumber.assignmentCategory);
-        writer.writeStringValue("@odata.type", assignedTelephoneNumber.odataType);
-        writer.writeStringValue("telephoneNumber", assignedTelephoneNumber.telephoneNumber);
-        writer.writeAdditionalData(assignedTelephoneNumber.additionalData);
-    }
+export function serializeAssignedTelephoneNumber(writer: SerializationWriter, assignedTelephoneNumber: Partial<AssignedTelephoneNumber> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!assignedTelephoneNumber || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AssignmentCategory>("assignmentCategory", assignedTelephoneNumber.assignmentCategory);
+    writer.writeStringValue("@odata.type", assignedTelephoneNumber.odataType);
+    writer.writeStringValue("telephoneNumber", assignedTelephoneNumber.telephoneNumber);
+    writer.writeAdditionalData(assignedTelephoneNumber.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param EffectivePolicyAssignment The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEffectivePolicyAssignment(writer: SerializationWriter, effectivePolicyAssignment: Partial<EffectivePolicyAssignment> | undefined | null = {}) : void {
-    if (effectivePolicyAssignment) {
-        writer.writeStringValue("@odata.type", effectivePolicyAssignment.odataType);
-        writer.writeObjectValue<PolicyAssignment>("policyAssignment", effectivePolicyAssignment.policyAssignment, serializePolicyAssignment);
-        writer.writeStringValue("policyType", effectivePolicyAssignment.policyType);
-        writer.writeAdditionalData(effectivePolicyAssignment.additionalData);
-    }
+export function serializeEffectivePolicyAssignment(writer: SerializationWriter, effectivePolicyAssignment: Partial<EffectivePolicyAssignment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!effectivePolicyAssignment || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", effectivePolicyAssignment.odataType);
+    writer.writeObjectValue<PolicyAssignment>("policyAssignment", effectivePolicyAssignment.policyAssignment, serializePolicyAssignment);
+    writer.writeStringValue("policyType", effectivePolicyAssignment.policyType);
+    writer.writeAdditionalData(effectivePolicyAssignment.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyAssignment The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicyAssignment(writer: SerializationWriter, policyAssignment: Partial<PolicyAssignment> | undefined | null = {}) : void {
-    if (policyAssignment) {
-        writer.writeEnumValue<AssignmentType>("assignmentType", policyAssignment.assignmentType);
-        writer.writeStringValue("displayName", policyAssignment.displayName);
-        writer.writeStringValue("groupId", policyAssignment.groupId);
-        writer.writeStringValue("@odata.type", policyAssignment.odataType);
-        writer.writeStringValue("policyId", policyAssignment.policyId);
-        writer.writeAdditionalData(policyAssignment.additionalData);
-    }
+export function serializePolicyAssignment(writer: SerializationWriter, policyAssignment: Partial<PolicyAssignment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyAssignment || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AssignmentType>("assignmentType", policyAssignment.assignmentType);
+    writer.writeStringValue("displayName", policyAssignment.displayName);
+    writer.writeStringValue("groupId", policyAssignment.groupId);
+    writer.writeStringValue("@odata.type", policyAssignment.odataType);
+    writer.writeStringValue("policyId", policyAssignment.policyId);
+    writer.writeAdditionalData(policyAssignment.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TeamsAdminRoot The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTeamsAdminRoot(writer: SerializationWriter, teamsAdminRoot: Partial<TeamsAdminRoot> | undefined | null = {}) : void {
-    if (teamsAdminRoot) {
-        serializeEntity(writer, teamsAdminRoot)
-        writer.writeObjectValue<TeamsPolicyAssignment>("policy", teamsAdminRoot.policy, serializeTeamsPolicyAssignment);
-        writer.writeCollectionOfObjectValues<TeamsUserConfiguration>("userConfigurations", teamsAdminRoot.userConfigurations, serializeTeamsUserConfiguration);
-    }
+export function serializeTeamsAdminRoot(writer: SerializationWriter, teamsAdminRoot: Partial<TeamsAdminRoot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!teamsAdminRoot || isSerializingDerivedType) { return; }
+    serializeEntity(writer, teamsAdminRoot, isSerializingDerivedType)
+    writer.writeObjectValue<TeamsPolicyAssignment>("policy", teamsAdminRoot.policy, serializeTeamsPolicyAssignment);
+    writer.writeCollectionOfObjectValues<TeamsUserConfiguration>("userConfigurations", teamsAdminRoot.userConfigurations, serializeTeamsUserConfiguration);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TeamsPolicyAssignment The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTeamsPolicyAssignment(writer: SerializationWriter, teamsPolicyAssignment: Partial<TeamsPolicyAssignment> | undefined | null = {}) : void {
-    if (teamsPolicyAssignment) {
-        serializeEntity(writer, teamsPolicyAssignment)
-    }
+export function serializeTeamsPolicyAssignment(writer: SerializationWriter, teamsPolicyAssignment: Partial<TeamsPolicyAssignment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!teamsPolicyAssignment || isSerializingDerivedType) { return; }
+    serializeEntity(writer, teamsPolicyAssignment, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TeamsUserConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTeamsUserConfiguration(writer: SerializationWriter, teamsUserConfiguration: Partial<TeamsUserConfiguration> | undefined | null = {}) : void {
-    if (teamsUserConfiguration) {
-        serializeEntity(writer, teamsUserConfiguration)
-        writer.writeEnumValue<AccountType>("accountType", teamsUserConfiguration.accountType);
-        writer.writeDateValue("createdDateTime", teamsUserConfiguration.createdDateTime);
-        writer.writeCollectionOfObjectValues<EffectivePolicyAssignment>("effectivePolicyAssignments", teamsUserConfiguration.effectivePolicyAssignments, serializeEffectivePolicyAssignment);
-        writer.writeCollectionOfPrimitiveValues<string>("featureTypes", teamsUserConfiguration.featureTypes);
-        writer.writeBooleanValue("isEnterpriseVoiceEnabled", teamsUserConfiguration.isEnterpriseVoiceEnabled);
-        writer.writeDateValue("modifiedDateTime", teamsUserConfiguration.modifiedDateTime);
-        writer.writeCollectionOfObjectValues<AssignedTelephoneNumber>("telephoneNumbers", teamsUserConfiguration.telephoneNumbers, serializeAssignedTelephoneNumber);
-        writer.writeStringValue("tenantId", teamsUserConfiguration.tenantId);
-        writer.writeObjectValue<User>("user", teamsUserConfiguration.user, serializeUser);
-        writer.writeStringValue("userPrincipalName", teamsUserConfiguration.userPrincipalName);
-    }
+export function serializeTeamsUserConfiguration(writer: SerializationWriter, teamsUserConfiguration: Partial<TeamsUserConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!teamsUserConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, teamsUserConfiguration, isSerializingDerivedType)
+    writer.writeEnumValue<AccountType>("accountType", teamsUserConfiguration.accountType);
+    writer.writeDateValue("createdDateTime", teamsUserConfiguration.createdDateTime);
+    writer.writeCollectionOfObjectValues<EffectivePolicyAssignment>("effectivePolicyAssignments", teamsUserConfiguration.effectivePolicyAssignments, serializeEffectivePolicyAssignment);
+    writer.writeCollectionOfPrimitiveValues<string>("featureTypes", teamsUserConfiguration.featureTypes);
+    writer.writeBooleanValue("isEnterpriseVoiceEnabled", teamsUserConfiguration.isEnterpriseVoiceEnabled);
+    writer.writeDateValue("modifiedDateTime", teamsUserConfiguration.modifiedDateTime);
+    writer.writeCollectionOfObjectValues<AssignedTelephoneNumber>("telephoneNumbers", teamsUserConfiguration.telephoneNumbers, serializeAssignedTelephoneNumber);
+    writer.writeStringValue("tenantId", teamsUserConfiguration.tenantId);
+    writer.writeObjectValue<User>("user", teamsUserConfiguration.user, serializeUser);
+    writer.writeStringValue("userPrincipalName", teamsUserConfiguration.userPrincipalName);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TeamsUserConfigurationCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTeamsUserConfigurationCollectionResponse(writer: SerializationWriter, teamsUserConfigurationCollectionResponse: Partial<TeamsUserConfigurationCollectionResponse> | undefined | null = {}) : void {
-    if (teamsUserConfigurationCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, teamsUserConfigurationCollectionResponse)
-        writer.writeCollectionOfObjectValues<TeamsUserConfiguration>("value", teamsUserConfigurationCollectionResponse.value, serializeTeamsUserConfiguration);
-    }
+export function serializeTeamsUserConfigurationCollectionResponse(writer: SerializationWriter, teamsUserConfigurationCollectionResponse: Partial<TeamsUserConfigurationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!teamsUserConfigurationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, teamsUserConfigurationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TeamsUserConfiguration>("value", teamsUserConfigurationCollectionResponse.value, serializeTeamsUserConfiguration);
 }
 export interface TeamsAdminRoot extends Entity, Parsable {
     /**

@@ -19,6 +19,7 @@ export function createGetPlatformSupportedPropertiesWithPlatformGetResponseFromD
 }
 /**
  * The deserialization information for the current model
+ * @param GetPlatformSupportedPropertiesWithPlatformGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetQuer
 }
 /**
  * Serializes information the current object
+ * @param GetPlatformSupportedPropertiesWithPlatformGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetPlatformSupportedPropertiesWithPlatformGetResponse(writer: SerializationWriter, getPlatformSupportedPropertiesWithPlatformGetResponse: Partial<GetPlatformSupportedPropertiesWithPlatformGetResponse> | undefined | null = {}) : void {
-    if (getPlatformSupportedPropertiesWithPlatformGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getPlatformSupportedPropertiesWithPlatformGetResponse)
-        writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getPlatformSupportedPropertiesWithPlatformGetResponse.value, serializeAssignmentFilterSupportedProperty);
-    }
+export function serializeGetPlatformSupportedPropertiesWithPlatformGetResponse(writer: SerializationWriter, getPlatformSupportedPropertiesWithPlatformGetResponse: Partial<GetPlatformSupportedPropertiesWithPlatformGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getPlatformSupportedPropertiesWithPlatformGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getPlatformSupportedPropertiesWithPlatformGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AssignmentFilterSupportedProperty>("value", getPlatformSupportedPropertiesWithPlatformGetResponse.value, serializeAssignmentFilterSupportedProperty);
 }
 /**
  * Uri template for the request builder.

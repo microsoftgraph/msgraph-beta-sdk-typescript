@@ -68,6 +68,7 @@ export function createCompareWithTemplateIdGetResponseFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param CompareWithTemplateIdGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export function deserializeIntoCompareWithTemplateIdGetResponse(compareWithTempl
 }
 /**
  * Serializes information the current object
+ * @param CompareWithTemplateIdGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCompareWithTemplateIdGetResponse(writer: SerializationWriter, compareWithTemplateIdGetResponse: Partial<CompareWithTemplateIdGetResponse> | undefined | null = {}) : void {
-    if (compareWithTemplateIdGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, compareWithTemplateIdGetResponse)
-        writer.writeCollectionOfObjectValues<DeviceManagementSettingComparison>("value", compareWithTemplateIdGetResponse.value, serializeDeviceManagementSettingComparison);
-    }
+export function serializeCompareWithTemplateIdGetResponse(writer: SerializationWriter, compareWithTemplateIdGetResponse: Partial<CompareWithTemplateIdGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!compareWithTemplateIdGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, compareWithTemplateIdGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceManagementSettingComparison>("value", compareWithTemplateIdGetResponse.value, serializeDeviceManagementSettingComparison);
 }
 /**
  * Uri template for the request builder.

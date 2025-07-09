@@ -19,6 +19,7 @@ export function createGetOffice365ActiveUserCountsWithPeriodGetResponseFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365ActiveUserCountsWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryPar
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365ActiveUserCountsWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365ActiveUserCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365ActiveUserCountsWithPeriodGetResponse: Partial<GetOffice365ActiveUserCountsWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getOffice365ActiveUserCountsWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserCountsWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<Office365ActiveUserCounts>("value", getOffice365ActiveUserCountsWithPeriodGetResponse.value, serializeOffice365ActiveUserCounts);
-    }
+export function serializeGetOffice365ActiveUserCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365ActiveUserCountsWithPeriodGetResponse: Partial<GetOffice365ActiveUserCountsWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365ActiveUserCountsWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365ActiveUserCountsWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365ActiveUserCounts>("value", getOffice365ActiveUserCountsWithPeriodGetResponse.value, serializeOffice365ActiveUserCounts);
 }
 /**
  * Uri template for the request builder.

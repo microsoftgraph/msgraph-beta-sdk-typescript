@@ -17,6 +17,7 @@ export function createGetUnhealthyFirewallReportPostRequestBodyFromDiscriminator
 }
 /**
  * The deserialization information for the current model
+ * @param GetUnhealthyFirewallReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetUnhealthyFirewallReportPostRequestBody(getUnhe
     }
 }
 export interface GetUnhealthyFirewallReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetUnhealthyFirewallReportRequestBuilder extends BaseRequestBui
 }
 /**
  * Serializes information the current object
+ * @param GetUnhealthyFirewallReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetUnhealthyFirewallReportPostRequestBody(writer: SerializationWriter, getUnhealthyFirewallReportPostRequestBody: Partial<GetUnhealthyFirewallReportPostRequestBody> | undefined | null = {}) : void {
-    if (getUnhealthyFirewallReportPostRequestBody) {
-        writer.writeStringValue("filter", getUnhealthyFirewallReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUnhealthyFirewallReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getUnhealthyFirewallReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getUnhealthyFirewallReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getUnhealthyFirewallReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getUnhealthyFirewallReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getUnhealthyFirewallReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getUnhealthyFirewallReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getUnhealthyFirewallReportPostRequestBody.top);
-        writer.writeAdditionalData(getUnhealthyFirewallReportPostRequestBody.additionalData);
-    }
+export function serializeGetUnhealthyFirewallReportPostRequestBody(writer: SerializationWriter, getUnhealthyFirewallReportPostRequestBody: Partial<GetUnhealthyFirewallReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getUnhealthyFirewallReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getUnhealthyFirewallReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getUnhealthyFirewallReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getUnhealthyFirewallReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getUnhealthyFirewallReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getUnhealthyFirewallReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getUnhealthyFirewallReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getUnhealthyFirewallReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getUnhealthyFirewallReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getUnhealthyFirewallReportPostRequestBody.top);
+    writer.writeAdditionalData(getUnhealthyFirewallReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createUploadExternallySignedCertificationAuthorityCertificatePos
 }
 /**
  * The deserialization information for the current model
+ * @param UploadExternallySignedCertificationAuthorityCertificatePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -32,22 +33,19 @@ export function deserializeIntoUploadExternallySignedCertificationAuthorityCerti
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UploadExternallySignedCertificationAuthorityCertificatePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUploadExternallySignedCertificationAuthorityCertificatePostRequestBody(writer: SerializationWriter, uploadExternallySignedCertificationAuthorityCertificatePostRequestBody: Partial<UploadExternallySignedCertificationAuthorityCertificatePostRequestBody> | undefined | null = {}) : void {
-    if (uploadExternallySignedCertificationAuthorityCertificatePostRequestBody) {
-        writer.writeNumberValue("certificationAuthorityVersion", uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.certificationAuthorityVersion);
-        writer.writeStringValue("signedCertificate", uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.signedCertificate);
-        writer.writeCollectionOfObjectValues<TrustChainCertificate>("trustChainCertificates", uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.trustChainCertificates, serializeTrustChainCertificate);
-        writer.writeAdditionalData(uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.additionalData);
-    }
+export function serializeUploadExternallySignedCertificationAuthorityCertificatePostRequestBody(writer: SerializationWriter, uploadExternallySignedCertificationAuthorityCertificatePostRequestBody: Partial<UploadExternallySignedCertificationAuthorityCertificatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!uploadExternallySignedCertificationAuthorityCertificatePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("certificationAuthorityVersion", uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.certificationAuthorityVersion);
+    writer.writeStringValue("signedCertificate", uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.signedCertificate);
+    writer.writeCollectionOfObjectValues<TrustChainCertificate>("trustChainCertificates", uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.trustChainCertificates, serializeTrustChainCertificate);
+    writer.writeAdditionalData(uploadExternallySignedCertificationAuthorityCertificatePostRequestBody.additionalData);
 }
 export interface UploadExternallySignedCertificationAuthorityCertificatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -21,6 +21,7 @@ export function createGetPortalNotificationsGetResponseFromDiscriminatorValue(pa
 }
 /**
  * The deserialization information for the current model
+ * @param GetPortalNotificationsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -81,14 +82,15 @@ export interface MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuil
 }
 /**
  * Serializes information the current object
+ * @param GetPortalNotificationsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetPortalNotificationsGetResponse(writer: SerializationWriter, getPortalNotificationsGetResponse: Partial<GetPortalNotificationsGetResponse> | undefined | null = {}) : void {
-    if (getPortalNotificationsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getPortalNotificationsGetResponse)
-        writer.writeCollectionOfObjectValues<PortalNotification>("value", getPortalNotificationsGetResponse.value, serializePortalNotification);
-    }
+export function serializeGetPortalNotificationsGetResponse(writer: SerializationWriter, getPortalNotificationsGetResponse: Partial<GetPortalNotificationsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getPortalNotificationsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getPortalNotificationsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PortalNotification>("value", getPortalNotificationsGetResponse.value, serializePortalNotification);
 }
 /**
  * Uri template for the request builder.

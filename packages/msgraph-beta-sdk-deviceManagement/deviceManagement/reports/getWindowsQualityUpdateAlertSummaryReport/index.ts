@@ -17,6 +17,7 @@ export function createGetWindowsQualityUpdateAlertSummaryReportPostRequestBodyFr
 }
 /**
  * The deserialization information for the current model
+ * @param GetWindowsQualityUpdateAlertSummaryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetWindowsQualityUpdateAlertSummaryReportPostRequ
     }
 }
 export interface GetWindowsQualityUpdateAlertSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetWindowsQualityUpdateAlertSummaryReportRequestBuilder extends
 }
 /**
  * Serializes information the current object
+ * @param GetWindowsQualityUpdateAlertSummaryReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetWindowsQualityUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsQualityUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertSummaryReportPostRequestBody> | undefined | null = {}) : void {
-    if (getWindowsQualityUpdateAlertSummaryReportPostRequestBody) {
-        writer.writeStringValue("filter", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.top);
-        writer.writeAdditionalData(getWindowsQualityUpdateAlertSummaryReportPostRequestBody.additionalData);
-    }
+export function serializeGetWindowsQualityUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsQualityUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertSummaryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getWindowsQualityUpdateAlertSummaryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getWindowsQualityUpdateAlertSummaryReportPostRequestBody.top);
+    writer.writeAdditionalData(getWindowsQualityUpdateAlertSummaryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AssignResourceAccountToDevicePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The addressableUserName property
      */
     addressableUserName?: string | null;
@@ -58,6 +54,7 @@ export function createAssignResourceAccountToDevicePostRequestBodyFromDiscrimina
 }
 /**
  * The deserialization information for the current model
+ * @param AssignResourceAccountToDevicePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -71,16 +68,17 @@ export function deserializeIntoAssignResourceAccountToDevicePostRequestBody(assi
 }
 /**
  * Serializes information the current object
+ * @param AssignResourceAccountToDevicePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAssignResourceAccountToDevicePostRequestBody(writer: SerializationWriter, assignResourceAccountToDevicePostRequestBody: Partial<AssignResourceAccountToDevicePostRequestBody> | undefined | null = {}) : void {
-    if (assignResourceAccountToDevicePostRequestBody) {
-        writer.writeStringValue("addressableUserName", assignResourceAccountToDevicePostRequestBody.addressableUserName);
-        writer.writeStringValue("resourceAccountName", assignResourceAccountToDevicePostRequestBody.resourceAccountName);
-        writer.writeStringValue("userPrincipalName", assignResourceAccountToDevicePostRequestBody.userPrincipalName);
-        writer.writeAdditionalData(assignResourceAccountToDevicePostRequestBody.additionalData);
-    }
+export function serializeAssignResourceAccountToDevicePostRequestBody(writer: SerializationWriter, assignResourceAccountToDevicePostRequestBody: Partial<AssignResourceAccountToDevicePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!assignResourceAccountToDevicePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("addressableUserName", assignResourceAccountToDevicePostRequestBody.addressableUserName);
+    writer.writeStringValue("resourceAccountName", assignResourceAccountToDevicePostRequestBody.resourceAccountName);
+    writer.writeStringValue("userPrincipalName", assignResourceAccountToDevicePostRequestBody.userPrincipalName);
+    writer.writeAdditionalData(assignResourceAccountToDevicePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -59,10 +59,6 @@ export interface AlertAction extends AdditionalDataHolder, BackedModel, Parsable
      */
     actionText?: string | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -78,10 +74,6 @@ export interface AlertCollectionResponse extends BaseCollectionPaginationCountRe
     value?: Alert[] | null;
 }
 export interface AlertFrequencyPoint extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -114,10 +106,6 @@ export interface AlertFrequencyPoint extends AdditionalDataHolder, BackedModel, 
 export type AlertSeverity = (typeof AlertSeverityObject)[keyof typeof AlertSeverityObject];
 export interface AlertSeveritySummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -135,10 +123,6 @@ export interface AlertSeveritySummary extends AdditionalDataHolder, BackedModel,
     severity?: AlertSeverity | null;
 }
 export interface AlertSummary extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The alertType property
      */
@@ -164,10 +148,6 @@ export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
 export type Algorithm = (typeof AlgorithmObject)[keyof typeof AlgorithmObject];
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The unique identifier of the application accessed during the transaction.
      */
     appId?: string | null;
@@ -188,10 +168,6 @@ export interface AssociatedBranch extends Association, Parsable {
 }
 export interface Association extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -202,10 +178,6 @@ export interface Association extends AdditionalDataHolder, BackedModel, Parsable
 }
 export type BandwidthCapacityInMbps = (typeof BandwidthCapacityInMbpsObject)[keyof typeof BandwidthCapacityInMbpsObject];
 export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Specifies the ASN of the BGP.
      */
@@ -232,10 +204,6 @@ export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Par
     peerIpAddress?: string | null;
 }
 export interface BranchConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -457,10 +425,6 @@ export interface ConnectionCollectionResponse extends BaseCollectionPaginationCo
 }
 export type ConnectionStatus = (typeof ConnectionStatusObject)[keyof typeof ConnectionStatusObject];
 export interface ConnectionSummary extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1127,6 +1091,8 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
                     return deserializeIntoFilteringPolicy;
                 case "#microsoft.graph.networkaccess.forwardingPolicy":
                     return deserializeIntoForwardingPolicy;
+                case "#microsoft.graph.networkaccess.threatIntelligencePolicy":
+                    return deserializeIntoThreatIntelligencePolicy;
             }
         }
     }
@@ -1158,6 +1124,8 @@ export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | un
                     return deserializeIntoFilteringPolicyLink;
                 case "#microsoft.graph.networkaccess.forwardingPolicyLink":
                     return deserializeIntoForwardingPolicyLink;
+                case "#microsoft.graph.networkaccess.threatIntelligencePolicyLink":
+                    return deserializeIntoThreatIntelligencePolicyLink;
             }
         }
     }
@@ -1206,6 +1174,8 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
                     return deserializeIntoM365ForwardingRule;
                 case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
                     return deserializeIntoPrivateAccessForwardingRule;
+                case "#microsoft.graph.networkaccess.threatIntelligenceRule":
+                    return deserializeIntoThreatIntelligenceRule;
                 case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
                     return deserializeIntoWebCategoryFilteringRule;
             }
@@ -1537,6 +1507,98 @@ export function createThirdPartyTokenDetailsFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceDestination}
+ */
+// @ts-ignore
+export function createThreatIntelligenceDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.threatIntelligenceFqdnDestination":
+                    return deserializeIntoThreatIntelligenceFqdnDestination;
+            }
+        }
+    }
+    return deserializeIntoThreatIntelligenceDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceFqdnDestination}
+ */
+// @ts-ignore
+export function createThreatIntelligenceFqdnDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceFqdnDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceMatchingConditions}
+ */
+// @ts-ignore
+export function createThreatIntelligenceMatchingConditionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceMatchingConditions;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligencePolicyCollectionResponse}
+ */
+// @ts-ignore
+export function createThreatIntelligencePolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligencePolicyCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligencePolicy}
+ */
+// @ts-ignore
+export function createThreatIntelligencePolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligencePolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligencePolicyLink}
+ */
+// @ts-ignore
+export function createThreatIntelligencePolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligencePolicyLink;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligencePolicySettings}
+ */
+// @ts-ignore
+export function createThreatIntelligencePolicySettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligencePolicySettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceRule}
+ */
+// @ts-ignore
+export function createThreatIntelligenceRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ThreatIntelligenceRuleSettings}
+ */
+// @ts-ignore
+export function createThreatIntelligenceRuleSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoThreatIntelligenceRuleSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TransactionSummary}
  */
 // @ts-ignore
@@ -1639,10 +1701,6 @@ export function createWebCategoryFromDiscriminatorValue(parseNode: ParseNode | u
 }
 export interface CrossTenantAccess extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1687,10 +1745,6 @@ export interface CrossTenantAccessSettings extends Entity, Parsable {
 }
 export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The total number of authentication sessions between startDateTime and endDateTime.
      */
     authTransactionCount?: number | null;
@@ -1725,6 +1779,7 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
 }
 /**
  * The deserialization information for the current model
+ * @param Alert The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1745,6 +1800,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
 }
 /**
  * The deserialization information for the current model
+ * @param AlertAction The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1758,6 +1814,7 @@ export function deserializeIntoAlertAction(alertAction: Partial<AlertAction> | u
 }
 /**
  * The deserialization information for the current model
+ * @param AlertCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1769,6 +1826,7 @@ export function deserializeIntoAlertCollectionResponse(alertCollectionResponse: 
 }
 /**
  * The deserialization information for the current model
+ * @param AlertFrequencyPoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1785,6 +1843,7 @@ export function deserializeIntoAlertFrequencyPoint(alertFrequencyPoint: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param AlertSeveritySummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1798,6 +1857,7 @@ export function deserializeIntoAlertSeveritySummary(alertSeveritySummary: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param AlertSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1812,6 +1872,7 @@ export function deserializeIntoAlertSummary(alertSummary: Partial<AlertSummary> 
 }
 /**
  * The deserialization information for the current model
+ * @param ApplicationSnapshot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1824,6 +1885,7 @@ export function deserializeIntoApplicationSnapshot(applicationSnapshot: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param AssociatedBranch The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1835,6 +1897,7 @@ export function deserializeIntoAssociatedBranch(associatedBranch: Partial<Associ
 }
 /**
  * The deserialization information for the current model
+ * @param Association The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1846,6 +1909,7 @@ export function deserializeIntoAssociation(association: Partial<Association> | u
 }
 /**
  * The deserialization information for the current model
+ * @param BgpConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1861,6 +1925,7 @@ export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpCon
 }
 /**
  * The deserialization information for the current model
+ * @param BranchConnectivityConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1875,6 +1940,7 @@ export function deserializeIntoBranchConnectivityConfiguration(branchConnectivit
 }
 /**
  * The deserialization information for the current model
+ * @param BranchSite The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1895,6 +1961,7 @@ export function deserializeIntoBranchSite(branchSite: Partial<BranchSite> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param BranchSiteCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1906,6 +1973,7 @@ export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollection
 }
 /**
  * The deserialization information for the current model
+ * @param ConditionalAccessPolicy The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1920,6 +1988,7 @@ export function deserializeIntoConditionalAccessPolicy(conditionalAccessPolicy: 
 }
 /**
  * The deserialization information for the current model
+ * @param ConditionalAccessPolicyCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1931,6 +2000,7 @@ export function deserializeIntoConditionalAccessPolicyCollectionResponse(conditi
 }
 /**
  * The deserialization information for the current model
+ * @param ConditionalAccessSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1942,6 +2012,7 @@ export function deserializeIntoConditionalAccessSettings(conditionalAccessSettin
 }
 /**
  * The deserialization information for the current model
+ * @param Connection The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1980,6 +2051,7 @@ export function deserializeIntoConnection(connection: Partial<Connection> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1991,6 +2063,7 @@ export function deserializeIntoConnectionCollectionResponse(connectionCollection
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectionSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2004,6 +2077,7 @@ export function deserializeIntoConnectionSummary(connectionSummary: Partial<Conn
 }
 /**
  * The deserialization information for the current model
+ * @param Connectivity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2017,6 +2091,7 @@ export function deserializeIntoConnectivity(connectivity: Partial<Connectivity> 
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectivityConfigurationLink The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2030,6 +2105,7 @@ export function deserializeIntoConnectivityConfigurationLink(connectivityConfigu
 }
 /**
  * The deserialization information for the current model
+ * @param ConnectivityConfigurationLinkCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2041,6 +2117,7 @@ export function deserializeIntoConnectivityConfigurationLinkCollectionResponse(c
 }
 /**
  * The deserialization information for the current model
+ * @param CrossTenantAccess The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2059,6 +2136,7 @@ export function deserializeIntoCrossTenantAccess(crossTenantAccess: Partial<Cros
 }
 /**
  * The deserialization information for the current model
+ * @param CrossTenantAccessSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2070,6 +2148,7 @@ export function deserializeIntoCrossTenantAccessSettings(crossTenantAccessSettin
 }
 /**
  * The deserialization information for the current model
+ * @param CrossTenantSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2087,6 +2166,7 @@ export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<Cr
 }
 /**
  * The deserialization information for the current model
+ * @param Destination The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2111,6 +2191,7 @@ export function deserializeIntoDestination(destination: Partial<Destination> | u
 }
 /**
  * The deserialization information for the current model
+ * @param DestinationSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2125,6 +2206,7 @@ export function deserializeIntoDestinationSummary(destinationSummary: Partial<De
 }
 /**
  * The deserialization information for the current model
+ * @param Device The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2142,6 +2224,7 @@ export function deserializeIntoDevice(device: Partial<Device> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceLink The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2160,6 +2243,7 @@ export function deserializeIntoDeviceLink(deviceLink: Partial<DeviceLink> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceLinkCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2171,6 +2255,7 @@ export function deserializeIntoDeviceLinkCollectionResponse(deviceLinkCollection
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceUsageSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2185,6 +2270,7 @@ export function deserializeIntoDeviceUsageSummary(deviceUsageSummary: Partial<De
 }
 /**
  * The deserialization information for the current model
+ * @param DiscoveredApplicationSegmentReport The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2209,6 +2295,7 @@ export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredAppl
 }
 /**
  * The deserialization information for the current model
+ * @param EnrichedAuditLogs The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2222,6 +2309,7 @@ export function deserializeIntoEnrichedAuditLogs(enrichedAuditLogs: Partial<Enri
 }
 /**
  * The deserialization information for the current model
+ * @param EnrichedAuditLogsSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2234,6 +2322,7 @@ export function deserializeIntoEnrichedAuditLogsSettings(enrichedAuditLogsSettin
 }
 /**
  * The deserialization information for the current model
+ * @param EntitiesSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2249,6 +2338,7 @@ export function deserializeIntoEntitiesSummary(entitiesSummary: Partial<Entities
 }
 /**
  * The deserialization information for the current model
+ * @param FilteringPolicy The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2262,6 +2352,7 @@ export function deserializeIntoFilteringPolicy(filteringPolicy: Partial<Filterin
 }
 /**
  * The deserialization information for the current model
+ * @param FilteringPolicyCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2273,6 +2364,7 @@ export function deserializeIntoFilteringPolicyCollectionResponse(filteringPolicy
 }
 /**
  * The deserialization information for the current model
+ * @param FilteringPolicyLink The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2287,6 +2379,7 @@ export function deserializeIntoFilteringPolicyLink(filteringPolicyLink: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param FilteringProfile The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2300,6 +2393,7 @@ export function deserializeIntoFilteringProfile(filteringProfile: Partial<Filter
 }
 /**
  * The deserialization information for the current model
+ * @param FilteringProfileCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2311,6 +2405,7 @@ export function deserializeIntoFilteringProfileCollectionResponse(filteringProfi
 }
 /**
  * The deserialization information for the current model
+ * @param FilteringRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2323,6 +2418,7 @@ export function deserializeIntoFilteringRule(filteringRule: Partial<FilteringRul
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2334,6 +2430,7 @@ export function deserializeIntoForwardingOptions(forwardingOptions: Partial<Forw
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingPolicy The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2345,6 +2442,7 @@ export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<Forwar
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingPolicyCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2356,6 +2454,7 @@ export function deserializeIntoForwardingPolicyCollectionResponse(forwardingPoli
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingPolicyLink The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2366,6 +2465,7 @@ export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingProfile The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2380,6 +2480,7 @@ export function deserializeIntoForwardingProfile(forwardingProfile: Partial<Forw
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingProfileCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2391,6 +2492,7 @@ export function deserializeIntoForwardingProfileCollectionResponse(forwardingPro
 }
 /**
  * The deserialization information for the current model
+ * @param ForwardingRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2404,6 +2506,7 @@ export function deserializeIntoForwardingRule(forwardingRule: Partial<Forwarding
 }
 /**
  * The deserialization information for the current model
+ * @param Fqdn The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2415,6 +2518,7 @@ export function deserializeIntoFqdn(fqdn: Partial<Fqdn> | undefined = {}) : Reco
 }
 /**
  * The deserialization information for the current model
+ * @param FqdnFilteringRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2425,6 +2529,7 @@ export function deserializeIntoFqdnFilteringRule(fqdnFilteringRule: Partial<Fqdn
 }
 /**
  * The deserialization information for the current model
+ * @param Headers The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2439,6 +2544,7 @@ export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param InternetAccessForwardingRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2451,6 +2557,7 @@ export function deserializeIntoInternetAccessForwardingRule(internetAccessForwar
 }
 /**
  * The deserialization information for the current model
+ * @param IpAddress The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2462,6 +2569,7 @@ export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param IpRange The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2474,6 +2582,7 @@ export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param IpSubnet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2485,6 +2594,7 @@ export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined 
 }
 /**
  * The deserialization information for the current model
+ * @param LocalConnectivityConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2500,6 +2610,7 @@ export function deserializeIntoLocalConnectivityConfiguration(localConnectivityC
 }
 /**
  * The deserialization information for the current model
+ * @param Logs The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2513,6 +2624,7 @@ export function deserializeIntoLogs(logs: Partial<Logs> | undefined = {}) : Reco
 }
 /**
  * The deserialization information for the current model
+ * @param M365ForwardingRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2526,6 +2638,7 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
 }
 /**
  * The deserialization information for the current model
+ * @param NetworkAccessRoot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2542,10 +2655,12 @@ export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<Netw
         "reports": n => { networkAccessRoot.reports = n.getObjectValue<Reports>(createReportsFromDiscriminatorValue); },
         "settings": n => { networkAccessRoot.settings = n.getObjectValue<Settings>(createSettingsFromDiscriminatorValue); },
         "tenantStatus": n => { networkAccessRoot.tenantStatus = n.getObjectValue<TenantStatus>(createTenantStatusFromDiscriminatorValue); },
+        "threatIntelligencePolicies": n => { networkAccessRoot.threatIntelligencePolicies = n.getCollectionOfObjectValues<ThreatIntelligencePolicy>(createThreatIntelligencePolicyFromDiscriminatorValue); },
     }
 }
 /**
  * The deserialization information for the current model
+ * @param NetworkAccessTraffic The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2603,6 +2718,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param NetworkAccessTrafficCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2614,6 +2730,7 @@ export function deserializeIntoNetworkAccessTrafficCollectionResponse(networkAcc
 }
 /**
  * The deserialization information for the current model
+ * @param PeerConnectivityConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2628,6 +2745,7 @@ export function deserializeIntoPeerConnectivityConfiguration(peerConnectivityCon
 }
 /**
  * The deserialization information for the current model
+ * @param Policy The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2642,6 +2760,7 @@ export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
+ * @param PolicyLink The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2655,6 +2774,7 @@ export function deserializeIntoPolicyLink(policyLink: Partial<PolicyLink> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param PolicyLinkCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2666,6 +2786,7 @@ export function deserializeIntoPolicyLinkCollectionResponse(policyLinkCollection
 }
 /**
  * The deserialization information for the current model
+ * @param PolicyRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2677,6 +2798,7 @@ export function deserializeIntoPolicyRule(policyRule: Partial<PolicyRule> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param PolicyRuleCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2688,6 +2810,7 @@ export function deserializeIntoPolicyRuleCollectionResponse(policyRuleCollection
 }
 /**
  * The deserialization information for the current model
+ * @param PolicyRuleDelta The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2701,6 +2824,7 @@ export function deserializeIntoPolicyRuleDelta(policyRuleDelta: Partial<PolicyRu
 }
 /**
  * The deserialization information for the current model
+ * @param PrivateAccessDetails The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2720,6 +2844,7 @@ export function deserializeIntoPrivateAccessDetails(privateAccessDetails: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param PrivateAccessForwardingRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2730,6 +2855,7 @@ export function deserializeIntoPrivateAccessForwardingRule(privateAccessForwardi
 }
 /**
  * The deserialization information for the current model
+ * @param Profile The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2746,6 +2872,7 @@ export function deserializeIntoProfile(profile: Partial<Profile> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param RedundancyConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2759,6 +2886,7 @@ export function deserializeIntoRedundancyConfiguration(redundancyConfiguration: 
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedDestination The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2773,6 +2901,7 @@ export function deserializeIntoRelatedDestination(relatedDestination: Partial<Re
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedDevice The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2784,6 +2913,7 @@ export function deserializeIntoRelatedDevice(relatedDevice: Partial<RelatedDevic
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedFile The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2797,6 +2927,7 @@ export function deserializeIntoRelatedFile(relatedFile: Partial<RelatedFile> | u
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedFileHash The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2809,6 +2940,7 @@ export function deserializeIntoRelatedFileHash(relatedFileHash: Partial<RelatedF
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedMalware The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2822,6 +2954,7 @@ export function deserializeIntoRelatedMalware(relatedMalware: Partial<RelatedMal
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedRemoteNetwork The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2833,6 +2966,7 @@ export function deserializeIntoRelatedRemoteNetwork(relatedRemoteNetwork: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedResource The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2844,6 +2978,7 @@ export function deserializeIntoRelatedResource(relatedResource: Partial<RelatedR
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedTenant The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2855,6 +2990,7 @@ export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenan
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedThreatIntelligence The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2866,6 +3002,7 @@ export function deserializeIntoRelatedThreatIntelligence(relatedThreatIntelligen
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedToken The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2877,6 +3014,7 @@ export function deserializeIntoRelatedToken(relatedToken: Partial<RelatedToken> 
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedTransaction The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2888,6 +3026,7 @@ export function deserializeIntoRelatedTransaction(relatedTransaction: Partial<Re
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedUrl The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2899,6 +3038,7 @@ export function deserializeIntoRelatedUrl(relatedUrl: Partial<RelatedUrl> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedUser The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2911,6 +3051,7 @@ export function deserializeIntoRelatedUser(relatedUser: Partial<RelatedUser> | u
 }
 /**
  * The deserialization information for the current model
+ * @param RelatedWebCategory The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2922,6 +3063,7 @@ export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<Re
 }
 /**
  * The deserialization information for the current model
+ * @param RemoteNetwork The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2939,6 +3081,7 @@ export function deserializeIntoRemoteNetwork(remoteNetwork: Partial<RemoteNetwor
 }
 /**
  * The deserialization information for the current model
+ * @param RemoteNetworkCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2950,6 +3093,7 @@ export function deserializeIntoRemoteNetworkCollectionResponse(remoteNetworkColl
 }
 /**
  * The deserialization information for the current model
+ * @param RemoteNetworkConnectivityConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2964,6 +3108,7 @@ export function deserializeIntoRemoteNetworkConnectivityConfiguration(remoteNetw
 }
 /**
  * The deserialization information for the current model
+ * @param RemoteNetworkHealthEvent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2983,6 +3128,7 @@ export function deserializeIntoRemoteNetworkHealthEvent(remoteNetworkHealthEvent
 }
 /**
  * The deserialization information for the current model
+ * @param RemoteNetworkHealthEventCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -2994,6 +3140,7 @@ export function deserializeIntoRemoteNetworkHealthEventCollectionResponse(remote
 }
 /**
  * The deserialization information for the current model
+ * @param Reports The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3004,6 +3151,7 @@ export function deserializeIntoReports(reports: Partial<Reports> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param RuleDestination The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3015,6 +3163,7 @@ export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDest
 }
 /**
  * The deserialization information for the current model
+ * @param Settings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3029,6 +3178,7 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
 }
 /**
  * The deserialization information for the current model
+ * @param TenantStatus The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3041,6 +3191,7 @@ export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> 
 }
 /**
  * The deserialization information for the current model
+ * @param ThirdPartyTokenDetails The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3056,6 +3207,123 @@ export function deserializeIntoThirdPartyTokenDetails(thirdPartyTokenDetails: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param ThreatIntelligenceDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceDestination(threatIntelligenceDestination: Partial<ThreatIntelligenceDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { threatIntelligenceDestination.backingStoreEnabled = true; },
+        "@odata.type": n => { threatIntelligenceDestination.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligenceFqdnDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceFqdnDestination(threatIntelligenceFqdnDestination: Partial<ThreatIntelligenceFqdnDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoThreatIntelligenceDestination(threatIntelligenceFqdnDestination),
+        "values": n => { threatIntelligenceFqdnDestination.values = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligenceMatchingConditions The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceMatchingConditions(threatIntelligenceMatchingConditions: Partial<ThreatIntelligenceMatchingConditions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { threatIntelligenceMatchingConditions.backingStoreEnabled = true; },
+        "destinations": n => { threatIntelligenceMatchingConditions.destinations = n.getCollectionOfObjectValues<ThreatIntelligenceDestination>(createThreatIntelligenceDestinationFromDiscriminatorValue); },
+        "@odata.type": n => { threatIntelligenceMatchingConditions.odataType = n.getStringValue(); },
+        "severity": n => { threatIntelligenceMatchingConditions.severity = n.getEnumValue<ThreatIntelligenceSeverity>(ThreatIntelligenceSeverityObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligencePolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligencePolicy(threatIntelligencePolicy: Partial<ThreatIntelligencePolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicy(threatIntelligencePolicy),
+        "lastModifiedDateTime": n => { threatIntelligencePolicy.lastModifiedDateTime = n.getDateValue(); },
+        "settings": n => { threatIntelligencePolicy.settings = n.getObjectValue<ThreatIntelligencePolicySettings>(createThreatIntelligencePolicySettingsFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligencePolicyCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligencePolicyCollectionResponse(threatIntelligencePolicyCollectionResponse: Partial<ThreatIntelligencePolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(threatIntelligencePolicyCollectionResponse),
+        "value": n => { threatIntelligencePolicyCollectionResponse.value = n.getCollectionOfObjectValues<ThreatIntelligencePolicy>(createThreatIntelligencePolicyFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligencePolicyLink The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligencePolicyLink(threatIntelligencePolicyLink: Partial<ThreatIntelligencePolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicyLink(threatIntelligencePolicyLink),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligencePolicySettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligencePolicySettings(threatIntelligencePolicySettings: Partial<ThreatIntelligencePolicySettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { threatIntelligencePolicySettings.backingStoreEnabled = true; },
+        "defaultAction": n => { threatIntelligencePolicySettings.defaultAction = n.getEnumValue<ThreatIntelligenceAction>(ThreatIntelligenceActionObject); },
+        "@odata.type": n => { threatIntelligencePolicySettings.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligenceRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceRule(threatIntelligenceRule: Partial<ThreatIntelligenceRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicyRule(threatIntelligenceRule),
+        "action": n => { threatIntelligenceRule.action = n.getEnumValue<ThreatIntelligenceAction>(ThreatIntelligenceActionObject); },
+        "description": n => { threatIntelligenceRule.description = n.getStringValue(); },
+        "matchingConditions": n => { threatIntelligenceRule.matchingConditions = n.getObjectValue<ThreatIntelligenceMatchingConditions>(createThreatIntelligenceMatchingConditionsFromDiscriminatorValue); },
+        "priority": n => { threatIntelligenceRule.priority = n.getNumberValue(); },
+        "settings": n => { threatIntelligenceRule.settings = n.getObjectValue<ThreatIntelligenceRuleSettings>(createThreatIntelligenceRuleSettingsFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ThreatIntelligenceRuleSettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoThreatIntelligenceRuleSettings(threatIntelligenceRuleSettings: Partial<ThreatIntelligenceRuleSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { threatIntelligenceRuleSettings.backingStoreEnabled = true; },
+        "@odata.type": n => { threatIntelligenceRuleSettings.odataType = n.getStringValue(); },
+        "status": n => { threatIntelligenceRuleSettings.status = n.getEnumValue<SecurityRuleStatus>(SecurityRuleStatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TransactionSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3070,6 +3338,7 @@ export function deserializeIntoTransactionSummary(transactionSummary: Partial<Tr
 }
 /**
  * The deserialization information for the current model
+ * @param TunnelConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3083,6 +3352,7 @@ export function deserializeIntoTunnelConfiguration(tunnelConfiguration: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param TunnelConfigurationIKEv2Custom The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3100,6 +3370,7 @@ export function deserializeIntoTunnelConfigurationIKEv2Custom(tunnelConfiguratio
 }
 /**
  * The deserialization information for the current model
+ * @param TunnelConfigurationIKEv2Default The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3110,6 +3381,7 @@ export function deserializeIntoTunnelConfigurationIKEv2Default(tunnelConfigurati
 }
 /**
  * The deserialization information for the current model
+ * @param Url The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3121,6 +3393,7 @@ export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<
 }
 /**
  * The deserialization information for the current model
+ * @param UsageProfilingPoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3137,6 +3410,7 @@ export function deserializeIntoUsageProfilingPoint(usageProfilingPoint: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param User The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3158,6 +3432,7 @@ export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Reco
 }
 /**
  * The deserialization information for the current model
+ * @param WebCategoriesSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3174,6 +3449,7 @@ export function deserializeIntoWebCategoriesSummary(webCategoriesSummary: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param WebCategory The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3187,6 +3463,7 @@ export function deserializeIntoWebCategory(webCategory: Partial<WebCategory> | u
 }
 /**
  * The deserialization information for the current model
+ * @param WebCategoryFilteringRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -3196,10 +3473,6 @@ export function deserializeIntoWebCategoryFilteringRule(webCategoryFilteringRule
     }
 }
 export interface Destination extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3263,10 +3536,6 @@ export interface Destination extends AdditionalDataHolder, BackedModel, Parsable
 }
 export interface DestinationSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3288,10 +3557,6 @@ export interface DestinationSummary extends AdditionalDataHolder, BackedModel, P
     trafficType?: TrafficType | null;
 }
 export interface Device extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3372,10 +3637,6 @@ export interface DeviceUsageSummary extends AdditionalDataHolder, BackedModel, P
      */
     activeDeviceCount?: number | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3399,10 +3660,6 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      * The type of access used to connect to this application segment. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.
      */
     accessType?: AccessType | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3462,23 +3719,19 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
 }
 export interface EnrichedAuditLogs extends Entity, Parsable {
     /**
-     * Exchange Online enriched audit logs settings.
+     * The exchange property
      */
     exchange?: EnrichedAuditLogsSettings | null;
     /**
-     * SharePoint Online enriched audit logs settings.
+     * The sharepoint property
      */
     sharepoint?: EnrichedAuditLogsSettings | null;
     /**
-     * Teams enriched audit logs settings.
+     * The teams property
      */
     teams?: EnrichedAuditLogsSettings | null;
 }
 export interface EnrichedAuditLogsSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3493,10 +3746,6 @@ export interface EnrichedAuditLogsSettings extends AdditionalDataHolder, BackedM
     status?: Status | null;
 }
 export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -3661,10 +3910,6 @@ export interface FqdnFilteringRule extends FilteringRule, Parsable {
 }
 export interface Headers extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3723,10 +3968,6 @@ export interface IpSubnet extends Parsable, RuleDestination {
     value?: string | null;
 }
 export interface LocalConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Specifies ASN of one end of IPSec tunnel (local or peer).
      */
@@ -3822,16 +4063,16 @@ export interface NetworkAccessRoot extends Entity, Parsable {
      * Represents the status of the Global Secure Access services for the tenant.
      */
     tenantStatus?: TenantStatus | null;
+    /**
+     * The threatIntelligencePolicies property
+     */
+    threatIntelligencePolicies?: ThreatIntelligencePolicy[] | null;
 }
 export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): bypass , alert.
      */
     action?: FilteringPolicyAction | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Represents the version of the Global Secure Access (GSA) client agent software. Supports $filter (eq) and $orderby.
      */
@@ -4033,10 +4274,6 @@ export type NetworkTrafficOperationStatus = (typeof NetworkTrafficOperationStatu
 export type OnboardingStatus = (typeof OnboardingStatusObject)[keyof typeof OnboardingStatusObject];
 export interface PeerConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Specifies ASN of one end of IPSec tunnel (local or peer).
      */
     asn?: number | null;
@@ -4114,10 +4351,6 @@ export interface PolicyRuleDelta extends AdditionalDataHolder, BackedModel, Pars
      */
     action?: ForwardingRuleAction | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -4135,10 +4368,6 @@ export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel,
      * Type of accessed application. Access type options: QuickAccess, PrivateAccess.
      */
     accessType?: AccessType | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The unique identifier for Application segment ID from Azure AD.
      */
@@ -4205,10 +4434,6 @@ export interface Profile extends Entity, Parsable {
     version?: string | null;
 }
 export interface RedundancyConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -4297,10 +4522,6 @@ export interface RelatedRemoteNetwork extends Parsable, RelatedResource {
     remoteNetworkId?: string | null;
 }
 export interface RelatedResource extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -4394,10 +4615,6 @@ export interface RemoteNetworkCollectionResponse extends BaseCollectionPaginatio
 }
 export interface RemoteNetworkConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -4467,10 +4684,6 @@ export interface Reports extends Entity, Parsable {
 }
 export interface RuleDestination extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -4479,1477 +4692,1855 @@ export interface RuleDestination extends AdditionalDataHolder, BackedModel, Pars
      */
     odataType?: string | null;
 }
+export type SecurityRuleStatus = (typeof SecurityRuleStatusObject)[keyof typeof SecurityRuleStatusObject];
 /**
  * Serializes information the current object
+ * @param Alert The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined | null = {}) : void {
-    if (alert) {
-        serializeEntity(writer, alert)
-        writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
-        writer.writeEnumValue<AlertType>("alertType", alert.alertType);
-        writer.writeDateValue("creationDateTime", alert.creationDateTime);
-        writer.writeStringValue("description", alert.description);
-        writer.writeStringValue("detectionTechnology", alert.detectionTechnology);
-        writer.writeStringValue("displayName", alert.displayName);
-        writer.writeObjectValue<FilteringPolicy>("policy", alert.policy, serializeFilteringPolicy);
-        writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
-        writer.writeEnumValue<AlertSeverity>("severity", alert.severity);
-        writer.writeStringValue("vendorName", alert.vendorName);
-    }
+export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alert || isSerializingDerivedType) { return; }
+    serializeEntity(writer, alert, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertAction>("actions", alert.actions, serializeAlertAction);
+    writer.writeEnumValue<AlertType>("alertType", alert.alertType);
+    writer.writeDateValue("creationDateTime", alert.creationDateTime);
+    writer.writeStringValue("description", alert.description);
+    writer.writeStringValue("detectionTechnology", alert.detectionTechnology);
+    writer.writeStringValue("displayName", alert.displayName);
+    writer.writeObjectValue<FilteringPolicy>("policy", alert.policy, serializeFilteringPolicy);
+    writer.writeCollectionOfObjectValues<RelatedResource>("relatedResources", alert.relatedResources, serializeRelatedResource);
+    writer.writeEnumValue<AlertSeverity>("severity", alert.severity);
+    writer.writeStringValue("vendorName", alert.vendorName);
 }
 /**
  * Serializes information the current object
+ * @param AlertAction The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined | null = {}) : void {
-    if (alertAction) {
-        writer.writeStringValue("actionLink", alertAction.actionLink);
-        writer.writeStringValue("actionText", alertAction.actionText);
-        writer.writeStringValue("@odata.type", alertAction.odataType);
-        writer.writeAdditionalData(alertAction.additionalData);
-    }
+export function serializeAlertAction(writer: SerializationWriter, alertAction: Partial<AlertAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertAction || isSerializingDerivedType) { return; }
+    writer.writeStringValue("actionLink", alertAction.actionLink);
+    writer.writeStringValue("actionText", alertAction.actionText);
+    writer.writeStringValue("@odata.type", alertAction.odataType);
+    writer.writeAdditionalData(alertAction.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined | null = {}) : void {
-    if (alertCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse)
-        writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
-    }
+export function serializeAlertCollectionResponse(writer: SerializationWriter, alertCollectionResponse: Partial<AlertCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, alertCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Alert>("value", alertCollectionResponse.value, serializeAlert);
 }
 /**
  * Serializes information the current object
+ * @param AlertFrequencyPoint The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertFrequencyPoint(writer: SerializationWriter, alertFrequencyPoint: Partial<AlertFrequencyPoint> | undefined | null = {}) : void {
-    if (alertFrequencyPoint) {
-        writer.writeNumberValue("highSeverityCount", alertFrequencyPoint.highSeverityCount);
-        writer.writeNumberValue("informationalSeverityCount", alertFrequencyPoint.informationalSeverityCount);
-        writer.writeNumberValue("lowSeverityCount", alertFrequencyPoint.lowSeverityCount);
-        writer.writeNumberValue("mediumSeverityCount", alertFrequencyPoint.mediumSeverityCount);
-        writer.writeStringValue("@odata.type", alertFrequencyPoint.odataType);
-        writer.writeDateValue("timeStampDateTime", alertFrequencyPoint.timeStampDateTime);
-        writer.writeAdditionalData(alertFrequencyPoint.additionalData);
-    }
+export function serializeAlertFrequencyPoint(writer: SerializationWriter, alertFrequencyPoint: Partial<AlertFrequencyPoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertFrequencyPoint || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("highSeverityCount", alertFrequencyPoint.highSeverityCount);
+    writer.writeNumberValue("informationalSeverityCount", alertFrequencyPoint.informationalSeverityCount);
+    writer.writeNumberValue("lowSeverityCount", alertFrequencyPoint.lowSeverityCount);
+    writer.writeNumberValue("mediumSeverityCount", alertFrequencyPoint.mediumSeverityCount);
+    writer.writeStringValue("@odata.type", alertFrequencyPoint.odataType);
+    writer.writeDateValue("timeStampDateTime", alertFrequencyPoint.timeStampDateTime);
+    writer.writeAdditionalData(alertFrequencyPoint.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertSeveritySummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertSeveritySummary(writer: SerializationWriter, alertSeveritySummary: Partial<AlertSeveritySummary> | undefined | null = {}) : void {
-    if (alertSeveritySummary) {
-        writer.writeNumberValue("count", alertSeveritySummary.count);
-        writer.writeStringValue("@odata.type", alertSeveritySummary.odataType);
-        writer.writeEnumValue<AlertSeverity>("severity", alertSeveritySummary.severity);
-        writer.writeAdditionalData(alertSeveritySummary.additionalData);
-    }
+export function serializeAlertSeveritySummary(writer: SerializationWriter, alertSeveritySummary: Partial<AlertSeveritySummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertSeveritySummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("count", alertSeveritySummary.count);
+    writer.writeStringValue("@odata.type", alertSeveritySummary.odataType);
+    writer.writeEnumValue<AlertSeverity>("severity", alertSeveritySummary.severity);
+    writer.writeAdditionalData(alertSeveritySummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertSummary(writer: SerializationWriter, alertSummary: Partial<AlertSummary> | undefined | null = {}) : void {
-    if (alertSummary) {
-        writer.writeEnumValue<AlertType>("alertType", alertSummary.alertType);
-        writer.writeNumberValue("count", alertSummary.count);
-        writer.writeStringValue("@odata.type", alertSummary.odataType);
-        writer.writeEnumValue<AlertSeverity>("severity", alertSummary.severity);
-        writer.writeAdditionalData(alertSummary.additionalData);
-    }
+export function serializeAlertSummary(writer: SerializationWriter, alertSummary: Partial<AlertSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertSummary || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AlertType>("alertType", alertSummary.alertType);
+    writer.writeNumberValue("count", alertSummary.count);
+    writer.writeStringValue("@odata.type", alertSummary.odataType);
+    writer.writeEnumValue<AlertSeverity>("severity", alertSummary.severity);
+    writer.writeAdditionalData(alertSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ApplicationSnapshot The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined | null = {}) : void {
-    if (applicationSnapshot) {
-        writer.writeStringValue("appId", applicationSnapshot.appId);
-        writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
-        writer.writeAdditionalData(applicationSnapshot.additionalData);
-    }
+export function serializeApplicationSnapshot(writer: SerializationWriter, applicationSnapshot: Partial<ApplicationSnapshot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicationSnapshot || isSerializingDerivedType) { return; }
+    writer.writeStringValue("appId", applicationSnapshot.appId);
+    writer.writeStringValue("@odata.type", applicationSnapshot.odataType);
+    writer.writeAdditionalData(applicationSnapshot.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AssociatedBranch The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAssociatedBranch(writer: SerializationWriter, associatedBranch: Partial<AssociatedBranch> | undefined | null = {}) : void {
-    if (associatedBranch) {
-        serializeAssociation(writer, associatedBranch)
-        writer.writeStringValue("branchId", associatedBranch.branchId);
-    }
+export function serializeAssociatedBranch(writer: SerializationWriter, associatedBranch: Partial<AssociatedBranch> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!associatedBranch || isSerializingDerivedType) { return; }
+    serializeAssociation(writer, associatedBranch, isSerializingDerivedType)
+    writer.writeStringValue("branchId", associatedBranch.branchId);
 }
 /**
  * Serializes information the current object
+ * @param Association The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAssociation(writer: SerializationWriter, association: Partial<Association> | undefined | null = {}) : void {
-    if (association) {
-        writer.writeStringValue("@odata.type", association.odataType);
-        writer.writeAdditionalData(association.additionalData);
+export function serializeAssociation(writer: SerializationWriter, association: Partial<Association> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!association || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", association.odataType);
+    writer.writeAdditionalData(association.additionalData);
+    switch (association.odataType) {
+        case "#microsoft.graph.networkaccess.associatedBranch":
+            serializeAssociatedBranch(writer, association, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param BgpConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfiguration: Partial<BgpConfiguration> | undefined | null = {}) : void {
-    if (bgpConfiguration) {
-        writer.writeNumberValue("asn", bgpConfiguration.asn);
-        writer.writeStringValue("ipAddress", bgpConfiguration.ipAddress);
-        writer.writeStringValue("localIpAddress", bgpConfiguration.localIpAddress);
-        writer.writeStringValue("@odata.type", bgpConfiguration.odataType);
-        writer.writeStringValue("peerIpAddress", bgpConfiguration.peerIpAddress);
-        writer.writeAdditionalData(bgpConfiguration.additionalData);
-    }
+export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfiguration: Partial<BgpConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!bgpConfiguration || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("asn", bgpConfiguration.asn);
+    writer.writeStringValue("ipAddress", bgpConfiguration.ipAddress);
+    writer.writeStringValue("localIpAddress", bgpConfiguration.localIpAddress);
+    writer.writeStringValue("@odata.type", bgpConfiguration.odataType);
+    writer.writeStringValue("peerIpAddress", bgpConfiguration.peerIpAddress);
+    writer.writeAdditionalData(bgpConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param BranchConnectivityConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeBranchConnectivityConfiguration(writer: SerializationWriter, branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined | null = {}) : void {
-    if (branchConnectivityConfiguration) {
-        writer.writeStringValue("branchId", branchConnectivityConfiguration.branchId);
-        writer.writeStringValue("branchName", branchConnectivityConfiguration.branchName);
-        writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", branchConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
-        writer.writeStringValue("@odata.type", branchConnectivityConfiguration.odataType);
-        writer.writeAdditionalData(branchConnectivityConfiguration.additionalData);
-    }
+export function serializeBranchConnectivityConfiguration(writer: SerializationWriter, branchConnectivityConfiguration: Partial<BranchConnectivityConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!branchConnectivityConfiguration || isSerializingDerivedType) { return; }
+    writer.writeStringValue("branchId", branchConnectivityConfiguration.branchId);
+    writer.writeStringValue("branchName", branchConnectivityConfiguration.branchName);
+    writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", branchConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
+    writer.writeStringValue("@odata.type", branchConnectivityConfiguration.odataType);
+    writer.writeAdditionalData(branchConnectivityConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param BranchSite The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeBranchSite(writer: SerializationWriter, branchSite: Partial<BranchSite> | undefined | null = {}) : void {
-    if (branchSite) {
-        serializeEntity(writer, branchSite)
-        writer.writeNumberValue("bandwidthCapacity", branchSite.bandwidthCapacity);
-        writer.writeObjectValue<BranchConnectivityConfiguration>("connectivityConfiguration", branchSite.connectivityConfiguration, serializeBranchConnectivityConfiguration);
-        writer.writeEnumValue<ConnectivityState>("connectivityState", branchSite.connectivityState);
-        writer.writeStringValue("country", branchSite.country);
-        writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", branchSite.deviceLinks, serializeDeviceLink);
-        writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", branchSite.forwardingProfiles, serializeForwardingProfile);
-        writer.writeDateValue("lastModifiedDateTime", branchSite.lastModifiedDateTime);
-        writer.writeStringValue("name", branchSite.name);
-        writer.writeEnumValue<Region>("region", branchSite.region);
-        writer.writeStringValue("version", branchSite.version);
-    }
+export function serializeBranchSite(writer: SerializationWriter, branchSite: Partial<BranchSite> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!branchSite || isSerializingDerivedType) { return; }
+    serializeEntity(writer, branchSite, isSerializingDerivedType)
+    writer.writeNumberValue("bandwidthCapacity", branchSite.bandwidthCapacity);
+    writer.writeObjectValue<BranchConnectivityConfiguration>("connectivityConfiguration", branchSite.connectivityConfiguration, serializeBranchConnectivityConfiguration);
+    writer.writeEnumValue<ConnectivityState>("connectivityState", branchSite.connectivityState);
+    writer.writeStringValue("country", branchSite.country);
+    writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", branchSite.deviceLinks, serializeDeviceLink);
+    writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", branchSite.forwardingProfiles, serializeForwardingProfile);
+    writer.writeDateValue("lastModifiedDateTime", branchSite.lastModifiedDateTime);
+    writer.writeStringValue("name", branchSite.name);
+    writer.writeEnumValue<Region>("region", branchSite.region);
+    writer.writeStringValue("version", branchSite.version);
 }
 /**
  * Serializes information the current object
+ * @param BranchSiteCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeBranchSiteCollectionResponse(writer: SerializationWriter, branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined | null = {}) : void {
-    if (branchSiteCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse)
-        writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
-    }
+export function serializeBranchSiteCollectionResponse(writer: SerializationWriter, branchSiteCollectionResponse: Partial<BranchSiteCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!branchSiteCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
 }
 /**
  * Serializes information the current object
+ * @param ConditionalAccessPolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConditionalAccessPolicy(writer: SerializationWriter, conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined | null = {}) : void {
-    if (conditionalAccessPolicy) {
-        serializeEntity(writer, conditionalAccessPolicy)
-        writer.writeDateValue("createdDateTime", conditionalAccessPolicy.createdDateTime);
-        writer.writeStringValue("description", conditionalAccessPolicy.description);
-        writer.writeStringValue("displayName", conditionalAccessPolicy.displayName);
-        writer.writeDateValue("modifiedDateTime", conditionalAccessPolicy.modifiedDateTime);
-    }
+export function serializeConditionalAccessPolicy(writer: SerializationWriter, conditionalAccessPolicy: Partial<ConditionalAccessPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!conditionalAccessPolicy || isSerializingDerivedType) { return; }
+    serializeEntity(writer, conditionalAccessPolicy, isSerializingDerivedType)
+    writer.writeDateValue("createdDateTime", conditionalAccessPolicy.createdDateTime);
+    writer.writeStringValue("description", conditionalAccessPolicy.description);
+    writer.writeStringValue("displayName", conditionalAccessPolicy.displayName);
+    writer.writeDateValue("modifiedDateTime", conditionalAccessPolicy.modifiedDateTime);
 }
 /**
  * Serializes information the current object
+ * @param ConditionalAccessPolicyCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConditionalAccessPolicyCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined | null = {}) : void {
-    if (conditionalAccessPolicyCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCollectionResponse)
-        writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("value", conditionalAccessPolicyCollectionResponse.value, serializeConditionalAccessPolicy);
-    }
+export function serializeConditionalAccessPolicyCollectionResponse(writer: SerializationWriter, conditionalAccessPolicyCollectionResponse: Partial<ConditionalAccessPolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!conditionalAccessPolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, conditionalAccessPolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("value", conditionalAccessPolicyCollectionResponse.value, serializeConditionalAccessPolicy);
 }
 /**
  * Serializes information the current object
+ * @param ConditionalAccessSettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConditionalAccessSettings(writer: SerializationWriter, conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined | null = {}) : void {
-    if (conditionalAccessSettings) {
-        serializeEntity(writer, conditionalAccessSettings)
-        writer.writeEnumValue<Status>("signalingStatus", conditionalAccessSettings.signalingStatus);
-    }
+export function serializeConditionalAccessSettings(writer: SerializationWriter, conditionalAccessSettings: Partial<ConditionalAccessSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!conditionalAccessSettings || isSerializingDerivedType) { return; }
+    serializeEntity(writer, conditionalAccessSettings, isSerializingDerivedType)
+    writer.writeEnumValue<Status>("signalingStatus", conditionalAccessSettings.signalingStatus);
 }
 /**
  * Serializes information the current object
+ * @param Connection The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnection(writer: SerializationWriter, connection: Partial<Connection> | undefined | null = {}) : void {
-    if (connection) {
-        serializeEntity(writer, connection)
-        writer.writeStringValue("agentVersion", connection.agentVersion);
-        writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", connection.applicationSnapshot, serializeApplicationSnapshot);
-        writer.writeDateValue("createdDateTime", connection.createdDateTime);
-        writer.writeStringValue("destinationFqdn", connection.destinationFqdn);
-        writer.writeStringValue("destinationIp", connection.destinationIp);
-        writer.writeNumberValue("destinationPort", connection.destinationPort);
-        writer.writeEnumValue<DeviceCategory>("deviceCategory", connection.deviceCategory);
-        writer.writeStringValue("deviceId", connection.deviceId);
-        writer.writeStringValue("deviceOperatingSystem", connection.deviceOperatingSystem);
-        writer.writeStringValue("deviceOperatingSystemVersion", connection.deviceOperatingSystemVersion);
-        writer.writeDateValue("endDateTime", connection.endDateTime);
-        writer.writeStringValue("initiatingProcessName", connection.initiatingProcessName);
-        writer.writeDateValue("lastUpdateDateTime", connection.lastUpdateDateTime);
-        writer.writeEnumValue<NetworkingProtocol>("networkProtocol", connection.networkProtocol);
-        writer.writeStringValue("popProcessingRegion", connection.popProcessingRegion);
-        writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", connection.privateAccessDetails, serializePrivateAccessDetails);
-        writer.writeNumberValue("receivedBytes", connection.receivedBytes);
-        writer.writeNumberValue("sentBytes", connection.sentBytes);
-        writer.writeStringValue("sourceIp", connection.sourceIp);
-        writer.writeNumberValue("sourcePort", connection.sourcePort);
-        writer.writeEnumValue<ConnectionStatus>("status", connection.status);
-        writer.writeStringValue("tenantId", connection.tenantId);
-        writer.writeEnumValue<TrafficType>("trafficType", connection.trafficType);
-        writer.writeNumberValue("transactionBlockCount", connection.transactionBlockCount);
-        writer.writeNumberValue("transactionCount", connection.transactionCount);
-        writer.writeEnumValue<NetworkingProtocol>("transportProtocol", connection.transportProtocol);
-        writer.writeStringValue("userId", connection.userId);
-        writer.writeStringValue("userPrincipalName", connection.userPrincipalName);
-    }
+export function serializeConnection(writer: SerializationWriter, connection: Partial<Connection> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connection || isSerializingDerivedType) { return; }
+    serializeEntity(writer, connection, isSerializingDerivedType)
+    writer.writeStringValue("agentVersion", connection.agentVersion);
+    writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", connection.applicationSnapshot, serializeApplicationSnapshot);
+    writer.writeDateValue("createdDateTime", connection.createdDateTime);
+    writer.writeStringValue("destinationFqdn", connection.destinationFqdn);
+    writer.writeStringValue("destinationIp", connection.destinationIp);
+    writer.writeNumberValue("destinationPort", connection.destinationPort);
+    writer.writeEnumValue<DeviceCategory>("deviceCategory", connection.deviceCategory);
+    writer.writeStringValue("deviceId", connection.deviceId);
+    writer.writeStringValue("deviceOperatingSystem", connection.deviceOperatingSystem);
+    writer.writeStringValue("deviceOperatingSystemVersion", connection.deviceOperatingSystemVersion);
+    writer.writeDateValue("endDateTime", connection.endDateTime);
+    writer.writeStringValue("initiatingProcessName", connection.initiatingProcessName);
+    writer.writeDateValue("lastUpdateDateTime", connection.lastUpdateDateTime);
+    writer.writeEnumValue<NetworkingProtocol>("networkProtocol", connection.networkProtocol);
+    writer.writeStringValue("popProcessingRegion", connection.popProcessingRegion);
+    writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", connection.privateAccessDetails, serializePrivateAccessDetails);
+    writer.writeNumberValue("receivedBytes", connection.receivedBytes);
+    writer.writeNumberValue("sentBytes", connection.sentBytes);
+    writer.writeStringValue("sourceIp", connection.sourceIp);
+    writer.writeNumberValue("sourcePort", connection.sourcePort);
+    writer.writeEnumValue<ConnectionStatus>("status", connection.status);
+    writer.writeStringValue("tenantId", connection.tenantId);
+    writer.writeEnumValue<TrafficType>("trafficType", connection.trafficType);
+    writer.writeNumberValue("transactionBlockCount", connection.transactionBlockCount);
+    writer.writeNumberValue("transactionCount", connection.transactionCount);
+    writer.writeEnumValue<NetworkingProtocol>("transportProtocol", connection.transportProtocol);
+    writer.writeStringValue("userId", connection.userId);
+    writer.writeStringValue("userPrincipalName", connection.userPrincipalName);
 }
 /**
  * Serializes information the current object
+ * @param ConnectionCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectionCollectionResponse(writer: SerializationWriter, connectionCollectionResponse: Partial<ConnectionCollectionResponse> | undefined | null = {}) : void {
-    if (connectionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, connectionCollectionResponse)
-        writer.writeCollectionOfObjectValues<Connection>("value", connectionCollectionResponse.value, serializeConnection);
-    }
+export function serializeConnectionCollectionResponse(writer: SerializationWriter, connectionCollectionResponse: Partial<ConnectionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, connectionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Connection>("value", connectionCollectionResponse.value, serializeConnection);
 }
 /**
  * Serializes information the current object
+ * @param ConnectionSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectionSummary(writer: SerializationWriter, connectionSummary: Partial<ConnectionSummary> | undefined | null = {}) : void {
-    if (connectionSummary) {
-        writer.writeStringValue("@odata.type", connectionSummary.odataType);
-        writer.writeNumberValue("totalCount", connectionSummary.totalCount);
-        writer.writeEnumValue<TrafficType>("trafficType", connectionSummary.trafficType);
-        writer.writeAdditionalData(connectionSummary.additionalData);
-    }
+export function serializeConnectionSummary(writer: SerializationWriter, connectionSummary: Partial<ConnectionSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectionSummary || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", connectionSummary.odataType);
+    writer.writeNumberValue("totalCount", connectionSummary.totalCount);
+    writer.writeEnumValue<TrafficType>("trafficType", connectionSummary.trafficType);
+    writer.writeAdditionalData(connectionSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param Connectivity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectivity(writer: SerializationWriter, connectivity: Partial<Connectivity> | undefined | null = {}) : void {
-    if (connectivity) {
-        serializeEntity(writer, connectivity)
-        writer.writeCollectionOfObjectValues<BranchSite>("branches", connectivity.branches, serializeBranchSite);
-        writer.writeCollectionOfObjectValues<RemoteNetwork>("remoteNetworks", connectivity.remoteNetworks, serializeRemoteNetwork);
-        writer.writeCollectionOfObjectValues<WebCategory>("webCategories", connectivity.webCategories, serializeWebCategory);
-    }
+export function serializeConnectivity(writer: SerializationWriter, connectivity: Partial<Connectivity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectivity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, connectivity, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<BranchSite>("branches", connectivity.branches, serializeBranchSite);
+    writer.writeCollectionOfObjectValues<RemoteNetwork>("remoteNetworks", connectivity.remoteNetworks, serializeRemoteNetwork);
+    writer.writeCollectionOfObjectValues<WebCategory>("webCategories", connectivity.webCategories, serializeWebCategory);
 }
 /**
  * Serializes information the current object
+ * @param ConnectivityConfigurationLink The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectivityConfigurationLink(writer: SerializationWriter, connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined | null = {}) : void {
-    if (connectivityConfigurationLink) {
-        serializeEntity(writer, connectivityConfigurationLink)
-        writer.writeStringValue("displayName", connectivityConfigurationLink.displayName);
-        writer.writeCollectionOfObjectValues<LocalConnectivityConfiguration>("localConfigurations", connectivityConfigurationLink.localConfigurations, serializeLocalConnectivityConfiguration);
-        writer.writeObjectValue<PeerConnectivityConfiguration>("peerConfiguration", connectivityConfigurationLink.peerConfiguration, serializePeerConnectivityConfiguration);
-    }
+export function serializeConnectivityConfigurationLink(writer: SerializationWriter, connectivityConfigurationLink: Partial<ConnectivityConfigurationLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectivityConfigurationLink || isSerializingDerivedType) { return; }
+    serializeEntity(writer, connectivityConfigurationLink, isSerializingDerivedType)
+    writer.writeStringValue("displayName", connectivityConfigurationLink.displayName);
+    writer.writeCollectionOfObjectValues<LocalConnectivityConfiguration>("localConfigurations", connectivityConfigurationLink.localConfigurations, serializeLocalConnectivityConfiguration);
+    writer.writeObjectValue<PeerConnectivityConfiguration>("peerConfiguration", connectivityConfigurationLink.peerConfiguration, serializePeerConnectivityConfiguration);
 }
 /**
  * Serializes information the current object
+ * @param ConnectivityConfigurationLinkCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeConnectivityConfigurationLinkCollectionResponse(writer: SerializationWriter, connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined | null = {}) : void {
-    if (connectivityConfigurationLinkCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, connectivityConfigurationLinkCollectionResponse)
-        writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("value", connectivityConfigurationLinkCollectionResponse.value, serializeConnectivityConfigurationLink);
-    }
+export function serializeConnectivityConfigurationLinkCollectionResponse(writer: SerializationWriter, connectivityConfigurationLinkCollectionResponse: Partial<ConnectivityConfigurationLinkCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!connectivityConfigurationLinkCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, connectivityConfigurationLinkCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("value", connectivityConfigurationLinkCollectionResponse.value, serializeConnectivityConfigurationLink);
 }
 /**
  * Serializes information the current object
+ * @param CrossTenantAccess The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCrossTenantAccess(writer: SerializationWriter, crossTenantAccess: Partial<CrossTenantAccess> | undefined | null = {}) : void {
-    if (crossTenantAccess) {
-        writer.writeNumberValue("deviceCount", crossTenantAccess.deviceCount);
-        writer.writeDateValue("lastAccessDateTime", crossTenantAccess.lastAccessDateTime);
-        writer.writeStringValue("@odata.type", crossTenantAccess.odataType);
-        writer.writeStringValue("resourceTenantId", crossTenantAccess.resourceTenantId);
-        writer.writeStringValue("resourceTenantName", crossTenantAccess.resourceTenantName);
-        writer.writeStringValue("resourceTenantPrimaryDomain", crossTenantAccess.resourceTenantPrimaryDomain);
-        writer.writeEnumValue<UsageStatus>("usageStatus", crossTenantAccess.usageStatus);
-        writer.writeNumberValue("userCount", crossTenantAccess.userCount);
-        writer.writeAdditionalData(crossTenantAccess.additionalData);
-    }
+export function serializeCrossTenantAccess(writer: SerializationWriter, crossTenantAccess: Partial<CrossTenantAccess> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!crossTenantAccess || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("deviceCount", crossTenantAccess.deviceCount);
+    writer.writeDateValue("lastAccessDateTime", crossTenantAccess.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", crossTenantAccess.odataType);
+    writer.writeStringValue("resourceTenantId", crossTenantAccess.resourceTenantId);
+    writer.writeStringValue("resourceTenantName", crossTenantAccess.resourceTenantName);
+    writer.writeStringValue("resourceTenantPrimaryDomain", crossTenantAccess.resourceTenantPrimaryDomain);
+    writer.writeEnumValue<UsageStatus>("usageStatus", crossTenantAccess.usageStatus);
+    writer.writeNumberValue("userCount", crossTenantAccess.userCount);
+    writer.writeAdditionalData(crossTenantAccess.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param CrossTenantAccessSettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCrossTenantAccessSettings(writer: SerializationWriter, crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined | null = {}) : void {
-    if (crossTenantAccessSettings) {
-        serializeEntity(writer, crossTenantAccessSettings)
-        writer.writeEnumValue<Status>("networkPacketTaggingStatus", crossTenantAccessSettings.networkPacketTaggingStatus);
-    }
+export function serializeCrossTenantAccessSettings(writer: SerializationWriter, crossTenantAccessSettings: Partial<CrossTenantAccessSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!crossTenantAccessSettings || isSerializingDerivedType) { return; }
+    serializeEntity(writer, crossTenantAccessSettings, isSerializingDerivedType)
+    writer.writeEnumValue<Status>("networkPacketTaggingStatus", crossTenantAccessSettings.networkPacketTaggingStatus);
 }
 /**
  * Serializes information the current object
+ * @param CrossTenantSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCrossTenantSummary(writer: SerializationWriter, crossTenantSummary: Partial<CrossTenantSummary> | undefined | null = {}) : void {
-    if (crossTenantSummary) {
-        writer.writeNumberValue("authTransactionCount", crossTenantSummary.authTransactionCount);
-        writer.writeNumberValue("deviceCount", crossTenantSummary.deviceCount);
-        writer.writeNumberValue("newTenantCount", crossTenantSummary.newTenantCount);
-        writer.writeStringValue("@odata.type", crossTenantSummary.odataType);
-        writer.writeNumberValue("rarelyUsedTenantCount", crossTenantSummary.rarelyUsedTenantCount);
-        writer.writeNumberValue("tenantCount", crossTenantSummary.tenantCount);
-        writer.writeNumberValue("userCount", crossTenantSummary.userCount);
-        writer.writeAdditionalData(crossTenantSummary.additionalData);
-    }
+export function serializeCrossTenantSummary(writer: SerializationWriter, crossTenantSummary: Partial<CrossTenantSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!crossTenantSummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("authTransactionCount", crossTenantSummary.authTransactionCount);
+    writer.writeNumberValue("deviceCount", crossTenantSummary.deviceCount);
+    writer.writeNumberValue("newTenantCount", crossTenantSummary.newTenantCount);
+    writer.writeStringValue("@odata.type", crossTenantSummary.odataType);
+    writer.writeNumberValue("rarelyUsedTenantCount", crossTenantSummary.rarelyUsedTenantCount);
+    writer.writeNumberValue("tenantCount", crossTenantSummary.tenantCount);
+    writer.writeNumberValue("userCount", crossTenantSummary.userCount);
+    writer.writeAdditionalData(crossTenantSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param Destination The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDestination(writer: SerializationWriter, destination: Partial<Destination> | undefined | null = {}) : void {
-    if (destination) {
-        writer.writeNumberValue("deviceCount", destination.deviceCount);
-        writer.writeDateValue("firstAccessDateTime", destination.firstAccessDateTime);
-        writer.writeStringValue("fqdn", destination.fqdn);
-        writer.writeStringValue("ip", destination.ip);
-        writer.writeDateValue("lastAccessDateTime", destination.lastAccessDateTime);
-        writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", destination.networkingProtocol);
-        writer.writeStringValue("@odata.type", destination.odataType);
-        writer.writeNumberValue("port", destination.port);
-        writer.writeNumberValue("threatCount", destination.threatCount);
-        writer.writeNumberValue("totalBytesReceived", destination.totalBytesReceived);
-        writer.writeNumberValue("totalBytesSent", destination.totalBytesSent);
-        writer.writeEnumValue<TrafficType>("trafficType", destination.trafficType);
-        writer.writeNumberValue("transactionCount", destination.transactionCount);
-        writer.writeNumberValue("userCount", destination.userCount);
-        writer.writeAdditionalData(destination.additionalData);
-    }
+export function serializeDestination(writer: SerializationWriter, destination: Partial<Destination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!destination || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("deviceCount", destination.deviceCount);
+    writer.writeDateValue("firstAccessDateTime", destination.firstAccessDateTime);
+    writer.writeStringValue("fqdn", destination.fqdn);
+    writer.writeStringValue("ip", destination.ip);
+    writer.writeDateValue("lastAccessDateTime", destination.lastAccessDateTime);
+    writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", destination.networkingProtocol);
+    writer.writeStringValue("@odata.type", destination.odataType);
+    writer.writeNumberValue("port", destination.port);
+    writer.writeNumberValue("threatCount", destination.threatCount);
+    writer.writeNumberValue("totalBytesReceived", destination.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", destination.totalBytesSent);
+    writer.writeEnumValue<TrafficType>("trafficType", destination.trafficType);
+    writer.writeNumberValue("transactionCount", destination.transactionCount);
+    writer.writeNumberValue("userCount", destination.userCount);
+    writer.writeAdditionalData(destination.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param DestinationSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDestinationSummary(writer: SerializationWriter, destinationSummary: Partial<DestinationSummary> | undefined | null = {}) : void {
-    if (destinationSummary) {
-        writer.writeNumberValue("count", destinationSummary.count);
-        writer.writeStringValue("destination", destinationSummary.destination);
-        writer.writeStringValue("@odata.type", destinationSummary.odataType);
-        writer.writeEnumValue<TrafficType>("trafficType", destinationSummary.trafficType);
-        writer.writeAdditionalData(destinationSummary.additionalData);
-    }
+export function serializeDestinationSummary(writer: SerializationWriter, destinationSummary: Partial<DestinationSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!destinationSummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("count", destinationSummary.count);
+    writer.writeStringValue("destination", destinationSummary.destination);
+    writer.writeStringValue("@odata.type", destinationSummary.odataType);
+    writer.writeEnumValue<TrafficType>("trafficType", destinationSummary.trafficType);
+    writer.writeAdditionalData(destinationSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param Device The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDevice(writer: SerializationWriter, device: Partial<Device> | undefined | null = {}) : void {
-    if (device) {
-        writer.writeStringValue("deviceId", device.deviceId);
-        writer.writeStringValue("displayName", device.displayName);
-        writer.writeBooleanValue("isCompliant", device.isCompliant);
-        writer.writeDateValue("lastAccessDateTime", device.lastAccessDateTime);
-        writer.writeStringValue("@odata.type", device.odataType);
-        writer.writeStringValue("operatingSystem", device.operatingSystem);
-        writer.writeEnumValue<TrafficType>("trafficType", device.trafficType);
-        writer.writeAdditionalData(device.additionalData);
-    }
+export function serializeDevice(writer: SerializationWriter, device: Partial<Device> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!device || isSerializingDerivedType) { return; }
+    writer.writeStringValue("deviceId", device.deviceId);
+    writer.writeStringValue("displayName", device.displayName);
+    writer.writeBooleanValue("isCompliant", device.isCompliant);
+    writer.writeDateValue("lastAccessDateTime", device.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", device.odataType);
+    writer.writeStringValue("operatingSystem", device.operatingSystem);
+    writer.writeEnumValue<TrafficType>("trafficType", device.trafficType);
+    writer.writeAdditionalData(device.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param DeviceLink The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceLink(writer: SerializationWriter, deviceLink: Partial<DeviceLink> | undefined | null = {}) : void {
-    if (deviceLink) {
-        serializeEntity(writer, deviceLink)
-        writer.writeEnumValue<BandwidthCapacityInMbps>("bandwidthCapacityInMbps", deviceLink.bandwidthCapacityInMbps);
-        writer.writeObjectValue<BgpConfiguration>("bgpConfiguration", deviceLink.bgpConfiguration, serializeBgpConfiguration);
-        writer.writeEnumValue<DeviceVendor>("deviceVendor", deviceLink.deviceVendor);
-        writer.writeStringValue("ipAddress", deviceLink.ipAddress);
-        writer.writeDateValue("lastModifiedDateTime", deviceLink.lastModifiedDateTime);
-        writer.writeStringValue("name", deviceLink.name);
-        writer.writeObjectValue<RedundancyConfiguration>("redundancyConfiguration", deviceLink.redundancyConfiguration, serializeRedundancyConfiguration);
-        writer.writeObjectValue<TunnelConfiguration>("tunnelConfiguration", deviceLink.tunnelConfiguration, serializeTunnelConfiguration);
-    }
+export function serializeDeviceLink(writer: SerializationWriter, deviceLink: Partial<DeviceLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceLink || isSerializingDerivedType) { return; }
+    serializeEntity(writer, deviceLink, isSerializingDerivedType)
+    writer.writeEnumValue<BandwidthCapacityInMbps>("bandwidthCapacityInMbps", deviceLink.bandwidthCapacityInMbps);
+    writer.writeObjectValue<BgpConfiguration>("bgpConfiguration", deviceLink.bgpConfiguration, serializeBgpConfiguration);
+    writer.writeEnumValue<DeviceVendor>("deviceVendor", deviceLink.deviceVendor);
+    writer.writeStringValue("ipAddress", deviceLink.ipAddress);
+    writer.writeDateValue("lastModifiedDateTime", deviceLink.lastModifiedDateTime);
+    writer.writeStringValue("name", deviceLink.name);
+    writer.writeObjectValue<RedundancyConfiguration>("redundancyConfiguration", deviceLink.redundancyConfiguration, serializeRedundancyConfiguration);
+    writer.writeObjectValue<TunnelConfiguration>("tunnelConfiguration", deviceLink.tunnelConfiguration, serializeTunnelConfiguration);
 }
 /**
  * Serializes information the current object
+ * @param DeviceLinkCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceLinkCollectionResponse(writer: SerializationWriter, deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined | null = {}) : void {
-    if (deviceLinkCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deviceLinkCollectionResponse)
-        writer.writeCollectionOfObjectValues<DeviceLink>("value", deviceLinkCollectionResponse.value, serializeDeviceLink);
-    }
+export function serializeDeviceLinkCollectionResponse(writer: SerializationWriter, deviceLinkCollectionResponse: Partial<DeviceLinkCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceLinkCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deviceLinkCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceLink>("value", deviceLinkCollectionResponse.value, serializeDeviceLink);
 }
 /**
  * Serializes information the current object
+ * @param DeviceUsageSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceUsageSummary: Partial<DeviceUsageSummary> | undefined | null = {}) : void {
-    if (deviceUsageSummary) {
-        writer.writeNumberValue("activeDeviceCount", deviceUsageSummary.activeDeviceCount);
-        writer.writeNumberValue("inactiveDeviceCount", deviceUsageSummary.inactiveDeviceCount);
-        writer.writeStringValue("@odata.type", deviceUsageSummary.odataType);
-        writer.writeNumberValue("totalDeviceCount", deviceUsageSummary.totalDeviceCount);
-        writer.writeAdditionalData(deviceUsageSummary.additionalData);
-    }
+export function serializeDeviceUsageSummary(writer: SerializationWriter, deviceUsageSummary: Partial<DeviceUsageSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceUsageSummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("activeDeviceCount", deviceUsageSummary.activeDeviceCount);
+    writer.writeNumberValue("inactiveDeviceCount", deviceUsageSummary.inactiveDeviceCount);
+    writer.writeStringValue("@odata.type", deviceUsageSummary.odataType);
+    writer.writeNumberValue("totalDeviceCount", deviceUsageSummary.totalDeviceCount);
+    writer.writeAdditionalData(deviceUsageSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param DiscoveredApplicationSegmentReport The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDiscoveredApplicationSegmentReport(writer: SerializationWriter, discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined | null = {}) : void {
-    if (discoveredApplicationSegmentReport) {
-        writer.writeEnumValue<AccessType>("accessType", discoveredApplicationSegmentReport.accessType);
-        writer.writeNumberValue("deviceCount", discoveredApplicationSegmentReport.deviceCount);
-        writer.writeStringValue("discoveredApplicationSegmentId", discoveredApplicationSegmentReport.discoveredApplicationSegmentId);
-        writer.writeDateValue("firstAccessDateTime", discoveredApplicationSegmentReport.firstAccessDateTime);
-        writer.writeStringValue("fqdn", discoveredApplicationSegmentReport.fqdn);
-        writer.writeStringValue("ip", discoveredApplicationSegmentReport.ip);
-        writer.writeDateValue("lastAccessDateTime", discoveredApplicationSegmentReport.lastAccessDateTime);
-        writer.writeStringValue("@odata.type", discoveredApplicationSegmentReport.odataType);
-        writer.writeNumberValue("port", discoveredApplicationSegmentReport.port);
-        writer.writeNumberValue("totalBytesReceived", discoveredApplicationSegmentReport.totalBytesReceived);
-        writer.writeNumberValue("totalBytesSent", discoveredApplicationSegmentReport.totalBytesSent);
-        writer.writeNumberValue("transactionCount", discoveredApplicationSegmentReport.transactionCount);
-        writer.writeEnumValue<NetworkingProtocol>("transportProtocol", discoveredApplicationSegmentReport.transportProtocol);
-        writer.writeNumberValue("userCount", discoveredApplicationSegmentReport.userCount);
-        writer.writeAdditionalData(discoveredApplicationSegmentReport.additionalData);
-    }
+export function serializeDiscoveredApplicationSegmentReport(writer: SerializationWriter, discoveredApplicationSegmentReport: Partial<DiscoveredApplicationSegmentReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!discoveredApplicationSegmentReport || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AccessType>("accessType", discoveredApplicationSegmentReport.accessType);
+    writer.writeNumberValue("deviceCount", discoveredApplicationSegmentReport.deviceCount);
+    writer.writeStringValue("discoveredApplicationSegmentId", discoveredApplicationSegmentReport.discoveredApplicationSegmentId);
+    writer.writeDateValue("firstAccessDateTime", discoveredApplicationSegmentReport.firstAccessDateTime);
+    writer.writeStringValue("fqdn", discoveredApplicationSegmentReport.fqdn);
+    writer.writeStringValue("ip", discoveredApplicationSegmentReport.ip);
+    writer.writeDateValue("lastAccessDateTime", discoveredApplicationSegmentReport.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", discoveredApplicationSegmentReport.odataType);
+    writer.writeNumberValue("port", discoveredApplicationSegmentReport.port);
+    writer.writeNumberValue("totalBytesReceived", discoveredApplicationSegmentReport.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", discoveredApplicationSegmentReport.totalBytesSent);
+    writer.writeNumberValue("transactionCount", discoveredApplicationSegmentReport.transactionCount);
+    writer.writeEnumValue<NetworkingProtocol>("transportProtocol", discoveredApplicationSegmentReport.transportProtocol);
+    writer.writeNumberValue("userCount", discoveredApplicationSegmentReport.userCount);
+    writer.writeAdditionalData(discoveredApplicationSegmentReport.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param EnrichedAuditLogs The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEnrichedAuditLogs(writer: SerializationWriter, enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined | null = {}) : void {
-    if (enrichedAuditLogs) {
-        serializeEntity(writer, enrichedAuditLogs)
-        writer.writeObjectValue<EnrichedAuditLogsSettings>("exchange", enrichedAuditLogs.exchange, serializeEnrichedAuditLogsSettings);
-        writer.writeObjectValue<EnrichedAuditLogsSettings>("sharepoint", enrichedAuditLogs.sharepoint, serializeEnrichedAuditLogsSettings);
-        writer.writeObjectValue<EnrichedAuditLogsSettings>("teams", enrichedAuditLogs.teams, serializeEnrichedAuditLogsSettings);
-    }
+export function serializeEnrichedAuditLogs(writer: SerializationWriter, enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enrichedAuditLogs || isSerializingDerivedType) { return; }
+    serializeEntity(writer, enrichedAuditLogs, isSerializingDerivedType)
+    writer.writeObjectValue<EnrichedAuditLogsSettings>("exchange", enrichedAuditLogs.exchange, serializeEnrichedAuditLogsSettings);
+    writer.writeObjectValue<EnrichedAuditLogsSettings>("sharepoint", enrichedAuditLogs.sharepoint, serializeEnrichedAuditLogsSettings);
+    writer.writeObjectValue<EnrichedAuditLogsSettings>("teams", enrichedAuditLogs.teams, serializeEnrichedAuditLogsSettings);
 }
 /**
  * Serializes information the current object
+ * @param EnrichedAuditLogsSettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined | null = {}) : void {
-    if (enrichedAuditLogsSettings) {
-        writer.writeStringValue("@odata.type", enrichedAuditLogsSettings.odataType);
-        writer.writeEnumValue<Status>("status", enrichedAuditLogsSettings.status);
-        writer.writeAdditionalData(enrichedAuditLogsSettings.additionalData);
-    }
+export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enrichedAuditLogsSettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", enrichedAuditLogsSettings.odataType);
+    writer.writeEnumValue<Status>("status", enrichedAuditLogsSettings.status);
+    writer.writeAdditionalData(enrichedAuditLogsSettings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param EntitiesSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSummary: Partial<EntitiesSummary> | undefined | null = {}) : void {
-    if (entitiesSummary) {
-        writer.writeNumberValue("deviceCount", entitiesSummary.deviceCount);
-        writer.writeStringValue("@odata.type", entitiesSummary.odataType);
-        writer.writeEnumValue<TrafficType>("trafficType", entitiesSummary.trafficType);
-        writer.writeNumberValue("userCount", entitiesSummary.userCount);
-        writer.writeNumberValue("workloadCount", entitiesSummary.workloadCount);
-        writer.writeAdditionalData(entitiesSummary.additionalData);
-    }
+export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSummary: Partial<EntitiesSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!entitiesSummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("deviceCount", entitiesSummary.deviceCount);
+    writer.writeStringValue("@odata.type", entitiesSummary.odataType);
+    writer.writeEnumValue<TrafficType>("trafficType", entitiesSummary.trafficType);
+    writer.writeNumberValue("userCount", entitiesSummary.userCount);
+    writer.writeNumberValue("workloadCount", entitiesSummary.workloadCount);
+    writer.writeAdditionalData(entitiesSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param FilteringPolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilteringPolicy(writer: SerializationWriter, filteringPolicy: Partial<FilteringPolicy> | undefined | null = {}) : void {
-    if (filteringPolicy) {
-        serializePolicy(writer, filteringPolicy)
-        writer.writeEnumValue<FilteringPolicyAction>("action", filteringPolicy.action);
-        writer.writeDateValue("createdDateTime", filteringPolicy.createdDateTime);
-        writer.writeDateValue("lastModifiedDateTime", filteringPolicy.lastModifiedDateTime);
-    }
+export function serializeFilteringPolicy(writer: SerializationWriter, filteringPolicy: Partial<FilteringPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filteringPolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, filteringPolicy, isSerializingDerivedType)
+    writer.writeEnumValue<FilteringPolicyAction>("action", filteringPolicy.action);
+    writer.writeDateValue("createdDateTime", filteringPolicy.createdDateTime);
+    writer.writeDateValue("lastModifiedDateTime", filteringPolicy.lastModifiedDateTime);
 }
 /**
  * Serializes information the current object
+ * @param FilteringPolicyCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilteringPolicyCollectionResponse(writer: SerializationWriter, filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined | null = {}) : void {
-    if (filteringPolicyCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, filteringPolicyCollectionResponse)
-        writer.writeCollectionOfObjectValues<FilteringPolicy>("value", filteringPolicyCollectionResponse.value, serializeFilteringPolicy);
-    }
+export function serializeFilteringPolicyCollectionResponse(writer: SerializationWriter, filteringPolicyCollectionResponse: Partial<FilteringPolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filteringPolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, filteringPolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<FilteringPolicy>("value", filteringPolicyCollectionResponse.value, serializeFilteringPolicy);
 }
 /**
  * Serializes information the current object
+ * @param FilteringPolicyLink The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilteringPolicyLink(writer: SerializationWriter, filteringPolicyLink: Partial<FilteringPolicyLink> | undefined | null = {}) : void {
-    if (filteringPolicyLink) {
-        serializePolicyLink(writer, filteringPolicyLink)
-        writer.writeDateValue("createdDateTime", filteringPolicyLink.createdDateTime);
-        writer.writeDateValue("lastModifiedDateTime", filteringPolicyLink.lastModifiedDateTime);
-        writer.writeEnumValue<Status>("loggingState", filteringPolicyLink.loggingState);
-        writer.writeNumberValue("priority", filteringPolicyLink.priority);
-    }
+export function serializeFilteringPolicyLink(writer: SerializationWriter, filteringPolicyLink: Partial<FilteringPolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filteringPolicyLink || isSerializingDerivedType) { return; }
+    serializePolicyLink(writer, filteringPolicyLink, isSerializingDerivedType)
+    writer.writeDateValue("createdDateTime", filteringPolicyLink.createdDateTime);
+    writer.writeDateValue("lastModifiedDateTime", filteringPolicyLink.lastModifiedDateTime);
+    writer.writeEnumValue<Status>("loggingState", filteringPolicyLink.loggingState);
+    writer.writeNumberValue("priority", filteringPolicyLink.priority);
 }
 /**
  * Serializes information the current object
+ * @param FilteringProfile The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilteringProfile(writer: SerializationWriter, filteringProfile: Partial<FilteringProfile> | undefined | null = {}) : void {
-    if (filteringProfile) {
-        serializeProfile(writer, filteringProfile)
-        writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", filteringProfile.conditionalAccessPolicies, serializeConditionalAccessPolicy);
-        writer.writeDateValue("createdDateTime", filteringProfile.createdDateTime);
-        writer.writeNumberValue("priority", filteringProfile.priority);
-    }
+export function serializeFilteringProfile(writer: SerializationWriter, filteringProfile: Partial<FilteringProfile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filteringProfile || isSerializingDerivedType) { return; }
+    serializeProfile(writer, filteringProfile, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", filteringProfile.conditionalAccessPolicies, serializeConditionalAccessPolicy);
+    writer.writeDateValue("createdDateTime", filteringProfile.createdDateTime);
+    writer.writeNumberValue("priority", filteringProfile.priority);
 }
 /**
  * Serializes information the current object
+ * @param FilteringProfileCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilteringProfileCollectionResponse(writer: SerializationWriter, filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined | null = {}) : void {
-    if (filteringProfileCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, filteringProfileCollectionResponse)
-        writer.writeCollectionOfObjectValues<FilteringProfile>("value", filteringProfileCollectionResponse.value, serializeFilteringProfile);
-    }
+export function serializeFilteringProfileCollectionResponse(writer: SerializationWriter, filteringProfileCollectionResponse: Partial<FilteringProfileCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filteringProfileCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, filteringProfileCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<FilteringProfile>("value", filteringProfileCollectionResponse.value, serializeFilteringProfile);
 }
 /**
  * Serializes information the current object
+ * @param FilteringRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilteringRule(writer: SerializationWriter, filteringRule: Partial<FilteringRule> | undefined | null = {}) : void {
-    if (filteringRule) {
-        serializePolicyRule(writer, filteringRule)
-        writer.writeCollectionOfObjectValues<RuleDestination>("destinations", filteringRule.destinations, serializeRuleDestination);
-        writer.writeEnumValue<NetworkDestinationType>("ruleType", filteringRule.ruleType);
+export function serializeFilteringRule(writer: SerializationWriter, filteringRule: Partial<FilteringRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filteringRule || isSerializingDerivedType) { return; }
+    serializePolicyRule(writer, filteringRule, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RuleDestination>("destinations", filteringRule.destinations, serializeRuleDestination);
+    writer.writeEnumValue<NetworkDestinationType>("ruleType", filteringRule.ruleType);
+    switch (filteringRule.odataType) {
+        case "#microsoft.graph.networkaccess.fqdnFilteringRule":
+            serializeFqdnFilteringRule(writer, filteringRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
+            serializeWebCategoryFilteringRule(writer, filteringRule, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param ForwardingOptions The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingOptions(writer: SerializationWriter, forwardingOptions: Partial<ForwardingOptions> | undefined | null = {}) : void {
-    if (forwardingOptions) {
-        serializeEntity(writer, forwardingOptions)
-        writer.writeEnumValue<Status>("skipDnsLookupState", forwardingOptions.skipDnsLookupState);
-    }
+export function serializeForwardingOptions(writer: SerializationWriter, forwardingOptions: Partial<ForwardingOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingOptions || isSerializingDerivedType) { return; }
+    serializeEntity(writer, forwardingOptions, isSerializingDerivedType)
+    writer.writeEnumValue<Status>("skipDnsLookupState", forwardingOptions.skipDnsLookupState);
 }
 /**
  * Serializes information the current object
+ * @param ForwardingPolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined | null = {}) : void {
-    if (forwardingPolicy) {
-        serializePolicy(writer, forwardingPolicy)
-        writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
-    }
+export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingPolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, forwardingPolicy, isSerializingDerivedType)
+    writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
 }
 /**
  * Serializes information the current object
+ * @param ForwardingPolicyCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingPolicyCollectionResponse(writer: SerializationWriter, forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined | null = {}) : void {
-    if (forwardingPolicyCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, forwardingPolicyCollectionResponse)
-        writer.writeCollectionOfObjectValues<ForwardingPolicy>("value", forwardingPolicyCollectionResponse.value, serializeForwardingPolicy);
-    }
+export function serializeForwardingPolicyCollectionResponse(writer: SerializationWriter, forwardingPolicyCollectionResponse: Partial<ForwardingPolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingPolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, forwardingPolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ForwardingPolicy>("value", forwardingPolicyCollectionResponse.value, serializeForwardingPolicy);
 }
 /**
  * Serializes information the current object
+ * @param ForwardingPolicyLink The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingPolicyLink(writer: SerializationWriter, forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined | null = {}) : void {
-    if (forwardingPolicyLink) {
-        serializePolicyLink(writer, forwardingPolicyLink)
-    }
+export function serializeForwardingPolicyLink(writer: SerializationWriter, forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingPolicyLink || isSerializingDerivedType) { return; }
+    serializePolicyLink(writer, forwardingPolicyLink, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param ForwardingProfile The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingProfile(writer: SerializationWriter, forwardingProfile: Partial<ForwardingProfile> | undefined | null = {}) : void {
-    if (forwardingProfile) {
-        serializeProfile(writer, forwardingProfile)
-        writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
-        writer.writeNumberValue("priority", forwardingProfile.priority);
-        writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
-        writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
-    }
+export function serializeForwardingProfile(writer: SerializationWriter, forwardingProfile: Partial<ForwardingProfile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingProfile || isSerializingDerivedType) { return; }
+    serializeProfile(writer, forwardingProfile, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
+    writer.writeNumberValue("priority", forwardingProfile.priority);
+    writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
+    writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
 }
 /**
  * Serializes information the current object
+ * @param ForwardingProfileCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingProfileCollectionResponse(writer: SerializationWriter, forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined | null = {}) : void {
-    if (forwardingProfileCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, forwardingProfileCollectionResponse)
-        writer.writeCollectionOfObjectValues<ForwardingProfile>("value", forwardingProfileCollectionResponse.value, serializeForwardingProfile);
-    }
+export function serializeForwardingProfileCollectionResponse(writer: SerializationWriter, forwardingProfileCollectionResponse: Partial<ForwardingProfileCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingProfileCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, forwardingProfileCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ForwardingProfile>("value", forwardingProfileCollectionResponse.value, serializeForwardingProfile);
 }
 /**
  * Serializes information the current object
+ * @param ForwardingRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeForwardingRule(writer: SerializationWriter, forwardingRule: Partial<ForwardingRule> | undefined | null = {}) : void {
-    if (forwardingRule) {
-        serializePolicyRule(writer, forwardingRule)
-        writer.writeEnumValue<ForwardingRuleAction>("action", forwardingRule.action);
-        writer.writeCollectionOfObjectValues<RuleDestination>("destinations", forwardingRule.destinations, serializeRuleDestination);
-        writer.writeEnumValue<NetworkDestinationType>("ruleType", forwardingRule.ruleType);
+export function serializeForwardingRule(writer: SerializationWriter, forwardingRule: Partial<ForwardingRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingRule || isSerializingDerivedType) { return; }
+    serializePolicyRule(writer, forwardingRule, isSerializingDerivedType)
+    writer.writeEnumValue<ForwardingRuleAction>("action", forwardingRule.action);
+    writer.writeCollectionOfObjectValues<RuleDestination>("destinations", forwardingRule.destinations, serializeRuleDestination);
+    writer.writeEnumValue<NetworkDestinationType>("ruleType", forwardingRule.ruleType);
+    switch (forwardingRule.odataType) {
+        case "#microsoft.graph.networkaccess.internetAccessForwardingRule":
+            serializeInternetAccessForwardingRule(writer, forwardingRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.m365ForwardingRule":
+            serializeM365ForwardingRule(writer, forwardingRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
+            serializePrivateAccessForwardingRule(writer, forwardingRule, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param Fqdn The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFqdn(writer: SerializationWriter, fqdn: Partial<Fqdn> | undefined | null = {}) : void {
-    if (fqdn) {
-        serializeRuleDestination(writer, fqdn)
-        writer.writeStringValue("value", fqdn.value);
-    }
+export function serializeFqdn(writer: SerializationWriter, fqdn: Partial<Fqdn> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!fqdn || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, fqdn, isSerializingDerivedType)
+    writer.writeStringValue("value", fqdn.value);
 }
 /**
  * Serializes information the current object
+ * @param FqdnFilteringRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFqdnFilteringRule(writer: SerializationWriter, fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined | null = {}) : void {
-    if (fqdnFilteringRule) {
-        serializeFilteringRule(writer, fqdnFilteringRule)
-    }
+export function serializeFqdnFilteringRule(writer: SerializationWriter, fqdnFilteringRule: Partial<FqdnFilteringRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!fqdnFilteringRule || isSerializingDerivedType) { return; }
+    serializeFilteringRule(writer, fqdnFilteringRule, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param Headers The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeHeaders(writer: SerializationWriter, headers: Partial<Headers> | undefined | null = {}) : void {
-    if (headers) {
-        writer.writeStringValue("@odata.type", headers.odataType);
-        writer.writeStringValue("origin", headers.origin);
-        writer.writeStringValue("referrer", headers.referrer);
-        writer.writeStringValue("xForwardedFor", headers.xForwardedFor);
-        writer.writeAdditionalData(headers.additionalData);
-    }
+export function serializeHeaders(writer: SerializationWriter, headers: Partial<Headers> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!headers || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", headers.odataType);
+    writer.writeStringValue("origin", headers.origin);
+    writer.writeStringValue("referrer", headers.referrer);
+    writer.writeStringValue("xForwardedFor", headers.xForwardedFor);
+    writer.writeAdditionalData(headers.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param InternetAccessForwardingRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInternetAccessForwardingRule(writer: SerializationWriter, internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined | null = {}) : void {
-    if (internetAccessForwardingRule) {
-        serializeForwardingRule(writer, internetAccessForwardingRule)
-        writer.writeCollectionOfPrimitiveValues<string>("ports", internetAccessForwardingRule.ports);
-        writer.writeEnumValue<NetworkingProtocol>("protocol", internetAccessForwardingRule.protocol);
-    }
+export function serializeInternetAccessForwardingRule(writer: SerializationWriter, internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!internetAccessForwardingRule || isSerializingDerivedType) { return; }
+    serializeForwardingRule(writer, internetAccessForwardingRule, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("ports", internetAccessForwardingRule.ports);
+    writer.writeEnumValue<NetworkingProtocol>("protocol", internetAccessForwardingRule.protocol);
 }
 /**
  * Serializes information the current object
+ * @param IpAddress The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined | null = {}) : void {
-    if (ipAddress) {
-        serializeRuleDestination(writer, ipAddress)
-        writer.writeStringValue("value", ipAddress.value);
-    }
+export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ipAddress || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, ipAddress, isSerializingDerivedType)
+    writer.writeStringValue("value", ipAddress.value);
 }
 /**
  * Serializes information the current object
+ * @param IpRange The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined | null = {}) : void {
-    if (ipRange) {
-        serializeRuleDestination(writer, ipRange)
-        writer.writeStringValue("beginAddress", ipRange.beginAddress);
-        writer.writeStringValue("endAddress", ipRange.endAddress);
-    }
+export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ipRange || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, ipRange, isSerializingDerivedType)
+    writer.writeStringValue("beginAddress", ipRange.beginAddress);
+    writer.writeStringValue("endAddress", ipRange.endAddress);
 }
 /**
  * Serializes information the current object
+ * @param IpSubnet The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined | null = {}) : void {
-    if (ipSubnet) {
-        serializeRuleDestination(writer, ipSubnet)
-        writer.writeStringValue("value", ipSubnet.value);
-    }
+export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ipSubnet || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, ipSubnet, isSerializingDerivedType)
+    writer.writeStringValue("value", ipSubnet.value);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LocalConnectivityConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeLocalConnectivityConfiguration(writer: SerializationWriter, localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined | null = {}) : void {
-    if (localConnectivityConfiguration) {
-        writer.writeNumberValue("asn", localConnectivityConfiguration.asn);
-        writer.writeStringValue("bgpAddress", localConnectivityConfiguration.bgpAddress);
-        writer.writeStringValue("endpoint", localConnectivityConfiguration.endpoint);
-        writer.writeStringValue("@odata.type", localConnectivityConfiguration.odataType);
-        writer.writeEnumValue<Region>("region", localConnectivityConfiguration.region);
-        writer.writeAdditionalData(localConnectivityConfiguration.additionalData);
-    }
+export function serializeLocalConnectivityConfiguration(writer: SerializationWriter, localConnectivityConfiguration: Partial<LocalConnectivityConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!localConnectivityConfiguration || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("asn", localConnectivityConfiguration.asn);
+    writer.writeStringValue("bgpAddress", localConnectivityConfiguration.bgpAddress);
+    writer.writeStringValue("endpoint", localConnectivityConfiguration.endpoint);
+    writer.writeStringValue("@odata.type", localConnectivityConfiguration.odataType);
+    writer.writeEnumValue<Region>("region", localConnectivityConfiguration.region);
+    writer.writeAdditionalData(localConnectivityConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Logs The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> | undefined | null = {}) : void {
-    if (logs) {
-        serializeEntity(writer, logs)
-        writer.writeCollectionOfObjectValues<Connection>("connections", logs.connections, serializeConnection);
-        writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", logs.remoteNetworks, serializeRemoteNetworkHealthEvent);
-        writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("traffic", logs.traffic, serializeNetworkAccessTraffic);
-    }
+export function serializeLogs(writer: SerializationWriter, logs: Partial<Logs> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!logs || isSerializingDerivedType) { return; }
+    serializeEntity(writer, logs, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Connection>("connections", logs.connections, serializeConnection);
+    writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", logs.remoteNetworks, serializeRemoteNetworkHealthEvent);
+    writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("traffic", logs.traffic, serializeNetworkAccessTraffic);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param M365ForwardingRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeM365ForwardingRule(writer: SerializationWriter, m365ForwardingRule: Partial<M365ForwardingRule> | undefined | null = {}) : void {
-    if (m365ForwardingRule) {
-        serializeForwardingRule(writer, m365ForwardingRule)
-        writer.writeEnumValue<ForwardingCategory>("category", m365ForwardingRule.category);
-        writer.writeCollectionOfPrimitiveValues<string>("ports", m365ForwardingRule.ports);
-        writer.writeEnumValue<NetworkingProtocol>("protocol", m365ForwardingRule.protocol);
-    }
+export function serializeM365ForwardingRule(writer: SerializationWriter, m365ForwardingRule: Partial<M365ForwardingRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!m365ForwardingRule || isSerializingDerivedType) { return; }
+    serializeForwardingRule(writer, m365ForwardingRule, isSerializingDerivedType)
+    writer.writeEnumValue<ForwardingCategory>("category", m365ForwardingRule.category);
+    writer.writeCollectionOfPrimitiveValues<string>("ports", m365ForwardingRule.ports);
+    writer.writeEnumValue<NetworkingProtocol>("protocol", m365ForwardingRule.protocol);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NetworkAccessRoot The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNetworkAccessRoot(writer: SerializationWriter, networkAccessRoot: Partial<NetworkAccessRoot> | undefined | null = {}) : void {
-    if (networkAccessRoot) {
-        serializeEntity(writer, networkAccessRoot)
-        writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
-        writer.writeObjectValue<Connectivity>("connectivity", networkAccessRoot.connectivity, serializeConnectivity);
-        writer.writeCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", networkAccessRoot.filteringPolicies, serializeFilteringPolicy);
-        writer.writeCollectionOfObjectValues<FilteringProfile>("filteringProfiles", networkAccessRoot.filteringProfiles, serializeFilteringProfile);
-        writer.writeCollectionOfObjectValues<ForwardingPolicy>("forwardingPolicies", networkAccessRoot.forwardingPolicies, serializeForwardingPolicy);
-        writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", networkAccessRoot.forwardingProfiles, serializeForwardingProfile);
-        writer.writeObjectValue<Logs>("logs", networkAccessRoot.logs, serializeLogs);
-        writer.writeObjectValue<Reports>("reports", networkAccessRoot.reports, serializeReports);
-        writer.writeObjectValue<Settings>("settings", networkAccessRoot.settings, serializeSettings);
-        writer.writeObjectValue<TenantStatus>("tenantStatus", networkAccessRoot.tenantStatus, serializeTenantStatus);
-    }
+export function serializeNetworkAccessRoot(writer: SerializationWriter, networkAccessRoot: Partial<NetworkAccessRoot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!networkAccessRoot || isSerializingDerivedType) { return; }
+    serializeEntity(writer, networkAccessRoot, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
+    writer.writeObjectValue<Connectivity>("connectivity", networkAccessRoot.connectivity, serializeConnectivity);
+    writer.writeCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", networkAccessRoot.filteringPolicies, serializeFilteringPolicy);
+    writer.writeCollectionOfObjectValues<FilteringProfile>("filteringProfiles", networkAccessRoot.filteringProfiles, serializeFilteringProfile);
+    writer.writeCollectionOfObjectValues<ForwardingPolicy>("forwardingPolicies", networkAccessRoot.forwardingPolicies, serializeForwardingPolicy);
+    writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", networkAccessRoot.forwardingProfiles, serializeForwardingProfile);
+    writer.writeObjectValue<Logs>("logs", networkAccessRoot.logs, serializeLogs);
+    writer.writeObjectValue<Reports>("reports", networkAccessRoot.reports, serializeReports);
+    writer.writeObjectValue<Settings>("settings", networkAccessRoot.settings, serializeSettings);
+    writer.writeObjectValue<TenantStatus>("tenantStatus", networkAccessRoot.tenantStatus, serializeTenantStatus);
+    writer.writeCollectionOfObjectValues<ThreatIntelligencePolicy>("threatIntelligencePolicies", networkAccessRoot.threatIntelligencePolicies, serializeThreatIntelligencePolicy);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NetworkAccessTraffic The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined | null = {}) : void {
-    if (networkAccessTraffic) {
-        writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
-        writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
-        writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
-        writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
-        writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
-        writer.writeStringValue("description", networkAccessTraffic.description);
-        writer.writeStringValue("destinationFQDN", networkAccessTraffic.destinationFQDN);
-        writer.writeStringValue("destinationIp", networkAccessTraffic.destinationIp);
-        writer.writeNumberValue("destinationPort", networkAccessTraffic.destinationPort);
-        writer.writeStringValue("destinationUrl", networkAccessTraffic.destinationUrl);
-        writer.writeObjectValue<WebCategory>("destinationWebCategory", networkAccessTraffic.destinationWebCategory, serializeWebCategory);
-        writer.writeObjectValue<I353170b9ab043a51be0a29bf9ffeadaa40f51ff6511c066ae82d223c77decf60>("device", networkAccessTraffic.device, I93801fe1d0700e2dfbaabaac8a107eaad07c485b973484cdebd0254423e093c4);
-        writer.writeEnumValue<DeviceCategory>("deviceCategory", networkAccessTraffic.deviceCategory);
-        writer.writeStringValue("deviceId", networkAccessTraffic.deviceId);
-        writer.writeStringValue("deviceOperatingSystem", networkAccessTraffic.deviceOperatingSystem);
-        writer.writeStringValue("deviceOperatingSystemVersion", networkAccessTraffic.deviceOperatingSystemVersion);
-        writer.writeStringValue("filteringProfileId", networkAccessTraffic.filteringProfileId);
-        writer.writeStringValue("filteringProfileName", networkAccessTraffic.filteringProfileName);
-        writer.writeObjectValue<Headers>("headers", networkAccessTraffic.headers, serializeHeaders);
-        writer.writeEnumValue<HttpMethod>("httpMethod", networkAccessTraffic.httpMethod);
-        writer.writeStringValue("initiatingProcessName", networkAccessTraffic.initiatingProcessName);
-        writer.writeEnumValue<NetworkingProtocol>("networkProtocol", networkAccessTraffic.networkProtocol);
-        writer.writeStringValue("@odata.type", networkAccessTraffic.odataType);
-        writer.writeEnumValue<NetworkTrafficOperationStatus>("operationStatus", networkAccessTraffic.operationStatus);
-        writer.writeStringValue("policyId", networkAccessTraffic.policyId);
-        writer.writeStringValue("policyName", networkAccessTraffic.policyName);
-        writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
-        writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
-        writer.writeStringValue("popProcessingRegion", networkAccessTraffic.popProcessingRegion);
-        writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
-        writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
-        writer.writeStringValue("remoteNetworkId", networkAccessTraffic.remoteNetworkId);
-        writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
-        writer.writeNumberValue("responseCode", networkAccessTraffic.responseCode);
-        writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
-        writer.writeStringValue("sessionId", networkAccessTraffic.sessionId);
-        writer.writeStringValue("sourceIp", networkAccessTraffic.sourceIp);
-        writer.writeNumberValue("sourcePort", networkAccessTraffic.sourcePort);
-        writer.writeStringValue("tenantId", networkAccessTraffic.tenantId);
-        writer.writeStringValue("threatType", networkAccessTraffic.threatType);
-        writer.writeEnumValue<TrafficType>("trafficType", networkAccessTraffic.trafficType);
-        writer.writeStringValue("transactionId", networkAccessTraffic.transactionId);
-        writer.writeEnumValue<NetworkingProtocol>("transportProtocol", networkAccessTraffic.transportProtocol);
-        writer.writeObjectValue<I4bfcbb20fa90605575bab96c7572912b314f024f9b0899d027a654508ef72465>("user", networkAccessTraffic.user, I52fb59bcf4aad10419ab5ac07e13466b759ff69b47806ecf063de624d08c4da3);
-        writer.writeStringValue("userId", networkAccessTraffic.userId);
-        writer.writeStringValue("userPrincipalName", networkAccessTraffic.userPrincipalName);
-        writer.writeCollectionOfPrimitiveValues<string>("vendorNames", networkAccessTraffic.vendorNames);
-        writer.writeAdditionalData(networkAccessTraffic.additionalData);
-    }
+export function serializeNetworkAccessTraffic(writer: SerializationWriter, networkAccessTraffic: Partial<NetworkAccessTraffic> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!networkAccessTraffic || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
+    writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
+    writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
+    writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
+    writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
+    writer.writeStringValue("description", networkAccessTraffic.description);
+    writer.writeStringValue("destinationFQDN", networkAccessTraffic.destinationFQDN);
+    writer.writeStringValue("destinationIp", networkAccessTraffic.destinationIp);
+    writer.writeNumberValue("destinationPort", networkAccessTraffic.destinationPort);
+    writer.writeStringValue("destinationUrl", networkAccessTraffic.destinationUrl);
+    writer.writeObjectValue<WebCategory>("destinationWebCategory", networkAccessTraffic.destinationWebCategory, serializeWebCategory);
+    writer.writeObjectValue<I353170b9ab043a51be0a29bf9ffeadaa40f51ff6511c066ae82d223c77decf60>("device", networkAccessTraffic.device, I93801fe1d0700e2dfbaabaac8a107eaad07c485b973484cdebd0254423e093c4);
+    writer.writeEnumValue<DeviceCategory>("deviceCategory", networkAccessTraffic.deviceCategory);
+    writer.writeStringValue("deviceId", networkAccessTraffic.deviceId);
+    writer.writeStringValue("deviceOperatingSystem", networkAccessTraffic.deviceOperatingSystem);
+    writer.writeStringValue("deviceOperatingSystemVersion", networkAccessTraffic.deviceOperatingSystemVersion);
+    writer.writeStringValue("filteringProfileId", networkAccessTraffic.filteringProfileId);
+    writer.writeStringValue("filteringProfileName", networkAccessTraffic.filteringProfileName);
+    writer.writeObjectValue<Headers>("headers", networkAccessTraffic.headers, serializeHeaders);
+    writer.writeEnumValue<HttpMethod>("httpMethod", networkAccessTraffic.httpMethod);
+    writer.writeStringValue("initiatingProcessName", networkAccessTraffic.initiatingProcessName);
+    writer.writeEnumValue<NetworkingProtocol>("networkProtocol", networkAccessTraffic.networkProtocol);
+    writer.writeStringValue("@odata.type", networkAccessTraffic.odataType);
+    writer.writeEnumValue<NetworkTrafficOperationStatus>("operationStatus", networkAccessTraffic.operationStatus);
+    writer.writeStringValue("policyId", networkAccessTraffic.policyId);
+    writer.writeStringValue("policyName", networkAccessTraffic.policyName);
+    writer.writeStringValue("policyRuleId", networkAccessTraffic.policyRuleId);
+    writer.writeStringValue("policyRuleName", networkAccessTraffic.policyRuleName);
+    writer.writeStringValue("popProcessingRegion", networkAccessTraffic.popProcessingRegion);
+    writer.writeObjectValue<PrivateAccessDetails>("privateAccessDetails", networkAccessTraffic.privateAccessDetails, serializePrivateAccessDetails);
+    writer.writeNumberValue("receivedBytes", networkAccessTraffic.receivedBytes);
+    writer.writeStringValue("remoteNetworkId", networkAccessTraffic.remoteNetworkId);
+    writer.writeStringValue("resourceTenantId", networkAccessTraffic.resourceTenantId);
+    writer.writeNumberValue("responseCode", networkAccessTraffic.responseCode);
+    writer.writeNumberValue("sentBytes", networkAccessTraffic.sentBytes);
+    writer.writeStringValue("sessionId", networkAccessTraffic.sessionId);
+    writer.writeStringValue("sourceIp", networkAccessTraffic.sourceIp);
+    writer.writeNumberValue("sourcePort", networkAccessTraffic.sourcePort);
+    writer.writeStringValue("tenantId", networkAccessTraffic.tenantId);
+    writer.writeStringValue("threatType", networkAccessTraffic.threatType);
+    writer.writeEnumValue<TrafficType>("trafficType", networkAccessTraffic.trafficType);
+    writer.writeStringValue("transactionId", networkAccessTraffic.transactionId);
+    writer.writeEnumValue<NetworkingProtocol>("transportProtocol", networkAccessTraffic.transportProtocol);
+    writer.writeObjectValue<I4bfcbb20fa90605575bab96c7572912b314f024f9b0899d027a654508ef72465>("user", networkAccessTraffic.user, I52fb59bcf4aad10419ab5ac07e13466b759ff69b47806ecf063de624d08c4da3);
+    writer.writeStringValue("userId", networkAccessTraffic.userId);
+    writer.writeStringValue("userPrincipalName", networkAccessTraffic.userPrincipalName);
+    writer.writeCollectionOfPrimitiveValues<string>("vendorNames", networkAccessTraffic.vendorNames);
+    writer.writeAdditionalData(networkAccessTraffic.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NetworkAccessTrafficCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNetworkAccessTrafficCollectionResponse(writer: SerializationWriter, networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined | null = {}) : void {
-    if (networkAccessTrafficCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, networkAccessTrafficCollectionResponse)
-        writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("value", networkAccessTrafficCollectionResponse.value, serializeNetworkAccessTraffic);
-    }
+export function serializeNetworkAccessTrafficCollectionResponse(writer: SerializationWriter, networkAccessTrafficCollectionResponse: Partial<NetworkAccessTrafficCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!networkAccessTrafficCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, networkAccessTrafficCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<NetworkAccessTraffic>("value", networkAccessTrafficCollectionResponse.value, serializeNetworkAccessTraffic);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PeerConnectivityConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePeerConnectivityConfiguration(writer: SerializationWriter, peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined | null = {}) : void {
-    if (peerConnectivityConfiguration) {
-        writer.writeNumberValue("asn", peerConnectivityConfiguration.asn);
-        writer.writeStringValue("bgpAddress", peerConnectivityConfiguration.bgpAddress);
-        writer.writeStringValue("endpoint", peerConnectivityConfiguration.endpoint);
-        writer.writeStringValue("@odata.type", peerConnectivityConfiguration.odataType);
-        writer.writeAdditionalData(peerConnectivityConfiguration.additionalData);
-    }
+export function serializePeerConnectivityConfiguration(writer: SerializationWriter, peerConnectivityConfiguration: Partial<PeerConnectivityConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!peerConnectivityConfiguration || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("asn", peerConnectivityConfiguration.asn);
+    writer.writeStringValue("bgpAddress", peerConnectivityConfiguration.bgpAddress);
+    writer.writeStringValue("endpoint", peerConnectivityConfiguration.endpoint);
+    writer.writeStringValue("@odata.type", peerConnectivityConfiguration.odataType);
+    writer.writeAdditionalData(peerConnectivityConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Policy The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicy(writer: SerializationWriter, policy: Partial<Policy> | undefined | null = {}) : void {
-    if (policy) {
-        serializeEntity(writer, policy)
-        writer.writeStringValue("description", policy.description);
-        writer.writeStringValue("name", policy.name);
-        writer.writeCollectionOfObjectValues<PolicyRule>("policyRules", policy.policyRules, serializePolicyRule);
-        writer.writeStringValue("version", policy.version);
+export function serializePolicy(writer: SerializationWriter, policy: Partial<Policy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policy || isSerializingDerivedType) { return; }
+    serializeEntity(writer, policy, isSerializingDerivedType)
+    writer.writeStringValue("description", policy.description);
+    writer.writeStringValue("name", policy.name);
+    writer.writeCollectionOfObjectValues<PolicyRule>("policyRules", policy.policyRules, serializePolicyRule);
+    writer.writeStringValue("version", policy.version);
+    switch (policy.odataType) {
+        case "#microsoft.graph.networkaccess.filteringPolicy":
+            serializeFilteringPolicy(writer, policy, true);
+        break;
+        case "#microsoft.graph.networkaccess.forwardingPolicy":
+            serializeForwardingPolicy(writer, policy, true);
+        break;
+        case "#microsoft.graph.networkaccess.threatIntelligencePolicy":
+            serializeThreatIntelligencePolicy(writer, policy, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyLink The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicyLink(writer: SerializationWriter, policyLink: Partial<PolicyLink> | undefined | null = {}) : void {
-    if (policyLink) {
-        serializeEntity(writer, policyLink)
-        writer.writeObjectValue<Policy>("policy", policyLink.policy, serializePolicy);
-        writer.writeEnumValue<Status>("state", policyLink.state);
-        writer.writeStringValue("version", policyLink.version);
+export function serializePolicyLink(writer: SerializationWriter, policyLink: Partial<PolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyLink || isSerializingDerivedType) { return; }
+    serializeEntity(writer, policyLink, isSerializingDerivedType)
+    writer.writeObjectValue<Policy>("policy", policyLink.policy, serializePolicy);
+    writer.writeEnumValue<Status>("state", policyLink.state);
+    writer.writeStringValue("version", policyLink.version);
+    switch (policyLink.odataType) {
+        case "#microsoft.graph.networkaccess.filteringPolicyLink":
+            serializeFilteringPolicyLink(writer, policyLink, true);
+        break;
+        case "#microsoft.graph.networkaccess.forwardingPolicyLink":
+            serializeForwardingPolicyLink(writer, policyLink, true);
+        break;
+        case "#microsoft.graph.networkaccess.threatIntelligencePolicyLink":
+            serializeThreatIntelligencePolicyLink(writer, policyLink, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyLinkCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicyLinkCollectionResponse(writer: SerializationWriter, policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined | null = {}) : void {
-    if (policyLinkCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, policyLinkCollectionResponse)
-        writer.writeCollectionOfObjectValues<PolicyLink>("value", policyLinkCollectionResponse.value, serializePolicyLink);
-    }
+export function serializePolicyLinkCollectionResponse(writer: SerializationWriter, policyLinkCollectionResponse: Partial<PolicyLinkCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyLinkCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, policyLinkCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PolicyLink>("value", policyLinkCollectionResponse.value, serializePolicyLink);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicyRule(writer: SerializationWriter, policyRule: Partial<PolicyRule> | undefined | null = {}) : void {
-    if (policyRule) {
-        serializeEntity(writer, policyRule)
-        writer.writeStringValue("name", policyRule.name);
+export function serializePolicyRule(writer: SerializationWriter, policyRule: Partial<PolicyRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyRule || isSerializingDerivedType) { return; }
+    serializeEntity(writer, policyRule, isSerializingDerivedType)
+    writer.writeStringValue("name", policyRule.name);
+    switch (policyRule.odataType) {
+        case "#microsoft.graph.networkaccess.filteringRule":
+            serializeFilteringRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.forwardingRule":
+            serializeForwardingRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.fqdnFilteringRule":
+            serializeFqdnFilteringRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.internetAccessForwardingRule":
+            serializeInternetAccessForwardingRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.m365ForwardingRule":
+            serializeM365ForwardingRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
+            serializePrivateAccessForwardingRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.threatIntelligenceRule":
+            serializeThreatIntelligenceRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
+            serializeWebCategoryFilteringRule(writer, policyRule, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyRuleCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicyRuleCollectionResponse(writer: SerializationWriter, policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined | null = {}) : void {
-    if (policyRuleCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, policyRuleCollectionResponse)
-        writer.writeCollectionOfObjectValues<PolicyRule>("value", policyRuleCollectionResponse.value, serializePolicyRule);
-    }
+export function serializePolicyRuleCollectionResponse(writer: SerializationWriter, policyRuleCollectionResponse: Partial<PolicyRuleCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyRuleCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, policyRuleCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PolicyRule>("value", policyRuleCollectionResponse.value, serializePolicyRule);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyRuleDelta The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePolicyRuleDelta(writer: SerializationWriter, policyRuleDelta: Partial<PolicyRuleDelta> | undefined | null = {}) : void {
-    if (policyRuleDelta) {
-        writer.writeEnumValue<ForwardingRuleAction>("action", policyRuleDelta.action);
-        writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
-        writer.writeStringValue("ruleId", policyRuleDelta.ruleId);
-        writer.writeAdditionalData(policyRuleDelta.additionalData);
-    }
+export function serializePolicyRuleDelta(writer: SerializationWriter, policyRuleDelta: Partial<PolicyRuleDelta> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyRuleDelta || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<ForwardingRuleAction>("action", policyRuleDelta.action);
+    writer.writeStringValue("@odata.type", policyRuleDelta.odataType);
+    writer.writeStringValue("ruleId", policyRuleDelta.ruleId);
+    writer.writeAdditionalData(policyRuleDelta.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PrivateAccessDetails The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined | null = {}) : void {
-    if (privateAccessDetails) {
-        writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
-        writer.writeStringValue("appSegmentId", privateAccessDetails.appSegmentId);
-        writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
-        writer.writeStringValue("connectorId", privateAccessDetails.connectorId);
-        writer.writeStringValue("connectorIp", privateAccessDetails.connectorIp);
-        writer.writeStringValue("connectorName", privateAccessDetails.connectorName);
-        writer.writeStringValue("@odata.type", privateAccessDetails.odataType);
-        writer.writeStringValue("processingRegion", privateAccessDetails.processingRegion);
-        writer.writeObjectValue<ThirdPartyTokenDetails>("thirdPartyTokenDetails", privateAccessDetails.thirdPartyTokenDetails, serializeThirdPartyTokenDetails);
-        writer.writeAdditionalData(privateAccessDetails.additionalData);
-    }
+export function serializePrivateAccessDetails(writer: SerializationWriter, privateAccessDetails: Partial<PrivateAccessDetails> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!privateAccessDetails || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AccessType>("accessType", privateAccessDetails.accessType);
+    writer.writeStringValue("appSegmentId", privateAccessDetails.appSegmentId);
+    writer.writeEnumValue<ConnectionStatus>("connectionStatus", privateAccessDetails.connectionStatus);
+    writer.writeStringValue("connectorId", privateAccessDetails.connectorId);
+    writer.writeStringValue("connectorIp", privateAccessDetails.connectorIp);
+    writer.writeStringValue("connectorName", privateAccessDetails.connectorName);
+    writer.writeStringValue("@odata.type", privateAccessDetails.odataType);
+    writer.writeStringValue("processingRegion", privateAccessDetails.processingRegion);
+    writer.writeObjectValue<ThirdPartyTokenDetails>("thirdPartyTokenDetails", privateAccessDetails.thirdPartyTokenDetails, serializeThirdPartyTokenDetails);
+    writer.writeAdditionalData(privateAccessDetails.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PrivateAccessForwardingRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePrivateAccessForwardingRule(writer: SerializationWriter, privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined | null = {}) : void {
-    if (privateAccessForwardingRule) {
-        serializeForwardingRule(writer, privateAccessForwardingRule)
-    }
+export function serializePrivateAccessForwardingRule(writer: SerializationWriter, privateAccessForwardingRule: Partial<PrivateAccessForwardingRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!privateAccessForwardingRule || isSerializingDerivedType) { return; }
+    serializeForwardingRule(writer, privateAccessForwardingRule, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Profile The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeProfile(writer: SerializationWriter, profile: Partial<Profile> | undefined | null = {}) : void {
-    if (profile) {
-        serializeEntity(writer, profile)
-        writer.writeStringValue("description", profile.description);
-        writer.writeDateValue("lastModifiedDateTime", profile.lastModifiedDateTime);
-        writer.writeStringValue("name", profile.name);
-        writer.writeCollectionOfObjectValues<PolicyLink>("policies", profile.policies, serializePolicyLink);
-        writer.writeEnumValue<Status>("state", profile.state);
-        writer.writeStringValue("version", profile.version);
+export function serializeProfile(writer: SerializationWriter, profile: Partial<Profile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!profile || isSerializingDerivedType) { return; }
+    serializeEntity(writer, profile, isSerializingDerivedType)
+    writer.writeStringValue("description", profile.description);
+    writer.writeDateValue("lastModifiedDateTime", profile.lastModifiedDateTime);
+    writer.writeStringValue("name", profile.name);
+    writer.writeCollectionOfObjectValues<PolicyLink>("policies", profile.policies, serializePolicyLink);
+    writer.writeEnumValue<Status>("state", profile.state);
+    writer.writeStringValue("version", profile.version);
+    switch (profile.odataType) {
+        case "#microsoft.graph.networkaccess.filteringProfile":
+            serializeFilteringProfile(writer, profile, true);
+        break;
+        case "#microsoft.graph.networkaccess.forwardingProfile":
+            serializeForwardingProfile(writer, profile, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RedundancyConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRedundancyConfiguration(writer: SerializationWriter, redundancyConfiguration: Partial<RedundancyConfiguration> | undefined | null = {}) : void {
-    if (redundancyConfiguration) {
-        writer.writeStringValue("@odata.type", redundancyConfiguration.odataType);
-        writer.writeEnumValue<RedundancyTier>("redundancyTier", redundancyConfiguration.redundancyTier);
-        writer.writeStringValue("zoneLocalIpAddress", redundancyConfiguration.zoneLocalIpAddress);
-        writer.writeAdditionalData(redundancyConfiguration.additionalData);
-    }
+export function serializeRedundancyConfiguration(writer: SerializationWriter, redundancyConfiguration: Partial<RedundancyConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!redundancyConfiguration || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", redundancyConfiguration.odataType);
+    writer.writeEnumValue<RedundancyTier>("redundancyTier", redundancyConfiguration.redundancyTier);
+    writer.writeStringValue("zoneLocalIpAddress", redundancyConfiguration.zoneLocalIpAddress);
+    writer.writeAdditionalData(redundancyConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedDestination The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedDestination(writer: SerializationWriter, relatedDestination: Partial<RelatedDestination> | undefined | null = {}) : void {
-    if (relatedDestination) {
-        serializeRelatedResource(writer, relatedDestination)
-        writer.writeStringValue("fqdn", relatedDestination.fqdn);
-        writer.writeStringValue("ip", relatedDestination.ip);
-        writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", relatedDestination.networkingProtocol);
-        writer.writeNumberValue("port", relatedDestination.port);
-    }
+export function serializeRelatedDestination(writer: SerializationWriter, relatedDestination: Partial<RelatedDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedDestination || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedDestination, isSerializingDerivedType)
+    writer.writeStringValue("fqdn", relatedDestination.fqdn);
+    writer.writeStringValue("ip", relatedDestination.ip);
+    writer.writeEnumValue<NetworkingProtocol>("networkingProtocol", relatedDestination.networkingProtocol);
+    writer.writeNumberValue("port", relatedDestination.port);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedDevice The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedDevice(writer: SerializationWriter, relatedDevice: Partial<RelatedDevice> | undefined | null = {}) : void {
-    if (relatedDevice) {
-        serializeRelatedResource(writer, relatedDevice)
-        writer.writeStringValue("deviceId", relatedDevice.deviceId);
-    }
+export function serializeRelatedDevice(writer: SerializationWriter, relatedDevice: Partial<RelatedDevice> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedDevice || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedDevice, isSerializingDerivedType)
+    writer.writeStringValue("deviceId", relatedDevice.deviceId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedFile The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedFile(writer: SerializationWriter, relatedFile: Partial<RelatedFile> | undefined | null = {}) : void {
-    if (relatedFile) {
-        serializeRelatedResource(writer, relatedFile)
-        writer.writeStringValue("directory", relatedFile.directory);
-        writer.writeStringValue("name", relatedFile.name);
-        writer.writeNumberValue("sizeInBytes", relatedFile.sizeInBytes);
-    }
+export function serializeRelatedFile(writer: SerializationWriter, relatedFile: Partial<RelatedFile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedFile || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedFile, isSerializingDerivedType)
+    writer.writeStringValue("directory", relatedFile.directory);
+    writer.writeStringValue("name", relatedFile.name);
+    writer.writeNumberValue("sizeInBytes", relatedFile.sizeInBytes);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedFileHash The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedFileHash(writer: SerializationWriter, relatedFileHash: Partial<RelatedFileHash> | undefined | null = {}) : void {
-    if (relatedFileHash) {
-        serializeRelatedResource(writer, relatedFileHash)
-        writer.writeEnumValue<Algorithm>("algorithm", relatedFileHash.algorithm);
-        writer.writeStringValue("value", relatedFileHash.value);
-    }
+export function serializeRelatedFileHash(writer: SerializationWriter, relatedFileHash: Partial<RelatedFileHash> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedFileHash || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedFileHash, isSerializingDerivedType)
+    writer.writeEnumValue<Algorithm>("algorithm", relatedFileHash.algorithm);
+    writer.writeStringValue("value", relatedFileHash.value);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedMalware The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined | null = {}) : void {
-    if (relatedMalware) {
-        serializeRelatedResource(writer, relatedMalware)
-        writer.writeEnumValue<MalwareCategory>("category", relatedMalware.category);
-        writer.writeStringValue("name", relatedMalware.name);
-        writer.writeEnumValue<ThreatSeverity>("severity", relatedMalware.severity);
-    }
+export function serializeRelatedMalware(writer: SerializationWriter, relatedMalware: Partial<RelatedMalware> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedMalware || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedMalware, isSerializingDerivedType)
+    writer.writeEnumValue<MalwareCategory>("category", relatedMalware.category);
+    writer.writeStringValue("name", relatedMalware.name);
+    writer.writeEnumValue<ThreatSeverity>("severity", relatedMalware.severity);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedRemoteNetwork The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined | null = {}) : void {
-    if (relatedRemoteNetwork) {
-        serializeRelatedResource(writer, relatedRemoteNetwork)
-        writer.writeStringValue("remoteNetworkId", relatedRemoteNetwork.remoteNetworkId);
-    }
+export function serializeRelatedRemoteNetwork(writer: SerializationWriter, relatedRemoteNetwork: Partial<RelatedRemoteNetwork> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedRemoteNetwork || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedRemoteNetwork, isSerializingDerivedType)
+    writer.writeStringValue("remoteNetworkId", relatedRemoteNetwork.remoteNetworkId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedResource The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedResource(writer: SerializationWriter, relatedResource: Partial<RelatedResource> | undefined | null = {}) : void {
-    if (relatedResource) {
-        writer.writeStringValue("@odata.type", relatedResource.odataType);
-        writer.writeAdditionalData(relatedResource.additionalData);
+export function serializeRelatedResource(writer: SerializationWriter, relatedResource: Partial<RelatedResource> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedResource || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", relatedResource.odataType);
+    writer.writeAdditionalData(relatedResource.additionalData);
+    switch (relatedResource.odataType) {
+        case "#microsoft.graph.networkaccess.relatedDestination":
+            serializeRelatedDestination(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedDevice":
+            serializeRelatedDevice(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedFile":
+            serializeRelatedFile(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedFileHash":
+            serializeRelatedFileHash(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedMalware":
+            serializeRelatedMalware(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedRemoteNetwork":
+            serializeRelatedRemoteNetwork(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedTenant":
+            serializeRelatedTenant(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedThreatIntelligence":
+            serializeRelatedThreatIntelligence(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedToken":
+            serializeRelatedToken(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedTransaction":
+            serializeRelatedTransaction(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedUrl":
+            serializeRelatedUrl(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedUser":
+            serializeRelatedUser(writer, relatedResource, true);
+        break;
+        case "#microsoft.graph.networkaccess.relatedWebCategory":
+            serializeRelatedWebCategory(writer, relatedResource, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedTenant The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedTenant(writer: SerializationWriter, relatedTenant: Partial<RelatedTenant> | undefined | null = {}) : void {
-    if (relatedTenant) {
-        serializeRelatedResource(writer, relatedTenant)
-        writer.writeStringValue("tenantId", relatedTenant.tenantId);
-    }
+export function serializeRelatedTenant(writer: SerializationWriter, relatedTenant: Partial<RelatedTenant> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedTenant || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedTenant, isSerializingDerivedType)
+    writer.writeStringValue("tenantId", relatedTenant.tenantId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedThreatIntelligence The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined | null = {}) : void {
-    if (relatedThreatIntelligence) {
-        serializeRelatedResource(writer, relatedThreatIntelligence)
-        writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
-    }
+export function serializeRelatedThreatIntelligence(writer: SerializationWriter, relatedThreatIntelligence: Partial<RelatedThreatIntelligence> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedThreatIntelligence || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedThreatIntelligence, isSerializingDerivedType)
+    writer.writeNumberValue("threatCount", relatedThreatIntelligence.threatCount);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedToken The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedToken(writer: SerializationWriter, relatedToken: Partial<RelatedToken> | undefined | null = {}) : void {
-    if (relatedToken) {
-        serializeRelatedResource(writer, relatedToken)
-        writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
-    }
+export function serializeRelatedToken(writer: SerializationWriter, relatedToken: Partial<RelatedToken> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedToken || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedToken, isSerializingDerivedType)
+    writer.writeStringValue("uniqueTokenIdentifier", relatedToken.uniqueTokenIdentifier);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedTransaction The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedTransaction(writer: SerializationWriter, relatedTransaction: Partial<RelatedTransaction> | undefined | null = {}) : void {
-    if (relatedTransaction) {
-        serializeRelatedResource(writer, relatedTransaction)
-        writer.writeStringValue("transactionId", relatedTransaction.transactionId);
-    }
+export function serializeRelatedTransaction(writer: SerializationWriter, relatedTransaction: Partial<RelatedTransaction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedTransaction || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedTransaction, isSerializingDerivedType)
+    writer.writeStringValue("transactionId", relatedTransaction.transactionId);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedUrl The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedUrl(writer: SerializationWriter, relatedUrl: Partial<RelatedUrl> | undefined | null = {}) : void {
-    if (relatedUrl) {
-        serializeRelatedResource(writer, relatedUrl)
-        writer.writeStringValue("url", relatedUrl.url);
-    }
+export function serializeRelatedUrl(writer: SerializationWriter, relatedUrl: Partial<RelatedUrl> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedUrl || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedUrl, isSerializingDerivedType)
+    writer.writeStringValue("url", relatedUrl.url);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedUser The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedUser(writer: SerializationWriter, relatedUser: Partial<RelatedUser> | undefined | null = {}) : void {
-    if (relatedUser) {
-        serializeRelatedResource(writer, relatedUser)
-        writer.writeStringValue("userId", relatedUser.userId);
-        writer.writeStringValue("userPrincipalName", relatedUser.userPrincipalName);
-    }
+export function serializeRelatedUser(writer: SerializationWriter, relatedUser: Partial<RelatedUser> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedUser || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedUser, isSerializingDerivedType)
+    writer.writeStringValue("userId", relatedUser.userId);
+    writer.writeStringValue("userPrincipalName", relatedUser.userPrincipalName);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RelatedWebCategory The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRelatedWebCategory(writer: SerializationWriter, relatedWebCategory: Partial<RelatedWebCategory> | undefined | null = {}) : void {
-    if (relatedWebCategory) {
-        serializeRelatedResource(writer, relatedWebCategory)
-        writer.writeStringValue("webCategoryName", relatedWebCategory.webCategoryName);
-    }
+export function serializeRelatedWebCategory(writer: SerializationWriter, relatedWebCategory: Partial<RelatedWebCategory> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!relatedWebCategory || isSerializingDerivedType) { return; }
+    serializeRelatedResource(writer, relatedWebCategory, isSerializingDerivedType)
+    writer.writeStringValue("webCategoryName", relatedWebCategory.webCategoryName);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoteNetwork The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwork: Partial<RemoteNetwork> | undefined | null = {}) : void {
-    if (remoteNetwork) {
-        serializeEntity(writer, remoteNetwork)
-        writer.writeObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", remoteNetwork.connectivityConfiguration, serializeRemoteNetworkConnectivityConfiguration);
-        writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", remoteNetwork.deviceLinks, serializeDeviceLink);
-        writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", remoteNetwork.forwardingProfiles, serializeForwardingProfile);
-        writer.writeDateValue("lastModifiedDateTime", remoteNetwork.lastModifiedDateTime);
-        writer.writeStringValue("name", remoteNetwork.name);
-        writer.writeEnumValue<Region>("region", remoteNetwork.region);
-        writer.writeStringValue("version", remoteNetwork.version);
-    }
+export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwork: Partial<RemoteNetwork> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!remoteNetwork || isSerializingDerivedType) { return; }
+    serializeEntity(writer, remoteNetwork, isSerializingDerivedType)
+    writer.writeObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", remoteNetwork.connectivityConfiguration, serializeRemoteNetworkConnectivityConfiguration);
+    writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", remoteNetwork.deviceLinks, serializeDeviceLink);
+    writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", remoteNetwork.forwardingProfiles, serializeForwardingProfile);
+    writer.writeDateValue("lastModifiedDateTime", remoteNetwork.lastModifiedDateTime);
+    writer.writeStringValue("name", remoteNetwork.name);
+    writer.writeEnumValue<Region>("region", remoteNetwork.region);
+    writer.writeStringValue("version", remoteNetwork.version);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoteNetworkCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoteNetworkCollectionResponse(writer: SerializationWriter, remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined | null = {}) : void {
-    if (remoteNetworkCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkCollectionResponse)
-        writer.writeCollectionOfObjectValues<RemoteNetwork>("value", remoteNetworkCollectionResponse.value, serializeRemoteNetwork);
-    }
+export function serializeRemoteNetworkCollectionResponse(writer: SerializationWriter, remoteNetworkCollectionResponse: Partial<RemoteNetworkCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!remoteNetworkCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RemoteNetwork>("value", remoteNetworkCollectionResponse.value, serializeRemoteNetwork);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoteNetworkConnectivityConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoteNetworkConnectivityConfiguration(writer: SerializationWriter, remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined | null = {}) : void {
-    if (remoteNetworkConnectivityConfiguration) {
-        writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", remoteNetworkConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
-        writer.writeStringValue("@odata.type", remoteNetworkConnectivityConfiguration.odataType);
-        writer.writeStringValue("remoteNetworkId", remoteNetworkConnectivityConfiguration.remoteNetworkId);
-        writer.writeStringValue("remoteNetworkName", remoteNetworkConnectivityConfiguration.remoteNetworkName);
-        writer.writeAdditionalData(remoteNetworkConnectivityConfiguration.additionalData);
-    }
+export function serializeRemoteNetworkConnectivityConfiguration(writer: SerializationWriter, remoteNetworkConnectivityConfiguration: Partial<RemoteNetworkConnectivityConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!remoteNetworkConnectivityConfiguration || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ConnectivityConfigurationLink>("links", remoteNetworkConnectivityConfiguration.links, serializeConnectivityConfigurationLink);
+    writer.writeStringValue("@odata.type", remoteNetworkConnectivityConfiguration.odataType);
+    writer.writeStringValue("remoteNetworkId", remoteNetworkConnectivityConfiguration.remoteNetworkId);
+    writer.writeStringValue("remoteNetworkName", remoteNetworkConnectivityConfiguration.remoteNetworkName);
+    writer.writeAdditionalData(remoteNetworkConnectivityConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoteNetworkHealthEvent The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoteNetworkHealthEvent(writer: SerializationWriter, remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined | null = {}) : void {
-    if (remoteNetworkHealthEvent) {
-        serializeEntity(writer, remoteNetworkHealthEvent)
-        writer.writeNumberValue("bgpRoutesAdvertisedCount", remoteNetworkHealthEvent.bgpRoutesAdvertisedCount);
-        writer.writeDateValue("createdDateTime", remoteNetworkHealthEvent.createdDateTime);
-        writer.writeStringValue("description", remoteNetworkHealthEvent.description);
-        writer.writeStringValue("destinationIp", remoteNetworkHealthEvent.destinationIp);
-        writer.writeNumberValue("receivedBytes", remoteNetworkHealthEvent.receivedBytes);
-        writer.writeStringValue("remoteNetworkId", remoteNetworkHealthEvent.remoteNetworkId);
-        writer.writeNumberValue("sentBytes", remoteNetworkHealthEvent.sentBytes);
-        writer.writeStringValue("sourceIp", remoteNetworkHealthEvent.sourceIp);
-        writer.writeEnumValue<RemoteNetworkStatus>("status", remoteNetworkHealthEvent.status);
-    }
+export function serializeRemoteNetworkHealthEvent(writer: SerializationWriter, remoteNetworkHealthEvent: Partial<RemoteNetworkHealthEvent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!remoteNetworkHealthEvent || isSerializingDerivedType) { return; }
+    serializeEntity(writer, remoteNetworkHealthEvent, isSerializingDerivedType)
+    writer.writeNumberValue("bgpRoutesAdvertisedCount", remoteNetworkHealthEvent.bgpRoutesAdvertisedCount);
+    writer.writeDateValue("createdDateTime", remoteNetworkHealthEvent.createdDateTime);
+    writer.writeStringValue("description", remoteNetworkHealthEvent.description);
+    writer.writeStringValue("destinationIp", remoteNetworkHealthEvent.destinationIp);
+    writer.writeNumberValue("receivedBytes", remoteNetworkHealthEvent.receivedBytes);
+    writer.writeStringValue("remoteNetworkId", remoteNetworkHealthEvent.remoteNetworkId);
+    writer.writeNumberValue("sentBytes", remoteNetworkHealthEvent.sentBytes);
+    writer.writeStringValue("sourceIp", remoteNetworkHealthEvent.sourceIp);
+    writer.writeEnumValue<RemoteNetworkStatus>("status", remoteNetworkHealthEvent.status);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoteNetworkHealthEventCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoteNetworkHealthEventCollectionResponse(writer: SerializationWriter, remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined | null = {}) : void {
-    if (remoteNetworkHealthEventCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkHealthEventCollectionResponse)
-        writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("value", remoteNetworkHealthEventCollectionResponse.value, serializeRemoteNetworkHealthEvent);
-    }
+export function serializeRemoteNetworkHealthEventCollectionResponse(writer: SerializationWriter, remoteNetworkHealthEventCollectionResponse: Partial<RemoteNetworkHealthEventCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!remoteNetworkHealthEventCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, remoteNetworkHealthEventCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RemoteNetworkHealthEvent>("value", remoteNetworkHealthEventCollectionResponse.value, serializeRemoteNetworkHealthEvent);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Reports The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReports(writer: SerializationWriter, reports: Partial<Reports> | undefined | null = {}) : void {
-    if (reports) {
-        serializeEntity(writer, reports)
-    }
+export function serializeReports(writer: SerializationWriter, reports: Partial<Reports> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!reports || isSerializingDerivedType) { return; }
+    serializeEntity(writer, reports, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RuleDestination The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRuleDestination(writer: SerializationWriter, ruleDestination: Partial<RuleDestination> | undefined | null = {}) : void {
-    if (ruleDestination) {
-        writer.writeStringValue("@odata.type", ruleDestination.odataType);
-        writer.writeAdditionalData(ruleDestination.additionalData);
+export function serializeRuleDestination(writer: SerializationWriter, ruleDestination: Partial<RuleDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ruleDestination || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", ruleDestination.odataType);
+    writer.writeAdditionalData(ruleDestination.additionalData);
+    switch (ruleDestination.odataType) {
+        case "#microsoft.graph.networkaccess.fqdn":
+            serializeFqdn(writer, ruleDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipAddress":
+            serializeIpAddress(writer, ruleDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipRange":
+            serializeIpRange(writer, ruleDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipSubnet":
+            serializeIpSubnet(writer, ruleDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.url":
+            serializeUrl(writer, ruleDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.webCategory":
+            serializeWebCategory(writer, ruleDestination, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Settings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined | null = {}) : void {
-    if (settings) {
-        serializeEntity(writer, settings)
-        writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
-        writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
-        writer.writeObjectValue<EnrichedAuditLogs>("enrichedAuditLogs", settings.enrichedAuditLogs, serializeEnrichedAuditLogs);
-        writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
-    }
+export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!settings || isSerializingDerivedType) { return; }
+    serializeEntity(writer, settings, isSerializingDerivedType)
+    writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
+    writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
+    writer.writeObjectValue<EnrichedAuditLogs>("enrichedAuditLogs", settings.enrichedAuditLogs, serializeEnrichedAuditLogs);
+    writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantStatus The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined | null = {}) : void {
-    if (tenantStatus) {
-        serializeEntity(writer, tenantStatus)
-        writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
-        writer.writeEnumValue<OnboardingStatus>("onboardingStatus", tenantStatus.onboardingStatus);
-    }
+export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantStatus || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenantStatus, isSerializingDerivedType)
+    writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
+    writer.writeEnumValue<OnboardingStatus>("onboardingStatus", tenantStatus.onboardingStatus);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThirdPartyTokenDetails The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeThirdPartyTokenDetails(writer: SerializationWriter, thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined | null = {}) : void {
-    if (thirdPartyTokenDetails) {
-        writer.writeDateValue("expirationDateTime", thirdPartyTokenDetails.expirationDateTime);
-        writer.writeDateValue("issuedAtDateTime", thirdPartyTokenDetails.issuedAtDateTime);
-        writer.writeStringValue("@odata.type", thirdPartyTokenDetails.odataType);
-        writer.writeStringValue("uniqueTokenIdentifier", thirdPartyTokenDetails.uniqueTokenIdentifier);
-        writer.writeDateValue("validFromDateTime", thirdPartyTokenDetails.validFromDateTime);
-        writer.writeAdditionalData(thirdPartyTokenDetails.additionalData);
-    }
+export function serializeThirdPartyTokenDetails(writer: SerializationWriter, thirdPartyTokenDetails: Partial<ThirdPartyTokenDetails> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!thirdPartyTokenDetails || isSerializingDerivedType) { return; }
+    writer.writeDateValue("expirationDateTime", thirdPartyTokenDetails.expirationDateTime);
+    writer.writeDateValue("issuedAtDateTime", thirdPartyTokenDetails.issuedAtDateTime);
+    writer.writeStringValue("@odata.type", thirdPartyTokenDetails.odataType);
+    writer.writeStringValue("uniqueTokenIdentifier", thirdPartyTokenDetails.uniqueTokenIdentifier);
+    writer.writeDateValue("validFromDateTime", thirdPartyTokenDetails.validFromDateTime);
+    writer.writeAdditionalData(thirdPartyTokenDetails.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligenceDestination The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTransactionSummary(writer: SerializationWriter, transactionSummary: Partial<TransactionSummary> | undefined | null = {}) : void {
-    if (transactionSummary) {
-        writer.writeNumberValue("blockedCount", transactionSummary.blockedCount);
-        writer.writeStringValue("@odata.type", transactionSummary.odataType);
-        writer.writeNumberValue("totalCount", transactionSummary.totalCount);
-        writer.writeEnumValue<TrafficType>("trafficType", transactionSummary.trafficType);
-        writer.writeAdditionalData(transactionSummary.additionalData);
+export function serializeThreatIntelligenceDestination(writer: SerializationWriter, threatIntelligenceDestination: Partial<ThreatIntelligenceDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligenceDestination || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", threatIntelligenceDestination.odataType);
+    writer.writeAdditionalData(threatIntelligenceDestination.additionalData);
+    switch (threatIntelligenceDestination.odataType) {
+        case "#microsoft.graph.networkaccess.threatIntelligenceFqdnDestination":
+            serializeThreatIntelligenceFqdnDestination(writer, threatIntelligenceDestination, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligenceFqdnDestination The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTunnelConfiguration(writer: SerializationWriter, tunnelConfiguration: Partial<TunnelConfiguration> | undefined | null = {}) : void {
-    if (tunnelConfiguration) {
-        writer.writeStringValue("@odata.type", tunnelConfiguration.odataType);
-        writer.writeStringValue("preSharedKey", tunnelConfiguration.preSharedKey);
-        writer.writeStringValue("zoneRedundancyPreSharedKey", tunnelConfiguration.zoneRedundancyPreSharedKey);
-        writer.writeAdditionalData(tunnelConfiguration.additionalData);
-    }
+export function serializeThreatIntelligenceFqdnDestination(writer: SerializationWriter, threatIntelligenceFqdnDestination: Partial<ThreatIntelligenceFqdnDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligenceFqdnDestination || isSerializingDerivedType) { return; }
+    serializeThreatIntelligenceDestination(writer, threatIntelligenceFqdnDestination, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("values", threatIntelligenceFqdnDestination.values);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligenceMatchingConditions The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTunnelConfigurationIKEv2Custom(writer: SerializationWriter, tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined | null = {}) : void {
-    if (tunnelConfigurationIKEv2Custom) {
-        serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Custom)
-        writer.writeEnumValue<DhGroup>("dhGroup", tunnelConfigurationIKEv2Custom.dhGroup);
-        writer.writeEnumValue<IkeEncryption>("ikeEncryption", tunnelConfigurationIKEv2Custom.ikeEncryption);
-        writer.writeEnumValue<IkeIntegrity>("ikeIntegrity", tunnelConfigurationIKEv2Custom.ikeIntegrity);
-        writer.writeEnumValue<IpSecEncryption>("ipSecEncryption", tunnelConfigurationIKEv2Custom.ipSecEncryption);
-        writer.writeEnumValue<IpSecIntegrity>("ipSecIntegrity", tunnelConfigurationIKEv2Custom.ipSecIntegrity);
-        writer.writeEnumValue<PfsGroup>("pfsGroup", tunnelConfigurationIKEv2Custom.pfsGroup);
-        writer.writeNumberValue("saLifeTimeSeconds", tunnelConfigurationIKEv2Custom.saLifeTimeSeconds);
-    }
+export function serializeThreatIntelligenceMatchingConditions(writer: SerializationWriter, threatIntelligenceMatchingConditions: Partial<ThreatIntelligenceMatchingConditions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligenceMatchingConditions || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<ThreatIntelligenceDestination>("destinations", threatIntelligenceMatchingConditions.destinations, serializeThreatIntelligenceDestination);
+    writer.writeStringValue("@odata.type", threatIntelligenceMatchingConditions.odataType);
+    writer.writeEnumValue<ThreatIntelligenceSeverity>("severity", threatIntelligenceMatchingConditions.severity);
+    writer.writeAdditionalData(threatIntelligenceMatchingConditions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligencePolicy The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTunnelConfigurationIKEv2Default(writer: SerializationWriter, tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined | null = {}) : void {
-    if (tunnelConfigurationIKEv2Default) {
-        serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Default)
-    }
+export function serializeThreatIntelligencePolicy(writer: SerializationWriter, threatIntelligencePolicy: Partial<ThreatIntelligencePolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligencePolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, threatIntelligencePolicy, isSerializingDerivedType)
+    writer.writeDateValue("lastModifiedDateTime", threatIntelligencePolicy.lastModifiedDateTime);
+    writer.writeObjectValue<ThreatIntelligencePolicySettings>("settings", threatIntelligencePolicy.settings, serializeThreatIntelligencePolicySettings);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligencePolicyCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | undefined | null = {}) : void {
-    if (url) {
-        serializeRuleDestination(writer, url)
-        writer.writeStringValue("value", url.value);
-    }
+export function serializeThreatIntelligencePolicyCollectionResponse(writer: SerializationWriter, threatIntelligencePolicyCollectionResponse: Partial<ThreatIntelligencePolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligencePolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, threatIntelligencePolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ThreatIntelligencePolicy>("value", threatIntelligencePolicyCollectionResponse.value, serializeThreatIntelligencePolicy);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligencePolicyLink The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUsageProfilingPoint(writer: SerializationWriter, usageProfilingPoint: Partial<UsageProfilingPoint> | undefined | null = {}) : void {
-    if (usageProfilingPoint) {
-        writer.writeNumberValue("internetAccessTrafficCount", usageProfilingPoint.internetAccessTrafficCount);
-        writer.writeNumberValue("microsoft365AccessTrafficCount", usageProfilingPoint.microsoft365AccessTrafficCount);
-        writer.writeStringValue("@odata.type", usageProfilingPoint.odataType);
-        writer.writeNumberValue("privateAccessTrafficCount", usageProfilingPoint.privateAccessTrafficCount);
-        writer.writeDateValue("timeStampDateTime", usageProfilingPoint.timeStampDateTime);
-        writer.writeNumberValue("totalTrafficCount", usageProfilingPoint.totalTrafficCount);
-        writer.writeAdditionalData(usageProfilingPoint.additionalData);
-    }
+export function serializeThreatIntelligencePolicyLink(writer: SerializationWriter, threatIntelligencePolicyLink: Partial<ThreatIntelligencePolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligencePolicyLink || isSerializingDerivedType) { return; }
+    serializePolicyLink(writer, threatIntelligencePolicyLink, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligencePolicySettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined | null = {}) : void {
-    if (user) {
-        writer.writeStringValue("displayName", user.displayName);
-        writer.writeDateValue("firstAccessDateTime", user.firstAccessDateTime);
-        writer.writeDateValue("lastAccessDateTime", user.lastAccessDateTime);
-        writer.writeStringValue("@odata.type", user.odataType);
-        writer.writeNumberValue("totalBytesReceived", user.totalBytesReceived);
-        writer.writeNumberValue("totalBytesSent", user.totalBytesSent);
-        writer.writeEnumValue<TrafficType>("trafficType", user.trafficType);
-        writer.writeNumberValue("transactionCount", user.transactionCount);
-        writer.writeStringValue("userId", user.userId);
-        writer.writeStringValue("userPrincipalName", user.userPrincipalName);
-        writer.writeEnumValue<UserType>("userType", user.userType);
-        writer.writeAdditionalData(user.additionalData);
-    }
+export function serializeThreatIntelligencePolicySettings(writer: SerializationWriter, threatIntelligencePolicySettings: Partial<ThreatIntelligencePolicySettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligencePolicySettings || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<ThreatIntelligenceAction>("defaultAction", threatIntelligencePolicySettings.defaultAction);
+    writer.writeStringValue("@odata.type", threatIntelligencePolicySettings.odataType);
+    writer.writeAdditionalData(threatIntelligencePolicySettings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligenceRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWebCategoriesSummary(writer: SerializationWriter, webCategoriesSummary: Partial<WebCategoriesSummary> | undefined | null = {}) : void {
-    if (webCategoriesSummary) {
-        writer.writeEnumValue<FilteringPolicyAction>("action", webCategoriesSummary.action);
-        writer.writeNumberValue("deviceCount", webCategoriesSummary.deviceCount);
-        writer.writeStringValue("@odata.type", webCategoriesSummary.odataType);
-        writer.writeNumberValue("transactionCount", webCategoriesSummary.transactionCount);
-        writer.writeNumberValue("userCount", webCategoriesSummary.userCount);
-        writer.writeObjectValue<WebCategory>("webCategory", webCategoriesSummary.webCategory, serializeWebCategory);
-        writer.writeAdditionalData(webCategoriesSummary.additionalData);
-    }
+export function serializeThreatIntelligenceRule(writer: SerializationWriter, threatIntelligenceRule: Partial<ThreatIntelligenceRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligenceRule || isSerializingDerivedType) { return; }
+    serializePolicyRule(writer, threatIntelligenceRule, isSerializingDerivedType)
+    writer.writeEnumValue<ThreatIntelligenceAction>("action", threatIntelligenceRule.action);
+    writer.writeStringValue("description", threatIntelligenceRule.description);
+    writer.writeObjectValue<ThreatIntelligenceMatchingConditions>("matchingConditions", threatIntelligenceRule.matchingConditions, serializeThreatIntelligenceMatchingConditions);
+    writer.writeNumberValue("priority", threatIntelligenceRule.priority);
+    writer.writeObjectValue<ThreatIntelligenceRuleSettings>("settings", threatIntelligenceRule.settings, serializeThreatIntelligenceRuleSettings);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ThreatIntelligenceRuleSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWebCategory(writer: SerializationWriter, webCategory: Partial<WebCategory> | undefined | null = {}) : void {
-    if (webCategory) {
-        serializeRuleDestination(writer, webCategory)
-        writer.writeStringValue("displayName", webCategory.displayName);
-        writer.writeStringValue("group", webCategory.group);
-        writer.writeStringValue("name", webCategory.name);
-    }
+export function serializeThreatIntelligenceRuleSettings(writer: SerializationWriter, threatIntelligenceRuleSettings: Partial<ThreatIntelligenceRuleSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!threatIntelligenceRuleSettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", threatIntelligenceRuleSettings.odataType);
+    writer.writeEnumValue<SecurityRuleStatus>("status", threatIntelligenceRuleSettings.status);
+    writer.writeAdditionalData(threatIntelligenceRuleSettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TransactionSummary The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTransactionSummary(writer: SerializationWriter, transactionSummary: Partial<TransactionSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!transactionSummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("blockedCount", transactionSummary.blockedCount);
+    writer.writeStringValue("@odata.type", transactionSummary.odataType);
+    writer.writeNumberValue("totalCount", transactionSummary.totalCount);
+    writer.writeEnumValue<TrafficType>("trafficType", transactionSummary.trafficType);
+    writer.writeAdditionalData(transactionSummary.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TunnelConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWebCategoryFilteringRule(writer: SerializationWriter, webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined | null = {}) : void {
-    if (webCategoryFilteringRule) {
-        serializeFilteringRule(writer, webCategoryFilteringRule)
+export function serializeTunnelConfiguration(writer: SerializationWriter, tunnelConfiguration: Partial<TunnelConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tunnelConfiguration || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", tunnelConfiguration.odataType);
+    writer.writeStringValue("preSharedKey", tunnelConfiguration.preSharedKey);
+    writer.writeStringValue("zoneRedundancyPreSharedKey", tunnelConfiguration.zoneRedundancyPreSharedKey);
+    writer.writeAdditionalData(tunnelConfiguration.additionalData);
+    switch (tunnelConfiguration.odataType) {
+        case "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Custom":
+            serializeTunnelConfigurationIKEv2Custom(writer, tunnelConfiguration, true);
+        break;
+        case "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default":
+            serializeTunnelConfigurationIKEv2Default(writer, tunnelConfiguration, true);
+        break;
     }
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TunnelConfigurationIKEv2Custom The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTunnelConfigurationIKEv2Custom(writer: SerializationWriter, tunnelConfigurationIKEv2Custom: Partial<TunnelConfigurationIKEv2Custom> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tunnelConfigurationIKEv2Custom || isSerializingDerivedType) { return; }
+    serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Custom, isSerializingDerivedType)
+    writer.writeEnumValue<DhGroup>("dhGroup", tunnelConfigurationIKEv2Custom.dhGroup);
+    writer.writeEnumValue<IkeEncryption>("ikeEncryption", tunnelConfigurationIKEv2Custom.ikeEncryption);
+    writer.writeEnumValue<IkeIntegrity>("ikeIntegrity", tunnelConfigurationIKEv2Custom.ikeIntegrity);
+    writer.writeEnumValue<IpSecEncryption>("ipSecEncryption", tunnelConfigurationIKEv2Custom.ipSecEncryption);
+    writer.writeEnumValue<IpSecIntegrity>("ipSecIntegrity", tunnelConfigurationIKEv2Custom.ipSecIntegrity);
+    writer.writeEnumValue<PfsGroup>("pfsGroup", tunnelConfigurationIKEv2Custom.pfsGroup);
+    writer.writeNumberValue("saLifeTimeSeconds", tunnelConfigurationIKEv2Custom.saLifeTimeSeconds);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TunnelConfigurationIKEv2Default The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTunnelConfigurationIKEv2Default(writer: SerializationWriter, tunnelConfigurationIKEv2Default: Partial<TunnelConfigurationIKEv2Default> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tunnelConfigurationIKEv2Default || isSerializingDerivedType) { return; }
+    serializeTunnelConfiguration(writer, tunnelConfigurationIKEv2Default, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Url The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!url || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, url, isSerializingDerivedType)
+    writer.writeStringValue("value", url.value);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UsageProfilingPoint The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUsageProfilingPoint(writer: SerializationWriter, usageProfilingPoint: Partial<UsageProfilingPoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!usageProfilingPoint || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("internetAccessTrafficCount", usageProfilingPoint.internetAccessTrafficCount);
+    writer.writeNumberValue("microsoft365AccessTrafficCount", usageProfilingPoint.microsoft365AccessTrafficCount);
+    writer.writeStringValue("@odata.type", usageProfilingPoint.odataType);
+    writer.writeNumberValue("privateAccessTrafficCount", usageProfilingPoint.privateAccessTrafficCount);
+    writer.writeDateValue("timeStampDateTime", usageProfilingPoint.timeStampDateTime);
+    writer.writeNumberValue("totalTrafficCount", usageProfilingPoint.totalTrafficCount);
+    writer.writeAdditionalData(usageProfilingPoint.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param User The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUser(writer: SerializationWriter, user: Partial<User> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!user || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", user.displayName);
+    writer.writeDateValue("firstAccessDateTime", user.firstAccessDateTime);
+    writer.writeDateValue("lastAccessDateTime", user.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", user.odataType);
+    writer.writeNumberValue("totalBytesReceived", user.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", user.totalBytesSent);
+    writer.writeEnumValue<TrafficType>("trafficType", user.trafficType);
+    writer.writeNumberValue("transactionCount", user.transactionCount);
+    writer.writeStringValue("userId", user.userId);
+    writer.writeStringValue("userPrincipalName", user.userPrincipalName);
+    writer.writeEnumValue<UserType>("userType", user.userType);
+    writer.writeAdditionalData(user.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WebCategoriesSummary The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeWebCategoriesSummary(writer: SerializationWriter, webCategoriesSummary: Partial<WebCategoriesSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!webCategoriesSummary || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<FilteringPolicyAction>("action", webCategoriesSummary.action);
+    writer.writeNumberValue("deviceCount", webCategoriesSummary.deviceCount);
+    writer.writeStringValue("@odata.type", webCategoriesSummary.odataType);
+    writer.writeNumberValue("transactionCount", webCategoriesSummary.transactionCount);
+    writer.writeNumberValue("userCount", webCategoriesSummary.userCount);
+    writer.writeObjectValue<WebCategory>("webCategory", webCategoriesSummary.webCategory, serializeWebCategory);
+    writer.writeAdditionalData(webCategoriesSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WebCategory The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeWebCategory(writer: SerializationWriter, webCategory: Partial<WebCategory> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!webCategory || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, webCategory, isSerializingDerivedType)
+    writer.writeStringValue("displayName", webCategory.displayName);
+    writer.writeStringValue("group", webCategory.group);
+    writer.writeStringValue("name", webCategory.name);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WebCategoryFilteringRule The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeWebCategoryFilteringRule(writer: SerializationWriter, webCategoryFilteringRule: Partial<WebCategoryFilteringRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!webCategoryFilteringRule || isSerializingDerivedType) { return; }
+    serializeFilteringRule(writer, webCategoryFilteringRule, isSerializingDerivedType)
 }
 export interface Settings extends Entity, Parsable {
     /**
@@ -5982,10 +6573,6 @@ export interface TenantStatus extends Entity, Parsable {
 }
 export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -6010,14 +6597,114 @@ export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedMode
      */
     validFromDateTime?: Date | null;
 }
+export type ThreatIntelligenceAction = (typeof ThreatIntelligenceActionObject)[keyof typeof ThreatIntelligenceActionObject];
+export interface ThreatIntelligenceDestination extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface ThreatIntelligenceFqdnDestination extends Parsable, ThreatIntelligenceDestination {
+    /**
+     * The values property
+     */
+    values?: string[] | null;
+}
+export interface ThreatIntelligenceMatchingConditions extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The destinations property
+     */
+    destinations?: ThreatIntelligenceDestination[] | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The severity property
+     */
+    severity?: ThreatIntelligenceSeverity | null;
+}
+export interface ThreatIntelligencePolicy extends Parsable, Policy {
+    /**
+     * The lastModifiedDateTime property
+     */
+    lastModifiedDateTime?: Date | null;
+    /**
+     * The settings property
+     */
+    settings?: ThreatIntelligencePolicySettings | null;
+}
+export interface ThreatIntelligencePolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ThreatIntelligencePolicy[] | null;
+}
+export interface ThreatIntelligencePolicyLink extends Parsable, PolicyLink {
+}
+export interface ThreatIntelligencePolicySettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The defaultAction property
+     */
+    defaultAction?: ThreatIntelligenceAction | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface ThreatIntelligenceRule extends Parsable, PolicyRule {
+    /**
+     * The action property
+     */
+    action?: ThreatIntelligenceAction | null;
+    /**
+     * The description property
+     */
+    description?: string | null;
+    /**
+     * The matchingConditions property
+     */
+    matchingConditions?: ThreatIntelligenceMatchingConditions | null;
+    /**
+     * The priority property
+     */
+    priority?: number | null;
+    /**
+     * The settings property
+     */
+    settings?: ThreatIntelligenceRuleSettings | null;
+}
+export interface ThreatIntelligenceRuleSettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The status property
+     */
+    status?: SecurityRuleStatus | null;
+}
+export type ThreatIntelligenceSeverity = (typeof ThreatIntelligenceSeverityObject)[keyof typeof ThreatIntelligenceSeverityObject];
 export type ThreatSeverity = (typeof ThreatSeverityObject)[keyof typeof ThreatSeverityObject];
 export type TrafficForwardingType = (typeof TrafficForwardingTypeObject)[keyof typeof TrafficForwardingTypeObject];
 export type TrafficType = (typeof TrafficTypeObject)[keyof typeof TrafficTypeObject];
 export interface TransactionSummary extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6040,10 +6727,6 @@ export interface TransactionSummary extends AdditionalDataHolder, BackedModel, P
     trafficType?: TrafficType | null;
 }
 export interface TunnelConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6101,10 +6784,6 @@ export interface Url extends Parsable, RuleDestination {
 }
 export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -6135,10 +6814,6 @@ export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, 
 }
 export type UsageStatus = (typeof UsageStatusObject)[keyof typeof UsageStatusObject];
 export interface User extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6194,10 +6869,6 @@ export interface WebCategoriesSummary extends AdditionalDataHolder, BackedModel,
      * The action property
      */
     action?: FilteringPolicyAction | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -6538,9 +7209,26 @@ export const RemoteNetworkStatusObject = {
     RemoteNetworkAlive: "remoteNetworkAlive",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const SecurityRuleStatusObject = {
+    Enabled: "enabled",
+    Disabled: "disabled",
+    ReportOnly: "reportOnly",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const StatusObject = {
     Enabled: "enabled",
     Disabled: "disabled",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ThreatIntelligenceActionObject = {
+    Allow: "allow",
+    Block: "block",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ThreatIntelligenceSeverityObject = {
+    Low: "low",
+    Medium: "medium",
+    High: "high",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const ThreatSeverityObject = {

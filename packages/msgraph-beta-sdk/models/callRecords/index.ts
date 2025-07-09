@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Du
 
 export interface AdministrativeUnitInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -26,10 +22,6 @@ export interface AdministrativeUnitInfo extends AdditionalDataHolder, BackedMode
 }
 export type AudioCodec = (typeof AudioCodecObject)[keyof typeof AudioCodecObject];
 export interface CallLogRow extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The administrativeUnitInfos property
      */
@@ -483,6 +475,7 @@ export function createUserIdentityFromDiscriminatorValue(parseNode: ParseNode | 
 }
 /**
  * The deserialization information for the current model
+ * @param AdministrativeUnitInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -495,6 +488,7 @@ export function deserializeIntoAdministrativeUnitInfo(administrativeUnitInfo: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param CallLogRow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -512,6 +506,7 @@ export function deserializeIntoCallLogRow(callLogRow: Partial<CallLogRow> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param CallRecord The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -534,6 +529,7 @@ export function deserializeIntoCallRecord(callRecord: Partial<CallRecord> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param CallRecordCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -545,6 +541,7 @@ export function deserializeIntoCallRecordCollectionResponse(callRecordCollection
 }
 /**
  * The deserialization information for the current model
+ * @param ClientUserAgent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -559,6 +556,7 @@ export function deserializeIntoClientUserAgent(clientUserAgent: Partial<ClientUs
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -591,6 +589,7 @@ export function deserializeIntoDeviceInfo(deviceInfo: Partial<DeviceInfo> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param DirectRoutingLogRow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -620,6 +619,7 @@ export function deserializeIntoDirectRoutingLogRow(directRoutingLogRow: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param Endpoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -632,6 +632,7 @@ export function deserializeIntoEndpoint(endpoint: Partial<Endpoint> | undefined 
 }
 /**
  * The deserialization information for the current model
+ * @param FailureInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -645,6 +646,7 @@ export function deserializeIntoFailureInfo(failureInfo: Partial<FailureInfo> | u
 }
 /**
  * The deserialization information for the current model
+ * @param FeedbackTokenSet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -656,6 +658,7 @@ export function deserializeIntoFeedbackTokenSet(feedbackTokenSet: Partial<Feedba
 }
 /**
  * The deserialization information for the current model
+ * @param Media The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -673,6 +676,7 @@ export function deserializeIntoMedia(media: Partial<Media> | undefined = {}) : R
 }
 /**
  * The deserialization information for the current model
+ * @param MediaStream The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -714,6 +718,7 @@ export function deserializeIntoMediaStream(mediaStream: Partial<MediaStream> | u
 }
 /**
  * The deserialization information for the current model
+ * @param NetworkInfo The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -751,6 +756,7 @@ export function deserializeIntoNetworkInfo(networkInfo: Partial<NetworkInfo> | u
 }
 /**
  * The deserialization information for the current model
+ * @param Organizer The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -761,6 +767,7 @@ export function deserializeIntoOrganizer(organizer: Partial<Organizer> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param Participant The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -771,6 +778,7 @@ export function deserializeIntoParticipant(participant: Partial<Participant> | u
 }
 /**
  * The deserialization information for the current model
+ * @param ParticipantBase The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -783,6 +791,7 @@ export function deserializeIntoParticipantBase(participantBase: Partial<Particip
 }
 /**
  * The deserialization information for the current model
+ * @param ParticipantCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -794,6 +803,7 @@ export function deserializeIntoParticipantCollectionResponse(participantCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param ParticipantEndpoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -811,6 +821,7 @@ export function deserializeIntoParticipantEndpoint(participantEndpoint: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param PstnBlockedUsersLogRow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -830,6 +841,7 @@ export function deserializeIntoPstnBlockedUsersLogRow(pstnBlockedUsersLogRow: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param PstnCallLogRow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -863,6 +875,7 @@ export function deserializeIntoPstnCallLogRow(pstnCallLogRow: Partial<PstnCallLo
 }
 /**
  * The deserialization information for the current model
+ * @param PstnOnlineMeetingDialoutReport The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -883,6 +896,7 @@ export function deserializeIntoPstnOnlineMeetingDialoutReport(pstnOnlineMeetingD
 }
 /**
  * The deserialization information for the current model
+ * @param Segment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -899,6 +913,7 @@ export function deserializeIntoSegment(segment: Partial<Segment> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param SegmentCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -910,6 +925,7 @@ export function deserializeIntoSegmentCollectionResponse(segmentCollectionRespon
 }
 /**
  * The deserialization information for the current model
+ * @param ServiceEndpoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -920,6 +936,7 @@ export function deserializeIntoServiceEndpoint(serviceEndpoint: Partial<ServiceE
 }
 /**
  * The deserialization information for the current model
+ * @param ServiceUserAgent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -931,6 +948,7 @@ export function deserializeIntoServiceUserAgent(serviceUserAgent: Partial<Servic
 }
 /**
  * The deserialization information for the current model
+ * @param Session The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -949,6 +967,7 @@ export function deserializeIntoSession(session: Partial<Session> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param SessionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -960,6 +979,7 @@ export function deserializeIntoSessionCollectionResponse(sessionCollectionRespon
 }
 /**
  * The deserialization information for the current model
+ * @param SmsLogRow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -983,6 +1003,7 @@ export function deserializeIntoSmsLogRow(smsLogRow: Partial<SmsLogRow> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param TraceRouteHop The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -997,6 +1018,7 @@ export function deserializeIntoTraceRouteHop(traceRouteHop: Partial<TraceRouteHo
 }
 /**
  * The deserialization information for the current model
+ * @param UserAgent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1010,6 +1032,7 @@ export function deserializeIntoUserAgent(userAgent: Partial<UserAgent> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param UserFeedback The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1024,6 +1047,7 @@ export function deserializeIntoUserFeedback(userFeedback: Partial<UserFeedback> 
 }
 /**
  * The deserialization information for the current model
+ * @param UserIdentity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1034,10 +1058,6 @@ export function deserializeIntoUserIdentity(userIdentity: Partial<UserIdentity> 
     }
 }
 export interface DeviceInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1211,10 +1231,6 @@ export interface DirectRoutingLogRow extends CallLogRow, Parsable {
 }
 export interface Endpoint extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1228,10 +1244,6 @@ export interface Endpoint extends AdditionalDataHolder, BackedModel, Parsable {
     userAgent?: UserAgent | null;
 }
 export interface FailureInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1252,10 +1264,6 @@ export interface FailureInfo extends AdditionalDataHolder, BackedModel, Parsable
 export type FailureStage = (typeof FailureStageObject)[keyof typeof FailureStageObject];
 export interface FeedbackTokenSet extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1265,10 +1273,6 @@ export interface FeedbackTokenSet extends AdditionalDataHolder, BackedModel, Par
     odataType?: string | null;
 }
 export interface Media extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1303,10 +1307,6 @@ export interface Media extends AdditionalDataHolder, BackedModel, Parsable {
     streams?: MediaStream[] | null;
 }
 export interface MediaStream extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
      */
@@ -1440,10 +1440,6 @@ export type MediaStreamDirection = (typeof MediaStreamDirectionObject)[keyof typ
 export type Modality = (typeof ModalityObject)[keyof typeof ModalityObject];
 export type NetworkConnectionType = (typeof NetworkConnectionTypeObject)[keyof typeof NetworkConnectionTypeObject];
 export interface NetworkInfo extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1611,10 +1607,6 @@ export interface ParticipantEndpoint extends Endpoint, Parsable {
 export type ProductFamily = (typeof ProductFamilyObject)[keyof typeof ProductFamilyObject];
 export interface PstnBlockedUsersLogRow extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1752,10 +1744,6 @@ export interface PstnCallLogRow extends CallLogRow, Parsable {
 }
 export interface PstnOnlineMeetingDialoutReport extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1835,557 +1823,624 @@ export interface SegmentCollectionResponse extends BaseCollectionPaginationCount
 }
 /**
  * Serializes information the current object
+ * @param AdministrativeUnitInfo The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdministrativeUnitInfo(writer: SerializationWriter, administrativeUnitInfo: Partial<AdministrativeUnitInfo> | undefined | null = {}) : void {
-    if (administrativeUnitInfo) {
-        writer.writeStringValue("id", administrativeUnitInfo.id);
-        writer.writeStringValue("@odata.type", administrativeUnitInfo.odataType);
-        writer.writeAdditionalData(administrativeUnitInfo.additionalData);
+export function serializeAdministrativeUnitInfo(writer: SerializationWriter, administrativeUnitInfo: Partial<AdministrativeUnitInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!administrativeUnitInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("id", administrativeUnitInfo.id);
+    writer.writeStringValue("@odata.type", administrativeUnitInfo.odataType);
+    writer.writeAdditionalData(administrativeUnitInfo.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CallLogRow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCallLogRow(writer: SerializationWriter, callLogRow: Partial<CallLogRow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!callLogRow || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", callLogRow.administrativeUnitInfos, serializeAdministrativeUnitInfo);
+    writer.writeStringValue("id", callLogRow.id);
+    writer.writeStringValue("@odata.type", callLogRow.odataType);
+    writer.writeStringValue("otherPartyCountryCode", callLogRow.otherPartyCountryCode);
+    writer.writeStringValue("userDisplayName", callLogRow.userDisplayName);
+    writer.writeStringValue("userId", callLogRow.userId);
+    writer.writeStringValue("userPrincipalName", callLogRow.userPrincipalName);
+    writer.writeAdditionalData(callLogRow.additionalData);
+    switch (callLogRow.odataType) {
+        case "#microsoft.graph.callRecords.directRoutingLogRow":
+            serializeDirectRoutingLogRow(writer, callLogRow, true);
+        break;
+        case "#microsoft.graph.callRecords.pstnCallLogRow":
+            serializePstnCallLogRow(writer, callLogRow, true);
+        break;
+        case "#microsoft.graph.callRecords.smsLogRow":
+            serializeSmsLogRow(writer, callLogRow, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param CallRecord The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCallLogRow(writer: SerializationWriter, callLogRow: Partial<CallLogRow> | undefined | null = {}) : void {
-    if (callLogRow) {
-        writer.writeCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", callLogRow.administrativeUnitInfos, serializeAdministrativeUnitInfo);
-        writer.writeStringValue("id", callLogRow.id);
-        writer.writeStringValue("@odata.type", callLogRow.odataType);
-        writer.writeStringValue("otherPartyCountryCode", callLogRow.otherPartyCountryCode);
-        writer.writeStringValue("userDisplayName", callLogRow.userDisplayName);
-        writer.writeStringValue("userId", callLogRow.userId);
-        writer.writeStringValue("userPrincipalName", callLogRow.userPrincipalName);
-        writer.writeAdditionalData(callLogRow.additionalData);
+export function serializeCallRecord(writer: SerializationWriter, callRecord: Partial<CallRecord> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!callRecord || isSerializingDerivedType) { return; }
+    serializeEntity(writer, callRecord, isSerializingDerivedType)
+    writer.writeDateValue("endDateTime", callRecord.endDateTime);
+    writer.writeStringValue("joinWebUrl", callRecord.joinWebUrl);
+    writer.writeDateValue("lastModifiedDateTime", callRecord.lastModifiedDateTime);
+    if(callRecord.modalities)
+    writer.writeCollectionOfEnumValues<Modality>("modalities", callRecord.modalities);
+    writer.writeObjectValue<IdentitySet>("organizer", callRecord.organizer, serializeIdentitySet);
+    writer.writeObjectValue<Organizer>("organizer_v2", callRecord.organizerV2, serializeOrganizer);
+    writer.writeCollectionOfObjectValues<IdentitySet>("participants", callRecord.participants, serializeIdentitySet);
+    writer.writeCollectionOfObjectValues<Participant>("participants_v2", callRecord.participantsV2, serializeParticipant);
+    writer.writeCollectionOfObjectValues<Session>("sessions", callRecord.sessions, serializeSession);
+    writer.writeDateValue("startDateTime", callRecord.startDateTime);
+    writer.writeEnumValue<CallType>("type", callRecord.type);
+    writer.writeNumberValue("version", callRecord.version);
+}
+/**
+ * Serializes information the current object
+ * @param CallRecordCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCallRecordCollectionResponse(writer: SerializationWriter, callRecordCollectionResponse: Partial<CallRecordCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!callRecordCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, callRecordCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CallRecord>("value", callRecordCollectionResponse.value, serializeCallRecord);
+}
+/**
+ * Serializes information the current object
+ * @param ClientUserAgent The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeClientUserAgent(writer: SerializationWriter, clientUserAgent: Partial<ClientUserAgent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!clientUserAgent || isSerializingDerivedType) { return; }
+    serializeUserAgent(writer, clientUserAgent, isSerializingDerivedType)
+    writer.writeStringValue("azureADAppId", clientUserAgent.azureADAppId);
+    writer.writeStringValue("communicationServiceId", clientUserAgent.communicationServiceId);
+    writer.writeEnumValue<ClientPlatform>("platform", clientUserAgent.platform);
+    writer.writeEnumValue<ProductFamily>("productFamily", clientUserAgent.productFamily);
+}
+/**
+ * Serializes information the current object
+ * @param DeviceInfo The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeviceInfo(writer: SerializationWriter, deviceInfo: Partial<DeviceInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("captureDeviceDriver", deviceInfo.captureDeviceDriver);
+    writer.writeStringValue("captureDeviceName", deviceInfo.captureDeviceName);
+    writer.writeNumberValue("captureNotFunctioningEventRatio", deviceInfo.captureNotFunctioningEventRatio);
+    writer.writeNumberValue("cpuInsufficentEventRatio", deviceInfo.cpuInsufficentEventRatio);
+    writer.writeNumberValue("deviceClippingEventRatio", deviceInfo.deviceClippingEventRatio);
+    writer.writeNumberValue("deviceGlitchEventRatio", deviceInfo.deviceGlitchEventRatio);
+    writer.writeNumberValue("howlingEventCount", deviceInfo.howlingEventCount);
+    writer.writeNumberValue("initialSignalLevelRootMeanSquare", deviceInfo.initialSignalLevelRootMeanSquare);
+    writer.writeNumberValue("lowSpeechLevelEventRatio", deviceInfo.lowSpeechLevelEventRatio);
+    writer.writeNumberValue("lowSpeechToNoiseEventRatio", deviceInfo.lowSpeechToNoiseEventRatio);
+    writer.writeNumberValue("micGlitchRate", deviceInfo.micGlitchRate);
+    writer.writeStringValue("@odata.type", deviceInfo.odataType);
+    writer.writeNumberValue("receivedNoiseLevel", deviceInfo.receivedNoiseLevel);
+    writer.writeNumberValue("receivedSignalLevel", deviceInfo.receivedSignalLevel);
+    writer.writeStringValue("renderDeviceDriver", deviceInfo.renderDeviceDriver);
+    writer.writeStringValue("renderDeviceName", deviceInfo.renderDeviceName);
+    writer.writeNumberValue("renderMuteEventRatio", deviceInfo.renderMuteEventRatio);
+    writer.writeNumberValue("renderNotFunctioningEventRatio", deviceInfo.renderNotFunctioningEventRatio);
+    writer.writeNumberValue("renderZeroVolumeEventRatio", deviceInfo.renderZeroVolumeEventRatio);
+    writer.writeNumberValue("sentNoiseLevel", deviceInfo.sentNoiseLevel);
+    writer.writeNumberValue("sentSignalLevel", deviceInfo.sentSignalLevel);
+    writer.writeNumberValue("speakerGlitchRate", deviceInfo.speakerGlitchRate);
+    writer.writeAdditionalData(deviceInfo.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param DirectRoutingLogRow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDirectRoutingLogRow(writer: SerializationWriter, directRoutingLogRow: Partial<DirectRoutingLogRow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!directRoutingLogRow || isSerializingDerivedType) { return; }
+    serializeCallLogRow(writer, directRoutingLogRow, isSerializingDerivedType)
+    writer.writeStringValue("calleeNumber", directRoutingLogRow.calleeNumber);
+    writer.writeNumberValue("callEndSubReason", directRoutingLogRow.callEndSubReason);
+    writer.writeStringValue("callerNumber", directRoutingLogRow.callerNumber);
+    writer.writeStringValue("callType", directRoutingLogRow.callType);
+    writer.writeStringValue("correlationId", directRoutingLogRow.correlationId);
+    writer.writeNumberValue("duration", directRoutingLogRow.duration);
+    writer.writeDateValue("endDateTime", directRoutingLogRow.endDateTime);
+    writer.writeDateValue("failureDateTime", directRoutingLogRow.failureDateTime);
+    writer.writeNumberValue("finalSipCode", directRoutingLogRow.finalSipCode);
+    writer.writeStringValue("finalSipCodePhrase", directRoutingLogRow.finalSipCodePhrase);
+    writer.writeDateValue("inviteDateTime", directRoutingLogRow.inviteDateTime);
+    writer.writeBooleanValue("mediaBypassEnabled", directRoutingLogRow.mediaBypassEnabled);
+    writer.writeStringValue("mediaPathLocation", directRoutingLogRow.mediaPathLocation);
+    writer.writeStringValue("signalingLocation", directRoutingLogRow.signalingLocation);
+    writer.writeDateValue("startDateTime", directRoutingLogRow.startDateTime);
+    writer.writeBooleanValue("successfulCall", directRoutingLogRow.successfulCall);
+    writer.writeStringValue("transferorCorrelationId", directRoutingLogRow.transferorCorrelationId);
+    writer.writeStringValue("trunkFullyQualifiedDomainName", directRoutingLogRow.trunkFullyQualifiedDomainName);
+    writer.writeStringValue("userCountryCode", directRoutingLogRow.userCountryCode);
+}
+/**
+ * Serializes information the current object
+ * @param Endpoint The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEndpoint(writer: SerializationWriter, endpoint: Partial<Endpoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!endpoint || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", endpoint.odataType);
+    writer.writeObjectValue<UserAgent>("userAgent", endpoint.userAgent, serializeUserAgent);
+    writer.writeAdditionalData(endpoint.additionalData);
+    switch (endpoint.odataType) {
+        case "#microsoft.graph.callRecords.participantEndpoint":
+            serializeParticipantEndpoint(writer, endpoint, true);
+        break;
+        case "#microsoft.graph.callRecords.serviceEndpoint":
+            serializeServiceEndpoint(writer, endpoint, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param FailureInfo The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCallRecord(writer: SerializationWriter, callRecord: Partial<CallRecord> | undefined | null = {}) : void {
-    if (callRecord) {
-        serializeEntity(writer, callRecord)
-        writer.writeDateValue("endDateTime", callRecord.endDateTime);
-        writer.writeStringValue("joinWebUrl", callRecord.joinWebUrl);
-        writer.writeDateValue("lastModifiedDateTime", callRecord.lastModifiedDateTime);
-        if(callRecord.modalities)
-        writer.writeCollectionOfEnumValues<Modality>("modalities", callRecord.modalities);
-        writer.writeObjectValue<IdentitySet>("organizer", callRecord.organizer, serializeIdentitySet);
-        writer.writeObjectValue<Organizer>("organizer_v2", callRecord.organizerV2, serializeOrganizer);
-        writer.writeCollectionOfObjectValues<IdentitySet>("participants", callRecord.participants, serializeIdentitySet);
-        writer.writeCollectionOfObjectValues<Participant>("participants_v2", callRecord.participantsV2, serializeParticipant);
-        writer.writeCollectionOfObjectValues<Session>("sessions", callRecord.sessions, serializeSession);
-        writer.writeDateValue("startDateTime", callRecord.startDateTime);
-        writer.writeEnumValue<CallType>("type", callRecord.type);
-        writer.writeNumberValue("version", callRecord.version);
+export function serializeFailureInfo(writer: SerializationWriter, failureInfo: Partial<FailureInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!failureInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", failureInfo.odataType);
+    writer.writeStringValue("reason", failureInfo.reason);
+    writer.writeEnumValue<FailureStage>("stage", failureInfo.stage);
+    writer.writeAdditionalData(failureInfo.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param FeedbackTokenSet The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFeedbackTokenSet(writer: SerializationWriter, feedbackTokenSet: Partial<FeedbackTokenSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!feedbackTokenSet || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", feedbackTokenSet.odataType);
+    writer.writeAdditionalData(feedbackTokenSet.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Media The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMedia(writer: SerializationWriter, media: Partial<Media> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!media || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<DeviceInfo>("calleeDevice", media.calleeDevice, serializeDeviceInfo);
+    writer.writeObjectValue<NetworkInfo>("calleeNetwork", media.calleeNetwork, serializeNetworkInfo);
+    writer.writeObjectValue<DeviceInfo>("callerDevice", media.callerDevice, serializeDeviceInfo);
+    writer.writeObjectValue<NetworkInfo>("callerNetwork", media.callerNetwork, serializeNetworkInfo);
+    writer.writeStringValue("label", media.label);
+    writer.writeStringValue("@odata.type", media.odataType);
+    writer.writeCollectionOfObjectValues<MediaStream>("streams", media.streams, serializeMediaStream);
+    writer.writeAdditionalData(media.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MediaStream The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMediaStream(writer: SerializationWriter, mediaStream: Partial<MediaStream> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!mediaStream || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AudioCodec>("audioCodec", mediaStream.audioCodec);
+    writer.writeNumberValue("averageAudioDegradation", mediaStream.averageAudioDegradation);
+    writer.writeDurationValue("averageAudioNetworkJitter", mediaStream.averageAudioNetworkJitter);
+    writer.writeNumberValue("averageBandwidthEstimate", mediaStream.averageBandwidthEstimate);
+    writer.writeDurationValue("averageFreezeDuration", mediaStream.averageFreezeDuration);
+    writer.writeDurationValue("averageJitter", mediaStream.averageJitter);
+    writer.writeNumberValue("averagePacketLossRate", mediaStream.averagePacketLossRate);
+    writer.writeNumberValue("averageRatioOfConcealedSamples", mediaStream.averageRatioOfConcealedSamples);
+    writer.writeNumberValue("averageReceivedFrameRate", mediaStream.averageReceivedFrameRate);
+    writer.writeDurationValue("averageRoundTripTime", mediaStream.averageRoundTripTime);
+    writer.writeNumberValue("averageVideoFrameLossPercentage", mediaStream.averageVideoFrameLossPercentage);
+    writer.writeNumberValue("averageVideoFrameRate", mediaStream.averageVideoFrameRate);
+    writer.writeNumberValue("averageVideoPacketLossRate", mediaStream.averageVideoPacketLossRate);
+    writer.writeDateValue("endDateTime", mediaStream.endDateTime);
+    writer.writeBooleanValue("isAudioForwardErrorCorrectionUsed", mediaStream.isAudioForwardErrorCorrectionUsed);
+    writer.writeNumberValue("lowFrameRateRatio", mediaStream.lowFrameRateRatio);
+    writer.writeNumberValue("lowVideoProcessingCapabilityRatio", mediaStream.lowVideoProcessingCapabilityRatio);
+    writer.writeDurationValue("maxAudioNetworkJitter", mediaStream.maxAudioNetworkJitter);
+    writer.writeDurationValue("maxJitter", mediaStream.maxJitter);
+    writer.writeNumberValue("maxPacketLossRate", mediaStream.maxPacketLossRate);
+    writer.writeNumberValue("maxRatioOfConcealedSamples", mediaStream.maxRatioOfConcealedSamples);
+    writer.writeDurationValue("maxRoundTripTime", mediaStream.maxRoundTripTime);
+    writer.writeStringValue("@odata.type", mediaStream.odataType);
+    writer.writeNumberValue("packetUtilization", mediaStream.packetUtilization);
+    writer.writeNumberValue("postForwardErrorCorrectionPacketLossRate", mediaStream.postForwardErrorCorrectionPacketLossRate);
+    writer.writeDurationValue("rmsFreezeDuration", mediaStream.rmsFreezeDuration);
+    writer.writeDateValue("startDateTime", mediaStream.startDateTime);
+    writer.writeEnumValue<MediaStreamDirection>("streamDirection", mediaStream.streamDirection);
+    writer.writeStringValue("streamId", mediaStream.streamId);
+    writer.writeEnumValue<VideoCodec>("videoCodec", mediaStream.videoCodec);
+    writer.writeBooleanValue("wasMediaBypassed", mediaStream.wasMediaBypassed);
+    writer.writeAdditionalData(mediaStream.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NetworkInfo The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeNetworkInfo(writer: SerializationWriter, networkInfo: Partial<NetworkInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!networkInfo || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("bandwidthLowEventRatio", networkInfo.bandwidthLowEventRatio);
+    writer.writeStringValue("basicServiceSetIdentifier", networkInfo.basicServiceSetIdentifier);
+    writer.writeEnumValue<NetworkConnectionType>("connectionType", networkInfo.connectionType);
+    writer.writeNumberValue("delayEventRatio", networkInfo.delayEventRatio);
+    writer.writeStringValue("dnsSuffix", networkInfo.dnsSuffix);
+    writer.writeStringValue("ipAddress", networkInfo.ipAddress);
+    writer.writeNumberValue("linkSpeed", networkInfo.linkSpeed);
+    writer.writeStringValue("macAddress", networkInfo.macAddress);
+    writer.writeEnumValue<NetworkTransportProtocol>("networkTransportProtocol", networkInfo.networkTransportProtocol);
+    writer.writeStringValue("@odata.type", networkInfo.odataType);
+    writer.writeNumberValue("port", networkInfo.port);
+    writer.writeNumberValue("receivedQualityEventRatio", networkInfo.receivedQualityEventRatio);
+    writer.writeStringValue("reflexiveIPAddress", networkInfo.reflexiveIPAddress);
+    writer.writeStringValue("relayIPAddress", networkInfo.relayIPAddress);
+    writer.writeNumberValue("relayPort", networkInfo.relayPort);
+    writer.writeNumberValue("sentQualityEventRatio", networkInfo.sentQualityEventRatio);
+    writer.writeStringValue("subnet", networkInfo.subnet);
+    writer.writeCollectionOfObjectValues<TraceRouteHop>("traceRouteHops", networkInfo.traceRouteHops, serializeTraceRouteHop);
+    writer.writeEnumValue<WifiBand>("wifiBand", networkInfo.wifiBand);
+    writer.writeNumberValue("wifiBatteryCharge", networkInfo.wifiBatteryCharge);
+    writer.writeNumberValue("wifiChannel", networkInfo.wifiChannel);
+    writer.writeStringValue("wifiMicrosoftDriver", networkInfo.wifiMicrosoftDriver);
+    writer.writeStringValue("wifiMicrosoftDriverVersion", networkInfo.wifiMicrosoftDriverVersion);
+    writer.writeEnumValue<WifiRadioType>("wifiRadioType", networkInfo.wifiRadioType);
+    writer.writeNumberValue("wifiSignalStrength", networkInfo.wifiSignalStrength);
+    writer.writeStringValue("wifiVendorDriver", networkInfo.wifiVendorDriver);
+    writer.writeStringValue("wifiVendorDriverVersion", networkInfo.wifiVendorDriverVersion);
+    writer.writeAdditionalData(networkInfo.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Organizer The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOrganizer(writer: SerializationWriter, organizer: Partial<Organizer> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!organizer || isSerializingDerivedType) { return; }
+    serializeParticipantBase(writer, organizer, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Participant The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeParticipant(writer: SerializationWriter, participant: Partial<Participant> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!participant || isSerializingDerivedType) { return; }
+    serializeParticipantBase(writer, participant, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ParticipantBase The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeParticipantBase(writer: SerializationWriter, participantBase: Partial<ParticipantBase> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!participantBase || isSerializingDerivedType) { return; }
+    serializeEntity(writer, participantBase, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", participantBase.administrativeUnitInfos, serializeAdministrativeUnitInfo);
+    writer.writeObjectValue<CommunicationsIdentitySet>("identity", participantBase.identity, serializeCommunicationsIdentitySet);
+    switch (participantBase.odataType) {
+        case "#microsoft.graph.callRecords.organizer":
+            serializeOrganizer(writer, participantBase, true);
+        break;
+        case "#microsoft.graph.callRecords.participant":
+            serializeParticipant(writer, participantBase, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ParticipantCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCallRecordCollectionResponse(writer: SerializationWriter, callRecordCollectionResponse: Partial<CallRecordCollectionResponse> | undefined | null = {}) : void {
-    if (callRecordCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, callRecordCollectionResponse)
-        writer.writeCollectionOfObjectValues<CallRecord>("value", callRecordCollectionResponse.value, serializeCallRecord);
+export function serializeParticipantCollectionResponse(writer: SerializationWriter, participantCollectionResponse: Partial<ParticipantCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!participantCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, participantCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Participant>("value", participantCollectionResponse.value, serializeParticipant);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ParticipantEndpoint The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeParticipantEndpoint(writer: SerializationWriter, participantEndpoint: Partial<ParticipantEndpoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!participantEndpoint || isSerializingDerivedType) { return; }
+    serializeEndpoint(writer, participantEndpoint, isSerializingDerivedType)
+    writer.writeObjectValue<Identity>("associatedIdentity", participantEndpoint.associatedIdentity, serializeIdentity);
+    writer.writeNumberValue("cpuCoresCount", participantEndpoint.cpuCoresCount);
+    writer.writeStringValue("cpuName", participantEndpoint.cpuName);
+    writer.writeNumberValue("cpuProcessorSpeedInMhz", participantEndpoint.cpuProcessorSpeedInMhz);
+    writer.writeObjectValue<UserFeedback>("feedback", participantEndpoint.feedback, serializeUserFeedback);
+    writer.writeObjectValue<IdentitySet>("identity", participantEndpoint.identity, serializeIdentitySet);
+    writer.writeStringValue("name", participantEndpoint.name);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PstnBlockedUsersLogRow The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePstnBlockedUsersLogRow(writer: SerializationWriter, pstnBlockedUsersLogRow: Partial<PstnBlockedUsersLogRow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!pstnBlockedUsersLogRow || isSerializingDerivedType) { return; }
+    writer.writeDateValue("blockDateTime", pstnBlockedUsersLogRow.blockDateTime);
+    writer.writeStringValue("blockReason", pstnBlockedUsersLogRow.blockReason);
+    writer.writeStringValue("@odata.type", pstnBlockedUsersLogRow.odataType);
+    writer.writeStringValue("remediationId", pstnBlockedUsersLogRow.remediationId);
+    writer.writeEnumValue<PstnUserBlockMode>("userBlockMode", pstnBlockedUsersLogRow.userBlockMode);
+    writer.writeStringValue("userDisplayName", pstnBlockedUsersLogRow.userDisplayName);
+    writer.writeStringValue("userId", pstnBlockedUsersLogRow.userId);
+    writer.writeStringValue("userPrincipalName", pstnBlockedUsersLogRow.userPrincipalName);
+    writer.writeStringValue("userTelephoneNumber", pstnBlockedUsersLogRow.userTelephoneNumber);
+    writer.writeAdditionalData(pstnBlockedUsersLogRow.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PstnCallLogRow The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePstnCallLogRow(writer: SerializationWriter, pstnCallLogRow: Partial<PstnCallLogRow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!pstnCallLogRow || isSerializingDerivedType) { return; }
+    serializeCallLogRow(writer, pstnCallLogRow, isSerializingDerivedType)
+    writer.writeEnumValue<PstnCallDurationSource>("callDurationSource", pstnCallLogRow.callDurationSource);
+    writer.writeStringValue("calleeNumber", pstnCallLogRow.calleeNumber);
+    writer.writeStringValue("callerNumber", pstnCallLogRow.callerNumber);
+    writer.writeStringValue("callId", pstnCallLogRow.callId);
+    writer.writeStringValue("callType", pstnCallLogRow.callType);
+    writer.writeNumberValue("charge", pstnCallLogRow.charge);
+    writer.writeStringValue("clientLocalIpV4Address", pstnCallLogRow.clientLocalIpV4Address);
+    writer.writeStringValue("clientLocalIpV6Address", pstnCallLogRow.clientLocalIpV6Address);
+    writer.writeStringValue("clientPublicIpV4Address", pstnCallLogRow.clientPublicIpV4Address);
+    writer.writeStringValue("clientPublicIpV6Address", pstnCallLogRow.clientPublicIpV6Address);
+    writer.writeStringValue("conferenceId", pstnCallLogRow.conferenceId);
+    writer.writeNumberValue("connectionCharge", pstnCallLogRow.connectionCharge);
+    writer.writeStringValue("currency", pstnCallLogRow.currency);
+    writer.writeStringValue("destinationContext", pstnCallLogRow.destinationContext);
+    writer.writeStringValue("destinationName", pstnCallLogRow.destinationName);
+    writer.writeNumberValue("duration", pstnCallLogRow.duration);
+    writer.writeDateValue("endDateTime", pstnCallLogRow.endDateTime);
+    writer.writeStringValue("inventoryType", pstnCallLogRow.inventoryType);
+    writer.writeStringValue("licenseCapability", pstnCallLogRow.licenseCapability);
+    writer.writeStringValue("operator", pstnCallLogRow.operator);
+    writer.writeDateValue("startDateTime", pstnCallLogRow.startDateTime);
+    writer.writeStringValue("tenantCountryCode", pstnCallLogRow.tenantCountryCode);
+    writer.writeStringValue("usageCountryCode", pstnCallLogRow.usageCountryCode);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PstnOnlineMeetingDialoutReport The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePstnOnlineMeetingDialoutReport(writer: SerializationWriter, pstnOnlineMeetingDialoutReport: Partial<PstnOnlineMeetingDialoutReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!pstnOnlineMeetingDialoutReport || isSerializingDerivedType) { return; }
+    writer.writeStringValue("currency", pstnOnlineMeetingDialoutReport.currency);
+    writer.writeStringValue("destinationContext", pstnOnlineMeetingDialoutReport.destinationContext);
+    writer.writeStringValue("@odata.type", pstnOnlineMeetingDialoutReport.odataType);
+    writer.writeNumberValue("totalCallCharge", pstnOnlineMeetingDialoutReport.totalCallCharge);
+    writer.writeNumberValue("totalCalls", pstnOnlineMeetingDialoutReport.totalCalls);
+    writer.writeNumberValue("totalCallSeconds", pstnOnlineMeetingDialoutReport.totalCallSeconds);
+    writer.writeStringValue("usageLocation", pstnOnlineMeetingDialoutReport.usageLocation);
+    writer.writeStringValue("userDisplayName", pstnOnlineMeetingDialoutReport.userDisplayName);
+    writer.writeStringValue("userId", pstnOnlineMeetingDialoutReport.userId);
+    writer.writeStringValue("userPrincipalName", pstnOnlineMeetingDialoutReport.userPrincipalName);
+    writer.writeAdditionalData(pstnOnlineMeetingDialoutReport.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Segment The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSegment(writer: SerializationWriter, segment: Partial<Segment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!segment || isSerializingDerivedType) { return; }
+    serializeEntity(writer, segment, isSerializingDerivedType)
+    writer.writeObjectValue<Endpoint>("callee", segment.callee, serializeEndpoint);
+    writer.writeObjectValue<Endpoint>("caller", segment.caller, serializeEndpoint);
+    writer.writeDateValue("endDateTime", segment.endDateTime);
+    writer.writeObjectValue<FailureInfo>("failureInfo", segment.failureInfo, serializeFailureInfo);
+    writer.writeCollectionOfObjectValues<Media>("media", segment.media, serializeMedia);
+    writer.writeDateValue("startDateTime", segment.startDateTime);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SegmentCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSegmentCollectionResponse(writer: SerializationWriter, segmentCollectionResponse: Partial<SegmentCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!segmentCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, segmentCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Segment>("value", segmentCollectionResponse.value, serializeSegment);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ServiceEndpoint The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeServiceEndpoint(writer: SerializationWriter, serviceEndpoint: Partial<ServiceEndpoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!serviceEndpoint || isSerializingDerivedType) { return; }
+    serializeEndpoint(writer, serviceEndpoint, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ServiceUserAgent The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeServiceUserAgent(writer: SerializationWriter, serviceUserAgent: Partial<ServiceUserAgent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!serviceUserAgent || isSerializingDerivedType) { return; }
+    serializeUserAgent(writer, serviceUserAgent, isSerializingDerivedType)
+    writer.writeEnumValue<ServiceRole>("role", serviceUserAgent.role);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Session The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSession(writer: SerializationWriter, session: Partial<Session> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!session || isSerializingDerivedType) { return; }
+    serializeEntity(writer, session, isSerializingDerivedType)
+    writer.writeObjectValue<Endpoint>("callee", session.callee, serializeEndpoint);
+    writer.writeObjectValue<Endpoint>("caller", session.caller, serializeEndpoint);
+    writer.writeDateValue("endDateTime", session.endDateTime);
+    writer.writeObjectValue<FailureInfo>("failureInfo", session.failureInfo, serializeFailureInfo);
+    writer.writeBooleanValue("isTest", session.isTest);
+    if(session.modalities)
+    writer.writeCollectionOfEnumValues<Modality>("modalities", session.modalities);
+    writer.writeCollectionOfObjectValues<Segment>("segments", session.segments, serializeSegment);
+    writer.writeDateValue("startDateTime", session.startDateTime);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SessionCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSessionCollectionResponse(writer: SerializationWriter, sessionCollectionResponse: Partial<SessionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sessionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, sessionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Session>("value", sessionCollectionResponse.value, serializeSession);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SmsLogRow The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSmsLogRow(writer: SerializationWriter, smsLogRow: Partial<SmsLogRow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!smsLogRow || isSerializingDerivedType) { return; }
+    serializeCallLogRow(writer, smsLogRow, isSerializingDerivedType)
+    writer.writeNumberValue("callCharge", smsLogRow.callCharge);
+    writer.writeStringValue("currency", smsLogRow.currency);
+    writer.writeStringValue("destinationContext", smsLogRow.destinationContext);
+    writer.writeStringValue("destinationName", smsLogRow.destinationName);
+    writer.writeStringValue("destinationNumber", smsLogRow.destinationNumber);
+    writer.writeStringValue("licenseCapability", smsLogRow.licenseCapability);
+    writer.writeDateValue("sentDateTime", smsLogRow.sentDateTime);
+    writer.writeStringValue("smsId", smsLogRow.smsId);
+    writer.writeStringValue("smsType", smsLogRow.smsType);
+    writer.writeNumberValue("smsUnits", smsLogRow.smsUnits);
+    writer.writeStringValue("sourceNumber", smsLogRow.sourceNumber);
+    writer.writeStringValue("tenantCountryCode", smsLogRow.tenantCountryCode);
+    writer.writeStringValue("userCountryCode", smsLogRow.userCountryCode);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TraceRouteHop The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTraceRouteHop(writer: SerializationWriter, traceRouteHop: Partial<TraceRouteHop> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!traceRouteHop || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("hopCount", traceRouteHop.hopCount);
+    writer.writeStringValue("ipAddress", traceRouteHop.ipAddress);
+    writer.writeStringValue("@odata.type", traceRouteHop.odataType);
+    writer.writeDurationValue("roundTripTime", traceRouteHop.roundTripTime);
+    writer.writeAdditionalData(traceRouteHop.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserAgent The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUserAgent(writer: SerializationWriter, userAgent: Partial<UserAgent> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userAgent || isSerializingDerivedType) { return; }
+    writer.writeStringValue("applicationVersion", userAgent.applicationVersion);
+    writer.writeStringValue("headerValue", userAgent.headerValue);
+    writer.writeStringValue("@odata.type", userAgent.odataType);
+    writer.writeAdditionalData(userAgent.additionalData);
+    switch (userAgent.odataType) {
+        case "#microsoft.graph.callRecords.clientUserAgent":
+            serializeClientUserAgent(writer, userAgent, true);
+        break;
+        case "#microsoft.graph.callRecords.serviceUserAgent":
+            serializeServiceUserAgent(writer, userAgent, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserFeedback The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeClientUserAgent(writer: SerializationWriter, clientUserAgent: Partial<ClientUserAgent> | undefined | null = {}) : void {
-    if (clientUserAgent) {
-        serializeUserAgent(writer, clientUserAgent)
-        writer.writeStringValue("azureADAppId", clientUserAgent.azureADAppId);
-        writer.writeStringValue("communicationServiceId", clientUserAgent.communicationServiceId);
-        writer.writeEnumValue<ClientPlatform>("platform", clientUserAgent.platform);
-        writer.writeEnumValue<ProductFamily>("productFamily", clientUserAgent.productFamily);
-    }
+export function serializeUserFeedback(writer: SerializationWriter, userFeedback: Partial<UserFeedback> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userFeedback || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", userFeedback.odataType);
+    writer.writeEnumValue<UserFeedbackRating>("rating", userFeedback.rating);
+    writer.writeStringValue("text", userFeedback.text);
+    writer.writeObjectValue<FeedbackTokenSet>("tokens", userFeedback.tokens, serializeFeedbackTokenSet);
+    writer.writeAdditionalData(userFeedback.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserIdentity The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeviceInfo(writer: SerializationWriter, deviceInfo: Partial<DeviceInfo> | undefined | null = {}) : void {
-    if (deviceInfo) {
-        writer.writeStringValue("captureDeviceDriver", deviceInfo.captureDeviceDriver);
-        writer.writeStringValue("captureDeviceName", deviceInfo.captureDeviceName);
-        writer.writeNumberValue("captureNotFunctioningEventRatio", deviceInfo.captureNotFunctioningEventRatio);
-        writer.writeNumberValue("cpuInsufficentEventRatio", deviceInfo.cpuInsufficentEventRatio);
-        writer.writeNumberValue("deviceClippingEventRatio", deviceInfo.deviceClippingEventRatio);
-        writer.writeNumberValue("deviceGlitchEventRatio", deviceInfo.deviceGlitchEventRatio);
-        writer.writeNumberValue("howlingEventCount", deviceInfo.howlingEventCount);
-        writer.writeNumberValue("initialSignalLevelRootMeanSquare", deviceInfo.initialSignalLevelRootMeanSquare);
-        writer.writeNumberValue("lowSpeechLevelEventRatio", deviceInfo.lowSpeechLevelEventRatio);
-        writer.writeNumberValue("lowSpeechToNoiseEventRatio", deviceInfo.lowSpeechToNoiseEventRatio);
-        writer.writeNumberValue("micGlitchRate", deviceInfo.micGlitchRate);
-        writer.writeStringValue("@odata.type", deviceInfo.odataType);
-        writer.writeNumberValue("receivedNoiseLevel", deviceInfo.receivedNoiseLevel);
-        writer.writeNumberValue("receivedSignalLevel", deviceInfo.receivedSignalLevel);
-        writer.writeStringValue("renderDeviceDriver", deviceInfo.renderDeviceDriver);
-        writer.writeStringValue("renderDeviceName", deviceInfo.renderDeviceName);
-        writer.writeNumberValue("renderMuteEventRatio", deviceInfo.renderMuteEventRatio);
-        writer.writeNumberValue("renderNotFunctioningEventRatio", deviceInfo.renderNotFunctioningEventRatio);
-        writer.writeNumberValue("renderZeroVolumeEventRatio", deviceInfo.renderZeroVolumeEventRatio);
-        writer.writeNumberValue("sentNoiseLevel", deviceInfo.sentNoiseLevel);
-        writer.writeNumberValue("sentSignalLevel", deviceInfo.sentSignalLevel);
-        writer.writeNumberValue("speakerGlitchRate", deviceInfo.speakerGlitchRate);
-        writer.writeAdditionalData(deviceInfo.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeDirectRoutingLogRow(writer: SerializationWriter, directRoutingLogRow: Partial<DirectRoutingLogRow> | undefined | null = {}) : void {
-    if (directRoutingLogRow) {
-        serializeCallLogRow(writer, directRoutingLogRow)
-        writer.writeStringValue("calleeNumber", directRoutingLogRow.calleeNumber);
-        writer.writeNumberValue("callEndSubReason", directRoutingLogRow.callEndSubReason);
-        writer.writeStringValue("callerNumber", directRoutingLogRow.callerNumber);
-        writer.writeStringValue("callType", directRoutingLogRow.callType);
-        writer.writeStringValue("correlationId", directRoutingLogRow.correlationId);
-        writer.writeNumberValue("duration", directRoutingLogRow.duration);
-        writer.writeDateValue("endDateTime", directRoutingLogRow.endDateTime);
-        writer.writeDateValue("failureDateTime", directRoutingLogRow.failureDateTime);
-        writer.writeNumberValue("finalSipCode", directRoutingLogRow.finalSipCode);
-        writer.writeStringValue("finalSipCodePhrase", directRoutingLogRow.finalSipCodePhrase);
-        writer.writeDateValue("inviteDateTime", directRoutingLogRow.inviteDateTime);
-        writer.writeBooleanValue("mediaBypassEnabled", directRoutingLogRow.mediaBypassEnabled);
-        writer.writeStringValue("mediaPathLocation", directRoutingLogRow.mediaPathLocation);
-        writer.writeStringValue("signalingLocation", directRoutingLogRow.signalingLocation);
-        writer.writeDateValue("startDateTime", directRoutingLogRow.startDateTime);
-        writer.writeBooleanValue("successfulCall", directRoutingLogRow.successfulCall);
-        writer.writeStringValue("transferorCorrelationId", directRoutingLogRow.transferorCorrelationId);
-        writer.writeStringValue("trunkFullyQualifiedDomainName", directRoutingLogRow.trunkFullyQualifiedDomainName);
-        writer.writeStringValue("userCountryCode", directRoutingLogRow.userCountryCode);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeEndpoint(writer: SerializationWriter, endpoint: Partial<Endpoint> | undefined | null = {}) : void {
-    if (endpoint) {
-        writer.writeStringValue("@odata.type", endpoint.odataType);
-        writer.writeObjectValue<UserAgent>("userAgent", endpoint.userAgent, serializeUserAgent);
-        writer.writeAdditionalData(endpoint.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeFailureInfo(writer: SerializationWriter, failureInfo: Partial<FailureInfo> | undefined | null = {}) : void {
-    if (failureInfo) {
-        writer.writeStringValue("@odata.type", failureInfo.odataType);
-        writer.writeStringValue("reason", failureInfo.reason);
-        writer.writeEnumValue<FailureStage>("stage", failureInfo.stage);
-        writer.writeAdditionalData(failureInfo.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeFeedbackTokenSet(writer: SerializationWriter, feedbackTokenSet: Partial<FeedbackTokenSet> | undefined | null = {}) : void {
-    if (feedbackTokenSet) {
-        writer.writeStringValue("@odata.type", feedbackTokenSet.odataType);
-        writer.writeAdditionalData(feedbackTokenSet.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeMedia(writer: SerializationWriter, media: Partial<Media> | undefined | null = {}) : void {
-    if (media) {
-        writer.writeObjectValue<DeviceInfo>("calleeDevice", media.calleeDevice, serializeDeviceInfo);
-        writer.writeObjectValue<NetworkInfo>("calleeNetwork", media.calleeNetwork, serializeNetworkInfo);
-        writer.writeObjectValue<DeviceInfo>("callerDevice", media.callerDevice, serializeDeviceInfo);
-        writer.writeObjectValue<NetworkInfo>("callerNetwork", media.callerNetwork, serializeNetworkInfo);
-        writer.writeStringValue("label", media.label);
-        writer.writeStringValue("@odata.type", media.odataType);
-        writer.writeCollectionOfObjectValues<MediaStream>("streams", media.streams, serializeMediaStream);
-        writer.writeAdditionalData(media.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeMediaStream(writer: SerializationWriter, mediaStream: Partial<MediaStream> | undefined | null = {}) : void {
-    if (mediaStream) {
-        writer.writeEnumValue<AudioCodec>("audioCodec", mediaStream.audioCodec);
-        writer.writeNumberValue("averageAudioDegradation", mediaStream.averageAudioDegradation);
-        writer.writeDurationValue("averageAudioNetworkJitter", mediaStream.averageAudioNetworkJitter);
-        writer.writeNumberValue("averageBandwidthEstimate", mediaStream.averageBandwidthEstimate);
-        writer.writeDurationValue("averageFreezeDuration", mediaStream.averageFreezeDuration);
-        writer.writeDurationValue("averageJitter", mediaStream.averageJitter);
-        writer.writeNumberValue("averagePacketLossRate", mediaStream.averagePacketLossRate);
-        writer.writeNumberValue("averageRatioOfConcealedSamples", mediaStream.averageRatioOfConcealedSamples);
-        writer.writeNumberValue("averageReceivedFrameRate", mediaStream.averageReceivedFrameRate);
-        writer.writeDurationValue("averageRoundTripTime", mediaStream.averageRoundTripTime);
-        writer.writeNumberValue("averageVideoFrameLossPercentage", mediaStream.averageVideoFrameLossPercentage);
-        writer.writeNumberValue("averageVideoFrameRate", mediaStream.averageVideoFrameRate);
-        writer.writeNumberValue("averageVideoPacketLossRate", mediaStream.averageVideoPacketLossRate);
-        writer.writeDateValue("endDateTime", mediaStream.endDateTime);
-        writer.writeBooleanValue("isAudioForwardErrorCorrectionUsed", mediaStream.isAudioForwardErrorCorrectionUsed);
-        writer.writeNumberValue("lowFrameRateRatio", mediaStream.lowFrameRateRatio);
-        writer.writeNumberValue("lowVideoProcessingCapabilityRatio", mediaStream.lowVideoProcessingCapabilityRatio);
-        writer.writeDurationValue("maxAudioNetworkJitter", mediaStream.maxAudioNetworkJitter);
-        writer.writeDurationValue("maxJitter", mediaStream.maxJitter);
-        writer.writeNumberValue("maxPacketLossRate", mediaStream.maxPacketLossRate);
-        writer.writeNumberValue("maxRatioOfConcealedSamples", mediaStream.maxRatioOfConcealedSamples);
-        writer.writeDurationValue("maxRoundTripTime", mediaStream.maxRoundTripTime);
-        writer.writeStringValue("@odata.type", mediaStream.odataType);
-        writer.writeNumberValue("packetUtilization", mediaStream.packetUtilization);
-        writer.writeNumberValue("postForwardErrorCorrectionPacketLossRate", mediaStream.postForwardErrorCorrectionPacketLossRate);
-        writer.writeDurationValue("rmsFreezeDuration", mediaStream.rmsFreezeDuration);
-        writer.writeDateValue("startDateTime", mediaStream.startDateTime);
-        writer.writeEnumValue<MediaStreamDirection>("streamDirection", mediaStream.streamDirection);
-        writer.writeStringValue("streamId", mediaStream.streamId);
-        writer.writeEnumValue<VideoCodec>("videoCodec", mediaStream.videoCodec);
-        writer.writeBooleanValue("wasMediaBypassed", mediaStream.wasMediaBypassed);
-        writer.writeAdditionalData(mediaStream.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeNetworkInfo(writer: SerializationWriter, networkInfo: Partial<NetworkInfo> | undefined | null = {}) : void {
-    if (networkInfo) {
-        writer.writeNumberValue("bandwidthLowEventRatio", networkInfo.bandwidthLowEventRatio);
-        writer.writeStringValue("basicServiceSetIdentifier", networkInfo.basicServiceSetIdentifier);
-        writer.writeEnumValue<NetworkConnectionType>("connectionType", networkInfo.connectionType);
-        writer.writeNumberValue("delayEventRatio", networkInfo.delayEventRatio);
-        writer.writeStringValue("dnsSuffix", networkInfo.dnsSuffix);
-        writer.writeStringValue("ipAddress", networkInfo.ipAddress);
-        writer.writeNumberValue("linkSpeed", networkInfo.linkSpeed);
-        writer.writeStringValue("macAddress", networkInfo.macAddress);
-        writer.writeEnumValue<NetworkTransportProtocol>("networkTransportProtocol", networkInfo.networkTransportProtocol);
-        writer.writeStringValue("@odata.type", networkInfo.odataType);
-        writer.writeNumberValue("port", networkInfo.port);
-        writer.writeNumberValue("receivedQualityEventRatio", networkInfo.receivedQualityEventRatio);
-        writer.writeStringValue("reflexiveIPAddress", networkInfo.reflexiveIPAddress);
-        writer.writeStringValue("relayIPAddress", networkInfo.relayIPAddress);
-        writer.writeNumberValue("relayPort", networkInfo.relayPort);
-        writer.writeNumberValue("sentQualityEventRatio", networkInfo.sentQualityEventRatio);
-        writer.writeStringValue("subnet", networkInfo.subnet);
-        writer.writeCollectionOfObjectValues<TraceRouteHop>("traceRouteHops", networkInfo.traceRouteHops, serializeTraceRouteHop);
-        writer.writeEnumValue<WifiBand>("wifiBand", networkInfo.wifiBand);
-        writer.writeNumberValue("wifiBatteryCharge", networkInfo.wifiBatteryCharge);
-        writer.writeNumberValue("wifiChannel", networkInfo.wifiChannel);
-        writer.writeStringValue("wifiMicrosoftDriver", networkInfo.wifiMicrosoftDriver);
-        writer.writeStringValue("wifiMicrosoftDriverVersion", networkInfo.wifiMicrosoftDriverVersion);
-        writer.writeEnumValue<WifiRadioType>("wifiRadioType", networkInfo.wifiRadioType);
-        writer.writeNumberValue("wifiSignalStrength", networkInfo.wifiSignalStrength);
-        writer.writeStringValue("wifiVendorDriver", networkInfo.wifiVendorDriver);
-        writer.writeStringValue("wifiVendorDriverVersion", networkInfo.wifiVendorDriverVersion);
-        writer.writeAdditionalData(networkInfo.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeOrganizer(writer: SerializationWriter, organizer: Partial<Organizer> | undefined | null = {}) : void {
-    if (organizer) {
-        serializeParticipantBase(writer, organizer)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeParticipant(writer: SerializationWriter, participant: Partial<Participant> | undefined | null = {}) : void {
-    if (participant) {
-        serializeParticipantBase(writer, participant)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeParticipantBase(writer: SerializationWriter, participantBase: Partial<ParticipantBase> | undefined | null = {}) : void {
-    if (participantBase) {
-        serializeEntity(writer, participantBase)
-        writer.writeCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", participantBase.administrativeUnitInfos, serializeAdministrativeUnitInfo);
-        writer.writeObjectValue<CommunicationsIdentitySet>("identity", participantBase.identity, serializeCommunicationsIdentitySet);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeParticipantCollectionResponse(writer: SerializationWriter, participantCollectionResponse: Partial<ParticipantCollectionResponse> | undefined | null = {}) : void {
-    if (participantCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, participantCollectionResponse)
-        writer.writeCollectionOfObjectValues<Participant>("value", participantCollectionResponse.value, serializeParticipant);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeParticipantEndpoint(writer: SerializationWriter, participantEndpoint: Partial<ParticipantEndpoint> | undefined | null = {}) : void {
-    if (participantEndpoint) {
-        serializeEndpoint(writer, participantEndpoint)
-        writer.writeObjectValue<Identity>("associatedIdentity", participantEndpoint.associatedIdentity, serializeIdentity);
-        writer.writeNumberValue("cpuCoresCount", participantEndpoint.cpuCoresCount);
-        writer.writeStringValue("cpuName", participantEndpoint.cpuName);
-        writer.writeNumberValue("cpuProcessorSpeedInMhz", participantEndpoint.cpuProcessorSpeedInMhz);
-        writer.writeObjectValue<UserFeedback>("feedback", participantEndpoint.feedback, serializeUserFeedback);
-        writer.writeObjectValue<IdentitySet>("identity", participantEndpoint.identity, serializeIdentitySet);
-        writer.writeStringValue("name", participantEndpoint.name);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePstnBlockedUsersLogRow(writer: SerializationWriter, pstnBlockedUsersLogRow: Partial<PstnBlockedUsersLogRow> | undefined | null = {}) : void {
-    if (pstnBlockedUsersLogRow) {
-        writer.writeDateValue("blockDateTime", pstnBlockedUsersLogRow.blockDateTime);
-        writer.writeStringValue("blockReason", pstnBlockedUsersLogRow.blockReason);
-        writer.writeStringValue("@odata.type", pstnBlockedUsersLogRow.odataType);
-        writer.writeStringValue("remediationId", pstnBlockedUsersLogRow.remediationId);
-        writer.writeEnumValue<PstnUserBlockMode>("userBlockMode", pstnBlockedUsersLogRow.userBlockMode);
-        writer.writeStringValue("userDisplayName", pstnBlockedUsersLogRow.userDisplayName);
-        writer.writeStringValue("userId", pstnBlockedUsersLogRow.userId);
-        writer.writeStringValue("userPrincipalName", pstnBlockedUsersLogRow.userPrincipalName);
-        writer.writeStringValue("userTelephoneNumber", pstnBlockedUsersLogRow.userTelephoneNumber);
-        writer.writeAdditionalData(pstnBlockedUsersLogRow.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePstnCallLogRow(writer: SerializationWriter, pstnCallLogRow: Partial<PstnCallLogRow> | undefined | null = {}) : void {
-    if (pstnCallLogRow) {
-        serializeCallLogRow(writer, pstnCallLogRow)
-        writer.writeEnumValue<PstnCallDurationSource>("callDurationSource", pstnCallLogRow.callDurationSource);
-        writer.writeStringValue("calleeNumber", pstnCallLogRow.calleeNumber);
-        writer.writeStringValue("callerNumber", pstnCallLogRow.callerNumber);
-        writer.writeStringValue("callId", pstnCallLogRow.callId);
-        writer.writeStringValue("callType", pstnCallLogRow.callType);
-        writer.writeNumberValue("charge", pstnCallLogRow.charge);
-        writer.writeStringValue("clientLocalIpV4Address", pstnCallLogRow.clientLocalIpV4Address);
-        writer.writeStringValue("clientLocalIpV6Address", pstnCallLogRow.clientLocalIpV6Address);
-        writer.writeStringValue("clientPublicIpV4Address", pstnCallLogRow.clientPublicIpV4Address);
-        writer.writeStringValue("clientPublicIpV6Address", pstnCallLogRow.clientPublicIpV6Address);
-        writer.writeStringValue("conferenceId", pstnCallLogRow.conferenceId);
-        writer.writeNumberValue("connectionCharge", pstnCallLogRow.connectionCharge);
-        writer.writeStringValue("currency", pstnCallLogRow.currency);
-        writer.writeStringValue("destinationContext", pstnCallLogRow.destinationContext);
-        writer.writeStringValue("destinationName", pstnCallLogRow.destinationName);
-        writer.writeNumberValue("duration", pstnCallLogRow.duration);
-        writer.writeDateValue("endDateTime", pstnCallLogRow.endDateTime);
-        writer.writeStringValue("inventoryType", pstnCallLogRow.inventoryType);
-        writer.writeStringValue("licenseCapability", pstnCallLogRow.licenseCapability);
-        writer.writeStringValue("operator", pstnCallLogRow.operator);
-        writer.writeDateValue("startDateTime", pstnCallLogRow.startDateTime);
-        writer.writeStringValue("tenantCountryCode", pstnCallLogRow.tenantCountryCode);
-        writer.writeStringValue("usageCountryCode", pstnCallLogRow.usageCountryCode);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializePstnOnlineMeetingDialoutReport(writer: SerializationWriter, pstnOnlineMeetingDialoutReport: Partial<PstnOnlineMeetingDialoutReport> | undefined | null = {}) : void {
-    if (pstnOnlineMeetingDialoutReport) {
-        writer.writeStringValue("currency", pstnOnlineMeetingDialoutReport.currency);
-        writer.writeStringValue("destinationContext", pstnOnlineMeetingDialoutReport.destinationContext);
-        writer.writeStringValue("@odata.type", pstnOnlineMeetingDialoutReport.odataType);
-        writer.writeNumberValue("totalCallCharge", pstnOnlineMeetingDialoutReport.totalCallCharge);
-        writer.writeNumberValue("totalCalls", pstnOnlineMeetingDialoutReport.totalCalls);
-        writer.writeNumberValue("totalCallSeconds", pstnOnlineMeetingDialoutReport.totalCallSeconds);
-        writer.writeStringValue("usageLocation", pstnOnlineMeetingDialoutReport.usageLocation);
-        writer.writeStringValue("userDisplayName", pstnOnlineMeetingDialoutReport.userDisplayName);
-        writer.writeStringValue("userId", pstnOnlineMeetingDialoutReport.userId);
-        writer.writeStringValue("userPrincipalName", pstnOnlineMeetingDialoutReport.userPrincipalName);
-        writer.writeAdditionalData(pstnOnlineMeetingDialoutReport.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSegment(writer: SerializationWriter, segment: Partial<Segment> | undefined | null = {}) : void {
-    if (segment) {
-        serializeEntity(writer, segment)
-        writer.writeObjectValue<Endpoint>("callee", segment.callee, serializeEndpoint);
-        writer.writeObjectValue<Endpoint>("caller", segment.caller, serializeEndpoint);
-        writer.writeDateValue("endDateTime", segment.endDateTime);
-        writer.writeObjectValue<FailureInfo>("failureInfo", segment.failureInfo, serializeFailureInfo);
-        writer.writeCollectionOfObjectValues<Media>("media", segment.media, serializeMedia);
-        writer.writeDateValue("startDateTime", segment.startDateTime);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSegmentCollectionResponse(writer: SerializationWriter, segmentCollectionResponse: Partial<SegmentCollectionResponse> | undefined | null = {}) : void {
-    if (segmentCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, segmentCollectionResponse)
-        writer.writeCollectionOfObjectValues<Segment>("value", segmentCollectionResponse.value, serializeSegment);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeServiceEndpoint(writer: SerializationWriter, serviceEndpoint: Partial<ServiceEndpoint> | undefined | null = {}) : void {
-    if (serviceEndpoint) {
-        serializeEndpoint(writer, serviceEndpoint)
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeServiceUserAgent(writer: SerializationWriter, serviceUserAgent: Partial<ServiceUserAgent> | undefined | null = {}) : void {
-    if (serviceUserAgent) {
-        serializeUserAgent(writer, serviceUserAgent)
-        writer.writeEnumValue<ServiceRole>("role", serviceUserAgent.role);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSession(writer: SerializationWriter, session: Partial<Session> | undefined | null = {}) : void {
-    if (session) {
-        serializeEntity(writer, session)
-        writer.writeObjectValue<Endpoint>("callee", session.callee, serializeEndpoint);
-        writer.writeObjectValue<Endpoint>("caller", session.caller, serializeEndpoint);
-        writer.writeDateValue("endDateTime", session.endDateTime);
-        writer.writeObjectValue<FailureInfo>("failureInfo", session.failureInfo, serializeFailureInfo);
-        writer.writeBooleanValue("isTest", session.isTest);
-        if(session.modalities)
-        writer.writeCollectionOfEnumValues<Modality>("modalities", session.modalities);
-        writer.writeCollectionOfObjectValues<Segment>("segments", session.segments, serializeSegment);
-        writer.writeDateValue("startDateTime", session.startDateTime);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSessionCollectionResponse(writer: SerializationWriter, sessionCollectionResponse: Partial<SessionCollectionResponse> | undefined | null = {}) : void {
-    if (sessionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, sessionCollectionResponse)
-        writer.writeCollectionOfObjectValues<Session>("value", sessionCollectionResponse.value, serializeSession);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeSmsLogRow(writer: SerializationWriter, smsLogRow: Partial<SmsLogRow> | undefined | null = {}) : void {
-    if (smsLogRow) {
-        serializeCallLogRow(writer, smsLogRow)
-        writer.writeNumberValue("callCharge", smsLogRow.callCharge);
-        writer.writeStringValue("currency", smsLogRow.currency);
-        writer.writeStringValue("destinationContext", smsLogRow.destinationContext);
-        writer.writeStringValue("destinationName", smsLogRow.destinationName);
-        writer.writeStringValue("destinationNumber", smsLogRow.destinationNumber);
-        writer.writeStringValue("licenseCapability", smsLogRow.licenseCapability);
-        writer.writeDateValue("sentDateTime", smsLogRow.sentDateTime);
-        writer.writeStringValue("smsId", smsLogRow.smsId);
-        writer.writeStringValue("smsType", smsLogRow.smsType);
-        writer.writeNumberValue("smsUnits", smsLogRow.smsUnits);
-        writer.writeStringValue("sourceNumber", smsLogRow.sourceNumber);
-        writer.writeStringValue("tenantCountryCode", smsLogRow.tenantCountryCode);
-        writer.writeStringValue("userCountryCode", smsLogRow.userCountryCode);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeTraceRouteHop(writer: SerializationWriter, traceRouteHop: Partial<TraceRouteHop> | undefined | null = {}) : void {
-    if (traceRouteHop) {
-        writer.writeNumberValue("hopCount", traceRouteHop.hopCount);
-        writer.writeStringValue("ipAddress", traceRouteHop.ipAddress);
-        writer.writeStringValue("@odata.type", traceRouteHop.odataType);
-        writer.writeDurationValue("roundTripTime", traceRouteHop.roundTripTime);
-        writer.writeAdditionalData(traceRouteHop.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserAgent(writer: SerializationWriter, userAgent: Partial<UserAgent> | undefined | null = {}) : void {
-    if (userAgent) {
-        writer.writeStringValue("applicationVersion", userAgent.applicationVersion);
-        writer.writeStringValue("headerValue", userAgent.headerValue);
-        writer.writeStringValue("@odata.type", userAgent.odataType);
-        writer.writeAdditionalData(userAgent.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserFeedback(writer: SerializationWriter, userFeedback: Partial<UserFeedback> | undefined | null = {}) : void {
-    if (userFeedback) {
-        writer.writeStringValue("@odata.type", userFeedback.odataType);
-        writer.writeEnumValue<UserFeedbackRating>("rating", userFeedback.rating);
-        writer.writeStringValue("text", userFeedback.text);
-        writer.writeObjectValue<FeedbackTokenSet>("tokens", userFeedback.tokens, serializeFeedbackTokenSet);
-        writer.writeAdditionalData(userFeedback.additionalData);
-    }
-}
-/**
- * Serializes information the current object
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserIdentity(writer: SerializationWriter, userIdentity: Partial<UserIdentity> | undefined | null = {}) : void {
-    if (userIdentity) {
-        serializeIdentity(writer, userIdentity)
-        writer.writeStringValue("userPrincipalName", userIdentity.userPrincipalName);
-    }
+export function serializeUserIdentity(writer: SerializationWriter, userIdentity: Partial<UserIdentity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userIdentity || isSerializingDerivedType) { return; }
+    serializeIdentity(writer, userIdentity, isSerializingDerivedType)
+    writer.writeStringValue("userPrincipalName", userIdentity.userPrincipalName);
 }
 export interface ServiceEndpoint extends Endpoint, Parsable {
 }
@@ -2492,10 +2547,6 @@ export interface SmsLogRow extends CallLogRow, Parsable {
 }
 export interface TraceRouteHop extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -2518,10 +2569,6 @@ export interface TraceRouteHop extends AdditionalDataHolder, BackedModel, Parsab
 }
 export interface UserAgent extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Identifies the version of application software used by this endpoint.
      */
     applicationVersion?: string | null;
@@ -2539,10 +2586,6 @@ export interface UserAgent extends AdditionalDataHolder, BackedModel, Parsable {
     odataType?: string | null;
 }
 export interface UserFeedback extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

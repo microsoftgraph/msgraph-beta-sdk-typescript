@@ -28,6 +28,7 @@ export function createGetHealthMetricsPostResponseFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param GetHealthMetricsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoGetHealthMetricsPostRequestBody(getHealthMetricsP
 }
 /**
  * The deserialization information for the current model
+ * @param GetHealthMetricsPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoGetHealthMetricsPostResponse(getHealthMetricsPost
     }
 }
 export interface GetHealthMetricsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface GetHealthMetricsRequestBuilder extends BaseRequestBuilder<GetHe
 }
 /**
  * Serializes information the current object
+ * @param GetHealthMetricsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetHealthMetricsPostRequestBody(writer: SerializationWriter, getHealthMetricsPostRequestBody: Partial<GetHealthMetricsPostRequestBody> | undefined | null = {}) : void {
-    if (getHealthMetricsPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("metricNames", getHealthMetricsPostRequestBody.metricNames);
-        writer.writeAdditionalData(getHealthMetricsPostRequestBody.additionalData);
-    }
+export function serializeGetHealthMetricsPostRequestBody(writer: SerializationWriter, getHealthMetricsPostRequestBody: Partial<GetHealthMetricsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getHealthMetricsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("metricNames", getHealthMetricsPostRequestBody.metricNames);
+    writer.writeAdditionalData(getHealthMetricsPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param GetHealthMetricsPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetHealthMetricsPostResponse(writer: SerializationWriter, getHealthMetricsPostResponse: Partial<GetHealthMetricsPostResponse> | undefined | null = {}) : void {
-    if (getHealthMetricsPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricsPostResponse)
-        writer.writeCollectionOfObjectValues<KeyLongValuePair>("value", getHealthMetricsPostResponse.value, serializeKeyLongValuePair);
-    }
+export function serializeGetHealthMetricsPostResponse(writer: SerializationWriter, getHealthMetricsPostResponse: Partial<GetHealthMetricsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getHealthMetricsPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getHealthMetricsPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<KeyLongValuePair>("value", getHealthMetricsPostResponse.value, serializeKeyLongValuePair);
 }
 /**
  * Uri template for the request builder.

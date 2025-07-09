@@ -19,6 +19,7 @@ export function createUploadNewVersionPostRequestBodyFromDiscriminatorValue(pars
 }
 /**
  * The deserialization information for the current model
+ * @param UploadNewVersionPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -31,21 +32,18 @@ export function deserializeIntoUploadNewVersionPostRequestBody(uploadNewVersionP
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UploadNewVersionPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUploadNewVersionPostRequestBody(writer: SerializationWriter, uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined | null = {}) : void {
-    if (uploadNewVersionPostRequestBody) {
-        writer.writeByteArrayValue("content", uploadNewVersionPostRequestBody.content);
-        writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
-        writer.writeAdditionalData(uploadNewVersionPostRequestBody.additionalData);
-    }
+export function serializeUploadNewVersionPostRequestBody(writer: SerializationWriter, uploadNewVersionPostRequestBody: Partial<UploadNewVersionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!uploadNewVersionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeByteArrayValue("content", uploadNewVersionPostRequestBody.content);
+    writer.writeCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", uploadNewVersionPostRequestBody.groupPolicyUploadedLanguageFiles, serializeGroupPolicyUploadedLanguageFile);
+    writer.writeAdditionalData(uploadNewVersionPostRequestBody.additionalData);
 }
 export interface UploadNewVersionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

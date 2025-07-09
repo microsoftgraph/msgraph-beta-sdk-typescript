@@ -19,6 +19,7 @@ export function createUpdateDefinitionValuesPostRequestBodyFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateDefinitionValuesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -32,26 +33,23 @@ export function deserializeIntoUpdateDefinitionValuesPostRequestBody(updateDefin
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateDefinitionValuesPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateDefinitionValuesPostRequestBody(writer: SerializationWriter, updateDefinitionValuesPostRequestBody: Partial<UpdateDefinitionValuesPostRequestBody> | undefined | null = {}) : void {
-    if (updateDefinitionValuesPostRequestBody) {
-        writer.writeCollectionOfObjectValues<GroupPolicyDefinitionValue>("added", updateDefinitionValuesPostRequestBody.added, serializeGroupPolicyDefinitionValue);
-        writer.writeCollectionOfPrimitiveValues<string>("deletedIds", updateDefinitionValuesPostRequestBody.deletedIds);
-        writer.writeCollectionOfObjectValues<GroupPolicyDefinitionValue>("updated", updateDefinitionValuesPostRequestBody.updated, serializeGroupPolicyDefinitionValue);
-        writer.writeAdditionalData(updateDefinitionValuesPostRequestBody.additionalData);
-    }
+export function serializeUpdateDefinitionValuesPostRequestBody(writer: SerializationWriter, updateDefinitionValuesPostRequestBody: Partial<UpdateDefinitionValuesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateDefinitionValuesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<GroupPolicyDefinitionValue>("added", updateDefinitionValuesPostRequestBody.added, serializeGroupPolicyDefinitionValue);
+    writer.writeCollectionOfPrimitiveValues<string>("deletedIds", updateDefinitionValuesPostRequestBody.deletedIds);
+    writer.writeCollectionOfObjectValues<GroupPolicyDefinitionValue>("updated", updateDefinitionValuesPostRequestBody.updated, serializeGroupPolicyDefinitionValue);
+    writer.writeAdditionalData(updateDefinitionValuesPostRequestBody.additionalData);
 }
 export interface UpdateDefinitionValuesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The added property
      */
     added?: GroupPolicyDefinitionValue[] | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

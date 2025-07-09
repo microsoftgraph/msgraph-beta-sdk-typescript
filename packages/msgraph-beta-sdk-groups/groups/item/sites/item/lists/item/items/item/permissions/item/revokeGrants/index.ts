@@ -19,6 +19,7 @@ export function createRevokeGrantsPostRequestBodyFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param RevokeGrantsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoRevokeGrantsPostRequestBody(revokeGrantsPostReque
     }
 }
 export interface RevokeGrantsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -65,14 +62,15 @@ export interface RevokeGrantsRequestBuilder extends BaseRequestBuilder<RevokeGra
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RevokeGrantsPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRevokeGrantsPostRequestBody(writer: SerializationWriter, revokeGrantsPostRequestBody: Partial<RevokeGrantsPostRequestBody> | undefined | null = {}) : void {
-    if (revokeGrantsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<DriveRecipient>("grantees", revokeGrantsPostRequestBody.grantees, serializeDriveRecipient);
-        writer.writeAdditionalData(revokeGrantsPostRequestBody.additionalData);
-    }
+export function serializeRevokeGrantsPostRequestBody(writer: SerializationWriter, revokeGrantsPostRequestBody: Partial<RevokeGrantsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!revokeGrantsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<DriveRecipient>("grantees", revokeGrantsPostRequestBody.grantees, serializeDriveRecipient);
+    writer.writeAdditionalData(revokeGrantsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

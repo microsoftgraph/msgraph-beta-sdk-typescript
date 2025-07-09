@@ -19,6 +19,7 @@ export function createGetRoleScopeTagsByResourceWithResourceGetResponseFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param GetRoleScopeTagsByResourceWithResourceGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryPar
 }
 /**
  * Serializes information the current object
+ * @param GetRoleScopeTagsByResourceWithResourceGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetRoleScopeTagsByResourceWithResourceGetResponse(writer: SerializationWriter, getRoleScopeTagsByResourceWithResourceGetResponse: Partial<GetRoleScopeTagsByResourceWithResourceGetResponse> | undefined | null = {}) : void {
-    if (getRoleScopeTagsByResourceWithResourceGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByResourceWithResourceGetResponse)
-        writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByResourceWithResourceGetResponse.value, serializeRoleScopeTag);
-    }
+export function serializeGetRoleScopeTagsByResourceWithResourceGetResponse(writer: SerializationWriter, getRoleScopeTagsByResourceWithResourceGetResponse: Partial<GetRoleScopeTagsByResourceWithResourceGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getRoleScopeTagsByResourceWithResourceGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getRoleScopeTagsByResourceWithResourceGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RoleScopeTag>("value", getRoleScopeTagsByResourceWithResourceGetResponse.value, serializeRoleScopeTag);
 }
 /**
  * Uri template for the request builder.

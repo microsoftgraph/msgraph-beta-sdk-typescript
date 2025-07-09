@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface AssignAndActivateBySerialNumberPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -59,6 +55,7 @@ export function createAssignAndActivateBySerialNumberPostRequestBodyFromDiscrimi
 }
 /**
  * The deserialization information for the current model
+ * @param AssignAndActivateBySerialNumberPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -72,16 +69,17 @@ export function deserializeIntoAssignAndActivateBySerialNumberPostRequestBody(as
 }
 /**
  * Serializes information the current object
+ * @param AssignAndActivateBySerialNumberPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAssignAndActivateBySerialNumberPostRequestBody(writer: SerializationWriter, assignAndActivateBySerialNumberPostRequestBody: Partial<AssignAndActivateBySerialNumberPostRequestBody> | undefined | null = {}) : void {
-    if (assignAndActivateBySerialNumberPostRequestBody) {
-        writer.writeStringValue("displayName", assignAndActivateBySerialNumberPostRequestBody.displayName);
-        writer.writeStringValue("serialNumber", assignAndActivateBySerialNumberPostRequestBody.serialNumber);
-        writer.writeStringValue("verificationCode", assignAndActivateBySerialNumberPostRequestBody.verificationCode);
-        writer.writeAdditionalData(assignAndActivateBySerialNumberPostRequestBody.additionalData);
-    }
+export function serializeAssignAndActivateBySerialNumberPostRequestBody(writer: SerializationWriter, assignAndActivateBySerialNumberPostRequestBody: Partial<AssignAndActivateBySerialNumberPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!assignAndActivateBySerialNumberPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", assignAndActivateBySerialNumberPostRequestBody.displayName);
+    writer.writeStringValue("serialNumber", assignAndActivateBySerialNumberPostRequestBody.serialNumber);
+    writer.writeStringValue("verificationCode", assignAndActivateBySerialNumberPostRequestBody.verificationCode);
+    writer.writeAdditionalData(assignAndActivateBySerialNumberPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

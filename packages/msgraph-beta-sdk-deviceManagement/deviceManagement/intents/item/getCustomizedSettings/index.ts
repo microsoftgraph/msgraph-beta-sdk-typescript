@@ -19,6 +19,7 @@ export function createGetCustomizedSettingsGetResponseFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param GetCustomizedSettingsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetCustomizedSettingsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetCustomizedSettingsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetCustomizedSettingsGetResponse(writer: SerializationWriter, getCustomizedSettingsGetResponse: Partial<GetCustomizedSettingsGetResponse> | undefined | null = {}) : void {
-    if (getCustomizedSettingsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getCustomizedSettingsGetResponse)
-        writer.writeCollectionOfObjectValues<DeviceManagementIntentCustomizedSetting>("value", getCustomizedSettingsGetResponse.value, serializeDeviceManagementIntentCustomizedSetting);
-    }
+export function serializeGetCustomizedSettingsGetResponse(writer: SerializationWriter, getCustomizedSettingsGetResponse: Partial<GetCustomizedSettingsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getCustomizedSettingsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getCustomizedSettingsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceManagementIntentCustomizedSetting>("value", getCustomizedSettingsGetResponse.value, serializeDeviceManagementIntentCustomizedSetting);
 }
 /**
  * Uri template for the request builder.

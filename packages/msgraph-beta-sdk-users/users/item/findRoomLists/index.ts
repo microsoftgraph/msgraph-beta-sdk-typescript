@@ -19,6 +19,7 @@ export function createFindRoomListsGetResponseFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param FindRoomListsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface FindRoomListsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param FindRoomListsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFindRoomListsGetResponse(writer: SerializationWriter, findRoomListsGetResponse: Partial<FindRoomListsGetResponse> | undefined | null = {}) : void {
-    if (findRoomListsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, findRoomListsGetResponse)
-        writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomListsGetResponse.value, serializeEmailAddress);
-    }
+export function serializeFindRoomListsGetResponse(writer: SerializationWriter, findRoomListsGetResponse: Partial<FindRoomListsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!findRoomListsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, findRoomListsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<EmailAddress>("value", findRoomListsGetResponse.value, serializeEmailAddress);
 }
 /**
  * Uri template for the request builder.

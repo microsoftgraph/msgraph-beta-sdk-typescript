@@ -17,6 +17,7 @@ export function createGetComplianceSettingDetailsReportPostRequestBodyFromDiscri
 }
 /**
  * The deserialization information for the current model
+ * @param GetComplianceSettingDetailsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetComplianceSettingDetailsReportPostRequestBody(
     }
 }
 export interface GetComplianceSettingDetailsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetComplianceSettingDetailsReportRequestBuilder extends BaseReq
 }
 /**
  * Serializes information the current object
+ * @param GetComplianceSettingDetailsReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetComplianceSettingDetailsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined | null = {}) : void {
-    if (getComplianceSettingDetailsReportPostRequestBody) {
-        writer.writeStringValue("filter", getComplianceSettingDetailsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingDetailsReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getComplianceSettingDetailsReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getComplianceSettingDetailsReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getComplianceSettingDetailsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getComplianceSettingDetailsReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getComplianceSettingDetailsReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getComplianceSettingDetailsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getComplianceSettingDetailsReportPostRequestBody.top);
-        writer.writeAdditionalData(getComplianceSettingDetailsReportPostRequestBody.additionalData);
-    }
+export function serializeGetComplianceSettingDetailsReportPostRequestBody(writer: SerializationWriter, getComplianceSettingDetailsReportPostRequestBody: Partial<GetComplianceSettingDetailsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getComplianceSettingDetailsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getComplianceSettingDetailsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getComplianceSettingDetailsReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getComplianceSettingDetailsReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getComplianceSettingDetailsReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getComplianceSettingDetailsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getComplianceSettingDetailsReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getComplianceSettingDetailsReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getComplianceSettingDetailsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getComplianceSettingDetailsReportPostRequestBody.top);
+    writer.writeAdditionalData(getComplianceSettingDetailsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

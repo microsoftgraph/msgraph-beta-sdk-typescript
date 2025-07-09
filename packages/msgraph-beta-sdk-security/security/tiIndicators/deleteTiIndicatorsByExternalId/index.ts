@@ -28,10 +28,6 @@ export function createDeleteTiIndicatorsByExternalIdPostResponseFromDiscriminato
 }
 export interface DeleteTiIndicatorsByExternalIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -71,6 +67,7 @@ export interface DeleteTiIndicatorsByExternalIdRequestBuilder extends BaseReques
 }
 /**
  * The deserialization information for the current model
+ * @param DeleteTiIndicatorsByExternalIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -82,6 +79,7 @@ export function deserializeIntoDeleteTiIndicatorsByExternalIdPostRequestBody(del
 }
 /**
  * The deserialization information for the current model
+ * @param DeleteTiIndicatorsByExternalIdPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -93,25 +91,27 @@ export function deserializeIntoDeleteTiIndicatorsByExternalIdPostResponse(delete
 }
 /**
  * Serializes information the current object
+ * @param DeleteTiIndicatorsByExternalIdPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeleteTiIndicatorsByExternalIdPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsByExternalIdPostRequestBody: Partial<DeleteTiIndicatorsByExternalIdPostRequestBody> | undefined | null = {}) : void {
-    if (deleteTiIndicatorsByExternalIdPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsByExternalIdPostRequestBody.value);
-        writer.writeAdditionalData(deleteTiIndicatorsByExternalIdPostRequestBody.additionalData);
-    }
+export function serializeDeleteTiIndicatorsByExternalIdPostRequestBody(writer: SerializationWriter, deleteTiIndicatorsByExternalIdPostRequestBody: Partial<DeleteTiIndicatorsByExternalIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deleteTiIndicatorsByExternalIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("value", deleteTiIndicatorsByExternalIdPostRequestBody.value);
+    writer.writeAdditionalData(deleteTiIndicatorsByExternalIdPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param DeleteTiIndicatorsByExternalIdPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeDeleteTiIndicatorsByExternalIdPostResponse(writer: SerializationWriter, deleteTiIndicatorsByExternalIdPostResponse: Partial<DeleteTiIndicatorsByExternalIdPostResponse> | undefined | null = {}) : void {
-    if (deleteTiIndicatorsByExternalIdPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsByExternalIdPostResponse)
-        writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsByExternalIdPostResponse.value, serializeResultInfo);
-    }
+export function serializeDeleteTiIndicatorsByExternalIdPostResponse(writer: SerializationWriter, deleteTiIndicatorsByExternalIdPostResponse: Partial<DeleteTiIndicatorsByExternalIdPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deleteTiIndicatorsByExternalIdPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deleteTiIndicatorsByExternalIdPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ResultInfo>("value", deleteTiIndicatorsByExternalIdPostResponse.value, serializeResultInfo);
 }
 /**
  * Uri template for the request builder.

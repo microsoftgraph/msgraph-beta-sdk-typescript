@@ -19,6 +19,7 @@ export function createGetNonCompliantSettingsGetResponseFromDiscriminatorValue(p
 }
 /**
  * The deserialization information for the current model
+ * @param GetNonCompliantSettingsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetNonCompliantSettingsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetNonCompliantSettingsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetNonCompliantSettingsGetResponse(writer: SerializationWriter, getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined | null = {}) : void {
-    if (getNonCompliantSettingsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getNonCompliantSettingsGetResponse)
-        writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingState>("value", getNonCompliantSettingsGetResponse.value, serializeDeviceCompliancePolicySettingState);
-    }
+export function serializeGetNonCompliantSettingsGetResponse(writer: SerializationWriter, getNonCompliantSettingsGetResponse: Partial<GetNonCompliantSettingsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getNonCompliantSettingsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getNonCompliantSettingsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceCompliancePolicySettingState>("value", getNonCompliantSettingsGetResponse.value, serializeDeviceCompliancePolicySettingState);
 }
 /**
  * Uri template for the request builder.

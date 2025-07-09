@@ -17,6 +17,7 @@ export function createWipeManagedAppRegistrationByDeviceTagPostRequestBodyFromDi
 }
 /**
  * The deserialization information for the current model
+ * @param WipeManagedAppRegistrationByDeviceTagPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,20 +29,17 @@ export function deserializeIntoWipeManagedAppRegistrationByDeviceTagPostRequestB
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WipeManagedAppRegistrationByDeviceTagPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWipeManagedAppRegistrationByDeviceTagPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined | null = {}) : void {
-    if (wipeManagedAppRegistrationByDeviceTagPostRequestBody) {
-        writer.writeStringValue("deviceTag", wipeManagedAppRegistrationByDeviceTagPostRequestBody.deviceTag);
-        writer.writeAdditionalData(wipeManagedAppRegistrationByDeviceTagPostRequestBody.additionalData);
-    }
+export function serializeWipeManagedAppRegistrationByDeviceTagPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationByDeviceTagPostRequestBody: Partial<WipeManagedAppRegistrationByDeviceTagPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!wipeManagedAppRegistrationByDeviceTagPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("deviceTag", wipeManagedAppRegistrationByDeviceTagPostRequestBody.deviceTag);
+    writer.writeAdditionalData(wipeManagedAppRegistrationByDeviceTagPostRequestBody.additionalData);
 }
 export interface WipeManagedAppRegistrationByDeviceTagPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

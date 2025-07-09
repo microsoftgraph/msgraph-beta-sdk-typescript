@@ -19,6 +19,7 @@ export function createSearchGetResponseFromDiscriminatorValue(parseNode: ParseNo
 }
 /**
  * The deserialization information for the current model
+ * @param SearchGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface SearchRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SearchGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSearchGetResponse(writer: SerializationWriter, searchGetResponse: Partial<SearchGetResponse> | undefined | null = {}) : void {
-    if (searchGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, searchGetResponse)
-        writer.writeCollectionOfObjectValues<AccessPackage>("value", searchGetResponse.value, serializeAccessPackage);
-    }
+export function serializeSearchGetResponse(writer: SerializationWriter, searchGetResponse: Partial<SearchGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!searchGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, searchGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AccessPackage>("value", searchGetResponse.value, serializeAccessPackage);
 }
 /**
  * Uri template for the request builder.

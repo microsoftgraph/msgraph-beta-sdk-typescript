@@ -17,6 +17,7 @@ export function createUpdatePinPostRequestBodyFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param UpdatePinPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,21 +30,18 @@ export function deserializeIntoUpdatePinPostRequestBody(updatePinPostRequestBody
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdatePinPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdatePinPostRequestBody(writer: SerializationWriter, updatePinPostRequestBody: Partial<UpdatePinPostRequestBody> | undefined | null = {}) : void {
-    if (updatePinPostRequestBody) {
-        writer.writeStringValue("currentPin", updatePinPostRequestBody.currentPin);
-        writer.writeStringValue("newPin", updatePinPostRequestBody.newPin);
-        writer.writeAdditionalData(updatePinPostRequestBody.additionalData);
-    }
+export function serializeUpdatePinPostRequestBody(writer: SerializationWriter, updatePinPostRequestBody: Partial<UpdatePinPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updatePinPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("currentPin", updatePinPostRequestBody.currentPin);
+    writer.writeStringValue("newPin", updatePinPostRequestBody.newPin);
+    writer.writeAdditionalData(updatePinPostRequestBody.additionalData);
 }
 export interface UpdatePinPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

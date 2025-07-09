@@ -26,12 +26,11 @@ export interface EnrichedAuditLogsRequestBuilder extends BaseRequestBuilder<Enri
      */
      get(requestConfiguration?: RequestConfiguration<EnrichedAuditLogsRequestBuilderGetQueryParameters> | undefined) : Promise<EnrichedAuditLogs | undefined>;
     /**
-     * Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
+     * Update the navigation property enrichedAuditLogs in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EnrichedAuditLogs>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: EnrichedAuditLogs, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EnrichedAuditLogs | undefined>;
     /**
@@ -47,7 +46,7 @@ export interface EnrichedAuditLogsRequestBuilder extends BaseRequestBuilder<Enri
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EnrichedAuditLogsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
+     * Update the navigation property enrichedAuditLogs in networkAccess
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

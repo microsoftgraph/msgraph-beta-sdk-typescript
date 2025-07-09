@@ -19,6 +19,7 @@ export function createExecuteActionPostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param ExecuteActionPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -43,10 +44,6 @@ export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, Back
      * The actionName property
      */
     actionName?: ManagedDeviceRemoteAction | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -114,24 +111,25 @@ export interface ExecuteActionRequestBuilder extends BaseRequestBuilder<ExecuteA
 }
 /**
  * Serializes information the current object
+ * @param ExecuteActionPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined | null = {}) : void {
-    if (executeActionPostRequestBody) {
-        writer.writeEnumValue<ManagedDeviceRemoteAction>("actionName", executeActionPostRequestBody.actionName);
-        writer.writeStringValue("carrierUrl", executeActionPostRequestBody.carrierUrl);
-        writer.writeStringValue("deprovisionReason", executeActionPostRequestBody.deprovisionReason);
-        writer.writeCollectionOfPrimitiveValues<string>("deviceIds", executeActionPostRequestBody.deviceIds);
-        writer.writeStringValue("deviceName", executeActionPostRequestBody.deviceName);
-        writer.writeBooleanValue("keepEnrollmentData", executeActionPostRequestBody.keepEnrollmentData);
-        writer.writeBooleanValue("keepUserData", executeActionPostRequestBody.keepUserData);
-        writer.writeStringValue("notificationBody", executeActionPostRequestBody.notificationBody);
-        writer.writeStringValue("notificationTitle", executeActionPostRequestBody.notificationTitle);
-        writer.writeStringValue("organizationalUnitPath", executeActionPostRequestBody.organizationalUnitPath);
-        writer.writeBooleanValue("persistEsimDataPlan", executeActionPostRequestBody.persistEsimDataPlan);
-        writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
-    }
+export function serializeExecuteActionPostRequestBody(writer: SerializationWriter, executeActionPostRequestBody: Partial<ExecuteActionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!executeActionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<ManagedDeviceRemoteAction>("actionName", executeActionPostRequestBody.actionName);
+    writer.writeStringValue("carrierUrl", executeActionPostRequestBody.carrierUrl);
+    writer.writeStringValue("deprovisionReason", executeActionPostRequestBody.deprovisionReason);
+    writer.writeCollectionOfPrimitiveValues<string>("deviceIds", executeActionPostRequestBody.deviceIds);
+    writer.writeStringValue("deviceName", executeActionPostRequestBody.deviceName);
+    writer.writeBooleanValue("keepEnrollmentData", executeActionPostRequestBody.keepEnrollmentData);
+    writer.writeBooleanValue("keepUserData", executeActionPostRequestBody.keepUserData);
+    writer.writeStringValue("notificationBody", executeActionPostRequestBody.notificationBody);
+    writer.writeStringValue("notificationTitle", executeActionPostRequestBody.notificationTitle);
+    writer.writeStringValue("organizationalUnitPath", executeActionPostRequestBody.organizationalUnitPath);
+    writer.writeBooleanValue("persistEsimDataPlan", executeActionPostRequestBody.persistEsimDataPlan);
+    writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

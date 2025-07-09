@@ -19,6 +19,7 @@ export function createGetIosAvailableUpdateVersionsGetResponseFromDiscriminatorV
 }
 /**
  * The deserialization information for the current model
+ * @param GetIosAvailableUpdateVersionsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface GetIosAvailableUpdateVersionsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetIosAvailableUpdateVersionsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetIosAvailableUpdateVersionsGetResponse(writer: SerializationWriter, getIosAvailableUpdateVersionsGetResponse: Partial<GetIosAvailableUpdateVersionsGetResponse> | undefined | null = {}) : void {
-    if (getIosAvailableUpdateVersionsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getIosAvailableUpdateVersionsGetResponse)
-        writer.writeCollectionOfObjectValues<IosAvailableUpdateVersion>("value", getIosAvailableUpdateVersionsGetResponse.value, serializeIosAvailableUpdateVersion);
-    }
+export function serializeGetIosAvailableUpdateVersionsGetResponse(writer: SerializationWriter, getIosAvailableUpdateVersionsGetResponse: Partial<GetIosAvailableUpdateVersionsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getIosAvailableUpdateVersionsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getIosAvailableUpdateVersionsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<IosAvailableUpdateVersion>("value", getIosAvailableUpdateVersionsGetResponse.value, serializeIosAvailableUpdateVersion);
 }
 /**
  * Uri template for the request builder.

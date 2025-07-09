@@ -19,6 +19,7 @@ export function createGetOffice365GroupsActivityFileCountsWithPeriodGetResponseF
 }
 /**
  * The deserialization information for the current model
+ * @param GetOffice365GroupsActivityFileCountsWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGet
 }
 /**
  * Serializes information the current object
+ * @param GetOffice365GroupsActivityFileCountsWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOffice365GroupsActivityFileCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityFileCountsWithPeriodGetResponse: Partial<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getOffice365GroupsActivityFileCountsWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityFileCountsWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<Office365GroupsActivityFileCounts>("value", getOffice365GroupsActivityFileCountsWithPeriodGetResponse.value, serializeOffice365GroupsActivityFileCounts);
-    }
+export function serializeGetOffice365GroupsActivityFileCountsWithPeriodGetResponse(writer: SerializationWriter, getOffice365GroupsActivityFileCountsWithPeriodGetResponse: Partial<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOffice365GroupsActivityFileCountsWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOffice365GroupsActivityFileCountsWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Office365GroupsActivityFileCounts>("value", getOffice365GroupsActivityFileCountsWithPeriodGetResponse.value, serializeOffice365GroupsActivityFileCounts);
 }
 /**
  * Uri template for the request builder.

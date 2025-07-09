@@ -19,6 +19,7 @@ export function createRetrieveRequestStatusPostRequestBodyFromDiscriminatorValue
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveRequestStatusPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoRetrieveRequestStatusPostRequestBody(retrieveRequ
     }
 }
 export interface RetrieveRequestStatusPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -69,15 +66,16 @@ export interface RetrieveRequestStatusRequestBuilder extends BaseRequestBuilder<
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveRequestStatusPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveRequestStatusPostRequestBody(writer: SerializationWriter, retrieveRequestStatusPostRequestBody: Partial<RetrieveRequestStatusPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveRequestStatusPostRequestBody) {
-        writer.writeStringValue("entityId", retrieveRequestStatusPostRequestBody.entityId);
-        writer.writeStringValue("entityType", retrieveRequestStatusPostRequestBody.entityType);
-        writer.writeAdditionalData(retrieveRequestStatusPostRequestBody.additionalData);
-    }
+export function serializeRetrieveRequestStatusPostRequestBody(writer: SerializationWriter, retrieveRequestStatusPostRequestBody: Partial<RetrieveRequestStatusPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveRequestStatusPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("entityId", retrieveRequestStatusPostRequestBody.entityId);
+    writer.writeStringValue("entityType", retrieveRequestStatusPostRequestBody.entityType);
+    writer.writeAdditionalData(retrieveRequestStatusPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

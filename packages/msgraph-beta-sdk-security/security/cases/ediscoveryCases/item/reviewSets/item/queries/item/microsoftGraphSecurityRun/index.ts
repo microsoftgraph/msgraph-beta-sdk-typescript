@@ -21,6 +21,7 @@ export function createRunGetResponseFromDiscriminatorValue(parseNode: ParseNode 
 }
 /**
  * The deserialization information for the current model
+ * @param RunGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -94,14 +95,15 @@ export interface RunGetResponse extends BaseCollectionPaginationCountResponse, P
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RunGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRunGetResponse(writer: SerializationWriter, runGetResponse: Partial<RunGetResponse> | undefined | null = {}) : void {
-    if (runGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, runGetResponse)
-        writer.writeCollectionOfObjectValues<EdiscoveryFile>("value", runGetResponse.value, serializeEdiscoveryFile);
-    }
+export function serializeRunGetResponse(writer: SerializationWriter, runGetResponse: Partial<RunGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!runGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, runGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<EdiscoveryFile>("value", runGetResponse.value, serializeEdiscoveryFile);
 }
 /**
  * Uri template for the request builder.

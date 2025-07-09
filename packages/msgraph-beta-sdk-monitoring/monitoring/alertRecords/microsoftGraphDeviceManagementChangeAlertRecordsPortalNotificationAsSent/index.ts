@@ -8,10 +8,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ChangeAlertRecordsPortalNotificationAsSentPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The alertRecordIds property
      */
     alertRecordIds?: string[] | null;
@@ -31,6 +27,7 @@ export function createChangeAlertRecordsPortalNotificationAsSentPostRequestBodyF
 }
 /**
  * The deserialization information for the current model
+ * @param ChangeAlertRecordsPortalNotificationAsSentPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -61,14 +58,15 @@ export interface MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificat
 }
 /**
  * Serializes information the current object
+ * @param ChangeAlertRecordsPortalNotificationAsSentPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeChangeAlertRecordsPortalNotificationAsSentPostRequestBody(writer: SerializationWriter, changeAlertRecordsPortalNotificationAsSentPostRequestBody: Partial<ChangeAlertRecordsPortalNotificationAsSentPostRequestBody> | undefined | null = {}) : void {
-    if (changeAlertRecordsPortalNotificationAsSentPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("alertRecordIds", changeAlertRecordsPortalNotificationAsSentPostRequestBody.alertRecordIds);
-        writer.writeAdditionalData(changeAlertRecordsPortalNotificationAsSentPostRequestBody.additionalData);
-    }
+export function serializeChangeAlertRecordsPortalNotificationAsSentPostRequestBody(writer: SerializationWriter, changeAlertRecordsPortalNotificationAsSentPostRequestBody: Partial<ChangeAlertRecordsPortalNotificationAsSentPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!changeAlertRecordsPortalNotificationAsSentPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("alertRecordIds", changeAlertRecordsPortalNotificationAsSentPostRequestBody.alertRecordIds);
+    writer.writeAdditionalData(changeAlertRecordsPortalNotificationAsSentPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

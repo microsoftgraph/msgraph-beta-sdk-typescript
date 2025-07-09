@@ -19,6 +19,7 @@ export function createGetEffectiveDeviceEnrollmentConfigurationsGetResponseFromD
 }
 /**
  * The deserialization information for the current model
+ * @param GetEffectiveDeviceEnrollmentConfigurationsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetQuer
 }
 /**
  * Serializes information the current object
+ * @param GetEffectiveDeviceEnrollmentConfigurationsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetEffectiveDeviceEnrollmentConfigurationsGetResponse(writer: SerializationWriter, getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined | null = {}) : void {
-    if (getEffectiveDeviceEnrollmentConfigurationsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getEffectiveDeviceEnrollmentConfigurationsGetResponse)
-        writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("value", getEffectiveDeviceEnrollmentConfigurationsGetResponse.value, serializeDeviceEnrollmentConfiguration);
-    }
+export function serializeGetEffectiveDeviceEnrollmentConfigurationsGetResponse(writer: SerializationWriter, getEffectiveDeviceEnrollmentConfigurationsGetResponse: Partial<GetEffectiveDeviceEnrollmentConfigurationsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getEffectiveDeviceEnrollmentConfigurationsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getEffectiveDeviceEnrollmentConfigurationsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceEnrollmentConfiguration>("value", getEffectiveDeviceEnrollmentConfigurationsGetResponse.value, serializeDeviceEnrollmentConfiguration);
 }
 /**
  * Uri template for the request builder.

@@ -19,6 +19,7 @@ export function createRetrieveApprovableOperationsGetResponseFromDiscriminatorVa
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveApprovableOperationsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface RetrieveApprovableOperationsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveApprovableOperationsGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveApprovableOperationsGetResponse(writer: SerializationWriter, retrieveApprovableOperationsGetResponse: Partial<RetrieveApprovableOperationsGetResponse> | undefined | null = {}) : void {
-    if (retrieveApprovableOperationsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveApprovableOperationsGetResponse)
-        writer.writeCollectionOfObjectValues<OperationApprovalPolicySet>("value", retrieveApprovableOperationsGetResponse.value, serializeOperationApprovalPolicySet);
-    }
+export function serializeRetrieveApprovableOperationsGetResponse(writer: SerializationWriter, retrieveApprovableOperationsGetResponse: Partial<RetrieveApprovableOperationsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveApprovableOperationsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveApprovableOperationsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<OperationApprovalPolicySet>("value", retrieveApprovableOperationsGetResponse.value, serializeOperationApprovalPolicySet);
 }
 /**
  * Uri template for the request builder.

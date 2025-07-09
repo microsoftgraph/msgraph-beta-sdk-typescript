@@ -28,6 +28,7 @@ export function createRejectPostResponseFromDiscriminatorValue(parseNode: ParseN
 }
 /**
  * The deserialization information for the current model
+ * @param RejectPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -40,6 +41,7 @@ export function deserializeIntoRejectPostRequestBody(rejectPostRequestBody: Part
 }
 /**
  * The deserialization information for the current model
+ * @param RejectPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,10 +52,6 @@ export function deserializeIntoRejectPostResponse(rejectPostResponse: Partial<Re
     }
 }
 export interface RejectPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The approvalSource property
      */
@@ -68,10 +66,6 @@ export interface RejectPostRequestBody extends AdditionalDataHolder, BackedModel
     justification?: string | null;
 }
 export interface RejectPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -103,26 +97,28 @@ export interface RejectRequestBuilder extends BaseRequestBuilder<RejectRequestBu
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RejectPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRejectPostRequestBody(writer: SerializationWriter, rejectPostRequestBody: Partial<RejectPostRequestBody> | undefined | null = {}) : void {
-    if (rejectPostRequestBody) {
-        writer.writeEnumValue<OperationApprovalSource>("approvalSource", rejectPostRequestBody.approvalSource);
-        writer.writeStringValue("justification", rejectPostRequestBody.justification);
-        writer.writeAdditionalData(rejectPostRequestBody.additionalData);
-    }
+export function serializeRejectPostRequestBody(writer: SerializationWriter, rejectPostRequestBody: Partial<RejectPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!rejectPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<OperationApprovalSource>("approvalSource", rejectPostRequestBody.approvalSource);
+    writer.writeStringValue("justification", rejectPostRequestBody.justification);
+    writer.writeAdditionalData(rejectPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RejectPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRejectPostResponse(writer: SerializationWriter, rejectPostResponse: Partial<RejectPostResponse> | undefined | null = {}) : void {
-    if (rejectPostResponse) {
-        writer.writeStringValue("value", rejectPostResponse.value);
-        writer.writeAdditionalData(rejectPostResponse.additionalData);
-    }
+export function serializeRejectPostResponse(writer: SerializationWriter, rejectPostResponse: Partial<RejectPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!rejectPostResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("value", rejectPostResponse.value);
+    writer.writeAdditionalData(rejectPostResponse.additionalData);
 }
 /**
  * Uri template for the request builder.

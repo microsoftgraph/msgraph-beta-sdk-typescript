@@ -17,6 +17,7 @@ export function createGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostR
 }
 /**
  * The deserialization information for the current model
+ * @param GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetWindowsQualityUpdateAlertsPerPolicyPerDeviceRe
     }
 }
 export interface GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBui
 }
 /**
  * Serializes information the current object
+ * @param GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(writer: SerializationWriter, getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined | null = {}) : void {
-    if (getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody) {
-        writer.writeStringValue("filter", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.top);
-        writer.writeAdditionalData(getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.additionalData);
-    }
+export function serializeGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody(writer: SerializationWriter, getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody: Partial<GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.top);
+    writer.writeAdditionalData(getWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

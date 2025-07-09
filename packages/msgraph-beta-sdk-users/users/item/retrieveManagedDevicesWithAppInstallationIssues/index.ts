@@ -19,6 +19,7 @@ export function createRetrieveManagedDevicesWithAppInstallationIssuesGetResponse
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveManagedDevicesWithAppInstallationIssuesGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -79,14 +80,15 @@ export interface RetrieveManagedDevicesWithAppInstallationIssuesRequestBuilderGe
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveManagedDevicesWithAppInstallationIssuesGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveManagedDevicesWithAppInstallationIssuesGetResponse(writer: SerializationWriter, retrieveManagedDevicesWithAppInstallationIssuesGetResponse: Partial<RetrieveManagedDevicesWithAppInstallationIssuesGetResponse> | undefined | null = {}) : void {
-    if (retrieveManagedDevicesWithAppInstallationIssuesGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, retrieveManagedDevicesWithAppInstallationIssuesGetResponse)
-        writer.writeCollectionOfObjectValues<ManagedDeviceSummarizedAppState>("value", retrieveManagedDevicesWithAppInstallationIssuesGetResponse.value, serializeManagedDeviceSummarizedAppState);
-    }
+export function serializeRetrieveManagedDevicesWithAppInstallationIssuesGetResponse(writer: SerializationWriter, retrieveManagedDevicesWithAppInstallationIssuesGetResponse: Partial<RetrieveManagedDevicesWithAppInstallationIssuesGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveManagedDevicesWithAppInstallationIssuesGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, retrieveManagedDevicesWithAppInstallationIssuesGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ManagedDeviceSummarizedAppState>("value", retrieveManagedDevicesWithAppInstallationIssuesGetResponse.value, serializeManagedDeviceSummarizedAppState);
 }
 /**
  * Uri template for the request builder.

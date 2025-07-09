@@ -19,6 +19,7 @@ export function createReprovisionPostRequestBodyFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param ReprovisionPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoReprovisionPostRequestBody(reprovisionPostRequest
     }
 }
 export interface ReprovisionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -69,15 +66,16 @@ export interface ReprovisionRequestBuilder extends BaseRequestBuilder<Reprovisio
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReprovisionPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReprovisionPostRequestBody(writer: SerializationWriter, reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined | null = {}) : void {
-    if (reprovisionPostRequestBody) {
-        writer.writeEnumValue<CloudPcOperatingSystem>("osVersion", reprovisionPostRequestBody.osVersion);
-        writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", reprovisionPostRequestBody.userAccountType);
-        writer.writeAdditionalData(reprovisionPostRequestBody.additionalData);
-    }
+export function serializeReprovisionPostRequestBody(writer: SerializationWriter, reprovisionPostRequestBody: Partial<ReprovisionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!reprovisionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<CloudPcOperatingSystem>("osVersion", reprovisionPostRequestBody.osVersion);
+    writer.writeEnumValue<CloudPcUserAccountType>("userAccountType", reprovisionPostRequestBody.userAccountType);
+    writer.writeAdditionalData(reprovisionPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

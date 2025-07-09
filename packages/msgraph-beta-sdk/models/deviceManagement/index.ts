@@ -9,10 +9,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Pa
 export type AggregationType = (typeof AggregationTypeObject)[keyof typeof AggregationTypeObject];
 export interface AlertImpact extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
      */
     aggregationType?: AggregationType | null;
@@ -225,6 +221,7 @@ export function createRuleThresholdFromDiscriminatorValue(parseNode: ParseNode |
 }
 /**
  * The deserialization information for the current model
+ * @param AlertImpact The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -239,6 +236,7 @@ export function deserializeIntoAlertImpact(alertImpact: Partial<AlertImpact> | u
 }
 /**
  * The deserialization information for the current model
+ * @param AlertRecord The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -258,6 +256,7 @@ export function deserializeIntoAlertRecord(alertRecord: Partial<AlertRecord> | u
 }
 /**
  * The deserialization information for the current model
+ * @param AlertRecordCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -269,6 +268,7 @@ export function deserializeIntoAlertRecordCollectionResponse(alertRecordCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param AlertRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -288,6 +288,7 @@ export function deserializeIntoAlertRule(alertRule: Partial<AlertRule> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param AlertRuleCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -299,6 +300,7 @@ export function deserializeIntoAlertRuleCollectionResponse(alertRuleCollectionRe
 }
 /**
  * The deserialization information for the current model
+ * @param Monitoring The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -311,6 +313,7 @@ export function deserializeIntoMonitoring(monitoring: Partial<Monitoring> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param NotificationChannel The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -324,6 +327,7 @@ export function deserializeIntoNotificationChannel(notificationChannel: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param NotificationReceiver The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -337,6 +341,7 @@ export function deserializeIntoNotificationReceiver(notificationReceiver: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param PortalNotification The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -356,6 +361,7 @@ export function deserializeIntoPortalNotification(portalNotification: Partial<Po
 }
 /**
  * The deserialization information for the current model
+ * @param RuleCondition The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -372,6 +378,7 @@ export function deserializeIntoRuleCondition(ruleCondition: Partial<RuleConditio
 }
 /**
  * The deserialization information for the current model
+ * @param RuleThreshold The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -396,10 +403,6 @@ export interface Monitoring extends Entity, Parsable {
 }
 export interface NotificationChannel extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -419,10 +422,6 @@ export interface NotificationChannel extends AdditionalDataHolder, BackedModel, 
 export type NotificationChannelType = (typeof NotificationChannelTypeObject)[keyof typeof NotificationChannelTypeObject];
 export interface NotificationReceiver extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -441,10 +440,6 @@ export interface NotificationReceiver extends AdditionalDataHolder, BackedModel,
 }
 export type OperatorType = (typeof OperatorTypeObject)[keyof typeof OperatorTypeObject];
 export interface PortalNotification extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The associated alert impact.
      */
@@ -489,10 +484,6 @@ export interface PortalNotification extends AdditionalDataHolder, BackedModel, P
 export type RelationshipType = (typeof RelationshipTypeObject)[keyof typeof RelationshipTypeObject];
 export interface RuleCondition extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The built-in aggregation method for the rule condition. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
      */
     aggregation?: AggregationType | null;
@@ -524,10 +515,6 @@ export interface RuleCondition extends AdditionalDataHolder, BackedModel, Parsab
 export type RuleSeverityType = (typeof RuleSeverityTypeObject)[keyof typeof RuleSeverityTypeObject];
 export interface RuleThreshold extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
      */
     aggregation?: AggregationType | null;
@@ -550,164 +537,175 @@ export interface RuleThreshold extends AdditionalDataHolder, BackedModel, Parsab
 }
 /**
  * Serializes information the current object
+ * @param AlertImpact The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertImpact(writer: SerializationWriter, alertImpact: Partial<AlertImpact> | undefined | null = {}) : void {
-    if (alertImpact) {
-        writer.writeEnumValue<AggregationType>("aggregationType", alertImpact.aggregationType);
-        writer.writeCollectionOfObjectValues<KeyValuePair>("alertImpactDetails", alertImpact.alertImpactDetails, serializeKeyValuePair);
-        writer.writeStringValue("@odata.type", alertImpact.odataType);
-        writer.writeNumberValue("value", alertImpact.value);
-        writer.writeAdditionalData(alertImpact.additionalData);
-    }
+export function serializeAlertImpact(writer: SerializationWriter, alertImpact: Partial<AlertImpact> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertImpact || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AggregationType>("aggregationType", alertImpact.aggregationType);
+    writer.writeCollectionOfObjectValues<KeyValuePair>("alertImpactDetails", alertImpact.alertImpactDetails, serializeKeyValuePair);
+    writer.writeStringValue("@odata.type", alertImpact.odataType);
+    writer.writeNumberValue("value", alertImpact.value);
+    writer.writeAdditionalData(alertImpact.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AlertRecord The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertRecord(writer: SerializationWriter, alertRecord: Partial<AlertRecord> | undefined | null = {}) : void {
-    if (alertRecord) {
-        serializeEntity(writer, alertRecord)
-        writer.writeObjectValue<AlertImpact>("alertImpact", alertRecord.alertImpact, serializeAlertImpact);
-        writer.writeStringValue("alertRuleId", alertRecord.alertRuleId);
-        writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRecord.alertRuleTemplate);
-        writer.writeDateValue("detectedDateTime", alertRecord.detectedDateTime);
-        writer.writeStringValue("displayName", alertRecord.displayName);
-        writer.writeDateValue("lastUpdatedDateTime", alertRecord.lastUpdatedDateTime);
-        writer.writeDateValue("resolvedDateTime", alertRecord.resolvedDateTime);
-        writer.writeEnumValue<RuleSeverityType>("severity", alertRecord.severity);
-        writer.writeEnumValue<AlertStatusType>("status", alertRecord.status);
-    }
+export function serializeAlertRecord(writer: SerializationWriter, alertRecord: Partial<AlertRecord> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertRecord || isSerializingDerivedType) { return; }
+    serializeEntity(writer, alertRecord, isSerializingDerivedType)
+    writer.writeObjectValue<AlertImpact>("alertImpact", alertRecord.alertImpact, serializeAlertImpact);
+    writer.writeStringValue("alertRuleId", alertRecord.alertRuleId);
+    writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRecord.alertRuleTemplate);
+    writer.writeDateValue("detectedDateTime", alertRecord.detectedDateTime);
+    writer.writeStringValue("displayName", alertRecord.displayName);
+    writer.writeDateValue("lastUpdatedDateTime", alertRecord.lastUpdatedDateTime);
+    writer.writeDateValue("resolvedDateTime", alertRecord.resolvedDateTime);
+    writer.writeEnumValue<RuleSeverityType>("severity", alertRecord.severity);
+    writer.writeEnumValue<AlertStatusType>("status", alertRecord.status);
 }
 /**
  * Serializes information the current object
+ * @param AlertRecordCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertRecordCollectionResponse(writer: SerializationWriter, alertRecordCollectionResponse: Partial<AlertRecordCollectionResponse> | undefined | null = {}) : void {
-    if (alertRecordCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, alertRecordCollectionResponse)
-        writer.writeCollectionOfObjectValues<AlertRecord>("value", alertRecordCollectionResponse.value, serializeAlertRecord);
-    }
+export function serializeAlertRecordCollectionResponse(writer: SerializationWriter, alertRecordCollectionResponse: Partial<AlertRecordCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertRecordCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, alertRecordCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertRecord>("value", alertRecordCollectionResponse.value, serializeAlertRecord);
 }
 /**
  * Serializes information the current object
+ * @param AlertRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertRule(writer: SerializationWriter, alertRule: Partial<AlertRule> | undefined | null = {}) : void {
-    if (alertRule) {
-        serializeEntity(writer, alertRule)
-        writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRule.alertRuleTemplate);
-        writer.writeCollectionOfObjectValues<RuleCondition>("conditions", alertRule.conditions, serializeRuleCondition);
-        writer.writeStringValue("description", alertRule.description);
-        writer.writeStringValue("displayName", alertRule.displayName);
-        writer.writeBooleanValue("enabled", alertRule.enabled);
-        writer.writeBooleanValue("isSystemRule", alertRule.isSystemRule);
-        writer.writeCollectionOfObjectValues<NotificationChannel>("notificationChannels", alertRule.notificationChannels, serializeNotificationChannel);
-        writer.writeEnumValue<RuleSeverityType>("severity", alertRule.severity);
-        writer.writeObjectValue<RuleThreshold>("threshold", alertRule.threshold, serializeRuleThreshold);
-    }
+export function serializeAlertRule(writer: SerializationWriter, alertRule: Partial<AlertRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertRule || isSerializingDerivedType) { return; }
+    serializeEntity(writer, alertRule, isSerializingDerivedType)
+    writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", alertRule.alertRuleTemplate);
+    writer.writeCollectionOfObjectValues<RuleCondition>("conditions", alertRule.conditions, serializeRuleCondition);
+    writer.writeStringValue("description", alertRule.description);
+    writer.writeStringValue("displayName", alertRule.displayName);
+    writer.writeBooleanValue("enabled", alertRule.enabled);
+    writer.writeBooleanValue("isSystemRule", alertRule.isSystemRule);
+    writer.writeCollectionOfObjectValues<NotificationChannel>("notificationChannels", alertRule.notificationChannels, serializeNotificationChannel);
+    writer.writeEnumValue<RuleSeverityType>("severity", alertRule.severity);
+    writer.writeObjectValue<RuleThreshold>("threshold", alertRule.threshold, serializeRuleThreshold);
 }
 /**
  * Serializes information the current object
+ * @param AlertRuleCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAlertRuleCollectionResponse(writer: SerializationWriter, alertRuleCollectionResponse: Partial<AlertRuleCollectionResponse> | undefined | null = {}) : void {
-    if (alertRuleCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, alertRuleCollectionResponse)
-        writer.writeCollectionOfObjectValues<AlertRule>("value", alertRuleCollectionResponse.value, serializeAlertRule);
-    }
+export function serializeAlertRuleCollectionResponse(writer: SerializationWriter, alertRuleCollectionResponse: Partial<AlertRuleCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!alertRuleCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, alertRuleCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertRule>("value", alertRuleCollectionResponse.value, serializeAlertRule);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Monitoring The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMonitoring(writer: SerializationWriter, monitoring: Partial<Monitoring> | undefined | null = {}) : void {
-    if (monitoring) {
-        serializeEntity(writer, monitoring)
-        writer.writeCollectionOfObjectValues<AlertRecord>("alertRecords", monitoring.alertRecords, serializeAlertRecord);
-        writer.writeCollectionOfObjectValues<AlertRule>("alertRules", monitoring.alertRules, serializeAlertRule);
-    }
+export function serializeMonitoring(writer: SerializationWriter, monitoring: Partial<Monitoring> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!monitoring || isSerializingDerivedType) { return; }
+    serializeEntity(writer, monitoring, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AlertRecord>("alertRecords", monitoring.alertRecords, serializeAlertRecord);
+    writer.writeCollectionOfObjectValues<AlertRule>("alertRules", monitoring.alertRules, serializeAlertRule);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NotificationChannel The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNotificationChannel(writer: SerializationWriter, notificationChannel: Partial<NotificationChannel> | undefined | null = {}) : void {
-    if (notificationChannel) {
-        writer.writeEnumValue<NotificationChannelType>("notificationChannelType", notificationChannel.notificationChannelType);
-        writer.writeCollectionOfObjectValues<NotificationReceiver>("notificationReceivers", notificationChannel.notificationReceivers, serializeNotificationReceiver);
-        writer.writeStringValue("@odata.type", notificationChannel.odataType);
-        writer.writeAdditionalData(notificationChannel.additionalData);
-    }
+export function serializeNotificationChannel(writer: SerializationWriter, notificationChannel: Partial<NotificationChannel> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!notificationChannel || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<NotificationChannelType>("notificationChannelType", notificationChannel.notificationChannelType);
+    writer.writeCollectionOfObjectValues<NotificationReceiver>("notificationReceivers", notificationChannel.notificationReceivers, serializeNotificationReceiver);
+    writer.writeStringValue("@odata.type", notificationChannel.odataType);
+    writer.writeAdditionalData(notificationChannel.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NotificationReceiver The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeNotificationReceiver(writer: SerializationWriter, notificationReceiver: Partial<NotificationReceiver> | undefined | null = {}) : void {
-    if (notificationReceiver) {
-        writer.writeStringValue("contactInformation", notificationReceiver.contactInformation);
-        writer.writeStringValue("locale", notificationReceiver.locale);
-        writer.writeStringValue("@odata.type", notificationReceiver.odataType);
-        writer.writeAdditionalData(notificationReceiver.additionalData);
-    }
+export function serializeNotificationReceiver(writer: SerializationWriter, notificationReceiver: Partial<NotificationReceiver> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!notificationReceiver || isSerializingDerivedType) { return; }
+    writer.writeStringValue("contactInformation", notificationReceiver.contactInformation);
+    writer.writeStringValue("locale", notificationReceiver.locale);
+    writer.writeStringValue("@odata.type", notificationReceiver.odataType);
+    writer.writeAdditionalData(notificationReceiver.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PortalNotification The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePortalNotification(writer: SerializationWriter, portalNotification: Partial<PortalNotification> | undefined | null = {}) : void {
-    if (portalNotification) {
-        writer.writeObjectValue<AlertImpact>("alertImpact", portalNotification.alertImpact, serializeAlertImpact);
-        writer.writeStringValue("alertRecordId", portalNotification.alertRecordId);
-        writer.writeStringValue("alertRuleId", portalNotification.alertRuleId);
-        writer.writeStringValue("alertRuleName", portalNotification.alertRuleName);
-        writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", portalNotification.alertRuleTemplate);
-        writer.writeStringValue("id", portalNotification.id);
-        writer.writeBooleanValue("isPortalNotificationSent", portalNotification.isPortalNotificationSent);
-        writer.writeStringValue("@odata.type", portalNotification.odataType);
-        writer.writeEnumValue<RuleSeverityType>("severity", portalNotification.severity);
-        writer.writeAdditionalData(portalNotification.additionalData);
-    }
+export function serializePortalNotification(writer: SerializationWriter, portalNotification: Partial<PortalNotification> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!portalNotification || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<AlertImpact>("alertImpact", portalNotification.alertImpact, serializeAlertImpact);
+    writer.writeStringValue("alertRecordId", portalNotification.alertRecordId);
+    writer.writeStringValue("alertRuleId", portalNotification.alertRuleId);
+    writer.writeStringValue("alertRuleName", portalNotification.alertRuleName);
+    writer.writeEnumValue<AlertRuleTemplate>("alertRuleTemplate", portalNotification.alertRuleTemplate);
+    writer.writeStringValue("id", portalNotification.id);
+    writer.writeBooleanValue("isPortalNotificationSent", portalNotification.isPortalNotificationSent);
+    writer.writeStringValue("@odata.type", portalNotification.odataType);
+    writer.writeEnumValue<RuleSeverityType>("severity", portalNotification.severity);
+    writer.writeAdditionalData(portalNotification.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RuleCondition The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRuleCondition(writer: SerializationWriter, ruleCondition: Partial<RuleCondition> | undefined | null = {}) : void {
-    if (ruleCondition) {
-        writer.writeEnumValue<AggregationType>("aggregation", ruleCondition.aggregation);
-        writer.writeEnumValue<ConditionCategory>("conditionCategory", ruleCondition.conditionCategory);
-        writer.writeStringValue("@odata.type", ruleCondition.odataType);
-        writer.writeEnumValue<OperatorType>("operator", ruleCondition.operator);
-        writer.writeEnumValue<RelationshipType>("relationshipType", ruleCondition.relationshipType);
-        writer.writeStringValue("thresholdValue", ruleCondition.thresholdValue);
-        writer.writeAdditionalData(ruleCondition.additionalData);
-    }
+export function serializeRuleCondition(writer: SerializationWriter, ruleCondition: Partial<RuleCondition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ruleCondition || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AggregationType>("aggregation", ruleCondition.aggregation);
+    writer.writeEnumValue<ConditionCategory>("conditionCategory", ruleCondition.conditionCategory);
+    writer.writeStringValue("@odata.type", ruleCondition.odataType);
+    writer.writeEnumValue<OperatorType>("operator", ruleCondition.operator);
+    writer.writeEnumValue<RelationshipType>("relationshipType", ruleCondition.relationshipType);
+    writer.writeStringValue("thresholdValue", ruleCondition.thresholdValue);
+    writer.writeAdditionalData(ruleCondition.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RuleThreshold The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRuleThreshold(writer: SerializationWriter, ruleThreshold: Partial<RuleThreshold> | undefined | null = {}) : void {
-    if (ruleThreshold) {
-        writer.writeEnumValue<AggregationType>("aggregation", ruleThreshold.aggregation);
-        writer.writeStringValue("@odata.type", ruleThreshold.odataType);
-        writer.writeEnumValue<OperatorType>("operator", ruleThreshold.operator);
-        writer.writeNumberValue("target", ruleThreshold.target);
-        writer.writeAdditionalData(ruleThreshold.additionalData);
-    }
+export function serializeRuleThreshold(writer: SerializationWriter, ruleThreshold: Partial<RuleThreshold> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ruleThreshold || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AggregationType>("aggregation", ruleThreshold.aggregation);
+    writer.writeStringValue("@odata.type", ruleThreshold.odataType);
+    writer.writeEnumValue<OperatorType>("operator", ruleThreshold.operator);
+    writer.writeNumberValue("target", ruleThreshold.target);
+    writer.writeAdditionalData(ruleThreshold.additionalData);
 }
 export const AggregationTypeObject = {
     Count: "count",

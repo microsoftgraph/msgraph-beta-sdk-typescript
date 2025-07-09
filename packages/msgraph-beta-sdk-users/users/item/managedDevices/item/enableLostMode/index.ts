@@ -17,6 +17,7 @@ export function createEnableLostModePostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param EnableLostModePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoEnableLostModePostRequestBody(enableLostModePostR
     }
 }
 export interface EnableLostModePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -71,16 +68,17 @@ export interface EnableLostModeRequestBuilder extends BaseRequestBuilder<EnableL
 }
 /**
  * Serializes information the current object
+ * @param EnableLostModePostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEnableLostModePostRequestBody(writer: SerializationWriter, enableLostModePostRequestBody: Partial<EnableLostModePostRequestBody> | undefined | null = {}) : void {
-    if (enableLostModePostRequestBody) {
-        writer.writeStringValue("footer", enableLostModePostRequestBody.footer);
-        writer.writeStringValue("message", enableLostModePostRequestBody.message);
-        writer.writeStringValue("phoneNumber", enableLostModePostRequestBody.phoneNumber);
-        writer.writeAdditionalData(enableLostModePostRequestBody.additionalData);
-    }
+export function serializeEnableLostModePostRequestBody(writer: SerializationWriter, enableLostModePostRequestBody: Partial<EnableLostModePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enableLostModePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("footer", enableLostModePostRequestBody.footer);
+    writer.writeStringValue("message", enableLostModePostRequestBody.message);
+    writer.writeStringValue("phoneNumber", enableLostModePostRequestBody.phoneNumber);
+    writer.writeAdditionalData(enableLostModePostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

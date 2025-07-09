@@ -9,10 +9,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Da
 export type AdditionalClassGroupAttributes = (typeof AdditionalClassGroupAttributesObject)[keyof typeof AdditionalClassGroupAttributesObject];
 export interface AdditionalClassGroupOptions extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -31,10 +27,6 @@ export interface AdditionalClassGroupOptions extends AdditionalDataHolder, Backe
 }
 export type AdditionalUserAttributes = (typeof AdditionalUserAttributesObject)[keyof typeof AdditionalUserAttributesObject];
 export interface AdditionalUserOptions extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Indicates whether student contact association should be allowed.
      */
@@ -60,10 +52,6 @@ export interface AdministrativeUnitProvisioningFlow extends Parsable, Provisioni
 }
 export interface AdminUnitCreationOptions extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -81,10 +69,6 @@ export interface AdminUnitCreationOptions extends AdditionalDataHolder, BackedMo
     odataType?: string | null;
 }
 export interface AggregatedInboundStatistics extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -162,10 +146,6 @@ export interface ClassGroupConfiguration extends AdditionalDataHolder, BackedMod
      * The different attributes to sync for the class groups. The possible values are: courseTitle, courseCode, courseSubject, courseGradeLevel, courseExternalId, academicSessionTitle, academicSessionExternalId, classCode, unknownFutureValue.
      */
     additionalAttributes?: AdditionalClassGroupAttributes[] | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The additionalOptions property
      */
@@ -984,10 +964,6 @@ export function createYearTimePeriodDefinitionFromDiscriminatorValue(parseNode: 
 }
 export interface Credential extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -1010,6 +986,7 @@ export interface Credential extends AdditionalDataHolder, BackedModel, Parsable 
 }
 /**
  * The deserialization information for the current model
+ * @param AdditionalClassGroupOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1023,6 +1000,7 @@ export function deserializeIntoAdditionalClassGroupOptions(additionalClassGroupO
 }
 /**
  * The deserialization information for the current model
+ * @param AdditionalUserOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1036,6 +1014,7 @@ export function deserializeIntoAdditionalUserOptions(additionalUserOptions: Part
 }
 /**
  * The deserialization information for the current model
+ * @param AdministrativeUnitProvisioningFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1047,6 +1026,7 @@ export function deserializeIntoAdministrativeUnitProvisioningFlow(administrative
 }
 /**
  * The deserialization information for the current model
+ * @param AdminUnitCreationOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1060,6 +1040,7 @@ export function deserializeIntoAdminUnitCreationOptions(adminUnitCreationOptions
 }
 /**
  * The deserialization information for the current model
+ * @param AggregatedInboundStatistics The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1079,6 +1060,7 @@ export function deserializeIntoAggregatedInboundStatistics(aggregatedInboundStat
 }
 /**
  * The deserialization information for the current model
+ * @param ApiDataConnector The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1092,6 +1074,7 @@ export function deserializeIntoApiDataConnector(apiDataConnector: Partial<ApiDat
 }
 /**
  * The deserialization information for the current model
+ * @param AzureDataLakeConnector The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1103,6 +1086,7 @@ export function deserializeIntoAzureDataLakeConnector(azureDataLakeConnector: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param BasicFilter The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1115,6 +1099,7 @@ export function deserializeIntoBasicFilter(basicFilter: Partial<BasicFilter> | u
 }
 /**
  * The deserialization information for the current model
+ * @param ClassGroupConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1129,6 +1114,7 @@ export function deserializeIntoClassGroupConfiguration(classGroupConfiguration: 
 }
 /**
  * The deserialization information for the current model
+ * @param ClassGroupProvisioningFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1140,6 +1126,7 @@ export function deserializeIntoClassGroupProvisioningFlow(classGroupProvisioning
 }
 /**
  * The deserialization information for the current model
+ * @param Credential The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1154,6 +1141,7 @@ export function deserializeIntoCredential(credential: Partial<Credential> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param EnrollmentMappings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1167,6 +1155,7 @@ export function deserializeIntoEnrollmentMappings(enrollmentMappings: Partial<En
 }
 /**
  * The deserialization information for the current model
+ * @param FileDataConnector The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1177,6 +1166,7 @@ export function deserializeIntoFileDataConnector(fileDataConnector: Partial<File
 }
 /**
  * The deserialization information for the current model
+ * @param FileFormatReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1187,6 +1177,7 @@ export function deserializeIntoFileFormatReferenceValue(fileFormatReferenceValue
 }
 /**
  * The deserialization information for the current model
+ * @param FileValidateOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1198,6 +1189,7 @@ export function deserializeIntoFileValidateOperation(fileValidateOperation: Part
 }
 /**
  * The deserialization information for the current model
+ * @param Filter The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1209,6 +1201,7 @@ export function deserializeIntoFilter(filter: Partial<Filter> | undefined = {}) 
 }
 /**
  * The deserialization information for the current model
+ * @param IdentifierTypeReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1219,6 +1212,7 @@ export function deserializeIntoIdentifierTypeReferenceValue(identifierTypeRefere
 }
 /**
  * The deserialization information for the current model
+ * @param InboundActivityResults The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1237,6 +1231,7 @@ export function deserializeIntoInboundActivityResults(inboundActivityResults: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param InboundApiFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1247,6 +1242,7 @@ export function deserializeIntoInboundApiFlow(inboundApiFlow: Partial<InboundApi
 }
 /**
  * The deserialization information for the current model
+ * @param InboundFileFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1257,6 +1253,7 @@ export function deserializeIntoInboundFileFlow(inboundFileFlow: Partial<InboundF
 }
 /**
  * The deserialization information for the current model
+ * @param InboundFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1272,6 +1269,7 @@ export function deserializeIntoInboundFlow(inboundFlow: Partial<InboundFlow> | u
 }
 /**
  * The deserialization information for the current model
+ * @param InboundFlowActivity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1282,6 +1280,7 @@ export function deserializeIntoInboundFlowActivity(inboundFlowActivity: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param InboundFlowCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1293,6 +1292,7 @@ export function deserializeIntoInboundFlowCollectionResponse(inboundFlowCollecti
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataActivity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1305,6 +1305,7 @@ export function deserializeIntoIndustryDataActivity(industryDataActivity: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataActivityStatistics The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1319,6 +1320,7 @@ export function deserializeIntoIndustryDataActivityStatistics(industryDataActivi
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataConnector The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1331,6 +1333,7 @@ export function deserializeIntoIndustryDataConnector(industryDataConnector: Part
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataConnectorCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1342,6 +1345,7 @@ export function deserializeIntoIndustryDataConnectorCollectionResponse(industryD
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRoot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1361,6 +1365,7 @@ export function deserializeIntoIndustryDataRoot(industryDataRoot: Partial<Indust
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRun The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1377,6 +1382,7 @@ export function deserializeIntoIndustryDataRun(industryDataRun: Partial<Industry
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRunActivity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1391,6 +1397,7 @@ export function deserializeIntoIndustryDataRunActivity(industryDataRunActivity: 
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRunActivityCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1402,6 +1409,7 @@ export function deserializeIntoIndustryDataRunActivityCollectionResponse(industr
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRunCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1413,6 +1421,7 @@ export function deserializeIntoIndustryDataRunCollectionResponse(industryDataRun
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRunEntityCountMetric The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1427,6 +1436,7 @@ export function deserializeIntoIndustryDataRunEntityCountMetric(industryDataRunE
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRunRoleCountMetric The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1440,6 +1450,7 @@ export function deserializeIntoIndustryDataRunRoleCountMetric(industryDataRunRol
 }
 /**
  * The deserialization information for the current model
+ * @param IndustryDataRunStatistics The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1455,6 +1466,7 @@ export function deserializeIntoIndustryDataRunStatistics(industryDataRunStatisti
 }
 /**
  * The deserialization information for the current model
+ * @param OAuth1ClientCredential The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1465,6 +1477,7 @@ export function deserializeIntoOAuth1ClientCredential(oAuth1ClientCredential: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param OAuth2ClientCredential The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1477,6 +1490,7 @@ export function deserializeIntoOAuth2ClientCredential(oAuth2ClientCredential: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param OAuthClientCredential The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1489,6 +1503,7 @@ export function deserializeIntoOAuthClientCredential(oAuthClientCredential: Part
 }
 /**
  * The deserialization information for the current model
+ * @param OneRosterApiDataConnector The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1503,6 +1518,7 @@ export function deserializeIntoOneRosterApiDataConnector(oneRosterApiDataConnect
 }
 /**
  * The deserialization information for the current model
+ * @param OutboundFlowActivity The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1513,6 +1529,7 @@ export function deserializeIntoOutboundFlowActivity(outboundFlowActivity: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param OutboundProvisioningFlowSet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1528,6 +1545,7 @@ export function deserializeIntoOutboundProvisioningFlowSet(outboundProvisioningF
 }
 /**
  * The deserialization information for the current model
+ * @param OutboundProvisioningFlowSetCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1539,6 +1557,7 @@ export function deserializeIntoOutboundProvisioningFlowSetCollectionResponse(out
 }
 /**
  * The deserialization information for the current model
+ * @param PasswordSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1550,6 +1569,7 @@ export function deserializeIntoPasswordSettings(passwordSettings: Partial<Passwo
 }
 /**
  * The deserialization information for the current model
+ * @param ProvisioningFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1563,6 +1583,7 @@ export function deserializeIntoProvisioningFlow(provisioningFlow: Partial<Provis
 }
 /**
  * The deserialization information for the current model
+ * @param ProvisioningFlowCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1574,6 +1595,7 @@ export function deserializeIntoProvisioningFlowCollectionResponse(provisioningFl
 }
 /**
  * The deserialization information for the current model
+ * @param ReferenceDefinition The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1592,6 +1614,7 @@ export function deserializeIntoReferenceDefinition(referenceDefinition: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param ReferenceDefinitionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1603,6 +1626,7 @@ export function deserializeIntoReferenceDefinitionCollectionResponse(referenceDe
 }
 /**
  * The deserialization information for the current model
+ * @param ReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1616,6 +1640,7 @@ export function deserializeIntoReferenceValue(referenceValue: Partial<ReferenceV
 }
 /**
  * The deserialization information for the current model
+ * @param RoleGroup The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1628,6 +1653,7 @@ export function deserializeIntoRoleGroup(roleGroup: Partial<RoleGroup> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param RoleGroupCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1639,6 +1665,7 @@ export function deserializeIntoRoleGroupCollectionResponse(roleGroupCollectionRe
 }
 /**
  * The deserialization information for the current model
+ * @param RoleReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1649,6 +1676,7 @@ export function deserializeIntoRoleReferenceValue(roleReferenceValue: Partial<Ro
 }
 /**
  * The deserialization information for the current model
+ * @param SectionRoleReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1659,6 +1687,7 @@ export function deserializeIntoSectionRoleReferenceValue(sectionRoleReferenceVal
 }
 /**
  * The deserialization information for the current model
+ * @param SecurityGroupCreationOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1672,6 +1701,7 @@ export function deserializeIntoSecurityGroupCreationOptions(securityGroupCreatio
 }
 /**
  * The deserialization information for the current model
+ * @param SecurityGroupProvisioningFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1683,6 +1713,7 @@ export function deserializeIntoSecurityGroupProvisioningFlow(securityGroupProvis
 }
 /**
  * The deserialization information for the current model
+ * @param SimplePasswordSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1694,6 +1725,7 @@ export function deserializeIntoSimplePasswordSettings(simplePasswordSettings: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param SourceSystemDefinition The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1707,6 +1739,7 @@ export function deserializeIntoSourceSystemDefinition(sourceSystemDefinition: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param SourceSystemDefinitionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1718,6 +1751,7 @@ export function deserializeIntoSourceSystemDefinitionCollectionResponse(sourceSy
 }
 /**
  * The deserialization information for the current model
+ * @param UserConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1732,6 +1766,7 @@ export function deserializeIntoUserConfiguration(userConfiguration: Partial<User
 }
 /**
  * The deserialization information for the current model
+ * @param UserCreationOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1744,6 +1779,7 @@ export function deserializeIntoUserCreationOptions(userCreationOptions: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param UserManagementOptions The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1757,6 +1793,7 @@ export function deserializeIntoUserManagementOptions(userManagementOptions: Part
 }
 /**
  * The deserialization information for the current model
+ * @param UserMatchingSetting The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1772,6 +1809,7 @@ export function deserializeIntoUserMatchingSetting(userMatchingSetting: Partial<
 }
 /**
  * The deserialization information for the current model
+ * @param UserMatchTargetReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1782,6 +1820,7 @@ export function deserializeIntoUserMatchTargetReferenceValue(userMatchTargetRefe
 }
 /**
  * The deserialization information for the current model
+ * @param UserProvisioningFlow The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1795,6 +1834,7 @@ export function deserializeIntoUserProvisioningFlow(userProvisioningFlow: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param ValidateOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1807,6 +1847,7 @@ export function deserializeIntoValidateOperation(validateOperation: Partial<Vali
 }
 /**
  * The deserialization information for the current model
+ * @param YearReferenceValue The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1817,6 +1858,7 @@ export function deserializeIntoYearReferenceValue(yearReferenceValue: Partial<Ye
 }
 /**
  * The deserialization information for the current model
+ * @param YearTimePeriodDefinition The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1831,6 +1873,7 @@ export function deserializeIntoYearTimePeriodDefinition(yearTimePeriodDefinition
 }
 /**
  * The deserialization information for the current model
+ * @param YearTimePeriodDefinitionCollectionResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -1841,10 +1884,6 @@ export function deserializeIntoYearTimePeriodDefinitionCollectionResponse(yearTi
     }
 }
 export interface EnrollmentMappings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1876,10 +1915,6 @@ export interface FileValidateOperation extends Parsable, ValidateOperation {
     validatedFiles?: string[] | null;
 }
 export interface Filter extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -1976,10 +2011,6 @@ export interface IndustryDataActivityStatistics extends AdditionalDataHolder, Ba
      * The identifier for the activity that is being reported on.
      */
     activityId?: string | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -2114,10 +2145,6 @@ export interface IndustryDataRunEntityCountMetric extends AdditionalDataHolder, 
      */
     active?: number | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -2135,10 +2162,6 @@ export interface IndustryDataRunEntityCountMetric extends AdditionalDataHolder, 
     total?: number | null;
 }
 export interface IndustryDataRunRoleCountMetric extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -2161,10 +2184,6 @@ export interface IndustryDataRunStatistics extends AdditionalDataHolder, BackedM
      * The collection of statistics for each activity included in this run.
      */
     activityStatistics?: IndustryDataActivityStatistics[] | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -2259,10 +2278,6 @@ export interface OutboundProvisioningFlowSetCollectionResponse extends BaseColle
 }
 export interface PasswordSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -2334,10 +2349,6 @@ export interface ReferenceDefinitionCollectionResponse extends BaseCollectionPag
 }
 export interface ReferenceValue extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -2376,10 +2387,6 @@ export interface SectionRoleReferenceValue extends Parsable, ReferenceValue {
 }
 export interface SecurityGroupCreationOptions extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -2404,792 +2411,983 @@ export interface SecurityGroupProvisioningFlow extends Parsable, ProvisioningFlo
 }
 /**
  * Serializes information the current object
+ * @param AdditionalClassGroupOptions The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdditionalClassGroupOptions(writer: SerializationWriter, additionalClassGroupOptions: Partial<AdditionalClassGroupOptions> | undefined | null = {}) : void {
-    if (additionalClassGroupOptions) {
-        writer.writeBooleanValue("createTeam", additionalClassGroupOptions.createTeam);
-        writer.writeStringValue("@odata.type", additionalClassGroupOptions.odataType);
-        writer.writeBooleanValue("writeDisplayNameOnCreateOnly", additionalClassGroupOptions.writeDisplayNameOnCreateOnly);
-        writer.writeAdditionalData(additionalClassGroupOptions.additionalData);
-    }
+export function serializeAdditionalClassGroupOptions(writer: SerializationWriter, additionalClassGroupOptions: Partial<AdditionalClassGroupOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!additionalClassGroupOptions || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("createTeam", additionalClassGroupOptions.createTeam);
+    writer.writeStringValue("@odata.type", additionalClassGroupOptions.odataType);
+    writer.writeBooleanValue("writeDisplayNameOnCreateOnly", additionalClassGroupOptions.writeDisplayNameOnCreateOnly);
+    writer.writeAdditionalData(additionalClassGroupOptions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AdditionalUserOptions The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdditionalUserOptions(writer: SerializationWriter, additionalUserOptions: Partial<AdditionalUserOptions> | undefined | null = {}) : void {
-    if (additionalUserOptions) {
-        writer.writeBooleanValue("allowStudentContactAssociation", additionalUserOptions.allowStudentContactAssociation);
-        writer.writeBooleanValue("markAllStudentsAsMinors", additionalUserOptions.markAllStudentsAsMinors);
-        writer.writeStringValue("@odata.type", additionalUserOptions.odataType);
-        writer.writeAdditionalData(additionalUserOptions.additionalData);
-    }
+export function serializeAdditionalUserOptions(writer: SerializationWriter, additionalUserOptions: Partial<AdditionalUserOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!additionalUserOptions || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("allowStudentContactAssociation", additionalUserOptions.allowStudentContactAssociation);
+    writer.writeBooleanValue("markAllStudentsAsMinors", additionalUserOptions.markAllStudentsAsMinors);
+    writer.writeStringValue("@odata.type", additionalUserOptions.odataType);
+    writer.writeAdditionalData(additionalUserOptions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AdministrativeUnitProvisioningFlow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdministrativeUnitProvisioningFlow(writer: SerializationWriter, administrativeUnitProvisioningFlow: Partial<AdministrativeUnitProvisioningFlow> | undefined | null = {}) : void {
-    if (administrativeUnitProvisioningFlow) {
-        serializeProvisioningFlow(writer, administrativeUnitProvisioningFlow)
-        writer.writeObjectValue<AdminUnitCreationOptions>("creationOptions", administrativeUnitProvisioningFlow.creationOptions, serializeAdminUnitCreationOptions);
-    }
+export function serializeAdministrativeUnitProvisioningFlow(writer: SerializationWriter, administrativeUnitProvisioningFlow: Partial<AdministrativeUnitProvisioningFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!administrativeUnitProvisioningFlow || isSerializingDerivedType) { return; }
+    serializeProvisioningFlow(writer, administrativeUnitProvisioningFlow, isSerializingDerivedType)
+    writer.writeObjectValue<AdminUnitCreationOptions>("creationOptions", administrativeUnitProvisioningFlow.creationOptions, serializeAdminUnitCreationOptions);
 }
 /**
  * Serializes information the current object
+ * @param AdminUnitCreationOptions The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAdminUnitCreationOptions(writer: SerializationWriter, adminUnitCreationOptions: Partial<AdminUnitCreationOptions> | undefined | null = {}) : void {
-    if (adminUnitCreationOptions) {
-        writer.writeBooleanValue("createBasedOnOrg", adminUnitCreationOptions.createBasedOnOrg);
-        writer.writeBooleanValue("createBasedOnOrgPlusRoleGroup", adminUnitCreationOptions.createBasedOnOrgPlusRoleGroup);
-        writer.writeStringValue("@odata.type", adminUnitCreationOptions.odataType);
-        writer.writeAdditionalData(adminUnitCreationOptions.additionalData);
-    }
+export function serializeAdminUnitCreationOptions(writer: SerializationWriter, adminUnitCreationOptions: Partial<AdminUnitCreationOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!adminUnitCreationOptions || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("createBasedOnOrg", adminUnitCreationOptions.createBasedOnOrg);
+    writer.writeBooleanValue("createBasedOnOrgPlusRoleGroup", adminUnitCreationOptions.createBasedOnOrgPlusRoleGroup);
+    writer.writeStringValue("@odata.type", adminUnitCreationOptions.odataType);
+    writer.writeAdditionalData(adminUnitCreationOptions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param AggregatedInboundStatistics The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAggregatedInboundStatistics(writer: SerializationWriter, aggregatedInboundStatistics: Partial<AggregatedInboundStatistics> | undefined | null = {}) : void {
-    if (aggregatedInboundStatistics) {
-        writer.writeStringValue("@odata.type", aggregatedInboundStatistics.odataType);
-        writer.writeAdditionalData(aggregatedInboundStatistics.additionalData);
-    }
+export function serializeAggregatedInboundStatistics(writer: SerializationWriter, aggregatedInboundStatistics: Partial<AggregatedInboundStatistics> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aggregatedInboundStatistics || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", aggregatedInboundStatistics.odataType);
+    writer.writeAdditionalData(aggregatedInboundStatistics.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ApiDataConnector The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeApiDataConnector(writer: SerializationWriter, apiDataConnector: Partial<ApiDataConnector> | undefined | null = {}) : void {
-    if (apiDataConnector) {
-        serializeIndustryDataConnector(writer, apiDataConnector)
-        writer.writeEnumValue<ApiFormat>("apiFormat", apiDataConnector.apiFormat);
-        writer.writeStringValue("baseUrl", apiDataConnector.baseUrl);
-        writer.writeObjectValue<Credential>("credential", apiDataConnector.credential, serializeCredential);
+export function serializeApiDataConnector(writer: SerializationWriter, apiDataConnector: Partial<ApiDataConnector> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!apiDataConnector || isSerializingDerivedType) { return; }
+    serializeIndustryDataConnector(writer, apiDataConnector, isSerializingDerivedType)
+    writer.writeEnumValue<ApiFormat>("apiFormat", apiDataConnector.apiFormat);
+    writer.writeStringValue("baseUrl", apiDataConnector.baseUrl);
+    writer.writeObjectValue<Credential>("credential", apiDataConnector.credential, serializeCredential);
+    switch (apiDataConnector.odataType) {
+        case "#microsoft.graph.industryData.oneRosterApiDataConnector":
+            serializeOneRosterApiDataConnector(writer, apiDataConnector, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param AzureDataLakeConnector The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeAzureDataLakeConnector(writer: SerializationWriter, azureDataLakeConnector: Partial<AzureDataLakeConnector> | undefined | null = {}) : void {
-    if (azureDataLakeConnector) {
-        serializeFileDataConnector(writer, azureDataLakeConnector)
-        writer.writeObjectValue<FileFormatReferenceValue>("fileFormat", azureDataLakeConnector.fileFormat, serializeFileFormatReferenceValue);
-    }
+export function serializeAzureDataLakeConnector(writer: SerializationWriter, azureDataLakeConnector: Partial<AzureDataLakeConnector> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!azureDataLakeConnector || isSerializingDerivedType) { return; }
+    serializeFileDataConnector(writer, azureDataLakeConnector, isSerializingDerivedType)
+    writer.writeObjectValue<FileFormatReferenceValue>("fileFormat", azureDataLakeConnector.fileFormat, serializeFileFormatReferenceValue);
 }
 /**
  * Serializes information the current object
+ * @param BasicFilter The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeBasicFilter(writer: SerializationWriter, basicFilter: Partial<BasicFilter> | undefined | null = {}) : void {
-    if (basicFilter) {
-        serializeFilter(writer, basicFilter)
-        writer.writeEnumValue<FilterOptions>("attribute", basicFilter.attribute);
-        writer.writeCollectionOfPrimitiveValues<string>("in", basicFilter.inEscaped);
-    }
+export function serializeBasicFilter(writer: SerializationWriter, basicFilter: Partial<BasicFilter> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!basicFilter || isSerializingDerivedType) { return; }
+    serializeFilter(writer, basicFilter, isSerializingDerivedType)
+    writer.writeEnumValue<FilterOptions>("attribute", basicFilter.attribute);
+    writer.writeCollectionOfPrimitiveValues<string>("in", basicFilter.inEscaped);
 }
 /**
  * Serializes information the current object
+ * @param ClassGroupConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeClassGroupConfiguration(writer: SerializationWriter, classGroupConfiguration: Partial<ClassGroupConfiguration> | undefined | null = {}) : void {
-    if (classGroupConfiguration) {
-        if(classGroupConfiguration.additionalAttributes)
-        writer.writeCollectionOfEnumValues<AdditionalClassGroupAttributes>("additionalAttributes", classGroupConfiguration.additionalAttributes);
-        writer.writeObjectValue<AdditionalClassGroupOptions>("additionalOptions", classGroupConfiguration.additionalOptions, serializeAdditionalClassGroupOptions);
-        writer.writeObjectValue<EnrollmentMappings>("enrollmentMappings", classGroupConfiguration.enrollmentMappings, serializeEnrollmentMappings);
-        writer.writeStringValue("@odata.type", classGroupConfiguration.odataType);
-        writer.writeAdditionalData(classGroupConfiguration.additionalData);
-    }
+export function serializeClassGroupConfiguration(writer: SerializationWriter, classGroupConfiguration: Partial<ClassGroupConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!classGroupConfiguration || isSerializingDerivedType) { return; }
+    if(classGroupConfiguration.additionalAttributes)
+    writer.writeCollectionOfEnumValues<AdditionalClassGroupAttributes>("additionalAttributes", classGroupConfiguration.additionalAttributes);
+    writer.writeObjectValue<AdditionalClassGroupOptions>("additionalOptions", classGroupConfiguration.additionalOptions, serializeAdditionalClassGroupOptions);
+    writer.writeObjectValue<EnrollmentMappings>("enrollmentMappings", classGroupConfiguration.enrollmentMappings, serializeEnrollmentMappings);
+    writer.writeStringValue("@odata.type", classGroupConfiguration.odataType);
+    writer.writeAdditionalData(classGroupConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param ClassGroupProvisioningFlow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeClassGroupProvisioningFlow(writer: SerializationWriter, classGroupProvisioningFlow: Partial<ClassGroupProvisioningFlow> | undefined | null = {}) : void {
-    if (classGroupProvisioningFlow) {
-        serializeProvisioningFlow(writer, classGroupProvisioningFlow)
-        writer.writeObjectValue<ClassGroupConfiguration>("configuration", classGroupProvisioningFlow.configuration, serializeClassGroupConfiguration);
-    }
+export function serializeClassGroupProvisioningFlow(writer: SerializationWriter, classGroupProvisioningFlow: Partial<ClassGroupProvisioningFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!classGroupProvisioningFlow || isSerializingDerivedType) { return; }
+    serializeProvisioningFlow(writer, classGroupProvisioningFlow, isSerializingDerivedType)
+    writer.writeObjectValue<ClassGroupConfiguration>("configuration", classGroupProvisioningFlow.configuration, serializeClassGroupConfiguration);
 }
 /**
  * Serializes information the current object
+ * @param Credential The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeCredential(writer: SerializationWriter, credential: Partial<Credential> | undefined | null = {}) : void {
-    if (credential) {
-        writer.writeStringValue("displayName", credential.displayName);
-        writer.writeStringValue("@odata.type", credential.odataType);
-        writer.writeAdditionalData(credential.additionalData);
+export function serializeCredential(writer: SerializationWriter, credential: Partial<Credential> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!credential || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", credential.displayName);
+    writer.writeStringValue("@odata.type", credential.odataType);
+    writer.writeAdditionalData(credential.additionalData);
+    switch (credential.odataType) {
+        case "#microsoft.graph.industryData.oAuth1ClientCredential":
+            serializeOAuth1ClientCredential(writer, credential, true);
+        break;
+        case "#microsoft.graph.industryData.oAuth2ClientCredential":
+            serializeOAuth2ClientCredential(writer, credential, true);
+        break;
+        case "#microsoft.graph.industryData.oAuthClientCredential":
+            serializeOAuthClientCredential(writer, credential, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param EnrollmentMappings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEnrollmentMappings(writer: SerializationWriter, enrollmentMappings: Partial<EnrollmentMappings> | undefined | null = {}) : void {
-    if (enrollmentMappings) {
-        writer.writeCollectionOfObjectValues<SectionRoleReferenceValue>("memberEnrollmentMappings", enrollmentMappings.memberEnrollmentMappings, serializeSectionRoleReferenceValue);
-        writer.writeStringValue("@odata.type", enrollmentMappings.odataType);
-        writer.writeCollectionOfObjectValues<SectionRoleReferenceValue>("ownerEnrollmentMappings", enrollmentMappings.ownerEnrollmentMappings, serializeSectionRoleReferenceValue);
-        writer.writeAdditionalData(enrollmentMappings.additionalData);
-    }
+export function serializeEnrollmentMappings(writer: SerializationWriter, enrollmentMappings: Partial<EnrollmentMappings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enrollmentMappings || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<SectionRoleReferenceValue>("memberEnrollmentMappings", enrollmentMappings.memberEnrollmentMappings, serializeSectionRoleReferenceValue);
+    writer.writeStringValue("@odata.type", enrollmentMappings.odataType);
+    writer.writeCollectionOfObjectValues<SectionRoleReferenceValue>("ownerEnrollmentMappings", enrollmentMappings.ownerEnrollmentMappings, serializeSectionRoleReferenceValue);
+    writer.writeAdditionalData(enrollmentMappings.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param FileDataConnector The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFileDataConnector(writer: SerializationWriter, fileDataConnector: Partial<FileDataConnector> | undefined | null = {}) : void {
-    if (fileDataConnector) {
-        serializeIndustryDataConnector(writer, fileDataConnector)
+export function serializeFileDataConnector(writer: SerializationWriter, fileDataConnector: Partial<FileDataConnector> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!fileDataConnector || isSerializingDerivedType) { return; }
+    serializeIndustryDataConnector(writer, fileDataConnector, isSerializingDerivedType)
+    switch (fileDataConnector.odataType) {
+        case "#microsoft.graph.industryData.azureDataLakeConnector":
+            serializeAzureDataLakeConnector(writer, fileDataConnector, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param FileFormatReferenceValue The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFileFormatReferenceValue(writer: SerializationWriter, fileFormatReferenceValue: Partial<FileFormatReferenceValue> | undefined | null = {}) : void {
-    if (fileFormatReferenceValue) {
-        serializeReferenceValue(writer, fileFormatReferenceValue)
-    }
+export function serializeFileFormatReferenceValue(writer: SerializationWriter, fileFormatReferenceValue: Partial<FileFormatReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!fileFormatReferenceValue || isSerializingDerivedType) { return; }
+    serializeReferenceValue(writer, fileFormatReferenceValue, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param FileValidateOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFileValidateOperation(writer: SerializationWriter, fileValidateOperation: Partial<FileValidateOperation> | undefined | null = {}) : void {
-    if (fileValidateOperation) {
-        serializeValidateOperation(writer, fileValidateOperation)
-    }
+export function serializeFileValidateOperation(writer: SerializationWriter, fileValidateOperation: Partial<FileValidateOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!fileValidateOperation || isSerializingDerivedType) { return; }
+    serializeValidateOperation(writer, fileValidateOperation, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param Filter The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFilter(writer: SerializationWriter, filter: Partial<Filter> | undefined | null = {}) : void {
-    if (filter) {
-        writer.writeStringValue("@odata.type", filter.odataType);
-        writer.writeAdditionalData(filter.additionalData);
+export function serializeFilter(writer: SerializationWriter, filter: Partial<Filter> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!filter || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", filter.odataType);
+    writer.writeAdditionalData(filter.additionalData);
+    switch (filter.odataType) {
+        case "#microsoft.graph.industryData.basicFilter":
+            serializeBasicFilter(writer, filter, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param IdentifierTypeReferenceValue The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIdentifierTypeReferenceValue(writer: SerializationWriter, identifierTypeReferenceValue: Partial<IdentifierTypeReferenceValue> | undefined | null = {}) : void {
-    if (identifierTypeReferenceValue) {
-        serializeReferenceValue(writer, identifierTypeReferenceValue)
-    }
+export function serializeIdentifierTypeReferenceValue(writer: SerializationWriter, identifierTypeReferenceValue: Partial<IdentifierTypeReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!identifierTypeReferenceValue || isSerializingDerivedType) { return; }
+    serializeReferenceValue(writer, identifierTypeReferenceValue, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param InboundActivityResults The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInboundActivityResults(writer: SerializationWriter, inboundActivityResults: Partial<InboundActivityResults> | undefined | null = {}) : void {
-    if (inboundActivityResults) {
-        serializeIndustryDataActivityStatistics(writer, inboundActivityResults)
-    }
+export function serializeInboundActivityResults(writer: SerializationWriter, inboundActivityResults: Partial<InboundActivityResults> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inboundActivityResults || isSerializingDerivedType) { return; }
+    serializeIndustryDataActivityStatistics(writer, inboundActivityResults, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param InboundApiFlow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInboundApiFlow(writer: SerializationWriter, inboundApiFlow: Partial<InboundApiFlow> | undefined | null = {}) : void {
-    if (inboundApiFlow) {
-        serializeInboundFlow(writer, inboundApiFlow)
-    }
+export function serializeInboundApiFlow(writer: SerializationWriter, inboundApiFlow: Partial<InboundApiFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inboundApiFlow || isSerializingDerivedType) { return; }
+    serializeInboundFlow(writer, inboundApiFlow, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param InboundFileFlow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInboundFileFlow(writer: SerializationWriter, inboundFileFlow: Partial<InboundFileFlow> | undefined | null = {}) : void {
-    if (inboundFileFlow) {
-        serializeInboundFlow(writer, inboundFileFlow)
-    }
+export function serializeInboundFileFlow(writer: SerializationWriter, inboundFileFlow: Partial<InboundFileFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inboundFileFlow || isSerializingDerivedType) { return; }
+    serializeInboundFlow(writer, inboundFileFlow, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param InboundFlow The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInboundFlow(writer: SerializationWriter, inboundFlow: Partial<InboundFlow> | undefined | null = {}) : void {
-    if (inboundFlow) {
-        serializeIndustryDataActivity(writer, inboundFlow)
-        writer.writeObjectValue<IndustryDataConnector>("dataConnector", inboundFlow.dataConnector, serializeIndustryDataConnector);
-        writer.writeEnumValue<InboundDomain>("dataDomain", inboundFlow.dataDomain);
-        writer.writeDateValue("effectiveDateTime", inboundFlow.effectiveDateTime);
-        writer.writeDateValue("expirationDateTime", inboundFlow.expirationDateTime);
-        writer.writeObjectValue<YearTimePeriodDefinition>("year", inboundFlow.year, serializeYearTimePeriodDefinition);
+export function serializeInboundFlow(writer: SerializationWriter, inboundFlow: Partial<InboundFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inboundFlow || isSerializingDerivedType) { return; }
+    serializeIndustryDataActivity(writer, inboundFlow, isSerializingDerivedType)
+    writer.writeObjectValue<IndustryDataConnector>("dataConnector", inboundFlow.dataConnector, serializeIndustryDataConnector);
+    writer.writeEnumValue<InboundDomain>("dataDomain", inboundFlow.dataDomain);
+    writer.writeDateValue("effectiveDateTime", inboundFlow.effectiveDateTime);
+    writer.writeDateValue("expirationDateTime", inboundFlow.expirationDateTime);
+    writer.writeObjectValue<YearTimePeriodDefinition>("year", inboundFlow.year, serializeYearTimePeriodDefinition);
+    switch (inboundFlow.odataType) {
+        case "#microsoft.graph.industryData.inboundApiFlow":
+            serializeInboundApiFlow(writer, inboundFlow, true);
+        break;
+        case "#microsoft.graph.industryData.inboundFileFlow":
+            serializeInboundFileFlow(writer, inboundFlow, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param InboundFlowActivity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInboundFlowActivity(writer: SerializationWriter, inboundFlowActivity: Partial<InboundFlowActivity> | undefined | null = {}) : void {
-    if (inboundFlowActivity) {
-        serializeIndustryDataRunActivity(writer, inboundFlowActivity)
-    }
+export function serializeInboundFlowActivity(writer: SerializationWriter, inboundFlowActivity: Partial<InboundFlowActivity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inboundFlowActivity || isSerializingDerivedType) { return; }
+    serializeIndustryDataRunActivity(writer, inboundFlowActivity, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param InboundFlowCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeInboundFlowCollectionResponse(writer: SerializationWriter, inboundFlowCollectionResponse: Partial<InboundFlowCollectionResponse> | undefined | null = {}) : void {
-    if (inboundFlowCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, inboundFlowCollectionResponse)
-        writer.writeCollectionOfObjectValues<InboundFlow>("value", inboundFlowCollectionResponse.value, serializeInboundFlow);
-    }
+export function serializeInboundFlowCollectionResponse(writer: SerializationWriter, inboundFlowCollectionResponse: Partial<InboundFlowCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inboundFlowCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, inboundFlowCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<InboundFlow>("value", inboundFlowCollectionResponse.value, serializeInboundFlow);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataActivity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataActivity(writer: SerializationWriter, industryDataActivity: Partial<IndustryDataActivity> | undefined | null = {}) : void {
-    if (industryDataActivity) {
-        serializeEntity(writer, industryDataActivity)
-        writer.writeStringValue("displayName", industryDataActivity.displayName);
-        writer.writeEnumValue<ReadinessStatus>("readinessStatus", industryDataActivity.readinessStatus);
+export function serializeIndustryDataActivity(writer: SerializationWriter, industryDataActivity: Partial<IndustryDataActivity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataActivity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, industryDataActivity, isSerializingDerivedType)
+    writer.writeStringValue("displayName", industryDataActivity.displayName);
+    writer.writeEnumValue<ReadinessStatus>("readinessStatus", industryDataActivity.readinessStatus);
+    switch (industryDataActivity.odataType) {
+        case "#microsoft.graph.industryData.inboundApiFlow":
+            serializeInboundApiFlow(writer, industryDataActivity, true);
+        break;
+        case "#microsoft.graph.industryData.inboundFileFlow":
+            serializeInboundFileFlow(writer, industryDataActivity, true);
+        break;
+        case "#microsoft.graph.industryData.inboundFlow":
+            serializeInboundFlow(writer, industryDataActivity, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataActivityStatistics The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataActivityStatistics(writer: SerializationWriter, industryDataActivityStatistics: Partial<IndustryDataActivityStatistics> | undefined | null = {}) : void {
-    if (industryDataActivityStatistics) {
-        writer.writeStringValue("@odata.type", industryDataActivityStatistics.odataType);
-        writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataActivityStatistics.status);
-        writer.writeAdditionalData(industryDataActivityStatistics.additionalData);
+export function serializeIndustryDataActivityStatistics(writer: SerializationWriter, industryDataActivityStatistics: Partial<IndustryDataActivityStatistics> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataActivityStatistics || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", industryDataActivityStatistics.odataType);
+    writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataActivityStatistics.status);
+    writer.writeAdditionalData(industryDataActivityStatistics.additionalData);
+    switch (industryDataActivityStatistics.odataType) {
+        case "#microsoft.graph.industryData.inboundActivityResults":
+            serializeInboundActivityResults(writer, industryDataActivityStatistics, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataConnector The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataConnector(writer: SerializationWriter, industryDataConnector: Partial<IndustryDataConnector> | undefined | null = {}) : void {
-    if (industryDataConnector) {
-        serializeEntity(writer, industryDataConnector)
-        writer.writeStringValue("displayName", industryDataConnector.displayName);
-        writer.writeObjectValue<SourceSystemDefinition>("sourceSystem", industryDataConnector.sourceSystem, serializeSourceSystemDefinition);
+export function serializeIndustryDataConnector(writer: SerializationWriter, industryDataConnector: Partial<IndustryDataConnector> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataConnector || isSerializingDerivedType) { return; }
+    serializeEntity(writer, industryDataConnector, isSerializingDerivedType)
+    writer.writeStringValue("displayName", industryDataConnector.displayName);
+    writer.writeObjectValue<SourceSystemDefinition>("sourceSystem", industryDataConnector.sourceSystem, serializeSourceSystemDefinition);
+    switch (industryDataConnector.odataType) {
+        case "#microsoft.graph.industryData.apiDataConnector":
+            serializeApiDataConnector(writer, industryDataConnector, true);
+        break;
+        case "#microsoft.graph.industryData.azureDataLakeConnector":
+            serializeAzureDataLakeConnector(writer, industryDataConnector, true);
+        break;
+        case "#microsoft.graph.industryData.fileDataConnector":
+            serializeFileDataConnector(writer, industryDataConnector, true);
+        break;
+        case "#microsoft.graph.industryData.oneRosterApiDataConnector":
+            serializeOneRosterApiDataConnector(writer, industryDataConnector, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataConnectorCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataConnectorCollectionResponse(writer: SerializationWriter, industryDataConnectorCollectionResponse: Partial<IndustryDataConnectorCollectionResponse> | undefined | null = {}) : void {
-    if (industryDataConnectorCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, industryDataConnectorCollectionResponse)
-        writer.writeCollectionOfObjectValues<IndustryDataConnector>("value", industryDataConnectorCollectionResponse.value, serializeIndustryDataConnector);
-    }
+export function serializeIndustryDataConnectorCollectionResponse(writer: SerializationWriter, industryDataConnectorCollectionResponse: Partial<IndustryDataConnectorCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataConnectorCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, industryDataConnectorCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<IndustryDataConnector>("value", industryDataConnectorCollectionResponse.value, serializeIndustryDataConnector);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRoot The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRoot(writer: SerializationWriter, industryDataRoot: Partial<IndustryDataRoot> | undefined | null = {}) : void {
-    if (industryDataRoot) {
-        serializeEntity(writer, industryDataRoot)
-        writer.writeCollectionOfObjectValues<IndustryDataConnector>("dataConnectors", industryDataRoot.dataConnectors, serializeIndustryDataConnector);
-        writer.writeCollectionOfObjectValues<InboundFlow>("inboundFlows", industryDataRoot.inboundFlows, serializeInboundFlow);
-        writer.writeCollectionOfObjectValues<LongRunningOperation>("operations", industryDataRoot.operations, serializeLongRunningOperation);
-        writer.writeCollectionOfObjectValues<OutboundProvisioningFlowSet>("outboundProvisioningFlowSets", industryDataRoot.outboundProvisioningFlowSets, serializeOutboundProvisioningFlowSet);
-        writer.writeCollectionOfObjectValues<ReferenceDefinition>("referenceDefinitions", industryDataRoot.referenceDefinitions, serializeReferenceDefinition);
-        writer.writeCollectionOfObjectValues<RoleGroup>("roleGroups", industryDataRoot.roleGroups, serializeRoleGroup);
-        writer.writeCollectionOfObjectValues<IndustryDataRun>("runs", industryDataRoot.runs, serializeIndustryDataRun);
-        writer.writeCollectionOfObjectValues<SourceSystemDefinition>("sourceSystems", industryDataRoot.sourceSystems, serializeSourceSystemDefinition);
-        writer.writeCollectionOfObjectValues<YearTimePeriodDefinition>("years", industryDataRoot.years, serializeYearTimePeriodDefinition);
-    }
+export function serializeIndustryDataRoot(writer: SerializationWriter, industryDataRoot: Partial<IndustryDataRoot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRoot || isSerializingDerivedType) { return; }
+    serializeEntity(writer, industryDataRoot, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<IndustryDataConnector>("dataConnectors", industryDataRoot.dataConnectors, serializeIndustryDataConnector);
+    writer.writeCollectionOfObjectValues<InboundFlow>("inboundFlows", industryDataRoot.inboundFlows, serializeInboundFlow);
+    writer.writeCollectionOfObjectValues<LongRunningOperation>("operations", industryDataRoot.operations, serializeLongRunningOperation);
+    writer.writeCollectionOfObjectValues<OutboundProvisioningFlowSet>("outboundProvisioningFlowSets", industryDataRoot.outboundProvisioningFlowSets, serializeOutboundProvisioningFlowSet);
+    writer.writeCollectionOfObjectValues<ReferenceDefinition>("referenceDefinitions", industryDataRoot.referenceDefinitions, serializeReferenceDefinition);
+    writer.writeCollectionOfObjectValues<RoleGroup>("roleGroups", industryDataRoot.roleGroups, serializeRoleGroup);
+    writer.writeCollectionOfObjectValues<IndustryDataRun>("runs", industryDataRoot.runs, serializeIndustryDataRun);
+    writer.writeCollectionOfObjectValues<SourceSystemDefinition>("sourceSystems", industryDataRoot.sourceSystems, serializeSourceSystemDefinition);
+    writer.writeCollectionOfObjectValues<YearTimePeriodDefinition>("years", industryDataRoot.years, serializeYearTimePeriodDefinition);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRun The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRun(writer: SerializationWriter, industryDataRun: Partial<IndustryDataRun> | undefined | null = {}) : void {
-    if (industryDataRun) {
-        serializeEntity(writer, industryDataRun)
-        writer.writeCollectionOfObjectValues<IndustryDataRunActivity>("activities", industryDataRun.activities, serializeIndustryDataRunActivity);
-        writer.writeEnumValue<IndustryDataRunStatus>("status", industryDataRun.status);
-    }
+export function serializeIndustryDataRun(writer: SerializationWriter, industryDataRun: Partial<IndustryDataRun> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRun || isSerializingDerivedType) { return; }
+    serializeEntity(writer, industryDataRun, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<IndustryDataRunActivity>("activities", industryDataRun.activities, serializeIndustryDataRunActivity);
+    writer.writeEnumValue<IndustryDataRunStatus>("status", industryDataRun.status);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRunActivity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRunActivity(writer: SerializationWriter, industryDataRunActivity: Partial<IndustryDataRunActivity> | undefined | null = {}) : void {
-    if (industryDataRunActivity) {
-        serializeEntity(writer, industryDataRunActivity)
-        writer.writeObjectValue<IndustryDataActivity>("activity", industryDataRunActivity.activity, serializeIndustryDataActivity);
-        writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataRunActivity.status);
+export function serializeIndustryDataRunActivity(writer: SerializationWriter, industryDataRunActivity: Partial<IndustryDataRunActivity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRunActivity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, industryDataRunActivity, isSerializingDerivedType)
+    writer.writeObjectValue<IndustryDataActivity>("activity", industryDataRunActivity.activity, serializeIndustryDataActivity);
+    writer.writeEnumValue<IndustryDataActivityStatus>("status", industryDataRunActivity.status);
+    switch (industryDataRunActivity.odataType) {
+        case "#microsoft.graph.industryData.inboundFlowActivity":
+            serializeInboundFlowActivity(writer, industryDataRunActivity, true);
+        break;
+        case "#microsoft.graph.industryData.outboundFlowActivity":
+            serializeOutboundFlowActivity(writer, industryDataRunActivity, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRunActivityCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRunActivityCollectionResponse(writer: SerializationWriter, industryDataRunActivityCollectionResponse: Partial<IndustryDataRunActivityCollectionResponse> | undefined | null = {}) : void {
-    if (industryDataRunActivityCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, industryDataRunActivityCollectionResponse)
-        writer.writeCollectionOfObjectValues<IndustryDataRunActivity>("value", industryDataRunActivityCollectionResponse.value, serializeIndustryDataRunActivity);
-    }
+export function serializeIndustryDataRunActivityCollectionResponse(writer: SerializationWriter, industryDataRunActivityCollectionResponse: Partial<IndustryDataRunActivityCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRunActivityCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, industryDataRunActivityCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<IndustryDataRunActivity>("value", industryDataRunActivityCollectionResponse.value, serializeIndustryDataRunActivity);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRunCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRunCollectionResponse(writer: SerializationWriter, industryDataRunCollectionResponse: Partial<IndustryDataRunCollectionResponse> | undefined | null = {}) : void {
-    if (industryDataRunCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, industryDataRunCollectionResponse)
-        writer.writeCollectionOfObjectValues<IndustryDataRun>("value", industryDataRunCollectionResponse.value, serializeIndustryDataRun);
-    }
+export function serializeIndustryDataRunCollectionResponse(writer: SerializationWriter, industryDataRunCollectionResponse: Partial<IndustryDataRunCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRunCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, industryDataRunCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<IndustryDataRun>("value", industryDataRunCollectionResponse.value, serializeIndustryDataRun);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRunEntityCountMetric The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRunEntityCountMetric(writer: SerializationWriter, industryDataRunEntityCountMetric: Partial<IndustryDataRunEntityCountMetric> | undefined | null = {}) : void {
-    if (industryDataRunEntityCountMetric) {
-        writer.writeStringValue("@odata.type", industryDataRunEntityCountMetric.odataType);
-        writer.writeAdditionalData(industryDataRunEntityCountMetric.additionalData);
-    }
+export function serializeIndustryDataRunEntityCountMetric(writer: SerializationWriter, industryDataRunEntityCountMetric: Partial<IndustryDataRunEntityCountMetric> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRunEntityCountMetric || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", industryDataRunEntityCountMetric.odataType);
+    writer.writeAdditionalData(industryDataRunEntityCountMetric.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRunRoleCountMetric The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRunRoleCountMetric(writer: SerializationWriter, industryDataRunRoleCountMetric: Partial<IndustryDataRunRoleCountMetric> | undefined | null = {}) : void {
-    if (industryDataRunRoleCountMetric) {
-        writer.writeStringValue("@odata.type", industryDataRunRoleCountMetric.odataType);
-        writer.writeAdditionalData(industryDataRunRoleCountMetric.additionalData);
-    }
+export function serializeIndustryDataRunRoleCountMetric(writer: SerializationWriter, industryDataRunRoleCountMetric: Partial<IndustryDataRunRoleCountMetric> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRunRoleCountMetric || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", industryDataRunRoleCountMetric.odataType);
+    writer.writeAdditionalData(industryDataRunRoleCountMetric.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param IndustryDataRunStatistics The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeIndustryDataRunStatistics(writer: SerializationWriter, industryDataRunStatistics: Partial<IndustryDataRunStatistics> | undefined | null = {}) : void {
-    if (industryDataRunStatistics) {
-        writer.writeStringValue("@odata.type", industryDataRunStatistics.odataType);
-        writer.writeEnumValue<IndustryDataRunStatus>("status", industryDataRunStatistics.status);
-        writer.writeAdditionalData(industryDataRunStatistics.additionalData);
-    }
+export function serializeIndustryDataRunStatistics(writer: SerializationWriter, industryDataRunStatistics: Partial<IndustryDataRunStatistics> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!industryDataRunStatistics || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", industryDataRunStatistics.odataType);
+    writer.writeEnumValue<IndustryDataRunStatus>("status", industryDataRunStatistics.status);
+    writer.writeAdditionalData(industryDataRunStatistics.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OAuth1ClientCredential The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOAuth1ClientCredential(writer: SerializationWriter, oAuth1ClientCredential: Partial<OAuth1ClientCredential> | undefined | null = {}) : void {
-    if (oAuth1ClientCredential) {
-        serializeOAuthClientCredential(writer, oAuth1ClientCredential)
-    }
+export function serializeOAuth1ClientCredential(writer: SerializationWriter, oAuth1ClientCredential: Partial<OAuth1ClientCredential> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!oAuth1ClientCredential || isSerializingDerivedType) { return; }
+    serializeOAuthClientCredential(writer, oAuth1ClientCredential, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OAuth2ClientCredential The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOAuth2ClientCredential(writer: SerializationWriter, oAuth2ClientCredential: Partial<OAuth2ClientCredential> | undefined | null = {}) : void {
-    if (oAuth2ClientCredential) {
-        serializeOAuthClientCredential(writer, oAuth2ClientCredential)
-        writer.writeStringValue("scope", oAuth2ClientCredential.scope);
-        writer.writeStringValue("tokenUrl", oAuth2ClientCredential.tokenUrl);
-    }
+export function serializeOAuth2ClientCredential(writer: SerializationWriter, oAuth2ClientCredential: Partial<OAuth2ClientCredential> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!oAuth2ClientCredential || isSerializingDerivedType) { return; }
+    serializeOAuthClientCredential(writer, oAuth2ClientCredential, isSerializingDerivedType)
+    writer.writeStringValue("scope", oAuth2ClientCredential.scope);
+    writer.writeStringValue("tokenUrl", oAuth2ClientCredential.tokenUrl);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OAuthClientCredential The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOAuthClientCredential(writer: SerializationWriter, oAuthClientCredential: Partial<OAuthClientCredential> | undefined | null = {}) : void {
-    if (oAuthClientCredential) {
-        serializeCredential(writer, oAuthClientCredential)
-        writer.writeStringValue("clientId", oAuthClientCredential.clientId);
-        writer.writeStringValue("clientSecret", oAuthClientCredential.clientSecret);
+export function serializeOAuthClientCredential(writer: SerializationWriter, oAuthClientCredential: Partial<OAuthClientCredential> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!oAuthClientCredential || isSerializingDerivedType) { return; }
+    serializeCredential(writer, oAuthClientCredential, isSerializingDerivedType)
+    writer.writeStringValue("clientId", oAuthClientCredential.clientId);
+    writer.writeStringValue("clientSecret", oAuthClientCredential.clientSecret);
+    switch (oAuthClientCredential.odataType) {
+        case "#microsoft.graph.industryData.oAuth1ClientCredential":
+            serializeOAuth1ClientCredential(writer, oAuthClientCredential, true);
+        break;
+        case "#microsoft.graph.industryData.oAuth2ClientCredential":
+            serializeOAuth2ClientCredential(writer, oAuthClientCredential, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OneRosterApiDataConnector The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOneRosterApiDataConnector(writer: SerializationWriter, oneRosterApiDataConnector: Partial<OneRosterApiDataConnector> | undefined | null = {}) : void {
-    if (oneRosterApiDataConnector) {
-        serializeApiDataConnector(writer, oneRosterApiDataConnector)
-        writer.writeStringValue("apiVersion", oneRosterApiDataConnector.apiVersion);
-        writer.writeBooleanValue("isContactsEnabled", oneRosterApiDataConnector.isContactsEnabled);
-        writer.writeBooleanValue("isDemographicsEnabled", oneRosterApiDataConnector.isDemographicsEnabled);
-        writer.writeBooleanValue("isFlagsEnabled", oneRosterApiDataConnector.isFlagsEnabled);
-    }
+export function serializeOneRosterApiDataConnector(writer: SerializationWriter, oneRosterApiDataConnector: Partial<OneRosterApiDataConnector> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!oneRosterApiDataConnector || isSerializingDerivedType) { return; }
+    serializeApiDataConnector(writer, oneRosterApiDataConnector, isSerializingDerivedType)
+    writer.writeStringValue("apiVersion", oneRosterApiDataConnector.apiVersion);
+    writer.writeBooleanValue("isContactsEnabled", oneRosterApiDataConnector.isContactsEnabled);
+    writer.writeBooleanValue("isDemographicsEnabled", oneRosterApiDataConnector.isDemographicsEnabled);
+    writer.writeBooleanValue("isFlagsEnabled", oneRosterApiDataConnector.isFlagsEnabled);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OutboundFlowActivity The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOutboundFlowActivity(writer: SerializationWriter, outboundFlowActivity: Partial<OutboundFlowActivity> | undefined | null = {}) : void {
-    if (outboundFlowActivity) {
-        serializeIndustryDataRunActivity(writer, outboundFlowActivity)
-    }
+export function serializeOutboundFlowActivity(writer: SerializationWriter, outboundFlowActivity: Partial<OutboundFlowActivity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!outboundFlowActivity || isSerializingDerivedType) { return; }
+    serializeIndustryDataRunActivity(writer, outboundFlowActivity, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OutboundProvisioningFlowSet The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOutboundProvisioningFlowSet(writer: SerializationWriter, outboundProvisioningFlowSet: Partial<OutboundProvisioningFlowSet> | undefined | null = {}) : void {
-    if (outboundProvisioningFlowSet) {
-        serializeEntity(writer, outboundProvisioningFlowSet)
-        writer.writeStringValue("displayName", outboundProvisioningFlowSet.displayName);
-        writer.writeObjectValue<Filter>("filter", outboundProvisioningFlowSet.filter, serializeFilter);
-        writer.writeCollectionOfObjectValues<ProvisioningFlow>("provisioningFlows", outboundProvisioningFlowSet.provisioningFlows, serializeProvisioningFlow);
-    }
+export function serializeOutboundProvisioningFlowSet(writer: SerializationWriter, outboundProvisioningFlowSet: Partial<OutboundProvisioningFlowSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!outboundProvisioningFlowSet || isSerializingDerivedType) { return; }
+    serializeEntity(writer, outboundProvisioningFlowSet, isSerializingDerivedType)
+    writer.writeStringValue("displayName", outboundProvisioningFlowSet.displayName);
+    writer.writeObjectValue<Filter>("filter", outboundProvisioningFlowSet.filter, serializeFilter);
+    writer.writeCollectionOfObjectValues<ProvisioningFlow>("provisioningFlows", outboundProvisioningFlowSet.provisioningFlows, serializeProvisioningFlow);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OutboundProvisioningFlowSetCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeOutboundProvisioningFlowSetCollectionResponse(writer: SerializationWriter, outboundProvisioningFlowSetCollectionResponse: Partial<OutboundProvisioningFlowSetCollectionResponse> | undefined | null = {}) : void {
-    if (outboundProvisioningFlowSetCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, outboundProvisioningFlowSetCollectionResponse)
-        writer.writeCollectionOfObjectValues<OutboundProvisioningFlowSet>("value", outboundProvisioningFlowSetCollectionResponse.value, serializeOutboundProvisioningFlowSet);
-    }
+export function serializeOutboundProvisioningFlowSetCollectionResponse(writer: SerializationWriter, outboundProvisioningFlowSetCollectionResponse: Partial<OutboundProvisioningFlowSetCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!outboundProvisioningFlowSetCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, outboundProvisioningFlowSetCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<OutboundProvisioningFlowSet>("value", outboundProvisioningFlowSetCollectionResponse.value, serializeOutboundProvisioningFlowSet);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PasswordSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePasswordSettings(writer: SerializationWriter, passwordSettings: Partial<PasswordSettings> | undefined | null = {}) : void {
-    if (passwordSettings) {
-        writer.writeStringValue("@odata.type", passwordSettings.odataType);
-        writer.writeAdditionalData(passwordSettings.additionalData);
+export function serializePasswordSettings(writer: SerializationWriter, passwordSettings: Partial<PasswordSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!passwordSettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", passwordSettings.odataType);
+    writer.writeAdditionalData(passwordSettings.additionalData);
+    switch (passwordSettings.odataType) {
+        case "#microsoft.graph.industryData.simplePasswordSettings":
+            serializeSimplePasswordSettings(writer, passwordSettings, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ProvisioningFlow The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeProvisioningFlow(writer: SerializationWriter, provisioningFlow: Partial<ProvisioningFlow> | undefined | null = {}) : void {
-    if (provisioningFlow) {
-        serializeEntity(writer, provisioningFlow)
+export function serializeProvisioningFlow(writer: SerializationWriter, provisioningFlow: Partial<ProvisioningFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!provisioningFlow || isSerializingDerivedType) { return; }
+    serializeEntity(writer, provisioningFlow, isSerializingDerivedType)
+    switch (provisioningFlow.odataType) {
+        case "#microsoft.graph.industryData.administrativeUnitProvisioningFlow":
+            serializeAdministrativeUnitProvisioningFlow(writer, provisioningFlow, true);
+        break;
+        case "#microsoft.graph.industryData.classGroupProvisioningFlow":
+            serializeClassGroupProvisioningFlow(writer, provisioningFlow, true);
+        break;
+        case "#microsoft.graph.industryData.securityGroupProvisioningFlow":
+            serializeSecurityGroupProvisioningFlow(writer, provisioningFlow, true);
+        break;
+        case "#microsoft.graph.industryData.userProvisioningFlow":
+            serializeUserProvisioningFlow(writer, provisioningFlow, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ProvisioningFlowCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeProvisioningFlowCollectionResponse(writer: SerializationWriter, provisioningFlowCollectionResponse: Partial<ProvisioningFlowCollectionResponse> | undefined | null = {}) : void {
-    if (provisioningFlowCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, provisioningFlowCollectionResponse)
-        writer.writeCollectionOfObjectValues<ProvisioningFlow>("value", provisioningFlowCollectionResponse.value, serializeProvisioningFlow);
-    }
+export function serializeProvisioningFlowCollectionResponse(writer: SerializationWriter, provisioningFlowCollectionResponse: Partial<ProvisioningFlowCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!provisioningFlowCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, provisioningFlowCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ProvisioningFlow>("value", provisioningFlowCollectionResponse.value, serializeProvisioningFlow);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReferenceDefinition The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReferenceDefinition(writer: SerializationWriter, referenceDefinition: Partial<ReferenceDefinition> | undefined | null = {}) : void {
-    if (referenceDefinition) {
-        serializeEntity(writer, referenceDefinition)
-        writer.writeStringValue("code", referenceDefinition.code);
-        writer.writeStringValue("displayName", referenceDefinition.displayName);
-        writer.writeBooleanValue("isDisabled", referenceDefinition.isDisabled);
-        writer.writeStringValue("referenceType", referenceDefinition.referenceType);
-        writer.writeNumberValue("sortIndex", referenceDefinition.sortIndex);
-    }
+export function serializeReferenceDefinition(writer: SerializationWriter, referenceDefinition: Partial<ReferenceDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!referenceDefinition || isSerializingDerivedType) { return; }
+    serializeEntity(writer, referenceDefinition, isSerializingDerivedType)
+    writer.writeStringValue("code", referenceDefinition.code);
+    writer.writeStringValue("displayName", referenceDefinition.displayName);
+    writer.writeBooleanValue("isDisabled", referenceDefinition.isDisabled);
+    writer.writeStringValue("referenceType", referenceDefinition.referenceType);
+    writer.writeNumberValue("sortIndex", referenceDefinition.sortIndex);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReferenceDefinitionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReferenceDefinitionCollectionResponse(writer: SerializationWriter, referenceDefinitionCollectionResponse: Partial<ReferenceDefinitionCollectionResponse> | undefined | null = {}) : void {
-    if (referenceDefinitionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, referenceDefinitionCollectionResponse)
-        writer.writeCollectionOfObjectValues<ReferenceDefinition>("value", referenceDefinitionCollectionResponse.value, serializeReferenceDefinition);
-    }
+export function serializeReferenceDefinitionCollectionResponse(writer: SerializationWriter, referenceDefinitionCollectionResponse: Partial<ReferenceDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!referenceDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, referenceDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ReferenceDefinition>("value", referenceDefinitionCollectionResponse.value, serializeReferenceDefinition);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ReferenceValue The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeReferenceValue(writer: SerializationWriter, referenceValue: Partial<ReferenceValue> | undefined | null = {}) : void {
-    if (referenceValue) {
-        writer.writeStringValue("code", referenceValue.code);
-        writer.writeStringValue("@odata.type", referenceValue.odataType);
-        writer.writeObjectValue<ReferenceDefinition>("value", referenceValue.value, serializeReferenceDefinition);
-        writer.writeAdditionalData(referenceValue.additionalData);
+export function serializeReferenceValue(writer: SerializationWriter, referenceValue: Partial<ReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!referenceValue || isSerializingDerivedType) { return; }
+    writer.writeStringValue("code", referenceValue.code);
+    writer.writeStringValue("@odata.type", referenceValue.odataType);
+    writer.writeObjectValue<ReferenceDefinition>("value", referenceValue.value, serializeReferenceDefinition);
+    writer.writeAdditionalData(referenceValue.additionalData);
+    switch (referenceValue.odataType) {
+        case "#microsoft.graph.industryData.fileFormatReferenceValue":
+            serializeFileFormatReferenceValue(writer, referenceValue, true);
+        break;
+        case "#microsoft.graph.industryData.identifierTypeReferenceValue":
+            serializeIdentifierTypeReferenceValue(writer, referenceValue, true);
+        break;
+        case "#microsoft.graph.industryData.roleReferenceValue":
+            serializeRoleReferenceValue(writer, referenceValue, true);
+        break;
+        case "#microsoft.graph.industryData.sectionRoleReferenceValue":
+            serializeSectionRoleReferenceValue(writer, referenceValue, true);
+        break;
+        case "#microsoft.graph.industryData.userMatchTargetReferenceValue":
+            serializeUserMatchTargetReferenceValue(writer, referenceValue, true);
+        break;
+        case "#microsoft.graph.industryData.yearReferenceValue":
+            serializeYearReferenceValue(writer, referenceValue, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RoleGroup The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRoleGroup(writer: SerializationWriter, roleGroup: Partial<RoleGroup> | undefined | null = {}) : void {
-    if (roleGroup) {
-        serializeEntity(writer, roleGroup)
-        writer.writeStringValue("displayName", roleGroup.displayName);
-        writer.writeCollectionOfObjectValues<RoleReferenceValue>("roles", roleGroup.roles, serializeRoleReferenceValue);
-    }
+export function serializeRoleGroup(writer: SerializationWriter, roleGroup: Partial<RoleGroup> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!roleGroup || isSerializingDerivedType) { return; }
+    serializeEntity(writer, roleGroup, isSerializingDerivedType)
+    writer.writeStringValue("displayName", roleGroup.displayName);
+    writer.writeCollectionOfObjectValues<RoleReferenceValue>("roles", roleGroup.roles, serializeRoleReferenceValue);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RoleGroupCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRoleGroupCollectionResponse(writer: SerializationWriter, roleGroupCollectionResponse: Partial<RoleGroupCollectionResponse> | undefined | null = {}) : void {
-    if (roleGroupCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, roleGroupCollectionResponse)
-        writer.writeCollectionOfObjectValues<RoleGroup>("value", roleGroupCollectionResponse.value, serializeRoleGroup);
-    }
+export function serializeRoleGroupCollectionResponse(writer: SerializationWriter, roleGroupCollectionResponse: Partial<RoleGroupCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!roleGroupCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, roleGroupCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RoleGroup>("value", roleGroupCollectionResponse.value, serializeRoleGroup);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RoleReferenceValue The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRoleReferenceValue(writer: SerializationWriter, roleReferenceValue: Partial<RoleReferenceValue> | undefined | null = {}) : void {
-    if (roleReferenceValue) {
-        serializeReferenceValue(writer, roleReferenceValue)
-    }
+export function serializeRoleReferenceValue(writer: SerializationWriter, roleReferenceValue: Partial<RoleReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!roleReferenceValue || isSerializingDerivedType) { return; }
+    serializeReferenceValue(writer, roleReferenceValue, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SectionRoleReferenceValue The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSectionRoleReferenceValue(writer: SerializationWriter, sectionRoleReferenceValue: Partial<SectionRoleReferenceValue> | undefined | null = {}) : void {
-    if (sectionRoleReferenceValue) {
-        serializeReferenceValue(writer, sectionRoleReferenceValue)
-    }
+export function serializeSectionRoleReferenceValue(writer: SerializationWriter, sectionRoleReferenceValue: Partial<SectionRoleReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sectionRoleReferenceValue || isSerializingDerivedType) { return; }
+    serializeReferenceValue(writer, sectionRoleReferenceValue, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SecurityGroupCreationOptions The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSecurityGroupCreationOptions(writer: SerializationWriter, securityGroupCreationOptions: Partial<SecurityGroupCreationOptions> | undefined | null = {}) : void {
-    if (securityGroupCreationOptions) {
-        writer.writeBooleanValue("createBasedOnOrgPlusRoleGroup", securityGroupCreationOptions.createBasedOnOrgPlusRoleGroup);
-        writer.writeBooleanValue("createBasedOnRoleGroup", securityGroupCreationOptions.createBasedOnRoleGroup);
-        writer.writeStringValue("@odata.type", securityGroupCreationOptions.odataType);
-        writer.writeAdditionalData(securityGroupCreationOptions.additionalData);
-    }
+export function serializeSecurityGroupCreationOptions(writer: SerializationWriter, securityGroupCreationOptions: Partial<SecurityGroupCreationOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!securityGroupCreationOptions || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("createBasedOnOrgPlusRoleGroup", securityGroupCreationOptions.createBasedOnOrgPlusRoleGroup);
+    writer.writeBooleanValue("createBasedOnRoleGroup", securityGroupCreationOptions.createBasedOnRoleGroup);
+    writer.writeStringValue("@odata.type", securityGroupCreationOptions.odataType);
+    writer.writeAdditionalData(securityGroupCreationOptions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SecurityGroupProvisioningFlow The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSecurityGroupProvisioningFlow(writer: SerializationWriter, securityGroupProvisioningFlow: Partial<SecurityGroupProvisioningFlow> | undefined | null = {}) : void {
-    if (securityGroupProvisioningFlow) {
-        serializeProvisioningFlow(writer, securityGroupProvisioningFlow)
-        writer.writeObjectValue<SecurityGroupCreationOptions>("creationOptions", securityGroupProvisioningFlow.creationOptions, serializeSecurityGroupCreationOptions);
-    }
+export function serializeSecurityGroupProvisioningFlow(writer: SerializationWriter, securityGroupProvisioningFlow: Partial<SecurityGroupProvisioningFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!securityGroupProvisioningFlow || isSerializingDerivedType) { return; }
+    serializeProvisioningFlow(writer, securityGroupProvisioningFlow, isSerializingDerivedType)
+    writer.writeObjectValue<SecurityGroupCreationOptions>("creationOptions", securityGroupProvisioningFlow.creationOptions, serializeSecurityGroupCreationOptions);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SimplePasswordSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSimplePasswordSettings(writer: SerializationWriter, simplePasswordSettings: Partial<SimplePasswordSettings> | undefined | null = {}) : void {
-    if (simplePasswordSettings) {
-        serializePasswordSettings(writer, simplePasswordSettings)
-        writer.writeStringValue("password", simplePasswordSettings.password);
-    }
+export function serializeSimplePasswordSettings(writer: SerializationWriter, simplePasswordSettings: Partial<SimplePasswordSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!simplePasswordSettings || isSerializingDerivedType) { return; }
+    serializePasswordSettings(writer, simplePasswordSettings, isSerializingDerivedType)
+    writer.writeStringValue("password", simplePasswordSettings.password);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SourceSystemDefinition The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSourceSystemDefinition(writer: SerializationWriter, sourceSystemDefinition: Partial<SourceSystemDefinition> | undefined | null = {}) : void {
-    if (sourceSystemDefinition) {
-        serializeEntity(writer, sourceSystemDefinition)
-        writer.writeStringValue("displayName", sourceSystemDefinition.displayName);
-        writer.writeCollectionOfObjectValues<UserMatchingSetting>("userMatchingSettings", sourceSystemDefinition.userMatchingSettings, serializeUserMatchingSetting);
-        writer.writeStringValue("vendor", sourceSystemDefinition.vendor);
-    }
+export function serializeSourceSystemDefinition(writer: SerializationWriter, sourceSystemDefinition: Partial<SourceSystemDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sourceSystemDefinition || isSerializingDerivedType) { return; }
+    serializeEntity(writer, sourceSystemDefinition, isSerializingDerivedType)
+    writer.writeStringValue("displayName", sourceSystemDefinition.displayName);
+    writer.writeCollectionOfObjectValues<UserMatchingSetting>("userMatchingSettings", sourceSystemDefinition.userMatchingSettings, serializeUserMatchingSetting);
+    writer.writeStringValue("vendor", sourceSystemDefinition.vendor);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SourceSystemDefinitionCollectionResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeSourceSystemDefinitionCollectionResponse(writer: SerializationWriter, sourceSystemDefinitionCollectionResponse: Partial<SourceSystemDefinitionCollectionResponse> | undefined | null = {}) : void {
-    if (sourceSystemDefinitionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, sourceSystemDefinitionCollectionResponse)
-        writer.writeCollectionOfObjectValues<SourceSystemDefinition>("value", sourceSystemDefinitionCollectionResponse.value, serializeSourceSystemDefinition);
-    }
+export function serializeSourceSystemDefinitionCollectionResponse(writer: SerializationWriter, sourceSystemDefinitionCollectionResponse: Partial<SourceSystemDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sourceSystemDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, sourceSystemDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SourceSystemDefinition>("value", sourceSystemDefinitionCollectionResponse.value, serializeSourceSystemDefinition);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserConfiguration The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserConfiguration(writer: SerializationWriter, userConfiguration: Partial<UserConfiguration> | undefined | null = {}) : void {
-    if (userConfiguration) {
-        writer.writeObjectValue<PasswordSettings>("defaultPasswordSettings", userConfiguration.defaultPasswordSettings, serializePasswordSettings);
-        writer.writeCollectionOfPrimitiveValues<string>("licenseSkus", userConfiguration.licenseSkus);
-        writer.writeStringValue("@odata.type", userConfiguration.odataType);
-        writer.writeObjectValue<RoleGroup>("roleGroup", userConfiguration.roleGroup, serializeRoleGroup);
-        writer.writeAdditionalData(userConfiguration.additionalData);
-    }
+export function serializeUserConfiguration(writer: SerializationWriter, userConfiguration: Partial<UserConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userConfiguration || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<PasswordSettings>("defaultPasswordSettings", userConfiguration.defaultPasswordSettings, serializePasswordSettings);
+    writer.writeCollectionOfPrimitiveValues<string>("licenseSkus", userConfiguration.licenseSkus);
+    writer.writeStringValue("@odata.type", userConfiguration.odataType);
+    writer.writeObjectValue<RoleGroup>("roleGroup", userConfiguration.roleGroup, serializeRoleGroup);
+    writer.writeAdditionalData(userConfiguration.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserCreationOptions The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserCreationOptions(writer: SerializationWriter, userCreationOptions: Partial<UserCreationOptions> | undefined | null = {}) : void {
-    if (userCreationOptions) {
-        writer.writeCollectionOfObjectValues<UserConfiguration>("configurations", userCreationOptions.configurations, serializeUserConfiguration);
-        writer.writeStringValue("@odata.type", userCreationOptions.odataType);
-        writer.writeAdditionalData(userCreationOptions.additionalData);
-    }
+export function serializeUserCreationOptions(writer: SerializationWriter, userCreationOptions: Partial<UserCreationOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userCreationOptions || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<UserConfiguration>("configurations", userCreationOptions.configurations, serializeUserConfiguration);
+    writer.writeStringValue("@odata.type", userCreationOptions.odataType);
+    writer.writeAdditionalData(userCreationOptions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserManagementOptions The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserManagementOptions(writer: SerializationWriter, userManagementOptions: Partial<UserManagementOptions> | undefined | null = {}) : void {
-    if (userManagementOptions) {
-        if(userManagementOptions.additionalAttributes)
-        writer.writeCollectionOfEnumValues<AdditionalUserAttributes>("additionalAttributes", userManagementOptions.additionalAttributes);
-        writer.writeObjectValue<AdditionalUserOptions>("additionalOptions", userManagementOptions.additionalOptions, serializeAdditionalUserOptions);
-        writer.writeStringValue("@odata.type", userManagementOptions.odataType);
-        writer.writeAdditionalData(userManagementOptions.additionalData);
-    }
+export function serializeUserManagementOptions(writer: SerializationWriter, userManagementOptions: Partial<UserManagementOptions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userManagementOptions || isSerializingDerivedType) { return; }
+    if(userManagementOptions.additionalAttributes)
+    writer.writeCollectionOfEnumValues<AdditionalUserAttributes>("additionalAttributes", userManagementOptions.additionalAttributes);
+    writer.writeObjectValue<AdditionalUserOptions>("additionalOptions", userManagementOptions.additionalOptions, serializeAdditionalUserOptions);
+    writer.writeStringValue("@odata.type", userManagementOptions.odataType);
+    writer.writeAdditionalData(userManagementOptions.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserMatchingSetting The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserMatchingSetting(writer: SerializationWriter, userMatchingSetting: Partial<UserMatchingSetting> | undefined | null = {}) : void {
-    if (userMatchingSetting) {
-        writer.writeObjectValue<UserMatchTargetReferenceValue>("matchTarget", userMatchingSetting.matchTarget, serializeUserMatchTargetReferenceValue);
-        writer.writeStringValue("@odata.type", userMatchingSetting.odataType);
-        writer.writeNumberValue("priorityOrder", userMatchingSetting.priorityOrder);
-        writer.writeObjectValue<RoleGroup>("roleGroup", userMatchingSetting.roleGroup, serializeRoleGroup);
-        writer.writeObjectValue<IdentifierTypeReferenceValue>("sourceIdentifier", userMatchingSetting.sourceIdentifier, serializeIdentifierTypeReferenceValue);
-        writer.writeAdditionalData(userMatchingSetting.additionalData);
-    }
+export function serializeUserMatchingSetting(writer: SerializationWriter, userMatchingSetting: Partial<UserMatchingSetting> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userMatchingSetting || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<UserMatchTargetReferenceValue>("matchTarget", userMatchingSetting.matchTarget, serializeUserMatchTargetReferenceValue);
+    writer.writeStringValue("@odata.type", userMatchingSetting.odataType);
+    writer.writeNumberValue("priorityOrder", userMatchingSetting.priorityOrder);
+    writer.writeObjectValue<RoleGroup>("roleGroup", userMatchingSetting.roleGroup, serializeRoleGroup);
+    writer.writeObjectValue<IdentifierTypeReferenceValue>("sourceIdentifier", userMatchingSetting.sourceIdentifier, serializeIdentifierTypeReferenceValue);
+    writer.writeAdditionalData(userMatchingSetting.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserMatchTargetReferenceValue The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserMatchTargetReferenceValue(writer: SerializationWriter, userMatchTargetReferenceValue: Partial<UserMatchTargetReferenceValue> | undefined | null = {}) : void {
-    if (userMatchTargetReferenceValue) {
-        serializeReferenceValue(writer, userMatchTargetReferenceValue)
-    }
+export function serializeUserMatchTargetReferenceValue(writer: SerializationWriter, userMatchTargetReferenceValue: Partial<UserMatchTargetReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userMatchTargetReferenceValue || isSerializingDerivedType) { return; }
+    serializeReferenceValue(writer, userMatchTargetReferenceValue, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UserProvisioningFlow The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUserProvisioningFlow(writer: SerializationWriter, userProvisioningFlow: Partial<UserProvisioningFlow> | undefined | null = {}) : void {
-    if (userProvisioningFlow) {
-        serializeProvisioningFlow(writer, userProvisioningFlow)
-        writer.writeBooleanValue("createUnmatchedUsers", userProvisioningFlow.createUnmatchedUsers);
-        writer.writeObjectValue<UserCreationOptions>("creationOptions", userProvisioningFlow.creationOptions, serializeUserCreationOptions);
-        writer.writeObjectValue<UserManagementOptions>("managementOptions", userProvisioningFlow.managementOptions, serializeUserManagementOptions);
-    }
+export function serializeUserProvisioningFlow(writer: SerializationWriter, userProvisioningFlow: Partial<UserProvisioningFlow> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!userProvisioningFlow || isSerializingDerivedType) { return; }
+    serializeProvisioningFlow(writer, userProvisioningFlow, isSerializingDerivedType)
+    writer.writeBooleanValue("createUnmatchedUsers", userProvisioningFlow.createUnmatchedUsers);
+    writer.writeObjectValue<UserCreationOptions>("creationOptions", userProvisioningFlow.creationOptions, serializeUserCreationOptions);
+    writer.writeObjectValue<UserManagementOptions>("managementOptions", userProvisioningFlow.managementOptions, serializeUserManagementOptions);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidateOperation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeValidateOperation(writer: SerializationWriter, validateOperation: Partial<ValidateOperation> | undefined | null = {}) : void {
-    if (validateOperation) {
-        serializeLongRunningOperation(writer, validateOperation)
+export function serializeValidateOperation(writer: SerializationWriter, validateOperation: Partial<ValidateOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validateOperation || isSerializingDerivedType) { return; }
+    serializeLongRunningOperation(writer, validateOperation, isSerializingDerivedType)
+    switch (validateOperation.odataType) {
+        case "#microsoft.graph.industryData.fileValidateOperation":
+            serializeFileValidateOperation(writer, validateOperation, true);
+        break;
     }
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
+ * @param YearReferenceValue The instance to serialize from.
  */
 // @ts-ignore
-export function serializeYearReferenceValue(writer: SerializationWriter, yearReferenceValue: Partial<YearReferenceValue> | undefined | null = {}) : void {
-    if (yearReferenceValue) {
-        serializeReferenceValue(writer, yearReferenceValue)
-    }
+export function serializeYearReferenceValue(writer: SerializationWriter, yearReferenceValue: Partial<YearReferenceValue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!yearReferenceValue || isSerializingDerivedType) { return; }
+    serializeReferenceValue(writer, yearReferenceValue, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
+ * @param YearTimePeriodDefinition The instance to serialize from.
  */
 // @ts-ignore
-export function serializeYearTimePeriodDefinition(writer: SerializationWriter, yearTimePeriodDefinition: Partial<YearTimePeriodDefinition> | undefined | null = {}) : void {
-    if (yearTimePeriodDefinition) {
-        serializeEntity(writer, yearTimePeriodDefinition)
-        writer.writeStringValue("displayName", yearTimePeriodDefinition.displayName);
-        writer.writeDateOnlyValue("endDate", yearTimePeriodDefinition.endDate);
-        writer.writeDateOnlyValue("startDate", yearTimePeriodDefinition.startDate);
-        writer.writeObjectValue<YearReferenceValue>("year", yearTimePeriodDefinition.year, serializeYearReferenceValue);
-    }
+export function serializeYearTimePeriodDefinition(writer: SerializationWriter, yearTimePeriodDefinition: Partial<YearTimePeriodDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!yearTimePeriodDefinition || isSerializingDerivedType) { return; }
+    serializeEntity(writer, yearTimePeriodDefinition, isSerializingDerivedType)
+    writer.writeStringValue("displayName", yearTimePeriodDefinition.displayName);
+    writer.writeDateOnlyValue("endDate", yearTimePeriodDefinition.endDate);
+    writer.writeDateOnlyValue("startDate", yearTimePeriodDefinition.startDate);
+    writer.writeObjectValue<YearReferenceValue>("year", yearTimePeriodDefinition.year, serializeYearReferenceValue);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
+ * @param YearTimePeriodDefinitionCollectionResponse The instance to serialize from.
  */
 // @ts-ignore
-export function serializeYearTimePeriodDefinitionCollectionResponse(writer: SerializationWriter, yearTimePeriodDefinitionCollectionResponse: Partial<YearTimePeriodDefinitionCollectionResponse> | undefined | null = {}) : void {
-    if (yearTimePeriodDefinitionCollectionResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, yearTimePeriodDefinitionCollectionResponse)
-        writer.writeCollectionOfObjectValues<YearTimePeriodDefinition>("value", yearTimePeriodDefinitionCollectionResponse.value, serializeYearTimePeriodDefinition);
-    }
+export function serializeYearTimePeriodDefinitionCollectionResponse(writer: SerializationWriter, yearTimePeriodDefinitionCollectionResponse: Partial<YearTimePeriodDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!yearTimePeriodDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, yearTimePeriodDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<YearTimePeriodDefinition>("value", yearTimePeriodDefinitionCollectionResponse.value, serializeYearTimePeriodDefinition);
 }
 export interface SimplePasswordSettings extends Parsable, PasswordSettings {
     /**
@@ -3219,10 +3417,6 @@ export interface SourceSystemDefinitionCollectionResponse extends BaseCollection
 }
 export interface UserConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3245,10 +3439,6 @@ export interface UserConfiguration extends AdditionalDataHolder, BackedModel, Pa
 }
 export interface UserCreationOptions extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -3267,10 +3457,6 @@ export interface UserManagementOptions extends AdditionalDataHolder, BackedModel
      */
     additionalAttributes?: AdditionalUserAttributes[] | null;
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The additionalOptions property
      */
     additionalOptions?: AdditionalUserOptions | null;
@@ -3284,10 +3470,6 @@ export interface UserManagementOptions extends AdditionalDataHolder, BackedModel
     odataType?: string | null;
 }
 export interface UserMatchingSetting extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

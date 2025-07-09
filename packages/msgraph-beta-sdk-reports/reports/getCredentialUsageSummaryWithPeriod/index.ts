@@ -19,6 +19,7 @@ export function createGetCredentialUsageSummaryWithPeriodGetResponseFromDiscrimi
 }
 /**
  * The deserialization information for the current model
+ * @param GetCredentialUsageSummaryWithPeriodGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParame
 }
 /**
  * Serializes information the current object
+ * @param GetCredentialUsageSummaryWithPeriodGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetCredentialUsageSummaryWithPeriodGetResponse(writer: SerializationWriter, getCredentialUsageSummaryWithPeriodGetResponse: Partial<GetCredentialUsageSummaryWithPeriodGetResponse> | undefined | null = {}) : void {
-    if (getCredentialUsageSummaryWithPeriodGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getCredentialUsageSummaryWithPeriodGetResponse)
-        writer.writeCollectionOfObjectValues<CredentialUsageSummary>("value", getCredentialUsageSummaryWithPeriodGetResponse.value, serializeCredentialUsageSummary);
-    }
+export function serializeGetCredentialUsageSummaryWithPeriodGetResponse(writer: SerializationWriter, getCredentialUsageSummaryWithPeriodGetResponse: Partial<GetCredentialUsageSummaryWithPeriodGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getCredentialUsageSummaryWithPeriodGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getCredentialUsageSummaryWithPeriodGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CredentialUsageSummary>("value", getCredentialUsageSummaryWithPeriodGetResponse.value, serializeCredentialUsageSummary);
 }
 /**
  * Uri template for the request builder.

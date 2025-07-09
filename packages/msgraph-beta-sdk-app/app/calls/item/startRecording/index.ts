@@ -19,6 +19,7 @@ export function createStartRecordingPostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param StartRecordingPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,20 +31,17 @@ export function deserializeIntoStartRecordingPostRequestBody(startRecordingPostR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param StartRecordingPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeStartRecordingPostRequestBody(writer: SerializationWriter, startRecordingPostRequestBody: Partial<StartRecordingPostRequestBody> | undefined | null = {}) : void {
-    if (startRecordingPostRequestBody) {
-        writer.writeStringValue("clientContext", startRecordingPostRequestBody.clientContext);
-        writer.writeAdditionalData(startRecordingPostRequestBody.additionalData);
-    }
+export function serializeStartRecordingPostRequestBody(writer: SerializationWriter, startRecordingPostRequestBody: Partial<StartRecordingPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!startRecordingPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("clientContext", startRecordingPostRequestBody.clientContext);
+    writer.writeAdditionalData(startRecordingPostRequestBody.additionalData);
 }
 export interface StartRecordingPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

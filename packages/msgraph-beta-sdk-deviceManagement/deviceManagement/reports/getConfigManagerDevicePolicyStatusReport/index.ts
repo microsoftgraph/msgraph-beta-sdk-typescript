@@ -17,6 +17,7 @@ export function createGetConfigManagerDevicePolicyStatusReportPostRequestBodyFro
 }
 /**
  * The deserialization information for the current model
+ * @param GetConfigManagerDevicePolicyStatusReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetConfigManagerDevicePolicyStatusReportPostReque
     }
 }
 export interface GetConfigManagerDevicePolicyStatusReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetConfigManagerDevicePolicyStatusReportRequestBuilder extends 
 }
 /**
  * Serializes information the current object
+ * @param GetConfigManagerDevicePolicyStatusReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetConfigManagerDevicePolicyStatusReportPostRequestBody(writer: SerializationWriter, getConfigManagerDevicePolicyStatusReportPostRequestBody: Partial<GetConfigManagerDevicePolicyStatusReportPostRequestBody> | undefined | null = {}) : void {
-    if (getConfigManagerDevicePolicyStatusReportPostRequestBody) {
-        writer.writeStringValue("filter", getConfigManagerDevicePolicyStatusReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigManagerDevicePolicyStatusReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getConfigManagerDevicePolicyStatusReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigManagerDevicePolicyStatusReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getConfigManagerDevicePolicyStatusReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getConfigManagerDevicePolicyStatusReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getConfigManagerDevicePolicyStatusReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getConfigManagerDevicePolicyStatusReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getConfigManagerDevicePolicyStatusReportPostRequestBody.top);
-        writer.writeAdditionalData(getConfigManagerDevicePolicyStatusReportPostRequestBody.additionalData);
-    }
+export function serializeGetConfigManagerDevicePolicyStatusReportPostRequestBody(writer: SerializationWriter, getConfigManagerDevicePolicyStatusReportPostRequestBody: Partial<GetConfigManagerDevicePolicyStatusReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getConfigManagerDevicePolicyStatusReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getConfigManagerDevicePolicyStatusReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getConfigManagerDevicePolicyStatusReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getConfigManagerDevicePolicyStatusReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getConfigManagerDevicePolicyStatusReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getConfigManagerDevicePolicyStatusReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getConfigManagerDevicePolicyStatusReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getConfigManagerDevicePolicyStatusReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getConfigManagerDevicePolicyStatusReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getConfigManagerDevicePolicyStatusReportPostRequestBody.top);
+    writer.writeAdditionalData(getConfigManagerDevicePolicyStatusReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

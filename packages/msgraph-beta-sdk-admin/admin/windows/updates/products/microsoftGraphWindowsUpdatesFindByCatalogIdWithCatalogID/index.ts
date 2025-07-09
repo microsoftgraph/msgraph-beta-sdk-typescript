@@ -21,6 +21,7 @@ export function createFindByCatalogIdWithCatalogIDGetResponseFromDiscriminatorVa
 }
 /**
  * The deserialization information for the current model
+ * @param FindByCatalogIdWithCatalogIDGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -93,14 +94,15 @@ export interface MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequest
 }
 /**
  * Serializes information the current object
+ * @param FindByCatalogIdWithCatalogIDGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeFindByCatalogIdWithCatalogIDGetResponse(writer: SerializationWriter, findByCatalogIdWithCatalogIDGetResponse: Partial<FindByCatalogIdWithCatalogIDGetResponse> | undefined | null = {}) : void {
-    if (findByCatalogIdWithCatalogIDGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, findByCatalogIdWithCatalogIDGetResponse)
-        writer.writeCollectionOfObjectValues<Product>("value", findByCatalogIdWithCatalogIDGetResponse.value, serializeProduct);
-    }
+export function serializeFindByCatalogIdWithCatalogIDGetResponse(writer: SerializationWriter, findByCatalogIdWithCatalogIDGetResponse: Partial<FindByCatalogIdWithCatalogIDGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!findByCatalogIdWithCatalogIDGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, findByCatalogIdWithCatalogIDGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Product>("value", findByCatalogIdWithCatalogIDGetResponse.value, serializeProduct);
 }
 /**
  * Uri template for the request builder.

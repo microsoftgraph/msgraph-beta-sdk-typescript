@@ -28,6 +28,7 @@ export function createRestorePostResponseFromDiscriminatorValue(parseNode: Parse
 }
 /**
  * The deserialization information for the current model
+ * @param RestorePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoRestorePostRequestBody(restorePostRequestBody: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param RestorePostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoRestorePostResponse(restorePostResponse: Partial<
     }
 }
 export interface RestorePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequest
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RestorePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRestorePostRequestBody(writer: SerializationWriter, restorePostRequestBody: Partial<RestorePostRequestBody> | undefined | null = {}) : void {
-    if (restorePostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("ids", restorePostRequestBody.ids);
-        writer.writeAdditionalData(restorePostRequestBody.additionalData);
-    }
+export function serializeRestorePostRequestBody(writer: SerializationWriter, restorePostRequestBody: Partial<RestorePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!restorePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("ids", restorePostRequestBody.ids);
+    writer.writeAdditionalData(restorePostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RestorePostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRestorePostResponse(writer: SerializationWriter, restorePostResponse: Partial<RestorePostResponse> | undefined | null = {}) : void {
-    if (restorePostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, restorePostResponse)
-        writer.writeCollectionOfObjectValues<RecycleBinItem>("value", restorePostResponse.value, serializeRecycleBinItem);
-    }
+export function serializeRestorePostResponse(writer: SerializationWriter, restorePostResponse: Partial<RestorePostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!restorePostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, restorePostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<RecycleBinItem>("value", restorePostResponse.value, serializeRecycleBinItem);
 }
 /**
  * Uri template for the request builder.

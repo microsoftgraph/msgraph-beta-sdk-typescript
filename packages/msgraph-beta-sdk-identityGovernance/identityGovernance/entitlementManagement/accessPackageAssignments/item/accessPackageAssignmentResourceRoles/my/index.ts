@@ -19,6 +19,7 @@ export function createMyGetResponseFromDiscriminatorValue(parseNode: ParseNode |
 }
 /**
  * The deserialization information for the current model
+ * @param MyGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -91,14 +92,15 @@ export interface MyRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MyGetResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeMyGetResponse(writer: SerializationWriter, myGetResponse: Partial<MyGetResponse> | undefined | null = {}) : void {
-    if (myGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, myGetResponse)
-        writer.writeCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("value", myGetResponse.value, serializeAccessPackageAssignmentResourceRole);
-    }
+export function serializeMyGetResponse(writer: SerializationWriter, myGetResponse: Partial<MyGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!myGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, myGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("value", myGetResponse.value, serializeAccessPackageAssignmentResourceRole);
 }
 /**
  * Uri template for the request builder.

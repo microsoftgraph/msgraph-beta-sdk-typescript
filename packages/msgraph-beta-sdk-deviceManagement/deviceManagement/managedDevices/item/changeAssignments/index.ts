@@ -10,10 +10,6 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Ba
 
 export interface ChangeAssignmentsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
@@ -52,6 +48,7 @@ export function createChangeAssignmentsPostRequestBodyFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param ChangeAssignmentsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -63,14 +60,15 @@ export function deserializeIntoChangeAssignmentsPostRequestBody(changeAssignment
 }
 /**
  * Serializes information the current object
+ * @param ChangeAssignmentsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeChangeAssignmentsPostRequestBody(writer: SerializationWriter, changeAssignmentsPostRequestBody: Partial<ChangeAssignmentsPostRequestBody> | undefined | null = {}) : void {
-    if (changeAssignmentsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<DeviceAssignmentItem>("deviceAssignmentItems", changeAssignmentsPostRequestBody.deviceAssignmentItems, serializeDeviceAssignmentItem);
-        writer.writeAdditionalData(changeAssignmentsPostRequestBody.additionalData);
-    }
+export function serializeChangeAssignmentsPostRequestBody(writer: SerializationWriter, changeAssignmentsPostRequestBody: Partial<ChangeAssignmentsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!changeAssignmentsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<DeviceAssignmentItem>("deviceAssignmentItems", changeAssignmentsPostRequestBody.deviceAssignmentItems, serializeDeviceAssignmentItem);
+    writer.writeAdditionalData(changeAssignmentsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

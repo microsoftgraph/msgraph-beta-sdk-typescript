@@ -17,6 +17,7 @@ export function createGetWindowsUpdateAlertSummaryReportPostRequestBodyFromDiscr
 }
 /**
  * The deserialization information for the current model
+ * @param GetWindowsUpdateAlertSummaryReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetWindowsUpdateAlertSummaryReportPostRequestBody
     }
 }
 export interface GetWindowsUpdateAlertSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetWindowsUpdateAlertSummaryReportRequestBuilder extends BaseRe
 }
 /**
  * Serializes information the current object
+ * @param GetWindowsUpdateAlertSummaryReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetWindowsUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsUpdateAlertSummaryReportPostRequestBody> | undefined | null = {}) : void {
-    if (getWindowsUpdateAlertSummaryReportPostRequestBody) {
-        writer.writeStringValue("filter", getWindowsUpdateAlertSummaryReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsUpdateAlertSummaryReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getWindowsUpdateAlertSummaryReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsUpdateAlertSummaryReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getWindowsUpdateAlertSummaryReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsUpdateAlertSummaryReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getWindowsUpdateAlertSummaryReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getWindowsUpdateAlertSummaryReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getWindowsUpdateAlertSummaryReportPostRequestBody.top);
-        writer.writeAdditionalData(getWindowsUpdateAlertSummaryReportPostRequestBody.additionalData);
-    }
+export function serializeGetWindowsUpdateAlertSummaryReportPostRequestBody(writer: SerializationWriter, getWindowsUpdateAlertSummaryReportPostRequestBody: Partial<GetWindowsUpdateAlertSummaryReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getWindowsUpdateAlertSummaryReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getWindowsUpdateAlertSummaryReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getWindowsUpdateAlertSummaryReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getWindowsUpdateAlertSummaryReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getWindowsUpdateAlertSummaryReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getWindowsUpdateAlertSummaryReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getWindowsUpdateAlertSummaryReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getWindowsUpdateAlertSummaryReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getWindowsUpdateAlertSummaryReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getWindowsUpdateAlertSummaryReportPostRequestBody.top);
+    writer.writeAdditionalData(getWindowsUpdateAlertSummaryReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

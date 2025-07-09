@@ -19,6 +19,7 @@ export function createRemoveAllAccessForUserPostRequestBodyFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param RemoveAllAccessForUserPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoRemoveAllAccessForUserPostRequestBody(removeAllAc
     }
 }
 export interface RemoveAllAccessForUserPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -64,14 +61,15 @@ export interface RemoveAllAccessForUserRequestBuilder extends BaseRequestBuilder
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoveAllAccessForUserPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoveAllAccessForUserPostRequestBody(writer: SerializationWriter, removeAllAccessForUserPostRequestBody: Partial<RemoveAllAccessForUserPostRequestBody> | undefined | null = {}) : void {
-    if (removeAllAccessForUserPostRequestBody) {
-        writer.writeObjectValue<TeamworkUserIdentity>("user", removeAllAccessForUserPostRequestBody.user, serializeTeamworkUserIdentity);
-        writer.writeAdditionalData(removeAllAccessForUserPostRequestBody.additionalData);
-    }
+export function serializeRemoveAllAccessForUserPostRequestBody(writer: SerializationWriter, removeAllAccessForUserPostRequestBody: Partial<RemoveAllAccessForUserPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!removeAllAccessForUserPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<TeamworkUserIdentity>("user", removeAllAccessForUserPostRequestBody.user, serializeTeamworkUserIdentity);
+    writer.writeAdditionalData(removeAllAccessForUserPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

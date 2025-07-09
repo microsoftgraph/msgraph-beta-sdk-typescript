@@ -19,6 +19,7 @@ export function createExtractLabelPostRequestBodyFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param ExtractLabelPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -29,10 +30,6 @@ export function deserializeIntoExtractLabelPostRequestBody(extractLabelPostReque
     }
 }
 export interface ExtractLabelPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -67,14 +64,15 @@ export interface ExtractLabelRequestBuilder extends BaseRequestBuilder<ExtractLa
 }
 /**
  * Serializes information the current object
+ * @param ExtractLabelPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeExtractLabelPostRequestBody(writer: SerializationWriter, extractLabelPostRequestBody: Partial<ExtractLabelPostRequestBody> | undefined | null = {}) : void {
-    if (extractLabelPostRequestBody) {
-        writer.writeObjectValue<ContentInfo>("contentInfo", extractLabelPostRequestBody.contentInfo, serializeContentInfo);
-        writer.writeAdditionalData(extractLabelPostRequestBody.additionalData);
-    }
+export function serializeExtractLabelPostRequestBody(writer: SerializationWriter, extractLabelPostRequestBody: Partial<ExtractLabelPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!extractLabelPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<ContentInfo>("contentInfo", extractLabelPostRequestBody.contentInfo, serializeContentInfo);
+    writer.writeAdditionalData(extractLabelPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

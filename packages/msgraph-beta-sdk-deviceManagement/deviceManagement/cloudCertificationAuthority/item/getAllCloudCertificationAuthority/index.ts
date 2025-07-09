@@ -19,6 +19,7 @@ export function createGetAllCloudCertificationAuthorityPostResponseFromDiscrimin
 }
 /**
  * The deserialization information for the current model
+ * @param GetAllCloudCertificationAuthorityPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -54,14 +55,15 @@ export interface GetAllCloudCertificationAuthorityRequestBuilder extends BaseReq
 }
 /**
  * Serializes information the current object
+ * @param GetAllCloudCertificationAuthorityPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAllCloudCertificationAuthorityPostResponse(writer: SerializationWriter, getAllCloudCertificationAuthorityPostResponse: Partial<GetAllCloudCertificationAuthorityPostResponse> | undefined | null = {}) : void {
-    if (getAllCloudCertificationAuthorityPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getAllCloudCertificationAuthorityPostResponse)
-        writer.writeCollectionOfObjectValues<CloudCertificationAuthority>("value", getAllCloudCertificationAuthorityPostResponse.value, serializeCloudCertificationAuthority);
-    }
+export function serializeGetAllCloudCertificationAuthorityPostResponse(writer: SerializationWriter, getAllCloudCertificationAuthorityPostResponse: Partial<GetAllCloudCertificationAuthorityPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAllCloudCertificationAuthorityPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getAllCloudCertificationAuthorityPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudCertificationAuthority>("value", getAllCloudCertificationAuthorityPostResponse.value, serializeCloudCertificationAuthority);
 }
 /**
  * Uri template for the request builder.

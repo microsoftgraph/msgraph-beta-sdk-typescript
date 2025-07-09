@@ -19,6 +19,7 @@ export function createGetSupportedCloudPcRemoteActionsGetResponseFromDiscriminat
 }
 /**
  * The deserialization information for the current model
+ * @param GetSupportedCloudPcRemoteActionsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -80,14 +81,15 @@ export interface GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameter
 }
 /**
  * Serializes information the current object
+ * @param GetSupportedCloudPcRemoteActionsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetSupportedCloudPcRemoteActionsGetResponse(writer: SerializationWriter, getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined | null = {}) : void {
-    if (getSupportedCloudPcRemoteActionsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getSupportedCloudPcRemoteActionsGetResponse)
-        writer.writeCollectionOfObjectValues<CloudPcRemoteActionCapability>("value", getSupportedCloudPcRemoteActionsGetResponse.value, serializeCloudPcRemoteActionCapability);
-    }
+export function serializeGetSupportedCloudPcRemoteActionsGetResponse(writer: SerializationWriter, getSupportedCloudPcRemoteActionsGetResponse: Partial<GetSupportedCloudPcRemoteActionsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getSupportedCloudPcRemoteActionsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getSupportedCloudPcRemoteActionsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudPcRemoteActionCapability>("value", getSupportedCloudPcRemoteActionsGetResponse.value, serializeCloudPcRemoteActionCapability);
 }
 /**
  * Uri template for the request builder.

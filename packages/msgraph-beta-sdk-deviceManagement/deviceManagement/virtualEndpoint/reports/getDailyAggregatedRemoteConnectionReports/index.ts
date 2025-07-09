@@ -17,6 +17,7 @@ export function createGetDailyAggregatedRemoteConnectionReportsPostRequestBodyFr
 }
 /**
  * The deserialization information for the current model
+ * @param GetDailyAggregatedRemoteConnectionReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,10 +34,6 @@ export function deserializeIntoGetDailyAggregatedRemoteConnectionReportsPostRequ
     }
 }
 export interface GetDailyAggregatedRemoteConnectionReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -93,20 +90,21 @@ export interface GetDailyAggregatedRemoteConnectionReportsRequestBuilder extends
 }
 /**
  * Serializes information the current object
+ * @param GetDailyAggregatedRemoteConnectionReportsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDailyAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getDailyAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetDailyAggregatedRemoteConnectionReportsPostRequestBody> | undefined | null = {}) : void {
-    if (getDailyAggregatedRemoteConnectionReportsPostRequestBody) {
-        writer.writeStringValue("filter", getDailyAggregatedRemoteConnectionReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
-        writer.writeStringValue("search", getDailyAggregatedRemoteConnectionReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getDailyAggregatedRemoteConnectionReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", getDailyAggregatedRemoteConnectionReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", getDailyAggregatedRemoteConnectionReportsPostRequestBody.top);
-        writer.writeAdditionalData(getDailyAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
-    }
+export function serializeGetDailyAggregatedRemoteConnectionReportsPostRequestBody(writer: SerializationWriter, getDailyAggregatedRemoteConnectionReportsPostRequestBody: Partial<GetDailyAggregatedRemoteConnectionReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDailyAggregatedRemoteConnectionReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getDailyAggregatedRemoteConnectionReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDailyAggregatedRemoteConnectionReportsPostRequestBody.orderBy);
+    writer.writeStringValue("search", getDailyAggregatedRemoteConnectionReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getDailyAggregatedRemoteConnectionReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", getDailyAggregatedRemoteConnectionReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", getDailyAggregatedRemoteConnectionReportsPostRequestBody.top);
+    writer.writeAdditionalData(getDailyAggregatedRemoteConnectionReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

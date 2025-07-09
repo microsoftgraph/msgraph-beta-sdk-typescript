@@ -19,6 +19,7 @@ export function createUpdateAudiencePostRequestBodyFromDiscriminatorValue(parseN
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateAudiencePostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -53,27 +54,24 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceRequestBuilder extend
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateAudiencePostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateAudiencePostRequestBody(writer: SerializationWriter, updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined | null = {}) : void {
-    if (updateAudiencePostRequestBody) {
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("addExclusions", updateAudiencePostRequestBody.addExclusions, serializeUpdatableAsset);
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("addMembers", updateAudiencePostRequestBody.addMembers, serializeUpdatableAsset);
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("removeExclusions", updateAudiencePostRequestBody.removeExclusions, serializeUpdatableAsset);
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("removeMembers", updateAudiencePostRequestBody.removeMembers, serializeUpdatableAsset);
-        writer.writeAdditionalData(updateAudiencePostRequestBody.additionalData);
-    }
+export function serializeUpdateAudiencePostRequestBody(writer: SerializationWriter, updateAudiencePostRequestBody: Partial<UpdateAudiencePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateAudiencePostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("addExclusions", updateAudiencePostRequestBody.addExclusions, serializeUpdatableAsset);
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("addMembers", updateAudiencePostRequestBody.addMembers, serializeUpdatableAsset);
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("removeExclusions", updateAudiencePostRequestBody.removeExclusions, serializeUpdatableAsset);
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("removeMembers", updateAudiencePostRequestBody.removeMembers, serializeUpdatableAsset);
+    writer.writeAdditionalData(updateAudiencePostRequestBody.additionalData);
 }
 export interface UpdateAudiencePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The addExclusions property
      */
     addExclusions?: UpdatableAsset[] | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The addMembers property
      */

@@ -19,6 +19,7 @@ export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscri
 }
 /**
  * The deserialization information for the current model
+ * @param GetAssignmentFiltersStatusDetailsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -34,10 +35,6 @@ export function deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody(
     }
 }
 export interface GetAssignmentFiltersStatusDetailsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The assignmentFilterIds property
      */
@@ -89,19 +86,20 @@ export interface GetAssignmentFiltersStatusDetailsRequestBuilder extends BaseReq
 }
 /**
  * Serializes information the current object
+ * @param GetAssignmentFiltersStatusDetailsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetAssignmentFiltersStatusDetailsPostRequestBody(writer: SerializationWriter, getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined | null = {}) : void {
-    if (getAssignmentFiltersStatusDetailsPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("assignmentFilterIds", getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds);
-        writer.writeStringValue("managedDeviceId", getAssignmentFiltersStatusDetailsPostRequestBody.managedDeviceId);
-        writer.writeStringValue("payloadId", getAssignmentFiltersStatusDetailsPostRequestBody.payloadId);
-        writer.writeNumberValue("skip", getAssignmentFiltersStatusDetailsPostRequestBody.skip);
-        writer.writeNumberValue("top", getAssignmentFiltersStatusDetailsPostRequestBody.top);
-        writer.writeStringValue("userId", getAssignmentFiltersStatusDetailsPostRequestBody.userId);
-        writer.writeAdditionalData(getAssignmentFiltersStatusDetailsPostRequestBody.additionalData);
-    }
+export function serializeGetAssignmentFiltersStatusDetailsPostRequestBody(writer: SerializationWriter, getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getAssignmentFiltersStatusDetailsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("assignmentFilterIds", getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds);
+    writer.writeStringValue("managedDeviceId", getAssignmentFiltersStatusDetailsPostRequestBody.managedDeviceId);
+    writer.writeStringValue("payloadId", getAssignmentFiltersStatusDetailsPostRequestBody.payloadId);
+    writer.writeNumberValue("skip", getAssignmentFiltersStatusDetailsPostRequestBody.skip);
+    writer.writeNumberValue("top", getAssignmentFiltersStatusDetailsPostRequestBody.top);
+    writer.writeStringValue("userId", getAssignmentFiltersStatusDetailsPostRequestBody.userId);
+    writer.writeAdditionalData(getAssignmentFiltersStatusDetailsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

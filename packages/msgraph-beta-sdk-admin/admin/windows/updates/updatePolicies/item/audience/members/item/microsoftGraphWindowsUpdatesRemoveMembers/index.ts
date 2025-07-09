@@ -19,6 +19,7 @@ export function createRemoveMembersPostRequestBodyFromDiscriminatorValue(parseNo
 }
 /**
  * The deserialization information for the current model
+ * @param RemoveMembersPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -50,10 +51,6 @@ export interface MicrosoftGraphWindowsUpdatesRemoveMembersRequestBuilder extends
 }
 export interface RemoveMembersPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
-    /**
      * The assets property
      */
     assets?: UpdatableAsset[] | null;
@@ -64,14 +61,15 @@ export interface RemoveMembersPostRequestBody extends AdditionalDataHolder, Back
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RemoveMembersPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRemoveMembersPostRequestBody(writer: SerializationWriter, removeMembersPostRequestBody: Partial<RemoveMembersPostRequestBody> | undefined | null = {}) : void {
-    if (removeMembersPostRequestBody) {
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", removeMembersPostRequestBody.assets, serializeUpdatableAsset);
-        writer.writeAdditionalData(removeMembersPostRequestBody.additionalData);
-    }
+export function serializeRemoveMembersPostRequestBody(writer: SerializationWriter, removeMembersPostRequestBody: Partial<RemoveMembersPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!removeMembersPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", removeMembersPostRequestBody.assets, serializeUpdatableAsset);
+    writer.writeAdditionalData(removeMembersPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

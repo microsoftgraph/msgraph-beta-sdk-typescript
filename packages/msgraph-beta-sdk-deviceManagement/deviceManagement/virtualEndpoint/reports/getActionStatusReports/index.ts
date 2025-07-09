@@ -17,6 +17,7 @@ export function createGetActionStatusReportsPostRequestBodyFromDiscriminatorValu
 }
 /**
  * The deserialization information for the current model
+ * @param GetActionStatusReportsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,10 +34,6 @@ export function deserializeIntoGetActionStatusReportsPostRequestBody(getActionSt
     }
 }
 export interface GetActionStatusReportsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -93,20 +90,21 @@ export interface GetActionStatusReportsRequestBuilder extends BaseRequestBuilder
 }
 /**
  * Serializes information the current object
+ * @param GetActionStatusReportsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetActionStatusReportsPostRequestBody(writer: SerializationWriter, getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined | null = {}) : void {
-    if (getActionStatusReportsPostRequestBody) {
-        writer.writeStringValue("filter", getActionStatusReportsPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getActionStatusReportsPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getActionStatusReportsPostRequestBody.orderBy);
-        writer.writeStringValue("search", getActionStatusReportsPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getActionStatusReportsPostRequestBody.select);
-        writer.writeNumberValue("skip", getActionStatusReportsPostRequestBody.skip);
-        writer.writeNumberValue("top", getActionStatusReportsPostRequestBody.top);
-        writer.writeAdditionalData(getActionStatusReportsPostRequestBody.additionalData);
-    }
+export function serializeGetActionStatusReportsPostRequestBody(writer: SerializationWriter, getActionStatusReportsPostRequestBody: Partial<GetActionStatusReportsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getActionStatusReportsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getActionStatusReportsPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getActionStatusReportsPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getActionStatusReportsPostRequestBody.orderBy);
+    writer.writeStringValue("search", getActionStatusReportsPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getActionStatusReportsPostRequestBody.select);
+    writer.writeNumberValue("skip", getActionStatusReportsPostRequestBody.skip);
+    writer.writeNumberValue("top", getActionStatusReportsPostRequestBody.top);
+    writer.writeAdditionalData(getActionStatusReportsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

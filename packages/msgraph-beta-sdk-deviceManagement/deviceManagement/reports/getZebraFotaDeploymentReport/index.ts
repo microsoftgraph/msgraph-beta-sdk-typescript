@@ -17,6 +17,7 @@ export function createGetZebraFotaDeploymentReportPostRequestBodyFromDiscriminat
 }
 /**
  * The deserialization information for the current model
+ * @param GetZebraFotaDeploymentReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetZebraFotaDeploymentReportPostRequestBody(getZe
     }
 }
 export interface GetZebraFotaDeploymentReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetZebraFotaDeploymentReportRequestBuilder extends BaseRequestB
 }
 /**
  * Serializes information the current object
+ * @param GetZebraFotaDeploymentReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetZebraFotaDeploymentReportPostRequestBody(writer: SerializationWriter, getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined | null = {}) : void {
-    if (getZebraFotaDeploymentReportPostRequestBody) {
-        writer.writeStringValue("filter", getZebraFotaDeploymentReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getZebraFotaDeploymentReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getZebraFotaDeploymentReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getZebraFotaDeploymentReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getZebraFotaDeploymentReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getZebraFotaDeploymentReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getZebraFotaDeploymentReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getZebraFotaDeploymentReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getZebraFotaDeploymentReportPostRequestBody.top);
-        writer.writeAdditionalData(getZebraFotaDeploymentReportPostRequestBody.additionalData);
-    }
+export function serializeGetZebraFotaDeploymentReportPostRequestBody(writer: SerializationWriter, getZebraFotaDeploymentReportPostRequestBody: Partial<GetZebraFotaDeploymentReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getZebraFotaDeploymentReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getZebraFotaDeploymentReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getZebraFotaDeploymentReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getZebraFotaDeploymentReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getZebraFotaDeploymentReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getZebraFotaDeploymentReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getZebraFotaDeploymentReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getZebraFotaDeploymentReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getZebraFotaDeploymentReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getZebraFotaDeploymentReportPostRequestBody.top);
+    writer.writeAdditionalData(getZebraFotaDeploymentReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createPauseConfigurationRefreshPostRequestBodyFromDiscriminatorV
 }
 /**
  * The deserialization information for the current model
+ * @param PauseConfigurationRefreshPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoPauseConfigurationRefreshPostRequestBody(pauseCon
     }
 }
 export interface PauseConfigurationRefreshPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -61,14 +58,15 @@ export interface PauseConfigurationRefreshRequestBuilder extends BaseRequestBuil
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PauseConfigurationRefreshPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePauseConfigurationRefreshPostRequestBody(writer: SerializationWriter, pauseConfigurationRefreshPostRequestBody: Partial<PauseConfigurationRefreshPostRequestBody> | undefined | null = {}) : void {
-    if (pauseConfigurationRefreshPostRequestBody) {
-        writer.writeNumberValue("pauseTimePeriodInMinutes", pauseConfigurationRefreshPostRequestBody.pauseTimePeriodInMinutes);
-        writer.writeAdditionalData(pauseConfigurationRefreshPostRequestBody.additionalData);
-    }
+export function serializePauseConfigurationRefreshPostRequestBody(writer: SerializationWriter, pauseConfigurationRefreshPostRequestBody: Partial<PauseConfigurationRefreshPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!pauseConfigurationRefreshPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("pauseTimePeriodInMinutes", pauseConfigurationRefreshPostRequestBody.pauseTimePeriodInMinutes);
+    writer.writeAdditionalData(pauseConfigurationRefreshPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

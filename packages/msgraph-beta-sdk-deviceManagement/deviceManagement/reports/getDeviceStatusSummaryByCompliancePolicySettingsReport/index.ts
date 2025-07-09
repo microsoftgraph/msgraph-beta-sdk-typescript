@@ -17,6 +17,7 @@ export function createGetDeviceStatusSummaryByCompliancePolicySettingsReportPost
 }
 /**
  * The deserialization information for the current model
+ * @param GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -34,10 +35,6 @@ export function deserializeIntoGetDeviceStatusSummaryByCompliancePolicySettingsR
     }
 }
 export interface GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -97,21 +94,22 @@ export interface GetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBu
 }
 /**
  * Serializes information the current object
+ * @param GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody(writer: SerializationWriter, getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody: Partial<GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody> | undefined | null = {}) : void {
-    if (getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody) {
-        writer.writeStringValue("filter", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.top);
-        writer.writeAdditionalData(getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.additionalData);
-    }
+export function serializeGetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody(writer: SerializationWriter, getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody: Partial<GetDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.top);
+    writer.writeAdditionalData(getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

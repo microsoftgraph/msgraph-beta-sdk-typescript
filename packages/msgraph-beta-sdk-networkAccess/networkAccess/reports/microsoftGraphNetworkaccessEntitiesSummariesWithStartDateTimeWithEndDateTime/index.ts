@@ -21,6 +21,7 @@ export function createEntitiesSummariesWithStartDateTimeWithEndDateTimeGetRespon
 }
 /**
  * The deserialization information for the current model
+ * @param EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -82,14 +83,15 @@ export interface MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWi
 }
 /**
  * Serializes information the current object
+ * @param EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}) : void {
-    if (entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse)
-        writer.writeCollectionOfObjectValues<EntitiesSummary>("value", entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeEntitiesSummary);
-    }
+export function serializeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse(writer: SerializationWriter, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse: Partial<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<EntitiesSummary>("value", entitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse.value, serializeEntitiesSummary);
 }
 /**
  * Uri template for the request builder.

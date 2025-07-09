@@ -19,6 +19,7 @@ export function createEnrollAssetsPostRequestBodyFromDiscriminatorValue(parseNod
 }
 /**
  * The deserialization information for the current model
+ * @param EnrollAssetsPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -30,10 +31,6 @@ export function deserializeIntoEnrollAssetsPostRequestBody(enrollAssetsPostReque
     }
 }
 export interface EnrollAssetsPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The assets property
      */
@@ -68,15 +65,16 @@ export interface MicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder extends 
 }
 /**
  * Serializes information the current object
+ * @param EnrollAssetsPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeEnrollAssetsPostRequestBody(writer: SerializationWriter, enrollAssetsPostRequestBody: Partial<EnrollAssetsPostRequestBody> | undefined | null = {}) : void {
-    if (enrollAssetsPostRequestBody) {
-        writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", enrollAssetsPostRequestBody.assets, serializeUpdatableAsset);
-        writer.writeEnumValue<UpdateCategory>("updateCategory", enrollAssetsPostRequestBody.updateCategory);
-        writer.writeAdditionalData(enrollAssetsPostRequestBody.additionalData);
-    }
+export function serializeEnrollAssetsPostRequestBody(writer: SerializationWriter, enrollAssetsPostRequestBody: Partial<EnrollAssetsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enrollAssetsPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<UpdatableAsset>("assets", enrollAssetsPostRequestBody.assets, serializeUpdatableAsset);
+    writer.writeEnumValue<UpdateCategory>("updateCategory", enrollAssetsPostRequestBody.updateCategory);
+    writer.writeAdditionalData(enrollAssetsPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

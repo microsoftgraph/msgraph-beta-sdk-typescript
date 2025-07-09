@@ -17,6 +17,7 @@ export function createRetrieveBulkActionStatusReportPostRequestBodyFromDiscrimin
 }
 /**
  * The deserialization information for the current model
+ * @param RetrieveBulkActionStatusReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -33,10 +34,6 @@ export function deserializeIntoRetrieveBulkActionStatusReportPostRequestBody(ret
     }
 }
 export interface RetrieveBulkActionStatusReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -93,20 +90,21 @@ export interface RetrieveBulkActionStatusReportRequestBuilder extends BaseReques
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RetrieveBulkActionStatusReportPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeRetrieveBulkActionStatusReportPostRequestBody(writer: SerializationWriter, retrieveBulkActionStatusReportPostRequestBody: Partial<RetrieveBulkActionStatusReportPostRequestBody> | undefined | null = {}) : void {
-    if (retrieveBulkActionStatusReportPostRequestBody) {
-        writer.writeStringValue("filter", retrieveBulkActionStatusReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveBulkActionStatusReportPostRequestBody.groupBy);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveBulkActionStatusReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", retrieveBulkActionStatusReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", retrieveBulkActionStatusReportPostRequestBody.select);
-        writer.writeNumberValue("skip", retrieveBulkActionStatusReportPostRequestBody.skip);
-        writer.writeNumberValue("top", retrieveBulkActionStatusReportPostRequestBody.top);
-        writer.writeAdditionalData(retrieveBulkActionStatusReportPostRequestBody.additionalData);
-    }
+export function serializeRetrieveBulkActionStatusReportPostRequestBody(writer: SerializationWriter, retrieveBulkActionStatusReportPostRequestBody: Partial<RetrieveBulkActionStatusReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!retrieveBulkActionStatusReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", retrieveBulkActionStatusReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", retrieveBulkActionStatusReportPostRequestBody.groupBy);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", retrieveBulkActionStatusReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", retrieveBulkActionStatusReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", retrieveBulkActionStatusReportPostRequestBody.select);
+    writer.writeNumberValue("skip", retrieveBulkActionStatusReportPostRequestBody.skip);
+    writer.writeNumberValue("top", retrieveBulkActionStatusReportPostRequestBody.top);
+    writer.writeAdditionalData(retrieveBulkActionStatusReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

@@ -17,6 +17,7 @@ export function createWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBod
 }
 /**
  * The deserialization information for the current model
+ * @param WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -28,20 +29,17 @@ export function deserializeIntoWipeManagedAppRegistrationsByAzureAdDeviceIdPostR
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody: Partial<WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody> | undefined | null = {}) : void {
-    if (wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody) {
-        writer.writeStringValue("azureAdDeviceId", wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody.azureAdDeviceId);
-        writer.writeAdditionalData(wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody.additionalData);
-    }
+export function serializeWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody(writer: SerializationWriter, wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody: Partial<WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("azureAdDeviceId", wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody.azureAdDeviceId);
+    writer.writeAdditionalData(wipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody.additionalData);
 }
 export interface WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The azureAdDeviceId property
      */

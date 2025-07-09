@@ -19,6 +19,7 @@ export function createGetOpenShiftsGetResponseFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param GetOpenShiftsGetResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -92,14 +93,15 @@ export interface GetOpenShiftsRequestBuilderGetQueryParameters {
 }
 /**
  * Serializes information the current object
+ * @param GetOpenShiftsGetResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetOpenShiftsGetResponse(writer: SerializationWriter, getOpenShiftsGetResponse: Partial<GetOpenShiftsGetResponse> | undefined | null = {}) : void {
-    if (getOpenShiftsGetResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getOpenShiftsGetResponse)
-        writer.writeCollectionOfObjectValues<OpenShift>("value", getOpenShiftsGetResponse.value, serializeOpenShift);
-    }
+export function serializeGetOpenShiftsGetResponse(writer: SerializationWriter, getOpenShiftsGetResponse: Partial<GetOpenShiftsGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getOpenShiftsGetResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getOpenShiftsGetResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<OpenShift>("value", getOpenShiftsGetResponse.value, serializeOpenShift);
 }
 /**
  * Uri template for the request builder.

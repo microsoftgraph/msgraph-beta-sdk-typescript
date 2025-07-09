@@ -30,6 +30,7 @@ export function createTenantSearchPostResponseFromDiscriminatorValue(parseNode: 
 }
 /**
  * The deserialization information for the current model
+ * @param TenantSearchPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -41,6 +42,7 @@ export function deserializeIntoTenantSearchPostRequestBody(tenantSearchPostReque
 }
 /**
  * The deserialization information for the current model
+ * @param TenantSearchPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -72,31 +74,29 @@ export interface MicrosoftGraphManagedTenantsTenantSearchRequestBuilder extends 
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantSearchPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantSearchPostRequestBody(writer: SerializationWriter, tenantSearchPostRequestBody: Partial<TenantSearchPostRequestBody> | undefined | null = {}) : void {
-    if (tenantSearchPostRequestBody) {
-        writer.writeStringValue("tenantId", tenantSearchPostRequestBody.tenantId);
-        writer.writeAdditionalData(tenantSearchPostRequestBody.additionalData);
-    }
+export function serializeTenantSearchPostRequestBody(writer: SerializationWriter, tenantSearchPostRequestBody: Partial<TenantSearchPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantSearchPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("tenantId", tenantSearchPostRequestBody.tenantId);
+    writer.writeAdditionalData(tenantSearchPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantSearchPostResponse The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeTenantSearchPostResponse(writer: SerializationWriter, tenantSearchPostResponse: Partial<TenantSearchPostResponse> | undefined | null = {}) : void {
-    if (tenantSearchPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, tenantSearchPostResponse)
-        writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantSearchPostResponse.value, serializeTenantGroup);
-    }
+export function serializeTenantSearchPostResponse(writer: SerializationWriter, tenantSearchPostResponse: Partial<TenantSearchPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantSearchPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tenantSearchPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TenantGroup>("value", tenantSearchPostResponse.value, serializeTenantGroup);
 }
 export interface TenantSearchPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -28,6 +28,8 @@ import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequest
 // @ts-ignore
 import { TenantStatusRequestBuilderRequestsMetadata, type TenantStatusRequestBuilder } from './tenantStatus/index.js';
 // @ts-ignore
+import { ThreatIntelligencePoliciesRequestBuilderNavigationMetadata, ThreatIntelligencePoliciesRequestBuilderRequestsMetadata, type ThreatIntelligencePoliciesRequestBuilder } from './threatIntelligencePolicies/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -78,6 +80,10 @@ export interface NetworkAccessRequestBuilder extends BaseRequestBuilder<NetworkA
      * Provides operations to manage the tenantStatus property of the microsoft.graph.networkaccess.networkAccessRoot entity.
      */
     get tenantStatus(): TenantStatusRequestBuilder;
+    /**
+     * Provides operations to manage the threatIntelligencePolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+     */
+    get threatIntelligencePolicies(): ThreatIntelligencePoliciesRequestBuilder;
     /**
      * Get networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -176,6 +182,10 @@ export const NetworkAccessRequestBuilderNavigationMetadata: Record<Exclude<keyof
     },
     tenantStatus: {
         requestsMetadata: TenantStatusRequestBuilderRequestsMetadata,
+    },
+    threatIntelligencePolicies: {
+        requestsMetadata: ThreatIntelligencePoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: ThreatIntelligencePoliciesRequestBuilderNavigationMetadata,
     },
 };
 /**

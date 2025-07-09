@@ -17,6 +17,7 @@ export function createUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(pa
 }
 /**
  * The deserialization information for the current model
+ * @param UpdateAudienceByIdPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -52,28 +53,25 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder ex
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateAudienceByIdPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUpdateAudienceByIdPostRequestBody(writer: SerializationWriter, updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined | null = {}) : void {
-    if (updateAudienceByIdPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("addExclusions", updateAudienceByIdPostRequestBody.addExclusions);
-        writer.writeCollectionOfPrimitiveValues<string>("addMembers", updateAudienceByIdPostRequestBody.addMembers);
-        writer.writeStringValue("memberEntityType", updateAudienceByIdPostRequestBody.memberEntityType);
-        writer.writeCollectionOfPrimitiveValues<string>("removeExclusions", updateAudienceByIdPostRequestBody.removeExclusions);
-        writer.writeCollectionOfPrimitiveValues<string>("removeMembers", updateAudienceByIdPostRequestBody.removeMembers);
-        writer.writeAdditionalData(updateAudienceByIdPostRequestBody.additionalData);
-    }
+export function serializeUpdateAudienceByIdPostRequestBody(writer: SerializationWriter, updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateAudienceByIdPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("addExclusions", updateAudienceByIdPostRequestBody.addExclusions);
+    writer.writeCollectionOfPrimitiveValues<string>("addMembers", updateAudienceByIdPostRequestBody.addMembers);
+    writer.writeStringValue("memberEntityType", updateAudienceByIdPostRequestBody.memberEntityType);
+    writer.writeCollectionOfPrimitiveValues<string>("removeExclusions", updateAudienceByIdPostRequestBody.removeExclusions);
+    writer.writeCollectionOfPrimitiveValues<string>("removeMembers", updateAudienceByIdPostRequestBody.removeMembers);
+    writer.writeAdditionalData(updateAudienceByIdPostRequestBody.additionalData);
 }
 export interface UpdateAudienceByIdPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The addExclusions property
      */
     addExclusions?: string[] | null;
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * The addMembers property
      */

@@ -17,6 +17,7 @@ export function createPlayLostModeSoundPostRequestBodyFromDiscriminatorValue(par
 }
 /**
  * The deserialization information for the current model
+ * @param PlayLostModeSoundPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -27,10 +28,6 @@ export function deserializeIntoPlayLostModeSoundPostRequestBody(playLostModeSoun
     }
 }
 export interface PlayLostModeSoundPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -61,14 +58,15 @@ export interface PlayLostModeSoundRequestBuilder extends BaseRequestBuilder<Play
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PlayLostModeSoundPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializePlayLostModeSoundPostRequestBody(writer: SerializationWriter, playLostModeSoundPostRequestBody: Partial<PlayLostModeSoundPostRequestBody> | undefined | null = {}) : void {
-    if (playLostModeSoundPostRequestBody) {
-        writer.writeStringValue("durationInMinutes", playLostModeSoundPostRequestBody.durationInMinutes);
-        writer.writeAdditionalData(playLostModeSoundPostRequestBody.additionalData);
-    }
+export function serializePlayLostModeSoundPostRequestBody(writer: SerializationWriter, playLostModeSoundPostRequestBody: Partial<PlayLostModeSoundPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!playLostModeSoundPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("durationInMinutes", playLostModeSoundPostRequestBody.durationInMinutes);
+    writer.writeAdditionalData(playLostModeSoundPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

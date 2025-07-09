@@ -28,6 +28,7 @@ export function createGetTargetedUsersAndDevicesPostResponseFromDiscriminatorVal
 }
 /**
  * The deserialization information for the current model
+ * @param GetTargetedUsersAndDevicesPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -39,6 +40,7 @@ export function deserializeIntoGetTargetedUsersAndDevicesPostRequestBody(getTarg
 }
 /**
  * The deserialization information for the current model
+ * @param GetTargetedUsersAndDevicesPostResponse The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -49,10 +51,6 @@ export function deserializeIntoGetTargetedUsersAndDevicesPostResponse(getTargete
     }
 }
 export interface GetTargetedUsersAndDevicesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -90,25 +88,27 @@ export interface GetTargetedUsersAndDevicesRequestBuilder extends BaseRequestBui
 }
 /**
  * Serializes information the current object
+ * @param GetTargetedUsersAndDevicesPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetTargetedUsersAndDevicesPostRequestBody(writer: SerializationWriter, getTargetedUsersAndDevicesPostRequestBody: Partial<GetTargetedUsersAndDevicesPostRequestBody> | undefined | null = {}) : void {
-    if (getTargetedUsersAndDevicesPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("deviceConfigurationIds", getTargetedUsersAndDevicesPostRequestBody.deviceConfigurationIds);
-        writer.writeAdditionalData(getTargetedUsersAndDevicesPostRequestBody.additionalData);
-    }
+export function serializeGetTargetedUsersAndDevicesPostRequestBody(writer: SerializationWriter, getTargetedUsersAndDevicesPostRequestBody: Partial<GetTargetedUsersAndDevicesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getTargetedUsersAndDevicesPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("deviceConfigurationIds", getTargetedUsersAndDevicesPostRequestBody.deviceConfigurationIds);
+    writer.writeAdditionalData(getTargetedUsersAndDevicesPostRequestBody.additionalData);
 }
 /**
  * Serializes information the current object
+ * @param GetTargetedUsersAndDevicesPostResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetTargetedUsersAndDevicesPostResponse(writer: SerializationWriter, getTargetedUsersAndDevicesPostResponse: Partial<GetTargetedUsersAndDevicesPostResponse> | undefined | null = {}) : void {
-    if (getTargetedUsersAndDevicesPostResponse) {
-        serializeBaseCollectionPaginationCountResponse(writer, getTargetedUsersAndDevicesPostResponse)
-        writer.writeCollectionOfObjectValues<DeviceConfigurationTargetedUserAndDevice>("value", getTargetedUsersAndDevicesPostResponse.value, serializeDeviceConfigurationTargetedUserAndDevice);
-    }
+export function serializeGetTargetedUsersAndDevicesPostResponse(writer: SerializationWriter, getTargetedUsersAndDevicesPostResponse: Partial<GetTargetedUsersAndDevicesPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getTargetedUsersAndDevicesPostResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, getTargetedUsersAndDevicesPostResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceConfigurationTargetedUserAndDevice>("value", getTargetedUsersAndDevicesPostResponse.value, serializeDeviceConfigurationTargetedUserAndDevice);
 }
 /**
  * Uri template for the request builder.

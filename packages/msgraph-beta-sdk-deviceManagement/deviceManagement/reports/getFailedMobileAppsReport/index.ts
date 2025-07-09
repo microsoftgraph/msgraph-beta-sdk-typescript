@@ -17,6 +17,7 @@ export function createGetFailedMobileAppsReportPostRequestBodyFromDiscriminatorV
 }
 /**
  * The deserialization information for the current model
+ * @param GetFailedMobileAppsReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -35,10 +36,6 @@ export function deserializeIntoGetFailedMobileAppsReportPostRequestBody(getFaile
     }
 }
 export interface GetFailedMobileAppsReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -102,22 +99,23 @@ export interface GetFailedMobileAppsReportRequestBuilder extends BaseRequestBuil
 }
 /**
  * Serializes information the current object
+ * @param GetFailedMobileAppsReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetFailedMobileAppsReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined | null = {}) : void {
-    if (getFailedMobileAppsReportPostRequestBody) {
-        writer.writeStringValue("filter", getFailedMobileAppsReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getFailedMobileAppsReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFailedMobileAppsReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getFailedMobileAppsReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getFailedMobileAppsReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getFailedMobileAppsReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getFailedMobileAppsReportPostRequestBody.skip);
-        writer.writeNumberValue("top", getFailedMobileAppsReportPostRequestBody.top);
-        writer.writeAdditionalData(getFailedMobileAppsReportPostRequestBody.additionalData);
-    }
+export function serializeGetFailedMobileAppsReportPostRequestBody(writer: SerializationWriter, getFailedMobileAppsReportPostRequestBody: Partial<GetFailedMobileAppsReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getFailedMobileAppsReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getFailedMobileAppsReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getFailedMobileAppsReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getFailedMobileAppsReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getFailedMobileAppsReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getFailedMobileAppsReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getFailedMobileAppsReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getFailedMobileAppsReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getFailedMobileAppsReportPostRequestBody.skip);
+    writer.writeNumberValue("top", getFailedMobileAppsReportPostRequestBody.top);
+    writer.writeAdditionalData(getFailedMobileAppsReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.

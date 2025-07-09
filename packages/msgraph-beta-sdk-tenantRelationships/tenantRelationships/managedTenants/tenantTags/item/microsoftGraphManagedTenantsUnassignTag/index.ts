@@ -19,6 +19,7 @@ export function createUnassignTagPostRequestBodyFromDiscriminatorValue(parseNode
 }
 /**
  * The deserialization information for the current model
+ * @param UnassignTagPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -51,20 +52,17 @@ export interface MicrosoftGraphManagedTenantsUnassignTagRequestBuilder extends B
 }
 /**
  * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UnassignTagPostRequestBody The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeUnassignTagPostRequestBody(writer: SerializationWriter, unassignTagPostRequestBody: Partial<UnassignTagPostRequestBody> | undefined | null = {}) : void {
-    if (unassignTagPostRequestBody) {
-        writer.writeCollectionOfPrimitiveValues<string>("tenantIds", unassignTagPostRequestBody.tenantIds);
-        writer.writeAdditionalData(unassignTagPostRequestBody.additionalData);
-    }
+export function serializeUnassignTagPostRequestBody(writer: SerializationWriter, unassignTagPostRequestBody: Partial<UnassignTagPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!unassignTagPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("tenantIds", unassignTagPostRequestBody.tenantIds);
+    writer.writeAdditionalData(unassignTagPostRequestBody.additionalData);
 }
 export interface UnassignTagPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */

@@ -17,6 +17,7 @@ export function createGetQuietTimePolicyUsersReportPostRequestBodyFromDiscrimina
 }
 /**
  * The deserialization information for the current model
+ * @param GetQuietTimePolicyUsersReportPostRequestBody The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
 // @ts-ignore
@@ -36,10 +37,6 @@ export function deserializeIntoGetQuietTimePolicyUsersReportPostRequestBody(getQ
     }
 }
 export interface GetQuietTimePolicyUsersReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     */
-    additionalData?: Record<string, unknown>;
     /**
      * Stores model information.
      */
@@ -107,23 +104,24 @@ export interface GetQuietTimePolicyUsersReportRequestBuilder extends BaseRequest
 }
 /**
  * Serializes information the current object
+ * @param GetQuietTimePolicyUsersReportPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
  */
 // @ts-ignore
-export function serializeGetQuietTimePolicyUsersReportPostRequestBody(writer: SerializationWriter, getQuietTimePolicyUsersReportPostRequestBody: Partial<GetQuietTimePolicyUsersReportPostRequestBody> | undefined | null = {}) : void {
-    if (getQuietTimePolicyUsersReportPostRequestBody) {
-        writer.writeStringValue("filter", getQuietTimePolicyUsersReportPostRequestBody.filter);
-        writer.writeCollectionOfPrimitiveValues<string>("groupBy", getQuietTimePolicyUsersReportPostRequestBody.groupBy);
-        writer.writeStringValue("name", getQuietTimePolicyUsersReportPostRequestBody.name);
-        writer.writeCollectionOfPrimitiveValues<string>("orderBy", getQuietTimePolicyUsersReportPostRequestBody.orderBy);
-        writer.writeStringValue("search", getQuietTimePolicyUsersReportPostRequestBody.search);
-        writer.writeCollectionOfPrimitiveValues<string>("select", getQuietTimePolicyUsersReportPostRequestBody.select);
-        writer.writeStringValue("sessionId", getQuietTimePolicyUsersReportPostRequestBody.sessionId);
-        writer.writeNumberValue("skip", getQuietTimePolicyUsersReportPostRequestBody.skip);
-        writer.writeStringValue("skipToken", getQuietTimePolicyUsersReportPostRequestBody.skipToken);
-        writer.writeNumberValue("top", getQuietTimePolicyUsersReportPostRequestBody.top);
-        writer.writeAdditionalData(getQuietTimePolicyUsersReportPostRequestBody.additionalData);
-    }
+export function serializeGetQuietTimePolicyUsersReportPostRequestBody(writer: SerializationWriter, getQuietTimePolicyUsersReportPostRequestBody: Partial<GetQuietTimePolicyUsersReportPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!getQuietTimePolicyUsersReportPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("filter", getQuietTimePolicyUsersReportPostRequestBody.filter);
+    writer.writeCollectionOfPrimitiveValues<string>("groupBy", getQuietTimePolicyUsersReportPostRequestBody.groupBy);
+    writer.writeStringValue("name", getQuietTimePolicyUsersReportPostRequestBody.name);
+    writer.writeCollectionOfPrimitiveValues<string>("orderBy", getQuietTimePolicyUsersReportPostRequestBody.orderBy);
+    writer.writeStringValue("search", getQuietTimePolicyUsersReportPostRequestBody.search);
+    writer.writeCollectionOfPrimitiveValues<string>("select", getQuietTimePolicyUsersReportPostRequestBody.select);
+    writer.writeStringValue("sessionId", getQuietTimePolicyUsersReportPostRequestBody.sessionId);
+    writer.writeNumberValue("skip", getQuietTimePolicyUsersReportPostRequestBody.skip);
+    writer.writeStringValue("skipToken", getQuietTimePolicyUsersReportPostRequestBody.skipToken);
+    writer.writeNumberValue("top", getQuietTimePolicyUsersReportPostRequestBody.top);
+    writer.writeAdditionalData(getQuietTimePolicyUsersReportPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.
