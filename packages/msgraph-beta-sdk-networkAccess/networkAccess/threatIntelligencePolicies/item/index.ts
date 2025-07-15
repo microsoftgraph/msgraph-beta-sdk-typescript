@@ -19,40 +19,43 @@ export interface ThreatIntelligencePolicyItemRequestBuilder extends BaseRequestB
      */
     get policyRules(): PolicyRulesRequestBuilder;
     /**
-     * Delete navigation property threatIntelligencePolicies for networkAccess
+     * Delete a threatIntelligencePolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-delete-threatintelligencepolicies?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get threatIntelligencePolicies from networkAccess
+     * Read the properties and relationships of a threatIntelligencePolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatIntelligencePolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ThreatIntelligencePolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<ThreatIntelligencePolicy | undefined>;
     /**
-     * Update the navigation property threatIntelligencePolicies in networkAccess
+     * Update the properties of a threatIntelligencePolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatIntelligencePolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ThreatIntelligencePolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ThreatIntelligencePolicy | undefined>;
     /**
-     * Delete navigation property threatIntelligencePolicies for networkAccess
+     * Delete a threatIntelligencePolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get threatIntelligencePolicies from networkAccess
+     * Read the properties and relationships of a threatIntelligencePolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ThreatIntelligencePolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property threatIntelligencePolicies in networkAccess
+     * Update the properties of a threatIntelligencePolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +63,7 @@ export interface ThreatIntelligencePolicyItemRequestBuilder extends BaseRequestB
      toPatchRequestInformation(body: ThreatIntelligencePolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get threatIntelligencePolicies from networkAccess
+ * Read the properties and relationships of a threatIntelligencePolicy object.
  */
 export interface ThreatIntelligencePolicyItemRequestBuilderGetQueryParameters {
     /**

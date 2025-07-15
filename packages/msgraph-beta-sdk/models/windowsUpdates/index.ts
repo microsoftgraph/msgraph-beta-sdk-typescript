@@ -1099,18 +1099,6 @@ export interface Deployment extends Entity, Parsable {
     state?: DeploymentState | null;
 }
 export interface DeploymentAudience extends Entity, Parsable {
-    /**
-     * Content eligible to deploy to devices in the audience. Not nullable. Read-only.
-     */
-    applicableContent?: ApplicableContent[] | null;
-    /**
-     * Specifies the assets to exclude from the audience.
-     */
-    exclusions?: UpdatableAsset[] | null;
-    /**
-     * Specifies the assets to include in the audience.
-     */
-    members?: UpdatableAsset[] | null;
 }
 export interface DeploymentAudienceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -1495,9 +1483,6 @@ export function deserializeIntoDeployment(deployment: Partial<Deployment> | unde
 export function deserializeIntoDeploymentAudience(deploymentAudience: Partial<DeploymentAudience> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(deploymentAudience),
-        "applicableContent": n => { deploymentAudience.applicableContent = n.getCollectionOfObjectValues<ApplicableContent>(createApplicableContentFromDiscriminatorValue); },
-        "exclusions": n => { deploymentAudience.exclusions = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
-        "members": n => { deploymentAudience.members = n.getCollectionOfObjectValues<UpdatableAsset>(createUpdatableAssetFromDiscriminatorValue); },
     }
 }
 /**
@@ -1703,7 +1688,6 @@ export function deserializeIntoItemBody(itemBody: Partial<ItemBody> | undefined 
 export function deserializeIntoKnowledgeBaseArticle(knowledgeBaseArticle: Partial<KnowledgeBaseArticle> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(knowledgeBaseArticle),
-        "url": n => { knowledgeBaseArticle.url = n.getStringValue(); },
     }
 }
 /**
@@ -2293,10 +2277,6 @@ export interface ItemBody extends AdditionalDataHolder, BackedModel, Parsable {
     odataType?: string | null;
 }
 export interface KnowledgeBaseArticle extends Entity, Parsable {
-    /**
-     * The URL of the knowledge base article. Read-only.
-     */
-    url?: string | null;
 }
 export interface KnownIssue extends Entity, Parsable {
     /**
@@ -2980,9 +2960,6 @@ export function serializeDeployment(writer: SerializationWriter, deployment: Par
 export function serializeDeploymentAudience(writer: SerializationWriter, deploymentAudience: Partial<DeploymentAudience> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!deploymentAudience || isSerializingDerivedType) { return; }
     serializeEntity(writer, deploymentAudience, isSerializingDerivedType)
-    writer.writeCollectionOfObjectValues<ApplicableContent>("applicableContent", deploymentAudience.applicableContent, serializeApplicableContent);
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("exclusions", deploymentAudience.exclusions, serializeUpdatableAsset);
-    writer.writeCollectionOfObjectValues<UpdatableAsset>("members", deploymentAudience.members, serializeUpdatableAsset);
 }
 /**
  * Serializes information the current object
@@ -3199,7 +3176,6 @@ export function serializeItemBody(writer: SerializationWriter, itemBody: Partial
 export function serializeKnowledgeBaseArticle(writer: SerializationWriter, knowledgeBaseArticle: Partial<KnowledgeBaseArticle> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!knowledgeBaseArticle || isSerializingDerivedType) { return; }
     serializeEntity(writer, knowledgeBaseArticle, isSerializingDerivedType)
-    writer.writeStringValue("url", knowledgeBaseArticle.url);
 }
 /**
  * Serializes information the current object

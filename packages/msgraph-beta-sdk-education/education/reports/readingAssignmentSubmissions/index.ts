@@ -27,11 +27,11 @@ export interface ReadingAssignmentSubmissionsRequestBuilder extends BaseRequestB
      */
      byReadingAssignmentSubmissionId(readingAssignmentSubmissionId: string) : ReadingAssignmentSubmissionItemRequestBuilder;
     /**
-     * Read the properties and relationships of a readingAssignmentSubmission object.
+     * Get a list of reading assignments that were submitted by a student.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReadingAssignmentSubmissionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/readingassignmentsubmission-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/reportsroot-list-readingassignmentsubmissions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ReadingAssignmentSubmissionsRequestBuilderGetQueryParameters> | undefined) : Promise<ReadingAssignmentSubmissionCollectionResponse | undefined>;
     /**
@@ -43,7 +43,7 @@ export interface ReadingAssignmentSubmissionsRequestBuilder extends BaseRequestB
      */
      post(body: ReadingAssignmentSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ReadingAssignmentSubmission | undefined>;
     /**
-     * Read the properties and relationships of a readingAssignmentSubmission object.
+     * Get a list of reading assignments that were submitted by a student.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface ReadingAssignmentSubmissionsRequestBuilder extends BaseRequestB
      toPostRequestInformation(body: ReadingAssignmentSubmission, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a readingAssignmentSubmission object.
+ * Get a list of reading assignments that were submitted by a student.
  */
 export interface ReadingAssignmentSubmissionsRequestBuilderGetQueryParameters {
     /**

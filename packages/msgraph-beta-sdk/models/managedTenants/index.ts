@@ -100,20 +100,6 @@ export interface AlertLogContent extends AdditionalDataHolder, BackedModel, Pars
      */
     odataType?: string | null;
 }
-export interface AlertRuleDefinitionTemplate extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * The defaultSeverity property
-     */
-    defaultSeverity?: AlertSeverity | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-}
 export type AlertSeverity = (typeof AlertSeverityObject)[keyof typeof AlertSeverityObject];
 export type AlertStatus = (typeof AlertStatusObject)[keyof typeof AlertStatusObject];
 export interface AppPerformance extends Entity, Parsable {
@@ -468,15 +454,6 @@ export function createAlertDataReferenceStringFromDiscriminatorValue(parseNode: 
 // @ts-ignore
 export function createAlertLogContentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAlertLogContent;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {AlertRuleDefinitionTemplate}
- */
-// @ts-ignore
-export function createAlertRuleDefinitionTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoAlertRuleDefinitionTemplate;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1447,19 +1424,6 @@ export function deserializeIntoAlertLogContent(alertLogContent: Partial<AlertLog
 }
 /**
  * The deserialization information for the current model
- * @param AlertRuleDefinitionTemplate The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoAlertRuleDefinitionTemplate(alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { alertRuleDefinitionTemplate.backingStoreEnabled = true; },
-        "defaultSeverity": n => { alertRuleDefinitionTemplate.defaultSeverity = n.getEnumValue<AlertSeverity>(AlertSeverityObject); },
-        "@odata.type": n => { alertRuleDefinitionTemplate.odataType = n.getStringValue(); },
-    }
-}
-/**
- * The deserialization information for the current model
  * @param AppPerformance The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2071,13 +2035,6 @@ export function deserializeIntoManagedTenantAlertRuleCollectionResponse(managedT
 export function deserializeIntoManagedTenantAlertRuleDefinition(managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managedTenantAlertRuleDefinition),
-        "alertRules": n => { managedTenantAlertRuleDefinition.alertRules = n.getCollectionOfObjectValues<ManagedTenantAlertRule>(createManagedTenantAlertRuleFromDiscriminatorValue); },
-        "createdByUserId": n => { managedTenantAlertRuleDefinition.createdByUserId = n.getStringValue(); },
-        "createdDateTime": n => { managedTenantAlertRuleDefinition.createdDateTime = n.getDateValue(); },
-        "definitionTemplate": n => { managedTenantAlertRuleDefinition.definitionTemplate = n.getObjectValue<AlertRuleDefinitionTemplate>(createAlertRuleDefinitionTemplateFromDiscriminatorValue); },
-        "displayName": n => { managedTenantAlertRuleDefinition.displayName = n.getStringValue(); },
-        "lastActionByUserId": n => { managedTenantAlertRuleDefinition.lastActionByUserId = n.getStringValue(); },
-        "lastActionDateTime": n => { managedTenantAlertRuleDefinition.lastActionDateTime = n.getDateValue(); },
     }
 }
 /**
@@ -2555,17 +2512,6 @@ export function deserializeIntoManagementTemplateStepTenantSummaryCollectionResp
 export function deserializeIntoManagementTemplateStepVersion(managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(managementTemplateStepVersion),
-        "acceptedFor": n => { managementTemplateStepVersion.acceptedFor = n.getObjectValue<ManagementTemplateStep>(createManagementTemplateStepFromDiscriminatorValue); },
-        "contentMarkdown": n => { managementTemplateStepVersion.contentMarkdown = n.getStringValue(); },
-        "createdByUserId": n => { managementTemplateStepVersion.createdByUserId = n.getStringValue(); },
-        "createdDateTime": n => { managementTemplateStepVersion.createdDateTime = n.getDateValue(); },
-        "deployments": n => { managementTemplateStepVersion.deployments = n.getCollectionOfObjectValues<ManagementTemplateStepDeployment>(createManagementTemplateStepDeploymentFromDiscriminatorValue); },
-        "lastActionByUserId": n => { managementTemplateStepVersion.lastActionByUserId = n.getStringValue(); },
-        "lastActionDateTime": n => { managementTemplateStepVersion.lastActionDateTime = n.getDateValue(); },
-        "name": n => { managementTemplateStepVersion.name = n.getStringValue(); },
-        "templateStep": n => { managementTemplateStepVersion.templateStep = n.getObjectValue<ManagementTemplateStep>(createManagementTemplateStepFromDiscriminatorValue); },
-        "version": n => { managementTemplateStepVersion.version = n.getNumberValue(); },
-        "versionInformation": n => { managementTemplateStepVersion.versionInformation = n.getStringValue(); },
     }
 }
 /**
@@ -3719,34 +3665,6 @@ export interface ManagedTenantAlertRuleCollectionResponse extends BaseCollection
     value?: ManagedTenantAlertRule[] | null;
 }
 export interface ManagedTenantAlertRuleDefinition extends Entity, Parsable {
-    /**
-     * The alertRules property
-     */
-    alertRules?: ManagedTenantAlertRule[] | null;
-    /**
-     * The createdByUserId property
-     */
-    createdByUserId?: string | null;
-    /**
-     * The createdDateTime property
-     */
-    createdDateTime?: Date | null;
-    /**
-     * The definitionTemplate property
-     */
-    definitionTemplate?: AlertRuleDefinitionTemplate | null;
-    /**
-     * The displayName property
-     */
-    displayName?: string | null;
-    /**
-     * The lastActionByUserId property
-     */
-    lastActionByUserId?: string | null;
-    /**
-     * The lastActionDateTime property
-     */
-    lastActionDateTime?: Date | null;
 }
 export interface ManagedTenantAlertRuleDefinitionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -4416,50 +4334,6 @@ export interface ManagementTemplateStepTenantSummaryCollectionResponse extends B
     value?: ManagementTemplateStepTenantSummary[] | null;
 }
 export interface ManagementTemplateStepVersion extends Entity, Parsable {
-    /**
-     * The acceptedFor property
-     */
-    acceptedFor?: ManagementTemplateStep | null;
-    /**
-     * The contentMarkdown property
-     */
-    contentMarkdown?: string | null;
-    /**
-     * The createdByUserId property
-     */
-    createdByUserId?: string | null;
-    /**
-     * The createdDateTime property
-     */
-    createdDateTime?: Date | null;
-    /**
-     * The deployments property
-     */
-    deployments?: ManagementTemplateStepDeployment[] | null;
-    /**
-     * The lastActionByUserId property
-     */
-    lastActionByUserId?: string | null;
-    /**
-     * The lastActionDateTime property
-     */
-    lastActionDateTime?: Date | null;
-    /**
-     * The name property
-     */
-    name?: string | null;
-    /**
-     * The templateStep property
-     */
-    templateStep?: ManagementTemplateStep | null;
-    /**
-     * The version property
-     */
-    version?: number | null;
-    /**
-     * The versionInformation property
-     */
-    versionInformation?: string | null;
 }
 export interface ManagementTemplateStepVersionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -4618,19 +4492,6 @@ export function serializeAlertLogContent(writer: SerializationWriter, alertLogCo
     writer.writeStringValue("displayName", alertLogContent.displayName);
     writer.writeStringValue("@odata.type", alertLogContent.odataType);
     writer.writeAdditionalData(alertLogContent.additionalData);
-}
-/**
- * Serializes information the current object
- * @param AlertRuleDefinitionTemplate The instance to serialize from.
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeAlertRuleDefinitionTemplate(writer: SerializationWriter, alertRuleDefinitionTemplate: Partial<AlertRuleDefinitionTemplate> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!alertRuleDefinitionTemplate || isSerializingDerivedType) { return; }
-    writer.writeEnumValue<AlertSeverity>("defaultSeverity", alertRuleDefinitionTemplate.defaultSeverity);
-    writer.writeStringValue("@odata.type", alertRuleDefinitionTemplate.odataType);
-    writer.writeAdditionalData(alertRuleDefinitionTemplate.additionalData);
 }
 /**
  * Serializes information the current object
@@ -5246,13 +5107,6 @@ export function serializeManagedTenantAlertRuleCollectionResponse(writer: Serial
 export function serializeManagedTenantAlertRuleDefinition(writer: SerializationWriter, managedTenantAlertRuleDefinition: Partial<ManagedTenantAlertRuleDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!managedTenantAlertRuleDefinition || isSerializingDerivedType) { return; }
     serializeEntity(writer, managedTenantAlertRuleDefinition, isSerializingDerivedType)
-    writer.writeCollectionOfObjectValues<ManagedTenantAlertRule>("alertRules", managedTenantAlertRuleDefinition.alertRules, serializeManagedTenantAlertRule);
-    writer.writeStringValue("createdByUserId", managedTenantAlertRuleDefinition.createdByUserId);
-    writer.writeDateValue("createdDateTime", managedTenantAlertRuleDefinition.createdDateTime);
-    writer.writeObjectValue<AlertRuleDefinitionTemplate>("definitionTemplate", managedTenantAlertRuleDefinition.definitionTemplate, serializeAlertRuleDefinitionTemplate);
-    writer.writeStringValue("displayName", managedTenantAlertRuleDefinition.displayName);
-    writer.writeStringValue("lastActionByUserId", managedTenantAlertRuleDefinition.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managedTenantAlertRuleDefinition.lastActionDateTime);
 }
 /**
  * Serializes information the current object
@@ -5730,17 +5584,6 @@ export function serializeManagementTemplateStepTenantSummaryCollectionResponse(w
 export function serializeManagementTemplateStepVersion(writer: SerializationWriter, managementTemplateStepVersion: Partial<ManagementTemplateStepVersion> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!managementTemplateStepVersion || isSerializingDerivedType) { return; }
     serializeEntity(writer, managementTemplateStepVersion, isSerializingDerivedType)
-    writer.writeObjectValue<ManagementTemplateStep>("acceptedFor", managementTemplateStepVersion.acceptedFor, serializeManagementTemplateStep);
-    writer.writeStringValue("contentMarkdown", managementTemplateStepVersion.contentMarkdown);
-    writer.writeStringValue("createdByUserId", managementTemplateStepVersion.createdByUserId);
-    writer.writeDateValue("createdDateTime", managementTemplateStepVersion.createdDateTime);
-    writer.writeCollectionOfObjectValues<ManagementTemplateStepDeployment>("deployments", managementTemplateStepVersion.deployments, serializeManagementTemplateStepDeployment);
-    writer.writeStringValue("lastActionByUserId", managementTemplateStepVersion.lastActionByUserId);
-    writer.writeDateValue("lastActionDateTime", managementTemplateStepVersion.lastActionDateTime);
-    writer.writeStringValue("name", managementTemplateStepVersion.name);
-    writer.writeObjectValue<ManagementTemplateStep>("templateStep", managementTemplateStepVersion.templateStep, serializeManagementTemplateStep);
-    writer.writeNumberValue("version", managementTemplateStepVersion.version);
-    writer.writeStringValue("versionInformation", managementTemplateStepVersion.versionInformation);
 }
 /**
  * Serializes information the current object

@@ -6,6 +6,8 @@ import { createTenantDataSecurityAndGovernanceFromDiscriminatorValue, serializeT
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { PolicyFilesRequestBuilderNavigationMetadata, PolicyFilesRequestBuilderRequestsMetadata, type PolicyFilesRequestBuilder } from './policyFiles/index.js';
+// @ts-ignore
 import { ProcessContentAsyncRequestBuilderRequestsMetadata, type ProcessContentAsyncRequestBuilder } from './processContentAsync/index.js';
 // @ts-ignore
 import { ProtectionScopesRequestBuilderNavigationMetadata, ProtectionScopesRequestBuilderRequestsMetadata, type ProtectionScopesRequestBuilder } from './protectionScopes/index.js';
@@ -18,6 +20,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.
  */
 export interface DataSecurityAndGovernanceRequestBuilder extends BaseRequestBuilder<DataSecurityAndGovernanceRequestBuilder> {
+    /**
+     * Provides operations to manage the policyFiles property of the microsoft.graph.tenantDataSecurityAndGovernance entity.
+     */
+    get policyFiles(): PolicyFilesRequestBuilder;
     /**
      * Provides operations to call the processContentAsync method.
      */
@@ -99,6 +105,10 @@ const DataSecurityAndGovernanceRequestBuilderGetQueryParametersMapper: Record<st
  * Metadata for all the navigation properties in the request builder.
  */
 export const DataSecurityAndGovernanceRequestBuilderNavigationMetadata: Record<Exclude<keyof DataSecurityAndGovernanceRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    policyFiles: {
+        requestsMetadata: PolicyFilesRequestBuilderRequestsMetadata,
+        navigationMetadata: PolicyFilesRequestBuilderNavigationMetadata,
+    },
     processContentAsync: {
         requestsMetadata: ProcessContentAsyncRequestBuilderRequestsMetadata,
     },

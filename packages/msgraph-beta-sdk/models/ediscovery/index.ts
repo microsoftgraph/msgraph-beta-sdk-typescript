@@ -4,7 +4,7 @@
 // @ts-ignore
 import { createGroupFromDiscriminatorValue, createIdentitySetFromDiscriminatorValue, createResultInfoFromDiscriminatorValue, createSiteFromDiscriminatorValue, deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, serializeBaseCollectionPaginationCountResponse, serializeEntity, serializeGroup, serializeIdentitySet, serializeResultInfo, serializeSite, type BaseCollectionPaginationCountResponse, type Entity, type Group, type IdentitySet, type ResultInfo, type Site } from '../index.js';
 // @ts-ignore
-import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
+import { type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
 export type AdditionalDataOptions = (typeof AdditionalDataOptionsObject)[keyof typeof AdditionalDataOptionsObject];
 export interface AddToReviewSetOperation extends CaseOperation, Parsable {
@@ -176,18 +176,6 @@ export interface CaseOperationCollectionResponse extends BaseCollectionPaginatio
 }
 export type CaseOperationStatus = (typeof CaseOperationStatusObject)[keyof typeof CaseOperationStatusObject];
 export interface CaseSettings extends Entity, Parsable {
-    /**
-     * The OCR (Optical Character Recognition) settings for the case.
-     */
-    ocr?: OcrSettings | null;
-    /**
-     * The redundancy (near duplicate and email threading) detection settings for the case.
-     */
-    redundancyDetection?: RedundancyDetectionSettings | null;
-    /**
-     * The article Modeling (Themes) settings for the case.
-     */
-    topicModeling?: TopicModelingSettings | null;
 }
 export type CaseStatus = (typeof CaseStatusObject)[keyof typeof CaseStatusObject];
 export type ChildSelectability = (typeof ChildSelectabilityObject)[keyof typeof ChildSelectabilityObject];
@@ -434,29 +422,11 @@ export function createNoncustodialDataSourceFromDiscriminatorValue(parseNode: Pa
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {OcrSettings}
- */
-// @ts-ignore
-export function createOcrSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoOcrSettings;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PurgeDataOperation}
  */
 // @ts-ignore
 export function createPurgeDataOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPurgeDataOperation;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {RedundancyDetectionSettings}
- */
-// @ts-ignore
-export function createRedundancyDetectionSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoRedundancyDetectionSettings;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -556,15 +526,6 @@ export function createTagFromDiscriminatorValue(parseNode: ParseNode | undefined
 // @ts-ignore
 export function createTagOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoTagOperation;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {TopicModelingSettings}
- */
-// @ts-ignore
-export function createTopicModelingSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoTopicModelingSettings;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -690,7 +651,6 @@ export interface DataSourceContainer extends Entity, Parsable {
 }
 export type DataSourceContainerStatus = (typeof DataSourceContainerStatusObject)[keyof typeof DataSourceContainerStatusObject];
 export type DataSourceHoldStatus = (typeof DataSourceHoldStatusObject)[keyof typeof DataSourceHoldStatusObject];
-export type DataSourceScopes = (typeof DataSourceScopesObject)[keyof typeof DataSourceScopesObject];
 /**
  * The deserialization information for the current model
  * @param AddToReviewSetOperation The instance to deserialize into.
@@ -836,9 +796,6 @@ export function deserializeIntoCaseOperationCollectionResponse(caseOperationColl
 export function deserializeIntoCaseSettings(caseSettings: Partial<CaseSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(caseSettings),
-        "ocr": n => { caseSettings.ocr = n.getObjectValue<OcrSettings>(createOcrSettingsFromDiscriminatorValue); },
-        "redundancyDetection": n => { caseSettings.redundancyDetection = n.getObjectValue<RedundancyDetectionSettings>(createRedundancyDetectionSettingsFromDiscriminatorValue); },
-        "topicModeling": n => { caseSettings.topicModeling = n.getObjectValue<TopicModelingSettings>(createTopicModelingSettingsFromDiscriminatorValue); },
     }
 }
 /**
@@ -1008,21 +965,6 @@ export function deserializeIntoNoncustodialDataSourceCollectionResponse(noncusto
 }
 /**
  * The deserialization information for the current model
- * @param OcrSettings The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoOcrSettings(ocrSettings: Partial<OcrSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { ocrSettings.backingStoreEnabled = true; },
-        "isEnabled": n => { ocrSettings.isEnabled = n.getBooleanValue(); },
-        "maxImageSize": n => { ocrSettings.maxImageSize = n.getNumberValue(); },
-        "@odata.type": n => { ocrSettings.odataType = n.getStringValue(); },
-        "timeout": n => { ocrSettings.timeout = n.getDurationValue(); },
-    }
-}
-/**
- * The deserialization information for the current model
  * @param PurgeDataOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1034,22 +976,6 @@ export function deserializeIntoPurgeDataOperation(purgeDataOperation: Partial<Pu
 }
 /**
  * The deserialization information for the current model
- * @param RedundancyDetectionSettings The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoRedundancyDetectionSettings(redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { redundancyDetectionSettings.backingStoreEnabled = true; },
-        "isEnabled": n => { redundancyDetectionSettings.isEnabled = n.getBooleanValue(); },
-        "maxWords": n => { redundancyDetectionSettings.maxWords = n.getNumberValue(); },
-        "minWords": n => { redundancyDetectionSettings.minWords = n.getNumberValue(); },
-        "@odata.type": n => { redundancyDetectionSettings.odataType = n.getStringValue(); },
-        "similarityThreshold": n => { redundancyDetectionSettings.similarityThreshold = n.getNumberValue(); },
-    }
-}
-/**
- * The deserialization information for the current model
  * @param ReviewSet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1057,10 +983,6 @@ export function deserializeIntoRedundancyDetectionSettings(redundancyDetectionSe
 export function deserializeIntoReviewSet(reviewSet: Partial<ReviewSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(reviewSet),
-        "createdBy": n => { reviewSet.createdBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
-        "createdDateTime": n => { reviewSet.createdDateTime = n.getDateValue(); },
-        "displayName": n => { reviewSet.displayName = n.getStringValue(); },
-        "queries": n => { reviewSet.queries = n.getCollectionOfObjectValues<ReviewSetQuery>(createReviewSetQueryFromDiscriminatorValue); },
     }
 }
 /**
@@ -1137,19 +1059,6 @@ export function deserializeIntoSiteSourceCollectionResponse(siteSourceCollection
 export function deserializeIntoSourceCollection(sourceCollection: Partial<SourceCollection> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(sourceCollection),
-        "additionalSources": n => { sourceCollection.additionalSources = n.getCollectionOfObjectValues<DataSource>(createDataSourceFromDiscriminatorValue); },
-        "addToReviewSetOperation": n => { sourceCollection.addToReviewSetOperation = n.getObjectValue<AddToReviewSetOperation>(createAddToReviewSetOperationFromDiscriminatorValue); },
-        "contentQuery": n => { sourceCollection.contentQuery = n.getStringValue(); },
-        "createdBy": n => { sourceCollection.createdBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
-        "createdDateTime": n => { sourceCollection.createdDateTime = n.getDateValue(); },
-        "custodianSources": n => { sourceCollection.custodianSources = n.getCollectionOfObjectValues<DataSource>(createDataSourceFromDiscriminatorValue); },
-        "dataSourceScopes": n => { sourceCollection.dataSourceScopes = n.getCollectionOfEnumValues<DataSourceScopes>(DataSourceScopesObject); },
-        "description": n => { sourceCollection.description = n.getStringValue(); },
-        "displayName": n => { sourceCollection.displayName = n.getStringValue(); },
-        "lastEstimateStatisticsOperation": n => { sourceCollection.lastEstimateStatisticsOperation = n.getObjectValue<EstimateStatisticsOperation>(createEstimateStatisticsOperationFromDiscriminatorValue); },
-        "lastModifiedBy": n => { sourceCollection.lastModifiedBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
-        "lastModifiedDateTime": n => { sourceCollection.lastModifiedDateTime = n.getDateValue(); },
-        "noncustodialSources": n => { sourceCollection.noncustodialSources = n.getCollectionOfObjectValues<NoncustodialDataSource>(createNoncustodialDataSourceFromDiscriminatorValue); },
     }
 }
 /**
@@ -1203,22 +1112,6 @@ export function deserializeIntoTagCollectionResponse(tagCollectionResponse: Part
 export function deserializeIntoTagOperation(tagOperation: Partial<TagOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(tagOperation),
-    }
-}
-/**
- * The deserialization information for the current model
- * @param TopicModelingSettings The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoTopicModelingSettings(topicModelingSettings: Partial<TopicModelingSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { topicModelingSettings.backingStoreEnabled = true; },
-        "dynamicallyAdjustTopicCount": n => { topicModelingSettings.dynamicallyAdjustTopicCount = n.getBooleanValue(); },
-        "ignoreNumbers": n => { topicModelingSettings.ignoreNumbers = n.getBooleanValue(); },
-        "isEnabled": n => { topicModelingSettings.isEnabled = n.getBooleanValue(); },
-        "@odata.type": n => { topicModelingSettings.odataType = n.getStringValue(); },
-        "topicCount": n => { topicModelingSettings.topicCount = n.getNumberValue(); },
     }
 }
 /**
@@ -1387,73 +1280,9 @@ export interface NoncustodialDataSourceCollectionResponse extends BaseCollection
      */
     value?: NoncustodialDataSource[] | null;
 }
-export interface OcrSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * Indicates whether or not OCR is enabled for the case.
-     */
-    isEnabled?: boolean | null;
-    /**
-     * Maximum image size that will be processed in KB).
-     */
-    maxImageSize?: number | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-    /**
-     * The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.
-     */
-    timeout?: Duration | null;
-}
 export interface PurgeDataOperation extends CaseOperation, Parsable {
 }
-export interface RedundancyDetectionSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * Indicates whether email threading and near duplicate detection are enabled.
-     */
-    isEnabled?: boolean | null;
-    /**
-     * Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
-     */
-    maxWords?: number | null;
-    /**
-     * Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
-     */
-    minWords?: number | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-    /**
-     * Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
-     */
-    similarityThreshold?: number | null;
-}
 export interface ReviewSet extends Entity, Parsable {
-    /**
-     * The user who created the review set. Read-only.
-     */
-    createdBy?: IdentitySet | null;
-    /**
-     * The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-     */
-    createdDateTime?: Date | null;
-    /**
-     * The review set name. The name is unique with a maximum limit of 64 characters.
-     */
-    displayName?: string | null;
-    /**
-     * The queries property
-     */
-    queries?: ReviewSetQuery[] | null;
 }
 export interface ReviewSetCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -1662,9 +1491,6 @@ export function serializeCaseOperationCollectionResponse(writer: SerializationWr
 export function serializeCaseSettings(writer: SerializationWriter, caseSettings: Partial<CaseSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!caseSettings || isSerializingDerivedType) { return; }
     serializeEntity(writer, caseSettings, isSerializingDerivedType)
-    writer.writeObjectValue<OcrSettings>("ocr", caseSettings.ocr, serializeOcrSettings);
-    writer.writeObjectValue<RedundancyDetectionSettings>("redundancyDetection", caseSettings.redundancyDetection, serializeRedundancyDetectionSettings);
-    writer.writeObjectValue<TopicModelingSettings>("topicModeling", caseSettings.topicModeling, serializeTopicModelingSettings);
 }
 /**
  * Serializes information the current object
@@ -1853,21 +1679,6 @@ export function serializeNoncustodialDataSourceCollectionResponse(writer: Serial
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param OcrSettings The instance to serialize from.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeOcrSettings(writer: SerializationWriter, ocrSettings: Partial<OcrSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!ocrSettings || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("isEnabled", ocrSettings.isEnabled);
-    writer.writeNumberValue("maxImageSize", ocrSettings.maxImageSize);
-    writer.writeStringValue("@odata.type", ocrSettings.odataType);
-    writer.writeDurationValue("timeout", ocrSettings.timeout);
-    writer.writeAdditionalData(ocrSettings.additionalData);
-}
-/**
- * Serializes information the current object
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param PurgeDataOperation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -1879,22 +1690,6 @@ export function serializePurgeDataOperation(writer: SerializationWriter, purgeDa
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param RedundancyDetectionSettings The instance to serialize from.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeRedundancyDetectionSettings(writer: SerializationWriter, redundancyDetectionSettings: Partial<RedundancyDetectionSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!redundancyDetectionSettings || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("isEnabled", redundancyDetectionSettings.isEnabled);
-    writer.writeNumberValue("maxWords", redundancyDetectionSettings.maxWords);
-    writer.writeNumberValue("minWords", redundancyDetectionSettings.minWords);
-    writer.writeStringValue("@odata.type", redundancyDetectionSettings.odataType);
-    writer.writeNumberValue("similarityThreshold", redundancyDetectionSettings.similarityThreshold);
-    writer.writeAdditionalData(redundancyDetectionSettings.additionalData);
-}
-/**
- * Serializes information the current object
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param ReviewSet The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -1902,10 +1697,6 @@ export function serializeRedundancyDetectionSettings(writer: SerializationWriter
 export function serializeReviewSet(writer: SerializationWriter, reviewSet: Partial<ReviewSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!reviewSet || isSerializingDerivedType) { return; }
     serializeEntity(writer, reviewSet, isSerializingDerivedType)
-    writer.writeObjectValue<IdentitySet>("createdBy", reviewSet.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", reviewSet.createdDateTime);
-    writer.writeStringValue("displayName", reviewSet.displayName);
-    writer.writeCollectionOfObjectValues<ReviewSetQuery>("queries", reviewSet.queries, serializeReviewSetQuery);
 }
 /**
  * Serializes information the current object
@@ -1982,19 +1773,6 @@ export function serializeSiteSourceCollectionResponse(writer: SerializationWrite
 export function serializeSourceCollection(writer: SerializationWriter, sourceCollection: Partial<SourceCollection> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!sourceCollection || isSerializingDerivedType) { return; }
     serializeEntity(writer, sourceCollection, isSerializingDerivedType)
-    writer.writeCollectionOfObjectValues<DataSource>("additionalSources", sourceCollection.additionalSources, serializeDataSource);
-    writer.writeObjectValue<AddToReviewSetOperation>("addToReviewSetOperation", sourceCollection.addToReviewSetOperation, serializeAddToReviewSetOperation);
-    writer.writeStringValue("contentQuery", sourceCollection.contentQuery);
-    writer.writeObjectValue<IdentitySet>("createdBy", sourceCollection.createdBy, serializeIdentitySet);
-    writer.writeDateValue("createdDateTime", sourceCollection.createdDateTime);
-    writer.writeCollectionOfObjectValues<DataSource>("custodianSources", sourceCollection.custodianSources, serializeDataSource);
-    writer.writeEnumValue<DataSourceScopes[]>("dataSourceScopes", sourceCollection.dataSourceScopes);
-    writer.writeStringValue("description", sourceCollection.description);
-    writer.writeStringValue("displayName", sourceCollection.displayName);
-    writer.writeObjectValue<EstimateStatisticsOperation>("lastEstimateStatisticsOperation", sourceCollection.lastEstimateStatisticsOperation, serializeEstimateStatisticsOperation);
-    writer.writeObjectValue<IdentitySet>("lastModifiedBy", sourceCollection.lastModifiedBy, serializeIdentitySet);
-    writer.writeDateValue("lastModifiedDateTime", sourceCollection.lastModifiedDateTime);
-    writer.writeCollectionOfObjectValues<NoncustodialDataSource>("noncustodialSources", sourceCollection.noncustodialSources, serializeNoncustodialDataSource);
 }
 /**
  * Serializes information the current object
@@ -2048,22 +1826,6 @@ export function serializeTagCollectionResponse(writer: SerializationWriter, tagC
 export function serializeTagOperation(writer: SerializationWriter, tagOperation: Partial<TagOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!tagOperation || isSerializingDerivedType) { return; }
     serializeCaseOperation(writer, tagOperation, isSerializingDerivedType)
-}
-/**
- * Serializes information the current object
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param TopicModelingSettings The instance to serialize from.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeTopicModelingSettings(writer: SerializationWriter, topicModelingSettings: Partial<TopicModelingSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!topicModelingSettings || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("dynamicallyAdjustTopicCount", topicModelingSettings.dynamicallyAdjustTopicCount);
-    writer.writeBooleanValue("ignoreNumbers", topicModelingSettings.ignoreNumbers);
-    writer.writeBooleanValue("isEnabled", topicModelingSettings.isEnabled);
-    writer.writeStringValue("@odata.type", topicModelingSettings.odataType);
-    writer.writeNumberValue("topicCount", topicModelingSettings.topicCount);
-    writer.writeAdditionalData(topicModelingSettings.additionalData);
 }
 /**
  * Serializes information the current object
@@ -2129,58 +1891,6 @@ export interface SiteSourceCollectionResponse extends BaseCollectionPaginationCo
     value?: SiteSource[] | null;
 }
 export interface SourceCollection extends Entity, Parsable {
-    /**
-     * Adds an additional source to the sourceCollection.
-     */
-    additionalSources?: DataSource[] | null;
-    /**
-     * Adds the results of the sourceCollection to the specified reviewSet.
-     */
-    addToReviewSetOperation?: AddToReviewSetOperation | null;
-    /**
-     * The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
-     */
-    contentQuery?: string | null;
-    /**
-     * The user who created the sourceCollection.
-     */
-    createdBy?: IdentitySet | null;
-    /**
-     * The date and time the sourceCollection was created.
-     */
-    createdDateTime?: Date | null;
-    /**
-     * Custodian sources that are included in the sourceCollection.
-     */
-    custodianSources?: DataSource[] | null;
-    /**
-     * When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-     */
-    dataSourceScopes?: DataSourceScopes[] | null;
-    /**
-     * The description of the sourceCollection.
-     */
-    description?: string | null;
-    /**
-     * The display name of the sourceCollection.
-     */
-    displayName?: string | null;
-    /**
-     * The last estimate operation associated with the sourceCollection.
-     */
-    lastEstimateStatisticsOperation?: EstimateStatisticsOperation | null;
-    /**
-     * The last user who modified the sourceCollection.
-     */
-    lastModifiedBy?: IdentitySet | null;
-    /**
-     * The last date and time the sourceCollection was modified.
-     */
-    lastModifiedDateTime?: Date | null;
-    /**
-     * noncustodialDataSource sources that are included in the sourceCollection
-     */
-    noncustodialSources?: NoncustodialDataSource[] | null;
 }
 export interface SourceCollectionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -2226,32 +1936,6 @@ export interface TagCollectionResponse extends BaseCollectionPaginationCountResp
     value?: Tag[] | null;
 }
 export interface TagOperation extends CaseOperation, Parsable {
-}
-export interface TopicModelingSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * To learn more, see Adjust maximum number of themes dynamically.
-     */
-    dynamicallyAdjustTopicCount?: boolean | null;
-    /**
-     * To learn more, see Include numbers in themes.
-     */
-    ignoreNumbers?: boolean | null;
-    /**
-     * Indicates whether themes are enabled for the case.
-     */
-    isEnabled?: boolean | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-    /**
-     * To learn more, see Maximum number of themes.
-     */
-    topicCount?: number | null;
 }
 export interface UnifiedGroupSource extends DataSource, Parsable {
     /**
@@ -2336,14 +2020,6 @@ export const DataSourceHoldStatusObject = {
     Applying: "applying",
     Removing: "removing",
     Partial: "partial",
-    UnknownFutureValue: "unknownFutureValue",
-} as const;
-export const DataSourceScopesObject = {
-    None: "none",
-    AllTenantMailboxes: "allTenantMailboxes",
-    AllTenantSites: "allTenantSites",
-    AllCaseCustodians: "allCaseCustodians",
-    AllCaseNoncustodialDataSources: "allCaseNoncustodialDataSources",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const ExportFileStructureObject = {

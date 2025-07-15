@@ -273,6 +273,7 @@ export interface BranchSiteCollectionResponse extends BaseCollectionPaginationCo
      */
     value?: BranchSite[] | null;
 }
+export type ClientFallbackAction = (typeof ClientFallbackActionObject)[keyof typeof ClientFallbackActionObject];
 export interface ConditionalAccessPolicy extends Entity, Parsable {
     /**
      * Indicates the date and time the conditional access policy was created.
@@ -779,29 +780,29 @@ export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(p
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {EnrichedAuditLogs}
- */
-// @ts-ignore
-export function createEnrichedAuditLogsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoEnrichedAuditLogs;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {EnrichedAuditLogsSettings}
- */
-// @ts-ignore
-export function createEnrichedAuditLogsSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoEnrichedAuditLogsSettings;
-}
-/**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EntitiesSummary}
  */
 // @ts-ignore
 export function createEntitiesSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEntitiesSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExternalCertificateAuthorityCertificateCollectionResponse}
+ */
+// @ts-ignore
+export function createExternalCertificateAuthorityCertificateCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExternalCertificateAuthorityCertificateCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ExternalCertificateAuthorityCertificate}
+ */
+// @ts-ignore
+export function createExternalCertificateAuthorityCertificateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoExternalCertificateAuthorityCertificate;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1093,6 +1094,8 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
                     return deserializeIntoForwardingPolicy;
                 case "#microsoft.graph.networkaccess.threatIntelligencePolicy":
                     return deserializeIntoThreatIntelligencePolicy;
+                case "#microsoft.graph.networkaccess.tlsInspectionPolicy":
+                    return deserializeIntoTlsInspectionPolicy;
             }
         }
     }
@@ -1126,6 +1129,8 @@ export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | un
                     return deserializeIntoForwardingPolicyLink;
                 case "#microsoft.graph.networkaccess.threatIntelligencePolicyLink":
                     return deserializeIntoThreatIntelligencePolicyLink;
+                case "#microsoft.graph.networkaccess.tlsInspectionPolicyLink":
+                    return deserializeIntoTlsInspectionPolicyLink;
             }
         }
     }
@@ -1176,6 +1181,8 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
                     return deserializeIntoPrivateAccessForwardingRule;
                 case "#microsoft.graph.networkaccess.threatIntelligenceRule":
                     return deserializeIntoThreatIntelligenceRule;
+                case "#microsoft.graph.networkaccess.tlsInspectionRule":
+                    return deserializeIntoTlsInspectionRule;
                 case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
                     return deserializeIntoWebCategoryFilteringRule;
             }
@@ -1599,6 +1606,118 @@ export function createThreatIntelligenceRuleSettingsFromDiscriminatorValue(parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionDestination}
+ */
+// @ts-ignore
+export function createTlsInspectionDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.tlsInspectionFqdnDestination":
+                    return deserializeIntoTlsInspectionFqdnDestination;
+                case "#microsoft.graph.networkaccess.tlsInspectionWebCategoryDestination":
+                    return deserializeIntoTlsInspectionWebCategoryDestination;
+            }
+        }
+    }
+    return deserializeIntoTlsInspectionDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionFqdnDestination}
+ */
+// @ts-ignore
+export function createTlsInspectionFqdnDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionFqdnDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionMatchingConditions}
+ */
+// @ts-ignore
+export function createTlsInspectionMatchingConditionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionMatchingConditions;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionPolicyCollectionResponse}
+ */
+// @ts-ignore
+export function createTlsInspectionPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionPolicyCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionPolicy}
+ */
+// @ts-ignore
+export function createTlsInspectionPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionPolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionPolicyLink}
+ */
+// @ts-ignore
+export function createTlsInspectionPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionPolicyLink;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionPolicySettings}
+ */
+// @ts-ignore
+export function createTlsInspectionPolicySettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionPolicySettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionRule}
+ */
+// @ts-ignore
+export function createTlsInspectionRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionRuleSettings}
+ */
+// @ts-ignore
+export function createTlsInspectionRuleSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionRuleSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsInspectionWebCategoryDestination}
+ */
+// @ts-ignore
+export function createTlsInspectionWebCategoryDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsInspectionWebCategoryDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TlsTermination}
+ */
+// @ts-ignore
+export function createTlsTerminationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTlsTermination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {TransactionSummary}
  */
 // @ts-ignore
@@ -1671,6 +1790,15 @@ export function createUsageProfilingPointFromDiscriminatorValue(parseNode: Parse
 // @ts-ignore
 export function createUserFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUser;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ValidityDate}
+ */
+// @ts-ignore
+export function createValidityDateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoValidityDate;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2295,33 +2423,6 @@ export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredAppl
 }
 /**
  * The deserialization information for the current model
- * @param EnrichedAuditLogs The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoEnrichedAuditLogs(enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        ...deserializeIntoEntity(enrichedAuditLogs),
-        "exchange": n => { enrichedAuditLogs.exchange = n.getObjectValue<EnrichedAuditLogsSettings>(createEnrichedAuditLogsSettingsFromDiscriminatorValue); },
-        "sharepoint": n => { enrichedAuditLogs.sharepoint = n.getObjectValue<EnrichedAuditLogsSettings>(createEnrichedAuditLogsSettingsFromDiscriminatorValue); },
-        "teams": n => { enrichedAuditLogs.teams = n.getObjectValue<EnrichedAuditLogsSettings>(createEnrichedAuditLogsSettingsFromDiscriminatorValue); },
-    }
-}
-/**
- * The deserialization information for the current model
- * @param EnrichedAuditLogsSettings The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoEnrichedAuditLogsSettings(enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { enrichedAuditLogsSettings.backingStoreEnabled = true; },
-        "@odata.type": n => { enrichedAuditLogsSettings.odataType = n.getStringValue(); },
-        "status": n => { enrichedAuditLogsSettings.status = n.getEnumValue<Status>(StatusObject); },
-    }
-}
-/**
- * The deserialization information for the current model
  * @param EntitiesSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2334,6 +2435,37 @@ export function deserializeIntoEntitiesSummary(entitiesSummary: Partial<Entities
         "trafficType": n => { entitiesSummary.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
         "userCount": n => { entitiesSummary.userCount = n.getNumberValue(); },
         "workloadCount": n => { entitiesSummary.workloadCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ExternalCertificateAuthorityCertificate The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExternalCertificateAuthorityCertificate(externalCertificateAuthorityCertificate: Partial<ExternalCertificateAuthorityCertificate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(externalCertificateAuthorityCertificate),
+        "certificate": n => { externalCertificateAuthorityCertificate.certificate = n.getStringValue(); },
+        "certificateSigningRequest": n => { externalCertificateAuthorityCertificate.certificateSigningRequest = n.getStringValue(); },
+        "chain": n => { externalCertificateAuthorityCertificate.chain = n.getStringValue(); },
+        "commonName": n => { externalCertificateAuthorityCertificate.commonName = n.getStringValue(); },
+        "name": n => { externalCertificateAuthorityCertificate.name = n.getStringValue(); },
+        "organizationName": n => { externalCertificateAuthorityCertificate.organizationName = n.getStringValue(); },
+        "status": n => { externalCertificateAuthorityCertificate.status = n.getEnumValue<TlsCertificateStatus>(TlsCertificateStatusObject); },
+        "validity": n => { externalCertificateAuthorityCertificate.validity = n.getObjectValue<ValidityDate>(createValidityDateFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ExternalCertificateAuthorityCertificateCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoExternalCertificateAuthorityCertificateCollectionResponse(externalCertificateAuthorityCertificateCollectionResponse: Partial<ExternalCertificateAuthorityCertificateCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(externalCertificateAuthorityCertificateCollectionResponse),
+        "value": n => { externalCertificateAuthorityCertificateCollectionResponse.value = n.getCollectionOfObjectValues<ExternalCertificateAuthorityCertificate>(createExternalCertificateAuthorityCertificateFromDiscriminatorValue); },
     }
 }
 /**
@@ -2500,6 +2632,7 @@ export function deserializeIntoForwardingRule(forwardingRule: Partial<Forwarding
     return {
         ...deserializeIntoPolicyRule(forwardingRule),
         "action": n => { forwardingRule.action = n.getEnumValue<ForwardingRuleAction>(ForwardingRuleActionObject); },
+        "clientFallbackAction": n => { forwardingRule.clientFallbackAction = n.getEnumValue<ClientFallbackAction>(ClientFallbackActionObject); },
         "destinations": n => { forwardingRule.destinations = n.getCollectionOfObjectValues<RuleDestination>(createRuleDestinationFromDiscriminatorValue); },
         "ruleType": n => { forwardingRule.ruleType = n.getEnumValue<NetworkDestinationType>(NetworkDestinationTypeObject); },
     }
@@ -2656,6 +2789,8 @@ export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<Netw
         "settings": n => { networkAccessRoot.settings = n.getObjectValue<Settings>(createSettingsFromDiscriminatorValue); },
         "tenantStatus": n => { networkAccessRoot.tenantStatus = n.getObjectValue<TenantStatus>(createTenantStatusFromDiscriminatorValue); },
         "threatIntelligencePolicies": n => { networkAccessRoot.threatIntelligencePolicies = n.getCollectionOfObjectValues<ThreatIntelligencePolicy>(createThreatIntelligencePolicyFromDiscriminatorValue); },
+        "tls": n => { networkAccessRoot.tls = n.getObjectValue<TlsTermination>(createTlsTerminationFromDiscriminatorValue); },
+        "tlsInspectionPolicies": n => { networkAccessRoot.tlsInspectionPolicies = n.getCollectionOfObjectValues<TlsInspectionPolicy>(createTlsInspectionPolicyFromDiscriminatorValue); },
     }
 }
 /**
@@ -3170,10 +3305,6 @@ export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDest
 export function deserializeIntoSettings(settings: Partial<Settings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(settings),
-        "conditionalAccess": n => { settings.conditionalAccess = n.getObjectValue<ConditionalAccessSettings>(createConditionalAccessSettingsFromDiscriminatorValue); },
-        "crossTenantAccess": n => { settings.crossTenantAccess = n.getObjectValue<CrossTenantAccessSettings>(createCrossTenantAccessSettingsFromDiscriminatorValue); },
-        "enrichedAuditLogs": n => { settings.enrichedAuditLogs = n.getObjectValue<EnrichedAuditLogs>(createEnrichedAuditLogsFromDiscriminatorValue); },
-        "forwardingOptions": n => { settings.forwardingOptions = n.getObjectValue<ForwardingOptions>(createForwardingOptionsFromDiscriminatorValue); },
     }
 }
 /**
@@ -3185,8 +3316,6 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
 export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantStatus),
-        "onboardingErrorMessage": n => { tenantStatus.onboardingErrorMessage = n.getStringValue(); },
-        "onboardingStatus": n => { tenantStatus.onboardingStatus = n.getEnumValue<OnboardingStatus>(OnboardingStatusObject); },
     }
 }
 /**
@@ -3323,6 +3452,142 @@ export function deserializeIntoThreatIntelligenceRuleSettings(threatIntelligence
 }
 /**
  * The deserialization information for the current model
+ * @param TlsInspectionDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionDestination(tlsInspectionDestination: Partial<TlsInspectionDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { tlsInspectionDestination.backingStoreEnabled = true; },
+        "@odata.type": n => { tlsInspectionDestination.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionFqdnDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionFqdnDestination(tlsInspectionFqdnDestination: Partial<TlsInspectionFqdnDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoTlsInspectionDestination(tlsInspectionFqdnDestination),
+        "values": n => { tlsInspectionFqdnDestination.values = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionMatchingConditions The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionMatchingConditions(tlsInspectionMatchingConditions: Partial<TlsInspectionMatchingConditions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { tlsInspectionMatchingConditions.backingStoreEnabled = true; },
+        "destinations": n => { tlsInspectionMatchingConditions.destinations = n.getCollectionOfObjectValues<TlsInspectionDestination>(createTlsInspectionDestinationFromDiscriminatorValue); },
+        "@odata.type": n => { tlsInspectionMatchingConditions.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionPolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionPolicy(tlsInspectionPolicy: Partial<TlsInspectionPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicy(tlsInspectionPolicy),
+        "lastModifiedDateTime": n => { tlsInspectionPolicy.lastModifiedDateTime = n.getDateValue(); },
+        "settings": n => { tlsInspectionPolicy.settings = n.getObjectValue<TlsInspectionPolicySettings>(createTlsInspectionPolicySettingsFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionPolicyCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionPolicyCollectionResponse(tlsInspectionPolicyCollectionResponse: Partial<TlsInspectionPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(tlsInspectionPolicyCollectionResponse),
+        "value": n => { tlsInspectionPolicyCollectionResponse.value = n.getCollectionOfObjectValues<TlsInspectionPolicy>(createTlsInspectionPolicyFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionPolicyLink The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionPolicyLink(tlsInspectionPolicyLink: Partial<TlsInspectionPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicyLink(tlsInspectionPolicyLink),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionPolicySettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionPolicySettings(tlsInspectionPolicySettings: Partial<TlsInspectionPolicySettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { tlsInspectionPolicySettings.backingStoreEnabled = true; },
+        "@odata.type": n => { tlsInspectionPolicySettings.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionRule(tlsInspectionRule: Partial<TlsInspectionRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicyRule(tlsInspectionRule),
+        "description": n => { tlsInspectionRule.description = n.getStringValue(); },
+        "matchingConditions": n => { tlsInspectionRule.matchingConditions = n.getObjectValue<TlsInspectionMatchingConditions>(createTlsInspectionMatchingConditionsFromDiscriminatorValue); },
+        "priority": n => { tlsInspectionRule.priority = n.getNumberValue(); },
+        "settings": n => { tlsInspectionRule.settings = n.getObjectValue<TlsInspectionRuleSettings>(createTlsInspectionRuleSettingsFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionRuleSettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionRuleSettings(tlsInspectionRuleSettings: Partial<TlsInspectionRuleSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { tlsInspectionRuleSettings.backingStoreEnabled = true; },
+        "@odata.type": n => { tlsInspectionRuleSettings.odataType = n.getStringValue(); },
+        "status": n => { tlsInspectionRuleSettings.status = n.getEnumValue<SecurityRuleStatus>(SecurityRuleStatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsInspectionWebCategoryDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsInspectionWebCategoryDestination(tlsInspectionWebCategoryDestination: Partial<TlsInspectionWebCategoryDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoTlsInspectionDestination(tlsInspectionWebCategoryDestination),
+        "values": n => { tlsInspectionWebCategoryDestination.values = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param TlsTermination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTlsTermination(tlsTermination: Partial<TlsTermination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(tlsTermination),
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param TransactionSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -3428,6 +3693,20 @@ export function deserializeIntoUser(user: Partial<User> | undefined = {}) : Reco
         "userId": n => { user.userId = n.getStringValue(); },
         "userPrincipalName": n => { user.userPrincipalName = n.getStringValue(); },
         "userType": n => { user.userType = n.getEnumValue<UserType>(UserTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ValidityDate The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoValidityDate(validityDate: Partial<ValidityDate> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { validityDate.backingStoreEnabled = true; },
+        "endDateTime": n => { validityDate.endDateTime = n.getDateValue(); },
+        "@odata.type": n => { validityDate.odataType = n.getStringValue(); },
+        "startDateTime": n => { validityDate.startDateTime = n.getDateValue(); },
     }
 }
 /**
@@ -3717,34 +3996,6 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      */
     userCount?: number | null;
 }
-export interface EnrichedAuditLogs extends Entity, Parsable {
-    /**
-     * The exchange property
-     */
-    exchange?: EnrichedAuditLogsSettings | null;
-    /**
-     * The sharepoint property
-     */
-    sharepoint?: EnrichedAuditLogsSettings | null;
-    /**
-     * The teams property
-     */
-    teams?: EnrichedAuditLogsSettings | null;
-}
-export interface EnrichedAuditLogsSettings extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-    /**
-     * The status property
-     */
-    status?: Status | null;
-}
 export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -3770,6 +4021,46 @@ export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Pars
      * The number of unique target workloads/hosts that were seen.
      */
     workloadCount?: number | null;
+}
+export interface ExternalCertificateAuthorityCertificate extends Entity, Parsable {
+    /**
+     * The signed X.509 certificate in PEM format.
+     */
+    certificate?: string | null;
+    /**
+     * The Certificate Signing Request (CSR) generated when creating the CA. This CSR should be signed using the customer's PKI infrastructure. Read-only.
+     */
+    certificateSigningRequest?: string | null;
+    /**
+     * The certificate chain in PEM format, containing all intermediate certificates up to the root CA.
+     */
+    chain?: string | null;
+    /**
+     * The common name (CN) field of the certificate. Supports $filter (eq, ne, startsWith)
+     */
+    commonName?: string | null;
+    /**
+     * The display name of the CA. Supports $filter (eq, ne, startsWith)
+     */
+    name?: string | null;
+    /**
+     * The organization name (OU) field of the certificate. Supports $filter (eq, ne, startsWith)
+     */
+    organizationName?: string | null;
+    /**
+     * The status property
+     */
+    status?: TlsCertificateStatus | null;
+    /**
+     * The validity property
+     */
+    validity?: ValidityDate | null;
+}
+export interface ExternalCertificateAuthorityCertificateCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ExternalCertificateAuthorityCertificate[] | null;
 }
 export interface FilteringPolicy extends Parsable, Policy {
     /**
@@ -3890,6 +4181,10 @@ export interface ForwardingRule extends Parsable, PolicyRule {
      * The action property
      */
     action?: ForwardingRuleAction | null;
+    /**
+     * The clientFallbackAction property
+     */
+    clientFallbackAction?: ClientFallbackAction | null;
     /**
      * Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
      */
@@ -4040,11 +4335,11 @@ export interface NetworkAccessRoot extends Entity, Parsable {
      */
     filteringProfiles?: FilteringProfile[] | null;
     /**
-     * A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+     * The forwardingPolicies property
      */
     forwardingPolicies?: ForwardingPolicy[] | null;
     /**
-     * A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+     * The forwardingProfiles property
      */
     forwardingProfiles?: ForwardingProfile[] | null;
     /**
@@ -4067,10 +4362,18 @@ export interface NetworkAccessRoot extends Entity, Parsable {
      * The threatIntelligencePolicies property
      */
     threatIntelligencePolicies?: ThreatIntelligencePolicy[] | null;
+    /**
+     * A container for tenant-level TLS inspection settings for Global Secure Access.
+     */
+    tls?: TlsTermination | null;
+    /**
+     * Allows you to configure TLS termination for your organization's network traffic through Global Secure Access.
+     */
+    tlsInspectionPolicies?: TlsInspectionPolicy[] | null;
 }
 export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): bypass , alert.
+     * Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: bypass , alert.
      */
     action?: FilteringPolicyAction | null;
     /**
@@ -4271,7 +4574,6 @@ export interface NetworkAccessTrafficCollectionResponse extends BaseCollectionPa
 export type NetworkDestinationType = (typeof NetworkDestinationTypeObject)[keyof typeof NetworkDestinationTypeObject];
 export type NetworkingProtocol = (typeof NetworkingProtocolObject)[keyof typeof NetworkingProtocolObject];
 export type NetworkTrafficOperationStatus = (typeof NetworkTrafficOperationStatusObject)[keyof typeof NetworkTrafficOperationStatusObject];
-export type OnboardingStatus = (typeof OnboardingStatusObject)[keyof typeof OnboardingStatusObject];
 export interface PeerConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Specifies ASN of one end of IPSec tunnel (local or peer).
@@ -5216,33 +5518,6 @@ export function serializeDiscoveredApplicationSegmentReport(writer: Serializatio
 }
 /**
  * Serializes information the current object
- * @param EnrichedAuditLogs The instance to serialize from.
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeEnrichedAuditLogs(writer: SerializationWriter, enrichedAuditLogs: Partial<EnrichedAuditLogs> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!enrichedAuditLogs || isSerializingDerivedType) { return; }
-    serializeEntity(writer, enrichedAuditLogs, isSerializingDerivedType)
-    writer.writeObjectValue<EnrichedAuditLogsSettings>("exchange", enrichedAuditLogs.exchange, serializeEnrichedAuditLogsSettings);
-    writer.writeObjectValue<EnrichedAuditLogsSettings>("sharepoint", enrichedAuditLogs.sharepoint, serializeEnrichedAuditLogsSettings);
-    writer.writeObjectValue<EnrichedAuditLogsSettings>("teams", enrichedAuditLogs.teams, serializeEnrichedAuditLogsSettings);
-}
-/**
- * Serializes information the current object
- * @param EnrichedAuditLogsSettings The instance to serialize from.
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeEnrichedAuditLogsSettings(writer: SerializationWriter, enrichedAuditLogsSettings: Partial<EnrichedAuditLogsSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!enrichedAuditLogsSettings || isSerializingDerivedType) { return; }
-    writer.writeStringValue("@odata.type", enrichedAuditLogsSettings.odataType);
-    writer.writeEnumValue<Status>("status", enrichedAuditLogsSettings.status);
-    writer.writeAdditionalData(enrichedAuditLogsSettings.additionalData);
-}
-/**
- * Serializes information the current object
  * @param EntitiesSummary The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5256,6 +5531,37 @@ export function serializeEntitiesSummary(writer: SerializationWriter, entitiesSu
     writer.writeNumberValue("userCount", entitiesSummary.userCount);
     writer.writeNumberValue("workloadCount", entitiesSummary.workloadCount);
     writer.writeAdditionalData(entitiesSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param ExternalCertificateAuthorityCertificate The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExternalCertificateAuthorityCertificate(writer: SerializationWriter, externalCertificateAuthorityCertificate: Partial<ExternalCertificateAuthorityCertificate> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalCertificateAuthorityCertificate || isSerializingDerivedType) { return; }
+    serializeEntity(writer, externalCertificateAuthorityCertificate, isSerializingDerivedType)
+    writer.writeStringValue("certificate", externalCertificateAuthorityCertificate.certificate);
+    writer.writeStringValue("certificateSigningRequest", externalCertificateAuthorityCertificate.certificateSigningRequest);
+    writer.writeStringValue("chain", externalCertificateAuthorityCertificate.chain);
+    writer.writeStringValue("commonName", externalCertificateAuthorityCertificate.commonName);
+    writer.writeStringValue("name", externalCertificateAuthorityCertificate.name);
+    writer.writeStringValue("organizationName", externalCertificateAuthorityCertificate.organizationName);
+    writer.writeEnumValue<TlsCertificateStatus>("status", externalCertificateAuthorityCertificate.status);
+    writer.writeObjectValue<ValidityDate>("validity", externalCertificateAuthorityCertificate.validity, serializeValidityDate);
+}
+/**
+ * Serializes information the current object
+ * @param ExternalCertificateAuthorityCertificateCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeExternalCertificateAuthorityCertificateCollectionResponse(writer: SerializationWriter, externalCertificateAuthorityCertificateCollectionResponse: Partial<ExternalCertificateAuthorityCertificateCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!externalCertificateAuthorityCertificateCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, externalCertificateAuthorityCertificateCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExternalCertificateAuthorityCertificate>("value", externalCertificateAuthorityCertificateCollectionResponse.value, serializeExternalCertificateAuthorityCertificate);
 }
 /**
  * Serializes information the current object
@@ -5430,6 +5736,7 @@ export function serializeForwardingRule(writer: SerializationWriter, forwardingR
     if (!forwardingRule || isSerializingDerivedType) { return; }
     serializePolicyRule(writer, forwardingRule, isSerializingDerivedType)
     writer.writeEnumValue<ForwardingRuleAction>("action", forwardingRule.action);
+    writer.writeEnumValue<ClientFallbackAction>("clientFallbackAction", forwardingRule.clientFallbackAction);
     writer.writeCollectionOfObjectValues<RuleDestination>("destinations", forwardingRule.destinations, serializeRuleDestination);
     writer.writeEnumValue<NetworkDestinationType>("ruleType", forwardingRule.ruleType);
     switch (forwardingRule.odataType) {
@@ -5597,6 +5904,8 @@ export function serializeNetworkAccessRoot(writer: SerializationWriter, networkA
     writer.writeObjectValue<Settings>("settings", networkAccessRoot.settings, serializeSettings);
     writer.writeObjectValue<TenantStatus>("tenantStatus", networkAccessRoot.tenantStatus, serializeTenantStatus);
     writer.writeCollectionOfObjectValues<ThreatIntelligencePolicy>("threatIntelligencePolicies", networkAccessRoot.threatIntelligencePolicies, serializeThreatIntelligencePolicy);
+    writer.writeObjectValue<TlsTermination>("tls", networkAccessRoot.tls, serializeTlsTermination);
+    writer.writeCollectionOfObjectValues<TlsInspectionPolicy>("tlsInspectionPolicies", networkAccessRoot.tlsInspectionPolicies, serializeTlsInspectionPolicy);
 }
 /**
  * Serializes information the current object
@@ -5707,6 +6016,9 @@ export function serializePolicy(writer: SerializationWriter, policy: Partial<Pol
         case "#microsoft.graph.networkaccess.threatIntelligencePolicy":
             serializeThreatIntelligencePolicy(writer, policy, true);
         break;
+        case "#microsoft.graph.networkaccess.tlsInspectionPolicy":
+            serializeTlsInspectionPolicy(writer, policy, true);
+        break;
     }
 }
 /**
@@ -5731,6 +6043,9 @@ export function serializePolicyLink(writer: SerializationWriter, policyLink: Par
         break;
         case "#microsoft.graph.networkaccess.threatIntelligencePolicyLink":
             serializeThreatIntelligencePolicyLink(writer, policyLink, true);
+        break;
+        case "#microsoft.graph.networkaccess.tlsInspectionPolicyLink":
+            serializeTlsInspectionPolicyLink(writer, policyLink, true);
         break;
     }
 }
@@ -5778,6 +6093,9 @@ export function serializePolicyRule(writer: SerializationWriter, policyRule: Par
         break;
         case "#microsoft.graph.networkaccess.threatIntelligenceRule":
             serializeThreatIntelligenceRule(writer, policyRule, true);
+        break;
+        case "#microsoft.graph.networkaccess.tlsInspectionRule":
+            serializeTlsInspectionRule(writer, policyRule, true);
         break;
         case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
             serializeWebCategoryFilteringRule(writer, policyRule, true);
@@ -6228,10 +6546,6 @@ export function serializeRuleDestination(writer: SerializationWriter, ruleDestin
 export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!settings || isSerializingDerivedType) { return; }
     serializeEntity(writer, settings, isSerializingDerivedType)
-    writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
-    writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
-    writer.writeObjectValue<EnrichedAuditLogs>("enrichedAuditLogs", settings.enrichedAuditLogs, serializeEnrichedAuditLogs);
-    writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
 }
 /**
  * Serializes information the current object
@@ -6243,8 +6557,6 @@ export function serializeSettings(writer: SerializationWriter, settings: Partial
 export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!tenantStatus || isSerializingDerivedType) { return; }
     serializeEntity(writer, tenantStatus, isSerializingDerivedType)
-    writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
-    writer.writeEnumValue<OnboardingStatus>("onboardingStatus", tenantStatus.onboardingStatus);
 }
 /**
  * Serializes information the current object
@@ -6386,6 +6698,150 @@ export function serializeThreatIntelligenceRuleSettings(writer: SerializationWri
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionDestination The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionDestination(writer: SerializationWriter, tlsInspectionDestination: Partial<TlsInspectionDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionDestination || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", tlsInspectionDestination.odataType);
+    writer.writeAdditionalData(tlsInspectionDestination.additionalData);
+    switch (tlsInspectionDestination.odataType) {
+        case "#microsoft.graph.networkaccess.tlsInspectionFqdnDestination":
+            serializeTlsInspectionFqdnDestination(writer, tlsInspectionDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.tlsInspectionWebCategoryDestination":
+            serializeTlsInspectionWebCategoryDestination(writer, tlsInspectionDestination, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionFqdnDestination The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionFqdnDestination(writer: SerializationWriter, tlsInspectionFqdnDestination: Partial<TlsInspectionFqdnDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionFqdnDestination || isSerializingDerivedType) { return; }
+    serializeTlsInspectionDestination(writer, tlsInspectionFqdnDestination, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("values", tlsInspectionFqdnDestination.values);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionMatchingConditions The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionMatchingConditions(writer: SerializationWriter, tlsInspectionMatchingConditions: Partial<TlsInspectionMatchingConditions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionMatchingConditions || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<TlsInspectionDestination>("destinations", tlsInspectionMatchingConditions.destinations, serializeTlsInspectionDestination);
+    writer.writeStringValue("@odata.type", tlsInspectionMatchingConditions.odataType);
+    writer.writeAdditionalData(tlsInspectionMatchingConditions.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionPolicy The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionPolicy(writer: SerializationWriter, tlsInspectionPolicy: Partial<TlsInspectionPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionPolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, tlsInspectionPolicy, isSerializingDerivedType)
+    writer.writeDateValue("lastModifiedDateTime", tlsInspectionPolicy.lastModifiedDateTime);
+    writer.writeObjectValue<TlsInspectionPolicySettings>("settings", tlsInspectionPolicy.settings, serializeTlsInspectionPolicySettings);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionPolicyCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionPolicyCollectionResponse(writer: SerializationWriter, tlsInspectionPolicyCollectionResponse: Partial<TlsInspectionPolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionPolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, tlsInspectionPolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<TlsInspectionPolicy>("value", tlsInspectionPolicyCollectionResponse.value, serializeTlsInspectionPolicy);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionPolicyLink The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionPolicyLink(writer: SerializationWriter, tlsInspectionPolicyLink: Partial<TlsInspectionPolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionPolicyLink || isSerializingDerivedType) { return; }
+    serializePolicyLink(writer, tlsInspectionPolicyLink, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionPolicySettings The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionPolicySettings(writer: SerializationWriter, tlsInspectionPolicySettings: Partial<TlsInspectionPolicySettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionPolicySettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", tlsInspectionPolicySettings.odataType);
+    writer.writeAdditionalData(tlsInspectionPolicySettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionRule The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionRule(writer: SerializationWriter, tlsInspectionRule: Partial<TlsInspectionRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionRule || isSerializingDerivedType) { return; }
+    serializePolicyRule(writer, tlsInspectionRule, isSerializingDerivedType)
+    writer.writeStringValue("description", tlsInspectionRule.description);
+    writer.writeObjectValue<TlsInspectionMatchingConditions>("matchingConditions", tlsInspectionRule.matchingConditions, serializeTlsInspectionMatchingConditions);
+    writer.writeNumberValue("priority", tlsInspectionRule.priority);
+    writer.writeObjectValue<TlsInspectionRuleSettings>("settings", tlsInspectionRule.settings, serializeTlsInspectionRuleSettings);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionRuleSettings The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionRuleSettings(writer: SerializationWriter, tlsInspectionRuleSettings: Partial<TlsInspectionRuleSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionRuleSettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", tlsInspectionRuleSettings.odataType);
+    writer.writeEnumValue<SecurityRuleStatus>("status", tlsInspectionRuleSettings.status);
+    writer.writeAdditionalData(tlsInspectionRuleSettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsInspectionWebCategoryDestination The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsInspectionWebCategoryDestination(writer: SerializationWriter, tlsInspectionWebCategoryDestination: Partial<TlsInspectionWebCategoryDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsInspectionWebCategoryDestination || isSerializingDerivedType) { return; }
+    serializeTlsInspectionDestination(writer, tlsInspectionWebCategoryDestination, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("values", tlsInspectionWebCategoryDestination.values);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TlsTermination The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTlsTermination(writer: SerializationWriter, tlsTermination: Partial<TlsTermination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tlsTermination || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tlsTermination, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param TransactionSummary The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -6503,6 +6959,20 @@ export function serializeUser(writer: SerializationWriter, user: Partial<User> |
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param ValidityDate The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeValidityDate(writer: SerializationWriter, validityDate: Partial<ValidityDate> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!validityDate || isSerializingDerivedType) { return; }
+    writer.writeDateValue("endDateTime", validityDate.endDateTime);
+    writer.writeStringValue("@odata.type", validityDate.odataType);
+    writer.writeDateValue("startDateTime", validityDate.startDateTime);
+    writer.writeAdditionalData(validityDate.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param WebCategoriesSummary The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -6543,33 +7013,9 @@ export function serializeWebCategoryFilteringRule(writer: SerializationWriter, w
     serializeFilteringRule(writer, webCategoryFilteringRule, isSerializingDerivedType)
 }
 export interface Settings extends Entity, Parsable {
-    /**
-     * The conditionalAccess property
-     */
-    conditionalAccess?: ConditionalAccessSettings | null;
-    /**
-     * The crossTenantAccess property
-     */
-    crossTenantAccess?: CrossTenantAccessSettings | null;
-    /**
-     * The enrichedAuditLogs property
-     */
-    enrichedAuditLogs?: EnrichedAuditLogs | null;
-    /**
-     * The forwardingOptions property
-     */
-    forwardingOptions?: ForwardingOptions | null;
 }
 export type Status = (typeof StatusObject)[keyof typeof StatusObject];
 export interface TenantStatus extends Entity, Parsable {
-    /**
-     * Reflects a message to the user if there's an error.
-     */
-    onboardingErrorMessage?: string | null;
-    /**
-     * The onboardingStatus property
-     */
-    onboardingStatus?: OnboardingStatus | null;
 }
 export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -6610,7 +7056,7 @@ export interface ThreatIntelligenceDestination extends AdditionalDataHolder, Bac
 }
 export interface ThreatIntelligenceFqdnDestination extends Parsable, ThreatIntelligenceDestination {
     /**
-     * The values property
+     * A collection of fully qualified domain names (FQDNs) associated with potential security threats.
      */
     values?: string[] | null;
 }
@@ -6620,7 +7066,7 @@ export interface ThreatIntelligenceMatchingConditions extends AdditionalDataHold
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The destinations property
+     * A collection of destinations that are considered potential threats for network access evaluation.
      */
     destinations?: ThreatIntelligenceDestination[] | null;
     /**
@@ -6628,13 +7074,13 @@ export interface ThreatIntelligenceMatchingConditions extends AdditionalDataHold
      */
     odataType?: string | null;
     /**
-     * The severity property
+     * The severity level of the threat associated with the destinations. Higher severity levels typically result in stricter security controls. The possible values are: low, medium, high, unknownFutureValue.
      */
     severity?: ThreatIntelligenceSeverity | null;
 }
 export interface ThreatIntelligencePolicy extends Parsable, Policy {
     /**
-     * The lastModifiedDateTime property
+     * The date and time when the policy was last modified.
      */
     lastModifiedDateTime?: Date | null;
     /**
@@ -6670,7 +7116,7 @@ export interface ThreatIntelligenceRule extends Parsable, PolicyRule {
      */
     action?: ThreatIntelligenceAction | null;
     /**
-     * The description property
+     * A description of the threat intelligence rule. Supports $filter (eq).
      */
     description?: string | null;
     /**
@@ -6678,7 +7124,7 @@ export interface ThreatIntelligenceRule extends Parsable, PolicyRule {
      */
     matchingConditions?: ThreatIntelligenceMatchingConditions | null;
     /**
-     * The priority property
+     * The priority of the rule which determines the order of rule evaluation. Lower values indicate higher priority. Supports $filter (eq).
      */
     priority?: number | null;
     /**
@@ -6702,6 +7148,105 @@ export interface ThreatIntelligenceRuleSettings extends AdditionalDataHolder, Ba
 }
 export type ThreatIntelligenceSeverity = (typeof ThreatIntelligenceSeverityObject)[keyof typeof ThreatIntelligenceSeverityObject];
 export type ThreatSeverity = (typeof ThreatSeverityObject)[keyof typeof ThreatSeverityObject];
+export type TlsCertificateStatus = (typeof TlsCertificateStatusObject)[keyof typeof TlsCertificateStatusObject];
+export interface TlsInspectionDestination extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface TlsInspectionFqdnDestination extends Parsable, TlsInspectionDestination {
+    /**
+     * A collection of fully qualified domain names to match against. The special value * represents any domain. Wildcard patterns can be used in domain names (for example: *.contoso.com). This collection cannot be empty or null.
+     */
+    values?: string[] | null;
+}
+export interface TlsInspectionMatchingConditions extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * A collection of destinations to match against. Can include FQDN destinations or web category destinations. An empty collection means no destination matching is performed. At least one destination must have non-null properties to allow for matching.
+     */
+    destinations?: TlsInspectionDestination[] | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface TlsInspectionPolicy extends Parsable, Policy {
+    /**
+     * The timestamp of when the policy was last modified. Supports $filter (eq, ne, not, ge, le, in) and $orderby. Read-only.
+     */
+    lastModifiedDateTime?: Date | null;
+    /**
+     * The settings property
+     */
+    settings?: TlsInspectionPolicySettings | null;
+}
+export interface TlsInspectionPolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: TlsInspectionPolicy[] | null;
+}
+export interface TlsInspectionPolicyLink extends Parsable, PolicyLink {
+}
+export interface TlsInspectionPolicySettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface TlsInspectionRule extends Parsable, PolicyRule {
+    /**
+     * Optional description explaining the purpose of the rule.
+     */
+    description?: string | null;
+    /**
+     * The matchingConditions property
+     */
+    matchingConditions?: TlsInspectionMatchingConditions | null;
+    /**
+     * The priority of the rule. Rules are evaluated in ascending order of priority. Lower numbers indicate higher priority. Supports $filter (eq, ne, not, ge, le, in) and $orderby.
+     */
+    priority?: number | null;
+    /**
+     * The settings property
+     */
+    settings?: TlsInspectionRuleSettings | null;
+}
+export interface TlsInspectionRuleSettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The status property
+     */
+    status?: SecurityRuleStatus | null;
+}
+export interface TlsInspectionWebCategoryDestination extends Parsable, TlsInspectionDestination {
+    /**
+     * A collection of web category names to match against. This collection cannot be empty or null.
+     */
+    values?: string[] | null;
+}
+export interface TlsTermination extends Entity, Parsable {
+}
 export type TrafficForwardingType = (typeof TrafficForwardingTypeObject)[keyof typeof TrafficForwardingTypeObject];
 export type TrafficType = (typeof TrafficTypeObject)[keyof typeof TrafficTypeObject];
 export interface TransactionSummary extends AdditionalDataHolder, BackedModel, Parsable {
@@ -6864,6 +7409,24 @@ export interface User extends AdditionalDataHolder, BackedModel, Parsable {
     userType?: UserType | null;
 }
 export type UserType = (typeof UserTypeObject)[keyof typeof UserTypeObject];
+export interface ValidityDate extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Date and time when certificate validity expires.
+     */
+    endDateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Date and time when certificate validity begins.
+     */
+    startDateTime?: Date | null;
+}
 export interface WebCategoriesSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The action property
@@ -6948,6 +7511,11 @@ export const BandwidthCapacityInMbpsObject = {
     Mbps500: "mbps500",
     Mbps750: "mbps750",
     Mbps1000: "mbps1000",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ClientFallbackActionObject = {
+    Bypass: "bypass",
+    Block: "block",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const ConnectionStatusObject = {
@@ -7137,15 +7705,6 @@ export const NetworkTrafficOperationStatusObject = {
     Failure: "failure",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
-export const OnboardingStatusObject = {
-    Offboarded: "offboarded",
-    OffboardingInProgress: "offboardingInProgress",
-    OnboardingInProgress: "onboardingInProgress",
-    Onboarded: "onboarded",
-    OnboardingErrorOccurred: "onboardingErrorOccurred",
-    OffboardingErrorOccurred: "offboardingErrorOccurred",
-    UnknownFutureValue: "unknownFutureValue",
-} as const;
 export const PfsGroupObject = {
     None: "none",
     Pfs1: "pfs1",
@@ -7237,6 +7796,14 @@ export const ThreatSeverityObject = {
     High: "high",
     Critical: "critical",
     UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const TlsCertificateStatusObject = {
+    CsrGenerated: "csrGenerated",
+    Enrolling: "enrolling",
+    Active: "active",
+    UnknownFutureValue: "unknownFutureValue",
+    Expiring: "expiring",
+    Expired: "expired",
 } as const;
 export const TrafficForwardingTypeObject = {
     M365: "m365",

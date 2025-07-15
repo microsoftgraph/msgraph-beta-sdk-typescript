@@ -35,15 +35,6 @@ export function createUsageRightFromDiscriminatorValue(parseNode: ParseNode | un
     return deserializeIntoUsageRight;
 }
 /**
- * Creates a new instance of the appropriate class based on discriminator value
- * @param parseNode The parse node to use to read the discriminator value and create the object
- * @returns {UserCloudLicensing}
- */
-// @ts-ignore
-export function createUserCloudLicensingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
-    return deserializeIntoUserCloudLicensing;
-}
-/**
  * The deserialization information for the current model
  * @param GroupCloudLicensing The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
@@ -83,19 +74,6 @@ export function deserializeIntoUsageRight(usageRight: Partial<UsageRight> | unde
         "services": n => { usageRight.services = n.getCollectionOfObjectValues<Service>(createServiceFromDiscriminatorValue); },
         "skuId": n => { usageRight.skuId = n.getGuidValue(); },
         "skuPartNumber": n => { usageRight.skuPartNumber = n.getStringValue(); },
-    }
-}
-/**
- * The deserialization information for the current model
- * @param UserCloudLicensing The instance to deserialize into.
- * @returns {Record<string, (node: ParseNode) => void>}
- */
-// @ts-ignore
-export function deserializeIntoUserCloudLicensing(userCloudLicensing: Partial<UserCloudLicensing> | undefined = {}) : Record<string, (node: ParseNode) => void> {
-    return {
-        "backingStoreEnabled": n => { userCloudLicensing.backingStoreEnabled = true; },
-        "@odata.type": n => { userCloudLicensing.odataType = n.getStringValue(); },
-        "usageRights": n => { userCloudLicensing.usageRights = n.getCollectionOfObjectValues<UsageRight>(createUsageRightFromDiscriminatorValue); },
     }
 }
 export interface GroupCloudLicensing extends AdditionalDataHolder, BackedModel, Parsable {
@@ -154,19 +132,6 @@ export function serializeUsageRight(writer: SerializationWriter, usageRight: Par
     writer.writeGuidValue("skuId", usageRight.skuId);
     writer.writeStringValue("skuPartNumber", usageRight.skuPartNumber);
 }
-/**
- * Serializes information the current object
- * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
- * @param UserCloudLicensing The instance to serialize from.
- * @param writer Serialization writer to use to serialize this model
- */
-// @ts-ignore
-export function serializeUserCloudLicensing(writer: SerializationWriter, userCloudLicensing: Partial<UserCloudLicensing> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
-    if (!userCloudLicensing || isSerializingDerivedType) { return; }
-    writer.writeStringValue("@odata.type", userCloudLicensing.odataType);
-    writer.writeCollectionOfObjectValues<UsageRight>("usageRights", userCloudLicensing.usageRights, serializeUsageRight);
-    writer.writeAdditionalData(userCloudLicensing.additionalData);
-}
 export interface Service extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The assignableTo property
@@ -202,20 +167,6 @@ export interface UsageRight extends Entity, Parsable {
      * Unique SKU display name that is equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.
      */
     skuPartNumber?: string | null;
-}
-export interface UserCloudLicensing extends AdditionalDataHolder, BackedModel, Parsable {
-    /**
-     * Stores model information.
-     */
-    backingStoreEnabled?: boolean | null;
-    /**
-     * The OdataType property
-     */
-    odataType?: string | null;
-    /**
-     * The usageRights property
-     */
-    usageRights?: UsageRight[] | null;
 }
 export const AssigneeTypesObject = {
     None: "none",

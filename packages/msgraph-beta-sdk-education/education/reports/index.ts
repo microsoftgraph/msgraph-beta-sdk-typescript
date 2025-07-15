@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ReadingAssignmentSubmissionsRequestBuilderNavigationMetadata, ReadingAssignmentSubmissionsRequestBuilderRequestsMetadata, type ReadingAssignmentSubmissionsRequestBuilder } from './readingAssignmentSubmissions/index.js';
 // @ts-ignore
+import { ReadingCoachPassagesRequestBuilderNavigationMetadata, ReadingCoachPassagesRequestBuilderRequestsMetadata, type ReadingCoachPassagesRequestBuilder } from './readingCoachPassages/index.js';
+// @ts-ignore
 import { ReflectCheckInResponsesRequestBuilderNavigationMetadata, ReflectCheckInResponsesRequestBuilderRequestsMetadata, type ReflectCheckInResponsesRequestBuilder } from './reflectCheckInResponses/index.js';
 // @ts-ignore
 import { SpeakerAssignmentSubmissionsRequestBuilderNavigationMetadata, SpeakerAssignmentSubmissionsRequestBuilderRequestsMetadata, type SpeakerAssignmentSubmissionsRequestBuilder } from './speakerAssignmentSubmissions/index.js';
@@ -22,6 +24,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to manage the readingAssignmentSubmissions property of the microsoft.graph.reportsRoot entity.
      */
     get readingAssignmentSubmissions(): ReadingAssignmentSubmissionsRequestBuilder;
+    /**
+     * Provides operations to manage the readingCoachPassages property of the microsoft.graph.reportsRoot entity.
+     */
+    get readingCoachPassages(): ReadingCoachPassagesRequestBuilder;
     /**
      * Provides operations to manage the reflectCheckInResponses property of the microsoft.graph.reportsRoot entity.
      */
@@ -102,6 +108,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     readingAssignmentSubmissions: {
         requestsMetadata: ReadingAssignmentSubmissionsRequestBuilderRequestsMetadata,
         navigationMetadata: ReadingAssignmentSubmissionsRequestBuilderNavigationMetadata,
+    },
+    readingCoachPassages: {
+        requestsMetadata: ReadingCoachPassagesRequestBuilderRequestsMetadata,
+        navigationMetadata: ReadingCoachPassagesRequestBuilderNavigationMetadata,
     },
     reflectCheckInResponses: {
         requestsMetadata: ReflectCheckInResponsesRequestBuilderRequestsMetadata,

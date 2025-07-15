@@ -307,8 +307,6 @@ export function deserializeIntoAlertRuleCollectionResponse(alertRuleCollectionRe
 export function deserializeIntoMonitoring(monitoring: Partial<Monitoring> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(monitoring),
-        "alertRecords": n => { monitoring.alertRecords = n.getCollectionOfObjectValues<AlertRecord>(createAlertRecordFromDiscriminatorValue); },
-        "alertRules": n => { monitoring.alertRules = n.getCollectionOfObjectValues<AlertRule>(createAlertRuleFromDiscriminatorValue); },
     }
 }
 /**
@@ -392,14 +390,6 @@ export function deserializeIntoRuleThreshold(ruleThreshold: Partial<RuleThreshol
     }
 }
 export interface Monitoring extends Entity, Parsable {
-    /**
-     * The collection of records of alert events.
-     */
-    alertRecords?: AlertRecord[] | null;
-    /**
-     * The collection of alert rules.
-     */
-    alertRules?: AlertRule[] | null;
 }
 export interface NotificationChannel extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -624,8 +614,6 @@ export function serializeAlertRuleCollectionResponse(writer: SerializationWriter
 export function serializeMonitoring(writer: SerializationWriter, monitoring: Partial<Monitoring> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!monitoring || isSerializingDerivedType) { return; }
     serializeEntity(writer, monitoring, isSerializingDerivedType)
-    writer.writeCollectionOfObjectValues<AlertRecord>("alertRecords", monitoring.alertRecords, serializeAlertRecord);
-    writer.writeCollectionOfObjectValues<AlertRule>("alertRules", monitoring.alertRules, serializeAlertRule);
 }
 /**
  * Serializes information the current object
