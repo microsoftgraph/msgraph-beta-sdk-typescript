@@ -14,7 +14,6 @@ export interface MicrosoftGraphIndustryDataValidateRequestBuilder extends BaseRe
      * Perform validations applicable for the specific instance of the data connector.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**

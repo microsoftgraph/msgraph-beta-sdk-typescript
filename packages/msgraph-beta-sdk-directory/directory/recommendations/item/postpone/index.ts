@@ -49,7 +49,6 @@ export interface PostponeRequestBuilder extends BaseRequestBuilder<PostponeReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Recommendation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-beta|Find more info here}
      */
      post(body: PostponePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Recommendation | undefined>;
     /**

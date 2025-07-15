@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "B48DF83B3B53D3C2F3FAC202F0F3768DCBBA0A73960ABFDCBF9E1074C3554B61BB55F4F20E3E9C7B56E2A1939E318079A9CAB410CE77F1794A9B481A6FE57CD1",
+  "descriptionHash": "07562DABE19C4D083CDAFA5A647CD89E9907125207192F6C918C954F8E2786370CF01BB071AE4651C841E044BE45AFF2F25421BCF42156CE0387B19BF7DBB392",
   "descriptionLocation": "../../msgraph-metadata/clean_beta_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.28.0",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "GraphBetaBaseServiceClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "github.com/microsoftgraph/msgraph-sdk-typescript/",

@@ -33,7 +33,6 @@ export interface DeltaRequestBuilder extends BaseRequestBuilder<DeltaRequestBuil
      * @returns {Promise<DeltaGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
-     * @see {@link https://learn.microsoft.com/graph/api/mailboxfolder-delta?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DeltaRequestBuilderGetQueryParameters> | undefined) : Promise<DeltaGetResponse | undefined>;
     /**

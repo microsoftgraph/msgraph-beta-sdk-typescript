@@ -59,7 +59,6 @@ export interface EndBreakRequestBuilder extends BaseRequestBuilder<EndBreakReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TimeCard>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/timecard-endbreak?view=graph-rest-beta|Find more info here}
      */
      post(body: EndBreakPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TimeCard | undefined>;
     /**

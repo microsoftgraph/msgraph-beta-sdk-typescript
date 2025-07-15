@@ -27,28 +27,30 @@ export interface ThreatIntelligencePoliciesRequestBuilder extends BaseRequestBui
      */
      byThreatIntelligencePolicyId(threatIntelligencePolicyId: string) : ThreatIntelligencePolicyItemRequestBuilder;
     /**
-     * Get threatIntelligencePolicies from networkAccess
+     * Get a list of the threatIntelligencePolicy objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatIntelligencePolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-threatintelligencepolicies?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ThreatIntelligencePoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<ThreatIntelligencePolicyCollectionResponse | undefined>;
     /**
-     * Create new navigation property to threatIntelligencePolicies for networkAccess
+     * Create a new threatIntelligencePolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ThreatIntelligencePolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-threatintelligencepolicies?view=graph-rest-beta|Find more info here}
      */
      post(body: ThreatIntelligencePolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ThreatIntelligencePolicy | undefined>;
     /**
-     * Get threatIntelligencePolicies from networkAccess
+     * Get a list of the threatIntelligencePolicy objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ThreatIntelligencePoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to threatIntelligencePolicies for networkAccess
+     * Create a new threatIntelligencePolicy object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface ThreatIntelligencePoliciesRequestBuilder extends BaseRequestBui
      toPostRequestInformation(body: ThreatIntelligencePolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get threatIntelligencePolicies from networkAccess
+ * Get a list of the threatIntelligencePolicy objects and their properties.
  */
 export interface ThreatIntelligencePoliciesRequestBuilderGetQueryParameters {
     /**

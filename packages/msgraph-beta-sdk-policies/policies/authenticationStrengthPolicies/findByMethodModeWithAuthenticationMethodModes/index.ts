@@ -45,7 +45,6 @@ export interface FindByMethodModeWithAuthenticationMethodModesRequestBuilder ext
      * @returns {Promise<FindByMethodModeWithAuthenticationMethodModesGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31
-     * @see {@link https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters> | undefined) : Promise<FindByMethodModeWithAuthenticationMethodModesGetResponse | undefined>;
     /**

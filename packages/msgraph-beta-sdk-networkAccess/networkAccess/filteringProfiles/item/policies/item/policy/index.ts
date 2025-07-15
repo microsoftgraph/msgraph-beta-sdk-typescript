@@ -13,21 +13,22 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBuilder> {
     /**
-     * Policy.
+     * Get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Policy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list-policy?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : Promise<Policy | undefined>;
     /**
-     * Policy.
+     * Get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Policy.
+ * Get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
  */
 export interface PolicyRequestBuilderGetQueryParameters {
     /**

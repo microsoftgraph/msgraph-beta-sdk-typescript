@@ -478,8 +478,6 @@ export function deserializeIntoHealthMonitoringDictionary(healthMonitoringDictio
 export function deserializeIntoHealthMonitoringRoot(healthMonitoringRoot: Partial<HealthMonitoringRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(healthMonitoringRoot),
-        "alertConfigurations": n => { healthMonitoringRoot.alertConfigurations = n.getCollectionOfObjectValues<AlertConfiguration>(createAlertConfigurationFromDiscriminatorValue); },
-        "alerts": n => { healthMonitoringRoot.alerts = n.getCollectionOfObjectValues<Alert>(createAlertFromDiscriminatorValue); },
     }
 }
 /**
@@ -607,14 +605,6 @@ export interface GroupImpactSummary extends DirectoryObjectImpactSummary, Parsab
 export interface HealthMonitoringDictionary extends Dictionary, Parsable {
 }
 export interface HealthMonitoringRoot extends Entity, Parsable {
-    /**
-     * The configuration of an alert type, which defines behavior that occurs when an alert is created.
-     */
-    alertConfigurations?: AlertConfiguration[] | null;
-    /**
-     * The collection of health monitoring system detected alerts for anomalous usage patterns found in a Microsoft Entra tenant.
-     */
-    alerts?: Alert[] | null;
 }
 export interface ResourceImpactSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -854,8 +844,6 @@ export function serializeHealthMonitoringDictionary(writer: SerializationWriter,
 export function serializeHealthMonitoringRoot(writer: SerializationWriter, healthMonitoringRoot: Partial<HealthMonitoringRoot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!healthMonitoringRoot || isSerializingDerivedType) { return; }
     serializeEntity(writer, healthMonitoringRoot, isSerializingDerivedType)
-    writer.writeCollectionOfObjectValues<AlertConfiguration>("alertConfigurations", healthMonitoringRoot.alertConfigurations, serializeAlertConfiguration);
-    writer.writeCollectionOfObjectValues<Alert>("alerts", healthMonitoringRoot.alerts, serializeAlert);
 }
 /**
  * Serializes information the current object

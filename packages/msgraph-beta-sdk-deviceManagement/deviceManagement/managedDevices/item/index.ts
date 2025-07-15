@@ -80,6 +80,8 @@ import { ResetPasscodeRequestBuilderRequestsMetadata, type ResetPasscodeRequestB
 // @ts-ignore
 import { RetireRequestBuilderRequestsMetadata, type RetireRequestBuilder } from './retire/index.js';
 // @ts-ignore
+import { RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilderRequestsMetadata, type RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder } from './retrieveMacOSManagedDeviceLocalAdminAccountDetail/index.js';
+// @ts-ignore
 import { RevokeAppleVppLicensesRequestBuilderRequestsMetadata, type RevokeAppleVppLicensesRequestBuilder } from './revokeAppleVppLicenses/index.js';
 // @ts-ignore
 import { RotateBitLockerKeysRequestBuilderRequestsMetadata, type RotateBitLockerKeysRequestBuilder } from './rotateBitLockerKeys/index.js';
@@ -266,6 +268,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the retire method.
      */
     get retire(): RetireRequestBuilder;
+    /**
+     * Provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.
+     */
+    get retrieveMacOSManagedDeviceLocalAdminAccountDetail(): RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder;
     /**
      * Provides operations to call the revokeAppleVppLicenses method.
      */
@@ -517,6 +523,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     retire: {
         requestsMetadata: RetireRequestBuilderRequestsMetadata,
+    },
+    retrieveMacOSManagedDeviceLocalAdminAccountDetail: {
+        requestsMetadata: RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilderRequestsMetadata,
     },
     revokeAppleVppLicenses: {
         requestsMetadata: RevokeAppleVppLicensesRequestBuilderRequestsMetadata,

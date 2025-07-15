@@ -27,28 +27,30 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      byPolicyLinkId(policyLinkId: string) : PolicyLinkItemRequestBuilder;
     /**
-     * The traffic forwarding policies associated with this profile.
+     * Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<PolicyLinkCollectionResponse | undefined>;
     /**
-     * Create new navigation property to policies for networkAccess
+     * Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-post?view=graph-rest-beta|Find more info here}
      */
      post(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicyLink | undefined>;
     /**
-     * The traffic forwarding policies associated with this profile.
+     * Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to policies for networkAccess
+     * Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      toPostRequestInformation(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The traffic forwarding policies associated with this profile.
+ * Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
  */
 export interface PoliciesRequestBuilderGetQueryParameters {
     /**

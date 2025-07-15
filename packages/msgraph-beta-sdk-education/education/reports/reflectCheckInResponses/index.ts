@@ -27,11 +27,11 @@ export interface ReflectCheckInResponsesRequestBuilder extends BaseRequestBuilde
      */
      byReflectCheckInResponseId(reflectCheckInResponseId: string) : ReflectCheckInResponseItemRequestBuilder;
     /**
-     * Read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+     * Get a list of Reflect check-ins that were submitted by a student.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ReflectCheckInResponseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/reflectcheckinresponse-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ReflectCheckInResponsesRequestBuilderGetQueryParameters> | undefined) : Promise<ReflectCheckInResponseCollectionResponse | undefined>;
     /**
@@ -43,7 +43,7 @@ export interface ReflectCheckInResponsesRequestBuilder extends BaseRequestBuilde
      */
      post(body: ReflectCheckInResponse, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ReflectCheckInResponse | undefined>;
     /**
-     * Read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+     * Get a list of Reflect check-ins that were submitted by a student.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface ReflectCheckInResponsesRequestBuilder extends BaseRequestBuilde
      toPostRequestInformation(body: ReflectCheckInResponse, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+ * Get a list of Reflect check-ins that were submitted by a student.
  */
 export interface ReflectCheckInResponsesRequestBuilderGetQueryParameters {
     /**

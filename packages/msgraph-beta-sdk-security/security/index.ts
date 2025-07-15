@@ -34,6 +34,8 @@ import { IdentitiesRequestBuilderNavigationMetadata, IdentitiesRequestBuilderReq
 // @ts-ignore
 import { IncidentsRequestBuilderNavigationMetadata, IncidentsRequestBuilderRequestsMetadata, type IncidentsRequestBuilder } from './incidents/index.js';
 // @ts-ignore
+import { IncidentTasksRequestBuilderNavigationMetadata, IncidentTasksRequestBuilderRequestsMetadata, type IncidentTasksRequestBuilder } from './incidentTasks/index.js';
+// @ts-ignore
 import { InformationProtectionRequestBuilderNavigationMetadata, InformationProtectionRequestBuilderRequestsMetadata, type InformationProtectionRequestBuilder } from './informationProtection/index.js';
 // @ts-ignore
 import { IpSecurityProfilesRequestBuilderNavigationMetadata, IpSecurityProfilesRequestBuilderRequestsMetadata, type IpSecurityProfilesRequestBuilder } from './ipSecurityProfiles/index.js';
@@ -130,6 +132,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the incidents property of the microsoft.graph.security entity.
      */
     get incidents(): IncidentsRequestBuilder;
+    /**
+     * Provides operations to manage the incidentTasks property of the microsoft.graph.security entity.
+     */
+    get incidentTasks(): IncidentTasksRequestBuilder;
     /**
      * Provides operations to manage the informationProtection property of the microsoft.graph.security entity.
      */
@@ -310,6 +316,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     incidents: {
         requestsMetadata: IncidentsRequestBuilderRequestsMetadata,
         navigationMetadata: IncidentsRequestBuilderNavigationMetadata,
+    },
+    incidentTasks: {
+        requestsMetadata: IncidentTasksRequestBuilderRequestsMetadata,
+        navigationMetadata: IncidentTasksRequestBuilderNavigationMetadata,
     },
     informationProtection: {
         requestsMetadata: InformationProtectionRequestBuilderRequestsMetadata,

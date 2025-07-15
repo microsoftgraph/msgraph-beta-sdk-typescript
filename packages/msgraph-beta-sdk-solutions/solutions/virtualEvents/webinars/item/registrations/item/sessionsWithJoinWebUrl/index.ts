@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface SessionsWithJoinWebUrlRequestBuilder extends BaseRequestBuilder<SessionsWithJoinWebUrlRequestBuilder> {
     /**
-     * Get sessions from solutions
+     * Sessions for a registration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventSession | undefined>;
     /**
-     * Get sessions from solutions
+     * Sessions for a registration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get sessions from solutions
+ * Sessions for a registration.
  */
 export interface SessionsWithJoinWebUrlRequestBuilderGetQueryParameters {
     /**

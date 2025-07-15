@@ -15,7 +15,6 @@ export interface GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
