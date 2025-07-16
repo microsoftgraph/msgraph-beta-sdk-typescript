@@ -17,6 +17,7 @@ export interface GetFrontlineCloudPcAccessStateRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FrontlineCloudPcAccessState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpc-getfrontlinecloudpcaccessstate?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FrontlineCloudPcAccessState | undefined>;
     /**

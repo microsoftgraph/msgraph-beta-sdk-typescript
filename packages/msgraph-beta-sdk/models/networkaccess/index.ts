@@ -3305,6 +3305,9 @@ export function deserializeIntoRuleDestination(ruleDestination: Partial<RuleDest
 export function deserializeIntoSettings(settings: Partial<Settings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(settings),
+        "conditionalAccess": n => { settings.conditionalAccess = n.getObjectValue<ConditionalAccessSettings>(createConditionalAccessSettingsFromDiscriminatorValue); },
+        "crossTenantAccess": n => { settings.crossTenantAccess = n.getObjectValue<CrossTenantAccessSettings>(createCrossTenantAccessSettingsFromDiscriminatorValue); },
+        "forwardingOptions": n => { settings.forwardingOptions = n.getObjectValue<ForwardingOptions>(createForwardingOptionsFromDiscriminatorValue); },
     }
 }
 /**
@@ -3316,6 +3319,8 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
 export function deserializeIntoTenantStatus(tenantStatus: Partial<TenantStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tenantStatus),
+        "onboardingErrorMessage": n => { tenantStatus.onboardingErrorMessage = n.getStringValue(); },
+        "onboardingStatus": n => { tenantStatus.onboardingStatus = n.getEnumValue<OnboardingStatus>(OnboardingStatusObject); },
     }
 }
 /**
@@ -3584,6 +3589,7 @@ export function deserializeIntoTlsInspectionWebCategoryDestination(tlsInspection
 export function deserializeIntoTlsTermination(tlsTermination: Partial<TlsTermination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(tlsTermination),
+        "externalCertificateAuthorityCertificates": n => { tlsTermination.externalCertificateAuthorityCertificates = n.getCollectionOfObjectValues<ExternalCertificateAuthorityCertificate>(createExternalCertificateAuthorityCertificateFromDiscriminatorValue); },
     }
 }
 /**
@@ -4574,6 +4580,7 @@ export interface NetworkAccessTrafficCollectionResponse extends BaseCollectionPa
 export type NetworkDestinationType = (typeof NetworkDestinationTypeObject)[keyof typeof NetworkDestinationTypeObject];
 export type NetworkingProtocol = (typeof NetworkingProtocolObject)[keyof typeof NetworkingProtocolObject];
 export type NetworkTrafficOperationStatus = (typeof NetworkTrafficOperationStatusObject)[keyof typeof NetworkTrafficOperationStatusObject];
+export type OnboardingStatus = (typeof OnboardingStatusObject)[keyof typeof OnboardingStatusObject];
 export interface PeerConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Specifies ASN of one end of IPSec tunnel (local or peer).
@@ -6546,6 +6553,9 @@ export function serializeRuleDestination(writer: SerializationWriter, ruleDestin
 export function serializeSettings(writer: SerializationWriter, settings: Partial<Settings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!settings || isSerializingDerivedType) { return; }
     serializeEntity(writer, settings, isSerializingDerivedType)
+    writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
+    writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
+    writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
 }
 /**
  * Serializes information the current object
@@ -6557,6 +6567,8 @@ export function serializeSettings(writer: SerializationWriter, settings: Partial
 export function serializeTenantStatus(writer: SerializationWriter, tenantStatus: Partial<TenantStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!tenantStatus || isSerializingDerivedType) { return; }
     serializeEntity(writer, tenantStatus, isSerializingDerivedType)
+    writer.writeStringValue("onboardingErrorMessage", tenantStatus.onboardingErrorMessage);
+    writer.writeEnumValue<OnboardingStatus>("onboardingStatus", tenantStatus.onboardingStatus);
 }
 /**
  * Serializes information the current object
@@ -6838,6 +6850,7 @@ export function serializeTlsInspectionWebCategoryDestination(writer: Serializati
 export function serializeTlsTermination(writer: SerializationWriter, tlsTermination: Partial<TlsTermination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!tlsTermination || isSerializingDerivedType) { return; }
     serializeEntity(writer, tlsTermination, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ExternalCertificateAuthorityCertificate>("externalCertificateAuthorityCertificates", tlsTermination.externalCertificateAuthorityCertificates, serializeExternalCertificateAuthorityCertificate);
 }
 /**
  * Serializes information the current object
@@ -7013,9 +7026,29 @@ export function serializeWebCategoryFilteringRule(writer: SerializationWriter, w
     serializeFilteringRule(writer, webCategoryFilteringRule, isSerializingDerivedType)
 }
 export interface Settings extends Entity, Parsable {
+    /**
+     * The conditionalAccess property
+     */
+    conditionalAccess?: ConditionalAccessSettings | null;
+    /**
+     * The crossTenantAccess property
+     */
+    crossTenantAccess?: CrossTenantAccessSettings | null;
+    /**
+     * The forwardingOptions property
+     */
+    forwardingOptions?: ForwardingOptions | null;
 }
 export type Status = (typeof StatusObject)[keyof typeof StatusObject];
 export interface TenantStatus extends Entity, Parsable {
+    /**
+     * Reflects a message to the user if there's an error.
+     */
+    onboardingErrorMessage?: string | null;
+    /**
+     * The onboardingStatus property
+     */
+    onboardingStatus?: OnboardingStatus | null;
 }
 export interface ThirdPartyTokenDetails extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -7246,6 +7279,10 @@ export interface TlsInspectionWebCategoryDestination extends Parsable, TlsInspec
     values?: string[] | null;
 }
 export interface TlsTermination extends Entity, Parsable {
+    /**
+     * List of customer's Certificate Authority (CA) certificates used for TLS inspection in Global Secure Access
+     */
+    externalCertificateAuthorityCertificates?: ExternalCertificateAuthorityCertificate[] | null;
 }
 export type TrafficForwardingType = (typeof TrafficForwardingTypeObject)[keyof typeof TrafficForwardingTypeObject];
 export type TrafficType = (typeof TrafficTypeObject)[keyof typeof TrafficTypeObject];
@@ -7703,6 +7740,15 @@ export const NetworkingProtocolObject = {
 export const NetworkTrafficOperationStatusObject = {
     Success: "success",
     Failure: "failure",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const OnboardingStatusObject = {
+    Offboarded: "offboarded",
+    OffboardingInProgress: "offboardingInProgress",
+    OnboardingInProgress: "onboardingInProgress",
+    Onboarded: "onboarded",
+    OnboardingErrorOccurred: "onboardingErrorOccurred",
+    OffboardingErrorOccurred: "offboardingErrorOccurred",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const PfsGroupObject = {

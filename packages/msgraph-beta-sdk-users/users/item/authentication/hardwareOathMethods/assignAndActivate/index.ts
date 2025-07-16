@@ -35,6 +35,7 @@ export interface AssignAndActivateRequestBuilder extends BaseRequestBuilder<Assi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivate?view=graph-rest-beta|Find more info here}
      */
      post(body: AssignAndActivatePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**

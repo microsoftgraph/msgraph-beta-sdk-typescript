@@ -77,6 +77,7 @@ export interface GetDailyAggregatedRemoteConnectionReportsRequestBuilder extends
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-beta|Find more info here}
      */
      post(body: GetDailyAggregatedRemoteConnectionReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**

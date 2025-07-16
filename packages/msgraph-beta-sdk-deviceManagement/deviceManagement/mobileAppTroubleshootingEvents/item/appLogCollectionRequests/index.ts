@@ -27,7 +27,7 @@ export interface AppLogCollectionRequestsRequestBuilder extends BaseRequestBuild
      */
      byAppLogCollectionRequestId(appLogCollectionRequestId: string) : AppLogCollectionRequestItemRequestBuilder;
     /**
-     * Indicates collection of App Log Upload Request.
+     * The collection property of AppLogUploadRequest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppLogCollectionRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface AppLogCollectionRequestsRequestBuilder extends BaseRequestBuild
      */
      post(body: AppLogCollectionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AppLogCollectionRequest | undefined>;
     /**
-     * Indicates collection of App Log Upload Request.
+     * The collection property of AppLogUploadRequest.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface AppLogCollectionRequestsRequestBuilder extends BaseRequestBuild
      toPostRequestInformation(body: AppLogCollectionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Indicates collection of App Log Upload Request.
+ * The collection property of AppLogUploadRequest.
  */
 export interface AppLogCollectionRequestsRequestBuilderGetQueryParameters {
     /**

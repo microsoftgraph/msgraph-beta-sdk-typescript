@@ -26,11 +26,11 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
+     * Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomAuthenticationExtension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomAuthenticationExtension | undefined>;
     /**
@@ -48,7 +48,7 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
+     * Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -62,7 +62,7 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      toPatchRequestInformation(body: CustomAuthenticationExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
+ * Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
  */
 export interface CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters {
     /**

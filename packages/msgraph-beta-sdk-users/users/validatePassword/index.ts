@@ -61,6 +61,7 @@ export interface ValidatePasswordRequestBuilder extends BaseRequestBuilder<Valid
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordValidationInformation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-beta|Find more info here}
      */
      post(body: ValidatePasswordPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordValidationInformation | undefined>;
     /**

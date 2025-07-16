@@ -21,12 +21,12 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      */
      get(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : Promise<Schema | undefined>;
     /**
-     * Update the properties of a schema for an externalConnection.
+     * Create a new or update an existing schema for a Microsoft Search connection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Schema>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta|Find more info here}
      */
      patch(body: Schema, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Schema | undefined>;
     /**
@@ -36,7 +36,7 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a schema for an externalConnection.
+     * Create a new or update an existing schema for a Microsoft Search connection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

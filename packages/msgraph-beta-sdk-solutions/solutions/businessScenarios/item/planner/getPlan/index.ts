@@ -49,6 +49,7 @@ export interface GetPlanRequestBuilder extends BaseRequestBuilder<GetPlanRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioPlanReference>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-beta|Find more info here}
      */
      post(body: GetPlanPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenarioPlanReference | undefined>;
     /**

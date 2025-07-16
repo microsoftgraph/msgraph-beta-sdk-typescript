@@ -14,6 +14,7 @@ export interface ReuploadRequestBuilder extends BaseRequestBuilder<ReuploadReque
      * Reupload a cloudPcDeviceImage object that failed to upload.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
