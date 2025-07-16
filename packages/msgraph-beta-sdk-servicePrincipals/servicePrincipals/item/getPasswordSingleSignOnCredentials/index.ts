@@ -49,6 +49,7 @@ export interface GetPasswordSingleSignOnCredentialsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PasswordSingleSignOnCredentialSet>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta|Find more info here}
      */
      post(body: GetPasswordSingleSignOnCredentialsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PasswordSingleSignOnCredentialSet | undefined>;
     /**

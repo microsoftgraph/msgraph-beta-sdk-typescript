@@ -96,6 +96,10 @@ export interface ConnectionOperationCollectionResponse extends BaseCollectionPag
 }
 export type ConnectionOperationStatus = (typeof ConnectionOperationStatusObject)[keyof typeof ConnectionOperationStatusObject];
 export interface ConnectionQuota extends Entity, Parsable {
+    /**
+     * The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.
+     */
+    itemsRemaining?: number | null;
 }
 export type ConnectionState = (typeof ConnectionStateObject)[keyof typeof ConnectionStateObject];
 export type ContentExperienceType = (typeof ContentExperienceTypeObject)[keyof typeof ContentExperienceTypeObject];
@@ -320,11 +324,29 @@ export function createPropertiesFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Property}
+ */
+// @ts-ignore
+export function createPropertyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoProperty;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PropertyRule}
  */
 // @ts-ignore
 export function createPropertyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPropertyRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {RankingHint}
+ */
+// @ts-ignore
+export function createRankingHintFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoRankingHint;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -462,6 +484,7 @@ export function deserializeIntoConnectionOperationCollectionResponse(connectionO
 export function deserializeIntoConnectionQuota(connectionQuota: Partial<ConnectionQuota> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(connectionQuota),
+        "itemsRemaining": n => { connectionQuota.itemsRemaining = n.getNumberValue(); },
     }
 }
 /**
@@ -647,6 +670,7 @@ export function deserializeIntoExternalItemContent(externalItemContent: Partial<
 export function deserializeIntoIdentity(identity: Partial<Identity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(identity),
+        "type": n => { identity.type = n.getEnumValue<IdentityType>(IdentityTypeObject); },
     }
 }
 /**
@@ -688,6 +712,28 @@ export function deserializeIntoProperties(properties: Partial<Properties> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param Property The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoProperty(property: Partial<Property> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "aliases": n => { property.aliases = n.getCollectionOfPrimitiveValues<string>(); },
+        "backingStoreEnabled": n => { property.backingStoreEnabled = true; },
+        "isExactMatchRequired": n => { property.isExactMatchRequired = n.getBooleanValue(); },
+        "isQueryable": n => { property.isQueryable = n.getBooleanValue(); },
+        "isRefinable": n => { property.isRefinable = n.getBooleanValue(); },
+        "isRetrievable": n => { property.isRetrievable = n.getBooleanValue(); },
+        "isSearchable": n => { property.isSearchable = n.getBooleanValue(); },
+        "labels": n => { property.labels = n.getCollectionOfEnumValues<Label>(LabelObject); },
+        "name": n => { property.name = n.getStringValue(); },
+        "@odata.type": n => { property.odataType = n.getStringValue(); },
+        "rankingHint": n => { property.rankingHint = n.getObjectValue<RankingHint>(createRankingHintFromDiscriminatorValue); },
+        "type": n => { property.type = n.getEnumValue<PropertyType>(PropertyTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param PropertyRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -704,6 +750,19 @@ export function deserializeIntoPropertyRule(propertyRule: Partial<PropertyRule> 
 }
 /**
  * The deserialization information for the current model
+ * @param RankingHint The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoRankingHint(rankingHint: Partial<RankingHint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { rankingHint.backingStoreEnabled = true; },
+        "importanceScore": n => { rankingHint.importanceScore = n.getEnumValue<ImportanceScore>(ImportanceScoreObject); },
+        "@odata.type": n => { rankingHint.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param Schema The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -711,6 +770,8 @@ export function deserializeIntoPropertyRule(propertyRule: Partial<PropertyRule> 
 export function deserializeIntoSchema(schema: Partial<Schema> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(schema),
+        "baseType": n => { schema.baseType = n.getStringValue(); },
+        "properties": n => { schema.properties = n.getCollectionOfObjectValues<Property>(createPropertyFromDiscriminatorValue); },
     }
 }
 /**
@@ -960,6 +1021,10 @@ export interface ExternalItemContent extends AdditionalDataHolder, BackedModel, 
 }
 export type ExternalItemContentType = (typeof ExternalItemContentTypeObject)[keyof typeof ExternalItemContentTypeObject];
 export interface Identity extends Entity, Parsable {
+    /**
+     * The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
+     */
+    type?: IdentityType | null;
 }
 export interface IdentityCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -968,6 +1033,8 @@ export interface IdentityCollectionResponse extends BaseCollectionPaginationCoun
     value?: Identity[] | null;
 }
 export type IdentitySourceType = (typeof IdentitySourceTypeObject)[keyof typeof IdentitySourceTypeObject];
+export type IdentityType = (typeof IdentityTypeObject)[keyof typeof IdentityTypeObject];
+export type ImportanceScore = (typeof ImportanceScoreObject)[keyof typeof ImportanceScoreObject];
 export interface ItemIdResolver extends Parsable, UrlToItemResolverBase {
     /**
      * Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.
@@ -978,6 +1045,7 @@ export interface ItemIdResolver extends Parsable, UrlToItemResolverBase {
      */
     urlMatchInfo?: UrlMatchInfo | null;
 }
+export type Label = (typeof LabelObject)[keyof typeof LabelObject];
 export interface Properties extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -987,6 +1055,56 @@ export interface Properties extends AdditionalDataHolder, BackedModel, Parsable 
      * The OdataType property
      */
     odataType?: string | null;
+}
+export interface Property extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
+     */
+    aliases?: string[] | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
+     */
+    isExactMatchRequired?: boolean | null;
+    /**
+     * Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
+     */
+    isQueryable?: boolean | null;
+    /**
+     * Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
+     */
+    isRefinable?: boolean | null;
+    /**
+     * Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
+     */
+    isRetrievable?: boolean | null;
+    /**
+     * Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
+     */
+    isSearchable?: boolean | null;
+    /**
+     * Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
+     */
+    labels?: Label[] | null;
+    /**
+     * The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.
+     */
+    rankingHint?: RankingHint | null;
+    /**
+     * The type property
+     */
+    type?: PropertyType | null;
 }
 export interface PropertyRule extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1014,8 +1132,31 @@ export interface PropertyRule extends AdditionalDataHolder, BackedModel, Parsabl
      */
     valuesJoinedBy?: BinaryOperator | null;
 }
+export type PropertyType = (typeof PropertyTypeObject)[keyof typeof PropertyTypeObject];
+export interface RankingHint extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The importanceScore property
+     */
+    importanceScore?: ImportanceScore | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export type RuleOperation = (typeof RuleOperationObject)[keyof typeof RuleOperationObject];
 export interface Schema extends Entity, Parsable {
+    /**
+     * Must be set to microsoft.graph.externalItem. Required.
+     */
+    baseType?: string | null;
+    /**
+     * The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+     */
+    properties?: Property[] | null;
 }
 export interface SearchSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1121,6 +1262,7 @@ export function serializeConnectionOperationCollectionResponse(writer: Serializa
 export function serializeConnectionQuota(writer: SerializationWriter, connectionQuota: Partial<ConnectionQuota> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!connectionQuota || isSerializingDerivedType) { return; }
     serializeEntity(writer, connectionQuota, isSerializingDerivedType)
+    writer.writeNumberValue("itemsRemaining", connectionQuota.itemsRemaining);
 }
 /**
  * Serializes information the current object
@@ -1310,6 +1452,7 @@ export function serializeExternalItemContent(writer: SerializationWriter, extern
 export function serializeIdentity(writer: SerializationWriter, identity: Partial<Identity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!identity || isSerializingDerivedType) { return; }
     serializeEntity(writer, identity, isSerializingDerivedType)
+    writer.writeEnumValue<IdentityType>("type", identity.type);
 }
 /**
  * Serializes information the current object
@@ -1351,6 +1494,29 @@ export function serializeProperties(writer: SerializationWriter, properties: Par
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param Property The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeProperty(writer: SerializationWriter, property: Partial<Property> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!property || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("aliases", property.aliases);
+    writer.writeBooleanValue("isExactMatchRequired", property.isExactMatchRequired);
+    writer.writeBooleanValue("isQueryable", property.isQueryable);
+    writer.writeBooleanValue("isRefinable", property.isRefinable);
+    writer.writeBooleanValue("isRetrievable", property.isRetrievable);
+    writer.writeBooleanValue("isSearchable", property.isSearchable);
+    if(property.labels)
+    writer.writeCollectionOfEnumValues<Label>("labels", property.labels);
+    writer.writeStringValue("name", property.name);
+    writer.writeStringValue("@odata.type", property.odataType);
+    writer.writeObjectValue<RankingHint>("rankingHint", property.rankingHint, serializeRankingHint);
+    writer.writeEnumValue<PropertyType>("type", property.type);
+    writer.writeAdditionalData(property.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param PropertyRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -1367,6 +1533,19 @@ export function serializePropertyRule(writer: SerializationWriter, propertyRule:
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param RankingHint The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeRankingHint(writer: SerializationWriter, rankingHint: Partial<RankingHint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!rankingHint || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<ImportanceScore>("importanceScore", rankingHint.importanceScore);
+    writer.writeStringValue("@odata.type", rankingHint.odataType);
+    writer.writeAdditionalData(rankingHint.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param Schema The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -1374,6 +1553,8 @@ export function serializePropertyRule(writer: SerializationWriter, propertyRule:
 export function serializeSchema(writer: SerializationWriter, schema: Partial<Schema> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!schema || isSerializingDerivedType) { return; }
     serializeEntity(writer, schema, isSerializingDerivedType)
+    writer.writeStringValue("baseType", schema.baseType);
+    writer.writeCollectionOfObjectValues<Property>("properties", schema.properties, serializeProperty);
 }
 /**
  * Serializes information the current object
@@ -1499,6 +1680,46 @@ export const ExternalItemContentTypeObject = {
 export const IdentitySourceTypeObject = {
     AzureActiveDirectory: "azureActiveDirectory",
     External: "external",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const IdentityTypeObject = {
+    User: "user",
+    Group: "group",
+    ExternalGroup: "externalGroup",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const ImportanceScoreObject = {
+    Low: "low",
+    Medium: "medium",
+    High: "high",
+    VeryHigh: "veryHigh",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const LabelObject = {
+    Title: "title",
+    Url: "url",
+    CreatedBy: "createdBy",
+    LastModifiedBy: "lastModifiedBy",
+    Authors: "authors",
+    CreatedDateTime: "createdDateTime",
+    LastModifiedDateTime: "lastModifiedDateTime",
+    FileName: "fileName",
+    FileExtension: "fileExtension",
+    UnknownFutureValue: "unknownFutureValue",
+    ContainerName: "containerName",
+    ContainerUrl: "containerUrl",
+    IconUrl: "iconUrl",
+} as const;
+export const PropertyTypeObject = {
+    String: "string",
+    Int64: "int64",
+    Double: "double",
+    DateTime: "dateTime",
+    Boolean: "boolean",
+    StringCollection: "stringCollection",
+    Int64Collection: "int64Collection",
+    DoubleCollection: "doubleCollection",
+    DateTimeCollection: "dateTimeCollection",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const RuleOperationObject = {
