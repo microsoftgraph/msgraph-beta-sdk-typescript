@@ -44,6 +44,7 @@ export interface GetOpenShiftsRequestBuilder extends BaseRequestBuilder<GetOpenS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetOpenShiftsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters> | undefined) : Promise<GetOpenShiftsGetResponse | undefined>;
     /**

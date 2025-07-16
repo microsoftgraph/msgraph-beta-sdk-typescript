@@ -544,6 +544,13 @@ export function deserializeIntoPartnerSecurityAlertCollectionResponse(partnerSec
 export function deserializeIntoPartnerSecurityScore(partnerSecurityScore: Partial<PartnerSecurityScore> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(partnerSecurityScore),
+        "currentScore": n => { partnerSecurityScore.currentScore = n.getNumberValue(); },
+        "customerInsights": n => { partnerSecurityScore.customerInsights = n.getCollectionOfObjectValues<CustomerInsight>(createCustomerInsightFromDiscriminatorValue); },
+        "history": n => { partnerSecurityScore.history = n.getCollectionOfObjectValues<SecurityScoreHistory>(createSecurityScoreHistoryFromDiscriminatorValue); },
+        "lastRefreshDateTime": n => { partnerSecurityScore.lastRefreshDateTime = n.getDateValue(); },
+        "maxScore": n => { partnerSecurityScore.maxScore = n.getNumberValue(); },
+        "requirements": n => { partnerSecurityScore.requirements = n.getCollectionOfObjectValues<SecurityRequirement>(createSecurityRequirementFromDiscriminatorValue); },
+        "updatedDateTime": n => { partnerSecurityScore.updatedDateTime = n.getDateValue(); },
     }
 }
 /**
@@ -715,6 +722,34 @@ export interface PartnerSecurityAlertCollectionResponse extends BaseCollectionPa
     value?: PartnerSecurityAlert[] | null;
 }
 export interface PartnerSecurityScore extends Entity, Parsable {
+    /**
+     * The current security score for the partner.
+     */
+    currentScore?: number | null;
+    /**
+     * Contains customer-specific information for certain requirements.
+     */
+    customerInsights?: CustomerInsight[] | null;
+    /**
+     * Contains a list of recent score changes.
+     */
+    history?: SecurityScoreHistory[] | null;
+    /**
+     * The last time the data was checked.
+     */
+    lastRefreshDateTime?: Date | null;
+    /**
+     * The maximum score possible.
+     */
+    maxScore?: number | null;
+    /**
+     * Contains the list of security requirements that make up the score.
+     */
+    requirements?: SecurityRequirement[] | null;
+    /**
+     * The last time the security score or related properties changed.
+     */
+    updatedDateTime?: Date | null;
 }
 export type PolicyStatus = (typeof PolicyStatusObject)[keyof typeof PolicyStatusObject];
 export interface ResponseTimeSecurityRequirement extends Parsable, SecurityRequirement {
@@ -990,6 +1025,13 @@ export function serializePartnerSecurityAlertCollectionResponse(writer: Serializ
 export function serializePartnerSecurityScore(writer: SerializationWriter, partnerSecurityScore: Partial<PartnerSecurityScore> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!partnerSecurityScore || isSerializingDerivedType) { return; }
     serializeEntity(writer, partnerSecurityScore, isSerializingDerivedType)
+    writer.writeNumberValue("currentScore", partnerSecurityScore.currentScore);
+    writer.writeCollectionOfObjectValues<CustomerInsight>("customerInsights", partnerSecurityScore.customerInsights, serializeCustomerInsight);
+    writer.writeCollectionOfObjectValues<SecurityScoreHistory>("history", partnerSecurityScore.history, serializeSecurityScoreHistory);
+    writer.writeDateValue("lastRefreshDateTime", partnerSecurityScore.lastRefreshDateTime);
+    writer.writeNumberValue("maxScore", partnerSecurityScore.maxScore);
+    writer.writeCollectionOfObjectValues<SecurityRequirement>("requirements", partnerSecurityScore.requirements, serializeSecurityRequirement);
+    writer.writeDateValue("updatedDateTime", partnerSecurityScore.updatedDateTime);
 }
 /**
  * Serializes information the current object
