@@ -26,11 +26,11 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a threatIntelligencePolicyLink object.
+     * Get a tlsInspectionPolicyLink object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PolicyLinkItemRequestBuilderGetQueryParameters> | undefined) : Promise<PolicyLink | undefined>;
     /**
@@ -49,7 +49,7 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a threatIntelligencePolicyLink object.
+     * Get a tlsInspectionPolicyLink object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -63,7 +63,7 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      toPatchRequestInformation(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a threatIntelligencePolicyLink object.
+ * Get a tlsInspectionPolicyLink object.
  */
 export interface PolicyLinkItemRequestBuilderGetQueryParameters {
     /**

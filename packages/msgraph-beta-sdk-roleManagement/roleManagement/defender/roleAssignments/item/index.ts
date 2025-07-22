@@ -41,18 +41,20 @@ export interface UnifiedRoleAssignmentMultipleItemRequestBuilder extends BaseReq
      */
     get roleDefinition(): RoleDefinitionRequestBuilder;
     /**
-     * Delete navigation property roleAssignments for roleManagement
+     * Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
+     * @see {@link https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get roleAssignments from roleManagement
+     * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleAssignmentMultiple>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
+     * @see {@link https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRoleAssignmentMultiple | undefined>;
     /**
@@ -65,14 +67,14 @@ export interface UnifiedRoleAssignmentMultipleItemRequestBuilder extends BaseReq
      */
      patch(body: UnifiedRoleAssignmentMultiple, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRoleAssignmentMultiple | undefined>;
     /**
-     * Delete navigation property roleAssignments for roleManagement
+     * Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get roleAssignments from roleManagement
+     * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
@@ -88,7 +90,7 @@ export interface UnifiedRoleAssignmentMultipleItemRequestBuilder extends BaseReq
      toPatchRequestInformation(body: UnifiedRoleAssignmentMultiple, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get roleAssignments from roleManagement
+ * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
  */
 export interface UnifiedRoleAssignmentMultipleItemRequestBuilderGetQueryParameters {
     /**

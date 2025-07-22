@@ -29,7 +29,7 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      */
      byUnifiedRoleAssignmentMultipleId(unifiedRoleAssignmentMultipleId: string) : UnifiedRoleAssignmentMultipleItemRequestBuilder;
     /**
-     * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+     * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleAssignmentMultipleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,7 +37,7 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      */
      get(requestConfiguration?: RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRoleAssignmentMultipleCollectionResponse | undefined>;
     /**
-     * Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+     * Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleAssignmentMultiple>}
@@ -47,14 +47,14 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      */
      post(body: UnifiedRoleAssignmentMultiple, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRoleAssignmentMultiple | undefined>;
     /**
-     * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+     * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+     * Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -63,7 +63,7 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      toPostRequestInformation(body: UnifiedRoleAssignmentMultiple, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+ * Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
  */
 export interface RoleAssignmentsRequestBuilderGetQueryParameters {
     /**
