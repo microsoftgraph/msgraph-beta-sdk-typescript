@@ -49,6 +49,7 @@ export interface MarkAsJunkRequestBuilder extends BaseRequestBuilder<MarkAsJunkR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Message>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The MarkAsJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Junk on 2025-04-25 and will be removed 2025-12-30
      * @see {@link https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta|Find more info here}
      */
      post(body: MarkAsJunkPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Message | undefined>;
@@ -57,6 +58,7 @@ export interface MarkAsJunkRequestBuilder extends BaseRequestBuilder<MarkAsJunkR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The MarkAsJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Junk on 2025-04-25 and will be removed 2025-12-30
      */
      toPostRequestInformation(body: MarkAsJunkPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

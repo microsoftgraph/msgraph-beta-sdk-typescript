@@ -31,7 +31,7 @@ export interface IncidentTaskItemRequestBuilder extends BaseRequestBuilder<Incid
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get incidentTasks from security
+     * A collection of tasks associated with security incidents.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IncidentTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface IncidentTaskItemRequestBuilder extends BaseRequestBuilder<Incid
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get incidentTasks from security
+     * A collection of tasks associated with security incidents.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface IncidentTaskItemRequestBuilder extends BaseRequestBuilder<Incid
      toPatchRequestInformation(body: IncidentTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get incidentTasks from security
+ * A collection of tasks associated with security incidents.
  */
 export interface IncidentTaskItemRequestBuilderGetQueryParameters {
     /**

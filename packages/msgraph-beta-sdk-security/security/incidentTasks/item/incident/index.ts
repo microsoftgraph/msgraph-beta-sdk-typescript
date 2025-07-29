@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface IncidentRequestBuilder extends BaseRequestBuilder<IncidentRequestBuilder> {
     /**
-     * Get incident from security
+     * Required. The incident that contains this task. Must contain a valid incident ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Incident>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<IncidentRequestBuilderGetQueryParameters> | undefined) : Promise<Incident | undefined>;
     /**
-     * Get incident from security
+     * Required. The incident that contains this task. Must contain a valid incident ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IncidentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get incident from security
+ * Required. The incident that contains this task. Must contain a valid incident ID.
  */
 export interface IncidentRequestBuilderGetQueryParameters {
     /**
