@@ -12,6 +12,8 @@ import { GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderRequest
 // @ts-ignore
 import { CloudPCItemRequestBuilderNavigationMetadata, CloudPCItemRequestBuilderRequestsMetadata, type CloudPCItemRequestBuilder } from './item/index.js';
 // @ts-ignore
+import { RetrieveCloudPcCountByStatusRequestBuilderRequestsMetadata, type RetrieveCloudPcCountByStatusRequestBuilder } from './retrieveCloudPcCountByStatus/index.js';
+// @ts-ignore
 import { type ValidateBulkResizeRequestBuilder, ValidateBulkResizeRequestBuilderRequestsMetadata } from './validateBulkResize/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -24,6 +26,10 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the retrieveCloudPcCountByStatus method.
+     */
+    get retrieveCloudPcCountByStatus(): RetrieveCloudPcCountByStatusRequestBuilder;
     /**
      * Provides operations to call the validateBulkResize method.
      */
@@ -139,6 +145,9 @@ export const CloudPCsRequestBuilderNavigationMetadata: Record<Exclude<keyof Clou
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    retrieveCloudPcCountByStatus: {
+        requestsMetadata: RetrieveCloudPcCountByStatusRequestBuilderRequestsMetadata,
     },
     validateBulkResize: {
         requestsMetadata: ValidateBulkResizeRequestBuilderRequestsMetadata,

@@ -27,10 +27,11 @@ export interface IncidentTasksRequestBuilder extends BaseRequestBuilder<Incident
      */
      byIncidentTaskId(incidentTaskId: string) : IncidentTaskItemRequestBuilder;
     /**
-     * Get incidentTasks from security
+     * Get incident tasks that Microsoft Defender Experts for XDR identified for remediation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IncidentTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-list-incidenttasks?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<IncidentTasksRequestBuilderGetQueryParameters> | undefined) : Promise<IncidentTaskCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface IncidentTasksRequestBuilder extends BaseRequestBuilder<Incident
      */
      post(body: IncidentTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IncidentTask | undefined>;
     /**
-     * Get incidentTasks from security
+     * Get incident tasks that Microsoft Defender Experts for XDR identified for remediation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface IncidentTasksRequestBuilder extends BaseRequestBuilder<Incident
      toPostRequestInformation(body: IncidentTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get incidentTasks from security
+ * Get incident tasks that Microsoft Defender Experts for XDR identified for remediation.
  */
 export interface IncidentTasksRequestBuilderGetQueryParameters {
     /**

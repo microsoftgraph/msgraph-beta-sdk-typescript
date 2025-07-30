@@ -34,6 +34,8 @@ import { ReplyRequestBuilderRequestsMetadata, type ReplyRequestBuilder } from '.
 // @ts-ignore
 import { ReplyAllRequestBuilderRequestsMetadata, type ReplyAllRequestBuilder } from './replyAll/index.js';
 // @ts-ignore
+import { ReportMessageRequestBuilderRequestsMetadata, type ReportMessageRequestBuilder } from './reportMessage/index.js';
+// @ts-ignore
 import { SendRequestBuilderRequestsMetadata, type SendRequestBuilder } from './send/index.js';
 // @ts-ignore
 import { type UnsubscribeRequestBuilder, UnsubscribeRequestBuilderRequestsMetadata } from './unsubscribe/index.js';
@@ -106,6 +108,10 @@ export interface MessageItemRequestBuilder extends BaseRequestBuilder<MessageIte
      * Provides operations to call the replyAll method.
      */
     get replyAll(): ReplyAllRequestBuilder;
+    /**
+     * Provides operations to call the reportMessage method.
+     */
+    get reportMessage(): ReportMessageRequestBuilder;
     /**
      * Provides operations to call the send method.
      */
@@ -230,6 +236,9 @@ export const MessageItemRequestBuilderNavigationMetadata: Record<Exclude<keyof M
     },
     replyAll: {
         requestsMetadata: ReplyAllRequestBuilderRequestsMetadata,
+    },
+    reportMessage: {
+        requestsMetadata: ReportMessageRequestBuilderRequestsMetadata,
     },
     send: {
         requestsMetadata: SendRequestBuilderRequestsMetadata,

@@ -43,6 +43,10 @@ export interface AdditionalUserOptions extends AdditionalDataHolder, BackedModel
      * The OdataType property
      */
     odataType?: string | null;
+    /**
+     * Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
+     */
+    studentAgeGroup?: StudentAgeGroup | null;
 }
 export interface AdministrativeUnitProvisioningFlow extends Parsable, ProvisioningFlow {
     /**
@@ -1010,6 +1014,7 @@ export function deserializeIntoAdditionalUserOptions(additionalUserOptions: Part
         "backingStoreEnabled": n => { additionalUserOptions.backingStoreEnabled = true; },
         "markAllStudentsAsMinors": n => { additionalUserOptions.markAllStudentsAsMinors = n.getBooleanValue(); },
         "@odata.type": n => { additionalUserOptions.odataType = n.getStringValue(); },
+        "studentAgeGroup": n => { additionalUserOptions.studentAgeGroup = n.getEnumValue<StudentAgeGroup>(StudentAgeGroupObject); },
     }
 }
 /**
@@ -2435,6 +2440,7 @@ export function serializeAdditionalUserOptions(writer: SerializationWriter, addi
     writer.writeBooleanValue("allowStudentContactAssociation", additionalUserOptions.allowStudentContactAssociation);
     writer.writeBooleanValue("markAllStudentsAsMinors", additionalUserOptions.markAllStudentsAsMinors);
     writer.writeStringValue("@odata.type", additionalUserOptions.odataType);
+    writer.writeEnumValue<StudentAgeGroup>("studentAgeGroup", additionalUserOptions.studentAgeGroup);
     writer.writeAdditionalData(additionalUserOptions.additionalData);
 }
 /**
@@ -3415,6 +3421,7 @@ export interface SourceSystemDefinitionCollectionResponse extends BaseCollection
      */
     value?: SourceSystemDefinition[] | null;
 }
+export type StudentAgeGroup = (typeof StudentAgeGroupObject)[keyof typeof StudentAgeGroupObject];
 export interface UserConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -3601,6 +3608,12 @@ export const ReadinessStatusObject = {
     Failed: "failed",
     Disabled: "disabled",
     Expired: "expired",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const StudentAgeGroupObject = {
+    Minor: "minor",
+    NotAdult: "notAdult",
+    Adult: "adult",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 /* tslint:enable */

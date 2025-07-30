@@ -18039,11 +18039,11 @@ export interface EdiscoveryExportOperation extends CaseOperation, Parsable {
      */
     exportFileMetadata?: ExportFileMetadata[] | null;
     /**
-     * The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize.
+     * The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths.
      */
     exportOptions?: ExportOptions[] | null;
     /**
-     * The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg.
+     * The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.
      */
     exportStructure?: ExportFileStructure | null;
     /**
@@ -18207,7 +18207,7 @@ export interface EdiscoverySearchCollectionResponse extends BaseCollectionPagina
 }
 export interface EdiscoverySearchExportOperation extends CaseOperation, Parsable {
     /**
-     * The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport.
+     * The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport.
      */
     additionalOptions?: AdditionalOptions[] | null;
     /**
@@ -18235,7 +18235,7 @@ export interface EdiscoverySearchExportOperation extends CaseOperation, Parsable
      */
     exportFileMetadata?: ExportFileMetadata[] | null;
     /**
-     * Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.
+     * Format of the emails of the export. The possible values are: pst, msg, eml (deprecated), unknownFutureValue. The eml member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.
      */
     exportFormat?: ExportFormat | null;
     /**
@@ -18450,11 +18450,11 @@ export interface EventQuery extends AdditionalDataHolder, BackedModel, Parsable 
      */
     odataType?: string | null;
     /**
-     * Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
+     * Represents unique identification for the  query. 'Asset ID' for SharePoint in Microsoft 365 and OneDrive for work or school, 'keywords' for Exchange Online.
      */
     query?: string | null;
     /**
-     * Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
+     * Represents the type of query associated with an event. 'files' for SharePoint in Microsoft 365 and OneDrive for work or school, and 'messages' for Exchange Online. The possible values are: files, messages, unknownFutureValue.
      */
     queryType?: QueryType | null;
 }
@@ -19662,35 +19662,35 @@ export interface IncidentTask extends Entity, Parsable {
      */
     actionType?: IncidentTaskActionType | null;
     /**
-     * The createdByDisplayName property
+     * Name of the entity that created the task. Read-only.
      */
     createdByDisplayName?: string | null;
     /**
-     * The createdDateTime property
+     * Creation time of the task. Read-only.
      */
     createdDateTime?: Date | null;
     /**
-     * The description property
+     * Description of the remediation action.
      */
     description?: string | null;
     /**
-     * The displayName property
+     * Title of the task.
      */
     displayName?: string | null;
     /**
-     * The incident property
+     * Required. The incident that contains this task. Must contain a valid incident ID.
      */
     incident?: Incident | null;
     /**
-     * The lastModifiedByDisplayName property
+     * Name of the entity that last updated the task. Read-only.
      */
     lastModifiedByDisplayName?: string | null;
     /**
-     * The lastModifiedDateTime property
+     * Last update time of the task. Read-only.
      */
     lastModifiedDateTime?: Date | null;
     /**
-     * The responseAction property
+     * The reponse action.
      */
     responseAction?: IncidentTaskResponseAction | null;
     /**
@@ -19712,7 +19712,7 @@ export interface IncidentTaskCollectionResponse extends BaseCollectionPagination
 }
 export interface IncidentTaskResponseAction extends Parsable, ResponseAction {
     /**
-     * The identifierValue property
+     * Required. The identifier value for the response action. This value is specific to the type of action being performed.
      */
     identifierValue?: string | null;
 }
@@ -31585,7 +31585,7 @@ export type StatisticsOptions = (typeof StatisticsOptionsObject)[keyof typeof St
 export type StopAndQuarantineFileEntityIdentifier = (typeof StopAndQuarantineFileEntityIdentifierObject)[keyof typeof StopAndQuarantineFileEntityIdentifierObject];
 export interface StopAndQuarantineFileIncidentTaskResponseAction extends IncidentTaskResponseAction, Parsable {
     /**
-     * The deviceId property
+     * Optional. The identifier of the device where the file is located. This property allows targeting the action to a specific device when the same file exists on multiple devices.
      */
     deviceId?: string | null;
 }
