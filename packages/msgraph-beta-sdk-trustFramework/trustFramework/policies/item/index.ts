@@ -19,7 +19,7 @@ export interface TrustFrameworkPolicyItemRequestBuilder extends BaseRequestBuild
      */
     get content(): ContentRequestBuilder;
     /**
-     * Delete an existing trustFrameworkPolicy.
+     * Delete an existing trustFrameworkPolicy object from an Microsoft Entra B2C tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/trustframeworkpolicy-delete?view=graph-rest-beta|Find more info here}
@@ -41,7 +41,7 @@ export interface TrustFrameworkPolicyItemRequestBuilder extends BaseRequestBuild
      */
      patch(body: TrustFrameworkPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TrustFrameworkPolicy | undefined>;
     /**
-     * Delete an existing trustFrameworkPolicy.
+     * Delete an existing trustFrameworkPolicy object from an Microsoft Entra B2C tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

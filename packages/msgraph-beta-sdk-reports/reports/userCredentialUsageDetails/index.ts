@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserCredentialUsageDetailsRequestBuilder extends BaseRequestBuilder<UserCredentialUsageDetailsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
      * @param userCredentialUsageDetailsId The unique identifier of userCredentialUsageDetails
      * @returns {UserCredentialUsageDetailsItemRequestBuilder}
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      byUserCredentialUsageDetailsId(userCredentialUsageDetailsId: string) : UserCredentialUsageDetailsItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface UserCredentialUsageDetailsRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCredentialUsageDetailsCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      * @see {@link https://learn.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters> | undefined) : Promise<UserCredentialUsageDetailsCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface UserCredentialUsageDetailsRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCredentialUsageDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      post(body: UserCredentialUsageDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserCredentialUsageDetails | undefined>;
     /**
      * Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface UserCredentialUsageDetailsRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      toPostRequestInformation(body: UserCredentialUsageDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

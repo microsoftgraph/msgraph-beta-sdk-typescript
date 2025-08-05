@@ -13,13 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ExternalAuthenticationMethodItemRequestBuilder extends BaseRequestBuilder<ExternalAuthenticationMethodItemRequestBuilder> {
     /**
-     * Delete navigation property externalAuthenticationMethods for users
+     * Delete an externalAuthenticationMethod object. This API doesn't support self-service operations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authentication-delete-externalauthenticationmethods?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get externalAuthenticationMethods from users
+     * Represents the external methods registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -34,13 +35,13 @@ export interface ExternalAuthenticationMethodItemRequestBuilder extends BaseRequ
      */
      patch(body: ExternalAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExternalAuthenticationMethod | undefined>;
     /**
-     * Delete navigation property externalAuthenticationMethods for users
+     * Delete an externalAuthenticationMethod object. This API doesn't support self-service operations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get externalAuthenticationMethods from users
+     * Represents the external methods registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface ExternalAuthenticationMethodItemRequestBuilder extends BaseRequ
      toPatchRequestInformation(body: ExternalAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get externalAuthenticationMethods from users
+ * Represents the external methods registered to a user for authentication.
  */
 export interface ExternalAuthenticationMethodItemRequestBuilderGetQueryParameters {
     /**

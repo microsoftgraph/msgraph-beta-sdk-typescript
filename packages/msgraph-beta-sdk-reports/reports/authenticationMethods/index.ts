@@ -6,7 +6,17 @@ import { createAuthenticationMethodsRootFromDiscriminatorValue, serializeAuthent
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { type UserEventsSummaryRequestBuilder, UserEventsSummaryRequestBuilderNavigationMetadata, UserEventsSummaryRequestBuilderRequestsMetadata } from './userEventsSummary/index.js';
+// @ts-ignore
+import { type UserMfaSignInSummaryRequestBuilder, UserMfaSignInSummaryRequestBuilderNavigationMetadata, UserMfaSignInSummaryRequestBuilderRequestsMetadata } from './userMfaSignInSummary/index.js';
+// @ts-ignore
+import { type UserPasswordResetsAndChangesSummaryRequestBuilder, UserPasswordResetsAndChangesSummaryRequestBuilderNavigationMetadata, UserPasswordResetsAndChangesSummaryRequestBuilderRequestsMetadata } from './userPasswordResetsAndChangesSummary/index.js';
+// @ts-ignore
+import { type UserRegistrationActivityWithPeriodRequestBuilder, UserRegistrationActivityWithPeriodRequestBuilderRequestsMetadata } from './userRegistrationActivityWithPeriod/index.js';
+// @ts-ignore
 import { type UserRegistrationDetailsRequestBuilder, UserRegistrationDetailsRequestBuilderNavigationMetadata, UserRegistrationDetailsRequestBuilderRequestsMetadata } from './userRegistrationDetails/index.js';
+// @ts-ignore
+import { type UserSignInsByAuthMethodSummaryWithPeriodRequestBuilder, UserSignInsByAuthMethodSummaryWithPeriodRequestBuilderRequestsMetadata } from './userSignInsByAuthMethodSummaryWithPeriod/index.js';
 // @ts-ignore
 import { type UsersRegisteredByFeatureRequestBuilder, UsersRegisteredByFeatureRequestBuilderRequestsMetadata } from './usersRegisteredByFeature/index.js';
 // @ts-ignore
@@ -22,6 +32,18 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
  */
 export interface AuthenticationMethodsRequestBuilder extends BaseRequestBuilder<AuthenticationMethodsRequestBuilder> {
+    /**
+     * Provides operations to manage the userEventsSummary property of the microsoft.graph.authenticationMethodsRoot entity.
+     */
+    get userEventsSummary(): UserEventsSummaryRequestBuilder;
+    /**
+     * Provides operations to manage the userMfaSignInSummary property of the microsoft.graph.authenticationMethodsRoot entity.
+     */
+    get userMfaSignInSummary(): UserMfaSignInSummaryRequestBuilder;
+    /**
+     * Provides operations to manage the userPasswordResetsAndChangesSummary property of the microsoft.graph.authenticationMethodsRoot entity.
+     */
+    get userPasswordResetsAndChangesSummary(): UserPasswordResetsAndChangesSummaryRequestBuilder;
     /**
      * Provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
      */
@@ -75,6 +97,18 @@ export interface AuthenticationMethodsRequestBuilder extends BaseRequestBuilder<
      */
      toPatchRequestInformation(body: AuthenticationMethodsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
+     * Provides operations to call the userRegistrationActivity method.
+     * @param period Usage: period='{period}'
+     * @returns {UserRegistrationActivityWithPeriodRequestBuilder}
+     */
+     userRegistrationActivityWithPeriod(period: string | undefined) : UserRegistrationActivityWithPeriodRequestBuilder;
+    /**
+     * Provides operations to call the userSignInsByAuthMethodSummary method.
+     * @param period Usage: period='{period}'
+     * @returns {UserSignInsByAuthMethodSummaryWithPeriodRequestBuilder}
+     */
+     userSignInsByAuthMethodSummaryWithPeriod(period: string | undefined) : UserSignInsByAuthMethodSummaryWithPeriodRequestBuilder;
+    /**
      * Provides operations to call the usersRegisteredByFeature method.
      * @param includedUserRoles Usage: includedUserRoles='{includedUserRoles}'
      * @param includedUserTypes Usage: includedUserTypes='{includedUserTypes}'
@@ -117,6 +151,14 @@ const AuthenticationMethodsRequestBuilderGetQueryParametersMapper: Record<string
  * Metadata for all the navigation properties in the request builder.
  */
 export const AuthenticationMethodsRequestBuilderNavigationMetadata: Record<Exclude<keyof AuthenticationMethodsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    userRegistrationActivityWithPeriod: {
+        requestsMetadata: UserRegistrationActivityWithPeriodRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
+    },
+    userSignInsByAuthMethodSummaryWithPeriod: {
+        requestsMetadata: UserSignInsByAuthMethodSummaryWithPeriodRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
+    },
     usersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles: {
         requestsMetadata: UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilderRequestsMetadata,
         pathParametersMappings: ["includedUserRoles", "includedUserTypes"],
@@ -124,6 +166,18 @@ export const AuthenticationMethodsRequestBuilderNavigationMetadata: Record<Exclu
     usersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles: {
         requestsMetadata: UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderRequestsMetadata,
         pathParametersMappings: ["includedUserRoles", "includedUserTypes"],
+    },
+    userEventsSummary: {
+        requestsMetadata: UserEventsSummaryRequestBuilderRequestsMetadata,
+        navigationMetadata: UserEventsSummaryRequestBuilderNavigationMetadata,
+    },
+    userMfaSignInSummary: {
+        requestsMetadata: UserMfaSignInSummaryRequestBuilderRequestsMetadata,
+        navigationMetadata: UserMfaSignInSummaryRequestBuilderNavigationMetadata,
+    },
+    userPasswordResetsAndChangesSummary: {
+        requestsMetadata: UserPasswordResetsAndChangesSummaryRequestBuilderRequestsMetadata,
+        navigationMetadata: UserPasswordResetsAndChangesSummaryRequestBuilderNavigationMetadata,
     },
     userRegistrationDetails: {
         requestsMetadata: UserRegistrationDetailsRequestBuilderRequestsMetadata,

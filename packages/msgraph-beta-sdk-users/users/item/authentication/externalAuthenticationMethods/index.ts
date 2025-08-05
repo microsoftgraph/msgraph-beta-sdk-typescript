@@ -27,28 +27,29 @@ export interface ExternalAuthenticationMethodsRequestBuilder extends BaseRequest
      */
      byExternalAuthenticationMethodId(externalAuthenticationMethodId: string) : ExternalAuthenticationMethodItemRequestBuilder;
     /**
-     * Get externalAuthenticationMethods from users
+     * Represents the external methods registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ExternalAuthenticationMethodsRequestBuilderGetQueryParameters> | undefined) : Promise<ExternalAuthenticationMethodCollectionResponse | undefined>;
     /**
-     * Create new navigation property to externalAuthenticationMethods for users
+     * Create a new externalAuthenticationMethod object. This API doesn't support self-service operations.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalAuthenticationMethod>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/authentication-post-externalauthenticationmethods?view=graph-rest-beta|Find more info here}
      */
      post(body: ExternalAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExternalAuthenticationMethod | undefined>;
     /**
-     * Get externalAuthenticationMethods from users
+     * Represents the external methods registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalAuthenticationMethodsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to externalAuthenticationMethods for users
+     * Create a new externalAuthenticationMethod object. This API doesn't support self-service operations.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +57,7 @@ export interface ExternalAuthenticationMethodsRequestBuilder extends BaseRequest
      toPostRequestInformation(body: ExternalAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get externalAuthenticationMethods from users
+ * Represents the external methods registered to a user for authentication.
  */
 export interface ExternalAuthenticationMethodsRequestBuilderGetQueryParameters {
     /**

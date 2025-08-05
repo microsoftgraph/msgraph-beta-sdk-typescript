@@ -10,6 +10,8 @@ import { ItemInsightsRequestBuilderRequestsMetadata, type ItemInsightsRequestBui
 // @ts-ignore
 import { NamePronunciationRequestBuilderRequestsMetadata, type NamePronunciationRequestBuilder } from './namePronunciation/index.js';
 // @ts-ignore
+import { PhotoUpdateSettingsRequestBuilderRequestsMetadata, type PhotoUpdateSettingsRequestBuilder } from './photoUpdateSettings/index.js';
+// @ts-ignore
 import { ProfileCardPropertiesRequestBuilderNavigationMetadata, ProfileCardPropertiesRequestBuilderRequestsMetadata, type ProfileCardPropertiesRequestBuilder } from './profileCardProperties/index.js';
 // @ts-ignore
 import { ProfilePropertySettingsRequestBuilderNavigationMetadata, ProfilePropertySettingsRequestBuilderRequestsMetadata, type ProfilePropertySettingsRequestBuilder } from './profilePropertySettings/index.js';
@@ -34,6 +36,10 @@ export interface PeopleRequestBuilder extends BaseRequestBuilder<PeopleRequestBu
      * Provides operations to manage the namePronunciation property of the microsoft.graph.peopleAdminSettings entity.
      */
     get namePronunciation(): NamePronunciationRequestBuilder;
+    /**
+     * Provides operations to manage the photoUpdateSettings property of the microsoft.graph.peopleAdminSettings entity.
+     */
+    get photoUpdateSettings(): PhotoUpdateSettingsRequestBuilder;
     /**
      * Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
      */
@@ -135,6 +141,9 @@ export const PeopleRequestBuilderNavigationMetadata: Record<Exclude<keyof People
     },
     namePronunciation: {
         requestsMetadata: NamePronunciationRequestBuilderRequestsMetadata,
+    },
+    photoUpdateSettings: {
+        requestsMetadata: PhotoUpdateSettingsRequestBuilderRequestsMetadata,
     },
     profileCardProperties: {
         requestsMetadata: ProfileCardPropertiesRequestBuilderRequestsMetadata,
