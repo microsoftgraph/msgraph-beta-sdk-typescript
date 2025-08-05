@@ -24,6 +24,8 @@ import { DriveRequestBuilderRequestsMetadata, type DriveRequestBuilder } from '.
 // @ts-ignore
 import { DrivesRequestBuilderNavigationMetadata, DrivesRequestBuilderRequestsMetadata, type DrivesRequestBuilder } from './drives/index.js';
 // @ts-ignore
+import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
+// @ts-ignore
 import { ExternalColumnsRequestBuilderNavigationMetadata, ExternalColumnsRequestBuilderRequestsMetadata, type ExternalColumnsRequestBuilder } from './externalColumns/index.js';
 // @ts-ignore
 import { GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderRequestsMetadata, type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder } from './getActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval/index.js';
@@ -100,6 +102,10 @@ export interface SiteItemRequestBuilder extends BaseRequestBuilder<SiteItemReque
      * Provides operations to manage the drives property of the microsoft.graph.site entity.
      */
     get drives(): DrivesRequestBuilder;
+    /**
+     * Provides operations to manage the extensions property of the microsoft.graph.site entity.
+     */
+    get extensions(): ExtensionsRequestBuilder;
     /**
      * Provides operations to manage the externalColumns property of the microsoft.graph.site entity.
      */
@@ -279,6 +285,10 @@ export const SiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Site
     drives: {
         requestsMetadata: DrivesRequestBuilderRequestsMetadata,
         navigationMetadata: DrivesRequestBuilderNavigationMetadata,
+    },
+    extensions: {
+        requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,
+        navigationMetadata: ExtensionsRequestBuilderNavigationMetadata,
     },
     externalColumns: {
         requestsMetadata: ExternalColumnsRequestBuilderRequestsMetadata,

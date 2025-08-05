@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface PermissionGrantConditionSetItemRequestBuilder extends BaseRequestBuilder<PermissionGrantConditionSetItemRequestBuilder> {
     /**
-     * Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
+     * Delete a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-beta|Find more info here}
@@ -35,7 +35,7 @@ export interface PermissionGrantConditionSetItemRequestBuilder extends BaseReque
      */
      patch(body: PermissionGrantConditionSet, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PermissionGrantConditionSet | undefined>;
     /**
-     * Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
+     * Delete a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

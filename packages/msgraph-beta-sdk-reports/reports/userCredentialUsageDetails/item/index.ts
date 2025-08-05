@@ -16,6 +16,7 @@ export interface UserCredentialUsageDetailsItemRequestBuilder extends BaseReques
      * Delete navigation property userCredentialUsageDetails for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface UserCredentialUsageDetailsItemRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCredentialUsageDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      get(requestConfiguration?: RequestConfiguration<UserCredentialUsageDetailsItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserCredentialUsageDetails | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface UserCredentialUsageDetailsItemRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCredentialUsageDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      patch(body: UserCredentialUsageDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserCredentialUsageDetails | undefined>;
     /**
      * Delete navigation property userCredentialUsageDetails for reports
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the self-service password reset (SSPR) usage for a given tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserCredentialUsageDetailsItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface UserCredentialUsageDetailsItemRequestBuilder extends BaseReques
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
      toPatchRequestInformation(body: UserCredentialUsageDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
