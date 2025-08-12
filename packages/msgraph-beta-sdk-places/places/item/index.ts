@@ -6,6 +6,8 @@ import { createPlaceFromDiscriminatorValue, serializePlace, type Place } from '@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { DescendantsRequestBuilderRequestsMetadata, type DescendantsRequestBuilder } from './descendants/index.js';
+// @ts-ignore
 import { GraphRoomRequestBuilderRequestsMetadata, type GraphRoomRequestBuilder } from './graphRoom/index.js';
 // @ts-ignore
 import { GraphRoomListRequestBuilderNavigationMetadata, GraphRoomListRequestBuilderRequestsMetadata, type GraphRoomListRequestBuilder } from './graphRoomList/index.js';
@@ -17,6 +19,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemRequestBuilder> {
     /**
+     * Provides operations to call the descendants method.
+     */
+    get descendants(): DescendantsRequestBuilder;
+    /**
      * Casts the previous resource to room.
      */
     get graphRoom(): GraphRoomRequestBuilder;
@@ -25,13 +31,14 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
     get graphRoomList(): GraphRoomListRequestBuilder;
     /**
-     * Delete entity from places
+     * Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+     * Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Place>}
@@ -40,13 +47,13 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
      patch(body: Place, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Place | undefined>;
     /**
-     * Delete entity from places
+     * Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+     * Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -61,6 +68,9 @@ export const PlaceItemRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did
  * Metadata for all the navigation properties in the request builder.
  */
 export const PlaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof PlaceItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    descendants: {
+        requestsMetadata: DescendantsRequestBuilderRequestsMetadata,
+    },
     graphRoom: {
         requestsMetadata: GraphRoomRequestBuilderRequestsMetadata,
     },

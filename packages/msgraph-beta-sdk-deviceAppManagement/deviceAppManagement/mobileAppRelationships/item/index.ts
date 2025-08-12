@@ -19,7 +19,7 @@ export interface MobileAppRelationshipItemRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * List mobileAppRelationship objects for mobile applications.
+     * The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppRelationship>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface MobileAppRelationshipItemRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * List mobileAppRelationship objects for mobile applications.
+     * The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface MobileAppRelationshipItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: MobileAppRelationship, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List mobileAppRelationship objects for mobile applications.
+ * The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
  */
 export interface MobileAppRelationshipItemRequestBuilderGetQueryParameters {
     /**
