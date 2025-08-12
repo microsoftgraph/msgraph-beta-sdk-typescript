@@ -27,7 +27,7 @@ export interface MobileAppRelationshipsRequestBuilder extends BaseRequestBuilder
      */
      byMobileAppRelationshipId(mobileAppRelationshipId: string) : MobileAppRelationshipItemRequestBuilder;
     /**
-     * List mobileAppRelationship objects for mobile applications.
+     * The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MobileAppRelationshipCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface MobileAppRelationshipsRequestBuilder extends BaseRequestBuilder
      */
      post(body: MobileAppRelationship, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MobileAppRelationship | undefined>;
     /**
-     * List mobileAppRelationship objects for mobile applications.
+     * The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface MobileAppRelationshipsRequestBuilder extends BaseRequestBuilder
      toPostRequestInformation(body: MobileAppRelationship, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List mobileAppRelationship objects for mobile applications.
+ * The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
  */
 export interface MobileAppRelationshipsRequestBuilderGetQueryParameters {
     /**

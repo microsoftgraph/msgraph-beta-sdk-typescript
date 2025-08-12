@@ -150,6 +150,10 @@ import { GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata, type GetZeb
 // @ts-ignore
 import { RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata, type RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder } from './retrieveAndroidWorkProfileDeviceMigrationStatuses/index.js';
 // @ts-ignore
+import { RetrieveAppleDeviceOSUpdateStatusRequestBuilderRequestsMetadata, type RetrieveAppleDeviceOSUpdateStatusRequestBuilder } from './retrieveAppleDeviceOSUpdateStatus/index.js';
+// @ts-ignore
+import { RetrieveAppleOSUpdateFailuresRequestBuilderRequestsMetadata, type RetrieveAppleOSUpdateFailuresRequestBuilder } from './retrieveAppleOSUpdateFailures/index.js';
+// @ts-ignore
 import { RetrieveCloudPkiLeafCertificateReportRequestBuilderRequestsMetadata, type RetrieveCloudPkiLeafCertificateReportRequestBuilder } from './retrieveCloudPkiLeafCertificateReport/index.js';
 // @ts-ignore
 import { RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderRequestsMetadata, type RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder } from './retrieveCloudPkiLeafCertificateSummaryReport/index.js';
@@ -454,6 +458,14 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the retrieveAndroidWorkProfileDeviceMigrationStatuses method.
      */
     get retrieveAndroidWorkProfileDeviceMigrationStatuses(): RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder;
+    /**
+     * Provides operations to call the retrieveAppleDeviceOSUpdateStatus method.
+     */
+    get retrieveAppleDeviceOSUpdateStatus(): RetrieveAppleDeviceOSUpdateStatusRequestBuilder;
+    /**
+     * Provides operations to call the retrieveAppleOSUpdateFailures method.
+     */
+    get retrieveAppleOSUpdateFailures(): RetrieveAppleOSUpdateFailuresRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPkiLeafCertificateReport method.
      */
@@ -760,6 +772,12 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     retrieveAndroidWorkProfileDeviceMigrationStatuses: {
         requestsMetadata: RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata,
+    },
+    retrieveAppleDeviceOSUpdateStatus: {
+        requestsMetadata: RetrieveAppleDeviceOSUpdateStatusRequestBuilderRequestsMetadata,
+    },
+    retrieveAppleOSUpdateFailures: {
+        requestsMetadata: RetrieveAppleOSUpdateFailuresRequestBuilderRequestsMetadata,
     },
     retrieveCloudPkiLeafCertificateReport: {
         requestsMetadata: RetrieveCloudPkiLeafCertificateReportRequestBuilderRequestsMetadata,

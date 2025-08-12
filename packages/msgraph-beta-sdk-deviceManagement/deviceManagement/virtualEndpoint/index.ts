@@ -10,6 +10,8 @@ import { AuditEventsRequestBuilderNavigationMetadata, AuditEventsRequestBuilderR
 // @ts-ignore
 import { BulkActionsRequestBuilderNavigationMetadata, BulkActionsRequestBuilderRequestsMetadata, type BulkActionsRequestBuilder } from './bulkActions/index.js';
 // @ts-ignore
+import { CloudAppsRequestBuilderNavigationMetadata, CloudAppsRequestBuilderRequestsMetadata, type CloudAppsRequestBuilder } from './cloudApps/index.js';
+// @ts-ignore
 import { CloudPCsRequestBuilderNavigationMetadata, CloudPCsRequestBuilderRequestsMetadata, type CloudPCsRequestBuilder } from './cloudPCs/index.js';
 // @ts-ignore
 import { CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetadata, type CrossCloudGovernmentOrganizationMappingRequestBuilder } from './crossCloudGovernmentOrganizationMapping/index.js';
@@ -58,6 +60,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the bulkActions property of the microsoft.graph.virtualEndpoint entity.
      */
     get bulkActions(): BulkActionsRequestBuilder;
+    /**
+     * Provides operations to manage the cloudApps property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get cloudApps(): CloudAppsRequestBuilder;
     /**
      * Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -202,6 +208,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     bulkActions: {
         requestsMetadata: BulkActionsRequestBuilderRequestsMetadata,
         navigationMetadata: BulkActionsRequestBuilderNavigationMetadata,
+    },
+    cloudApps: {
+        requestsMetadata: CloudAppsRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudAppsRequestBuilderNavigationMetadata,
     },
     cloudPCs: {
         requestsMetadata: CloudPCsRequestBuilderRequestsMetadata,
