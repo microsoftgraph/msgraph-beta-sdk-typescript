@@ -19,18 +19,20 @@ export interface CloudPcCloudAppItemRequestBuilder extends BaseRequestBuilder<Cl
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get cloudApps from deviceManagement
+     * Read the properties of a specific cloudPcCloudApp object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcCloudApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpccloudapp-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcCloudAppItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcCloudApp | undefined>;
     /**
-     * Update the navigation property cloudApps in deviceManagement
+     * Update the properties of a cloudPcCloudApp object, such as the display name or icon path.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcCloudApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpccloudapp-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CloudPcCloudApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcCloudApp | undefined>;
     /**
@@ -40,13 +42,13 @@ export interface CloudPcCloudAppItemRequestBuilder extends BaseRequestBuilder<Cl
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get cloudApps from deviceManagement
+     * Read the properties of a specific cloudPcCloudApp object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcCloudAppItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property cloudApps in deviceManagement
+     * Update the properties of a cloudPcCloudApp object, such as the display name or icon path.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +56,7 @@ export interface CloudPcCloudAppItemRequestBuilder extends BaseRequestBuilder<Cl
      toPatchRequestInformation(body: CloudPcCloudApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get cloudApps from deviceManagement
+ * Read the properties of a specific cloudPcCloudApp object.
  */
 export interface CloudPcCloudAppItemRequestBuilderGetQueryParameters {
     /**
