@@ -40,21 +40,22 @@ export interface RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvision
  */
 export interface RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder extends BaseRequestBuilder<RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder> {
     /**
-     * Invoke function retrieveDiscoveredApps
+     * Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpccloudapp-retrievediscoveredapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters> | undefined) : Promise<RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse | undefined>;
     /**
-     * Invoke function retrieveDiscoveredApps
+     * Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Invoke function retrieveDiscoveredApps
+ * Get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
  */
 export interface RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters {
     /**

@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface GetCloudPcLaunchInfoRequestBuilder extends BaseRequestBuilder<GetCloudPcLaunchInfoRequestBuilder> {
     /**
-     * Get the cloudPCLaunchInfo for a specific cloudPC.
+     * Get the cloudPCLaunchInfo for a specific cloudPC that belongs to the current signed-in user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcLaunchInfo>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,7 +21,7 @@ export interface GetCloudPcLaunchInfoRequestBuilder extends BaseRequestBuilder<G
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcLaunchInfo | undefined>;
     /**
-     * Get the cloudPCLaunchInfo for a specific cloudPC.
+     * Get the cloudPCLaunchInfo for a specific cloudPC that belongs to the current signed-in user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

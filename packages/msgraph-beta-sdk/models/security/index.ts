@@ -10,7 +10,7 @@ export interface AadRiskDetectionAuditRecord extends AuditData, Parsable {
 }
 export interface Account extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The actions property
+     * List of the type of action. The possible values are: disable, enable, forcePasswordReset, revokeAllSessions, requireUserToSignInAgain, markUserAsCompromised.
      */
     actions?: Action[] | null;
     /**
@@ -18,7 +18,7 @@ export interface Account extends AdditionalDataHolder, BackedModel, Parsable {
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The identifier property
+     * The account ID.
      */
     identifier?: string | null;
     /**
@@ -19546,27 +19546,27 @@ export interface Hyperlink extends AdditionalDataHolder, BackedModel, Parsable {
 }
 export interface IdentityAccounts extends Entity, Parsable {
     /**
-     * The accounts property
+     * Collection of accounts of the identity in different identity providers.
      */
     accounts?: Account[] | null;
     /**
-     * The cloudSecurityIdentifier property
+     * The cloud security identifier of the identityAccount.
      */
     cloudSecurityIdentifier?: string | null;
     /**
-     * The displayName property
+     * The  Active Directory display name of the identityAccount.
      */
     displayName?: string | null;
     /**
-     * The domain property
+     * The Active Directory domain name of the identityAccount.
      */
     domain?: string | null;
     /**
-     * The isEnabled property
+     * Boolean indicating if the identityAccounts is enabled.
      */
     isEnabled?: boolean | null;
     /**
-     * The onPremisesSecurityIdentifier property
+     * The on-premises security identifier of the identityAccount.
      */
     onPremisesSecurityIdentifier?: string | null;
 }
@@ -19582,7 +19582,7 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     healthIssues?: HealthIssue[] | null;
     /**
-     * The identityAccounts property
+     * Represents an identity's details in the context of Microsoft Defender for Identity.
      */
     identityAccounts?: IdentityAccounts[] | null;
     /**
@@ -19926,7 +19926,7 @@ export interface IntelligenceProfileIndicatorCollectionResponse extends BaseColl
 export type IntelligenceProfileKind = (typeof IntelligenceProfileKindObject)[keyof typeof IntelligenceProfileKindObject];
 export interface InvokeActionResult extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The accountId property
+     * The account ID.
      */
     accountId?: string | null;
     /**
@@ -19938,7 +19938,7 @@ export interface InvokeActionResult extends AdditionalDataHolder, BackedModel, P
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The correlationId property
+     * The unique identifier for tracking the request.
      */
     correlationId?: string | null;
     /**
@@ -32396,11 +32396,11 @@ export interface UrlThreatSubmissionCollectionResponse extends BaseCollectionPag
 }
 export interface User extends IdentityAccounts, Parsable {
     /**
-     * The emailAddress property
+     * Email address of the user.
      */
     emailAddress?: string | null;
     /**
-     * The userPrincipalName property
+     * The user principal name.
      */
     userPrincipalName?: string | null;
 }

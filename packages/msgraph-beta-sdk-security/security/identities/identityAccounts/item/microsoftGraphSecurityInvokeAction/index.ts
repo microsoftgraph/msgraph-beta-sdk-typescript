@@ -54,15 +54,16 @@ export interface InvokeActionPostRequestBody extends AdditionalDataHolder, Backe
  */
 export interface MicrosoftGraphSecurityInvokeActionRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityInvokeActionRequestBuilder> {
     /**
-     * Invoke action invokeAction
+     * Perform actions such as revoking accounts and forcing password reset for identity accounts that are observed in Microsoft Defender for Identity. This action allows reading and performing identity security actions on behalf of the signed-in identity.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InvokeActionResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-identityaccounts-invokeaction?view=graph-rest-beta|Find more info here}
      */
      post(body: InvokeActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<InvokeActionResult | undefined>;
     /**
-     * Invoke action invokeAction
+     * Perform actions such as revoking accounts and forcing password reset for identity accounts that are observed in Microsoft Defender for Identity. This action allows reading and performing identity security actions on behalf of the signed-in identity.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
