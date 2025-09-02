@@ -489,7 +489,7 @@ export interface Connectivity extends Entity, Parsable {
      */
     remoteNetworks?: RemoteNetwork[] | null;
     /**
-     * The webCategories property
+     * The URL category.
      */
     webCategories?: WebCategory[] | null;
 }

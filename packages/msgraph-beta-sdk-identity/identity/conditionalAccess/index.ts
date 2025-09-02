@@ -8,6 +8,14 @@ import { AuthenticationStrengthRequestBuilderNavigationMetadata, AuthenticationS
 // @ts-ignore
 import { AuthenticationStrengthsRequestBuilderNavigationMetadata, AuthenticationStrengthsRequestBuilderRequestsMetadata, type AuthenticationStrengthsRequestBuilder } from './authenticationStrengths/index.js';
 // @ts-ignore
+import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilderRequestsMetadata, type DeletedItemsRequestBuilder } from './deletedItems/index.js';
+// @ts-ignore
+import { EvaluateRequestBuilderRequestsMetadata, type EvaluateRequestBuilder } from './evaluate/index.js';
+// @ts-ignore
+import { NamedLocationsRequestBuilderNavigationMetadata, NamedLocationsRequestBuilderRequestsMetadata, type NamedLocationsRequestBuilder } from './namedLocations/index.js';
+// @ts-ignore
+import { PoliciesRequestBuilderNavigationMetadata, PoliciesRequestBuilderRequestsMetadata, type PoliciesRequestBuilder } from './policies/index.js';
+// @ts-ignore
 import { TemplatesRequestBuilderNavigationMetadata, TemplatesRequestBuilderRequestsMetadata, type TemplatesRequestBuilder } from './templates/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata } from '@microsoft/kiota-abstractions';
@@ -28,6 +36,22 @@ export interface ConditionalAccessRequestBuilder extends BaseRequestBuilder<Cond
      * Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.
      */
     get authenticationStrengths(): AuthenticationStrengthsRequestBuilder;
+    /**
+     * Provides operations to manage the deletedItems property of the microsoft.graph.conditionalAccessRoot entity.
+     */
+    get deletedItems(): DeletedItemsRequestBuilder;
+    /**
+     * Provides operations to call the evaluate method.
+     */
+    get evaluate(): EvaluateRequestBuilder;
+    /**
+     * Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
+     */
+    get namedLocations(): NamedLocationsRequestBuilder;
+    /**
+     * Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
+     */
+    get policies(): PoliciesRequestBuilder;
     /**
      * Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
      */
@@ -52,6 +76,21 @@ export const ConditionalAccessRequestBuilderNavigationMetadata: Record<Exclude<k
     authenticationStrengths: {
         requestsMetadata: AuthenticationStrengthsRequestBuilderRequestsMetadata,
         navigationMetadata: AuthenticationStrengthsRequestBuilderNavigationMetadata,
+    },
+    deletedItems: {
+        requestsMetadata: DeletedItemsRequestBuilderRequestsMetadata,
+        navigationMetadata: DeletedItemsRequestBuilderNavigationMetadata,
+    },
+    evaluate: {
+        requestsMetadata: EvaluateRequestBuilderRequestsMetadata,
+    },
+    namedLocations: {
+        requestsMetadata: NamedLocationsRequestBuilderRequestsMetadata,
+        navigationMetadata: NamedLocationsRequestBuilderNavigationMetadata,
+    },
+    policies: {
+        requestsMetadata: PoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: PoliciesRequestBuilderNavigationMetadata,
     },
     templates: {
         requestsMetadata: TemplatesRequestBuilderRequestsMetadata,
