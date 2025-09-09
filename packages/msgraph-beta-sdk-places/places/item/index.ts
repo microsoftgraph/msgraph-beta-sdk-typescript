@@ -6,9 +6,11 @@ import { createPlaceFromDiscriminatorValue, serializePlace, type Place } from '@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
+// @ts-ignore
 import { DescendantsRequestBuilderRequestsMetadata, type DescendantsRequestBuilder } from './descendants/index.js';
 // @ts-ignore
-import { GraphRoomRequestBuilderRequestsMetadata, type GraphRoomRequestBuilder } from './graphRoom/index.js';
+import { GraphRoomRequestBuilderNavigationMetadata, GraphRoomRequestBuilderRequestsMetadata, type GraphRoomRequestBuilder } from './graphRoom/index.js';
 // @ts-ignore
 import { GraphRoomListRequestBuilderNavigationMetadata, GraphRoomListRequestBuilderRequestsMetadata, type GraphRoomListRequestBuilder } from './graphRoomList/index.js';
 // @ts-ignore
@@ -18,6 +20,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the collection of place entities.
  */
 export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemRequestBuilder> {
+    /**
+     * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
+     */
+    get checkIns(): CheckInsRequestBuilder;
     /**
      * Provides operations to call the descendants method.
      */
@@ -68,11 +74,16 @@ export const PlaceItemRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did
  * Metadata for all the navigation properties in the request builder.
  */
 export const PlaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof PlaceItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    checkIns: {
+        requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
+        navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
     descendants: {
         requestsMetadata: DescendantsRequestBuilderRequestsMetadata,
     },
     graphRoom: {
         requestsMetadata: GraphRoomRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphRoomRequestBuilderNavigationMetadata,
     },
     graphRoomList: {
         requestsMetadata: GraphRoomListRequestBuilderRequestsMetadata,

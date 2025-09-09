@@ -6,12 +6,18 @@ import { createRoomFromDiscriminatorValue, type Room } from '@microsoft/msgraph-
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Casts the previous resource to room.
  */
 export interface GraphRoomRequestBuilder extends BaseRequestBuilder<GraphRoomRequestBuilder> {
+    /**
+     * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
+     */
+    get checkIns(): CheckInsRequestBuilder;
     /**
      * Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list. By default, this operation returns up to 100 rooms, workspaces, and room lists per page, and 1,000 buildings, floors, sections, and desks per page. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -50,6 +56,15 @@ export const GraphRoomRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did
 const GraphRoomRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const GraphRoomRequestBuilderNavigationMetadata: Record<Exclude<keyof GraphRoomRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    checkIns: {
+        requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
+        navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

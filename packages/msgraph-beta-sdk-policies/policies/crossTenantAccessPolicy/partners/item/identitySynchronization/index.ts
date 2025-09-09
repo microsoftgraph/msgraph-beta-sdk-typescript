@@ -6,12 +6,18 @@ import { createCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue, seria
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the identitySynchronization property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
  */
 export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilder<IdentitySynchronizationRequestBuilder> {
+    /**
+     * Provides operations to call the restore method.
+     */
+    get restore(): RestoreRequestBuilder;
     /**
      * Delete the user synchronization policy for a partner-specific configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -28,12 +34,12 @@ export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilde
      */
      get(requestConfiguration?: RequestConfiguration<IdentitySynchronizationRequestBuilderGetQueryParameters> | undefined) : Promise<CrossTenantIdentitySyncPolicyPartner | undefined>;
     /**
-     * Update the user synchronization policy of a partner-specific configuration.
+     * Create a cross-tenant user synchronization policy for a partner-specific configuration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantIdentitySyncPolicyPartner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta|Find more info here}
      */
      put(body: CrossTenantIdentitySyncPolicyPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantIdentitySyncPolicyPartner | undefined>;
     /**
@@ -49,7 +55,7 @@ export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilde
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IdentitySynchronizationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the user synchronization policy of a partner-specific configuration.
+     * Create a cross-tenant user synchronization policy for a partner-specific configuration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -79,6 +85,14 @@ export const IdentitySynchronizationRequestBuilderUriTemplate = "{+baseurl}/poli
 const IdentitySynchronizationRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const IdentitySynchronizationRequestBuilderNavigationMetadata: Record<Exclude<keyof IdentitySynchronizationRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    restore: {
+        requestsMetadata: RestoreRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

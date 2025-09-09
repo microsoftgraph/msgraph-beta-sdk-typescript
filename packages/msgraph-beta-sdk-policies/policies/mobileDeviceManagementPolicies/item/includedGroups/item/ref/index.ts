@@ -27,7 +27,7 @@ export interface RefRequestBuilder extends BaseRequestBuilder<RefRequestBuilder>
 /**
  * Uri template for the request builder.
  */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref";
+export const RefRequestBuilderUriTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref";
 /**
  * Metadata for all the requests in the request builder.
  */

@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ActivitiesRequestBuilderNavigationMetadata, ActivitiesRequestBuilderRequestsMetadata, type ActivitiesRequestBuilder } from './activities/index.js';
 // @ts-ignore
+import { AdhocCallsRequestBuilderNavigationMetadata, AdhocCallsRequestBuilderRequestsMetadata, type AdhocCallsRequestBuilder } from './adhocCalls/index.js';
+// @ts-ignore
 import { AgreementAcceptancesRequestBuilderNavigationMetadata, AgreementAcceptancesRequestBuilderRequestsMetadata, type AgreementAcceptancesRequestBuilder } from './agreementAcceptances/index.js';
 // @ts-ignore
 import { AnalyticsRequestBuilderNavigationMetadata, AnalyticsRequestBuilderRequestsMetadata, type AnalyticsRequestBuilder } from './analytics/index.js';
@@ -252,6 +254,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the activities property of the microsoft.graph.user entity.
      */
     get activities(): ActivitiesRequestBuilder;
+    /**
+     * Provides operations to manage the adhocCalls property of the microsoft.graph.user entity.
+     */
+    get adhocCalls(): AdhocCallsRequestBuilder;
     /**
      * Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
      */
@@ -834,6 +840,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     activities: {
         requestsMetadata: ActivitiesRequestBuilderRequestsMetadata,
         navigationMetadata: ActivitiesRequestBuilderNavigationMetadata,
+    },
+    adhocCalls: {
+        requestsMetadata: AdhocCallsRequestBuilderRequestsMetadata,
+        navigationMetadata: AdhocCallsRequestBuilderNavigationMetadata,
     },
     agreementAcceptances: {
         requestsMetadata: AgreementAcceptancesRequestBuilderRequestsMetadata,

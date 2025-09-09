@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { BranchesRequestBuilderNavigationMetadata, BranchesRequestBuilderRequestsMetadata, type BranchesRequestBuilder } from './branches/index.js';
 // @ts-ignore
+import { MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder } from './microsoftGraphNetworkaccessGetWebCategoryByUrlWithUrl/index.js';
+// @ts-ignore
 import { RemoteNetworksRequestBuilderNavigationMetadata, RemoteNetworksRequestBuilderRequestsMetadata, type RemoteNetworksRequestBuilder } from './remoteNetworks/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -37,6 +39,12 @@ export interface ConnectivityRequestBuilder extends BaseRequestBuilder<Connectiv
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ConnectivityRequestBuilderGetQueryParameters> | undefined) : Promise<Connectivity | undefined>;
+    /**
+     * Provides operations to call the getWebCategoryByUrl method.
+     * @param url Usage: url='{url}'
+     * @returns {MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder}
+     */
+     microsoftGraphNetworkaccessGetWebCategoryByUrlWithUrl(url: string | undefined) : MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder;
     /**
      * Update the navigation property connectivity in networkAccess
      * @param body The request body
@@ -93,6 +101,10 @@ const ConnectivityRequestBuilderGetQueryParametersMapper: Record<string, string>
  * Metadata for all the navigation properties in the request builder.
  */
 export const ConnectivityRequestBuilderNavigationMetadata: Record<Exclude<keyof ConnectivityRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    microsoftGraphNetworkaccessGetWebCategoryByUrlWithUrl: {
+        requestsMetadata: MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["url"],
+    },
     branches: {
         requestsMetadata: BranchesRequestBuilderRequestsMetadata,
         navigationMetadata: BranchesRequestBuilderNavigationMetadata,

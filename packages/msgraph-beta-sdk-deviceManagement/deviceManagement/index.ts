@@ -252,8 +252,6 @@ import { SettingDefinitionsRequestBuilderNavigationMetadata, SettingDefinitionsR
 // @ts-ignore
 import { SoftwareUpdateStatusSummaryRequestBuilderRequestsMetadata, type SoftwareUpdateStatusSummaryRequestBuilder } from './softwareUpdateStatusSummary/index.js';
 // @ts-ignore
-import { TelecomExpenseManagementPartnersRequestBuilderNavigationMetadata, TelecomExpenseManagementPartnersRequestBuilderRequestsMetadata, type TelecomExpenseManagementPartnersRequestBuilder } from './telecomExpenseManagementPartners/index.js';
-// @ts-ignore
 import { TemplateInsightsRequestBuilderNavigationMetadata, TemplateInsightsRequestBuilderRequestsMetadata, type TemplateInsightsRequestBuilder } from './templateInsights/index.js';
 // @ts-ignore
 import { TemplatesRequestBuilderNavigationMetadata, TemplatesRequestBuilderRequestsMetadata, type TemplatesRequestBuilder } from './templates/index.js';
@@ -866,10 +864,6 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      * Provides operations to manage the softwareUpdateStatusSummary property of the microsoft.graph.deviceManagement entity.
      */
     get softwareUpdateStatusSummary(): SoftwareUpdateStatusSummaryRequestBuilder;
-    /**
-     * Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
-     */
-    get telecomExpenseManagementPartners(): TelecomExpenseManagementPartnersRequestBuilder;
     /**
      * Provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.
      */
@@ -1717,10 +1711,6 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     },
     softwareUpdateStatusSummary: {
         requestsMetadata: SoftwareUpdateStatusSummaryRequestBuilderRequestsMetadata,
-    },
-    telecomExpenseManagementPartners: {
-        requestsMetadata: TelecomExpenseManagementPartnersRequestBuilderRequestsMetadata,
-        navigationMetadata: TelecomExpenseManagementPartnersRequestBuilderNavigationMetadata,
     },
     templateInsights: {
         requestsMetadata: TemplateInsightsRequestBuilderRequestsMetadata,

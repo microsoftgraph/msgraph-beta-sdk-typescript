@@ -96,7 +96,7 @@ export interface RefRequestBuilderGetQueryParameters {
 /**
  * Uri template for the request builder.
  */
-export const RefRequestBuilderUriTemplate = "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref?@id={%40id}{&%24count,%24filter,%24orderby,%24search,%24skip,%24top}";
+export const RefRequestBuilderUriTemplate = "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/$ref?@id={%40id}{&%24count,%24filter,%24orderby,%24search,%24skip,%24top}";
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
