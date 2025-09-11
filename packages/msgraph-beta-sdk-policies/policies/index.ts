@@ -26,9 +26,13 @@ import { B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata, type B2cA
 // @ts-ignore
 import { ClaimsMappingPoliciesRequestBuilderNavigationMetadata, ClaimsMappingPoliciesRequestBuilderRequestsMetadata, type ClaimsMappingPoliciesRequestBuilder } from './claimsMappingPolicies/index.js';
 // @ts-ignore
+import { ConditionalAccessPoliciesRequestBuilderNavigationMetadata, ConditionalAccessPoliciesRequestBuilderRequestsMetadata, type ConditionalAccessPoliciesRequestBuilder } from './conditionalAccessPolicies/index.js';
+// @ts-ignore
 import { CrossTenantAccessPolicyRequestBuilderNavigationMetadata, CrossTenantAccessPolicyRequestBuilderRequestsMetadata, type CrossTenantAccessPolicyRequestBuilder } from './crossTenantAccessPolicy/index.js';
 // @ts-ignore
 import { DefaultAppManagementPolicyRequestBuilderRequestsMetadata, type DefaultAppManagementPolicyRequestBuilder } from './defaultAppManagementPolicy/index.js';
+// @ts-ignore
+import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilderRequestsMetadata, type DeletedItemsRequestBuilder } from './deletedItems/index.js';
 // @ts-ignore
 import { DeviceRegistrationPolicyRequestBuilderRequestsMetadata, type DeviceRegistrationPolicyRequestBuilder } from './deviceRegistrationPolicy/index.js';
 // @ts-ignore
@@ -109,6 +113,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
     get claimsMappingPolicies(): ClaimsMappingPoliciesRequestBuilder;
     /**
+     * Provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get conditionalAccessPolicies(): ConditionalAccessPoliciesRequestBuilder;
+    /**
      * Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.
      */
     get crossTenantAccessPolicy(): CrossTenantAccessPolicyRequestBuilder;
@@ -116,6 +124,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.
      */
     get defaultAppManagementPolicy(): DefaultAppManagementPolicyRequestBuilder;
+    /**
+     * Provides operations to manage the deletedItems property of the microsoft.graph.policyRoot entity.
+     */
+    get deletedItems(): DeletedItemsRequestBuilder;
     /**
      * Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.
      */
@@ -273,12 +285,20 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
         requestsMetadata: ClaimsMappingPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: ClaimsMappingPoliciesRequestBuilderNavigationMetadata,
     },
+    conditionalAccessPolicies: {
+        requestsMetadata: ConditionalAccessPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: ConditionalAccessPoliciesRequestBuilderNavigationMetadata,
+    },
     crossTenantAccessPolicy: {
         requestsMetadata: CrossTenantAccessPolicyRequestBuilderRequestsMetadata,
         navigationMetadata: CrossTenantAccessPolicyRequestBuilderNavigationMetadata,
     },
     defaultAppManagementPolicy: {
         requestsMetadata: DefaultAppManagementPolicyRequestBuilderRequestsMetadata,
+    },
+    deletedItems: {
+        requestsMetadata: DeletedItemsRequestBuilderRequestsMetadata,
+        navigationMetadata: DeletedItemsRequestBuilderNavigationMetadata,
     },
     deviceRegistrationPolicy: {
         requestsMetadata: DeviceRegistrationPolicyRequestBuilderRequestsMetadata,

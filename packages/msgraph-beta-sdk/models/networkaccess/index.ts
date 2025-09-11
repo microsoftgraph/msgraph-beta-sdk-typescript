@@ -182,6 +182,32 @@ export interface AlertSummary extends AdditionalDataHolder, BackedModel, Parsabl
 }
 export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
 export type Algorithm = (typeof AlgorithmObject)[keyof typeof AlgorithmObject];
+export interface ApplicationAnalyticsUsagePoint extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The count attributed to cloud applications for the specified aggregation type.
+     */
+    cloudAppsCount?: number | null;
+    /**
+     * The count attributed to enterprise applications for the specified aggregation type.
+     */
+    enterpriseAppsCount?: number | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The date for which the aggregated data point represents.
+     */
+    timeStampDateTime?: Date | null;
+    /**
+     * The total count for the specified aggregation type (users, devices, or transactions).
+     */
+    totalCount?: number | null;
+}
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The unique identifier of the application accessed during the transaction.
@@ -310,6 +336,131 @@ export interface BranchSiteCollectionResponse extends BaseCollectionPaginationCo
     value?: BranchSite[] | null;
 }
 export type ClientFallbackAction = (typeof ClientFallbackActionObject)[keyof typeof ClientFallbackActionObject];
+export type CloudApplicationCategory = (typeof CloudApplicationCategoryObject)[keyof typeof CloudApplicationCategoryObject];
+export interface CloudApplicationMetadata extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The category property
+     */
+    category?: CloudApplicationCategory | null;
+    /**
+     * The ID of the application in the SaaS application catalog.
+     */
+    cloudApplicationCatalogId?: string | null;
+    /**
+     * The compliance score of the application.
+     */
+    complianceScore?: number | null;
+    /**
+     * The general score of the application.
+     */
+    generalScore?: number | null;
+    /**
+     * The legal score of the application.
+     */
+    legalScore?: number | null;
+    /**
+     * The username that was used to log into the application.
+     */
+    loginUser?: string | null;
+    /**
+     * The name of the application (e.g., ChatGPT, Salesforce, Bing).
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The risk score of the application.
+     */
+    riskScore?: number | null;
+    /**
+     * The security score of the application.
+     */
+    securityScore?: number | null;
+    /**
+     * The subactivity property
+     */
+    subactivity?: string | null;
+}
+export interface CloudApplicationReport extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The category property
+     */
+    category?: CloudApplicationCategory | null;
+    /**
+     * The ID of the application in the SaaS application catalog.
+     */
+    cloudApplicationCatalogId?: string | null;
+    /**
+     * The compliance score of the application.
+     */
+    complianceScore?: number | null;
+    /**
+     * Number of devices under this application.
+     */
+    deviceCount?: number | null;
+    /**
+     * Timestamp of the first access to the application.
+     */
+    firstAccessDateTime?: Date | null;
+    /**
+     * The general score of the application.
+     */
+    generalScore?: number | null;
+    /**
+     * Timestamp of the last access to the application.
+     */
+    lastAccessDateTime?: Date | null;
+    /**
+     * The legal score of the application.
+     */
+    legalScore?: number | null;
+    /**
+     * The name of the application (e.g., ChatGPT, Salesforce, Bing).
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The risk score of the application.
+     */
+    riskScore?: number | null;
+    /**
+     * The security score of the application.
+     */
+    securityScore?: number | null;
+    /**
+     * Total bytes received from the application.
+     */
+    totalBytesReceived?: number | null;
+    /**
+     * Total bytes sent to the application.
+     */
+    totalBytesSent?: number | null;
+    /**
+     * The trafficType property
+     */
+    trafficType?: TrafficType | null;
+    /**
+     * Number of transactions under this application.
+     */
+    transactionCount?: number | null;
+    /**
+     * Number of users under this application.
+     */
+    userCount?: number | null;
+}
 export interface ConditionalAccessPolicy extends Entity, Parsable {
     /**
      * Indicates the date and time the conditional access policy was created.
@@ -489,7 +640,7 @@ export interface Connectivity extends Entity, Parsable {
      */
     remoteNetworks?: RemoteNetwork[] | null;
     /**
-     * The webCategories property
+     * The URL category.
      */
     webCategories?: WebCategory[] | null;
 }
@@ -571,6 +722,15 @@ export function createAlertSummaryFromDiscriminatorValue(parseNode: ParseNode | 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicationAnalyticsUsagePoint}
+ */
+// @ts-ignore
+export function createApplicationAnalyticsUsagePointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicationAnalyticsUsagePoint;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplicationSnapshot}
  */
 // @ts-ignore
@@ -641,6 +801,24 @@ export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNo
 // @ts-ignore
 export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSite;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudApplicationMetadata}
+ */
+// @ts-ignore
+export function createCloudApplicationMetadataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudApplicationMetadata;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudApplicationReport}
+ */
+// @ts-ignore
+export function createCloudApplicationReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudApplicationReport;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -812,6 +990,15 @@ export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseN
 // @ts-ignore
 export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDiscoveredApplicationSegmentReport;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EnterpriseApplicationReport}
+ */
+// @ts-ignore
+export function createEnterpriseApplicationReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnterpriseApplicationReport;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2054,6 +2241,22 @@ export function deserializeIntoAlertSummary(alertSummary: Partial<AlertSummary> 
 }
 /**
  * The deserialization information for the current model
+ * @param ApplicationAnalyticsUsagePoint The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicationAnalyticsUsagePoint(applicationAnalyticsUsagePoint: Partial<ApplicationAnalyticsUsagePoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { applicationAnalyticsUsagePoint.backingStoreEnabled = true; },
+        "cloudAppsCount": n => { applicationAnalyticsUsagePoint.cloudAppsCount = n.getNumberValue(); },
+        "enterpriseAppsCount": n => { applicationAnalyticsUsagePoint.enterpriseAppsCount = n.getNumberValue(); },
+        "@odata.type": n => { applicationAnalyticsUsagePoint.odataType = n.getStringValue(); },
+        "timeStampDateTime": n => { applicationAnalyticsUsagePoint.timeStampDateTime = n.getDateValue(); },
+        "totalCount": n => { applicationAnalyticsUsagePoint.totalCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param ApplicationSnapshot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2151,6 +2354,56 @@ export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollection
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(branchSiteCollectionResponse),
         "value": n => { branchSiteCollectionResponse.value = n.getCollectionOfObjectValues<BranchSite>(createBranchSiteFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudApplicationMetadata The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudApplicationMetadata(cloudApplicationMetadata: Partial<CloudApplicationMetadata> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudApplicationMetadata.backingStoreEnabled = true; },
+        "category": n => { cloudApplicationMetadata.category = n.getEnumValue<CloudApplicationCategory>(CloudApplicationCategoryObject); },
+        "cloudApplicationCatalogId": n => { cloudApplicationMetadata.cloudApplicationCatalogId = n.getStringValue(); },
+        "complianceScore": n => { cloudApplicationMetadata.complianceScore = n.getNumberValue(); },
+        "generalScore": n => { cloudApplicationMetadata.generalScore = n.getNumberValue(); },
+        "legalScore": n => { cloudApplicationMetadata.legalScore = n.getNumberValue(); },
+        "loginUser": n => { cloudApplicationMetadata.loginUser = n.getStringValue(); },
+        "name": n => { cloudApplicationMetadata.name = n.getStringValue(); },
+        "@odata.type": n => { cloudApplicationMetadata.odataType = n.getStringValue(); },
+        "riskScore": n => { cloudApplicationMetadata.riskScore = n.getNumberValue(); },
+        "securityScore": n => { cloudApplicationMetadata.securityScore = n.getNumberValue(); },
+        "subactivity": n => { cloudApplicationMetadata.subactivity = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudApplicationReport The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudApplicationReport(cloudApplicationReport: Partial<CloudApplicationReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudApplicationReport.backingStoreEnabled = true; },
+        "category": n => { cloudApplicationReport.category = n.getEnumValue<CloudApplicationCategory>(CloudApplicationCategoryObject); },
+        "cloudApplicationCatalogId": n => { cloudApplicationReport.cloudApplicationCatalogId = n.getStringValue(); },
+        "complianceScore": n => { cloudApplicationReport.complianceScore = n.getNumberValue(); },
+        "deviceCount": n => { cloudApplicationReport.deviceCount = n.getNumberValue(); },
+        "firstAccessDateTime": n => { cloudApplicationReport.firstAccessDateTime = n.getDateValue(); },
+        "generalScore": n => { cloudApplicationReport.generalScore = n.getNumberValue(); },
+        "lastAccessDateTime": n => { cloudApplicationReport.lastAccessDateTime = n.getDateValue(); },
+        "legalScore": n => { cloudApplicationReport.legalScore = n.getNumberValue(); },
+        "name": n => { cloudApplicationReport.name = n.getStringValue(); },
+        "@odata.type": n => { cloudApplicationReport.odataType = n.getStringValue(); },
+        "riskScore": n => { cloudApplicationReport.riskScore = n.getNumberValue(); },
+        "securityScore": n => { cloudApplicationReport.securityScore = n.getNumberValue(); },
+        "totalBytesReceived": n => { cloudApplicationReport.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { cloudApplicationReport.totalBytesSent = n.getNumberValue(); },
+        "trafficType": n => { cloudApplicationReport.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+        "transactionCount": n => { cloudApplicationReport.transactionCount = n.getNumberValue(); },
+        "userCount": n => { cloudApplicationReport.userCount = n.getNumberValue(); },
     }
 }
 /**
@@ -2477,6 +2730,28 @@ export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredAppl
 }
 /**
  * The deserialization information for the current model
+ * @param EnterpriseApplicationReport The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEnterpriseApplicationReport(enterpriseApplicationReport: Partial<EnterpriseApplicationReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "accessType": n => { enterpriseApplicationReport.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
+        "applicationId": n => { enterpriseApplicationReport.applicationId = n.getStringValue(); },
+        "backingStoreEnabled": n => { enterpriseApplicationReport.backingStoreEnabled = true; },
+        "deviceCount": n => { enterpriseApplicationReport.deviceCount = n.getNumberValue(); },
+        "firstAccessDateTime": n => { enterpriseApplicationReport.firstAccessDateTime = n.getDateValue(); },
+        "lastAccessDateTime": n => { enterpriseApplicationReport.lastAccessDateTime = n.getDateValue(); },
+        "@odata.type": n => { enterpriseApplicationReport.odataType = n.getStringValue(); },
+        "totalBytesReceived": n => { enterpriseApplicationReport.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { enterpriseApplicationReport.totalBytesSent = n.getNumberValue(); },
+        "trafficType": n => { enterpriseApplicationReport.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+        "transactionCount": n => { enterpriseApplicationReport.transactionCount = n.getNumberValue(); },
+        "userCount": n => { enterpriseApplicationReport.userCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param EntitiesSummary The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2634,6 +2909,7 @@ export function deserializeIntoForwardingOptions(forwardingOptions: Partial<Forw
 export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<ForwardingPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicy(forwardingPolicy),
+        "privateAccessAppId": n => { forwardingPolicy.privateAccessAppId = n.getStringValue(); },
         "trafficForwardingType": n => { forwardingPolicy.trafficForwardingType = n.getEnumValue<TrafficForwardingType>(TrafficForwardingTypeObject); },
     }
 }
@@ -2670,6 +2946,7 @@ export function deserializeIntoForwardingProfile(forwardingProfile: Partial<Forw
     return {
         ...deserializeIntoProfile(forwardingProfile),
         "associations": n => { forwardingProfile.associations = n.getCollectionOfObjectValues<Association>(createAssociationFromDiscriminatorValue); },
+        "isCustomProfile": n => { forwardingProfile.isCustomProfile = n.getBooleanValue(); },
         "priority": n => { forwardingProfile.priority = n.getNumberValue(); },
         "servicePrincipal": n => { forwardingProfile.servicePrincipal = n.getObjectValue<ServicePrincipal>(createServicePrincipalFromDiscriminatorValue); },
         "trafficForwardingType": n => { forwardingProfile.trafficForwardingType = n.getEnumValue<TrafficForwardingType>(TrafficForwardingTypeObject); },
@@ -2870,6 +3147,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "agentVersion": n => { networkAccessTraffic.agentVersion = n.getStringValue(); },
         "applicationSnapshot": n => { networkAccessTraffic.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
         "backingStoreEnabled": n => { networkAccessTraffic.backingStoreEnabled = true; },
+        "cloudApplicationMetadata": n => { networkAccessTraffic.cloudApplicationMetadata = n.getObjectValue<CloudApplicationMetadata>(createCloudApplicationMetadataFromDiscriminatorValue); },
         "connectionId": n => { networkAccessTraffic.connectionId = n.getStringValue(); },
         "createdDateTime": n => { networkAccessTraffic.createdDateTime = n.getDateValue(); },
         "description": n => { networkAccessTraffic.description = n.getStringValue(); },
@@ -4067,6 +4345,56 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      */
     userCount?: number | null;
 }
+export interface EnterpriseApplicationReport extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The type of accessed application. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.
+     */
+    accessType?: AccessType | null;
+    /**
+     * The unique identifier for the enterprise application (appId) in Microsoft Entra ID.
+     */
+    applicationId?: string | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Number of devices that accessed this application.
+     */
+    deviceCount?: number | null;
+    /**
+     * Timestamp of the first access to the application.
+     */
+    firstAccessDateTime?: Date | null;
+    /**
+     * Timestamp of the last access to the application.
+     */
+    lastAccessDateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Total bytes received from the application.
+     */
+    totalBytesReceived?: number | null;
+    /**
+     * Total bytes sent to the application.
+     */
+    totalBytesSent?: number | null;
+    /**
+     * The trafficType property
+     */
+    trafficType?: TrafficType | null;
+    /**
+     * Number of transactions to this application.
+     */
+    transactionCount?: number | null;
+    /**
+     * Number of users that accessed this application.
+     */
+    userCount?: number | null;
+}
 export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -4213,6 +4541,10 @@ export interface ForwardingOptions extends Entity, Parsable {
 }
 export interface ForwardingPolicy extends Parsable, Policy {
     /**
+     * The privateAccessAppId property
+     */
+    privateAccessAppId?: string | null;
+    /**
      * The trafficForwardingType property
      */
     trafficForwardingType?: TrafficForwardingType | null;
@@ -4230,6 +4562,10 @@ export interface ForwardingProfile extends Parsable, Profile {
      * Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
      */
     associations?: Association[] | null;
+    /**
+     * The isCustomProfile property
+     */
+    isCustomProfile?: boolean | null;
     /**
      * Profile priority.
      */
@@ -4462,6 +4798,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * Contains metadata about the cloud application involved in the network transaction, such as application name, category, and risk level. Supports $filter (eq) and $orderby.
+     */
+    cloudApplicationMetadata?: CloudApplicationMetadata | null;
     /**
      * Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.
      */
@@ -5175,6 +5515,22 @@ export function serializeAlertSummary(writer: SerializationWriter, alertSummary:
 }
 /**
  * Serializes information the current object
+ * @param ApplicationAnalyticsUsagePoint The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicationAnalyticsUsagePoint(writer: SerializationWriter, applicationAnalyticsUsagePoint: Partial<ApplicationAnalyticsUsagePoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicationAnalyticsUsagePoint || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("cloudAppsCount", applicationAnalyticsUsagePoint.cloudAppsCount);
+    writer.writeNumberValue("enterpriseAppsCount", applicationAnalyticsUsagePoint.enterpriseAppsCount);
+    writer.writeStringValue("@odata.type", applicationAnalyticsUsagePoint.odataType);
+    writer.writeDateValue("timeStampDateTime", applicationAnalyticsUsagePoint.timeStampDateTime);
+    writer.writeNumberValue("totalCount", applicationAnalyticsUsagePoint.totalCount);
+    writer.writeAdditionalData(applicationAnalyticsUsagePoint.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param ApplicationSnapshot The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5278,6 +5634,56 @@ export function serializeBranchSiteCollectionResponse(writer: SerializationWrite
     if (!branchSiteCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
+}
+/**
+ * Serializes information the current object
+ * @param CloudApplicationMetadata The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudApplicationMetadata(writer: SerializationWriter, cloudApplicationMetadata: Partial<CloudApplicationMetadata> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudApplicationMetadata || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<CloudApplicationCategory>("category", cloudApplicationMetadata.category);
+    writer.writeStringValue("cloudApplicationCatalogId", cloudApplicationMetadata.cloudApplicationCatalogId);
+    writer.writeNumberValue("complianceScore", cloudApplicationMetadata.complianceScore);
+    writer.writeNumberValue("generalScore", cloudApplicationMetadata.generalScore);
+    writer.writeNumberValue("legalScore", cloudApplicationMetadata.legalScore);
+    writer.writeStringValue("loginUser", cloudApplicationMetadata.loginUser);
+    writer.writeStringValue("name", cloudApplicationMetadata.name);
+    writer.writeStringValue("@odata.type", cloudApplicationMetadata.odataType);
+    writer.writeNumberValue("riskScore", cloudApplicationMetadata.riskScore);
+    writer.writeNumberValue("securityScore", cloudApplicationMetadata.securityScore);
+    writer.writeStringValue("subactivity", cloudApplicationMetadata.subactivity);
+    writer.writeAdditionalData(cloudApplicationMetadata.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CloudApplicationReport The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudApplicationReport(writer: SerializationWriter, cloudApplicationReport: Partial<CloudApplicationReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudApplicationReport || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<CloudApplicationCategory>("category", cloudApplicationReport.category);
+    writer.writeStringValue("cloudApplicationCatalogId", cloudApplicationReport.cloudApplicationCatalogId);
+    writer.writeNumberValue("complianceScore", cloudApplicationReport.complianceScore);
+    writer.writeNumberValue("deviceCount", cloudApplicationReport.deviceCount);
+    writer.writeDateValue("firstAccessDateTime", cloudApplicationReport.firstAccessDateTime);
+    writer.writeNumberValue("generalScore", cloudApplicationReport.generalScore);
+    writer.writeDateValue("lastAccessDateTime", cloudApplicationReport.lastAccessDateTime);
+    writer.writeNumberValue("legalScore", cloudApplicationReport.legalScore);
+    writer.writeStringValue("name", cloudApplicationReport.name);
+    writer.writeStringValue("@odata.type", cloudApplicationReport.odataType);
+    writer.writeNumberValue("riskScore", cloudApplicationReport.riskScore);
+    writer.writeNumberValue("securityScore", cloudApplicationReport.securityScore);
+    writer.writeNumberValue("totalBytesReceived", cloudApplicationReport.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", cloudApplicationReport.totalBytesSent);
+    writer.writeEnumValue<TrafficType>("trafficType", cloudApplicationReport.trafficType);
+    writer.writeNumberValue("transactionCount", cloudApplicationReport.transactionCount);
+    writer.writeNumberValue("userCount", cloudApplicationReport.userCount);
+    writer.writeAdditionalData(cloudApplicationReport.additionalData);
 }
 /**
  * Serializes information the current object
@@ -5603,6 +6009,28 @@ export function serializeDiscoveredApplicationSegmentReport(writer: Serializatio
 }
 /**
  * Serializes information the current object
+ * @param EnterpriseApplicationReport The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnterpriseApplicationReport(writer: SerializationWriter, enterpriseApplicationReport: Partial<EnterpriseApplicationReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enterpriseApplicationReport || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AccessType>("accessType", enterpriseApplicationReport.accessType);
+    writer.writeStringValue("applicationId", enterpriseApplicationReport.applicationId);
+    writer.writeNumberValue("deviceCount", enterpriseApplicationReport.deviceCount);
+    writer.writeDateValue("firstAccessDateTime", enterpriseApplicationReport.firstAccessDateTime);
+    writer.writeDateValue("lastAccessDateTime", enterpriseApplicationReport.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", enterpriseApplicationReport.odataType);
+    writer.writeNumberValue("totalBytesReceived", enterpriseApplicationReport.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", enterpriseApplicationReport.totalBytesSent);
+    writer.writeEnumValue<TrafficType>("trafficType", enterpriseApplicationReport.trafficType);
+    writer.writeNumberValue("transactionCount", enterpriseApplicationReport.transactionCount);
+    writer.writeNumberValue("userCount", enterpriseApplicationReport.userCount);
+    writer.writeAdditionalData(enterpriseApplicationReport.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param EntitiesSummary The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5769,6 +6197,7 @@ export function serializeForwardingOptions(writer: SerializationWriter, forwardi
 export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!forwardingPolicy || isSerializingDerivedType) { return; }
     serializePolicy(writer, forwardingPolicy, isSerializingDerivedType)
+    writer.writeStringValue("privateAccessAppId", forwardingPolicy.privateAccessAppId);
     writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
 }
 /**
@@ -5805,6 +6234,7 @@ export function serializeForwardingProfile(writer: SerializationWriter, forwardi
     if (!forwardingProfile || isSerializingDerivedType) { return; }
     serializeProfile(writer, forwardingProfile, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
+    writer.writeBooleanValue("isCustomProfile", forwardingProfile.isCustomProfile);
     writer.writeNumberValue("priority", forwardingProfile.priority);
     writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
     writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
@@ -6015,6 +6445,7 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
     writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
     writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
     writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
+    writer.writeObjectValue<CloudApplicationMetadata>("cloudApplicationMetadata", networkAccessTraffic.cloudApplicationMetadata, serializeCloudApplicationMetadata);
     writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
     writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
     writer.writeStringValue("description", networkAccessTraffic.description);
@@ -7643,6 +8074,53 @@ export const ClientFallbackActionObject = {
     Bypass: "bypass",
     Block: "block",
     UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const CloudApplicationCategoryObject = {
+    HostingServices: "hostingServices",
+    ItServices: "itServices",
+    AccountingAndFinance: "accountingAndFinance",
+    BusinessManagement: "businessManagement",
+    Productivity: "productivity",
+    ECommerce: "eCommerce",
+    Education: "education",
+    Marketing: "marketing",
+    HumanResourceManagement: "humanResourceManagement",
+    Health: "health",
+    Security: "security",
+    GenerativeAi: "generativeAi",
+    NewsAndEntertainment: "newsAndEntertainment",
+    OperationsManagement: "operationsManagement",
+    ContentManagement: "contentManagement",
+    DevelopmentTools: "developmentTools",
+    Collaboration: "collaboration",
+    Crm: "crm",
+    Communications: "communications",
+    DataAnalytics: "dataAnalytics",
+    Advertising: "advertising",
+    SupplyChainAndLogistics: "supplyChainAndLogistics",
+    ProjectManagement: "projectManagement",
+    TransportationAndTravel: "transportationAndTravel",
+    CloudComputingPlatform: "cloudComputingPlatform",
+    BusinessIntelligence: "businessIntelligence",
+    CloudStorage: "cloudStorage",
+    PropertyManagement: "propertyManagement",
+    ContentSharing: "contentSharing",
+    CustomerSupport: "customerSupport",
+    Sales: "sales",
+    ProductDesign: "productDesign",
+    SocialNetwork: "socialNetwork",
+    OnlineMeetings: "onlineMeetings",
+    Webmail: "webmail",
+    InternetOfThings: "internetOfThings",
+    Forums: "forums",
+    WebAnalytics: "webAnalytics",
+    WebsiteMonitoring: "websiteMonitoring",
+    VendorManagementSystem: "vendorManagementSystem",
+    PersonalInstantMessaging: "personalInstantMessaging",
+    CodeHosting: "codeHosting",
+    UnknownFutureValue: "unknownFutureValue",
+    McpServer: "mcpServer",
+    AiModelProvider: "aiModelProvider",
 } as const;
 export const ConnectionStatusObject = {
     Open: "open",
