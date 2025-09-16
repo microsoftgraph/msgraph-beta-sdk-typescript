@@ -7766,7 +7766,7 @@ export interface TlsInspectionRule extends Parsable, PolicyRule {
      */
     description?: string | null;
     /**
-     * The matchingConditions property
+     * The conditions that determine when this rule should be applied to traffic.
      */
     matchingConditions?: TlsInspectionMatchingConditions | null;
     /**
