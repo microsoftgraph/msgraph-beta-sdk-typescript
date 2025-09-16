@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-governancerolesettings",
-  "version": "1.0.0-preview.65",
+  "version": "1.0.0-preview.66",
   "description": "GovernanceRoleSettings fluent API for Microsoft Graph",
   "keywords": [
     "Microsoft",
