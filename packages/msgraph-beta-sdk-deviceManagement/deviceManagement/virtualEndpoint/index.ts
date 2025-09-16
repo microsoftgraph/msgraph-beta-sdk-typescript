@@ -18,6 +18,8 @@ import { CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetadata, 
 // @ts-ignore
 import { DeviceImagesRequestBuilderNavigationMetadata, DeviceImagesRequestBuilderRequestsMetadata, type DeviceImagesRequestBuilder } from './deviceImages/index.js';
 // @ts-ignore
+import { ExternalPartnersRequestBuilderNavigationMetadata, ExternalPartnersRequestBuilderRequestsMetadata, type ExternalPartnersRequestBuilder } from './externalPartners/index.js';
+// @ts-ignore
 import { ExternalPartnerSettingsRequestBuilderNavigationMetadata, ExternalPartnerSettingsRequestBuilderRequestsMetadata, type ExternalPartnerSettingsRequestBuilder } from './externalPartnerSettings/index.js';
 // @ts-ignore
 import { FrontLineServicePlansRequestBuilderNavigationMetadata, FrontLineServicePlansRequestBuilderRequestsMetadata, type FrontLineServicePlansRequestBuilder } from './frontLineServicePlans/index.js';
@@ -76,6 +78,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
      */
     get deviceImages(): DeviceImagesRequestBuilder;
+    /**
+     * Provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get externalPartners(): ExternalPartnersRequestBuilder;
     /**
      * Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -223,6 +229,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     deviceImages: {
         requestsMetadata: DeviceImagesRequestBuilderRequestsMetadata,
         navigationMetadata: DeviceImagesRequestBuilderNavigationMetadata,
+    },
+    externalPartners: {
+        requestsMetadata: ExternalPartnersRequestBuilderRequestsMetadata,
+        navigationMetadata: ExternalPartnersRequestBuilderNavigationMetadata,
     },
     externalPartnerSettings: {
         requestsMetadata: ExternalPartnerSettingsRequestBuilderRequestsMetadata,
