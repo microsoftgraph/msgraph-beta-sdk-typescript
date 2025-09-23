@@ -34,12 +34,12 @@ export interface GradingSchemesRequestBuilder extends BaseRequestBuilder<Grading
      */
      get(requestConfiguration?: RequestConfiguration<GradingSchemesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingSchemeCollectionResponse | undefined>;
     /**
-     * Create a new educationGradingScheme object.
+     * Create a new educationGradingScheme on an educationClass. Only teachers can perform this operation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingScheme>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/educationgradingscheme-post?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/educationassignmentsettings-post-gradingschemes?view=graph-rest-beta|Find more info here}
      */
      post(body: EducationGradingScheme, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationGradingScheme | undefined>;
     /**
@@ -49,7 +49,7 @@ export interface GradingSchemesRequestBuilder extends BaseRequestBuilder<Grading
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GradingSchemesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new educationGradingScheme object.
+     * Create a new educationGradingScheme on an educationClass. Only teachers can perform this operation.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -2460,7 +2460,7 @@ export interface TriggerAttribute extends AdditionalDataHolder, BackedModel, Par
 }
 export interface UserInactivityTrigger extends Parsable, WorkflowExecutionTrigger {
     /**
-     * The inactivityPeriodInDays property
+     * The number of days a user must be inactive before triggering workflow execution.
      */
     inactivityPeriodInDays?: number | null;
 }
@@ -2482,7 +2482,7 @@ export interface UserProcessingResult extends Entity, Parsable {
      */
     scheduledDateTime?: Date | null;
     /**
-     * The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+     * The date time that the workflow execution started. Value is null if the workflow execution hasn't started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
      */
     startedDateTime?: Date | null;
     /**
