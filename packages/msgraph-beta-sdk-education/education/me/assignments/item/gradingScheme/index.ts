@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface GradingSchemeRequestBuilder extends BaseRequestBuilder<GradingSchemeRequestBuilder> {
     /**
-     * Get gradingScheme from education
+     * When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingScheme>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<GradingSchemeRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingScheme | undefined>;
     /**
-     * Get gradingScheme from education
+     * When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GradingSchemeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get gradingScheme from education
+ * When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
  */
 export interface GradingSchemeRequestBuilderGetQueryParameters {
     /**
