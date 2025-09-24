@@ -35,7 +35,7 @@ export interface CopyPostRequestBody extends AdditionalDataHolder, BackedModel, 
  */
 export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilder> {
     /**
-     * Create a copy of a driveItem asynchronously. You can optionally copy exclusively the child items, specify a new parent folder, or provide a new name. Once the request is accepted, the operation is queued and processed asynchronously. Use the monitor URL to track progress until the operation completes.
+     * Create a copy of a driveItem asynchronously. You can optionally copy exclusively the child items, specify a new parent folder, or provide a new name. Once the request is accepted, the operation is queued and processed asynchronously. Use the monitor URL to track progress until the operation completes. The copy operation is restricted to 30,000 driveItems. For more information, see SharePoint limits.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveItem>}
@@ -44,7 +44,7 @@ export interface CopyRequestBuilder extends BaseRequestBuilder<CopyRequestBuilde
      */
      post(body: CopyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveItem | undefined>;
     /**
-     * Create a copy of a driveItem asynchronously. You can optionally copy exclusively the child items, specify a new parent folder, or provide a new name. Once the request is accepted, the operation is queued and processed asynchronously. Use the monitor URL to track progress until the operation completes.
+     * Create a copy of a driveItem asynchronously. You can optionally copy exclusively the child items, specify a new parent folder, or provide a new name. Once the request is accepted, the operation is queued and processed asynchronously. Use the monitor URL to track progress until the operation completes. The copy operation is restricted to 30,000 driveItems. For more information, see SharePoint limits.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

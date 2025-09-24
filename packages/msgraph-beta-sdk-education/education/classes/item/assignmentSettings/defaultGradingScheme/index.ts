@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DefaultGradingSchemeRequestBuilder extends BaseRequestBuilder<DefaultGradingSchemeRequestBuilder> {
     /**
-     * Get defaultGradingScheme from education
+     * The default grading scheme for assignments created in this class.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationGradingScheme>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<DefaultGradingSchemeRequestBuilderGetQueryParameters> | undefined) : Promise<EducationGradingScheme | undefined>;
     /**
-     * Get defaultGradingScheme from education
+     * The default grading scheme for assignments created in this class.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DefaultGradingSchemeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get defaultGradingScheme from education
+ * The default grading scheme for assignments created in this class.
  */
 export interface DefaultGradingSchemeRequestBuilderGetQueryParameters {
     /**
