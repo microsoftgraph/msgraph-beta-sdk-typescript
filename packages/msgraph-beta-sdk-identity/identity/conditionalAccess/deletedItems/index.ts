@@ -31,7 +31,7 @@ export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedIt
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get deletedItems from identity
+     * Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CaPoliciesDeletableRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedIt
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get deletedItems from identity
+     * Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedIt
      toPatchRequestInformation(body: CaPoliciesDeletableRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get deletedItems from identity
+ * Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
  */
 export interface DeletedItemsRequestBuilderGetQueryParameters {
     /**

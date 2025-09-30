@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequestBuilder> {
     /**
-     * Invoke action restore
+     * Restore a deleted ipNamedLocation object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NamedLocation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/ipnamedlocation-restore?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<NamedLocation | undefined>;
     /**
-     * Invoke action restore
+     * Restore a deleted ipNamedLocation object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

@@ -19,7 +19,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get policy from admin
+     * Represents a navigation property to the Teams policy assignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsPolicyAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get policy from admin
+     * Represents a navigation property to the Teams policy assignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      toPatchRequestInformation(body: TeamsPolicyAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get policy from admin
+ * Represents a navigation property to the Teams policy assignment object.
  */
 export interface PolicyRequestBuilderGetQueryParameters {
     /**

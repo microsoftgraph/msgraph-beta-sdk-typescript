@@ -19,16 +19,18 @@ export interface NamedLocationItemRequestBuilder extends BaseRequestBuilder<Name
      */
     get restore(): RestoreRequestBuilder;
     /**
-     * Delete navigation property namedLocations for identity
+     * Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get namedLocations from identity
+     * Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NamedLocation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters> | undefined) : Promise<NamedLocation | undefined>;
     /**
@@ -40,13 +42,13 @@ export interface NamedLocationItemRequestBuilder extends BaseRequestBuilder<Name
      */
      patch(body: NamedLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<NamedLocation | undefined>;
     /**
-     * Delete navigation property namedLocations for identity
+     * Permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get namedLocations from identity
+     * Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +62,7 @@ export interface NamedLocationItemRequestBuilder extends BaseRequestBuilder<Name
      toPatchRequestInformation(body: NamedLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get namedLocations from identity
+ * Read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
  */
 export interface NamedLocationItemRequestBuilderGetQueryParameters {
     /**
