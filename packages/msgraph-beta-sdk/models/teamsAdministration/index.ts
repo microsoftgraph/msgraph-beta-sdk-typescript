@@ -338,7 +338,7 @@ export function serializeTeamsUserConfigurationCollectionResponse(writer: Serial
 }
 export interface TeamsAdminRoot extends Entity, Parsable {
     /**
-     * The policy property
+     * Represents a navigation property to the Teams policy assignment object.
      */
     policy?: TeamsPolicyAssignment | null;
     /**

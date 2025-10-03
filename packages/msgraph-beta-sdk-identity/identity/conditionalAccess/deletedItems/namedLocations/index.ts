@@ -27,10 +27,11 @@ export interface NamedLocationsRequestBuilder extends BaseRequestBuilder<NamedLo
      */
      byNamedLocationId(namedLocationId: string) : NamedLocationItemRequestBuilder;
     /**
-     * Get namedLocations from identity
+     * Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<NamedLocationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/policydeletableitem-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<NamedLocationsRequestBuilderGetQueryParameters> | undefined) : Promise<NamedLocationCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface NamedLocationsRequestBuilder extends BaseRequestBuilder<NamedLo
      */
      post(body: NamedLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<NamedLocation | undefined>;
     /**
-     * Get namedLocations from identity
+     * Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface NamedLocationsRequestBuilder extends BaseRequestBuilder<NamedLo
      toPostRequestInformation(body: NamedLocation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get namedLocations from identity
+ * Get a list of the policyDeletableItem objects and their properties, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
  */
 export interface NamedLocationsRequestBuilderGetQueryParameters {
     /**

@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface CancelOffboardRequestBuilder extends BaseRequestBuilder<CancelOffboardRequestBuilder> {
     /**
-     * Cancel offboard for a protectionUnitBase.
+     * Cancel the offboarding of a protectionUnitBase.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProtectionUnitBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,7 +21,7 @@ export interface CancelOffboardRequestBuilder extends BaseRequestBuilder<CancelO
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProtectionUnitBase | undefined>;
     /**
-     * Cancel offboard for a protectionUnitBase.
+     * Cancel the offboarding of a protectionUnitBase.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

@@ -31,7 +31,7 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * A container for all Teams telephone number management functionalities and user configurations.
+     * A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAdminRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * A container for all Teams telephone number management functionalities and user configurations.
+     * A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      toPatchRequestInformation(body: TeamsAdminRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A container for all Teams telephone number management functionalities and user configurations.
+ * A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
  */
 export interface TeamsRequestBuilderGetQueryParameters {
     /**
