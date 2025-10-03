@@ -27,7 +27,7 @@ export interface DependentResourcesRequestBuilder extends BaseRequestBuilder<Dep
      */
      byEducationAssignmentResourceId1(educationAssignmentResourceId1: string) : EducationAssignmentResourceItemRequestBuilder;
     /**
-     * Get dependentResources from education
+     * A collection of assignment resources that depend on the parent educationAssignmentResource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationAssignmentResourceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface DependentResourcesRequestBuilder extends BaseRequestBuilder<Dep
      */
      post(body: EducationAssignmentResource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationAssignmentResource | undefined>;
     /**
-     * Get dependentResources from education
+     * A collection of assignment resources that depend on the parent educationAssignmentResource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface DependentResourcesRequestBuilder extends BaseRequestBuilder<Dep
      toPostRequestInformation(body: EducationAssignmentResource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dependentResources from education
+ * A collection of assignment resources that depend on the parent educationAssignmentResource.
  */
 export interface DependentResourcesRequestBuilderGetQueryParameters {
     /**

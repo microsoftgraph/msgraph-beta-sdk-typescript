@@ -20,11 +20,11 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a resourceConnection object.
+     * Read the properties and relationships of an operationalInsightsConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ResourceConnection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ResourceConnectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ResourceConnection | undefined>;
     /**
@@ -42,7 +42,7 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a resourceConnection object.
+     * Read the properties and relationships of an operationalInsightsConnection object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface ResourceConnectionItemRequestBuilder extends BaseRequestBuilder
      toPatchRequestInformation(body: ResourceConnection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a resourceConnection object.
+ * Read the properties and relationships of an operationalInsightsConnection object.
  */
 export interface ResourceConnectionItemRequestBuilderGetQueryParameters {
     /**
