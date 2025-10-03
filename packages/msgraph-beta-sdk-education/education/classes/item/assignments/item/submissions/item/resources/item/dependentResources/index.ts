@@ -27,10 +27,11 @@ export interface DependentResourcesRequestBuilder extends BaseRequestBuilder<Dep
      */
      byEducationSubmissionResourceId1(educationSubmissionResourceId1: string) : EducationSubmissionResourceItemRequestBuilder;
     /**
-     * Get dependentResources from education
+     * List the dependent education submission resources for a given education submission resource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationSubmissionResourceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/educationsubmissionresource-list-dependentresources?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DependentResourcesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationSubmissionResourceCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface DependentResourcesRequestBuilder extends BaseRequestBuilder<Dep
      */
      post(body: EducationSubmissionResource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EducationSubmissionResource | undefined>;
     /**
-     * Get dependentResources from education
+     * List the dependent education submission resources for a given education submission resource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface DependentResourcesRequestBuilder extends BaseRequestBuilder<Dep
      toPostRequestInformation(body: EducationSubmissionResource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dependentResources from education
+ * List the dependent education submission resources for a given education submission resource.
  */
 export interface DependentResourcesRequestBuilderGetQueryParameters {
     /**
