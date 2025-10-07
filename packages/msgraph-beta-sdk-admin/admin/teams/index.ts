@@ -6,7 +6,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createTeamsAdminRootFromDiscriminatorValue, serializeTeamsAdminRoot, type TeamsAdminRoot } from '@microsoft/msgraph-beta-sdk/models/teamsAdministration/index.js';
 // @ts-ignore
-import { PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
+import { PolicyRequestBuilderNavigationMetadata, PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
 // @ts-ignore
 import { type UserConfigurationsRequestBuilder, UserConfigurationsRequestBuilderNavigationMetadata, UserConfigurationsRequestBuilderRequestsMetadata } from './userConfigurations/index.js';
 // @ts-ignore
@@ -95,6 +95,7 @@ const TeamsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const TeamsRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     policy: {
         requestsMetadata: PolicyRequestBuilderRequestsMetadata,
+        navigationMetadata: PolicyRequestBuilderNavigationMetadata,
     },
     userConfigurations: {
         requestsMetadata: UserConfigurationsRequestBuilderRequestsMetadata,

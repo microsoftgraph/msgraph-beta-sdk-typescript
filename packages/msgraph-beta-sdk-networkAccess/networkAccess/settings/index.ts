@@ -10,6 +10,8 @@ import { ConditionalAccessRequestBuilderRequestsMetadata, type ConditionalAccess
 // @ts-ignore
 import { CrossTenantAccessRequestBuilderRequestsMetadata, type CrossTenantAccessRequestBuilder } from './crossTenantAccess/index.js';
 // @ts-ignore
+import { CustomBlockPageRequestBuilderRequestsMetadata, type CustomBlockPageRequestBuilder } from './customBlockPage/index.js';
+// @ts-ignore
 import { ForwardingOptionsRequestBuilderRequestsMetadata, type ForwardingOptionsRequestBuilder } from './forwardingOptions/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -26,6 +28,10 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * Provides operations to manage the crossTenantAccess property of the microsoft.graph.networkaccess.settings entity.
      */
     get crossTenantAccess(): CrossTenantAccessRequestBuilder;
+    /**
+     * Provides operations to manage the customBlockPage property of the microsoft.graph.networkaccess.settings entity.
+     */
+    get customBlockPage(): CustomBlockPageRequestBuilder;
     /**
      * Provides operations to manage the forwardingOptions property of the microsoft.graph.networkaccess.settings entity.
      */
@@ -104,6 +110,9 @@ export const SettingsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sett
     },
     crossTenantAccess: {
         requestsMetadata: CrossTenantAccessRequestBuilderRequestsMetadata,
+    },
+    customBlockPage: {
+        requestsMetadata: CustomBlockPageRequestBuilderRequestsMetadata,
     },
     forwardingOptions: {
         requestsMetadata: ForwardingOptionsRequestBuilderRequestsMetadata,

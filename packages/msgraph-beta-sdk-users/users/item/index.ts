@@ -166,6 +166,8 @@ import { OnlineMeetingsRequestBuilderNavigationMetadata, OnlineMeetingsRequestBu
 // @ts-ignore
 import { OnlineMeetingsWithJoinWebUrlRequestBuilderNavigationMetadata, OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata, type OnlineMeetingsWithJoinWebUrlRequestBuilder } from './onlineMeetingsWithJoinWebUrl/index.js';
 // @ts-ignore
+import { OnPremisesSyncBehaviorRequestBuilderRequestsMetadata, type OnPremisesSyncBehaviorRequestBuilder } from './onPremisesSyncBehavior/index.js';
+// @ts-ignore
 import { OutlookRequestBuilderNavigationMetadata, OutlookRequestBuilderRequestsMetadata, type OutlookRequestBuilder } from './outlook/index.js';
 // @ts-ignore
 import { OwnedDevicesRequestBuilderNavigationMetadata, OwnedDevicesRequestBuilderRequestsMetadata, type OwnedDevicesRequestBuilder } from './ownedDevices/index.js';
@@ -550,6 +552,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
      */
     get onlineMeetings(): OnlineMeetingsRequestBuilder;
+    /**
+     * Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.user entity.
+     */
+    get onPremisesSyncBehavior(): OnPremisesSyncBehaviorRequestBuilder;
     /**
      * Provides operations to manage the outlook property of the microsoft.graph.user entity.
      */
@@ -1110,6 +1116,9 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     onlineMeetings: {
         requestsMetadata: OnlineMeetingsRequestBuilderRequestsMetadata,
         navigationMetadata: OnlineMeetingsRequestBuilderNavigationMetadata,
+    },
+    onPremisesSyncBehavior: {
+        requestsMetadata: OnPremisesSyncBehaviorRequestBuilderRequestsMetadata,
     },
     outlook: {
         requestsMetadata: OutlookRequestBuilderRequestsMetadata,

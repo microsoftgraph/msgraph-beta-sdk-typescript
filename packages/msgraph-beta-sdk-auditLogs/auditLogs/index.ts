@@ -6,13 +6,25 @@ import { createAuditLogRootFromDiscriminatorValue, serializeAuditLogRoot, type A
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AuditActivityTypesRequestBuilderNavigationMetadata, AuditActivityTypesRequestBuilderRequestsMetadata, type AuditActivityTypesRequestBuilder } from './auditActivityTypes/index.js';
+// @ts-ignore
 import { CustomSecurityAttributeAuditsRequestBuilderNavigationMetadata, CustomSecurityAttributeAuditsRequestBuilderRequestsMetadata, type CustomSecurityAttributeAuditsRequestBuilder } from './customSecurityAttributeAudits/index.js';
 // @ts-ignore
 import { DirectoryAuditsRequestBuilderNavigationMetadata, DirectoryAuditsRequestBuilderRequestsMetadata, type DirectoryAuditsRequestBuilder } from './directoryAudits/index.js';
 // @ts-ignore
 import { DirectoryProvisioningRequestBuilderNavigationMetadata, DirectoryProvisioningRequestBuilderRequestsMetadata, type DirectoryProvisioningRequestBuilder } from './directoryProvisioning/index.js';
 // @ts-ignore
+import { GetSummarizedMSISignInsWithAggregationWindowRequestBuilderRequestsMetadata, type GetSummarizedMSISignInsWithAggregationWindowRequestBuilder } from './getSummarizedMSISignInsWithAggregationWindow/index.js';
+// @ts-ignore
+import { GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilderRequestsMetadata, type GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilder } from './getSummarizedNonInteractiveSignInsWithAggregationWindow/index.js';
+// @ts-ignore
+import { GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilderRequestsMetadata, type GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilder } from './getSummarizedServicePrincipalSignInsWithAggregationWindow/index.js';
+// @ts-ignore
 import { ProvisioningRequestBuilderNavigationMetadata, ProvisioningRequestBuilderRequestsMetadata, type ProvisioningRequestBuilder } from './provisioning/index.js';
+// @ts-ignore
+import { SignInEventsAppSummaryRequestBuilderNavigationMetadata, SignInEventsAppSummaryRequestBuilderRequestsMetadata, type SignInEventsAppSummaryRequestBuilder } from './signInEventsAppSummary/index.js';
+// @ts-ignore
+import { SignInEventsSummaryRequestBuilderNavigationMetadata, SignInEventsSummaryRequestBuilderRequestsMetadata, type SignInEventsSummaryRequestBuilder } from './signInEventsSummary/index.js';
 // @ts-ignore
 import { SignInsRequestBuilderNavigationMetadata, SignInsRequestBuilderRequestsMetadata, type SignInsRequestBuilder } from './signIns/index.js';
 // @ts-ignore
@@ -24,6 +36,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the auditLogRoot singleton.
  */
 export interface AuditLogsRequestBuilder extends BaseRequestBuilder<AuditLogsRequestBuilder> {
+    /**
+     * Provides operations to manage the auditActivityTypes property of the microsoft.graph.auditLogRoot entity.
+     */
+    get auditActivityTypes(): AuditActivityTypesRequestBuilder;
     /**
      * Provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
      */
@@ -41,6 +57,14 @@ export interface AuditLogsRequestBuilder extends BaseRequestBuilder<AuditLogsReq
      */
     get provisioning(): ProvisioningRequestBuilder;
     /**
+     * Provides operations to manage the signInEventsAppSummary property of the microsoft.graph.auditLogRoot entity.
+     */
+    get signInEventsAppSummary(): SignInEventsAppSummaryRequestBuilder;
+    /**
+     * Provides operations to manage the signInEventsSummary property of the microsoft.graph.auditLogRoot entity.
+     */
+    get signInEventsSummary(): SignInEventsSummaryRequestBuilder;
+    /**
      * Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
      */
     get signIns(): SignInsRequestBuilder;
@@ -55,6 +79,24 @@ export interface AuditLogsRequestBuilder extends BaseRequestBuilder<AuditLogsReq
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogRoot | undefined>;
+    /**
+     * Provides operations to call the getSummarizedMSISignIns method.
+     * @param aggregationWindow Usage: aggregationWindow='{aggregationWindow}'
+     * @returns {GetSummarizedMSISignInsWithAggregationWindowRequestBuilder}
+     */
+     getSummarizedMSISignInsWithAggregationWindow(aggregationWindow: string | undefined) : GetSummarizedMSISignInsWithAggregationWindowRequestBuilder;
+    /**
+     * Provides operations to call the getSummarizedNonInteractiveSignIns method.
+     * @param aggregationWindow Usage: aggregationWindow='{aggregationWindow}'
+     * @returns {GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilder}
+     */
+     getSummarizedNonInteractiveSignInsWithAggregationWindow(aggregationWindow: string | undefined) : GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilder;
+    /**
+     * Provides operations to call the getSummarizedServicePrincipalSignIns method.
+     * @param aggregationWindow Usage: aggregationWindow='{aggregationWindow}'
+     * @returns {GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilder}
+     */
+     getSummarizedServicePrincipalSignInsWithAggregationWindow(aggregationWindow: string | undefined) : GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilder;
     /**
      * Update auditLogs
      * @param body The request body
@@ -105,6 +147,22 @@ const AuditLogsRequestBuilderGetQueryParametersMapper: Record<string, string> = 
  * Metadata for all the navigation properties in the request builder.
  */
 export const AuditLogsRequestBuilderNavigationMetadata: Record<Exclude<keyof AuditLogsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    getSummarizedMSISignInsWithAggregationWindow: {
+        requestsMetadata: GetSummarizedMSISignInsWithAggregationWindowRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["aggregationWindow"],
+    },
+    getSummarizedNonInteractiveSignInsWithAggregationWindow: {
+        requestsMetadata: GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["aggregationWindow"],
+    },
+    getSummarizedServicePrincipalSignInsWithAggregationWindow: {
+        requestsMetadata: GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["aggregationWindow"],
+    },
+    auditActivityTypes: {
+        requestsMetadata: AuditActivityTypesRequestBuilderRequestsMetadata,
+        navigationMetadata: AuditActivityTypesRequestBuilderNavigationMetadata,
+    },
     customSecurityAttributeAudits: {
         requestsMetadata: CustomSecurityAttributeAuditsRequestBuilderRequestsMetadata,
         navigationMetadata: CustomSecurityAttributeAuditsRequestBuilderNavigationMetadata,
@@ -120,6 +178,14 @@ export const AuditLogsRequestBuilderNavigationMetadata: Record<Exclude<keyof Aud
     provisioning: {
         requestsMetadata: ProvisioningRequestBuilderRequestsMetadata,
         navigationMetadata: ProvisioningRequestBuilderNavigationMetadata,
+    },
+    signInEventsAppSummary: {
+        requestsMetadata: SignInEventsAppSummaryRequestBuilderRequestsMetadata,
+        navigationMetadata: SignInEventsAppSummaryRequestBuilderNavigationMetadata,
+    },
+    signInEventsSummary: {
+        requestsMetadata: SignInEventsSummaryRequestBuilderRequestsMetadata,
+        navigationMetadata: SignInEventsSummaryRequestBuilderNavigationMetadata,
     },
     signIns: {
         requestsMetadata: SignInsRequestBuilderRequestsMetadata,
