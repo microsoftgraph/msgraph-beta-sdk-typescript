@@ -2979,6 +2979,8 @@ export function createCaseOperationFromDiscriminatorValue(parseNode: ParseNode |
                     return deserializeIntoEdiscoveryExportOperation;
                 case "#microsoft.graph.security.ediscoveryHoldOperation":
                     return deserializeIntoEdiscoveryHoldOperation;
+                case "#microsoft.graph.security.ediscoveryHoldPolicySyncOperation":
+                    return deserializeIntoEdiscoveryHoldPolicySyncOperation;
                 case "#microsoft.graph.security.ediscoveryIndexOperation":
                     return deserializeIntoEdiscoveryIndexOperation;
                 case "#microsoft.graph.security.ediscoveryPurgeDataOperation":
@@ -4130,6 +4132,15 @@ export function createEdiscoveryHoldPolicyCollectionResponseFromDiscriminatorVal
 // @ts-ignore
 export function createEdiscoveryHoldPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEdiscoveryHoldPolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EdiscoveryHoldPolicySyncOperation}
+ */
+// @ts-ignore
+export function createEdiscoveryHoldPolicySyncOperationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEdiscoveryHoldPolicySyncOperation;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -11338,6 +11349,18 @@ export function deserializeIntoEdiscoveryHoldPolicyCollectionResponse(ediscovery
 }
 /**
  * The deserialization information for the current model
+ * @param EdiscoveryHoldPolicySyncOperation The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEdiscoveryHoldPolicySyncOperation(ediscoveryHoldPolicySyncOperation: Partial<EdiscoveryHoldPolicySyncOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCaseOperation(ediscoveryHoldPolicySyncOperation),
+        "reportFileMetadata": n => { ediscoveryHoldPolicySyncOperation.reportFileMetadata = n.getCollectionOfObjectValues<ReportFileMetadata>(createReportFileMetadataFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param EdiscoveryIndexOperation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -18252,6 +18275,12 @@ export interface EdiscoveryHoldPolicyCollectionResponse extends BaseCollectionPa
      */
     value?: EdiscoveryHoldPolicy[] | null;
 }
+export interface EdiscoveryHoldPolicySyncOperation extends CaseOperation, Parsable {
+    /**
+     * The reportFileMetadata property
+     */
+    reportFileMetadata?: ReportFileMetadata[] | null;
+}
 export interface EdiscoveryIndexOperation extends CaseOperation, Parsable {
 }
 export interface EdiscoveryNoncustodialDataSource extends DataSourceContainer, Parsable {
@@ -23826,6 +23855,9 @@ export function serializeCaseOperation(writer: SerializationWriter, caseOperatio
         case "#microsoft.graph.security.ediscoveryHoldOperation":
             serializeEdiscoveryHoldOperation(writer, caseOperation, true);
         break;
+        case "#microsoft.graph.security.ediscoveryHoldPolicySyncOperation":
+            serializeEdiscoveryHoldPolicySyncOperation(writer, caseOperation, true);
+        break;
         case "#microsoft.graph.security.ediscoveryIndexOperation":
             serializeEdiscoveryIndexOperation(writer, caseOperation, true);
         break;
@@ -25544,6 +25576,18 @@ export function serializeEdiscoveryHoldPolicyCollectionResponse(writer: Serializ
     if (!ediscoveryHoldPolicyCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, ediscoveryHoldPolicyCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<EdiscoveryHoldPolicy>("value", ediscoveryHoldPolicyCollectionResponse.value, serializeEdiscoveryHoldPolicy);
+}
+/**
+ * Serializes information the current object
+ * @param EdiscoveryHoldPolicySyncOperation The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEdiscoveryHoldPolicySyncOperation(writer: SerializationWriter, ediscoveryHoldPolicySyncOperation: Partial<EdiscoveryHoldPolicySyncOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ediscoveryHoldPolicySyncOperation || isSerializingDerivedType) { return; }
+    serializeCaseOperation(writer, ediscoveryHoldPolicySyncOperation, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ReportFileMetadata>("reportFileMetadata", ediscoveryHoldPolicySyncOperation.reportFileMetadata, serializeReportFileMetadata);
 }
 /**
  * Serializes information the current object
@@ -33528,6 +33572,7 @@ export const CaseActionObject = {
     PurgeData: "purgeData",
     ExportReport: "exportReport",
     ExportResult: "exportResult",
+    HoldPolicySync: "holdPolicySync",
 } as const;
 export const CaseOperationStatusObject = {
     NotStarted: "notStarted",
@@ -33696,6 +33741,8 @@ export const DetectionSourceObject = {
     BuiltInMl: "builtInMl",
     MicrosoftInsiderRiskManagement: "microsoftInsiderRiskManagement",
     MicrosoftThreatIntelligence: "microsoftThreatIntelligence",
+    MicrosoftDefenderForAIServices: "microsoftDefenderForAIServices",
+    SecurityCopilot: "securityCopilot",
     MicrosoftSentinel: "microsoftSentinel",
 } as const;
 export const DetectionStatusObject = {

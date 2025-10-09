@@ -6,12 +6,20 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createTeamsPolicyAssignmentFromDiscriminatorValue, serializeTeamsPolicyAssignment, type TeamsPolicyAssignment } from '@microsoft/msgraph-beta-sdk/models/teamsAdministration/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilderRequestsMetadata, type MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder } from './microsoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName/index.js';
+// @ts-ignore
+import { type UserAssignmentsRequestBuilder, UserAssignmentsRequestBuilderNavigationMetadata, UserAssignmentsRequestBuilderRequestsMetadata } from './userAssignments/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the policy property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
  */
 export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBuilder> {
+    /**
+     * Provides operations to manage the userAssignments property of the microsoft.graph.teamsAdministration.teamsPolicyAssignment entity.
+     */
+    get userAssignments(): UserAssignmentsRequestBuilder;
     /**
      * Delete navigation property policy for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -25,6 +33,13 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsPolicyAssignment | undefined>;
+    /**
+     * Provides operations to call the getPolicyId method.
+     * @param name Usage: name='{name}'
+     * @param type Usage: type='{type}'
+     * @returns {MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder}
+     */
+     microsoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName(name: string | undefined, type: string | undefined) : MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder;
     /**
      * Update the navigation property policy in admin
      * @param body The request body
@@ -76,6 +91,19 @@ export const PolicyRequestBuilderUriTemplate = "{+baseurl}/admin/teams/policy{?%
 const PolicyRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const PolicyRequestBuilderNavigationMetadata: Record<Exclude<keyof PolicyRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    microsoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName: {
+        requestsMetadata: MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["name", "type"],
+    },
+    userAssignments: {
+        requestsMetadata: UserAssignmentsRequestBuilderRequestsMetadata,
+        navigationMetadata: UserAssignmentsRequestBuilderNavigationMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

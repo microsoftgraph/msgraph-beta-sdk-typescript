@@ -265,6 +265,16 @@ export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Par
      */
     peerIpAddress?: string | null;
 }
+export interface BlockPageConfigurationBase extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export interface BranchConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -778,6 +788,26 @@ export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {BlockPageConfigurationBase}
+ */
+// @ts-ignore
+export function createBlockPageConfigurationBaseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.markdownBlockMessageConfiguration":
+                    return deserializeIntoMarkdownBlockMessageConfiguration;
+            }
+        }
+    }
+    return deserializeIntoBlockPageConfigurationBase;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BranchConnectivityConfiguration}
  */
 // @ts-ignore
@@ -927,6 +957,15 @@ export function createCrossTenantAccessSettingsFromDiscriminatorValue(parseNode:
 // @ts-ignore
 export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCrossTenantSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomBlockPage}
+ */
+// @ts-ignore
+export function createCustomBlockPageFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomBlockPage;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1229,6 +1268,30 @@ export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {IpDestination}
+ */
+// @ts-ignore
+export function createIpDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.ipAddress":
+                    return deserializeIntoIpAddress;
+                case "#microsoft.graph.networkaccess.ipRange":
+                    return deserializeIntoIpRange;
+                case "#microsoft.graph.networkaccess.ipSubnet":
+                    return deserializeIntoIpSubnet;
+            }
+        }
+    }
+    return deserializeIntoIpDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpRange}
  */
 // @ts-ignore
@@ -1270,6 +1333,15 @@ export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefine
 // @ts-ignore
 export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoM365ForwardingRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MarkdownBlockMessageConfiguration}
+ */
+// @ts-ignore
+export function createMarkdownBlockMessageConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMarkdownBlockMessageConfiguration;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1703,6 +1775,8 @@ export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoFqdn;
                 case "#microsoft.graph.networkaccess.ipAddress":
                     return deserializeIntoIpAddress;
+                case "#microsoft.graph.networkaccess.ipDestination":
+                    return deserializeIntoIpDestination;
                 case "#microsoft.graph.networkaccess.ipRange":
                     return deserializeIntoIpRange;
                 case "#microsoft.graph.networkaccess.ipSubnet":
@@ -2137,6 +2211,16 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
      */
     userCount?: number | null;
 }
+export interface CustomBlockPage extends Entity, Parsable {
+    /**
+     * The configuration property
+     */
+    configuration?: BlockPageConfigurationBase | null;
+    /**
+     * The state property
+     */
+    state?: Status | null;
+}
 /**
  * The deserialization information for the current model
  * @param Alert The instance to deserialize into.
@@ -2306,6 +2390,18 @@ export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpCon
         "localIpAddress": n => { bgpConfiguration.localIpAddress = n.getStringValue(); },
         "@odata.type": n => { bgpConfiguration.odataType = n.getStringValue(); },
         "peerIpAddress": n => { bgpConfiguration.peerIpAddress = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param BlockPageConfigurationBase The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoBlockPageConfigurationBase(blockPageConfigurationBase: Partial<BlockPageConfigurationBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { blockPageConfigurationBase.backingStoreEnabled = true; },
+        "@odata.type": n => { blockPageConfigurationBase.odataType = n.getStringValue(); },
     }
 }
 /**
@@ -2597,6 +2693,19 @@ export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<Cr
         "rarelyUsedTenantCount": n => { crossTenantSummary.rarelyUsedTenantCount = n.getNumberValue(); },
         "tenantCount": n => { crossTenantSummary.tenantCount = n.getNumberValue(); },
         "userCount": n => { crossTenantSummary.userCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CustomBlockPage The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomBlockPage(customBlockPage: Partial<CustomBlockPage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(customBlockPage),
+        "configuration": n => { customBlockPage.configuration = n.getObjectValue<BlockPageConfigurationBase>(createBlockPageConfigurationBaseFromDiscriminatorValue); },
+        "state": n => { customBlockPage.state = n.getEnumValue<Status>(StatusObject); },
     }
 }
 /**
@@ -3038,8 +3147,19 @@ export function deserializeIntoInternetAccessForwardingRule(internetAccessForwar
 // @ts-ignore
 export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoRuleDestination(ipAddress),
+        ...deserializeIntoIpDestination(ipAddress),
         "value": n => { ipAddress.value = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param IpDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoIpDestination(ipDestination: Partial<IpDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRuleDestination(ipDestination),
     }
 }
 /**
@@ -3050,7 +3170,7 @@ export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefin
 // @ts-ignore
 export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoRuleDestination(ipRange),
+        ...deserializeIntoIpDestination(ipRange),
         "beginAddress": n => { ipRange.beginAddress = n.getStringValue(); },
         "endAddress": n => { ipRange.endAddress = n.getStringValue(); },
     }
@@ -3063,7 +3183,7 @@ export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {
 // @ts-ignore
 export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoRuleDestination(ipSubnet),
+        ...deserializeIntoIpDestination(ipSubnet),
         "value": n => { ipSubnet.value = n.getStringValue(); },
     }
 }
@@ -3109,6 +3229,18 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
         "category": n => { m365ForwardingRule.category = n.getEnumValue<ForwardingCategory>(ForwardingCategoryObject); },
         "ports": n => { m365ForwardingRule.ports = n.getCollectionOfPrimitiveValues<string>(); },
         "protocol": n => { m365ForwardingRule.protocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param MarkdownBlockMessageConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMarkdownBlockMessageConfiguration(markdownBlockMessageConfiguration: Partial<MarkdownBlockMessageConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBlockPageConfigurationBase(markdownBlockMessageConfiguration),
+        "body": n => { markdownBlockMessageConfiguration.body = n.getStringValue(); },
     }
 }
 /**
@@ -3650,6 +3782,7 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
         ...deserializeIntoEntity(settings),
         "conditionalAccess": n => { settings.conditionalAccess = n.getObjectValue<ConditionalAccessSettings>(createConditionalAccessSettingsFromDiscriminatorValue); },
         "crossTenantAccess": n => { settings.crossTenantAccess = n.getObjectValue<CrossTenantAccessSettings>(createCrossTenantAccessSettingsFromDiscriminatorValue); },
+        "customBlockPage": n => { settings.customBlockPage = n.getObjectValue<CustomBlockPage>(createCustomBlockPageFromDiscriminatorValue); },
         "forwardingOptions": n => { settings.forwardingOptions = n.getObjectValue<ForwardingOptions>(createForwardingOptionsFromDiscriminatorValue); },
     }
 }
@@ -4648,13 +4781,15 @@ export interface InternetAccessForwardingRule extends ForwardingRule, Parsable {
      */
     protocol?: NetworkingProtocol | null;
 }
-export interface IpAddress extends Parsable, RuleDestination {
+export interface IpAddress extends IpDestination, Parsable {
     /**
      * Defines the IP address used in a destination for a rule.
      */
     value?: string | null;
 }
-export interface IpRange extends Parsable, RuleDestination {
+export interface IpDestination extends Parsable, RuleDestination {
+}
+export interface IpRange extends IpDestination, Parsable {
     /**
      * Specifies the starting IP address of the IP range.
      */
@@ -4666,7 +4801,7 @@ export interface IpRange extends Parsable, RuleDestination {
 }
 export type IpSecEncryption = (typeof IpSecEncryptionObject)[keyof typeof IpSecEncryptionObject];
 export type IpSecIntegrity = (typeof IpSecIntegrityObject)[keyof typeof IpSecIntegrityObject];
-export interface IpSubnet extends Parsable, RuleDestination {
+export interface IpSubnet extends IpDestination, Parsable {
     /**
      * Defines the IP address of the subset used in a destination for a rule.
      */
@@ -4727,6 +4862,12 @@ export interface M365ForwardingRule extends ForwardingRule, Parsable {
     protocol?: NetworkingProtocol | null;
 }
 export type MalwareCategory = (typeof MalwareCategoryObject)[keyof typeof MalwareCategoryObject];
+export interface MarkdownBlockMessageConfiguration extends BlockPageConfigurationBase, Parsable {
+    /**
+     * The body property
+     */
+    body?: string | null;
+}
 export interface NetworkAccessRoot extends Entity, Parsable {
     /**
      * The alerts property
@@ -5589,6 +5730,23 @@ export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfig
 }
 /**
  * Serializes information the current object
+ * @param BlockPageConfigurationBase The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeBlockPageConfigurationBase(writer: SerializationWriter, blockPageConfigurationBase: Partial<BlockPageConfigurationBase> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!blockPageConfigurationBase || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", blockPageConfigurationBase.odataType);
+    writer.writeAdditionalData(blockPageConfigurationBase.additionalData);
+    switch (blockPageConfigurationBase.odataType) {
+        case "#microsoft.graph.networkaccess.markdownBlockMessageConfiguration":
+            serializeMarkdownBlockMessageConfiguration(writer, blockPageConfigurationBase, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
  * @param BranchConnectivityConfiguration The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5877,6 +6035,19 @@ export function serializeCrossTenantSummary(writer: SerializationWriter, crossTe
     writer.writeNumberValue("tenantCount", crossTenantSummary.tenantCount);
     writer.writeNumberValue("userCount", crossTenantSummary.userCount);
     writer.writeAdditionalData(crossTenantSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CustomBlockPage The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomBlockPage(writer: SerializationWriter, customBlockPage: Partial<CustomBlockPage> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customBlockPage || isSerializingDerivedType) { return; }
+    serializeEntity(writer, customBlockPage, isSerializingDerivedType)
+    writer.writeObjectValue<BlockPageConfigurationBase>("configuration", customBlockPage.configuration, serializeBlockPageConfigurationBase);
+    writer.writeEnumValue<Status>("state", customBlockPage.state);
 }
 /**
  * Serializes information the current object
@@ -6337,8 +6508,30 @@ export function serializeInternetAccessForwardingRule(writer: SerializationWrite
 // @ts-ignore
 export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ipAddress || isSerializingDerivedType) { return; }
-    serializeRuleDestination(writer, ipAddress, isSerializingDerivedType)
+    serializeIpDestination(writer, ipAddress, isSerializingDerivedType)
     writer.writeStringValue("value", ipAddress.value);
+}
+/**
+ * Serializes information the current object
+ * @param IpDestination The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeIpDestination(writer: SerializationWriter, ipDestination: Partial<IpDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ipDestination || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, ipDestination, isSerializingDerivedType)
+    switch (ipDestination.odataType) {
+        case "#microsoft.graph.networkaccess.ipAddress":
+            serializeIpAddress(writer, ipDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipRange":
+            serializeIpRange(writer, ipDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipSubnet":
+            serializeIpSubnet(writer, ipDestination, true);
+        break;
+    }
 }
 /**
  * Serializes information the current object
@@ -6349,7 +6542,7 @@ export function serializeIpAddress(writer: SerializationWriter, ipAddress: Parti
 // @ts-ignore
 export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ipRange || isSerializingDerivedType) { return; }
-    serializeRuleDestination(writer, ipRange, isSerializingDerivedType)
+    serializeIpDestination(writer, ipRange, isSerializingDerivedType)
     writer.writeStringValue("beginAddress", ipRange.beginAddress);
     writer.writeStringValue("endAddress", ipRange.endAddress);
 }
@@ -6362,7 +6555,7 @@ export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<I
 // @ts-ignore
 export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ipSubnet || isSerializingDerivedType) { return; }
-    serializeRuleDestination(writer, ipSubnet, isSerializingDerivedType)
+    serializeIpDestination(writer, ipSubnet, isSerializingDerivedType)
     writer.writeStringValue("value", ipSubnet.value);
 }
 /**
@@ -6408,6 +6601,18 @@ export function serializeM365ForwardingRule(writer: SerializationWriter, m365For
     writer.writeEnumValue<ForwardingCategory>("category", m365ForwardingRule.category);
     writer.writeCollectionOfPrimitiveValues<string>("ports", m365ForwardingRule.ports);
     writer.writeEnumValue<NetworkingProtocol>("protocol", m365ForwardingRule.protocol);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MarkdownBlockMessageConfiguration The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMarkdownBlockMessageConfiguration(writer: SerializationWriter, markdownBlockMessageConfiguration: Partial<MarkdownBlockMessageConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!markdownBlockMessageConfiguration || isSerializingDerivedType) { return; }
+    serializeBlockPageConfigurationBase(writer, markdownBlockMessageConfiguration, isSerializingDerivedType)
+    writer.writeStringValue("body", markdownBlockMessageConfiguration.body);
 }
 /**
  * Serializes information the current object
@@ -7049,6 +7254,9 @@ export function serializeRuleDestination(writer: SerializationWriter, ruleDestin
         case "#microsoft.graph.networkaccess.ipAddress":
             serializeIpAddress(writer, ruleDestination, true);
         break;
+        case "#microsoft.graph.networkaccess.ipDestination":
+            serializeIpDestination(writer, ruleDestination, true);
+        break;
         case "#microsoft.graph.networkaccess.ipRange":
             serializeIpRange(writer, ruleDestination, true);
         break;
@@ -7075,6 +7283,7 @@ export function serializeSettings(writer: SerializationWriter, settings: Partial
     serializeEntity(writer, settings, isSerializingDerivedType)
     writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
     writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
+    writer.writeObjectValue<CustomBlockPage>("customBlockPage", settings.customBlockPage, serializeCustomBlockPage);
     writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
 }
 /**
@@ -7554,6 +7763,10 @@ export interface Settings extends Entity, Parsable {
      * The crossTenantAccess property
      */
     crossTenantAccess?: CrossTenantAccessSettings | null;
+    /**
+     * The customBlockPage property
+     */
+    customBlockPage?: CustomBlockPage | null;
     /**
      * The forwardingOptions property
      */
