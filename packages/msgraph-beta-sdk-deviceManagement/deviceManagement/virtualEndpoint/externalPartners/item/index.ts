@@ -19,18 +19,20 @@ export interface CloudPcExternalPartnerItemRequestBuilder extends BaseRequestBui
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get externalPartners from deviceManagement
+     * Read the properties and relationships of a cloudPcExternalPartner object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExternalPartner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcexternalpartner-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcExternalPartnerItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcExternalPartner | undefined>;
     /**
-     * Update the navigation property externalPartners in deviceManagement
+     * Update the properties of a cloudPcExternalPartner object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExternalPartner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcexternalpartner-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CloudPcExternalPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcExternalPartner | undefined>;
     /**
@@ -40,13 +42,13 @@ export interface CloudPcExternalPartnerItemRequestBuilder extends BaseRequestBui
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get externalPartners from deviceManagement
+     * Read the properties and relationships of a cloudPcExternalPartner object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcExternalPartnerItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property externalPartners in deviceManagement
+     * Update the properties of a cloudPcExternalPartner object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +56,7 @@ export interface CloudPcExternalPartnerItemRequestBuilder extends BaseRequestBui
      toPatchRequestInformation(body: CloudPcExternalPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get externalPartners from deviceManagement
+ * Read the properties and relationships of a cloudPcExternalPartner object.
  */
 export interface CloudPcExternalPartnerItemRequestBuilderGetQueryParameters {
     /**

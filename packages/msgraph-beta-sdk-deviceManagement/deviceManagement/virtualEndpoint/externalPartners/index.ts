@@ -27,28 +27,30 @@ export interface ExternalPartnersRequestBuilder extends BaseRequestBuilder<Exter
      */
      byCloudPcExternalPartnerId(cloudPcExternalPartnerId: string) : CloudPcExternalPartnerItemRequestBuilder;
     /**
-     * Get externalPartners from deviceManagement
+     * Get a list of the cloudPcExternalPartner objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExternalPartnerCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartners?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ExternalPartnersRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcExternalPartnerCollectionResponse | undefined>;
     /**
-     * Create new navigation property to externalPartners for deviceManagement
+     * Create a new cloudPcExternalPartner object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExternalPartner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartners?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcExternalPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcExternalPartner | undefined>;
     /**
-     * Get externalPartners from deviceManagement
+     * Get a list of the cloudPcExternalPartner objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalPartnersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to externalPartners for deviceManagement
+     * Create a new cloudPcExternalPartner object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface ExternalPartnersRequestBuilder extends BaseRequestBuilder<Exter
      toPostRequestInformation(body: CloudPcExternalPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get externalPartners from deviceManagement
+ * Get a list of the cloudPcExternalPartner objects and their properties.
  */
 export interface ExternalPartnersRequestBuilderGetQueryParameters {
     /**
