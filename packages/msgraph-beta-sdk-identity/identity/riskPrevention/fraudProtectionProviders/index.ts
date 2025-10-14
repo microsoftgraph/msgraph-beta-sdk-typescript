@@ -27,28 +27,29 @@ export interface FraudProtectionProvidersRequestBuilder extends BaseRequestBuild
      */
      byFraudProtectionProviderId(fraudProtectionProviderId: string) : FraudProtectionProviderItemRequestBuilder;
     /**
-     * Get fraudProtectionProviders from identity
+     * Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FraudProtectionProviderCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<FraudProtectionProvidersRequestBuilderGetQueryParameters> | undefined) : Promise<FraudProtectionProviderCollectionResponse | undefined>;
     /**
-     * Create new navigation property to fraudProtectionProviders for identity
+     * Create a new fraudProtectionProvider object. You can create one of the following subtypes that are derived from fraudProtectionProvider.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FraudProtectionProvider>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/riskpreventioncontainer-post-fraudprotectionproviders?view=graph-rest-beta|Find more info here}
      */
      post(body: FraudProtectionProvider, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FraudProtectionProvider | undefined>;
     /**
-     * Get fraudProtectionProviders from identity
+     * Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FraudProtectionProvidersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to fraudProtectionProviders for identity
+     * Create a new fraudProtectionProvider object. You can create one of the following subtypes that are derived from fraudProtectionProvider.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +57,7 @@ export interface FraudProtectionProvidersRequestBuilder extends BaseRequestBuild
      toPostRequestInformation(body: FraudProtectionProvider, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get fraudProtectionProviders from identity
+ * Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
  */
 export interface FraudProtectionProvidersRequestBuilderGetQueryParameters {
     /**
