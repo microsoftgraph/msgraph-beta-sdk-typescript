@@ -25,7 +25,7 @@ export interface RiskPreventionRequestBuilder extends BaseRequestBuilder<RiskPre
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get riskPrevention from identity
+     * Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RiskPreventionContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface RiskPreventionRequestBuilder extends BaseRequestBuilder<RiskPre
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get riskPrevention from identity
+     * Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface RiskPreventionRequestBuilder extends BaseRequestBuilder<RiskPre
      toPatchRequestInformation(body: RiskPreventionContainer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get riskPrevention from identity
+ * Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
  */
 export interface RiskPreventionRequestBuilderGetQueryParameters {
     /**

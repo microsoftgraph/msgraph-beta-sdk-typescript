@@ -8,6 +8,8 @@ import { createTeamsAdminRootFromDiscriminatorValue, serializeTeamsAdminRoot, ty
 // @ts-ignore
 import { PolicyRequestBuilderNavigationMetadata, PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
 // @ts-ignore
+import { TelephoneNumberManagementRequestBuilderNavigationMetadata, TelephoneNumberManagementRequestBuilderRequestsMetadata, type TelephoneNumberManagementRequestBuilder } from './telephoneNumberManagement/index.js';
+// @ts-ignore
 import { type UserConfigurationsRequestBuilder, UserConfigurationsRequestBuilderNavigationMetadata, UserConfigurationsRequestBuilderRequestsMetadata } from './userConfigurations/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -20,6 +22,10 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      * Provides operations to manage the policy property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
      */
     get policy(): PolicyRequestBuilder;
+    /**
+     * Provides operations to manage the telephoneNumberManagement property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
+     */
+    get telephoneNumberManagement(): TelephoneNumberManagementRequestBuilder;
     /**
      * Provides operations to manage the userConfigurations property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
      */
@@ -96,6 +102,10 @@ export const TeamsRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamsRe
     policy: {
         requestsMetadata: PolicyRequestBuilderRequestsMetadata,
         navigationMetadata: PolicyRequestBuilderNavigationMetadata,
+    },
+    telephoneNumberManagement: {
+        requestsMetadata: TelephoneNumberManagementRequestBuilderRequestsMetadata,
+        navigationMetadata: TelephoneNumberManagementRequestBuilderNavigationMetadata,
     },
     userConfigurations: {
         requestsMetadata: UserConfigurationsRequestBuilderRequestsMetadata,

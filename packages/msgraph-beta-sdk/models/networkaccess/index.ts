@@ -8650,6 +8650,8 @@ export const TlsCertificateStatusObject = {
     UnknownFutureValue: "unknownFutureValue",
     Expiring: "expiring",
     Expired: "expired",
+    Enabled: "enabled",
+    Disabled: "disabled",
 } as const;
 export const TrafficForwardingTypeObject = {
     M365: "m365",
