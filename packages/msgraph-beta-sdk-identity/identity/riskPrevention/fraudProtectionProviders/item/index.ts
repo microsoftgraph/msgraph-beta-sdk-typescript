@@ -19,7 +19,7 @@ export interface FraudProtectionProviderItemRequestBuilder extends BaseRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get fraudProtectionProviders from identity
+     * Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FraudProtectionProvider>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface FraudProtectionProviderItemRequestBuilder extends BaseRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get fraudProtectionProviders from identity
+     * Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface FraudProtectionProviderItemRequestBuilder extends BaseRequestBu
      toPatchRequestInformation(body: FraudProtectionProvider, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get fraudProtectionProviders from identity
+ * Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.
  */
 export interface FraudProtectionProviderItemRequestBuilderGetQueryParameters {
     /**

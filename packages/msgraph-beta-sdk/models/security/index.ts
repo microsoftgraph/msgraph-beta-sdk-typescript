@@ -1126,6 +1126,12 @@ export interface AuthorityTemplateCollectionResponse extends BaseCollectionPagin
      */
     value?: AuthorityTemplate[] | null;
 }
+export interface AutoAuditingConfiguration extends Entity, Parsable {
+    /**
+     * The isAutomatic property
+     */
+    isAutomatic?: boolean | null;
+}
 export interface AutonomousSystem extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -1256,7 +1262,7 @@ export interface CaseInvestigation extends AuditData, Parsable {
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
-     * The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
+     * The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult, holdPolicySync. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult, holdPolicySync.
      */
     action?: CaseAction | null;
     /**
@@ -1280,7 +1286,7 @@ export interface CaseOperation extends Entity, Parsable {
      */
     resultInfo?: ResultInfo | null;
     /**
-     * The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
+     * The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed, unknownFutureValue.
      */
     status?: CaseOperationStatus | null;
 }
@@ -2820,6 +2826,15 @@ export function createAuthorityTemplateCollectionResponseFromDiscriminatorValue(
 // @ts-ignore
 export function createAuthorityTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuthorityTemplate;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AutoAuditingConfiguration}
+ */
+// @ts-ignore
+export function createAutoAuditingConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAutoAuditingConfiguration;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -7522,6 +7537,15 @@ export function createServicePrincipalEvidenceFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SettingsContainer}
+ */
+// @ts-ignore
+export function createSettingsContainerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSettingsContainer;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SharePointAppPermissionOperationAuditRecord}
  */
 // @ts-ignore
@@ -9487,6 +9511,18 @@ export function deserializeIntoAuthorityTemplateCollectionResponse(authorityTemp
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(authorityTemplateCollectionResponse),
         "value": n => { authorityTemplateCollectionResponse.value = n.getCollectionOfObjectValues<AuthorityTemplate>(createAuthorityTemplateFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AutoAuditingConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAutoAuditingConfiguration(autoAuditingConfiguration: Partial<AutoAuditingConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(autoAuditingConfiguration),
+        "isAutomatic": n => { autoAuditingConfiguration.isAutomatic = n.getBooleanValue(); },
     }
 }
 /**
@@ -12773,6 +12809,7 @@ export function deserializeIntoIdentityContainer(identityContainer: Partial<Iden
         "sensorCandidateActivationConfiguration": n => { identityContainer.sensorCandidateActivationConfiguration = n.getObjectValue<SensorCandidateActivationConfiguration>(createSensorCandidateActivationConfigurationFromDiscriminatorValue); },
         "sensorCandidates": n => { identityContainer.sensorCandidates = n.getCollectionOfObjectValues<SensorCandidate>(createSensorCandidateFromDiscriminatorValue); },
         "sensors": n => { identityContainer.sensors = n.getCollectionOfObjectValues<Sensor>(createSensorFromDiscriminatorValue); },
+        "settings": n => { identityContainer.settings = n.getObjectValue<SettingsContainer>(createSettingsContainerFromDiscriminatorValue); },
     }
 }
 /**
@@ -15772,6 +15809,18 @@ export function deserializeIntoServicePrincipalEvidence(servicePrincipalEvidence
 }
 /**
  * The deserialization information for the current model
+ * @param SettingsContainer The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSettingsContainer(settingsContainer: Partial<SettingsContainer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(settingsContainer),
+        "autoAuditingConfiguration": n => { settingsContainer.autoAuditingConfiguration = n.getObjectValue<AutoAuditingConfiguration>(createAutoAuditingConfigurationFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param SharePointAppPermissionOperationAuditRecord The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -18277,7 +18326,7 @@ export interface EdiscoveryHoldPolicyCollectionResponse extends BaseCollectionPa
 }
 export interface EdiscoveryHoldPolicySyncOperation extends CaseOperation, Parsable {
     /**
-     * The reportFileMetadata property
+     * Contains the properties for report file metadata, including downloadUrl, fileName, and size.
      */
     reportFileMetadata?: ReportFileMetadata[] | null;
 }
@@ -19709,6 +19758,10 @@ export interface IdentityContainer extends Entity, Parsable {
      * Represents a customer's Microsoft Defender for Identity sensors.
      */
     sensors?: Sensor[] | null;
+    /**
+     * The settings property
+     */
+    settings?: SettingsContainer | null;
 }
 export type IdentityProvider = (typeof IdentityProviderObject)[keyof typeof IdentityProviderObject];
 export interface ImpactedAsset extends AdditionalDataHolder, BackedModel, Parsable {
@@ -23655,6 +23708,18 @@ export function serializeAuthorityTemplateCollectionResponse(writer: Serializati
 }
 /**
  * Serializes information the current object
+ * @param AutoAuditingConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAutoAuditingConfiguration(writer: SerializationWriter, autoAuditingConfiguration: Partial<AutoAuditingConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!autoAuditingConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, autoAuditingConfiguration, isSerializingDerivedType)
+    writer.writeBooleanValue("isAutomatic", autoAuditingConfiguration.isAutomatic);
+}
+/**
+ * Serializes information the current object
  * @param AutonomousSystem The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -27078,6 +27143,7 @@ export function serializeIdentityContainer(writer: SerializationWriter, identity
     writer.writeObjectValue<SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", identityContainer.sensorCandidateActivationConfiguration, serializeSensorCandidateActivationConfiguration);
     writer.writeCollectionOfObjectValues<SensorCandidate>("sensorCandidates", identityContainer.sensorCandidates, serializeSensorCandidate);
     writer.writeCollectionOfObjectValues<Sensor>("sensors", identityContainer.sensors, serializeSensor);
+    writer.writeObjectValue<SettingsContainer>("settings", identityContainer.settings, serializeSettingsContainer);
 }
 /**
  * Serializes information the current object
@@ -30308,6 +30374,18 @@ export function serializeServicePrincipalEvidence(writer: SerializationWriter, s
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SettingsContainer The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSettingsContainer(writer: SerializationWriter, settingsContainer: Partial<SettingsContainer> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!settingsContainer || isSerializingDerivedType) { return; }
+    serializeEntity(writer, settingsContainer, isSerializingDerivedType)
+    writer.writeObjectValue<AutoAuditingConfiguration>("autoAuditingConfiguration", settingsContainer.autoAuditingConfiguration, serializeAutoAuditingConfiguration);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param SharePointAppPermissionOperationAuditRecord The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -31786,6 +31864,12 @@ export interface ServicePrincipalEvidence extends AlertEvidence, Parsable {
 }
 export type ServicePrincipalType = (typeof ServicePrincipalTypeObject)[keyof typeof ServicePrincipalTypeObject];
 export type ServiceSource = (typeof ServiceSourceObject)[keyof typeof ServiceSourceObject];
+export interface SettingsContainer extends Entity, Parsable {
+    /**
+     * The autoAuditingConfiguration property
+     */
+    autoAuditingConfiguration?: AutoAuditingConfiguration | null;
+}
 export interface SharePointAppPermissionOperationAuditRecord extends AuditData, Parsable {
 }
 export interface SharePointAuditRecord extends AuditData, Parsable {
