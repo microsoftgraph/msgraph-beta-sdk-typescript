@@ -18,6 +18,8 @@ import { ConnectorsRequestBuilderNavigationMetadata, ConnectorsRequestBuilderReq
 // @ts-ignore
 import { PublishedResourcesRequestBuilderNavigationMetadata, PublishedResourcesRequestBuilderRequestsMetadata, type PublishedResourcesRequestBuilder } from './publishedResources/index.js';
 // @ts-ignore
+import { SensorsRequestBuilderNavigationMetadata, SensorsRequestBuilderRequestsMetadata, type SensorsRequestBuilder } from './sensors/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -48,6 +50,10 @@ export interface OnPremisesPublishingProfileItemRequestBuilder extends BaseReque
      * Provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.
      */
     get publishedResources(): PublishedResourcesRequestBuilder;
+    /**
+     * Provides operations to manage the sensors property of the microsoft.graph.onPremisesPublishingProfile entity.
+     */
+    get sensors(): SensorsRequestBuilder;
     /**
      * Delete entity from onPremisesPublishingProfiles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -140,6 +146,10 @@ export const OnPremisesPublishingProfileItemRequestBuilderNavigationMetadata: Re
     publishedResources: {
         requestsMetadata: PublishedResourcesRequestBuilderRequestsMetadata,
         navigationMetadata: PublishedResourcesRequestBuilderNavigationMetadata,
+    },
+    sensors: {
+        requestsMetadata: SensorsRequestBuilderRequestsMetadata,
+        navigationMetadata: SensorsRequestBuilderNavigationMetadata,
     },
 };
 /**
