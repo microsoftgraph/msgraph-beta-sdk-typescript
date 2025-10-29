@@ -14,6 +14,8 @@ import { DeltaRequestBuilderRequestsMetadata, type DeltaRequestBuilder } from '.
 // @ts-ignore
 import { GetAllSitesRequestBuilderRequestsMetadata, type GetAllSitesRequestBuilder } from './getAllSites/index.js';
 // @ts-ignore
+import { GetOperationStatusWithOperationIdRequestBuilderRequestsMetadata, type GetOperationStatusWithOperationIdRequestBuilder } from './getOperationStatusWithOperationId/index.js';
+// @ts-ignore
 import { SiteItemRequestBuilderNavigationMetadata, SiteItemRequestBuilderRequestsMetadata, type SiteItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { RemoveRequestBuilderRequestsMetadata, type RemoveRequestBuilder } from './remove/index.js';
@@ -57,6 +59,12 @@ export interface SitesRequestBuilder extends BaseRequestBuilder<SitesRequestBuil
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<SitesRequestBuilderGetQueryParameters> | undefined) : Promise<SiteCollectionResponse | undefined>;
+    /**
+     * Provides operations to call the getOperationStatus method.
+     * @param operationId Usage: operationId='{operationId}'
+     * @returns {GetOperationStatusWithOperationIdRequestBuilder}
+     */
+     getOperationStatusWithOperationId(operationId: string | undefined) : GetOperationStatusWithOperationIdRequestBuilder;
     /**
      * The list of SharePoint sites in this group. Access the default site with /sites/root.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -126,6 +134,10 @@ export const SitesRequestBuilderNavigationMetadata: Record<Exclude<keyof SitesRe
         requestsMetadata: SiteItemRequestBuilderRequestsMetadata,
         navigationMetadata: SiteItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["site%2Did"],
+    },
+    getOperationStatusWithOperationId: {
+        requestsMetadata: GetOperationStatusWithOperationIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["operationId"],
     },
     add: {
         requestsMetadata: AddRequestBuilderRequestsMetadata,
