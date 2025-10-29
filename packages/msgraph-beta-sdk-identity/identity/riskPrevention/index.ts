@@ -8,6 +8,10 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { FraudProtectionProvidersRequestBuilderNavigationMetadata, FraudProtectionProvidersRequestBuilderRequestsMetadata, type FraudProtectionProvidersRequestBuilder } from './fraudProtectionProviders/index.js';
 // @ts-ignore
+import { type WebApplicationFirewallProvidersRequestBuilder, WebApplicationFirewallProvidersRequestBuilderNavigationMetadata, WebApplicationFirewallProvidersRequestBuilderRequestsMetadata } from './webApplicationFirewallProviders/index.js';
+// @ts-ignore
+import { type WebApplicationFirewallVerificationsRequestBuilder, WebApplicationFirewallVerificationsRequestBuilderNavigationMetadata, WebApplicationFirewallVerificationsRequestBuilderRequestsMetadata } from './webApplicationFirewallVerifications/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +22,14 @@ export interface RiskPreventionRequestBuilder extends BaseRequestBuilder<RiskPre
      * Provides operations to manage the fraudProtectionProviders property of the microsoft.graph.riskPreventionContainer entity.
      */
     get fraudProtectionProviders(): FraudProtectionProvidersRequestBuilder;
+    /**
+     * Provides operations to manage the webApplicationFirewallProviders property of the microsoft.graph.riskPreventionContainer entity.
+     */
+    get webApplicationFirewallProviders(): WebApplicationFirewallProvidersRequestBuilder;
+    /**
+     * Provides operations to manage the webApplicationFirewallVerifications property of the microsoft.graph.riskPreventionContainer entity.
+     */
+    get webApplicationFirewallVerifications(): WebApplicationFirewallVerificationsRequestBuilder;
     /**
      * Delete navigation property riskPrevention for identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -90,6 +102,14 @@ export const RiskPreventionRequestBuilderNavigationMetadata: Record<Exclude<keyo
     fraudProtectionProviders: {
         requestsMetadata: FraudProtectionProvidersRequestBuilderRequestsMetadata,
         navigationMetadata: FraudProtectionProvidersRequestBuilderNavigationMetadata,
+    },
+    webApplicationFirewallProviders: {
+        requestsMetadata: WebApplicationFirewallProvidersRequestBuilderRequestsMetadata,
+        navigationMetadata: WebApplicationFirewallProvidersRequestBuilderNavigationMetadata,
+    },
+    webApplicationFirewallVerifications: {
+        requestsMetadata: WebApplicationFirewallVerificationsRequestBuilderRequestsMetadata,
+        navigationMetadata: WebApplicationFirewallVerificationsRequestBuilderNavigationMetadata,
     },
 };
 /**

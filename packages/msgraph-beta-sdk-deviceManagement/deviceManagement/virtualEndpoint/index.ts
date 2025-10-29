@@ -28,6 +28,8 @@ import { GalleryImagesRequestBuilderNavigationMetadata, GalleryImagesRequestBuil
 // @ts-ignore
 import { GetEffectivePermissionsRequestBuilderRequestsMetadata, type GetEffectivePermissionsRequestBuilder } from './getEffectivePermissions/index.js';
 // @ts-ignore
+import { ManagedLicensesRequestBuilderNavigationMetadata, ManagedLicensesRequestBuilderRequestsMetadata, type ManagedLicensesRequestBuilder } from './managedLicenses/index.js';
+// @ts-ignore
 import { OnPremisesConnectionsRequestBuilderNavigationMetadata, OnPremisesConnectionsRequestBuilderRequestsMetadata, type OnPremisesConnectionsRequestBuilder } from './onPremisesConnections/index.js';
 // @ts-ignore
 import { OrganizationSettingsRequestBuilderRequestsMetadata, type OrganizationSettingsRequestBuilder } from './organizationSettings/index.js';
@@ -98,6 +100,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to call the getEffectivePermissions method.
      */
     get getEffectivePermissions(): GetEffectivePermissionsRequestBuilder;
+    /**
+     * Provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get managedLicenses(): ManagedLicensesRequestBuilder;
     /**
      * Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -248,6 +254,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     getEffectivePermissions: {
         requestsMetadata: GetEffectivePermissionsRequestBuilderRequestsMetadata,
+    },
+    managedLicenses: {
+        requestsMetadata: ManagedLicensesRequestBuilderRequestsMetadata,
+        navigationMetadata: ManagedLicensesRequestBuilderNavigationMetadata,
     },
     onPremisesConnections: {
         requestsMetadata: OnPremisesConnectionsRequestBuilderRequestsMetadata,

@@ -25,21 +25,21 @@ export interface UserRequestBuilder extends BaseRequestBuilder<UserRequestBuilde
      */
     get serviceProvisioningErrors(): ServiceProvisioningErrorsRequestBuilder;
     /**
-     * User entity of the member who has been assigned the role.
+     * The user who has this role assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserRequestBuilderGetQueryParameters> | undefined) : Promise<User | undefined>;
     /**
-     * User entity of the member who has been assigned the role.
+     * The user who has this role assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * User entity of the member who has been assigned the role.
+ * The user who has this role assigned.
  */
 export interface UserRequestBuilderGetQueryParameters {
     /**

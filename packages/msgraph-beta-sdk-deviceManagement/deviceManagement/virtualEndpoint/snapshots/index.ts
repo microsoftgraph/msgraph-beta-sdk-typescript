@@ -12,7 +12,13 @@ import { GetStorageAccountsWithSubscriptionIdRequestBuilderRequestsMetadata, typ
 // @ts-ignore
 import { GetSubscriptionsRequestBuilderRequestsMetadata, type GetSubscriptionsRequestBuilder } from './getSubscriptions/index.js';
 // @ts-ignore
+import { ImportSnapshotRequestBuilderRequestsMetadata, type ImportSnapshotRequestBuilder } from './importSnapshot/index.js';
+// @ts-ignore
 import { CloudPcSnapshotItemRequestBuilderRequestsMetadata, type CloudPcSnapshotItemRequestBuilder } from './item/index.js';
+// @ts-ignore
+import { PurgeImportedSnapshotRequestBuilderRequestsMetadata, type PurgeImportedSnapshotRequestBuilder } from './purgeImportedSnapshot/index.js';
+// @ts-ignore
+import { RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilderRequestsMetadata, type RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder } from './retrieveSnapshotImportResultsWithSnapshotId/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -28,6 +34,14 @@ export interface SnapshotsRequestBuilder extends BaseRequestBuilder<SnapshotsReq
      * Provides operations to call the getSubscriptions method.
      */
     get getSubscriptions(): GetSubscriptionsRequestBuilder;
+    /**
+     * Provides operations to call the importSnapshot method.
+     */
+    get importSnapshot(): ImportSnapshotRequestBuilder;
+    /**
+     * Provides operations to call the purgeImportedSnapshot method.
+     */
+    get purgeImportedSnapshot(): PurgeImportedSnapshotRequestBuilder;
     /**
      * Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
      * @param cloudPcSnapshotId The unique identifier of cloudPcSnapshot
@@ -55,6 +69,12 @@ export interface SnapshotsRequestBuilder extends BaseRequestBuilder<SnapshotsReq
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      post(body: CloudPcSnapshot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcSnapshot | undefined>;
+    /**
+     * Provides operations to call the retrieveSnapshotImportResults method.
+     * @param snapshotId Usage: snapshotId='{snapshotId}'
+     * @returns {RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder}
+     */
+     retrieveSnapshotImportResultsWithSnapshotId(snapshotId: string | undefined) : RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder;
     /**
      * Cloud PC snapshots.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -135,11 +155,21 @@ export const SnapshotsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sna
         requestsMetadata: GetStorageAccountsWithSubscriptionIdRequestBuilderRequestsMetadata,
         pathParametersMappings: ["subscriptionId"],
     },
+    retrieveSnapshotImportResultsWithSnapshotId: {
+        requestsMetadata: RetrieveSnapshotImportResultsWithSnapshotIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["snapshotId"],
+    },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
     },
     getSubscriptions: {
         requestsMetadata: GetSubscriptionsRequestBuilderRequestsMetadata,
+    },
+    importSnapshot: {
+        requestsMetadata: ImportSnapshotRequestBuilderRequestsMetadata,
+    },
+    purgeImportedSnapshot: {
+        requestsMetadata: PurgeImportedSnapshotRequestBuilderRequestsMetadata,
     },
 };
 /**
