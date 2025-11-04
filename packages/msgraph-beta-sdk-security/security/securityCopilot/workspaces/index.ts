@@ -27,10 +27,11 @@ export interface WorkspacesRequestBuilder extends BaseRequestBuilder<WorkspacesR
      */
      byWorkspaceId(workspaceId: string) : WorkspaceItemRequestBuilder;
     /**
-     * Get workspaces from security
+     * Get a list of the workspace objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkspaceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/securitycopilot-list-workspaces?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<WorkspacesRequestBuilderGetQueryParameters> | undefined) : Promise<WorkspaceCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface WorkspacesRequestBuilder extends BaseRequestBuilder<WorkspacesR
      */
      post(body: Workspace, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Workspace | undefined>;
     /**
-     * Get workspaces from security
+     * Get a list of the workspace objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface WorkspacesRequestBuilder extends BaseRequestBuilder<WorkspacesR
      toPostRequestInformation(body: Workspace, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get workspaces from security
+ * Get a list of the workspace objects and their properties.
  */
 export interface WorkspacesRequestBuilderGetQueryParameters {
     /**

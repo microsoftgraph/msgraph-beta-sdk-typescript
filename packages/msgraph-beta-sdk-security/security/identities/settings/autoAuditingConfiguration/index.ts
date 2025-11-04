@@ -19,10 +19,11 @@ export interface AutoAuditingConfigurationRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get autoAuditingConfiguration from security
+     * Get the properties and relationships of an microsoft.graph.security.autoAuditingConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AutoAuditingConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-autoauditingconfiguration-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AutoAuditingConfigurationRequestBuilderGetQueryParameters> | undefined) : Promise<AutoAuditingConfiguration | undefined>;
     /**
@@ -40,7 +41,7 @@ export interface AutoAuditingConfigurationRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get autoAuditingConfiguration from security
+     * Get the properties and relationships of an microsoft.graph.security.autoAuditingConfiguration object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface AutoAuditingConfigurationRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: AutoAuditingConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get autoAuditingConfiguration from security
+ * Get the properties and relationships of an microsoft.graph.security.autoAuditingConfiguration object.
  */
 export interface AutoAuditingConfigurationRequestBuilderGetQueryParameters {
     /**

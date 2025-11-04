@@ -27,7 +27,7 @@ export interface PromptsRequestBuilder extends BaseRequestBuilder<PromptsRequest
      */
      byPromptId(promptId: string) : PromptItemRequestBuilder;
     /**
-     * Get prompts from security
+     * The collection of prompts in the session.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PromptCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface PromptsRequestBuilder extends BaseRequestBuilder<PromptsRequest
      */
      post(body: Prompt, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Prompt | undefined>;
     /**
-     * Get prompts from security
+     * The collection of prompts in the session.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface PromptsRequestBuilder extends BaseRequestBuilder<PromptsRequest
      toPostRequestInformation(body: Prompt, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get prompts from security
+ * The collection of prompts in the session.
  */
 export interface PromptsRequestBuilderGetQueryParameters {
     /**

@@ -25,7 +25,7 @@ export interface PromptItemRequestBuilder extends BaseRequestBuilder<PromptItemR
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get prompts from security
+     * The collection of prompts in the session.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Prompt>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface PromptItemRequestBuilder extends BaseRequestBuilder<PromptItemR
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get prompts from security
+     * The collection of prompts in the session.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface PromptItemRequestBuilder extends BaseRequestBuilder<PromptItemR
      toPatchRequestInformation(body: Prompt, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get prompts from security
+ * The collection of prompts in the session.
  */
 export interface PromptItemRequestBuilderGetQueryParameters {
     /**
