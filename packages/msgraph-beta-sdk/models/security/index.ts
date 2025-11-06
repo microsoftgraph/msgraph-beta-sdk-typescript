@@ -215,6 +215,10 @@ export interface Alert extends Entity, Parsable {
      */
     incidentWebUrl?: string | null;
     /**
+     * Information on the current status of the investigation. Possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.
+     */
+    investigationState?: InvestigationState | null;
+    /**
      * The oldest activity associated with the alert.
      */
     lastActivityDateTime?: Date | null;
@@ -1128,7 +1132,7 @@ export interface AuthorityTemplateCollectionResponse extends BaseCollectionPagin
 }
 export interface AutoAuditingConfiguration extends Entity, Parsable {
     /**
-     * The isAutomatic property
+     * Indicates whether automatic auditing is enabled for Defender for Identity monitoring.
      */
     isAutomatic?: boolean | null;
 }
@@ -8944,6 +8948,7 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
         "firstActivityDateTime": n => { alert.firstActivityDateTime = n.getDateValue(); },
         "incidentId": n => { alert.incidentId = n.getStringValue(); },
         "incidentWebUrl": n => { alert.incidentWebUrl = n.getStringValue(); },
+        "investigationState": n => { alert.investigationState = n.getEnumValue<InvestigationState>(InvestigationStateObject); },
         "lastActivityDateTime": n => { alert.lastActivityDateTime = n.getDateValue(); },
         "lastUpdateDateTime": n => { alert.lastUpdateDateTime = n.getDateValue(); },
         "mitreTechniques": n => { alert.mitreTechniques = n.getCollectionOfPrimitiveValues<string>(); },
@@ -19759,7 +19764,7 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     sensors?: Sensor[] | null;
     /**
-     * The settings property
+     * Represents a container for security identities settings APIs.
      */
     settings?: SettingsContainer | null;
 }
@@ -20097,6 +20102,7 @@ export interface IntelligenceProfileIndicatorCollectionResponse extends BaseColl
     value?: IntelligenceProfileIndicator[] | null;
 }
 export type IntelligenceProfileKind = (typeof IntelligenceProfileKindObject)[keyof typeof IntelligenceProfileKindObject];
+export type InvestigationState = (typeof InvestigationStateObject)[keyof typeof InvestigationStateObject];
 export interface InvokeActionResult extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The account ID.
@@ -22145,6 +22151,7 @@ export function serializeAlert(writer: SerializationWriter, alert: Partial<Alert
     writer.writeDateValue("firstActivityDateTime", alert.firstActivityDateTime);
     writer.writeStringValue("incidentId", alert.incidentId);
     writer.writeStringValue("incidentWebUrl", alert.incidentWebUrl);
+    writer.writeEnumValue<InvestigationState>("investigationState", alert.investigationState);
     writer.writeDateValue("lastActivityDateTime", alert.lastActivityDateTime);
     writer.writeDateValue("lastUpdateDateTime", alert.lastUpdateDateTime);
     writer.writeCollectionOfPrimitiveValues<string>("mitreTechniques", alert.mitreTechniques);
@@ -31866,7 +31873,7 @@ export type ServicePrincipalType = (typeof ServicePrincipalTypeObject)[keyof typ
 export type ServiceSource = (typeof ServiceSourceObject)[keyof typeof ServiceSourceObject];
 export interface SettingsContainer extends Entity, Parsable {
     /**
-     * The autoAuditingConfiguration property
+     * Represents automatic configuration for collection of Windows event logs as needed for Defender for Identity sensors.
      */
     autoAuditingConfiguration?: AutoAuditingConfiguration | null;
 }
@@ -34159,6 +34166,27 @@ export const IndicatorSourceObject = {
 export const IntelligenceProfileKindObject = {
     Actor: "actor",
     Tool: "tool",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const InvestigationStateObject = {
+    Unknown: "unknown",
+    Terminated: "terminated",
+    SuccessfullyRemediated: "successfullyRemediated",
+    Benign: "benign",
+    Failed: "failed",
+    PartiallyRemediated: "partiallyRemediated",
+    Running: "running",
+    PendingApproval: "pendingApproval",
+    PendingResource: "pendingResource",
+    Queued: "queued",
+    InnerFailure: "innerFailure",
+    PreexistingAlert: "preexistingAlert",
+    UnsupportedOs: "unsupportedOs",
+    UnsupportedAlertType: "unsupportedAlertType",
+    SuppressedAlert: "suppressedAlert",
+    PartiallyInvestigated: "partiallyInvestigated",
+    TerminatedByUser: "terminatedByUser",
+    TerminatedBySystem: "terminatedBySystem",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const IoTDeviceImportanceTypeObject = {

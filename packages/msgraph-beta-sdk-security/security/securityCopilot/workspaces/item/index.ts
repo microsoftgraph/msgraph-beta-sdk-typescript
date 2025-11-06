@@ -31,7 +31,7 @@ export interface WorkspaceItemRequestBuilder extends BaseRequestBuilder<Workspac
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get workspaces from security
+     * References a workspace in Security Copilot.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Workspace>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface WorkspaceItemRequestBuilder extends BaseRequestBuilder<Workspac
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get workspaces from security
+     * References a workspace in Security Copilot.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface WorkspaceItemRequestBuilder extends BaseRequestBuilder<Workspac
      toPatchRequestInformation(body: Workspace, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get workspaces from security
+ * References a workspace in Security Copilot.
  */
 export interface WorkspaceItemRequestBuilderGetQueryParameters {
     /**

@@ -14,9 +14,15 @@ import { CompleteSignupRequestBuilderRequestsMetadata, type CompleteSignupReques
 // @ts-ignore
 import { CreateGooglePlayWebTokenRequestBuilderRequestsMetadata, type CreateGooglePlayWebTokenRequestBuilder } from './createGooglePlayWebToken/index.js';
 // @ts-ignore
+import { RequestEnterpriseUpgradeUrlRequestBuilderRequestsMetadata, type RequestEnterpriseUpgradeUrlRequestBuilder } from './requestEnterpriseUpgradeUrl/index.js';
+// @ts-ignore
 import { RequestSignupUrlRequestBuilderRequestsMetadata, type RequestSignupUrlRequestBuilder } from './requestSignupUrl/index.js';
 // @ts-ignore
+import { RetrieveStoreLayoutRequestBuilderRequestsMetadata, type RetrieveStoreLayoutRequestBuilder } from './retrieveStoreLayout/index.js';
+// @ts-ignore
 import { SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderRequestsMetadata, type SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder } from './setAndroidDeviceOwnerFullyManagedEnrollmentState/index.js';
+// @ts-ignore
+import { SetStoreLayoutRequestBuilderRequestsMetadata, type SetStoreLayoutRequestBuilder } from './setStoreLayout/index.js';
 // @ts-ignore
 import { SyncAppsRequestBuilderRequestsMetadata, type SyncAppsRequestBuilder } from './syncApps/index.js';
 // @ts-ignore
@@ -45,13 +51,25 @@ export interface AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder exte
      */
     get createGooglePlayWebToken(): CreateGooglePlayWebTokenRequestBuilder;
     /**
+     * Provides operations to call the requestEnterpriseUpgradeUrl method.
+     */
+    get requestEnterpriseUpgradeUrl(): RequestEnterpriseUpgradeUrlRequestBuilder;
+    /**
      * Provides operations to call the requestSignupUrl method.
      */
     get requestSignupUrl(): RequestSignupUrlRequestBuilder;
     /**
+     * Provides operations to call the retrieveStoreLayout method.
+     */
+    get retrieveStoreLayout(): RetrieveStoreLayoutRequestBuilder;
+    /**
      * Provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.
      */
     get setAndroidDeviceOwnerFullyManagedEnrollmentState(): SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder;
+    /**
+     * Provides operations to call the setStoreLayout method.
+     */
+    get setStoreLayout(): SetStoreLayoutRequestBuilder;
     /**
      * Provides operations to call the syncApps method.
      */
@@ -141,11 +159,20 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderNavigatio
     createGooglePlayWebToken: {
         requestsMetadata: CreateGooglePlayWebTokenRequestBuilderRequestsMetadata,
     },
+    requestEnterpriseUpgradeUrl: {
+        requestsMetadata: RequestEnterpriseUpgradeUrlRequestBuilderRequestsMetadata,
+    },
     requestSignupUrl: {
         requestsMetadata: RequestSignupUrlRequestBuilderRequestsMetadata,
     },
+    retrieveStoreLayout: {
+        requestsMetadata: RetrieveStoreLayoutRequestBuilderRequestsMetadata,
+    },
     setAndroidDeviceOwnerFullyManagedEnrollmentState: {
         requestsMetadata: SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderRequestsMetadata,
+    },
+    setStoreLayout: {
+        requestsMetadata: SetStoreLayoutRequestBuilderRequestsMetadata,
     },
     syncApps: {
         requestsMetadata: SyncAppsRequestBuilderRequestsMetadata,

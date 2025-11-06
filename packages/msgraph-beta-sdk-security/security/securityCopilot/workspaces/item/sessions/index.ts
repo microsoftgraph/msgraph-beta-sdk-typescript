@@ -27,7 +27,7 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      */
      bySessionId(sessionId: string) : SessionItemRequestBuilder;
     /**
-     * Get sessions from security
+     * Represents sessions in Security Copilot.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      */
      post(body: Session, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Session | undefined>;
     /**
-     * Get sessions from security
+     * Represents sessions in Security Copilot.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      toPostRequestInformation(body: Session, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sessions from security
+ * Represents sessions in Security Copilot.
  */
 export interface SessionsRequestBuilderGetQueryParameters {
     /**

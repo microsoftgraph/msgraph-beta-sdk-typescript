@@ -10,8 +10,6 @@ import { ConnectivityConfigurationRequestBuilderNavigationMetadata, Connectivity
 // @ts-ignore
 import { DeviceLinksRequestBuilderNavigationMetadata, DeviceLinksRequestBuilderRequestsMetadata, type DeviceLinksRequestBuilder } from './deviceLinks/index.js';
 // @ts-ignore
-import { ForwardingProfilesRequestBuilderNavigationMetadata, ForwardingProfilesRequestBuilderRequestsMetadata, type ForwardingProfilesRequestBuilder } from './forwardingProfiles/index.js';
-// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -28,11 +26,6 @@ export interface BranchSiteItemRequestBuilder extends BaseRequestBuilder<BranchS
      * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
      */
     get deviceLinks(): DeviceLinksRequestBuilder;
-    /**
-     * Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
-     * @deprecated The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
-     */
-    get forwardingProfiles(): ForwardingProfilesRequestBuilder;
     /**
      * Delete a specific branch.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -118,10 +111,6 @@ export const BranchSiteItemRequestBuilderNavigationMetadata: Record<Exclude<keyo
     deviceLinks: {
         requestsMetadata: DeviceLinksRequestBuilderRequestsMetadata,
         navigationMetadata: DeviceLinksRequestBuilderNavigationMetadata,
-    },
-    forwardingProfiles: {
-        requestsMetadata: ForwardingProfilesRequestBuilderRequestsMetadata,
-        navigationMetadata: ForwardingProfilesRequestBuilderNavigationMetadata,
     },
 };
 /**

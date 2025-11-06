@@ -25,7 +25,7 @@ export interface SecurityCopilotRequestBuilder extends BaseRequestBuilder<Securi
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get securityCopilot from security
+     * Represents the resources related to Microsoft Security Copilot.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityCopilot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface SecurityCopilotRequestBuilder extends BaseRequestBuilder<Securi
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get securityCopilot from security
+     * Represents the resources related to Microsoft Security Copilot.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface SecurityCopilotRequestBuilder extends BaseRequestBuilder<Securi
      toPatchRequestInformation(body: SecurityCopilot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get securityCopilot from security
+ * Represents the resources related to Microsoft Security Copilot.
  */
 export interface SecurityCopilotRequestBuilderGetQueryParameters {
     /**

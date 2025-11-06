@@ -19,7 +19,7 @@ export interface EvaluationItemRequestBuilder extends BaseRequestBuilder<Evaluat
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get evaluations from security
+     * Collection of evaluations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Evaluation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface EvaluationItemRequestBuilder extends BaseRequestBuilder<Evaluat
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get evaluations from security
+     * Collection of evaluations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface EvaluationItemRequestBuilder extends BaseRequestBuilder<Evaluat
      toPatchRequestInformation(body: Evaluation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get evaluations from security
+ * Collection of evaluations
  */
 export interface EvaluationItemRequestBuilderGetQueryParameters {
     /**

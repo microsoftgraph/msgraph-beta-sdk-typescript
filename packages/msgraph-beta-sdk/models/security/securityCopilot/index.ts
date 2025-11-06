@@ -404,31 +404,31 @@ export function deserializeIntoWorkspaceCollectionResponse(workspaceCollectionRe
 }
 export interface Evaluation extends Entity, Parsable {
     /**
-     * The completedDateTime property
+     * Evaluation completion time.
      */
     completedDateTime?: Date | null;
     /**
-     * The createdDateTime property
+     * Evaluation created time.
      */
     createdDateTime?: Date | null;
     /**
-     * The executionCount property
+     * Evaluation execution count.
      */
     executionCount?: number | null;
     /**
-     * The isCancelled property
+     * Evaluation cancellation status.
      */
     isCancelled?: boolean | null;
     /**
-     * The lastModifiedDateTime property
+     * Evaluation modified time.
      */
     lastModifiedDateTime?: Date | null;
     /**
-     * The result property
+     * Evaluation results collection.
      */
     result?: EvaluationResult | null;
     /**
-     * The runStartDateTime property
+     * Evaluation Run start time.
      */
     runStartDateTime?: Date | null;
     /**
@@ -448,7 +448,7 @@ export interface EvaluationResult extends AdditionalDataHolder, BackedModel, Par
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The content property
+     * The final content.
      */
     content?: string | null;
     /**
@@ -468,7 +468,7 @@ export type EvaluationResultType = (typeof EvaluationResultTypeObject)[keyof typ
 export type EvaluationState = (typeof EvaluationStateObject)[keyof typeof EvaluationStateObject];
 export interface Plugin extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The authorization property
+     * Authorization for the plugin.
      */
     authorization?: PluginAuth | null;
     /**
@@ -484,19 +484,19 @@ export interface Plugin extends AdditionalDataHolder, BackedModel, Parsable {
      */
     category?: PluginCategory | null;
     /**
-     * The description property
+     * Brief description of the plugin.
      */
     description?: string | null;
     /**
-     * The displayName property
+     * Display name of the plugin.   Supports $filter (eq).
      */
     displayName?: string | null;
     /**
-     * The isEnabled property
+     * Displays whether the plugin is enabled for use within the catalogScope.   Supports $filter (eq).
      */
     isEnabled?: boolean | null;
     /**
-     * The name property
+     * Represents the name of the plugin. Primary key.   Supports $filter (eq, contains).
      */
     name?: string | null;
     /**
@@ -508,7 +508,7 @@ export interface Plugin extends AdditionalDataHolder, BackedModel, Parsable {
      */
     previewState?: PluginPreviewStates | null;
     /**
-     * The settings property
+     * Settings for the plugin.
      */
     settings?: PluginSetting[] | null;
     /**
@@ -542,7 +542,7 @@ export interface PluginCollectionResponse extends BaseCollectionPaginationCountR
 export type PluginPreviewStates = (typeof PluginPreviewStatesObject)[keyof typeof PluginPreviewStatesObject];
 export interface PluginSetting extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The acceptableValues property
+     * Acceptable values for plugin type
      */
     acceptableValues?: string[] | null;
     /**
@@ -550,11 +550,11 @@ export interface PluginSetting extends AdditionalDataHolder, BackedModel, Parsab
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The defaultValue property
+     * Default value available for the plugin if not configured
      */
     defaultValue?: string | null;
     /**
-     * The description property
+     * Description of the value requested
      */
     description?: string | null;
     /**
@@ -562,19 +562,19 @@ export interface PluginSetting extends AdditionalDataHolder, BackedModel, Parsab
      */
     displayType?: PluginSettingDisplayType | null;
     /**
-     * The hintText property
+     * Hint for the plugin
      */
     hintText?: string | null;
     /**
-     * The isRequired property
+     * Setting whether the value is required
      */
     isRequired?: boolean | null;
     /**
-     * The label property
+     * Label for the setting
      */
     label?: string | null;
     /**
-     * The name property
+     * Name of the setting
      */
     name?: string | null;
     /**
@@ -586,7 +586,7 @@ export interface PluginSetting extends AdditionalDataHolder, BackedModel, Parsab
      */
     settingValue?: PluginSettingType | null;
     /**
-     * The value property
+     * Value
      */
     value?: string | null;
 }
@@ -594,31 +594,31 @@ export type PluginSettingDisplayType = (typeof PluginSettingDisplayTypeObject)[k
 export type PluginSettingType = (typeof PluginSettingTypeObject)[keyof typeof PluginSettingTypeObject];
 export interface Prompt extends Entity, Parsable {
     /**
-     * The content property
+     * Input content to the prompt.
      */
     content?: string | null;
     /**
-     * The createdDateTime property
+     * Created time.
      */
     createdDateTime?: Date | null;
     /**
-     * The evaluations property
+     * Collection of evaluations
      */
     evaluations?: Evaluation[] | null;
     /**
-     * The inputs property
+     * Not implemented.
      */
     inputs?: Dictionary | null;
     /**
-     * The lastModifiedDateTime property
+     * Last modified time.
      */
     lastModifiedDateTime?: Date | null;
     /**
-     * The skillInputDescriptors property
+     * Skill Input descriptor.
      */
     skillInputDescriptors?: SkillInputDescriptor[] | null;
     /**
-     * The skillName property
+     * Skill name.
      */
     skillName?: string | null;
     /**
@@ -881,19 +881,19 @@ export function serializeWorkspaceCollectionResponse(writer: SerializationWriter
 }
 export interface Session extends Entity, Parsable {
     /**
-     * The createdDateTime property
+     * Created time of the session (UTC).
      */
     createdDateTime?: Date | null;
     /**
-     * The displayName property
+     * Display name for the session.
      */
     displayName?: string | null;
     /**
-     * The lastModifiedDateTime property
+     * Last modified time of the session (UTC). Updated when displayName changes.
      */
     lastModifiedDateTime?: Date | null;
     /**
-     * The prompts property
+     * The collection of prompts in the session.
      */
     prompts?: Prompt[] | null;
 }
@@ -905,15 +905,15 @@ export interface SessionCollectionResponse extends BaseCollectionPaginationCount
 }
 export interface SkillInputDescriptor extends Parsable, SkillVariableDescriptor {
     /**
-     * The defaultValue property
+     * Unsupported.
      */
     defaultValue?: string | null;
     /**
-     * The isRequired property
+     * Unsupported.
      */
     isRequired?: boolean | null;
     /**
-     * The placeholderValue property
+     * Unsupported.
      */
     placeholderValue?: string | null;
 }
@@ -924,7 +924,7 @@ export interface SkillTypeDescriptor extends AdditionalDataHolder, BackedModel, 
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The name property
+     * Unsupported.
      */
     name?: string | null;
     /**
@@ -938,11 +938,11 @@ export interface SkillVariableDescriptor extends AdditionalDataHolder, BackedMod
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The description property
+     * Unsupported.
      */
     description?: string | null;
     /**
-     * The name property
+     * Unsupported.
      */
     name?: string | null;
     /**
@@ -956,15 +956,15 @@ export interface SkillVariableDescriptor extends AdditionalDataHolder, BackedMod
 }
 export interface Workspace extends Entity, Parsable {
     /**
-     * The displayName property
+     * Name of the Security Copilot workspace.
      */
     displayName?: string | null;
     /**
-     * The plugins property
+     * Represents plugins in Security Copilot.
      */
     plugins?: Plugin[] | null;
     /**
-     * The sessions property
+     * Represents sessions in Security Copilot.
      */
     sessions?: Session[] | null;
 }

@@ -27,7 +27,7 @@ export interface EvaluationsRequestBuilder extends BaseRequestBuilder<Evaluation
      */
      byEvaluationId(evaluationId: string) : EvaluationItemRequestBuilder;
     /**
-     * Get evaluations from security
+     * Collection of evaluations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EvaluationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface EvaluationsRequestBuilder extends BaseRequestBuilder<Evaluation
      */
      post(body: Evaluation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Evaluation | undefined>;
     /**
-     * Get evaluations from security
+     * Collection of evaluations
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface EvaluationsRequestBuilder extends BaseRequestBuilder<Evaluation
      toPostRequestInformation(body: Evaluation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get evaluations from security
+ * Collection of evaluations
  */
 export interface EvaluationsRequestBuilderGetQueryParameters {
     /**
