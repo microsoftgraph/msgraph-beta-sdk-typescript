@@ -18,7 +18,7 @@ export interface AgentSignIn extends AdditionalDataHolder, BackedModel, Parsable
      */
     odataType?: string | null;
     /**
-     * The ID of the parent application for agentic instances.
+     * The appId of the parent agent where the agentType is agentic.
      */
     parentAppId?: string | null;
 }

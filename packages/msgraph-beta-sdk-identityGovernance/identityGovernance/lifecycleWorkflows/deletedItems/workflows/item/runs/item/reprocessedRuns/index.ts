@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ReprocessedRunsRequestBuilder extends BaseRequestBuilder<ReprocessedRunsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.run entity.
      * @param runId1 The unique identifier of run
      * @returns {RunItemRequestBuilder}
-     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01
      */
      byRunId1(runId1: string) : RunItemRequestBuilder;
     /**
@@ -33,14 +31,12 @@ export interface ReprocessedRunsRequestBuilder extends BaseRequestBuilder<Reproc
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RunCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<ReprocessedRunsRequestBuilderGetQueryParameters> | undefined) : Promise<RunCollectionResponse | undefined>;
     /**
      * The related reprocessed workflow run.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReprocessedRunsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

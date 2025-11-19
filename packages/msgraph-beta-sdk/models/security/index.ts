@@ -19756,7 +19756,7 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     sensorCandidateActivationConfiguration?: SensorCandidateActivationConfiguration | null;
     /**
-     * The sensorCandidates property
+     * Represents Microsoft Defender for Identity sensors that are ready to be activated.
      */
     sensorCandidates?: SensorCandidate[] | null;
     /**
@@ -21864,7 +21864,7 @@ export interface SensorCandidate extends Entity, Parsable {
      */
     lastSeenDateTime?: Date | null;
     /**
-     * The version of the Defender for Identity sensor client.
+     * The version of the Defender for Identity sensor client.  Supports $filter (eq).
      */
     senseClientVersion?: string | null;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExportJobsRequestBuilder extends BaseRequestBuilder<ExportJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
      * @param cloudPcExportJobId The unique identifier of cloudPcExportJob
      * @returns {CloudPcExportJobItemRequestBuilder}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      byCloudPcExportJobId(cloudPcExportJobId: string) : CloudPcExportJobItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ExportJobsRequestBuilder extends BaseRequestBuilder<ExportJobsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExportJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      get(requestConfiguration?: RequestConfiguration<ExportJobsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcExportJobCollectionResponse | undefined>;
     /**
@@ -39,6 +42,7 @@ export interface ExportJobsRequestBuilder extends BaseRequestBuilder<ExportJobsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExportJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcExportJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcExportJob | undefined>;
@@ -46,6 +50,7 @@ export interface ExportJobsRequestBuilder extends BaseRequestBuilder<ExportJobsR
      * Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExportJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface ExportJobsRequestBuilder extends BaseRequestBuilder<ExportJobsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toPostRequestInformation(body: CloudPcExportJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

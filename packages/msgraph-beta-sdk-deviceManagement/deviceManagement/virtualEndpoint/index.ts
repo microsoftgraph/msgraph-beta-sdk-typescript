@@ -36,6 +36,8 @@ import { OrganizationSettingsRequestBuilderRequestsMetadata, type OrganizationSe
 // @ts-ignore
 import { ProvisioningPoliciesRequestBuilderNavigationMetadata, ProvisioningPoliciesRequestBuilderRequestsMetadata, type ProvisioningPoliciesRequestBuilder } from './provisioningPolicies/index.js';
 // @ts-ignore
+import { ReportRequestBuilderNavigationMetadata, ReportRequestBuilderRequestsMetadata, type ReportRequestBuilder } from './report/index.js';
+// @ts-ignore
 import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsMetadata, type ReportsRequestBuilder } from './reports/index.js';
 // @ts-ignore
 import { RetrieveScopedPermissionsRequestBuilderRequestsMetadata, type RetrieveScopedPermissionsRequestBuilder } from './retrieveScopedPermissions/index.js';
@@ -116,6 +118,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
      */
     get provisioningPolicies(): ProvisioningPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get report(): ReportRequestBuilder;
     /**
      * Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -269,6 +275,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     provisioningPolicies: {
         requestsMetadata: ProvisioningPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: ProvisioningPoliciesRequestBuilderNavigationMetadata,
+    },
+    report: {
+        requestsMetadata: ReportRequestBuilderRequestsMetadata,
+        navigationMetadata: ReportRequestBuilderNavigationMetadata,
     },
     reports: {
         requestsMetadata: ReportsRequestBuilderRequestsMetadata,

@@ -27,22 +27,22 @@ export interface TransitiveReportsRequestBuilder extends BaseRequestBuilder<Tran
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
-     * Retrieve a count of transitive reports for a user.
+     * Get the transitive reports for an agentUser.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/user-get-transitivereports?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/agentuser-list-transitivereports?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TransitiveReportsRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
-     * Retrieve a count of transitive reports for a user.
+     * Get the transitive reports for an agentUser.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TransitiveReportsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a count of transitive reports for a user.
+ * Get the transitive reports for an agentUser.
  */
 export interface TransitiveReportsRequestBuilderGetQueryParameters {
     /**

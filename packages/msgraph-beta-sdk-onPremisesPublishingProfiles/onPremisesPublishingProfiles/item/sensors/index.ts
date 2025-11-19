@@ -27,7 +27,7 @@ export interface SensorsRequestBuilder extends BaseRequestBuilder<SensorsRequest
      */
      byPrivateAccessSensorId(privateAccessSensorId: string) : PrivateAccessSensorItemRequestBuilder;
     /**
-     * Get sensors from onPremisesPublishingProfiles
+     * A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivateAccessSensorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface SensorsRequestBuilder extends BaseRequestBuilder<SensorsRequest
      */
      post(body: PrivateAccessSensor, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivateAccessSensor | undefined>;
     /**
-     * Get sensors from onPremisesPublishingProfiles
+     * A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface SensorsRequestBuilder extends BaseRequestBuilder<SensorsRequest
      toPostRequestInformation(body: PrivateAccessSensor, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensors from onPremisesPublishingProfiles
+ * A lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
  */
 export interface SensorsRequestBuilderGetQueryParameters {
     /**

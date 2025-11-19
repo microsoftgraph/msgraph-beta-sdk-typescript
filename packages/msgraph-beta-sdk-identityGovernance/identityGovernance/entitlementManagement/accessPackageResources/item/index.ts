@@ -14,8 +14,6 @@ import { AccessPackageResourceScopesRequestBuilderNavigationMetadata, AccessPack
 // @ts-ignore
 import { RefreshRequestBuilderRequestsMetadata, type RefreshRequestBuilder } from './refresh/index.js';
 // @ts-ignore
-import { type UploadSessionsRequestBuilder, UploadSessionsRequestBuilderNavigationMetadata, UploadSessionsRequestBuilderRequestsMetadata } from './uploadSessions/index.js';
-// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -38,10 +36,6 @@ export interface AccessPackageResourceItemRequestBuilder extends BaseRequestBuil
      * Provides operations to call the refresh method.
      */
     get refresh(): RefreshRequestBuilder;
-    /**
-     * Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
-     */
-    get uploadSessions(): UploadSessionsRequestBuilder;
     /**
      * Delete navigation property accessPackageResources for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -124,10 +118,6 @@ export const AccessPackageResourceItemRequestBuilderNavigationMetadata: Record<E
     },
     refresh: {
         requestsMetadata: RefreshRequestBuilderRequestsMetadata,
-    },
-    uploadSessions: {
-        requestsMetadata: UploadSessionsRequestBuilderRequestsMetadata,
-        navigationMetadata: UploadSessionsRequestBuilderNavigationMetadata,
     },
 };
 /**
