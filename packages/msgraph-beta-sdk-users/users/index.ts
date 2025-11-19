@@ -63,15 +63,15 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      */
      byUserId(userId: string) : UserItemRequestBuilder;
     /**
-     * Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
+     * Get a list of the agentUser objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/agentuser-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : Promise<UserCollectionResponse | undefined>;
     /**
-     * Create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
+     * Create a new user. If you specify an @odata.type property with a value of #microsoft.graph.agentUser with the required properties, this API creates an agentUser object. At a minimum, you must specify the required properties. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
@@ -80,13 +80,13 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      */
      post(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<User | undefined>;
     /**
-     * Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
+     * Get a list of the agentUser objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
+     * Create a new user. If you specify an @odata.type property with a value of #microsoft.graph.agentUser with the required properties, this API creates an agentUser object. At a minimum, you must specify the required properties. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -94,7 +94,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      toPostRequestInformation(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
+ * Get a list of the agentUser objects and their properties.
  */
 export interface UsersRequestBuilderGetQueryParameters {
     /**

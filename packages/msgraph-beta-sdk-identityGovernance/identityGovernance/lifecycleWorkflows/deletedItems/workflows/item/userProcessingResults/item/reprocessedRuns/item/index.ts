@@ -17,14 +17,12 @@ export interface RunItemRequestBuilder extends BaseRequestBuilder<RunItemRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Run>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<RunItemRequestBuilderGetQueryParameters> | undefined) : Promise<Run | undefined>;
     /**
      * The related reprocessed workflow run.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-03-14 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RunItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

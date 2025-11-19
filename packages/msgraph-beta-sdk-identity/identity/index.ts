@@ -26,9 +26,13 @@ import { IdentityProvidersRequestBuilderNavigationMetadata, IdentityProvidersReq
 // @ts-ignore
 import { RiskPreventionRequestBuilderNavigationMetadata, RiskPreventionRequestBuilderRequestsMetadata, type RiskPreventionRequestBuilder } from './riskPrevention/index.js';
 // @ts-ignore
+import { SignInIdentifiersRequestBuilderNavigationMetadata, SignInIdentifiersRequestBuilderRequestsMetadata, type SignInIdentifiersRequestBuilder } from './signInIdentifiers/index.js';
+// @ts-ignore
 import { type UserFlowAttributesRequestBuilder, UserFlowAttributesRequestBuilderNavigationMetadata, UserFlowAttributesRequestBuilderRequestsMetadata } from './userFlowAttributes/index.js';
 // @ts-ignore
 import { type UserFlowsRequestBuilder, UserFlowsRequestBuilderNavigationMetadata, UserFlowsRequestBuilderRequestsMetadata } from './userFlows/index.js';
+// @ts-ignore
+import { type VerifiedIdRequestBuilder, VerifiedIdRequestBuilderNavigationMetadata, VerifiedIdRequestBuilderRequestsMetadata } from './verifiedId/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -77,6 +81,10 @@ export interface IdentityRequestBuilder extends BaseRequestBuilder<IdentityReque
      */
     get riskPrevention(): RiskPreventionRequestBuilder;
     /**
+     * Provides operations to manage the signInIdentifiers property of the microsoft.graph.identityContainer entity.
+     */
+    get signInIdentifiers(): SignInIdentifiersRequestBuilder;
+    /**
      * Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
      */
     get userFlowAttributes(): UserFlowAttributesRequestBuilder;
@@ -84,6 +92,10 @@ export interface IdentityRequestBuilder extends BaseRequestBuilder<IdentityReque
      * Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
      */
     get userFlows(): UserFlowsRequestBuilder;
+    /**
+     * Provides operations to manage the verifiedId property of the microsoft.graph.identityContainer entity.
+     */
+    get verifiedId(): VerifiedIdRequestBuilder;
     /**
      * Get identity
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -179,6 +191,10 @@ export const IdentityRequestBuilderNavigationMetadata: Record<Exclude<keyof Iden
         requestsMetadata: RiskPreventionRequestBuilderRequestsMetadata,
         navigationMetadata: RiskPreventionRequestBuilderNavigationMetadata,
     },
+    signInIdentifiers: {
+        requestsMetadata: SignInIdentifiersRequestBuilderRequestsMetadata,
+        navigationMetadata: SignInIdentifiersRequestBuilderNavigationMetadata,
+    },
     userFlowAttributes: {
         requestsMetadata: UserFlowAttributesRequestBuilderRequestsMetadata,
         navigationMetadata: UserFlowAttributesRequestBuilderNavigationMetadata,
@@ -186,6 +202,10 @@ export const IdentityRequestBuilderNavigationMetadata: Record<Exclude<keyof Iden
     userFlows: {
         requestsMetadata: UserFlowsRequestBuilderRequestsMetadata,
         navigationMetadata: UserFlowsRequestBuilderNavigationMetadata,
+    },
+    verifiedId: {
+        requestsMetadata: VerifiedIdRequestBuilderRequestsMetadata,
+        navigationMetadata: VerifiedIdRequestBuilderNavigationMetadata,
     },
 };
 /**

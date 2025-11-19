@@ -10,9 +10,19 @@ import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequest
 // @ts-ignore
 import { DescendantsRequestBuilderRequestsMetadata, type DescendantsRequestBuilder } from './descendants/index.js';
 // @ts-ignore
+import { GraphBuildingRequestBuilderNavigationMetadata, GraphBuildingRequestBuilderRequestsMetadata, type GraphBuildingRequestBuilder } from './graphBuilding/index.js';
+// @ts-ignore
+import { GraphDeskRequestBuilderNavigationMetadata, GraphDeskRequestBuilderRequestsMetadata, type GraphDeskRequestBuilder } from './graphDesk/index.js';
+// @ts-ignore
+import { GraphFloorRequestBuilderNavigationMetadata, GraphFloorRequestBuilderRequestsMetadata, type GraphFloorRequestBuilder } from './graphFloor/index.js';
+// @ts-ignore
 import { GraphRoomRequestBuilderNavigationMetadata, GraphRoomRequestBuilderRequestsMetadata, type GraphRoomRequestBuilder } from './graphRoom/index.js';
 // @ts-ignore
 import { GraphRoomListRequestBuilderNavigationMetadata, GraphRoomListRequestBuilderRequestsMetadata, type GraphRoomListRequestBuilder } from './graphRoomList/index.js';
+// @ts-ignore
+import { GraphSectionRequestBuilderNavigationMetadata, GraphSectionRequestBuilderRequestsMetadata, type GraphSectionRequestBuilder } from './graphSection/index.js';
+// @ts-ignore
+import { GraphWorkspaceRequestBuilderNavigationMetadata, GraphWorkspaceRequestBuilderRequestsMetadata, type GraphWorkspaceRequestBuilder } from './graphWorkspace/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -29,6 +39,18 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
     get descendants(): DescendantsRequestBuilder;
     /**
+     * Casts the previous resource to building.
+     */
+    get graphBuilding(): GraphBuildingRequestBuilder;
+    /**
+     * Casts the previous resource to desk.
+     */
+    get graphDesk(): GraphDeskRequestBuilder;
+    /**
+     * Casts the previous resource to floor.
+     */
+    get graphFloor(): GraphFloorRequestBuilder;
+    /**
      * Casts the previous resource to room.
      */
     get graphRoom(): GraphRoomRequestBuilder;
@@ -36,6 +58,14 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      * Casts the previous resource to roomList.
      */
     get graphRoomList(): GraphRoomListRequestBuilder;
+    /**
+     * Casts the previous resource to section.
+     */
+    get graphSection(): GraphSectionRequestBuilder;
+    /**
+     * Casts the previous resource to workspace.
+     */
+    get graphWorkspace(): GraphWorkspaceRequestBuilder;
     /**
      * Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -81,6 +111,18 @@ export const PlaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Pla
     descendants: {
         requestsMetadata: DescendantsRequestBuilderRequestsMetadata,
     },
+    graphBuilding: {
+        requestsMetadata: GraphBuildingRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphBuildingRequestBuilderNavigationMetadata,
+    },
+    graphDesk: {
+        requestsMetadata: GraphDeskRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphDeskRequestBuilderNavigationMetadata,
+    },
+    graphFloor: {
+        requestsMetadata: GraphFloorRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphFloorRequestBuilderNavigationMetadata,
+    },
     graphRoom: {
         requestsMetadata: GraphRoomRequestBuilderRequestsMetadata,
         navigationMetadata: GraphRoomRequestBuilderNavigationMetadata,
@@ -88,6 +130,14 @@ export const PlaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Pla
     graphRoomList: {
         requestsMetadata: GraphRoomListRequestBuilderRequestsMetadata,
         navigationMetadata: GraphRoomListRequestBuilderNavigationMetadata,
+    },
+    graphSection: {
+        requestsMetadata: GraphSectionRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphSectionRequestBuilderNavigationMetadata,
+    },
+    graphWorkspace: {
+        requestsMetadata: GraphWorkspaceRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphWorkspaceRequestBuilderNavigationMetadata,
     },
 };
 /**

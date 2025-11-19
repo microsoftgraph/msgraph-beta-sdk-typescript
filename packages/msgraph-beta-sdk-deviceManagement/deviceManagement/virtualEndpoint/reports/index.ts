@@ -54,99 +54,121 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequestBuilder> {
     /**
      * Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get exportJobs(): ExportJobsRequestBuilder;
     /**
      * Provides operations to call the getActionStatusReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getActionStatusReports(): GetActionStatusReportsRequestBuilder;
     /**
      * Provides operations to call the getCloudPcPerformanceReport method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getCloudPcPerformanceReport(): GetCloudPcPerformanceReportRequestBuilder;
     /**
      * Provides operations to call the getCloudPcRecommendationReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getCloudPcRecommendationReports(): GetCloudPcRecommendationReportsRequestBuilder;
     /**
      * Provides operations to call the getConnectionQualityReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getConnectionQualityReports(): GetConnectionQualityReportsRequestBuilder;
     /**
      * Provides operations to call the getDailyAggregatedRemoteConnectionReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getDailyAggregatedRemoteConnectionReports(): GetDailyAggregatedRemoteConnectionReportsRequestBuilder;
     /**
      * Provides operations to call the getFrontlineReport method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getFrontlineReport(): GetFrontlineReportRequestBuilder;
     /**
      * Provides operations to call the getInaccessibleCloudPcReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getInaccessibleCloudPcReports(): GetInaccessibleCloudPcReportsRequestBuilder;
     /**
      * Provides operations to call the getRawRemoteConnectionReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getRawRemoteConnectionReports(): GetRawRemoteConnectionReportsRequestBuilder;
     /**
      * Provides operations to call the getRemoteConnectionHistoricalReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getRemoteConnectionHistoricalReports(): GetRemoteConnectionHistoricalReportsRequestBuilder;
     /**
      * Provides operations to call the getTotalAggregatedRemoteConnectionReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get getTotalAggregatedRemoteConnectionReports(): GetTotalAggregatedRemoteConnectionReportsRequestBuilder;
     /**
      * Provides operations to call the retrieveBulkActionStatusReport method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveBulkActionStatusReport(): RetrieveBulkActionStatusReportRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPcRecommendationReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveCloudPcRecommendationReports(): RetrieveCloudPcRecommendationReportsRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPcTenantMetricsReport method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveCloudPcTenantMetricsReport(): RetrieveCloudPcTenantMetricsReportRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPcTroubleshootReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveCloudPcTroubleshootReports(): RetrieveCloudPcTroubleshootReportsRequestBuilder;
     /**
      * Provides operations to call the retrieveConnectionQualityReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveConnectionQualityReports(): RetrieveConnectionQualityReportsRequestBuilder;
     /**
      * Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveCrossRegionDisasterRecoveryReport(): RetrieveCrossRegionDisasterRecoveryReportRequestBuilder;
     /**
      * Provides operations to call the retrieveFrontlineReports method.
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
     get retrieveFrontlineReports(): RetrieveFrontlineReportsRequestBuilder;
     /**
      * Delete navigation property reports for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Cloud PC related reports.
+     * Cloud PC-related reports.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcReports>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      get(requestConfiguration?: RequestConfiguration<ReportsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcReports | undefined>;
     /**
      * Provides operations to call the getRealTimeRemoteConnectionLatency method.
      * @param cloudPcId Usage: cloudPcId='{cloudPcId}'
      * @returns {GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      getRealTimeRemoteConnectionLatencyWithCloudPcId(cloudPcId: string | undefined) : GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder;
     /**
      * Provides operations to call the getRealTimeRemoteConnectionStatus method.
      * @param cloudPcId Usage: cloudPcId='{cloudPcId}'
      * @returns {GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      getRealTimeRemoteConnectionStatusWithCloudPcId(cloudPcId: string | undefined) : GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder;
     /**
@@ -155,18 +177,21 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcReports>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      patch(body: CloudPcReports, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcReports | undefined>;
     /**
      * Delete navigation property reports for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Cloud PC related reports.
+     * Cloud PC-related reports.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReportsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -174,11 +199,12 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toPatchRequestInformation(body: CloudPcReports, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Cloud PC related reports.
+ * Cloud PC-related reports.
  */
 export interface ReportsRequestBuilderGetQueryParameters {
     /**

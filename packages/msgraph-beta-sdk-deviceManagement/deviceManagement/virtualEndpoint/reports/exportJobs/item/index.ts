@@ -16,6 +16,7 @@ export interface CloudPcExportJobItemRequestBuilder extends BaseRequestBuilder<C
      * Delete navigation property exportJobs for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface CloudPcExportJobItemRequestBuilder extends BaseRequestBuilder<C
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExportJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcExportJobItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcExportJob | undefined>;
@@ -32,18 +34,21 @@ export interface CloudPcExportJobItemRequestBuilder extends BaseRequestBuilder<C
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExportJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      patch(body: CloudPcExportJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcExportJob | undefined>;
     /**
      * Delete navigation property exportJobs for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcExportJobItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -51,6 +56,7 @@ export interface CloudPcExportJobItemRequestBuilder extends BaseRequestBuilder<C
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
      */
      toPatchRequestInformation(body: CloudPcExportJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
