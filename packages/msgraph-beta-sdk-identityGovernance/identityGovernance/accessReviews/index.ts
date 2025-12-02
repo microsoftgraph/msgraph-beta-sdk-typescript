@@ -12,6 +12,8 @@ import { DefinitionsRequestBuilderNavigationMetadata, DefinitionsRequestBuilderR
 // @ts-ignore
 import { HistoryDefinitionsRequestBuilderNavigationMetadata, HistoryDefinitionsRequestBuilderRequestsMetadata, type HistoryDefinitionsRequestBuilder } from './historyDefinitions/index.js';
 // @ts-ignore
+import { InstancesRequestBuilderNavigationMetadata, InstancesRequestBuilderRequestsMetadata, type InstancesRequestBuilder } from './instances/index.js';
+// @ts-ignore
 import { PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -32,6 +34,10 @@ export interface AccessReviewsRequestBuilder extends BaseRequestBuilder<AccessRe
      * Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
      */
     get historyDefinitions(): HistoryDefinitionsRequestBuilder;
+    /**
+     * Provides operations to manage the instances property of the microsoft.graph.accessReviewSet entity.
+     */
+    get instances(): InstancesRequestBuilder;
     /**
      * Provides operations to manage the policy property of the microsoft.graph.accessReviewSet entity.
      */
@@ -116,6 +122,10 @@ export const AccessReviewsRequestBuilderNavigationMetadata: Record<Exclude<keyof
     historyDefinitions: {
         requestsMetadata: HistoryDefinitionsRequestBuilderRequestsMetadata,
         navigationMetadata: HistoryDefinitionsRequestBuilderNavigationMetadata,
+    },
+    instances: {
+        requestsMetadata: InstancesRequestBuilderRequestsMetadata,
+        navigationMetadata: InstancesRequestBuilderNavigationMetadata,
     },
     policy: {
         requestsMetadata: PolicyRequestBuilderRequestsMetadata,

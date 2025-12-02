@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
 // @ts-ignore
+import { ChildrenRequestBuilderNavigationMetadata, ChildrenRequestBuilderRequestsMetadata, type ChildrenRequestBuilder } from './children/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,10 @@ export interface GraphWorkspaceRequestBuilder extends BaseRequestBuilder<GraphWo
      * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
      */
     get checkIns(): CheckInsRequestBuilder;
+    /**
+     * Provides operations to manage the children property of the microsoft.graph.place entity.
+     */
+    get children(): ChildrenRequestBuilder;
     /**
      * Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list. Compared with the findRooms and findRoomLists functions, this operation returns a richer payload for rooms and room lists. For details about how they compare, see Using the places API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -64,6 +70,10 @@ export const GraphWorkspaceRequestBuilderNavigationMetadata: Record<Exclude<keyo
     checkIns: {
         requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
         navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
+    children: {
+        requestsMetadata: ChildrenRequestBuilderRequestsMetadata,
+        navigationMetadata: ChildrenRequestBuilderNavigationMetadata,
     },
 };
 /**

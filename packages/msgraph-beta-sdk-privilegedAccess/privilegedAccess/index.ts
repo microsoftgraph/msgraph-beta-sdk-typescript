@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PrivilegedAccessRequestBuilder extends BaseRequestBuilder<PrivilegedAccessRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the collection of privilegedAccess entities.
      * @param privilegedAccessId The unique identifier of privilegedAccess
      * @returns {PrivilegedAccessItemRequestBuilder}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      byPrivilegedAccessId(privilegedAccessId: string) : PrivilegedAccessItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface PrivilegedAccessRequestBuilder extends BaseRequestBuilder<Privi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      get(requestConfiguration?: RequestConfiguration<PrivilegedAccessRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedAccessCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface PrivilegedAccessRequestBuilder extends BaseRequestBuilder<Privi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccess>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      post(body: PrivilegedAccess, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedAccess | undefined>;
     /**
      * Get entities from privilegedAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrivilegedAccessRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface PrivilegedAccessRequestBuilder extends BaseRequestBuilder<Privi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPostRequestInformation(body: PrivilegedAccess, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -62,14 +62,15 @@ export interface SetAutomaticLocationPostRequestBody extends AdditionalDataHolde
  */
 export interface SetAutomaticLocationRequestBuilder extends BaseRequestBuilder<SetAutomaticLocationRequestBuilder> {
     /**
-     * Invoke action setAutomaticLocation
+     * Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn't clear manual or scheduled signals.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta|Find more info here}
      */
      post(body: SetAutomaticLocationPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action setAutomaticLocation
+     * Update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn't clear manual or scheduled signals.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

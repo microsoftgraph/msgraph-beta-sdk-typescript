@@ -12,7 +12,11 @@ import { ConnectivityRequestBuilderNavigationMetadata, ConnectivityRequestBuilde
 // @ts-ignore
 import { FilteringPoliciesRequestBuilderNavigationMetadata, FilteringPoliciesRequestBuilderRequestsMetadata, type FilteringPoliciesRequestBuilder } from './filteringPolicies/index.js';
 // @ts-ignore
+import { FilteringProfilesRequestBuilderNavigationMetadata, FilteringProfilesRequestBuilderRequestsMetadata, type FilteringProfilesRequestBuilder } from './filteringProfiles/index.js';
+// @ts-ignore
 import { ForwardingPoliciesRequestBuilderNavigationMetadata, ForwardingPoliciesRequestBuilderRequestsMetadata, type ForwardingPoliciesRequestBuilder } from './forwardingPolicies/index.js';
+// @ts-ignore
+import { ForwardingProfilesRequestBuilderNavigationMetadata, ForwardingProfilesRequestBuilderRequestsMetadata, type ForwardingProfilesRequestBuilder } from './forwardingProfiles/index.js';
 // @ts-ignore
 import { LogsRequestBuilderNavigationMetadata, LogsRequestBuilderRequestsMetadata, type LogsRequestBuilder } from './logs/index.js';
 // @ts-ignore
@@ -49,9 +53,17 @@ export interface NetworkAccessRequestBuilder extends BaseRequestBuilder<NetworkA
      */
     get filteringPolicies(): FilteringPoliciesRequestBuilder;
     /**
+     * Provides operations to manage the filteringProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+     */
+    get filteringProfiles(): FilteringProfilesRequestBuilder;
+    /**
      * Provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
      */
     get forwardingPolicies(): ForwardingPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+     */
+    get forwardingProfiles(): ForwardingProfilesRequestBuilder;
     /**
      * Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.
      */
@@ -153,9 +165,17 @@ export const NetworkAccessRequestBuilderNavigationMetadata: Record<Exclude<keyof
         requestsMetadata: FilteringPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: FilteringPoliciesRequestBuilderNavigationMetadata,
     },
+    filteringProfiles: {
+        requestsMetadata: FilteringProfilesRequestBuilderRequestsMetadata,
+        navigationMetadata: FilteringProfilesRequestBuilderNavigationMetadata,
+    },
     forwardingPolicies: {
         requestsMetadata: ForwardingPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: ForwardingPoliciesRequestBuilderNavigationMetadata,
+    },
+    forwardingProfiles: {
+        requestsMetadata: ForwardingProfilesRequestBuilderRequestsMetadata,
+        navigationMetadata: ForwardingProfilesRequestBuilderNavigationMetadata,
     },
     logs: {
         requestsMetadata: LogsRequestBuilderRequestsMetadata,

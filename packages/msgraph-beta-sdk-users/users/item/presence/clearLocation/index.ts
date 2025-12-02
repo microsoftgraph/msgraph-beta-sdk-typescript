@@ -11,13 +11,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ClearLocationRequestBuilder extends BaseRequestBuilder<ClearLocationRequestBuilder> {
     /**
-     * Invoke action clearLocation
+     * Clear the work location signals for a user, including both the manual and automatic layers for the current date.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action clearLocation
+     * Clear the work location signals for a user, including both the manual and automatic layers for the current date.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

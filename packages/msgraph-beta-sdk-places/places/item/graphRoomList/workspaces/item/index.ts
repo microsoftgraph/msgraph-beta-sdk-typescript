@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
 // @ts-ignore
+import { ChildrenRequestBuilderNavigationMetadata, ChildrenRequestBuilderRequestsMetadata, type ChildrenRequestBuilder } from './children/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,10 @@ export interface WorkspaceItemRequestBuilder extends BaseRequestBuilder<Workspac
      * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
      */
     get checkIns(): CheckInsRequestBuilder;
+    /**
+     * Provides operations to manage the children property of the microsoft.graph.place entity.
+     */
+    get children(): ChildrenRequestBuilder;
     /**
      * Delete navigation property workspaces for places
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -90,6 +96,10 @@ export const WorkspaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
     checkIns: {
         requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
         navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
+    children: {
+        requestsMetadata: ChildrenRequestBuilderRequestsMetadata,
+        navigationMetadata: ChildrenRequestBuilderNavigationMetadata,
     },
 };
 /**

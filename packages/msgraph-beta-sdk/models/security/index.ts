@@ -123,6 +123,25 @@ export interface AddWatermarkAction extends InformationProtectionAction, Parsabl
 }
 export interface AedAuditRecord extends AuditData, Parsable {
 }
+export interface AiAgentEvidence extends AlertEvidence, Parsable {
+    /**
+     * The unique identifier for the AI agent.
+     */
+    agentId?: string | null;
+    /**
+     * The display name for the AI agent.
+     */
+    agentName?: string | null;
+    /**
+     * Type of the platform the agent runs on. Possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.
+     */
+    hostingPlatformType?: AiAgentPlatform | null;
+    /**
+     * The instructions of the agent.
+     */
+    instructions?: string | null;
+}
+export type AiAgentPlatform = (typeof AiAgentPlatformObject)[keyof typeof AiAgentPlatformObject];
 export interface AiAppInteractionAuditRecord extends AuditData, Parsable {
 }
 export interface AipFileDeleted extends AuditData, Parsable {
@@ -1755,6 +1774,15 @@ export function createAedAuditRecordFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AiAgentEvidence}
+ */
+// @ts-ignore
+export function createAiAgentEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAiAgentEvidence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AiAppInteractionAuditRecord}
  */
 // @ts-ignore
@@ -1864,6 +1892,8 @@ export function createAlertEvidenceFromDiscriminatorValue(parseNode: ParseNode |
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.security.aiAgentEvidence":
+                    return deserializeIntoAiAgentEvidence;
                 case "#microsoft.graph.security.amazonResourceEvidence":
                     return deserializeIntoAmazonResourceEvidence;
                 case "#microsoft.graph.security.analyzedMessageEvidence":
@@ -8824,6 +8854,21 @@ export function deserializeIntoAedAuditRecord(aedAuditRecord: Partial<AedAuditRe
 }
 /**
  * The deserialization information for the current model
+ * @param AiAgentEvidence The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAiAgentEvidence(aiAgentEvidence: Partial<AiAgentEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAlertEvidence(aiAgentEvidence),
+        "agentId": n => { aiAgentEvidence.agentId = n.getStringValue(); },
+        "agentName": n => { aiAgentEvidence.agentName = n.getStringValue(); },
+        "hostingPlatformType": n => { aiAgentEvidence.hostingPlatformType = n.getEnumValue<AiAgentPlatform>(AiAgentPlatformObject); },
+        "instructions": n => { aiAgentEvidence.instructions = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param AiAppInteractionAuditRecord The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -15711,6 +15756,7 @@ export function deserializeIntoSensor(sensor: Partial<Sensor> | undefined = {}) 
         "healthStatus": n => { sensor.healthStatus = n.getEnumValue<SensorHealthStatus>(SensorHealthStatusObject); },
         "openHealthIssuesCount": n => { sensor.openHealthIssuesCount = n.getNumberValue(); },
         "sensorType": n => { sensor.sensorType = n.getEnumValue<SensorType>(SensorTypeObject); },
+        "serviceStatus": n => { sensor.serviceStatus = n.getEnumValue<ServiceStatus>(ServiceStatusObject); },
         "settings": n => { sensor.settings = n.getObjectValue<SensorSettings>(createSensorSettingsFromDiscriminatorValue); },
         "version": n => { sensor.version = n.getStringValue(); },
     }
@@ -15725,6 +15771,7 @@ export function deserializeIntoSensorCandidate(sensorCandidate: Partial<SensorCa
     return {
         ...deserializeIntoEntity(sensorCandidate),
         "computerDnsName": n => { sensorCandidate.computerDnsName = n.getStringValue(); },
+        "domainName": n => { sensorCandidate.domainName = n.getStringValue(); },
         "lastSeenDateTime": n => { sensorCandidate.lastSeenDateTime = n.getDateValue(); },
         "senseClientVersion": n => { sensorCandidate.senseClientVersion = n.getStringValue(); },
     }
@@ -18263,7 +18310,7 @@ export interface EdiscoveryExportOperation extends CaseOperation, Parsable {
      */
     exportOptions?: ExportOptions[] | null;
     /**
-     * The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.
+     * The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.
      */
     exportStructure?: ExportFileStructure | null;
     /**
@@ -21778,7 +21825,7 @@ export interface SensitivityLabel extends Entity, Parsable {
      */
     description?: string | null;
     /**
-     * Indicates whether the label has protection actions configured.
+     * Indicates whether the label has protection actions (such as encryption or do not forward) configured.
      */
     hasProtection?: boolean | null;
     /**
@@ -21846,6 +21893,10 @@ export interface Sensor extends Entity, Parsable {
      */
     sensorType?: SensorType | null;
     /**
+     * The serviceStatus property
+     */
+    serviceStatus?: ServiceStatus | null;
+    /**
      * The settings property
      */
     settings?: SensorSettings | null;
@@ -21859,6 +21910,10 @@ export interface SensorCandidate extends Entity, Parsable {
      * The DNS name of the computer associated with the sensor.
      */
     computerDnsName?: string | null;
+    /**
+     * The domain name of the sensor.
+     */
+    domainName?: string | null;
     /**
      * The date and time when the sensor was last seen.
      */
@@ -22023,6 +22078,21 @@ export function serializeAddWatermarkAction(writer: SerializationWriter, addWate
 export function serializeAedAuditRecord(writer: SerializationWriter, aedAuditRecord: Partial<AedAuditRecord> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!aedAuditRecord || isSerializingDerivedType) { return; }
     serializeAuditData(writer, aedAuditRecord, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param AiAgentEvidence The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAiAgentEvidence(writer: SerializationWriter, aiAgentEvidence: Partial<AiAgentEvidence> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aiAgentEvidence || isSerializingDerivedType) { return; }
+    serializeAlertEvidence(writer, aiAgentEvidence, isSerializingDerivedType)
+    writer.writeStringValue("agentId", aiAgentEvidence.agentId);
+    writer.writeStringValue("agentName", aiAgentEvidence.agentName);
+    writer.writeEnumValue<AiAgentPlatform>("hostingPlatformType", aiAgentEvidence.hostingPlatformType);
+    writer.writeStringValue("instructions", aiAgentEvidence.instructions);
 }
 /**
  * Serializes information the current object
@@ -22215,6 +22285,9 @@ export function serializeAlertEvidence(writer: SerializationWriter, alertEvidenc
     writer.writeEnumValue<EvidenceVerdict>("verdict", alertEvidence.verdict);
     writer.writeAdditionalData(alertEvidence.additionalData);
     switch (alertEvidence.odataType) {
+        case "#microsoft.graph.security.aiAgentEvidence":
+            serializeAiAgentEvidence(writer, alertEvidence, true);
+        break;
         case "#microsoft.graph.security.amazonResourceEvidence":
             serializeAmazonResourceEvidence(writer, alertEvidence, true);
         break;
@@ -30278,6 +30351,7 @@ export function serializeSensor(writer: SerializationWriter, sensor: Partial<Sen
     writer.writeEnumValue<SensorHealthStatus>("healthStatus", sensor.healthStatus);
     writer.writeNumberValue("openHealthIssuesCount", sensor.openHealthIssuesCount);
     writer.writeEnumValue<SensorType>("sensorType", sensor.sensorType);
+    writer.writeEnumValue<ServiceStatus>("serviceStatus", sensor.serviceStatus);
     writer.writeObjectValue<SensorSettings>("settings", sensor.settings, serializeSensorSettings);
     writer.writeStringValue("version", sensor.version);
 }
@@ -30292,6 +30366,7 @@ export function serializeSensorCandidate(writer: SerializationWriter, sensorCand
     if (!sensorCandidate || isSerializingDerivedType) { return; }
     serializeEntity(writer, sensorCandidate, isSerializingDerivedType)
     writer.writeStringValue("computerDnsName", sensorCandidate.computerDnsName);
+    writer.writeStringValue("domainName", sensorCandidate.domainName);
     writer.writeDateValue("lastSeenDateTime", sensorCandidate.lastSeenDateTime);
     writer.writeStringValue("senseClientVersion", sensorCandidate.senseClientVersion);
 }
@@ -31871,6 +31946,7 @@ export interface ServicePrincipalEvidence extends AlertEvidence, Parsable {
 }
 export type ServicePrincipalType = (typeof ServicePrincipalTypeObject)[keyof typeof ServicePrincipalTypeObject];
 export type ServiceSource = (typeof ServiceSourceObject)[keyof typeof ServiceSourceObject];
+export type ServiceStatus = (typeof ServiceStatusObject)[keyof typeof ServiceStatusObject];
 export interface SettingsContainer extends Entity, Parsable {
     /**
      * Represents automatic configuration for collection of Windows event logs as needed for Defender for Identity sensors.
@@ -33144,6 +33220,13 @@ export const AdditionalOptionsObject = {
     FriendlyName: "friendlyName",
     SplitSource: "splitSource",
     IncludeReport: "includeReport",
+} as const;
+export const AiAgentPlatformObject = {
+    Unknown: "unknown",
+    AzureAIFoundry: "azureAIFoundry",
+    CopilotStudio: "copilotStudio",
+    Copilot: "copilot",
+    UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const AlertClassificationObject = {
     Unknown: "unknown",
@@ -34434,6 +34517,15 @@ export const ServiceSourceObject = {
     MicrosoftSentinel: "microsoftSentinel",
     MicrosoftInsiderRiskManagement: "microsoftInsiderRiskManagement",
     MicrosoftThreatIntelligence: "microsoftThreatIntelligence",
+} as const;
+export const ServiceStatusObject = {
+    Stopped: "stopped",
+    Starting: "starting",
+    Running: "running",
+    Disabled: "disabled",
+    Onboarding: "onboarding",
+    Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const SourceTypeObject = {
     Mailbox: "mailbox",

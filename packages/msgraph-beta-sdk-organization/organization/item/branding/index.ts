@@ -22,6 +22,8 @@ import { SquareLogoRequestBuilderRequestsMetadata, type SquareLogoRequestBuilder
 // @ts-ignore
 import { SquareLogoDarkRequestBuilderRequestsMetadata, type SquareLogoDarkRequestBuilder } from './squareLogoDark/index.js';
 // @ts-ignore
+import { ThemesRequestBuilderNavigationMetadata, ThemesRequestBuilderRequestsMetadata, type ThemesRequestBuilder } from './themes/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -60,6 +62,10 @@ export interface BrandingRequestBuilder extends BaseRequestBuilder<BrandingReque
      * Provides operations to manage the media for the organization entity.
      */
     get squareLogoDark(): SquareLogoDarkRequestBuilder;
+    /**
+     * Provides operations to manage the themes property of the microsoft.graph.organizationalBranding entity.
+     */
+    get themes(): ThemesRequestBuilder;
     /**
      * Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -156,6 +162,10 @@ export const BrandingRequestBuilderNavigationMetadata: Record<Exclude<keyof Bran
     },
     squareLogoDark: {
         requestsMetadata: SquareLogoDarkRequestBuilderRequestsMetadata,
+    },
+    themes: {
+        requestsMetadata: ThemesRequestBuilderRequestsMetadata,
+        navigationMetadata: ThemesRequestBuilderNavigationMetadata,
     },
 };
 /**

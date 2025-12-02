@@ -22,6 +22,8 @@ import { AuthenticationStrengthPoliciesRequestBuilderNavigationMetadata, Authent
 // @ts-ignore
 import { AuthorizationPolicyRequestBuilderNavigationMetadata, AuthorizationPolicyRequestBuilderRequestsMetadata, type AuthorizationPolicyRequestBuilder } from './authorizationPolicy/index.js';
 // @ts-ignore
+import { B2bManagementPoliciesRequestBuilderNavigationMetadata, B2bManagementPoliciesRequestBuilderRequestsMetadata, type B2bManagementPoliciesRequestBuilder } from './b2bManagementPolicies/index.js';
+// @ts-ignore
 import { B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata, type B2cAuthenticationMethodsPolicyRequestBuilder } from './b2cAuthenticationMethodsPolicy/index.js';
 // @ts-ignore
 import { ClaimsMappingPoliciesRequestBuilderNavigationMetadata, ClaimsMappingPoliciesRequestBuilderRequestsMetadata, type ClaimsMappingPoliciesRequestBuilder } from './claimsMappingPolicies/index.js';
@@ -51,6 +53,8 @@ import { IdentitySecurityDefaultsEnforcementPolicyRequestBuilderRequestsMetadata
 import { MobileAppManagementPoliciesRequestBuilderNavigationMetadata, MobileAppManagementPoliciesRequestBuilderRequestsMetadata, type MobileAppManagementPoliciesRequestBuilder } from './mobileAppManagementPolicies/index.js';
 // @ts-ignore
 import { MobileDeviceManagementPoliciesRequestBuilderNavigationMetadata, MobileDeviceManagementPoliciesRequestBuilderRequestsMetadata, type MobileDeviceManagementPoliciesRequestBuilder } from './mobileDeviceManagementPolicies/index.js';
+// @ts-ignore
+import { OnPremAuthenticationPoliciesRequestBuilderNavigationMetadata, OnPremAuthenticationPoliciesRequestBuilderRequestsMetadata, type OnPremAuthenticationPoliciesRequestBuilder } from './onPremAuthenticationPolicies/index.js';
 // @ts-ignore
 import { PermissionGrantPoliciesRequestBuilderNavigationMetadata, PermissionGrantPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPoliciesRequestBuilder } from './permissionGrantPolicies/index.js';
 // @ts-ignore
@@ -104,6 +108,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
      */
     get authorizationPolicy(): AuthorizationPolicyRequestBuilder;
+    /**
+     * Provides operations to manage the b2bManagementPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get b2bManagementPolicies(): B2bManagementPoliciesRequestBuilder;
     /**
      * Provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
      */
@@ -164,6 +172,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
      */
     get mobileDeviceManagementPolicies(): MobileDeviceManagementPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the onPremAuthenticationPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get onPremAuthenticationPolicies(): OnPremAuthenticationPoliciesRequestBuilder;
     /**
      * Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
      */
@@ -278,6 +290,10 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
         requestsMetadata: AuthorizationPolicyRequestBuilderRequestsMetadata,
         navigationMetadata: AuthorizationPolicyRequestBuilderNavigationMetadata,
     },
+    b2bManagementPolicies: {
+        requestsMetadata: B2bManagementPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: B2bManagementPoliciesRequestBuilderNavigationMetadata,
+    },
     b2cAuthenticationMethodsPolicy: {
         requestsMetadata: B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata,
     },
@@ -330,6 +346,10 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
     mobileDeviceManagementPolicies: {
         requestsMetadata: MobileDeviceManagementPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: MobileDeviceManagementPoliciesRequestBuilderNavigationMetadata,
+    },
+    onPremAuthenticationPolicies: {
+        requestsMetadata: OnPremAuthenticationPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: OnPremAuthenticationPoliciesRequestBuilderNavigationMetadata,
     },
     permissionGrantPolicies: {
         requestsMetadata: PermissionGrantPoliciesRequestBuilderRequestsMetadata,
