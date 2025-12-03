@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
+import { GetOperationWithIdRequestBuilderRequestsMetadata, type GetOperationWithIdRequestBuilder } from './getOperationWithId/index.js';
+// @ts-ignore
 import { GraphBuildingRequestBuilderNavigationMetadata, GraphBuildingRequestBuilderRequestsMetadata, type GraphBuildingRequestBuilder } from './graphBuilding/index.js';
 // @ts-ignore
 import { GraphDeskRequestBuilderNavigationMetadata, GraphDeskRequestBuilderRequestsMetadata, type GraphDeskRequestBuilder } from './graphDesk/index.js';
@@ -23,6 +25,8 @@ import { GraphSectionRequestBuilderNavigationMetadata, GraphSectionRequestBuilde
 import { GraphWorkspaceRequestBuilderNavigationMetadata, GraphWorkspaceRequestBuilderRequestsMetadata, type GraphWorkspaceRequestBuilder } from './graphWorkspace/index.js';
 // @ts-ignore
 import { PlaceItemRequestBuilderNavigationMetadata, PlaceItemRequestBuilderRequestsMetadata, type PlaceItemRequestBuilder } from './item/index.js';
+// @ts-ignore
+import { ListOperationsRequestBuilderRequestsMetadata, type ListOperationsRequestBuilder } from './listOperations/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -63,11 +67,21 @@ export interface PlacesRequestBuilder extends BaseRequestBuilder<PlacesRequestBu
      */
     get graphWorkspace(): GraphWorkspaceRequestBuilder;
     /**
+     * Provides operations to call the listOperations method.
+     */
+    get listOperations(): ListOperationsRequestBuilder;
+    /**
      * Provides operations to manage the collection of place entities.
      * @param placeId The unique identifier of place
      * @returns {PlaceItemRequestBuilder}
      */
      byPlaceId(placeId: string) : PlaceItemRequestBuilder;
+    /**
+     * Provides operations to call the getOperation method.
+     * @param id Usage: id='{id}'
+     * @returns {GetOperationWithIdRequestBuilder}
+     */
+     getOperationWithId(id: string | undefined) : GetOperationWithIdRequestBuilder;
     /**
      * Create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.
      * @param body The request body
@@ -97,6 +111,10 @@ export const PlacesRequestBuilderNavigationMetadata: Record<Exclude<keyof Places
         requestsMetadata: PlaceItemRequestBuilderRequestsMetadata,
         navigationMetadata: PlaceItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["place%2Did"],
+    },
+    getOperationWithId: {
+        requestsMetadata: GetOperationWithIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["id"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
@@ -128,6 +146,9 @@ export const PlacesRequestBuilderNavigationMetadata: Record<Exclude<keyof Places
     graphWorkspace: {
         requestsMetadata: GraphWorkspaceRequestBuilderRequestsMetadata,
         navigationMetadata: GraphWorkspaceRequestBuilderNavigationMetadata,
+    },
+    listOperations: {
+        requestsMetadata: ListOperationsRequestBuilderRequestsMetadata,
     },
 };
 /**

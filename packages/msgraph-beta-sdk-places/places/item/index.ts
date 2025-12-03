@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
 // @ts-ignore
+import { ChildrenRequestBuilderNavigationMetadata, ChildrenRequestBuilderRequestsMetadata, type ChildrenRequestBuilder } from './children/index.js';
+// @ts-ignore
 import { DescendantsRequestBuilderRequestsMetadata, type DescendantsRequestBuilder } from './descendants/index.js';
 // @ts-ignore
 import { GraphBuildingRequestBuilderNavigationMetadata, GraphBuildingRequestBuilderRequestsMetadata, type GraphBuildingRequestBuilder } from './graphBuilding/index.js';
@@ -34,6 +36,10 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
      */
     get checkIns(): CheckInsRequestBuilder;
+    /**
+     * Provides operations to manage the children property of the microsoft.graph.place entity.
+     */
+    get children(): ChildrenRequestBuilder;
     /**
      * Provides operations to call the descendants method.
      */
@@ -107,6 +113,10 @@ export const PlaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Pla
     checkIns: {
         requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
         navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
+    children: {
+        requestsMetadata: ChildrenRequestBuilderRequestsMetadata,
+        navigationMetadata: ChildrenRequestBuilderNavigationMetadata,
     },
     descendants: {
         requestsMetadata: DescendantsRequestBuilderRequestsMetadata,

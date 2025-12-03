@@ -88,6 +88,8 @@ import { ExportPersonalDataRequestBuilderRequestsMetadata, type ExportPersonalDa
 // @ts-ignore
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
 // @ts-ignore
+import { FindMeetingLocationsRequestBuilderRequestsMetadata, type FindMeetingLocationsRequestBuilder } from './findMeetingLocations/index.js';
+// @ts-ignore
 import { FindMeetingTimesRequestBuilderRequestsMetadata, type FindMeetingTimesRequestBuilder } from './findMeetingTimes/index.js';
 // @ts-ignore
 import { FindRoomListsRequestBuilderRequestsMetadata, type FindRoomListsRequestBuilder } from './findRoomLists/index.js';
@@ -404,6 +406,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the extensions property of the microsoft.graph.user entity.
      */
     get extensions(): ExtensionsRequestBuilder;
+    /**
+     * Provides operations to call the findMeetingLocations method.
+     */
+    get findMeetingLocations(): FindMeetingLocationsRequestBuilder;
     /**
      * Provides operations to call the findMeetingTimes method.
      */
@@ -985,6 +991,9 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     extensions: {
         requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,
         navigationMetadata: ExtensionsRequestBuilderNavigationMetadata,
+    },
+    findMeetingLocations: {
+        requestsMetadata: FindMeetingLocationsRequestBuilderRequestsMetadata,
     },
     findMeetingTimes: {
         requestsMetadata: FindMeetingTimesRequestBuilderRequestsMetadata,

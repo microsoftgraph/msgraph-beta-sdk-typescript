@@ -10,6 +10,8 @@ import { BranchesRequestBuilderNavigationMetadata, BranchesRequestBuilderRequest
 // @ts-ignore
 import { MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder } from './microsoftGraphNetworkaccessGetWebCategoryByUrlWithUrl/index.js';
 // @ts-ignore
+import { RemoteNetworksRequestBuilderNavigationMetadata, RemoteNetworksRequestBuilderRequestsMetadata, type RemoteNetworksRequestBuilder } from './remoteNetworks/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -20,6 +22,10 @@ export interface ConnectivityRequestBuilder extends BaseRequestBuilder<Connectiv
      * Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.
      */
     get branches(): BranchesRequestBuilder;
+    /**
+     * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.
+     */
+    get remoteNetworks(): RemoteNetworksRequestBuilder;
     /**
      * Delete navigation property connectivity for networkAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -102,6 +108,10 @@ export const ConnectivityRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     branches: {
         requestsMetadata: BranchesRequestBuilderRequestsMetadata,
         navigationMetadata: BranchesRequestBuilderNavigationMetadata,
+    },
+    remoteNetworks: {
+        requestsMetadata: RemoteNetworksRequestBuilderRequestsMetadata,
+        navigationMetadata: RemoteNetworksRequestBuilderNavigationMetadata,
     },
 };
 /**

@@ -102,6 +102,7 @@ export interface ConnectionQuota extends Entity, Parsable {
     itemsRemaining?: number | null;
 }
 export type ConnectionState = (typeof ConnectionStateObject)[keyof typeof ConnectionStateObject];
+export type ContentCategory = (typeof ContentCategoryObject)[keyof typeof ContentCategoryObject];
 export type ContentExperienceType = (typeof ContentExperienceTypeObject)[keyof typeof ContentExperienceTypeObject];
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -569,6 +570,7 @@ export function deserializeIntoExternalConnection(externalConnection: Partial<Ex
         "complianceSettings": n => { externalConnection.complianceSettings = n.getObjectValue<ComplianceSettings>(createComplianceSettingsFromDiscriminatorValue); },
         "configuration": n => { externalConnection.configuration = n.getObjectValue<Configuration>(createConfigurationFromDiscriminatorValue); },
         "connectorId": n => { externalConnection.connectorId = n.getStringValue(); },
+        "contentCategory": n => { externalConnection.contentCategory = n.getEnumValue<ContentCategory>(ContentCategoryObject); },
         "description": n => { externalConnection.description = n.getStringValue(); },
         "enabledContentExperiences": n => { externalConnection.enabledContentExperiences = n.getCollectionOfEnumValues<ContentExperienceType>(ContentExperienceTypeObject); },
         "groups": n => { externalConnection.groups = n.getCollectionOfObjectValues<ExternalGroup>(createExternalGroupFromDiscriminatorValue); },
@@ -720,6 +722,7 @@ export function deserializeIntoProperty(property: Partial<Property> | undefined 
     return {
         "aliases": n => { property.aliases = n.getCollectionOfPrimitiveValues<string>(); },
         "backingStoreEnabled": n => { property.backingStoreEnabled = true; },
+        "description": n => { property.description = n.getStringValue(); },
         "isExactMatchRequired": n => { property.isExactMatchRequired = n.getBooleanValue(); },
         "isQueryable": n => { property.isQueryable = n.getBooleanValue(); },
         "isRefinable": n => { property.isRefinable = n.getBooleanValue(); },
@@ -907,6 +910,10 @@ export interface ExternalConnection extends Entity, Parsable {
      */
     connectorId?: string | null;
     /**
+     * The contentCategory property
+     */
+    contentCategory?: ContentCategory | null;
+    /**
      * Description of the connection displayed in the Microsoft 365 admin center. Optional.
      */
     description?: string | null;
@@ -1066,7 +1073,11 @@ export interface Property extends AdditionalDataHolder, BackedModel, Parsable {
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
+     * Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.
+     */
+    description?: string | null;
+    /**
+     * Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for nonsearchable properties of type string or stringCollection. Optional.
      */
     isExactMatchRequired?: boolean | null;
     /**
@@ -1082,11 +1093,11 @@ export interface Property extends AdditionalDataHolder, BackedModel, Parsable {
      */
     isRetrievable?: boolean | null;
     /**
-     * Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
+     * Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Nonsearchable properties aren't added to the search index. Optional.
      */
     isSearchable?: boolean | null;
     /**
-     * Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
+     * Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions.
      */
     labels?: Label[] | null;
     /**
@@ -1352,6 +1363,7 @@ export function serializeExternalConnection(writer: SerializationWriter, externa
     writer.writeObjectValue<ComplianceSettings>("complianceSettings", externalConnection.complianceSettings, serializeComplianceSettings);
     writer.writeObjectValue<Configuration>("configuration", externalConnection.configuration, serializeConfiguration);
     writer.writeStringValue("connectorId", externalConnection.connectorId);
+    writer.writeEnumValue<ContentCategory>("contentCategory", externalConnection.contentCategory);
     writer.writeStringValue("description", externalConnection.description);
     writer.writeEnumValue<ContentExperienceType[]>("enabledContentExperiences", externalConnection.enabledContentExperiences);
     writer.writeCollectionOfObjectValues<ExternalGroup>("groups", externalConnection.groups, serializeExternalGroup);
@@ -1501,6 +1513,7 @@ export function serializeProperties(writer: SerializationWriter, properties: Par
 export function serializeProperty(writer: SerializationWriter, property: Partial<Property> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!property || isSerializingDerivedType) { return; }
     writer.writeCollectionOfPrimitiveValues<string>("aliases", property.aliases);
+    writer.writeStringValue("description", property.description);
     writer.writeBooleanValue("isExactMatchRequired", property.isExactMatchRequired);
     writer.writeBooleanValue("isQueryable", property.isQueryable);
     writer.writeBooleanValue("isRefinable", property.isRefinable);
@@ -1660,6 +1673,23 @@ export const ConnectionStateObject = {
     LimitExceeded: "limitExceeded",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const ContentCategoryObject = {
+    Uncategorized: "uncategorized",
+    KnowledgeBase: "knowledgeBase",
+    Wikis: "wikis",
+    FileRepository: "fileRepository",
+    Qna: "qna",
+    Crm: "crm",
+    Dashboard: "dashboard",
+    People: "people",
+    Media: "media",
+    Email: "email",
+    Messaging: "messaging",
+    MeetingTranscripts: "meetingTranscripts",
+    TaskManagement: "taskManagement",
+    LearningManagement: "learningManagement",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const ContentExperienceTypeObject = {
     Search: "search",
     Compliance: "compliance",
@@ -1709,6 +1739,23 @@ export const LabelObject = {
     ContainerName: "containerName",
     ContainerUrl: "containerUrl",
     IconUrl: "iconUrl",
+    AssignedToPeople: "assignedToPeople",
+    ClosedBy: "closedBy",
+    ClosedDate: "closedDate",
+    Priority: "priority",
+    SprintName: "sprintName",
+    Tags: "tags",
+    Severity: "severity",
+    State: "state",
+    DueDate: "dueDate",
+    ItemParentId: "itemParentId",
+    ItemPath: "itemPath",
+    ItemType: "itemType",
+    NumberOfReactions: "numberOfReactions",
+    ParentUrl: "parentUrl",
+    PriorityNormalized: "priorityNormalized",
+    ReportedBy: "reportedBy",
+    SecondaryId: "secondaryId",
 } as const;
 export const PropertyTypeObject = {
     String: "string",
@@ -1721,6 +1768,7 @@ export const PropertyTypeObject = {
     DoubleCollection: "doubleCollection",
     DateTimeCollection: "dateTimeCollection",
     UnknownFutureValue: "unknownFutureValue",
+    Principal: "principal",
 } as const;
 export const RuleOperationObject = {
     NullEscaped: "null",

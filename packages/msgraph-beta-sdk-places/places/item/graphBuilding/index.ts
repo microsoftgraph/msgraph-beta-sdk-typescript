@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
 // @ts-ignore
+import { ChildrenRequestBuilderNavigationMetadata, ChildrenRequestBuilderRequestsMetadata, type ChildrenRequestBuilder } from './children/index.js';
+// @ts-ignore
 import { MapRequestBuilderNavigationMetadata, MapRequestBuilderRequestsMetadata, type MapRequestBuilder } from './map/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -20,6 +22,10 @@ export interface GraphBuildingRequestBuilder extends BaseRequestBuilder<GraphBui
      * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
      */
     get checkIns(): CheckInsRequestBuilder;
+    /**
+     * Provides operations to manage the children property of the microsoft.graph.place entity.
+     */
+    get children(): ChildrenRequestBuilder;
     /**
      * Provides operations to manage the map property of the microsoft.graph.building entity.
      */
@@ -70,6 +76,10 @@ export const GraphBuildingRequestBuilderNavigationMetadata: Record<Exclude<keyof
     checkIns: {
         requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
         navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
+    children: {
+        requestsMetadata: ChildrenRequestBuilderRequestsMetadata,
+        navigationMetadata: ChildrenRequestBuilderNavigationMetadata,
     },
     map: {
         requestsMetadata: MapRequestBuilderRequestsMetadata,

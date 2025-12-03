@@ -10,6 +10,10 @@ import { AccessReviewsRequestBuilderNavigationMetadata, AccessReviewsRequestBuil
 // @ts-ignore
 import { AppConsentRequestBuilderNavigationMetadata, AppConsentRequestBuilderRequestsMetadata, type AppConsentRequestBuilder } from './appConsent/index.js';
 // @ts-ignore
+import { CatalogsRequestBuilderNavigationMetadata, CatalogsRequestBuilderRequestsMetadata, type CatalogsRequestBuilder } from './catalogs/index.js';
+// @ts-ignore
+import { CatalogsWithUniqueNameRequestBuilderRequestsMetadata, type CatalogsWithUniqueNameRequestBuilder } from './catalogsWithUniqueName/index.js';
+// @ts-ignore
 import { EntitlementManagementRequestBuilderNavigationMetadata, EntitlementManagementRequestBuilderRequestsMetadata, type EntitlementManagementRequestBuilder } from './entitlementManagement/index.js';
 // @ts-ignore
 import { LifecycleWorkflowsRequestBuilderNavigationMetadata, LifecycleWorkflowsRequestBuilderRequestsMetadata, type LifecycleWorkflowsRequestBuilder } from './lifecycleWorkflows/index.js';
@@ -39,6 +43,10 @@ export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<Ide
      */
     get appConsent(): AppConsentRequestBuilder;
     /**
+     * Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+     */
+    get catalogs(): CatalogsRequestBuilder;
+    /**
      * Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
      */
     get entitlementManagement(): EntitlementManagementRequestBuilder;
@@ -66,6 +74,13 @@ export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<Ide
      * Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
      */
     get termsOfUse(): TermsOfUseRequestBuilder;
+    /**
+     * Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+     * @param uniqueName Alternate key of accessPackageCatalog
+     * @returns {CatalogsWithUniqueNameRequestBuilder}
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+     */
+     catalogsWithUniqueName(uniqueName: string | undefined) : CatalogsWithUniqueNameRequestBuilder;
     /**
      * Get identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -123,6 +138,10 @@ const IdentityGovernanceRequestBuilderGetQueryParametersMapper: Record<string, s
  * Metadata for all the navigation properties in the request builder.
  */
 export const IdentityGovernanceRequestBuilderNavigationMetadata: Record<Exclude<keyof IdentityGovernanceRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    catalogsWithUniqueName: {
+        requestsMetadata: CatalogsWithUniqueNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["uniqueName"],
+    },
     accessReviews: {
         requestsMetadata: AccessReviewsRequestBuilderRequestsMetadata,
         navigationMetadata: AccessReviewsRequestBuilderNavigationMetadata,
@@ -130,6 +149,10 @@ export const IdentityGovernanceRequestBuilderNavigationMetadata: Record<Exclude<
     appConsent: {
         requestsMetadata: AppConsentRequestBuilderRequestsMetadata,
         navigationMetadata: AppConsentRequestBuilderNavigationMetadata,
+    },
+    catalogs: {
+        requestsMetadata: CatalogsRequestBuilderRequestsMetadata,
+        navigationMetadata: CatalogsRequestBuilderNavigationMetadata,
     },
     entitlementManagement: {
         requestsMetadata: EntitlementManagementRequestBuilderRequestsMetadata,

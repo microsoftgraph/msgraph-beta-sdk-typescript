@@ -6,6 +6,14 @@ import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Pa
 
 export interface AgentSignIn extends AdditionalDataHolder, BackedModel, Parsable {
     /**
+     * The subject's parent object ID. This is either the id of the agentIdentity or agentIdentityBlueprint.
+     */
+    agentSubjectParentId?: string | null;
+    /**
+     * The agentSubjectType property
+     */
+    agentSubjectType?: AgentType | null;
+    /**
      * The agentType property
      */
     agentType?: AgentType | null;
@@ -40,6 +48,8 @@ export function createAgentSignInFromDiscriminatorValue(parseNode: ParseNode | u
 // @ts-ignore
 export function deserializeIntoAgentSignIn(agentSignIn: Partial<AgentSignIn> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
+        "agentSubjectParentId": n => { agentSignIn.agentSubjectParentId = n.getStringValue(); },
+        "agentSubjectType": n => { agentSignIn.agentSubjectType = n.getEnumValue<AgentType>(AgentTypeObject); },
         "agentType": n => { agentSignIn.agentType = n.getEnumValue<AgentType>(AgentTypeObject); },
         "backingStoreEnabled": n => { agentSignIn.backingStoreEnabled = true; },
         "@odata.type": n => { agentSignIn.odataType = n.getStringValue(); },
@@ -55,6 +65,8 @@ export function deserializeIntoAgentSignIn(agentSignIn: Partial<AgentSignIn> | u
 // @ts-ignore
 export function serializeAgentSignIn(writer: SerializationWriter, agentSignIn: Partial<AgentSignIn> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!agentSignIn || isSerializingDerivedType) { return; }
+    writer.writeStringValue("agentSubjectParentId", agentSignIn.agentSubjectParentId);
+    writer.writeEnumValue<AgentType>("agentSubjectType", agentSignIn.agentSubjectType);
     writer.writeEnumValue<AgentType>("agentType", agentSignIn.agentType);
     writer.writeStringValue("@odata.type", agentSignIn.odataType);
     writer.writeStringValue("parentAppId", agentSignIn.parentAppId);
@@ -62,9 +74,10 @@ export function serializeAgentSignIn(writer: SerializationWriter, agentSignIn: P
 }
 export const AgentTypeObject = {
     NotAgentic: "notAgentic",
-    AgenticAppBuilder: "agenticAppBuilder",
     AgenticApp: "agenticApp",
     AgenticAppInstance: "agenticAppInstance",
+    AgentIdentityBlueprintPrincipal: "agentIdentityBlueprintPrincipal",
+    AgentIDuser: "agentIDuser",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 /* tslint:enable */

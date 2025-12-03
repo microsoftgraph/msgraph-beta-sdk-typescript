@@ -30,9 +30,13 @@ import { AccessPackageResourcesRequestBuilderNavigationMetadata, AccessPackageRe
 // @ts-ignore
 import { AccessPackagesRequestBuilderNavigationMetadata, AccessPackagesRequestBuilderRequestsMetadata, type AccessPackagesRequestBuilder } from './accessPackages/index.js';
 // @ts-ignore
+import { AccessPackageSuggestionsRequestBuilderNavigationMetadata, AccessPackageSuggestionsRequestBuilderRequestsMetadata, type AccessPackageSuggestionsRequestBuilder } from './accessPackageSuggestions/index.js';
+// @ts-ignore
 import { AccessPackagesWithUniqueNameRequestBuilderNavigationMetadata, AccessPackagesWithUniqueNameRequestBuilderRequestsMetadata, type AccessPackagesWithUniqueNameRequestBuilder } from './accessPackagesWithUniqueName/index.js';
 // @ts-ignore
 import { AssignmentRequestsRequestBuilderNavigationMetadata, AssignmentRequestsRequestBuilderRequestsMetadata, type AssignmentRequestsRequestBuilder } from './assignmentRequests/index.js';
+// @ts-ignore
+import { AvailableAccessPackagesRequestBuilderNavigationMetadata, AvailableAccessPackagesRequestBuilderRequestsMetadata, type AvailableAccessPackagesRequestBuilder } from './availableAccessPackages/index.js';
 // @ts-ignore
 import { ConnectedOrganizationsRequestBuilderNavigationMetadata, ConnectedOrganizationsRequestBuilderRequestsMetadata, type ConnectedOrganizationsRequestBuilder } from './connectedOrganizations/index.js';
 // @ts-ignore
@@ -93,9 +97,17 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      */
     get accessPackages(): AccessPackagesRequestBuilder;
     /**
+     * Provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.
+     */
+    get accessPackageSuggestions(): AccessPackageSuggestionsRequestBuilder;
+    /**
      * Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
      */
     get assignmentRequests(): AssignmentRequestsRequestBuilder;
+    /**
+     * Provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.
+     */
+    get availableAccessPackages(): AvailableAccessPackagesRequestBuilder;
     /**
      * Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
      */
@@ -253,9 +265,17 @@ export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclu
         requestsMetadata: AccessPackagesRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackagesRequestBuilderNavigationMetadata,
     },
+    accessPackageSuggestions: {
+        requestsMetadata: AccessPackageSuggestionsRequestBuilderRequestsMetadata,
+        navigationMetadata: AccessPackageSuggestionsRequestBuilderNavigationMetadata,
+    },
     assignmentRequests: {
         requestsMetadata: AssignmentRequestsRequestBuilderRequestsMetadata,
         navigationMetadata: AssignmentRequestsRequestBuilderNavigationMetadata,
+    },
+    availableAccessPackages: {
+        requestsMetadata: AvailableAccessPackagesRequestBuilderRequestsMetadata,
+        navigationMetadata: AvailableAccessPackagesRequestBuilderNavigationMetadata,
     },
     connectedOrganizations: {
         requestsMetadata: ConnectedOrganizationsRequestBuilderRequestsMetadata,

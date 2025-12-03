@@ -34,11 +34,12 @@ export interface PermissionsRequestBuilder extends BaseRequestBuilder<Permission
      */
      get(requestConfiguration?: RequestConfiguration<PermissionsRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionCollectionResponse | undefined>;
     /**
-     * Create new navigation property to permissions for sites
+     * Create a new permission object on a list.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Permission>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/list-post-permissions?view=graph-rest-beta|Find more info here}
      */
      post(body: Permission, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Permission | undefined>;
     /**
@@ -48,7 +49,7 @@ export interface PermissionsRequestBuilder extends BaseRequestBuilder<Permission
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PermissionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to permissions for sites
+     * Create a new permission object on a list.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
