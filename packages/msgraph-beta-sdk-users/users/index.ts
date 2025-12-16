@@ -63,11 +63,11 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      */
      byUserId(userId: string) : UserItemRequestBuilder;
     /**
-     * Get a list of the agentUser objects and their properties.
+     * Retrieve a list of user objects. This API also returns agentUser objects. This operation returns by default only a subset of the more commonly used properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/agentuser-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : Promise<UserCollectionResponse | undefined>;
     /**
@@ -80,7 +80,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      */
      post(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<User | undefined>;
     /**
-     * Get a list of the agentUser objects and their properties.
+     * Retrieve a list of user objects. This API also returns agentUser objects. This operation returns by default only a subset of the more commonly used properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -94,7 +94,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      toPostRequestInformation(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the agentUser objects and their properties.
+ * Retrieve a list of user objects. This API also returns agentUser objects. This operation returns by default only a subset of the more commonly used properties for each user and agentUser. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
  */
 export interface UsersRequestBuilderGetQueryParameters {
     /**

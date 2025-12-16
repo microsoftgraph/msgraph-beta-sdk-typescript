@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface GetOperationWithIdRequestBuilder extends BaseRequestBuilder<GetOperationWithIdRequestBuilder> {
     /**
-     * Invoke function getOperation
+     * Get a placeOperation by ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlaceOperation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/place-getoperation?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlaceOperation | undefined>;
     /**
-     * Invoke function getOperation
+     * Get a placeOperation by ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

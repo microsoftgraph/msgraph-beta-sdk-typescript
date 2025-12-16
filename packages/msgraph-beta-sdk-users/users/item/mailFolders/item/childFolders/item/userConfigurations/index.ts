@@ -27,21 +27,21 @@ export interface UserConfigurationsRequestBuilder extends BaseRequestBuilder<Use
      */
      byUserConfigurationId(userConfigurationId: string) : UserConfigurationItemRequestBuilder;
     /**
-     * Get userConfigurations from users
+     * The user configuration objects associated to the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConfigurationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserConfigurationsRequestBuilderGetQueryParameters> | undefined) : Promise<UserConfigurationCollectionResponse | undefined>;
     /**
-     * Get userConfigurations from users
+     * The user configuration objects associated to the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserConfigurationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get userConfigurations from users
+ * The user configuration objects associated to the mailFolder.
  */
 export interface UserConfigurationsRequestBuilderGetQueryParameters {
     /**

@@ -40,21 +40,22 @@ export interface ListOperationsGetResponse extends BaseCollectionPaginationCount
  */
 export interface ListOperationsRequestBuilder extends BaseRequestBuilder<ListOperationsRequestBuilder> {
     /**
-     * Invoke function listOperations
+     * List all existing placeOperation objects. This API doesn't return operation details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ListOperationsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ListOperationsRequestBuilderGetQueryParameters> | undefined) : Promise<ListOperationsGetResponse | undefined>;
     /**
-     * Invoke function listOperations
+     * List all existing placeOperation objects. This API doesn't return operation details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ListOperationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Invoke function listOperations
+ * List all existing placeOperation objects. This API doesn't return operation details.
  */
 export interface ListOperationsRequestBuilderGetQueryParameters {
     /**

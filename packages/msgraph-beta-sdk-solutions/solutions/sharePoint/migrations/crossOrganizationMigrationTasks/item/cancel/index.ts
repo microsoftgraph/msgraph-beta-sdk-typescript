@@ -11,13 +11,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBuilder> {
     /**
-     * Invoke action cancel
+     * Cancel a sharePointMigrationTask that moves a specific object from a source organization to a target organization. Only cancel the sharePointMigrationTask before it starts and when reverting doesn't cause system instability.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointmigrationtask-cancel?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action cancel
+     * Cancel a sharePointMigrationTask that moves a specific object from a source organization to a target organization. Only cancel the sharePointMigrationTask before it starts and when reverting doesn't cause system instability.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

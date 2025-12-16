@@ -40,6 +40,8 @@ import { AvailableAccessPackagesRequestBuilderNavigationMetadata, AvailableAcces
 // @ts-ignore
 import { ConnectedOrganizationsRequestBuilderNavigationMetadata, ConnectedOrganizationsRequestBuilderRequestsMetadata, type ConnectedOrganizationsRequestBuilder } from './connectedOrganizations/index.js';
 // @ts-ignore
+import { ControlConfigurationsRequestBuilderNavigationMetadata, ControlConfigurationsRequestBuilderRequestsMetadata, type ControlConfigurationsRequestBuilder } from './controlConfigurations/index.js';
+// @ts-ignore
 import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { SubjectsRequestBuilderNavigationMetadata, SubjectsRequestBuilderRequestsMetadata, type SubjectsRequestBuilder } from './subjects/index.js';
@@ -112,6 +114,10 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
      */
     get connectedOrganizations(): ConnectedOrganizationsRequestBuilder;
+    /**
+     * Provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
+     */
+    get controlConfigurations(): ControlConfigurationsRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
      */
@@ -280,6 +286,10 @@ export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclu
     connectedOrganizations: {
         requestsMetadata: ConnectedOrganizationsRequestBuilderRequestsMetadata,
         navigationMetadata: ConnectedOrganizationsRequestBuilderNavigationMetadata,
+    },
+    controlConfigurations: {
+        requestsMetadata: ControlConfigurationsRequestBuilderRequestsMetadata,
+        navigationMetadata: ControlConfigurationsRequestBuilderNavigationMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,

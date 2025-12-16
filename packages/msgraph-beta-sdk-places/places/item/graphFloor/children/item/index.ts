@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemRequestBuilder> {
     /**
-     * Get children from places
+     * A collection of children places that is only used in the Upsert places API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Place>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PlaceItemRequestBuilderGetQueryParameters> | undefined) : Promise<Place | undefined>;
     /**
-     * Get children from places
+     * A collection of children places that is only used in the Upsert places API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlaceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get children from places
+ * A collection of children places that is only used in the Upsert places API.
  */
 export interface PlaceItemRequestBuilderGetQueryParameters {
     /**
