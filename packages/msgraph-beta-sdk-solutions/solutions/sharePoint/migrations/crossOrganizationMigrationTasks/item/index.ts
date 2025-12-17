@@ -25,10 +25,11 @@ export interface SharePointMigrationTaskItemRequestBuilder extends BaseRequestBu
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get crossOrganizationMigrationTasks from solutions
+     * Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointMigrationTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointmigrationtask-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SharePointMigrationTaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointMigrationTask | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface SharePointMigrationTaskItemRequestBuilder extends BaseRequestBu
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get crossOrganizationMigrationTasks from solutions
+     * Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +61,7 @@ export interface SharePointMigrationTaskItemRequestBuilder extends BaseRequestBu
      toPatchRequestInformation(body: SharePointMigrationTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get crossOrganizationMigrationTasks from solutions
+ * Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
  */
 export interface SharePointMigrationTaskItemRequestBuilderGetQueryParameters {
     /**

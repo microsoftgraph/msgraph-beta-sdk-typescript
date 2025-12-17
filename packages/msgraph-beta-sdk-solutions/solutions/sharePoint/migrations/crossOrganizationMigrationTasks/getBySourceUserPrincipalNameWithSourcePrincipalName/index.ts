@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder extends BaseRequestBuilder<GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder> {
     /**
-     * Invoke function getBySourceUserPrincipalName
+     * Get a sharePointMigrationTask that was previously created for a user, using the source userPrincipalName. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointMigrationTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointmigrationtask-getbysourceuserprincipalname?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointMigrationTask | undefined>;
     /**
-     * Invoke function getBySourceUserPrincipalName
+     * Get a sharePointMigrationTask that was previously created for a user, using the source userPrincipalName. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

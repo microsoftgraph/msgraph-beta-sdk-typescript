@@ -16,7 +16,7 @@ import { SensorCandidatesRequestBuilderNavigationMetadata, SensorCandidatesReque
 // @ts-ignore
 import { SensorsRequestBuilderNavigationMetadata, SensorsRequestBuilderRequestsMetadata, type SensorsRequestBuilder } from './sensors/index.js';
 // @ts-ignore
-import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
+import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -138,7 +138,6 @@ export const IdentitiesRequestBuilderNavigationMetadata: Record<Exclude<keyof Id
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,
-        navigationMetadata: SettingsRequestBuilderNavigationMetadata,
     },
 };
 /**

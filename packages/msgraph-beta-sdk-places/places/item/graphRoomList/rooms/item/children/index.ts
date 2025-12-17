@@ -27,21 +27,21 @@ export interface ChildrenRequestBuilder extends BaseRequestBuilder<ChildrenReque
      */
      byPlaceId1(placeId1: string) : PlaceItemRequestBuilder;
     /**
-     * Get children from places
+     * A collection of children places that is only used in the Upsert places API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlaceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ChildrenRequestBuilderGetQueryParameters> | undefined) : Promise<PlaceCollectionResponse | undefined>;
     /**
-     * Get children from places
+     * A collection of children places that is only used in the Upsert places API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ChildrenRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get children from places
+ * A collection of children places that is only used in the Upsert places API.
  */
 export interface ChildrenRequestBuilderGetQueryParameters {
     /**

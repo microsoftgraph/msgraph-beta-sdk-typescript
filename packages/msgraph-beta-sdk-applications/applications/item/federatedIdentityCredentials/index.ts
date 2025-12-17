@@ -27,30 +27,30 @@ export interface FederatedIdentityCredentialsRequestBuilder extends BaseRequestB
      */
      byFederatedIdentityCredentialId(federatedIdentityCredentialId: string) : FederatedIdentityCredentialItemRequestBuilder;
     /**
-     * Get a list of the federatedIdentityCredential objects and their properties.
+     * Get a list of the federatedIdentityCredential objects and their properties assigned to an application or an agentIdentityBlueprint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedIdentityCredentialCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/federatedidentitycredential-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FederatedIdentityCredentialsRequestBuilderGetQueryParameters> | undefined) : Promise<FederatedIdentityCredentialCollectionResponse | undefined>;
     /**
-     * Create a new federatedIdentityCredential object for an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra agent identity blueprint registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an agentIdentityBlueprint.
+     * Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra application registration or agent identity blueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agent identity blueprint.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedIdentityCredential>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/agentidentityblueprint-post-federatedidentitycredentials?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/federatedidentitycredential-post?view=graph-rest-beta|Find more info here}
      */
      post(body: FederatedIdentityCredential, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FederatedIdentityCredential | undefined>;
     /**
-     * Get a list of the federatedIdentityCredential objects and their properties.
+     * Get a list of the federatedIdentityCredential objects and their properties assigned to an application or an agentIdentityBlueprint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FederatedIdentityCredentialsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new federatedIdentityCredential object for an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra agent identity blueprint registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an agentIdentityBlueprint.
+     * Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint. By configuring a trust relationship between your Microsoft Entra application registration or agent identity blueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agent identity blueprint.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface FederatedIdentityCredentialsRequestBuilder extends BaseRequestB
      toPostRequestInformation(body: FederatedIdentityCredential, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the federatedIdentityCredential objects and their properties.
+ * Get a list of the federatedIdentityCredential objects and their properties assigned to an application or an agentIdentityBlueprint.
  */
 export interface FederatedIdentityCredentialsRequestBuilderGetQueryParameters {
     /**

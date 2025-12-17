@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface FederatedIdentityCredentialsWithNameRequestBuilder extends BaseRequestBuilder<FederatedIdentityCredentialsWithNameRequestBuilder> {
     /**
-     * Deletes a federatedIdentityCredential object from an application.
+     * Delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a federatedIdentityCredential object.
+     * Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedIdentityCredential>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -28,7 +28,7 @@ export interface FederatedIdentityCredentialsWithNameRequestBuilder extends Base
      */
      get(requestConfiguration?: RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters> | undefined) : Promise<FederatedIdentityCredential | undefined>;
     /**
-     * Create a new federatedIdentityCredential object for an application if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+     * Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FederatedIdentityCredential>}
@@ -37,19 +37,19 @@ export interface FederatedIdentityCredentialsWithNameRequestBuilder extends Base
      */
      patch(body: FederatedIdentityCredential, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<FederatedIdentityCredential | undefined>;
     /**
-     * Deletes a federatedIdentityCredential object from an application.
+     * Delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a federatedIdentityCredential object.
+     * Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new federatedIdentityCredential object for an application if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+     * Create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -57,7 +57,7 @@ export interface FederatedIdentityCredentialsWithNameRequestBuilder extends Base
      toPatchRequestInformation(body: FederatedIdentityCredential, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a federatedIdentityCredential object.
+ * Read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
  */
 export interface FederatedIdentityCredentialsWithNameRequestBuilderGetQueryParameters {
     /**

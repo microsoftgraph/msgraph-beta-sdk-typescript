@@ -6,18 +6,12 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createSettingsContainerFromDiscriminatorValue, serializeSettingsContainer, type SettingsContainer } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
-import { AutoAuditingConfigurationRequestBuilderRequestsMetadata, type AutoAuditingConfigurationRequestBuilder } from './autoAuditingConfiguration/index.js';
-// @ts-ignore
-import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.
  */
 export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsRequestBuilder> {
-    /**
-     * Provides operations to manage the autoAuditingConfiguration property of the microsoft.graph.security.settingsContainer entity.
-     */
-    get autoAuditingConfiguration(): AutoAuditingConfigurationRequestBuilder;
     /**
      * Delete navigation property settings for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -82,14 +76,6 @@ export const SettingsRequestBuilderUriTemplate = "{+baseurl}/security/identities
 const SettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
-};
-/**
- * Metadata for all the navigation properties in the request builder.
- */
-export const SettingsRequestBuilderNavigationMetadata: Record<Exclude<keyof SettingsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
-    autoAuditingConfiguration: {
-        requestsMetadata: AutoAuditingConfigurationRequestBuilderRequestsMetadata,
-    },
 };
 /**
  * Metadata for all the requests in the request builder.

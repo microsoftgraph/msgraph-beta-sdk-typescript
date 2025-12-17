@@ -35,11 +35,12 @@ export interface CertificateBasedApplicationConfigurationsRequestBuilder extends
      */
      get(requestConfiguration?: RequestConfiguration<CertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters> | undefined) : Promise<CertificateBasedApplicationConfigurationCollectionResponse | undefined>;
     /**
-     * Create new navigation property to certificateBasedApplicationConfigurations for directory
+     * Create a new certificateBasedApplicationConfiguration  object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CertificateBasedApplicationConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/certificateauthoritypath-post-certificatebasedapplicationconfigurations?view=graph-rest-beta|Find more info here}
      */
      post(body: CertificateBasedApplicationConfiguration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CertificateBasedApplicationConfiguration | undefined>;
     /**
@@ -49,7 +50,7 @@ export interface CertificateBasedApplicationConfigurationsRequestBuilder extends
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to certificateBasedApplicationConfigurations for directory
+     * Create a new certificateBasedApplicationConfiguration  object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

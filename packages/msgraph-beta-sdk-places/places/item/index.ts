@@ -80,12 +80,12 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
+     * Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Place>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/place-patch-places?view=graph-rest-beta|Find more info here}
      */
      patch(body: Place, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Place | undefined>;
     /**
@@ -95,7 +95,7 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
+     * Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
