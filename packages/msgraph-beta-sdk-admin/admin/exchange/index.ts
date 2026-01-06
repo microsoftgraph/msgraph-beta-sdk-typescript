@@ -10,6 +10,8 @@ import { MailboxesRequestBuilderNavigationMetadata, MailboxesRequestBuilderReque
 // @ts-ignore
 import { MessageTracesRequestBuilderNavigationMetadata, MessageTracesRequestBuilderRequestsMetadata, type MessageTracesRequestBuilder } from './messageTraces/index.js';
 // @ts-ignore
+import { TracingRequestBuilderNavigationMetadata, TracingRequestBuilderRequestsMetadata, type TracingRequestBuilder } from './tracing/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -26,6 +28,11 @@ export interface ExchangeRequestBuilder extends BaseRequestBuilder<ExchangeReque
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get messageTraces(): MessageTracesRequestBuilder;
+    /**
+     * Provides operations to manage the tracing property of the microsoft.graph.exchangeAdmin entity.
+     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
+     */
+    get tracing(): TracingRequestBuilder;
     /**
      * Delete navigation property exchange for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -108,6 +115,10 @@ export const ExchangeRequestBuilderNavigationMetadata: Record<Exclude<keyof Exch
     messageTraces: {
         requestsMetadata: MessageTracesRequestBuilderRequestsMetadata,
         navigationMetadata: MessageTracesRequestBuilderNavigationMetadata,
+    },
+    tracing: {
+        requestsMetadata: TracingRequestBuilderRequestsMetadata,
+        navigationMetadata: TracingRequestBuilderNavigationMetadata,
     },
 };
 /**

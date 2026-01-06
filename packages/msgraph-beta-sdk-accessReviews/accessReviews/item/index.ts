@@ -76,7 +76,7 @@ export interface AccessReviewItemRequestBuilder extends BaseRequestBuilder<Acces
      */
      get(requestConfiguration?: RequestConfiguration<AccessReviewItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReview | undefined>;
     /**
-     * In the Microsoft Entra access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
+     * In the Microsoft Entra access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review. To change the reviewers, use the addReviewer or removeReviewer APIs. To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReview>}
@@ -97,7 +97,7 @@ export interface AccessReviewItemRequestBuilder extends BaseRequestBuilder<Acces
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessReviewItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * In the Microsoft Entra access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
+     * In the Microsoft Entra access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review. To change the reviewers, use the addReviewer or removeReviewer APIs. To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -19,7 +19,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Represents a container for security identities settings APIs.
+     * Get settings from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SettingsContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Represents a container for security identities settings APIs.
+     * Get settings from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      toPatchRequestInformation(body: SettingsContainer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents a container for security identities settings APIs.
+ * Get settings from security
  */
 export interface SettingsRequestBuilderGetQueryParameters {
     /**

@@ -33,6 +33,16 @@ export interface Account extends AdditionalDataHolder, BackedModel, Parsable {
 export type Action = (typeof ActionObject)[keyof typeof ActionObject];
 export type ActionAfterRetentionPeriod = (typeof ActionAfterRetentionPeriodObject)[keyof typeof ActionAfterRetentionPeriodObject];
 export type ActionSource = (typeof ActionSourceObject)[keyof typeof ActionSourceObject];
+export interface ActiveDirectoryDomainEvidence extends AlertEvidence, Parsable {
+    /**
+     * The activeDirectoryDomainName property
+     */
+    activeDirectoryDomainName?: string | null;
+    /**
+     * The trustedDomains property
+     */
+    trustedDomains?: ActiveDirectoryDomainEvidence[] | null;
+}
 export interface AddContentFooterAction extends InformationProtectionAction, Parsable {
     /**
      * The alignment property
@@ -1732,6 +1742,15 @@ export function createAccountFromDiscriminatorValue(parseNode: ParseNode | undef
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ActiveDirectoryDomainEvidence}
+ */
+// @ts-ignore
+export function createActiveDirectoryDomainEvidenceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoActiveDirectoryDomainEvidence;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AddContentFooterAction}
  */
 // @ts-ignore
@@ -1886,6 +1905,8 @@ export function createAlertEvidenceFromDiscriminatorValue(parseNode: ParseNode |
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.security.activeDirectoryDomainEvidence":
+                    return deserializeIntoActiveDirectoryDomainEvidence;
                 case "#microsoft.graph.security.aiAgentEvidence":
                     return deserializeIntoAiAgentEvidence;
                 case "#microsoft.graph.security.amazonResourceEvidence":
@@ -8775,6 +8796,19 @@ export function deserializeIntoAccount(account: Partial<Account> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param ActiveDirectoryDomainEvidence The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoActiveDirectoryDomainEvidence(activeDirectoryDomainEvidence: Partial<ActiveDirectoryDomainEvidence> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoAlertEvidence(activeDirectoryDomainEvidence),
+        "activeDirectoryDomainName": n => { activeDirectoryDomainEvidence.activeDirectoryDomainName = n.getStringValue(); },
+        "trustedDomains": n => { activeDirectoryDomainEvidence.trustedDomains = n.getCollectionOfObjectValues<ActiveDirectoryDomainEvidence>(createActiveDirectoryDomainEvidenceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param AddContentFooterAction The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -10845,6 +10879,7 @@ export function deserializeIntoDeviceEvidence(deviceEvidence: Partial<DeviceEvid
         "osPlatform": n => { deviceEvidence.osPlatform = n.getStringValue(); },
         "rbacGroupId": n => { deviceEvidence.rbacGroupId = n.getNumberValue(); },
         "rbacGroupName": n => { deviceEvidence.rbacGroupName = n.getStringValue(); },
+        "resourceAccessEvents": n => { deviceEvidence.resourceAccessEvents = n.getCollectionOfObjectValues<ResourceAccessEvent>(createResourceAccessEventFromDiscriminatorValue); },
         "riskScore": n => { deviceEvidence.riskScore = n.getEnumValue<DeviceRiskScore>(DeviceRiskScoreObject); },
         "version": n => { deviceEvidence.version = n.getStringValue(); },
         "vmMetadata": n => { deviceEvidence.vmMetadata = n.getObjectValue<VmMetadata>(createVmMetadataFromDiscriminatorValue); },
@@ -17447,7 +17482,7 @@ export interface DeviceEvidence extends AlertEvidence, Parsable {
      */
     azureAdDeviceId?: string | null;
     /**
-     * State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
+     * State of the Defender anti-malware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
      */
     defenderAvStatus?: DefenderAvStatus | null;
     /**
@@ -17514,6 +17549,10 @@ export interface DeviceEvidence extends AlertEvidence, Parsable {
      * The name of the role-based access control device group.
      */
     rbacGroupName?: string | null;
+    /**
+     * Information on resource access attempts made by the user account.
+     */
+    resourceAccessEvents?: ResourceAccessEvent[] | null;
     /**
      * Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
      */
@@ -19775,7 +19814,7 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     sensorCandidateActivationConfiguration?: SensorCandidateActivationConfiguration | null;
     /**
-     * Represents Microsoft Defender for Identity sensors that are ready to be activated.
+     * The sensorCandidates property
      */
     sensorCandidates?: SensorCandidate[] | null;
     /**
@@ -19783,7 +19822,7 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     sensors?: Sensor[] | null;
     /**
-     * Represents a container for security identities settings APIs.
+     * The settings property
      */
     settings?: SettingsContainer | null;
 }
@@ -20606,27 +20645,27 @@ export interface M365DAADAuditRecord extends AuditData, Parsable {
 export type MailboxAssetIdentifier = (typeof MailboxAssetIdentifierObject)[keyof typeof MailboxAssetIdentifierObject];
 export interface MailboxConfigurationEvidence extends AlertEvidence, Parsable {
     /**
-     * The configurationId property
+     * The unique identifier of the mailbox configuration.
      */
     configurationId?: string | null;
     /**
-     * The configurationType property
+     * The type of mailbox configuration. The possible values are: mailForwardingRule, owaSettings, ewsSettings, mailDelegation, userInboxRule, unknownFutureValue.
      */
     configurationType?: MailboxConfigurationType | null;
     /**
-     * The displayName property
+     * The display name of the mailbox.
      */
     displayName?: string | null;
     /**
-     * The externalDirectoryObjectId property
+     * The external directory object identifier of the mailbox.
      */
     externalDirectoryObjectId?: Guid | null;
     /**
-     * The mailboxPrimaryAddress property
+     * The primary email address of the mailbox.
      */
     mailboxPrimaryAddress?: string | null;
     /**
-     * The upn property
+     * The user principal name (UPN) of the mailbox.
      */
     upn?: string | null;
 }
@@ -21989,6 +22028,19 @@ export function serializeAccount(writer: SerializationWriter, account: Partial<A
 }
 /**
  * Serializes information the current object
+ * @param ActiveDirectoryDomainEvidence The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeActiveDirectoryDomainEvidence(writer: SerializationWriter, activeDirectoryDomainEvidence: Partial<ActiveDirectoryDomainEvidence> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!activeDirectoryDomainEvidence || isSerializingDerivedType) { return; }
+    serializeAlertEvidence(writer, activeDirectoryDomainEvidence, isSerializingDerivedType)
+    writer.writeStringValue("activeDirectoryDomainName", activeDirectoryDomainEvidence.activeDirectoryDomainName);
+    writer.writeCollectionOfObjectValues<ActiveDirectoryDomainEvidence>("trustedDomains", activeDirectoryDomainEvidence.trustedDomains, serializeActiveDirectoryDomainEvidence);
+}
+/**
+ * Serializes information the current object
  * @param AddContentFooterAction The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -22257,6 +22309,9 @@ export function serializeAlertEvidence(writer: SerializationWriter, alertEvidenc
     writer.writeEnumValue<EvidenceVerdict>("verdict", alertEvidence.verdict);
     writer.writeAdditionalData(alertEvidence.additionalData);
     switch (alertEvidence.odataType) {
+        case "#microsoft.graph.security.activeDirectoryDomainEvidence":
+            serializeActiveDirectoryDomainEvidence(writer, alertEvidence, true);
+        break;
         case "#microsoft.graph.security.aiAgentEvidence":
             serializeAiAgentEvidence(writer, alertEvidence, true);
         break;
@@ -25116,6 +25171,7 @@ export function serializeDeviceEvidence(writer: SerializationWriter, deviceEvide
     writer.writeStringValue("osPlatform", deviceEvidence.osPlatform);
     writer.writeNumberValue("rbacGroupId", deviceEvidence.rbacGroupId);
     writer.writeStringValue("rbacGroupName", deviceEvidence.rbacGroupName);
+    writer.writeCollectionOfObjectValues<ResourceAccessEvent>("resourceAccessEvents", deviceEvidence.resourceAccessEvents, serializeResourceAccessEvent);
     writer.writeEnumValue<DeviceRiskScore>("riskScore", deviceEvidence.riskScore);
     writer.writeStringValue("version", deviceEvidence.version);
     writer.writeObjectValue<VmMetadata>("vmMetadata", deviceEvidence.vmMetadata, serializeVmMetadata);

@@ -19,7 +19,7 @@ export interface SensorCandidateItemRequestBuilder extends BaseRequestBuilder<Se
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Represents Microsoft Defender for Identity sensors that are ready to be activated.
+     * Get sensorCandidates from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensorCandidate>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface SensorCandidateItemRequestBuilder extends BaseRequestBuilder<Se
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Represents Microsoft Defender for Identity sensors that are ready to be activated.
+     * Get sensorCandidates from security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface SensorCandidateItemRequestBuilder extends BaseRequestBuilder<Se
      toPatchRequestInformation(body: SensorCandidate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents Microsoft Defender for Identity sensors that are ready to be activated.
+ * Get sensorCandidates from security
  */
 export interface SensorCandidateItemRequestBuilderGetQueryParameters {
     /**

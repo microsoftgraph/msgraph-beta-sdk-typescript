@@ -11,13 +11,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RetryRequestBuilder extends BaseRequestBuilder<RetryRequestBuilder> {
     /**
-     * Invoke action retry
+     * Retry the provisioning operation for Cloud PCs that used the current frontline shared policy and failed to apply the provisioning policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retry?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action retry
+     * Retry the provisioning operation for Cloud PCs that used the current frontline shared policy and failed to apply the provisioning policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
