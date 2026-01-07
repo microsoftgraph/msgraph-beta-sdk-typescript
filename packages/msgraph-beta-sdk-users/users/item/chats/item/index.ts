@@ -32,6 +32,8 @@ import { RemoveAllAccessForUserRequestBuilderRequestsMetadata, type RemoveAllAcc
 // @ts-ignore
 import { SendActivityNotificationRequestBuilderRequestsMetadata, type SendActivityNotificationRequestBuilder } from './sendActivityNotification/index.js';
 // @ts-ignore
+import { StartMigrationRequestBuilderRequestsMetadata, type StartMigrationRequestBuilder } from './startMigration/index.js';
+// @ts-ignore
 import { TabsRequestBuilderNavigationMetadata, TabsRequestBuilderRequestsMetadata, type TabsRequestBuilder } from './tabs/index.js';
 // @ts-ignore
 import { type UnhideForUserRequestBuilder, UnhideForUserRequestBuilderRequestsMetadata } from './unhideForUser/index.js';
@@ -94,6 +96,10 @@ export interface ChatItemRequestBuilder extends BaseRequestBuilder<ChatItemReque
      * Provides operations to call the sendActivityNotification method.
      */
     get sendActivityNotification(): SendActivityNotificationRequestBuilder;
+    /**
+     * Provides operations to call the startMigration method.
+     */
+    get startMigration(): StartMigrationRequestBuilder;
     /**
      * Provides operations to manage the tabs property of the microsoft.graph.chat entity.
      */
@@ -216,6 +222,9 @@ export const ChatItemRequestBuilderNavigationMetadata: Record<Exclude<keyof Chat
     },
     sendActivityNotification: {
         requestsMetadata: SendActivityNotificationRequestBuilderRequestsMetadata,
+    },
+    startMigration: {
+        requestsMetadata: StartMigrationRequestBuilderRequestsMetadata,
     },
     tabs: {
         requestsMetadata: TabsRequestBuilderRequestsMetadata,

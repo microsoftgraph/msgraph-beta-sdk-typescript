@@ -30,6 +30,8 @@ import { RemoveEmailRequestBuilderRequestsMetadata, type RemoveEmailRequestBuild
 // @ts-ignore
 import { SharedWithTeamsRequestBuilderNavigationMetadata, SharedWithTeamsRequestBuilderRequestsMetadata, type SharedWithTeamsRequestBuilder } from './sharedWithTeams/index.js';
 // @ts-ignore
+import { StartMigrationRequestBuilderRequestsMetadata, type StartMigrationRequestBuilder } from './startMigration/index.js';
+// @ts-ignore
 import { TabsRequestBuilderNavigationMetadata, TabsRequestBuilderRequestsMetadata, type TabsRequestBuilder } from './tabs/index.js';
 // @ts-ignore
 import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/index.js';
@@ -88,6 +90,10 @@ export interface PrimaryChannelRequestBuilder extends BaseRequestBuilder<Primary
      * Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
      */
     get sharedWithTeams(): SharedWithTeamsRequestBuilder;
+    /**
+     * Provides operations to call the startMigration method.
+     */
+    get startMigration(): StartMigrationRequestBuilder;
     /**
      * Provides operations to manage the tabs property of the microsoft.graph.channel entity.
      */
@@ -207,6 +213,9 @@ export const PrimaryChannelRequestBuilderNavigationMetadata: Record<Exclude<keyo
     sharedWithTeams: {
         requestsMetadata: SharedWithTeamsRequestBuilderRequestsMetadata,
         navigationMetadata: SharedWithTeamsRequestBuilderNavigationMetadata,
+    },
+    startMigration: {
+        requestsMetadata: StartMigrationRequestBuilderRequestsMetadata,
     },
     tabs: {
         requestsMetadata: TabsRequestBuilderRequestsMetadata,

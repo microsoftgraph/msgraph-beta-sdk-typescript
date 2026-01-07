@@ -19,18 +19,20 @@ export interface CustomBlockPageRequestBuilder extends BaseRequestBuilder<Custom
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get customBlockPage from networkAccess
+     * Read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomBlockPage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-customblockpage-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomBlockPageRequestBuilderGetQueryParameters> | undefined) : Promise<CustomBlockPage | undefined>;
     /**
-     * Update the navigation property customBlockPage in networkAccess
+     * Update the properties of a customBlockPage object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomBlockPage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-customblockpage-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomBlockPage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomBlockPage | undefined>;
     /**
@@ -40,13 +42,13 @@ export interface CustomBlockPageRequestBuilder extends BaseRequestBuilder<Custom
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get customBlockPage from networkAccess
+     * Read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomBlockPageRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property customBlockPage in networkAccess
+     * Update the properties of a customBlockPage object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +56,7 @@ export interface CustomBlockPageRequestBuilder extends BaseRequestBuilder<Custom
      toPatchRequestInformation(body: CustomBlockPage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get customBlockPage from networkAccess
+ * Read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
  */
 export interface CustomBlockPageRequestBuilderGetQueryParameters {
     /**

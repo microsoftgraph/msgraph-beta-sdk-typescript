@@ -62,7 +62,7 @@ export interface SetManualLocationPostRequestBody extends AdditionalDataHolder, 
  */
 export interface SetManualLocationRequestBuilder extends BaseRequestBuilder<SetManualLocationRequestBuilder> {
     /**
-     * Set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+     * Set the manual work location signal for a user. The explicit value chosen by a user or an authorized client overrides any automatically detected or scheduled working hours and location.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -70,7 +70,7 @@ export interface SetManualLocationRequestBuilder extends BaseRequestBuilder<SetM
      */
      post(body: SetManualLocationPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+     * Set the manual work location signal for a user. The explicit value chosen by a user or an authorized client overrides any automatically detected or scheduled working hours and location.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -826,7 +826,7 @@ export interface TeamsPolicyUserAssignmentCollectionResponse extends BaseCollect
 }
 export interface TeamsUserConfiguration extends Entity, Parsable {
     /**
-     * The type of the account in the Teams context. The possible values are: user, resourceAccount, guest, sfbOnPremUser, unknown, unknownFutureValue, ineligibleUser. Use the Prefer: include-unknown-enum-members request header to get the following value from this enum evolvable enum: ineligibleUser.
+     * The accountType property
      */
     accountType?: AccountType | null;
     /**
