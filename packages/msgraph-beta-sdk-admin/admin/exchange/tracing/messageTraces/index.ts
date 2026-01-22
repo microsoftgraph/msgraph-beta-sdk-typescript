@@ -29,11 +29,12 @@ export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageT
      */
      byExchangeMessageTraceId(exchangeMessageTraceId: string) : ExchangeMessageTraceItemRequestBuilder;
     /**
-     * Get messageTraces from admin
+     * Get a list of exchangeMessageTrace objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeMessageTraceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
+     * @see {@link https://learn.microsoft.com/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MessageTracesRequestBuilderGetQueryParameters> | undefined) : Promise<ExchangeMessageTraceCollectionResponse | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageT
      */
      post(body: ExchangeMessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExchangeMessageTrace | undefined>;
     /**
-     * Get messageTraces from admin
+     * Get a list of exchangeMessageTrace objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
@@ -62,7 +63,7 @@ export interface MessageTracesRequestBuilder extends BaseRequestBuilder<MessageT
      toPostRequestInformation(body: ExchangeMessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get messageTraces from admin
+ * Get a list of exchangeMessageTrace objects.
  */
 export interface MessageTracesRequestBuilderGetQueryParameters {
     /**

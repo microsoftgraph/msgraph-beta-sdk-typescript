@@ -40,15 +40,16 @@ export interface GetDetailsByRecipientWithRecipientAddressGetResponse extends Ba
  */
 export interface GetDetailsByRecipientWithRecipientAddressRequestBuilder extends BaseRequestBuilder<GetDetailsByRecipientWithRecipientAddressRequestBuilder> {
     /**
-     * Invoke function getDetailsByRecipient
+     * Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetDetailsByRecipientWithRecipientAddressGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
+     * @see {@link https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters> | undefined) : Promise<GetDetailsByRecipientWithRecipientAddressGetResponse | undefined>;
     /**
-     * Invoke function getDetailsByRecipient
+     * Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
@@ -56,7 +57,7 @@ export interface GetDetailsByRecipientWithRecipientAddressRequestBuilder extends
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Invoke function getDetailsByRecipient
+ * Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
  */
 export interface GetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters {
     /**

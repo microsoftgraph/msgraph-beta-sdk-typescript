@@ -1788,6 +1788,7 @@ export const PropertyTypeObject = {
     DateTimeCollection: "dateTimeCollection",
     UnknownFutureValue: "unknownFutureValue",
     Principal: "principal",
+    PrincipalCollection: "principalCollection",
 } as const;
 export const RuleOperationObject = {
     NullEscaped: "null",

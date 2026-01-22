@@ -10,6 +10,8 @@ import { AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata, type Ac
 // @ts-ignore
 import { AccessPackageResourceRolesRequestBuilderNavigationMetadata, AccessPackageResourceRolesRequestBuilderRequestsMetadata, type AccessPackageResourceRolesRequestBuilder } from './accessPackageResourceRoles/index.js';
 // @ts-ignore
+import { ExternalOriginResourceConnectorRequestBuilderRequestsMetadata, type ExternalOriginResourceConnectorRequestBuilder } from './externalOriginResourceConnector/index.js';
+// @ts-ignore
 import { RefreshRequestBuilderRequestsMetadata, type RefreshRequestBuilder } from './refresh/index.js';
 // @ts-ignore
 import { type UploadSessionsRequestBuilder, UploadSessionsRequestBuilderNavigationMetadata, UploadSessionsRequestBuilderRequestsMetadata } from './uploadSessions/index.js';
@@ -28,6 +30,10 @@ export interface AccessPackageResourceRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the accessPackageResourceRoles property of the microsoft.graph.accessPackageResource entity.
      */
     get accessPackageResourceRoles(): AccessPackageResourceRolesRequestBuilder;
+    /**
+     * Provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+     */
+    get externalOriginResourceConnector(): ExternalOriginResourceConnectorRequestBuilder;
     /**
      * Provides operations to call the refresh method.
      */
@@ -111,6 +117,9 @@ export const AccessPackageResourceRequestBuilderNavigationMetadata: Record<Exclu
     accessPackageResourceRoles: {
         requestsMetadata: AccessPackageResourceRolesRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackageResourceRolesRequestBuilderNavigationMetadata,
+    },
+    externalOriginResourceConnector: {
+        requestsMetadata: ExternalOriginResourceConnectorRequestBuilderRequestsMetadata,
     },
     refresh: {
         requestsMetadata: RefreshRequestBuilderRequestsMetadata,

@@ -27,21 +27,21 @@ export interface EnabledAppsRequestBuilder extends BaseRequestBuilder<EnabledApp
      */
      byTeamsAppId(teamsAppId: string) : TeamsAppItemRequestBuilder;
     /**
-     * Get enabledApps from teams
+     * A collection of enabled apps in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<EnabledAppsRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsAppCollectionResponse | undefined>;
     /**
-     * Get enabledApps from teams
+     * A collection of enabled apps in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EnabledAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get enabledApps from teams
+ * A collection of enabled apps in the channel.
  */
 export interface EnabledAppsRequestBuilderGetQueryParameters {
     /**

@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface TeamsAppItemRequestBuilder extends BaseRequestBuilder<TeamsAppItemRequestBuilder> {
     /**
-     * Get enabledApps from teamwork
+     * A collection of enabled apps in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<TeamsAppItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsApp | undefined>;
     /**
-     * Get enabledApps from teamwork
+     * A collection of enabled apps in the channel.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamsAppItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get enabledApps from teamwork
+ * A collection of enabled apps in the channel.
  */
 export interface TeamsAppItemRequestBuilderGetQueryParameters {
     /**
