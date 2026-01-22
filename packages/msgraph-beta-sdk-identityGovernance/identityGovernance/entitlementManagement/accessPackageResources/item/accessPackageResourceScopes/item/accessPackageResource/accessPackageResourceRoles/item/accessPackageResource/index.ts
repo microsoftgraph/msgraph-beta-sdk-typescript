@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata, type AccessPackageResourceEnvironmentRequestBuilder } from './accessPackageResourceEnvironment/index.js';
 // @ts-ignore
+import { ExternalOriginResourceConnectorRequestBuilderRequestsMetadata, type ExternalOriginResourceConnectorRequestBuilder } from './externalOriginResourceConnector/index.js';
+// @ts-ignore
 import { RefreshRequestBuilderRequestsMetadata, type RefreshRequestBuilder } from './refresh/index.js';
 // @ts-ignore
 import { type UploadSessionsRequestBuilder, UploadSessionsRequestBuilderNavigationMetadata, UploadSessionsRequestBuilderRequestsMetadata } from './uploadSessions/index.js';
@@ -22,6 +24,10 @@ export interface AccessPackageResourceRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the accessPackageResourceEnvironment property of the microsoft.graph.accessPackageResource entity.
      */
     get accessPackageResourceEnvironment(): AccessPackageResourceEnvironmentRequestBuilder;
+    /**
+     * Provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+     */
+    get externalOriginResourceConnector(): ExternalOriginResourceConnectorRequestBuilder;
     /**
      * Provides operations to call the refresh method.
      */
@@ -101,6 +107,9 @@ const AccessPackageResourceRequestBuilderGetQueryParametersMapper: Record<string
 export const AccessPackageResourceRequestBuilderNavigationMetadata: Record<Exclude<keyof AccessPackageResourceRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     accessPackageResourceEnvironment: {
         requestsMetadata: AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata,
+    },
+    externalOriginResourceConnector: {
+        requestsMetadata: ExternalOriginResourceConnectorRequestBuilderRequestsMetadata,
     },
     refresh: {
         requestsMetadata: RefreshRequestBuilderRequestsMetadata,

@@ -27,7 +27,7 @@ export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequest
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get tracing from admin
+     * Represents a container for administrative resources to trace messages.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageTracingRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -51,7 +51,7 @@ export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequest
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get tracing from admin
+     * Represents a container for administrative resources to trace messages.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
@@ -67,7 +67,7 @@ export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequest
      toPatchRequestInformation(body: MessageTracingRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get tracing from admin
+ * Represents a container for administrative resources to trace messages.
  */
 export interface TracingRequestBuilderGetQueryParameters {
     /**

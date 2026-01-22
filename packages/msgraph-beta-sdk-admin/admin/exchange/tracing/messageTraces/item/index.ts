@@ -22,7 +22,7 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get messageTraces from admin
+     * Represents the trace information of messages that pass-through Exchange Online organizations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeMessageTrace>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -53,7 +53,7 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get messageTraces from admin
+     * Represents the trace information of messages that pass-through Exchange Online organizations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
@@ -69,7 +69,7 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      toPatchRequestInformation(body: ExchangeMessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get messageTraces from admin
+ * Represents the trace information of messages that pass-through Exchange Online organizations.
  */
 export interface ExchangeMessageTraceItemRequestBuilderGetQueryParameters {
     /**

@@ -216,7 +216,7 @@ export interface Alert extends Entity, Parsable {
      */
     description?: string | null;
     /**
-     * Detection technology or sensor that identified the notable component or activity. The possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence, microsoftDefenderForAIServices, securityCopilot. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence, microsoftDefenderForAIServices, securityCopilot.
+     * Detection technology or sensor that identified the notable component or activity.
      */
     detectionSource?: DetectionSource | null;
     /**
@@ -12939,6 +12939,7 @@ export function deserializeIntoIncident(incident: Partial<Incident> | undefined 
         "incidentWebUrl": n => { incident.incidentWebUrl = n.getStringValue(); },
         "lastModifiedBy": n => { incident.lastModifiedBy = n.getStringValue(); },
         "lastUpdateDateTime": n => { incident.lastUpdateDateTime = n.getDateValue(); },
+        "priorityScore": n => { incident.priorityScore = n.getNumberValue(); },
         "recommendedActions": n => { incident.recommendedActions = n.getStringValue(); },
         "recommendedHuntingQueries": n => { incident.recommendedHuntingQueries = n.getCollectionOfObjectValues<RecommendedHuntingQuery>(createRecommendedHuntingQueryFromDiscriminatorValue); },
         "redirectIncidentId": n => { incident.redirectIncidentId = n.getStringValue(); },
@@ -19904,6 +19905,10 @@ export interface Incident extends Entity, Parsable {
      * Time when the incident was last updated.
      */
     lastUpdateDateTime?: Date | null;
+    /**
+     * The priorityScore property
+     */
+    priorityScore?: number | null;
     /**
      * A rich text string that represents the actions that are reccomnded to take in order to resolve the incident.
      */
@@ -27322,6 +27327,7 @@ export function serializeIncident(writer: SerializationWriter, incident: Partial
     writer.writeStringValue("incidentWebUrl", incident.incidentWebUrl);
     writer.writeStringValue("lastModifiedBy", incident.lastModifiedBy);
     writer.writeDateValue("lastUpdateDateTime", incident.lastUpdateDateTime);
+    writer.writeNumberValue("priorityScore", incident.priorityScore);
     writer.writeStringValue("recommendedActions", incident.recommendedActions);
     writer.writeCollectionOfObjectValues<RecommendedHuntingQuery>("recommendedHuntingQueries", incident.recommendedHuntingQueries, serializeRecommendedHuntingQuery);
     writer.writeStringValue("redirectIncidentId", incident.redirectIncidentId);
