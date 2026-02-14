@@ -39,7 +39,7 @@ export interface UserAssignmentsRequestBuilder extends BaseRequestBuilder<UserAs
      */
      byTeamsPolicyUserAssignmentId(teamsPolicyUserAssignmentId: string) : TeamsPolicyUserAssignmentItemRequestBuilder;
     /**
-     * Navigation property to the collection of user policy assignments.
+     * The collection of user policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsPolicyUserAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -54,7 +54,7 @@ export interface UserAssignmentsRequestBuilder extends BaseRequestBuilder<UserAs
      */
      post(body: TeamsPolicyUserAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsPolicyUserAssignment | undefined>;
     /**
-     * Navigation property to the collection of user policy assignments.
+     * The collection of user policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -68,7 +68,7 @@ export interface UserAssignmentsRequestBuilder extends BaseRequestBuilder<UserAs
      toPostRequestInformation(body: TeamsPolicyUserAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Navigation property to the collection of user policy assignments.
+ * The collection of user policy assignments.
  */
 export interface UserAssignmentsRequestBuilderGetQueryParameters {
     /**

@@ -27,7 +27,7 @@ export interface ConfigurationSnapshotsRequestBuilder extends BaseRequestBuilder
      */
      byConfigurationBaselineId(configurationBaselineId: string) : ConfigurationBaselineItemRequestBuilder;
     /**
-     * Get configurationSnapshots from admin
+     * A container for configuration snapshot baselines.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationBaselineCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface ConfigurationSnapshotsRequestBuilder extends BaseRequestBuilder
      */
      post(body: ConfigurationBaseline, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigurationBaseline | undefined>;
     /**
-     * Get configurationSnapshots from admin
+     * A container for configuration snapshot baselines.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface ConfigurationSnapshotsRequestBuilder extends BaseRequestBuilder
      toPostRequestInformation(body: ConfigurationBaseline, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationSnapshots from admin
+ * A container for configuration snapshot baselines.
  */
 export interface ConfigurationSnapshotsRequestBuilderGetQueryParameters {
     /**
