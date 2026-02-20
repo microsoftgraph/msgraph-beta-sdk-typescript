@@ -13,16 +13,18 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ConfigurationSnapshotJobItemRequestBuilder extends BaseRequestBuilder<ConfigurationSnapshotJobItemRequestBuilder> {
     /**
-     * Delete navigation property configurationSnapshotJobs for admin
+     * Delete a configurationSnapshotJob object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationsnapshotjob-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get configurationSnapshotJobs from admin
+     * Read the properties and relationships of a configurationSnapshotJob object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationSnapshotJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConfigurationSnapshotJobItemRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationSnapshotJob | undefined>;
     /**
@@ -34,13 +36,13 @@ export interface ConfigurationSnapshotJobItemRequestBuilder extends BaseRequestB
      */
      patch(body: ConfigurationSnapshotJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigurationSnapshotJob | undefined>;
     /**
-     * Delete navigation property configurationSnapshotJobs for admin
+     * Delete a configurationSnapshotJob object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get configurationSnapshotJobs from admin
+     * Read the properties and relationships of a configurationSnapshotJob object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +56,7 @@ export interface ConfigurationSnapshotJobItemRequestBuilder extends BaseRequestB
      toPatchRequestInformation(body: ConfigurationSnapshotJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationSnapshotJobs from admin
+ * Read the properties and relationships of a configurationSnapshotJob object.
  */
 export interface ConfigurationSnapshotJobItemRequestBuilderGetQueryParameters {
     /**

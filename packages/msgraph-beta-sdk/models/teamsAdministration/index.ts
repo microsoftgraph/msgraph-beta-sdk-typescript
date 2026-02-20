@@ -800,7 +800,7 @@ export interface TeamsAdminRoot extends Entity, Parsable {
 }
 export interface TeamsPolicyAssignment extends Entity, Parsable {
     /**
-     * Navigation property to the collection of user policy assignments.
+     * The collection of user policy assignments.
      */
     userAssignments?: TeamsPolicyUserAssignment[] | null;
 }
@@ -810,7 +810,7 @@ export interface TeamsPolicyUserAssignment extends Entity, Parsable {
      */
     policyId?: string | null;
     /**
-     * The type of Teams policy assigned or unassigned, such as TeamsMeetingBroadcastPolicy.
+     * The type of Teams policy assigned or unassigned, such as teamsMeetingBroadcastPolicy.
      */
     policyType?: string | null;
     /**

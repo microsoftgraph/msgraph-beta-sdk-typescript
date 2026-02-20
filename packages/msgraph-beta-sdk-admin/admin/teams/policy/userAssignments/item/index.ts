@@ -19,7 +19,7 @@ export interface TeamsPolicyUserAssignmentItemRequestBuilder extends BaseRequest
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Navigation property to the collection of user policy assignments.
+     * The collection of user policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsPolicyUserAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface TeamsPolicyUserAssignmentItemRequestBuilder extends BaseRequest
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Navigation property to the collection of user policy assignments.
+     * The collection of user policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface TeamsPolicyUserAssignmentItemRequestBuilder extends BaseRequest
      toPatchRequestInformation(body: TeamsPolicyUserAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Navigation property to the collection of user policy assignments.
+ * The collection of user policy assignments.
  */
 export interface TeamsPolicyUserAssignmentItemRequestBuilderGetQueryParameters {
     /**

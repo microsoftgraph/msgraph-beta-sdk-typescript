@@ -12,6 +12,8 @@ import { DeploymentAudiencesRequestBuilderNavigationMetadata, DeploymentAudience
 // @ts-ignore
 import { DeploymentsRequestBuilderNavigationMetadata, DeploymentsRequestBuilderRequestsMetadata, type DeploymentsRequestBuilder } from './deployments/index.js';
 // @ts-ignore
+import { PoliciesRequestBuilderNavigationMetadata, PoliciesRequestBuilderRequestsMetadata, type PoliciesRequestBuilder } from './policies/index.js';
+// @ts-ignore
 import { ProductsRequestBuilderNavigationMetadata, ProductsRequestBuilderRequestsMetadata, type ProductsRequestBuilder } from './products/index.js';
 // @ts-ignore
 import { ResourceConnectionsRequestBuilderNavigationMetadata, ResourceConnectionsRequestBuilderRequestsMetadata, type ResourceConnectionsRequestBuilder } from './resourceConnections/index.js';
@@ -38,6 +40,10 @@ export interface UpdatesRequestBuilder extends BaseRequestBuilder<UpdatesRequest
      * Provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
      */
     get deployments(): DeploymentsRequestBuilder;
+    /**
+     * Provides operations to manage the policies property of the microsoft.graph.adminWindowsUpdates entity.
+     */
+    get policies(): PoliciesRequestBuilder;
     /**
      * Provides operations to manage the products property of the microsoft.graph.adminWindowsUpdates entity.
      */
@@ -134,6 +140,10 @@ export const UpdatesRequestBuilderNavigationMetadata: Record<Exclude<keyof Updat
     deployments: {
         requestsMetadata: DeploymentsRequestBuilderRequestsMetadata,
         navigationMetadata: DeploymentsRequestBuilderNavigationMetadata,
+    },
+    policies: {
+        requestsMetadata: PoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: PoliciesRequestBuilderNavigationMetadata,
     },
     products: {
         requestsMetadata: ProductsRequestBuilderRequestsMetadata,
