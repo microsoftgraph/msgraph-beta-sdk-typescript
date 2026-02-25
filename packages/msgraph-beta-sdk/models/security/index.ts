@@ -133,6 +133,24 @@ export interface AddWatermarkAction extends InformationProtectionAction, Parsabl
 }
 export interface AedAuditRecord extends AuditData, Parsable {
 }
+export interface AggregatedEnvironment extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Number of environments of this type.
+     */
+    count?: number | null;
+    /**
+     * Environment type.
+     */
+    kind?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export interface AiAgentEvidence extends AlertEvidence, Parsable {
     /**
      * The unique identifier for the AI agent.
@@ -1030,6 +1048,24 @@ export interface AuditData extends AdditionalDataHolder, BackedModel, Parsable {
      */
     odataType?: string | null;
 }
+export interface AuditInfo extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Display name of the user or application that performed the action.
+     */
+    by?: string | null;
+    /**
+     * Timestamp of the action. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    dateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export interface AuditLogQuery extends Entity, Parsable {
     /**
      * The administrative units tagged to an audit log record.
@@ -1158,6 +1194,12 @@ export interface AuthorityTemplateCollectionResponse extends BaseCollectionPagin
      * The value property
      */
     value?: AuthorityTemplate[] | null;
+}
+export interface AutoAuditingConfiguration extends Entity, Parsable {
+    /**
+     * Indicates whether automatic auditing is enabled for Defender for Identity monitoring.
+     */
+    isAutomatic?: boolean | null;
 }
 export interface AutonomousSystem extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1783,6 +1825,15 @@ export function createAddWatermarkActionFromDiscriminatorValue(parseNode: ParseN
 // @ts-ignore
 export function createAedAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAedAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AggregatedEnvironment}
+ */
+// @ts-ignore
+export function createAggregatedEnvironmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAggregatedEnvironment;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2816,6 +2867,15 @@ export function createAuditDataFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AuditInfo}
+ */
+// @ts-ignore
+export function createAuditInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAuditInfo;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuditLogQueryCollectionResponse}
  */
 // @ts-ignore
@@ -2875,6 +2935,15 @@ export function createAuthorityTemplateCollectionResponseFromDiscriminatorValue(
 // @ts-ignore
 export function createAuthorityTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuthorityTemplate;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AutoAuditingConfiguration}
+ */
+// @ts-ignore
+export function createAutoAuditingConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAutoAuditingConfiguration;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4425,6 +4494,24 @@ export function createEnableUserIncidentTaskResponseActionFromDiscriminatorValue
 // @ts-ignore
 export function createEndpointDiscoveredCloudAppDetailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEndpointDiscoveredCloudAppDetail;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EnvironmentCollectionResponse}
+ */
+// @ts-ignore
+export function createEnvironmentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnvironmentCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Environment}
+ */
+// @ts-ignore
+export function createEnvironmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnvironment;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -8602,6 +8689,24 @@ export function createWorkplaceAnalyticsAuditRecordFromDiscriminatorValue(parseN
 export function createYammerAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoYammerAuditRecord;
 }
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ZoneCollectionResponse}
+ */
+// @ts-ignore
+export function createZoneCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoZoneCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Zone}
+ */
+// @ts-ignore
+export function createZoneFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoZone;
+}
 export interface CrmBaseAuditRecord extends AuditData, Parsable {
 }
 export interface CrmEntityOperationAuditRecord extends AuditData, Parsable {
@@ -8869,6 +8974,20 @@ export function deserializeIntoAddWatermarkAction(addWatermarkAction: Partial<Ad
 export function deserializeIntoAedAuditRecord(aedAuditRecord: Partial<AedAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(aedAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AggregatedEnvironment The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAggregatedEnvironment(aggregatedEnvironment: Partial<AggregatedEnvironment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { aggregatedEnvironment.backingStoreEnabled = true; },
+        "count": n => { aggregatedEnvironment.count = n.getNumberValue(); },
+        "kind": n => { aggregatedEnvironment.kind = n.getStringValue(); },
+        "@odata.type": n => { aggregatedEnvironment.odataType = n.getStringValue(); },
     }
 }
 /**
@@ -9479,6 +9598,20 @@ export function deserializeIntoAuditData(auditData: Partial<AuditData> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param AuditInfo The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAuditInfo(auditInfo: Partial<AuditInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { auditInfo.backingStoreEnabled = true; },
+        "by": n => { auditInfo.by = n.getStringValue(); },
+        "dateTime": n => { auditInfo.dateTime = n.getDateValue(); },
+        "@odata.type": n => { auditInfo.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param AuditLogQuery The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -9580,6 +9713,18 @@ export function deserializeIntoAuthorityTemplateCollectionResponse(authorityTemp
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(authorityTemplateCollectionResponse),
         "value": n => { authorityTemplateCollectionResponse.value = n.getCollectionOfObjectValues<AuthorityTemplate>(createAuthorityTemplateFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AutoAuditingConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAutoAuditingConfiguration(autoAuditingConfiguration: Partial<AutoAuditingConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(autoAuditingConfiguration),
+        "isAutomatic": n => { autoAuditingConfiguration.isAutomatic = n.getBooleanValue(); },
     }
 }
 /**
@@ -10829,12 +10974,17 @@ export function deserializeIntoDetonationDetails(detonationDetails: Partial<Deto
         "backingStoreEnabled": n => { detonationDetails.backingStoreEnabled = true; },
         "compromiseIndicators": n => { detonationDetails.compromiseIndicators = n.getCollectionOfObjectValues<CompromiseIndicator>(createCompromiseIndicatorFromDiscriminatorValue); },
         "detonationBehaviourDetails": n => { detonationDetails.detonationBehaviourDetails = n.getObjectValue<DetonationBehaviourDetails>(createDetonationBehaviourDetailsFromDiscriminatorValue); },
+        "detonationBehaviourDetailsV2": n => { detonationDetails.detonationBehaviourDetailsV2 = n.getStringValue(); },
         "detonationChain": n => { detonationDetails.detonationChain = n.getObjectValue<DetonationChain>(createDetonationChainFromDiscriminatorValue); },
         "detonationObservables": n => { detonationDetails.detonationObservables = n.getObjectValue<DetonationObservables>(createDetonationObservablesFromDiscriminatorValue); },
         "detonationScreenshotUri": n => { detonationDetails.detonationScreenshotUri = n.getStringValue(); },
         "detonationVerdict": n => { detonationDetails.detonationVerdict = n.getStringValue(); },
         "detonationVerdictReason": n => { detonationDetails.detonationVerdictReason = n.getStringValue(); },
+        "entityMetadata": n => { detonationDetails.entityMetadata = n.getStringValue(); },
+        "mitreTechniques": n => { detonationDetails.mitreTechniques = n.getStringValue(); },
         "@odata.type": n => { detonationDetails.odataType = n.getStringValue(); },
+        "staticAnalysis": n => { detonationDetails.staticAnalysis = n.getStringValue(); },
+        "submissionSource": n => { detonationDetails.submissionSource = n.getStringValue(); },
     }
 }
 /**
@@ -11498,6 +11648,7 @@ export function deserializeIntoEdiscoveryNoncustodialDataSourceCollectionRespons
 export function deserializeIntoEdiscoveryPurgeDataOperation(ediscoveryPurgeDataOperation: Partial<EdiscoveryPurgeDataOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(ediscoveryPurgeDataOperation),
+        "reportFileMetadata": n => { ediscoveryPurgeDataOperation.reportFileMetadata = n.getCollectionOfObjectValues<ReportFileMetadata>(createReportFileMetadataFromDiscriminatorValue); },
     }
 }
 /**
@@ -11776,6 +11927,30 @@ export function deserializeIntoEndpointDiscoveredCloudAppDetail(endpointDiscover
         ...deserializeIntoDiscoveredCloudAppDetail(endpointDiscoveredCloudAppDetail),
         "deviceCount": n => { endpointDiscoveredCloudAppDetail.deviceCount = n.getNumberValue(); },
         "devices": n => { endpointDiscoveredCloudAppDetail.devices = n.getCollectionOfObjectValues<DiscoveredCloudAppDevice>(createDiscoveredCloudAppDeviceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param Environment The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEnvironment(environment: Partial<Environment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(environment),
+        "kind": n => { environment.kind = n.getEnumValue<EnvironmentKind>(EnvironmentKindObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param EnvironmentCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEnvironmentCollectionResponse(environmentCollectionResponse: Partial<EnvironmentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(environmentCollectionResponse),
+        "value": n => { environmentCollectionResponse.value = n.getCollectionOfObjectValues<Environment>(createEnvironmentFromDiscriminatorValue); },
     }
 }
 /**
@@ -15877,6 +16052,7 @@ export function deserializeIntoServicePrincipalEvidence(servicePrincipalEvidence
 export function deserializeIntoSettingsContainer(settingsContainer: Partial<SettingsContainer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(settingsContainer),
+        "autoAuditingConfiguration": n => { settingsContainer.autoAuditingConfiguration = n.getObjectValue<AutoAuditingConfiguration>(createAutoAuditingConfigurationFromDiscriminatorValue); },
     }
 }
 /**
@@ -17296,6 +17472,35 @@ export function deserializeIntoYammerAuditRecord(yammerAuditRecord: Partial<Yamm
         ...deserializeIntoAuditData(yammerAuditRecord),
     }
 }
+/**
+ * The deserialization information for the current model
+ * @param Zone The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoZone(zone: Partial<Zone> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(zone),
+        "aggregations": n => { zone.aggregations = n.getCollectionOfObjectValues<AggregatedEnvironment>(createAggregatedEnvironmentFromDiscriminatorValue); },
+        "created": n => { zone.created = n.getObjectValue<AuditInfo>(createAuditInfoFromDiscriminatorValue); },
+        "description": n => { zone.description = n.getStringValue(); },
+        "displayName": n => { zone.displayName = n.getStringValue(); },
+        "environments": n => { zone.environments = n.getCollectionOfObjectValues<Environment>(createEnvironmentFromDiscriminatorValue); },
+        "modified": n => { zone.modified = n.getObjectValue<AuditInfo>(createAuditInfoFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ZoneCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoZoneCollectionResponse(zoneCollectionResponse: Partial<ZoneCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(zoneCollectionResponse),
+        "value": n => { zoneCollectionResponse.value = n.getCollectionOfObjectValues<Zone>(createZoneFromDiscriminatorValue); },
+    }
+}
 export interface DetectionAction extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The alertTemplate property
@@ -17426,9 +17631,13 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     compromiseIndicators?: CompromiseIndicator[] | null;
     /**
-     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
+     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation. This property is deprecated and still stop returning data in March 2026. Use the detonationBehaviourDetailsV2 property instead.
      */
     detonationBehaviourDetails?: DetonationBehaviourDetails | null;
+    /**
+     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation in a JSON format.
+     */
+    detonationBehaviourDetailsV2?: string | null;
     /**
      * The chain of detonation.
      */
@@ -17450,9 +17659,25 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     detonationVerdictReason?: string | null;
     /**
+     * Additional metadata about the entity in JSON format.
+     */
+    entityMetadata?: string | null;
+    /**
+     * The attack techniques, as aligned with the MITRE ATT&CK framework.
+     */
+    mitreTechniques?: string | null;
+    /**
      * The OdataType property
      */
     odataType?: string | null;
+    /**
+     * The results of static analysis performed on the file or URL.
+     */
+    staticAnalysis?: string | null;
+    /**
+     * The source of the submission.
+     */
+    submissionSource?: string | null;
 }
 export interface DetonationObservables extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -18413,6 +18638,10 @@ export interface EdiscoveryNoncustodialDataSourceCollectionResponse extends Base
     value?: EdiscoveryNoncustodialDataSource[] | null;
 }
 export interface EdiscoveryPurgeDataOperation extends CaseOperation, Parsable {
+    /**
+     * The purge job report file metadata. It contains the properties for report file metadata, including downloadUrl, fileName, and size.
+     */
+    reportFileMetadata?: ReportFileMetadata[] | null;
 }
 export interface EdiscoveryReviewSet extends DataSet, Parsable {
     /**
@@ -18692,6 +18921,19 @@ export interface EndpointDiscoveredCloudAppDetail extends DiscoveredCloudAppDeta
     devices?: DiscoveredCloudAppDevice[] | null;
 }
 export type EntityType = (typeof EntityTypeObject)[keyof typeof EntityTypeObject];
+export interface Environment extends Entity, Parsable {
+    /**
+     * The kind property
+     */
+    kind?: EnvironmentKind | null;
+}
+export interface EnvironmentCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Environment[] | null;
+}
+export type EnvironmentKind = (typeof EnvironmentKindObject)[keyof typeof EnvironmentKindObject];
 export interface EpicSMSLinkRecord extends AuditData, Parsable {
 }
 export interface EpicSMSSettingsUpdateRecord extends AuditData, Parsable {
@@ -19823,7 +20065,7 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     sensors?: Sensor[] | null;
     /**
-     * The settings property
+     * Represents a container for security identities settings APIs.
      */
     settings?: SettingsContainer | null;
 }
@@ -19906,7 +20148,7 @@ export interface Incident extends Entity, Parsable {
      */
     lastUpdateDateTime?: Date | null;
     /**
-     * The priorityScore property
+     * A priority score for the incident from 0 to 100, with > 85 being the top priority, 15 - 85 medium priority, and < 15 low priority. This score is generated using machine learning and is based on multiple factors, including severity, disruption impact, threat intelligence, alert types, asset criticality, threat analytics, incident rarity, and additional priority signals. The value can also be null which indicates the feature is not open for the tenant or the value of the score is pending calculation.
      */
     priorityScore?: number | null;
     /**
@@ -22110,6 +22352,20 @@ export function serializeAedAuditRecord(writer: SerializationWriter, aedAuditRec
 }
 /**
  * Serializes information the current object
+ * @param AggregatedEnvironment The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAggregatedEnvironment(writer: SerializationWriter, aggregatedEnvironment: Partial<AggregatedEnvironment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aggregatedEnvironment || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("count", aggregatedEnvironment.count);
+    writer.writeStringValue("kind", aggregatedEnvironment.kind);
+    writer.writeStringValue("@odata.type", aggregatedEnvironment.odataType);
+    writer.writeAdditionalData(aggregatedEnvironment.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param AiAgentEvidence The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -23714,6 +23970,20 @@ export function serializeAuditData(writer: SerializationWriter, auditData: Parti
 }
 /**
  * Serializes information the current object
+ * @param AuditInfo The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAuditInfo(writer: SerializationWriter, auditInfo: Partial<AuditInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!auditInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("by", auditInfo.by);
+    writer.writeDateValue("dateTime", auditInfo.dateTime);
+    writer.writeStringValue("@odata.type", auditInfo.odataType);
+    writer.writeAdditionalData(auditInfo.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param AuditLogQuery The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -23817,6 +24087,18 @@ export function serializeAuthorityTemplateCollectionResponse(writer: Serializati
     if (!authorityTemplateCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, authorityTemplateCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<AuthorityTemplate>("value", authorityTemplateCollectionResponse.value, serializeAuthorityTemplate);
+}
+/**
+ * Serializes information the current object
+ * @param AutoAuditingConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAutoAuditingConfiguration(writer: SerializationWriter, autoAuditingConfiguration: Partial<AutoAuditingConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!autoAuditingConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, autoAuditingConfiguration, isSerializingDerivedType)
+    writer.writeBooleanValue("isAutomatic", autoAuditingConfiguration.isAutomatic);
 }
 /**
  * Serializes information the current object
@@ -25125,12 +25407,17 @@ export function serializeDetonationDetails(writer: SerializationWriter, detonati
     writer.writeDateValue("analysisDateTime", detonationDetails.analysisDateTime);
     writer.writeCollectionOfObjectValues<CompromiseIndicator>("compromiseIndicators", detonationDetails.compromiseIndicators, serializeCompromiseIndicator);
     writer.writeObjectValue<DetonationBehaviourDetails>("detonationBehaviourDetails", detonationDetails.detonationBehaviourDetails, serializeDetonationBehaviourDetails);
+    writer.writeStringValue("detonationBehaviourDetailsV2", detonationDetails.detonationBehaviourDetailsV2);
     writer.writeObjectValue<DetonationChain>("detonationChain", detonationDetails.detonationChain, serializeDetonationChain);
     writer.writeObjectValue<DetonationObservables>("detonationObservables", detonationDetails.detonationObservables, serializeDetonationObservables);
     writer.writeStringValue("detonationScreenshotUri", detonationDetails.detonationScreenshotUri);
     writer.writeStringValue("detonationVerdict", detonationDetails.detonationVerdict);
     writer.writeStringValue("detonationVerdictReason", detonationDetails.detonationVerdictReason);
+    writer.writeStringValue("entityMetadata", detonationDetails.entityMetadata);
+    writer.writeStringValue("mitreTechniques", detonationDetails.mitreTechniques);
     writer.writeStringValue("@odata.type", detonationDetails.odataType);
+    writer.writeStringValue("staticAnalysis", detonationDetails.staticAnalysis);
+    writer.writeStringValue("submissionSource", detonationDetails.submissionSource);
     writer.writeAdditionalData(detonationDetails.additionalData);
 }
 /**
@@ -25801,6 +26088,7 @@ export function serializeEdiscoveryNoncustodialDataSourceCollectionResponse(writ
 export function serializeEdiscoveryPurgeDataOperation(writer: SerializationWriter, ediscoveryPurgeDataOperation: Partial<EdiscoveryPurgeDataOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ediscoveryPurgeDataOperation || isSerializingDerivedType) { return; }
     serializeCaseOperation(writer, ediscoveryPurgeDataOperation, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ReportFileMetadata>("reportFileMetadata", ediscoveryPurgeDataOperation.reportFileMetadata, serializeReportFileMetadata);
 }
 /**
  * Serializes information the current object
@@ -26087,6 +26375,30 @@ export function serializeEndpointDiscoveredCloudAppDetail(writer: SerializationW
     serializeDiscoveredCloudAppDetail(writer, endpointDiscoveredCloudAppDetail, isSerializingDerivedType)
     writer.writeNumberValue("deviceCount", endpointDiscoveredCloudAppDetail.deviceCount);
     writer.writeCollectionOfObjectValues<DiscoveredCloudAppDevice>("devices", endpointDiscoveredCloudAppDetail.devices, serializeDiscoveredCloudAppDevice);
+}
+/**
+ * Serializes information the current object
+ * @param Environment The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnvironment(writer: SerializationWriter, environment: Partial<Environment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!environment || isSerializingDerivedType) { return; }
+    serializeEntity(writer, environment, isSerializingDerivedType)
+    writer.writeEnumValue<EnvironmentKind>("kind", environment.kind);
+}
+/**
+ * Serializes information the current object
+ * @param EnvironmentCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnvironmentCollectionResponse(writer: SerializationWriter, environmentCollectionResponse: Partial<EnvironmentCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!environmentCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, environmentCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Environment>("value", environmentCollectionResponse.value, serializeEnvironment);
 }
 /**
  * Serializes information the current object
@@ -30485,6 +30797,7 @@ export function serializeServicePrincipalEvidence(writer: SerializationWriter, s
 export function serializeSettingsContainer(writer: SerializationWriter, settingsContainer: Partial<SettingsContainer> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!settingsContainer || isSerializingDerivedType) { return; }
     serializeEntity(writer, settingsContainer, isSerializingDerivedType)
+    writer.writeObjectValue<AutoAuditingConfiguration>("autoAuditingConfiguration", settingsContainer.autoAuditingConfiguration, serializeAutoAuditingConfiguration);
 }
 /**
  * Serializes information the current object
@@ -31939,6 +32252,35 @@ export function serializeYammerAuditRecord(writer: SerializationWriter, yammerAu
     if (!yammerAuditRecord || isSerializingDerivedType) { return; }
     serializeAuditData(writer, yammerAuditRecord, isSerializingDerivedType)
 }
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ * @param Zone The instance to serialize from.
+ */
+// @ts-ignore
+export function serializeZone(writer: SerializationWriter, zone: Partial<Zone> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!zone || isSerializingDerivedType) { return; }
+    serializeEntity(writer, zone, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AggregatedEnvironment>("aggregations", zone.aggregations, serializeAggregatedEnvironment);
+    writer.writeObjectValue<AuditInfo>("created", zone.created, serializeAuditInfo);
+    writer.writeStringValue("description", zone.description);
+    writer.writeStringValue("displayName", zone.displayName);
+    writer.writeCollectionOfObjectValues<Environment>("environments", zone.environments, serializeEnvironment);
+    writer.writeObjectValue<AuditInfo>("modified", zone.modified, serializeAuditInfo);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ * @param ZoneCollectionResponse The instance to serialize from.
+ */
+// @ts-ignore
+export function serializeZoneCollectionResponse(writer: SerializationWriter, zoneCollectionResponse: Partial<ZoneCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!zoneCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, zoneCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Zone>("value", zoneCollectionResponse.value, serializeZone);
+}
 export interface ServicePrincipalEvidence extends AlertEvidence, Parsable {
     /**
      * The appId property
@@ -31969,6 +32311,10 @@ export type ServicePrincipalType = (typeof ServicePrincipalTypeObject)[keyof typ
 export type ServiceSource = (typeof ServiceSourceObject)[keyof typeof ServiceSourceObject];
 export type ServiceStatus = (typeof ServiceStatusObject)[keyof typeof ServiceStatusObject];
 export interface SettingsContainer extends Entity, Parsable {
+    /**
+     * Represents automatic configuration for collection of Windows event logs as needed for Defender for Identity sensors.
+     */
+    autoAuditingConfiguration?: AutoAuditingConfiguration | null;
 }
 export interface SharePointAppPermissionOperationAuditRecord extends AuditData, Parsable {
 }
@@ -33188,6 +33534,38 @@ export interface WorkplaceAnalyticsAuditRecord extends AuditData, Parsable {
 }
 export interface YammerAuditRecord extends AuditData, Parsable {
 }
+export interface Zone extends Entity, Parsable {
+    /**
+     * Environment count summaries by type. Read-only. Supports $filter (eq) on the kind property. For example, $filter=aggregations/any(a: a/kind eq 'azureSubscription').
+     */
+    aggregations?: AggregatedEnvironment[] | null;
+    /**
+     * Creation metadata, including user and timestamp. Supports $orderby (dateTime property only). Supports $filter (ge, le, gt, lt) on the dateTime property. For example, $filter=created/dateTime ge 2023-01-01T00:00:00Z.
+     */
+    created?: AuditInfo | null;
+    /**
+     * Optional description of the zone. Up to 255 characters. Supports $filter (eq, contains). For example, $filter=contains(description, 'production').
+     */
+    description?: string | null;
+    /**
+     * Human-readable name of the zone. Up to 1,024 characters. Supports $filter (eq, contains), and $orderby. For example, $filter=displayName eq 'Production Zone' or $orderby=displayName asc.
+     */
+    displayName?: string | null;
+    /**
+     * Collection of attached environments. Supports $expand.
+     */
+    environments?: Environment[] | null;
+    /**
+     * Last modification metadata, including user and timestamp. Supports $orderby (dateTime property only). Supports $filter (ge, le, gt, lt) on the dateTime property. For example, $orderby=modified/dateTime desc.
+     */
+    modified?: AuditInfo | null;
+}
+export interface ZoneCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Zone[] | null;
+}
 export const ActionAfterRetentionPeriodObject = {
     None: "none",
     Delete: "delete",
@@ -33998,6 +34376,20 @@ export const EntityTypeObject = {
     Unknown: "unknown",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const EnvironmentKindObject = {
+    AzureSubscription: "azureSubscription",
+    AwsOrganization: "awsOrganization",
+    AwsAccount: "awsAccount",
+    GcpOrganization: "gcpOrganization",
+    GcpProject: "gcpProject",
+    DockersHubOrganization: "dockersHubOrganization",
+    DevOpsConnection: "devOpsConnection",
+    AzureDevOpsOrganization: "azureDevOpsOrganization",
+    GitHubOrganization: "gitHubOrganization",
+    GitLabGroup: "gitLabGroup",
+    JFrogArtifactory: "jFrogArtifactory",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const EventPropagationStatusObject = {
     None: "none",
     InProcessing: "inProcessing",
@@ -34469,6 +34861,7 @@ export const RemediationActionObject = {
     SoftDelete: "softDelete",
     MoveToDeletedItems: "moveToDeletedItems",
     UnknownFutureValue: "unknownFutureValue",
+    MoveToQuarantine: "moveToQuarantine",
 } as const;
 export const RemediationSeverityObject = {
     Low: "low",

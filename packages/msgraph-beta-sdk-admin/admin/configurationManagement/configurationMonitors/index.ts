@@ -27,28 +27,30 @@ export interface ConfigurationMonitorsRequestBuilder extends BaseRequestBuilder<
      */
      byConfigurationMonitorId(configurationMonitorId: string) : ConfigurationMonitorItemRequestBuilder;
     /**
-     * Get configurationMonitors from admin
+     * Get a list of the configurationMonitor objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationMonitorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConfigurationMonitorsRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationMonitorCollectionResponse | undefined>;
     /**
-     * Create new navigation property to configurationMonitors for admin
+     * Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationMonitor>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-beta|Find more info here}
      */
      post(body: ConfigurationMonitor, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigurationMonitor | undefined>;
     /**
-     * Get configurationMonitors from admin
+     * Get a list of the configurationMonitor objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConfigurationMonitorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to configurationMonitors for admin
+     * Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface ConfigurationMonitorsRequestBuilder extends BaseRequestBuilder<
      toPostRequestInformation(body: ConfigurationMonitor, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationMonitors from admin
+ * Get a list of the configurationMonitor objects and their properties.
  */
 export interface ConfigurationMonitorsRequestBuilderGetQueryParameters {
     /**
