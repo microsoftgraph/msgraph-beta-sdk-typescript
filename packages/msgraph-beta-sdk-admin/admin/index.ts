@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AppsAndServicesRequestBuilderRequestsMetadata, type AppsAndServicesRequestBuilder } from './appsAndServices/index.js';
 // @ts-ignore
+import { CloudLicensingRequestBuilderNavigationMetadata, CloudLicensingRequestBuilderRequestsMetadata, type CloudLicensingRequestBuilder } from './cloudLicensing/index.js';
+// @ts-ignore
 import { ConfigurationManagementRequestBuilderNavigationMetadata, ConfigurationManagementRequestBuilderRequestsMetadata, type ConfigurationManagementRequestBuilder } from './configurationManagement/index.js';
 // @ts-ignore
 import { DynamicsRequestBuilderRequestsMetadata, type DynamicsRequestBuilder } from './dynamics/index.js';
@@ -46,6 +48,10 @@ export interface AdminRequestBuilder extends BaseRequestBuilder<AdminRequestBuil
      * Provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.
      */
     get appsAndServices(): AppsAndServicesRequestBuilder;
+    /**
+     * Provides operations to manage the cloudLicensing property of the microsoft.graph.admin entity.
+     */
+    get cloudLicensing(): CloudLicensingRequestBuilder;
     /**
      * Provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
      */
@@ -161,6 +167,10 @@ const AdminRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     appsAndServices: {
         requestsMetadata: AppsAndServicesRequestBuilderRequestsMetadata,
+    },
+    cloudLicensing: {
+        requestsMetadata: CloudLicensingRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudLicensingRequestBuilderNavigationMetadata,
     },
     configurationManagement: {
         requestsMetadata: ConfigurationManagementRequestBuilderRequestsMetadata,
