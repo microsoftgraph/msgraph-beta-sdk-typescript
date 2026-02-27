@@ -19,7 +19,7 @@ export interface ConfigurationBaselineItemRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get configurationSnapshots from admin
+     * A container for configuration snapshot baselines.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationBaseline>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ConfigurationBaselineItemRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get configurationSnapshots from admin
+     * A container for configuration snapshot baselines.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ConfigurationBaselineItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: ConfigurationBaseline, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationSnapshots from admin
+ * A container for configuration snapshot baselines.
  */
 export interface ConfigurationBaselineItemRequestBuilderGetQueryParameters {
     /**
