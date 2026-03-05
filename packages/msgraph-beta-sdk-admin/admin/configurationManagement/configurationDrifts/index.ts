@@ -27,10 +27,11 @@ export interface ConfigurationDriftsRequestBuilder extends BaseRequestBuilder<Co
      */
      byConfigurationDriftId(configurationDriftId: string) : ConfigurationDriftItemRequestBuilder;
     /**
-     * Get configurationDrifts from admin
+     * Get a list of the configurationDrift objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationDriftCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationdrifts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConfigurationDriftsRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationDriftCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface ConfigurationDriftsRequestBuilder extends BaseRequestBuilder<Co
      */
      post(body: ConfigurationDrift, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigurationDrift | undefined>;
     /**
-     * Get configurationDrifts from admin
+     * Get a list of the configurationDrift objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface ConfigurationDriftsRequestBuilder extends BaseRequestBuilder<Co
      toPostRequestInformation(body: ConfigurationDrift, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationDrifts from admin
+ * Get a list of the configurationDrift objects and their properties.
  */
 export interface ConfigurationDriftsRequestBuilderGetQueryParameters {
     /**

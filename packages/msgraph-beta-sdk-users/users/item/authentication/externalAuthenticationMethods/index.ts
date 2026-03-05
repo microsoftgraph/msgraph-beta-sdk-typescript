@@ -27,7 +27,7 @@ export interface ExternalAuthenticationMethodsRequestBuilder extends BaseRequest
      */
      byExternalAuthenticationMethodId(externalAuthenticationMethodId: string) : ExternalAuthenticationMethodItemRequestBuilder;
     /**
-     * Represents the external methods registered to a user for authentication.
+     * Represents the external MFA registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalAuthenticationMethodCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -43,7 +43,7 @@ export interface ExternalAuthenticationMethodsRequestBuilder extends BaseRequest
      */
      post(body: ExternalAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExternalAuthenticationMethod | undefined>;
     /**
-     * Represents the external methods registered to a user for authentication.
+     * Represents the external MFA registered to a user for authentication.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface ExternalAuthenticationMethodsRequestBuilder extends BaseRequest
      toPostRequestInformation(body: ExternalAuthenticationMethod, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents the external methods registered to a user for authentication.
+ * Represents the external MFA registered to a user for authentication.
  */
 export interface ExternalAuthenticationMethodsRequestBuilderGetQueryParameters {
     /**

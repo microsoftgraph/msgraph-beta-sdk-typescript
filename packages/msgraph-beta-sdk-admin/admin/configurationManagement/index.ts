@@ -6,8 +6,6 @@ import { createConfigurationManagementFromDiscriminatorValue, serializeConfigura
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { ConfigurationApplicationsRequestBuilderNavigationMetadata, ConfigurationApplicationsRequestBuilderRequestsMetadata, type ConfigurationApplicationsRequestBuilder } from './configurationApplications/index.js';
-// @ts-ignore
 import { ConfigurationDriftsRequestBuilderNavigationMetadata, ConfigurationDriftsRequestBuilderRequestsMetadata, type ConfigurationDriftsRequestBuilder } from './configurationDrifts/index.js';
 // @ts-ignore
 import { ConfigurationMonitoringResultsRequestBuilderNavigationMetadata, ConfigurationMonitoringResultsRequestBuilderRequestsMetadata, type ConfigurationMonitoringResultsRequestBuilder } from './configurationMonitoringResults/index.js';
@@ -24,10 +22,6 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
  */
 export interface ConfigurationManagementRequestBuilder extends BaseRequestBuilder<ConfigurationManagementRequestBuilder> {
-    /**
-     * Provides operations to manage the configurationApplications property of the microsoft.graph.configurationManagement entity.
-     */
-    get configurationApplications(): ConfigurationApplicationsRequestBuilder;
     /**
      * Provides operations to manage the configurationDrifts property of the microsoft.graph.configurationManagement entity.
      */
@@ -117,10 +111,6 @@ const ConfigurationManagementRequestBuilderGetQueryParametersMapper: Record<stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const ConfigurationManagementRequestBuilderNavigationMetadata: Record<Exclude<keyof ConfigurationManagementRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
-    configurationApplications: {
-        requestsMetadata: ConfigurationApplicationsRequestBuilderRequestsMetadata,
-        navigationMetadata: ConfigurationApplicationsRequestBuilderNavigationMetadata,
-    },
     configurationDrifts: {
         requestsMetadata: ConfigurationDriftsRequestBuilderRequestsMetadata,
         navigationMetadata: ConfigurationDriftsRequestBuilderNavigationMetadata,

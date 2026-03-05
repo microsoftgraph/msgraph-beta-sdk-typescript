@@ -72,6 +72,8 @@ import { TriggerTypesRequestBuilderNavigationMetadata, TriggerTypesRequestBuilde
 // @ts-ignore
 import { type UserSecurityProfilesRequestBuilder, UserSecurityProfilesRequestBuilderNavigationMetadata, UserSecurityProfilesRequestBuilderRequestsMetadata } from './userSecurityProfiles/index.js';
 // @ts-ignore
+import { type ZonesRequestBuilder, ZonesRequestBuilderNavigationMetadata, ZonesRequestBuilderRequestsMetadata } from './zones/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -210,6 +212,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
      */
     get userSecurityProfiles(): UserSecurityProfilesRequestBuilder;
+    /**
+     * Provides operations to manage the zones property of the microsoft.graph.security entity.
+     */
+    get zones(): ZonesRequestBuilder;
     /**
      * Get security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -397,6 +403,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     userSecurityProfiles: {
         requestsMetadata: UserSecurityProfilesRequestBuilderRequestsMetadata,
         navigationMetadata: UserSecurityProfilesRequestBuilderNavigationMetadata,
+    },
+    zones: {
+        requestsMetadata: ZonesRequestBuilderRequestsMetadata,
+        navigationMetadata: ZonesRequestBuilderNavigationMetadata,
     },
 };
 /**
