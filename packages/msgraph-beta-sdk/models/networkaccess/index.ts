@@ -520,6 +520,10 @@ export interface Connection extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
+     * Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.
+     */
+    crossTenantAccessType?: CrossTenantAccessType | null;
+    /**
      * The destination FQDN of the connection.
      */
     destinationFqdn?: string | null;
@@ -540,6 +544,10 @@ export interface Connection extends Entity, Parsable {
      */
     deviceId?: string | null;
     /**
+     * Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.
+     */
+    deviceJoinType?: DeviceJoinType | null;
+    /**
      * The device operating system type.
      */
     deviceOperatingSystem?: string | null;
@@ -551,6 +559,10 @@ export interface Connection extends Entity, Parsable {
      * The time the connection was terminated.
      */
     endDateTime?: Date | null;
+    /**
+     * The identifier of the home tenant, for Entra B2B scenarios.
+     */
+    homeTenantId?: string | null;
     /**
      * The process initiating the traffic connection.
      */
@@ -2221,6 +2233,7 @@ export interface CrossTenantAccessSettings extends Entity, Parsable {
      */
     networkPacketTaggingStatus?: Status | null;
 }
+export type CrossTenantAccessType = (typeof CrossTenantAccessTypeObject)[keyof typeof CrossTenantAccessTypeObject];
 export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The total number of authentication sessions between startDateTime and endDateTime.
@@ -2609,14 +2622,17 @@ export function deserializeIntoConnection(connection: Partial<Connection> | unde
         "agentVersion": n => { connection.agentVersion = n.getStringValue(); },
         "applicationSnapshot": n => { connection.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
         "createdDateTime": n => { connection.createdDateTime = n.getDateValue(); },
+        "crossTenantAccessType": n => { connection.crossTenantAccessType = n.getEnumValue<CrossTenantAccessType>(CrossTenantAccessTypeObject); },
         "destinationFqdn": n => { connection.destinationFqdn = n.getStringValue(); },
         "destinationIp": n => { connection.destinationIp = n.getStringValue(); },
         "destinationPort": n => { connection.destinationPort = n.getNumberValue(); },
         "deviceCategory": n => { connection.deviceCategory = n.getEnumValue<DeviceCategory>(DeviceCategoryObject); },
         "deviceId": n => { connection.deviceId = n.getStringValue(); },
+        "deviceJoinType": n => { connection.deviceJoinType = n.getEnumValue<DeviceJoinType>(DeviceJoinTypeObject); },
         "deviceOperatingSystem": n => { connection.deviceOperatingSystem = n.getStringValue(); },
         "deviceOperatingSystemVersion": n => { connection.deviceOperatingSystemVersion = n.getStringValue(); },
         "endDateTime": n => { connection.endDateTime = n.getDateValue(); },
+        "homeTenantId": n => { connection.homeTenantId = n.getStringValue(); },
         "initiatingProcessName": n => { connection.initiatingProcessName = n.getStringValue(); },
         "lastUpdateDateTime": n => { connection.lastUpdateDateTime = n.getDateValue(); },
         "networkProtocol": n => { connection.networkProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
@@ -4417,6 +4433,7 @@ export interface Device extends AdditionalDataHolder, BackedModel, Parsable {
     trafficType?: TrafficType | null;
 }
 export type DeviceCategory = (typeof DeviceCategoryObject)[keyof typeof DeviceCategoryObject];
+export type DeviceJoinType = (typeof DeviceJoinTypeObject)[keyof typeof DeviceJoinTypeObject];
 export interface DeviceLink extends Entity, Parsable {
     /**
      * Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
@@ -5978,14 +5995,17 @@ export function serializeConnection(writer: SerializationWriter, connection: Par
     writer.writeStringValue("agentVersion", connection.agentVersion);
     writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", connection.applicationSnapshot, serializeApplicationSnapshot);
     writer.writeDateValue("createdDateTime", connection.createdDateTime);
+    writer.writeEnumValue<CrossTenantAccessType>("crossTenantAccessType", connection.crossTenantAccessType);
     writer.writeStringValue("destinationFqdn", connection.destinationFqdn);
     writer.writeStringValue("destinationIp", connection.destinationIp);
     writer.writeNumberValue("destinationPort", connection.destinationPort);
     writer.writeEnumValue<DeviceCategory>("deviceCategory", connection.deviceCategory);
     writer.writeStringValue("deviceId", connection.deviceId);
+    writer.writeEnumValue<DeviceJoinType>("deviceJoinType", connection.deviceJoinType);
     writer.writeStringValue("deviceOperatingSystem", connection.deviceOperatingSystem);
     writer.writeStringValue("deviceOperatingSystemVersion", connection.deviceOperatingSystemVersion);
     writer.writeDateValue("endDateTime", connection.endDateTime);
+    writer.writeStringValue("homeTenantId", connection.homeTenantId);
     writer.writeStringValue("initiatingProcessName", connection.initiatingProcessName);
     writer.writeDateValue("lastUpdateDateTime", connection.lastUpdateDateTime);
     writer.writeEnumValue<NetworkingProtocol>("networkProtocol", connection.networkProtocol);
@@ -8401,11 +8421,22 @@ export const ConnectivityStateObject = {
     ErrorEscaped: "error",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const CrossTenantAccessTypeObject = {
+    None: "none",
+    B2bCollaboration: "b2bCollaboration",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const DeviceCategoryObject = {
     Client: "client",
     Branch: "branch",
     UnknownFutureValue: "unknownFutureValue",
     RemoteNetwork: "remoteNetwork",
+} as const;
+export const DeviceJoinTypeObject = {
+    None: "none",
+    MicrosoftEntraJoined: "microsoftEntraJoined",
+    MicrosoftEntraRegistered: "microsoftEntraRegistered",
+    UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const DeviceVendorObject = {
     BarracudaNetworks: "barracudaNetworks",
@@ -8425,6 +8456,12 @@ export const DeviceVendorObject = {
     Other: "other",
     CiscoCatalyst: "ciscoCatalyst",
     UnknownFutureValue: "unknownFutureValue",
+    Aviatrix: "aviatrix",
+    Netskope: "netskope",
+    Teridion: "teridion",
+    AristaNetworks: "aristaNetworks",
+    AristaVeloCloud: "aristaVeloCloud",
+    JuniperNetworks: "juniperNetworks",
 } as const;
 export const DhGroupObject = {
     DhGroup14: "dhGroup14",
@@ -8658,6 +8695,11 @@ export const RegionObject = {
     FranceSouth: "franceSouth",
     IsraelCentral: "israelCentral",
     UnknownFutureValue: "unknownFutureValue",
+    TaiwanNorth: "taiwanNorth",
+    MexicoCentral: "mexicoCentral",
+    SpainCentral: "spainCentral",
+    JioIndiaCentral: "jioIndiaCentral",
+    BrazilSouthEast: "brazilSouthEast",
 } as const;
 export const RemoteNetworkStatusObject = {
     TunnelDisconnected: "tunnelDisconnected",

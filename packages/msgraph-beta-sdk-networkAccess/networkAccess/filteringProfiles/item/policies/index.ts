@@ -27,30 +27,30 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      byPolicyLinkId(policyLinkId: string) : PolicyLinkItemRequestBuilder;
     /**
-     * Get a list of the threatIntelligencePolicyLink objects and their properties.
+     * Get a list of the filteringPolicyLink objects and their properties. The associated policy can be of the following types:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<PolicyLinkCollectionResponse | undefined>;
     /**
-     * Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+     * Add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-post?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-post?view=graph-rest-beta|Find more info here}
      */
      post(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicyLink | undefined>;
     /**
-     * Get a list of the threatIntelligencePolicyLink objects and their properties.
+     * Get a list of the filteringPolicyLink objects and their properties. The associated policy can be of the following types:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+     * Add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      toPostRequestInformation(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the threatIntelligencePolicyLink objects and their properties.
+ * Get a list of the filteringPolicyLink objects and their properties. The associated policy can be of the following types:
  */
 export interface PoliciesRequestBuilderGetQueryParameters {
     /**

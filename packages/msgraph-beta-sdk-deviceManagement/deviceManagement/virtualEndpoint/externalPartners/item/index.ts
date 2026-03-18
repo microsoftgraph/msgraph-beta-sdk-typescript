@@ -6,12 +6,36 @@ import { createCloudPcExternalPartnerFromDiscriminatorValue, serializeCloudPcExt
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { ConfigureAgentRequestBuilderRequestsMetadata, type ConfigureAgentRequestBuilder } from './configureAgent/index.js';
+// @ts-ignore
+import { DeployAgentRequestBuilderRequestsMetadata, type DeployAgentRequestBuilder } from './deployAgent/index.js';
+// @ts-ignore
+import { RetrieveActionReportsRequestBuilderRequestsMetadata, type RetrieveActionReportsRequestBuilder } from './retrieveActionReports/index.js';
+// @ts-ignore
+import { RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilderRequestsMetadata, type RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilder } from './retrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcId/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.
  */
 export interface CloudPcExternalPartnerItemRequestBuilder extends BaseRequestBuilder<CloudPcExternalPartnerItemRequestBuilder> {
+    /**
+     * Provides operations to call the configureAgent method.
+     */
+    get configureAgent(): ConfigureAgentRequestBuilder;
+    /**
+     * Provides operations to call the deployAgent method.
+     */
+    get deployAgent(): DeployAgentRequestBuilder;
+    /**
+     * Provides operations to call the retrieveActionReports method.
+     */
+    get retrieveActionReports(): RetrieveActionReportsRequestBuilder;
+    /**
+     * Provides operations to call the retrieveDeployAgentActionResults method.
+     */
+    get retrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcId(): RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilder;
     /**
      * Delete navigation property externalPartners for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -78,6 +102,23 @@ export const CloudPcExternalPartnerItemRequestBuilderUriTemplate = "{+baseurl}/d
 const CloudPcExternalPartnerItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const CloudPcExternalPartnerItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CloudPcExternalPartnerItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    configureAgent: {
+        requestsMetadata: ConfigureAgentRequestBuilderRequestsMetadata,
+    },
+    deployAgent: {
+        requestsMetadata: DeployAgentRequestBuilderRequestsMetadata,
+    },
+    retrieveActionReports: {
+        requestsMetadata: RetrieveActionReportsRequestBuilderRequestsMetadata,
+    },
+    retrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcId: {
+        requestsMetadata: RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.
