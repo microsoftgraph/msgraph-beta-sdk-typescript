@@ -19,10 +19,11 @@ export interface BaselineRequestBuilder extends BaseRequestBuilder<BaselineReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get baseline from admin
+     * Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationBaseline>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationbaseline-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BaselineRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationBaseline | undefined>;
     /**
@@ -40,7 +41,7 @@ export interface BaselineRequestBuilder extends BaseRequestBuilder<BaselineReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get baseline from admin
+     * Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface BaselineRequestBuilder extends BaseRequestBuilder<BaselineReque
      toPatchRequestInformation(body: ConfigurationBaseline, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get baseline from admin
+ * Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
  */
 export interface BaselineRequestBuilderGetQueryParameters {
     /**

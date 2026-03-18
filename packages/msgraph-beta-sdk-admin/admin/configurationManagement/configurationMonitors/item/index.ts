@@ -19,40 +19,43 @@ export interface ConfigurationMonitorItemRequestBuilder extends BaseRequestBuild
      */
     get baseline(): BaselineRequestBuilder;
     /**
-     * Delete navigation property configurationMonitors for admin
+     * Delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can't be restored.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get configurationMonitors from admin
+     * Get the properties and relationships of a configurationMonitor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationMonitor>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConfigurationMonitorItemRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationMonitor | undefined>;
     /**
-     * Update the navigation property configurationMonitors in admin
+     * Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationMonitor>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ConfigurationMonitor, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigurationMonitor | undefined>;
     /**
-     * Delete navigation property configurationMonitors for admin
+     * Delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can't be restored.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get configurationMonitors from admin
+     * Get the properties and relationships of a configurationMonitor object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConfigurationMonitorItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property configurationMonitors in admin
+     * Update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +63,7 @@ export interface ConfigurationMonitorItemRequestBuilder extends BaseRequestBuild
      toPatchRequestInformation(body: ConfigurationMonitor, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationMonitors from admin
+ * Get the properties and relationships of a configurationMonitor object.
  */
 export interface ConfigurationMonitorItemRequestBuilderGetQueryParameters {
     /**

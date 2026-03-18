@@ -476,6 +476,172 @@ export interface CloudApplicationReport extends AdditionalDataHolder, BackedMode
      */
     userCount?: number | null;
 }
+export type CloudFirewallAction = (typeof CloudFirewallActionObject)[keyof typeof CloudFirewallActionObject];
+export interface CloudFirewallDestinationAddress extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface CloudFirewallDestinationFqdnAddress extends CloudFirewallDestinationAddress, Parsable {
+    /**
+     * A collection of FQDNs for destination address matching (for example, example.com, api.contoso.com). Empty collections are not allowed. Required.
+     */
+    values?: string[] | null;
+}
+export interface CloudFirewallDestinationIpAddress extends CloudFirewallDestinationAddress, Parsable {
+    /**
+     * A collection of IP addresses. Supports IPv4, IPv6, CIDR notation (for example, 192.168.0.0/16), and IP ranges (for example, 172.16.0.0-172.16.255.255). The collection must not be empty. Required.
+     */
+    values?: string[] | null;
+}
+export interface CloudFirewallDestinationMatching extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The destination addresses to match. An empty collection means don't filter by destination addresses (match all). Required.
+     */
+    addresses?: CloudFirewallDestinationAddress[] | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The destination ports to match, for example, 80, 443, 1024-2048. An empty collection means don't filter by destination ports (match all). Required.
+     */
+    ports?: string[] | null;
+    /**
+     * The protocols property
+     */
+    protocols?: CloudFirewallProtocol[] | null;
+}
+export interface CloudFirewallMatchingConditions extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Destination address, port, and protocol matching criteria. null means don't match on destination. Optional.
+     */
+    destinations?: CloudFirewallDestinationMatching | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Source address and port matching criteria. null means don't match on source. Optional.
+     */
+    sources?: CloudFirewallSourceMatching | null;
+}
+export interface CloudFirewallPolicy extends Parsable, Policy {
+    /**
+     * The date and time when the policy was last modified. Read-only.
+     */
+    lastModifiedDateTime?: Date | null;
+    /**
+     * The settings property
+     */
+    settings?: CloudFirewallPolicySettings | null;
+}
+export interface CloudFirewallPolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: CloudFirewallPolicy[] | null;
+}
+export interface CloudFirewallPolicyLink extends Parsable, PolicyLink {
+}
+export interface CloudFirewallPolicySettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The defaultAction property
+     */
+    defaultAction?: CloudFirewallAction | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export type CloudFirewallProtocol = (typeof CloudFirewallProtocolObject)[keyof typeof CloudFirewallProtocolObject];
+export interface CloudFirewallRule extends Parsable, PolicyRule {
+    /**
+     * The action property
+     */
+    action?: CloudFirewallAction | null;
+    /**
+     * A human-readable description of the rule's purpose. Optional.
+     */
+    description?: string | null;
+    /**
+     * The matchingConditions property
+     */
+    matchingConditions?: CloudFirewallMatchingConditions | null;
+    /**
+     * A unique priority value that determines the rule evaluation order; lower values are evaluated first. Required.
+     */
+    priority?: number | null;
+    /**
+     * The settings property
+     */
+    settings?: CloudFirewallRuleSettings | null;
+}
+export interface CloudFirewallRuleSettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The status property
+     */
+    status?: SecurityRuleStatus | null;
+}
+export interface CloudFirewallSourceAddress extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface CloudFirewallSourceIpAddress extends CloudFirewallSourceAddress, Parsable {
+    /**
+     * A collection of IP addresses. Supports IPv4, IPv6, CIDR notation (for example, 192.168.0.0/16), and IP ranges (for example, 172.16.0.0-172.16.255.255). The collection must not be empty. Required.
+     */
+    values?: string[] | null;
+}
+export interface CloudFirewallSourceMatching extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The source addresses to match. An empty collection means don't filter by source addresses (match all). Required.
+     */
+    addresses?: CloudFirewallSourceAddress[] | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The source ports to match, for example, 80, 443, 1024-2048. An empty collection means don't filter by source ports (match all). Required.
+     */
+    ports?: string[] | null;
+}
 export interface ConditionalAccessPolicy extends Entity, Parsable {
     /**
      * Indicates the date and time the conditional access policy was created.
@@ -520,6 +686,10 @@ export interface Connection extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
+     * Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.
+     */
+    crossTenantAccessType?: CrossTenantAccessType | null;
+    /**
      * The destination FQDN of the connection.
      */
     destinationFqdn?: string | null;
@@ -540,6 +710,10 @@ export interface Connection extends Entity, Parsable {
      */
     deviceId?: string | null;
     /**
+     * Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.
+     */
+    deviceJoinType?: DeviceJoinType | null;
+    /**
      * The device operating system type.
      */
     deviceOperatingSystem?: string | null;
@@ -551,6 +725,10 @@ export interface Connection extends Entity, Parsable {
      * The time the connection was terminated.
      */
     endDateTime?: Date | null;
+    /**
+     * The identifier of the home tenant, for Entra B2B scenarios.
+     */
+    homeTenantId?: string | null;
     /**
      * The process initiating the traffic connection.
      */
@@ -880,6 +1058,156 @@ export function createCloudApplicationMetadataFromDiscriminatorValue(parseNode: 
 // @ts-ignore
 export function createCloudApplicationReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCloudApplicationReport;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallDestinationAddress}
+ */
+// @ts-ignore
+export function createCloudFirewallDestinationAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.cloudFirewallDestinationFqdnAddress":
+                    return deserializeIntoCloudFirewallDestinationFqdnAddress;
+                case "#microsoft.graph.networkaccess.cloudFirewallDestinationIpAddress":
+                    return deserializeIntoCloudFirewallDestinationIpAddress;
+            }
+        }
+    }
+    return deserializeIntoCloudFirewallDestinationAddress;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallDestinationFqdnAddress}
+ */
+// @ts-ignore
+export function createCloudFirewallDestinationFqdnAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallDestinationFqdnAddress;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallDestinationIpAddress}
+ */
+// @ts-ignore
+export function createCloudFirewallDestinationIpAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallDestinationIpAddress;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallDestinationMatching}
+ */
+// @ts-ignore
+export function createCloudFirewallDestinationMatchingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallDestinationMatching;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallMatchingConditions}
+ */
+// @ts-ignore
+export function createCloudFirewallMatchingConditionsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallMatchingConditions;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallPolicyCollectionResponse}
+ */
+// @ts-ignore
+export function createCloudFirewallPolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallPolicyCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallPolicy}
+ */
+// @ts-ignore
+export function createCloudFirewallPolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallPolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallPolicyLink}
+ */
+// @ts-ignore
+export function createCloudFirewallPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallPolicyLink;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallPolicySettings}
+ */
+// @ts-ignore
+export function createCloudFirewallPolicySettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallPolicySettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallRule}
+ */
+// @ts-ignore
+export function createCloudFirewallRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallRuleSettings}
+ */
+// @ts-ignore
+export function createCloudFirewallRuleSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallRuleSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallSourceAddress}
+ */
+// @ts-ignore
+export function createCloudFirewallSourceAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.cloudFirewallSourceIpAddress":
+                    return deserializeIntoCloudFirewallSourceIpAddress;
+            }
+        }
+    }
+    return deserializeIntoCloudFirewallSourceAddress;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallSourceIpAddress}
+ */
+// @ts-ignore
+export function createCloudFirewallSourceIpAddressFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallSourceIpAddress;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudFirewallSourceMatching}
+ */
+// @ts-ignore
+export function createCloudFirewallSourceMatchingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudFirewallSourceMatching;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1425,6 +1753,8 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.cloudFirewallPolicy":
+                    return deserializeIntoCloudFirewallPolicy;
                 case "#microsoft.graph.networkaccess.filteringPolicy":
                     return deserializeIntoFilteringPolicy;
                 case "#microsoft.graph.networkaccess.forwardingPolicy":
@@ -1460,6 +1790,8 @@ export function createPolicyLinkFromDiscriminatorValue(parseNode: ParseNode | un
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.cloudFirewallPolicyLink":
+                    return deserializeIntoCloudFirewallPolicyLink;
                 case "#microsoft.graph.networkaccess.filteringPolicyLink":
                     return deserializeIntoFilteringPolicyLink;
                 case "#microsoft.graph.networkaccess.forwardingPolicyLink":
@@ -1504,6 +1836,8 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.cloudFirewallRule":
+                    return deserializeIntoCloudFirewallRule;
                 case "#microsoft.graph.networkaccess.filteringRule":
                     return deserializeIntoFilteringRule;
                 case "#microsoft.graph.networkaccess.forwardingRule":
@@ -2221,6 +2555,7 @@ export interface CrossTenantAccessSettings extends Entity, Parsable {
      */
     networkPacketTaggingStatus?: Status | null;
 }
+export type CrossTenantAccessType = (typeof CrossTenantAccessTypeObject)[keyof typeof CrossTenantAccessTypeObject];
 export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The total number of authentication sessions between startDateTime and endDateTime.
@@ -2560,6 +2895,187 @@ export function deserializeIntoCloudApplicationReport(cloudApplicationReport: Pa
 }
 /**
  * The deserialization information for the current model
+ * @param CloudFirewallDestinationAddress The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallDestinationAddress(cloudFirewallDestinationAddress: Partial<CloudFirewallDestinationAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudFirewallDestinationAddress.backingStoreEnabled = true; },
+        "@odata.type": n => { cloudFirewallDestinationAddress.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallDestinationFqdnAddress The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallDestinationFqdnAddress(cloudFirewallDestinationFqdnAddress: Partial<CloudFirewallDestinationFqdnAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCloudFirewallDestinationAddress(cloudFirewallDestinationFqdnAddress),
+        "values": n => { cloudFirewallDestinationFqdnAddress.values = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallDestinationIpAddress The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallDestinationIpAddress(cloudFirewallDestinationIpAddress: Partial<CloudFirewallDestinationIpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCloudFirewallDestinationAddress(cloudFirewallDestinationIpAddress),
+        "values": n => { cloudFirewallDestinationIpAddress.values = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallDestinationMatching The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallDestinationMatching(cloudFirewallDestinationMatching: Partial<CloudFirewallDestinationMatching> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "addresses": n => { cloudFirewallDestinationMatching.addresses = n.getCollectionOfObjectValues<CloudFirewallDestinationAddress>(createCloudFirewallDestinationAddressFromDiscriminatorValue); },
+        "backingStoreEnabled": n => { cloudFirewallDestinationMatching.backingStoreEnabled = true; },
+        "@odata.type": n => { cloudFirewallDestinationMatching.odataType = n.getStringValue(); },
+        "ports": n => { cloudFirewallDestinationMatching.ports = n.getCollectionOfPrimitiveValues<string>(); },
+        "protocols": n => { cloudFirewallDestinationMatching.protocols = n.getCollectionOfEnumValues<CloudFirewallProtocol>(CloudFirewallProtocolObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallMatchingConditions The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallMatchingConditions(cloudFirewallMatchingConditions: Partial<CloudFirewallMatchingConditions> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudFirewallMatchingConditions.backingStoreEnabled = true; },
+        "destinations": n => { cloudFirewallMatchingConditions.destinations = n.getObjectValue<CloudFirewallDestinationMatching>(createCloudFirewallDestinationMatchingFromDiscriminatorValue); },
+        "@odata.type": n => { cloudFirewallMatchingConditions.odataType = n.getStringValue(); },
+        "sources": n => { cloudFirewallMatchingConditions.sources = n.getObjectValue<CloudFirewallSourceMatching>(createCloudFirewallSourceMatchingFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallPolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallPolicy(cloudFirewallPolicy: Partial<CloudFirewallPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicy(cloudFirewallPolicy),
+        "lastModifiedDateTime": n => { cloudFirewallPolicy.lastModifiedDateTime = n.getDateValue(); },
+        "settings": n => { cloudFirewallPolicy.settings = n.getObjectValue<CloudFirewallPolicySettings>(createCloudFirewallPolicySettingsFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallPolicyCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallPolicyCollectionResponse(cloudFirewallPolicyCollectionResponse: Partial<CloudFirewallPolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(cloudFirewallPolicyCollectionResponse),
+        "value": n => { cloudFirewallPolicyCollectionResponse.value = n.getCollectionOfObjectValues<CloudFirewallPolicy>(createCloudFirewallPolicyFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallPolicyLink The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallPolicyLink(cloudFirewallPolicyLink: Partial<CloudFirewallPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicyLink(cloudFirewallPolicyLink),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallPolicySettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallPolicySettings(cloudFirewallPolicySettings: Partial<CloudFirewallPolicySettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudFirewallPolicySettings.backingStoreEnabled = true; },
+        "defaultAction": n => { cloudFirewallPolicySettings.defaultAction = n.getEnumValue<CloudFirewallAction>(CloudFirewallActionObject); },
+        "@odata.type": n => { cloudFirewallPolicySettings.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallRule(cloudFirewallRule: Partial<CloudFirewallRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicyRule(cloudFirewallRule),
+        "action": n => { cloudFirewallRule.action = n.getEnumValue<CloudFirewallAction>(CloudFirewallActionObject); },
+        "description": n => { cloudFirewallRule.description = n.getStringValue(); },
+        "matchingConditions": n => { cloudFirewallRule.matchingConditions = n.getObjectValue<CloudFirewallMatchingConditions>(createCloudFirewallMatchingConditionsFromDiscriminatorValue); },
+        "priority": n => { cloudFirewallRule.priority = n.getNumberValue(); },
+        "settings": n => { cloudFirewallRule.settings = n.getObjectValue<CloudFirewallRuleSettings>(createCloudFirewallRuleSettingsFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallRuleSettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallRuleSettings(cloudFirewallRuleSettings: Partial<CloudFirewallRuleSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudFirewallRuleSettings.backingStoreEnabled = true; },
+        "@odata.type": n => { cloudFirewallRuleSettings.odataType = n.getStringValue(); },
+        "status": n => { cloudFirewallRuleSettings.status = n.getEnumValue<SecurityRuleStatus>(SecurityRuleStatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallSourceAddress The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallSourceAddress(cloudFirewallSourceAddress: Partial<CloudFirewallSourceAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudFirewallSourceAddress.backingStoreEnabled = true; },
+        "@odata.type": n => { cloudFirewallSourceAddress.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallSourceIpAddress The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallSourceIpAddress(cloudFirewallSourceIpAddress: Partial<CloudFirewallSourceIpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCloudFirewallSourceAddress(cloudFirewallSourceIpAddress),
+        "values": n => { cloudFirewallSourceIpAddress.values = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudFirewallSourceMatching The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudFirewallSourceMatching(cloudFirewallSourceMatching: Partial<CloudFirewallSourceMatching> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "addresses": n => { cloudFirewallSourceMatching.addresses = n.getCollectionOfObjectValues<CloudFirewallSourceAddress>(createCloudFirewallSourceAddressFromDiscriminatorValue); },
+        "backingStoreEnabled": n => { cloudFirewallSourceMatching.backingStoreEnabled = true; },
+        "@odata.type": n => { cloudFirewallSourceMatching.odataType = n.getStringValue(); },
+        "ports": n => { cloudFirewallSourceMatching.ports = n.getCollectionOfPrimitiveValues<string>(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param ConditionalAccessPolicy The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2609,14 +3125,17 @@ export function deserializeIntoConnection(connection: Partial<Connection> | unde
         "agentVersion": n => { connection.agentVersion = n.getStringValue(); },
         "applicationSnapshot": n => { connection.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
         "createdDateTime": n => { connection.createdDateTime = n.getDateValue(); },
+        "crossTenantAccessType": n => { connection.crossTenantAccessType = n.getEnumValue<CrossTenantAccessType>(CrossTenantAccessTypeObject); },
         "destinationFqdn": n => { connection.destinationFqdn = n.getStringValue(); },
         "destinationIp": n => { connection.destinationIp = n.getStringValue(); },
         "destinationPort": n => { connection.destinationPort = n.getNumberValue(); },
         "deviceCategory": n => { connection.deviceCategory = n.getEnumValue<DeviceCategory>(DeviceCategoryObject); },
         "deviceId": n => { connection.deviceId = n.getStringValue(); },
+        "deviceJoinType": n => { connection.deviceJoinType = n.getEnumValue<DeviceJoinType>(DeviceJoinTypeObject); },
         "deviceOperatingSystem": n => { connection.deviceOperatingSystem = n.getStringValue(); },
         "deviceOperatingSystemVersion": n => { connection.deviceOperatingSystemVersion = n.getStringValue(); },
         "endDateTime": n => { connection.endDateTime = n.getDateValue(); },
+        "homeTenantId": n => { connection.homeTenantId = n.getStringValue(); },
         "initiatingProcessName": n => { connection.initiatingProcessName = n.getStringValue(); },
         "lastUpdateDateTime": n => { connection.lastUpdateDateTime = n.getDateValue(); },
         "networkProtocol": n => { connection.networkProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
@@ -3309,6 +3828,7 @@ export function deserializeIntoNetworkAccessRoot(networkAccessRoot: Partial<Netw
     return {
         ...deserializeIntoEntity(networkAccessRoot),
         "alerts": n => { networkAccessRoot.alerts = n.getCollectionOfObjectValues<Alert>(createAlertFromDiscriminatorValue); },
+        "cloudFirewallPolicies": n => { networkAccessRoot.cloudFirewallPolicies = n.getCollectionOfObjectValues<CloudFirewallPolicy>(createCloudFirewallPolicyFromDiscriminatorValue); },
         "connectivity": n => { networkAccessRoot.connectivity = n.getObjectValue<Connectivity>(createConnectivityFromDiscriminatorValue); },
         "filteringPolicies": n => { networkAccessRoot.filteringPolicies = n.getCollectionOfObjectValues<FilteringPolicy>(createFilteringPolicyFromDiscriminatorValue); },
         "filteringProfiles": n => { networkAccessRoot.filteringProfiles = n.getCollectionOfObjectValues<FilteringProfile>(createFilteringProfileFromDiscriminatorValue); },
@@ -4417,6 +4937,7 @@ export interface Device extends AdditionalDataHolder, BackedModel, Parsable {
     trafficType?: TrafficType | null;
 }
 export type DeviceCategory = (typeof DeviceCategoryObject)[keyof typeof DeviceCategoryObject];
+export type DeviceJoinType = (typeof DeviceJoinTypeObject)[keyof typeof DeviceJoinTypeObject];
 export interface DeviceLink extends Entity, Parsable {
     /**
      * Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
@@ -4938,6 +5459,10 @@ export interface NetworkAccessRoot extends Entity, Parsable {
      * The alerts property
      */
     alerts?: Alert[] | null;
+    /**
+     * A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.
+     */
+    cloudFirewallPolicies?: CloudFirewallPolicy[] | null;
     /**
      * Connectivity represents all the connectivity components in Global Secure Access.
      */
@@ -5928,6 +6453,200 @@ export function serializeCloudApplicationReport(writer: SerializationWriter, clo
 }
 /**
  * Serializes information the current object
+ * @param CloudFirewallDestinationAddress The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallDestinationAddress(writer: SerializationWriter, cloudFirewallDestinationAddress: Partial<CloudFirewallDestinationAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallDestinationAddress || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", cloudFirewallDestinationAddress.odataType);
+    writer.writeAdditionalData(cloudFirewallDestinationAddress.additionalData);
+    switch (cloudFirewallDestinationAddress.odataType) {
+        case "#microsoft.graph.networkaccess.cloudFirewallDestinationFqdnAddress":
+            serializeCloudFirewallDestinationFqdnAddress(writer, cloudFirewallDestinationAddress, true);
+        break;
+        case "#microsoft.graph.networkaccess.cloudFirewallDestinationIpAddress":
+            serializeCloudFirewallDestinationIpAddress(writer, cloudFirewallDestinationAddress, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallDestinationFqdnAddress The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallDestinationFqdnAddress(writer: SerializationWriter, cloudFirewallDestinationFqdnAddress: Partial<CloudFirewallDestinationFqdnAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallDestinationFqdnAddress || isSerializingDerivedType) { return; }
+    serializeCloudFirewallDestinationAddress(writer, cloudFirewallDestinationFqdnAddress, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("values", cloudFirewallDestinationFqdnAddress.values);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallDestinationIpAddress The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallDestinationIpAddress(writer: SerializationWriter, cloudFirewallDestinationIpAddress: Partial<CloudFirewallDestinationIpAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallDestinationIpAddress || isSerializingDerivedType) { return; }
+    serializeCloudFirewallDestinationAddress(writer, cloudFirewallDestinationIpAddress, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("values", cloudFirewallDestinationIpAddress.values);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallDestinationMatching The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallDestinationMatching(writer: SerializationWriter, cloudFirewallDestinationMatching: Partial<CloudFirewallDestinationMatching> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallDestinationMatching || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<CloudFirewallDestinationAddress>("addresses", cloudFirewallDestinationMatching.addresses, serializeCloudFirewallDestinationAddress);
+    writer.writeStringValue("@odata.type", cloudFirewallDestinationMatching.odataType);
+    writer.writeCollectionOfPrimitiveValues<string>("ports", cloudFirewallDestinationMatching.ports);
+    writer.writeEnumValue<CloudFirewallProtocol[]>("protocols", cloudFirewallDestinationMatching.protocols);
+    writer.writeAdditionalData(cloudFirewallDestinationMatching.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallMatchingConditions The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallMatchingConditions(writer: SerializationWriter, cloudFirewallMatchingConditions: Partial<CloudFirewallMatchingConditions> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallMatchingConditions || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<CloudFirewallDestinationMatching>("destinations", cloudFirewallMatchingConditions.destinations, serializeCloudFirewallDestinationMatching);
+    writer.writeStringValue("@odata.type", cloudFirewallMatchingConditions.odataType);
+    writer.writeObjectValue<CloudFirewallSourceMatching>("sources", cloudFirewallMatchingConditions.sources, serializeCloudFirewallSourceMatching);
+    writer.writeAdditionalData(cloudFirewallMatchingConditions.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallPolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallPolicy(writer: SerializationWriter, cloudFirewallPolicy: Partial<CloudFirewallPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallPolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, cloudFirewallPolicy, isSerializingDerivedType)
+    writer.writeDateValue("lastModifiedDateTime", cloudFirewallPolicy.lastModifiedDateTime);
+    writer.writeObjectValue<CloudFirewallPolicySettings>("settings", cloudFirewallPolicy.settings, serializeCloudFirewallPolicySettings);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallPolicyCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallPolicyCollectionResponse(writer: SerializationWriter, cloudFirewallPolicyCollectionResponse: Partial<CloudFirewallPolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallPolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, cloudFirewallPolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CloudFirewallPolicy>("value", cloudFirewallPolicyCollectionResponse.value, serializeCloudFirewallPolicy);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallPolicyLink The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallPolicyLink(writer: SerializationWriter, cloudFirewallPolicyLink: Partial<CloudFirewallPolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallPolicyLink || isSerializingDerivedType) { return; }
+    serializePolicyLink(writer, cloudFirewallPolicyLink, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallPolicySettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallPolicySettings(writer: SerializationWriter, cloudFirewallPolicySettings: Partial<CloudFirewallPolicySettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallPolicySettings || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<CloudFirewallAction>("defaultAction", cloudFirewallPolicySettings.defaultAction);
+    writer.writeStringValue("@odata.type", cloudFirewallPolicySettings.odataType);
+    writer.writeAdditionalData(cloudFirewallPolicySettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallRule(writer: SerializationWriter, cloudFirewallRule: Partial<CloudFirewallRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallRule || isSerializingDerivedType) { return; }
+    serializePolicyRule(writer, cloudFirewallRule, isSerializingDerivedType)
+    writer.writeEnumValue<CloudFirewallAction>("action", cloudFirewallRule.action);
+    writer.writeStringValue("description", cloudFirewallRule.description);
+    writer.writeObjectValue<CloudFirewallMatchingConditions>("matchingConditions", cloudFirewallRule.matchingConditions, serializeCloudFirewallMatchingConditions);
+    writer.writeNumberValue("priority", cloudFirewallRule.priority);
+    writer.writeObjectValue<CloudFirewallRuleSettings>("settings", cloudFirewallRule.settings, serializeCloudFirewallRuleSettings);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallRuleSettings The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallRuleSettings(writer: SerializationWriter, cloudFirewallRuleSettings: Partial<CloudFirewallRuleSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallRuleSettings || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", cloudFirewallRuleSettings.odataType);
+    writer.writeEnumValue<SecurityRuleStatus>("status", cloudFirewallRuleSettings.status);
+    writer.writeAdditionalData(cloudFirewallRuleSettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallSourceAddress The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallSourceAddress(writer: SerializationWriter, cloudFirewallSourceAddress: Partial<CloudFirewallSourceAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallSourceAddress || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", cloudFirewallSourceAddress.odataType);
+    writer.writeAdditionalData(cloudFirewallSourceAddress.additionalData);
+    switch (cloudFirewallSourceAddress.odataType) {
+        case "#microsoft.graph.networkaccess.cloudFirewallSourceIpAddress":
+            serializeCloudFirewallSourceIpAddress(writer, cloudFirewallSourceAddress, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallSourceIpAddress The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallSourceIpAddress(writer: SerializationWriter, cloudFirewallSourceIpAddress: Partial<CloudFirewallSourceIpAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallSourceIpAddress || isSerializingDerivedType) { return; }
+    serializeCloudFirewallSourceAddress(writer, cloudFirewallSourceIpAddress, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("values", cloudFirewallSourceIpAddress.values);
+}
+/**
+ * Serializes information the current object
+ * @param CloudFirewallSourceMatching The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudFirewallSourceMatching(writer: SerializationWriter, cloudFirewallSourceMatching: Partial<CloudFirewallSourceMatching> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudFirewallSourceMatching || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<CloudFirewallSourceAddress>("addresses", cloudFirewallSourceMatching.addresses, serializeCloudFirewallSourceAddress);
+    writer.writeStringValue("@odata.type", cloudFirewallSourceMatching.odataType);
+    writer.writeCollectionOfPrimitiveValues<string>("ports", cloudFirewallSourceMatching.ports);
+    writer.writeAdditionalData(cloudFirewallSourceMatching.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param ConditionalAccessPolicy The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5978,14 +6697,17 @@ export function serializeConnection(writer: SerializationWriter, connection: Par
     writer.writeStringValue("agentVersion", connection.agentVersion);
     writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", connection.applicationSnapshot, serializeApplicationSnapshot);
     writer.writeDateValue("createdDateTime", connection.createdDateTime);
+    writer.writeEnumValue<CrossTenantAccessType>("crossTenantAccessType", connection.crossTenantAccessType);
     writer.writeStringValue("destinationFqdn", connection.destinationFqdn);
     writer.writeStringValue("destinationIp", connection.destinationIp);
     writer.writeNumberValue("destinationPort", connection.destinationPort);
     writer.writeEnumValue<DeviceCategory>("deviceCategory", connection.deviceCategory);
     writer.writeStringValue("deviceId", connection.deviceId);
+    writer.writeEnumValue<DeviceJoinType>("deviceJoinType", connection.deviceJoinType);
     writer.writeStringValue("deviceOperatingSystem", connection.deviceOperatingSystem);
     writer.writeStringValue("deviceOperatingSystemVersion", connection.deviceOperatingSystemVersion);
     writer.writeDateValue("endDateTime", connection.endDateTime);
+    writer.writeStringValue("homeTenantId", connection.homeTenantId);
     writer.writeStringValue("initiatingProcessName", connection.initiatingProcessName);
     writer.writeDateValue("lastUpdateDateTime", connection.lastUpdateDateTime);
     writer.writeEnumValue<NetworkingProtocol>("networkProtocol", connection.networkProtocol);
@@ -6711,6 +7433,7 @@ export function serializeNetworkAccessRoot(writer: SerializationWriter, networkA
     if (!networkAccessRoot || isSerializingDerivedType) { return; }
     serializeEntity(writer, networkAccessRoot, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<Alert>("alerts", networkAccessRoot.alerts, serializeAlert);
+    writer.writeCollectionOfObjectValues<CloudFirewallPolicy>("cloudFirewallPolicies", networkAccessRoot.cloudFirewallPolicies, serializeCloudFirewallPolicy);
     writer.writeObjectValue<Connectivity>("connectivity", networkAccessRoot.connectivity, serializeConnectivity);
     writer.writeCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", networkAccessRoot.filteringPolicies, serializeFilteringPolicy);
     writer.writeCollectionOfObjectValues<FilteringProfile>("filteringProfiles", networkAccessRoot.filteringProfiles, serializeFilteringProfile);
@@ -6825,6 +7548,9 @@ export function serializePolicy(writer: SerializationWriter, policy: Partial<Pol
     writer.writeCollectionOfObjectValues<PolicyRule>("policyRules", policy.policyRules, serializePolicyRule);
     writer.writeStringValue("version", policy.version);
     switch (policy.odataType) {
+        case "#microsoft.graph.networkaccess.cloudFirewallPolicy":
+            serializeCloudFirewallPolicy(writer, policy, true);
+        break;
         case "#microsoft.graph.networkaccess.filteringPolicy":
             serializeFilteringPolicy(writer, policy, true);
         break;
@@ -6853,6 +7579,9 @@ export function serializePolicyLink(writer: SerializationWriter, policyLink: Par
     writer.writeEnumValue<Status>("state", policyLink.state);
     writer.writeStringValue("version", policyLink.version);
     switch (policyLink.odataType) {
+        case "#microsoft.graph.networkaccess.cloudFirewallPolicyLink":
+            serializeCloudFirewallPolicyLink(writer, policyLink, true);
+        break;
         case "#microsoft.graph.networkaccess.filteringPolicyLink":
             serializeFilteringPolicyLink(writer, policyLink, true);
         break;
@@ -6891,6 +7620,9 @@ export function serializePolicyRule(writer: SerializationWriter, policyRule: Par
     serializeEntity(writer, policyRule, isSerializingDerivedType)
     writer.writeStringValue("name", policyRule.name);
     switch (policyRule.odataType) {
+        case "#microsoft.graph.networkaccess.cloudFirewallRule":
+            serializeCloudFirewallRule(writer, policyRule, true);
+        break;
         case "#microsoft.graph.networkaccess.filteringRule":
             serializeFilteringRule(writer, policyRule, true);
         break;
@@ -8388,6 +9120,16 @@ export const ClientFallbackActionObject = {
     Block: "block",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const CloudFirewallActionObject = {
+    Allow: "allow",
+    Block: "block",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const CloudFirewallProtocolObject = {
+    Tcp: "tcp",
+    Udp: "udp",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const ConnectionStatusObject = {
     Open: "open",
     Active: "active",
@@ -8401,11 +9143,22 @@ export const ConnectivityStateObject = {
     ErrorEscaped: "error",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const CrossTenantAccessTypeObject = {
+    None: "none",
+    B2bCollaboration: "b2bCollaboration",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const DeviceCategoryObject = {
     Client: "client",
     Branch: "branch",
     UnknownFutureValue: "unknownFutureValue",
     RemoteNetwork: "remoteNetwork",
+} as const;
+export const DeviceJoinTypeObject = {
+    None: "none",
+    MicrosoftEntraJoined: "microsoftEntraJoined",
+    MicrosoftEntraRegistered: "microsoftEntraRegistered",
+    UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const DeviceVendorObject = {
     BarracudaNetworks: "barracudaNetworks",
@@ -8425,6 +9178,12 @@ export const DeviceVendorObject = {
     Other: "other",
     CiscoCatalyst: "ciscoCatalyst",
     UnknownFutureValue: "unknownFutureValue",
+    Aviatrix: "aviatrix",
+    Netskope: "netskope",
+    Teridion: "teridion",
+    AristaNetworks: "aristaNetworks",
+    AristaVeloCloud: "aristaVeloCloud",
+    JuniperNetworks: "juniperNetworks",
 } as const;
 export const DhGroupObject = {
     DhGroup14: "dhGroup14",
@@ -8658,6 +9417,11 @@ export const RegionObject = {
     FranceSouth: "franceSouth",
     IsraelCentral: "israelCentral",
     UnknownFutureValue: "unknownFutureValue",
+    TaiwanNorth: "taiwanNorth",
+    MexicoCentral: "mexicoCentral",
+    SpainCentral: "spainCentral",
+    JioIndiaCentral: "jioIndiaCentral",
+    BrazilSouthEast: "brazilSouthEast",
 } as const;
 export const RemoteNetworkStatusObject = {
     TunnelDisconnected: "tunnelDisconnected",

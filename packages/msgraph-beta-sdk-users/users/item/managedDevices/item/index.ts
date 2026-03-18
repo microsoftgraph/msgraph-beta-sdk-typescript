@@ -78,9 +78,15 @@ import { RequestRemoteAssistanceRequestBuilderRequestsMetadata, type RequestRemo
 // @ts-ignore
 import { ResetPasscodeRequestBuilderRequestsMetadata, type ResetPasscodeRequestBuilder } from './resetPasscode/index.js';
 // @ts-ignore
+import { RestoreManagedHomeScreenRequestBuilderRequestsMetadata, type RestoreManagedHomeScreenRequestBuilder } from './restoreManagedHomeScreen/index.js';
+// @ts-ignore
 import { RetireRequestBuilderRequestsMetadata, type RetireRequestBuilder } from './retire/index.js';
 // @ts-ignore
+import { RetrieveDeviceLocalAdminAccountDetailRequestBuilderRequestsMetadata, type RetrieveDeviceLocalAdminAccountDetailRequestBuilder } from './retrieveDeviceLocalAdminAccountDetail/index.js';
+// @ts-ignore
 import { RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilderRequestsMetadata, type RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder } from './retrieveMacOSManagedDeviceLocalAdminAccountDetail/index.js';
+// @ts-ignore
+import { RetrieveRecoveryLockPasscodeRequestBuilderRequestsMetadata, type RetrieveRecoveryLockPasscodeRequestBuilder } from './retrieveRecoveryLockPasscode/index.js';
 // @ts-ignore
 import { RevokeAppleVppLicensesRequestBuilderRequestsMetadata, type RevokeAppleVppLicensesRequestBuilder } from './revokeAppleVppLicenses/index.js';
 // @ts-ignore
@@ -90,6 +96,8 @@ import { RotateFileVaultKeyRequestBuilderRequestsMetadata, type RotateFileVaultK
 // @ts-ignore
 import { RotateLocalAdminPasswordRequestBuilderRequestsMetadata, type RotateLocalAdminPasswordRequestBuilder } from './rotateLocalAdminPassword/index.js';
 // @ts-ignore
+import { RotateRecoveryLockPasscodeRequestBuilderRequestsMetadata, type RotateRecoveryLockPasscodeRequestBuilder } from './rotateRecoveryLockPasscode/index.js';
+// @ts-ignore
 import { SecurityBaselineStatesRequestBuilderNavigationMetadata, SecurityBaselineStatesRequestBuilderRequestsMetadata, type SecurityBaselineStatesRequestBuilder } from './securityBaselineStates/index.js';
 // @ts-ignore
 import { SendCustomNotificationToCompanyPortalRequestBuilderRequestsMetadata, type SendCustomNotificationToCompanyPortalRequestBuilder } from './sendCustomNotificationToCompanyPortal/index.js';
@@ -97,6 +105,8 @@ import { SendCustomNotificationToCompanyPortalRequestBuilderRequestsMetadata, ty
 import { SetDeviceNameRequestBuilderRequestsMetadata, type SetDeviceNameRequestBuilder } from './setDeviceName/index.js';
 // @ts-ignore
 import { ShutDownRequestBuilderRequestsMetadata, type ShutDownRequestBuilder } from './shutDown/index.js';
+// @ts-ignore
+import { SuspendManagedHomeScreenRequestBuilderRequestsMetadata, type SuspendManagedHomeScreenRequestBuilder } from './suspendManagedHomeScreen/index.js';
 // @ts-ignore
 import { SyncDeviceRequestBuilderRequestsMetadata, type SyncDeviceRequestBuilder } from './syncDevice/index.js';
 // @ts-ignore
@@ -265,13 +275,25 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      */
     get resetPasscode(): ResetPasscodeRequestBuilder;
     /**
+     * Provides operations to call the restoreManagedHomeScreen method.
+     */
+    get restoreManagedHomeScreen(): RestoreManagedHomeScreenRequestBuilder;
+    /**
      * Provides operations to call the retire method.
      */
     get retire(): RetireRequestBuilder;
     /**
+     * Provides operations to call the retrieveDeviceLocalAdminAccountDetail method.
+     */
+    get retrieveDeviceLocalAdminAccountDetail(): RetrieveDeviceLocalAdminAccountDetailRequestBuilder;
+    /**
      * Provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.
      */
     get retrieveMacOSManagedDeviceLocalAdminAccountDetail(): RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder;
+    /**
+     * Provides operations to call the retrieveRecoveryLockPasscode method.
+     */
+    get retrieveRecoveryLockPasscode(): RetrieveRecoveryLockPasscodeRequestBuilder;
     /**
      * Provides operations to call the revokeAppleVppLicenses method.
      */
@@ -289,6 +311,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      */
     get rotateLocalAdminPassword(): RotateLocalAdminPasswordRequestBuilder;
     /**
+     * Provides operations to call the rotateRecoveryLockPasscode method.
+     */
+    get rotateRecoveryLockPasscode(): RotateRecoveryLockPasscodeRequestBuilder;
+    /**
      * Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
      */
     get securityBaselineStates(): SecurityBaselineStatesRequestBuilder;
@@ -304,6 +330,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the shutDown method.
      */
     get shutDown(): ShutDownRequestBuilder;
+    /**
+     * Provides operations to call the suspendManagedHomeScreen method.
+     */
+    get suspendManagedHomeScreen(): SuspendManagedHomeScreenRequestBuilder;
     /**
      * Provides operations to call the syncDevice method.
      */
@@ -521,11 +551,20 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     resetPasscode: {
         requestsMetadata: ResetPasscodeRequestBuilderRequestsMetadata,
     },
+    restoreManagedHomeScreen: {
+        requestsMetadata: RestoreManagedHomeScreenRequestBuilderRequestsMetadata,
+    },
     retire: {
         requestsMetadata: RetireRequestBuilderRequestsMetadata,
     },
+    retrieveDeviceLocalAdminAccountDetail: {
+        requestsMetadata: RetrieveDeviceLocalAdminAccountDetailRequestBuilderRequestsMetadata,
+    },
     retrieveMacOSManagedDeviceLocalAdminAccountDetail: {
         requestsMetadata: RetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilderRequestsMetadata,
+    },
+    retrieveRecoveryLockPasscode: {
+        requestsMetadata: RetrieveRecoveryLockPasscodeRequestBuilderRequestsMetadata,
     },
     revokeAppleVppLicenses: {
         requestsMetadata: RevokeAppleVppLicensesRequestBuilderRequestsMetadata,
@@ -539,6 +578,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     rotateLocalAdminPassword: {
         requestsMetadata: RotateLocalAdminPasswordRequestBuilderRequestsMetadata,
     },
+    rotateRecoveryLockPasscode: {
+        requestsMetadata: RotateRecoveryLockPasscodeRequestBuilderRequestsMetadata,
+    },
     securityBaselineStates: {
         requestsMetadata: SecurityBaselineStatesRequestBuilderRequestsMetadata,
         navigationMetadata: SecurityBaselineStatesRequestBuilderNavigationMetadata,
@@ -551,6 +593,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     shutDown: {
         requestsMetadata: ShutDownRequestBuilderRequestsMetadata,
+    },
+    suspendManagedHomeScreen: {
+        requestsMetadata: SuspendManagedHomeScreenRequestBuilderRequestsMetadata,
     },
     syncDevice: {
         requestsMetadata: SyncDeviceRequestBuilderRequestsMetadata,

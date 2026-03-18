@@ -15,12 +15,14 @@ export interface CountRequestBuilder extends BaseRequestBuilder<CountRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<number>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
      get(requestConfiguration?: RequestConfiguration<CountRequestBuilderGetQueryParameters> | undefined) : Promise<number | undefined>;
     /**
      * Get the number of the resource
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CountRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
