@@ -242,6 +242,15 @@ export function createParameterFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PreviewFailedTask}
+ */
+// @ts-ignore
+export function createPreviewFailedTaskFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPreviewFailedTask;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RuleBasedSubjectSet}
  */
 // @ts-ignore
@@ -874,6 +883,22 @@ export function deserializeIntoParameter(parameter: Partial<Parameter> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param PreviewFailedTask The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPreviewFailedTask(previewFailedTask: Partial<PreviewFailedTask> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { previewFailedTask.backingStoreEnabled = true; },
+        "definitionId": n => { previewFailedTask.definitionId = n.getStringValue(); },
+        "failureReason": n => { previewFailedTask.failureReason = n.getStringValue(); },
+        "name": n => { previewFailedTask.name = n.getStringValue(); },
+        "@odata.type": n => { previewFailedTask.odataType = n.getStringValue(); },
+        "taskId": n => { previewFailedTask.taskId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param RuleBasedSubjectSet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1241,6 +1266,7 @@ export function deserializeIntoWorkflow(workflow: Partial<Workflow> | undefined 
         "executionScope": n => { workflow.executionScope = n.getCollectionOfObjectValues<UserProcessingResult>(createUserProcessingResultFromDiscriminatorValue); },
         "id": n => { workflow.id = n.getStringValue(); },
         "nextScheduleRunDateTime": n => { workflow.nextScheduleRunDateTime = n.getDateValue(); },
+        "previewScope": n => { workflow.previewScope = n.getCollectionOfObjectValues<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
         "runs": n => { workflow.runs = n.getCollectionOfObjectValues<Run>(createRunFromDiscriminatorValue); },
         "taskReports": n => { workflow.taskReports = n.getCollectionOfObjectValues<TaskReport>(createTaskReportFromDiscriminatorValue); },
         "userProcessingResults": n => { workflow.userProcessingResults = n.getCollectionOfObjectValues<UserProcessingResult>(createUserProcessingResultFromDiscriminatorValue); },
@@ -1483,6 +1509,32 @@ export interface Parameter extends AdditionalDataHolder, BackedModel, Parsable {
      * The valueType property
      */
     valueType?: ValueType | null;
+}
+export interface PreviewFailedTask extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The identifier of the task definition of the task that failed during the preview operation of a workflow.
+     */
+    definitionId?: string | null;
+    /**
+     * The reason why the task failed in the preview operation of a workflow.
+     */
+    failureReason?: string | null;
+    /**
+     * The name of the task that failed within the preview operation of a workflow.
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The identifier of the task that failed during the preview operation of a workflow.
+     */
+    taskId?: string | null;
 }
 export interface RuleBasedSubjectSet extends Parsable, SubjectSet {
     /**
@@ -1843,6 +1895,22 @@ export function serializeParameter(writer: SerializationWriter, parameter: Parti
     writer.writeCollectionOfPrimitiveValues<string>("values", parameter.values);
     writer.writeEnumValue<ValueType>("valueType", parameter.valueType);
     writer.writeAdditionalData(parameter.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PreviewFailedTask The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePreviewFailedTask(writer: SerializationWriter, previewFailedTask: Partial<PreviewFailedTask> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!previewFailedTask || isSerializingDerivedType) { return; }
+    writer.writeStringValue("definitionId", previewFailedTask.definitionId);
+    writer.writeStringValue("failureReason", previewFailedTask.failureReason);
+    writer.writeStringValue("name", previewFailedTask.name);
+    writer.writeStringValue("@odata.type", previewFailedTask.odataType);
+    writer.writeStringValue("taskId", previewFailedTask.taskId);
+    writer.writeAdditionalData(previewFailedTask.additionalData);
 }
 /**
  * Serializes information the current object
@@ -2214,6 +2282,7 @@ export function serializeWorkflow(writer: SerializationWriter, workflow: Partial
     writer.writeCollectionOfObjectValues<UserProcessingResult>("executionScope", workflow.executionScope, serializeUserProcessingResult);
     writer.writeStringValue("id", workflow.id);
     writer.writeDateValue("nextScheduleRunDateTime", workflow.nextScheduleRunDateTime);
+    writer.writeCollectionOfObjectValues<DirectoryObject>("previewScope", workflow.previewScope, serializeDirectoryObject);
     writer.writeCollectionOfObjectValues<Run>("runs", workflow.runs, serializeRun);
     writer.writeCollectionOfObjectValues<TaskReport>("taskReports", workflow.taskReports, serializeTaskReport);
     writer.writeCollectionOfObjectValues<UserProcessingResult>("userProcessingResults", workflow.userProcessingResults, serializeUserProcessingResult);
@@ -2835,6 +2904,10 @@ export interface Workflow extends Parsable, WorkflowBase {
      */
     nextScheduleRunDateTime?: Date | null;
     /**
+     * A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.
+     */
+    previewScope?: DirectoryObject[] | null;
+    /**
      * Workflow runs.
      */
     runs?: Run[] | null;
@@ -3126,6 +3199,7 @@ export const WorkflowExecutionTypeObject = {
     OnDemand: "onDemand",
     UnknownFutureValue: "unknownFutureValue",
     ActivatedWithScope: "activatedWithScope",
+    Preview: "preview",
 } as const;
 export const WorkflowTriggerTimeBasedAttributeObject = {
     EmployeeHireDate: "employeeHireDate",

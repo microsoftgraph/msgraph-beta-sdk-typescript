@@ -32,7 +32,7 @@ export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuild
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageSubjectItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageSubject | undefined>;
     /**
-     * Update an existing accessPackageSubject object to change the subject lifecycle.
+     * Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageSubject>}
@@ -53,7 +53,7 @@ export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuild
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageSubjectItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update an existing accessPackageSubject object to change the subject lifecycle.
+     * Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

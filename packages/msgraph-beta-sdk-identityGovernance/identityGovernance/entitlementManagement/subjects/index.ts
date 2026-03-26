@@ -27,7 +27,7 @@ export interface SubjectsRequestBuilder extends BaseRequestBuilder<SubjectsReque
      */
      byAccessPackageSubjectId(accessPackageSubjectId: string) : AccessPackageSubjectItemRequestBuilder;
     /**
-     * Get the properties of an existing accessPackageSubject object.
+     * Get the properties of an external directory user represented by an existing accessPackageSubject object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageSubjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -43,7 +43,7 @@ export interface SubjectsRequestBuilder extends BaseRequestBuilder<SubjectsReque
      */
      post(body: AccessPackageSubject, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageSubject | undefined>;
     /**
-     * Get the properties of an existing accessPackageSubject object.
+     * Get the properties of an external directory user represented by an existing accessPackageSubject object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface SubjectsRequestBuilder extends BaseRequestBuilder<SubjectsReque
      toPostRequestInformation(body: AccessPackageSubject, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties of an existing accessPackageSubject object.
+ * Get the properties of an external directory user represented by an existing accessPackageSubject object.
  */
 export interface SubjectsRequestBuilderGetQueryParameters {
     /**

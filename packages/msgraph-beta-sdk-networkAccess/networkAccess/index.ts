@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AlertsRequestBuilderNavigationMetadata, AlertsRequestBuilderRequestsMetadata, type AlertsRequestBuilder } from './alerts/index.js';
 // @ts-ignore
+import { CloudFirewallPoliciesRequestBuilderNavigationMetadata, CloudFirewallPoliciesRequestBuilderRequestsMetadata, type CloudFirewallPoliciesRequestBuilder } from './cloudFirewallPolicies/index.js';
+// @ts-ignore
 import { ConnectivityRequestBuilderNavigationMetadata, ConnectivityRequestBuilderRequestsMetadata, type ConnectivityRequestBuilder } from './connectivity/index.js';
 // @ts-ignore
 import { FilteringPoliciesRequestBuilderNavigationMetadata, FilteringPoliciesRequestBuilderRequestsMetadata, type FilteringPoliciesRequestBuilder } from './filteringPolicies/index.js';
@@ -44,6 +46,10 @@ export interface NetworkAccessRequestBuilder extends BaseRequestBuilder<NetworkA
      * Provides operations to manage the alerts property of the microsoft.graph.networkaccess.networkAccessRoot entity.
      */
     get alerts(): AlertsRequestBuilder;
+    /**
+     * Provides operations to manage the cloudFirewallPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+     */
+    get cloudFirewallPolicies(): CloudFirewallPoliciesRequestBuilder;
     /**
      * Provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.
      */
@@ -156,6 +162,10 @@ export const NetworkAccessRequestBuilderNavigationMetadata: Record<Exclude<keyof
     alerts: {
         requestsMetadata: AlertsRequestBuilderRequestsMetadata,
         navigationMetadata: AlertsRequestBuilderNavigationMetadata,
+    },
+    cloudFirewallPolicies: {
+        requestsMetadata: CloudFirewallPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudFirewallPoliciesRequestBuilderNavigationMetadata,
     },
     connectivity: {
         requestsMetadata: ConnectivityRequestBuilderRequestsMetadata,

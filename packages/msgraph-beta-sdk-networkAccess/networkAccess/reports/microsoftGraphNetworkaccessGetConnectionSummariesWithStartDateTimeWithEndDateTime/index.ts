@@ -42,7 +42,7 @@ export interface GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetRespon
  */
 export interface MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder> {
     /**
-     * An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+     * Returns connections count per traffic type: Private/Internet/Microsoft.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -50,14 +50,14 @@ export interface MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateT
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<GetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
     /**
-     * An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+     * Returns connections count per traffic type: Private/Internet/Microsoft.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * An API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+ * Returns connections count per traffic type: Private/Internet/Microsoft.
  */
 export interface MicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters {
     /**

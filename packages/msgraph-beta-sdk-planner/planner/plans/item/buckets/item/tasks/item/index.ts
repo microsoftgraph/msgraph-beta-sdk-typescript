@@ -12,6 +12,8 @@ import { BucketTaskBoardFormatRequestBuilderRequestsMetadata, type BucketTaskBoa
 // @ts-ignore
 import { DetailsRequestBuilderRequestsMetadata, type DetailsRequestBuilder } from './details/index.js';
 // @ts-ignore
+import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequestsMetadata, type MessagesRequestBuilder } from './messages/index.js';
+// @ts-ignore
 import { ProgressTaskBoardFormatRequestBuilderRequestsMetadata, type ProgressTaskBoardFormatRequestBuilder } from './progressTaskBoardFormat/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -32,6 +34,10 @@ export interface PlannerTaskItemRequestBuilder extends BaseRequestBuilder<Planne
      * Provides operations to manage the details property of the microsoft.graph.plannerTask entity.
      */
     get details(): DetailsRequestBuilder;
+    /**
+     * Provides operations to manage the messages property of the microsoft.graph.plannerTask entity.
+     */
+    get messages(): MessagesRequestBuilder;
     /**
      * Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
      */
@@ -113,6 +119,10 @@ export const PlannerTaskItemRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     details: {
         requestsMetadata: DetailsRequestBuilderRequestsMetadata,
+    },
+    messages: {
+        requestsMetadata: MessagesRequestBuilderRequestsMetadata,
+        navigationMetadata: MessagesRequestBuilderNavigationMetadata,
     },
     progressTaskBoardFormat: {
         requestsMetadata: ProgressTaskBoardFormatRequestBuilderRequestsMetadata,
