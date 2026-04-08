@@ -26,7 +26,7 @@ export interface SubjectsWithObjectIdRequestBuilder extends BaseRequestBuilder<S
      */
      get(requestConfiguration?: RequestConfiguration<SubjectsWithObjectIdRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageSubject | undefined>;
     /**
-     * Update an existing accessPackageSubject object to change the subject lifecycle.
+     * Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageSubject>}
@@ -47,7 +47,7 @@ export interface SubjectsWithObjectIdRequestBuilder extends BaseRequestBuilder<S
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SubjectsWithObjectIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update an existing accessPackageSubject object to change the subject lifecycle.
+     * Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

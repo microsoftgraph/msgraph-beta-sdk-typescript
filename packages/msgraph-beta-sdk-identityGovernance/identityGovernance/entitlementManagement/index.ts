@@ -42,6 +42,8 @@ import { ConnectedOrganizationsRequestBuilderNavigationMetadata, ConnectedOrgani
 // @ts-ignore
 import { ControlConfigurationsRequestBuilderNavigationMetadata, ControlConfigurationsRequestBuilderRequestsMetadata, type ControlConfigurationsRequestBuilder } from './controlConfigurations/index.js';
 // @ts-ignore
+import { ExternalOriginResourceConnectorsRequestBuilderNavigationMetadata, ExternalOriginResourceConnectorsRequestBuilderRequestsMetadata, type ExternalOriginResourceConnectorsRequestBuilder } from './externalOriginResourceConnectors/index.js';
+// @ts-ignore
 import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { SubjectsRequestBuilderNavigationMetadata, SubjectsRequestBuilderRequestsMetadata, type SubjectsRequestBuilder } from './subjects/index.js';
@@ -118,6 +120,10 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
      */
     get controlConfigurations(): ControlConfigurationsRequestBuilder;
+    /**
+     * Provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.
+     */
+    get externalOriginResourceConnectors(): ExternalOriginResourceConnectorsRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
      */
@@ -290,6 +296,10 @@ export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclu
     controlConfigurations: {
         requestsMetadata: ControlConfigurationsRequestBuilderRequestsMetadata,
         navigationMetadata: ControlConfigurationsRequestBuilderNavigationMetadata,
+    },
+    externalOriginResourceConnectors: {
+        requestsMetadata: ExternalOriginResourceConnectorsRequestBuilderRequestsMetadata,
+        navigationMetadata: ExternalOriginResourceConnectorsRequestBuilderNavigationMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,
