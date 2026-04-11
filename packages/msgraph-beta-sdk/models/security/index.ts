@@ -133,6 +133,24 @@ export interface AddWatermarkAction extends InformationProtectionAction, Parsabl
 }
 export interface AedAuditRecord extends AuditData, Parsable {
 }
+export interface AggregatedEnvironment extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Number of environments of this type.
+     */
+    count?: number | null;
+    /**
+     * Environment type.
+     */
+    kind?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export interface AiAgentEvidence extends AlertEvidence, Parsable {
     /**
      * The unique identifier for the AI agent.
@@ -1030,6 +1048,24 @@ export interface AuditData extends AdditionalDataHolder, BackedModel, Parsable {
      */
     odataType?: string | null;
 }
+export interface AuditInfo extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Display name of the user or application that performed the action.
+     */
+    by?: string | null;
+    /**
+     * Timestamp of the action. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    dateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
 export interface AuditLogQuery extends Entity, Parsable {
     /**
      * The administrative units tagged to an audit log record.
@@ -1158,6 +1194,12 @@ export interface AuthorityTemplateCollectionResponse extends BaseCollectionPagin
      * The value property
      */
     value?: AuthorityTemplate[] | null;
+}
+export interface AutoAuditingConfiguration extends Entity, Parsable {
+    /**
+     * Indicates whether automatic auditing is enabled for Defender for Identity monitoring.
+     */
+    isAutomatic?: boolean | null;
 }
 export interface AutonomousSystem extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -1715,6 +1757,7 @@ export interface CopilotInteractionAuditRecord extends AuditData, Parsable {
 }
 export interface CoreReportingSettingsAuditRecord extends AuditData, Parsable {
 }
+export type CorrelationReason = (typeof CorrelationReasonObject)[keyof typeof CorrelationReasonObject];
 export interface CortanaBriefingAuditRecord extends AuditData, Parsable {
 }
 export interface CpsCommonPolicyAuditRecord extends AuditData, Parsable {
@@ -1783,6 +1826,15 @@ export function createAddWatermarkActionFromDiscriminatorValue(parseNode: ParseN
 // @ts-ignore
 export function createAedAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAedAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AggregatedEnvironment}
+ */
+// @ts-ignore
+export function createAggregatedEnvironmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAggregatedEnvironment;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -2816,6 +2868,15 @@ export function createAuditDataFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AuditInfo}
+ */
+// @ts-ignore
+export function createAuditInfoFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAuditInfo;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AuditLogQueryCollectionResponse}
  */
 // @ts-ignore
@@ -2875,6 +2936,15 @@ export function createAuthorityTemplateCollectionResponseFromDiscriminatorValue(
 // @ts-ignore
 export function createAuthorityTemplateFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoAuthorityTemplate;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AutoAuditingConfiguration}
+ */
+// @ts-ignore
+export function createAutoAuditingConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAutoAuditingConfiguration;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4429,6 +4499,24 @@ export function createEndpointDiscoveredCloudAppDetailFromDiscriminatorValue(par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EnvironmentCollectionResponse}
+ */
+// @ts-ignore
+export function createEnvironmentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnvironmentCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Environment}
+ */
+// @ts-ignore
+export function createEnvironmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnvironment;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {EpicSMSLinkRecord}
  */
 // @ts-ignore
@@ -5937,6 +6025,15 @@ export function createMdiAuditRecordFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MergeResponse}
+ */
+// @ts-ignore
+export function createMergeResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMergeResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MeshWorldsAuditRecord}
  */
 // @ts-ignore
@@ -6149,6 +6246,15 @@ export function createMicrosoftTeamsSensitivityLabelActionAuditRecordFromDiscrim
 // @ts-ignore
 export function createMicrosoftTeamsShiftsAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoMicrosoftTeamsShiftsAuditRecord;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MigrateSensorsResult}
+ */
+// @ts-ignore
+export function createMigrateSensorsResultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMigrateSensorsResult;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -7559,6 +7665,24 @@ export function createSensorFromDiscriminatorValue(parseNode: ParseNode | undefi
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SensorMigrationCollectionResponse}
+ */
+// @ts-ignore
+export function createSensorMigrationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSensorMigrationCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SensorMigration}
+ */
+// @ts-ignore
+export function createSensorMigrationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSensorMigration;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SensorSettings}
  */
 // @ts-ignore
@@ -8602,6 +8726,24 @@ export function createWorkplaceAnalyticsAuditRecordFromDiscriminatorValue(parseN
 export function createYammerAuditRecordFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoYammerAuditRecord;
 }
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ZoneCollectionResponse}
+ */
+// @ts-ignore
+export function createZoneCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoZoneCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {Zone}
+ */
+// @ts-ignore
+export function createZoneFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoZone;
+}
 export interface CrmBaseAuditRecord extends AuditData, Parsable {
 }
 export interface CrmEntityOperationAuditRecord extends AuditData, Parsable {
@@ -8869,6 +9011,20 @@ export function deserializeIntoAddWatermarkAction(addWatermarkAction: Partial<Ad
 export function deserializeIntoAedAuditRecord(aedAuditRecord: Partial<AedAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(aedAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AggregatedEnvironment The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAggregatedEnvironment(aggregatedEnvironment: Partial<AggregatedEnvironment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { aggregatedEnvironment.backingStoreEnabled = true; },
+        "count": n => { aggregatedEnvironment.count = n.getNumberValue(); },
+        "kind": n => { aggregatedEnvironment.kind = n.getStringValue(); },
+        "@odata.type": n => { aggregatedEnvironment.odataType = n.getStringValue(); },
     }
 }
 /**
@@ -9479,6 +9635,20 @@ export function deserializeIntoAuditData(auditData: Partial<AuditData> | undefin
 }
 /**
  * The deserialization information for the current model
+ * @param AuditInfo The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAuditInfo(auditInfo: Partial<AuditInfo> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { auditInfo.backingStoreEnabled = true; },
+        "by": n => { auditInfo.by = n.getStringValue(); },
+        "dateTime": n => { auditInfo.dateTime = n.getDateValue(); },
+        "@odata.type": n => { auditInfo.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param AuditLogQuery The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -9580,6 +9750,18 @@ export function deserializeIntoAuthorityTemplateCollectionResponse(authorityTemp
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(authorityTemplateCollectionResponse),
         "value": n => { authorityTemplateCollectionResponse.value = n.getCollectionOfObjectValues<AuthorityTemplate>(createAuthorityTemplateFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AutoAuditingConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAutoAuditingConfiguration(autoAuditingConfiguration: Partial<AutoAuditingConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(autoAuditingConfiguration),
+        "isAutomatic": n => { autoAuditingConfiguration.isAutomatic = n.getBooleanValue(); },
     }
 }
 /**
@@ -10829,12 +11011,17 @@ export function deserializeIntoDetonationDetails(detonationDetails: Partial<Deto
         "backingStoreEnabled": n => { detonationDetails.backingStoreEnabled = true; },
         "compromiseIndicators": n => { detonationDetails.compromiseIndicators = n.getCollectionOfObjectValues<CompromiseIndicator>(createCompromiseIndicatorFromDiscriminatorValue); },
         "detonationBehaviourDetails": n => { detonationDetails.detonationBehaviourDetails = n.getObjectValue<DetonationBehaviourDetails>(createDetonationBehaviourDetailsFromDiscriminatorValue); },
+        "detonationBehaviourDetailsV2": n => { detonationDetails.detonationBehaviourDetailsV2 = n.getStringValue(); },
         "detonationChain": n => { detonationDetails.detonationChain = n.getObjectValue<DetonationChain>(createDetonationChainFromDiscriminatorValue); },
         "detonationObservables": n => { detonationDetails.detonationObservables = n.getObjectValue<DetonationObservables>(createDetonationObservablesFromDiscriminatorValue); },
         "detonationScreenshotUri": n => { detonationDetails.detonationScreenshotUri = n.getStringValue(); },
         "detonationVerdict": n => { detonationDetails.detonationVerdict = n.getStringValue(); },
         "detonationVerdictReason": n => { detonationDetails.detonationVerdictReason = n.getStringValue(); },
+        "entityMetadata": n => { detonationDetails.entityMetadata = n.getStringValue(); },
+        "mitreTechniques": n => { detonationDetails.mitreTechniques = n.getStringValue(); },
         "@odata.type": n => { detonationDetails.odataType = n.getStringValue(); },
+        "staticAnalysis": n => { detonationDetails.staticAnalysis = n.getStringValue(); },
+        "submissionSource": n => { detonationDetails.submissionSource = n.getStringValue(); },
     }
 }
 /**
@@ -11498,6 +11685,7 @@ export function deserializeIntoEdiscoveryNoncustodialDataSourceCollectionRespons
 export function deserializeIntoEdiscoveryPurgeDataOperation(ediscoveryPurgeDataOperation: Partial<EdiscoveryPurgeDataOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCaseOperation(ediscoveryPurgeDataOperation),
+        "reportFileMetadata": n => { ediscoveryPurgeDataOperation.reportFileMetadata = n.getCollectionOfObjectValues<ReportFileMetadata>(createReportFileMetadataFromDiscriminatorValue); },
     }
 }
 /**
@@ -11776,6 +11964,30 @@ export function deserializeIntoEndpointDiscoveredCloudAppDetail(endpointDiscover
         ...deserializeIntoDiscoveredCloudAppDetail(endpointDiscoveredCloudAppDetail),
         "deviceCount": n => { endpointDiscoveredCloudAppDetail.deviceCount = n.getNumberValue(); },
         "devices": n => { endpointDiscoveredCloudAppDetail.devices = n.getCollectionOfObjectValues<DiscoveredCloudAppDevice>(createDiscoveredCloudAppDeviceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param Environment The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEnvironment(environment: Partial<Environment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(environment),
+        "kind": n => { environment.kind = n.getEnumValue<EnvironmentKind>(EnvironmentKindObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param EnvironmentCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEnvironmentCollectionResponse(environmentCollectionResponse: Partial<EnvironmentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(environmentCollectionResponse),
+        "value": n => { environmentCollectionResponse.value = n.getCollectionOfObjectValues<Environment>(createEnvironmentFromDiscriminatorValue); },
     }
 }
 /**
@@ -12866,6 +13078,7 @@ export function deserializeIntoIdentityContainer(identityContainer: Partial<Iden
         "identityAccounts": n => { identityContainer.identityAccounts = n.getCollectionOfObjectValues<IdentityAccounts>(createIdentityAccountsFromDiscriminatorValue); },
         "sensorCandidateActivationConfiguration": n => { identityContainer.sensorCandidateActivationConfiguration = n.getObjectValue<SensorCandidateActivationConfiguration>(createSensorCandidateActivationConfigurationFromDiscriminatorValue); },
         "sensorCandidates": n => { identityContainer.sensorCandidates = n.getCollectionOfObjectValues<SensorCandidate>(createSensorCandidateFromDiscriminatorValue); },
+        "sensorMigration": n => { identityContainer.sensorMigration = n.getCollectionOfObjectValues<SensorMigration>(createSensorMigrationFromDiscriminatorValue); },
         "sensors": n => { identityContainer.sensors = n.getCollectionOfObjectValues<Sensor>(createSensorFromDiscriminatorValue); },
         "settings": n => { identityContainer.settings = n.getObjectValue<SettingsContainer>(createSettingsContainerFromDiscriminatorValue); },
     }
@@ -13798,6 +14011,19 @@ export function deserializeIntoMdiAuditRecord(mdiAuditRecord: Partial<MdiAuditRe
 }
 /**
  * The deserialization information for the current model
+ * @param MergeResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMergeResponse(mergeResponse: Partial<MergeResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { mergeResponse.backingStoreEnabled = true; },
+        "@odata.type": n => { mergeResponse.odataType = n.getStringValue(); },
+        "targetIncidentId": n => { mergeResponse.targetIncidentId = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param MeshWorldsAuditRecord The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -14060,6 +14286,20 @@ export function deserializeIntoMicrosoftTeamsSensitivityLabelActionAuditRecord(m
 export function deserializeIntoMicrosoftTeamsShiftsAuditRecord(microsoftTeamsShiftsAuditRecord: Partial<MicrosoftTeamsShiftsAuditRecord> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoAuditData(microsoftTeamsShiftsAuditRecord),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param MigrateSensorsResult The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMigrateSensorsResult(migrateSensorsResult: Partial<MigrateSensorsResult> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { migrateSensorsResult.backingStoreEnabled = true; },
+        "failedMigrationSensorIds": n => { migrateSensorsResult.failedMigrationSensorIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "@odata.type": n => { migrateSensorsResult.odataType = n.getStringValue(); },
+        "successfulMigrationSensorIds": n => { migrateSensorsResult.successfulMigrationSensorIds = n.getCollectionOfPrimitiveValues<string>(); },
     }
 }
 /**
@@ -15763,6 +16003,7 @@ export function deserializeIntoSensor(sensor: Partial<Sensor> | undefined = {}) 
         "domainName": n => { sensor.domainName = n.getStringValue(); },
         "healthIssues": n => { sensor.healthIssues = n.getCollectionOfObjectValues<HealthIssue>(createHealthIssueFromDiscriminatorValue); },
         "healthStatus": n => { sensor.healthStatus = n.getEnumValue<SensorHealthStatus>(SensorHealthStatusObject); },
+        "migrationState": n => { sensor.migrationState = n.getEnumValue<MigrationState>(MigrationStateObject); },
         "openHealthIssuesCount": n => { sensor.openHealthIssuesCount = n.getNumberValue(); },
         "sensorType": n => { sensor.sensorType = n.getEnumValue<SensorType>(SensorTypeObject); },
         "serviceStatus": n => { sensor.serviceStatus = n.getEnumValue<ServiceStatus>(ServiceStatusObject); },
@@ -15783,6 +16024,7 @@ export function deserializeIntoSensorCandidate(sensorCandidate: Partial<SensorCa
         "domainName": n => { sensorCandidate.domainName = n.getStringValue(); },
         "lastSeenDateTime": n => { sensorCandidate.lastSeenDateTime = n.getDateValue(); },
         "senseClientVersion": n => { sensorCandidate.senseClientVersion = n.getStringValue(); },
+        "sensorTypes": n => { sensorCandidate.sensorTypes = n.getCollectionOfEnumValues<DeviceType>(DeviceTypeObject); },
     }
 }
 /**
@@ -15837,6 +16079,37 @@ export function deserializeIntoSensorDeploymentPackage(sensorDeploymentPackage: 
 }
 /**
  * The deserialization information for the current model
+ * @param SensorMigration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSensorMigration(sensorMigration: Partial<SensorMigration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(sensorMigration),
+        "createdDateTime": n => { sensorMigration.createdDateTime = n.getDateValue(); },
+        "displayName": n => { sensorMigration.displayName = n.getStringValue(); },
+        "domainName": n => { sensorMigration.domainName = n.getStringValue(); },
+        "healthStatus": n => { sensorMigration.healthStatus = n.getEnumValue<SensorHealthStatus>(SensorHealthStatusObject); },
+        "migrationState": n => { sensorMigration.migrationState = n.getEnumValue<MigrationState>(MigrationStateObject); },
+        "sensorType": n => { sensorMigration.sensorType = n.getEnumValue<SensorType>(SensorTypeObject); },
+        "serviceStatus": n => { sensorMigration.serviceStatus = n.getEnumValue<ServiceStatus>(ServiceStatusObject); },
+        "version": n => { sensorMigration.version = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SensorMigrationCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSensorMigrationCollectionResponse(sensorMigrationCollectionResponse: Partial<SensorMigrationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(sensorMigrationCollectionResponse),
+        "value": n => { sensorMigrationCollectionResponse.value = n.getCollectionOfObjectValues<SensorMigration>(createSensorMigrationFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param SensorSettings The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -15877,6 +16150,7 @@ export function deserializeIntoServicePrincipalEvidence(servicePrincipalEvidence
 export function deserializeIntoSettingsContainer(settingsContainer: Partial<SettingsContainer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(settingsContainer),
+        "autoAuditingConfiguration": n => { settingsContainer.autoAuditingConfiguration = n.getObjectValue<AutoAuditingConfiguration>(createAutoAuditingConfigurationFromDiscriminatorValue); },
     }
 }
 /**
@@ -17296,6 +17570,35 @@ export function deserializeIntoYammerAuditRecord(yammerAuditRecord: Partial<Yamm
         ...deserializeIntoAuditData(yammerAuditRecord),
     }
 }
+/**
+ * The deserialization information for the current model
+ * @param Zone The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoZone(zone: Partial<Zone> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(zone),
+        "aggregations": n => { zone.aggregations = n.getCollectionOfObjectValues<AggregatedEnvironment>(createAggregatedEnvironmentFromDiscriminatorValue); },
+        "created": n => { zone.created = n.getObjectValue<AuditInfo>(createAuditInfoFromDiscriminatorValue); },
+        "description": n => { zone.description = n.getStringValue(); },
+        "displayName": n => { zone.displayName = n.getStringValue(); },
+        "environments": n => { zone.environments = n.getCollectionOfObjectValues<Environment>(createEnvironmentFromDiscriminatorValue); },
+        "modified": n => { zone.modified = n.getObjectValue<AuditInfo>(createAuditInfoFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ZoneCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoZoneCollectionResponse(zoneCollectionResponse: Partial<ZoneCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(zoneCollectionResponse),
+        "value": n => { zoneCollectionResponse.value = n.getCollectionOfObjectValues<Zone>(createZoneFromDiscriminatorValue); },
+    }
+}
 export interface DetectionAction extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The alertTemplate property
@@ -17426,9 +17729,13 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     compromiseIndicators?: CompromiseIndicator[] | null;
     /**
-     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
+     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation. This property is deprecated and still stop returning data in March 2026. Use the detonationBehaviourDetailsV2 property instead.
      */
     detonationBehaviourDetails?: DetonationBehaviourDetails | null;
+    /**
+     * Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation in a JSON format.
+     */
+    detonationBehaviourDetailsV2?: string | null;
     /**
      * The chain of detonation.
      */
@@ -17450,9 +17757,25 @@ export interface DetonationDetails extends AdditionalDataHolder, BackedModel, Pa
      */
     detonationVerdictReason?: string | null;
     /**
+     * Additional metadata about the entity in JSON format.
+     */
+    entityMetadata?: string | null;
+    /**
+     * The attack techniques, as aligned with the MITRE ATT&CK framework.
+     */
+    mitreTechniques?: string | null;
+    /**
      * The OdataType property
      */
     odataType?: string | null;
+    /**
+     * The results of static analysis performed on the file or URL.
+     */
+    staticAnalysis?: string | null;
+    /**
+     * The source of the submission.
+     */
+    submissionSource?: string | null;
 }
 export interface DetonationObservables extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -17570,6 +17893,7 @@ export interface DeviceEvidence extends AlertEvidence, Parsable {
 export type DeviceHealthStatus = (typeof DeviceHealthStatusObject)[keyof typeof DeviceHealthStatusObject];
 export type DeviceIdEntityIdentifier = (typeof DeviceIdEntityIdentifierObject)[keyof typeof DeviceIdEntityIdentifierObject];
 export type DeviceRiskScore = (typeof DeviceRiskScoreObject)[keyof typeof DeviceRiskScoreObject];
+export type DeviceType = (typeof DeviceTypeObject)[keyof typeof DeviceTypeObject];
 export interface Dictionary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -18413,6 +18737,10 @@ export interface EdiscoveryNoncustodialDataSourceCollectionResponse extends Base
     value?: EdiscoveryNoncustodialDataSource[] | null;
 }
 export interface EdiscoveryPurgeDataOperation extends CaseOperation, Parsable {
+    /**
+     * The purge job report file metadata. It contains the properties for report file metadata, including downloadUrl, fileName, and size.
+     */
+    reportFileMetadata?: ReportFileMetadata[] | null;
 }
 export interface EdiscoveryReviewSet extends DataSet, Parsable {
     /**
@@ -18692,6 +19020,19 @@ export interface EndpointDiscoveredCloudAppDetail extends DiscoveredCloudAppDeta
     devices?: DiscoveredCloudAppDevice[] | null;
 }
 export type EntityType = (typeof EntityTypeObject)[keyof typeof EntityTypeObject];
+export interface Environment extends Entity, Parsable {
+    /**
+     * The kind property
+     */
+    kind?: EnvironmentKind | null;
+}
+export interface EnvironmentCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Environment[] | null;
+}
+export type EnvironmentKind = (typeof EnvironmentKindObject)[keyof typeof EnvironmentKindObject];
 export interface EpicSMSLinkRecord extends AuditData, Parsable {
 }
 export interface EpicSMSSettingsUpdateRecord extends AuditData, Parsable {
@@ -19819,11 +20160,15 @@ export interface IdentityContainer extends Entity, Parsable {
      */
     sensorCandidates?: SensorCandidate[] | null;
     /**
+     * The sensorMigration property
+     */
+    sensorMigration?: SensorMigration[] | null;
+    /**
      * Represents a customer's Microsoft Defender for Identity sensors.
      */
     sensors?: Sensor[] | null;
     /**
-     * The settings property
+     * Represents a container for security identities settings APIs.
      */
     settings?: SettingsContainer | null;
 }
@@ -19906,7 +20251,7 @@ export interface Incident extends Entity, Parsable {
      */
     lastUpdateDateTime?: Date | null;
     /**
-     * The priorityScore property
+     * A priority score for the incident from 0 to 100, with > 85 being the top priority, 15 - 85 medium priority, and < 15 low priority. This score is generated using machine learning and is based on multiple factors, including severity, disruption impact, threat intelligence, alert types, asset criticality, threat analytics, incident rarity, and additional priority signals. The value can also be null which indicates the feature is not open for the tenant or the value of the score is pending calculation.
      */
     priorityScore?: number | null;
     /**
@@ -20768,6 +21113,20 @@ export interface MdcEventsRecord extends AuditData, Parsable {
 }
 export interface MdiAuditRecord extends AuditData, Parsable {
 }
+export interface MergeResponse extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The ID of the target incident after the operation completes.
+     */
+    targetIncidentId?: string | null;
+}
 export interface MeshWorldsAuditRecord extends AuditData, Parsable {
 }
 export interface MetadataAction extends InformationProtectionAction, Parsable {
@@ -20824,6 +21183,25 @@ export interface MicrosoftTeamsSensitivityLabelActionAuditRecord extends AuditDa
 }
 export interface MicrosoftTeamsShiftsAuditRecord extends AuditData, Parsable {
 }
+export interface MigrateSensorsResult extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The failedMigrationSensorIds property
+     */
+    failedMigrationSensorIds?: string[] | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The successfulMigrationSensorIds property
+     */
+    successfulMigrationSensorIds?: string[] | null;
+}
+export type MigrationState = (typeof MigrationStateObject)[keyof typeof MigrationStateObject];
 export interface MipAutoLabelExchangeItemAuditRecord extends AuditData, Parsable {
 }
 export interface MipAutoLabelItemAuditRecord extends AuditData, Parsable {
@@ -21901,6 +22279,10 @@ export interface Sensor extends Entity, Parsable {
      */
     healthStatus?: SensorHealthStatus | null;
     /**
+     * The migrationState property
+     */
+    migrationState?: MigrationState | null;
+    /**
      * This field displays the count of health issues related to this sensor.
      */
     openHealthIssuesCount?: number | null;
@@ -21938,6 +22320,10 @@ export interface SensorCandidate extends Entity, Parsable {
      * The version of the Defender for Identity sensor client.  Supports $filter (eq).
      */
     senseClientVersion?: string | null;
+    /**
+     * The list of device type of the sensor. The possible values are: domainController, adfs,, adcs, entraConnect unknownFutureValue. This flagged enumeration allows multiple members to be returned simultaneously.
+     */
+    sensorTypes?: DeviceType[] | null;
 }
 export interface SensorCandidateActivationConfiguration extends Entity, Parsable {
     /**
@@ -21977,6 +22363,46 @@ export interface SensorDeploymentPackage extends AdditionalDataHolder, BackedMod
     version?: string | null;
 }
 export type SensorHealthStatus = (typeof SensorHealthStatusObject)[keyof typeof SensorHealthStatusObject];
+export interface SensorMigration extends Entity, Parsable {
+    /**
+     * The createdDateTime property
+     */
+    createdDateTime?: Date | null;
+    /**
+     * The displayName property
+     */
+    displayName?: string | null;
+    /**
+     * The domainName property
+     */
+    domainName?: string | null;
+    /**
+     * The healthStatus property
+     */
+    healthStatus?: SensorHealthStatus | null;
+    /**
+     * The migrationState property
+     */
+    migrationState?: MigrationState | null;
+    /**
+     * The sensorType property
+     */
+    sensorType?: SensorType | null;
+    /**
+     * The serviceStatus property
+     */
+    serviceStatus?: ServiceStatus | null;
+    /**
+     * The version property
+     */
+    version?: string | null;
+}
+export interface SensorMigrationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: SensorMigration[] | null;
+}
 export interface SensorSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -22107,6 +22533,20 @@ export function serializeAddWatermarkAction(writer: SerializationWriter, addWate
 export function serializeAedAuditRecord(writer: SerializationWriter, aedAuditRecord: Partial<AedAuditRecord> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!aedAuditRecord || isSerializingDerivedType) { return; }
     serializeAuditData(writer, aedAuditRecord, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param AggregatedEnvironment The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAggregatedEnvironment(writer: SerializationWriter, aggregatedEnvironment: Partial<AggregatedEnvironment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!aggregatedEnvironment || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("count", aggregatedEnvironment.count);
+    writer.writeStringValue("kind", aggregatedEnvironment.kind);
+    writer.writeStringValue("@odata.type", aggregatedEnvironment.odataType);
+    writer.writeAdditionalData(aggregatedEnvironment.additionalData);
 }
 /**
  * Serializes information the current object
@@ -23714,6 +24154,20 @@ export function serializeAuditData(writer: SerializationWriter, auditData: Parti
 }
 /**
  * Serializes information the current object
+ * @param AuditInfo The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAuditInfo(writer: SerializationWriter, auditInfo: Partial<AuditInfo> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!auditInfo || isSerializingDerivedType) { return; }
+    writer.writeStringValue("by", auditInfo.by);
+    writer.writeDateValue("dateTime", auditInfo.dateTime);
+    writer.writeStringValue("@odata.type", auditInfo.odataType);
+    writer.writeAdditionalData(auditInfo.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param AuditLogQuery The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -23817,6 +24271,18 @@ export function serializeAuthorityTemplateCollectionResponse(writer: Serializati
     if (!authorityTemplateCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, authorityTemplateCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<AuthorityTemplate>("value", authorityTemplateCollectionResponse.value, serializeAuthorityTemplate);
+}
+/**
+ * Serializes information the current object
+ * @param AutoAuditingConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAutoAuditingConfiguration(writer: SerializationWriter, autoAuditingConfiguration: Partial<AutoAuditingConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!autoAuditingConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, autoAuditingConfiguration, isSerializingDerivedType)
+    writer.writeBooleanValue("isAutomatic", autoAuditingConfiguration.isAutomatic);
 }
 /**
  * Serializes information the current object
@@ -25125,12 +25591,17 @@ export function serializeDetonationDetails(writer: SerializationWriter, detonati
     writer.writeDateValue("analysisDateTime", detonationDetails.analysisDateTime);
     writer.writeCollectionOfObjectValues<CompromiseIndicator>("compromiseIndicators", detonationDetails.compromiseIndicators, serializeCompromiseIndicator);
     writer.writeObjectValue<DetonationBehaviourDetails>("detonationBehaviourDetails", detonationDetails.detonationBehaviourDetails, serializeDetonationBehaviourDetails);
+    writer.writeStringValue("detonationBehaviourDetailsV2", detonationDetails.detonationBehaviourDetailsV2);
     writer.writeObjectValue<DetonationChain>("detonationChain", detonationDetails.detonationChain, serializeDetonationChain);
     writer.writeObjectValue<DetonationObservables>("detonationObservables", detonationDetails.detonationObservables, serializeDetonationObservables);
     writer.writeStringValue("detonationScreenshotUri", detonationDetails.detonationScreenshotUri);
     writer.writeStringValue("detonationVerdict", detonationDetails.detonationVerdict);
     writer.writeStringValue("detonationVerdictReason", detonationDetails.detonationVerdictReason);
+    writer.writeStringValue("entityMetadata", detonationDetails.entityMetadata);
+    writer.writeStringValue("mitreTechniques", detonationDetails.mitreTechniques);
     writer.writeStringValue("@odata.type", detonationDetails.odataType);
+    writer.writeStringValue("staticAnalysis", detonationDetails.staticAnalysis);
+    writer.writeStringValue("submissionSource", detonationDetails.submissionSource);
     writer.writeAdditionalData(detonationDetails.additionalData);
 }
 /**
@@ -25801,6 +26272,7 @@ export function serializeEdiscoveryNoncustodialDataSourceCollectionResponse(writ
 export function serializeEdiscoveryPurgeDataOperation(writer: SerializationWriter, ediscoveryPurgeDataOperation: Partial<EdiscoveryPurgeDataOperation> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ediscoveryPurgeDataOperation || isSerializingDerivedType) { return; }
     serializeCaseOperation(writer, ediscoveryPurgeDataOperation, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ReportFileMetadata>("reportFileMetadata", ediscoveryPurgeDataOperation.reportFileMetadata, serializeReportFileMetadata);
 }
 /**
  * Serializes information the current object
@@ -26087,6 +26559,30 @@ export function serializeEndpointDiscoveredCloudAppDetail(writer: SerializationW
     serializeDiscoveredCloudAppDetail(writer, endpointDiscoveredCloudAppDetail, isSerializingDerivedType)
     writer.writeNumberValue("deviceCount", endpointDiscoveredCloudAppDetail.deviceCount);
     writer.writeCollectionOfObjectValues<DiscoveredCloudAppDevice>("devices", endpointDiscoveredCloudAppDetail.devices, serializeDiscoveredCloudAppDevice);
+}
+/**
+ * Serializes information the current object
+ * @param Environment The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnvironment(writer: SerializationWriter, environment: Partial<Environment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!environment || isSerializingDerivedType) { return; }
+    serializeEntity(writer, environment, isSerializingDerivedType)
+    writer.writeEnumValue<EnvironmentKind>("kind", environment.kind);
+}
+/**
+ * Serializes information the current object
+ * @param EnvironmentCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnvironmentCollectionResponse(writer: SerializationWriter, environmentCollectionResponse: Partial<EnvironmentCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!environmentCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, environmentCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Environment>("value", environmentCollectionResponse.value, serializeEnvironment);
 }
 /**
  * Serializes information the current object
@@ -27243,6 +27739,7 @@ export function serializeIdentityContainer(writer: SerializationWriter, identity
     writer.writeCollectionOfObjectValues<IdentityAccounts>("identityAccounts", identityContainer.identityAccounts, serializeIdentityAccounts);
     writer.writeObjectValue<SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", identityContainer.sensorCandidateActivationConfiguration, serializeSensorCandidateActivationConfiguration);
     writer.writeCollectionOfObjectValues<SensorCandidate>("sensorCandidates", identityContainer.sensorCandidates, serializeSensorCandidate);
+    writer.writeCollectionOfObjectValues<SensorMigration>("sensorMigration", identityContainer.sensorMigration, serializeSensorMigration);
     writer.writeCollectionOfObjectValues<Sensor>("sensors", identityContainer.sensors, serializeSensor);
     writer.writeObjectValue<SettingsContainer>("settings", identityContainer.settings, serializeSettingsContainer);
 }
@@ -28285,6 +28782,19 @@ export function serializeMdiAuditRecord(writer: SerializationWriter, mdiAuditRec
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MergeResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMergeResponse(writer: SerializationWriter, mergeResponse: Partial<MergeResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!mergeResponse || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", mergeResponse.odataType);
+    writer.writeStringValue("targetIncidentId", mergeResponse.targetIncidentId);
+    writer.writeAdditionalData(mergeResponse.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param MeshWorldsAuditRecord The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -28547,6 +29057,20 @@ export function serializeMicrosoftTeamsSensitivityLabelActionAuditRecord(writer:
 export function serializeMicrosoftTeamsShiftsAuditRecord(writer: SerializationWriter, microsoftTeamsShiftsAuditRecord: Partial<MicrosoftTeamsShiftsAuditRecord> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!microsoftTeamsShiftsAuditRecord || isSerializingDerivedType) { return; }
     serializeAuditData(writer, microsoftTeamsShiftsAuditRecord, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MigrateSensorsResult The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMigrateSensorsResult(writer: SerializationWriter, migrateSensorsResult: Partial<MigrateSensorsResult> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!migrateSensorsResult || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("failedMigrationSensorIds", migrateSensorsResult.failedMigrationSensorIds);
+    writer.writeStringValue("@odata.type", migrateSensorsResult.odataType);
+    writer.writeCollectionOfPrimitiveValues<string>("successfulMigrationSensorIds", migrateSensorsResult.successfulMigrationSensorIds);
+    writer.writeAdditionalData(migrateSensorsResult.additionalData);
 }
 /**
  * Serializes information the current object
@@ -30371,6 +30895,7 @@ export function serializeSensor(writer: SerializationWriter, sensor: Partial<Sen
     writer.writeStringValue("domainName", sensor.domainName);
     writer.writeCollectionOfObjectValues<HealthIssue>("healthIssues", sensor.healthIssues, serializeHealthIssue);
     writer.writeEnumValue<SensorHealthStatus>("healthStatus", sensor.healthStatus);
+    writer.writeEnumValue<MigrationState>("migrationState", sensor.migrationState);
     writer.writeNumberValue("openHealthIssuesCount", sensor.openHealthIssuesCount);
     writer.writeEnumValue<SensorType>("sensorType", sensor.sensorType);
     writer.writeEnumValue<ServiceStatus>("serviceStatus", sensor.serviceStatus);
@@ -30391,6 +30916,8 @@ export function serializeSensorCandidate(writer: SerializationWriter, sensorCand
     writer.writeStringValue("domainName", sensorCandidate.domainName);
     writer.writeDateValue("lastSeenDateTime", sensorCandidate.lastSeenDateTime);
     writer.writeStringValue("senseClientVersion", sensorCandidate.senseClientVersion);
+    if(sensorCandidate.sensorTypes)
+    writer.writeCollectionOfEnumValues<DeviceType>("sensorTypes", sensorCandidate.sensorTypes);
 }
 /**
  * Serializes information the current object
@@ -30445,6 +30972,37 @@ export function serializeSensorDeploymentPackage(writer: SerializationWriter, se
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SensorMigration The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSensorMigration(writer: SerializationWriter, sensorMigration: Partial<SensorMigration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sensorMigration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, sensorMigration, isSerializingDerivedType)
+    writer.writeDateValue("createdDateTime", sensorMigration.createdDateTime);
+    writer.writeStringValue("displayName", sensorMigration.displayName);
+    writer.writeStringValue("domainName", sensorMigration.domainName);
+    writer.writeEnumValue<SensorHealthStatus>("healthStatus", sensorMigration.healthStatus);
+    writer.writeEnumValue<MigrationState>("migrationState", sensorMigration.migrationState);
+    writer.writeEnumValue<SensorType>("sensorType", sensorMigration.sensorType);
+    writer.writeEnumValue<ServiceStatus>("serviceStatus", sensorMigration.serviceStatus);
+    writer.writeStringValue("version", sensorMigration.version);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SensorMigrationCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSensorMigrationCollectionResponse(writer: SerializationWriter, sensorMigrationCollectionResponse: Partial<SensorMigrationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sensorMigrationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, sensorMigrationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SensorMigration>("value", sensorMigrationCollectionResponse.value, serializeSensorMigration);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param SensorSettings The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -30485,6 +31043,7 @@ export function serializeServicePrincipalEvidence(writer: SerializationWriter, s
 export function serializeSettingsContainer(writer: SerializationWriter, settingsContainer: Partial<SettingsContainer> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!settingsContainer || isSerializingDerivedType) { return; }
     serializeEntity(writer, settingsContainer, isSerializingDerivedType)
+    writer.writeObjectValue<AutoAuditingConfiguration>("autoAuditingConfiguration", settingsContainer.autoAuditingConfiguration, serializeAutoAuditingConfiguration);
 }
 /**
  * Serializes information the current object
@@ -31939,6 +32498,35 @@ export function serializeYammerAuditRecord(writer: SerializationWriter, yammerAu
     if (!yammerAuditRecord || isSerializingDerivedType) { return; }
     serializeAuditData(writer, yammerAuditRecord, isSerializingDerivedType)
 }
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ * @param Zone The instance to serialize from.
+ */
+// @ts-ignore
+export function serializeZone(writer: SerializationWriter, zone: Partial<Zone> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!zone || isSerializingDerivedType) { return; }
+    serializeEntity(writer, zone, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<AggregatedEnvironment>("aggregations", zone.aggregations, serializeAggregatedEnvironment);
+    writer.writeObjectValue<AuditInfo>("created", zone.created, serializeAuditInfo);
+    writer.writeStringValue("description", zone.description);
+    writer.writeStringValue("displayName", zone.displayName);
+    writer.writeCollectionOfObjectValues<Environment>("environments", zone.environments, serializeEnvironment);
+    writer.writeObjectValue<AuditInfo>("modified", zone.modified, serializeAuditInfo);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ * @param ZoneCollectionResponse The instance to serialize from.
+ */
+// @ts-ignore
+export function serializeZoneCollectionResponse(writer: SerializationWriter, zoneCollectionResponse: Partial<ZoneCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!zoneCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, zoneCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Zone>("value", zoneCollectionResponse.value, serializeZone);
+}
 export interface ServicePrincipalEvidence extends AlertEvidence, Parsable {
     /**
      * The appId property
@@ -31969,6 +32557,10 @@ export type ServicePrincipalType = (typeof ServicePrincipalTypeObject)[keyof typ
 export type ServiceSource = (typeof ServiceSourceObject)[keyof typeof ServiceSourceObject];
 export type ServiceStatus = (typeof ServiceStatusObject)[keyof typeof ServiceStatusObject];
 export interface SettingsContainer extends Entity, Parsable {
+    /**
+     * Represents automatic configuration for collection of Windows event logs as needed for Defender for Identity sensors.
+     */
+    autoAuditingConfiguration?: AutoAuditingConfiguration | null;
 }
 export interface SharePointAppPermissionOperationAuditRecord extends AuditData, Parsable {
 }
@@ -33188,6 +33780,38 @@ export interface WorkplaceAnalyticsAuditRecord extends AuditData, Parsable {
 }
 export interface YammerAuditRecord extends AuditData, Parsable {
 }
+export interface Zone extends Entity, Parsable {
+    /**
+     * Environment count summaries by type. Read-only. Supports $filter (eq) on the kind property. For example, $filter=aggregations/any(a: a/kind eq 'azureSubscription').
+     */
+    aggregations?: AggregatedEnvironment[] | null;
+    /**
+     * Creation metadata, including user and timestamp. Supports $orderby (dateTime property only). Supports $filter (ge, le, gt, lt) on the dateTime property. For example, $filter=created/dateTime ge 2023-01-01T00:00:00Z.
+     */
+    created?: AuditInfo | null;
+    /**
+     * Optional description of the zone. Up to 255 characters. Supports $filter (eq, contains). For example, $filter=contains(description, 'production').
+     */
+    description?: string | null;
+    /**
+     * Human-readable name of the zone. Up to 1,024 characters. Supports $filter (eq, contains), and $orderby. For example, $filter=displayName eq 'Production Zone' or $orderby=displayName asc.
+     */
+    displayName?: string | null;
+    /**
+     * Collection of attached environments. Supports $expand.
+     */
+    environments?: Environment[] | null;
+    /**
+     * Last modification metadata, including user and timestamp. Supports $orderby (dateTime property only). Supports $filter (ge, le, gt, lt) on the dateTime property. For example, $orderby=modified/dateTime desc.
+     */
+    modified?: AuditInfo | null;
+}
+export interface ZoneCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: Zone[] | null;
+}
 export const ActionAfterRetentionPeriodObject = {
     None: "none",
     Delete: "delete",
@@ -33828,6 +34452,26 @@ export const ContentStateObject = {
     Motion: "motion",
     Use: "use",
 } as const;
+export const CorrelationReasonObject = {
+    RepeatedAlertOccurrence: "repeatedAlertOccurrence",
+    SameGeography: "sameGeography",
+    SimilarArtifacts: "similarArtifacts",
+    SameTargetedAsset: "sameTargetedAsset",
+    SameNetworkSegment: "sameNetworkSegment",
+    EventSequence: "eventSequence",
+    TimeFrame: "timeFrame",
+    SameThreatSource: "sameThreatSource",
+    SimilarTTPsOrBehavior: "similarTTPsOrBehavior",
+    SameActor: "sameActor",
+    SameCampaign: "sameCampaign",
+    SharedIndicators: "sharedIndicators",
+    SameAsset: "sameAsset",
+    NetworkProximity: "networkProximity",
+    EventCasualSequence: "eventCasualSequence",
+    TemporalProximity: "temporalProximity",
+    LateralMovementPath: "lateralMovementPath",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const DataSourceContainerStatusObject = {
     Active: "active",
     Released: "released",
@@ -33971,6 +34615,13 @@ export const DeviceRiskScoreObject = {
     High: "high",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const DeviceTypeObject = {
+    DomainController: "domainController",
+    Adfs: "adfs",
+    Adcs: "adcs",
+    EntraConnect: "entraConnect",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const DisableUserEntityIdentifierObject = {
     AccountSid: "accountSid",
     InitiatingProcessAccountSid: "initiatingProcessAccountSid",
@@ -33996,6 +34647,20 @@ export const EntityTypeObject = {
     MachineName: "machineName",
     Other: "other",
     Unknown: "unknown",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const EnvironmentKindObject = {
+    AzureSubscription: "azureSubscription",
+    AwsOrganization: "awsOrganization",
+    AwsAccount: "awsAccount",
+    GcpOrganization: "gcpOrganization",
+    GcpProject: "gcpProject",
+    DockersHubOrganization: "dockersHubOrganization",
+    DevOpsConnection: "devOpsConnection",
+    AzureDevOpsOrganization: "azureDevOpsOrganization",
+    GitHubOrganization: "gitHubOrganization",
+    GitLabGroup: "gitLabGroup",
+    JFrogArtifactory: "jFrogArtifactory",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const EventPropagationStatusObject = {
@@ -34416,6 +35081,14 @@ export const MarkUserAsCompromisedEntityIdentifierObject = {
     RecipientObjectId: "recipientObjectId",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const MigrationStateObject = {
+    ReadyForMigration: "readyForMigration",
+    NotReadyForMigration: "notReadyForMigration",
+    UpToDate: "upToDate",
+    MigrationFailed: "migrationFailed",
+    Migrating: "migrating",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const OnboardingStatusObject = {
     InsufficientInfo: "insufficientInfo",
     Onboarded: "onboarded",
@@ -34469,6 +35142,7 @@ export const RemediationActionObject = {
     SoftDelete: "softDelete",
     MoveToDeletedItems: "moveToDeletedItems",
     UnknownFutureValue: "unknownFutureValue",
+    MoveToQuarantine: "moveToQuarantine",
 } as const;
 export const RemediationSeverityObject = {
     Low: "low",

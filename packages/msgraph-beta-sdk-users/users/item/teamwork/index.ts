@@ -8,7 +8,15 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AssociatedTeamsRequestBuilderNavigationMetadata, AssociatedTeamsRequestBuilderRequestsMetadata, type AssociatedTeamsRequestBuilder } from './associatedTeams/index.js';
 // @ts-ignore
+import { DeleteTargetedMessageRequestBuilderRequestsMetadata, type DeleteTargetedMessageRequestBuilder } from './deleteTargetedMessage/index.js';
+// @ts-ignore
+import { GetAllRetainedTargetedMessagesRequestBuilderRequestsMetadata, type GetAllRetainedTargetedMessagesRequestBuilder } from './getAllRetainedTargetedMessages/index.js';
+// @ts-ignore
+import { GetAllTargetedMessagesRequestBuilderRequestsMetadata, type GetAllTargetedMessagesRequestBuilder } from './getAllTargetedMessages/index.js';
+// @ts-ignore
 import { InstalledAppsRequestBuilderNavigationMetadata, InstalledAppsRequestBuilderRequestsMetadata, type InstalledAppsRequestBuilder } from './installedApps/index.js';
+// @ts-ignore
+import { SectionsRequestBuilderNavigationMetadata, SectionsRequestBuilderRequestsMetadata, type SectionsRequestBuilder } from './sections/index.js';
 // @ts-ignore
 import { SendActivityNotificationRequestBuilderRequestsMetadata, type SendActivityNotificationRequestBuilder } from './sendActivityNotification/index.js';
 // @ts-ignore
@@ -23,9 +31,25 @@ export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkReque
      */
     get associatedTeams(): AssociatedTeamsRequestBuilder;
     /**
+     * Provides operations to call the deleteTargetedMessage method.
+     */
+    get deleteTargetedMessage(): DeleteTargetedMessageRequestBuilder;
+    /**
+     * Provides operations to call the getAllRetainedTargetedMessages method.
+     */
+    get getAllRetainedTargetedMessages(): GetAllRetainedTargetedMessagesRequestBuilder;
+    /**
+     * Provides operations to call the getAllTargetedMessages method.
+     */
+    get getAllTargetedMessages(): GetAllTargetedMessagesRequestBuilder;
+    /**
      * Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
      */
     get installedApps(): InstalledAppsRequestBuilder;
+    /**
+     * Provides operations to manage the sections property of the microsoft.graph.userTeamwork entity.
+     */
+    get sections(): SectionsRequestBuilder;
     /**
      * Provides operations to call the sendActivityNotification method.
      */
@@ -104,9 +128,22 @@ export const TeamworkRequestBuilderNavigationMetadata: Record<Exclude<keyof Team
         requestsMetadata: AssociatedTeamsRequestBuilderRequestsMetadata,
         navigationMetadata: AssociatedTeamsRequestBuilderNavigationMetadata,
     },
+    deleteTargetedMessage: {
+        requestsMetadata: DeleteTargetedMessageRequestBuilderRequestsMetadata,
+    },
+    getAllRetainedTargetedMessages: {
+        requestsMetadata: GetAllRetainedTargetedMessagesRequestBuilderRequestsMetadata,
+    },
+    getAllTargetedMessages: {
+        requestsMetadata: GetAllTargetedMessagesRequestBuilderRequestsMetadata,
+    },
     installedApps: {
         requestsMetadata: InstalledAppsRequestBuilderRequestsMetadata,
         navigationMetadata: InstalledAppsRequestBuilderNavigationMetadata,
+    },
+    sections: {
+        requestsMetadata: SectionsRequestBuilderRequestsMetadata,
+        navigationMetadata: SectionsRequestBuilderNavigationMetadata,
     },
     sendActivityNotification: {
         requestsMetadata: SendActivityNotificationRequestBuilderRequestsMetadata,

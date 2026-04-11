@@ -14,6 +14,7 @@ export interface ReuploadRequestBuilder extends BaseRequestBuilder<ReuploadReque
      * Reupload a cloudPcDeviceImage object that failed to upload.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The reupload is deprecated and will not be supported starting June 25, 2026. Please use retryUpload instead. as of 2026-01/reupload on 2026-01-09 and will be removed 2026-06-25
      * @see {@link https://learn.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -21,6 +22,7 @@ export interface ReuploadRequestBuilder extends BaseRequestBuilder<ReuploadReque
      * Reupload a cloudPcDeviceImage object that failed to upload.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The reupload is deprecated and will not be supported starting June 25, 2026. Please use retryUpload instead. as of 2026-01/reupload on 2026-01-09 and will be removed 2026-06-25
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

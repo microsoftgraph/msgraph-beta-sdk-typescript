@@ -27,10 +27,11 @@ export interface ConfigurationMonitoringResultsRequestBuilder extends BaseReques
      */
      byConfigurationMonitoringResultId(configurationMonitoringResultId: string) : ConfigurationMonitoringResultItemRequestBuilder;
     /**
-     * Get configurationMonitoringResults from admin
+     * Get a list of the configurationMonitoringResult objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationMonitoringResultCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitoringresults?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ConfigurationMonitoringResultsRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationMonitoringResultCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface ConfigurationMonitoringResultsRequestBuilder extends BaseReques
      */
      post(body: ConfigurationMonitoringResult, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ConfigurationMonitoringResult | undefined>;
     /**
-     * Get configurationMonitoringResults from admin
+     * Get a list of the configurationMonitoringResult objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface ConfigurationMonitoringResultsRequestBuilder extends BaseReques
      toPostRequestInformation(body: ConfigurationMonitoringResult, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get configurationMonitoringResults from admin
+ * Get a list of the configurationMonitoringResult objects and their properties.
  */
 export interface ConfigurationMonitoringResultsRequestBuilderGetQueryParameters {
     /**

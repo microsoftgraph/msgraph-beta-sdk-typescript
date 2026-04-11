@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ConnectionsRequestBuilderNavigationMetadata, ConnectionsRequestBuilderRequestsMetadata, type ConnectionsRequestBuilder } from './connections/index.js';
 // @ts-ignore
+import { GenerativeAIInsightsRequestBuilderNavigationMetadata, GenerativeAIInsightsRequestBuilderRequestsMetadata, type GenerativeAIInsightsRequestBuilder } from './generativeAIInsights/index.js';
+// @ts-ignore
 import { RemoteNetworksRequestBuilderNavigationMetadata, RemoteNetworksRequestBuilderRequestsMetadata, type RemoteNetworksRequestBuilder } from './remoteNetworks/index.js';
 // @ts-ignore
 import { TrafficRequestBuilderNavigationMetadata, TrafficRequestBuilderRequestsMetadata, type TrafficRequestBuilder } from './traffic/index.js';
@@ -22,6 +24,10 @@ export interface LogsRequestBuilder extends BaseRequestBuilder<LogsRequestBuilde
      * Provides operations to manage the connections property of the microsoft.graph.networkaccess.logs entity.
      */
     get connections(): ConnectionsRequestBuilder;
+    /**
+     * Provides operations to manage the generativeAIInsights property of the microsoft.graph.networkaccess.logs entity.
+     */
+    get generativeAIInsights(): GenerativeAIInsightsRequestBuilder;
     /**
      * Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
      */
@@ -102,6 +108,10 @@ export const LogsRequestBuilderNavigationMetadata: Record<Exclude<keyof LogsRequ
     connections: {
         requestsMetadata: ConnectionsRequestBuilderRequestsMetadata,
         navigationMetadata: ConnectionsRequestBuilderNavigationMetadata,
+    },
+    generativeAIInsights: {
+        requestsMetadata: GenerativeAIInsightsRequestBuilderRequestsMetadata,
+        navigationMetadata: GenerativeAIInsightsRequestBuilderNavigationMetadata,
     },
     remoteNetworks: {
         requestsMetadata: RemoteNetworksRequestBuilderRequestsMetadata,
