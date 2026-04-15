@@ -16,6 +16,7 @@ export interface SubjectRequestBuilder extends BaseRequestBuilder<SubjectRequest
      * Delete navigation property subject for privilegedAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface SubjectRequestBuilder extends BaseRequestBuilder<SubjectRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceSubject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      get(requestConfiguration?: RequestConfiguration<SubjectRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceSubject | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface SubjectRequestBuilder extends BaseRequestBuilder<SubjectRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceSubject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      patch(body: GovernanceSubject, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GovernanceSubject | undefined>;
     /**
      * Delete navigation property subject for privilegedAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read-only. The user/group principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SubjectRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface SubjectRequestBuilder extends BaseRequestBuilder<SubjectRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPatchRequestInformation(body: GovernanceSubject, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

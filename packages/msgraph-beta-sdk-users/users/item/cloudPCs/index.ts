@@ -41,7 +41,7 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      */
      byCloudPCId(cloudPCId: string) : CloudPCItemRequestBuilder;
     /**
-     * Get cloudPCs from users
+     * The user's Cloud PCs. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPCCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -63,7 +63,7 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      */
      post(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPC | undefined>;
     /**
-     * Get cloudPCs from users
+     * The user's Cloud PCs. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -77,7 +77,7 @@ export interface CloudPCsRequestBuilder extends BaseRequestBuilder<CloudPCsReque
      toPostRequestInformation(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get cloudPCs from users
+ * The user's Cloud PCs. Read-only. Nullable.
  */
 export interface CloudPCsRequestBuilderGetQueryParameters {
     /**

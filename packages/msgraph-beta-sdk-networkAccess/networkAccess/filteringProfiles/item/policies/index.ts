@@ -27,11 +27,11 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      byPolicyLinkId(policyLinkId: string) : PolicyLinkItemRequestBuilder;
     /**
-     * Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+     * Get a list of the threatIntelligencePolicyLink objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<PolicyLinkCollectionResponse | undefined>;
     /**
@@ -44,7 +44,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      post(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicyLink | undefined>;
     /**
-     * Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+     * Get a list of the threatIntelligencePolicyLink objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -58,7 +58,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      toPostRequestInformation(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+ * Get a list of the threatIntelligencePolicyLink objects and their properties.
  */
 export interface PoliciesRequestBuilderGetQueryParameters {
     /**

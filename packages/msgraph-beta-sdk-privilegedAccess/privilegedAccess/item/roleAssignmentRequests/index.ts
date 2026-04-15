@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RoleAssignmentRequestsRequestBuilder extends BaseRequestBuilder<RoleAssignmentRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
      * @param governanceRoleAssignmentRequestId The unique identifier of governanceRoleAssignmentRequest
      * @returns {GovernanceRoleAssignmentRequestItemRequestBuilder}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      byGovernanceRoleAssignmentRequestId(governanceRoleAssignmentRequestId: string) : GovernanceRoleAssignmentRequestItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface RoleAssignmentRequestsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceRoleAssignmentRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      get(requestConfiguration?: RequestConfiguration<RoleAssignmentRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceRoleAssignmentRequestCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface RoleAssignmentRequestsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceRoleAssignmentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      post(body: GovernanceRoleAssignmentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GovernanceRoleAssignmentRequest | undefined>;
     /**
      * A collection of role assignment requests for the provider.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleAssignmentRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface RoleAssignmentRequestsRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPostRequestInformation(body: GovernanceRoleAssignmentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -6,6 +6,14 @@ import { createBackupRestoreRootFromDiscriminatorValue, serializeBackupRestoreRo
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AllDrivesBackupRequestBuilderNavigationMetadata, AllDrivesBackupRequestBuilderRequestsMetadata, type AllDrivesBackupRequestBuilder } from './allDrivesBackup/index.js';
+// @ts-ignore
+import { AllMailboxesBackupRequestBuilderNavigationMetadata, AllMailboxesBackupRequestBuilderRequestsMetadata, type AllMailboxesBackupRequestBuilder } from './allMailboxesBackup/index.js';
+// @ts-ignore
+import { AllSitesBackupRequestBuilderNavigationMetadata, AllSitesBackupRequestBuilderRequestsMetadata, type AllSitesBackupRequestBuilder } from './allSitesBackup/index.js';
+// @ts-ignore
+import { BrowseSessionsRequestBuilderNavigationMetadata, BrowseSessionsRequestBuilderRequestsMetadata, type BrowseSessionsRequestBuilder } from './browseSessions/index.js';
+// @ts-ignore
 import { DriveInclusionRulesRequestBuilderNavigationMetadata, DriveInclusionRulesRequestBuilderRequestsMetadata, type DriveInclusionRulesRequestBuilder } from './driveInclusionRules/index.js';
 // @ts-ignore
 import { DriveProtectionUnitsRequestBuilderNavigationMetadata, DriveProtectionUnitsRequestBuilderRequestsMetadata, type DriveProtectionUnitsRequestBuilder } from './driveProtectionUnits/index.js';
@@ -26,6 +34,8 @@ import { MailboxProtectionUnitsRequestBuilderNavigationMetadata, MailboxProtecti
 // @ts-ignore
 import { MailboxProtectionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, MailboxProtectionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type MailboxProtectionUnitsBulkAdditionJobsRequestBuilder } from './mailboxProtectionUnitsBulkAdditionJobs/index.js';
 // @ts-ignore
+import { OneDriveForBusinessBrowseSessionsRequestBuilderNavigationMetadata, OneDriveForBusinessBrowseSessionsRequestBuilderRequestsMetadata, type OneDriveForBusinessBrowseSessionsRequestBuilder } from './oneDriveForBusinessBrowseSessions/index.js';
+// @ts-ignore
 import { OneDriveForBusinessProtectionPoliciesRequestBuilderNavigationMetadata, OneDriveForBusinessProtectionPoliciesRequestBuilderRequestsMetadata, type OneDriveForBusinessProtectionPoliciesRequestBuilder } from './oneDriveForBusinessProtectionPolicies/index.js';
 // @ts-ignore
 import { OneDriveForBusinessRestoreSessionsRequestBuilderNavigationMetadata, OneDriveForBusinessRestoreSessionsRequestBuilderRequestsMetadata, type OneDriveForBusinessRestoreSessionsRequestBuilder } from './oneDriveForBusinessRestoreSessions/index.js';
@@ -39,6 +49,8 @@ import { RestorePointsRequestBuilderNavigationMetadata, RestorePointsRequestBuil
 import { RestoreSessionsRequestBuilderNavigationMetadata, RestoreSessionsRequestBuilderRequestsMetadata, type RestoreSessionsRequestBuilder } from './restoreSessions/index.js';
 // @ts-ignore
 import { ServiceAppsRequestBuilderNavigationMetadata, ServiceAppsRequestBuilderRequestsMetadata, type ServiceAppsRequestBuilder } from './serviceApps/index.js';
+// @ts-ignore
+import { SharePointBrowseSessionsRequestBuilderNavigationMetadata, SharePointBrowseSessionsRequestBuilderRequestsMetadata, type SharePointBrowseSessionsRequestBuilder } from './sharePointBrowseSessions/index.js';
 // @ts-ignore
 import { SharePointProtectionPoliciesRequestBuilderNavigationMetadata, SharePointProtectionPoliciesRequestBuilderRequestsMetadata, type SharePointProtectionPoliciesRequestBuilder } from './sharePointProtectionPolicies/index.js';
 // @ts-ignore
@@ -56,6 +68,22 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.
  */
 export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRestoreRequestBuilder> {
+    /**
+     * Provides operations to manage the allDrivesBackup property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get allDrivesBackup(): AllDrivesBackupRequestBuilder;
+    /**
+     * Provides operations to manage the allMailboxesBackup property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get allMailboxesBackup(): AllMailboxesBackupRequestBuilder;
+    /**
+     * Provides operations to manage the allSitesBackup property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get allSitesBackup(): AllSitesBackupRequestBuilder;
+    /**
+     * Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get browseSessions(): BrowseSessionsRequestBuilder;
     /**
      * Provides operations to manage the driveInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -97,6 +125,10 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      */
     get mailboxProtectionUnitsBulkAdditionJobs(): MailboxProtectionUnitsBulkAdditionJobsRequestBuilder;
     /**
+     * Provides operations to manage the oneDriveForBusinessBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get oneDriveForBusinessBrowseSessions(): OneDriveForBusinessBrowseSessionsRequestBuilder;
+    /**
      * Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
      */
     get oneDriveForBusinessProtectionPolicies(): OneDriveForBusinessProtectionPoliciesRequestBuilder;
@@ -124,6 +156,10 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * Provides operations to manage the serviceApps property of the microsoft.graph.backupRestoreRoot entity.
      */
     get serviceApps(): ServiceAppsRequestBuilder;
+    /**
+     * Provides operations to manage the sharePointBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get sharePointBrowseSessions(): SharePointBrowseSessionsRequestBuilder;
     /**
      * Provides operations to manage the sharePointProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -214,6 +250,22 @@ const BackupRestoreRequestBuilderGetQueryParametersMapper: Record<string, string
  * Metadata for all the navigation properties in the request builder.
  */
 export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof BackupRestoreRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    allDrivesBackup: {
+        requestsMetadata: AllDrivesBackupRequestBuilderRequestsMetadata,
+        navigationMetadata: AllDrivesBackupRequestBuilderNavigationMetadata,
+    },
+    allMailboxesBackup: {
+        requestsMetadata: AllMailboxesBackupRequestBuilderRequestsMetadata,
+        navigationMetadata: AllMailboxesBackupRequestBuilderNavigationMetadata,
+    },
+    allSitesBackup: {
+        requestsMetadata: AllSitesBackupRequestBuilderRequestsMetadata,
+        navigationMetadata: AllSitesBackupRequestBuilderNavigationMetadata,
+    },
+    browseSessions: {
+        requestsMetadata: BrowseSessionsRequestBuilderRequestsMetadata,
+        navigationMetadata: BrowseSessionsRequestBuilderNavigationMetadata,
+    },
     driveInclusionRules: {
         requestsMetadata: DriveInclusionRulesRequestBuilderRequestsMetadata,
         navigationMetadata: DriveInclusionRulesRequestBuilderNavigationMetadata,
@@ -252,6 +304,10 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
         requestsMetadata: MailboxProtectionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
         navigationMetadata: MailboxProtectionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
     },
+    oneDriveForBusinessBrowseSessions: {
+        requestsMetadata: OneDriveForBusinessBrowseSessionsRequestBuilderRequestsMetadata,
+        navigationMetadata: OneDriveForBusinessBrowseSessionsRequestBuilderNavigationMetadata,
+    },
     oneDriveForBusinessProtectionPolicies: {
         requestsMetadata: OneDriveForBusinessProtectionPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: OneDriveForBusinessProtectionPoliciesRequestBuilderNavigationMetadata,
@@ -279,6 +335,10 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
     serviceApps: {
         requestsMetadata: ServiceAppsRequestBuilderRequestsMetadata,
         navigationMetadata: ServiceAppsRequestBuilderNavigationMetadata,
+    },
+    sharePointBrowseSessions: {
+        requestsMetadata: SharePointBrowseSessionsRequestBuilderRequestsMetadata,
+        navigationMetadata: SharePointBrowseSessionsRequestBuilderNavigationMetadata,
     },
     sharePointProtectionPolicies: {
         requestsMetadata: SharePointProtectionPoliciesRequestBuilderRequestsMetadata,

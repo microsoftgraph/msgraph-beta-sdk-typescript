@@ -79,6 +79,7 @@ export interface UpdateRequestRequestBuilder extends BaseRequestBuilder<UpdateRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceRoleAssignmentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      post(body: UpdateRequestPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GovernanceRoleAssignmentRequest | undefined>;
     /**
@@ -86,6 +87,7 @@ export interface UpdateRequestRequestBuilder extends BaseRequestBuilder<UpdateRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPostRequestInformation(body: UpdateRequestPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

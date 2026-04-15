@@ -6,7 +6,11 @@ import { createIdentityProtectionRootFromDiscriminatorValue, serializeIdentityPr
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AgentRiskDetectionsRequestBuilderNavigationMetadata, AgentRiskDetectionsRequestBuilderRequestsMetadata, type AgentRiskDetectionsRequestBuilder } from './agentRiskDetections/index.js';
+// @ts-ignore
 import { RiskDetectionsRequestBuilderNavigationMetadata, RiskDetectionsRequestBuilderRequestsMetadata, type RiskDetectionsRequestBuilder } from './riskDetections/index.js';
+// @ts-ignore
+import { RiskyAgentsRequestBuilderNavigationMetadata, RiskyAgentsRequestBuilderRequestsMetadata, type RiskyAgentsRequestBuilder } from './riskyAgents/index.js';
 // @ts-ignore
 import { RiskyServicePrincipalsRequestBuilderNavigationMetadata, RiskyServicePrincipalsRequestBuilderRequestsMetadata, type RiskyServicePrincipalsRequestBuilder } from './riskyServicePrincipals/index.js';
 // @ts-ignore
@@ -21,9 +25,17 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface IdentityProtectionRequestBuilder extends BaseRequestBuilder<IdentityProtectionRequestBuilder> {
     /**
+     * Provides operations to manage the agentRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
+     */
+    get agentRiskDetections(): AgentRiskDetectionsRequestBuilder;
+    /**
      * Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
      */
     get riskDetections(): RiskDetectionsRequestBuilder;
+    /**
+     * Provides operations to manage the riskyAgents property of the microsoft.graph.identityProtectionRoot entity.
+     */
+    get riskyAgents(): RiskyAgentsRequestBuilder;
     /**
      * Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
      */
@@ -93,9 +105,17 @@ const IdentityProtectionRequestBuilderGetQueryParametersMapper: Record<string, s
  * Metadata for all the navigation properties in the request builder.
  */
 export const IdentityProtectionRequestBuilderNavigationMetadata: Record<Exclude<keyof IdentityProtectionRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    agentRiskDetections: {
+        requestsMetadata: AgentRiskDetectionsRequestBuilderRequestsMetadata,
+        navigationMetadata: AgentRiskDetectionsRequestBuilderNavigationMetadata,
+    },
     riskDetections: {
         requestsMetadata: RiskDetectionsRequestBuilderRequestsMetadata,
         navigationMetadata: RiskDetectionsRequestBuilderNavigationMetadata,
+    },
+    riskyAgents: {
+        requestsMetadata: RiskyAgentsRequestBuilderRequestsMetadata,
+        navigationMetadata: RiskyAgentsRequestBuilderNavigationMetadata,
     },
     riskyServicePrincipals: {
         requestsMetadata: RiskyServicePrincipalsRequestBuilderRequestsMetadata,

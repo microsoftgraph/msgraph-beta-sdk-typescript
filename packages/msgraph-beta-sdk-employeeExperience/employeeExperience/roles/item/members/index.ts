@@ -27,7 +27,7 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      */
      byEngagementRoleMemberId(engagementRoleMemberId: string) : EngagementRoleMemberItemRequestBuilder;
     /**
-     * Get a list of the engagementRoleMember objects and their properties.
+     * Get a list of users with assigned roles in Viva Engage.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EngagementRoleMemberCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      */
      get(requestConfiguration?: RequestConfiguration<MembersRequestBuilderGetQueryParameters> | undefined) : Promise<EngagementRoleMemberCollectionResponse | undefined>;
     /**
-     * Assign a Viva Engage role to a user.
+     * Create a new engagementRoleMember object that assigns a Viva Engage role to a user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EngagementRoleMember>}
@@ -44,13 +44,13 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      */
      post(body: EngagementRoleMember, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EngagementRoleMember | undefined>;
     /**
-     * Get a list of the engagementRoleMember objects and their properties.
+     * Get a list of users with assigned roles in Viva Engage.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MembersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Assign a Viva Engage role to a user.
+     * Create a new engagementRoleMember object that assigns a Viva Engage role to a user.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      toPostRequestInformation(body: EngagementRoleMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the engagementRoleMember objects and their properties.
+ * Get a list of users with assigned roles in Viva Engage.
  */
 export interface MembersRequestBuilderGetQueryParameters {
     /**

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExternalPartnerSettingsRequestBuilder extends BaseRequestBuilder<ExternalPartnerSettingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
      * @param cloudPcExternalPartnerSettingId The unique identifier of cloudPcExternalPartnerSetting
      * @returns {CloudPcExternalPartnerSettingItemRequestBuilder}
+     * @deprecated The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
      */
      byCloudPcExternalPartnerSettingId(cloudPcExternalPartnerSettingId: string) : CloudPcExternalPartnerSettingItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ExternalPartnerSettingsRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExternalPartnerSettingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
      * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ExternalPartnerSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcExternalPartnerSettingCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface ExternalPartnerSettingsRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcExternalPartnerSetting>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
      * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcExternalPartnerSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcExternalPartnerSetting | undefined>;
@@ -47,6 +51,7 @@ export interface ExternalPartnerSettingsRequestBuilder extends BaseRequestBuilde
      * Get a list of the cloudPcExternalPartnerSetting objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalPartnerSettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface ExternalPartnerSettingsRequestBuilder extends BaseRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
      */
      toPostRequestInformation(body: CloudPcExternalPartnerSetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

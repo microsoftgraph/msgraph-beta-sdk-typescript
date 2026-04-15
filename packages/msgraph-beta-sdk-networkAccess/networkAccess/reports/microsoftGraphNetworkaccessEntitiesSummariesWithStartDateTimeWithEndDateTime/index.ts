@@ -42,7 +42,7 @@ export interface EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse ex
  */
 export interface MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder> {
     /**
-     * Get the number of users, devices, and workloads per traffic type in a specified time period.
+     * Get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -50,14 +50,14 @@ export interface MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWi
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
     /**
-     * Get the number of users, devices, and workloads per traffic type in a specified time period.
+     * Get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get the number of users, devices, and workloads per traffic type in a specified time period.
+ * Get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
  */
 export interface MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters {
     /**

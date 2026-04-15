@@ -2284,7 +2284,7 @@ export interface ItemBody extends AdditionalDataHolder, BackedModel, Parsable {
      */
     content?: string | null;
     /**
-     * The type of the content indicated by the enum value of bodyType. Possible values are: text, html, unknownFutureValue.
+     * The type of the content indicated by the enum value of bodyType. The possible values are: text, html, unknownFutureValue.
      */
     contentType?: BodyType | null;
     /**
@@ -2371,7 +2371,7 @@ export interface KnownIssueHistoryItem extends AdditionalDataHolder, BackedModel
 export type MonitoringAction = (typeof MonitoringActionObject)[keyof typeof MonitoringActionObject];
 export interface MonitoringRule extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
+     * The action triggered when the threshold for the given signal is reached. The possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
      */
     action?: MonitoringAction | null;
     /**
@@ -2383,7 +2383,7 @@ export interface MonitoringRule extends AdditionalDataHolder, BackedModel, Parsa
      */
     odataType?: string | null;
     /**
-     * The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
+     * The signal to monitor. The possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
      */
     signal?: MonitoringSignal | null;
     /**
@@ -2474,7 +2474,7 @@ export interface ProductRevision extends Entity, Parsable {
      */
     osBuild?: BuildVersionDetails | null;
     /**
-     * The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.
+     * The product of the revision. The possible values are: Windows 10, Windows 11. Read-only.
      */
     product?: string | null;
     /**
@@ -2511,7 +2511,7 @@ export interface QualityUpdateCatalogEntry extends Parsable, SoftwareUpdateCatal
      */
     productRevisions?: ProductRevision[] | null;
     /**
-     * The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
+     * The publishing cadence of the quality update. The possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
      */
     qualityUpdateCadence?: QualityUpdateCadence | null;
     /**

@@ -22,13 +22,19 @@ import { AuthenticationStrengthPoliciesRequestBuilderNavigationMetadata, Authent
 // @ts-ignore
 import { AuthorizationPolicyRequestBuilderNavigationMetadata, AuthorizationPolicyRequestBuilderRequestsMetadata, type AuthorizationPolicyRequestBuilder } from './authorizationPolicy/index.js';
 // @ts-ignore
+import { B2bManagementPoliciesRequestBuilderNavigationMetadata, B2bManagementPoliciesRequestBuilderRequestsMetadata, type B2bManagementPoliciesRequestBuilder } from './b2bManagementPolicies/index.js';
+// @ts-ignore
 import { B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata, type B2cAuthenticationMethodsPolicyRequestBuilder } from './b2cAuthenticationMethodsPolicy/index.js';
 // @ts-ignore
 import { ClaimsMappingPoliciesRequestBuilderNavigationMetadata, ClaimsMappingPoliciesRequestBuilderRequestsMetadata, type ClaimsMappingPoliciesRequestBuilder } from './claimsMappingPolicies/index.js';
 // @ts-ignore
+import { ConditionalAccessPoliciesRequestBuilderNavigationMetadata, ConditionalAccessPoliciesRequestBuilderRequestsMetadata, type ConditionalAccessPoliciesRequestBuilder } from './conditionalAccessPolicies/index.js';
+// @ts-ignore
 import { CrossTenantAccessPolicyRequestBuilderNavigationMetadata, CrossTenantAccessPolicyRequestBuilderRequestsMetadata, type CrossTenantAccessPolicyRequestBuilder } from './crossTenantAccessPolicy/index.js';
 // @ts-ignore
 import { DefaultAppManagementPolicyRequestBuilderRequestsMetadata, type DefaultAppManagementPolicyRequestBuilder } from './defaultAppManagementPolicy/index.js';
+// @ts-ignore
+import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilderRequestsMetadata, type DeletedItemsRequestBuilder } from './deletedItems/index.js';
 // @ts-ignore
 import { DeviceRegistrationPolicyRequestBuilderRequestsMetadata, type DeviceRegistrationPolicyRequestBuilder } from './deviceRegistrationPolicy/index.js';
 // @ts-ignore
@@ -47,6 +53,8 @@ import { IdentitySecurityDefaultsEnforcementPolicyRequestBuilderRequestsMetadata
 import { MobileAppManagementPoliciesRequestBuilderNavigationMetadata, MobileAppManagementPoliciesRequestBuilderRequestsMetadata, type MobileAppManagementPoliciesRequestBuilder } from './mobileAppManagementPolicies/index.js';
 // @ts-ignore
 import { MobileDeviceManagementPoliciesRequestBuilderNavigationMetadata, MobileDeviceManagementPoliciesRequestBuilderRequestsMetadata, type MobileDeviceManagementPoliciesRequestBuilder } from './mobileDeviceManagementPolicies/index.js';
+// @ts-ignore
+import { OnPremAuthenticationPoliciesRequestBuilderNavigationMetadata, OnPremAuthenticationPoliciesRequestBuilderRequestsMetadata, type OnPremAuthenticationPoliciesRequestBuilder } from './onPremAuthenticationPolicies/index.js';
 // @ts-ignore
 import { PermissionGrantPoliciesRequestBuilderNavigationMetadata, PermissionGrantPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPoliciesRequestBuilder } from './permissionGrantPolicies/index.js';
 // @ts-ignore
@@ -101,6 +109,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
     get authorizationPolicy(): AuthorizationPolicyRequestBuilder;
     /**
+     * Provides operations to manage the b2bManagementPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get b2bManagementPolicies(): B2bManagementPoliciesRequestBuilder;
+    /**
      * Provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
      */
     get b2cAuthenticationMethodsPolicy(): B2cAuthenticationMethodsPolicyRequestBuilder;
@@ -109,6 +121,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
     get claimsMappingPolicies(): ClaimsMappingPoliciesRequestBuilder;
     /**
+     * Provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get conditionalAccessPolicies(): ConditionalAccessPoliciesRequestBuilder;
+    /**
      * Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.
      */
     get crossTenantAccessPolicy(): CrossTenantAccessPolicyRequestBuilder;
@@ -116,6 +132,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.
      */
     get defaultAppManagementPolicy(): DefaultAppManagementPolicyRequestBuilder;
+    /**
+     * Provides operations to manage the deletedItems property of the microsoft.graph.policyRoot entity.
+     */
+    get deletedItems(): DeletedItemsRequestBuilder;
     /**
      * Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.
      */
@@ -152,6 +172,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
      */
     get mobileDeviceManagementPolicies(): MobileDeviceManagementPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the onPremAuthenticationPolicies property of the microsoft.graph.policyRoot entity.
+     */
+    get onPremAuthenticationPolicies(): OnPremAuthenticationPoliciesRequestBuilder;
     /**
      * Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
      */
@@ -266,6 +290,10 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
         requestsMetadata: AuthorizationPolicyRequestBuilderRequestsMetadata,
         navigationMetadata: AuthorizationPolicyRequestBuilderNavigationMetadata,
     },
+    b2bManagementPolicies: {
+        requestsMetadata: B2bManagementPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: B2bManagementPoliciesRequestBuilderNavigationMetadata,
+    },
     b2cAuthenticationMethodsPolicy: {
         requestsMetadata: B2cAuthenticationMethodsPolicyRequestBuilderRequestsMetadata,
     },
@@ -273,12 +301,20 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
         requestsMetadata: ClaimsMappingPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: ClaimsMappingPoliciesRequestBuilderNavigationMetadata,
     },
+    conditionalAccessPolicies: {
+        requestsMetadata: ConditionalAccessPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: ConditionalAccessPoliciesRequestBuilderNavigationMetadata,
+    },
     crossTenantAccessPolicy: {
         requestsMetadata: CrossTenantAccessPolicyRequestBuilderRequestsMetadata,
         navigationMetadata: CrossTenantAccessPolicyRequestBuilderNavigationMetadata,
     },
     defaultAppManagementPolicy: {
         requestsMetadata: DefaultAppManagementPolicyRequestBuilderRequestsMetadata,
+    },
+    deletedItems: {
+        requestsMetadata: DeletedItemsRequestBuilderRequestsMetadata,
+        navigationMetadata: DeletedItemsRequestBuilderNavigationMetadata,
     },
     deviceRegistrationPolicy: {
         requestsMetadata: DeviceRegistrationPolicyRequestBuilderRequestsMetadata,
@@ -310,6 +346,10 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
     mobileDeviceManagementPolicies: {
         requestsMetadata: MobileDeviceManagementPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: MobileDeviceManagementPoliciesRequestBuilderNavigationMetadata,
+    },
+    onPremAuthenticationPolicies: {
+        requestsMetadata: OnPremAuthenticationPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: OnPremAuthenticationPoliciesRequestBuilderNavigationMetadata,
     },
     permissionGrantPolicies: {
         requestsMetadata: PermissionGrantPoliciesRequestBuilderRequestsMetadata,

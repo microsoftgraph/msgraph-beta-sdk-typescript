@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder> {
     /**
-     * Get a summary of device onboarding and offboarding within a specified timeframe. This summary includes the total number of devices, active devices, and inactive devices.
+     * Get a summary of device onboarding and offboarding within a specified timeframe as logged in Global Secure Access. This summary includes the total number of devices, active devices, and inactive devices.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceUsageSummary>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceUsageSummary | undefined>;
     /**
-     * Get a summary of device onboarding and offboarding within a specified timeframe. This summary includes the total number of devices, active devices, and inactive devices.
+     * Get a summary of device onboarding and offboarding within a specified timeframe as logged in Global Secure Access. This summary includes the total number of devices, active devices, and inactive devices.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

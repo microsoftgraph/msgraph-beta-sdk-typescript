@@ -16,6 +16,8 @@ import { RetrievePolicyApplyActionResultRequestBuilderRequestsMetadata, type Ret
 // @ts-ignore
 import { RetrievePolicyApplyScheduleRequestBuilderRequestsMetadata, type RetrievePolicyApplyScheduleRequestBuilder } from './retrievePolicyApplySchedule/index.js';
 // @ts-ignore
+import { RetryRequestBuilderRequestsMetadata, type RetryRequestBuilder } from './retry/index.js';
+// @ts-ignore
 import { SchedulePolicyApplyTaskRequestBuilderRequestsMetadata, type SchedulePolicyApplyTaskRequestBuilder } from './schedulePolicyApplyTask/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -44,6 +46,10 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * Provides operations to call the retrievePolicyApplySchedule method.
      */
     get retrievePolicyApplySchedule(): RetrievePolicyApplyScheduleRequestBuilder;
+    /**
+     * Provides operations to call the retry method.
+     */
+    get retry(): RetryRequestBuilder;
     /**
      * Provides operations to call the schedulePolicyApplyTask method.
      */
@@ -135,6 +141,9 @@ export const CloudPcProvisioningPolicyItemRequestBuilderNavigationMetadata: Reco
     },
     retrievePolicyApplySchedule: {
         requestsMetadata: RetrievePolicyApplyScheduleRequestBuilderRequestsMetadata,
+    },
+    retry: {
+        requestsMetadata: RetryRequestBuilderRequestsMetadata,
     },
     schedulePolicyApplyTask: {
         requestsMetadata: SchedulePolicyApplyTaskRequestBuilderRequestsMetadata,

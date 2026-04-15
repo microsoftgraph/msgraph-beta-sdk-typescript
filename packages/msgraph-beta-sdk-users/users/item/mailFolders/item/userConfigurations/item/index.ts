@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface UserConfigurationItemRequestBuilder extends BaseRequestBuilder<UserConfigurationItemRequestBuilder> {
     /**
-     * Get userConfigurations from users
+     * The user configuration objects associated to the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConfiguration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<UserConfigurationItemRequestBuilderGetQueryParameters> | undefined) : Promise<UserConfiguration | undefined>;
     /**
-     * Get userConfigurations from users
+     * The user configuration objects associated to the mailFolder.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserConfigurationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get userConfigurations from users
+ * The user configuration objects associated to the mailFolder.
  */
 export interface UserConfigurationItemRequestBuilderGetQueryParameters {
     /**

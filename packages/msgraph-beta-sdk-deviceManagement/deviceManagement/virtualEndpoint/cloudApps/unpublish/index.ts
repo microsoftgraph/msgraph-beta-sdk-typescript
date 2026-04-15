@@ -54,14 +54,15 @@ export interface UnpublishPostRequestBody extends AdditionalDataHolder, BackedMo
  */
 export interface UnpublishRequestBuilder extends BaseRequestBuilder<UnpublishRequestBuilder> {
     /**
-     * Invoke action unpublish
+     * Unpublish a cloudPcCloudApp to remove it from the end-user portal, for example, the Windows App. When a cloud app is unpublished, any changes made to its app details are reverted and reset to the values of the discovered app it's linked to.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpccloudapp-unpublish?view=graph-rest-beta|Find more info here}
      */
      post(body: UnpublishPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action unpublish
+     * Unpublish a cloudPcCloudApp to remove it from the end-user portal, for example, the Windows App. When a cloud app is unpublished, any changes made to its app details are reverted and reset to the values of the discovered app it's linked to.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

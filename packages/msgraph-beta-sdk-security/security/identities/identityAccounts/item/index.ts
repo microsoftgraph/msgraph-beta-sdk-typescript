@@ -25,10 +25,11 @@ export interface IdentityAccountsItemRequestBuilder extends BaseRequestBuilder<I
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get identityAccounts from security
+     * Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityAccounts>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-identityaccounts-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<IdentityAccountsItemRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityAccounts | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface IdentityAccountsItemRequestBuilder extends BaseRequestBuilder<I
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get identityAccounts from security
+     * Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +61,7 @@ export interface IdentityAccountsItemRequestBuilder extends BaseRequestBuilder<I
      toPatchRequestInformation(body: IdentityAccounts, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get identityAccounts from security
+ * Read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
  */
 export interface IdentityAccountsItemRequestBuilderGetQueryParameters {
     /**

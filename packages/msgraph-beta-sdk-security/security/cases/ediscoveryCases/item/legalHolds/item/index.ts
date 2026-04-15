@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createEdiscoveryHoldPolicyFromDiscriminatorValue, serializeEdiscoveryHoldPolicy, type EdiscoveryHoldPolicy } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
+import { MicrosoftGraphSecurityRetryPolicyRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityRetryPolicyRequestBuilder } from './microsoftGraphSecurityRetryPolicy/index.js';
+// @ts-ignore
 import { SiteSourcesRequestBuilderNavigationMetadata, SiteSourcesRequestBuilderRequestsMetadata, type SiteSourcesRequestBuilder } from './siteSources/index.js';
 // @ts-ignore
 import { type UserSourcesRequestBuilder, UserSourcesRequestBuilderNavigationMetadata, UserSourcesRequestBuilderRequestsMetadata } from './userSources/index.js';
@@ -16,6 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.
  */
 export interface EdiscoveryHoldPolicyItemRequestBuilder extends BaseRequestBuilder<EdiscoveryHoldPolicyItemRequestBuilder> {
+    /**
+     * Provides operations to call the retryPolicy method.
+     */
+    get microsoftGraphSecurityRetryPolicy(): MicrosoftGraphSecurityRetryPolicyRequestBuilder;
     /**
      * Provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
      */
@@ -93,6 +99,9 @@ const EdiscoveryHoldPolicyItemRequestBuilderGetQueryParametersMapper: Record<str
  * Metadata for all the navigation properties in the request builder.
  */
 export const EdiscoveryHoldPolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof EdiscoveryHoldPolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    microsoftGraphSecurityRetryPolicy: {
+        requestsMetadata: MicrosoftGraphSecurityRetryPolicyRequestBuilderRequestsMetadata,
+    },
     siteSources: {
         requestsMetadata: SiteSourcesRequestBuilderRequestsMetadata,
         navigationMetadata: SiteSourcesRequestBuilderNavigationMetadata,

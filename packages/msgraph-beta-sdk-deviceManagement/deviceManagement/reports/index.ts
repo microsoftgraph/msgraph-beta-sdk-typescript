@@ -160,6 +160,8 @@ import { RetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderRequestsMetad
 // @ts-ignore
 import { RetrieveDeviceAppInstallationStatusReportRequestBuilderRequestsMetadata, type RetrieveDeviceAppInstallationStatusReportRequestBuilder } from './retrieveDeviceAppInstallationStatusReport/index.js';
 // @ts-ignore
+import { RetrieveEnrollmentTimeGroupingFailureReportRequestBuilderRequestsMetadata, type RetrieveEnrollmentTimeGroupingFailureReportRequestBuilder } from './retrieveEnrollmentTimeGroupingFailureReport/index.js';
+// @ts-ignore
 import { RetrieveSecurityTaskAppsReportRequestBuilderRequestsMetadata, type RetrieveSecurityTaskAppsReportRequestBuilder } from './retrieveSecurityTaskAppsReport/index.js';
 // @ts-ignore
 import { RetrieveWin32CatalogAppsUpdateReportRequestBuilderRequestsMetadata, type RetrieveWin32CatalogAppsUpdateReportRequestBuilder } from './retrieveWin32CatalogAppsUpdateReport/index.js';
@@ -479,6 +481,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
     get retrieveDeviceAppInstallationStatusReport(): RetrieveDeviceAppInstallationStatusReportRequestBuilder;
     /**
+     * Provides operations to call the retrieveEnrollmentTimeGroupingFailureReport method.
+     */
+    get retrieveEnrollmentTimeGroupingFailureReport(): RetrieveEnrollmentTimeGroupingFailureReportRequestBuilder;
+    /**
      * Provides operations to call the retrieveSecurityTaskAppsReport method.
      */
     get retrieveSecurityTaskAppsReport(): RetrieveSecurityTaskAppsReportRequestBuilder;
@@ -787,6 +793,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     retrieveDeviceAppInstallationStatusReport: {
         requestsMetadata: RetrieveDeviceAppInstallationStatusReportRequestBuilderRequestsMetadata,
+    },
+    retrieveEnrollmentTimeGroupingFailureReport: {
+        requestsMetadata: RetrieveEnrollmentTimeGroupingFailureReportRequestBuilderRequestsMetadata,
     },
     retrieveSecurityTaskAppsReport: {
         requestsMetadata: RetrieveSecurityTaskAppsReportRequestBuilderRequestsMetadata,

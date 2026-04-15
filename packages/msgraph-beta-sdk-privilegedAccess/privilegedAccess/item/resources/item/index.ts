@@ -24,28 +24,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GovernanceResourceItemRequestBuilder extends BaseRequestBuilder<GovernanceResourceItemRequestBuilder> {
     /**
      * Provides operations to manage the parent property of the microsoft.graph.governanceResource entity.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get parent(): ParentRequestBuilder;
     /**
      * Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get roleAssignmentRequests(): RoleAssignmentRequestsRequestBuilder;
     /**
      * Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get roleAssignments(): RoleAssignmentsRequestBuilder;
     /**
      * Provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get roleDefinitions(): RoleDefinitionsRequestBuilder;
     /**
      * Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get roleSettings(): RoleSettingsRequestBuilder;
     /**
      * Delete navigation property resources for privilegedAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -53,6 +59,7 @@ export interface GovernanceResourceItemRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      get(requestConfiguration?: RequestConfiguration<GovernanceResourceItemRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceResource | undefined>;
     /**
@@ -61,18 +68,21 @@ export interface GovernanceResourceItemRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      patch(body: GovernanceResource, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GovernanceResource | undefined>;
     /**
      * Delete navigation property resources for privilegedAccess
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of resources for the provider.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GovernanceResourceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -80,6 +90,7 @@ export interface GovernanceResourceItemRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPatchRequestInformation(body: GovernanceResource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

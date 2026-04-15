@@ -37,7 +37,7 @@ export interface OnlineMeetingEngagementConversationItemRequestBuilder extends B
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * A collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+     * A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OnlineMeetingEngagementConversation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -58,7 +58,7 @@ export interface OnlineMeetingEngagementConversationItemRequestBuilder extends B
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * A collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+     * A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -72,7 +72,7 @@ export interface OnlineMeetingEngagementConversationItemRequestBuilder extends B
      toPatchRequestInformation(body: OnlineMeetingEngagementConversation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+ * A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
  */
 export interface OnlineMeetingEngagementConversationItemRequestBuilderGetQueryParameters {
     /**

@@ -27,7 +27,7 @@ export interface ScheduledActionsForRuleRequestBuilder extends BaseRequestBuilde
      */
      byDeviceComplianceScheduledActionForRuleId(deviceComplianceScheduledActionForRuleId: string) : DeviceComplianceScheduledActionForRuleItemRequestBuilder;
     /**
-     * The list of scheduled action for this rule
+     * The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceComplianceScheduledActionForRuleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface ScheduledActionsForRuleRequestBuilder extends BaseRequestBuilde
      */
      post(body: DeviceComplianceScheduledActionForRule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceComplianceScheduledActionForRule | undefined>;
     /**
-     * The list of scheduled action for this rule
+     * The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface ScheduledActionsForRuleRequestBuilder extends BaseRequestBuilde
      toPostRequestInformation(body: DeviceComplianceScheduledActionForRule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The list of scheduled action for this rule
+ * The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
  */
 export interface ScheduledActionsForRuleRequestBuilderGetQueryParameters {
     /**

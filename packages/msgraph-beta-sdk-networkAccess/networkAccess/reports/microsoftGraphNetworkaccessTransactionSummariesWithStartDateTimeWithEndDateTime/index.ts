@@ -36,7 +36,7 @@ export function deserializeIntoTransactionSummariesWithStartDateTimeWithEndDateT
  */
 export interface MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder> {
     /**
-     * Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+     * Get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -44,14 +44,14 @@ export interface MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTim
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
     /**
-     * Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+     * Get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+ * Get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
  */
 export interface MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters {
     /**

@@ -31,7 +31,7 @@ export interface PartnerRequestBuilder extends BaseRequestBuilder<PartnerRequest
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners’ customers, including alerts, scores, and all aspects of security.
+     * A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners' customers, including alerts, scores, and all aspects of security.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PartnerSecurity>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface PartnerRequestBuilder extends BaseRequestBuilder<PartnerRequest
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners’ customers, including alerts, scores, and all aspects of security.
+     * A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners' customers, including alerts, scores, and all aspects of security.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface PartnerRequestBuilder extends BaseRequestBuilder<PartnerRequest
      toPatchRequestInformation(body: PartnerSecurity, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners’ customers, including alerts, scores, and all aspects of security.
+ * A container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners' customers, including alerts, scores, and all aspects of security.
  */
 export interface PartnerRequestBuilderGetQueryParameters {
     /**

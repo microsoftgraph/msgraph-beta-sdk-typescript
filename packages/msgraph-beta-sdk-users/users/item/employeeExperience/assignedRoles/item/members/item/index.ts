@@ -25,7 +25,7 @@ export interface EngagementRoleMemberItemRequestBuilder extends BaseRequestBuild
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Users who have been assigned this role.
+     * Users that have this role assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EngagementRoleMember>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface EngagementRoleMemberItemRequestBuilder extends BaseRequestBuild
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Users who have been assigned this role.
+     * Users that have this role assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface EngagementRoleMemberItemRequestBuilder extends BaseRequestBuild
      toPatchRequestInformation(body: EngagementRoleMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Users who have been assigned this role.
+ * Users that have this role assigned.
  */
 export interface EngagementRoleMemberItemRequestBuilderGetQueryParameters {
     /**

@@ -6,7 +6,9 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createTeamsAdminRootFromDiscriminatorValue, serializeTeamsAdminRoot, type TeamsAdminRoot } from '@microsoft/msgraph-beta-sdk/models/teamsAdministration/index.js';
 // @ts-ignore
-import { PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
+import { PolicyRequestBuilderNavigationMetadata, PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
+// @ts-ignore
+import { TelephoneNumberManagementRequestBuilderNavigationMetadata, TelephoneNumberManagementRequestBuilderRequestsMetadata, type TelephoneNumberManagementRequestBuilder } from './telephoneNumberManagement/index.js';
 // @ts-ignore
 import { type UserConfigurationsRequestBuilder, UserConfigurationsRequestBuilderNavigationMetadata, UserConfigurationsRequestBuilderRequestsMetadata } from './userConfigurations/index.js';
 // @ts-ignore
@@ -21,6 +23,10 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      */
     get policy(): PolicyRequestBuilder;
     /**
+     * Provides operations to manage the telephoneNumberManagement property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
+     */
+    get telephoneNumberManagement(): TelephoneNumberManagementRequestBuilder;
+    /**
      * Provides operations to manage the userConfigurations property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
      */
     get userConfigurations(): UserConfigurationsRequestBuilder;
@@ -31,7 +37,7 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Represents a collection of user configurations.
+     * A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsAdminRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +58,7 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Represents a collection of user configurations.
+     * A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +72,7 @@ export interface TeamsRequestBuilder extends BaseRequestBuilder<TeamsRequestBuil
      toPatchRequestInformation(body: TeamsAdminRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents a collection of user configurations.
+ * A container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
  */
 export interface TeamsRequestBuilderGetQueryParameters {
     /**
@@ -95,6 +101,11 @@ const TeamsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
 export const TeamsRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     policy: {
         requestsMetadata: PolicyRequestBuilderRequestsMetadata,
+        navigationMetadata: PolicyRequestBuilderNavigationMetadata,
+    },
+    telephoneNumberManagement: {
+        requestsMetadata: TelephoneNumberManagementRequestBuilderRequestsMetadata,
+        navigationMetadata: TelephoneNumberManagementRequestBuilderNavigationMetadata,
     },
     userConfigurations: {
         requestsMetadata: UserConfigurationsRequestBuilderRequestsMetadata,

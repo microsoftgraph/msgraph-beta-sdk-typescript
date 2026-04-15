@@ -16,7 +16,7 @@ export interface AggregatedPolicyCompliance extends Entity, Parsable {
      */
     compliancePolicyName?: string | null;
     /**
-     * Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
+     * Platform for the device compliance policy. The possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
      */
     compliancePolicyPlatform?: string | null;
     /**
@@ -230,7 +230,7 @@ export interface CloudPcConnection extends Entity, Parsable {
      */
     displayName?: string | null;
     /**
-     * The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
+     * The health status of the cloud PC connection. The possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
      */
     healthCheckStatus?: string | null;
     /**
@@ -254,7 +254,7 @@ export interface CloudPcConnectionCollectionResponse extends BaseCollectionPagin
 }
 export interface CloudPcDevice extends Entity, Parsable {
     /**
-     * The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
+     * The status of the cloud PC. The possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
      */
     cloudPcStatus?: string | null;
     /**
@@ -402,7 +402,7 @@ export interface CloudPcOverviewCollectionResponse extends BaseCollectionPaginat
 }
 export interface ConditionalAccessPolicyCoverage extends Entity, Parsable {
     /**
-     * The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
+     * The state for the conditional access policy. The possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
      */
     conditionalAccessPolicyState?: string | null;
     /**
@@ -3278,11 +3278,11 @@ export interface GraphAPIErrorDetails extends AdditionalDataHolder, BackedModel,
 }
 export interface ManagedDeviceCompliance extends Entity, Parsable {
     /**
-     * Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
+     * Compliance state of the device. This property is read-only. The possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
      */
     complianceStatus?: string | null;
     /**
-     * Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
+     * Platform of the device. This property is read-only. The possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
      */
     deviceType?: string | null;
     /**
@@ -4026,7 +4026,7 @@ export type ManagementParameterValueType = (typeof ManagementParameterValueTypeO
 export type ManagementProvider = (typeof ManagementProviderObject)[keyof typeof ManagementProviderObject];
 export interface ManagementTemplate extends Entity, Parsable {
     /**
-     * The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+     * The management category for the management template. The possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
      */
     category?: ManagementCategory | null;
     /**
@@ -4508,7 +4508,7 @@ export interface NotificationTarget extends AdditionalDataHolder, BackedModel, P
 }
 export interface RoleAssignment extends AdditionalDataHolder, BackedModel, Parsable {
     /**
-     * The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
+     * The type of the admin relationship(s) associated with the role assignment. The possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
      */
     assignmentType?: DelegatedPrivilegeStatus | null;
     /**
@@ -6508,7 +6508,7 @@ export interface TenantStatusInformation extends AdditionalDataHolder, BackedMod
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
+     * The status of the delegated admin privilege relationship between the managing entity and the managed tenant. The possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
      */
     delegatedPrivilegeStatus?: DelegatedPrivilegeStatus | null;
     /**
@@ -6536,11 +6536,11 @@ export interface TenantStatusInformation extends AdditionalDataHolder, BackedMod
      */
     onboardedDateTime?: Date | null;
     /**
-     * The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
+     * The onboarding status for the managed tenant.. The possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
      */
     onboardingStatus?: TenantOnboardingStatus | null;
     /**
-     * Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
+     * Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. The possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
      */
     tenantOnboardingEligibilityReason?: TenantOnboardingEligibilityReason | null;
     /**
@@ -6778,7 +6778,7 @@ export interface WorkloadAction extends AdditionalDataHolder, BackedModel, Parsa
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
+     * The category for the workload action. The possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
      */
     category?: WorkloadActionCategory | null;
     /**

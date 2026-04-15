@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAssignmentsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the export method.
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
     get exportEscaped(): ExportRequestBuilder;
     /**
      * Provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
      * @param governanceRoleAssignmentId The unique identifier of governanceRoleAssignment
      * @returns {GovernanceRoleAssignmentItemRequestBuilder}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      byGovernanceRoleAssignmentId(governanceRoleAssignmentId: string) : GovernanceRoleAssignmentItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceRoleAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      get(requestConfiguration?: RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> | undefined) : Promise<GovernanceRoleAssignmentCollectionResponse | undefined>;
     /**
@@ -45,12 +49,14 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GovernanceRoleAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      post(body: GovernanceRoleAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GovernanceRoleAssignment | undefined>;
     /**
      * A collection of role assignments for the provider.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,6 +64,7 @@ export interface RoleAssignmentsRequestBuilder extends BaseRequestBuilder<RoleAs
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPostRequestInformation(body: GovernanceRoleAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

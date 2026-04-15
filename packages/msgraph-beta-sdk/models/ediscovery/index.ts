@@ -108,11 +108,11 @@ export interface CaseExportOperation extends CaseOperation, Parsable {
      */
     description?: string | null;
     /**
-     * The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+     * The options provided for the export. For more information, see reviewSet: export. The possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
      */
     exportOptions?: ExportOptions[] | null;
     /**
-     * The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
+     * The options provided specify the structure of the export. For more information, see reviewSet: export. The possible values are: none, directory, pst.
      */
     exportStructure?: ExportFileStructure | null;
     /**
@@ -140,7 +140,7 @@ export interface CaseIndexOperation extends CaseOperation, Parsable {
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
-     * The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+     * The type of action the operation represents. The possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
      */
     action?: CaseAction | null;
     /**
@@ -164,7 +164,7 @@ export interface CaseOperation extends Entity, Parsable {
      */
     resultInfo?: ResultInfo | null;
     /**
-     * The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
+     * The status of the case operation. The possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
      */
     status?: CaseOperationStatus | null;
 }
@@ -684,7 +684,7 @@ export interface DataSourceContainer extends Entity, Parsable {
      */
     releasedDateTime?: Date | null;
     /**
-     * Latest status of the dataSourceContainer. Possible values are: Active, Released.
+     * Latest status of the dataSourceContainer. The possible values are: Active, Released.
      */
     status?: DataSourceContainerStatus | null;
 }
@@ -1352,7 +1352,7 @@ export interface LegalHold extends Entity, Parsable {
      */
     siteSources?: SiteSource[] | null;
     /**
-     * The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
+     * The status of the legal hold. The possible values are: Pending, Error, Success, UnknownFutureValue.
      */
     status?: LegalHoldStatus | null;
     /**
@@ -2154,7 +2154,7 @@ export interface SourceCollection extends Entity, Parsable {
      */
     custodianSources?: DataSource[] | null;
     /**
-     * When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+     * When specified, the collection spans across a service for an entire workload. The possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
      */
     dataSourceScopes?: DataSourceScopes[] | null;
     /**
@@ -2191,7 +2191,7 @@ export interface SourceCollectionCollectionResponse extends BaseCollectionPagina
 export type SourceType = (typeof SourceTypeObject)[keyof typeof SourceTypeObject];
 export interface Tag extends Entity, Parsable {
     /**
-     * Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
+     * Indicates whether a single or multiple child tags can be associated with a document. The possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
      */
     childSelectability?: ChildSelectability | null;
     /**
@@ -2259,7 +2259,7 @@ export interface UnifiedGroupSource extends DataSource, Parsable {
      */
     group?: Group | null;
     /**
-     * Specifies which sources are included in this group. Possible values are: mailbox, site.
+     * Specifies which sources are included in this group. The possible values are: mailbox, site.
      */
     includedSources?: SourceType[] | null;
 }
@@ -2275,7 +2275,7 @@ export interface UserSource extends DataSource, Parsable {
      */
     email?: string | null;
     /**
-     * Specifies which sources are included in this group. Possible values are: mailbox, site.
+     * Specifies which sources are included in this group. The possible values are: mailbox, site.
      */
     includedSources?: SourceType[] | null;
     /**

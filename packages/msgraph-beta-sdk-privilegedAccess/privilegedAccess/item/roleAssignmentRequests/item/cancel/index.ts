@@ -14,12 +14,14 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * Invoke action cancel
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * Invoke action cancel
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

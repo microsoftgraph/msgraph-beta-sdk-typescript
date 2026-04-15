@@ -56,6 +56,8 @@ import { SecureScoresRequestBuilderNavigationMetadata, SecureScoresRequestBuilde
 // @ts-ignore
 import { SecurityActionsRequestBuilderNavigationMetadata, SecurityActionsRequestBuilderRequestsMetadata, type SecurityActionsRequestBuilder } from './securityActions/index.js';
 // @ts-ignore
+import { SecurityCopilotRequestBuilderNavigationMetadata, SecurityCopilotRequestBuilderRequestsMetadata, type SecurityCopilotRequestBuilder } from './securityCopilot/index.js';
+// @ts-ignore
 import { SubjectRightsRequestsRequestBuilderNavigationMetadata, SubjectRightsRequestsRequestBuilderRequestsMetadata, type SubjectRightsRequestsRequestBuilder } from './subjectRightsRequests/index.js';
 // @ts-ignore
 import { ThreatIntelligenceRequestBuilderNavigationMetadata, ThreatIntelligenceRequestBuilderRequestsMetadata, type ThreatIntelligenceRequestBuilder } from './threatIntelligence/index.js';
@@ -176,6 +178,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the securityActions property of the microsoft.graph.security entity.
      */
     get securityActions(): SecurityActionsRequestBuilder;
+    /**
+     * Provides operations to manage the securityCopilot property of the microsoft.graph.security entity.
+     */
+    get securityCopilot(): SecurityCopilotRequestBuilder;
     /**
      * Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
      */
@@ -359,6 +365,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     securityActions: {
         requestsMetadata: SecurityActionsRequestBuilderRequestsMetadata,
         navigationMetadata: SecurityActionsRequestBuilderNavigationMetadata,
+    },
+    securityCopilot: {
+        requestsMetadata: SecurityCopilotRequestBuilderRequestsMetadata,
+        navigationMetadata: SecurityCopilotRequestBuilderNavigationMetadata,
     },
     subjectRightsRequests: {
         requestsMetadata: SubjectRightsRequestsRequestBuilderRequestsMetadata,

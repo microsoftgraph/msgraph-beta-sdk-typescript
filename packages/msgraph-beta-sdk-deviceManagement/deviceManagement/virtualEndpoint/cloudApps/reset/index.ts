@@ -42,14 +42,15 @@ export interface ResetPostRequestBody extends AdditionalDataHolder, BackedModel,
  */
 export interface ResetRequestBuilder extends BaseRequestBuilder<ResetRequestBuilder> {
     /**
-     * Invoke action reset
+     * Reset the app details of the cloudPcCloudApp object to the app details of the initially discovered app that this cloud app is mapped to. This action requires the Microsoft.CloudPC/CloudApps/Update permission.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpccloudapp-reset?view=graph-rest-beta|Find more info here}
      */
      post(body: ResetPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action reset
+     * Reset the app details of the cloudPcCloudApp object to the app details of the initially discovered app that this cloud app is mapped to. This action requires the Microsoft.CloudPC/CloudApps/Update permission.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -18,6 +18,8 @@ import { CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetadata, 
 // @ts-ignore
 import { DeviceImagesRequestBuilderNavigationMetadata, DeviceImagesRequestBuilderRequestsMetadata, type DeviceImagesRequestBuilder } from './deviceImages/index.js';
 // @ts-ignore
+import { ExternalPartnersRequestBuilderNavigationMetadata, ExternalPartnersRequestBuilderRequestsMetadata, type ExternalPartnersRequestBuilder } from './externalPartners/index.js';
+// @ts-ignore
 import { ExternalPartnerSettingsRequestBuilderNavigationMetadata, ExternalPartnerSettingsRequestBuilderRequestsMetadata, type ExternalPartnerSettingsRequestBuilder } from './externalPartnerSettings/index.js';
 // @ts-ignore
 import { FrontLineServicePlansRequestBuilderNavigationMetadata, FrontLineServicePlansRequestBuilderRequestsMetadata, type FrontLineServicePlansRequestBuilder } from './frontLineServicePlans/index.js';
@@ -26,11 +28,15 @@ import { GalleryImagesRequestBuilderNavigationMetadata, GalleryImagesRequestBuil
 // @ts-ignore
 import { GetEffectivePermissionsRequestBuilderRequestsMetadata, type GetEffectivePermissionsRequestBuilder } from './getEffectivePermissions/index.js';
 // @ts-ignore
+import { ManagedLicensesRequestBuilderNavigationMetadata, ManagedLicensesRequestBuilderRequestsMetadata, type ManagedLicensesRequestBuilder } from './managedLicenses/index.js';
+// @ts-ignore
 import { OnPremisesConnectionsRequestBuilderNavigationMetadata, OnPremisesConnectionsRequestBuilderRequestsMetadata, type OnPremisesConnectionsRequestBuilder } from './onPremisesConnections/index.js';
 // @ts-ignore
 import { OrganizationSettingsRequestBuilderRequestsMetadata, type OrganizationSettingsRequestBuilder } from './organizationSettings/index.js';
 // @ts-ignore
 import { ProvisioningPoliciesRequestBuilderNavigationMetadata, ProvisioningPoliciesRequestBuilderRequestsMetadata, type ProvisioningPoliciesRequestBuilder } from './provisioningPolicies/index.js';
+// @ts-ignore
+import { ReportRequestBuilderNavigationMetadata, ReportRequestBuilderRequestsMetadata, type ReportRequestBuilder } from './report/index.js';
 // @ts-ignore
 import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsMetadata, type ReportsRequestBuilder } from './reports/index.js';
 // @ts-ignore
@@ -77,6 +83,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      */
     get deviceImages(): DeviceImagesRequestBuilder;
     /**
+     * Provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get externalPartners(): ExternalPartnersRequestBuilder;
+    /**
      * Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
      */
     get externalPartnerSettings(): ExternalPartnerSettingsRequestBuilder;
@@ -93,6 +103,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      */
     get getEffectivePermissions(): GetEffectivePermissionsRequestBuilder;
     /**
+     * Provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get managedLicenses(): ManagedLicensesRequestBuilder;
+    /**
      * Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
      */
     get onPremisesConnections(): OnPremisesConnectionsRequestBuilder;
@@ -104,6 +118,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
      */
     get provisioningPolicies(): ProvisioningPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get report(): ReportRequestBuilder;
     /**
      * Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -224,6 +242,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
         requestsMetadata: DeviceImagesRequestBuilderRequestsMetadata,
         navigationMetadata: DeviceImagesRequestBuilderNavigationMetadata,
     },
+    externalPartners: {
+        requestsMetadata: ExternalPartnersRequestBuilderRequestsMetadata,
+        navigationMetadata: ExternalPartnersRequestBuilderNavigationMetadata,
+    },
     externalPartnerSettings: {
         requestsMetadata: ExternalPartnerSettingsRequestBuilderRequestsMetadata,
         navigationMetadata: ExternalPartnerSettingsRequestBuilderNavigationMetadata,
@@ -239,6 +261,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     getEffectivePermissions: {
         requestsMetadata: GetEffectivePermissionsRequestBuilderRequestsMetadata,
     },
+    managedLicenses: {
+        requestsMetadata: ManagedLicensesRequestBuilderRequestsMetadata,
+        navigationMetadata: ManagedLicensesRequestBuilderNavigationMetadata,
+    },
     onPremisesConnections: {
         requestsMetadata: OnPremisesConnectionsRequestBuilderRequestsMetadata,
         navigationMetadata: OnPremisesConnectionsRequestBuilderNavigationMetadata,
@@ -249,6 +275,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     provisioningPolicies: {
         requestsMetadata: ProvisioningPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: ProvisioningPoliciesRequestBuilderNavigationMetadata,
+    },
+    report: {
+        requestsMetadata: ReportRequestBuilderRequestsMetadata,
+        navigationMetadata: ReportRequestBuilderNavigationMetadata,
     },
     reports: {
         requestsMetadata: ReportsRequestBuilderRequestsMetadata,

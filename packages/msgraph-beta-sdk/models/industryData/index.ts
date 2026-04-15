@@ -44,7 +44,7 @@ export interface AdditionalUserOptions extends AdditionalDataHolder, BackedModel
      */
     odataType?: string | null;
     /**
-     * Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
+     * Indicates the age group classification for students. The possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
      */
     studentAgeGroup?: StudentAgeGroup | null;
 }

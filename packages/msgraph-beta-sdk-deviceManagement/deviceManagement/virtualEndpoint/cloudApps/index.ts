@@ -47,10 +47,11 @@ export interface CloudAppsRequestBuilder extends BaseRequestBuilder<CloudAppsReq
      */
      byCloudPcCloudAppId(cloudPcCloudAppId: string) : CloudPcCloudAppItemRequestBuilder;
     /**
-     * Get cloudApps from deviceManagement
+     * List all the cloudPcCloudApp objects filtered by a provision policy ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcCloudAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudAppsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcCloudAppCollectionResponse | undefined>;
     /**
@@ -68,7 +69,7 @@ export interface CloudAppsRequestBuilder extends BaseRequestBuilder<CloudAppsReq
      */
      retrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyId(sourceId: string | undefined) : RetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder;
     /**
-     * Get cloudApps from deviceManagement
+     * List all the cloudPcCloudApp objects filtered by a provision policy ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -82,7 +83,7 @@ export interface CloudAppsRequestBuilder extends BaseRequestBuilder<CloudAppsReq
      toPostRequestInformation(body: CloudPcCloudApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get cloudApps from deviceManagement
+ * List all the cloudPcCloudApp objects filtered by a provision policy ID.
  */
 export interface CloudAppsRequestBuilderGetQueryParameters {
     /**

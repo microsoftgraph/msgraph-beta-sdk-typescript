@@ -27,7 +27,7 @@ export interface CommentsRequestBuilder extends BaseRequestBuilder<CommentsReque
      */
      byWorkbookCommentId(workbookCommentId: string) : WorkbookCommentItemRequestBuilder;
     /**
-     * Get comments from drives
+     * Represents a collection of comments in a workbook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkbookCommentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface CommentsRequestBuilder extends BaseRequestBuilder<CommentsReque
      */
      post(body: WorkbookComment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkbookComment | undefined>;
     /**
-     * Get comments from drives
+     * Represents a collection of comments in a workbook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface CommentsRequestBuilder extends BaseRequestBuilder<CommentsReque
      toPostRequestInformation(body: WorkbookComment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get comments from drives
+ * Represents a collection of comments in a workbook.
  */
 export interface CommentsRequestBuilderGetQueryParameters {
     /**

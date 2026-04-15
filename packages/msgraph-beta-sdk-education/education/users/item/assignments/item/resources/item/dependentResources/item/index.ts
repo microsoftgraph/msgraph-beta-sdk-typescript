@@ -19,7 +19,7 @@ export interface EducationAssignmentResourceItemRequestBuilder extends BaseReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get dependentResources from education
+     * A collection of assignment resources that depend on the parent educationAssignmentResource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationAssignmentResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface EducationAssignmentResourceItemRequestBuilder extends BaseReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get dependentResources from education
+     * A collection of assignment resources that depend on the parent educationAssignmentResource.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface EducationAssignmentResourceItemRequestBuilder extends BaseReque
      toPatchRequestInformation(body: EducationAssignmentResource, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get dependentResources from education
+ * A collection of assignment resources that depend on the parent educationAssignmentResource.
  */
 export interface EducationAssignmentResourceItemRequestBuilderGetQueryParameters {
     /**

@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder> {
     /**
-     * Get a summary of the cross-tenant access patterns.
+     * Get a summary of the cross-tenant access patterns as logged in Global Secure Access.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantSummary>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantSummary | undefined>;
     /**
-     * Get a summary of the cross-tenant access patterns.
+     * Get a summary of the cross-tenant access patterns as logged in Global Secure Access.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

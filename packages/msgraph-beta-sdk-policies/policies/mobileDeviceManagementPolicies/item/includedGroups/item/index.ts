@@ -9,7 +9,7 @@ import { ServiceProvisioningErrorsRequestBuilderNavigationMetadata, ServiceProvi
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata } from '@microsoft/kiota-abstractions';
 
 /**
- * Builds and executes requests for operations under /policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy-id}/includedGroups/{group-id}
+ * Builds and executes requests for operations under /policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy-id}/includedGroups/{group-id}
  */
 export interface GroupItemRequestBuilder extends BaseRequestBuilder<GroupItemRequestBuilder> {
     /**
@@ -24,7 +24,7 @@ export interface GroupItemRequestBuilder extends BaseRequestBuilder<GroupItemReq
 /**
  * Uri template for the request builder.
  */
-export const GroupItemRequestBuilderUriTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}";
+export const GroupItemRequestBuilderUriTemplate = "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}/includedGroups/{group%2Did}";
 /**
  * Metadata for all the navigation properties in the request builder.
  */

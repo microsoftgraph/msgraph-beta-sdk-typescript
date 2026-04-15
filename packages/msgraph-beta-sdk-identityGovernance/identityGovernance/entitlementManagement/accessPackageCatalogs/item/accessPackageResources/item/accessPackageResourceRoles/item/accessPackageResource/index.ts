@@ -10,7 +10,11 @@ import { AccessPackageResourceEnvironmentRequestBuilderRequestsMetadata, type Ac
 // @ts-ignore
 import { AccessPackageResourceScopesRequestBuilderNavigationMetadata, AccessPackageResourceScopesRequestBuilderRequestsMetadata, type AccessPackageResourceScopesRequestBuilder } from './accessPackageResourceScopes/index.js';
 // @ts-ignore
+import { ExternalOriginResourceConnectorRequestBuilderRequestsMetadata, type ExternalOriginResourceConnectorRequestBuilder } from './externalOriginResourceConnector/index.js';
+// @ts-ignore
 import { RefreshRequestBuilderRequestsMetadata, type RefreshRequestBuilder } from './refresh/index.js';
+// @ts-ignore
+import { type UploadSessionsRequestBuilder, UploadSessionsRequestBuilderNavigationMetadata, UploadSessionsRequestBuilderRequestsMetadata } from './uploadSessions/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -29,10 +33,20 @@ export interface AccessPackageResourceRequestBuilder extends BaseRequestBuilder<
      */
     get accessPackageResourceScopes(): AccessPackageResourceScopesRequestBuilder;
     /**
+     * Provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+     */
+    get externalOriginResourceConnector(): ExternalOriginResourceConnectorRequestBuilder;
+    /**
      * Provides operations to call the refresh method.
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get refresh(): RefreshRequestBuilder;
+    /**
+     * Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+     */
+    get uploadSessions(): UploadSessionsRequestBuilder;
     /**
      * Delete navigation property accessPackageResource for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -115,8 +129,15 @@ export const AccessPackageResourceRequestBuilderNavigationMetadata: Record<Exclu
         requestsMetadata: AccessPackageResourceScopesRequestBuilderRequestsMetadata,
         navigationMetadata: AccessPackageResourceScopesRequestBuilderNavigationMetadata,
     },
+    externalOriginResourceConnector: {
+        requestsMetadata: ExternalOriginResourceConnectorRequestBuilderRequestsMetadata,
+    },
     refresh: {
         requestsMetadata: RefreshRequestBuilderRequestsMetadata,
+    },
+    uploadSessions: {
+        requestsMetadata: UploadSessionsRequestBuilderRequestsMetadata,
+        navigationMetadata: UploadSessionsRequestBuilderNavigationMetadata,
     },
 };
 /**

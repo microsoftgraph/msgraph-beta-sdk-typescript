@@ -12,6 +12,8 @@ import { BucketsRequestBuilderNavigationMetadata, BucketsRequestBuilderRequestsM
 // @ts-ignore
 import { DetailsRequestBuilderRequestsMetadata, type DetailsRequestBuilder } from './details/index.js';
 // @ts-ignore
+import { GetUsageRightsRequestBuilderRequestsMetadata, type GetUsageRightsRequestBuilder } from './getUsageRights/index.js';
+// @ts-ignore
 import { MoveToContainerRequestBuilderRequestsMetadata, type MoveToContainerRequestBuilder } from './moveToContainer/index.js';
 // @ts-ignore
 import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetadata, type TasksRequestBuilder } from './tasks/index.js';
@@ -36,6 +38,10 @@ export interface PlannerPlanItemRequestBuilder extends BaseRequestBuilder<Planne
      * Provides operations to manage the details property of the microsoft.graph.plannerPlan entity.
      */
     get details(): DetailsRequestBuilder;
+    /**
+     * Provides operations to call the getUsageRights method.
+     */
+    get getUsageRights(): GetUsageRightsRequestBuilder;
     /**
      * Provides operations to call the moveToContainer method.
      */
@@ -126,6 +132,9 @@ export const PlannerPlanItemRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     details: {
         requestsMetadata: DetailsRequestBuilderRequestsMetadata,
+    },
+    getUsageRights: {
+        requestsMetadata: GetUsageRightsRequestBuilderRequestsMetadata,
     },
     moveToContainer: {
         requestsMetadata: MoveToContainerRequestBuilderRequestsMetadata,

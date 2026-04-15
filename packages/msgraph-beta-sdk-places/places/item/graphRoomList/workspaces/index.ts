@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { type WorkspaceItemRequestBuilder, WorkspaceItemRequestBuilderRequestsMetadata } from './item/index.js';
+import { type WorkspaceItemRequestBuilder, WorkspaceItemRequestBuilderNavigationMetadata, WorkspaceItemRequestBuilderRequestsMetadata } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -115,6 +115,7 @@ const WorkspacesRequestBuilderGetQueryParametersMapper: Record<string, string> =
 export const WorkspacesRequestBuilderNavigationMetadata: Record<Exclude<keyof WorkspacesRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byWorkspaceId: {
         requestsMetadata: WorkspaceItemRequestBuilderRequestsMetadata,
+        navigationMetadata: WorkspaceItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["workspace%2Did"],
     },
     count: {

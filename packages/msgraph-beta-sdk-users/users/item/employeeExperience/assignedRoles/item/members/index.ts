@@ -27,7 +27,7 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      */
      byEngagementRoleMemberId(engagementRoleMemberId: string) : EngagementRoleMemberItemRequestBuilder;
     /**
-     * Users who have been assigned this role.
+     * Users that have this role assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EngagementRoleMemberCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      */
      post(body: EngagementRoleMember, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EngagementRoleMember | undefined>;
     /**
-     * Users who have been assigned this role.
+     * Users that have this role assigned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface MembersRequestBuilder extends BaseRequestBuilder<MembersRequest
      toPostRequestInformation(body: EngagementRoleMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Users who have been assigned this role.
+ * Users that have this role assigned.
  */
 export interface MembersRequestBuilderGetQueryParameters {
     /**

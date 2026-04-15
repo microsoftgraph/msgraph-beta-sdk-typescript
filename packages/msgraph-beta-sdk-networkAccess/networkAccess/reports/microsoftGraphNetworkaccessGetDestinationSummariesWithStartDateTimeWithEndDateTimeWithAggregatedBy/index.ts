@@ -42,21 +42,21 @@ export interface GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggr
  */
 export interface MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder> {
     /**
-     * Get counts of the visits to the top destination aggregations.
+     * Get counts of the visits to the top destination aggregations as logged in Global Secure Access
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters> | undefined) : Promise<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse | undefined>;
     /**
-     * Get counts of the visits to the top destination aggregations.
+     * Get counts of the visits to the top destination aggregations as logged in Global Secure Access
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get counts of the visits to the top destination aggregations.
+ * Get counts of the visits to the top destination aggregations as logged in Global Secure Access
  */
 export interface MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters {
     /**

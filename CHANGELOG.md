@@ -5,6 +5,73 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.73](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.72...v1.0.0-preview.73) (2026-01-22)
+
+
+### Features
+
+* **generation:** update request builders and models ([#444](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues/444)) ([b247ed6](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/b247ed68f87cd027d444699c31e61d2f1132dee7))
+
+## [1.0.0-preview.72](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.71...v1.0.0-preview.72) (2026-01-07)
+
+
+### Features
+
+* **generation:** update request builders and models ([59ff9a1](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/59ff9a1e3cf5c77c791a3e4f7ddc0f6df917aecf))
+
+## [1.0.0-preview.71](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.70...v1.0.0-preview.71) (2025-12-17)
+
+
+### Features
+
+* **generation:** update request builders and models ([a95c5a2](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/a95c5a2f1f2d2b137ad4b6136c43275c9c4cf4a0))
+
+## [1.0.0-preview.70](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.69...v1.0.0-preview.70) (2025-12-03)
+
+
+### Features
+
+* **generation:** update request builders and models ([#425](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues/425)) ([007db47](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/007db47ca44552880496dfd9dc0d1a058a0b8338))
+
+## [1.0.0-preview.69](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.68...v1.0.0-preview.69) (2025-11-19)
+
+
+### Features
+
+* **generation:** update request builders and models ([8feb5c4](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/8feb5c403523382d6f34db82ea07f22106b6b6eb))
+
+## [1.0.0-preview.68](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.67...v1.0.0-preview.68) (2025-11-06)
+
+
+### Features
+
+* **generation:** update request builders and models ([#414](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues/414)) ([e9f471e](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/e9f471e0eec7315a8fbfdbe5f5f1b339d4e9d769))
+
+## [1.0.0-preview.67](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.66...v1.0.0-preview.67) (2025-10-21)
+
+
+### Features
+
+* **generation:** update request builders and models ([9eec7e4](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/9eec7e4873a705800c24a552047dccf9ce5a8482))
+* **generation:** update request builders and models ([19b6936](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/19b69369567fd7ababc3236ce245190c9fe04cdc))
+* **generation:** update request builders and models ([3126292](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/31262929f25184cc1b4929afb63bbc7e434b21b2))
+* **generation:** update request builders and models ([32564b4](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/32564b4ba890d4eb9be48271152099b7db2cbe0c))
+
+## [1.0.0-preview.66](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.65...v1.0.0-preview.66) (2025-09-16)
+
+
+### Features
+
+* **generation:** update request builders and models ([8836e8f](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/8836e8f353b6201813ef5c11495cc0f4349d5247))
+* **generation:** update request builders and models  ([9fefdae](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/9fefdae9e21c87dc8e1055163ae3944ee7bd55f8))
+
+## [1.0.0-preview.65](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.64...v1.0.0-preview.65) (2025-08-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([e418134](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/e4181344383e8bb07cd99bb4fb0548260565e5a1))
+
 ## [1.0.0-preview.64](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.63...v1.0.0-preview.64) (2025-08-12)
 
 

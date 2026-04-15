@@ -31,7 +31,7 @@ export interface WorkbookCommentItemRequestBuilder extends BaseRequestBuilder<Wo
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get comments from drives
+     * Represents a collection of comments in a workbook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkbookComment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface WorkbookCommentItemRequestBuilder extends BaseRequestBuilder<Wo
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get comments from drives
+     * Represents a collection of comments in a workbook.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface WorkbookCommentItemRequestBuilder extends BaseRequestBuilder<Wo
      toPatchRequestInformation(body: WorkbookComment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get comments from drives
+ * Represents a collection of comments in a workbook.
  */
 export interface WorkbookCommentItemRequestBuilderGetQueryParameters {
     /**

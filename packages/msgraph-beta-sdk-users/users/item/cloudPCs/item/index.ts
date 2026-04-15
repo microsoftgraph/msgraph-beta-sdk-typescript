@@ -34,7 +34,11 @@ import { ResizeRequestBuilderRequestsMetadata, type ResizeRequestBuilder } from 
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
 // @ts-ignore
+import { RetrieveCloudPcLaunchDetailRequestBuilderRequestsMetadata, type RetrieveCloudPcLaunchDetailRequestBuilder } from './retrieveCloudPcLaunchDetail/index.js';
+// @ts-ignore
 import { RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata, type RetrieveCloudPCRemoteActionResultsRequestBuilder } from './retrieveCloudPCRemoteActionResults/index.js';
+// @ts-ignore
+import { RetrieveFrontlineCloudPcDetailRequestBuilderRequestsMetadata, type RetrieveFrontlineCloudPcDetailRequestBuilder } from './retrieveFrontlineCloudPcDetail/index.js';
 // @ts-ignore
 import { RetrieveReviewStatusRequestBuilderRequestsMetadata, type RetrieveReviewStatusRequestBuilder } from './retrieveReviewStatus/index.js';
 // @ts-ignore
@@ -113,9 +117,17 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      */
     get restore(): RestoreRequestBuilder;
     /**
+     * Provides operations to call the retrieveCloudPcLaunchDetail method.
+     */
+    get retrieveCloudPcLaunchDetail(): RetrieveCloudPcLaunchDetailRequestBuilder;
+    /**
      * Provides operations to call the retrieveCloudPCRemoteActionResults method.
      */
     get retrieveCloudPCRemoteActionResults(): RetrieveCloudPCRemoteActionResultsRequestBuilder;
+    /**
+     * Provides operations to call the retrieveFrontlineCloudPcDetail method.
+     */
+    get retrieveFrontlineCloudPcDetail(): RetrieveFrontlineCloudPcDetailRequestBuilder;
     /**
      * Provides operations to call the retrieveReviewStatus method.
      */
@@ -151,7 +163,7 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get cloudPCs from users
+     * The user's Cloud PCs. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPC>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -172,7 +184,7 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get cloudPCs from users
+     * The user's Cloud PCs. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -186,7 +198,7 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      toPatchRequestInformation(body: CloudPC, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get cloudPCs from users
+ * The user's Cloud PCs. Read-only. Nullable.
  */
 export interface CloudPCItemRequestBuilderGetQueryParameters {
     /**
@@ -255,8 +267,14 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     restore: {
         requestsMetadata: RestoreRequestBuilderRequestsMetadata,
     },
+    retrieveCloudPcLaunchDetail: {
+        requestsMetadata: RetrieveCloudPcLaunchDetailRequestBuilderRequestsMetadata,
+    },
     retrieveCloudPCRemoteActionResults: {
         requestsMetadata: RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata,
+    },
+    retrieveFrontlineCloudPcDetail: {
+        requestsMetadata: RetrieveFrontlineCloudPcDetailRequestBuilderRequestsMetadata,
     },
     retrieveReviewStatus: {
         requestsMetadata: RetrieveReviewStatusRequestBuilderRequestsMetadata,

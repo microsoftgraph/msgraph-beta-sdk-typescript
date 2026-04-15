@@ -18,6 +18,10 @@ import { BusinessScenariosRequestBuilderNavigationMetadata, BusinessScenariosReq
 // @ts-ignore
 import { BusinessScenariosWithUniqueNameRequestBuilderRequestsMetadata, type BusinessScenariosWithUniqueNameRequestBuilder } from './businessScenariosWithUniqueName/index.js';
 // @ts-ignore
+import { MigrationsRequestBuilderNavigationMetadata, MigrationsRequestBuilderRequestsMetadata, type MigrationsRequestBuilder } from './migrations/index.js';
+// @ts-ignore
+import { SharePointRequestBuilderNavigationMetadata, SharePointRequestBuilderRequestsMetadata, type SharePointRequestBuilder } from './sharePoint/index.js';
+// @ts-ignore
 import { type VirtualEventsRequestBuilder, VirtualEventsRequestBuilderNavigationMetadata, VirtualEventsRequestBuilderRequestsMetadata } from './virtualEvents/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -46,6 +50,14 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
      */
     get businessScenarios(): BusinessScenariosRequestBuilder;
+    /**
+     * Provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.
+     */
+    get migrations(): MigrationsRequestBuilder;
+    /**
+     * Provides operations to manage the sharePoint property of the microsoft.graph.solutionsRoot entity.
+     */
+    get sharePoint(): SharePointRequestBuilder;
     /**
      * Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.
      */
@@ -136,6 +148,14 @@ export const SolutionsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sol
     businessScenarios: {
         requestsMetadata: BusinessScenariosRequestBuilderRequestsMetadata,
         navigationMetadata: BusinessScenariosRequestBuilderNavigationMetadata,
+    },
+    migrations: {
+        requestsMetadata: MigrationsRequestBuilderRequestsMetadata,
+        navigationMetadata: MigrationsRequestBuilderNavigationMetadata,
+    },
+    sharePoint: {
+        requestsMetadata: SharePointRequestBuilderRequestsMetadata,
+        navigationMetadata: SharePointRequestBuilderNavigationMetadata,
     },
     virtualEvents: {
         requestsMetadata: VirtualEventsRequestBuilderRequestsMetadata,

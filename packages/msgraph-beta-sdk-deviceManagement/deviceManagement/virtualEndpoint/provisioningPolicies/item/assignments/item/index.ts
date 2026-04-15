@@ -10,6 +10,8 @@ import { AssignedUsersRequestBuilderNavigationMetadata, AssignedUsersRequestBuil
 // @ts-ignore
 import { AssignedUsersWithUserPrincipalNameRequestBuilderRequestsMetadata, type AssignedUsersWithUserPrincipalNameRequestBuilder } from './assignedUsersWithUserPrincipalName/index.js';
 // @ts-ignore
+import { type UserSettingsPersistenceDetailRequestBuilder, UserSettingsPersistenceDetailRequestBuilderNavigationMetadata, UserSettingsPersistenceDetailRequestBuilderRequestsMetadata } from './userSettingsPersistenceDetail/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -20,6 +22,10 @@ export interface CloudPcProvisioningPolicyAssignmentItemRequestBuilder extends B
      * Provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
      */
     get assignedUsers(): AssignedUsersRequestBuilder;
+    /**
+     * Provides operations to manage the userSettingsPersistenceDetail property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
+     */
+    get userSettingsPersistenceDetail(): UserSettingsPersistenceDetailRequestBuilder;
     /**
      * Provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
      * @param userPrincipalName Alternate key of user
@@ -102,6 +108,10 @@ export const CloudPcProvisioningPolicyAssignmentItemRequestBuilderNavigationMeta
     assignedUsers: {
         requestsMetadata: AssignedUsersRequestBuilderRequestsMetadata,
         navigationMetadata: AssignedUsersRequestBuilderNavigationMetadata,
+    },
+    userSettingsPersistenceDetail: {
+        requestsMetadata: UserSettingsPersistenceDetailRequestBuilderRequestsMetadata,
+        navigationMetadata: UserSettingsPersistenceDetailRequestBuilderNavigationMetadata,
     },
 };
 /**

@@ -182,6 +182,32 @@ export interface AlertSummary extends AdditionalDataHolder, BackedModel, Parsabl
 }
 export type AlertType = (typeof AlertTypeObject)[keyof typeof AlertTypeObject];
 export type Algorithm = (typeof AlgorithmObject)[keyof typeof AlgorithmObject];
+export interface ApplicationAnalyticsUsagePoint extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The count attributed to cloud applications for the specified aggregation type.
+     */
+    cloudAppsCount?: number | null;
+    /**
+     * The count attributed to enterprise applications for the specified aggregation type.
+     */
+    enterpriseAppsCount?: number | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The date for which the aggregated data point represents.
+     */
+    timeStampDateTime?: Date | null;
+    /**
+     * The total count for the specified aggregation type (users, devices, or transactions).
+     */
+    totalCount?: number | null;
+}
 export interface ApplicationSnapshot extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * The unique identifier of the application accessed during the transaction.
@@ -213,6 +239,12 @@ export interface Association extends AdditionalDataHolder, BackedModel, Parsable
     odataType?: string | null;
 }
 export type BandwidthCapacityInMbps = (typeof BandwidthCapacityInMbpsObject)[keyof typeof BandwidthCapacityInMbpsObject];
+export interface BaseEntity extends Entity, Parsable {
+    /**
+     * Name of the entity
+     */
+    name?: string | null;
+}
 export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Specifies the ASN of the BGP.
@@ -238,6 +270,16 @@ export interface BgpConfiguration extends AdditionalDataHolder, BackedModel, Par
      * Specifies the BGP IP address of customer's on-premise VPN router configuration.
      */
     peerIpAddress?: string | null;
+}
+export interface BlockPageConfigurationBase extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
 }
 export interface BranchConnectivityConfiguration extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -310,6 +352,130 @@ export interface BranchSiteCollectionResponse extends BaseCollectionPaginationCo
     value?: BranchSite[] | null;
 }
 export type ClientFallbackAction = (typeof ClientFallbackActionObject)[keyof typeof ClientFallbackActionObject];
+export interface CloudApplicationMetadata extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The list of categories for the application. Supported values are: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+     */
+    categories?: string[] | null;
+    /**
+     * The ID of the application in the SaaS application catalog.
+     */
+    cloudApplicationCatalogId?: string | null;
+    /**
+     * The compliance score of the application.
+     */
+    complianceScore?: number | null;
+    /**
+     * The general score of the application.
+     */
+    generalScore?: number | null;
+    /**
+     * The legal score of the application.
+     */
+    legalScore?: number | null;
+    /**
+     * The username that was used to log into the application.
+     */
+    loginUser?: string | null;
+    /**
+     * The name of the application (e.g., ChatGPT, Salesforce, Bing).
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The risk score of the application.
+     */
+    riskScore?: number | null;
+    /**
+     * The security score of the application.
+     */
+    securityScore?: number | null;
+    /**
+     * The subactivity property
+     */
+    subactivity?: string | null;
+}
+export interface CloudApplicationReport extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The list of categories for the application. Supported values are: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+     */
+    categories?: string[] | null;
+    /**
+     * The ID of the application in the SaaS application catalog.
+     */
+    cloudApplicationCatalogId?: string | null;
+    /**
+     * The compliance score of the application.
+     */
+    complianceScore?: number | null;
+    /**
+     * Number of devices under this application.
+     */
+    deviceCount?: number | null;
+    /**
+     * Timestamp of the first access to the application.
+     */
+    firstAccessDateTime?: Date | null;
+    /**
+     * The general score of the application.
+     */
+    generalScore?: number | null;
+    /**
+     * Timestamp of the last access to the application.
+     */
+    lastAccessDateTime?: Date | null;
+    /**
+     * The legal score of the application.
+     */
+    legalScore?: number | null;
+    /**
+     * The name of the application (e.g., ChatGPT, Salesforce, Bing).
+     */
+    name?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The risk score of the application.
+     */
+    riskScore?: number | null;
+    /**
+     * The security score of the application.
+     */
+    securityScore?: number | null;
+    /**
+     * Total bytes received from the application.
+     */
+    totalBytesReceived?: number | null;
+    /**
+     * Total bytes sent to the application.
+     */
+    totalBytesSent?: number | null;
+    /**
+     * The trafficType property
+     */
+    trafficType?: TrafficType | null;
+    /**
+     * Number of transactions under this application.
+     */
+    transactionCount?: number | null;
+    /**
+     * Number of users under this application.
+     */
+    userCount?: number | null;
+}
 export interface ConditionalAccessPolicy extends Entity, Parsable {
     /**
      * Indicates the date and time the conditional access policy was created.
@@ -489,7 +655,7 @@ export interface Connectivity extends Entity, Parsable {
      */
     remoteNetworks?: RemoteNetwork[] | null;
     /**
-     * The webCategories property
+     * The URL category.
      */
     webCategories?: WebCategory[] | null;
 }
@@ -571,6 +737,15 @@ export function createAlertSummaryFromDiscriminatorValue(parseNode: ParseNode | 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicationAnalyticsUsagePoint}
+ */
+// @ts-ignore
+export function createApplicationAnalyticsUsagePointFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicationAnalyticsUsagePoint;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplicationSnapshot}
  */
 // @ts-ignore
@@ -609,11 +784,57 @@ export function createAssociationFromDiscriminatorValue(parseNode: ParseNode | u
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {BaseEntity}
+ */
+// @ts-ignore
+export function createBaseEntityFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.filteringProfile":
+                    return deserializeIntoFilteringProfile;
+                case "#microsoft.graph.networkaccess.forwardingProfile":
+                    return deserializeIntoForwardingProfile;
+                case "#microsoft.graph.networkaccess.profile":
+                    return deserializeIntoProfile;
+                case "#microsoft.graph.networkaccess.remoteNetwork":
+                    return deserializeIntoRemoteNetwork;
+            }
+        }
+    }
+    return deserializeIntoBaseEntity;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {BgpConfiguration}
  */
 // @ts-ignore
 export function createBgpConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBgpConfiguration;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {BlockPageConfigurationBase}
+ */
+// @ts-ignore
+export function createBlockPageConfigurationBaseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.markdownBlockMessageConfiguration":
+                    return deserializeIntoMarkdownBlockMessageConfiguration;
+            }
+        }
+    }
+    return deserializeIntoBlockPageConfigurationBase;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -641,6 +862,24 @@ export function createBranchSiteCollectionResponseFromDiscriminatorValue(parseNo
 // @ts-ignore
 export function createBranchSiteFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoBranchSite;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudApplicationMetadata}
+ */
+// @ts-ignore
+export function createCloudApplicationMetadataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudApplicationMetadata;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CloudApplicationReport}
+ */
+// @ts-ignore
+export function createCloudApplicationReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCloudApplicationReport;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -753,6 +992,15 @@ export function createCrossTenantSummaryFromDiscriminatorValue(parseNode: ParseN
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomBlockPage}
+ */
+// @ts-ignore
+export function createCustomBlockPageFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomBlockPage;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Destination}
  */
 // @ts-ignore
@@ -812,6 +1060,15 @@ export function createDeviceUsageSummaryFromDiscriminatorValue(parseNode: ParseN
 // @ts-ignore
 export function createDiscoveredApplicationSegmentReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDiscoveredApplicationSegmentReport;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EnterpriseApplicationReport}
+ */
+// @ts-ignore
+export function createEnterpriseApplicationReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEnterpriseApplicationReport;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -909,6 +1166,8 @@ export function createFilteringRuleFromDiscriminatorValue(parseNode: ParseNode |
             switch (mappingValue) {
                 case "#microsoft.graph.networkaccess.fqdnFilteringRule":
                     return deserializeIntoFqdnFilteringRule;
+                case "#microsoft.graph.networkaccess.urlDestinationFilteringRule":
+                    return deserializeIntoUrlDestinationFilteringRule;
                 case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
                     return deserializeIntoWebCategoryFilteringRule;
             }
@@ -1042,6 +1301,30 @@ export function createIpAddressFromDiscriminatorValue(parseNode: ParseNode | und
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {IpDestination}
+ */
+// @ts-ignore
+export function createIpDestinationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.ipAddress":
+                    return deserializeIntoIpAddress;
+                case "#microsoft.graph.networkaccess.ipRange":
+                    return deserializeIntoIpRange;
+                case "#microsoft.graph.networkaccess.ipSubnet":
+                    return deserializeIntoIpSubnet;
+            }
+        }
+    }
+    return deserializeIntoIpDestination;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {IpRange}
  */
 // @ts-ignore
@@ -1083,6 +1366,15 @@ export function createLogsFromDiscriminatorValue(parseNode: ParseNode | undefine
 // @ts-ignore
 export function createM365ForwardingRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoM365ForwardingRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MarkdownBlockMessageConfiguration}
+ */
+// @ts-ignore
+export function createMarkdownBlockMessageConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMarkdownBlockMessageConfiguration;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1228,6 +1520,8 @@ export function createPolicyRuleFromDiscriminatorValue(parseNode: ParseNode | un
                     return deserializeIntoThreatIntelligenceRule;
                 case "#microsoft.graph.networkaccess.tlsInspectionRule":
                     return deserializeIntoTlsInspectionRule;
+                case "#microsoft.graph.networkaccess.urlDestinationFilteringRule":
+                    return deserializeIntoUrlDestinationFilteringRule;
                 case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
                     return deserializeIntoWebCategoryFilteringRule;
             }
@@ -1516,6 +1810,8 @@ export function createRuleDestinationFromDiscriminatorValue(parseNode: ParseNode
                     return deserializeIntoFqdn;
                 case "#microsoft.graph.networkaccess.ipAddress":
                     return deserializeIntoIpAddress;
+                case "#microsoft.graph.networkaccess.ipDestination":
+                    return deserializeIntoIpDestination;
                 case "#microsoft.graph.networkaccess.ipRange":
                     return deserializeIntoIpRange;
                 case "#microsoft.graph.networkaccess.ipSubnet":
@@ -1812,6 +2108,15 @@ export function createTunnelConfigurationIKEv2DefaultFromDiscriminatorValue(pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UrlDestinationFilteringRule}
+ */
+// @ts-ignore
+export function createUrlDestinationFilteringRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUrlDestinationFilteringRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Url}
  */
 // @ts-ignore
@@ -1950,6 +2255,16 @@ export interface CrossTenantSummary extends AdditionalDataHolder, BackedModel, P
      */
     userCount?: number | null;
 }
+export interface CustomBlockPage extends Entity, Parsable {
+    /**
+     * The current configuration of the customized message. The body can be input in limited markdown language, supporting links via the format: link.
+     */
+    configuration?: BlockPageConfigurationBase | null;
+    /**
+     * The state property
+     */
+    state?: Status | null;
+}
 /**
  * The deserialization information for the current model
  * @param Alert The instance to deserialize into.
@@ -2054,6 +2369,22 @@ export function deserializeIntoAlertSummary(alertSummary: Partial<AlertSummary> 
 }
 /**
  * The deserialization information for the current model
+ * @param ApplicationAnalyticsUsagePoint The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicationAnalyticsUsagePoint(applicationAnalyticsUsagePoint: Partial<ApplicationAnalyticsUsagePoint> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { applicationAnalyticsUsagePoint.backingStoreEnabled = true; },
+        "cloudAppsCount": n => { applicationAnalyticsUsagePoint.cloudAppsCount = n.getNumberValue(); },
+        "enterpriseAppsCount": n => { applicationAnalyticsUsagePoint.enterpriseAppsCount = n.getNumberValue(); },
+        "@odata.type": n => { applicationAnalyticsUsagePoint.odataType = n.getStringValue(); },
+        "timeStampDateTime": n => { applicationAnalyticsUsagePoint.timeStampDateTime = n.getDateValue(); },
+        "totalCount": n => { applicationAnalyticsUsagePoint.totalCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param ApplicationSnapshot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2091,6 +2422,18 @@ export function deserializeIntoAssociation(association: Partial<Association> | u
 }
 /**
  * The deserialization information for the current model
+ * @param BaseEntity The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoBaseEntity(baseEntity: Partial<BaseEntity> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(baseEntity),
+        "name": n => { baseEntity.name = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param BgpConfiguration The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2103,6 +2446,18 @@ export function deserializeIntoBgpConfiguration(bgpConfiguration: Partial<BgpCon
         "localIpAddress": n => { bgpConfiguration.localIpAddress = n.getStringValue(); },
         "@odata.type": n => { bgpConfiguration.odataType = n.getStringValue(); },
         "peerIpAddress": n => { bgpConfiguration.peerIpAddress = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param BlockPageConfigurationBase The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoBlockPageConfigurationBase(blockPageConfigurationBase: Partial<BlockPageConfigurationBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { blockPageConfigurationBase.backingStoreEnabled = true; },
+        "@odata.type": n => { blockPageConfigurationBase.odataType = n.getStringValue(); },
     }
 }
 /**
@@ -2151,6 +2506,56 @@ export function deserializeIntoBranchSiteCollectionResponse(branchSiteCollection
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(branchSiteCollectionResponse),
         "value": n => { branchSiteCollectionResponse.value = n.getCollectionOfObjectValues<BranchSite>(createBranchSiteFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudApplicationMetadata The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudApplicationMetadata(cloudApplicationMetadata: Partial<CloudApplicationMetadata> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudApplicationMetadata.backingStoreEnabled = true; },
+        "categories": n => { cloudApplicationMetadata.categories = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudApplicationCatalogId": n => { cloudApplicationMetadata.cloudApplicationCatalogId = n.getStringValue(); },
+        "complianceScore": n => { cloudApplicationMetadata.complianceScore = n.getNumberValue(); },
+        "generalScore": n => { cloudApplicationMetadata.generalScore = n.getNumberValue(); },
+        "legalScore": n => { cloudApplicationMetadata.legalScore = n.getNumberValue(); },
+        "loginUser": n => { cloudApplicationMetadata.loginUser = n.getStringValue(); },
+        "name": n => { cloudApplicationMetadata.name = n.getStringValue(); },
+        "@odata.type": n => { cloudApplicationMetadata.odataType = n.getStringValue(); },
+        "riskScore": n => { cloudApplicationMetadata.riskScore = n.getNumberValue(); },
+        "securityScore": n => { cloudApplicationMetadata.securityScore = n.getNumberValue(); },
+        "subactivity": n => { cloudApplicationMetadata.subactivity = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CloudApplicationReport The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCloudApplicationReport(cloudApplicationReport: Partial<CloudApplicationReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { cloudApplicationReport.backingStoreEnabled = true; },
+        "categories": n => { cloudApplicationReport.categories = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudApplicationCatalogId": n => { cloudApplicationReport.cloudApplicationCatalogId = n.getStringValue(); },
+        "complianceScore": n => { cloudApplicationReport.complianceScore = n.getNumberValue(); },
+        "deviceCount": n => { cloudApplicationReport.deviceCount = n.getNumberValue(); },
+        "firstAccessDateTime": n => { cloudApplicationReport.firstAccessDateTime = n.getDateValue(); },
+        "generalScore": n => { cloudApplicationReport.generalScore = n.getNumberValue(); },
+        "lastAccessDateTime": n => { cloudApplicationReport.lastAccessDateTime = n.getDateValue(); },
+        "legalScore": n => { cloudApplicationReport.legalScore = n.getNumberValue(); },
+        "name": n => { cloudApplicationReport.name = n.getStringValue(); },
+        "@odata.type": n => { cloudApplicationReport.odataType = n.getStringValue(); },
+        "riskScore": n => { cloudApplicationReport.riskScore = n.getNumberValue(); },
+        "securityScore": n => { cloudApplicationReport.securityScore = n.getNumberValue(); },
+        "totalBytesReceived": n => { cloudApplicationReport.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { cloudApplicationReport.totalBytesSent = n.getNumberValue(); },
+        "trafficType": n => { cloudApplicationReport.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+        "transactionCount": n => { cloudApplicationReport.transactionCount = n.getNumberValue(); },
+        "userCount": n => { cloudApplicationReport.userCount = n.getNumberValue(); },
     }
 }
 /**
@@ -2348,6 +2753,19 @@ export function deserializeIntoCrossTenantSummary(crossTenantSummary: Partial<Cr
 }
 /**
  * The deserialization information for the current model
+ * @param CustomBlockPage The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomBlockPage(customBlockPage: Partial<CustomBlockPage> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(customBlockPage),
+        "configuration": n => { customBlockPage.configuration = n.getObjectValue<BlockPageConfigurationBase>(createBlockPageConfigurationBaseFromDiscriminatorValue); },
+        "state": n => { customBlockPage.state = n.getEnumValue<Status>(StatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param Destination The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2473,6 +2891,28 @@ export function deserializeIntoDiscoveredApplicationSegmentReport(discoveredAppl
         "transactionCount": n => { discoveredApplicationSegmentReport.transactionCount = n.getNumberValue(); },
         "transportProtocol": n => { discoveredApplicationSegmentReport.transportProtocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
         "userCount": n => { discoveredApplicationSegmentReport.userCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param EnterpriseApplicationReport The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEnterpriseApplicationReport(enterpriseApplicationReport: Partial<EnterpriseApplicationReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "accessType": n => { enterpriseApplicationReport.accessType = n.getEnumValue<AccessType>(AccessTypeObject); },
+        "applicationId": n => { enterpriseApplicationReport.applicationId = n.getStringValue(); },
+        "backingStoreEnabled": n => { enterpriseApplicationReport.backingStoreEnabled = true; },
+        "deviceCount": n => { enterpriseApplicationReport.deviceCount = n.getNumberValue(); },
+        "firstAccessDateTime": n => { enterpriseApplicationReport.firstAccessDateTime = n.getDateValue(); },
+        "lastAccessDateTime": n => { enterpriseApplicationReport.lastAccessDateTime = n.getDateValue(); },
+        "@odata.type": n => { enterpriseApplicationReport.odataType = n.getStringValue(); },
+        "totalBytesReceived": n => { enterpriseApplicationReport.totalBytesReceived = n.getNumberValue(); },
+        "totalBytesSent": n => { enterpriseApplicationReport.totalBytesSent = n.getNumberValue(); },
+        "trafficType": n => { enterpriseApplicationReport.trafficType = n.getEnumValue<TrafficType>(TrafficTypeObject); },
+        "transactionCount": n => { enterpriseApplicationReport.transactionCount = n.getNumberValue(); },
+        "userCount": n => { enterpriseApplicationReport.userCount = n.getNumberValue(); },
     }
 }
 /**
@@ -2634,6 +3074,7 @@ export function deserializeIntoForwardingOptions(forwardingOptions: Partial<Forw
 export function deserializeIntoForwardingPolicy(forwardingPolicy: Partial<ForwardingPolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicy(forwardingPolicy),
+        "privateAccessAppId": n => { forwardingPolicy.privateAccessAppId = n.getStringValue(); },
         "trafficForwardingType": n => { forwardingPolicy.trafficForwardingType = n.getEnumValue<TrafficForwardingType>(TrafficForwardingTypeObject); },
     }
 }
@@ -2670,6 +3111,7 @@ export function deserializeIntoForwardingProfile(forwardingProfile: Partial<Forw
     return {
         ...deserializeIntoProfile(forwardingProfile),
         "associations": n => { forwardingProfile.associations = n.getCollectionOfObjectValues<Association>(createAssociationFromDiscriminatorValue); },
+        "isCustomProfile": n => { forwardingProfile.isCustomProfile = n.getBooleanValue(); },
         "priority": n => { forwardingProfile.priority = n.getNumberValue(); },
         "servicePrincipal": n => { forwardingProfile.servicePrincipal = n.getObjectValue<ServicePrincipal>(createServicePrincipalFromDiscriminatorValue); },
         "trafficForwardingType": n => { forwardingProfile.trafficForwardingType = n.getEnumValue<TrafficForwardingType>(TrafficForwardingTypeObject); },
@@ -2761,8 +3203,19 @@ export function deserializeIntoInternetAccessForwardingRule(internetAccessForwar
 // @ts-ignore
 export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoRuleDestination(ipAddress),
+        ...deserializeIntoIpDestination(ipAddress),
         "value": n => { ipAddress.value = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param IpDestination The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoIpDestination(ipDestination: Partial<IpDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRuleDestination(ipDestination),
     }
 }
 /**
@@ -2773,7 +3226,7 @@ export function deserializeIntoIpAddress(ipAddress: Partial<IpAddress> | undefin
 // @ts-ignore
 export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoRuleDestination(ipRange),
+        ...deserializeIntoIpDestination(ipRange),
         "beginAddress": n => { ipRange.beginAddress = n.getStringValue(); },
         "endAddress": n => { ipRange.endAddress = n.getStringValue(); },
     }
@@ -2786,7 +3239,7 @@ export function deserializeIntoIpRange(ipRange: Partial<IpRange> | undefined = {
 // @ts-ignore
 export function deserializeIntoIpSubnet(ipSubnet: Partial<IpSubnet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoRuleDestination(ipSubnet),
+        ...deserializeIntoIpDestination(ipSubnet),
         "value": n => { ipSubnet.value = n.getStringValue(); },
     }
 }
@@ -2836,6 +3289,18 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
 }
 /**
  * The deserialization information for the current model
+ * @param MarkdownBlockMessageConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMarkdownBlockMessageConfiguration(markdownBlockMessageConfiguration: Partial<MarkdownBlockMessageConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBlockPageConfigurationBase(markdownBlockMessageConfiguration),
+        "body": n => { markdownBlockMessageConfiguration.body = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param NetworkAccessRoot The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2870,6 +3335,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "agentVersion": n => { networkAccessTraffic.agentVersion = n.getStringValue(); },
         "applicationSnapshot": n => { networkAccessTraffic.applicationSnapshot = n.getObjectValue<ApplicationSnapshot>(createApplicationSnapshotFromDiscriminatorValue); },
         "backingStoreEnabled": n => { networkAccessTraffic.backingStoreEnabled = true; },
+        "cloudApplicationMetadata": n => { networkAccessTraffic.cloudApplicationMetadata = n.getObjectValue<CloudApplicationMetadata>(createCloudApplicationMetadataFromDiscriminatorValue); },
         "connectionId": n => { networkAccessTraffic.connectionId = n.getStringValue(); },
         "createdDateTime": n => { networkAccessTraffic.createdDateTime = n.getDateValue(); },
         "description": n => { networkAccessTraffic.description = n.getStringValue(); },
@@ -3061,10 +3527,9 @@ export function deserializeIntoPrivateAccessForwardingRule(privateAccessForwardi
 // @ts-ignore
 export function deserializeIntoProfile(profile: Partial<Profile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoEntity(profile),
+        ...deserializeIntoBaseEntity(profile),
         "description": n => { profile.description = n.getStringValue(); },
         "lastModifiedDateTime": n => { profile.lastModifiedDateTime = n.getDateValue(); },
-        "name": n => { profile.name = n.getStringValue(); },
         "policies": n => { profile.policies = n.getCollectionOfObjectValues<PolicyLink>(createPolicyLinkFromDiscriminatorValue); },
         "state": n => { profile.state = n.getEnumValue<Status>(StatusObject); },
         "version": n => { profile.version = n.getStringValue(); },
@@ -3269,12 +3734,11 @@ export function deserializeIntoRelatedWebCategory(relatedWebCategory: Partial<Re
 // @ts-ignore
 export function deserializeIntoRemoteNetwork(remoteNetwork: Partial<RemoteNetwork> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoEntity(remoteNetwork),
+        ...deserializeIntoBaseEntity(remoteNetwork),
         "connectivityConfiguration": n => { remoteNetwork.connectivityConfiguration = n.getObjectValue<RemoteNetworkConnectivityConfiguration>(createRemoteNetworkConnectivityConfigurationFromDiscriminatorValue); },
         "deviceLinks": n => { remoteNetwork.deviceLinks = n.getCollectionOfObjectValues<DeviceLink>(createDeviceLinkFromDiscriminatorValue); },
         "forwardingProfiles": n => { remoteNetwork.forwardingProfiles = n.getCollectionOfObjectValues<ForwardingProfile>(createForwardingProfileFromDiscriminatorValue); },
         "lastModifiedDateTime": n => { remoteNetwork.lastModifiedDateTime = n.getDateValue(); },
-        "name": n => { remoteNetwork.name = n.getStringValue(); },
         "region": n => { remoteNetwork.region = n.getEnumValue<Region>(RegionObject); },
         "version": n => { remoteNetwork.version = n.getStringValue(); },
     }
@@ -3372,6 +3836,7 @@ export function deserializeIntoSettings(settings: Partial<Settings> | undefined 
         ...deserializeIntoEntity(settings),
         "conditionalAccess": n => { settings.conditionalAccess = n.getObjectValue<ConditionalAccessSettings>(createConditionalAccessSettingsFromDiscriminatorValue); },
         "crossTenantAccess": n => { settings.crossTenantAccess = n.getObjectValue<CrossTenantAccessSettings>(createCrossTenantAccessSettingsFromDiscriminatorValue); },
+        "customBlockPage": n => { settings.customBlockPage = n.getObjectValue<CustomBlockPage>(createCustomBlockPageFromDiscriminatorValue); },
         "forwardingOptions": n => { settings.forwardingOptions = n.getObjectValue<ForwardingOptions>(createForwardingOptionsFromDiscriminatorValue); },
     }
 }
@@ -3729,6 +4194,17 @@ export function deserializeIntoUrl(url: Partial<Url> | undefined = {}) : Record<
 }
 /**
  * The deserialization information for the current model
+ * @param UrlDestinationFilteringRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUrlDestinationFilteringRule(urlDestinationFilteringRule: Partial<UrlDestinationFilteringRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoFilteringRule(urlDestinationFilteringRule),
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param UsageProfilingPoint The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -4067,6 +4543,56 @@ export interface DiscoveredApplicationSegmentReport extends AdditionalDataHolder
      */
     userCount?: number | null;
 }
+export interface EnterpriseApplicationReport extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The type of accessed application. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.
+     */
+    accessType?: AccessType | null;
+    /**
+     * The unique identifier for the enterprise application (appId) in Microsoft Entra ID.
+     */
+    applicationId?: string | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Number of devices that accessed this application.
+     */
+    deviceCount?: number | null;
+    /**
+     * Timestamp of the first access to the application.
+     */
+    firstAccessDateTime?: Date | null;
+    /**
+     * Timestamp of the last access to the application.
+     */
+    lastAccessDateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Total bytes received from the application.
+     */
+    totalBytesReceived?: number | null;
+    /**
+     * Total bytes sent to the application.
+     */
+    totalBytesSent?: number | null;
+    /**
+     * The trafficType property
+     */
+    trafficType?: TrafficType | null;
+    /**
+     * Number of transactions to this application.
+     */
+    transactionCount?: number | null;
+    /**
+     * Number of users that accessed this application.
+     */
+    userCount?: number | null;
+}
 export interface EntitiesSummary extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -4213,6 +4739,10 @@ export interface ForwardingOptions extends Entity, Parsable {
 }
 export interface ForwardingPolicy extends Parsable, Policy {
     /**
+     * The privateAccessAppId property
+     */
+    privateAccessAppId?: string | null;
+    /**
      * The trafficForwardingType property
      */
     trafficForwardingType?: TrafficForwardingType | null;
@@ -4230,6 +4760,10 @@ export interface ForwardingProfile extends Parsable, Profile {
      * Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
      */
     associations?: Association[] | null;
+    /**
+     * The isCustomProfile property
+     */
+    isCustomProfile?: boolean | null;
     /**
      * Profile priority.
      */
@@ -4312,13 +4846,15 @@ export interface InternetAccessForwardingRule extends ForwardingRule, Parsable {
      */
     protocol?: NetworkingProtocol | null;
 }
-export interface IpAddress extends Parsable, RuleDestination {
+export interface IpAddress extends IpDestination, Parsable {
     /**
      * Defines the IP address used in a destination for a rule.
      */
     value?: string | null;
 }
-export interface IpRange extends Parsable, RuleDestination {
+export interface IpDestination extends Parsable, RuleDestination {
+}
+export interface IpRange extends IpDestination, Parsable {
     /**
      * Specifies the starting IP address of the IP range.
      */
@@ -4330,7 +4866,7 @@ export interface IpRange extends Parsable, RuleDestination {
 }
 export type IpSecEncryption = (typeof IpSecEncryptionObject)[keyof typeof IpSecEncryptionObject];
 export type IpSecIntegrity = (typeof IpSecIntegrityObject)[keyof typeof IpSecIntegrityObject];
-export interface IpSubnet extends Parsable, RuleDestination {
+export interface IpSubnet extends IpDestination, Parsable {
     /**
      * Defines the IP address of the subset used in a destination for a rule.
      */
@@ -4391,6 +4927,12 @@ export interface M365ForwardingRule extends ForwardingRule, Parsable {
     protocol?: NetworkingProtocol | null;
 }
 export type MalwareCategory = (typeof MalwareCategoryObject)[keyof typeof MalwareCategoryObject];
+export interface MarkdownBlockMessageConfiguration extends BlockPageConfigurationBase, Parsable {
+    /**
+     * Body field of HTML error generated by the Global Secure Access service. Can be programmed in limited Markdown language, with a limit of 1024 characters.
+     */
+    body?: string | null;
+}
 export interface NetworkAccessRoot extends Entity, Parsable {
     /**
      * The alerts property
@@ -4462,6 +5004,10 @@ export interface NetworkAccessTraffic extends AdditionalDataHolder, BackedModel,
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * Contains metadata about the cloud application involved in the network transaction, such as application name, category, and risk level. Supports $filter (eq) and $orderby.
+     */
+    cloudApplicationMetadata?: CloudApplicationMetadata | null;
     /**
      * Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.
      */
@@ -4784,7 +5330,7 @@ export interface PrivateAccessDetails extends AdditionalDataHolder, BackedModel,
 }
 export interface PrivateAccessForwardingRule extends ForwardingRule, Parsable {
 }
-export interface Profile extends Entity, Parsable {
+export interface Profile extends BaseEntity, Parsable {
     /**
      * Description.
      */
@@ -4793,10 +5339,6 @@ export interface Profile extends Entity, Parsable {
      * The date and time when the profile was last modified.
      */
     lastModifiedDateTime?: Date | null;
-    /**
-     * The name of the profile.
-     */
-    name?: string | null;
     /**
      * The traffic forwarding policies associated with this profile.
      */
@@ -4954,7 +5496,7 @@ export interface RelatedWebCategory extends Parsable, RelatedResource {
      */
     webCategoryName?: string | null;
 }
-export interface RemoteNetwork extends Entity, Parsable {
+export interface RemoteNetwork extends BaseEntity, Parsable {
     /**
      * Specifies the connectivity details of all device links associated with a remote network.
      */
@@ -4971,10 +5513,6 @@ export interface RemoteNetwork extends Entity, Parsable {
      * last modified time.
      */
     lastModifiedDateTime?: Date | null;
-    /**
-     * Name.
-     */
-    name?: string | null;
     /**
      * The region property
      */
@@ -5175,6 +5713,22 @@ export function serializeAlertSummary(writer: SerializationWriter, alertSummary:
 }
 /**
  * Serializes information the current object
+ * @param ApplicationAnalyticsUsagePoint The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicationAnalyticsUsagePoint(writer: SerializationWriter, applicationAnalyticsUsagePoint: Partial<ApplicationAnalyticsUsagePoint> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicationAnalyticsUsagePoint || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("cloudAppsCount", applicationAnalyticsUsagePoint.cloudAppsCount);
+    writer.writeNumberValue("enterpriseAppsCount", applicationAnalyticsUsagePoint.enterpriseAppsCount);
+    writer.writeStringValue("@odata.type", applicationAnalyticsUsagePoint.odataType);
+    writer.writeDateValue("timeStampDateTime", applicationAnalyticsUsagePoint.timeStampDateTime);
+    writer.writeNumberValue("totalCount", applicationAnalyticsUsagePoint.totalCount);
+    writer.writeAdditionalData(applicationAnalyticsUsagePoint.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param ApplicationSnapshot The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5217,6 +5771,32 @@ export function serializeAssociation(writer: SerializationWriter, association: P
 }
 /**
  * Serializes information the current object
+ * @param BaseEntity The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeBaseEntity(writer: SerializationWriter, baseEntity: Partial<BaseEntity> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!baseEntity || isSerializingDerivedType) { return; }
+    serializeEntity(writer, baseEntity, isSerializingDerivedType)
+    writer.writeStringValue("name", baseEntity.name);
+    switch (baseEntity.odataType) {
+        case "#microsoft.graph.networkaccess.filteringProfile":
+            serializeFilteringProfile(writer, baseEntity, true);
+        break;
+        case "#microsoft.graph.networkaccess.forwardingProfile":
+            serializeForwardingProfile(writer, baseEntity, true);
+        break;
+        case "#microsoft.graph.networkaccess.profile":
+            serializeProfile(writer, baseEntity, true);
+        break;
+        case "#microsoft.graph.networkaccess.remoteNetwork":
+            serializeRemoteNetwork(writer, baseEntity, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
  * @param BgpConfiguration The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5230,6 +5810,23 @@ export function serializeBgpConfiguration(writer: SerializationWriter, bgpConfig
     writer.writeStringValue("@odata.type", bgpConfiguration.odataType);
     writer.writeStringValue("peerIpAddress", bgpConfiguration.peerIpAddress);
     writer.writeAdditionalData(bgpConfiguration.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param BlockPageConfigurationBase The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeBlockPageConfigurationBase(writer: SerializationWriter, blockPageConfigurationBase: Partial<BlockPageConfigurationBase> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!blockPageConfigurationBase || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", blockPageConfigurationBase.odataType);
+    writer.writeAdditionalData(blockPageConfigurationBase.additionalData);
+    switch (blockPageConfigurationBase.odataType) {
+        case "#microsoft.graph.networkaccess.markdownBlockMessageConfiguration":
+            serializeMarkdownBlockMessageConfiguration(writer, blockPageConfigurationBase, true);
+        break;
+    }
 }
 /**
  * Serializes information the current object
@@ -5278,6 +5875,56 @@ export function serializeBranchSiteCollectionResponse(writer: SerializationWrite
     if (!branchSiteCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, branchSiteCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<BranchSite>("value", branchSiteCollectionResponse.value, serializeBranchSite);
+}
+/**
+ * Serializes information the current object
+ * @param CloudApplicationMetadata The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudApplicationMetadata(writer: SerializationWriter, cloudApplicationMetadata: Partial<CloudApplicationMetadata> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudApplicationMetadata || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("categories", cloudApplicationMetadata.categories);
+    writer.writeStringValue("cloudApplicationCatalogId", cloudApplicationMetadata.cloudApplicationCatalogId);
+    writer.writeNumberValue("complianceScore", cloudApplicationMetadata.complianceScore);
+    writer.writeNumberValue("generalScore", cloudApplicationMetadata.generalScore);
+    writer.writeNumberValue("legalScore", cloudApplicationMetadata.legalScore);
+    writer.writeStringValue("loginUser", cloudApplicationMetadata.loginUser);
+    writer.writeStringValue("name", cloudApplicationMetadata.name);
+    writer.writeStringValue("@odata.type", cloudApplicationMetadata.odataType);
+    writer.writeNumberValue("riskScore", cloudApplicationMetadata.riskScore);
+    writer.writeNumberValue("securityScore", cloudApplicationMetadata.securityScore);
+    writer.writeStringValue("subactivity", cloudApplicationMetadata.subactivity);
+    writer.writeAdditionalData(cloudApplicationMetadata.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CloudApplicationReport The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCloudApplicationReport(writer: SerializationWriter, cloudApplicationReport: Partial<CloudApplicationReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!cloudApplicationReport || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("categories", cloudApplicationReport.categories);
+    writer.writeStringValue("cloudApplicationCatalogId", cloudApplicationReport.cloudApplicationCatalogId);
+    writer.writeNumberValue("complianceScore", cloudApplicationReport.complianceScore);
+    writer.writeNumberValue("deviceCount", cloudApplicationReport.deviceCount);
+    writer.writeDateValue("firstAccessDateTime", cloudApplicationReport.firstAccessDateTime);
+    writer.writeNumberValue("generalScore", cloudApplicationReport.generalScore);
+    writer.writeDateValue("lastAccessDateTime", cloudApplicationReport.lastAccessDateTime);
+    writer.writeNumberValue("legalScore", cloudApplicationReport.legalScore);
+    writer.writeStringValue("name", cloudApplicationReport.name);
+    writer.writeStringValue("@odata.type", cloudApplicationReport.odataType);
+    writer.writeNumberValue("riskScore", cloudApplicationReport.riskScore);
+    writer.writeNumberValue("securityScore", cloudApplicationReport.securityScore);
+    writer.writeNumberValue("totalBytesReceived", cloudApplicationReport.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", cloudApplicationReport.totalBytesSent);
+    writer.writeEnumValue<TrafficType>("trafficType", cloudApplicationReport.trafficType);
+    writer.writeNumberValue("transactionCount", cloudApplicationReport.transactionCount);
+    writer.writeNumberValue("userCount", cloudApplicationReport.userCount);
+    writer.writeAdditionalData(cloudApplicationReport.additionalData);
 }
 /**
  * Serializes information the current object
@@ -5474,6 +6121,19 @@ export function serializeCrossTenantSummary(writer: SerializationWriter, crossTe
 }
 /**
  * Serializes information the current object
+ * @param CustomBlockPage The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomBlockPage(writer: SerializationWriter, customBlockPage: Partial<CustomBlockPage> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customBlockPage || isSerializingDerivedType) { return; }
+    serializeEntity(writer, customBlockPage, isSerializingDerivedType)
+    writer.writeObjectValue<BlockPageConfigurationBase>("configuration", customBlockPage.configuration, serializeBlockPageConfigurationBase);
+    writer.writeEnumValue<Status>("state", customBlockPage.state);
+}
+/**
+ * Serializes information the current object
  * @param Destination The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -5600,6 +6260,28 @@ export function serializeDiscoveredApplicationSegmentReport(writer: Serializatio
     writer.writeEnumValue<NetworkingProtocol>("transportProtocol", discoveredApplicationSegmentReport.transportProtocol);
     writer.writeNumberValue("userCount", discoveredApplicationSegmentReport.userCount);
     writer.writeAdditionalData(discoveredApplicationSegmentReport.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param EnterpriseApplicationReport The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEnterpriseApplicationReport(writer: SerializationWriter, enterpriseApplicationReport: Partial<EnterpriseApplicationReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!enterpriseApplicationReport || isSerializingDerivedType) { return; }
+    writer.writeEnumValue<AccessType>("accessType", enterpriseApplicationReport.accessType);
+    writer.writeStringValue("applicationId", enterpriseApplicationReport.applicationId);
+    writer.writeNumberValue("deviceCount", enterpriseApplicationReport.deviceCount);
+    writer.writeDateValue("firstAccessDateTime", enterpriseApplicationReport.firstAccessDateTime);
+    writer.writeDateValue("lastAccessDateTime", enterpriseApplicationReport.lastAccessDateTime);
+    writer.writeStringValue("@odata.type", enterpriseApplicationReport.odataType);
+    writer.writeNumberValue("totalBytesReceived", enterpriseApplicationReport.totalBytesReceived);
+    writer.writeNumberValue("totalBytesSent", enterpriseApplicationReport.totalBytesSent);
+    writer.writeEnumValue<TrafficType>("trafficType", enterpriseApplicationReport.trafficType);
+    writer.writeNumberValue("transactionCount", enterpriseApplicationReport.transactionCount);
+    writer.writeNumberValue("userCount", enterpriseApplicationReport.userCount);
+    writer.writeAdditionalData(enterpriseApplicationReport.additionalData);
 }
 /**
  * Serializes information the current object
@@ -5742,6 +6424,9 @@ export function serializeFilteringRule(writer: SerializationWriter, filteringRul
         case "#microsoft.graph.networkaccess.fqdnFilteringRule":
             serializeFqdnFilteringRule(writer, filteringRule, true);
         break;
+        case "#microsoft.graph.networkaccess.urlDestinationFilteringRule":
+            serializeUrlDestinationFilteringRule(writer, filteringRule, true);
+        break;
         case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
             serializeWebCategoryFilteringRule(writer, filteringRule, true);
         break;
@@ -5769,6 +6454,7 @@ export function serializeForwardingOptions(writer: SerializationWriter, forwardi
 export function serializeForwardingPolicy(writer: SerializationWriter, forwardingPolicy: Partial<ForwardingPolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!forwardingPolicy || isSerializingDerivedType) { return; }
     serializePolicy(writer, forwardingPolicy, isSerializingDerivedType)
+    writer.writeStringValue("privateAccessAppId", forwardingPolicy.privateAccessAppId);
     writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingPolicy.trafficForwardingType);
 }
 /**
@@ -5805,6 +6491,7 @@ export function serializeForwardingProfile(writer: SerializationWriter, forwardi
     if (!forwardingProfile || isSerializingDerivedType) { return; }
     serializeProfile(writer, forwardingProfile, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
+    writer.writeBooleanValue("isCustomProfile", forwardingProfile.isCustomProfile);
     writer.writeNumberValue("priority", forwardingProfile.priority);
     writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
     writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
@@ -5907,8 +6594,30 @@ export function serializeInternetAccessForwardingRule(writer: SerializationWrite
 // @ts-ignore
 export function serializeIpAddress(writer: SerializationWriter, ipAddress: Partial<IpAddress> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ipAddress || isSerializingDerivedType) { return; }
-    serializeRuleDestination(writer, ipAddress, isSerializingDerivedType)
+    serializeIpDestination(writer, ipAddress, isSerializingDerivedType)
     writer.writeStringValue("value", ipAddress.value);
+}
+/**
+ * Serializes information the current object
+ * @param IpDestination The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeIpDestination(writer: SerializationWriter, ipDestination: Partial<IpDestination> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!ipDestination || isSerializingDerivedType) { return; }
+    serializeRuleDestination(writer, ipDestination, isSerializingDerivedType)
+    switch (ipDestination.odataType) {
+        case "#microsoft.graph.networkaccess.ipAddress":
+            serializeIpAddress(writer, ipDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipRange":
+            serializeIpRange(writer, ipDestination, true);
+        break;
+        case "#microsoft.graph.networkaccess.ipSubnet":
+            serializeIpSubnet(writer, ipDestination, true);
+        break;
+    }
 }
 /**
  * Serializes information the current object
@@ -5919,7 +6628,7 @@ export function serializeIpAddress(writer: SerializationWriter, ipAddress: Parti
 // @ts-ignore
 export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<IpRange> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ipRange || isSerializingDerivedType) { return; }
-    serializeRuleDestination(writer, ipRange, isSerializingDerivedType)
+    serializeIpDestination(writer, ipRange, isSerializingDerivedType)
     writer.writeStringValue("beginAddress", ipRange.beginAddress);
     writer.writeStringValue("endAddress", ipRange.endAddress);
 }
@@ -5932,7 +6641,7 @@ export function serializeIpRange(writer: SerializationWriter, ipRange: Partial<I
 // @ts-ignore
 export function serializeIpSubnet(writer: SerializationWriter, ipSubnet: Partial<IpSubnet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ipSubnet || isSerializingDerivedType) { return; }
-    serializeRuleDestination(writer, ipSubnet, isSerializingDerivedType)
+    serializeIpDestination(writer, ipSubnet, isSerializingDerivedType)
     writer.writeStringValue("value", ipSubnet.value);
 }
 /**
@@ -5982,6 +6691,18 @@ export function serializeM365ForwardingRule(writer: SerializationWriter, m365For
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MarkdownBlockMessageConfiguration The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMarkdownBlockMessageConfiguration(writer: SerializationWriter, markdownBlockMessageConfiguration: Partial<MarkdownBlockMessageConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!markdownBlockMessageConfiguration || isSerializingDerivedType) { return; }
+    serializeBlockPageConfigurationBase(writer, markdownBlockMessageConfiguration, isSerializingDerivedType)
+    writer.writeStringValue("body", markdownBlockMessageConfiguration.body);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param NetworkAccessRoot The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -6015,6 +6736,7 @@ export function serializeNetworkAccessTraffic(writer: SerializationWriter, netwo
     writer.writeEnumValue<FilteringPolicyAction>("action", networkAccessTraffic.action);
     writer.writeStringValue("agentVersion", networkAccessTraffic.agentVersion);
     writer.writeObjectValue<ApplicationSnapshot>("applicationSnapshot", networkAccessTraffic.applicationSnapshot, serializeApplicationSnapshot);
+    writer.writeObjectValue<CloudApplicationMetadata>("cloudApplicationMetadata", networkAccessTraffic.cloudApplicationMetadata, serializeCloudApplicationMetadata);
     writer.writeStringValue("connectionId", networkAccessTraffic.connectionId);
     writer.writeDateValue("createdDateTime", networkAccessTraffic.createdDateTime);
     writer.writeStringValue("description", networkAccessTraffic.description);
@@ -6193,6 +6915,9 @@ export function serializePolicyRule(writer: SerializationWriter, policyRule: Par
         case "#microsoft.graph.networkaccess.tlsInspectionRule":
             serializeTlsInspectionRule(writer, policyRule, true);
         break;
+        case "#microsoft.graph.networkaccess.urlDestinationFilteringRule":
+            serializeUrlDestinationFilteringRule(writer, policyRule, true);
+        break;
         case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
             serializeWebCategoryFilteringRule(writer, policyRule, true);
         break;
@@ -6264,10 +6989,9 @@ export function serializePrivateAccessForwardingRule(writer: SerializationWriter
 // @ts-ignore
 export function serializeProfile(writer: SerializationWriter, profile: Partial<Profile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!profile || isSerializingDerivedType) { return; }
-    serializeEntity(writer, profile, isSerializingDerivedType)
+    serializeBaseEntity(writer, profile, isSerializingDerivedType)
     writer.writeStringValue("description", profile.description);
     writer.writeDateValue("lastModifiedDateTime", profile.lastModifiedDateTime);
-    writer.writeStringValue("name", profile.name);
     writer.writeCollectionOfObjectValues<PolicyLink>("policies", profile.policies, serializePolicyLink);
     writer.writeEnumValue<Status>("state", profile.state);
     writer.writeStringValue("version", profile.version);
@@ -6521,12 +7245,11 @@ export function serializeRelatedWebCategory(writer: SerializationWriter, related
 // @ts-ignore
 export function serializeRemoteNetwork(writer: SerializationWriter, remoteNetwork: Partial<RemoteNetwork> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!remoteNetwork || isSerializingDerivedType) { return; }
-    serializeEntity(writer, remoteNetwork, isSerializingDerivedType)
+    serializeBaseEntity(writer, remoteNetwork, isSerializingDerivedType)
     writer.writeObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", remoteNetwork.connectivityConfiguration, serializeRemoteNetworkConnectivityConfiguration);
     writer.writeCollectionOfObjectValues<DeviceLink>("deviceLinks", remoteNetwork.deviceLinks, serializeDeviceLink);
     writer.writeCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", remoteNetwork.forwardingProfiles, serializeForwardingProfile);
     writer.writeDateValue("lastModifiedDateTime", remoteNetwork.lastModifiedDateTime);
-    writer.writeStringValue("name", remoteNetwork.name);
     writer.writeEnumValue<Region>("region", remoteNetwork.region);
     writer.writeStringValue("version", remoteNetwork.version);
 }
@@ -6618,6 +7341,9 @@ export function serializeRuleDestination(writer: SerializationWriter, ruleDestin
         case "#microsoft.graph.networkaccess.ipAddress":
             serializeIpAddress(writer, ruleDestination, true);
         break;
+        case "#microsoft.graph.networkaccess.ipDestination":
+            serializeIpDestination(writer, ruleDestination, true);
+        break;
         case "#microsoft.graph.networkaccess.ipRange":
             serializeIpRange(writer, ruleDestination, true);
         break;
@@ -6644,6 +7370,7 @@ export function serializeSettings(writer: SerializationWriter, settings: Partial
     serializeEntity(writer, settings, isSerializingDerivedType)
     writer.writeObjectValue<ConditionalAccessSettings>("conditionalAccess", settings.conditionalAccess, serializeConditionalAccessSettings);
     writer.writeObjectValue<CrossTenantAccessSettings>("crossTenantAccess", settings.crossTenantAccess, serializeCrossTenantAccessSettings);
+    writer.writeObjectValue<CustomBlockPage>("customBlockPage", settings.customBlockPage, serializeCustomBlockPage);
     writer.writeObjectValue<ForwardingOptions>("forwardingOptions", settings.forwardingOptions, serializeForwardingOptions);
 }
 /**
@@ -7022,6 +7749,17 @@ export function serializeUrl(writer: SerializationWriter, url: Partial<Url> | un
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UrlDestinationFilteringRule The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUrlDestinationFilteringRule(writer: SerializationWriter, urlDestinationFilteringRule: Partial<UrlDestinationFilteringRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!urlDestinationFilteringRule || isSerializingDerivedType) { return; }
+    serializeFilteringRule(writer, urlDestinationFilteringRule, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param UsageProfilingPoint The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -7123,6 +7861,10 @@ export interface Settings extends Entity, Parsable {
      * The crossTenantAccess property
      */
     crossTenantAccess?: CrossTenantAccessSettings | null;
+    /**
+     * The customBlockPage property
+     */
+    customBlockPage?: CustomBlockPage | null;
     /**
      * The forwardingOptions property
      */
@@ -7335,7 +8077,7 @@ export interface TlsInspectionRule extends Parsable, PolicyRule {
      */
     description?: string | null;
     /**
-     * The matchingConditions property
+     * The conditions that determine when this rule should be applied to traffic.
      */
     matchingConditions?: TlsInspectionMatchingConditions | null;
     /**
@@ -7452,6 +8194,8 @@ export interface Url extends Parsable, RuleDestination {
      * URL Address
      */
     value?: string | null;
+}
+export interface UrlDestinationFilteringRule extends FilteringRule, Parsable {
 }
 export interface UsageProfilingPoint extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -7959,6 +8703,8 @@ export const TlsCertificateStatusObject = {
     UnknownFutureValue: "unknownFutureValue",
     Expiring: "expiring",
     Expired: "expired",
+    Enabled: "enabled",
+    Disabled: "disabled",
 } as const;
 export const TrafficForwardingTypeObject = {
     M365: "m365",

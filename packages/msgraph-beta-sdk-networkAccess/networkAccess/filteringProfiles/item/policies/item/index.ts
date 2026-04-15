@@ -19,10 +19,10 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
     get policy(): PolicyRequestBuilder;
     /**
-     * Delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
+     * Delete a threatIntelligencePolicyLink object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-delete?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -34,16 +34,16 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
      get(requestConfiguration?: RequestConfiguration<PolicyLinkItemRequestBuilderGetQueryParameters> | undefined) : Promise<PolicyLink | undefined>;
     /**
-     * Update the properties of a tlsInspectionPolicyLink object.
+     * Update the properties of a threatIntelligencePolicyLink object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PolicyLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PolicyLink | undefined>;
     /**
-     * Delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
+     * Delete a threatIntelligencePolicyLink object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -55,7 +55,7 @@ export interface PolicyLinkItemRequestBuilder extends BaseRequestBuilder<PolicyL
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicyLinkItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a tlsInspectionPolicyLink object.
+     * Update the properties of a threatIntelligencePolicyLink object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

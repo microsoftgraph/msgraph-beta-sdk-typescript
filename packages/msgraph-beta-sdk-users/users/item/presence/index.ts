@@ -6,9 +6,17 @@ import { createPresenceFromDiscriminatorValue, serializePresence, type Presence 
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ClearAutomaticLocationRequestBuilderRequestsMetadata, type ClearAutomaticLocationRequestBuilder } from './clearAutomaticLocation/index.js';
+// @ts-ignore
+import { ClearLocationRequestBuilderRequestsMetadata, type ClearLocationRequestBuilder } from './clearLocation/index.js';
+// @ts-ignore
 import { ClearPresenceRequestBuilderRequestsMetadata, type ClearPresenceRequestBuilder } from './clearPresence/index.js';
 // @ts-ignore
 import { ClearUserPreferredPresenceRequestBuilderRequestsMetadata, type ClearUserPreferredPresenceRequestBuilder } from './clearUserPreferredPresence/index.js';
+// @ts-ignore
+import { SetAutomaticLocationRequestBuilderRequestsMetadata, type SetAutomaticLocationRequestBuilder } from './setAutomaticLocation/index.js';
+// @ts-ignore
+import { SetManualLocationRequestBuilderRequestsMetadata, type SetManualLocationRequestBuilder } from './setManualLocation/index.js';
 // @ts-ignore
 import { SetPresenceRequestBuilderRequestsMetadata, type SetPresenceRequestBuilder } from './setPresence/index.js';
 // @ts-ignore
@@ -23,6 +31,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceRequestBuilder> {
     /**
+     * Provides operations to call the clearAutomaticLocation method.
+     */
+    get clearAutomaticLocation(): ClearAutomaticLocationRequestBuilder;
+    /**
+     * Provides operations to call the clearLocation method.
+     */
+    get clearLocation(): ClearLocationRequestBuilder;
+    /**
      * Provides operations to call the clearPresence method.
      */
     get clearPresence(): ClearPresenceRequestBuilder;
@@ -30,6 +46,14 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      * Provides operations to call the clearUserPreferredPresence method.
      */
     get clearUserPreferredPresence(): ClearUserPreferredPresenceRequestBuilder;
+    /**
+     * Provides operations to call the setAutomaticLocation method.
+     */
+    get setAutomaticLocation(): SetAutomaticLocationRequestBuilder;
+    /**
+     * Provides operations to call the setManualLocation method.
+     */
+    get setManualLocation(): SetManualLocationRequestBuilder;
     /**
      * Provides operations to call the setPresence method.
      */
@@ -49,11 +73,11 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Set a presence status message for a user. An optional expiration date and time can be supplied.
+     * Get a user's presence information.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Presence>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PresenceRequestBuilderGetQueryParameters> | undefined) : Promise<Presence | undefined>;
     /**
@@ -71,7 +95,7 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Set a presence status message for a user. An optional expiration date and time can be supplied.
+     * Get a user's presence information.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -85,7 +109,7 @@ export interface PresenceRequestBuilder extends BaseRequestBuilder<PresenceReque
      toPatchRequestInformation(body: Presence, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Set a presence status message for a user. An optional expiration date and time can be supplied.
+ * Get a user's presence information.
  */
 export interface PresenceRequestBuilderGetQueryParameters {
     /**
@@ -112,11 +136,23 @@ const PresenceRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the navigation properties in the request builder.
  */
 export const PresenceRequestBuilderNavigationMetadata: Record<Exclude<keyof PresenceRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    clearAutomaticLocation: {
+        requestsMetadata: ClearAutomaticLocationRequestBuilderRequestsMetadata,
+    },
+    clearLocation: {
+        requestsMetadata: ClearLocationRequestBuilderRequestsMetadata,
+    },
     clearPresence: {
         requestsMetadata: ClearPresenceRequestBuilderRequestsMetadata,
     },
     clearUserPreferredPresence: {
         requestsMetadata: ClearUserPreferredPresenceRequestBuilderRequestsMetadata,
+    },
+    setAutomaticLocation: {
+        requestsMetadata: SetAutomaticLocationRequestBuilderRequestsMetadata,
+    },
+    setManualLocation: {
+        requestsMetadata: SetManualLocationRequestBuilderRequestsMetadata,
     },
     setPresence: {
         requestsMetadata: SetPresenceRequestBuilderRequestsMetadata,

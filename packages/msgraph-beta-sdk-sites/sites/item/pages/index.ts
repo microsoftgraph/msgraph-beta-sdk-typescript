@@ -41,12 +41,12 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<PagesRequestBuilderGetQueryParameters> | undefined) : Promise<BaseSitePageCollectionResponse | undefined>;
     /**
-     * Create a new sitePage in the site pages list in a site.
+     * Create a new newsLinkPage in the site pages list of a site.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BaseSitePage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/newslinkpage-create?view=graph-rest-beta|Find more info here}
      */
      post(body: BaseSitePage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BaseSitePage | undefined>;
     /**
@@ -56,7 +56,7 @@ export interface PagesRequestBuilder extends BaseRequestBuilder<PagesRequestBuil
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new sitePage in the site pages list in a site.
+     * Create a new newsLinkPage in the site pages list of a site.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

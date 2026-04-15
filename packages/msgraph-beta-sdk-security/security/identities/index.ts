@@ -10,7 +10,13 @@ import { HealthIssuesRequestBuilderNavigationMetadata, HealthIssuesRequestBuilde
 // @ts-ignore
 import { IdentityAccountsRequestBuilderNavigationMetadata, IdentityAccountsRequestBuilderRequestsMetadata, type IdentityAccountsRequestBuilder } from './identityAccounts/index.js';
 // @ts-ignore
+import { SensorCandidateActivationConfigurationRequestBuilderRequestsMetadata, type SensorCandidateActivationConfigurationRequestBuilder } from './sensorCandidateActivationConfiguration/index.js';
+// @ts-ignore
+import { SensorCandidatesRequestBuilderNavigationMetadata, SensorCandidatesRequestBuilderRequestsMetadata, type SensorCandidatesRequestBuilder } from './sensorCandidates/index.js';
+// @ts-ignore
 import { SensorsRequestBuilderNavigationMetadata, SensorsRequestBuilderRequestsMetadata, type SensorsRequestBuilder } from './sensors/index.js';
+// @ts-ignore
+import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -27,9 +33,21 @@ export interface IdentitiesRequestBuilder extends BaseRequestBuilder<IdentitiesR
      */
     get identityAccounts(): IdentityAccountsRequestBuilder;
     /**
+     * Provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.
+     */
+    get sensorCandidateActivationConfiguration(): SensorCandidateActivationConfigurationRequestBuilder;
+    /**
+     * Provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.
+     */
+    get sensorCandidates(): SensorCandidatesRequestBuilder;
+    /**
      * Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
      */
     get sensors(): SensorsRequestBuilder;
+    /**
+     * Provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.
+     */
+    get settings(): SettingsRequestBuilder;
     /**
      * Delete navigation property identities for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -107,9 +125,19 @@ export const IdentitiesRequestBuilderNavigationMetadata: Record<Exclude<keyof Id
         requestsMetadata: IdentityAccountsRequestBuilderRequestsMetadata,
         navigationMetadata: IdentityAccountsRequestBuilderNavigationMetadata,
     },
+    sensorCandidateActivationConfiguration: {
+        requestsMetadata: SensorCandidateActivationConfigurationRequestBuilderRequestsMetadata,
+    },
+    sensorCandidates: {
+        requestsMetadata: SensorCandidatesRequestBuilderRequestsMetadata,
+        navigationMetadata: SensorCandidatesRequestBuilderNavigationMetadata,
+    },
     sensors: {
         requestsMetadata: SensorsRequestBuilderRequestsMetadata,
         navigationMetadata: SensorsRequestBuilderNavigationMetadata,
+    },
+    settings: {
+        requestsMetadata: SettingsRequestBuilderRequestsMetadata,
     },
 };
 /**

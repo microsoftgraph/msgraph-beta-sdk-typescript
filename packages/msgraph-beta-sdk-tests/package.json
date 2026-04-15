@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/msgraph-beta-sdk-tests",
-  "version": "1.0.0-preview.64",
+  "version": "1.0.0-preview.73",
   "description": "integration test project for all the packages",
   "author": "Microsoft <graphsdkpub+javascript@microsoft.com>",
   "homepage": "https://github.com/microsoftgraph/msgraph-beta-sdk-typescript#readme",
@@ -34,8 +34,8 @@
   "devDependencies": {
     "@types/chai": "^5.0.0",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^24.0.1",
-    "chai": "^5.0.3",
+    "@types/node": "^25.0.9",
+    "chai": "^6.0.1",
     "mocha": "^11.0.1"
   },
   "type": "module"

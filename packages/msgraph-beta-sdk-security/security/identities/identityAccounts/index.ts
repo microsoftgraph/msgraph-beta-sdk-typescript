@@ -27,10 +27,11 @@ export interface IdentityAccountsRequestBuilder extends BaseRequestBuilder<Ident
      */
      byIdentityAccountsId(identityAccountsId: string) : IdentityAccountsItemRequestBuilder;
     /**
-     * Get identityAccounts from security
+     * Get a list of the identityAccounts objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityAccountsCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-identitycontainer-list-identityaccounts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<IdentityAccountsRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityAccountsCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface IdentityAccountsRequestBuilder extends BaseRequestBuilder<Ident
      */
      post(body: IdentityAccounts, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IdentityAccounts | undefined>;
     /**
-     * Get identityAccounts from security
+     * Get a list of the identityAccounts objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface IdentityAccountsRequestBuilder extends BaseRequestBuilder<Ident
      toPostRequestInformation(body: IdentityAccounts, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get identityAccounts from security
+ * Get a list of the identityAccounts objects and their properties.
  */
 export interface IdentityAccountsRequestBuilderGetQueryParameters {
     /**

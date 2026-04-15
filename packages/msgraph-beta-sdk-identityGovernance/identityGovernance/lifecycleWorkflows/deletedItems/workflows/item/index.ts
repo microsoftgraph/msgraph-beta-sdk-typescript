@@ -6,6 +6,8 @@ import { createWorkflowFromDiscriminatorValue, type Workflow } from '@microsoft/
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AdministrationScopeTargetsRequestBuilderNavigationMetadata, AdministrationScopeTargetsRequestBuilderRequestsMetadata, type AdministrationScopeTargetsRequestBuilder } from './administrationScopeTargets/index.js';
+// @ts-ignore
 import { CreatedByRequestBuilderNavigationMetadata, CreatedByRequestBuilderRequestsMetadata, type CreatedByRequestBuilder } from './createdBy/index.js';
 // @ts-ignore
 import { ExecutionScopeRequestBuilderNavigationMetadata, ExecutionScopeRequestBuilderRequestsMetadata, type ExecutionScopeRequestBuilder } from './executionScope/index.js';
@@ -13,6 +15,8 @@ import { ExecutionScopeRequestBuilderNavigationMetadata, ExecutionScopeRequestBu
 import { LastModifiedByRequestBuilderNavigationMetadata, LastModifiedByRequestBuilderRequestsMetadata, type LastModifiedByRequestBuilder } from './lastModifiedBy/index.js';
 // @ts-ignore
 import { MicrosoftGraphIdentityGovernanceActivateRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceActivateRequestBuilder } from './microsoftGraphIdentityGovernanceActivate/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder } from './microsoftGraphIdentityGovernanceActivateWithScope/index.js';
 // @ts-ignore
 import { MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder } from './microsoftGraphIdentityGovernanceCreateNewVersion/index.js';
 // @ts-ignore
@@ -35,6 +39,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowItemRequestBuilder> {
     /**
+     * Provides operations to manage the administrationScopeTargets property of the microsoft.graph.identityGovernance.workflowBase entity.
+     */
+    get administrationScopeTargets(): AdministrationScopeTargetsRequestBuilder;
+    /**
      * Provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.workflowBase entity.
      */
     get createdBy(): CreatedByRequestBuilder;
@@ -50,6 +58,10 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
      * Provides operations to call the activate method.
      */
     get microsoftGraphIdentityGovernanceActivate(): MicrosoftGraphIdentityGovernanceActivateRequestBuilder;
+    /**
+     * Provides operations to call the activateWithScope method.
+     */
+    get microsoftGraphIdentityGovernanceActivateWithScope(): MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder;
     /**
      * Provides operations to call the createNewVersion method.
      */
@@ -134,6 +146,10 @@ const WorkflowItemRequestBuilderGetQueryParametersMapper: Record<string, string>
  * Metadata for all the navigation properties in the request builder.
  */
 export const WorkflowItemRequestBuilderNavigationMetadata: Record<Exclude<keyof WorkflowItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    administrationScopeTargets: {
+        requestsMetadata: AdministrationScopeTargetsRequestBuilderRequestsMetadata,
+        navigationMetadata: AdministrationScopeTargetsRequestBuilderNavigationMetadata,
+    },
     createdBy: {
         requestsMetadata: CreatedByRequestBuilderRequestsMetadata,
         navigationMetadata: CreatedByRequestBuilderNavigationMetadata,
@@ -148,6 +164,9 @@ export const WorkflowItemRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     },
     microsoftGraphIdentityGovernanceActivate: {
         requestsMetadata: MicrosoftGraphIdentityGovernanceActivateRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphIdentityGovernanceActivateWithScope: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderRequestsMetadata,
     },
     microsoftGraphIdentityGovernanceCreateNewVersion: {
         requestsMetadata: MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilderRequestsMetadata,

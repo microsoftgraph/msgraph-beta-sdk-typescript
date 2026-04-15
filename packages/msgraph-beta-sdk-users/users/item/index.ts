@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { ActivitiesRequestBuilderNavigationMetadata, ActivitiesRequestBuilderRequestsMetadata, type ActivitiesRequestBuilder } from './activities/index.js';
 // @ts-ignore
+import { AdhocCallsRequestBuilderNavigationMetadata, AdhocCallsRequestBuilderRequestsMetadata, type AdhocCallsRequestBuilder } from './adhocCalls/index.js';
+// @ts-ignore
 import { AgreementAcceptancesRequestBuilderNavigationMetadata, AgreementAcceptancesRequestBuilderRequestsMetadata, type AgreementAcceptancesRequestBuilder } from './agreementAcceptances/index.js';
 // @ts-ignore
 import { AnalyticsRequestBuilderNavigationMetadata, AnalyticsRequestBuilderRequestsMetadata, type AnalyticsRequestBuilder } from './analytics/index.js';
@@ -86,6 +88,8 @@ import { ExportPersonalDataRequestBuilderRequestsMetadata, type ExportPersonalDa
 // @ts-ignore
 import { ExtensionsRequestBuilderNavigationMetadata, ExtensionsRequestBuilderRequestsMetadata, type ExtensionsRequestBuilder } from './extensions/index.js';
 // @ts-ignore
+import { FindMeetingLocationsRequestBuilderRequestsMetadata, type FindMeetingLocationsRequestBuilder } from './findMeetingLocations/index.js';
+// @ts-ignore
 import { FindMeetingTimesRequestBuilderRequestsMetadata, type FindMeetingTimesRequestBuilder } from './findMeetingTimes/index.js';
 // @ts-ignore
 import { FindRoomListsRequestBuilderRequestsMetadata, type FindRoomListsRequestBuilder } from './findRoomLists/index.js';
@@ -163,6 +167,8 @@ import { OnenoteRequestBuilderNavigationMetadata, OnenoteRequestBuilderRequestsM
 import { OnlineMeetingsRequestBuilderNavigationMetadata, OnlineMeetingsRequestBuilderRequestsMetadata, type OnlineMeetingsRequestBuilder } from './onlineMeetings/index.js';
 // @ts-ignore
 import { OnlineMeetingsWithJoinWebUrlRequestBuilderNavigationMetadata, OnlineMeetingsWithJoinWebUrlRequestBuilderRequestsMetadata, type OnlineMeetingsWithJoinWebUrlRequestBuilder } from './onlineMeetingsWithJoinWebUrl/index.js';
+// @ts-ignore
+import { OnPremisesSyncBehaviorRequestBuilderRequestsMetadata, type OnPremisesSyncBehaviorRequestBuilder } from './onPremisesSyncBehavior/index.js';
 // @ts-ignore
 import { OutlookRequestBuilderNavigationMetadata, OutlookRequestBuilderRequestsMetadata, type OutlookRequestBuilder } from './outlook/index.js';
 // @ts-ignore
@@ -252,6 +258,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the activities property of the microsoft.graph.user entity.
      */
     get activities(): ActivitiesRequestBuilder;
+    /**
+     * Provides operations to manage the adhocCalls property of the microsoft.graph.user entity.
+     */
+    get adhocCalls(): AdhocCallsRequestBuilder;
     /**
      * Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
      */
@@ -396,6 +406,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the extensions property of the microsoft.graph.user entity.
      */
     get extensions(): ExtensionsRequestBuilder;
+    /**
+     * Provides operations to call the findMeetingLocations method.
+     */
+    get findMeetingLocations(): FindMeetingLocationsRequestBuilder;
     /**
      * Provides operations to call the findMeetingTimes method.
      */
@@ -544,6 +558,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
      */
     get onlineMeetings(): OnlineMeetingsRequestBuilder;
+    /**
+     * Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.user entity.
+     */
+    get onPremisesSyncBehavior(): OnPremisesSyncBehaviorRequestBuilder;
     /**
      * Provides operations to manage the outlook property of the microsoft.graph.user entity.
      */
@@ -703,7 +721,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      appRoleAssignedResourcesWithAppId(appId: string | undefined) : AppRoleAssignedResourcesWithAppIdRequestBuilder;
     /**
-     * Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
+     * Delete a user object. If the ID specified in the request URL is that of an agentUser object, this request deletes the agent user. When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-beta|Find more info here}
@@ -729,7 +747,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      findRoomsWithRoomList(roomList: string | undefined) : FindRoomsWithRoomListRequestBuilder;
     /**
-     * Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
+     * Retrieve the properties and relationships of a user object. If the ID specified is that of an agentUser, the API returns the properties of the agentUser object. This operation returns by default only a subset of the more commonly used properties. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -743,7 +761,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      onlineMeetingsWithJoinWebUrl(joinWebUrl: string | undefined) : OnlineMeetingsWithJoinWebUrlRequestBuilder;
     /**
-     * Update the properties of a user object.
+     * Update the properties of a user or agentUser object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
@@ -759,19 +777,19 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      reminderViewWithStartDateTimeWithEndDateTime(endDateTime: string | undefined, startDateTime: string | undefined) : ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
-     * Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
+     * Delete a user object. If the ID specified in the request URL is that of an agentUser object, this request deletes the agent user. When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
+     * Retrieve the properties and relationships of a user object. If the ID specified is that of an agentUser, the API returns the properties of the agentUser object. This operation returns by default only a subset of the more commonly used properties. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a user object.
+     * Update the properties of a user or agentUser object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -779,7 +797,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      toPatchRequestInformation(body: User, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
+ * Retrieve the properties and relationships of a user object. If the ID specified is that of an agentUser, the API returns the properties of the agentUser object. This operation returns by default only a subset of the more commonly used properties. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. Customers through Microsoft Entra ID for customers can also use this API operation to retrieve their details.
  */
 export interface UserItemRequestBuilderGetQueryParameters {
     /**
@@ -834,6 +852,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     activities: {
         requestsMetadata: ActivitiesRequestBuilderRequestsMetadata,
         navigationMetadata: ActivitiesRequestBuilderNavigationMetadata,
+    },
+    adhocCalls: {
+        requestsMetadata: AdhocCallsRequestBuilderRequestsMetadata,
+        navigationMetadata: AdhocCallsRequestBuilderNavigationMetadata,
     },
     agreementAcceptances: {
         requestsMetadata: AgreementAcceptancesRequestBuilderRequestsMetadata,
@@ -970,6 +992,9 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
         requestsMetadata: ExtensionsRequestBuilderRequestsMetadata,
         navigationMetadata: ExtensionsRequestBuilderNavigationMetadata,
     },
+    findMeetingLocations: {
+        requestsMetadata: FindMeetingLocationsRequestBuilderRequestsMetadata,
+    },
     findMeetingTimes: {
         requestsMetadata: FindMeetingTimesRequestBuilderRequestsMetadata,
     },
@@ -1100,6 +1125,9 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     onlineMeetings: {
         requestsMetadata: OnlineMeetingsRequestBuilderRequestsMetadata,
         navigationMetadata: OnlineMeetingsRequestBuilderNavigationMetadata,
+    },
+    onPremisesSyncBehavior: {
+        requestsMetadata: OnPremisesSyncBehaviorRequestBuilderRequestsMetadata,
     },
     outlook: {
         requestsMetadata: OutlookRequestBuilderRequestsMetadata,

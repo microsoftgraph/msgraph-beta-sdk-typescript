@@ -19,7 +19,7 @@ export interface SecureScoreItemRequestBuilder extends BaseRequestBuilder<Secure
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Measurements of tenants’ security posture to help protect them from threats.
+     * Measurements of tenants' security posture to help protect them from threats.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecureScore>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface SecureScoreItemRequestBuilder extends BaseRequestBuilder<Secure
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Measurements of tenants’ security posture to help protect them from threats.
+     * Measurements of tenants' security posture to help protect them from threats.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface SecureScoreItemRequestBuilder extends BaseRequestBuilder<Secure
      toPatchRequestInformation(body: SecureScore, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Measurements of tenants’ security posture to help protect them from threats.
+ * Measurements of tenants' security posture to help protect them from threats.
  */
 export interface SecureScoreItemRequestBuilderGetQueryParameters {
     /**

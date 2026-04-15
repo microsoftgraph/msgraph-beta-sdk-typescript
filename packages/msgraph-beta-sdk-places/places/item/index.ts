@@ -6,11 +6,25 @@ import { createPlaceFromDiscriminatorValue, serializePlace, type Place } from '@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { CheckInsRequestBuilderNavigationMetadata, CheckInsRequestBuilderRequestsMetadata, type CheckInsRequestBuilder } from './checkIns/index.js';
+// @ts-ignore
+import { ChildrenRequestBuilderNavigationMetadata, ChildrenRequestBuilderRequestsMetadata, type ChildrenRequestBuilder } from './children/index.js';
+// @ts-ignore
 import { DescendantsRequestBuilderRequestsMetadata, type DescendantsRequestBuilder } from './descendants/index.js';
 // @ts-ignore
-import { GraphRoomRequestBuilderRequestsMetadata, type GraphRoomRequestBuilder } from './graphRoom/index.js';
+import { GraphBuildingRequestBuilderNavigationMetadata, GraphBuildingRequestBuilderRequestsMetadata, type GraphBuildingRequestBuilder } from './graphBuilding/index.js';
+// @ts-ignore
+import { GraphDeskRequestBuilderNavigationMetadata, GraphDeskRequestBuilderRequestsMetadata, type GraphDeskRequestBuilder } from './graphDesk/index.js';
+// @ts-ignore
+import { GraphFloorRequestBuilderNavigationMetadata, GraphFloorRequestBuilderRequestsMetadata, type GraphFloorRequestBuilder } from './graphFloor/index.js';
+// @ts-ignore
+import { GraphRoomRequestBuilderNavigationMetadata, GraphRoomRequestBuilderRequestsMetadata, type GraphRoomRequestBuilder } from './graphRoom/index.js';
 // @ts-ignore
 import { GraphRoomListRequestBuilderNavigationMetadata, GraphRoomListRequestBuilderRequestsMetadata, type GraphRoomListRequestBuilder } from './graphRoomList/index.js';
+// @ts-ignore
+import { GraphSectionRequestBuilderNavigationMetadata, GraphSectionRequestBuilderRequestsMetadata, type GraphSectionRequestBuilder } from './graphSection/index.js';
+// @ts-ignore
+import { GraphWorkspaceRequestBuilderNavigationMetadata, GraphWorkspaceRequestBuilderRequestsMetadata, type GraphWorkspaceRequestBuilder } from './graphWorkspace/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -19,9 +33,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemRequestBuilder> {
     /**
+     * Provides operations to manage the checkIns property of the microsoft.graph.place entity.
+     */
+    get checkIns(): CheckInsRequestBuilder;
+    /**
+     * Provides operations to manage the children property of the microsoft.graph.place entity.
+     */
+    get children(): ChildrenRequestBuilder;
+    /**
      * Provides operations to call the descendants method.
      */
     get descendants(): DescendantsRequestBuilder;
+    /**
+     * Casts the previous resource to building.
+     */
+    get graphBuilding(): GraphBuildingRequestBuilder;
+    /**
+     * Casts the previous resource to desk.
+     */
+    get graphDesk(): GraphDeskRequestBuilder;
+    /**
+     * Casts the previous resource to floor.
+     */
+    get graphFloor(): GraphFloorRequestBuilder;
     /**
      * Casts the previous resource to room.
      */
@@ -31,6 +65,14 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
     get graphRoomList(): GraphRoomListRequestBuilder;
     /**
+     * Casts the previous resource to section.
+     */
+    get graphSection(): GraphSectionRequestBuilder;
+    /**
+     * Casts the previous resource to workspace.
+     */
+    get graphWorkspace(): GraphWorkspaceRequestBuilder;
+    /**
      * Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -38,12 +80,12 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
+     * Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Place>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/place-patch-places?view=graph-rest-beta|Find more info here}
      */
      patch(body: Place, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Place | undefined>;
     /**
@@ -53,7 +95,7 @@ export interface PlaceItemRequestBuilder extends BaseRequestBuilder<PlaceItemReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
+     * Upsert one or more place objects in async mode. This API allows you to create and update multiple places efficiently in a single request. For more information on how to use this API, including scenarios, best practices, and concurrency limits, see Working with the upsert Places API in Microsoft Graph.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -68,15 +110,44 @@ export const PlaceItemRequestBuilderUriTemplate = "{+baseurl}/places/{place%2Did
  * Metadata for all the navigation properties in the request builder.
  */
 export const PlaceItemRequestBuilderNavigationMetadata: Record<Exclude<keyof PlaceItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    checkIns: {
+        requestsMetadata: CheckInsRequestBuilderRequestsMetadata,
+        navigationMetadata: CheckInsRequestBuilderNavigationMetadata,
+    },
+    children: {
+        requestsMetadata: ChildrenRequestBuilderRequestsMetadata,
+        navigationMetadata: ChildrenRequestBuilderNavigationMetadata,
+    },
     descendants: {
         requestsMetadata: DescendantsRequestBuilderRequestsMetadata,
     },
+    graphBuilding: {
+        requestsMetadata: GraphBuildingRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphBuildingRequestBuilderNavigationMetadata,
+    },
+    graphDesk: {
+        requestsMetadata: GraphDeskRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphDeskRequestBuilderNavigationMetadata,
+    },
+    graphFloor: {
+        requestsMetadata: GraphFloorRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphFloorRequestBuilderNavigationMetadata,
+    },
     graphRoom: {
         requestsMetadata: GraphRoomRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphRoomRequestBuilderNavigationMetadata,
     },
     graphRoomList: {
         requestsMetadata: GraphRoomListRequestBuilderRequestsMetadata,
         navigationMetadata: GraphRoomListRequestBuilderNavigationMetadata,
+    },
+    graphSection: {
+        requestsMetadata: GraphSectionRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphSectionRequestBuilderNavigationMetadata,
+    },
+    graphWorkspace: {
+        requestsMetadata: GraphWorkspaceRequestBuilderRequestsMetadata,
+        navigationMetadata: GraphWorkspaceRequestBuilderNavigationMetadata,
     },
 };
 /**
