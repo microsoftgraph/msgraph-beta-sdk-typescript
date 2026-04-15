@@ -12,6 +12,8 @@ import { ApplicationSignInDetailedSummaryRequestBuilderNavigationMetadata, Appli
 // @ts-ignore
 import { AuthenticationMethodsRequestBuilderNavigationMetadata, AuthenticationMethodsRequestBuilderRequestsMetadata, type AuthenticationMethodsRequestBuilder } from './authenticationMethods/index.js';
 // @ts-ignore
+import { AzureADPremiumLicenseInsightRequestBuilderRequestsMetadata, type AzureADPremiumLicenseInsightRequestBuilder } from './azureADPremiumLicenseInsight/index.js';
+// @ts-ignore
 import { CredentialUserRegistrationDetailsRequestBuilderNavigationMetadata, CredentialUserRegistrationDetailsRequestBuilderRequestsMetadata, type CredentialUserRegistrationDetailsRequestBuilder } from './credentialUserRegistrationDetails/index.js';
 // @ts-ignore
 import { DailyPrintUsageRequestBuilderNavigationMetadata, DailyPrintUsageRequestBuilderRequestsMetadata, type DailyPrintUsageRequestBuilder } from './dailyPrintUsage/index.js';
@@ -324,6 +326,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
      */
     get authenticationMethods(): AuthenticationMethodsRequestBuilder;
+    /**
+     * Provides operations to manage the azureADPremiumLicenseInsight property of the microsoft.graph.reportRoot entity.
+     */
+    get azureADPremiumLicenseInsight(): AzureADPremiumLicenseInsightRequestBuilder;
     /**
      * Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
      */
@@ -1691,6 +1697,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     authenticationMethods: {
         requestsMetadata: AuthenticationMethodsRequestBuilderRequestsMetadata,
         navigationMetadata: AuthenticationMethodsRequestBuilderNavigationMetadata,
+    },
+    azureADPremiumLicenseInsight: {
+        requestsMetadata: AzureADPremiumLicenseInsightRequestBuilderRequestsMetadata,
     },
     credentialUserRegistrationDetails: {
         requestsMetadata: CredentialUserRegistrationDetailsRequestBuilderRequestsMetadata,

@@ -12,6 +12,8 @@ import { LearningCourseActivitiesRequestBuilderNavigationMetadata, LearningCours
 // @ts-ignore
 import { LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderRequestsMetadata, type LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder } from './learningCourseActivitiesWithExternalcourseActivityId/index.js';
 // @ts-ignore
+import { StorylineRequestBuilderNavigationMetadata, StorylineRequestBuilderRequestsMetadata, type StorylineRequestBuilder } from './storyline/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -27,13 +29,17 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      */
     get learningCourseActivities(): LearningCourseActivitiesRequestBuilder;
     /**
+     * Provides operations to manage the storyline property of the microsoft.graph.employeeExperienceUser entity.
+     */
+    get storyline(): StorylineRequestBuilder;
+    /**
      * Delete navigation property employeeExperience for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get employeeExperience from users
+     * The employee experience resources for the user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EmployeeExperienceUser>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -60,7 +66,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get employeeExperience from users
+     * The employee experience resources for the user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -74,7 +80,7 @@ export interface EmployeeExperienceRequestBuilder extends BaseRequestBuilder<Emp
      toPatchRequestInformation(body: EmployeeExperienceUser, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get employeeExperience from users
+ * The employee experience resources for the user. Read-only. Nullable.
  */
 export interface EmployeeExperienceRequestBuilderGetQueryParameters {
     /**
@@ -112,6 +118,10 @@ export const EmployeeExperienceRequestBuilderNavigationMetadata: Record<Exclude<
     learningCourseActivities: {
         requestsMetadata: LearningCourseActivitiesRequestBuilderRequestsMetadata,
         navigationMetadata: LearningCourseActivitiesRequestBuilderNavigationMetadata,
+    },
+    storyline: {
+        requestsMetadata: StorylineRequestBuilderRequestsMetadata,
+        navigationMetadata: StorylineRequestBuilderNavigationMetadata,
     },
 };
 /**

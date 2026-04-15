@@ -27,7 +27,7 @@ export interface PartnersRequestBuilder extends BaseRequestBuilder<PartnersReque
      */
      byCrossTenantAccessPolicyConfigurationPartnerTenantId(crossTenantAccessPolicyConfigurationPartnerTenantId: string) : CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder;
     /**
-     * Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+     * Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user and group synchronization policy for all partner configurations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantAccessPolicyConfigurationPartnerCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -44,7 +44,7 @@ export interface PartnersRequestBuilder extends BaseRequestBuilder<PartnersReque
      */
      post(body: CrossTenantAccessPolicyConfigurationPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantAccessPolicyConfigurationPartner | undefined>;
     /**
-     * Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+     * Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user and group synchronization policy for all partner configurations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -58,7 +58,7 @@ export interface PartnersRequestBuilder extends BaseRequestBuilder<PartnersReque
      toPostRequestInformation(body: CrossTenantAccessPolicyConfigurationPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
+ * Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user and group synchronization policy for all partner configurations.
  */
 export interface PartnersRequestBuilderGetQueryParameters {
     /**

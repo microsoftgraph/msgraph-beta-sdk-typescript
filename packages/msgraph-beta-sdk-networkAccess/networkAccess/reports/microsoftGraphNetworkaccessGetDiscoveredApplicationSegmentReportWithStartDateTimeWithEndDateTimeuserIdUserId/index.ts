@@ -42,7 +42,7 @@ export interface GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDa
  */
 export interface MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder extends BaseRequestBuilder<MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder> {
     /**
-     * Returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+     * Returns a collection of discovered application segments based on aggregated traffic logs for a given period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -50,14 +50,14 @@ export interface MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentRepor
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetQueryParameters> | undefined) : Promise<GetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse | undefined>;
     /**
-     * Returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+     * Returns a collection of discovered application segments based on aggregated traffic logs for a given period.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+ * Returns a collection of discovered application segments based on aggregated traffic logs for a given period.
  */
 export interface MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetQueryParameters {
     /**

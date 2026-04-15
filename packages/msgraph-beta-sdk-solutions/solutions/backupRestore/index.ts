@@ -6,6 +6,8 @@ import { createBackupRestoreRootFromDiscriminatorValue, serializeBackupRestoreRo
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ActivityLogsRequestBuilderNavigationMetadata, ActivityLogsRequestBuilderRequestsMetadata, type ActivityLogsRequestBuilder } from './activityLogs/index.js';
+// @ts-ignore
 import { AllDrivesBackupRequestBuilderNavigationMetadata, AllDrivesBackupRequestBuilderRequestsMetadata, type AllDrivesBackupRequestBuilder } from './allDrivesBackup/index.js';
 // @ts-ignore
 import { AllMailboxesBackupRequestBuilderNavigationMetadata, AllMailboxesBackupRequestBuilderRequestsMetadata, type AllMailboxesBackupRequestBuilder } from './allMailboxesBackup/index.js';
@@ -44,6 +46,8 @@ import { ProtectionPoliciesRequestBuilderNavigationMetadata, ProtectionPoliciesR
 // @ts-ignore
 import { ProtectionUnitsRequestBuilderNavigationMetadata, ProtectionUnitsRequestBuilderRequestsMetadata, type ProtectionUnitsRequestBuilder } from './protectionUnits/index.js';
 // @ts-ignore
+import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsMetadata, type ReportsRequestBuilder } from './reports/index.js';
+// @ts-ignore
 import { RestorePointsRequestBuilderNavigationMetadata, RestorePointsRequestBuilderRequestsMetadata, type RestorePointsRequestBuilder } from './restorePoints/index.js';
 // @ts-ignore
 import { RestoreSessionsRequestBuilderNavigationMetadata, RestoreSessionsRequestBuilderRequestsMetadata, type RestoreSessionsRequestBuilder } from './restoreSessions/index.js';
@@ -68,6 +72,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.
  */
 export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRestoreRequestBuilder> {
+    /**
+     * Provides operations to manage the activityLogs property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get activityLogs(): ActivityLogsRequestBuilder;
     /**
      * Provides operations to manage the allDrivesBackup property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -144,6 +152,10 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * Provides operations to manage the protectionUnits property of the microsoft.graph.backupRestoreRoot entity.
      */
     get protectionUnits(): ProtectionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get reports(): ReportsRequestBuilder;
     /**
      * Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -250,6 +262,10 @@ const BackupRestoreRequestBuilderGetQueryParametersMapper: Record<string, string
  * Metadata for all the navigation properties in the request builder.
  */
 export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof BackupRestoreRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    activityLogs: {
+        requestsMetadata: ActivityLogsRequestBuilderRequestsMetadata,
+        navigationMetadata: ActivityLogsRequestBuilderNavigationMetadata,
+    },
     allDrivesBackup: {
         requestsMetadata: AllDrivesBackupRequestBuilderRequestsMetadata,
         navigationMetadata: AllDrivesBackupRequestBuilderNavigationMetadata,
@@ -323,6 +339,10 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
     protectionUnits: {
         requestsMetadata: ProtectionUnitsRequestBuilderRequestsMetadata,
         navigationMetadata: ProtectionUnitsRequestBuilderNavigationMetadata,
+    },
+    reports: {
+        requestsMetadata: ReportsRequestBuilderRequestsMetadata,
+        navigationMetadata: ReportsRequestBuilderNavigationMetadata,
     },
     restorePoints: {
         requestsMetadata: RestorePointsRequestBuilderRequestsMetadata,

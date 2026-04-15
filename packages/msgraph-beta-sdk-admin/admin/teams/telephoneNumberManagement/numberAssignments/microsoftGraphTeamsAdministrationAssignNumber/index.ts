@@ -4,7 +4,7 @@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { AssignmentCategory, AssignmentCategoryObject, NumberType, NumberTypeObject } from '@microsoft/msgraph-beta-sdk/models/teamsAdministration/index.js';
+import { AssignmentCategoryObject, NumberTypeObject, type AssignmentCategory, type NumberType } from '@microsoft/msgraph-beta-sdk/models/teamsAdministration/index.js';
 // @ts-ignore
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type BaseRequestBuilder, type Parsable, type ParsableFactory, type ParseNode, type RequestConfiguration, type RequestInformation, type RequestsMetadata, type SerializationWriter } from '@microsoft/kiota-abstractions';
 

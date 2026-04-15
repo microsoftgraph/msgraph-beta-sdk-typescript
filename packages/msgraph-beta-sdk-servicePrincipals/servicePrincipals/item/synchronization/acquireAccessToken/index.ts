@@ -27,6 +27,7 @@ export interface AcquireAccessTokenRequestBuilder extends BaseRequestBuilder<Acq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This action acquires an access token via Oauth Code Grant Flow. Code Grant will be completely deprecated so this action will be obsolete. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta|Find more info here}
      */
      post(body: AcquireAccessTokenPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -35,6 +36,7 @@ export interface AcquireAccessTokenRequestBuilder extends BaseRequestBuilder<Acq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This action acquires an access token via Oauth Code Grant Flow. Code Grant will be completely deprecated so this action will be obsolete. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
      toPostRequestInformation(body: AcquireAccessTokenPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

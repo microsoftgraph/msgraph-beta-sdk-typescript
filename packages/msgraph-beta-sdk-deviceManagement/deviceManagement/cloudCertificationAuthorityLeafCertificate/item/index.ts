@@ -6,12 +6,18 @@ import { createCloudCertificationAuthorityLeafCertificateFromDiscriminatorValue,
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { CloudCertificationAuthorityVersionRequestBuilderRequestsMetadata, type CloudCertificationAuthorityVersionRequestBuilder } from './cloudCertificationAuthorityVersion/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the cloudCertificationAuthorityLeafCertificate property of the microsoft.graph.deviceManagement entity.
  */
 export interface CloudCertificationAuthorityLeafCertificateItemRequestBuilder extends BaseRequestBuilder<CloudCertificationAuthorityLeafCertificateItemRequestBuilder> {
+    /**
+     * Provides operations to manage the cloudCertificationAuthorityVersion property of the microsoft.graph.cloudCertificationAuthorityLeafCertificate entity.
+     */
+    get cloudCertificationAuthorityVersion(): CloudCertificationAuthorityVersionRequestBuilder;
     /**
      * Delete navigation property cloudCertificationAuthorityLeafCertificate for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -76,6 +82,14 @@ export const CloudCertificationAuthorityLeafCertificateItemRequestBuilderUriTemp
 const CloudCertificationAuthorityLeafCertificateItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const CloudCertificationAuthorityLeafCertificateItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CloudCertificationAuthorityLeafCertificateItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    cloudCertificationAuthorityVersion: {
+        requestsMetadata: CloudCertificationAuthorityVersionRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

@@ -146,8 +146,6 @@ import { GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderRequestsMet
 // @ts-ignore
 import { GetWindowsUpdateAlertSummaryReportRequestBuilderRequestsMetadata, type GetWindowsUpdateAlertSummaryReportRequestBuilder } from './getWindowsUpdateAlertSummaryReport/index.js';
 // @ts-ignore
-import { GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata, type GetZebraFotaDeploymentReportRequestBuilder } from './getZebraFotaDeploymentReport/index.js';
-// @ts-ignore
 import { RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata, type RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder } from './retrieveAndroidWorkProfileDeviceMigrationStatuses/index.js';
 // @ts-ignore
 import { RetrieveAppleDeviceOSUpdateStatusRequestBuilderRequestsMetadata, type RetrieveAppleDeviceOSUpdateStatusRequestBuilder } from './retrieveAppleDeviceOSUpdateStatus/index.js';
@@ -452,10 +450,6 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the getWindowsUpdateAlertSummaryReport method.
      */
     get getWindowsUpdateAlertSummaryReport(): GetWindowsUpdateAlertSummaryReportRequestBuilder;
-    /**
-     * Provides operations to call the getZebraFotaDeploymentReport method.
-     */
-    get getZebraFotaDeploymentReport(): GetZebraFotaDeploymentReportRequestBuilder;
     /**
      * Provides operations to call the retrieveAndroidWorkProfileDeviceMigrationStatuses method.
      */
@@ -772,9 +766,6 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getWindowsUpdateAlertSummaryReport: {
         requestsMetadata: GetWindowsUpdateAlertSummaryReportRequestBuilderRequestsMetadata,
-    },
-    getZebraFotaDeploymentReport: {
-        requestsMetadata: GetZebraFotaDeploymentReportRequestBuilderRequestsMetadata,
     },
     retrieveAndroidWorkProfileDeviceMigrationStatuses: {
         requestsMetadata: RetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderRequestsMetadata,

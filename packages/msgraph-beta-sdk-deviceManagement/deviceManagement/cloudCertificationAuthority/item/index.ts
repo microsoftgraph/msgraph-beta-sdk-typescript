@@ -6,6 +6,10 @@ import { createCloudCertificationAuthorityFromDiscriminatorValue, serializeCloud
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ActivateRequestBuilderRequestsMetadata, type ActivateRequestBuilder } from './activate/index.js';
+// @ts-ignore
+import { ActiveVersionRequestBuilderRequestsMetadata, type ActiveVersionRequestBuilder } from './activeVersion/index.js';
+// @ts-ignore
 import { ChangeCloudCertificationAuthorityStatusRequestBuilderRequestsMetadata, type ChangeCloudCertificationAuthorityStatusRequestBuilder } from './changeCloudCertificationAuthorityStatus/index.js';
 // @ts-ignore
 import { CloudCertificationAuthorityLeafCertificateRequestBuilderNavigationMetadata, CloudCertificationAuthorityLeafCertificateRequestBuilderRequestsMetadata, type CloudCertificationAuthorityLeafCertificateRequestBuilder } from './cloudCertificationAuthorityLeafCertificate/index.js';
@@ -16,9 +20,15 @@ import { GetAllCloudCertificationAuthorityLeafCertificatesRequestBuilderRequests
 // @ts-ignore
 import { GetCloudCertificationAuthorityRequestBuilderRequestsMetadata, type GetCloudCertificationAuthorityRequestBuilder } from './getCloudCertificationAuthority/index.js';
 // @ts-ignore
+import { GetCloudCertificationAuthorityVersionRequestBuilderRequestsMetadata, type GetCloudCertificationAuthorityVersionRequestBuilder } from './getCloudCertificationAuthorityVersion/index.js';
+// @ts-ignore
+import { GetCloudCertificationAuthorityVersionsRequestBuilderRequestsMetadata, type GetCloudCertificationAuthorityVersionsRequestBuilder } from './getCloudCertificationAuthorityVersions/index.js';
+// @ts-ignore
 import { PatchCloudCertificationAuthorityRequestBuilderRequestsMetadata, type PatchCloudCertificationAuthorityRequestBuilder } from './patchCloudCertificationAuthority/index.js';
 // @ts-ignore
 import { PostCloudCertificationAuthorityRequestBuilderRequestsMetadata, type PostCloudCertificationAuthorityRequestBuilder } from './postCloudCertificationAuthority/index.js';
+// @ts-ignore
+import { RenewRequestBuilderRequestsMetadata, type RenewRequestBuilder } from './renew/index.js';
 // @ts-ignore
 import { RevokeCloudCertificationAuthorityCertificateRequestBuilderRequestsMetadata, type RevokeCloudCertificationAuthorityCertificateRequestBuilder } from './revokeCloudCertificationAuthorityCertificate/index.js';
 // @ts-ignore
@@ -30,12 +40,22 @@ import { SearchCloudCertificationAuthorityLeafCertificateBySerialNumberRequestBu
 // @ts-ignore
 import { type UploadExternallySignedCertificationAuthorityCertificateRequestBuilder, UploadExternallySignedCertificationAuthorityCertificateRequestBuilderRequestsMetadata } from './uploadExternallySignedCertificationAuthorityCertificate/index.js';
 // @ts-ignore
+import { type VersionsRequestBuilder, VersionsRequestBuilderNavigationMetadata, VersionsRequestBuilderRequestsMetadata } from './versions/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the cloudCertificationAuthority property of the microsoft.graph.deviceManagement entity.
  */
 export interface CloudCertificationAuthorityItemRequestBuilder extends BaseRequestBuilder<CloudCertificationAuthorityItemRequestBuilder> {
+    /**
+     * Provides operations to call the activate method.
+     */
+    get activate(): ActivateRequestBuilder;
+    /**
+     * Provides operations to manage the activeVersion property of the microsoft.graph.cloudCertificationAuthority entity.
+     */
+    get activeVersion(): ActiveVersionRequestBuilder;
     /**
      * Provides operations to call the changeCloudCertificationAuthorityStatus method.
      */
@@ -57,6 +77,14 @@ export interface CloudCertificationAuthorityItemRequestBuilder extends BaseReque
      */
     get getCloudCertificationAuthority(): GetCloudCertificationAuthorityRequestBuilder;
     /**
+     * Provides operations to call the getCloudCertificationAuthorityVersion method.
+     */
+    get getCloudCertificationAuthorityVersion(): GetCloudCertificationAuthorityVersionRequestBuilder;
+    /**
+     * Provides operations to call the getCloudCertificationAuthorityVersions method.
+     */
+    get getCloudCertificationAuthorityVersions(): GetCloudCertificationAuthorityVersionsRequestBuilder;
+    /**
      * Provides operations to call the patchCloudCertificationAuthority method.
      */
     get patchCloudCertificationAuthority(): PatchCloudCertificationAuthorityRequestBuilder;
@@ -64,6 +92,10 @@ export interface CloudCertificationAuthorityItemRequestBuilder extends BaseReque
      * Provides operations to call the postCloudCertificationAuthority method.
      */
     get postCloudCertificationAuthority(): PostCloudCertificationAuthorityRequestBuilder;
+    /**
+     * Provides operations to call the renew method.
+     */
+    get renew(): RenewRequestBuilder;
     /**
      * Provides operations to call the revokeCloudCertificationAuthorityCertificate method.
      */
@@ -84,6 +116,10 @@ export interface CloudCertificationAuthorityItemRequestBuilder extends BaseReque
      * Provides operations to call the uploadExternallySignedCertificationAuthorityCertificate method.
      */
     get uploadExternallySignedCertificationAuthorityCertificate(): UploadExternallySignedCertificationAuthorityCertificateRequestBuilder;
+    /**
+     * Provides operations to manage the versions property of the microsoft.graph.cloudCertificationAuthority entity.
+     */
+    get versions(): VersionsRequestBuilder;
     /**
      * Delete navigation property cloudCertificationAuthority for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -153,6 +189,12 @@ const CloudCertificationAuthorityItemRequestBuilderGetQueryParametersMapper: Rec
  * Metadata for all the navigation properties in the request builder.
  */
 export const CloudCertificationAuthorityItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CloudCertificationAuthorityItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    activate: {
+        requestsMetadata: ActivateRequestBuilderRequestsMetadata,
+    },
+    activeVersion: {
+        requestsMetadata: ActiveVersionRequestBuilderRequestsMetadata,
+    },
     changeCloudCertificationAuthorityStatus: {
         requestsMetadata: ChangeCloudCertificationAuthorityStatusRequestBuilderRequestsMetadata,
     },
@@ -169,11 +211,20 @@ export const CloudCertificationAuthorityItemRequestBuilderNavigationMetadata: Re
     getCloudCertificationAuthority: {
         requestsMetadata: GetCloudCertificationAuthorityRequestBuilderRequestsMetadata,
     },
+    getCloudCertificationAuthorityVersion: {
+        requestsMetadata: GetCloudCertificationAuthorityVersionRequestBuilderRequestsMetadata,
+    },
+    getCloudCertificationAuthorityVersions: {
+        requestsMetadata: GetCloudCertificationAuthorityVersionsRequestBuilderRequestsMetadata,
+    },
     patchCloudCertificationAuthority: {
         requestsMetadata: PatchCloudCertificationAuthorityRequestBuilderRequestsMetadata,
     },
     postCloudCertificationAuthority: {
         requestsMetadata: PostCloudCertificationAuthorityRequestBuilderRequestsMetadata,
+    },
+    renew: {
+        requestsMetadata: RenewRequestBuilderRequestsMetadata,
     },
     revokeCloudCertificationAuthorityCertificate: {
         requestsMetadata: RevokeCloudCertificationAuthorityCertificateRequestBuilderRequestsMetadata,
@@ -189,6 +240,10 @@ export const CloudCertificationAuthorityItemRequestBuilderNavigationMetadata: Re
     },
     uploadExternallySignedCertificationAuthorityCertificate: {
         requestsMetadata: UploadExternallySignedCertificationAuthorityCertificateRequestBuilderRequestsMetadata,
+    },
+    versions: {
+        requestsMetadata: VersionsRequestBuilderRequestsMetadata,
+        navigationMetadata: VersionsRequestBuilderNavigationMetadata,
     },
 };
 /**

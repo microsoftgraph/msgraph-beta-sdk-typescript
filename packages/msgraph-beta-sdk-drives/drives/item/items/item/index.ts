@@ -10,6 +10,8 @@ import { ActivitiesRequestBuilderNavigationMetadata, ActivitiesRequestBuilderReq
 // @ts-ignore
 import { AnalyticsRequestBuilderNavigationMetadata, AnalyticsRequestBuilderRequestsMetadata, type AnalyticsRequestBuilder } from './analytics/index.js';
 // @ts-ignore
+import { ArchiveRequestBuilderRequestsMetadata, type ArchiveRequestBuilder } from './archive/index.js';
+// @ts-ignore
 import { AssignSensitivityLabelRequestBuilderRequestsMetadata, type AssignSensitivityLabelRequestBuilder } from './assignSensitivityLabel/index.js';
 // @ts-ignore
 import { CheckinRequestBuilderRequestsMetadata, type CheckinRequestBuilder } from './checkin/index.js';
@@ -66,6 +68,8 @@ import { SubscriptionsRequestBuilderNavigationMetadata, SubscriptionsRequestBuil
 // @ts-ignore
 import { ThumbnailsRequestBuilderNavigationMetadata, ThumbnailsRequestBuilderRequestsMetadata, type ThumbnailsRequestBuilder } from './thumbnails/index.js';
 // @ts-ignore
+import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/index.js';
+// @ts-ignore
 import { type UnfollowRequestBuilder, UnfollowRequestBuilderRequestsMetadata } from './unfollow/index.js';
 // @ts-ignore
 import { type ValidatePermissionRequestBuilder, ValidatePermissionRequestBuilderRequestsMetadata } from './validatePermission/index.js';
@@ -88,6 +92,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      * Provides operations to manage the analytics property of the microsoft.graph.driveItem entity.
      */
     get analytics(): AnalyticsRequestBuilder;
+    /**
+     * Provides operations to call the archive method.
+     */
+    get archive(): ArchiveRequestBuilder;
     /**
      * Provides operations to call the assignSensitivityLabel method.
      */
@@ -188,6 +196,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      * Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
      */
     get thumbnails(): ThumbnailsRequestBuilder;
+    /**
+     * Provides operations to call the unarchive method.
+     */
+    get unarchive(): UnarchiveRequestBuilder;
     /**
      * Provides operations to call the unfollow method.
      */
@@ -313,6 +325,9 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
         requestsMetadata: AnalyticsRequestBuilderRequestsMetadata,
         navigationMetadata: AnalyticsRequestBuilderNavigationMetadata,
     },
+    archive: {
+        requestsMetadata: ArchiveRequestBuilderRequestsMetadata,
+    },
     assignSensitivityLabel: {
         requestsMetadata: AssignSensitivityLabelRequestBuilderRequestsMetadata,
     },
@@ -394,6 +409,9 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
     thumbnails: {
         requestsMetadata: ThumbnailsRequestBuilderRequestsMetadata,
         navigationMetadata: ThumbnailsRequestBuilderNavigationMetadata,
+    },
+    unarchive: {
+        requestsMetadata: UnarchiveRequestBuilderRequestsMetadata,
     },
     unfollow: {
         requestsMetadata: UnfollowRequestBuilderRequestsMetadata,
