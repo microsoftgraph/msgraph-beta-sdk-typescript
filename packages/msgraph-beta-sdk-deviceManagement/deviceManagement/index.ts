@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderNavigationMetadata, AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequestsMetadata, type AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder } from './advancedThreatProtectionOnboardingStateSummary/index.js';
 // @ts-ignore
+import { AndroidAppConfigurationSchemaRequestBuilderNavigationMetadata, AndroidAppConfigurationSchemaRequestBuilderRequestsMetadata, type AndroidAppConfigurationSchemaRequestBuilder } from './androidAppConfigurationSchema/index.js';
+// @ts-ignore
 import { AndroidDeviceOwnerEnrollmentProfilesRequestBuilderNavigationMetadata, AndroidDeviceOwnerEnrollmentProfilesRequestBuilderRequestsMetadata, type AndroidDeviceOwnerEnrollmentProfilesRequestBuilder } from './androidDeviceOwnerEnrollmentProfiles/index.js';
 // @ts-ignore
 import { AndroidForWorkAppConfigurationSchemasRequestBuilderNavigationMetadata, AndroidForWorkAppConfigurationSchemasRequestBuilderRequestsMetadata, type AndroidForWorkAppConfigurationSchemasRequestBuilder } from './androidForWorkAppConfigurationSchemas/index.js';
@@ -400,6 +402,10 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
      * Provides operations to manage the advancedThreatProtectionOnboardingStateSummary property of the microsoft.graph.deviceManagement entity.
      */
     get advancedThreatProtectionOnboardingStateSummary(): AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder;
+    /**
+     * Provides operations to manage the androidAppConfigurationSchema property of the microsoft.graph.deviceManagement entity.
+     */
+    get androidAppConfigurationSchema(): AndroidAppConfigurationSchemaRequestBuilder;
     /**
      * Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
      */
@@ -1266,6 +1272,10 @@ export const DeviceManagementRequestBuilderNavigationMetadata: Record<Exclude<ke
     advancedThreatProtectionOnboardingStateSummary: {
         requestsMetadata: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderRequestsMetadata,
         navigationMetadata: AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderNavigationMetadata,
+    },
+    androidAppConfigurationSchema: {
+        requestsMetadata: AndroidAppConfigurationSchemaRequestBuilderRequestsMetadata,
+        navigationMetadata: AndroidAppConfigurationSchemaRequestBuilderNavigationMetadata,
     },
     androidDeviceOwnerEnrollmentProfiles: {
         requestsMetadata: AndroidDeviceOwnerEnrollmentProfilesRequestBuilderRequestsMetadata,

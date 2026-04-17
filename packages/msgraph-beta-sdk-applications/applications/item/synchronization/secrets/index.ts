@@ -78,6 +78,7 @@ export interface SecretsPutResponse extends AdditionalDataHolder, BackedModel, P
 export interface SecretsRequestBuilder extends BaseRequestBuilder<SecretsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
     get count(): CountRequestBuilder;
     /**
@@ -86,6 +87,7 @@ export interface SecretsRequestBuilder extends BaseRequestBuilder<SecretsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecretsPutResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
      put(body: SecretsPutRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SecretsPutResponse | undefined>;
     /**
@@ -93,6 +95,7 @@ export interface SecretsRequestBuilder extends BaseRequestBuilder<SecretsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
      toPutRequestInformation(body: SecretsPutRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

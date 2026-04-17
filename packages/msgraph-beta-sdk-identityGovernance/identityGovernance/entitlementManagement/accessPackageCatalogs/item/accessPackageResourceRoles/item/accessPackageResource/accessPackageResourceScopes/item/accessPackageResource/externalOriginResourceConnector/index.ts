@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ExternalOriginResourceConnectorRequestBuilder extends BaseRequestBuilder<ExternalOriginResourceConnectorRequestBuilder> {
     /**
-     * Get externalOriginResourceConnector from identityGovernance
+     * The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalOriginResourceConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,7 +21,7 @@ export interface ExternalOriginResourceConnectorRequestBuilder extends BaseReque
      */
      get(requestConfiguration?: RequestConfiguration<ExternalOriginResourceConnectorRequestBuilderGetQueryParameters> | undefined) : Promise<ExternalOriginResourceConnector | undefined>;
     /**
-     * Get externalOriginResourceConnector from identityGovernance
+     * The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
@@ -29,7 +29,7 @@ export interface ExternalOriginResourceConnectorRequestBuilder extends BaseReque
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalOriginResourceConnectorRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get externalOriginResourceConnector from identityGovernance
+ * The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
  */
 export interface ExternalOriginResourceConnectorRequestBuilderGetQueryParameters {
     /**

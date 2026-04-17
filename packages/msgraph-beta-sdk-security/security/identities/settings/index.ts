@@ -6,12 +6,18 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createSettingsContainerFromDiscriminatorValue, serializeSettingsContainer, type SettingsContainer } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { AutoAuditingConfigurationRequestBuilderRequestsMetadata, type AutoAuditingConfigurationRequestBuilder } from './autoAuditingConfiguration/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.
  */
 export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsRequestBuilder> {
+    /**
+     * Provides operations to manage the autoAuditingConfiguration property of the microsoft.graph.security.settingsContainer entity.
+     */
+    get autoAuditingConfiguration(): AutoAuditingConfigurationRequestBuilder;
     /**
      * Delete navigation property settings for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -19,7 +25,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get settings from security
+     * Represents a container for security identities settings APIs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SettingsContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +46,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get settings from security
+     * Represents a container for security identities settings APIs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +60,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      toPatchRequestInformation(body: SettingsContainer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get settings from security
+ * Represents a container for security identities settings APIs.
  */
 export interface SettingsRequestBuilderGetQueryParameters {
     /**
@@ -76,6 +82,14 @@ export const SettingsRequestBuilderUriTemplate = "{+baseurl}/security/identities
 const SettingsRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const SettingsRequestBuilderNavigationMetadata: Record<Exclude<keyof SettingsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    autoAuditingConfiguration: {
+        requestsMetadata: AutoAuditingConfigurationRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

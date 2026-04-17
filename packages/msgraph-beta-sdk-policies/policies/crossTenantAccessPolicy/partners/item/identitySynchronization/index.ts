@@ -19,14 +19,14 @@ export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilde
      */
     get restore(): RestoreRequestBuilder;
     /**
-     * Delete the user synchronization policy for a partner-specific configuration.
+     * Delete the user and group synchronization policy for a partner-specific configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the user synchronization policy of a partner-specific configuration.
+     * Get the user and group synchronization policy of a partner-specific configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantIdentitySyncPolicyPartner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -34,7 +34,7 @@ export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilde
      */
      get(requestConfiguration?: RequestConfiguration<IdentitySynchronizationRequestBuilderGetQueryParameters> | undefined) : Promise<CrossTenantIdentitySyncPolicyPartner | undefined>;
     /**
-     * Create a cross-tenant user synchronization policy for a partner-specific configuration.
+     * Create a cross-tenant user and optionally group synchronization policy for a partner-specific configuration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantIdentitySyncPolicyPartner>}
@@ -43,19 +43,19 @@ export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilde
      */
      put(body: CrossTenantIdentitySyncPolicyPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantIdentitySyncPolicyPartner | undefined>;
     /**
-     * Delete the user synchronization policy for a partner-specific configuration.
+     * Delete the user and group synchronization policy for a partner-specific configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the user synchronization policy of a partner-specific configuration.
+     * Get the user and group synchronization policy of a partner-specific configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IdentitySynchronizationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a cross-tenant user synchronization policy for a partner-specific configuration.
+     * Create a cross-tenant user and optionally group synchronization policy for a partner-specific configuration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -63,7 +63,7 @@ export interface IdentitySynchronizationRequestBuilder extends BaseRequestBuilde
      toPutRequestInformation(body: CrossTenantIdentitySyncPolicyPartner, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the user synchronization policy of a partner-specific configuration.
+ * Get the user and group synchronization policy of a partner-specific configuration.
  */
 export interface IdentitySynchronizationRequestBuilderGetQueryParameters {
     /**
