@@ -131,7 +131,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Cloud PC-related reports.
+     * Cloud PC-related reports. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcReports>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -164,7 +164,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Cloud PC-related reports.
+     * Cloud PC-related reports. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -178,7 +178,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      toPatchRequestInformation(body: CloudPcReports, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Cloud PC-related reports.
+ * Cloud PC-related reports. Read-only.
  */
 export interface ReportsRequestBuilderGetQueryParameters {
     /**

@@ -27,28 +27,30 @@ export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsReque
      */
      byTeamworkSectionId(teamworkSectionId: string) : TeamworkSectionItemRequestBuilder;
     /**
-     * User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+     * Get the list of sections in a user's teamwork.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSectionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/userteamwork-list-sections?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SectionsRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkSectionCollectionResponse | undefined>;
     /**
-     * Create new navigation property to sections for users
+     * Create a new section in a user's teamwork.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/userteamwork-post-sections?view=graph-rest-beta|Find more info here}
      */
      post(body: TeamworkSection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkSection | undefined>;
     /**
-     * User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+     * Get the list of sections in a user's teamwork.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SectionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to sections for users
+     * Create a new section in a user's teamwork.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsReque
      toPostRequestInformation(body: TeamworkSection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+ * Get the list of sections in a user's teamwork.
  */
 export interface SectionsRequestBuilderGetQueryParameters {
     /**

@@ -19,40 +19,43 @@ export interface TeamworkSectionItemRequestBuilder extends BaseRequestBuilder<Te
      */
     get items(): ItemsRequestBuilder;
     /**
-     * Delete navigation property sections for users
+     * Delete a user-defined section from a user's teamwork. System-defined sections can't be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksection-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+     * Read the properties of a section in a user's teamwork.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksection-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamworkSectionItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkSection | undefined>;
     /**
-     * Update the navigation property sections in users
+     * Update the properties of a section in a user's teamwork. For system-defined sections, only the sortType property can be updated.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSection>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksection-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: TeamworkSection, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkSection | undefined>;
     /**
-     * Delete navigation property sections for users
+     * Delete a user-defined section from a user's teamwork. System-defined sections can't be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+     * Read the properties of a section in a user's teamwork.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamworkSectionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property sections in users
+     * Update the properties of a section in a user's teamwork. For system-defined sections, only the sortType property can be updated.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +63,7 @@ export interface TeamworkSectionItemRequestBuilder extends BaseRequestBuilder<Te
      toPatchRequestInformation(body: TeamworkSection, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+ * Read the properties of a section in a user's teamwork.
  */
 export interface TeamworkSectionItemRequestBuilderGetQueryParameters {
     /**

@@ -6,6 +6,10 @@ import { createOneDriveForBusinessProtectionPolicyFromDiscriminatorValue, serial
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { DriveExclusionUnitsRequestBuilderNavigationMetadata, DriveExclusionUnitsRequestBuilderRequestsMetadata, type DriveExclusionUnitsRequestBuilder } from './driveExclusionUnits/index.js';
+// @ts-ignore
+import { DriveExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, DriveExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type DriveExclusionUnitsBulkAdditionJobsRequestBuilder } from './driveExclusionUnitsBulkAdditionJobs/index.js';
+// @ts-ignore
 import { DriveInclusionRulesRequestBuilderNavigationMetadata, DriveInclusionRulesRequestBuilderRequestsMetadata, type DriveInclusionRulesRequestBuilder } from './driveInclusionRules/index.js';
 // @ts-ignore
 import { DriveProtectionUnitsRequestBuilderNavigationMetadata, DriveProtectionUnitsRequestBuilderRequestsMetadata, type DriveProtectionUnitsRequestBuilder } from './driveProtectionUnits/index.js';
@@ -18,6 +22,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
  */
 export interface OneDriveForBusinessProtectionPolicyItemRequestBuilder extends BaseRequestBuilder<OneDriveForBusinessProtectionPolicyItemRequestBuilder> {
+    /**
+     * Provides operations to manage the driveExclusionUnits property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     */
+    get driveExclusionUnits(): DriveExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     */
+    get driveExclusionUnitsBulkAdditionJobs(): DriveExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the driveInclusionRules property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
      */
@@ -100,6 +112,14 @@ const OneDriveForBusinessProtectionPolicyItemRequestBuilderGetQueryParametersMap
  * Metadata for all the navigation properties in the request builder.
  */
 export const OneDriveForBusinessProtectionPolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof OneDriveForBusinessProtectionPolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    driveExclusionUnits: {
+        requestsMetadata: DriveExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: DriveExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    driveExclusionUnitsBulkAdditionJobs: {
+        requestsMetadata: DriveExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: DriveExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
+    },
     driveInclusionRules: {
         requestsMetadata: DriveInclusionRulesRequestBuilderRequestsMetadata,
         navigationMetadata: DriveInclusionRulesRequestBuilderNavigationMetadata,

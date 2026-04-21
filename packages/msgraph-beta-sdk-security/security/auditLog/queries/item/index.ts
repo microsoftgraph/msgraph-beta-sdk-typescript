@@ -4,7 +4,7 @@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { createAuditLogQueryFromDiscriminatorValue, serializeAuditLogQuery, type AuditLogQuery } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
+import { createAuditLogQueryFromDiscriminatorValue, type AuditLogQuery } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
 import { RecordsRequestBuilderNavigationMetadata, RecordsRequestBuilderRequestsMetadata, type RecordsRequestBuilder } from './records/index.js';
 // @ts-ignore
@@ -33,14 +33,6 @@ export interface AuditLogQueryItemRequestBuilder extends BaseRequestBuilder<Audi
      */
      get(requestConfiguration?: RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogQuery | undefined>;
     /**
-     * Update the navigation property queries in security
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {Promise<AuditLogQuery>}
-     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     */
-     patch(body: AuditLogQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogQuery | undefined>;
-    /**
      * Delete navigation property queries for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -52,13 +44,6 @@ export interface AuditLogQueryItemRequestBuilder extends BaseRequestBuilder<Audi
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuditLogQueryItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
-    /**
-     * Update the navigation property queries in security
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {RequestInformation}
-     */
-     toPatchRequestInformation(body: AuditLogQuery, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Read the properties and relationships of an auditLogQuery object.
@@ -114,18 +99,6 @@ export const AuditLogQueryItemRequestBuilderRequestsMetadata: RequestsMetadata =
         adapterMethodName: "send",
         responseBodyFactory:  createAuditLogQueryFromDiscriminatorValue,
         queryParametersMapper: AuditLogQueryItemRequestBuilderGetQueryParametersMapper,
-    },
-    patch: {
-        uriTemplate: AuditLogQueryItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "send",
-        responseBodyFactory:  createAuditLogQueryFromDiscriminatorValue,
-        requestBodyContentType: "application/json",
-        requestBodySerializer: serializeAuditLogQuery,
-        requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
 /* tslint:enable */

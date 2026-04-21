@@ -3642,6 +3642,7 @@ export function deserializeIntoForwardingPolicyCollectionResponse(forwardingPoli
 export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoPolicyLink(forwardingPolicyLink),
+        "priority": n => { forwardingPolicyLink.priority = n.getNumberValue(); },
     }
 }
 /**
@@ -5336,6 +5337,10 @@ export interface ForwardingPolicyCollectionResponse extends BaseCollectionPagina
     value?: ForwardingPolicy[] | null;
 }
 export interface ForwardingPolicyLink extends Parsable, PolicyLink {
+    /**
+     * The priority property
+     */
+    priority?: number | null;
 }
 export interface ForwardingProfile extends Parsable, Profile {
     /**
@@ -7331,6 +7336,7 @@ export function serializeForwardingPolicyCollectionResponse(writer: Serializatio
 export function serializeForwardingPolicyLink(writer: SerializationWriter, forwardingPolicyLink: Partial<ForwardingPolicyLink> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!forwardingPolicyLink || isSerializingDerivedType) { return; }
     serializePolicyLink(writer, forwardingPolicyLink, isSerializingDerivedType)
+    writer.writeNumberValue("priority", forwardingPolicyLink.priority);
 }
 /**
  * Serializes information the current object

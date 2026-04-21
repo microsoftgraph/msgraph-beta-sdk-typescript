@@ -4,7 +4,7 @@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { createAuditLogRecordCollectionResponseFromDiscriminatorValue, createAuditLogRecordFromDiscriminatorValue, serializeAuditLogRecord, type AuditLogRecord, type AuditLogRecordCollectionResponse } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
+import { createAuditLogRecordCollectionResponseFromDiscriminatorValue, type AuditLogRecordCollectionResponse } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
@@ -35,26 +35,11 @@ export interface RecordsRequestBuilder extends BaseRequestBuilder<RecordsRequest
      */
      get(requestConfiguration?: RequestConfiguration<RecordsRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogRecordCollectionResponse | undefined>;
     /**
-     * Create new navigation property to records for security
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {Promise<AuditLogRecord>}
-     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     */
-     post(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogRecord | undefined>;
-    /**
      * Get a list of the auditLogRecord objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RecordsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
-    /**
-     * Create new navigation property to records for security
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {RequestInformation}
-     */
-     toPostRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * Get a list of the auditLogRecord objects and their properties.
@@ -135,18 +120,6 @@ export const RecordsRequestBuilderRequestsMetadata: RequestsMetadata = {
         adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRecordCollectionResponseFromDiscriminatorValue,
         queryParametersMapper: RecordsRequestBuilderGetQueryParametersMapper,
-    },
-    post: {
-        uriTemplate: RecordsRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "send",
-        responseBodyFactory:  createAuditLogRecordFromDiscriminatorValue,
-        requestBodyContentType: "application/json",
-        requestBodySerializer: serializeAuditLogRecord,
-        requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
 /* tslint:enable */

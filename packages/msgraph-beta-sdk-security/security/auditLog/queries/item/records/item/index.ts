@@ -4,7 +4,7 @@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { createAuditLogRecordFromDiscriminatorValue, serializeAuditLogRecord, type AuditLogRecord } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
+import { createAuditLogRecordFromDiscriminatorValue, type AuditLogRecord } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -13,12 +13,6 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface AuditLogRecordItemRequestBuilder extends BaseRequestBuilder<AuditLogRecordItemRequestBuilder> {
     /**
-     * Delete navigation property records for security
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     */
-     delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
-    /**
      * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AuditLogRecord>}
@@ -26,32 +20,11 @@ export interface AuditLogRecordItemRequestBuilder extends BaseRequestBuilder<Aud
      */
      get(requestConfiguration?: RequestConfiguration<AuditLogRecordItemRequestBuilderGetQueryParameters> | undefined) : Promise<AuditLogRecord | undefined>;
     /**
-     * Update the navigation property records in security
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {Promise<AuditLogRecord>}
-     * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     */
-     patch(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AuditLogRecord | undefined>;
-    /**
-     * Delete navigation property records for security
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {RequestInformation}
-     */
-     toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
-    /**
      * An individual audit log record.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AuditLogRecordItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
-    /**
-     * Update the navigation property records in security
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @returns {RequestInformation}
-     */
-     toPatchRequestInformation(body: AuditLogRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
  * An individual audit log record.
@@ -81,14 +54,6 @@ const AuditLogRecordItemRequestBuilderGetQueryParametersMapper: Record<string, s
  * Metadata for all the requests in the request builder.
  */
 export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata = {
-    delete: {
-        uriTemplate: AuditLogRecordItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "sendNoResponseContent",
-    },
     get: {
         uriTemplate: AuditLogRecordItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
@@ -98,18 +63,6 @@ export const AuditLogRecordItemRequestBuilderRequestsMetadata: RequestsMetadata 
         adapterMethodName: "send",
         responseBodyFactory:  createAuditLogRecordFromDiscriminatorValue,
         queryParametersMapper: AuditLogRecordItemRequestBuilderGetQueryParametersMapper,
-    },
-    patch: {
-        uriTemplate: AuditLogRecordItemRequestBuilderUriTemplate,
-        responseBodyContentType: "application/json",
-        errorMappings: {
-            XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
-        },
-        adapterMethodName: "send",
-        responseBodyFactory:  createAuditLogRecordFromDiscriminatorValue,
-        requestBodyContentType: "application/json",
-        requestBodySerializer: serializeAuditLogRecord,
-        requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
 /* tslint:enable */
