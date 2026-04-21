@@ -10,6 +10,8 @@ import { AcceptRecommendationsRequestBuilderRequestsMetadata, type AcceptRecomme
 // @ts-ignore
 import { ApplyDecisionsRequestBuilderRequestsMetadata, type ApplyDecisionsRequestBuilder } from './applyDecisions/index.js';
 // @ts-ignore
+import { BatchApplyCustomDataProvidedResourceDecisionsRequestBuilderRequestsMetadata, type BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder } from './batchApplyCustomDataProvidedResourceDecisions/index.js';
+// @ts-ignore
 import { BatchRecordDecisionsRequestBuilderRequestsMetadata, type BatchRecordDecisionsRequestBuilder } from './batchRecordDecisions/index.js';
 // @ts-ignore
 import { ContactedReviewersRequestBuilderNavigationMetadata, ContactedReviewersRequestBuilderRequestsMetadata, type ContactedReviewersRequestBuilder } from './contactedReviewers/index.js';
@@ -40,6 +42,10 @@ export interface InstanceRequestBuilder extends BaseRequestBuilder<InstanceReque
      * Provides operations to call the applyDecisions method.
      */
     get applyDecisions(): ApplyDecisionsRequestBuilder;
+    /**
+     * Provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.
+     */
+    get batchApplyCustomDataProvidedResourceDecisions(): BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder;
     /**
      * Provides operations to call the batchRecordDecisions method.
      */
@@ -146,6 +152,9 @@ export const InstanceRequestBuilderNavigationMetadata: Record<Exclude<keyof Inst
     },
     applyDecisions: {
         requestsMetadata: ApplyDecisionsRequestBuilderRequestsMetadata,
+    },
+    batchApplyCustomDataProvidedResourceDecisions: {
+        requestsMetadata: BatchApplyCustomDataProvidedResourceDecisionsRequestBuilderRequestsMetadata,
     },
     batchRecordDecisions: {
         requestsMetadata: BatchRecordDecisionsRequestBuilderRequestsMetadata,

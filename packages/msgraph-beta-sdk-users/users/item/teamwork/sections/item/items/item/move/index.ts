@@ -44,15 +44,16 @@ export interface MovePostRequestBody extends AdditionalDataHolder, BackedModel, 
  */
 export interface MoveRequestBuilder extends BaseRequestBuilder<MoveRequestBuilder> {
     /**
-     * Invoke action move
+     * Move an item from one user-defined section to another user-defined section in a user's teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section. Use this action instead of add when the item is already in a user-defined section.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSectionItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksectionitem-move?view=graph-rest-beta|Find more info here}
      */
      post(body: MovePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkSectionItem | undefined>;
     /**
-     * Invoke action move
+     * Move an item from one user-defined section to another user-defined section in a user's teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section. Use this action instead of add when the item is already in a user-defined section.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

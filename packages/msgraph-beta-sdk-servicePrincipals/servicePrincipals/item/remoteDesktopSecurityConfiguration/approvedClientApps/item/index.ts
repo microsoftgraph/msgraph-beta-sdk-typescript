@@ -13,40 +13,43 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ApprovedClientAppItemRequestBuilder extends BaseRequestBuilder<ApprovedClientAppItemRequestBuilder> {
     /**
-     * Delete navigation property approvedClientApps for servicePrincipals
+     * Delete a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-delete-approvedclientapps?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get approvedClientApps from servicePrincipals
+     * Read the properties and relationships of a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a servicePrincipal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovedClientApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/approvedclientapp-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovedClientAppItemRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovedClientApp | undefined>;
     /**
-     * Update the navigation property approvedClientApps in servicePrincipals
+     * Update the properties of an approvedClientApp object for a remotedesktopsecurityconfiguration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovedClientApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/approvedclientapp-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ApprovedClientApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovedClientApp | undefined>;
     /**
-     * Delete navigation property approvedClientApps for servicePrincipals
+     * Delete a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get approvedClientApps from servicePrincipals
+     * Read the properties and relationships of a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a servicePrincipal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovedClientAppItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property approvedClientApps in servicePrincipals
+     * Update the properties of an approvedClientApp object for a remotedesktopsecurityconfiguration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +57,7 @@ export interface ApprovedClientAppItemRequestBuilder extends BaseRequestBuilder<
      toPatchRequestInformation(body: ApprovedClientApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get approvedClientApps from servicePrincipals
+ * Read the properties and relationships of a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a servicePrincipal.
  */
 export interface ApprovedClientAppItemRequestBuilderGetQueryParameters {
     /**

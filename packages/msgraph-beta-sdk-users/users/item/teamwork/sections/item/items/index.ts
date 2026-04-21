@@ -27,28 +27,30 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      */
      byTeamworkSectionItemId(teamworkSectionItemId: string) : TeamworkSectionItemItemRequestBuilder;
     /**
-     * Get items from users
+     * Get the list of items in a section of a user's teamwork.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSectionItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksection-list-items?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ItemsRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkSectionItemCollectionResponse | undefined>;
     /**
-     * Create new navigation property to items for users
+     * Add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user's teamwork. Each item can belong to only one section at a time. You can only add items that are currently in a system-defined section. If the item is already in another user-defined section, use the move action to relocate it.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSectionItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksection-post-items?view=graph-rest-beta|Find more info here}
      */
      post(body: TeamworkSectionItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkSectionItem | undefined>;
     /**
-     * Get items from users
+     * Get the list of items in a section of a user's teamwork.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to items for users
+     * Add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user's teamwork. Each item can belong to only one section at a time. You can only add items that are currently in a system-defined section. If the item is already in another user-defined section, use the move action to relocate it.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface ItemsRequestBuilder extends BaseRequestBuilder<ItemsRequestBuil
      toPostRequestInformation(body: TeamworkSectionItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get items from users
+ * Get the list of items in a section of a user's teamwork.
  */
 export interface ItemsRequestBuilderGetQueryParameters {
     /**

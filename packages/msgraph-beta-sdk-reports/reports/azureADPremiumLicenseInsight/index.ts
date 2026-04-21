@@ -19,10 +19,11 @@ export interface AzureADPremiumLicenseInsightRequestBuilder extends BaseRequestB
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get azureADPremiumLicenseInsight from reports
+     * Get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AzureADPremiumLicenseInsight>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/azureadpremiumlicenseinsight-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AzureADPremiumLicenseInsightRequestBuilderGetQueryParameters> | undefined) : Promise<AzureADPremiumLicenseInsight | undefined>;
     /**
@@ -40,7 +41,7 @@ export interface AzureADPremiumLicenseInsightRequestBuilder extends BaseRequestB
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get azureADPremiumLicenseInsight from reports
+     * Get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface AzureADPremiumLicenseInsightRequestBuilder extends BaseRequestB
      toPatchRequestInformation(body: AzureADPremiumLicenseInsight, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get azureADPremiumLicenseInsight from reports
+ * Get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
  */
 export interface AzureADPremiumLicenseInsightRequestBuilderGetQueryParameters {
     /**

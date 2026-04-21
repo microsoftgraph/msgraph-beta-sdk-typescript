@@ -19,13 +19,14 @@ export interface TeamworkSectionItemItemRequestBuilder extends BaseRequestBuilde
      */
     get move(): MoveRequestBuilder;
     /**
-     * Delete navigation property items for users
+     * Remove an item from a user-defined section in a user's teamwork. This API doesn't delete the underlying chat, channel, meeting, or community; it only removes the item from the user-defined section. The item is automatically moved back to its default system-defined section.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworksectionitem-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get items from users
+     * The items (chats, channels, meetings, or communities) organized within the section.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkSectionItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,13 +41,13 @@ export interface TeamworkSectionItemItemRequestBuilder extends BaseRequestBuilde
      */
      patch(body: TeamworkSectionItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkSectionItem | undefined>;
     /**
-     * Delete navigation property items for users
+     * Remove an item from a user-defined section in a user's teamwork. This API doesn't delete the underlying chat, channel, meeting, or community; it only removes the item from the user-defined section. The item is automatically moved back to its default system-defined section.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get items from users
+     * The items (chats, channels, meetings, or communities) organized within the section.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +61,7 @@ export interface TeamworkSectionItemItemRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: TeamworkSectionItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get items from users
+ * The items (chats, channels, meetings, or communities) organized within the section.
  */
 export interface TeamworkSectionItemItemRequestBuilderGetQueryParameters {
     /**

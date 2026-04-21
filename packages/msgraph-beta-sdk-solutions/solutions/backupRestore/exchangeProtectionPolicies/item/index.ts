@@ -6,6 +6,10 @@ import { createExchangeProtectionPolicyFromDiscriminatorValue, serializeExchange
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { MailboxExclusionUnitsRequestBuilderNavigationMetadata, MailboxExclusionUnitsRequestBuilderRequestsMetadata, type MailboxExclusionUnitsRequestBuilder } from './mailboxExclusionUnits/index.js';
+// @ts-ignore
+import { MailboxExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, MailboxExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type MailboxExclusionUnitsBulkAdditionJobsRequestBuilder } from './mailboxExclusionUnitsBulkAdditionJobs/index.js';
+// @ts-ignore
 import { MailboxInclusionRulesRequestBuilderNavigationMetadata, MailboxInclusionRulesRequestBuilderRequestsMetadata, type MailboxInclusionRulesRequestBuilder } from './mailboxInclusionRules/index.js';
 // @ts-ignore
 import { MailboxProtectionUnitsRequestBuilderNavigationMetadata, MailboxProtectionUnitsRequestBuilderRequestsMetadata, type MailboxProtectionUnitsRequestBuilder } from './mailboxProtectionUnits/index.js';
@@ -18,6 +22,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
  */
 export interface ExchangeProtectionPolicyItemRequestBuilder extends BaseRequestBuilder<ExchangeProtectionPolicyItemRequestBuilder> {
+    /**
+     * Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.
+     */
+    get mailboxExclusionUnits(): MailboxExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.
+     */
+    get mailboxExclusionUnitsBulkAdditionJobs(): MailboxExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.exchangeProtectionPolicy entity.
      */
@@ -100,6 +112,14 @@ const ExchangeProtectionPolicyItemRequestBuilderGetQueryParametersMapper: Record
  * Metadata for all the navigation properties in the request builder.
  */
 export const ExchangeProtectionPolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ExchangeProtectionPolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    mailboxExclusionUnits: {
+        requestsMetadata: MailboxExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: MailboxExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    mailboxExclusionUnitsBulkAdditionJobs: {
+        requestsMetadata: MailboxExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: MailboxExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
+    },
     mailboxInclusionRules: {
         requestsMetadata: MailboxInclusionRulesRequestBuilderRequestsMetadata,
         navigationMetadata: MailboxInclusionRulesRequestBuilderNavigationMetadata,

@@ -27,28 +27,30 @@ export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<App
      */
      byApprovedClientAppId(approvedClientAppId: string) : ApprovedClientAppItemRequestBuilder;
     /**
-     * Get approvedClientApps from servicePrincipals
+     * Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovedClientAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-approvedclientapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovedClientAppsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovedClientAppCollectionResponse | undefined>;
     /**
-     * Create new navigation property to approvedClientApps for servicePrincipals
+     * Create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovedClientApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-approvedclientapps?view=graph-rest-beta|Find more info here}
      */
      post(body: ApprovedClientApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovedClientApp | undefined>;
     /**
-     * Get approvedClientApps from servicePrincipals
+     * Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovedClientAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to approvedClientApps for servicePrincipals
+     * Create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<App
      toPostRequestInformation(body: ApprovedClientApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get approvedClientApps from servicePrincipals
+ * Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
  */
 export interface ApprovedClientAppsRequestBuilderGetQueryParameters {
     /**
