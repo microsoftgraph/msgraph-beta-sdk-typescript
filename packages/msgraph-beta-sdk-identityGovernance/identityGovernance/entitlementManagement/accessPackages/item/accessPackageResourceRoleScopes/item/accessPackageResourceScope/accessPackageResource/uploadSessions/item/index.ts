@@ -6,6 +6,8 @@ import { createCustomDataProvidedResourceUploadSessionFromDiscriminatorValue, se
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { FilesRequestBuilderNavigationMetadata, FilesRequestBuilderRequestsMetadata, type FilesRequestBuilder } from './files/index.js';
+// @ts-ignore
 import { type UploadFileRequestBuilder, UploadFileRequestBuilderRequestsMetadata } from './uploadFile/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
  */
 export interface CustomDataProvidedResourceUploadSessionItemRequestBuilder extends BaseRequestBuilder<CustomDataProvidedResourceUploadSessionItemRequestBuilder> {
+    /**
+     * Provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+     */
+    get files(): FilesRequestBuilder;
     /**
      * Provides operations to call the uploadFile method.
      */
@@ -87,6 +93,10 @@ const CustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameter
  * Metadata for all the navigation properties in the request builder.
  */
 export const CustomDataProvidedResourceUploadSessionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CustomDataProvidedResourceUploadSessionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    files: {
+        requestsMetadata: FilesRequestBuilderRequestsMetadata,
+        navigationMetadata: FilesRequestBuilderNavigationMetadata,
+    },
     uploadFile: {
         requestsMetadata: UploadFileRequestBuilderRequestsMetadata,
     },

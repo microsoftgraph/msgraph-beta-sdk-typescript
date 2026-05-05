@@ -31,14 +31,15 @@ export interface BatchApplyCustomDataProvidedResourceDecisionsPostRequestBody ex
  */
 export interface BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder extends BaseRequestBuilder<BatchApplyCustomDataProvidedResourceDecisionsRequestBuilder> {
     /**
-     * Invoke action batchApplyCustomDataProvidedResourceDecisions
+     * Enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/accessreviewinstance-batchapplycustomdataprovidedresourcedecisions?view=graph-rest-beta|Find more info here}
      */
      post(body: BatchApplyCustomDataProvidedResourceDecisionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action batchApplyCustomDataProvidedResourceDecisions
+     * Enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

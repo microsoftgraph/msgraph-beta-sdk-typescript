@@ -6,6 +6,8 @@ import { createCustomDataProvidedResourceUploadSessionFromDiscriminatorValue, se
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { FilesRequestBuilderNavigationMetadata, FilesRequestBuilderRequestsMetadata, type FilesRequestBuilder } from './files/index.js';
+// @ts-ignore
 import { type UploadFileRequestBuilder, UploadFileRequestBuilderRequestsMetadata } from './uploadFile/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,11 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
  */
 export interface CustomDataProvidedResourceUploadSessionItemRequestBuilder extends BaseRequestBuilder<CustomDataProvidedResourceUploadSessionItemRequestBuilder> {
+    /**
+     * Provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+     */
+    get files(): FilesRequestBuilder;
     /**
      * Provides operations to call the uploadFile method.
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
@@ -27,22 +34,20 @@ export interface CustomDataProvidedResourceUploadSessionItemRequestBuilder exten
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a customDataProvidedResourceUploadSession object.
+     * Get uploadSessions from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
-     * @see {@link https://learn.microsoft.com/graph/api/customdataprovidedresourceuploadsession-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomDataProvidedResourceUploadSession | undefined>;
     /**
-     * Update the properties of a customDataProvidedResourceUploadSession created for a customDataProvidedResource object.
+     * Update the navigation property uploadSessions in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
-     * @see {@link https://learn.microsoft.com/graph/api/customdataprovidedresourceuploadsession-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomDataProvidedResourceUploadSession | undefined>;
     /**
@@ -53,14 +58,14 @@ export interface CustomDataProvidedResourceUploadSessionItemRequestBuilder exten
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a customDataProvidedResourceUploadSession object.
+     * Get uploadSessions from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a customDataProvidedResourceUploadSession created for a customDataProvidedResource object.
+     * Update the navigation property uploadSessions in identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -69,7 +74,7 @@ export interface CustomDataProvidedResourceUploadSessionItemRequestBuilder exten
      toPatchRequestInformation(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a customDataProvidedResourceUploadSession object.
+ * Get uploadSessions from identityGovernance
  */
 export interface CustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters {
     /**
@@ -96,6 +101,10 @@ const CustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameter
  * Metadata for all the navigation properties in the request builder.
  */
 export const CustomDataProvidedResourceUploadSessionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CustomDataProvidedResourceUploadSessionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    files: {
+        requestsMetadata: FilesRequestBuilderRequestsMetadata,
+        navigationMetadata: FilesRequestBuilderNavigationMetadata,
+    },
     uploadFile: {
         requestsMetadata: UploadFileRequestBuilderRequestsMetadata,
     },

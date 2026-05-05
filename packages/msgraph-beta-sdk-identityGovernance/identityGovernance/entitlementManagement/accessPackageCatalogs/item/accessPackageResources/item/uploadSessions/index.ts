@@ -29,7 +29,7 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      */
      byCustomDataProvidedResourceUploadSessionId(customDataProvidedResourceUploadSessionId: string) : CustomDataProvidedResourceUploadSessionItemRequestBuilder;
     /**
-     * Read the properties and relationships of a customDataProvidedResourceUploadSession object.
+     * Get uploadSessions from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -37,24 +37,23 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      */
      get(requestConfiguration?: RequestConfiguration<UploadSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<CustomDataProvidedResourceUploadSessionCollectionResponse | undefined>;
     /**
-     * Create a new customDataProvidedResourceUploadSession object.
+     * Create new navigation property to uploadSessions for identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
-     * @see {@link https://learn.microsoft.com/graph/api/customdataprovidedresource-post-uploadsessions?view=graph-rest-beta|Find more info here}
      */
      post(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomDataProvidedResourceUploadSession | undefined>;
     /**
-     * Read the properties and relationships of a customDataProvidedResourceUploadSession object.
+     * Get uploadSessions from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UploadSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new customDataProvidedResourceUploadSession object.
+     * Create new navigation property to uploadSessions for identityGovernance
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -63,7 +62,7 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      toPostRequestInformation(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a customDataProvidedResourceUploadSession object.
+ * Get uploadSessions from identityGovernance
  */
 export interface UploadSessionsRequestBuilderGetQueryParameters {
     /**

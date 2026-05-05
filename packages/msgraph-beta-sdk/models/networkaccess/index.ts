@@ -981,6 +981,8 @@ export function createBaseEntityFromDiscriminatorValue(parseNode: ParseNode | un
                     return deserializeIntoFilteringProfile;
                 case "#microsoft.graph.networkaccess.forwardingProfile":
                     return deserializeIntoForwardingProfile;
+                case "#microsoft.graph.networkaccess.forwardingProfileBase":
+                    return deserializeIntoForwardingProfileBase;
                 case "#microsoft.graph.networkaccess.profile":
                     return deserializeIntoProfile;
                 case "#microsoft.graph.networkaccess.remoteNetwork":
@@ -1547,6 +1549,26 @@ export function createForwardingPolicyLinkFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ForwardingProfileBase}
+ */
+// @ts-ignore
+export function createForwardingProfileBaseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.networkaccess.forwardingProfile":
+                    return deserializeIntoForwardingProfile;
+            }
+        }
+    }
+    return deserializeIntoForwardingProfileBase;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ForwardingProfileCollectionResponse}
  */
 // @ts-ignore
@@ -1921,6 +1943,8 @@ export function createProfileFromDiscriminatorValue(parseNode: ParseNode | undef
                     return deserializeIntoFilteringProfile;
                 case "#microsoft.graph.networkaccess.forwardingProfile":
                     return deserializeIntoForwardingProfile;
+                case "#microsoft.graph.networkaccess.forwardingProfileBase":
+                    return deserializeIntoForwardingProfileBase;
             }
         }
     }
@@ -3653,12 +3677,23 @@ export function deserializeIntoForwardingPolicyLink(forwardingPolicyLink: Partia
 // @ts-ignore
 export function deserializeIntoForwardingProfile(forwardingProfile: Partial<ForwardingProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        ...deserializeIntoProfile(forwardingProfile),
-        "associations": n => { forwardingProfile.associations = n.getCollectionOfObjectValues<Association>(createAssociationFromDiscriminatorValue); },
-        "isCustomProfile": n => { forwardingProfile.isCustomProfile = n.getBooleanValue(); },
-        "priority": n => { forwardingProfile.priority = n.getNumberValue(); },
-        "servicePrincipal": n => { forwardingProfile.servicePrincipal = n.getObjectValue<ServicePrincipal>(createServicePrincipalFromDiscriminatorValue); },
-        "trafficForwardingType": n => { forwardingProfile.trafficForwardingType = n.getEnumValue<TrafficForwardingType>(TrafficForwardingTypeObject); },
+        ...deserializeIntoForwardingProfileBase(forwardingProfile),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ForwardingProfileBase The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoForwardingProfileBase(forwardingProfileBase: Partial<ForwardingProfileBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoProfile(forwardingProfileBase),
+        "associations": n => { forwardingProfileBase.associations = n.getCollectionOfObjectValues<Association>(createAssociationFromDiscriminatorValue); },
+        "isCustomProfile": n => { forwardingProfileBase.isCustomProfile = n.getBooleanValue(); },
+        "priority": n => { forwardingProfileBase.priority = n.getNumberValue(); },
+        "servicePrincipal": n => { forwardingProfileBase.servicePrincipal = n.getObjectValue<ServicePrincipal>(createServicePrincipalFromDiscriminatorValue); },
+        "trafficForwardingType": n => { forwardingProfileBase.trafficForwardingType = n.getEnumValue<TrafficForwardingType>(TrafficForwardingTypeObject); },
     }
 }
 /**
@@ -5342,9 +5377,11 @@ export interface ForwardingPolicyLink extends Parsable, PolicyLink {
      */
     priority?: number | null;
 }
-export interface ForwardingProfile extends Parsable, Profile {
+export interface ForwardingProfile extends ForwardingProfileBase, Parsable {
+}
+export interface ForwardingProfileBase extends Parsable, Profile {
     /**
-     * Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
+     * The associations property
      */
     associations?: Association[] | null;
     /**
@@ -5352,7 +5389,7 @@ export interface ForwardingProfile extends Parsable, Profile {
      */
     isCustomProfile?: boolean | null;
     /**
-     * Profile priority.
+     * The priority property
      */
     priority?: number | null;
     /**
@@ -6446,6 +6483,9 @@ export function serializeBaseEntity(writer: SerializationWriter, baseEntity: Par
         case "#microsoft.graph.networkaccess.forwardingProfile":
             serializeForwardingProfile(writer, baseEntity, true);
         break;
+        case "#microsoft.graph.networkaccess.forwardingProfileBase":
+            serializeForwardingProfileBase(writer, baseEntity, true);
+        break;
         case "#microsoft.graph.networkaccess.profile":
             serializeProfile(writer, baseEntity, true);
         break;
@@ -7347,12 +7387,28 @@ export function serializeForwardingPolicyLink(writer: SerializationWriter, forwa
 // @ts-ignore
 export function serializeForwardingProfile(writer: SerializationWriter, forwardingProfile: Partial<ForwardingProfile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!forwardingProfile || isSerializingDerivedType) { return; }
-    serializeProfile(writer, forwardingProfile, isSerializingDerivedType)
-    writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfile.associations, serializeAssociation);
-    writer.writeBooleanValue("isCustomProfile", forwardingProfile.isCustomProfile);
-    writer.writeNumberValue("priority", forwardingProfile.priority);
-    writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfile.servicePrincipal, serializeServicePrincipal);
-    writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfile.trafficForwardingType);
+    serializeForwardingProfileBase(writer, forwardingProfile, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param ForwardingProfileBase The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeForwardingProfileBase(writer: SerializationWriter, forwardingProfileBase: Partial<ForwardingProfileBase> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!forwardingProfileBase || isSerializingDerivedType) { return; }
+    serializeProfile(writer, forwardingProfileBase, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Association>("associations", forwardingProfileBase.associations, serializeAssociation);
+    writer.writeBooleanValue("isCustomProfile", forwardingProfileBase.isCustomProfile);
+    writer.writeNumberValue("priority", forwardingProfileBase.priority);
+    writer.writeObjectValue<ServicePrincipal>("servicePrincipal", forwardingProfileBase.servicePrincipal, serializeServicePrincipal);
+    writer.writeEnumValue<TrafficForwardingType>("trafficForwardingType", forwardingProfileBase.trafficForwardingType);
+    switch (forwardingProfileBase.odataType) {
+        case "#microsoft.graph.networkaccess.forwardingProfile":
+            serializeForwardingProfile(writer, forwardingProfileBase, true);
+        break;
+    }
 }
 /**
  * Serializes information the current object
@@ -7906,6 +7962,9 @@ export function serializeProfile(writer: SerializationWriter, profile: Partial<P
         break;
         case "#microsoft.graph.networkaccess.forwardingProfile":
             serializeForwardingProfile(writer, profile, true);
+        break;
+        case "#microsoft.graph.networkaccess.forwardingProfileBase":
+            serializeForwardingProfileBase(writer, profile, true);
         break;
     }
 }
