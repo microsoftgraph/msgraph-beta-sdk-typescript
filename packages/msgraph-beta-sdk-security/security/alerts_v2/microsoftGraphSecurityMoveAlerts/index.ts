@@ -37,7 +37,7 @@ export function deserializeIntoMoveAlertsPostRequestBody(moveAlertsPostRequestBo
  */
 export interface MicrosoftGraphSecurityMoveAlertsRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityMoveAlertsRequestBuilder> {
     /**
-     * Move one or more alert resources to an existing incident.
+     * Move one or more alert resources to a new or existing incident.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MergeResponse>}
@@ -46,7 +46,7 @@ export interface MicrosoftGraphSecurityMoveAlertsRequestBuilder extends BaseRequ
      */
      post(body: MoveAlertsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MergeResponse | undefined>;
     /**
-     * Move one or more alert resources to an existing incident.
+     * Move one or more alert resources to a new or existing incident.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -25,7 +25,7 @@ export interface VerifiedIdRequestBuilder extends BaseRequestBuilder<VerifiedIdR
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get verifiedId from identity
+     * Entry point for verified ID operations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityVerifiedIdRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface VerifiedIdRequestBuilder extends BaseRequestBuilder<VerifiedIdR
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get verifiedId from identity
+     * Entry point for verified ID operations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface VerifiedIdRequestBuilder extends BaseRequestBuilder<VerifiedIdR
      toPatchRequestInformation(body: IdentityVerifiedIdRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get verifiedId from identity
+ * Entry point for verified ID operations.
  */
 export interface VerifiedIdRequestBuilderGetQueryParameters {
     /**

@@ -34,11 +34,12 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      */
      get(requestConfiguration?: RequestConfiguration<CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomAuthenticationExtension | undefined>;
     /**
-     * Update the navigation property customAuthenticationExtensions in identity
+     * Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomAuthenticationExtension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomAuthenticationExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomAuthenticationExtension | undefined>;
     /**
@@ -54,7 +55,7 @@ export interface CustomAuthenticationExtensionItemRequestBuilder extends BaseReq
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property customAuthenticationExtensions in identity
+     * Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

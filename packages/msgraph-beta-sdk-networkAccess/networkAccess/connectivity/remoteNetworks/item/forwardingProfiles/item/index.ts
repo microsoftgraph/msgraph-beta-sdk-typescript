@@ -21,7 +21,7 @@ export interface ForwardingProfileItemRequestBuilder extends BaseRequestBuilder<
      */
     get policies(): PoliciesRequestBuilder;
     /**
-     * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+     * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.
      */
     get servicePrincipal(): ServicePrincipalRequestBuilder;
     /**

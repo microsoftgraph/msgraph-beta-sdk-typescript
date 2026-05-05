@@ -44,15 +44,16 @@ export function deserializeIntoCancelProcessingPostRequestBody(cancelProcessingP
  */
 export interface MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder extends BaseRequestBuilder<MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder> {
     /**
-     * Invoke action cancelProcessing
+     * Cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2025-11/PrivatePreview:cancelWorkflows on 2025-10-28 and will be removed 2026-10-28
+     * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-workflow-cancelprocessing?view=graph-rest-beta|Find more info here}
      */
      post(body: CancelProcessingPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action cancelProcessing
+     * Cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

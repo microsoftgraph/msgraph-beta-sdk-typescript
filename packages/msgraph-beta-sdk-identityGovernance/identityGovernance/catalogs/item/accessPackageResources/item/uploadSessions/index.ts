@@ -29,31 +29,33 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      */
      byCustomDataProvidedResourceUploadSessionId(customDataProvidedResourceUploadSessionId: string) : CustomDataProvidedResourceUploadSessionItemRequestBuilder;
     /**
-     * Get uploadSessions from identityGovernance
+     * Get a list of the customDataProvidedResourceUploadSession objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+     * @see {@link https://learn.microsoft.com/graph/api/accesspackageresource-list-uploadsessions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UploadSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<CustomDataProvidedResourceUploadSessionCollectionResponse | undefined>;
     /**
-     * Create new navigation property to uploadSessions for identityGovernance
+     * Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+     * @see {@link https://learn.microsoft.com/graph/api/customdataprovidedresource-post-uploadsessions?view=graph-rest-beta|Find more info here}
      */
      post(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomDataProvidedResourceUploadSession | undefined>;
     /**
-     * Get uploadSessions from identityGovernance
+     * Get a list of the customDataProvidedResourceUploadSession objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UploadSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to uploadSessions for identityGovernance
+     * Create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -62,7 +64,7 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      toPostRequestInformation(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get uploadSessions from identityGovernance
+ * Get a list of the customDataProvidedResourceUploadSession objects and their properties.
  */
 export interface UploadSessionsRequestBuilderGetQueryParameters {
     /**
