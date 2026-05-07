@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.75](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.74...v1.0.0-preview.75) (2026-05-05)
+
+
+### Features
+
+* **generation:** update request builders and models ([3c64b71](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/3c64b7109e9a3ec4650f2f4ed28a92be7fd0ea24))
+* **generation:** update request builders and models ([8479e77](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/8479e773e9a658278644b19963720ddd041ee9b3))
+
 ## [1.0.0-preview.74](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.73...v1.0.0-preview.74) (2026-04-17)
 
 
