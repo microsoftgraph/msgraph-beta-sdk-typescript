@@ -13,18 +13,17 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface PhotoUpdateSettingsRequestBuilder extends BaseRequestBuilder<PhotoUpdateSettingsRequestBuilder> {
     /**
-     * Delete a photoUpdateSettings object.
+     * Delete navigation property photoUpdateSettings for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/peopleadminsettings-delete-photoupdatesettings?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a photoUpdateSettings object.
+     * Get the properties of a photoUpdateSettings object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PhotoUpdateSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/photoupdatesettings-get?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/peopleadminsettings-list-photoupdatesettings?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PhotoUpdateSettingsRequestBuilderGetQueryParameters> | undefined) : Promise<PhotoUpdateSettings | undefined>;
     /**
@@ -37,13 +36,13 @@ export interface PhotoUpdateSettingsRequestBuilder extends BaseRequestBuilder<Ph
      */
      patch(body: PhotoUpdateSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PhotoUpdateSettings | undefined>;
     /**
-     * Delete a photoUpdateSettings object.
+     * Delete navigation property photoUpdateSettings for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a photoUpdateSettings object.
+     * Get the properties of a photoUpdateSettings object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +56,7 @@ export interface PhotoUpdateSettingsRequestBuilder extends BaseRequestBuilder<Ph
      toPatchRequestInformation(body: PhotoUpdateSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a photoUpdateSettings object.
+ * Get the properties of a photoUpdateSettings object.
  */
 export interface PhotoUpdateSettingsRequestBuilderGetQueryParameters {
     /**

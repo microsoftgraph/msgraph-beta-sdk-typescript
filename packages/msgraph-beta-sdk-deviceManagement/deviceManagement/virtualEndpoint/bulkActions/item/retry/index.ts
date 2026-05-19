@@ -42,14 +42,15 @@ export interface RetryPostRequestBody extends AdditionalDataHolder, BackedModel,
  */
 export interface RetryRequestBuilder extends BaseRequestBuilder<RetryRequestBuilder> {
     /**
-     * Invoke action retry
+     * Retry a cloudPcBulkAction object with selected Cloud PCs.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcbulkaction-retry?view=graph-rest-beta|Find more info here}
      */
      post(body: RetryPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action retry
+     * Retry a cloudPcBulkAction object with selected Cloud PCs.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
