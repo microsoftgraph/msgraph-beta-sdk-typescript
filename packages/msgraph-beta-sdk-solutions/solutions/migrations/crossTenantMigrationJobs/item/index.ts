@@ -8,7 +8,11 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CancelRequestBuilderRequestsMetadata, type CancelRequestBuilder } from './cancel/index.js';
 // @ts-ignore
+import { MigrateRequestBuilderRequestsMetadata, type MigrateRequestBuilder } from './migrate/index.js';
+// @ts-ignore
 import { type UsersRequestBuilder, UsersRequestBuilderNavigationMetadata, UsersRequestBuilderRequestsMetadata } from './users/index.js';
+// @ts-ignore
+import { type ValidateRequestBuilder, ValidateRequestBuilderRequestsMetadata } from './validate/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -22,10 +26,20 @@ export interface CrossTenantMigrationJobItemRequestBuilder extends BaseRequestBu
      */
     get cancel(): CancelRequestBuilder;
     /**
+     * Provides operations to call the migrate method.
+     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     */
+    get migrate(): MigrateRequestBuilder;
+    /**
      * Provides operations to manage the users property of the microsoft.graph.crossTenantMigrationJob entity.
      * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get users(): UsersRequestBuilder;
+    /**
+     * Provides operations to call the validate method.
+     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     */
+    get validate(): ValidateRequestBuilder;
     /**
      * Delete navigation property crossTenantMigrationJobs for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -106,9 +120,15 @@ export const CrossTenantMigrationJobItemRequestBuilderNavigationMetadata: Record
     cancel: {
         requestsMetadata: CancelRequestBuilderRequestsMetadata,
     },
+    migrate: {
+        requestsMetadata: MigrateRequestBuilderRequestsMetadata,
+    },
     users: {
         requestsMetadata: UsersRequestBuilderRequestsMetadata,
         navigationMetadata: UsersRequestBuilderNavigationMetadata,
+    },
+    validate: {
+        requestsMetadata: ValidateRequestBuilderRequestsMetadata,
     },
 };
 /**
