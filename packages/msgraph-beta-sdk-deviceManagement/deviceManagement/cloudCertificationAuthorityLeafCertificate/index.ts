@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { CloudCertificationAuthorityLeafCertificateItemRequestBuilderRequestsMetadata, type CloudCertificationAuthorityLeafCertificateItemRequestBuilder } from './item/index.js';
+import { CloudCertificationAuthorityLeafCertificateItemRequestBuilderNavigationMetadata, CloudCertificationAuthorityLeafCertificateItemRequestBuilderRequestsMetadata, type CloudCertificationAuthorityLeafCertificateItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -115,6 +115,7 @@ const CloudCertificationAuthorityLeafCertificateRequestBuilderGetQueryParameters
 export const CloudCertificationAuthorityLeafCertificateRequestBuilderNavigationMetadata: Record<Exclude<keyof CloudCertificationAuthorityLeafCertificateRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byCloudCertificationAuthorityLeafCertificateId: {
         requestsMetadata: CloudCertificationAuthorityLeafCertificateItemRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudCertificationAuthorityLeafCertificateItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["cloudCertificationAuthorityLeafCertificate%2Did"],
     },
     count: {

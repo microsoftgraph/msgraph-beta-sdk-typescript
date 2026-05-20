@@ -14,9 +14,11 @@ import { SensorCandidateActivationConfigurationRequestBuilderRequestsMetadata, t
 // @ts-ignore
 import { SensorCandidatesRequestBuilderNavigationMetadata, SensorCandidatesRequestBuilderRequestsMetadata, type SensorCandidatesRequestBuilder } from './sensorCandidates/index.js';
 // @ts-ignore
+import { SensorMigrationRequestBuilderNavigationMetadata, SensorMigrationRequestBuilderRequestsMetadata, type SensorMigrationRequestBuilder } from './sensorMigration/index.js';
+// @ts-ignore
 import { SensorsRequestBuilderNavigationMetadata, SensorsRequestBuilderRequestsMetadata, type SensorsRequestBuilder } from './sensors/index.js';
 // @ts-ignore
-import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
+import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -40,6 +42,10 @@ export interface IdentitiesRequestBuilder extends BaseRequestBuilder<IdentitiesR
      * Provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.
      */
     get sensorCandidates(): SensorCandidatesRequestBuilder;
+    /**
+     * Provides operations to manage the sensorMigration property of the microsoft.graph.security.identityContainer entity.
+     */
+    get sensorMigration(): SensorMigrationRequestBuilder;
     /**
      * Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
      */
@@ -132,12 +138,17 @@ export const IdentitiesRequestBuilderNavigationMetadata: Record<Exclude<keyof Id
         requestsMetadata: SensorCandidatesRequestBuilderRequestsMetadata,
         navigationMetadata: SensorCandidatesRequestBuilderNavigationMetadata,
     },
+    sensorMigration: {
+        requestsMetadata: SensorMigrationRequestBuilderRequestsMetadata,
+        navigationMetadata: SensorMigrationRequestBuilderNavigationMetadata,
+    },
     sensors: {
         requestsMetadata: SensorsRequestBuilderRequestsMetadata,
         navigationMetadata: SensorsRequestBuilderNavigationMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,
+        navigationMetadata: SettingsRequestBuilderNavigationMetadata,
     },
 };
 /**

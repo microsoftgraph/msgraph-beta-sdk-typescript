@@ -72,6 +72,8 @@ import { TriggerTypesRequestBuilderNavigationMetadata, TriggerTypesRequestBuilde
 // @ts-ignore
 import { type UserSecurityProfilesRequestBuilder, UserSecurityProfilesRequestBuilderNavigationMetadata, UserSecurityProfilesRequestBuilderRequestsMetadata } from './userSecurityProfiles/index.js';
 // @ts-ignore
+import { type ZonesRequestBuilder, ZonesRequestBuilderNavigationMetadata, ZonesRequestBuilderRequestsMetadata } from './zones/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -211,6 +213,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      */
     get userSecurityProfiles(): UserSecurityProfilesRequestBuilder;
     /**
+     * Provides operations to manage the zones property of the microsoft.graph.security entity.
+     */
+    get zones(): ZonesRequestBuilder;
+    /**
      * Get security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Security>}
@@ -219,7 +225,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      get(requestConfiguration?: RequestConfiguration<SecurityRequestBuilderGetQueryParameters> | undefined) : Promise<Security | undefined>;
     /**
      * Update security
-     * @param body The request body
+     * @param body Security singleton providing access to audit log resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Security>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -233,7 +239,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SecurityRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update security
-     * @param body The request body
+     * @param body Security singleton providing access to audit log resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -397,6 +403,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     userSecurityProfiles: {
         requestsMetadata: UserSecurityProfilesRequestBuilderRequestsMetadata,
         navigationMetadata: UserSecurityProfilesRequestBuilderNavigationMetadata,
+    },
+    zones: {
+        requestsMetadata: ZonesRequestBuilderRequestsMetadata,
+        navigationMetadata: ZonesRequestBuilderNavigationMetadata,
     },
 };
 /**

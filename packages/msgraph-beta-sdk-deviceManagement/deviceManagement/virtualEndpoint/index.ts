@@ -12,6 +12,8 @@ import { BulkActionsRequestBuilderNavigationMetadata, BulkActionsRequestBuilderR
 // @ts-ignore
 import { CloudAppsRequestBuilderNavigationMetadata, CloudAppsRequestBuilderRequestsMetadata, type CloudAppsRequestBuilder } from './cloudApps/index.js';
 // @ts-ignore
+import { CloudPcPoolsRequestBuilderNavigationMetadata, CloudPcPoolsRequestBuilderRequestsMetadata, type CloudPcPoolsRequestBuilder } from './cloudPcPools/index.js';
+// @ts-ignore
 import { CloudPCsRequestBuilderNavigationMetadata, CloudPCsRequestBuilderRequestsMetadata, type CloudPCsRequestBuilder } from './cloudPCs/index.js';
 // @ts-ignore
 import { CrossCloudGovernmentOrganizationMappingRequestBuilderRequestsMetadata, type CrossCloudGovernmentOrganizationMappingRequestBuilder } from './crossCloudGovernmentOrganizationMapping/index.js';
@@ -32,6 +34,8 @@ import { ManagedLicensesRequestBuilderNavigationMetadata, ManagedLicensesRequest
 // @ts-ignore
 import { OnPremisesConnectionsRequestBuilderNavigationMetadata, OnPremisesConnectionsRequestBuilderRequestsMetadata, type OnPremisesConnectionsRequestBuilder } from './onPremisesConnections/index.js';
 // @ts-ignore
+import { OrganizationActionRequestBuilderRequestsMetadata, type OrganizationActionRequestBuilder } from './organizationAction/index.js';
+// @ts-ignore
 import { OrganizationSettingsRequestBuilderRequestsMetadata, type OrganizationSettingsRequestBuilder } from './organizationSettings/index.js';
 // @ts-ignore
 import { ProvisioningPoliciesRequestBuilderNavigationMetadata, ProvisioningPoliciesRequestBuilderRequestsMetadata, type ProvisioningPoliciesRequestBuilder } from './provisioningPolicies/index.js';
@@ -39,6 +43,8 @@ import { ProvisioningPoliciesRequestBuilderNavigationMetadata, ProvisioningPolic
 import { ReportRequestBuilderNavigationMetadata, ReportRequestBuilderRequestsMetadata, type ReportRequestBuilder } from './report/index.js';
 // @ts-ignore
 import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsMetadata, type ReportsRequestBuilder } from './reports/index.js';
+// @ts-ignore
+import { RetrieveOrganizationActionDetailWithActionTypeRequestBuilderRequestsMetadata, type RetrieveOrganizationActionDetailWithActionTypeRequestBuilder } from './retrieveOrganizationActionDetailWithActionType/index.js';
 // @ts-ignore
 import { RetrieveScopedPermissionsRequestBuilderRequestsMetadata, type RetrieveScopedPermissionsRequestBuilder } from './retrieveScopedPermissions/index.js';
 // @ts-ignore
@@ -70,6 +76,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the cloudApps property of the microsoft.graph.virtualEndpoint entity.
      */
     get cloudApps(): CloudAppsRequestBuilder;
+    /**
+     * Provides operations to manage the cloudPcPools property of the microsoft.graph.virtualEndpoint entity.
+     */
+    get cloudPcPools(): CloudPcPoolsRequestBuilder;
     /**
      * Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -110,6 +120,10 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      * Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
      */
     get onPremisesConnections(): OnPremisesConnectionsRequestBuilder;
+    /**
+     * Provides operations to call the organizationAction method.
+     */
+    get organizationAction(): OrganizationActionRequestBuilder;
     /**
      * Provides operations to manage the organizationSettings property of the microsoft.graph.virtualEndpoint entity.
      */
@@ -172,6 +186,12 @@ export interface VirtualEndpointRequestBuilder extends BaseRequestBuilder<Virtua
      */
      patch(body: VirtualEndpoint, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEndpoint | undefined>;
     /**
+     * Provides operations to call the retrieveOrganizationActionDetail method.
+     * @param actionType Usage: actionType='{actionType}'
+     * @returns {RetrieveOrganizationActionDetailWithActionTypeRequestBuilder}
+     */
+     retrieveOrganizationActionDetailWithActionType(actionType: string | undefined) : RetrieveOrganizationActionDetailWithActionTypeRequestBuilder;
+    /**
      * Delete navigation property virtualEndpoint for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -219,6 +239,10 @@ const VirtualEndpointRequestBuilderGetQueryParametersMapper: Record<string, stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<keyof VirtualEndpointRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    retrieveOrganizationActionDetailWithActionType: {
+        requestsMetadata: RetrieveOrganizationActionDetailWithActionTypeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["actionType"],
+    },
     auditEvents: {
         requestsMetadata: AuditEventsRequestBuilderRequestsMetadata,
         navigationMetadata: AuditEventsRequestBuilderNavigationMetadata,
@@ -230,6 +254,10 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     cloudApps: {
         requestsMetadata: CloudAppsRequestBuilderRequestsMetadata,
         navigationMetadata: CloudAppsRequestBuilderNavigationMetadata,
+    },
+    cloudPcPools: {
+        requestsMetadata: CloudPcPoolsRequestBuilderRequestsMetadata,
+        navigationMetadata: CloudPcPoolsRequestBuilderNavigationMetadata,
     },
     cloudPCs: {
         requestsMetadata: CloudPCsRequestBuilderRequestsMetadata,
@@ -268,6 +296,9 @@ export const VirtualEndpointRequestBuilderNavigationMetadata: Record<Exclude<key
     onPremisesConnections: {
         requestsMetadata: OnPremisesConnectionsRequestBuilderRequestsMetadata,
         navigationMetadata: OnPremisesConnectionsRequestBuilderNavigationMetadata,
+    },
+    organizationAction: {
+        requestsMetadata: OrganizationActionRequestBuilderRequestsMetadata,
     },
     organizationSettings: {
         requestsMetadata: OrganizationSettingsRequestBuilderRequestsMetadata,

@@ -6,6 +6,8 @@ import { createCloudPcDeviceImageFromDiscriminatorValue, serializeCloudPcDeviceI
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { RetryUploadRequestBuilderRequestsMetadata, type RetryUploadRequestBuilder } from './retryUpload/index.js';
+// @ts-ignore
 import { ReuploadRequestBuilderRequestsMetadata, type ReuploadRequestBuilder } from './reupload/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
  */
 export interface CloudPcDeviceImageItemRequestBuilder extends BaseRequestBuilder<CloudPcDeviceImageItemRequestBuilder> {
+    /**
+     * Provides operations to call the retryUpload method.
+     */
+    get retryUpload(): RetryUploadRequestBuilder;
     /**
      * Provides operations to call the reupload method.
      */
@@ -89,6 +95,9 @@ const CloudPcDeviceImageItemRequestBuilderGetQueryParametersMapper: Record<strin
  * Metadata for all the navigation properties in the request builder.
  */
 export const CloudPcDeviceImageItemRequestBuilderNavigationMetadata: Record<Exclude<keyof CloudPcDeviceImageItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    retryUpload: {
+        requestsMetadata: RetryUploadRequestBuilderRequestsMetadata,
+    },
     reupload: {
         requestsMetadata: ReuploadRequestBuilderRequestsMetadata,
     },

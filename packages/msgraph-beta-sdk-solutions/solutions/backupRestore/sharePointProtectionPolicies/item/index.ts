@@ -6,6 +6,10 @@ import { createSharePointProtectionPolicyFromDiscriminatorValue, serializeShareP
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { SiteExclusionUnitsRequestBuilderNavigationMetadata, SiteExclusionUnitsRequestBuilderRequestsMetadata, type SiteExclusionUnitsRequestBuilder } from './siteExclusionUnits/index.js';
+// @ts-ignore
+import { SiteExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, SiteExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type SiteExclusionUnitsBulkAdditionJobsRequestBuilder } from './siteExclusionUnitsBulkAdditionJobs/index.js';
+// @ts-ignore
 import { SiteInclusionRulesRequestBuilderNavigationMetadata, SiteInclusionRulesRequestBuilderRequestsMetadata, type SiteInclusionRulesRequestBuilder } from './siteInclusionRules/index.js';
 // @ts-ignore
 import { SiteProtectionUnitsRequestBuilderNavigationMetadata, SiteProtectionUnitsRequestBuilderRequestsMetadata, type SiteProtectionUnitsRequestBuilder } from './siteProtectionUnits/index.js';
@@ -18,6 +22,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the sharePointProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
  */
 export interface SharePointProtectionPolicyItemRequestBuilder extends BaseRequestBuilder<SharePointProtectionPolicyItemRequestBuilder> {
+    /**
+     * Provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.
+     */
+    get siteExclusionUnits(): SiteExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.
+     */
+    get siteExclusionUnitsBulkAdditionJobs(): SiteExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the siteInclusionRules property of the microsoft.graph.sharePointProtectionPolicy entity.
      */
@@ -100,6 +112,14 @@ const SharePointProtectionPolicyItemRequestBuilderGetQueryParametersMapper: Reco
  * Metadata for all the navigation properties in the request builder.
  */
 export const SharePointProtectionPolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof SharePointProtectionPolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    siteExclusionUnits: {
+        requestsMetadata: SiteExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: SiteExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    siteExclusionUnitsBulkAdditionJobs: {
+        requestsMetadata: SiteExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: SiteExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
+    },
     siteInclusionRules: {
         requestsMetadata: SiteInclusionRulesRequestBuilderRequestsMetadata,
         navigationMetadata: SiteInclusionRulesRequestBuilderNavigationMetadata,

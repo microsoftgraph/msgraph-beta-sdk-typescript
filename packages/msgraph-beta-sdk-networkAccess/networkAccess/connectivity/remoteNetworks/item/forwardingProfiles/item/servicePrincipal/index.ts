@@ -9,7 +9,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
- * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+ * Provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.
  */
 export interface ServicePrincipalRequestBuilder extends BaseRequestBuilder<ServicePrincipalRequestBuilder> {
     /**

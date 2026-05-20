@@ -42,6 +42,8 @@ import { RecommendationConfigurationRequestBuilderRequestsMetadata, type Recomme
 // @ts-ignore
 import { RecommendationsRequestBuilderNavigationMetadata, RecommendationsRequestBuilderRequestsMetadata, type RecommendationsRequestBuilder } from './recommendations/index.js';
 // @ts-ignore
+import { RecoveryRequestBuilderNavigationMetadata, RecoveryRequestBuilderRequestsMetadata, type RecoveryRequestBuilder } from './recovery/index.js';
+// @ts-ignore
 import { SharedEmailDomainsRequestBuilderNavigationMetadata, SharedEmailDomainsRequestBuilderRequestsMetadata, type SharedEmailDomainsRequestBuilder } from './sharedEmailDomains/index.js';
 // @ts-ignore
 import { SubscriptionsRequestBuilderNavigationMetadata, SubscriptionsRequestBuilderRequestsMetadata, type SubscriptionsRequestBuilder } from './subscriptions/index.js';
@@ -51,6 +53,8 @@ import { SubscriptionsWithCommerceSubscriptionIdRequestBuilderRequestsMetadata, 
 import { SubscriptionsWithOcpSubscriptionIdRequestBuilderRequestsMetadata, type SubscriptionsWithOcpSubscriptionIdRequestBuilder } from './subscriptionsWithOcpSubscriptionId/index.js';
 // @ts-ignore
 import { TemplatesRequestBuilderNavigationMetadata, TemplatesRequestBuilderRequestsMetadata, type TemplatesRequestBuilder } from './templates/index.js';
+// @ts-ignore
+import { TenantGovernanceRequestBuilderNavigationMetadata, TenantGovernanceRequestBuilderRequestsMetadata, type TenantGovernanceRequestBuilder } from './tenantGovernance/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -131,6 +135,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      */
     get recommendations(): RecommendationsRequestBuilder;
     /**
+     * Provides operations to manage the recovery property of the microsoft.graph.directory entity.
+     */
+    get recovery(): RecoveryRequestBuilder;
+    /**
      * Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
      */
     get sharedEmailDomains(): SharedEmailDomainsRequestBuilder;
@@ -142,6 +150,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the templates property of the microsoft.graph.directory entity.
      */
     get templates(): TemplatesRequestBuilder;
+    /**
+     * Provides operations to manage the tenantGovernance property of the microsoft.graph.directory entity.
+     */
+    get tenantGovernance(): TenantGovernanceRequestBuilder;
     /**
      * Get directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -290,6 +302,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
         requestsMetadata: RecommendationsRequestBuilderRequestsMetadata,
         navigationMetadata: RecommendationsRequestBuilderNavigationMetadata,
     },
+    recovery: {
+        requestsMetadata: RecoveryRequestBuilderRequestsMetadata,
+        navigationMetadata: RecoveryRequestBuilderNavigationMetadata,
+    },
     sharedEmailDomains: {
         requestsMetadata: SharedEmailDomainsRequestBuilderRequestsMetadata,
         navigationMetadata: SharedEmailDomainsRequestBuilderNavigationMetadata,
@@ -301,6 +317,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
     templates: {
         requestsMetadata: TemplatesRequestBuilderRequestsMetadata,
         navigationMetadata: TemplatesRequestBuilderNavigationMetadata,
+    },
+    tenantGovernance: {
+        requestsMetadata: TenantGovernanceRequestBuilderRequestsMetadata,
+        navigationMetadata: TenantGovernanceRequestBuilderNavigationMetadata,
     },
 };
 /**

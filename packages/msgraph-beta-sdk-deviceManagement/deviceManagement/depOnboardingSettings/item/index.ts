@@ -22,6 +22,8 @@ import { GetEncryptionPublicKeyRequestBuilderRequestsMetadata, type GetEncryptio
 // @ts-ignore
 import { ImportedAppleDeviceIdentitiesRequestBuilderNavigationMetadata, ImportedAppleDeviceIdentitiesRequestBuilderRequestsMetadata, type ImportedAppleDeviceIdentitiesRequestBuilder } from './importedAppleDeviceIdentities/index.js';
 // @ts-ignore
+import { ReleaseAppleDevicesRequestBuilderRequestsMetadata, type ReleaseAppleDevicesRequestBuilder } from './releaseAppleDevices/index.js';
+// @ts-ignore
 import { ShareForSchoolDataSyncServiceRequestBuilderRequestsMetadata, type ShareForSchoolDataSyncServiceRequestBuilder } from './shareForSchoolDataSyncService/index.js';
 // @ts-ignore
 import { SyncWithAppleDeviceEnrollmentProgramRequestBuilderRequestsMetadata, type SyncWithAppleDeviceEnrollmentProgramRequestBuilder } from './syncWithAppleDeviceEnrollmentProgram/index.js';
@@ -68,6 +70,10 @@ export interface DepOnboardingSettingItemRequestBuilder extends BaseRequestBuild
      * Provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.
      */
     get importedAppleDeviceIdentities(): ImportedAppleDeviceIdentitiesRequestBuilder;
+    /**
+     * Provides operations to call the releaseAppleDevices method.
+     */
+    get releaseAppleDevices(): ReleaseAppleDevicesRequestBuilder;
     /**
      * Provides operations to call the shareForSchoolDataSyncService method.
      */
@@ -178,6 +184,9 @@ export const DepOnboardingSettingItemRequestBuilderNavigationMetadata: Record<Ex
     importedAppleDeviceIdentities: {
         requestsMetadata: ImportedAppleDeviceIdentitiesRequestBuilderRequestsMetadata,
         navigationMetadata: ImportedAppleDeviceIdentitiesRequestBuilderNavigationMetadata,
+    },
+    releaseAppleDevices: {
+        requestsMetadata: ReleaseAppleDevicesRequestBuilderRequestsMetadata,
     },
     shareForSchoolDataSyncService: {
         requestsMetadata: ShareForSchoolDataSyncServiceRequestBuilderRequestsMetadata,

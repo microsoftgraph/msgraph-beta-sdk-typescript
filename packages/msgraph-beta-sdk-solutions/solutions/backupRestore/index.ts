@@ -6,13 +6,13 @@ import { createBackupRestoreRootFromDiscriminatorValue, serializeBackupRestoreRo
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { AllDrivesBackupRequestBuilderNavigationMetadata, AllDrivesBackupRequestBuilderRequestsMetadata, type AllDrivesBackupRequestBuilder } from './allDrivesBackup/index.js';
-// @ts-ignore
-import { AllMailboxesBackupRequestBuilderNavigationMetadata, AllMailboxesBackupRequestBuilderRequestsMetadata, type AllMailboxesBackupRequestBuilder } from './allMailboxesBackup/index.js';
-// @ts-ignore
-import { AllSitesBackupRequestBuilderNavigationMetadata, AllSitesBackupRequestBuilderRequestsMetadata, type AllSitesBackupRequestBuilder } from './allSitesBackup/index.js';
+import { ActivityLogsRequestBuilderNavigationMetadata, ActivityLogsRequestBuilderRequestsMetadata, type ActivityLogsRequestBuilder } from './activityLogs/index.js';
 // @ts-ignore
 import { BrowseSessionsRequestBuilderNavigationMetadata, BrowseSessionsRequestBuilderRequestsMetadata, type BrowseSessionsRequestBuilder } from './browseSessions/index.js';
+// @ts-ignore
+import { DriveExclusionUnitsRequestBuilderNavigationMetadata, DriveExclusionUnitsRequestBuilderRequestsMetadata, type DriveExclusionUnitsRequestBuilder } from './driveExclusionUnits/index.js';
+// @ts-ignore
+import { DriveExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, DriveExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type DriveExclusionUnitsBulkAdditionJobsRequestBuilder } from './driveExclusionUnitsBulkAdditionJobs/index.js';
 // @ts-ignore
 import { DriveInclusionRulesRequestBuilderNavigationMetadata, DriveInclusionRulesRequestBuilderRequestsMetadata, type DriveInclusionRulesRequestBuilder } from './driveInclusionRules/index.js';
 // @ts-ignore
@@ -27,6 +27,12 @@ import { EnableRequestBuilderRequestsMetadata, type EnableRequestBuilder } from 
 import { ExchangeProtectionPoliciesRequestBuilderNavigationMetadata, ExchangeProtectionPoliciesRequestBuilderRequestsMetadata, type ExchangeProtectionPoliciesRequestBuilder } from './exchangeProtectionPolicies/index.js';
 // @ts-ignore
 import { ExchangeRestoreSessionsRequestBuilderNavigationMetadata, ExchangeRestoreSessionsRequestBuilderRequestsMetadata, type ExchangeRestoreSessionsRequestBuilder } from './exchangeRestoreSessions/index.js';
+// @ts-ignore
+import { ExclusionUnitsRequestBuilderNavigationMetadata, ExclusionUnitsRequestBuilderRequestsMetadata, type ExclusionUnitsRequestBuilder } from './exclusionUnits/index.js';
+// @ts-ignore
+import { MailboxExclusionUnitsRequestBuilderNavigationMetadata, MailboxExclusionUnitsRequestBuilderRequestsMetadata, type MailboxExclusionUnitsRequestBuilder } from './mailboxExclusionUnits/index.js';
+// @ts-ignore
+import { MailboxExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, MailboxExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type MailboxExclusionUnitsBulkAdditionJobsRequestBuilder } from './mailboxExclusionUnitsBulkAdditionJobs/index.js';
 // @ts-ignore
 import { MailboxInclusionRulesRequestBuilderNavigationMetadata, MailboxInclusionRulesRequestBuilderRequestsMetadata, type MailboxInclusionRulesRequestBuilder } from './mailboxInclusionRules/index.js';
 // @ts-ignore
@@ -44,6 +50,8 @@ import { ProtectionPoliciesRequestBuilderNavigationMetadata, ProtectionPoliciesR
 // @ts-ignore
 import { ProtectionUnitsRequestBuilderNavigationMetadata, ProtectionUnitsRequestBuilderRequestsMetadata, type ProtectionUnitsRequestBuilder } from './protectionUnits/index.js';
 // @ts-ignore
+import { ReportsRequestBuilderNavigationMetadata, ReportsRequestBuilderRequestsMetadata, type ReportsRequestBuilder } from './reports/index.js';
+// @ts-ignore
 import { RestorePointsRequestBuilderNavigationMetadata, RestorePointsRequestBuilderRequestsMetadata, type RestorePointsRequestBuilder } from './restorePoints/index.js';
 // @ts-ignore
 import { RestoreSessionsRequestBuilderNavigationMetadata, RestoreSessionsRequestBuilderRequestsMetadata, type RestoreSessionsRequestBuilder } from './restoreSessions/index.js';
@@ -55,6 +63,10 @@ import { SharePointBrowseSessionsRequestBuilderNavigationMetadata, SharePointBro
 import { SharePointProtectionPoliciesRequestBuilderNavigationMetadata, SharePointProtectionPoliciesRequestBuilderRequestsMetadata, type SharePointProtectionPoliciesRequestBuilder } from './sharePointProtectionPolicies/index.js';
 // @ts-ignore
 import { SharePointRestoreSessionsRequestBuilderNavigationMetadata, SharePointRestoreSessionsRequestBuilderRequestsMetadata, type SharePointRestoreSessionsRequestBuilder } from './sharePointRestoreSessions/index.js';
+// @ts-ignore
+import { SiteExclusionUnitsRequestBuilderNavigationMetadata, SiteExclusionUnitsRequestBuilderRequestsMetadata, type SiteExclusionUnitsRequestBuilder } from './siteExclusionUnits/index.js';
+// @ts-ignore
+import { SiteExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata, SiteExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata, type SiteExclusionUnitsBulkAdditionJobsRequestBuilder } from './siteExclusionUnitsBulkAdditionJobs/index.js';
 // @ts-ignore
 import { SiteInclusionRulesRequestBuilderNavigationMetadata, SiteInclusionRulesRequestBuilderRequestsMetadata, type SiteInclusionRulesRequestBuilder } from './siteInclusionRules/index.js';
 // @ts-ignore
@@ -69,21 +81,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRestoreRequestBuilder> {
     /**
-     * Provides operations to manage the allDrivesBackup property of the microsoft.graph.backupRestoreRoot entity.
+     * Provides operations to manage the activityLogs property of the microsoft.graph.backupRestoreRoot entity.
      */
-    get allDrivesBackup(): AllDrivesBackupRequestBuilder;
-    /**
-     * Provides operations to manage the allMailboxesBackup property of the microsoft.graph.backupRestoreRoot entity.
-     */
-    get allMailboxesBackup(): AllMailboxesBackupRequestBuilder;
-    /**
-     * Provides operations to manage the allSitesBackup property of the microsoft.graph.backupRestoreRoot entity.
-     */
-    get allSitesBackup(): AllSitesBackupRequestBuilder;
+    get activityLogs(): ActivityLogsRequestBuilder;
     /**
      * Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.
      */
     get browseSessions(): BrowseSessionsRequestBuilder;
+    /**
+     * Provides operations to manage the driveExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get driveExclusionUnits(): DriveExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get driveExclusionUnitsBulkAdditionJobs(): DriveExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the driveInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -112,6 +124,18 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * Provides operations to manage the exchangeRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
      */
     get exchangeRestoreSessions(): ExchangeRestoreSessionsRequestBuilder;
+    /**
+     * Provides operations to manage the exclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get exclusionUnits(): ExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get mailboxExclusionUnits(): MailboxExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get mailboxExclusionUnitsBulkAdditionJobs(): MailboxExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -145,6 +169,10 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      */
     get protectionUnits(): ProtectionUnitsRequestBuilder;
     /**
+     * Provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get reports(): ReportsRequestBuilder;
+    /**
      * Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.
      */
     get restorePoints(): RestorePointsRequestBuilder;
@@ -168,6 +196,14 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * Provides operations to manage the sharePointRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
      */
     get sharePointRestoreSessions(): SharePointRestoreSessionsRequestBuilder;
+    /**
+     * Provides operations to manage the siteExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get siteExclusionUnits(): SiteExclusionUnitsRequestBuilder;
+    /**
+     * Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get siteExclusionUnitsBulkAdditionJobs(): SiteExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the siteInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -250,21 +286,21 @@ const BackupRestoreRequestBuilderGetQueryParametersMapper: Record<string, string
  * Metadata for all the navigation properties in the request builder.
  */
 export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof BackupRestoreRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
-    allDrivesBackup: {
-        requestsMetadata: AllDrivesBackupRequestBuilderRequestsMetadata,
-        navigationMetadata: AllDrivesBackupRequestBuilderNavigationMetadata,
-    },
-    allMailboxesBackup: {
-        requestsMetadata: AllMailboxesBackupRequestBuilderRequestsMetadata,
-        navigationMetadata: AllMailboxesBackupRequestBuilderNavigationMetadata,
-    },
-    allSitesBackup: {
-        requestsMetadata: AllSitesBackupRequestBuilderRequestsMetadata,
-        navigationMetadata: AllSitesBackupRequestBuilderNavigationMetadata,
+    activityLogs: {
+        requestsMetadata: ActivityLogsRequestBuilderRequestsMetadata,
+        navigationMetadata: ActivityLogsRequestBuilderNavigationMetadata,
     },
     browseSessions: {
         requestsMetadata: BrowseSessionsRequestBuilderRequestsMetadata,
         navigationMetadata: BrowseSessionsRequestBuilderNavigationMetadata,
+    },
+    driveExclusionUnits: {
+        requestsMetadata: DriveExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: DriveExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    driveExclusionUnitsBulkAdditionJobs: {
+        requestsMetadata: DriveExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: DriveExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
     },
     driveInclusionRules: {
         requestsMetadata: DriveInclusionRulesRequestBuilderRequestsMetadata,
@@ -291,6 +327,18 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
     exchangeRestoreSessions: {
         requestsMetadata: ExchangeRestoreSessionsRequestBuilderRequestsMetadata,
         navigationMetadata: ExchangeRestoreSessionsRequestBuilderNavigationMetadata,
+    },
+    exclusionUnits: {
+        requestsMetadata: ExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: ExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    mailboxExclusionUnits: {
+        requestsMetadata: MailboxExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: MailboxExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    mailboxExclusionUnitsBulkAdditionJobs: {
+        requestsMetadata: MailboxExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: MailboxExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
     },
     mailboxInclusionRules: {
         requestsMetadata: MailboxInclusionRulesRequestBuilderRequestsMetadata,
@@ -324,6 +372,10 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
         requestsMetadata: ProtectionUnitsRequestBuilderRequestsMetadata,
         navigationMetadata: ProtectionUnitsRequestBuilderNavigationMetadata,
     },
+    reports: {
+        requestsMetadata: ReportsRequestBuilderRequestsMetadata,
+        navigationMetadata: ReportsRequestBuilderNavigationMetadata,
+    },
     restorePoints: {
         requestsMetadata: RestorePointsRequestBuilderRequestsMetadata,
         navigationMetadata: RestorePointsRequestBuilderNavigationMetadata,
@@ -347,6 +399,14 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
     sharePointRestoreSessions: {
         requestsMetadata: SharePointRestoreSessionsRequestBuilderRequestsMetadata,
         navigationMetadata: SharePointRestoreSessionsRequestBuilderNavigationMetadata,
+    },
+    siteExclusionUnits: {
+        requestsMetadata: SiteExclusionUnitsRequestBuilderRequestsMetadata,
+        navigationMetadata: SiteExclusionUnitsRequestBuilderNavigationMetadata,
+    },
+    siteExclusionUnitsBulkAdditionJobs: {
+        requestsMetadata: SiteExclusionUnitsBulkAdditionJobsRequestBuilderRequestsMetadata,
+        navigationMetadata: SiteExclusionUnitsBulkAdditionJobsRequestBuilderNavigationMetadata,
     },
     siteInclusionRules: {
         requestsMetadata: SiteInclusionRulesRequestBuilderRequestsMetadata,

@@ -56,6 +56,8 @@ import { MobileDeviceManagementPoliciesRequestBuilderNavigationMetadata, MobileD
 // @ts-ignore
 import { OnPremAuthenticationPoliciesRequestBuilderNavigationMetadata, OnPremAuthenticationPoliciesRequestBuilderRequestsMetadata, type OnPremAuthenticationPoliciesRequestBuilder } from './onPremAuthenticationPolicies/index.js';
 // @ts-ignore
+import { OwnerlessGroupPolicyRequestBuilderRequestsMetadata, type OwnerlessGroupPolicyRequestBuilder } from './ownerlessGroupPolicy/index.js';
+// @ts-ignore
 import { PermissionGrantPoliciesRequestBuilderNavigationMetadata, PermissionGrantPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPoliciesRequestBuilder } from './permissionGrantPolicies/index.js';
 // @ts-ignore
 import { PermissionGrantPreApprovalPoliciesRequestBuilderNavigationMetadata, PermissionGrantPreApprovalPoliciesRequestBuilderRequestsMetadata, type PermissionGrantPreApprovalPoliciesRequestBuilder } from './permissionGrantPreApprovalPolicies/index.js';
@@ -176,6 +178,10 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      * Provides operations to manage the onPremAuthenticationPolicies property of the microsoft.graph.policyRoot entity.
      */
     get onPremAuthenticationPolicies(): OnPremAuthenticationPoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.
+     */
+    get ownerlessGroupPolicy(): OwnerlessGroupPolicyRequestBuilder;
     /**
      * Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
      */
@@ -350,6 +356,9 @@ export const PoliciesRequestBuilderNavigationMetadata: Record<Exclude<keyof Poli
     onPremAuthenticationPolicies: {
         requestsMetadata: OnPremAuthenticationPoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: OnPremAuthenticationPoliciesRequestBuilderNavigationMetadata,
+    },
+    ownerlessGroupPolicy: {
+        requestsMetadata: OwnerlessGroupPolicyRequestBuilderRequestsMetadata,
     },
     permissionGrantPolicies: {
         requestsMetadata: PermissionGrantPoliciesRequestBuilderRequestsMetadata,
