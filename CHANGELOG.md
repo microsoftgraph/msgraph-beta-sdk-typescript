@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.77](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.76...v1.0.0-preview.77) (2026-06-29)
+
+
+### Bug Fixes
+
+* resolve daily CI build failures (1ES pool image + npm auth) ([#494](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues/494)) ([a688c3b](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/a688c3bf6b1c747a49570c5ef737fe8ed51479f4))
+* update kiota-http-fetchlibrary and other outdated dependencies ([#492](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues/492)) ([8973486](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/89734867ba33390b725996e1295cb35a9db609e3))
+
 ## [1.0.0-preview.76](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.75...v1.0.0-preview.76) (2026-05-20)
 
 
