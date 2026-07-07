@@ -23,12 +23,12 @@ export function createUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(pa
 // @ts-ignore
 export function deserializeIntoUpdateAudienceByIdPostRequestBody(updateAudienceByIdPostRequestBody: Partial<UpdateAudienceByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "addExclusions": n => { updateAudienceByIdPostRequestBody.addExclusions = n.getCollectionOfPrimitiveValues<string>(); },
-        "addMembers": n => { updateAudienceByIdPostRequestBody.addMembers = n.getCollectionOfPrimitiveValues<string>(); },
+        "addExclusions": n => { updateAudienceByIdPostRequestBody.addExclusions = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "addMembers": n => { updateAudienceByIdPostRequestBody.addMembers = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { updateAudienceByIdPostRequestBody.backingStoreEnabled = true; },
         "memberEntityType": n => { updateAudienceByIdPostRequestBody.memberEntityType = n.getStringValue(); },
-        "removeExclusions": n => { updateAudienceByIdPostRequestBody.removeExclusions = n.getCollectionOfPrimitiveValues<string>(); },
-        "removeMembers": n => { updateAudienceByIdPostRequestBody.removeMembers = n.getCollectionOfPrimitiveValues<string>(); },
+        "removeExclusions": n => { updateAudienceByIdPostRequestBody.removeExclusions = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "removeMembers": n => { updateAudienceByIdPostRequestBody.removeMembers = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -36,7 +36,7 @@ export function deserializeIntoUpdateAudienceByIdPostRequestBody(updateAudienceB
  */
 export interface MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder extends BaseRequestBuilder<MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder> {
     /**
-     * Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.
+     * Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it doesn't already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -44,7 +44,7 @@ export interface MicrosoftGraphWindowsUpdatesUpdateAudienceByIdRequestBuilder ex
      */
      post(body: UpdateAudienceByIdPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.
+     * Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type. Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it doesn't already exist. If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset. You can also use the method updateAudience to update the deploymentAudience.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

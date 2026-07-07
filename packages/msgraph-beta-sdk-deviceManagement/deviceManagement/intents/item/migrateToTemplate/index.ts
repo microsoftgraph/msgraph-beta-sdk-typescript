@@ -25,7 +25,7 @@ export function deserializeIntoMigrateToTemplatePostRequestBody(migrateToTemplat
     return {
         "backingStoreEnabled": n => { migrateToTemplatePostRequestBody.backingStoreEnabled = true; },
         "newTemplateId": n => { migrateToTemplatePostRequestBody.newTemplateId = n.getStringValue(); },
-        "preserveCustomValues": n => { migrateToTemplatePostRequestBody.preserveCustomValues = n.getBooleanValue(); },
+        "preserveCustomValues": n => { migrateToTemplatePostRequestBody.preserveCustomValues = n.getBooleanValue() ?? false; },
     }
 }
 export interface MigrateToTemplatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -71,7 +71,7 @@ export interface MigrateToTemplateRequestBuilder extends BaseRequestBuilder<Migr
 export function serializeMigrateToTemplatePostRequestBody(writer: SerializationWriter, migrateToTemplatePostRequestBody: Partial<MigrateToTemplatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!migrateToTemplatePostRequestBody || isSerializingDerivedType) { return; }
     writer.writeStringValue("newTemplateId", migrateToTemplatePostRequestBody.newTemplateId);
-    writer.writeBooleanValue("preserveCustomValues", migrateToTemplatePostRequestBody.preserveCustomValues);
+    writer.writeBooleanValue("preserveCustomValues", migrateToTemplatePostRequestBody.preserveCustomValues ?? false);
     writer.writeAdditionalData(migrateToTemplatePostRequestBody.additionalData);
 }
 /**

@@ -24,7 +24,7 @@ export function createPublishPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 export function deserializeIntoPublishPostRequestBody(publishPostRequestBody: Partial<PublishPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { publishPostRequestBody.backingStoreEnabled = true; },
-        "cloudAppIds": n => { publishPostRequestBody.cloudAppIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudAppIds": n => { publishPostRequestBody.cloudAppIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface PublishPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

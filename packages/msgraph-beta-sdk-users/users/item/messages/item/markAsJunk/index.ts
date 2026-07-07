@@ -26,7 +26,7 @@ export function createMarkAsJunkPostRequestBodyFromDiscriminatorValue(parseNode:
 export function deserializeIntoMarkAsJunkPostRequestBody(markAsJunkPostRequestBody: Partial<MarkAsJunkPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { markAsJunkPostRequestBody.backingStoreEnabled = true; },
-        "MoveToJunk": n => { markAsJunkPostRequestBody.moveToJunk = n.getBooleanValue(); },
+        "MoveToJunk": n => { markAsJunkPostRequestBody.moveToJunk = n.getBooleanValue() ?? false; },
     }
 }
 export interface MarkAsJunkPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -71,7 +71,7 @@ export interface MarkAsJunkRequestBuilder extends BaseRequestBuilder<MarkAsJunkR
 // @ts-ignore
 export function serializeMarkAsJunkPostRequestBody(writer: SerializationWriter, markAsJunkPostRequestBody: Partial<MarkAsJunkPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!markAsJunkPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("MoveToJunk", markAsJunkPostRequestBody.moveToJunk);
+    writer.writeBooleanValue("MoveToJunk", markAsJunkPostRequestBody.moveToJunk ?? false);
     writer.writeAdditionalData(markAsJunkPostRequestBody.additionalData);
 }
 /**

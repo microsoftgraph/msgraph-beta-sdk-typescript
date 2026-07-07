@@ -25,10 +25,10 @@ export function deserializeIntoGetDevicesStatusBySettingReportPostRequestBody(ge
     return {
         "backingStoreEnabled": n => { getDevicesStatusBySettingReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getDevicesStatusBySettingReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getDevicesStatusBySettingReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getDevicesStatusBySettingReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getDevicesStatusBySettingReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getDevicesStatusBySettingReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getDevicesStatusBySettingReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getDevicesStatusBySettingReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getDevicesStatusBySettingReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "sessionId": n => { getDevicesStatusBySettingReportPostRequestBody.sessionId = n.getStringValue(); },
         "skip": n => { getDevicesStatusBySettingReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getDevicesStatusBySettingReportPostRequestBody.top = n.getNumberValue(); },

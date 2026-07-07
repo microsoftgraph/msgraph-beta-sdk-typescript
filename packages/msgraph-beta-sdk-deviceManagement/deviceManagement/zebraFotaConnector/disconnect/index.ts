@@ -24,7 +24,7 @@ export function createDisconnectPostResponseFromDiscriminatorValue(parseNode: Pa
 export function deserializeIntoDisconnectPostResponse(disconnectPostResponse: Partial<DisconnectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { disconnectPostResponse.backingStoreEnabled = true; },
-        "value": n => { disconnectPostResponse.value = n.getBooleanValue(); },
+        "value": n => { disconnectPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface DisconnectPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -64,7 +64,7 @@ export interface DisconnectRequestBuilder extends BaseRequestBuilder<DisconnectR
 // @ts-ignore
 export function serializeDisconnectPostResponse(writer: SerializationWriter, disconnectPostResponse: Partial<DisconnectPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!disconnectPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", disconnectPostResponse.value);
+    writer.writeBooleanValue("value", disconnectPostResponse.value ?? false);
     writer.writeAdditionalData(disconnectPostResponse.additionalData);
 }
 /**

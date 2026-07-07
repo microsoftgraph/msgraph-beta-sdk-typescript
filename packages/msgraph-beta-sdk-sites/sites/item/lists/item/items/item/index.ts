@@ -20,7 +20,7 @@ import { DriveItemRequestBuilderNavigationMetadata, DriveItemRequestBuilderReque
 // @ts-ignore
 import { FieldsRequestBuilderRequestsMetadata, type FieldsRequestBuilder } from './fields/index.js';
 // @ts-ignore
-import { GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderRequestsMetadata, type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder } from './getActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval/index.js';
+import { GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderRequestsMetadata, type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder } from './getActivitiesByIntervalWithStartDateTimeWithEndDateTime_58a4aa2a/index.js';
 // @ts-ignore
 import { LastModifiedByUserRequestBuilderNavigationMetadata, LastModifiedByUserRequestBuilderRequestsMetadata, type LastModifiedByUserRequestBuilder } from './lastModifiedByUser/index.js';
 // @ts-ignore

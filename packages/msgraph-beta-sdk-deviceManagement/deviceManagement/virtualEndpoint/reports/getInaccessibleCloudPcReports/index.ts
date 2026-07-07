@@ -27,11 +27,11 @@ export function deserializeIntoGetInaccessibleCloudPcReportsPostRequestBody(getI
     return {
         "backingStoreEnabled": n => { getInaccessibleCloudPcReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getInaccessibleCloudPcReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getInaccessibleCloudPcReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getInaccessibleCloudPcReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getInaccessibleCloudPcReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getInaccessibleCloudPcReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { getInaccessibleCloudPcReportsPostRequestBody.reportName = n.getEnumValue<CloudPCInaccessibleReportName>(CloudPCInaccessibleReportNameObject); },
         "search": n => { getInaccessibleCloudPcReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getInaccessibleCloudPcReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getInaccessibleCloudPcReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getInaccessibleCloudPcReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getInaccessibleCloudPcReportsPostRequestBody.top = n.getNumberValue(); },
     }

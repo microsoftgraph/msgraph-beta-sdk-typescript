@@ -27,7 +27,7 @@ export function deserializeIntoMuteAllPostRequestBody(muteAllPostRequestBody: Pa
     return {
         "backingStoreEnabled": n => { muteAllPostRequestBody.backingStoreEnabled = true; },
         "clientContext": n => { muteAllPostRequestBody.clientContext = n.getStringValue(); },
-        "participants": n => { muteAllPostRequestBody.participants = n.getCollectionOfPrimitiveValues<string>(); },
+        "participants": n => { muteAllPostRequestBody.participants = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface MuteAllPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

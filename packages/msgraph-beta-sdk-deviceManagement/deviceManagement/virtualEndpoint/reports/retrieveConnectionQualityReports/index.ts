@@ -27,11 +27,11 @@ export function deserializeIntoRetrieveConnectionQualityReportsPostRequestBody(r
     return {
         "backingStoreEnabled": n => { retrieveConnectionQualityReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveConnectionQualityReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { retrieveConnectionQualityReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { retrieveConnectionQualityReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { retrieveConnectionQualityReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { retrieveConnectionQualityReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { retrieveConnectionQualityReportsPostRequestBody.reportName = n.getEnumValue<CloudPCConnectionQualityReportType>(CloudPCConnectionQualityReportTypeObject); },
         "search": n => { retrieveConnectionQualityReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveConnectionQualityReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveConnectionQualityReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveConnectionQualityReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveConnectionQualityReportsPostRequestBody.top = n.getNumberValue(); },
     }

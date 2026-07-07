@@ -12,7 +12,7 @@ import { DeployAgentRequestBuilderRequestsMetadata, type DeployAgentRequestBuild
 // @ts-ignore
 import { RetrieveActionReportsRequestBuilderRequestsMetadata, type RetrieveActionReportsRequestBuilder } from './retrieveActionReports/index.js';
 // @ts-ignore
-import { RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilderRequestsMetadata, type RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilder } from './retrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcId/index.js';
+import { RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilderRequestsMetadata, type RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilder } from './retrieveDeployAgentActionResultsactivityIdActivityIdClo_c6f461a2/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 

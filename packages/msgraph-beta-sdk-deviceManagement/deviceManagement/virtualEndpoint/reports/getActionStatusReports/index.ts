@@ -25,10 +25,10 @@ export function deserializeIntoGetActionStatusReportsPostRequestBody(getActionSt
     return {
         "backingStoreEnabled": n => { getActionStatusReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getActionStatusReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getActionStatusReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getActionStatusReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getActionStatusReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getActionStatusReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getActionStatusReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getActionStatusReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getActionStatusReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getActionStatusReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getActionStatusReportsPostRequestBody.top = n.getNumberValue(); },
     }

@@ -30,7 +30,7 @@ export function deserializeIntoRemediatePostRequestBody(remediatePostRequestBody
         "backingStoreEnabled": n => { remediatePostRequestBody.backingStoreEnabled = true; },
         "description": n => { remediatePostRequestBody.description = n.getStringValue(); },
         "displayName": n => { remediatePostRequestBody.displayName = n.getStringValue(); },
-        "remediateSendersCopy": n => { remediatePostRequestBody.remediateSendersCopy = n.getBooleanValue(); },
+        "remediateSendersCopy": n => { remediatePostRequestBody.remediateSendersCopy = n.getBooleanValue() ?? false; },
         "severity": n => { remediatePostRequestBody.severity = n.getEnumValue<RemediationSeverity>(RemediationSeverityObject); },
     }
 }
@@ -97,7 +97,7 @@ export function serializeRemediatePostRequestBody(writer: SerializationWriter, r
     writer.writeCollectionOfObjectValues<AnalyzedEmail>("analyzedEmails", remediatePostRequestBody.analyzedEmails, serializeAnalyzedEmail);
     writer.writeStringValue("description", remediatePostRequestBody.description);
     writer.writeStringValue("displayName", remediatePostRequestBody.displayName);
-    writer.writeBooleanValue("remediateSendersCopy", remediatePostRequestBody.remediateSendersCopy);
+    writer.writeBooleanValue("remediateSendersCopy", remediatePostRequestBody.remediateSendersCopy ?? false);
     writer.writeEnumValue<RemediationSeverity>("severity", remediatePostRequestBody.severity);
     writer.writeAdditionalData(remediatePostRequestBody.additionalData);
 }

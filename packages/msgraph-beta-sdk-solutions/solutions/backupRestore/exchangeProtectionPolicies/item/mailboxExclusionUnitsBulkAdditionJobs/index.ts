@@ -27,21 +27,22 @@ export interface MailboxExclusionUnitsBulkAdditionJobsRequestBuilder extends Bas
      */
      byMailboxExclusionUnitsBulkAdditionJobId(mailboxExclusionUnitsBulkAdditionJobId: string) : MailboxExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
-     * Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+     * Get a list of mailbox exclusion units bulk addition jobs associated with an Exchange protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxexclusionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MailboxExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
     /**
-     * Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+     * Get a list of mailbox exclusion units bulk addition jobs associated with an Exchange protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+ * Get a list of mailbox exclusion units bulk addition jobs associated with an Exchange protection policy.
  */
 export interface MailboxExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters {
     /**

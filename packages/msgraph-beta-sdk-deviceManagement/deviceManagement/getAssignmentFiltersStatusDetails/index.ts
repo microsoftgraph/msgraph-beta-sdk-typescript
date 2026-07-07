@@ -25,7 +25,7 @@ export function createGetAssignmentFiltersStatusDetailsPostRequestBodyFromDiscri
 // @ts-ignore
 export function deserializeIntoGetAssignmentFiltersStatusDetailsPostRequestBody(getAssignmentFiltersStatusDetailsPostRequestBody: Partial<GetAssignmentFiltersStatusDetailsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "assignmentFilterIds": n => { getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "assignmentFilterIds": n => { getAssignmentFiltersStatusDetailsPostRequestBody.assignmentFilterIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { getAssignmentFiltersStatusDetailsPostRequestBody.backingStoreEnabled = true; },
         "managedDeviceId": n => { getAssignmentFiltersStatusDetailsPostRequestBody.managedDeviceId = n.getStringValue(); },
         "payloadId": n => { getAssignmentFiltersStatusDetailsPostRequestBody.payloadId = n.getStringValue(); },

@@ -24,7 +24,7 @@ export function createPurgeImportedSnapshotPostRequestBodyFromDiscriminatorValue
 export function deserializeIntoPurgeImportedSnapshotPostRequestBody(purgeImportedSnapshotPostRequestBody: Partial<PurgeImportedSnapshotPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { purgeImportedSnapshotPostRequestBody.backingStoreEnabled = true; },
-        "snapshotIds": n => { purgeImportedSnapshotPostRequestBody.snapshotIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "snapshotIds": n => { purgeImportedSnapshotPostRequestBody.snapshotIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface PurgeImportedSnapshotPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

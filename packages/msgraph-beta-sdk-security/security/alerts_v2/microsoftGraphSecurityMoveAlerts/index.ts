@@ -26,7 +26,7 @@ export function createMoveAlertsPostRequestBodyFromDiscriminatorValue(parseNode:
 export function deserializeIntoMoveAlertsPostRequestBody(moveAlertsPostRequestBody: Partial<MoveAlertsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "alertComment": n => { moveAlertsPostRequestBody.alertComment = n.getStringValue(); },
-        "alertIds": n => { moveAlertsPostRequestBody.alertIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "alertIds": n => { moveAlertsPostRequestBody.alertIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { moveAlertsPostRequestBody.backingStoreEnabled = true; },
         "incidentId": n => { moveAlertsPostRequestBody.incidentId = n.getStringValue(); },
         "newCorrelationReasons": n => { moveAlertsPostRequestBody.newCorrelationReasons = n.getCollectionOfEnumValues<CorrelationReason>(CorrelationReasonObject); },

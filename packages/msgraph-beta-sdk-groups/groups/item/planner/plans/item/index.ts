@@ -14,6 +14,8 @@ import { DetailsRequestBuilderRequestsMetadata, type DetailsRequestBuilder } fro
 // @ts-ignore
 import { GetUsageRightsRequestBuilderRequestsMetadata, type GetUsageRightsRequestBuilder } from './getUsageRights/index.js';
 // @ts-ignore
+import { HistoryItemsRequestBuilderNavigationMetadata, HistoryItemsRequestBuilderRequestsMetadata, type HistoryItemsRequestBuilder } from './historyItems/index.js';
+// @ts-ignore
 import { MoveToContainerRequestBuilderRequestsMetadata, type MoveToContainerRequestBuilder } from './moveToContainer/index.js';
 // @ts-ignore
 import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetadata, type TasksRequestBuilder } from './tasks/index.js';
@@ -42,6 +44,10 @@ export interface PlannerPlanItemRequestBuilder extends BaseRequestBuilder<Planne
      * Provides operations to call the getUsageRights method.
      */
     get getUsageRights(): GetUsageRightsRequestBuilder;
+    /**
+     * Provides operations to manage the historyItems property of the microsoft.graph.plannerPlan entity.
+     */
+    get historyItems(): HistoryItemsRequestBuilder;
     /**
      * Provides operations to call the moveToContainer method.
      */
@@ -135,6 +141,10 @@ export const PlannerPlanItemRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     getUsageRights: {
         requestsMetadata: GetUsageRightsRequestBuilderRequestsMetadata,
+    },
+    historyItems: {
+        requestsMetadata: HistoryItemsRequestBuilderRequestsMetadata,
+        navigationMetadata: HistoryItemsRequestBuilderNavigationMetadata,
     },
     moveToContainer: {
         requestsMetadata: MoveToContainerRequestBuilderRequestsMetadata,

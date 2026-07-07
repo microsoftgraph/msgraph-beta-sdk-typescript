@@ -19,40 +19,43 @@ export interface CloudPcPoolItemRequestBuilder extends BaseRequestBuilder<CloudP
      */
     get assignments(): AssignmentsRequestBuilder;
     /**
-     * Delete navigation property cloudPcPools for deviceManagement
+     * Delete a cloudPcPool object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpool-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get cloudPcPools from deviceManagement
+     * Read the properties and relationships of a cloudPcPool object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPool>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpool-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcPoolItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcPool | undefined>;
     /**
-     * Update the navigation property cloudPcPools in deviceManagement
+     * Update the properties of a cloudPcPool object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPool>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpool-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CloudPcPool, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcPool | undefined>;
     /**
-     * Delete navigation property cloudPcPools for deviceManagement
+     * Delete a cloudPcPool object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get cloudPcPools from deviceManagement
+     * Read the properties and relationships of a cloudPcPool object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcPoolItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property cloudPcPools in deviceManagement
+     * Update the properties of a cloudPcPool object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,7 +63,7 @@ export interface CloudPcPoolItemRequestBuilder extends BaseRequestBuilder<CloudP
      toPatchRequestInformation(body: CloudPcPool, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get cloudPcPools from deviceManagement
+ * Read the properties and relationships of a cloudPcPool object.
  */
 export interface CloudPcPoolItemRequestBuilderGetQueryParameters {
     /**

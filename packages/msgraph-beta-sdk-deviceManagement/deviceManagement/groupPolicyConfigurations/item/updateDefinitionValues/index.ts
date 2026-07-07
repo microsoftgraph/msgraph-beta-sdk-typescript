@@ -27,7 +27,7 @@ export function deserializeIntoUpdateDefinitionValuesPostRequestBody(updateDefin
     return {
         "added": n => { updateDefinitionValuesPostRequestBody.added = n.getCollectionOfObjectValues<GroupPolicyDefinitionValue>(createGroupPolicyDefinitionValueFromDiscriminatorValue); },
         "backingStoreEnabled": n => { updateDefinitionValuesPostRequestBody.backingStoreEnabled = true; },
-        "deletedIds": n => { updateDefinitionValuesPostRequestBody.deletedIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "deletedIds": n => { updateDefinitionValuesPostRequestBody.deletedIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "updated": n => { updateDefinitionValuesPostRequestBody.updated = n.getCollectionOfObjectValues<GroupPolicyDefinitionValue>(createGroupPolicyDefinitionValueFromDiscriminatorValue); },
     }
 }

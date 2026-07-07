@@ -52,7 +52,7 @@ export function createCanSignUpGetResponseFromDiscriminatorValue(parseNode: Pars
 export function deserializeIntoCanSignUpGetResponse(canSignUpGetResponse: Partial<CanSignUpGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { canSignUpGetResponse.backingStoreEnabled = true; },
-        "value": n => { canSignUpGetResponse.value = n.getBooleanValue(); },
+        "value": n => { canSignUpGetResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -64,7 +64,7 @@ export function deserializeIntoCanSignUpGetResponse(canSignUpGetResponse: Partia
 // @ts-ignore
 export function serializeCanSignUpGetResponse(writer: SerializationWriter, canSignUpGetResponse: Partial<CanSignUpGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!canSignUpGetResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", canSignUpGetResponse.value);
+    writer.writeBooleanValue("value", canSignUpGetResponse.value ?? false);
     writer.writeAdditionalData(canSignUpGetResponse.additionalData);
 }
 /**

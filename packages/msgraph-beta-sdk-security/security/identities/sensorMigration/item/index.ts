@@ -19,7 +19,7 @@ export interface SensorMigrationItemRequestBuilder extends BaseRequestBuilder<Se
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get sensorMigration from security
+     * Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensorMigration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface SensorMigrationItemRequestBuilder extends BaseRequestBuilder<Se
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get sensorMigration from security
+     * Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface SensorMigrationItemRequestBuilder extends BaseRequestBuilder<Se
      toPatchRequestInformation(body: SensorMigration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensorMigration from security
+ * Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
  */
 export interface SensorMigrationItemRequestBuilderGetQueryParameters {
     /**

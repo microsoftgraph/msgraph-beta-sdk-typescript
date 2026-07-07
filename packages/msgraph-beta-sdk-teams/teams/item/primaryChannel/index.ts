@@ -12,11 +12,13 @@ import { ArchiveRequestBuilderRequestsMetadata, type ArchiveRequestBuilder } fro
 // @ts-ignore
 import { CompleteMigrationRequestBuilderRequestsMetadata, type CompleteMigrationRequestBuilder } from './completeMigration/index.js';
 // @ts-ignore
-import { DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderRequestsMetadata, type DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder } from './doesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName/index.js';
+import { DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderRequestsMetadata, type DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder } from './doesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrinc_09968052/index.js';
 // @ts-ignore
 import { EnabledAppsRequestBuilderNavigationMetadata, EnabledAppsRequestBuilderRequestsMetadata, type EnabledAppsRequestBuilder } from './enabledApps/index.js';
 // @ts-ignore
 import { FilesFolderRequestBuilderNavigationMetadata, FilesFolderRequestBuilderRequestsMetadata, type FilesFolderRequestBuilder } from './filesFolder/index.js';
+// @ts-ignore
+import { JoinedUsersRequestBuilderNavigationMetadata, JoinedUsersRequestBuilderRequestsMetadata, type JoinedUsersRequestBuilder } from './joinedUsers/index.js';
 // @ts-ignore
 import { MembersRequestBuilderNavigationMetadata, MembersRequestBuilderRequestsMetadata, type MembersRequestBuilder } from './members/index.js';
 // @ts-ignore
@@ -66,6 +68,10 @@ export interface PrimaryChannelRequestBuilder extends BaseRequestBuilder<Primary
      * Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
      */
     get filesFolder(): FilesFolderRequestBuilder;
+    /**
+     * Provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.
+     */
+    get joinedUsers(): JoinedUsersRequestBuilder;
     /**
      * Provides operations to manage the members property of the microsoft.graph.channel entity.
      */
@@ -192,6 +198,10 @@ export const PrimaryChannelRequestBuilderNavigationMetadata: Record<Exclude<keyo
     filesFolder: {
         requestsMetadata: FilesFolderRequestBuilderRequestsMetadata,
         navigationMetadata: FilesFolderRequestBuilderNavigationMetadata,
+    },
+    joinedUsers: {
+        requestsMetadata: JoinedUsersRequestBuilderRequestsMetadata,
+        navigationMetadata: JoinedUsersRequestBuilderNavigationMetadata,
     },
     members: {
         requestsMetadata: MembersRequestBuilderRequestsMetadata,

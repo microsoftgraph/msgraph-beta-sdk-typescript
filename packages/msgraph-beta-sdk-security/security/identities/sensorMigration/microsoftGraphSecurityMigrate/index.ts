@@ -26,7 +26,7 @@ export function createMigratePostRequestBodyFromDiscriminatorValue(parseNode: Pa
 export function deserializeIntoMigratePostRequestBody(migratePostRequestBody: Partial<MigratePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { migratePostRequestBody.backingStoreEnabled = true; },
-        "sensorIds": n => { migratePostRequestBody.sensorIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "sensorIds": n => { migratePostRequestBody.sensorIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -34,15 +34,16 @@ export function deserializeIntoMigratePostRequestBody(migratePostRequestBody: Pa
  */
 export interface MicrosoftGraphSecurityMigrateRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityMigrateRequestBuilder> {
     /**
-     * Invoke action migrate
+     * Migrate the specified sensors to the unified security portal. This action initiates the migration process for one or more Microsoft Defender for Identity sensors.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MigrateSensorsResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-sensormigration-migrate?view=graph-rest-beta|Find more info here}
      */
      post(body: MigratePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MigrateSensorsResult | undefined>;
     /**
-     * Invoke action migrate
+     * Migrate the specified sensors to the unified security portal. This action initiates the migration process for one or more Microsoft Defender for Identity sensors.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

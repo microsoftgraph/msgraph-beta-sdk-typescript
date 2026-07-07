@@ -10,7 +10,7 @@ import { EditionsRequestBuilderNavigationMetadata, EditionsRequestBuilderRequest
 // @ts-ignore
 import { KnownIssuesRequestBuilderNavigationMetadata, KnownIssuesRequestBuilderRequestsMetadata, type KnownIssuesRequestBuilder } from './knownIssues/index.js';
 // @ts-ignore
-import { MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderRequestsMetadata, type MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder } from './microsoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive/index.js';
+import { MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderRequestsMetadata, type MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder } from './microsoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWi_b9906865/index.js';
 // @ts-ignore
 import { RevisionsRequestBuilderNavigationMetadata, RevisionsRequestBuilderRequestsMetadata, type RevisionsRequestBuilder } from './revisions/index.js';
 // @ts-ignore

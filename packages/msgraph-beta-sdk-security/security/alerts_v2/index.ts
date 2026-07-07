@@ -41,11 +41,12 @@ export interface Alerts_v2RequestBuilder extends BaseRequestBuilder<Alerts_v2Req
      */
      get(requestConfiguration?: RequestConfiguration<Alerts_v2RequestBuilderGetQueryParameters> | undefined) : Promise<AlertCollectionResponse | undefined>;
     /**
-     * Create new navigation property to alerts_v2 for security
+     * Create a manual security alert in Microsoft 365 Defender with specified entities and metadata. When the alert is created, the backend automatically creates a new incident to contain the alert, or links the alert to an existing incident if linkToIncident is specified.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Alert>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-alert-post-manualalert?view=graph-rest-beta|Find more info here}
      */
      post(body: Alert, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Alert | undefined>;
     /**
@@ -55,7 +56,7 @@ export interface Alerts_v2RequestBuilder extends BaseRequestBuilder<Alerts_v2Req
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<Alerts_v2RequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to alerts_v2 for security
+     * Create a manual security alert in Microsoft 365 Defender with specified entities and metadata. When the alert is created, the backend automatically creates a new incident to contain the alert, or links the alert to an existing incident if linkToIncident is specified.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

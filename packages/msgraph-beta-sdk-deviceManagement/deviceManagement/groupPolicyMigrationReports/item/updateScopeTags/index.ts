@@ -33,7 +33,7 @@ export function createUpdateScopeTagsPostResponseFromDiscriminatorValue(parseNod
 export function deserializeIntoUpdateScopeTagsPostRequestBody(updateScopeTagsPostRequestBody: Partial<UpdateScopeTagsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateScopeTagsPostRequestBody.backingStoreEnabled = true; },
-        "roleScopeTagIds": n => { updateScopeTagsPostRequestBody.roleScopeTagIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "roleScopeTagIds": n => { updateScopeTagsPostRequestBody.roleScopeTagIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

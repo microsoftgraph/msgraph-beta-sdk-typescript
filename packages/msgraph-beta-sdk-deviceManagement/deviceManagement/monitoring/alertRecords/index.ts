@@ -10,7 +10,7 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { AlertRecordItemRequestBuilderNavigationMetadata, AlertRecordItemRequestBuilderRequestsMetadata, type AlertRecordItemRequestBuilder } from './item/index.js';
 // @ts-ignore
-import { MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderRequestsMetadata, type MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder } from './microsoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent/index.js';
+import { MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderRequestsMetadata, type MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder } from './microsoftGraphDeviceManagementChangeAlertRecordsPortalN_43d1221f/index.js';
 // @ts-ignore
 import { MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderRequestsMetadata, type MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder } from './microsoftGraphDeviceManagementGetPortalNotifications/index.js';
 // @ts-ignore

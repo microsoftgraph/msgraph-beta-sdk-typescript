@@ -74,7 +74,7 @@ export interface DeployAgentRequestBuilder extends BaseRequestBuilder<DeployAgen
 export function deserializeIntoDeployAgentPostRequestBody(deployAgentPostRequestBody: Partial<DeployAgentPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deployAgentPostRequestBody.backingStoreEnabled = true; },
-        "cloudPcIds": n => { deployAgentPostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudPcIds": n => { deployAgentPostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

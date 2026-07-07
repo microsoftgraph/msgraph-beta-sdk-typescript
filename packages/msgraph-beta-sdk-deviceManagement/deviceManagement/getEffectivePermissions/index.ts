@@ -26,7 +26,7 @@ export function createGetEffectivePermissionsGetResponseFromDiscriminatorValue(p
 export function deserializeIntoGetEffectivePermissionsGetResponse(getEffectivePermissionsGetResponse: Partial<GetEffectivePermissionsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getEffectivePermissionsGetResponse),
-        "value": n => { getEffectivePermissionsGetResponse.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { getEffectivePermissionsGetResponse.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface GetEffectivePermissionsGetResponse extends BaseCollectionPaginationCountResponse, Parsable {

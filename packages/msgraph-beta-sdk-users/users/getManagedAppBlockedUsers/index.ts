@@ -26,7 +26,7 @@ export function createGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue
 export function deserializeIntoGetManagedAppBlockedUsersGetResponse(getManagedAppBlockedUsersGetResponse: Partial<GetManagedAppBlockedUsersGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getManagedAppBlockedUsersGetResponse),
-        "value": n => { getManagedAppBlockedUsersGetResponse.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { getManagedAppBlockedUsersGetResponse.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface GetManagedAppBlockedUsersGetResponse extends BaseCollectionPaginationCountResponse, Parsable {

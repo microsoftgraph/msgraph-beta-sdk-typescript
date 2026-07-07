@@ -26,15 +26,15 @@ export function createRecordResponsePostRequestBodyFromDiscriminatorValue(parseN
 export function deserializeIntoRecordResponsePostRequestBody(recordResponsePostRequestBody: Partial<RecordResponsePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { recordResponsePostRequestBody.backingStoreEnabled = true; },
-        "bargeInAllowed": n => { recordResponsePostRequestBody.bargeInAllowed = n.getBooleanValue(); },
+        "bargeInAllowed": n => { recordResponsePostRequestBody.bargeInAllowed = n.getBooleanValue() ?? false; },
         "clientContext": n => { recordResponsePostRequestBody.clientContext = n.getStringValue(); },
         "initialSilenceTimeoutInSeconds": n => { recordResponsePostRequestBody.initialSilenceTimeoutInSeconds = n.getNumberValue(); },
         "maxRecordDurationInSeconds": n => { recordResponsePostRequestBody.maxRecordDurationInSeconds = n.getNumberValue(); },
         "maxSilenceTimeoutInSeconds": n => { recordResponsePostRequestBody.maxSilenceTimeoutInSeconds = n.getNumberValue(); },
-        "playBeep": n => { recordResponsePostRequestBody.playBeep = n.getBooleanValue(); },
+        "playBeep": n => { recordResponsePostRequestBody.playBeep = n.getBooleanValue() ?? false; },
         "prompts": n => { recordResponsePostRequestBody.prompts = n.getCollectionOfObjectValues<Prompt>(createPromptFromDiscriminatorValue); },
-        "stopTones": n => { recordResponsePostRequestBody.stopTones = n.getCollectionOfPrimitiveValues<string>(); },
-        "streamWhileRecording": n => { recordResponsePostRequestBody.streamWhileRecording = n.getBooleanValue(); },
+        "stopTones": n => { recordResponsePostRequestBody.stopTones = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "streamWhileRecording": n => { recordResponsePostRequestBody.streamWhileRecording = n.getBooleanValue() ?? false; },
     }
 }
 export interface RecordResponsePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -109,15 +109,15 @@ export interface RecordResponseRequestBuilder extends BaseRequestBuilder<RecordR
 // @ts-ignore
 export function serializeRecordResponsePostRequestBody(writer: SerializationWriter, recordResponsePostRequestBody: Partial<RecordResponsePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!recordResponsePostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("bargeInAllowed", recordResponsePostRequestBody.bargeInAllowed);
+    writer.writeBooleanValue("bargeInAllowed", recordResponsePostRequestBody.bargeInAllowed ?? false);
     writer.writeStringValue("clientContext", recordResponsePostRequestBody.clientContext);
     writer.writeNumberValue("initialSilenceTimeoutInSeconds", recordResponsePostRequestBody.initialSilenceTimeoutInSeconds);
     writer.writeNumberValue("maxRecordDurationInSeconds", recordResponsePostRequestBody.maxRecordDurationInSeconds);
     writer.writeNumberValue("maxSilenceTimeoutInSeconds", recordResponsePostRequestBody.maxSilenceTimeoutInSeconds);
-    writer.writeBooleanValue("playBeep", recordResponsePostRequestBody.playBeep);
+    writer.writeBooleanValue("playBeep", recordResponsePostRequestBody.playBeep ?? false);
     writer.writeCollectionOfObjectValues<Prompt>("prompts", recordResponsePostRequestBody.prompts, serializePrompt);
     writer.writeCollectionOfPrimitiveValues<string>("stopTones", recordResponsePostRequestBody.stopTones);
-    writer.writeBooleanValue("streamWhileRecording", recordResponsePostRequestBody.streamWhileRecording);
+    writer.writeBooleanValue("streamWhileRecording", recordResponsePostRequestBody.streamWhileRecording ?? false);
     writer.writeAdditionalData(recordResponsePostRequestBody.additionalData);
 }
 /**

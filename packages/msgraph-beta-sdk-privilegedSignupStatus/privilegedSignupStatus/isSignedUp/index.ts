@@ -24,7 +24,7 @@ export function createIsSignedUpGetResponseFromDiscriminatorValue(parseNode: Par
 export function deserializeIntoIsSignedUpGetResponse(isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { isSignedUpGetResponse.backingStoreEnabled = true; },
-        "value": n => { isSignedUpGetResponse.value = n.getBooleanValue(); },
+        "value": n => { isSignedUpGetResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface IsSignedUpGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -64,7 +64,7 @@ export interface IsSignedUpRequestBuilder extends BaseRequestBuilder<IsSignedUpR
 // @ts-ignore
 export function serializeIsSignedUpGetResponse(writer: SerializationWriter, isSignedUpGetResponse: Partial<IsSignedUpGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!isSignedUpGetResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", isSignedUpGetResponse.value);
+    writer.writeBooleanValue("value", isSignedUpGetResponse.value ?? false);
     writer.writeAdditionalData(isSignedUpGetResponse.additionalData);
 }
 /**

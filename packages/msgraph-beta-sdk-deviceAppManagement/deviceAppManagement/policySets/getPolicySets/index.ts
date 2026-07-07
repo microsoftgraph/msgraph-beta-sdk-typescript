@@ -35,7 +35,7 @@ export function createGetPolicySetsPostResponseFromDiscriminatorValue(parseNode:
 export function deserializeIntoGetPolicySetsPostRequestBody(getPolicySetsPostRequestBody: Partial<GetPolicySetsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getPolicySetsPostRequestBody.backingStoreEnabled = true; },
-        "policySetIds": n => { getPolicySetsPostRequestBody.policySetIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "policySetIds": n => { getPolicySetsPostRequestBody.policySetIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

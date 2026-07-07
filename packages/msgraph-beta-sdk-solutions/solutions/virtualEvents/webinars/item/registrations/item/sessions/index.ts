@@ -27,7 +27,7 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      */
      byVirtualEventSessionId(virtualEventSessionId: string) : VirtualEventSessionItemRequestBuilder;
     /**
-     * Get a list of sessions that a registrant registered for in a webinar.
+     * Get a list of sessions that a registrant registered for in a webinar or town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,14 +35,14 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      */
      get(requestConfiguration?: RequestConfiguration<SessionsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventSessionCollectionResponse | undefined>;
     /**
-     * Get a list of sessions that a registrant registered for in a webinar.
+     * Get a list of sessions that a registrant registered for in a webinar or town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get a list of sessions that a registrant registered for in a webinar.
+ * Get a list of sessions that a registrant registered for in a webinar or town hall.
  */
 export interface SessionsRequestBuilderGetQueryParameters {
     /**

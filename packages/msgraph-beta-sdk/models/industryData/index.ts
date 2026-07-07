@@ -1099,7 +1099,7 @@ export function deserializeIntoBasicFilter(basicFilter: Partial<BasicFilter> | u
     return {
         ...deserializeIntoFilter(basicFilter),
         "attribute": n => { basicFilter.attribute = n.getEnumValue<FilterOptions>(FilterOptionsObject); },
-        "in": n => { basicFilter.inEscaped = n.getCollectionOfPrimitiveValues<string>(); },
+        "in": n => { basicFilter.inEscaped = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -1189,7 +1189,7 @@ export function deserializeIntoFileFormatReferenceValue(fileFormatReferenceValue
 export function deserializeIntoFileValidateOperation(fileValidateOperation: Partial<FileValidateOperation> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoValidateOperation(fileValidateOperation),
-        "validatedFiles": n => { fileValidateOperation.validatedFiles = n.getCollectionOfPrimitiveValues<string>(); },
+        "validatedFiles": n => { fileValidateOperation.validatedFiles = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -1764,7 +1764,7 @@ export function deserializeIntoUserConfiguration(userConfiguration: Partial<User
     return {
         "backingStoreEnabled": n => { userConfiguration.backingStoreEnabled = true; },
         "defaultPasswordSettings": n => { userConfiguration.defaultPasswordSettings = n.getObjectValue<PasswordSettings>(createPasswordSettingsFromDiscriminatorValue); },
-        "licenseSkus": n => { userConfiguration.licenseSkus = n.getCollectionOfPrimitiveValues<string>(); },
+        "licenseSkus": n => { userConfiguration.licenseSkus = n.getCollectionOfPrimitiveValues<string>("string"); },
         "@odata.type": n => { userConfiguration.odataType = n.getStringValue(); },
         "roleGroup": n => { userConfiguration.roleGroup = n.getObjectValue<RoleGroup>(createRoleGroupFromDiscriminatorValue); },
     }

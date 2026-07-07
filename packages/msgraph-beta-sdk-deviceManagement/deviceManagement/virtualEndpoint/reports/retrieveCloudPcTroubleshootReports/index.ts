@@ -27,11 +27,11 @@ export function deserializeIntoRetrieveCloudPcTroubleshootReportsPostRequestBody
     return {
         "backingStoreEnabled": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.reportName = n.getEnumValue<CloudPCTroubleshootReportType>(CloudPCTroubleshootReportTypeObject); },
         "search": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveCloudPcTroubleshootReportsPostRequestBody.top = n.getNumberValue(); },
     }
@@ -79,7 +79,7 @@ export interface RetrieveCloudPcTroubleshootReportsPostRequestBody extends Addit
  */
 export interface RetrieveCloudPcTroubleshootReportsRequestBuilder extends BaseRequestBuilder<RetrieveCloudPcTroubleshootReportsRequestBuilder> {
     /**
-     * Get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
+     * Get Cloud PC troubleshooting reports. You can get tenant-level reports, configuration reports, user and device reports, and view data table reports. For the report types grouped by scope, including the mandatory filter parameters and response columns per reportName, see Cloud PC troubleshoot report types.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
@@ -88,7 +88,7 @@ export interface RetrieveCloudPcTroubleshootReportsRequestBuilder extends BaseRe
      */
      post(body: RetrieveCloudPcTroubleshootReportsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
+     * Get Cloud PC troubleshooting reports. You can get tenant-level reports, configuration reports, user and device reports, and view data table reports. For the report types grouped by scope, including the mandatory filter parameters and response columns per reportName, see Cloud PC troubleshoot report types.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

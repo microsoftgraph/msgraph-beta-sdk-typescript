@@ -24,7 +24,7 @@ export function createUpdateDeviceProfileAssignmentPostRequestBodyFromDiscrimina
 export function deserializeIntoUpdateDeviceProfileAssignmentPostRequestBody(updateDeviceProfileAssignmentPostRequestBody: Partial<UpdateDeviceProfileAssignmentPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateDeviceProfileAssignmentPostRequestBody.backingStoreEnabled = true; },
-        "deviceIds": n => { updateDeviceProfileAssignmentPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "deviceIds": n => { updateDeviceProfileAssignmentPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

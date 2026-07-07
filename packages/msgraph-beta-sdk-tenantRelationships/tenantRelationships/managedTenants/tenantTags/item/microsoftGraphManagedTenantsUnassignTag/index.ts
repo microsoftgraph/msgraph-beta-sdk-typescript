@@ -26,7 +26,7 @@ export function createUnassignTagPostRequestBodyFromDiscriminatorValue(parseNode
 export function deserializeIntoUnassignTagPostRequestBody(unassignTagPostRequestBody: Partial<UnassignTagPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unassignTagPostRequestBody.backingStoreEnabled = true; },
-        "tenantIds": n => { unassignTagPostRequestBody.tenantIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "tenantIds": n => { unassignTagPostRequestBody.tenantIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

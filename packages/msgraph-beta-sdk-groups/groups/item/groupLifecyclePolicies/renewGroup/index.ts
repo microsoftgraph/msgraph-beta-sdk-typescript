@@ -45,7 +45,7 @@ export function deserializeIntoRenewGroupPostRequestBody(renewGroupPostRequestBo
 export function deserializeIntoRenewGroupPostResponse(renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { renewGroupPostResponse.backingStoreEnabled = true; },
-        "value": n => { renewGroupPostResponse.value = n.getBooleanValue(); },
+        "value": n => { renewGroupPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface RenewGroupPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -110,7 +110,7 @@ export function serializeRenewGroupPostRequestBody(writer: SerializationWriter, 
 // @ts-ignore
 export function serializeRenewGroupPostResponse(writer: SerializationWriter, renewGroupPostResponse: Partial<RenewGroupPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!renewGroupPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", renewGroupPostResponse.value);
+    writer.writeBooleanValue("value", renewGroupPostResponse.value ?? false);
     writer.writeAdditionalData(renewGroupPostResponse.additionalData);
 }
 /**

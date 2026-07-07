@@ -27,7 +27,7 @@ export interface ProfilePropertySettingsRequestBuilder extends BaseRequestBuilde
      */
      byProfilePropertySettingId(profilePropertySettingId: string) : ProfilePropertySettingItemRequestBuilder;
     /**
-     * Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+     * Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProfilePropertySettingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -44,7 +44,7 @@ export interface ProfilePropertySettingsRequestBuilder extends BaseRequestBuilde
      */
      post(body: ProfilePropertySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProfilePropertySetting | undefined>;
     /**
-     * Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+     * Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -58,7 +58,7 @@ export interface ProfilePropertySettingsRequestBuilder extends BaseRequestBuilde
      toPostRequestInformation(body: ProfilePropertySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a collection of profilePropertySetting objects that define the configuration for user profile properties in an organization. The id property identifies each resource object uniquely.
+ * Get a collection of profilePropertySetting objects that define the configuration for user profile property settings in an organization. The id property identifies each resource object uniquely.
  */
 export interface ProfilePropertySettingsRequestBuilderGetQueryParameters {
     /**

@@ -69,7 +69,7 @@ export function deserializeIntoClassifyExactMatchesPostRequestBody(classifyExact
     return {
         "backingStoreEnabled": n => { classifyExactMatchesPostRequestBody.backingStoreEnabled = true; },
         "contentClassifications": n => { classifyExactMatchesPostRequestBody.contentClassifications = n.getCollectionOfObjectValues<ContentClassification>(createContentClassificationFromDiscriminatorValue); },
-        "sensitiveTypeIds": n => { classifyExactMatchesPostRequestBody.sensitiveTypeIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "sensitiveTypeIds": n => { classifyExactMatchesPostRequestBody.sensitiveTypeIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "text": n => { classifyExactMatchesPostRequestBody.text = n.getStringValue(); },
         "timeoutInMs": n => { classifyExactMatchesPostRequestBody.timeoutInMs = n.getStringValue(); },
     }

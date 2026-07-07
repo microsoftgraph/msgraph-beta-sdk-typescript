@@ -25,7 +25,7 @@ export interface RulesRequestBuilder extends BaseRequestBuilder<RulesRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get rules from security
+     * Container for the security rules configured in Microsoft Defender XDR, including custom detection rules.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RulesRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface RulesRequestBuilder extends BaseRequestBuilder<RulesRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get rules from security
+     * Container for the security rules configured in Microsoft Defender XDR, including custom detection rules.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface RulesRequestBuilder extends BaseRequestBuilder<RulesRequestBuil
      toPatchRequestInformation(body: RulesRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get rules from security
+ * Container for the security rules configured in Microsoft Defender XDR, including custom detection rules.
  */
 export interface RulesRequestBuilderGetQueryParameters {
     /**

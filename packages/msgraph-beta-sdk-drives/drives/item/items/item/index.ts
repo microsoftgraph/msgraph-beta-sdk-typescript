@@ -44,7 +44,7 @@ import { ExtractSensitivityLabelsRequestBuilderRequestsMetadata, type ExtractSen
 // @ts-ignore
 import { FollowRequestBuilderRequestsMetadata, type FollowRequestBuilder } from './follow/index.js';
 // @ts-ignore
-import { GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderRequestsMetadata, type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder } from './getActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval/index.js';
+import { GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderRequestsMetadata, type GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder } from './getActivitiesByIntervalWithStartDateTimeWithEndDateTime_58a4aa2a/index.js';
 // @ts-ignore
 import { InviteRequestBuilderRequestsMetadata, type InviteRequestBuilder } from './invite/index.js';
 // @ts-ignore

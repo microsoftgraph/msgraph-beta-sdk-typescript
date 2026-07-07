@@ -24,7 +24,7 @@ export function createUpdateIndexPostRequestBodyFromDiscriminatorValue(parseNode
 export function deserializeIntoUpdateIndexPostRequestBody(updateIndexPostRequestBody: Partial<UpdateIndexPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateIndexPostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { updateIndexPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { updateIndexPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

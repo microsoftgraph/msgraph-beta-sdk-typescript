@@ -74,6 +74,8 @@ import { DevicesWithDeviceIdRequestBuilderRequestsMetadata, type DevicesWithDevi
 // @ts-ignore
 import { DirectReportsRequestBuilderNavigationMetadata, DirectReportsRequestBuilderRequestsMetadata, type DirectReportsRequestBuilder } from './directReports/index.js';
 // @ts-ignore
+import { DistributionListsRequestBuilderNavigationMetadata, DistributionListsRequestBuilderRequestsMetadata, type DistributionListsRequestBuilder } from './distributionLists/index.js';
+// @ts-ignore
 import { DriveRequestBuilderRequestsMetadata, type DriveRequestBuilder } from './drive/index.js';
 // @ts-ignore
 import { DrivesRequestBuilderNavigationMetadata, DrivesRequestBuilderRequestsMetadata, type DrivesRequestBuilder } from './drives/index.js';
@@ -384,6 +386,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the directReports property of the microsoft.graph.user entity.
      */
     get directReports(): DirectReportsRequestBuilder;
+    /**
+     * Provides operations to manage the distributionLists property of the microsoft.graph.user entity.
+     */
+    get distributionLists(): DistributionListsRequestBuilder;
     /**
      * Provides operations to manage the drive property of the microsoft.graph.user entity.
      */
@@ -767,7 +773,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      onlineMeetingsWithJoinWebUrl(joinWebUrl: string | undefined) : OnlineMeetingsWithJoinWebUrlRequestBuilder;
     /**
-     * Update the properties of a user or agentUser object.
+     * Update the properties of a user. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<User>}
@@ -795,7 +801,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a user or agentUser object.
+     * Update the properties of a user. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -976,6 +982,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     directReports: {
         requestsMetadata: DirectReportsRequestBuilderRequestsMetadata,
         navigationMetadata: DirectReportsRequestBuilderNavigationMetadata,
+    },
+    distributionLists: {
+        requestsMetadata: DistributionListsRequestBuilderRequestsMetadata,
+        navigationMetadata: DistributionListsRequestBuilderNavigationMetadata,
     },
     drive: {
         requestsMetadata: DriveRequestBuilderRequestsMetadata,

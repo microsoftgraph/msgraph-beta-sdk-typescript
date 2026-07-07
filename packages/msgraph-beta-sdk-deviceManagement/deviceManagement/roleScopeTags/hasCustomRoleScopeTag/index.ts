@@ -24,7 +24,7 @@ export function createHasCustomRoleScopeTagGetResponseFromDiscriminatorValue(par
 export function deserializeIntoHasCustomRoleScopeTagGetResponse(hasCustomRoleScopeTagGetResponse: Partial<HasCustomRoleScopeTagGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { hasCustomRoleScopeTagGetResponse.backingStoreEnabled = true; },
-        "value": n => { hasCustomRoleScopeTagGetResponse.value = n.getBooleanValue(); },
+        "value": n => { hasCustomRoleScopeTagGetResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface HasCustomRoleScopeTagGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -64,7 +64,7 @@ export interface HasCustomRoleScopeTagRequestBuilder extends BaseRequestBuilder<
 // @ts-ignore
 export function serializeHasCustomRoleScopeTagGetResponse(writer: SerializationWriter, hasCustomRoleScopeTagGetResponse: Partial<HasCustomRoleScopeTagGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!hasCustomRoleScopeTagGetResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", hasCustomRoleScopeTagGetResponse.value);
+    writer.writeBooleanValue("value", hasCustomRoleScopeTagGetResponse.value ?? false);
     writer.writeAdditionalData(hasCustomRoleScopeTagGetResponse.additionalData);
 }
 /**

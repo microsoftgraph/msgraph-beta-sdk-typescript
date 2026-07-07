@@ -19,7 +19,7 @@ export interface CloudPcPoolAssignmentItemRequestBuilder extends BaseRequestBuil
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get assignments from users
+     * The collection of assignments that grant user or service principal identities access to this pool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPoolAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface CloudPcPoolAssignmentItemRequestBuilder extends BaseRequestBuil
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get assignments from users
+     * The collection of assignments that grant user or service principal identities access to this pool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface CloudPcPoolAssignmentItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get assignments from users
+ * The collection of assignments that grant user or service principal identities access to this pool.
  */
 export interface CloudPcPoolAssignmentItemRequestBuilderGetQueryParameters {
     /**

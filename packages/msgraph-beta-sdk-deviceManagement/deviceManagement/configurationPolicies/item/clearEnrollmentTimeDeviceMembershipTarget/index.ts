@@ -52,7 +52,7 @@ export function createClearEnrollmentTimeDeviceMembershipTargetPostResponseFromD
 export function deserializeIntoClearEnrollmentTimeDeviceMembershipTargetPostResponse(clearEnrollmentTimeDeviceMembershipTargetPostResponse: Partial<ClearEnrollmentTimeDeviceMembershipTargetPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { clearEnrollmentTimeDeviceMembershipTargetPostResponse.backingStoreEnabled = true; },
-        "value": n => { clearEnrollmentTimeDeviceMembershipTargetPostResponse.value = n.getBooleanValue(); },
+        "value": n => { clearEnrollmentTimeDeviceMembershipTargetPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -64,7 +64,7 @@ export function deserializeIntoClearEnrollmentTimeDeviceMembershipTargetPostResp
 // @ts-ignore
 export function serializeClearEnrollmentTimeDeviceMembershipTargetPostResponse(writer: SerializationWriter, clearEnrollmentTimeDeviceMembershipTargetPostResponse: Partial<ClearEnrollmentTimeDeviceMembershipTargetPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!clearEnrollmentTimeDeviceMembershipTargetPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", clearEnrollmentTimeDeviceMembershipTargetPostResponse.value);
+    writer.writeBooleanValue("value", clearEnrollmentTimeDeviceMembershipTargetPostResponse.value ?? false);
     writer.writeAdditionalData(clearEnrollmentTimeDeviceMembershipTargetPostResponse.additionalData);
 }
 /**

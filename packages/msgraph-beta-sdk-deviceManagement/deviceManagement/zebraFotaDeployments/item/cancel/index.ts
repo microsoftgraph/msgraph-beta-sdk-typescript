@@ -52,7 +52,7 @@ export function createCancelPostResponseFromDiscriminatorValue(parseNode: ParseN
 export function deserializeIntoCancelPostResponse(cancelPostResponse: Partial<CancelPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cancelPostResponse.backingStoreEnabled = true; },
-        "value": n => { cancelPostResponse.value = n.getBooleanValue(); },
+        "value": n => { cancelPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -64,7 +64,7 @@ export function deserializeIntoCancelPostResponse(cancelPostResponse: Partial<Ca
 // @ts-ignore
 export function serializeCancelPostResponse(writer: SerializationWriter, cancelPostResponse: Partial<CancelPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!cancelPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", cancelPostResponse.value);
+    writer.writeBooleanValue("value", cancelPostResponse.value ?? false);
     writer.writeAdditionalData(cancelPostResponse.additionalData);
 }
 /**

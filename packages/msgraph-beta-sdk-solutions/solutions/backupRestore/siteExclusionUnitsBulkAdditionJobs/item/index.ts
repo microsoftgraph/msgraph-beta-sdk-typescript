@@ -19,7 +19,7 @@ export interface SiteExclusionUnitsBulkAdditionJobItemRequestBuilder extends Bas
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get siteExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for site exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface SiteExclusionUnitsBulkAdditionJobItemRequestBuilder extends Bas
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get siteExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for site exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface SiteExclusionUnitsBulkAdditionJobItemRequestBuilder extends Bas
      toPatchRequestInformation(body: SiteExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get siteExclusionUnitsBulkAdditionJobs from solutions
+ * The list of bulk addition jobs for site exclusion units in the tenant.
  */
 export interface SiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters {
     /**

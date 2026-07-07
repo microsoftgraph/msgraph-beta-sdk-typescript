@@ -41,7 +41,7 @@ export interface ClassesRequestBuilder extends BaseRequestBuilder<ClassesRequest
      */
      get(requestConfiguration?: RequestConfiguration<ClassesRequestBuilderGetQueryParameters> | undefined) : Promise<EducationClassCollectionResponse | undefined>;
     /**
-     * Create a new class. This will also create a universal group. When you use this API to create a class, it will add special properties to the group, which willadd features such as assignments and special handling within Microsoft Teams when teams are created using the group. Please note that this API only creates the universal group and does not create a team. Microsoft Teams provides a user interface for teachers to create teams for their own classes using the groups created by this API.
+     * Create a new class. This will also create a universal group. When you use this API to create a class, it will add special properties to the group, which willadd features such as assignments and special handling within Microsoft Teams when teams are created using the group. Please note that this API only creates the universal group and doesn't create a team. Microsoft Teams provides a user interface for teachers to create teams for their own classes using the groups created by this API.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EducationClass>}
@@ -56,7 +56,7 @@ export interface ClassesRequestBuilder extends BaseRequestBuilder<ClassesRequest
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ClassesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new class. This will also create a universal group. When you use this API to create a class, it will add special properties to the group, which willadd features such as assignments and special handling within Microsoft Teams when teams are created using the group. Please note that this API only creates the universal group and does not create a team. Microsoft Teams provides a user interface for teachers to create teams for their own classes using the groups created by this API.
+     * Create a new class. This will also create a universal group. When you use this API to create a class, it will add special properties to the group, which willadd features such as assignments and special handling within Microsoft Teams when teams are created using the group. Please note that this API only creates the universal group and doesn't create a team. Microsoft Teams provides a user interface for teachers to create teams for their own classes using the groups created by this API.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

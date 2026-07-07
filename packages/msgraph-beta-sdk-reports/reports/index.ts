@@ -14,6 +14,8 @@ import { AuthenticationMethodsRequestBuilderNavigationMetadata, AuthenticationMe
 // @ts-ignore
 import { AzureADPremiumLicenseInsightRequestBuilderRequestsMetadata, type AzureADPremiumLicenseInsightRequestBuilder } from './azureADPremiumLicenseInsight/index.js';
 // @ts-ignore
+import { CorrelationsRequestBuilderNavigationMetadata, CorrelationsRequestBuilderRequestsMetadata, type CorrelationsRequestBuilder } from './correlations/index.js';
+// @ts-ignore
 import { CredentialUserRegistrationDetailsRequestBuilderNavigationMetadata, CredentialUserRegistrationDetailsRequestBuilderRequestsMetadata, type CredentialUserRegistrationDetailsRequestBuilder } from './credentialUserRegistrationDetails/index.js';
 // @ts-ignore
 import { DailyPrintUsageRequestBuilderNavigationMetadata, DailyPrintUsageRequestBuilderRequestsMetadata, type DailyPrintUsageRequestBuilder } from './dailyPrintUsage/index.js';
@@ -76,7 +78,7 @@ import { GetFormsUserActivityUserDetailWithDateRequestBuilderRequestsMetadata, t
 // @ts-ignore
 import { GetFormsUserActivityUserDetailWithPeriodRequestBuilderRequestsMetadata, type GetFormsUserActivityUserDetailWithPeriodRequestBuilder } from './getFormsUserActivityUserDetailWithPeriod/index.js';
 // @ts-ignore
-import { GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder } from './getGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime/index.js';
+import { GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder } from './getGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWi_e2eac30b/index.js';
 // @ts-ignore
 import { GetM365AppPlatformUserCountsWithPeriodRequestBuilderRequestsMetadata, type GetM365AppPlatformUserCountsWithPeriodRequestBuilder } from './getM365AppPlatformUserCountsWithPeriod/index.js';
 // @ts-ignore
@@ -144,7 +146,7 @@ import { GetOneDriveUsageFileCountsWithPeriodRequestBuilderRequestsMetadata, typ
 // @ts-ignore
 import { GetOneDriveUsageStorageWithPeriodRequestBuilderRequestsMetadata, type GetOneDriveUsageStorageWithPeriodRequestBuilder } from './getOneDriveUsageStorageWithPeriod/index.js';
 // @ts-ignore
-import { GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder } from './getPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime/index.js';
+import { GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder } from './getPrinterArchivedPrintJobsWithPrinterIdWithStartDateTi_41d6f486/index.js';
 // @ts-ignore
 import { GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderRequestsMetadata, type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder } from './getRelyingPartyDetailedSummaryWithPeriod/index.js';
 // @ts-ignore
@@ -244,7 +246,7 @@ import { GetTeamsUserActivityUserDetailWithDateRequestBuilderRequestsMetadata, t
 // @ts-ignore
 import { GetTeamsUserActivityUserDetailWithPeriodRequestBuilderRequestsMetadata, type GetTeamsUserActivityUserDetailWithPeriodRequestBuilder } from './getTeamsUserActivityUserDetailWithPeriod/index.js';
 // @ts-ignore
-import { GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder } from './getUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime/index.js';
+import { GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder } from './getUserArchivedPrintJobsWithUserIdWithStartDateTimeWith_2be0aad7/index.js';
 // @ts-ignore
 import { GetYammerActivityCountsWithPeriodRequestBuilderRequestsMetadata, type GetYammerActivityCountsWithPeriodRequestBuilder } from './getYammerActivityCountsWithPeriod/index.js';
 // @ts-ignore
@@ -272,13 +274,15 @@ import { GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderRequestsMetad
 // @ts-ignore
 import { HealthMonitoringRequestBuilderNavigationMetadata, HealthMonitoringRequestBuilderRequestsMetadata, type HealthMonitoringRequestBuilder } from './healthMonitoring/index.js';
 // @ts-ignore
-import { ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken/index.js';
+import { IdentityAnalyticsRequestBuilderNavigationMetadata, IdentityAnalyticsRequestBuilderRequestsMetadata, type IdentityAnalyticsRequestBuilder } from './identityAnalytics/index.js';
 // @ts-ignore
-import { ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken/index.js';
+import { ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentAbandonmentDetailsWithSkipWithTo_3cc2b7d1/index.js';
+// @ts-ignore
+import { ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentAbandonmentSummaryWithSkipWithTo_60b80d5d/index.js';
 // @ts-ignore
 import { ManagedDeviceEnrollmentFailureDetailsRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentFailureDetailsRequestBuilder } from './managedDeviceEnrollmentFailureDetails/index.js';
 // @ts-ignore
-import { ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken/index.js';
+import { ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentFailureDetailsWithSkipWithTopWit_5d97720e/index.js';
 // @ts-ignore
 import { ManagedDeviceEnrollmentFailureTrendsRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentFailureTrendsRequestBuilder } from './managedDeviceEnrollmentFailureTrends/index.js';
 // @ts-ignore
@@ -330,6 +334,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to manage the azureADPremiumLicenseInsight property of the microsoft.graph.reportRoot entity.
      */
     get azureADPremiumLicenseInsight(): AzureADPremiumLicenseInsightRequestBuilder;
+    /**
+     * Provides operations to manage the correlations property of the microsoft.graph.reportRoot entity.
+     */
+    get correlations(): CorrelationsRequestBuilder;
     /**
      * Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
      */
@@ -398,6 +406,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to manage the healthMonitoring property of the microsoft.graph.reportRoot entity.
      */
     get healthMonitoring(): HealthMonitoringRequestBuilder;
+    /**
+     * Provides operations to manage the identityAnalytics property of the microsoft.graph.reportRoot entity.
+     */
+    get identityAnalytics(): IdentityAnalyticsRequestBuilder;
     /**
      * Provides operations to call the managedDeviceEnrollmentFailureDetails method.
      */
@@ -1701,6 +1713,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     azureADPremiumLicenseInsight: {
         requestsMetadata: AzureADPremiumLicenseInsightRequestBuilderRequestsMetadata,
     },
+    correlations: {
+        requestsMetadata: CorrelationsRequestBuilderRequestsMetadata,
+        navigationMetadata: CorrelationsRequestBuilderNavigationMetadata,
+    },
     credentialUserRegistrationDetails: {
         requestsMetadata: CredentialUserRegistrationDetailsRequestBuilderRequestsMetadata,
         navigationMetadata: CredentialUserRegistrationDetailsRequestBuilderNavigationMetadata,
@@ -1758,6 +1774,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     healthMonitoring: {
         requestsMetadata: HealthMonitoringRequestBuilderRequestsMetadata,
         navigationMetadata: HealthMonitoringRequestBuilderNavigationMetadata,
+    },
+    identityAnalytics: {
+        requestsMetadata: IdentityAnalyticsRequestBuilderRequestsMetadata,
+        navigationMetadata: IdentityAnalyticsRequestBuilderNavigationMetadata,
     },
     managedDeviceEnrollmentFailureDetails: {
         requestsMetadata: ManagedDeviceEnrollmentFailureDetailsRequestBuilderRequestsMetadata,

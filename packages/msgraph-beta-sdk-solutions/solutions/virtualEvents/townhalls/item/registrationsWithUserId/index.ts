@@ -25,7 +25,7 @@ export interface RegistrationsWithUserIdRequestBuilder extends BaseRequestBuilde
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get registrations from solutions
+     * Registration records of the town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface RegistrationsWithUserIdRequestBuilder extends BaseRequestBuilde
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get registrations from solutions
+     * Registration records of the town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface RegistrationsWithUserIdRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: VirtualEventRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get registrations from solutions
+ * Registration records of the town hall.
  */
 export interface RegistrationsWithUserIdRequestBuilderGetQueryParameters {
     /**

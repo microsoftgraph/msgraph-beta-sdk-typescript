@@ -27,21 +27,22 @@ export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<Sit
      */
      bySiteExclusionUnitId(siteExclusionUnitId: string) : SiteExclusionUnitItemRequestBuilder;
     /**
-     * Get siteExclusionUnits from solutions
+     * Get a list of site exclusion units associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteexclusionunits?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteExclusionUnitCollectionResponse | undefined>;
     /**
-     * Get siteExclusionUnits from solutions
+     * Get a list of site exclusion units associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get siteExclusionUnits from solutions
+ * Get a list of site exclusion units associated with a SharePoint protection policy.
  */
 export interface SiteExclusionUnitsRequestBuilderGetQueryParameters {
     /**

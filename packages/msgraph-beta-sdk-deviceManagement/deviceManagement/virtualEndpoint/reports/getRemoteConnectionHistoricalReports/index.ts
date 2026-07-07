@@ -25,10 +25,10 @@ export function deserializeIntoGetRemoteConnectionHistoricalReportsPostRequestBo
     return {
         "backingStoreEnabled": n => { getRemoteConnectionHistoricalReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getRemoteConnectionHistoricalReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getRemoteConnectionHistoricalReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getRemoteConnectionHistoricalReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getRemoteConnectionHistoricalReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getRemoteConnectionHistoricalReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getRemoteConnectionHistoricalReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getRemoteConnectionHistoricalReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getRemoteConnectionHistoricalReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getRemoteConnectionHistoricalReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getRemoteConnectionHistoricalReportsPostRequestBody.top = n.getNumberValue(); },
     }

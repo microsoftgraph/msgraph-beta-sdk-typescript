@@ -6,7 +6,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createHuntingQueryResultsFromDiscriminatorValue, serializeHuntingQueryResults, type HuntingQueryResults } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
-import { type AdditionalDataHolder, type BackedModel, type BackingStore, type BaseRequestBuilder, type Parsable, type ParsableFactory, type ParseNode, type RequestConfiguration, type RequestInformation, type RequestsMetadata, type SerializationWriter } from '@microsoft/kiota-abstractions';
+import { type AdditionalDataHolder, type BackedModel, type BackingStore, type BaseRequestBuilder, type Guid, type Parsable, type ParsableFactory, type ParseNode, type RequestConfiguration, type RequestInformation, type RequestsMetadata, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -28,6 +28,7 @@ export function deserializeIntoRunHuntingQueryPostRequestBody(runHuntingQueryPos
         "backingStoreEnabled": n => { runHuntingQueryPostRequestBody.backingStoreEnabled = true; },
         "query": n => { runHuntingQueryPostRequestBody.query = n.getStringValue(); },
         "timespan": n => { runHuntingQueryPostRequestBody.timespan = n.getStringValue(); },
+        "workspaceId": n => { runHuntingQueryPostRequestBody.workspaceId = n.getGuidValue(); },
     }
 }
 /**
@@ -35,7 +36,7 @@ export function deserializeIntoRunHuntingQueryPostRequestBody(runHuntingQueryPos
  */
 export interface MicrosoftGraphSecurityRunHuntingQueryRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityRunHuntingQueryRequestBuilder> {
     /**
-     * Query a specified set of event, activity, or entity data supported by Microsoft 365 Defender to proactively look for specific threats in your environment. This method is for advanced hunting in Microsoft 365 Defender. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft 365 Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft 365 Defender.
+     * Query a specified set of event, activity, or entity data supported by Microsoft Defender XDR to proactively look for specific threats in your environment. This method is for advanced hunting in Microsoft Defender XDR. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft Defender XDR.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<HuntingQueryResults>}
@@ -43,7 +44,7 @@ export interface MicrosoftGraphSecurityRunHuntingQueryRequestBuilder extends Bas
      */
      post(body: RunHuntingQueryPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<HuntingQueryResults | undefined>;
     /**
-     * Query a specified set of event, activity, or entity data supported by Microsoft 365 Defender to proactively look for specific threats in your environment. This method is for advanced hunting in Microsoft 365 Defender. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft 365 Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft 365 Defender.
+     * Query a specified set of event, activity, or entity data supported by Microsoft Defender XDR to proactively look for specific threats in your environment. This method is for advanced hunting in Microsoft Defender XDR. This method includes a query in Kusto Query Language (KQL). It specifies a data table in the advanced hunting schema and a piped sequence of operators to filter or search that data and format the query output in specific ways.  Find out more about hunting for threats across devices, emails, apps, and identities. Learn about KQL. For information on using advanced hunting in the Microsoft Defender portal, see Proactively hunt for threats with advanced hunting in Microsoft Defender XDR.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -63,6 +64,10 @@ export interface RunHuntingQueryPostRequestBody extends AdditionalDataHolder, Ba
      * The timespan property
      */
     timespan?: string | null;
+    /**
+     * The workspaceId property
+     */
+    workspaceId?: Guid | null;
 }
 /**
  * Serializes information the current object
@@ -75,6 +80,7 @@ export function serializeRunHuntingQueryPostRequestBody(writer: SerializationWri
     if (!runHuntingQueryPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeStringValue("query", runHuntingQueryPostRequestBody.query);
     writer.writeStringValue("timespan", runHuntingQueryPostRequestBody.timespan);
+    writer.writeGuidValue("workspaceId", runHuntingQueryPostRequestBody.workspaceId);
     writer.writeAdditionalData(runHuntingQueryPostRequestBody.additionalData);
 }
 /**

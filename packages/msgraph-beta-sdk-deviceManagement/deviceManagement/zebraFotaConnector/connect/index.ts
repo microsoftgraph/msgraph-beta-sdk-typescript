@@ -52,7 +52,7 @@ export function createConnectPostResponseFromDiscriminatorValue(parseNode: Parse
 export function deserializeIntoConnectPostResponse(connectPostResponse: Partial<ConnectPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { connectPostResponse.backingStoreEnabled = true; },
-        "value": n => { connectPostResponse.value = n.getBooleanValue(); },
+        "value": n => { connectPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -64,7 +64,7 @@ export function deserializeIntoConnectPostResponse(connectPostResponse: Partial<
 // @ts-ignore
 export function serializeConnectPostResponse(writer: SerializationWriter, connectPostResponse: Partial<ConnectPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!connectPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", connectPostResponse.value);
+    writer.writeBooleanValue("value", connectPostResponse.value ?? false);
     writer.writeAdditionalData(connectPostResponse.additionalData);
 }
 /**

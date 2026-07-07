@@ -27,7 +27,7 @@ export function deserializeIntoPlayPromptPostRequestBody(playPromptPostRequestBo
     return {
         "backingStoreEnabled": n => { playPromptPostRequestBody.backingStoreEnabled = true; },
         "clientContext": n => { playPromptPostRequestBody.clientContext = n.getStringValue(); },
-        "loop": n => { playPromptPostRequestBody.loop = n.getBooleanValue(); },
+        "loop": n => { playPromptPostRequestBody.loop = n.getBooleanValue() ?? false; },
         "prompts": n => { playPromptPostRequestBody.prompts = n.getCollectionOfObjectValues<Prompt>(createPromptFromDiscriminatorValue); },
     }
 }
@@ -80,7 +80,7 @@ export interface PlayPromptRequestBuilder extends BaseRequestBuilder<PlayPromptR
 export function serializePlayPromptPostRequestBody(writer: SerializationWriter, playPromptPostRequestBody: Partial<PlayPromptPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!playPromptPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeStringValue("clientContext", playPromptPostRequestBody.clientContext);
-    writer.writeBooleanValue("loop", playPromptPostRequestBody.loop);
+    writer.writeBooleanValue("loop", playPromptPostRequestBody.loop ?? false);
     writer.writeCollectionOfObjectValues<Prompt>("prompts", playPromptPostRequestBody.prompts, serializePrompt);
     writer.writeAdditionalData(playPromptPostRequestBody.additionalData);
 }

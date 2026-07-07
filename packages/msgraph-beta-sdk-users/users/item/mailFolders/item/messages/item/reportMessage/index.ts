@@ -26,7 +26,7 @@ export function createReportMessagePostRequestBodyFromDiscriminatorValue(parseNo
 export function deserializeIntoReportMessagePostRequestBody(reportMessagePostRequestBody: Partial<ReportMessagePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { reportMessagePostRequestBody.backingStoreEnabled = true; },
-        "IsMessageMoveRequested": n => { reportMessagePostRequestBody.isMessageMoveRequested = n.getBooleanValue(); },
+        "IsMessageMoveRequested": n => { reportMessagePostRequestBody.isMessageMoveRequested = n.getBooleanValue() ?? false; },
         "ReportAction": n => { reportMessagePostRequestBody.reportAction = n.getEnumValue<ReportAction>(ReportActionObject); },
     }
 }
@@ -73,7 +73,7 @@ export interface ReportMessageRequestBuilder extends BaseRequestBuilder<ReportMe
 // @ts-ignore
 export function serializeReportMessagePostRequestBody(writer: SerializationWriter, reportMessagePostRequestBody: Partial<ReportMessagePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!reportMessagePostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("IsMessageMoveRequested", reportMessagePostRequestBody.isMessageMoveRequested);
+    writer.writeBooleanValue("IsMessageMoveRequested", reportMessagePostRequestBody.isMessageMoveRequested ?? false);
     writer.writeEnumValue<ReportAction>("ReportAction", reportMessagePostRequestBody.reportAction);
     writer.writeAdditionalData(reportMessagePostRequestBody.additionalData);
 }
