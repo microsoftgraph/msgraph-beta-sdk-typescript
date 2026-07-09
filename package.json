@@ -9,6 +9,7 @@
     "test": "npm run test -w @microsoft/msgraph-beta-sdk-tests"
   },
   "devDependencies": {
+    "@types/node": "^26.1.0",
     "rimraf": "^6.0.1"
   },
   "version": "1.0.0-preview.76"
