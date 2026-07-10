@@ -25,10 +25,10 @@ export function deserializeIntoGetDeviceStatusByCompliacePolicyReportPostRequest
     return {
         "backingStoreEnabled": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "sessionId": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.sessionId = n.getStringValue(); },
         "skip": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getDeviceStatusByCompliacePolicyReportPostRequestBody.top = n.getNumberValue(); },

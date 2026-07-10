@@ -36,8 +36,8 @@ export function deserializeIntoForwardToChatPostRequestBody(forwardToChatPostReq
     return {
         "additionalMessage": n => { forwardToChatPostRequestBody.additionalMessage = n.getObjectValue<ChatMessage>(createChatMessageFromDiscriminatorValue); },
         "backingStoreEnabled": n => { forwardToChatPostRequestBody.backingStoreEnabled = true; },
-        "messageIds": n => { forwardToChatPostRequestBody.messageIds = n.getCollectionOfPrimitiveValues<string>(); },
-        "targetChatIds": n => { forwardToChatPostRequestBody.targetChatIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "messageIds": n => { forwardToChatPostRequestBody.messageIds = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "targetChatIds": n => { forwardToChatPostRequestBody.targetChatIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

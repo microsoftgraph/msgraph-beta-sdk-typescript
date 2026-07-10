@@ -24,7 +24,7 @@ export function createScopedForResourceWithResourceGetResponseFromDiscriminatorV
 export function deserializeIntoScopedForResourceWithResourceGetResponse(scopedForResourceWithResourceGetResponse: Partial<ScopedForResourceWithResourceGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { scopedForResourceWithResourceGetResponse.backingStoreEnabled = true; },
-        "value": n => { scopedForResourceWithResourceGetResponse.value = n.getBooleanValue(); },
+        "value": n => { scopedForResourceWithResourceGetResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface ScopedForResourceWithResourceGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -64,7 +64,7 @@ export interface ScopedForResourceWithResourceRequestBuilder extends BaseRequest
 // @ts-ignore
 export function serializeScopedForResourceWithResourceGetResponse(writer: SerializationWriter, scopedForResourceWithResourceGetResponse: Partial<ScopedForResourceWithResourceGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!scopedForResourceWithResourceGetResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", scopedForResourceWithResourceGetResponse.value);
+    writer.writeBooleanValue("value", scopedForResourceWithResourceGetResponse.value ?? false);
     writer.writeAdditionalData(scopedForResourceWithResourceGetResponse.additionalData);
 }
 /**

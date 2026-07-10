@@ -959,7 +959,7 @@ export function deserializeIntoLegalHold(legalHold: Partial<LegalHold> | undefin
         "createdDateTime": n => { legalHold.createdDateTime = n.getDateValue(); },
         "description": n => { legalHold.description = n.getStringValue(); },
         "displayName": n => { legalHold.displayName = n.getStringValue(); },
-        "errors": n => { legalHold.errors = n.getCollectionOfPrimitiveValues<string>(); },
+        "errors": n => { legalHold.errors = n.getCollectionOfPrimitiveValues<string>("string"); },
         "isEnabled": n => { legalHold.isEnabled = n.getBooleanValue(); },
         "lastModifiedBy": n => { legalHold.lastModifiedBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
         "lastModifiedDateTime": n => { legalHold.lastModifiedDateTime = n.getDateValue(); },

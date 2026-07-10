@@ -24,7 +24,7 @@ export function createUnpublishPostRequestBodyFromDiscriminatorValue(parseNode: 
 export function deserializeIntoUnpublishPostRequestBody(unpublishPostRequestBody: Partial<UnpublishPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unpublishPostRequestBody.backingStoreEnabled = true; },
-        "cloudAppIds": n => { unpublishPostRequestBody.cloudAppIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudAppIds": n => { unpublishPostRequestBody.cloudAppIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

@@ -56,9 +56,9 @@ export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: Pars
 export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applyPostRequestBody.backingStoreEnabled = true; },
-        "excludeGroups": n => { applyPostRequestBody.excludeGroups = n.getCollectionOfPrimitiveValues<string>(); },
-        "includeAllUsers": n => { applyPostRequestBody.includeAllUsers = n.getBooleanValue(); },
-        "includeGroups": n => { applyPostRequestBody.includeGroups = n.getCollectionOfPrimitiveValues<string>(); },
+        "excludeGroups": n => { applyPostRequestBody.excludeGroups = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "includeAllUsers": n => { applyPostRequestBody.includeAllUsers = n.getBooleanValue() ?? false; },
+        "includeGroups": n => { applyPostRequestBody.includeGroups = n.getCollectionOfPrimitiveValues<string>("string"); },
         "managementTemplateId": n => { applyPostRequestBody.managementTemplateId = n.getStringValue(); },
         "tenantGroupId": n => { applyPostRequestBody.tenantGroupId = n.getStringValue(); },
         "tenantId": n => { applyPostRequestBody.tenantId = n.getStringValue(); },
@@ -95,7 +95,7 @@ export interface MicrosoftGraphManagedTenantsApplyRequestBuilder extends BaseReq
 export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!applyPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeCollectionOfPrimitiveValues<string>("excludeGroups", applyPostRequestBody.excludeGroups);
-    writer.writeBooleanValue("includeAllUsers", applyPostRequestBody.includeAllUsers);
+    writer.writeBooleanValue("includeAllUsers", applyPostRequestBody.includeAllUsers ?? false);
     writer.writeCollectionOfPrimitiveValues<string>("includeGroups", applyPostRequestBody.includeGroups);
     writer.writeStringValue("managementTemplateId", applyPostRequestBody.managementTemplateId);
     writer.writeStringValue("tenantGroupId", applyPostRequestBody.tenantGroupId);

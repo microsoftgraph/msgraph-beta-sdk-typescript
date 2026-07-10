@@ -53,7 +53,7 @@ export function createAddAppsPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 export function deserializeIntoAddAppsPostRequestBody(addAppsPostRequestBody: Partial<AddAppsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addAppsPostRequestBody.backingStoreEnabled = true; },
-        "productIds": n => { addAppsPostRequestBody.productIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "productIds": n => { addAppsPostRequestBody.productIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

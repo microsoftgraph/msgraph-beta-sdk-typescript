@@ -24,7 +24,7 @@ export function createIsManagedAppUserBlockedGetResponseFromDiscriminatorValue(p
 export function deserializeIntoIsManagedAppUserBlockedGetResponse(isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { isManagedAppUserBlockedGetResponse.backingStoreEnabled = true; },
-        "value": n => { isManagedAppUserBlockedGetResponse.value = n.getBooleanValue(); },
+        "value": n => { isManagedAppUserBlockedGetResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface IsManagedAppUserBlockedGetResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -64,7 +64,7 @@ export interface IsManagedAppUserBlockedRequestBuilder extends BaseRequestBuilde
 // @ts-ignore
 export function serializeIsManagedAppUserBlockedGetResponse(writer: SerializationWriter, isManagedAppUserBlockedGetResponse: Partial<IsManagedAppUserBlockedGetResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!isManagedAppUserBlockedGetResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", isManagedAppUserBlockedGetResponse.value);
+    writer.writeBooleanValue("value", isManagedAppUserBlockedGetResponse.value ?? false);
     writer.writeAdditionalData(isManagedAppUserBlockedGetResponse.additionalData);
 }
 /**

@@ -16,9 +16,13 @@ import { LastModifiedByRequestBuilderNavigationMetadata, LastModifiedByRequestBu
 // @ts-ignore
 import { MicrosoftGraphIdentityGovernanceActivateRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceActivateRequestBuilder } from './microsoftGraphIdentityGovernanceActivate/index.js';
 // @ts-ignore
+import { MicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder } from './microsoftGraphIdentityGovernanceActivateAndWait/index.js';
+// @ts-ignore
 import { MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder } from './microsoftGraphIdentityGovernanceActivateWithScope/index.js';
 // @ts-ignore
 import { MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder } from './microsoftGraphIdentityGovernanceCancelProcessing/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder } from './microsoftGraphIdentityGovernanceClearQuarantine/index.js';
 // @ts-ignore
 import { MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder } from './microsoftGraphIdentityGovernanceCreateNewVersion/index.js';
 // @ts-ignore
@@ -31,6 +35,8 @@ import { MicrosoftGraphIdentityGovernanceRestoreRequestBuilderRequestsMetadata, 
 import { PreviewScopeRequestBuilderNavigationMetadata, PreviewScopeRequestBuilderRequestsMetadata, type PreviewScopeRequestBuilder } from './previewScope/index.js';
 // @ts-ignore
 import { RunsRequestBuilderNavigationMetadata, RunsRequestBuilderRequestsMetadata, type RunsRequestBuilder } from './runs/index.js';
+// @ts-ignore
+import { SubjectProcessingResultsRequestBuilderNavigationMetadata, SubjectProcessingResultsRequestBuilderRequestsMetadata, type SubjectProcessingResultsRequestBuilder } from './subjectProcessingResults/index.js';
 // @ts-ignore
 import { TaskReportsRequestBuilderNavigationMetadata, TaskReportsRequestBuilderRequestsMetadata, type TaskReportsRequestBuilder } from './taskReports/index.js';
 // @ts-ignore
@@ -67,6 +73,10 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
      */
     get microsoftGraphIdentityGovernanceActivate(): MicrosoftGraphIdentityGovernanceActivateRequestBuilder;
     /**
+     * Provides operations to call the activateAndWait method.
+     */
+    get microsoftGraphIdentityGovernanceActivateAndWait(): MicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder;
+    /**
      * Provides operations to call the activateWithScope method.
      */
     get microsoftGraphIdentityGovernanceActivateWithScope(): MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder;
@@ -74,6 +84,10 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
      * Provides operations to call the cancelProcessing method.
      */
     get microsoftGraphIdentityGovernanceCancelProcessing(): MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder;
+    /**
+     * Provides operations to call the clearQuarantine method.
+     */
+    get microsoftGraphIdentityGovernanceClearQuarantine(): MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder;
     /**
      * Provides operations to call the createNewVersion method.
      */
@@ -99,6 +113,10 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
      */
     get runs(): RunsRequestBuilder;
     /**
+     * Provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
+     */
+    get subjectProcessingResults(): SubjectProcessingResultsRequestBuilder;
+    /**
      * Provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
      */
     get taskReports(): TaskReportsRequestBuilder;
@@ -115,7 +133,7 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
      */
     get versions(): VersionsRequestBuilder;
     /**
-     * Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+     * Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-workflow-delete?view=graph-rest-beta|Find more info here}
@@ -139,7 +157,7 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
      */
      patch(body: Workflow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Workflow | undefined>;
     /**
-     * Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+     * Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -205,11 +223,17 @@ export const WorkflowItemRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     microsoftGraphIdentityGovernanceActivate: {
         requestsMetadata: MicrosoftGraphIdentityGovernanceActivateRequestBuilderRequestsMetadata,
     },
+    microsoftGraphIdentityGovernanceActivateAndWait: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilderRequestsMetadata,
+    },
     microsoftGraphIdentityGovernanceActivateWithScope: {
         requestsMetadata: MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderRequestsMetadata,
     },
     microsoftGraphIdentityGovernanceCancelProcessing: {
         requestsMetadata: MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphIdentityGovernanceClearQuarantine: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilderRequestsMetadata,
     },
     microsoftGraphIdentityGovernanceCreateNewVersion: {
         requestsMetadata: MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilderRequestsMetadata,
@@ -230,6 +254,10 @@ export const WorkflowItemRequestBuilderNavigationMetadata: Record<Exclude<keyof 
     runs: {
         requestsMetadata: RunsRequestBuilderRequestsMetadata,
         navigationMetadata: RunsRequestBuilderNavigationMetadata,
+    },
+    subjectProcessingResults: {
+        requestsMetadata: SubjectProcessingResultsRequestBuilderRequestsMetadata,
+        navigationMetadata: SubjectProcessingResultsRequestBuilderNavigationMetadata,
     },
     taskReports: {
         requestsMetadata: TaskReportsRequestBuilderRequestsMetadata,

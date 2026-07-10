@@ -33,10 +33,11 @@ export interface SensorMigrationRequestBuilder extends BaseRequestBuilder<Sensor
      */
      bySensorMigrationId(sensorMigrationId: string) : SensorMigrationItemRequestBuilder;
     /**
-     * Get sensorMigration from security
+     * Get a list of the sensorMigration objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SensorMigrationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensormigration?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SensorMigrationRequestBuilderGetQueryParameters> | undefined) : Promise<SensorMigrationCollectionResponse | undefined>;
     /**
@@ -48,7 +49,7 @@ export interface SensorMigrationRequestBuilder extends BaseRequestBuilder<Sensor
      */
      post(body: SensorMigration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SensorMigration | undefined>;
     /**
-     * Get sensorMigration from security
+     * Get a list of the sensorMigration objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -62,7 +63,7 @@ export interface SensorMigrationRequestBuilder extends BaseRequestBuilder<Sensor
      toPostRequestInformation(body: SensorMigration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get sensorMigration from security
+ * Get a list of the sensorMigration objects and their properties.
  */
 export interface SensorMigrationRequestBuilderGetQueryParameters {
     /**

@@ -24,8 +24,8 @@ export function createRevokeLicensesPostRequestBodyFromDiscriminatorValue(parseN
 export function deserializeIntoRevokeLicensesPostRequestBody(revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { revokeLicensesPostRequestBody.backingStoreEnabled = true; },
-        "notifyManagedDevices": n => { revokeLicensesPostRequestBody.notifyManagedDevices = n.getBooleanValue(); },
-        "revokeUntrackedLicenses": n => { revokeLicensesPostRequestBody.revokeUntrackedLicenses = n.getBooleanValue(); },
+        "notifyManagedDevices": n => { revokeLicensesPostRequestBody.notifyManagedDevices = n.getBooleanValue() ?? false; },
+        "revokeUntrackedLicenses": n => { revokeLicensesPostRequestBody.revokeUntrackedLicenses = n.getBooleanValue() ?? false; },
     }
 }
 export interface RevokeLicensesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -70,8 +70,8 @@ export interface RevokeLicensesRequestBuilder extends BaseRequestBuilder<RevokeL
 // @ts-ignore
 export function serializeRevokeLicensesPostRequestBody(writer: SerializationWriter, revokeLicensesPostRequestBody: Partial<RevokeLicensesPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!revokeLicensesPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("notifyManagedDevices", revokeLicensesPostRequestBody.notifyManagedDevices);
-    writer.writeBooleanValue("revokeUntrackedLicenses", revokeLicensesPostRequestBody.revokeUntrackedLicenses);
+    writer.writeBooleanValue("notifyManagedDevices", revokeLicensesPostRequestBody.notifyManagedDevices ?? false);
+    writer.writeBooleanValue("revokeUntrackedLicenses", revokeLicensesPostRequestBody.revokeUntrackedLicenses ?? false);
     writer.writeAdditionalData(revokeLicensesPostRequestBody.additionalData);
 }
 /**

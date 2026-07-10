@@ -33,7 +33,7 @@ export function createChangeAlertRecordsPortalNotificationAsSentPostRequestBodyF
 // @ts-ignore
 export function deserializeIntoChangeAlertRecordsPortalNotificationAsSentPostRequestBody(changeAlertRecordsPortalNotificationAsSentPostRequestBody: Partial<ChangeAlertRecordsPortalNotificationAsSentPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "alertRecordIds": n => { changeAlertRecordsPortalNotificationAsSentPostRequestBody.alertRecordIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "alertRecordIds": n => { changeAlertRecordsPortalNotificationAsSentPostRequestBody.alertRecordIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { changeAlertRecordsPortalNotificationAsSentPostRequestBody.backingStoreEnabled = true; },
     }
 }

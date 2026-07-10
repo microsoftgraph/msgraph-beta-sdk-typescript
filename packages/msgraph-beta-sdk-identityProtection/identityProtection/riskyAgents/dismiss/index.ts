@@ -23,7 +23,7 @@ export function createDismissPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 // @ts-ignore
 export function deserializeIntoDismissPostRequestBody(dismissPostRequestBody: Partial<DismissPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "agentIds": n => { dismissPostRequestBody.agentIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "agentIds": n => { dismissPostRequestBody.agentIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { dismissPostRequestBody.backingStoreEnabled = true; },
     }
 }

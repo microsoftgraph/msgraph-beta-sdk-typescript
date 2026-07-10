@@ -64,9 +64,9 @@ export function createClockOutPostRequestBodyFromDiscriminatorValue(parseNode: P
 // @ts-ignore
 export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "atApprovedLocation": n => { clockOutPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
+        "atApprovedLocation": n => { clockOutPostRequestBody.atApprovedLocation = n.getBooleanValue() ?? false; },
         "backingStoreEnabled": n => { clockOutPostRequestBody.backingStoreEnabled = true; },
-        "isAtApprovedLocation": n => { clockOutPostRequestBody.isAtApprovedLocation = n.getBooleanValue(); },
+        "isAtApprovedLocation": n => { clockOutPostRequestBody.isAtApprovedLocation = n.getBooleanValue() ?? false; },
         "notes": n => { clockOutPostRequestBody.notes = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
     }
 }
@@ -79,8 +79,8 @@ export function deserializeIntoClockOutPostRequestBody(clockOutPostRequestBody: 
 // @ts-ignore
 export function serializeClockOutPostRequestBody(writer: SerializationWriter, clockOutPostRequestBody: Partial<ClockOutPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!clockOutPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("atApprovedLocation", clockOutPostRequestBody.atApprovedLocation);
-    writer.writeBooleanValue("isAtApprovedLocation", clockOutPostRequestBody.isAtApprovedLocation);
+    writer.writeBooleanValue("atApprovedLocation", clockOutPostRequestBody.atApprovedLocation ?? false);
+    writer.writeBooleanValue("isAtApprovedLocation", clockOutPostRequestBody.isAtApprovedLocation ?? false);
     writer.writeObjectValue<ItemBody>("notes", clockOutPostRequestBody.notes, serializeItemBody);
     writer.writeAdditionalData(clockOutPostRequestBody.additionalData);
 }

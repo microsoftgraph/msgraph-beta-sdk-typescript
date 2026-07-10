@@ -27,11 +27,11 @@ export function deserializeIntoGetFrontlineReportPostRequestBody(getFrontlineRep
     return {
         "backingStoreEnabled": n => { getFrontlineReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getFrontlineReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getFrontlineReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getFrontlineReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getFrontlineReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getFrontlineReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { getFrontlineReportPostRequestBody.reportName = n.getEnumValue<CloudPcReportName>(CloudPcReportNameObject); },
         "search": n => { getFrontlineReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getFrontlineReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getFrontlineReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getFrontlineReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getFrontlineReportPostRequestBody.top = n.getNumberValue(); },
     }

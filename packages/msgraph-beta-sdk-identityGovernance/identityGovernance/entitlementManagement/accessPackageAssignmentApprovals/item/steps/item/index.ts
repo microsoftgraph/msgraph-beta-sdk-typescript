@@ -27,7 +27,7 @@ export interface ApprovalStepItemRequestBuilder extends BaseRequestBuilder<Appro
      */
      get(requestConfiguration?: RequestConfiguration<ApprovalStepItemRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalStep | undefined>;
     /**
-     * Apply approve or deny decision on an approvalStep object.
+     * Apply an approve or deny decision on an approvalStep object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStep>}
@@ -48,7 +48,7 @@ export interface ApprovalStepItemRequestBuilder extends BaseRequestBuilder<Appro
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovalStepItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Apply approve or deny decision on an approvalStep object.
+     * Apply an approve or deny decision on an approvalStep object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

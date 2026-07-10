@@ -26,7 +26,7 @@ export function createRetrieveZebraFotaDeviceModelsGetResponseFromDiscriminatorV
 export function deserializeIntoRetrieveZebraFotaDeviceModelsGetResponse(retrieveZebraFotaDeviceModelsGetResponse: Partial<RetrieveZebraFotaDeviceModelsGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(retrieveZebraFotaDeviceModelsGetResponse),
-        "value": n => { retrieveZebraFotaDeviceModelsGetResponse.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { retrieveZebraFotaDeviceModelsGetResponse.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface RetrieveZebraFotaDeviceModelsGetResponse extends BaseCollectionPaginationCountResponse, Parsable {

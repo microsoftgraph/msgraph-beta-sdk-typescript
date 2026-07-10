@@ -56,9 +56,9 @@ export function createApproveAppsPostRequestBodyFromDiscriminatorValue(parseNode
 // @ts-ignore
 export function deserializeIntoApproveAppsPostRequestBody(approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "approveAllPermissions": n => { approveAppsPostRequestBody.approveAllPermissions = n.getBooleanValue(); },
+        "approveAllPermissions": n => { approveAppsPostRequestBody.approveAllPermissions = n.getBooleanValue() ?? false; },
         "backingStoreEnabled": n => { approveAppsPostRequestBody.backingStoreEnabled = true; },
-        "packageIds": n => { approveAppsPostRequestBody.packageIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "packageIds": n => { approveAppsPostRequestBody.packageIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -70,7 +70,7 @@ export function deserializeIntoApproveAppsPostRequestBody(approveAppsPostRequest
 // @ts-ignore
 export function serializeApproveAppsPostRequestBody(writer: SerializationWriter, approveAppsPostRequestBody: Partial<ApproveAppsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!approveAppsPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("approveAllPermissions", approveAppsPostRequestBody.approveAllPermissions);
+    writer.writeBooleanValue("approveAllPermissions", approveAppsPostRequestBody.approveAllPermissions ?? false);
     writer.writeCollectionOfPrimitiveValues<string>("packageIds", approveAppsPostRequestBody.packageIds);
     writer.writeAdditionalData(approveAppsPostRequestBody.additionalData);
 }

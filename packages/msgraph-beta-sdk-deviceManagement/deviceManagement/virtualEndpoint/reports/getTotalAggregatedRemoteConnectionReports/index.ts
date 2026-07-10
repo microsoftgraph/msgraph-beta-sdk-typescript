@@ -25,10 +25,10 @@ export function deserializeIntoGetTotalAggregatedRemoteConnectionReportsPostRequ
     return {
         "backingStoreEnabled": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getTotalAggregatedRemoteConnectionReportsPostRequestBody.top = n.getNumberValue(); },
     }

@@ -22,29 +22,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DefenderRequestBuilder extends BaseRequestBuilder<DefenderRequestBuilder> {
     /**
      * Provides operations to manage the customAppScopes property of the microsoft.graph.unifiedRbacApplicationMultiple entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get customAppScopes(): CustomAppScopesRequestBuilder;
     /**
      * Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get resourceNamespaces(): ResourceNamespacesRequestBuilder;
     /**
      * Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get roleAssignments(): RoleAssignmentsRequestBuilder;
     /**
      * Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get roleDefinitions(): RoleDefinitionsRequestBuilder;
     /**
      * Delete navigation property defender for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -52,7 +47,6 @@ export interface DefenderRequestBuilder extends BaseRequestBuilder<DefenderReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRbacApplicationMultiple>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      get(requestConfiguration?: RequestConfiguration<DefenderRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRbacApplicationMultiple | undefined>;
     /**
@@ -61,21 +55,18 @@ export interface DefenderRequestBuilder extends BaseRequestBuilder<DefenderReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRbacApplicationMultiple>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      patch(body: UnifiedRbacApplicationMultiple, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRbacApplicationMultiple | undefined>;
     /**
      * Delete navigation property defender for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get defender from roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DefenderRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,7 +74,6 @@ export interface DefenderRequestBuilder extends BaseRequestBuilder<DefenderReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toPatchRequestInformation(body: UnifiedRbacApplicationMultiple, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

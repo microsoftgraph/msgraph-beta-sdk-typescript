@@ -27,11 +27,11 @@ export function deserializeIntoGetCloudPcPerformanceReportPostRequestBody(getClo
     return {
         "backingStoreEnabled": n => { getCloudPcPerformanceReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getCloudPcPerformanceReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getCloudPcPerformanceReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getCloudPcPerformanceReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getCloudPcPerformanceReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getCloudPcPerformanceReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { getCloudPcPerformanceReportPostRequestBody.reportName = n.getEnumValue<CloudPCPerformanceReportName>(CloudPCPerformanceReportNameObject); },
         "search": n => { getCloudPcPerformanceReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getCloudPcPerformanceReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getCloudPcPerformanceReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getCloudPcPerformanceReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getCloudPcPerformanceReportPostRequestBody.top = n.getNumberValue(); },
     }

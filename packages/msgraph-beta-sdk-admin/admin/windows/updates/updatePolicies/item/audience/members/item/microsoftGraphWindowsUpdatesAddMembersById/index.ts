@@ -38,7 +38,7 @@ export function createAddMembersByIdPostRequestBodyFromDiscriminatorValue(parseN
 export function deserializeIntoAddMembersByIdPostRequestBody(addMembersByIdPostRequestBody: Partial<AddMembersByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addMembersByIdPostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { addMembersByIdPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { addMembersByIdPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
         "memberEntityType": n => { addMembersByIdPostRequestBody.memberEntityType = n.getStringValue(); },
     }
 }

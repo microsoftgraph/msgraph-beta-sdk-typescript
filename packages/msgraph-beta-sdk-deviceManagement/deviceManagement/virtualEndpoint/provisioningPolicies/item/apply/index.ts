@@ -14,6 +14,10 @@ export interface ApplyPostRequestBody extends AdditionalDataHolder, BackedModel,
      */
     backingStoreEnabled?: boolean | null;
     /**
+     * The isForceUserLogoffEnabled property
+     */
+    isForceUserLogoffEnabled?: boolean | null;
+    /**
      * The policySettings property
      */
     policySettings?: CloudPcPolicySettingType[] | null;
@@ -27,7 +31,7 @@ export interface ApplyPostRequestBody extends AdditionalDataHolder, BackedModel,
  */
 export interface ApplyRequestBuilder extends BaseRequestBuilder<ApplyRequestBuilder> {
     /**
-     * Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
+     * Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. You can apply policy settings such as region and singleSignOn. This action also supports reprovisioning for frontline shared mode Cloud PCs by using the reservePercentage parameter to control the percentage of Cloud PCs that remain available during the process.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +39,7 @@ export interface ApplyRequestBuilder extends BaseRequestBuilder<ApplyRequestBuil
      */
      post(body: ApplyPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
+     * Apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. You can apply policy settings such as region and singleSignOn. This action also supports reprovisioning for frontline shared mode Cloud PCs by using the reservePercentage parameter to control the percentage of Cloud PCs that remain available during the process.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -60,6 +64,7 @@ export function createApplyPostRequestBodyFromDiscriminatorValue(parseNode: Pars
 export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applyPostRequestBody.backingStoreEnabled = true; },
+        "isForceUserLogoffEnabled": n => { applyPostRequestBody.isForceUserLogoffEnabled = n.getBooleanValue() ?? false; },
         "policySettings": n => { applyPostRequestBody.policySettings = n.getCollectionOfEnumValues<CloudPcPolicySettingType>(CloudPcPolicySettingTypeObject); },
         "reservePercentage": n => { applyPostRequestBody.reservePercentage = n.getNumberValue(); },
     }
@@ -73,6 +78,7 @@ export function deserializeIntoApplyPostRequestBody(applyPostRequestBody: Partia
 // @ts-ignore
 export function serializeApplyPostRequestBody(writer: SerializationWriter, applyPostRequestBody: Partial<ApplyPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!applyPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("isForceUserLogoffEnabled", applyPostRequestBody.isForceUserLogoffEnabled ?? false);
     writer.writeEnumValue<CloudPcPolicySettingType[]>("policySettings", applyPostRequestBody.policySettings);
     writer.writeNumberValue("reservePercentage", applyPostRequestBody.reservePercentage);
     writer.writeAdditionalData(applyPostRequestBody.additionalData);

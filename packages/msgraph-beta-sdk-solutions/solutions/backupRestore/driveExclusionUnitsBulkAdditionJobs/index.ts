@@ -27,7 +27,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      */
      byDriveExclusionUnitsBulkAdditionJobId(driveExclusionUnitsBulkAdditionJobId: string) : DriveExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
-     * Get driveExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      */
      post(body: DriveExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveExclusionUnitsBulkAdditionJob | undefined>;
     /**
-     * Get driveExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      toPostRequestInformation(body: DriveExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get driveExclusionUnitsBulkAdditionJobs from solutions
+ * The list of bulk addition jobs for drive exclusion units in the tenant.
  */
 export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters {
     /**

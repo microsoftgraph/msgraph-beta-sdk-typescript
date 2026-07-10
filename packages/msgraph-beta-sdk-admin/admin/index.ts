@@ -26,7 +26,7 @@ import { Microsoft365AppsRequestBuilderNavigationMetadata, Microsoft365AppsReque
 // @ts-ignore
 import { PeopleRequestBuilderNavigationMetadata, PeopleRequestBuilderRequestsMetadata, type PeopleRequestBuilder } from './people/index.js';
 // @ts-ignore
-import { ReportSettingsRequestBuilderRequestsMetadata, type ReportSettingsRequestBuilder } from './reportSettings/index.js';
+import { ReportSettingsRequestBuilderNavigationMetadata, ReportSettingsRequestBuilderRequestsMetadata, type ReportSettingsRequestBuilder } from './reportSettings/index.js';
 // @ts-ignore
 import { ServiceAnnouncementRequestBuilderNavigationMetadata, ServiceAnnouncementRequestBuilderRequestsMetadata, type ServiceAnnouncementRequestBuilder } from './serviceAnnouncement/index.js';
 // @ts-ignore
@@ -204,6 +204,7 @@ export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRe
     },
     reportSettings: {
         requestsMetadata: ReportSettingsRequestBuilderRequestsMetadata,
+        navigationMetadata: ReportSettingsRequestBuilderNavigationMetadata,
     },
     serviceAnnouncement: {
         requestsMetadata: ServiceAnnouncementRequestBuilderRequestsMetadata,

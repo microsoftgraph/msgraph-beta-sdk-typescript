@@ -6,7 +6,11 @@ import { createParticipantFromDiscriminatorValue, serializeParticipant, type Par
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AdmitFromLobbyRequestBuilderRequestsMetadata, type AdmitFromLobbyRequestBuilder } from './admitFromLobby/index.js';
+// @ts-ignore
 import { MuteRequestBuilderRequestsMetadata, type MuteRequestBuilder } from './mute/index.js';
+// @ts-ignore
+import { RemoveFromLobbyRequestBuilderRequestsMetadata, type RemoveFromLobbyRequestBuilder } from './removeFromLobby/index.js';
 // @ts-ignore
 import { StartHoldMusicRequestBuilderRequestsMetadata, type StartHoldMusicRequestBuilder } from './startHoldMusic/index.js';
 // @ts-ignore
@@ -19,9 +23,17 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface ParticipantItemRequestBuilder extends BaseRequestBuilder<ParticipantItemRequestBuilder> {
     /**
+     * Provides operations to call the admitFromLobby method.
+     */
+    get admitFromLobby(): AdmitFromLobbyRequestBuilder;
+    /**
      * Provides operations to call the mute method.
      */
     get mute(): MuteRequestBuilder;
+    /**
+     * Provides operations to call the removeFromLobby method.
+     */
+    get removeFromLobby(): RemoveFromLobbyRequestBuilder;
     /**
      * Provides operations to call the startHoldMusic method.
      */
@@ -99,8 +111,14 @@ const ParticipantItemRequestBuilderGetQueryParametersMapper: Record<string, stri
  * Metadata for all the navigation properties in the request builder.
  */
 export const ParticipantItemRequestBuilderNavigationMetadata: Record<Exclude<keyof ParticipantItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    admitFromLobby: {
+        requestsMetadata: AdmitFromLobbyRequestBuilderRequestsMetadata,
+    },
     mute: {
         requestsMetadata: MuteRequestBuilderRequestsMetadata,
+    },
+    removeFromLobby: {
+        requestsMetadata: RemoveFromLobbyRequestBuilderRequestsMetadata,
     },
     startHoldMusic: {
         requestsMetadata: StartHoldMusicRequestBuilderRequestsMetadata,

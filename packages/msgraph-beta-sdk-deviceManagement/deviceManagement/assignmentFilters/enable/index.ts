@@ -24,7 +24,7 @@ export function createEnablePostRequestBodyFromDiscriminatorValue(parseNode: Par
 export function deserializeIntoEnablePostRequestBody(enablePostRequestBody: Partial<EnablePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { enablePostRequestBody.backingStoreEnabled = true; },
-        "enable": n => { enablePostRequestBody.enable = n.getBooleanValue(); },
+        "enable": n => { enablePostRequestBody.enable = n.getBooleanValue() ?? false; },
     }
 }
 export interface EnablePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -65,7 +65,7 @@ export interface EnableRequestBuilder extends BaseRequestBuilder<EnableRequestBu
 // @ts-ignore
 export function serializeEnablePostRequestBody(writer: SerializationWriter, enablePostRequestBody: Partial<EnablePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!enablePostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("enable", enablePostRequestBody.enable);
+    writer.writeBooleanValue("enable", enablePostRequestBody.enable ?? false);
     writer.writeAdditionalData(enablePostRequestBody.additionalData);
 }
 /**

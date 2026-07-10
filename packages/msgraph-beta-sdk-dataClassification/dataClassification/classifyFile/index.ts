@@ -61,7 +61,7 @@ export function deserializeIntoClassifyFilePostRequestBody(classifyFilePostReque
     return {
         "backingStoreEnabled": n => { classifyFilePostRequestBody.backingStoreEnabled = true; },
         "file": n => { classifyFilePostRequestBody.file = n.getByteArrayValue(); },
-        "sensitiveTypeIds": n => { classifyFilePostRequestBody.sensitiveTypeIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "sensitiveTypeIds": n => { classifyFilePostRequestBody.sensitiveTypeIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

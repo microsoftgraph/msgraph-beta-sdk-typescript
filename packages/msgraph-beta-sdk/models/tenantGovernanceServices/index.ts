@@ -555,6 +555,10 @@ export interface DelegatedAdministrationRoleAssignment extends AdditionalDataHol
      */
     group?: Group | null;
     /**
+     * The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
+     */
+    groupDisplayName?: string | null;
+    /**
      * The OdataType property
      */
     odataType?: string | null;
@@ -568,6 +572,10 @@ export interface DelegatedAdministrationRoleAssignmentSnapshot extends Additiona
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
+     */
+    groupDisplayName?: string | null;
     /**
      * The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
      */
@@ -712,7 +720,7 @@ export function deserializeIntoBillingMetricsBase(billingMetricsBase: Partial<Bi
         "foreignAssociatedTenantProvisioningActiveCount": n => { billingMetricsBase.foreignAssociatedTenantProvisioningActiveCount = n.getNumberValue(); },
         "localAssociatedTenantBillingManagementActiveCount": n => { billingMetricsBase.localAssociatedTenantBillingManagementActiveCount = n.getNumberValue(); },
         "localAssociatedTenantCount": n => { billingMetricsBase.localAssociatedTenantCount = n.getNumberValue(); },
-        "localAssociatedTenantIds": n => { billingMetricsBase.localAssociatedTenantIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "localAssociatedTenantIds": n => { billingMetricsBase.localAssociatedTenantIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "localAssociatedTenantProvisioningActiveCount": n => { billingMetricsBase.localAssociatedTenantProvisioningActiveCount = n.getNumberValue(); },
         "watermarkDateTime": n => { billingMetricsBase.watermarkDateTime = n.getDateValue(); },
     }
@@ -751,6 +759,7 @@ export function deserializeIntoDelegatedAdministrationRoleAssignment(delegatedAd
     return {
         "backingStoreEnabled": n => { delegatedAdministrationRoleAssignment.backingStoreEnabled = true; },
         "group": n => { delegatedAdministrationRoleAssignment.group = n.getObjectValue<Group>(createGroupFromDiscriminatorValue); },
+        "groupDisplayName": n => { delegatedAdministrationRoleAssignment.groupDisplayName = n.getStringValue(); },
         "@odata.type": n => { delegatedAdministrationRoleAssignment.odataType = n.getStringValue(); },
         "roleTemplates": n => { delegatedAdministrationRoleAssignment.roleTemplates = n.getCollectionOfObjectValues<RoleTemplate>(createRoleTemplateFromDiscriminatorValue); },
     }
@@ -764,6 +773,7 @@ export function deserializeIntoDelegatedAdministrationRoleAssignment(delegatedAd
 export function deserializeIntoDelegatedAdministrationRoleAssignmentSnapshot(delegatedAdministrationRoleAssignmentSnapshot: Partial<DelegatedAdministrationRoleAssignmentSnapshot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { delegatedAdministrationRoleAssignmentSnapshot.backingStoreEnabled = true; },
+        "groupDisplayName": n => { delegatedAdministrationRoleAssignmentSnapshot.groupDisplayName = n.getStringValue(); },
         "groupId": n => { delegatedAdministrationRoleAssignmentSnapshot.groupId = n.getStringValue(); },
         "@odata.type": n => { delegatedAdministrationRoleAssignmentSnapshot.odataType = n.getStringValue(); },
         "roleTemplates": n => { delegatedAdministrationRoleAssignmentSnapshot.roleTemplates = n.getCollectionOfObjectValues<RoleTemplate>(createRoleTemplateFromDiscriminatorValue); },
@@ -1005,6 +1015,7 @@ export function deserializeIntoRelatedTenant(relatedTenant: Partial<RelatedTenan
         "b2BSignInActivityMetrics": n => { relatedTenant.b2BSignInActivityMetrics = n.getObjectValue<B2BSignInActivityMetrics>(createB2BSignInActivityMetricsFromDiscriminatorValue); },
         "billingMetrics": n => { relatedTenant.billingMetrics = n.getObjectValue<BillingMetrics>(createBillingMetricsFromDiscriminatorValue); },
         "createdDateTime": n => { relatedTenant.createdDateTime = n.getDateValue(); },
+        "isMicrosoftInfrastructure": n => { relatedTenant.isMicrosoftInfrastructure = n.getBooleanValue(); },
         "multiTenantApplicationMetrics": n => { relatedTenant.multiTenantApplicationMetrics = n.getObjectValue<MultiTenantApplicationMetrics>(createMultiTenantApplicationMetricsFromDiscriminatorValue); },
     }
 }
@@ -1427,6 +1438,10 @@ export interface RelatedTenant extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
+     * Indicates whether this tenant is a Microsoft infrastructure tenant.
+     */
+    isMicrosoftInfrastructure?: boolean | null;
+    /**
      * Multi-tenant application usage metrics for this related tenant. Expanded by default.
      */
     multiTenantApplicationMetrics?: MultiTenantApplicationMetrics | null;
@@ -1750,6 +1765,7 @@ export function serializeBillingMetricsRecent(writer: SerializationWriter, billi
 export function serializeDelegatedAdministrationRoleAssignment(writer: SerializationWriter, delegatedAdministrationRoleAssignment: Partial<DelegatedAdministrationRoleAssignment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!delegatedAdministrationRoleAssignment || isSerializingDerivedType) { return; }
     writer.writeObjectValue<Group>("group", delegatedAdministrationRoleAssignment.group, serializeGroup);
+    writer.writeStringValue("groupDisplayName", delegatedAdministrationRoleAssignment.groupDisplayName);
     writer.writeStringValue("@odata.type", delegatedAdministrationRoleAssignment.odataType);
     writer.writeCollectionOfObjectValues<RoleTemplate>("roleTemplates", delegatedAdministrationRoleAssignment.roleTemplates, serializeRoleTemplate);
     writer.writeAdditionalData(delegatedAdministrationRoleAssignment.additionalData);
@@ -1763,6 +1779,7 @@ export function serializeDelegatedAdministrationRoleAssignment(writer: Serializa
 // @ts-ignore
 export function serializeDelegatedAdministrationRoleAssignmentSnapshot(writer: SerializationWriter, delegatedAdministrationRoleAssignmentSnapshot: Partial<DelegatedAdministrationRoleAssignmentSnapshot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!delegatedAdministrationRoleAssignmentSnapshot || isSerializingDerivedType) { return; }
+    writer.writeStringValue("groupDisplayName", delegatedAdministrationRoleAssignmentSnapshot.groupDisplayName);
     writer.writeStringValue("groupId", delegatedAdministrationRoleAssignmentSnapshot.groupId);
     writer.writeStringValue("@odata.type", delegatedAdministrationRoleAssignmentSnapshot.odataType);
     writer.writeCollectionOfObjectValues<RoleTemplate>("roleTemplates", delegatedAdministrationRoleAssignmentSnapshot.roleTemplates, serializeRoleTemplate);

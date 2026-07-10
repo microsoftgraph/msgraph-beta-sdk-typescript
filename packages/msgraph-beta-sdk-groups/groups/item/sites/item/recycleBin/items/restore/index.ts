@@ -35,7 +35,7 @@ export function createRestorePostResponseFromDiscriminatorValue(parseNode: Parse
 export function deserializeIntoRestorePostRequestBody(restorePostRequestBody: Partial<RestorePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { restorePostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { restorePostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { restorePostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

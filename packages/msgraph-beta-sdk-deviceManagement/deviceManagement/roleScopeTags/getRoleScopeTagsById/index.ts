@@ -35,7 +35,7 @@ export function createGetRoleScopeTagsByIdPostResponseFromDiscriminatorValue(par
 export function deserializeIntoGetRoleScopeTagsByIdPostRequestBody(getRoleScopeTagsByIdPostRequestBody: Partial<GetRoleScopeTagsByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getRoleScopeTagsByIdPostRequestBody.backingStoreEnabled = true; },
-        "roleScopeTagIds": n => { getRoleScopeTagsByIdPostRequestBody.roleScopeTagIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "roleScopeTagIds": n => { getRoleScopeTagsByIdPostRequestBody.roleScopeTagIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

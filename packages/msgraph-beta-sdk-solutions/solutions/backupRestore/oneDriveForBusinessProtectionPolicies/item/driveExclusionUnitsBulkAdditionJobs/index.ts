@@ -27,21 +27,22 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      */
      byDriveExclusionUnitsBulkAdditionJobId(driveExclusionUnitsBulkAdditionJobId: string) : DriveExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
-     * Get driveExclusionUnitsBulkAdditionJobs from solutions
+     * Get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveexclusionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
     /**
-     * Get driveExclusionUnitsBulkAdditionJobs from solutions
+     * Get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get driveExclusionUnitsBulkAdditionJobs from solutions
+ * Get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
  */
 export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters {
     /**

@@ -70,7 +70,7 @@ export function deserializeIntoCreateInstancePostRequestBody(createInstancePostR
         "backingStoreEnabled": n => { createInstancePostRequestBody.backingStoreEnabled = true; },
         "description": n => { createInstancePostRequestBody.description = n.getStringValue(); },
         "displayName": n => { createInstancePostRequestBody.displayName = n.getStringValue(); },
-        "roleScopeTagIds": n => { createInstancePostRequestBody.roleScopeTagIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "roleScopeTagIds": n => { createInstancePostRequestBody.roleScopeTagIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "settingsDelta": n => { createInstancePostRequestBody.settingsDelta = n.getCollectionOfObjectValues<DeviceManagementSettingInstance>(createDeviceManagementSettingInstanceFromDiscriminatorValue); },
     }
 }

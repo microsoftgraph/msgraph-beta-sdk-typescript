@@ -26,7 +26,7 @@ export function createExportGetResponseFromDiscriminatorValue(parseNode: ParseNo
 export function deserializeIntoExportGetResponse(exportGetResponse: Partial<ExportGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(exportGetResponse),
-        "value": n => { exportGetResponse.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { exportGetResponse.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface ExportGetResponse extends BaseCollectionPaginationCountResponse, Parsable {

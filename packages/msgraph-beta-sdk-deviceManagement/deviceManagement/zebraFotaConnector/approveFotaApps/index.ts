@@ -52,7 +52,7 @@ export function createApproveFotaAppsPostResponseFromDiscriminatorValue(parseNod
 export function deserializeIntoApproveFotaAppsPostResponse(approveFotaAppsPostResponse: Partial<ApproveFotaAppsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { approveFotaAppsPostResponse.backingStoreEnabled = true; },
-        "value": n => { approveFotaAppsPostResponse.value = n.getBooleanValue(); },
+        "value": n => { approveFotaAppsPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -64,7 +64,7 @@ export function deserializeIntoApproveFotaAppsPostResponse(approveFotaAppsPostRe
 // @ts-ignore
 export function serializeApproveFotaAppsPostResponse(writer: SerializationWriter, approveFotaAppsPostResponse: Partial<ApproveFotaAppsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!approveFotaAppsPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", approveFotaAppsPostResponse.value);
+    writer.writeBooleanValue("value", approveFotaAppsPostResponse.value ?? false);
     writer.writeAdditionalData(approveFotaAppsPostResponse.additionalData);
 }
 /**

@@ -26,7 +26,7 @@ export function createGetScopesForUserWithUseridGetResponseFromDiscriminatorValu
 export function deserializeIntoGetScopesForUserWithUseridGetResponse(getScopesForUserWithUseridGetResponse: Partial<GetScopesForUserWithUseridGetResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(getScopesForUserWithUseridGetResponse),
-        "value": n => { getScopesForUserWithUseridGetResponse.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { getScopesForUserWithUseridGetResponse.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface GetScopesForUserWithUseridGetResponse extends BaseCollectionPaginationCountResponse, Parsable {

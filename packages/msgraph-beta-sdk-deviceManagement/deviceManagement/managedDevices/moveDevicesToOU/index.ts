@@ -24,7 +24,7 @@ export function createMoveDevicesToOUPostRequestBodyFromDiscriminatorValue(parse
 export function deserializeIntoMoveDevicesToOUPostRequestBody(moveDevicesToOUPostRequestBody: Partial<MoveDevicesToOUPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { moveDevicesToOUPostRequestBody.backingStoreEnabled = true; },
-        "deviceIds": n => { moveDevicesToOUPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<Guid>(); },
+        "deviceIds": n => { moveDevicesToOUPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<Guid>("string"); },
         "organizationalUnitPath": n => { moveDevicesToOUPostRequestBody.organizationalUnitPath = n.getStringValue(); },
     }
 }

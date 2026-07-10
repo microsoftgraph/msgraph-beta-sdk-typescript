@@ -167,7 +167,7 @@ export function createSnapshotFromDiscriminatorValue(parseNode: ParseNode | unde
 export function deserializeIntoEntityTypeAndIds(entityTypeAndIds: Partial<EntityTypeAndIds> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { entityTypeAndIds.backingStoreEnabled = true; },
-        "entityIds": n => { entityTypeAndIds.entityIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "entityIds": n => { entityTypeAndIds.entityIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "entityType": n => { entityTypeAndIds.entityType = n.getEnumValue<ResourceTypeName>(ResourceTypeNameObject); },
         "@odata.type": n => { entityTypeAndIds.odataType = n.getStringValue(); },
     }

@@ -38,6 +38,10 @@ export interface Allotment extends Entity, Parsable {
      */
     consumedUnits?: number | null;
     /**
+     * The externalServiceIdentifier property
+     */
+    externalServiceIdentifier?: string | null;
+    /**
      * The list of services that might be enabled or disabled for assignments from this allotment. Not nullable. Read-only.
      */
     services?: Service[] | null;
@@ -270,6 +274,7 @@ export function deserializeIntoAllotment(allotment: Partial<Allotment> | undefin
         "assignableTo": n => { allotment.assignableTo = n.getCollectionOfEnumValues<AssigneeTypes>(AssigneeTypesObject); },
         "assignments": n => { allotment.assignments = n.getCollectionOfObjectValues<Assignment>(createAssignmentFromDiscriminatorValue); },
         "consumedUnits": n => { allotment.consumedUnits = n.getNumberValue(); },
+        "externalServiceIdentifier": n => { allotment.externalServiceIdentifier = n.getStringValue(); },
         "services": n => { allotment.services = n.getCollectionOfObjectValues<Service>(createServiceFromDiscriminatorValue); },
         "skuId": n => { allotment.skuId = n.getGuidValue(); },
         "skuPartNumber": n => { allotment.skuPartNumber = n.getStringValue(); },
@@ -300,7 +305,7 @@ export function deserializeIntoAssignment(assignment: Partial<Assignment> | unde
         ...deserializeIntoEntity(assignment),
         "allotment": n => { assignment.allotment = n.getObjectValue<Allotment>(createAllotmentFromDiscriminatorValue); },
         "assignedTo": n => { assignment.assignedTo = n.getObjectValue<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
-        "disabledServicePlanIds": n => { assignment.disabledServicePlanIds = n.getCollectionOfPrimitiveValues<Guid>(); },
+        "disabledServicePlanIds": n => { assignment.disabledServicePlanIds = n.getCollectionOfPrimitiveValues<Guid>("string"); },
     }
 }
 /**
@@ -401,6 +406,7 @@ export function deserializeIntoUsageRight(usageRight: Partial<UsageRight> | unde
         ...deserializeIntoEntity(usageRight),
         "allotments": n => { usageRight.allotments = n.getCollectionOfObjectValues<Allotment>(createAllotmentFromDiscriminatorValue); },
         "assignments": n => { usageRight.assignments = n.getCollectionOfObjectValues<Assignment>(createAssignmentFromDiscriminatorValue); },
+        "externalServiceIdentifier": n => { usageRight.externalServiceIdentifier = n.getStringValue(); },
         "services": n => { usageRight.services = n.getCollectionOfObjectValues<Service>(createServiceFromDiscriminatorValue); },
         "skuId": n => { usageRight.skuId = n.getGuidValue(); },
         "skuPartNumber": n => { usageRight.skuPartNumber = n.getStringValue(); },
@@ -494,6 +500,7 @@ export function serializeAllotment(writer: SerializationWriter, allotment: Parti
     writer.writeEnumValue<AssigneeTypes[]>("assignableTo", allotment.assignableTo);
     writer.writeCollectionOfObjectValues<Assignment>("assignments", allotment.assignments, serializeAssignment);
     writer.writeNumberValue("consumedUnits", allotment.consumedUnits);
+    writer.writeStringValue("externalServiceIdentifier", allotment.externalServiceIdentifier);
     writer.writeCollectionOfObjectValues<Service>("services", allotment.services, serializeService);
     writer.writeGuidValue("skuId", allotment.skuId);
     writer.writeStringValue("skuPartNumber", allotment.skuPartNumber);
@@ -625,6 +632,7 @@ export function serializeUsageRight(writer: SerializationWriter, usageRight: Par
     serializeEntity(writer, usageRight, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<Allotment>("allotments", usageRight.allotments, serializeAllotment);
     writer.writeCollectionOfObjectValues<Assignment>("assignments", usageRight.assignments, serializeAssignment);
+    writer.writeStringValue("externalServiceIdentifier", usageRight.externalServiceIdentifier);
     writer.writeCollectionOfObjectValues<Service>("services", usageRight.services, serializeService);
     writer.writeGuidValue("skuId", usageRight.skuId);
     writer.writeStringValue("skuPartNumber", usageRight.skuPartNumber);
@@ -734,6 +742,10 @@ export interface UsageRight extends Entity, Parsable {
      * The set of assignments that combine to form this usageRight, including both direct assignments and assignments inherited through group membership.
      */
     assignments?: Assignment[] | null;
+    /**
+     * The externalServiceIdentifier property
+     */
+    externalServiceIdentifier?: string | null;
     /**
      * Information about the services associated with the usageRight. Not nullable. Read-only. Supports $filter on the planId property.
      */

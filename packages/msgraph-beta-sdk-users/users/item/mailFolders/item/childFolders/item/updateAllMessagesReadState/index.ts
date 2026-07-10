@@ -24,8 +24,8 @@ export function createUpdateAllMessagesReadStatePostRequestBodyFromDiscriminator
 export function deserializeIntoUpdateAllMessagesReadStatePostRequestBody(updateAllMessagesReadStatePostRequestBody: Partial<UpdateAllMessagesReadStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { updateAllMessagesReadStatePostRequestBody.backingStoreEnabled = true; },
-        "isRead": n => { updateAllMessagesReadStatePostRequestBody.isRead = n.getBooleanValue(); },
-        "suppressReadReceipts": n => { updateAllMessagesReadStatePostRequestBody.suppressReadReceipts = n.getBooleanValue(); },
+        "isRead": n => { updateAllMessagesReadStatePostRequestBody.isRead = n.getBooleanValue() ?? false; },
+        "suppressReadReceipts": n => { updateAllMessagesReadStatePostRequestBody.suppressReadReceipts = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -37,8 +37,8 @@ export function deserializeIntoUpdateAllMessagesReadStatePostRequestBody(updateA
 // @ts-ignore
 export function serializeUpdateAllMessagesReadStatePostRequestBody(writer: SerializationWriter, updateAllMessagesReadStatePostRequestBody: Partial<UpdateAllMessagesReadStatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!updateAllMessagesReadStatePostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("isRead", updateAllMessagesReadStatePostRequestBody.isRead);
-    writer.writeBooleanValue("suppressReadReceipts", updateAllMessagesReadStatePostRequestBody.suppressReadReceipts);
+    writer.writeBooleanValue("isRead", updateAllMessagesReadStatePostRequestBody.isRead ?? false);
+    writer.writeBooleanValue("suppressReadReceipts", updateAllMessagesReadStatePostRequestBody.suppressReadReceipts ?? false);
     writer.writeAdditionalData(updateAllMessagesReadStatePostRequestBody.additionalData);
 }
 export interface UpdateAllMessagesReadStatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

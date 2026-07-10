@@ -35,7 +35,7 @@ export function createGetTargetedUsersAndDevicesPostResponseFromDiscriminatorVal
 export function deserializeIntoGetTargetedUsersAndDevicesPostRequestBody(getTargetedUsersAndDevicesPostRequestBody: Partial<GetTargetedUsersAndDevicesPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getTargetedUsersAndDevicesPostRequestBody.backingStoreEnabled = true; },
-        "deviceConfigurationIds": n => { getTargetedUsersAndDevicesPostRequestBody.deviceConfigurationIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "deviceConfigurationIds": n => { getTargetedUsersAndDevicesPostRequestBody.deviceConfigurationIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

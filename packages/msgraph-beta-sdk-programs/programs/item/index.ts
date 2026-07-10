@@ -19,7 +19,7 @@ export interface ProgramItemRequestBuilder extends BaseRequestBuilder<ProgramIte
      */
     get controls(): ControlsRequestBuilder;
     /**
-     * In the Microsoft Entra access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
+     * In the Microsoft Entra access reviews feature, delete a program object. Don't delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/program-delete?view=graph-rest-beta|Find more info here}
@@ -42,7 +42,7 @@ export interface ProgramItemRequestBuilder extends BaseRequestBuilder<ProgramIte
      */
      patch(body: Program, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Program | undefined>;
     /**
-     * In the Microsoft Entra access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
+     * In the Microsoft Entra access reviews feature, delete a program object. Don't delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

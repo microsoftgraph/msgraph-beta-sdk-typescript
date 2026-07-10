@@ -25,7 +25,7 @@ export function createFindMeetingLocationsPostRequestBodyFromDiscriminatorValue(
 // @ts-ignore
 export function deserializeIntoFindMeetingLocationsPostRequestBody(findMeetingLocationsPostRequestBody: Partial<FindMeetingLocationsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "allowFreeOnly": n => { findMeetingLocationsPostRequestBody.allowFreeOnly = n.getBooleanValue(); },
+        "allowFreeOnly": n => { findMeetingLocationsPostRequestBody.allowFreeOnly = n.getBooleanValue() ?? false; },
         "attendees": n => { findMeetingLocationsPostRequestBody.attendees = n.getCollectionOfObjectValues<AttendeeBase>(createAttendeeBaseFromDiscriminatorValue); },
         "backingStoreEnabled": n => { findMeetingLocationsPostRequestBody.backingStoreEnabled = true; },
         "maxCandidates": n => { findMeetingLocationsPostRequestBody.maxCandidates = n.getNumberValue(); },
@@ -93,7 +93,7 @@ export interface FindMeetingLocationsRequestBuilder extends BaseRequestBuilder<F
 // @ts-ignore
 export function serializeFindMeetingLocationsPostRequestBody(writer: SerializationWriter, findMeetingLocationsPostRequestBody: Partial<FindMeetingLocationsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!findMeetingLocationsPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("allowFreeOnly", findMeetingLocationsPostRequestBody.allowFreeOnly);
+    writer.writeBooleanValue("allowFreeOnly", findMeetingLocationsPostRequestBody.allowFreeOnly ?? false);
     writer.writeCollectionOfObjectValues<AttendeeBase>("attendees", findMeetingLocationsPostRequestBody.attendees, serializeAttendeeBase);
     writer.writeNumberValue("maxCandidates", findMeetingLocationsPostRequestBody.maxCandidates);
     writer.writeDurationValue("meetingDuration", findMeetingLocationsPostRequestBody.meetingDuration);

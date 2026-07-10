@@ -24,7 +24,7 @@ export function createHasActiveDeploymentsPostResponseFromDiscriminatorValue(par
 export function deserializeIntoHasActiveDeploymentsPostResponse(hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { hasActiveDeploymentsPostResponse.backingStoreEnabled = true; },
-        "value": n => { hasActiveDeploymentsPostResponse.value = n.getBooleanValue(); },
+        "value": n => { hasActiveDeploymentsPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface HasActiveDeploymentsPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -64,7 +64,7 @@ export interface HasActiveDeploymentsRequestBuilder extends BaseRequestBuilder<H
 // @ts-ignore
 export function serializeHasActiveDeploymentsPostResponse(writer: SerializationWriter, hasActiveDeploymentsPostResponse: Partial<HasActiveDeploymentsPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!hasActiveDeploymentsPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", hasActiveDeploymentsPostResponse.value);
+    writer.writeBooleanValue("value", hasActiveDeploymentsPostResponse.value ?? false);
     writer.writeAdditionalData(hasActiveDeploymentsPostResponse.additionalData);
 }
 /**

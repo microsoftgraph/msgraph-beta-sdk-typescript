@@ -14,6 +14,8 @@ import { DetermineIfInteractionIsAllowedRequestBuilderRequestsMetadata, type Det
 // @ts-ignore
 import { DevicesRequestBuilderNavigationMetadata, DevicesRequestBuilderRequestsMetadata, type DevicesRequestBuilder } from './devices/index.js';
 // @ts-ignore
+import { MessagingRequestBuilderNavigationMetadata, MessagingRequestBuilderRequestsMetadata, type MessagingRequestBuilder } from './messaging/index.js';
+// @ts-ignore
 import { SendActivityNotificationToRecipientsRequestBuilderRequestsMetadata, type SendActivityNotificationToRecipientsRequestBuilder } from './sendActivityNotificationToRecipients/index.js';
 // @ts-ignore
 import { TeamsAppSettingsRequestBuilderRequestsMetadata, type TeamsAppSettingsRequestBuilder } from './teamsAppSettings/index.js';
@@ -44,6 +46,10 @@ export interface TeamworkRequestBuilder extends BaseRequestBuilder<TeamworkReque
      * Provides operations to manage the devices property of the microsoft.graph.teamwork entity.
      */
     get devices(): DevicesRequestBuilder;
+    /**
+     * Provides operations to manage the messaging property of the microsoft.graph.teamwork entity.
+     */
+    get messaging(): MessagingRequestBuilder;
     /**
      * Provides operations to call the sendActivityNotificationToRecipients method.
      */
@@ -132,6 +138,10 @@ export const TeamworkRequestBuilderNavigationMetadata: Record<Exclude<keyof Team
     devices: {
         requestsMetadata: DevicesRequestBuilderRequestsMetadata,
         navigationMetadata: DevicesRequestBuilderNavigationMetadata,
+    },
+    messaging: {
+        requestsMetadata: MessagingRequestBuilderRequestsMetadata,
+        navigationMetadata: MessagingRequestBuilderNavigationMetadata,
     },
     sendActivityNotificationToRecipients: {
         requestsMetadata: SendActivityNotificationToRecipientsRequestBuilderRequestsMetadata,

@@ -60,7 +60,7 @@ export function createApplyConfigPostRequestBodyFromDiscriminatorValue(parseNode
 export function deserializeIntoApplyConfigPostRequestBody(applyConfigPostRequestBody: Partial<ApplyConfigPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { applyConfigPostRequestBody.backingStoreEnabled = true; },
-        "cloudPcIds": n => { applyConfigPostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudPcIds": n => { applyConfigPostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "policySettings": n => { applyConfigPostRequestBody.policySettings = n.getCollectionOfEnumValues<CloudPcPolicySettingType>(CloudPcPolicySettingTypeObject); },
     }
 }

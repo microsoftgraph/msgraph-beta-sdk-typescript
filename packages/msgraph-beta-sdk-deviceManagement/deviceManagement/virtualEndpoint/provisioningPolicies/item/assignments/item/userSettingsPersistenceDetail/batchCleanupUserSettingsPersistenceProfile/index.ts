@@ -57,7 +57,7 @@ export function createBatchCleanupUserSettingsPersistenceProfilePostRequestBodyF
 export function deserializeIntoBatchCleanupUserSettingsPersistenceProfilePostRequestBody(batchCleanupUserSettingsPersistenceProfilePostRequestBody: Partial<BatchCleanupUserSettingsPersistenceProfilePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { batchCleanupUserSettingsPersistenceProfilePostRequestBody.backingStoreEnabled = true; },
-        "cloudProfileIds": n => { batchCleanupUserSettingsPersistenceProfilePostRequestBody.cloudProfileIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudProfileIds": n => { batchCleanupUserSettingsPersistenceProfilePostRequestBody.cloudProfileIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "configurationId": n => { batchCleanupUserSettingsPersistenceProfilePostRequestBody.configurationId = n.getStringValue(); },
     }
 }

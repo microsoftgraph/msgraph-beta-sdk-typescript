@@ -27,28 +27,30 @@ export interface CloudPcPoolsRequestBuilder extends BaseRequestBuilder<CloudPcPo
      */
      byCloudPcPoolId(cloudPcPoolId: string) : CloudPcPoolItemRequestBuilder;
     /**
-     * Get cloudPcPools from deviceManagement
+     * List the properties and relationships of the cloudPcPool objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPoolCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcpools?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcPoolsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcPoolCollectionResponse | undefined>;
     /**
-     * Create new navigation property to cloudPcPools for deviceManagement
+     * Create a new cloudPcPool object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPool>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-post-cloudpcpools?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcPool, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcPool | undefined>;
     /**
-     * Get cloudPcPools from deviceManagement
+     * List the properties and relationships of the cloudPcPool objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudPcPoolsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to cloudPcPools for deviceManagement
+     * Create a new cloudPcPool object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface CloudPcPoolsRequestBuilder extends BaseRequestBuilder<CloudPcPo
      toPostRequestInformation(body: CloudPcPool, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get cloudPcPools from deviceManagement
+ * List the properties and relationships of the cloudPcPool objects.
  */
 export interface CloudPcPoolsRequestBuilderGetQueryParameters {
     /**

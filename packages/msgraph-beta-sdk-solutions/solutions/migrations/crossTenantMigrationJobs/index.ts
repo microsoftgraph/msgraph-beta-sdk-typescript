@@ -10,8 +10,6 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { CrossTenantMigrationJobItemRequestBuilderNavigationMetadata, CrossTenantMigrationJobItemRequestBuilderRequestsMetadata, type CrossTenantMigrationJobItemRequestBuilder } from './item/index.js';
 // @ts-ignore
-import { type ValidateRequestBuilder, ValidateRequestBuilderRequestsMetadata } from './validate/index.js';
-// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -23,11 +21,6 @@ export interface CrossTenantMigrationJobsRequestBuilder extends BaseRequestBuild
      * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get count(): CountRequestBuilder;
-    /**
-     * Provides operations to call the validate method.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
-     */
-    get validate(): ValidateRequestBuilder;
     /**
      * Provides operations to manage the crossTenantMigrationJobs property of the microsoft.graph.migrationsRoot entity.
      * @param crossTenantMigrationJobId The unique identifier of crossTenantMigrationJob
@@ -45,7 +38,7 @@ export interface CrossTenantMigrationJobsRequestBuilder extends BaseRequestBuild
      */
      get(requestConfiguration?: RequestConfiguration<CrossTenantMigrationJobsRequestBuilderGetQueryParameters> | undefined) : Promise<CrossTenantMigrationJobCollectionResponse | undefined>;
     /**
-     * Create a new crossTenantMigrationJob.
+     * Create a new crossTenantMigrationJob. A job defines the migration batch but doesn't start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationJob>}
@@ -62,7 +55,7 @@ export interface CrossTenantMigrationJobsRequestBuilder extends BaseRequestBuild
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CrossTenantMigrationJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new crossTenantMigrationJob.
+     * Create a new crossTenantMigrationJob. A job defines the migration batch but doesn't start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -135,9 +128,6 @@ export const CrossTenantMigrationJobsRequestBuilderNavigationMetadata: Record<Ex
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
-    },
-    validate: {
-        requestsMetadata: ValidateRequestBuilderRequestsMetadata,
     },
 };
 /**

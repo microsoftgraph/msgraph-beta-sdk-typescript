@@ -26,8 +26,8 @@ export function createSetScheduledRetireStatePostRequestBodyFromDiscriminatorVal
 export function deserializeIntoSetScheduledRetireStatePostRequestBody(setScheduledRetireStatePostRequestBody: Partial<SetScheduledRetireStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setScheduledRetireStatePostRequestBody.backingStoreEnabled = true; },
-        "managedDeviceIds": n => { setScheduledRetireStatePostRequestBody.managedDeviceIds = n.getCollectionOfPrimitiveValues<string>(); },
-        "scopedToAllDevices": n => { setScheduledRetireStatePostRequestBody.scopedToAllDevices = n.getBooleanValue(); },
+        "managedDeviceIds": n => { setScheduledRetireStatePostRequestBody.managedDeviceIds = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "scopedToAllDevices": n => { setScheduledRetireStatePostRequestBody.scopedToAllDevices = n.getBooleanValue() ?? false; },
         "state": n => { setScheduledRetireStatePostRequestBody.state = n.getEnumValue<ScheduledRetireState>(ScheduledRetireStateObject); },
     }
 }
@@ -41,7 +41,7 @@ export function deserializeIntoSetScheduledRetireStatePostRequestBody(setSchedul
 export function serializeSetScheduledRetireStatePostRequestBody(writer: SerializationWriter, setScheduledRetireStatePostRequestBody: Partial<SetScheduledRetireStatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!setScheduledRetireStatePostRequestBody || isSerializingDerivedType) { return; }
     writer.writeCollectionOfPrimitiveValues<string>("managedDeviceIds", setScheduledRetireStatePostRequestBody.managedDeviceIds);
-    writer.writeBooleanValue("scopedToAllDevices", setScheduledRetireStatePostRequestBody.scopedToAllDevices);
+    writer.writeBooleanValue("scopedToAllDevices", setScheduledRetireStatePostRequestBody.scopedToAllDevices ?? false);
     writer.writeEnumValue<ScheduledRetireState>("state", setScheduledRetireStatePostRequestBody.state);
     writer.writeAdditionalData(setScheduledRetireStatePostRequestBody.additionalData);
 }

@@ -25,11 +25,11 @@ export function deserializeIntoGetEnrollmentConfigurationPoliciesByDevicePostReq
     return {
         "backingStoreEnabled": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "name": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.name = n.getStringValue(); },
-        "orderBy": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "orderBy": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.search = n.getStringValue(); },
-        "select": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getEnrollmentConfigurationPoliciesByDevicePostRequestBody.top = n.getNumberValue(); },
     }

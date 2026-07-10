@@ -24,7 +24,7 @@ export function createSendCustomNotificationToCompanyPortalPostRequestBodyFromDi
 export function deserializeIntoSendCustomNotificationToCompanyPortalPostRequestBody(sendCustomNotificationToCompanyPortalPostRequestBody: Partial<SendCustomNotificationToCompanyPortalPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { sendCustomNotificationToCompanyPortalPostRequestBody.backingStoreEnabled = true; },
-        "groupsToNotify": n => { sendCustomNotificationToCompanyPortalPostRequestBody.groupsToNotify = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupsToNotify": n => { sendCustomNotificationToCompanyPortalPostRequestBody.groupsToNotify = n.getCollectionOfPrimitiveValues<string>("string"); },
         "notificationBody": n => { sendCustomNotificationToCompanyPortalPostRequestBody.notificationBody = n.getStringValue(); },
         "notificationTitle": n => { sendCustomNotificationToCompanyPortalPostRequestBody.notificationTitle = n.getStringValue(); },
     }

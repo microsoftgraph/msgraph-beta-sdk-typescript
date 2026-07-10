@@ -27,11 +27,11 @@ export function deserializeIntoRetrieveCrossRegionDisasterRecoveryReportPostRequ
     return {
         "backingStoreEnabled": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.reportName = n.getEnumValue<CloudPcDisasterRecoveryReportName>(CloudPcDisasterRecoveryReportNameObject); },
         "search": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveCrossRegionDisasterRecoveryReportPostRequestBody.top = n.getNumberValue(); },
     }

@@ -27,7 +27,7 @@ export interface RegistrationsRequestBuilder extends BaseRequestBuilder<Registra
      */
      byVirtualEventRegistrationId(virtualEventRegistrationId: string) : VirtualEventRegistrationItemRequestBuilder;
     /**
-     * Get registrations from solutions
+     * Registration records of the town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistrationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface RegistrationsRequestBuilder extends BaseRequestBuilder<Registra
      */
      post(body: VirtualEventRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventRegistration | undefined>;
     /**
-     * Get registrations from solutions
+     * Registration records of the town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface RegistrationsRequestBuilder extends BaseRequestBuilder<Registra
      toPostRequestInformation(body: VirtualEventRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get registrations from solutions
+ * Registration records of the town hall.
  */
 export interface RegistrationsRequestBuilderGetQueryParameters {
     /**

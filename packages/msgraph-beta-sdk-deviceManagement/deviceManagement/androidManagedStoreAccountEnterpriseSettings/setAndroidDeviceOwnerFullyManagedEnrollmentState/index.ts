@@ -24,7 +24,7 @@ export function createSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostReques
 export function deserializeIntoSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody(setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody: Partial<SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.backingStoreEnabled = true; },
-        "enabled": n => { setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.enabled = n.getBooleanValue(); },
+        "enabled": n => { setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.enabled = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -36,7 +36,7 @@ export function deserializeIntoSetAndroidDeviceOwnerFullyManagedEnrollmentStateP
 // @ts-ignore
 export function serializeSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody(writer: SerializationWriter, setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody: Partial<SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("enabled", setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.enabled);
+    writer.writeBooleanValue("enabled", setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.enabled ?? false);
     writer.writeAdditionalData(setAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody.additionalData);
 }
 export interface SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

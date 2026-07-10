@@ -27,8 +27,8 @@ export function deserializeIntoRedirectPostRequestBody(redirectPostRequestBody: 
     return {
         "backingStoreEnabled": n => { redirectPostRequestBody.backingStoreEnabled = true; },
         "callbackUri": n => { redirectPostRequestBody.callbackUri = n.getStringValue(); },
-        "maskCallee": n => { redirectPostRequestBody.maskCallee = n.getBooleanValue(); },
-        "maskCaller": n => { redirectPostRequestBody.maskCaller = n.getBooleanValue(); },
+        "maskCallee": n => { redirectPostRequestBody.maskCallee = n.getBooleanValue() ?? false; },
+        "maskCaller": n => { redirectPostRequestBody.maskCaller = n.getBooleanValue() ?? false; },
         "targetDisposition": n => { redirectPostRequestBody.targetDisposition = n.getEnumValue<CallDisposition>(CallDispositionObject); },
         "targets": n => { redirectPostRequestBody.targets = n.getCollectionOfObjectValues<InvitationParticipantInfo>(createInvitationParticipantInfoFromDiscriminatorValue); },
         "timeout": n => { redirectPostRequestBody.timeout = n.getNumberValue(); },
@@ -94,8 +94,8 @@ export interface RedirectRequestBuilder extends BaseRequestBuilder<RedirectReque
 export function serializeRedirectPostRequestBody(writer: SerializationWriter, redirectPostRequestBody: Partial<RedirectPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!redirectPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeStringValue("callbackUri", redirectPostRequestBody.callbackUri);
-    writer.writeBooleanValue("maskCallee", redirectPostRequestBody.maskCallee);
-    writer.writeBooleanValue("maskCaller", redirectPostRequestBody.maskCaller);
+    writer.writeBooleanValue("maskCallee", redirectPostRequestBody.maskCallee ?? false);
+    writer.writeBooleanValue("maskCaller", redirectPostRequestBody.maskCaller ?? false);
     writer.writeEnumValue<CallDisposition>("targetDisposition", redirectPostRequestBody.targetDisposition);
     writer.writeCollectionOfObjectValues<InvitationParticipantInfo>("targets", redirectPostRequestBody.targets, serializeInvitationParticipantInfo);
     writer.writeNumberValue("timeout", redirectPostRequestBody.timeout);

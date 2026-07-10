@@ -28,7 +28,7 @@ export function deserializeIntoUpdatePostRequestBody(updatePostRequestBody: Part
         "addedPolicySetItems": n => { updatePostRequestBody.addedPolicySetItems = n.getCollectionOfObjectValues<PolicySetItem>(createPolicySetItemFromDiscriminatorValue); },
         "assignments": n => { updatePostRequestBody.assignments = n.getCollectionOfObjectValues<PolicySetAssignment>(createPolicySetAssignmentFromDiscriminatorValue); },
         "backingStoreEnabled": n => { updatePostRequestBody.backingStoreEnabled = true; },
-        "deletedPolicySetItems": n => { updatePostRequestBody.deletedPolicySetItems = n.getCollectionOfPrimitiveValues<string>(); },
+        "deletedPolicySetItems": n => { updatePostRequestBody.deletedPolicySetItems = n.getCollectionOfPrimitiveValues<string>("string"); },
         "updatedPolicySetItems": n => { updatePostRequestBody.updatedPolicySetItems = n.getCollectionOfObjectValues<PolicySetItem>(createPolicySetItemFromDiscriminatorValue); },
     }
 }

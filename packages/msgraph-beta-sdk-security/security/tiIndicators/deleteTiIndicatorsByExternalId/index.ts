@@ -74,7 +74,7 @@ export interface DeleteTiIndicatorsByExternalIdRequestBuilder extends BaseReques
 export function deserializeIntoDeleteTiIndicatorsByExternalIdPostRequestBody(deleteTiIndicatorsByExternalIdPostRequestBody: Partial<DeleteTiIndicatorsByExternalIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deleteTiIndicatorsByExternalIdPostRequestBody.backingStoreEnabled = true; },
-        "value": n => { deleteTiIndicatorsByExternalIdPostRequestBody.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { deleteTiIndicatorsByExternalIdPostRequestBody.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

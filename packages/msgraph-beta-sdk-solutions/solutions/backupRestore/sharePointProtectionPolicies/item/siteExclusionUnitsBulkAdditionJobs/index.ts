@@ -27,21 +27,22 @@ export interface SiteExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRe
      */
      bySiteExclusionUnitsBulkAdditionJobId(siteExclusionUnitsBulkAdditionJobId: string) : SiteExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
-     * Get siteExclusionUnitsBulkAdditionJobs from solutions
+     * Get a list of site exclusion units bulk addition jobs associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteexclusionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
     /**
-     * Get siteExclusionUnitsBulkAdditionJobs from solutions
+     * Get a list of site exclusion units bulk addition jobs associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get siteExclusionUnitsBulkAdditionJobs from solutions
+ * Get a list of site exclusion units bulk addition jobs associated with a SharePoint protection policy.
  */
 export interface SiteExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters {
     /**

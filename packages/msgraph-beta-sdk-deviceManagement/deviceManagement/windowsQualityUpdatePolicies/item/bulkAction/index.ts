@@ -61,7 +61,7 @@ export function deserializeIntoBulkActionPostRequestBody(bulkActionPostRequestBo
     return {
         "action": n => { bulkActionPostRequestBody.action = n.getEnumValue<WindowsQualityUpdatePolicyActionType>(WindowsQualityUpdatePolicyActionTypeObject); },
         "backingStoreEnabled": n => { bulkActionPostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { bulkActionPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { bulkActionPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

@@ -14,6 +14,8 @@ import { AuthenticationMethodsRequestBuilderNavigationMetadata, AuthenticationMe
 // @ts-ignore
 import { AzureADPremiumLicenseInsightRequestBuilderRequestsMetadata, type AzureADPremiumLicenseInsightRequestBuilder } from './azureADPremiumLicenseInsight/index.js';
 // @ts-ignore
+import { CorrelationsRequestBuilderNavigationMetadata, CorrelationsRequestBuilderRequestsMetadata, type CorrelationsRequestBuilder } from './correlations/index.js';
+// @ts-ignore
 import { CredentialUserRegistrationDetailsRequestBuilderNavigationMetadata, CredentialUserRegistrationDetailsRequestBuilderRequestsMetadata, type CredentialUserRegistrationDetailsRequestBuilder } from './credentialUserRegistrationDetails/index.js';
 // @ts-ignore
 import { DailyPrintUsageRequestBuilderNavigationMetadata, DailyPrintUsageRequestBuilderRequestsMetadata, type DailyPrintUsageRequestBuilder } from './dailyPrintUsage/index.js';
@@ -272,6 +274,8 @@ import { GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderRequestsMetad
 // @ts-ignore
 import { HealthMonitoringRequestBuilderNavigationMetadata, HealthMonitoringRequestBuilderRequestsMetadata, type HealthMonitoringRequestBuilder } from './healthMonitoring/index.js';
 // @ts-ignore
+import { IdentityAnalyticsRequestBuilderNavigationMetadata, IdentityAnalyticsRequestBuilderRequestsMetadata, type IdentityAnalyticsRequestBuilder } from './identityAnalytics/index.js';
+// @ts-ignore
 import { ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken/index.js';
 // @ts-ignore
 import { ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder } from './managedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipToken/index.js';
@@ -330,6 +334,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to manage the azureADPremiumLicenseInsight property of the microsoft.graph.reportRoot entity.
      */
     get azureADPremiumLicenseInsight(): AzureADPremiumLicenseInsightRequestBuilder;
+    /**
+     * Provides operations to manage the correlations property of the microsoft.graph.reportRoot entity.
+     */
+    get correlations(): CorrelationsRequestBuilder;
     /**
      * Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
      */
@@ -398,6 +406,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to manage the healthMonitoring property of the microsoft.graph.reportRoot entity.
      */
     get healthMonitoring(): HealthMonitoringRequestBuilder;
+    /**
+     * Provides operations to manage the identityAnalytics property of the microsoft.graph.reportRoot entity.
+     */
+    get identityAnalytics(): IdentityAnalyticsRequestBuilder;
     /**
      * Provides operations to call the managedDeviceEnrollmentFailureDetails method.
      */
@@ -1701,6 +1713,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     azureADPremiumLicenseInsight: {
         requestsMetadata: AzureADPremiumLicenseInsightRequestBuilderRequestsMetadata,
     },
+    correlations: {
+        requestsMetadata: CorrelationsRequestBuilderRequestsMetadata,
+        navigationMetadata: CorrelationsRequestBuilderNavigationMetadata,
+    },
     credentialUserRegistrationDetails: {
         requestsMetadata: CredentialUserRegistrationDetailsRequestBuilderRequestsMetadata,
         navigationMetadata: CredentialUserRegistrationDetailsRequestBuilderNavigationMetadata,
@@ -1758,6 +1774,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     healthMonitoring: {
         requestsMetadata: HealthMonitoringRequestBuilderRequestsMetadata,
         navigationMetadata: HealthMonitoringRequestBuilderNavigationMetadata,
+    },
+    identityAnalytics: {
+        requestsMetadata: IdentityAnalyticsRequestBuilderRequestsMetadata,
+        navigationMetadata: IdentityAnalyticsRequestBuilderNavigationMetadata,
     },
     managedDeviceEnrollmentFailureDetails: {
         requestsMetadata: ManagedDeviceEnrollmentFailureDetailsRequestBuilderRequestsMetadata,

@@ -48,7 +48,7 @@ export function deserializeIntoDetermineIfInteractionIsAllowedPostRequestBody(de
 export function deserializeIntoDetermineIfInteractionIsAllowedPostResponse(determineIfInteractionIsAllowedPostResponse: Partial<DetermineIfInteractionIsAllowedPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { determineIfInteractionIsAllowedPostResponse.backingStoreEnabled = true; },
-        "value": n => { determineIfInteractionIsAllowedPostResponse.value = n.getBooleanValue(); },
+        "value": n => { determineIfInteractionIsAllowedPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface DetermineIfInteractionIsAllowedPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -118,7 +118,7 @@ export function serializeDetermineIfInteractionIsAllowedPostRequestBody(writer: 
 // @ts-ignore
 export function serializeDetermineIfInteractionIsAllowedPostResponse(writer: SerializationWriter, determineIfInteractionIsAllowedPostResponse: Partial<DetermineIfInteractionIsAllowedPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!determineIfInteractionIsAllowedPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", determineIfInteractionIsAllowedPostResponse.value);
+    writer.writeBooleanValue("value", determineIfInteractionIsAllowedPostResponse.value ?? false);
     writer.writeAdditionalData(determineIfInteractionIsAllowedPostResponse.additionalData);
 }
 /**

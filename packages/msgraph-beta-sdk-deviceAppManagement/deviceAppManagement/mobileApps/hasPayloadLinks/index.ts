@@ -35,7 +35,7 @@ export function createHasPayloadLinksPostResponseFromDiscriminatorValue(parseNod
 export function deserializeIntoHasPayloadLinksPostRequestBody(hasPayloadLinksPostRequestBody: Partial<HasPayloadLinksPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { hasPayloadLinksPostRequestBody.backingStoreEnabled = true; },
-        "payloadIds": n => { hasPayloadLinksPostRequestBody.payloadIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "payloadIds": n => { hasPayloadLinksPostRequestBody.payloadIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

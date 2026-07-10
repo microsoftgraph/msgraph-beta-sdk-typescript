@@ -29,14 +29,14 @@ export function deserializeIntoExecuteActionPostRequestBody(executeActionPostReq
         "backingStoreEnabled": n => { executeActionPostRequestBody.backingStoreEnabled = true; },
         "carrierUrl": n => { executeActionPostRequestBody.carrierUrl = n.getStringValue(); },
         "deprovisionReason": n => { executeActionPostRequestBody.deprovisionReason = n.getStringValue(); },
-        "deviceIds": n => { executeActionPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "deviceIds": n => { executeActionPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "deviceName": n => { executeActionPostRequestBody.deviceName = n.getStringValue(); },
-        "keepEnrollmentData": n => { executeActionPostRequestBody.keepEnrollmentData = n.getBooleanValue(); },
-        "keepUserData": n => { executeActionPostRequestBody.keepUserData = n.getBooleanValue(); },
+        "keepEnrollmentData": n => { executeActionPostRequestBody.keepEnrollmentData = n.getBooleanValue() ?? false; },
+        "keepUserData": n => { executeActionPostRequestBody.keepUserData = n.getBooleanValue() ?? false; },
         "notificationBody": n => { executeActionPostRequestBody.notificationBody = n.getStringValue(); },
         "notificationTitle": n => { executeActionPostRequestBody.notificationTitle = n.getStringValue(); },
         "organizationalUnitPath": n => { executeActionPostRequestBody.organizationalUnitPath = n.getStringValue(); },
-        "persistEsimDataPlan": n => { executeActionPostRequestBody.persistEsimDataPlan = n.getBooleanValue(); },
+        "persistEsimDataPlan": n => { executeActionPostRequestBody.persistEsimDataPlan = n.getBooleanValue() ?? false; },
     }
 }
 export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
@@ -123,12 +123,12 @@ export function serializeExecuteActionPostRequestBody(writer: SerializationWrite
     writer.writeStringValue("deprovisionReason", executeActionPostRequestBody.deprovisionReason);
     writer.writeCollectionOfPrimitiveValues<string>("deviceIds", executeActionPostRequestBody.deviceIds);
     writer.writeStringValue("deviceName", executeActionPostRequestBody.deviceName);
-    writer.writeBooleanValue("keepEnrollmentData", executeActionPostRequestBody.keepEnrollmentData);
-    writer.writeBooleanValue("keepUserData", executeActionPostRequestBody.keepUserData);
+    writer.writeBooleanValue("keepEnrollmentData", executeActionPostRequestBody.keepEnrollmentData ?? false);
+    writer.writeBooleanValue("keepUserData", executeActionPostRequestBody.keepUserData ?? false);
     writer.writeStringValue("notificationBody", executeActionPostRequestBody.notificationBody);
     writer.writeStringValue("notificationTitle", executeActionPostRequestBody.notificationTitle);
     writer.writeStringValue("organizationalUnitPath", executeActionPostRequestBody.organizationalUnitPath);
-    writer.writeBooleanValue("persistEsimDataPlan", executeActionPostRequestBody.persistEsimDataPlan);
+    writer.writeBooleanValue("persistEsimDataPlan", executeActionPostRequestBody.persistEsimDataPlan ?? false);
     writer.writeAdditionalData(executeActionPostRequestBody.additionalData);
 }
 /**

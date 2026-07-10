@@ -6,6 +6,8 @@ import { createParticipantCollectionResponseFromDiscriminatorValue, createPartic
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AdmitAllFromLobbyRequestBuilderRequestsMetadata, type AdmitAllFromLobbyRequestBuilder } from './admitAllFromLobby/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { InviteRequestBuilderRequestsMetadata, type InviteRequestBuilder } from './invite/index.js';
@@ -20,6 +22,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the participants property of the microsoft.graph.call entity.
  */
 export interface ParticipantsRequestBuilder extends BaseRequestBuilder<ParticipantsRequestBuilder> {
+    /**
+     * Provides operations to call the admitAllFromLobby method.
+     */
+    get admitAllFromLobby(): AdmitAllFromLobbyRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -129,6 +135,9 @@ export const ParticipantsRequestBuilderNavigationMetadata: Record<Exclude<keyof 
         requestsMetadata: ParticipantItemRequestBuilderRequestsMetadata,
         navigationMetadata: ParticipantItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["participant%2Did"],
+    },
+    admitAllFromLobby: {
+        requestsMetadata: AdmitAllFromLobbyRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

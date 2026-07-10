@@ -36,7 +36,7 @@ export function deserializeIntoImportDeviceIdentityListPostRequestBody(importDev
     return {
         "backingStoreEnabled": n => { importDeviceIdentityListPostRequestBody.backingStoreEnabled = true; },
         "importedDeviceIdentities": n => { importDeviceIdentityListPostRequestBody.importedDeviceIdentities = n.getCollectionOfObjectValues<ImportedDeviceIdentity>(createImportedDeviceIdentityFromDiscriminatorValue); },
-        "overwriteImportedDeviceIdentities": n => { importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities = n.getBooleanValue(); },
+        "overwriteImportedDeviceIdentities": n => { importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -101,7 +101,7 @@ export interface ImportDeviceIdentityListRequestBuilder extends BaseRequestBuild
 export function serializeImportDeviceIdentityListPostRequestBody(writer: SerializationWriter, importDeviceIdentityListPostRequestBody: Partial<ImportDeviceIdentityListPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!importDeviceIdentityListPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeCollectionOfObjectValues<ImportedDeviceIdentity>("importedDeviceIdentities", importDeviceIdentityListPostRequestBody.importedDeviceIdentities, serializeImportedDeviceIdentity);
-    writer.writeBooleanValue("overwriteImportedDeviceIdentities", importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
+    writer.writeBooleanValue("overwriteImportedDeviceIdentities", importDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities ?? false);
     writer.writeAdditionalData(importDeviceIdentityListPostRequestBody.additionalData);
 }
 /**

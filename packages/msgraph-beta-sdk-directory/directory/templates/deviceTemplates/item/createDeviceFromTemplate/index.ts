@@ -76,8 +76,8 @@ export interface CreateDeviceFromTemplateRequestBuilder extends BaseRequestBuild
 // @ts-ignore
 export function deserializeIntoCreateDeviceFromTemplatePostRequestBody(createDeviceFromTemplatePostRequestBody: Partial<CreateDeviceFromTemplatePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "accountEnabled": n => { createDeviceFromTemplatePostRequestBody.accountEnabled = n.getBooleanValue(); },
-        "alternativeNames": n => { createDeviceFromTemplatePostRequestBody.alternativeNames = n.getCollectionOfPrimitiveValues<string>(); },
+        "accountEnabled": n => { createDeviceFromTemplatePostRequestBody.accountEnabled = n.getBooleanValue() ?? false; },
+        "alternativeNames": n => { createDeviceFromTemplatePostRequestBody.alternativeNames = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { createDeviceFromTemplatePostRequestBody.backingStoreEnabled = true; },
         "externalDeviceId": n => { createDeviceFromTemplatePostRequestBody.externalDeviceId = n.getStringValue(); },
         "externalSourceName": n => { createDeviceFromTemplatePostRequestBody.externalSourceName = n.getStringValue(); },
@@ -94,7 +94,7 @@ export function deserializeIntoCreateDeviceFromTemplatePostRequestBody(createDev
 // @ts-ignore
 export function serializeCreateDeviceFromTemplatePostRequestBody(writer: SerializationWriter, createDeviceFromTemplatePostRequestBody: Partial<CreateDeviceFromTemplatePostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!createDeviceFromTemplatePostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("accountEnabled", createDeviceFromTemplatePostRequestBody.accountEnabled);
+    writer.writeBooleanValue("accountEnabled", createDeviceFromTemplatePostRequestBody.accountEnabled ?? false);
     writer.writeCollectionOfPrimitiveValues<string>("alternativeNames", createDeviceFromTemplatePostRequestBody.alternativeNames);
     writer.writeStringValue("externalDeviceId", createDeviceFromTemplatePostRequestBody.externalDeviceId);
     writer.writeStringValue("externalSourceName", createDeviceFromTemplatePostRequestBody.externalSourceName);

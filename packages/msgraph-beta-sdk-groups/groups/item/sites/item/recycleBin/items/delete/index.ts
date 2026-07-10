@@ -53,7 +53,7 @@ export interface DeleteRequestBuilder extends BaseRequestBuilder<DeleteRequestBu
 export function deserializeIntoDeletePostRequestBody(deletePostRequestBody: Partial<DeletePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deletePostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { deletePostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { deletePostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

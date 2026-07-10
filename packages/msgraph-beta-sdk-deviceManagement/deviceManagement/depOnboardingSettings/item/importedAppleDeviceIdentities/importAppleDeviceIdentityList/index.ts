@@ -36,7 +36,7 @@ export function deserializeIntoImportAppleDeviceIdentityListPostRequestBody(impo
     return {
         "backingStoreEnabled": n => { importAppleDeviceIdentityListPostRequestBody.backingStoreEnabled = true; },
         "importedAppleDeviceIdentities": n => { importAppleDeviceIdentityListPostRequestBody.importedAppleDeviceIdentities = n.getCollectionOfObjectValues<ImportedAppleDeviceIdentity>(createImportedAppleDeviceIdentityFromDiscriminatorValue); },
-        "overwriteImportedDeviceIdentities": n => { importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities = n.getBooleanValue(); },
+        "overwriteImportedDeviceIdentities": n => { importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities = n.getBooleanValue() ?? false; },
     }
 }
 /**
@@ -101,7 +101,7 @@ export interface ImportAppleDeviceIdentityListRequestBuilder extends BaseRequest
 export function serializeImportAppleDeviceIdentityListPostRequestBody(writer: SerializationWriter, importAppleDeviceIdentityListPostRequestBody: Partial<ImportAppleDeviceIdentityListPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!importAppleDeviceIdentityListPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeCollectionOfObjectValues<ImportedAppleDeviceIdentity>("importedAppleDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.importedAppleDeviceIdentities, serializeImportedAppleDeviceIdentity);
-    writer.writeBooleanValue("overwriteImportedDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities);
+    writer.writeBooleanValue("overwriteImportedDeviceIdentities", importAppleDeviceIdentityListPostRequestBody.overwriteImportedDeviceIdentities ?? false);
     writer.writeAdditionalData(importAppleDeviceIdentityListPostRequestBody.additionalData);
 }
 /**

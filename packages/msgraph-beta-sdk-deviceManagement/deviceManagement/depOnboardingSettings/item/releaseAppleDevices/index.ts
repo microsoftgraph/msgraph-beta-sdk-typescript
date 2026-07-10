@@ -25,7 +25,7 @@ export function deserializeIntoReleaseAppleDevicesPostRequestBody(releaseAppleDe
     return {
         "backingStoreEnabled": n => { releaseAppleDevicesPostRequestBody.backingStoreEnabled = true; },
         "depToken": n => { releaseAppleDevicesPostRequestBody.depToken = n.getStringValue(); },
-        "deviceSerialNumbers": n => { releaseAppleDevicesPostRequestBody.deviceSerialNumbers = n.getCollectionOfPrimitiveValues<string>(); },
+        "deviceSerialNumbers": n => { releaseAppleDevicesPostRequestBody.deviceSerialNumbers = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface ReleaseAppleDevicesPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

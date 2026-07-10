@@ -35,7 +35,7 @@ export function createValidateBulkResizePostResponseFromDiscriminatorValue(parse
 export function deserializeIntoValidateBulkResizePostRequestBody(validateBulkResizePostRequestBody: Partial<ValidateBulkResizePostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { validateBulkResizePostRequestBody.backingStoreEnabled = true; },
-        "cloudPcIds": n => { validateBulkResizePostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudPcIds": n => { validateBulkResizePostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "targetServicePlanId": n => { validateBulkResizePostRequestBody.targetServicePlanId = n.getStringValue(); },
     }
 }
