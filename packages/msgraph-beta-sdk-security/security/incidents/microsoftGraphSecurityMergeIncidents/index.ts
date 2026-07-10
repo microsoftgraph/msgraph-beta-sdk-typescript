@@ -27,7 +27,7 @@ export function deserializeIntoMergeIncidentsPostRequestBody(mergeIncidentsPostR
     return {
         "backingStoreEnabled": n => { mergeIncidentsPostRequestBody.backingStoreEnabled = true; },
         "incidentComment": n => { mergeIncidentsPostRequestBody.incidentComment = n.getStringValue(); },
-        "incidentIds": n => { mergeIncidentsPostRequestBody.incidentIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "incidentIds": n => { mergeIncidentsPostRequestBody.incidentIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "mergeReasons": n => { mergeIncidentsPostRequestBody.mergeReasons = n.getCollectionOfEnumValues<CorrelationReason>(CorrelationReasonObject); },
     }
 }

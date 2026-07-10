@@ -19,7 +19,7 @@ export interface MailboxExclusionUnitsBulkAdditionJobItemRequestBuilder extends 
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for mailbox exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxExclusionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface MailboxExclusionUnitsBulkAdditionJobItemRequestBuilder extends 
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for mailbox exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface MailboxExclusionUnitsBulkAdditionJobItemRequestBuilder extends 
      toPatchRequestInformation(body: MailboxExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get mailboxExclusionUnitsBulkAdditionJobs from solutions
+ * The list of bulk addition jobs for mailbox exclusion units in the tenant.
  */
 export interface MailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters {
     /**

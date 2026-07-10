@@ -27,7 +27,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      */
      byCloudPcPoolAssignmentId(cloudPcPoolAssignmentId: string) : CloudPcPoolAssignmentItemRequestBuilder;
     /**
-     * Get assignments from users
+     * The collection of assignments that grant user or service principal identities access to this pool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPoolAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      */
      post(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcPoolAssignment | undefined>;
     /**
-     * Get assignments from users
+     * The collection of assignments that grant user or service principal identities access to this pool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      toPostRequestInformation(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get assignments from users
+ * The collection of assignments that grant user or service principal identities access to this pool.
  */
 export interface AssignmentsRequestBuilderGetQueryParameters {
     /**

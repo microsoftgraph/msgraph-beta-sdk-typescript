@@ -29,7 +29,7 @@ export interface AccessPackageCustomWorkflowExtensionsRequestBuilder extends Bas
      */
      byCustomCalloutExtensionId(customCalloutExtensionId: string) : CustomCalloutExtensionItemRequestBuilder;
     /**
-     * Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
+     * List the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects in the accessPackageCustomWorkflowExtensions relationship of an accessPackageCatalog. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomCalloutExtensionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -47,7 +47,7 @@ export interface AccessPackageCustomWorkflowExtensionsRequestBuilder extends Bas
      */
      post(body: CustomCalloutExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomCalloutExtension | undefined>;
     /**
-     * Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
+     * List the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects in the accessPackageCustomWorkflowExtensions relationship of an accessPackageCatalog. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
@@ -63,7 +63,7 @@ export interface AccessPackageCustomWorkflowExtensionsRequestBuilder extends Bas
      toPostRequestInformation(body: CustomCalloutExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
+ * List the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects in the accessPackageCustomWorkflowExtensions relationship of an accessPackageCatalog. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
  */
 export interface AccessPackageCustomWorkflowExtensionsRequestBuilderGetQueryParameters {
     /**

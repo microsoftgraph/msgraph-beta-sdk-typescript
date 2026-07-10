@@ -13,13 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DetectionRuleItemRequestBuilder extends BaseRequestBuilder<DetectionRuleItemRequestBuilder> {
     /**
-     * Delete navigation property detectionRules for security
+     * Delete a detectionRule object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-rulesroot-delete-detectionrules?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get detectionRules from security
+     * The custom detection rules configured for the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DetectionRule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -34,13 +35,13 @@ export interface DetectionRuleItemRequestBuilder extends BaseRequestBuilder<Dete
      */
      patch(body: DetectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DetectionRule | undefined>;
     /**
-     * Delete navigation property detectionRules for security
+     * Delete a detectionRule object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get detectionRules from security
+     * The custom detection rules configured for the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +55,7 @@ export interface DetectionRuleItemRequestBuilder extends BaseRequestBuilder<Dete
      toPatchRequestInformation(body: DetectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get detectionRules from security
+ * The custom detection rules configured for the tenant.
  */
 export interface DetectionRuleItemRequestBuilderGetQueryParameters {
     /**

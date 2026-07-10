@@ -27,7 +27,7 @@ export function deserializeIntoImportResourceActionsPostRequestBody(importResour
     return {
         "backingStoreEnabled": n => { importResourceActionsPostRequestBody.backingStoreEnabled = true; },
         "format": n => { importResourceActionsPostRequestBody.format = n.getStringValue(); },
-        "overwriteResourceNamespace": n => { importResourceActionsPostRequestBody.overwriteResourceNamespace = n.getBooleanValue(); },
+        "overwriteResourceNamespace": n => { importResourceActionsPostRequestBody.overwriteResourceNamespace = n.getBooleanValue() ?? false; },
         "value": n => { importResourceActionsPostRequestBody.value = n.getStringValue(); },
     }
 }
@@ -59,7 +59,6 @@ export interface ImportResourceActionsRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRbacResourceNamespace>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      post(body: ImportResourceActionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRbacResourceNamespace | undefined>;
     /**
@@ -67,7 +66,6 @@ export interface ImportResourceActionsRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toPostRequestInformation(body: ImportResourceActionsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -81,7 +79,7 @@ export interface ImportResourceActionsRequestBuilder extends BaseRequestBuilder<
 export function serializeImportResourceActionsPostRequestBody(writer: SerializationWriter, importResourceActionsPostRequestBody: Partial<ImportResourceActionsPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!importResourceActionsPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeStringValue("format", importResourceActionsPostRequestBody.format);
-    writer.writeBooleanValue("overwriteResourceNamespace", importResourceActionsPostRequestBody.overwriteResourceNamespace);
+    writer.writeBooleanValue("overwriteResourceNamespace", importResourceActionsPostRequestBody.overwriteResourceNamespace ?? false);
     writer.writeStringValue("value", importResourceActionsPostRequestBody.value);
     writer.writeAdditionalData(importResourceActionsPostRequestBody.additionalData);
 }

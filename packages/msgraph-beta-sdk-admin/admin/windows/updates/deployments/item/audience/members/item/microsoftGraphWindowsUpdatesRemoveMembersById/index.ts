@@ -24,7 +24,7 @@ export function createRemoveMembersByIdPostRequestBodyFromDiscriminatorValue(par
 export function deserializeIntoRemoveMembersByIdPostRequestBody(removeMembersByIdPostRequestBody: Partial<RemoveMembersByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { removeMembersByIdPostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { removeMembersByIdPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { removeMembersByIdPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
         "memberEntityType": n => { removeMembersByIdPostRequestBody.memberEntityType = n.getStringValue(); },
     }
 }

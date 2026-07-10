@@ -42,6 +42,10 @@ import { IpSecurityProfilesRequestBuilderNavigationMetadata, IpSecurityProfilesR
 // @ts-ignore
 import { LabelsRequestBuilderNavigationMetadata, LabelsRequestBuilderRequestsMetadata, type LabelsRequestBuilder } from './labels/index.js';
 // @ts-ignore
+import { MicrosoftGraphSecurityGetHuntingSchemaRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder } from './microsoftGraphSecurityGetHuntingSchema/index.js';
+// @ts-ignore
+import { MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder } from './microsoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId/index.js';
+// @ts-ignore
 import { MicrosoftGraphSecurityRunHuntingQueryRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityRunHuntingQueryRequestBuilder } from './microsoftGraphSecurityRunHuntingQuery/index.js';
 // @ts-ignore
 import { PartnerRequestBuilderNavigationMetadata, PartnerRequestBuilderRequestsMetadata, type PartnerRequestBuilder } from './partner/index.js';
@@ -153,6 +157,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      */
     get labels(): LabelsRequestBuilder;
     /**
+     * Provides operations to call the getHuntingSchema method.
+     */
+    get microsoftGraphSecurityGetHuntingSchema(): MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder;
+    /**
      * Provides operations to call the runHuntingQuery method.
      */
     get microsoftGraphSecurityRunHuntingQuery(): MicrosoftGraphSecurityRunHuntingQueryRequestBuilder;
@@ -224,6 +232,12 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      */
      get(requestConfiguration?: RequestConfiguration<SecurityRequestBuilderGetQueryParameters> | undefined) : Promise<Security | undefined>;
     /**
+     * Provides operations to call the getRunHuntingQuery method.
+     * @param query Usage: query='{query}'
+     * @returns {MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder}
+     */
+     microsoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId(query: string | undefined) : MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder;
+    /**
      * Update security
      * @param body Security singleton providing access to audit log resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -273,6 +287,10 @@ const SecurityRequestBuilderGetQueryParametersMapper: Record<string, string> = {
  * Metadata for all the navigation properties in the request builder.
  */
 export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof SecurityRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    microsoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId: {
+        requestsMetadata: MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["query"],
+    },
     alerts: {
         requestsMetadata: AlertsRequestBuilderRequestsMetadata,
         navigationMetadata: AlertsRequestBuilderNavigationMetadata,
@@ -344,6 +362,9 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     labels: {
         requestsMetadata: LabelsRequestBuilderRequestsMetadata,
         navigationMetadata: LabelsRequestBuilderNavigationMetadata,
+    },
+    microsoftGraphSecurityGetHuntingSchema: {
+        requestsMetadata: MicrosoftGraphSecurityGetHuntingSchemaRequestBuilderRequestsMetadata,
     },
     microsoftGraphSecurityRunHuntingQuery: {
         requestsMetadata: MicrosoftGraphSecurityRunHuntingQueryRequestBuilderRequestsMetadata,

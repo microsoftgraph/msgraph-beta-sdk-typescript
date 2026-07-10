@@ -25,10 +25,10 @@ export function deserializeIntoGetDevicePoliciesComplianceReportPostRequestBody(
     return {
         "backingStoreEnabled": n => { getDevicePoliciesComplianceReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getDevicePoliciesComplianceReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getDevicePoliciesComplianceReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getDevicePoliciesComplianceReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getDevicePoliciesComplianceReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getDevicePoliciesComplianceReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getDevicePoliciesComplianceReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getDevicePoliciesComplianceReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getDevicePoliciesComplianceReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "sessionId": n => { getDevicePoliciesComplianceReportPostRequestBody.sessionId = n.getStringValue(); },
         "skip": n => { getDevicePoliciesComplianceReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getDevicePoliciesComplianceReportPostRequestBody.top = n.getNumberValue(); },

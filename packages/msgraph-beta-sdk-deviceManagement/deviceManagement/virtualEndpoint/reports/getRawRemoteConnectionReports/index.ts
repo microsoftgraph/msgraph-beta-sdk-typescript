@@ -25,10 +25,10 @@ export function deserializeIntoGetRawRemoteConnectionReportsPostRequestBody(getR
     return {
         "backingStoreEnabled": n => { getRawRemoteConnectionReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getRawRemoteConnectionReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getRawRemoteConnectionReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getRawRemoteConnectionReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getRawRemoteConnectionReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getRawRemoteConnectionReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getRawRemoteConnectionReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getRawRemoteConnectionReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getRawRemoteConnectionReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getRawRemoteConnectionReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getRawRemoteConnectionReportsPostRequestBody.top = n.getNumberValue(); },
     }

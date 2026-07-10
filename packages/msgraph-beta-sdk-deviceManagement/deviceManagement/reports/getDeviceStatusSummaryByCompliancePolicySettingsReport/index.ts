@@ -25,10 +25,10 @@ export function deserializeIntoGetDeviceStatusSummaryByCompliancePolicySettingsR
     return {
         "backingStoreEnabled": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "sessionId": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.sessionId = n.getStringValue(); },
         "skip": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getDeviceStatusSummaryByCompliancePolicySettingsReportPostRequestBody.top = n.getNumberValue(); },

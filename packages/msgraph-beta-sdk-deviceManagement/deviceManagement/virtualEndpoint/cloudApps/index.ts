@@ -55,11 +55,12 @@ export interface CloudAppsRequestBuilder extends BaseRequestBuilder<CloudAppsReq
      */
      get(requestConfiguration?: RequestConfiguration<CloudAppsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcCloudAppCollectionResponse | undefined>;
     /**
-     * Create new navigation property to cloudApps for deviceManagement
+     * Create a new cloudPcCloudApp object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcCloudApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/virtualendpoint-post-cloudapps?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcCloudApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcCloudApp | undefined>;
     /**
@@ -75,7 +76,7 @@ export interface CloudAppsRequestBuilder extends BaseRequestBuilder<CloudAppsReq
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CloudAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to cloudApps for deviceManagement
+     * Create a new cloudPcCloudApp object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

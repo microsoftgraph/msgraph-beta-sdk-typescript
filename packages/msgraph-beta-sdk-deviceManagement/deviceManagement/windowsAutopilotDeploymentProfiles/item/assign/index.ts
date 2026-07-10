@@ -53,7 +53,7 @@ export function createAssignPostRequestBodyFromDiscriminatorValue(parseNode: Par
 export function deserializeIntoAssignPostRequestBody(assignPostRequestBody: Partial<AssignPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { assignPostRequestBody.backingStoreEnabled = true; },
-        "deviceIds": n => { assignPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "deviceIds": n => { assignPostRequestBody.deviceIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

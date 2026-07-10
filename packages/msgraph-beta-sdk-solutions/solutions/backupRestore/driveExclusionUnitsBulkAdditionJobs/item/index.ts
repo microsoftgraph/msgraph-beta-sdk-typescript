@@ -19,7 +19,7 @@ export interface DriveExclusionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get driveExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface DriveExclusionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get driveExclusionUnitsBulkAdditionJobs from solutions
+     * The list of bulk addition jobs for drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface DriveExclusionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      toPatchRequestInformation(body: DriveExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get driveExclusionUnitsBulkAdditionJobs from solutions
+ * The list of bulk addition jobs for drive exclusion units in the tenant.
  */
 export interface DriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters {
     /**

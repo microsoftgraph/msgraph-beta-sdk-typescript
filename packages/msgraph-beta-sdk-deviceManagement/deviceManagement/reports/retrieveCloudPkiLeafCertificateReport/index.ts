@@ -26,9 +26,9 @@ export function deserializeIntoRetrieveCloudPkiLeafCertificateReportPostRequestB
         "backingStoreEnabled": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.backingStoreEnabled = true; },
         "certificationAuthorityId": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.certificationAuthorityId = n.getStringValue(); },
         "filter": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.filter = n.getStringValue(); },
-        "orderBy": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "orderBy": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveCloudPkiLeafCertificateReportPostRequestBody.top = n.getNumberValue(); },
     }

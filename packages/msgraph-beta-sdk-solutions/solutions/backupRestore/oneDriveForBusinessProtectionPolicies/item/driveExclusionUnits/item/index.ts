@@ -13,21 +13,22 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface DriveExclusionUnitItemRequestBuilder extends BaseRequestBuilder<DriveExclusionUnitItemRequestBuilder> {
     /**
-     * Get driveExclusionUnits from solutions
+     * Get a drive exclusion unit associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/driveexclusionunit-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DriveExclusionUnitItemRequestBuilderGetQueryParameters> | undefined) : Promise<DriveExclusionUnit | undefined>;
     /**
-     * Get driveExclusionUnits from solutions
+     * Get a drive exclusion unit associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveExclusionUnitItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get driveExclusionUnits from solutions
+ * Get a drive exclusion unit associated with a OneDrive for work or school protection policy.
  */
 export interface DriveExclusionUnitItemRequestBuilderGetQueryParameters {
     /**

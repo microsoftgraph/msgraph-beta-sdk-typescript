@@ -24,7 +24,7 @@ export function createRetryPostRequestBodyFromDiscriminatorValue(parseNode: Pars
 export function deserializeIntoRetryPostRequestBody(retryPostRequestBody: Partial<RetryPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { retryPostRequestBody.backingStoreEnabled = true; },
-        "cloudPcIds": n => { retryPostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudPcIds": n => { retryPostRequestBody.cloudPcIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface RetryPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

@@ -27,11 +27,11 @@ export function deserializeIntoRetrieveFrontlineReportsPostRequestBody(retrieveF
     return {
         "backingStoreEnabled": n => { retrieveFrontlineReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveFrontlineReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { retrieveFrontlineReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { retrieveFrontlineReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { retrieveFrontlineReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { retrieveFrontlineReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { retrieveFrontlineReportsPostRequestBody.reportName = n.getEnumValue<CloudPCFrontlineReportType>(CloudPCFrontlineReportTypeObject); },
         "search": n => { retrieveFrontlineReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveFrontlineReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveFrontlineReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveFrontlineReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveFrontlineReportsPostRequestBody.top = n.getNumberValue(); },
     }

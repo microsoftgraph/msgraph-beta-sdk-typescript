@@ -25,7 +25,7 @@ export function deserializeIntoRetrieveCloudPkiLeafCertificateSummaryReportPostR
     return {
         "backingStoreEnabled": n => { retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.backingStoreEnabled = true; },
         "certificationAuthorityId": n => { retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.certificationAuthorityId = n.getStringValue(); },
-        "select": n => { retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveCloudPkiLeafCertificateSummaryReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface RetrieveCloudPkiLeafCertificateSummaryReportPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

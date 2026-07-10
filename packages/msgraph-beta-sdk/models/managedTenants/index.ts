@@ -2753,13 +2753,13 @@ export function deserializeIntoTenantCustomizedInformation(tenantCustomizedInfor
     return {
         ...deserializeIntoEntity(tenantCustomizedInformation),
         "businessRelationship": n => { tenantCustomizedInformation.businessRelationship = n.getStringValue(); },
-        "complianceRequirements": n => { tenantCustomizedInformation.complianceRequirements = n.getCollectionOfPrimitiveValues<string>(); },
+        "complianceRequirements": n => { tenantCustomizedInformation.complianceRequirements = n.getCollectionOfPrimitiveValues<string>("string"); },
         "contacts": n => { tenantCustomizedInformation.contacts = n.getCollectionOfObjectValues<TenantContactInformation>(createTenantContactInformationFromDiscriminatorValue); },
         "displayName": n => { tenantCustomizedInformation.displayName = n.getStringValue(); },
-        "managedServicesPlans": n => { tenantCustomizedInformation.managedServicesPlans = n.getCollectionOfPrimitiveValues<string>(); },
+        "managedServicesPlans": n => { tenantCustomizedInformation.managedServicesPlans = n.getCollectionOfPrimitiveValues<string>("string"); },
         "note": n => { tenantCustomizedInformation.note = n.getStringValue(); },
         "noteLastModifiedDateTime": n => { tenantCustomizedInformation.noteLastModifiedDateTime = n.getDateValue(); },
-        "partnerRelationshipManagerUserIds": n => { tenantCustomizedInformation.partnerRelationshipManagerUserIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "partnerRelationshipManagerUserIds": n => { tenantCustomizedInformation.partnerRelationshipManagerUserIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "tenantId": n => { tenantCustomizedInformation.tenantId = n.getStringValue(); },
         "website": n => { tenantCustomizedInformation.website = n.getStringValue(); },
     }
@@ -2822,7 +2822,7 @@ export function deserializeIntoTenantGroup(tenantGroup: Partial<TenantGroup> | u
         "displayName": n => { tenantGroup.displayName = n.getStringValue(); },
         "managementActions": n => { tenantGroup.managementActions = n.getCollectionOfObjectValues<ManagementActionInfo>(createManagementActionInfoFromDiscriminatorValue); },
         "managementIntents": n => { tenantGroup.managementIntents = n.getCollectionOfObjectValues<ManagementIntentInfo>(createManagementIntentInfoFromDiscriminatorValue); },
-        "tenantIds": n => { tenantGroup.tenantIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "tenantIds": n => { tenantGroup.tenantIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -3002,7 +3002,7 @@ export function deserializeIntoWorkloadAction(workloadAction: Partial<WorkloadAc
         "category": n => { workloadAction.category = n.getEnumValue<WorkloadActionCategory>(WorkloadActionCategoryObject); },
         "description": n => { workloadAction.description = n.getStringValue(); },
         "displayName": n => { workloadAction.displayName = n.getStringValue(); },
-        "licenses": n => { workloadAction.licenses = n.getCollectionOfPrimitiveValues<string>(); },
+        "licenses": n => { workloadAction.licenses = n.getCollectionOfPrimitiveValues<string>("string"); },
         "@odata.type": n => { workloadAction.odataType = n.getStringValue(); },
         "service": n => { workloadAction.service = n.getStringValue(); },
         "settings": n => { workloadAction.settings = n.getCollectionOfObjectValues<Setting>(createSettingFromDiscriminatorValue); },
@@ -3020,9 +3020,9 @@ export function deserializeIntoWorkloadActionDeploymentStatus(workloadActionDepl
         "backingStoreEnabled": n => { workloadActionDeploymentStatus.backingStoreEnabled = true; },
         "deployedPolicyId": n => { workloadActionDeploymentStatus.deployedPolicyId = n.getStringValue(); },
         "error": n => { workloadActionDeploymentStatus.errorEscaped = n.getObjectValue<GenericError>(createGenericErrorFromDiscriminatorValue); },
-        "excludeGroups": n => { workloadActionDeploymentStatus.excludeGroups = n.getCollectionOfPrimitiveValues<string>(); },
+        "excludeGroups": n => { workloadActionDeploymentStatus.excludeGroups = n.getCollectionOfPrimitiveValues<string>("string"); },
         "includeAllUsers": n => { workloadActionDeploymentStatus.includeAllUsers = n.getBooleanValue(); },
-        "includeGroups": n => { workloadActionDeploymentStatus.includeGroups = n.getCollectionOfPrimitiveValues<string>(); },
+        "includeGroups": n => { workloadActionDeploymentStatus.includeGroups = n.getCollectionOfPrimitiveValues<string>("string"); },
         "lastDeploymentDateTime": n => { workloadActionDeploymentStatus.lastDeploymentDateTime = n.getDateValue(); },
         "@odata.type": n => { workloadActionDeploymentStatus.odataType = n.getStringValue(); },
         "status": n => { workloadActionDeploymentStatus.status = n.getEnumValue<WorkloadActionStatus>(WorkloadActionStatusObject); },

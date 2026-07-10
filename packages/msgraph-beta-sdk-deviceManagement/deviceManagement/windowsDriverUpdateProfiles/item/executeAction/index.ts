@@ -28,7 +28,7 @@ export function deserializeIntoExecuteActionPostRequestBody(executeActionPostReq
         "actionName": n => { executeActionPostRequestBody.actionName = n.getEnumValue<DriverApprovalAction>(DriverApprovalActionObject); },
         "backingStoreEnabled": n => { executeActionPostRequestBody.backingStoreEnabled = true; },
         "deploymentDate": n => { executeActionPostRequestBody.deploymentDate = n.getDateValue(); },
-        "driverIds": n => { executeActionPostRequestBody.driverIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "driverIds": n => { executeActionPostRequestBody.driverIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface ExecuteActionPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

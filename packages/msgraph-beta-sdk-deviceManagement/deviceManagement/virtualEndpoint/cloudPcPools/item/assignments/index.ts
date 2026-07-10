@@ -27,28 +27,30 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      */
      byCloudPcPoolAssignmentId(cloudPcPoolAssignmentId: string) : CloudPcPoolAssignmentItemRequestBuilder;
     /**
-     * Get assignments from deviceManagement
+     * List the assignments of a cloudPcPool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPoolAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpool-list-assignments?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AssignmentsRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcPoolAssignmentCollectionResponse | undefined>;
     /**
-     * Create new navigation property to assignments for deviceManagement
+     * Create a new cloudPcPoolAssignment for a cloudPcPool.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPoolAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpool-post-assignments?view=graph-rest-beta|Find more info here}
      */
      post(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcPoolAssignment | undefined>;
     /**
-     * Get assignments from deviceManagement
+     * List the assignments of a cloudPcPool.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to assignments for deviceManagement
+     * Create a new cloudPcPoolAssignment for a cloudPcPool.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface AssignmentsRequestBuilder extends BaseRequestBuilder<Assignment
      toPostRequestInformation(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get assignments from deviceManagement
+ * List the assignments of a cloudPcPool.
  */
 export interface AssignmentsRequestBuilderGetQueryParameters {
     /**

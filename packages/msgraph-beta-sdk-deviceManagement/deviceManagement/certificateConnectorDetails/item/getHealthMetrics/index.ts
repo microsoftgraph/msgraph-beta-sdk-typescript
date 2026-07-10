@@ -35,7 +35,7 @@ export function createGetHealthMetricsPostResponseFromDiscriminatorValue(parseNo
 export function deserializeIntoGetHealthMetricsPostRequestBody(getHealthMetricsPostRequestBody: Partial<GetHealthMetricsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { getHealthMetricsPostRequestBody.backingStoreEnabled = true; },
-        "metricNames": n => { getHealthMetricsPostRequestBody.metricNames = n.getCollectionOfPrimitiveValues<string>(); },
+        "metricNames": n => { getHealthMetricsPostRequestBody.metricNames = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

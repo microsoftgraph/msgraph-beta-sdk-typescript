@@ -262,7 +262,7 @@ export function deserializeIntoPluginCollectionResponse(pluginCollectionResponse
 // @ts-ignore
 export function deserializeIntoPluginSetting(pluginSetting: Partial<PluginSetting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "acceptableValues": n => { pluginSetting.acceptableValues = n.getCollectionOfPrimitiveValues<string>(); },
+        "acceptableValues": n => { pluginSetting.acceptableValues = n.getCollectionOfPrimitiveValues<string>("string"); },
         "backingStoreEnabled": n => { pluginSetting.backingStoreEnabled = true; },
         "defaultValue": n => { pluginSetting.defaultValue = n.getStringValue(); },
         "description": n => { pluginSetting.description = n.getStringValue(); },

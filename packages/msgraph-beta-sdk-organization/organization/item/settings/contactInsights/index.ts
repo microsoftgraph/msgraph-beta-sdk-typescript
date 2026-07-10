@@ -27,7 +27,7 @@ export interface ContactInsightsRequestBuilder extends BaseRequestBuilder<Contac
      */
      get(requestConfiguration?: RequestConfiguration<ContactInsightsRequestBuilderGetQueryParameters> | undefined) : Promise<InsightsSettings | undefined>;
     /**
-     * Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+     * Update privacy settings to display or return the specified type of insightsSettings in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<InsightsSettings>}
@@ -48,7 +48,7 @@ export interface ContactInsightsRequestBuilder extends BaseRequestBuilder<Contac
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ContactInsightsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+     * Update privacy settings to display or return the specified type of insightsSettings in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

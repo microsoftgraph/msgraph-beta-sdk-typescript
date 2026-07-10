@@ -13,16 +13,18 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface CloudPcPoolAssignmentItemRequestBuilder extends BaseRequestBuilder<CloudPcPoolAssignmentItemRequestBuilder> {
     /**
-     * Delete navigation property assignments for deviceManagement
+     * Delete a cloudPcPoolAssignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpoolassignment-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get assignments from deviceManagement
+     * Read the properties of a cloudPcPoolAssignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcPoolAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpcpoolassignment-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CloudPcPoolAssignmentItemRequestBuilderGetQueryParameters> | undefined) : Promise<CloudPcPoolAssignment | undefined>;
     /**
@@ -34,13 +36,13 @@ export interface CloudPcPoolAssignmentItemRequestBuilder extends BaseRequestBuil
      */
      patch(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcPoolAssignment | undefined>;
     /**
-     * Delete navigation property assignments for deviceManagement
+     * Delete a cloudPcPoolAssignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get assignments from deviceManagement
+     * Read the properties of a cloudPcPoolAssignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +56,7 @@ export interface CloudPcPoolAssignmentItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: CloudPcPoolAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get assignments from deviceManagement
+ * Read the properties of a cloudPcPoolAssignment object.
  */
 export interface CloudPcPoolAssignmentItemRequestBuilderGetQueryParameters {
     /**

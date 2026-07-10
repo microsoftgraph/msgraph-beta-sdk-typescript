@@ -25,10 +25,10 @@ export function deserializeIntoRetrieveBulkActionStatusReportPostRequestBody(ret
     return {
         "backingStoreEnabled": n => { retrieveBulkActionStatusReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveBulkActionStatusReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { retrieveBulkActionStatusReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { retrieveBulkActionStatusReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { retrieveBulkActionStatusReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { retrieveBulkActionStatusReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { retrieveBulkActionStatusReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveBulkActionStatusReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveBulkActionStatusReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveBulkActionStatusReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveBulkActionStatusReportPostRequestBody.top = n.getNumberValue(); },
     }

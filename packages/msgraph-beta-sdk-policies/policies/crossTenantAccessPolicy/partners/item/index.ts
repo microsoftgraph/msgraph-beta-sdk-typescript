@@ -12,6 +12,8 @@ import { M365CapabilitiesRequestBuilderNavigationMetadata, M365CapabilitiesReque
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
 // @ts-ignore
+import { ServiceProviderConstraintsRequestBuilderNavigationMetadata, ServiceProviderConstraintsRequestBuilderRequestsMetadata, type ServiceProviderConstraintsRequestBuilder } from './serviceProviderConstraints/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -30,6 +32,10 @@ export interface CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBui
      * Provides operations to call the restore method.
      */
     get restore(): RestoreRequestBuilder;
+    /**
+     * Provides operations to manage the serviceProviderConstraints property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
+     */
+    get serviceProviderConstraints(): ServiceProviderConstraintsRequestBuilder;
     /**
      * Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -112,6 +118,10 @@ export const CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder
     },
     restore: {
         requestsMetadata: RestoreRequestBuilderRequestsMetadata,
+    },
+    serviceProviderConstraints: {
+        requestsMetadata: ServiceProviderConstraintsRequestBuilderRequestsMetadata,
+        navigationMetadata: ServiceProviderConstraintsRequestBuilderNavigationMetadata,
     },
 };
 /**

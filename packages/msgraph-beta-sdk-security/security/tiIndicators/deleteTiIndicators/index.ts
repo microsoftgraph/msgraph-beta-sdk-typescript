@@ -74,7 +74,7 @@ export interface DeleteTiIndicatorsRequestBuilder extends BaseRequestBuilder<Del
 export function deserializeIntoDeleteTiIndicatorsPostRequestBody(deleteTiIndicatorsPostRequestBody: Partial<DeleteTiIndicatorsPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deleteTiIndicatorsPostRequestBody.backingStoreEnabled = true; },
-        "value": n => { deleteTiIndicatorsPostRequestBody.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { deleteTiIndicatorsPostRequestBody.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**

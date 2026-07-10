@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ExclusionUnitBaseItemRequestBuilder extends BaseRequestBuilder<ExclusionUnitBaseItemRequestBuilder> {
     /**
-     * Get exclusionUnits from solutions
+     * The list of exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExclusionUnitBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ExclusionUnitBaseItemRequestBuilderGetQueryParameters> | undefined) : Promise<ExclusionUnitBase | undefined>;
     /**
-     * Get exclusionUnits from solutions
+     * The list of exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExclusionUnitBaseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get exclusionUnits from solutions
+ * The list of exclusion units in the tenant.
  */
 export interface ExclusionUnitBaseItemRequestBuilderGetQueryParameters {
     /**

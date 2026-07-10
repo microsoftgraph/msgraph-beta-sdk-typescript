@@ -24,7 +24,7 @@ export function createResetPostRequestBodyFromDiscriminatorValue(parseNode: Pars
 export function deserializeIntoResetPostRequestBody(resetPostRequestBody: Partial<ResetPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { resetPostRequestBody.backingStoreEnabled = true; },
-        "cloudAppIds": n => { resetPostRequestBody.cloudAppIds = n.getCollectionOfPrimitiveValues<string>(); },
+        "cloudAppIds": n => { resetPostRequestBody.cloudAppIds = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface ResetPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

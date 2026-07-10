@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CustomAppScopesRequestBuilder extends BaseRequestBuilder<CustomAppScopesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the customAppScopes property of the microsoft.graph.unifiedRbacApplicationMultiple entity.
      * @param customAppScopeId The unique identifier of customAppScope
      * @returns {CustomAppScopeItemRequestBuilder}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      byCustomAppScopeId(customAppScopeId: string) : CustomAppScopeItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface CustomAppScopesRequestBuilder extends BaseRequestBuilder<Custom
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomAppScopeCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      * @see {@link https://learn.microsoft.com/graph/api/unifiedrbacapplicationmultiple-list-customappscopes?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomAppScopesRequestBuilderGetQueryParameters> | undefined) : Promise<CustomAppScopeCollectionResponse | undefined>;
@@ -41,7 +38,6 @@ export interface CustomAppScopesRequestBuilder extends BaseRequestBuilder<Custom
      * Get a list of customAppScope objects for an RBAC provider. Only the Microsoft Defender XDR Unified RBAC provider is supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomAppScopesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

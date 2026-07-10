@@ -6,6 +6,8 @@ import { createApplicationTemplateCollectionResponseFromDiscriminatorValue, type
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { CategoriesRequestBuilderRequestsMetadata, type CategoriesRequestBuilder } from './categories/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { ApplicationTemplateItemRequestBuilderNavigationMetadata, ApplicationTemplateItemRequestBuilderRequestsMetadata, type ApplicationTemplateItemRequestBuilder } from './item/index.js';
@@ -16,6 +18,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the collection of applicationTemplate entities.
  */
 export interface ApplicationTemplatesRequestBuilder extends BaseRequestBuilder<ApplicationTemplatesRequestBuilder> {
+    /**
+     * Provides operations to call the categories method.
+     */
+    get categories(): CategoriesRequestBuilder;
     /**
      * Provides operations to count the resources in the collection.
      */
@@ -103,6 +109,9 @@ export const ApplicationTemplatesRequestBuilderNavigationMetadata: Record<Exclud
         requestsMetadata: ApplicationTemplateItemRequestBuilderRequestsMetadata,
         navigationMetadata: ApplicationTemplateItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["applicationTemplate%2Did"],
+    },
+    categories: {
+        requestsMetadata: CategoriesRequestBuilderRequestsMetadata,
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

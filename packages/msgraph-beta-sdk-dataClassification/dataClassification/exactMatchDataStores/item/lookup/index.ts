@@ -36,8 +36,8 @@ export function deserializeIntoLookupPostRequestBody(lookupPostRequestBody: Part
     return {
         "backingStoreEnabled": n => { lookupPostRequestBody.backingStoreEnabled = true; },
         "key": n => { lookupPostRequestBody.key = n.getStringValue(); },
-        "resultColumnNames": n => { lookupPostRequestBody.resultColumnNames = n.getCollectionOfPrimitiveValues<string>(); },
-        "values": n => { lookupPostRequestBody.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "resultColumnNames": n => { lookupPostRequestBody.resultColumnNames = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "values": n => { lookupPostRequestBody.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -49,7 +49,7 @@ export function deserializeIntoLookupPostRequestBody(lookupPostRequestBody: Part
 export function deserializeIntoLookupPostResponse(lookupPostResponse: Partial<LookupPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(lookupPostResponse),
-        "value": n => { lookupPostResponse.value = n.getCollectionOfPrimitiveValues<string>(); },
+        "value": n => { lookupPostResponse.value = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 export interface LookupPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {

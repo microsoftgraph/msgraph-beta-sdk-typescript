@@ -26,7 +26,7 @@ export function createUnenrollAssetsByIdPostRequestBodyFromDiscriminatorValue(pa
 export function deserializeIntoUnenrollAssetsByIdPostRequestBody(unenrollAssetsByIdPostRequestBody: Partial<UnenrollAssetsByIdPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unenrollAssetsByIdPostRequestBody.backingStoreEnabled = true; },
-        "ids": n => { unenrollAssetsByIdPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>(); },
+        "ids": n => { unenrollAssetsByIdPostRequestBody.ids = n.getCollectionOfPrimitiveValues<string>("string"); },
         "memberEntityType": n => { unenrollAssetsByIdPostRequestBody.memberEntityType = n.getStringValue(); },
         "updateCategory": n => { unenrollAssetsByIdPostRequestBody.updateCategory = n.getEnumValue<UpdateCategory>(UpdateCategoryObject); },
     }

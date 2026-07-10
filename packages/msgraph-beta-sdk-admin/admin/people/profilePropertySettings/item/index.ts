@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ProfilePropertySettingItemRequestBuilder extends BaseRequestBuilder<ProfilePropertySettingItemRequestBuilder> {
     /**
-     * Delete a profilePropertySetting object.
+     * Delete a profilePropertySetting object. You shouldn't delete a profilePropertySetting that includes a source precedence configuration. Instead, patch it to a default state that contains only the Microsoft Entra ID source reference. This delete operation is supported but fails unless the prioritizedSourceUrls property contains only the Entra ID source reference.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/profilepropertysetting-delete?view=graph-rest-beta|Find more info here}
@@ -37,7 +37,7 @@ export interface ProfilePropertySettingItemRequestBuilder extends BaseRequestBui
      */
      patch(body: ProfilePropertySetting, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProfilePropertySetting | undefined>;
     /**
-     * Delete a profilePropertySetting object.
+     * Delete a profilePropertySetting object. You shouldn't delete a profilePropertySetting that includes a source precedence configuration. Instead, patch it to a default state that contains only the Microsoft Entra ID source reference. This delete operation is supported but fails unless the prioritizedSourceUrls property contains only the Entra ID source reference.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

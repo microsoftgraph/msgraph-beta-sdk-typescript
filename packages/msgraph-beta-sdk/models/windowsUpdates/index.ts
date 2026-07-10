@@ -93,11 +93,11 @@ export interface AssignedGroup extends AdditionalDataHolder, BackedModel, Parsab
 }
 export interface AzureADDevice extends Parsable, UpdatableAsset {
     /**
-     * The enrollment property
+     * Specifies the update management enrollment for the device. Read-only. Returned by default.
      */
     enrollment?: UpdateManagementEnrollment | null;
     /**
-     * Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
+     * Specifies any errors that prevent the device from being enrolled in update management or receiving deployed content. Read-only. Returned by default.
      */
     errors?: UpdatableAssetError[] | null;
 }
@@ -1459,7 +1459,7 @@ export function deserializeIntoApplicableContentDeviceMatch(applicableContentDev
         "backingStoreEnabled": n => { applicableContentDeviceMatch.backingStoreEnabled = true; },
         "deviceId": n => { applicableContentDeviceMatch.deviceId = n.getStringValue(); },
         "@odata.type": n => { applicableContentDeviceMatch.odataType = n.getStringValue(); },
-        "recommendedBy": n => { applicableContentDeviceMatch.recommendedBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "recommendedBy": n => { applicableContentDeviceMatch.recommendedBy = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -1644,7 +1644,7 @@ export function deserializeIntoContentApplicabilitySettings(contentApplicability
     return {
         "backingStoreEnabled": n => { contentApplicabilitySettings.backingStoreEnabled = true; },
         "@odata.type": n => { contentApplicabilitySettings.odataType = n.getStringValue(); },
-        "offerWhileRecommendedBy": n => { contentApplicabilitySettings.offerWhileRecommendedBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "offerWhileRecommendedBy": n => { contentApplicabilitySettings.offerWhileRecommendedBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "safeguard": n => { contentApplicabilitySettings.safeguard = n.getObjectValue<SafeguardSettings>(createSafeguardSettingsFromDiscriminatorValue); },
     }
 }
@@ -2013,7 +2013,7 @@ export function deserializeIntoKnownIssue(knownIssue: Partial<KnownIssue> | unde
         "originatingKnowledgeBaseArticle": n => { knownIssue.originatingKnowledgeBaseArticle = n.getObjectValue<KnowledgeBaseArticle>(createKnowledgeBaseArticleFromDiscriminatorValue); },
         "resolvedDateTime": n => { knownIssue.resolvedDateTime = n.getDateValue(); },
         "resolvingKnowledgeBaseArticle": n => { knownIssue.resolvingKnowledgeBaseArticle = n.getObjectValue<KnowledgeBaseArticle>(createKnowledgeBaseArticleFromDiscriminatorValue); },
-        "safeguardHoldIds": n => { knownIssue.safeguardHoldIds = n.getCollectionOfPrimitiveValues<number>(); },
+        "safeguardHoldIds": n => { knownIssue.safeguardHoldIds = n.getCollectionOfPrimitiveValues<number>("number"); },
         "startDateTime": n => { knownIssue.startDateTime = n.getDateValue(); },
         "status": n => { knownIssue.status = n.getEnumValue<WindowsReleaseHealthStatus>(WindowsReleaseHealthStatusObject); },
         "title": n => { knownIssue.title = n.getStringValue(); },
@@ -2157,7 +2157,7 @@ export function deserializeIntoProduct(product: Partial<Product> | undefined = {
     return {
         ...deserializeIntoEntity(product),
         "editions": n => { product.editions = n.getCollectionOfObjectValues<Edition>(createEditionFromDiscriminatorValue); },
-        "friendlyNames": n => { product.friendlyNames = n.getCollectionOfPrimitiveValues<string>(); },
+        "friendlyNames": n => { product.friendlyNames = n.getCollectionOfPrimitiveValues<string>("string"); },
         "groupName": n => { product.groupName = n.getStringValue(); },
         "knownIssues": n => { product.knownIssues = n.getCollectionOfObjectValues<KnownIssue>(createKnownIssueFromDiscriminatorValue); },
         "name": n => { product.name = n.getStringValue(); },
@@ -4614,7 +4614,7 @@ export interface UpdateCategoryEnrollmentInformation extends AdditionalDataHolde
      */
     enrollmentState?: EnrollmentState | null;
     /**
-     * The lastModifiedDateTime property
+     * The date and time when the enrollmentState was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.
      */
     lastModifiedDateTime?: Date | null;
     /**
@@ -4628,11 +4628,11 @@ export interface UpdateManagementEnrollment extends AdditionalDataHolder, Backed
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The driver property
+     * Information about the enrollment state of the device in driver update management.
      */
     driver?: UpdateCategoryEnrollmentInformation | null;
     /**
-     * The feature property
+     * Information about the enrollment state of the device in feature update management.
      */
     feature?: UpdateCategoryEnrollmentInformation | null;
     /**
@@ -4640,7 +4640,7 @@ export interface UpdateManagementEnrollment extends AdditionalDataHolder, Backed
      */
     odataType?: string | null;
     /**
-     * The quality property
+     * Information about the enrollment state of the device in quality update management.
      */
     quality?: UpdateCategoryEnrollmentInformation | null;
 }

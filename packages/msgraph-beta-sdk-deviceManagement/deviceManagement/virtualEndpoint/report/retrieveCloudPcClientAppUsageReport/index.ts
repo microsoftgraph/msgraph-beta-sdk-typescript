@@ -27,11 +27,11 @@ export function deserializeIntoRetrieveCloudPcClientAppUsageReportPostRequestBod
     return {
         "backingStoreEnabled": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportType": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.reportType = n.getEnumValue<CloudPcClientAppUsageReportType>(CloudPcClientAppUsageReportTypeObject); },
         "search": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.search = n.getStringValue(); },
-        "select": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { retrieveCloudPcClientAppUsageReportPostRequestBody.top = n.getNumberValue(); },
     }

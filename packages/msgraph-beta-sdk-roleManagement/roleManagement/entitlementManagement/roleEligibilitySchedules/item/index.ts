@@ -22,29 +22,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UnifiedRoleEligibilityScheduleItemRequestBuilder extends BaseRequestBuilder<UnifiedRoleEligibilityScheduleItemRequestBuilder> {
     /**
      * Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get appScope(): AppScopeRequestBuilder;
     /**
      * Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get directoryScope(): DirectoryScopeRequestBuilder;
     /**
      * Provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleBase entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get principal(): PrincipalRequestBuilder;
     /**
      * Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleBase entity.
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
     get roleDefinition(): RoleDefinitionRequestBuilder;
     /**
      * Delete navigation property roleEligibilitySchedules for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -52,7 +47,6 @@ export interface UnifiedRoleEligibilityScheduleItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleEligibilitySchedule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      get(requestConfiguration?: RequestConfiguration<UnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRoleEligibilitySchedule | undefined>;
     /**
@@ -61,21 +55,18 @@ export interface UnifiedRoleEligibilityScheduleItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleEligibilitySchedule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      patch(body: UnifiedRoleEligibilitySchedule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRoleEligibilitySchedule | undefined>;
     /**
      * Delete navigation property roleEligibilitySchedules for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get roleEligibilitySchedules from roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,7 +74,6 @@ export interface UnifiedRoleEligibilityScheduleItemRequestBuilder extends BaseRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
      */
      toPatchRequestInformation(body: UnifiedRoleEligibilitySchedule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

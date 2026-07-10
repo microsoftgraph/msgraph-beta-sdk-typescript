@@ -68,9 +68,9 @@ export function createClockInPostRequestBodyFromDiscriminatorValue(parseNode: Pa
 // @ts-ignore
 export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
-        "atApprovedLocation": n => { clockInPostRequestBody.atApprovedLocation = n.getBooleanValue(); },
+        "atApprovedLocation": n => { clockInPostRequestBody.atApprovedLocation = n.getBooleanValue() ?? false; },
         "backingStoreEnabled": n => { clockInPostRequestBody.backingStoreEnabled = true; },
-        "isAtApprovedLocation": n => { clockInPostRequestBody.isAtApprovedLocation = n.getBooleanValue(); },
+        "isAtApprovedLocation": n => { clockInPostRequestBody.isAtApprovedLocation = n.getBooleanValue() ?? false; },
         "notes": n => { clockInPostRequestBody.notes = n.getObjectValue<ItemBody>(createItemBodyFromDiscriminatorValue); },
         "onBehalfOfUserId": n => { clockInPostRequestBody.onBehalfOfUserId = n.getStringValue(); },
     }
@@ -84,8 +84,8 @@ export function deserializeIntoClockInPostRequestBody(clockInPostRequestBody: Pa
 // @ts-ignore
 export function serializeClockInPostRequestBody(writer: SerializationWriter, clockInPostRequestBody: Partial<ClockInPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!clockInPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("atApprovedLocation", clockInPostRequestBody.atApprovedLocation);
-    writer.writeBooleanValue("isAtApprovedLocation", clockInPostRequestBody.isAtApprovedLocation);
+    writer.writeBooleanValue("atApprovedLocation", clockInPostRequestBody.atApprovedLocation ?? false);
+    writer.writeBooleanValue("isAtApprovedLocation", clockInPostRequestBody.isAtApprovedLocation ?? false);
     writer.writeObjectValue<ItemBody>("notes", clockInPostRequestBody.notes, serializeItemBody);
     writer.writeStringValue("onBehalfOfUserId", clockInPostRequestBody.onBehalfOfUserId);
     writer.writeAdditionalData(clockInPostRequestBody.additionalData);

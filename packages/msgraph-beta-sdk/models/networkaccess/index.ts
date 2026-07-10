@@ -2672,8 +2672,8 @@ export function deserializeIntoAlert(alert: Partial<Alert> | undefined = {}) : R
         "productName": n => { alert.productName = n.getStringValue(); },
         "relatedResources": n => { alert.relatedResources = n.getCollectionOfObjectValues<RelatedResource>(createRelatedResourceFromDiscriminatorValue); },
         "severity": n => { alert.severity = n.getEnumValue<AlertSeverity>(AlertSeverityObject); },
-        "subTechniques": n => { alert.subTechniques = n.getCollectionOfPrimitiveValues<string>(); },
-        "techniques": n => { alert.techniques = n.getCollectionOfPrimitiveValues<string>(); },
+        "subTechniques": n => { alert.subTechniques = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "techniques": n => { alert.techniques = n.getCollectionOfPrimitiveValues<string>("string"); },
         "vendorName": n => { alert.vendorName = n.getStringValue(); },
     }
 }
@@ -2900,7 +2900,7 @@ export function deserializeIntoCloudApplicationMetadata(cloudApplicationMetadata
     return {
         "activity": n => { cloudApplicationMetadata.activity = n.getEnumValue<ApplicationActivity>(ApplicationActivityObject); },
         "backingStoreEnabled": n => { cloudApplicationMetadata.backingStoreEnabled = true; },
-        "categories": n => { cloudApplicationMetadata.categories = n.getCollectionOfPrimitiveValues<string>(); },
+        "categories": n => { cloudApplicationMetadata.categories = n.getCollectionOfPrimitiveValues<string>("string"); },
         "cloudApplicationCatalogId": n => { cloudApplicationMetadata.cloudApplicationCatalogId = n.getStringValue(); },
         "complianceScore": n => { cloudApplicationMetadata.complianceScore = n.getNumberValue(); },
         "generalScore": n => { cloudApplicationMetadata.generalScore = n.getNumberValue(); },
@@ -2922,7 +2922,7 @@ export function deserializeIntoCloudApplicationMetadata(cloudApplicationMetadata
 export function deserializeIntoCloudApplicationReport(cloudApplicationReport: Partial<CloudApplicationReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { cloudApplicationReport.backingStoreEnabled = true; },
-        "categories": n => { cloudApplicationReport.categories = n.getCollectionOfPrimitiveValues<string>(); },
+        "categories": n => { cloudApplicationReport.categories = n.getCollectionOfPrimitiveValues<string>("string"); },
         "cloudApplicationCatalogId": n => { cloudApplicationReport.cloudApplicationCatalogId = n.getStringValue(); },
         "complianceScore": n => { cloudApplicationReport.complianceScore = n.getNumberValue(); },
         "deviceCount": n => { cloudApplicationReport.deviceCount = n.getNumberValue(); },
@@ -2962,7 +2962,7 @@ export function deserializeIntoCloudFirewallDestinationAddress(cloudFirewallDest
 export function deserializeIntoCloudFirewallDestinationFqdnAddress(cloudFirewallDestinationFqdnAddress: Partial<CloudFirewallDestinationFqdnAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCloudFirewallDestinationAddress(cloudFirewallDestinationFqdnAddress),
-        "values": n => { cloudFirewallDestinationFqdnAddress.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "values": n => { cloudFirewallDestinationFqdnAddress.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -2974,7 +2974,7 @@ export function deserializeIntoCloudFirewallDestinationFqdnAddress(cloudFirewall
 export function deserializeIntoCloudFirewallDestinationIpAddress(cloudFirewallDestinationIpAddress: Partial<CloudFirewallDestinationIpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCloudFirewallDestinationAddress(cloudFirewallDestinationIpAddress),
-        "values": n => { cloudFirewallDestinationIpAddress.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "values": n => { cloudFirewallDestinationIpAddress.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -2988,7 +2988,7 @@ export function deserializeIntoCloudFirewallDestinationMatching(cloudFirewallDes
         "addresses": n => { cloudFirewallDestinationMatching.addresses = n.getCollectionOfObjectValues<CloudFirewallDestinationAddress>(createCloudFirewallDestinationAddressFromDiscriminatorValue); },
         "backingStoreEnabled": n => { cloudFirewallDestinationMatching.backingStoreEnabled = true; },
         "@odata.type": n => { cloudFirewallDestinationMatching.odataType = n.getStringValue(); },
-        "ports": n => { cloudFirewallDestinationMatching.ports = n.getCollectionOfPrimitiveValues<string>(); },
+        "ports": n => { cloudFirewallDestinationMatching.ports = n.getCollectionOfPrimitiveValues<string>("string"); },
         "protocols": n => { cloudFirewallDestinationMatching.protocols = n.getCollectionOfEnumValues<CloudFirewallProtocol>(CloudFirewallProtocolObject); },
     }
 }
@@ -3105,7 +3105,7 @@ export function deserializeIntoCloudFirewallSourceAddress(cloudFirewallSourceAdd
 export function deserializeIntoCloudFirewallSourceIpAddress(cloudFirewallSourceIpAddress: Partial<CloudFirewallSourceIpAddress> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoCloudFirewallSourceAddress(cloudFirewallSourceIpAddress),
-        "values": n => { cloudFirewallSourceIpAddress.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "values": n => { cloudFirewallSourceIpAddress.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -3119,7 +3119,7 @@ export function deserializeIntoCloudFirewallSourceMatching(cloudFirewallSourceMa
         "addresses": n => { cloudFirewallSourceMatching.addresses = n.getCollectionOfObjectValues<CloudFirewallSourceAddress>(createCloudFirewallSourceAddressFromDiscriminatorValue); },
         "backingStoreEnabled": n => { cloudFirewallSourceMatching.backingStoreEnabled = true; },
         "@odata.type": n => { cloudFirewallSourceMatching.odataType = n.getStringValue(); },
-        "ports": n => { cloudFirewallSourceMatching.ports = n.getCollectionOfPrimitiveValues<string>(); },
+        "ports": n => { cloudFirewallSourceMatching.ports = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -3806,7 +3806,7 @@ export function deserializeIntoHeaders(headers: Partial<Headers> | undefined = {
 export function deserializeIntoInternetAccessForwardingRule(internetAccessForwardingRule: Partial<InternetAccessForwardingRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoForwardingRule(internetAccessForwardingRule),
-        "ports": n => { internetAccessForwardingRule.ports = n.getCollectionOfPrimitiveValues<string>(); },
+        "ports": n => { internetAccessForwardingRule.ports = n.getCollectionOfPrimitiveValues<string>("string"); },
         "protocol": n => { internetAccessForwardingRule.protocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
     }
 }
@@ -3899,7 +3899,7 @@ export function deserializeIntoM365ForwardingRule(m365ForwardingRule: Partial<M3
     return {
         ...deserializeIntoForwardingRule(m365ForwardingRule),
         "category": n => { m365ForwardingRule.category = n.getEnumValue<ForwardingCategory>(ForwardingCategoryObject); },
-        "ports": n => { m365ForwardingRule.ports = n.getCollectionOfPrimitiveValues<string>(); },
+        "ports": n => { m365ForwardingRule.ports = n.getCollectionOfPrimitiveValues<string>("string"); },
         "protocol": n => { m365ForwardingRule.protocol = n.getEnumValue<NetworkingProtocol>(NetworkingProtocolObject); },
     }
 }
@@ -3996,7 +3996,7 @@ export function deserializeIntoNetworkAccessTraffic(networkAccessTraffic: Partia
         "user": n => { networkAccessTraffic.user = n.getObjectValue<I4bfcbb20fa90605575bab96c7572912b314f024f9b0899d027a654508ef72465>(I76468935476edf00ba62610ba93d13d7194a94fc3b9375d1eacaf60b72b6323e); },
         "userId": n => { networkAccessTraffic.userId = n.getStringValue(); },
         "userPrincipalName": n => { networkAccessTraffic.userPrincipalName = n.getStringValue(); },
-        "vendorNames": n => { networkAccessTraffic.vendorNames = n.getCollectionOfPrimitiveValues<string>(); },
+        "vendorNames": n => { networkAccessTraffic.vendorNames = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -4507,7 +4507,7 @@ export function deserializeIntoThreatIntelligenceDestination(threatIntelligenceD
 export function deserializeIntoThreatIntelligenceFqdnDestination(threatIntelligenceFqdnDestination: Partial<ThreatIntelligenceFqdnDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoThreatIntelligenceDestination(threatIntelligenceFqdnDestination),
-        "values": n => { threatIntelligenceFqdnDestination.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "values": n => { threatIntelligenceFqdnDestination.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -4623,7 +4623,7 @@ export function deserializeIntoTlsInspectionDestination(tlsInspectionDestination
 export function deserializeIntoTlsInspectionFqdnDestination(tlsInspectionFqdnDestination: Partial<TlsInspectionFqdnDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoTlsInspectionDestination(tlsInspectionFqdnDestination),
-        "values": n => { tlsInspectionFqdnDestination.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "values": n => { tlsInspectionFqdnDestination.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -4724,7 +4724,7 @@ export function deserializeIntoTlsInspectionRuleSettings(tlsInspectionRuleSettin
 export function deserializeIntoTlsInspectionWebCategoryDestination(tlsInspectionWebCategoryDestination: Partial<TlsInspectionWebCategoryDestination> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoTlsInspectionDestination(tlsInspectionWebCategoryDestination),
-        "values": n => { tlsInspectionWebCategoryDestination.values = n.getCollectionOfPrimitiveValues<string>(); },
+        "values": n => { tlsInspectionWebCategoryDestination.values = n.getCollectionOfPrimitiveValues<string>("string"); },
     }
 }
 /**
@@ -5373,7 +5373,7 @@ export interface ForwardingPolicyCollectionResponse extends BaseCollectionPagina
 }
 export interface ForwardingPolicyLink extends Parsable, PolicyLink {
     /**
-     * The priority property
+     * Priority of the policy within the forwarding profile.
      */
     priority?: number | null;
 }
@@ -9356,6 +9356,7 @@ export const BandwidthCapacityInMbpsObject = {
 export const ClientFallbackActionObject = {
     Bypass: "bypass",
     Block: "block",
+    DefaultEscaped: "default",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const CloudFirewallActionObject = {
@@ -9707,6 +9708,8 @@ export const TlsCertificateStatusObject = {
     Expired: "expired",
     Enabled: "enabled",
     Disabled: "disabled",
+    Creating: "creating",
+    Revoked: "revoked",
 } as const;
 export const TrafficForwardingTypeObject = {
     M365: "m365",

@@ -27,21 +27,21 @@ export interface ExclusionUnitsRequestBuilder extends BaseRequestBuilder<Exclusi
      */
      byExclusionUnitBaseId(exclusionUnitBaseId: string) : ExclusionUnitBaseItemRequestBuilder;
     /**
-     * Get exclusionUnits from solutions
+     * The list of exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExclusionUnitBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<ExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<ExclusionUnitBaseCollectionResponse | undefined>;
     /**
-     * Get exclusionUnits from solutions
+     * The list of exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get exclusionUnits from solutions
+ * The list of exclusion units in the tenant.
  */
 export interface ExclusionUnitsRequestBuilderGetQueryParameters {
     /**

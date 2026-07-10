@@ -27,7 +27,7 @@ export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<Sit
      */
      bySiteExclusionUnitId(siteExclusionUnitId: string) : SiteExclusionUnitItemRequestBuilder;
     /**
-     * Get siteExclusionUnits from solutions
+     * The list of site exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<Sit
      */
      post(body: SiteExclusionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteExclusionUnit | undefined>;
     /**
-     * Get siteExclusionUnits from solutions
+     * The list of site exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<Sit
      toPostRequestInformation(body: SiteExclusionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get siteExclusionUnits from solutions
+ * The list of site exclusion units in the tenant.
  */
 export interface SiteExclusionUnitsRequestBuilderGetQueryParameters {
     /**

@@ -27,29 +27,30 @@ export interface DetectionRulesRequestBuilder extends BaseRequestBuilder<Detecti
      */
      byDetectionRuleId(detectionRuleId: string) : DetectionRuleItemRequestBuilder;
     /**
-     * Get a list of custom detection rules.With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.Custom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries.
+     * Get a list of detectionRule objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DetectionRuleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/security-detectionrule-list?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/security-rulesroot-list-detectionrules?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DetectionRulesRequestBuilderGetQueryParameters> | undefined) : Promise<DetectionRuleCollectionResponse | undefined>;
     /**
-     * Create new navigation property to detectionRules for security
+     * Create a new detectionRule object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DetectionRule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-rulesroot-post-detectionrules?view=graph-rest-beta|Find more info here}
      */
      post(body: DetectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DetectionRule | undefined>;
     /**
-     * Get a list of custom detection rules.With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.Custom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries.
+     * Get a list of detectionRule objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DetectionRulesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to detectionRules for security
+     * Create a new detectionRule object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -57,7 +58,7 @@ export interface DetectionRulesRequestBuilder extends BaseRequestBuilder<Detecti
      toPostRequestInformation(body: DetectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of custom detection rules.With custom detections, you can proactively monitor for and respond to various events and system states, including suspected breach activity and misconfigured assets in their organization network.Custom detection rules, which are written in Kusto query language (KQL), automatically trigger alerts and response actions once there are events matching their KQL queries.
+ * Get a list of detectionRule objects and their properties.
  */
 export interface DetectionRulesRequestBuilderGetQueryParameters {
     /**

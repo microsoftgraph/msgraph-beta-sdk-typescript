@@ -27,21 +27,22 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      */
      byDriveExclusionUnitId(driveExclusionUnitId: string) : DriveExclusionUnitItemRequestBuilder;
     /**
-     * Get driveExclusionUnits from solutions
+     * Get a list of drive exclusion units associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveexclusionunits?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveExclusionUnitCollectionResponse | undefined>;
     /**
-     * Get driveExclusionUnits from solutions
+     * Get a list of drive exclusion units associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get driveExclusionUnits from solutions
+ * Get a list of drive exclusion units associated with a OneDrive for work or school protection policy.
  */
 export interface DriveExclusionUnitsRequestBuilderGetQueryParameters {
     /**

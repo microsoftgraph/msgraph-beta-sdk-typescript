@@ -27,11 +27,11 @@ export function deserializeIntoGetCloudPcRecommendationReportsPostRequestBody(ge
     return {
         "backingStoreEnabled": n => { getCloudPcRecommendationReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getCloudPcRecommendationReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getCloudPcRecommendationReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getCloudPcRecommendationReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getCloudPcRecommendationReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getCloudPcRecommendationReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "reportName": n => { getCloudPcRecommendationReportsPostRequestBody.reportName = n.getEnumValue<CloudPcReportName>(CloudPcReportNameObject); },
         "search": n => { getCloudPcRecommendationReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getCloudPcRecommendationReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getCloudPcRecommendationReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getCloudPcRecommendationReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getCloudPcRecommendationReportsPostRequestBody.top = n.getNumberValue(); },
     }

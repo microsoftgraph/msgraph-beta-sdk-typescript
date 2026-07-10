@@ -16,6 +16,8 @@ import { RetrievePolicyApplyActionResultRequestBuilderRequestsMetadata, type Ret
 // @ts-ignore
 import { RetrievePolicyApplyScheduleRequestBuilderRequestsMetadata, type RetrievePolicyApplyScheduleRequestBuilder } from './retrievePolicyApplySchedule/index.js';
 // @ts-ignore
+import { RetrievePolicyUpdateStatusResultRequestBuilderRequestsMetadata, type RetrievePolicyUpdateStatusResultRequestBuilder } from './retrievePolicyUpdateStatusResult/index.js';
+// @ts-ignore
 import { RetryRequestBuilderRequestsMetadata, type RetryRequestBuilder } from './retry/index.js';
 // @ts-ignore
 import { SchedulePolicyApplyTaskRequestBuilderRequestsMetadata, type SchedulePolicyApplyTaskRequestBuilder } from './schedulePolicyApplyTask/index.js';
@@ -46,6 +48,10 @@ export interface CloudPcProvisioningPolicyItemRequestBuilder extends BaseRequest
      * Provides operations to call the retrievePolicyApplySchedule method.
      */
     get retrievePolicyApplySchedule(): RetrievePolicyApplyScheduleRequestBuilder;
+    /**
+     * Provides operations to call the retrievePolicyUpdateStatusResult method.
+     */
+    get retrievePolicyUpdateStatusResult(): RetrievePolicyUpdateStatusResultRequestBuilder;
     /**
      * Provides operations to call the retry method.
      */
@@ -141,6 +147,9 @@ export const CloudPcProvisioningPolicyItemRequestBuilderNavigationMetadata: Reco
     },
     retrievePolicyApplySchedule: {
         requestsMetadata: RetrievePolicyApplyScheduleRequestBuilderRequestsMetadata,
+    },
+    retrievePolicyUpdateStatusResult: {
+        requestsMetadata: RetrievePolicyUpdateStatusResultRequestBuilderRequestsMetadata,
     },
     retry: {
         requestsMetadata: RetryRequestBuilderRequestsMetadata,

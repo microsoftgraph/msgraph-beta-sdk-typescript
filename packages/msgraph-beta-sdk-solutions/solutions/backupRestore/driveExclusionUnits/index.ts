@@ -27,7 +27,7 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      */
      byDriveExclusionUnitId(driveExclusionUnitId: string) : DriveExclusionUnitItemRequestBuilder;
     /**
-     * Get driveExclusionUnits from solutions
+     * The list of drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      */
      post(body: DriveExclusionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveExclusionUnit | undefined>;
     /**
-     * Get driveExclusionUnits from solutions
+     * The list of drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      toPostRequestInformation(body: DriveExclusionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get driveExclusionUnits from solutions
+ * The list of drive exclusion units in the tenant.
  */
 export interface DriveExclusionUnitsRequestBuilderGetQueryParameters {
     /**

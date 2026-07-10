@@ -25,10 +25,10 @@ export function deserializeIntoGetConnectionQualityReportsPostRequestBody(getCon
     return {
         "backingStoreEnabled": n => { getConnectionQualityReportsPostRequestBody.backingStoreEnabled = true; },
         "filter": n => { getConnectionQualityReportsPostRequestBody.filter = n.getStringValue(); },
-        "groupBy": n => { getConnectionQualityReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>(); },
-        "orderBy": n => { getConnectionQualityReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>(); },
+        "groupBy": n => { getConnectionQualityReportsPostRequestBody.groupBy = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "orderBy": n => { getConnectionQualityReportsPostRequestBody.orderBy = n.getCollectionOfPrimitiveValues<string>("string"); },
         "search": n => { getConnectionQualityReportsPostRequestBody.search = n.getStringValue(); },
-        "select": n => { getConnectionQualityReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>(); },
+        "select": n => { getConnectionQualityReportsPostRequestBody.select = n.getCollectionOfPrimitiveValues<string>("string"); },
         "skip": n => { getConnectionQualityReportsPostRequestBody.skip = n.getNumberValue(); },
         "top": n => { getConnectionQualityReportsPostRequestBody.top = n.getNumberValue(); },
     }

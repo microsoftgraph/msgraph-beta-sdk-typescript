@@ -24,7 +24,7 @@ export function createInvalidateAllRefreshTokensPostResponseFromDiscriminatorVal
 export function deserializeIntoInvalidateAllRefreshTokensPostResponse(invalidateAllRefreshTokensPostResponse: Partial<InvalidateAllRefreshTokensPostResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { invalidateAllRefreshTokensPostResponse.backingStoreEnabled = true; },
-        "value": n => { invalidateAllRefreshTokensPostResponse.value = n.getBooleanValue(); },
+        "value": n => { invalidateAllRefreshTokensPostResponse.value = n.getBooleanValue() ?? false; },
     }
 }
 export interface InvalidateAllRefreshTokensPostResponse extends AdditionalDataHolder, BackedModel, Parsable {
@@ -65,7 +65,7 @@ export interface InvalidateAllRefreshTokensRequestBuilder extends BaseRequestBui
 // @ts-ignore
 export function serializeInvalidateAllRefreshTokensPostResponse(writer: SerializationWriter, invalidateAllRefreshTokensPostResponse: Partial<InvalidateAllRefreshTokensPostResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!invalidateAllRefreshTokensPostResponse || isSerializingDerivedType) { return; }
-    writer.writeBooleanValue("value", invalidateAllRefreshTokensPostResponse.value);
+    writer.writeBooleanValue("value", invalidateAllRefreshTokensPostResponse.value ?? false);
     writer.writeAdditionalData(invalidateAllRefreshTokensPostResponse.additionalData);
 }
 /**
