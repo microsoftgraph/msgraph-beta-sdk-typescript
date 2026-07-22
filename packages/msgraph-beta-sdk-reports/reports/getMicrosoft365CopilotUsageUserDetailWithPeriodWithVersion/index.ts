@@ -7,19 +7,19 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
- * Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+ * Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
  */
-export interface GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder extends BaseRequestBuilder<GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder> {
+export interface GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder extends BaseRequestBuilder<GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder> {
     /**
-     * Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
+     * Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ArrayBuffer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ArrayBuffer | undefined>;
     /**
-     * Get the aggregated number of active and enabled users of Microsoft 365 Copilot for a specified time period.
+     * Get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -28,13 +28,13 @@ export interface GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder 
 /**
  * Uri template for the request builder.
  */
-export const GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderUriTemplate = "{+baseurl}/reports/getMicrosoft365CopilotUserCountSummary(period='{period}')";
+export const GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderUriTemplate = "{+baseurl}/reports/getMicrosoft365CopilotUsageUserDetail(period='{period}',version='{version}')";
 /**
  * Metadata for all the requests in the request builder.
  */
-export const GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderRequestsMetadata: RequestsMetadata = {
+export const GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderRequestsMetadata: RequestsMetadata = {
     get: {
-        uriTemplate: GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderUriTemplate,
+        uriTemplate: GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderUriTemplate,
         responseBodyContentType: "application/octet-stream, application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,

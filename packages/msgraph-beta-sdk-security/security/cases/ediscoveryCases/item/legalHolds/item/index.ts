@@ -6,6 +6,10 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createEdiscoveryHoldPolicyFromDiscriminatorValue, serializeEdiscoveryHoldPolicy, type EdiscoveryHoldPolicy } from '@microsoft/msgraph-beta-sdk/models/security/index.js';
 // @ts-ignore
+import { MicrosoftGraphSecurityDisablePolicyRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityDisablePolicyRequestBuilder } from './microsoftGraphSecurityDisablePolicy/index.js';
+// @ts-ignore
+import { MicrosoftGraphSecurityEnablePolicyRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityEnablePolicyRequestBuilder } from './microsoftGraphSecurityEnablePolicy/index.js';
+// @ts-ignore
 import { MicrosoftGraphSecurityRetryPolicyRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityRetryPolicyRequestBuilder } from './microsoftGraphSecurityRetryPolicy/index.js';
 // @ts-ignore
 import { SiteSourcesRequestBuilderNavigationMetadata, SiteSourcesRequestBuilderRequestsMetadata, type SiteSourcesRequestBuilder } from './siteSources/index.js';
@@ -18,6 +22,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the legalHolds property of the microsoft.graph.security.ediscoveryCase entity.
  */
 export interface EdiscoveryHoldPolicyItemRequestBuilder extends BaseRequestBuilder<EdiscoveryHoldPolicyItemRequestBuilder> {
+    /**
+     * Provides operations to call the disablePolicy method.
+     */
+    get microsoftGraphSecurityDisablePolicy(): MicrosoftGraphSecurityDisablePolicyRequestBuilder;
+    /**
+     * Provides operations to call the enablePolicy method.
+     */
+    get microsoftGraphSecurityEnablePolicy(): MicrosoftGraphSecurityEnablePolicyRequestBuilder;
     /**
      * Provides operations to call the retryPolicy method.
      */
@@ -99,6 +111,12 @@ const EdiscoveryHoldPolicyItemRequestBuilderGetQueryParametersMapper: Record<str
  * Metadata for all the navigation properties in the request builder.
  */
 export const EdiscoveryHoldPolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof EdiscoveryHoldPolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    microsoftGraphSecurityDisablePolicy: {
+        requestsMetadata: MicrosoftGraphSecurityDisablePolicyRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphSecurityEnablePolicy: {
+        requestsMetadata: MicrosoftGraphSecurityEnablePolicyRequestBuilderRequestsMetadata,
+    },
     microsoftGraphSecurityRetryPolicy: {
         requestsMetadata: MicrosoftGraphSecurityRetryPolicyRequestBuilderRequestsMetadata,
     },

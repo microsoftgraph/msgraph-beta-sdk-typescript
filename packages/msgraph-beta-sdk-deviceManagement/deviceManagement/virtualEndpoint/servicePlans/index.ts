@@ -27,7 +27,7 @@ export interface ServicePlansRequestBuilder extends BaseRequestBuilder<ServicePl
      */
      byCloudPcServicePlanId(cloudPcServicePlanId: string) : CloudPcServicePlanItemRequestBuilder;
     /**
-     * List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
+     * List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, the Microsoft Graph API is available for Windows 365 Enterprise.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcServicePlanCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -43,7 +43,7 @@ export interface ServicePlansRequestBuilder extends BaseRequestBuilder<ServicePl
      */
      post(body: CloudPcServicePlan, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcServicePlan | undefined>;
     /**
-     * List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
+     * List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, the Microsoft Graph API is available for Windows 365 Enterprise.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface ServicePlansRequestBuilder extends BaseRequestBuilder<ServicePl
      toPostRequestInformation(body: CloudPcServicePlan, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
+ * List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, the Microsoft Graph API is available for Windows 365 Enterprise.
  */
 export interface ServicePlansRequestBuilderGetQueryParameters {
     /**

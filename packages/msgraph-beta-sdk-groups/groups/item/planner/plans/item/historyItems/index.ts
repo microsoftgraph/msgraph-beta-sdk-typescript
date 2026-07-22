@@ -27,7 +27,7 @@ export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryIt
      */
      byPlannerHistoryItemId(plannerHistoryItemId: string) : PlannerHistoryItemItemRequestBuilder;
     /**
-     * Get historyItems from groups
+     * Collection of history items for entities in the plan. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerHistoryItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryIt
      */
      post(body: PlannerHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerHistoryItem | undefined>;
     /**
-     * Get historyItems from groups
+     * Collection of history items for entities in the plan. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface HistoryItemsRequestBuilder extends BaseRequestBuilder<HistoryIt
      toPostRequestInformation(body: PlannerHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get historyItems from groups
+ * Collection of history items for entities in the plan. Read-only. Nullable.
  */
 export interface HistoryItemsRequestBuilderGetQueryParameters {
     /**

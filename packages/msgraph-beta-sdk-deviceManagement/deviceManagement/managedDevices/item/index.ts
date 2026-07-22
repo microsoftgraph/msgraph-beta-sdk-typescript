@@ -44,6 +44,8 @@ import { GetFileVaultKeyRequestBuilderRequestsMetadata, type GetFileVaultKeyRequ
 // @ts-ignore
 import { GetNonCompliantSettingsRequestBuilderRequestsMetadata, type GetNonCompliantSettingsRequestBuilder } from './getNonCompliantSettings/index.js';
 // @ts-ignore
+import { GetSyncStatusRequestBuilderRequestsMetadata, type GetSyncStatusRequestBuilder } from './getSyncStatus/index.js';
+// @ts-ignore
 import { InitiateDeviceAttestationRequestBuilderRequestsMetadata, type InitiateDeviceAttestationRequestBuilder } from './initiateDeviceAttestation/index.js';
 // @ts-ignore
 import { InitiateMobileDeviceManagementKeyRecoveryRequestBuilderRequestsMetadata, type InitiateMobileDeviceManagementKeyRecoveryRequestBuilder } from './initiateMobileDeviceManagementKeyRecovery/index.js';
@@ -71,6 +73,8 @@ import { RecoverPasscodeRequestBuilderRequestsMetadata, type RecoverPasscodeRequ
 import { ReenableRequestBuilderRequestsMetadata, type ReenableRequestBuilder } from './reenable/index.js';
 // @ts-ignore
 import { RemoteLockRequestBuilderRequestsMetadata, type RemoteLockRequestBuilder } from './remoteLock/index.js';
+// @ts-ignore
+import { RemoveDeviceEsimRequestBuilderRequestsMetadata, type RemoveDeviceEsimRequestBuilder } from './removeDeviceEsim/index.js';
 // @ts-ignore
 import { RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderRequestsMetadata, type RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder } from './removeDeviceFirmwareConfigurationInterfaceManagement/index.js';
 // @ts-ignore
@@ -207,6 +211,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      */
     get getNonCompliantSettings(): GetNonCompliantSettingsRequestBuilder;
     /**
+     * Provides operations to call the getSyncStatus method.
+     */
+    get getSyncStatus(): GetSyncStatusRequestBuilder;
+    /**
      * Provides operations to call the initiateDeviceAttestation method.
      */
     get initiateDeviceAttestation(): InitiateDeviceAttestationRequestBuilder;
@@ -262,6 +270,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the remoteLock method.
      */
     get remoteLock(): RemoteLockRequestBuilder;
+    /**
+     * Provides operations to call the removeDeviceEsim method.
+     */
+    get removeDeviceEsim(): RemoveDeviceEsimRequestBuilder;
     /**
      * Provides operations to call the removeDeviceFirmwareConfigurationInterfaceManagement method.
      */
@@ -498,6 +510,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     getNonCompliantSettings: {
         requestsMetadata: GetNonCompliantSettingsRequestBuilderRequestsMetadata,
     },
+    getSyncStatus: {
+        requestsMetadata: GetSyncStatusRequestBuilderRequestsMetadata,
+    },
     initiateDeviceAttestation: {
         requestsMetadata: InitiateDeviceAttestationRequestBuilderRequestsMetadata,
     },
@@ -541,6 +556,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     remoteLock: {
         requestsMetadata: RemoteLockRequestBuilderRequestsMetadata,
+    },
+    removeDeviceEsim: {
+        requestsMetadata: RemoveDeviceEsimRequestBuilderRequestsMetadata,
     },
     removeDeviceFirmwareConfigurationInterfaceManagement: {
         requestsMetadata: RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderRequestsMetadata,

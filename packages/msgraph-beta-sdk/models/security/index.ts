@@ -4,6 +4,8 @@
 // @ts-ignore
 import { createGroupFromDiscriminatorValue, createIdentitySetFromDiscriminatorValue, createPhysicalAddressFromDiscriminatorValue, createPublicErrorFromDiscriminatorValue, createResultInfoFromDiscriminatorValue, createSiteFromDiscriminatorValue, deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, deserializeIntoIdentity, serializeBaseCollectionPaginationCountResponse, serializeEntity, serializeGroup, serializeIdentity, serializeIdentitySet, serializePhysicalAddress, serializePublicError, serializeResultInfo, serializeSite, type BaseCollectionPaginationCountResponse, type Entity, type Group, type Identity, type IdentitySet, type PhysicalAddress, type PublicError, type ResultInfo, type Site } from '../index.js';
 // @ts-ignore
+import { createCaseEscapedFromDiscriminatorValue as I04c8fd8d7d793fe83a2f5aea097a28f9a6cf45af6c77a616d50903ea898d91e1, serializeCaseEscaped as Icff3ea98f9032045377a20ce1bc97a20b242f7708b98448f49e29fd16056f7f5, type CaseEscaped as I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28 } from './caseManagement/index.js';
+// @ts-ignore
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Guid, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
 /**
@@ -1668,6 +1670,12 @@ export interface CaseEscaped extends Entity, Parsable {
      * The status property
      */
     status?: CaseStatus | null;
+}
+export interface CaseManagementRoot extends Entity, Parsable {
+    /**
+     * The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, $skip, and $count.
+     */
+    cases?: I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28[] | null;
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
@@ -4122,6 +4130,15 @@ export function createCaseEscapedFromDiscriminatorValue(parseNode: ParseNode | u
         }
     }
     return deserializeIntoCaseEscaped;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CaseManagementRoot}
+ */
+// @ts-ignore
+export function createCaseManagementRootFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCaseManagementRoot;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -12614,6 +12631,18 @@ export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | u
         "lastModifiedBy": n => { caseEscaped.lastModifiedBy = n.getObjectValue<IdentitySet>(createIdentitySetFromDiscriminatorValue); },
         "lastModifiedDateTime": n => { caseEscaped.lastModifiedDateTime = n.getDateValue(); },
         "status": n => { caseEscaped.status = n.getEnumValue<CaseStatus>(CaseStatusObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CaseManagementRoot The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCaseManagementRoot(caseManagementRoot: Partial<CaseManagementRoot> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(caseManagementRoot),
+        "cases": n => { caseManagementRoot.cases = n.getCollectionOfObjectValues<I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28>(I04c8fd8d7d793fe83a2f5aea097a28f9a6cf45af6c77a616d50903ea898d91e1); },
     }
 }
 /**
@@ -30708,6 +30737,18 @@ export function serializeCaseEscaped(writer: SerializationWriter, caseEscaped: P
             serializeEdiscoveryCase(writer, caseEscaped, true);
         break;
     }
+}
+/**
+ * Serializes information the current object
+ * @param CaseManagementRoot The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseManagementRoot(writer: SerializationWriter, caseManagementRoot: Partial<CaseManagementRoot> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseManagementRoot || isSerializingDerivedType) { return; }
+    serializeEntity(writer, caseManagementRoot, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28>("cases", caseManagementRoot.cases, Icff3ea98f9032045377a20ce1bc97a20b242f7708b98448f49e29fd16056f7f5);
 }
 /**
  * Serializes information the current object

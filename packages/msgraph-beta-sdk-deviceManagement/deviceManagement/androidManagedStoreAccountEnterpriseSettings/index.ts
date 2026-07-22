@@ -14,6 +14,8 @@ import { CompleteSignupRequestBuilderRequestsMetadata, type CompleteSignupReques
 // @ts-ignore
 import { CreateGooglePlayWebTokenRequestBuilderRequestsMetadata, type CreateGooglePlayWebTokenRequestBuilder } from './createGooglePlayWebToken/index.js';
 // @ts-ignore
+import { CreateZeroTouchWebTokenRequestBuilderRequestsMetadata, type CreateZeroTouchWebTokenRequestBuilder } from './createZeroTouchWebToken/index.js';
+// @ts-ignore
 import { RequestEnterpriseUpgradeUrlRequestBuilderRequestsMetadata, type RequestEnterpriseUpgradeUrlRequestBuilder } from './requestEnterpriseUpgradeUrl/index.js';
 // @ts-ignore
 import { RequestSignupUrlRequestBuilderRequestsMetadata, type RequestSignupUrlRequestBuilder } from './requestSignupUrl/index.js';
@@ -50,6 +52,10 @@ export interface AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder exte
      * Provides operations to call the createGooglePlayWebToken method.
      */
     get createGooglePlayWebToken(): CreateGooglePlayWebTokenRequestBuilder;
+    /**
+     * Provides operations to call the createZeroTouchWebToken method.
+     */
+    get createZeroTouchWebToken(): CreateZeroTouchWebTokenRequestBuilder;
     /**
      * Provides operations to call the requestEnterpriseUpgradeUrl method.
      */
@@ -158,6 +164,9 @@ export const AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderNavigatio
     },
     createGooglePlayWebToken: {
         requestsMetadata: CreateGooglePlayWebTokenRequestBuilderRequestsMetadata,
+    },
+    createZeroTouchWebToken: {
+        requestsMetadata: CreateZeroTouchWebTokenRequestBuilderRequestsMetadata,
     },
     requestEnterpriseUpgradeUrl: {
         requestsMetadata: RequestEnterpriseUpgradeUrlRequestBuilderRequestsMetadata,

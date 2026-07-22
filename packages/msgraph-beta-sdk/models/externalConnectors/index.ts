@@ -1021,7 +1021,7 @@ export interface ExternalItem extends Entity, Parsable {
      */
     content?: ExternalItemContent | null;
     /**
-     * The informationProtectionLabel property
+     * Specifies the Microsoft Purview sensitivity label for the item. Set the sensitivityLabelId property to the GUID of a Purview sensitivity label. The service then applies the label rules to the item. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command. Optional.
      */
     informationProtectionLabel?: ExternalItemInformationProtectionLabel | null;
     /**
@@ -1064,7 +1064,7 @@ export interface ExternalItemInformationProtectionLabel extends AdditionalDataHo
      */
     odataType?: string | null;
     /**
-     * The sensitivityLabelId property
+     * The GUID of the Purview sensitivity label. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command.
      */
     sensitivityLabelId?: string | null;
 }
