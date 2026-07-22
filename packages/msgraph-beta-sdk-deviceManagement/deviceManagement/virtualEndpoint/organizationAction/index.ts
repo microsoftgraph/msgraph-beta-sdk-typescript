@@ -44,15 +44,16 @@ export interface OrganizationActionPostRequestBody extends AdditionalDataHolder,
  */
 export interface OrganizationActionRequestBuilder extends BaseRequestBuilder<OrganizationActionRequestBuilder> {
     /**
-     * Invoke action organizationAction
+     * Trigger a Cloud PC organization action.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CloudPcOrganizationActionDetail>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/cloudpc-organizationaction?view=graph-rest-beta|Find more info here}
      */
      post(body: OrganizationActionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CloudPcOrganizationActionDetail | undefined>;
     /**
-     * Invoke action organizationAction
+     * Trigger a Cloud PC organization action.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

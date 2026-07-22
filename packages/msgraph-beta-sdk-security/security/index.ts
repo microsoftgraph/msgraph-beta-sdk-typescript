@@ -14,6 +14,8 @@ import { AttackSimulationRequestBuilderNavigationMetadata, AttackSimulationReque
 // @ts-ignore
 import { AuditLogRequestBuilderNavigationMetadata, AuditLogRequestBuilderRequestsMetadata, type AuditLogRequestBuilder } from './auditLog/index.js';
 // @ts-ignore
+import { CaseManagementRequestBuilderNavigationMetadata, CaseManagementRequestBuilderRequestsMetadata, type CaseManagementRequestBuilder } from './caseManagement/index.js';
+// @ts-ignore
 import { CasesRequestBuilderNavigationMetadata, CasesRequestBuilderRequestsMetadata, type CasesRequestBuilder } from './cases/index.js';
 // @ts-ignore
 import { CloudAppSecurityProfilesRequestBuilderNavigationMetadata, CloudAppSecurityProfilesRequestBuilderRequestsMetadata, type CloudAppSecurityProfilesRequestBuilder } from './cloudAppSecurityProfiles/index.js';
@@ -100,6 +102,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the auditLog property of the microsoft.graph.security entity.
      */
     get auditLog(): AuditLogRequestBuilder;
+    /**
+     * Provides operations to manage the caseManagement property of the microsoft.graph.security entity.
+     */
+    get caseManagement(): CaseManagementRequestBuilder;
     /**
      * Provides operations to manage the cases property of the microsoft.graph.security entity.
      */
@@ -306,6 +312,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     auditLog: {
         requestsMetadata: AuditLogRequestBuilderRequestsMetadata,
         navigationMetadata: AuditLogRequestBuilderNavigationMetadata,
+    },
+    caseManagement: {
+        requestsMetadata: CaseManagementRequestBuilderRequestsMetadata,
+        navigationMetadata: CaseManagementRequestBuilderNavigationMetadata,
     },
     cases: {
         requestsMetadata: CasesRequestBuilderRequestsMetadata,

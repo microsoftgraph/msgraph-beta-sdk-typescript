@@ -27,7 +27,7 @@ export interface ApiUsageReportMetricsRequestBuilder extends BaseRequestBuilder<
      */
      byApiUsageReportEnablementStatusMetric(apiUsageReportEnablementStatusMetric: string) : ApiUsageReportEnablementStatusMetricItemRequestBuilder;
     /**
-     * Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+     * Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApiUsageReportEnablementStatusCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -43,7 +43,7 @@ export interface ApiUsageReportMetricsRequestBuilder extends BaseRequestBuilder<
      */
      post(body: ApiUsageReportEnablementStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApiUsageReportEnablementStatus | undefined>;
     /**
-     * Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+     * Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -57,7 +57,7 @@ export interface ApiUsageReportMetricsRequestBuilder extends BaseRequestBuilder<
      toPostRequestInformation(body: ApiUsageReportEnablementStatus, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+ * Get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
  */
 export interface ApiUsageReportMetricsRequestBuilderGetQueryParameters {
     /**

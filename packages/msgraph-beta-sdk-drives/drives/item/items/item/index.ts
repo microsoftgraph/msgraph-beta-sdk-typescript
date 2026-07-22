@@ -52,11 +52,15 @@ import { LastModifiedByUserRequestBuilderNavigationMetadata, LastModifiedByUserR
 // @ts-ignore
 import { ListItemRequestBuilderRequestsMetadata, type ListItemRequestBuilder } from './listItem/index.js';
 // @ts-ignore
+import { LockRequestBuilderRequestsMetadata, type LockRequestBuilder } from './lock/index.js';
+// @ts-ignore
 import { PermanentDeleteRequestBuilderRequestsMetadata, type PermanentDeleteRequestBuilder } from './permanentDelete/index.js';
 // @ts-ignore
 import { PermissionsRequestBuilderNavigationMetadata, PermissionsRequestBuilderRequestsMetadata, type PermissionsRequestBuilder } from './permissions/index.js';
 // @ts-ignore
 import { PreviewRequestBuilderRequestsMetadata, type PreviewRequestBuilder } from './preview/index.js';
+// @ts-ignore
+import { ReleaseLockRequestBuilderRequestsMetadata, type ReleaseLockRequestBuilder } from './releaseLock/index.js';
 // @ts-ignore
 import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
 // @ts-ignore
@@ -169,6 +173,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      */
     get listItem(): ListItemRequestBuilder;
     /**
+     * Provides operations to call the lock method.
+     */
+    get lock(): LockRequestBuilder;
+    /**
      * Provides operations to call the permanentDelete method.
      */
     get permanentDelete(): PermanentDeleteRequestBuilder;
@@ -180,6 +188,10 @@ export interface DriveItemItemRequestBuilder extends BaseRequestBuilder<DriveIte
      * Provides operations to call the preview method.
      */
     get preview(): PreviewRequestBuilder;
+    /**
+     * Provides operations to call the releaseLock method.
+     */
+    get releaseLock(): ReleaseLockRequestBuilder;
     /**
      * Provides operations to call the restore method.
      */
@@ -386,6 +398,9 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
     listItem: {
         requestsMetadata: ListItemRequestBuilderRequestsMetadata,
     },
+    lock: {
+        requestsMetadata: LockRequestBuilderRequestsMetadata,
+    },
     permanentDelete: {
         requestsMetadata: PermanentDeleteRequestBuilderRequestsMetadata,
     },
@@ -395,6 +410,9 @@ export const DriveItemItemRequestBuilderNavigationMetadata: Record<Exclude<keyof
     },
     preview: {
         requestsMetadata: PreviewRequestBuilderRequestsMetadata,
+    },
+    releaseLock: {
+        requestsMetadata: ReleaseLockRequestBuilderRequestsMetadata,
     },
     restore: {
         requestsMetadata: RestoreRequestBuilderRequestsMetadata,

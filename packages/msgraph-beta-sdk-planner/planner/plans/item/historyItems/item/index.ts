@@ -19,7 +19,7 @@ export interface PlannerHistoryItemItemRequestBuilder extends BaseRequestBuilder
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get historyItems from planner
+     * Collection of history items for entities in the plan. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerHistoryItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface PlannerHistoryItemItemRequestBuilder extends BaseRequestBuilder
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get historyItems from planner
+     * Collection of history items for entities in the plan. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface PlannerHistoryItemItemRequestBuilder extends BaseRequestBuilder
      toPatchRequestInformation(body: PlannerHistoryItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get historyItems from planner
+ * Collection of history items for entities in the plan. Read-only. Nullable.
  */
 export interface PlannerHistoryItemItemRequestBuilderGetQueryParameters {
     /**
