@@ -16,6 +16,8 @@ import { InstancesRequestBuilderNavigationMetadata, InstancesRequestBuilderReque
 // @ts-ignore
 import { PolicyRequestBuilderRequestsMetadata, type PolicyRequestBuilder } from './policy/index.js';
 // @ts-ignore
+import { type UnifiedRequestBuilder, UnifiedRequestBuilderNavigationMetadata, UnifiedRequestBuilderRequestsMetadata } from './unified/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -42,6 +44,10 @@ export interface AccessReviewsRequestBuilder extends BaseRequestBuilder<AccessRe
      * Provides operations to manage the policy property of the microsoft.graph.accessReviewSet entity.
      */
     get policy(): PolicyRequestBuilder;
+    /**
+     * Provides operations to manage the unified property of the microsoft.graph.accessReviewSet entity.
+     */
+    get unified(): UnifiedRequestBuilder;
     /**
      * Delete navigation property accessReviews for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -129,6 +135,10 @@ export const AccessReviewsRequestBuilderNavigationMetadata: Record<Exclude<keyof
     },
     policy: {
         requestsMetadata: PolicyRequestBuilderRequestsMetadata,
+    },
+    unified: {
+        requestsMetadata: UnifiedRequestBuilderRequestsMetadata,
+        navigationMetadata: UnifiedRequestBuilderNavigationMetadata,
     },
 };
 /**

@@ -25,7 +25,7 @@ export interface MessagingRequestBuilder extends BaseRequestBuilder<MessagingReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get messaging from teamwork
+     * The messaging functionality, including custom emojis.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkMessaging>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +46,7 @@ export interface MessagingRequestBuilder extends BaseRequestBuilder<MessagingReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get messaging from teamwork
+     * The messaging functionality, including custom emojis.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -60,7 +60,7 @@ export interface MessagingRequestBuilder extends BaseRequestBuilder<MessagingReq
      toPatchRequestInformation(body: TeamworkMessaging, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get messaging from teamwork
+ * The messaging functionality, including custom emojis.
  */
 export interface MessagingRequestBuilderGetQueryParameters {
     /**

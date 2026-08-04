@@ -213,6 +213,30 @@ export interface CaseManagementEntity extends Entity, Parsable {
 }
 export type CaseTaskCategory = (typeof CaseTaskCategoryObject)[keyof typeof CaseTaskCategoryObject];
 export type CaseTaskPriority = (typeof CaseTaskPriorityObject)[keyof typeof CaseTaskPriorityObject];
+export interface CaseTypeConfiguration extends Entity, Parsable {
+    /**
+     * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+     */
+    customFields?: CustomFieldDefinition[] | null;
+    /**
+     * The id of the top-level status that a new case of this type starts in.
+     */
+    defaultStatusId?: string | null;
+    /**
+     * The human-readable label of the case type.
+     */
+    displayName?: string | null;
+    /**
+     * The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+     */
+    statuses?: StatusDefinition[] | null;
+}
+export interface CaseTypeConfigurationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: CaseTypeConfiguration[] | null;
+}
 export interface Comment extends Activity, Parsable {
     /**
      * The comment body.
@@ -402,6 +426,24 @@ export function createCaseManagementEntityFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CaseTypeConfigurationCollectionResponse}
+ */
+// @ts-ignore
+export function createCaseTypeConfigurationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCaseTypeConfigurationCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CaseTypeConfiguration}
+ */
+// @ts-ignore
+export function createCaseTypeConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCaseTypeConfiguration;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Comment}
  */
 // @ts-ignore
@@ -411,11 +453,64 @@ export function createCommentFromDiscriminatorValue(parseNode: ParseNode | undef
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomFieldDefinitionCollectionResponse}
+ */
+// @ts-ignore
+export function createCustomFieldDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomFieldDefinitionCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomFieldDefinition}
+ */
+// @ts-ignore
+export function createCustomFieldDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition":
+                    return deserializeIntoDateTimeCustomFieldDefinition;
+                case "#microsoft.graph.security.caseManagement.numberCustomFieldDefinition":
+                    return deserializeIntoNumberCustomFieldDefinition;
+                case "#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition":
+                    return deserializeIntoOptionsCustomFieldDefinition;
+                case "#microsoft.graph.security.caseManagement.stringCustomFieldDefinition":
+                    return deserializeIntoStringCustomFieldDefinition;
+            }
+        }
+    }
+    return deserializeIntoCustomFieldDefinition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CustomFieldValues}
  */
 // @ts-ignore
 export function createCustomFieldValuesFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoCustomFieldValues;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CustomStatusDefinition}
+ */
+// @ts-ignore
+export function createCustomStatusDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCustomStatusDefinition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DateTimeCustomFieldDefinition}
+ */
+// @ts-ignore
+export function createDateTimeCustomFieldDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDateTimeCustomFieldDefinition;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -519,6 +614,24 @@ export function createModifiedPropertyFromDiscriminatorValue(parseNode: ParseNod
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {NumberCustomFieldDefinition}
+ */
+// @ts-ignore
+export function createNumberCustomFieldDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoNumberCustomFieldDefinition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {OptionsCustomFieldDefinition}
+ */
+// @ts-ignore
+export function createOptionsCustomFieldDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoOptionsCustomFieldDefinition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {RecommendationRelation}
  */
 // @ts-ignore
@@ -557,6 +670,33 @@ export function createRelationFromDiscriminatorValue(parseNode: ParseNode | unde
         }
     }
     return deserializeIntoRelation;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {StatusDefinitionCollectionResponse}
+ */
+// @ts-ignore
+export function createStatusDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoStatusDefinitionCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {StatusDefinition}
+ */
+// @ts-ignore
+export function createStatusDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoStatusDefinition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {StringCustomFieldDefinition}
+ */
+// @ts-ignore
+export function createStringCustomFieldDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoStringCustomFieldDefinition;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -634,6 +774,30 @@ export function createValuePropertyFromDiscriminatorValue(parseNode: ParseNode |
 export function createWorkspaceIndicatorRelationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoWorkspaceIndicatorRelation;
 }
+export interface CustomFieldDefinition extends Entity, Parsable {
+    /**
+     * The field description. Supports $filter and $orderby.
+     */
+    description?: string | null;
+    /**
+     * The field label shown on the case form. Supports $filter and $orderby.
+     */
+    displayName?: string | null;
+    /**
+     * true if the field is disabled; otherwise, false. Supports $filter and $orderby.
+     */
+    isDisabled?: boolean | null;
+    /**
+     * true if a value is required for this field; otherwise, false. Supports $filter and $orderby.
+     */
+    isRequired?: boolean | null;
+}
+export interface CustomFieldDefinitionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: CustomFieldDefinition[] | null;
+}
 export interface CustomFieldValues extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -643,6 +807,38 @@ export interface CustomFieldValues extends AdditionalDataHolder, BackedModel, Pa
      * The OdataType property
      */
     odataType?: string | null;
+}
+export interface CustomStatusDefinition extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The immutable identifier of the custom status.
+     */
+    customStatusId?: string | null;
+    /**
+     * The human-readable label of the custom status.
+     */
+    displayName?: string | null;
+    /**
+     * true if this is a terminal status; a case in a final status can't transition to another status. Otherwise, false.
+     */
+    isFinal?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The display order of the custom status within its parent status.
+     */
+    sortOrder?: number | null;
+}
+export interface DateTimeCustomFieldDefinition extends CustomFieldDefinition, Parsable {
+    /**
+     * The default date/time value applied to the field on a new case. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+     */
+    defaultDateTime?: Date | null;
 }
 /**
  * The deserialization information for the current model
@@ -829,6 +1025,33 @@ export function deserializeIntoCaseManagementEntity(caseManagementEntity: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param CaseTypeConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCaseTypeConfiguration(caseTypeConfiguration: Partial<CaseTypeConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(caseTypeConfiguration),
+        "customFields": n => { caseTypeConfiguration.customFields = n.getCollectionOfObjectValues<CustomFieldDefinition>(createCustomFieldDefinitionFromDiscriminatorValue); },
+        "defaultStatusId": n => { caseTypeConfiguration.defaultStatusId = n.getStringValue(); },
+        "displayName": n => { caseTypeConfiguration.displayName = n.getStringValue(); },
+        "statuses": n => { caseTypeConfiguration.statuses = n.getCollectionOfObjectValues<StatusDefinition>(createStatusDefinitionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CaseTypeConfigurationCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCaseTypeConfigurationCollectionResponse(caseTypeConfigurationCollectionResponse: Partial<CaseTypeConfigurationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(caseTypeConfigurationCollectionResponse),
+        "value": n => { caseTypeConfigurationCollectionResponse.value = n.getCollectionOfObjectValues<CaseTypeConfiguration>(createCaseTypeConfigurationFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param Comment The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -841,6 +1064,33 @@ export function deserializeIntoComment(comment: Partial<Comment> | undefined = {
 }
 /**
  * The deserialization information for the current model
+ * @param CustomFieldDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomFieldDefinition(customFieldDefinition: Partial<CustomFieldDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(customFieldDefinition),
+        "description": n => { customFieldDefinition.description = n.getStringValue(); },
+        "displayName": n => { customFieldDefinition.displayName = n.getStringValue(); },
+        "isDisabled": n => { customFieldDefinition.isDisabled = n.getBooleanValue(); },
+        "isRequired": n => { customFieldDefinition.isRequired = n.getBooleanValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CustomFieldDefinitionCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomFieldDefinitionCollectionResponse(customFieldDefinitionCollectionResponse: Partial<CustomFieldDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(customFieldDefinitionCollectionResponse),
+        "value": n => { customFieldDefinitionCollectionResponse.value = n.getCollectionOfObjectValues<CustomFieldDefinition>(createCustomFieldDefinitionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param CustomFieldValues The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -849,6 +1099,34 @@ export function deserializeIntoCustomFieldValues(customFieldValues: Partial<Cust
     return {
         "backingStoreEnabled": n => { customFieldValues.backingStoreEnabled = true; },
         "@odata.type": n => { customFieldValues.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CustomStatusDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCustomStatusDefinition(customStatusDefinition: Partial<CustomStatusDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { customStatusDefinition.backingStoreEnabled = true; },
+        "customStatusId": n => { customStatusDefinition.customStatusId = n.getStringValue(); },
+        "displayName": n => { customStatusDefinition.displayName = n.getStringValue(); },
+        "isFinal": n => { customStatusDefinition.isFinal = n.getBooleanValue(); },
+        "@odata.type": n => { customStatusDefinition.odataType = n.getStringValue(); },
+        "sortOrder": n => { customStatusDefinition.sortOrder = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DateTimeCustomFieldDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDateTimeCustomFieldDefinition(dateTimeCustomFieldDefinition: Partial<DateTimeCustomFieldDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCustomFieldDefinition(dateTimeCustomFieldDefinition),
+        "defaultDateTime": n => { dateTimeCustomFieldDefinition.defaultDateTime = n.getDateValue(); },
     }
 }
 /**
@@ -1069,6 +1347,31 @@ export function deserializeIntoModifiedProperty(modifiedProperty: Partial<Modifi
 }
 /**
  * The deserialization information for the current model
+ * @param NumberCustomFieldDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoNumberCustomFieldDefinition(numberCustomFieldDefinition: Partial<NumberCustomFieldDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCustomFieldDefinition(numberCustomFieldDefinition),
+        "defaultValue": n => { numberCustomFieldDefinition.defaultValue = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param OptionsCustomFieldDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoOptionsCustomFieldDefinition(optionsCustomFieldDefinition: Partial<OptionsCustomFieldDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCustomFieldDefinition(optionsCustomFieldDefinition),
+        "defaultValues": n => { optionsCustomFieldDefinition.defaultValues = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "options": n => { optionsCustomFieldDefinition.options = n.getCollectionOfPrimitiveValues<string>("string"); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param RecommendationRelation The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1103,6 +1406,44 @@ export function deserializeIntoRelationCollectionResponse(relationCollectionResp
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(relationCollectionResponse),
         "value": n => { relationCollectionResponse.value = n.getCollectionOfObjectValues<Relation>(createRelationFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param StatusDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoStatusDefinition(statusDefinition: Partial<StatusDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(statusDefinition),
+        "customStatuses": n => { statusDefinition.customStatuses = n.getCollectionOfObjectValues<CustomStatusDefinition>(createCustomStatusDefinitionFromDiscriminatorValue); },
+        "displayName": n => { statusDefinition.displayName = n.getStringValue(); },
+        "sortOrder": n => { statusDefinition.sortOrder = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param StatusDefinitionCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoStatusDefinitionCollectionResponse(statusDefinitionCollectionResponse: Partial<StatusDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(statusDefinitionCollectionResponse),
+        "value": n => { statusDefinitionCollectionResponse.value = n.getCollectionOfObjectValues<StatusDefinition>(createStatusDefinitionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param StringCustomFieldDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoStringCustomFieldDefinition(stringCustomFieldDefinition: Partial<StringCustomFieldDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCustomFieldDefinition(stringCustomFieldDefinition),
+        "defaultValue": n => { stringCustomFieldDefinition.defaultValue = n.getStringValue(); },
     }
 }
 /**
@@ -1638,6 +1979,22 @@ export interface ModifiedProperty extends AdditionalDataHolder, BackedModel, Par
      */
     propertyName?: string | null;
 }
+export interface NumberCustomFieldDefinition extends CustomFieldDefinition, Parsable {
+    /**
+     * The default numeric value applied to the field on a new case.
+     */
+    defaultValue?: number | null;
+}
+export interface OptionsCustomFieldDefinition extends CustomFieldDefinition, Parsable {
+    /**
+     * The option value or values selected by default on a new case.
+     */
+    defaultValues?: string[] | null;
+    /**
+     * The allowed option values a case author can choose from.
+     */
+    options?: string[] | null;
+}
 export interface RecommendationRelation extends Parsable, Relation {
     /**
      * The recommendation type associated with the linked recommendation.
@@ -1909,6 +2266,33 @@ export function serializeCaseManagementEntity(writer: SerializationWriter, caseM
 }
 /**
  * Serializes information the current object
+ * @param CaseTypeConfiguration The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseTypeConfiguration(writer: SerializationWriter, caseTypeConfiguration: Partial<CaseTypeConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseTypeConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, caseTypeConfiguration, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CustomFieldDefinition>("customFields", caseTypeConfiguration.customFields, serializeCustomFieldDefinition);
+    writer.writeStringValue("defaultStatusId", caseTypeConfiguration.defaultStatusId);
+    writer.writeStringValue("displayName", caseTypeConfiguration.displayName);
+    writer.writeCollectionOfObjectValues<StatusDefinition>("statuses", caseTypeConfiguration.statuses, serializeStatusDefinition);
+}
+/**
+ * Serializes information the current object
+ * @param CaseTypeConfigurationCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseTypeConfigurationCollectionResponse(writer: SerializationWriter, caseTypeConfigurationCollectionResponse: Partial<CaseTypeConfigurationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseTypeConfigurationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, caseTypeConfigurationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CaseTypeConfiguration>("value", caseTypeConfigurationCollectionResponse.value, serializeCaseTypeConfiguration);
+}
+/**
+ * Serializes information the current object
  * @param Comment The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -1921,6 +2305,47 @@ export function serializeComment(writer: SerializationWriter, comment: Partial<C
 }
 /**
  * Serializes information the current object
+ * @param CustomFieldDefinition The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomFieldDefinition(writer: SerializationWriter, customFieldDefinition: Partial<CustomFieldDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customFieldDefinition || isSerializingDerivedType) { return; }
+    serializeEntity(writer, customFieldDefinition, isSerializingDerivedType)
+    writer.writeStringValue("description", customFieldDefinition.description);
+    writer.writeStringValue("displayName", customFieldDefinition.displayName);
+    writer.writeBooleanValue("isDisabled", customFieldDefinition.isDisabled);
+    writer.writeBooleanValue("isRequired", customFieldDefinition.isRequired);
+    switch (customFieldDefinition.odataType) {
+        case "#microsoft.graph.security.caseManagement.dateTimeCustomFieldDefinition":
+            serializeDateTimeCustomFieldDefinition(writer, customFieldDefinition, true);
+        break;
+        case "#microsoft.graph.security.caseManagement.numberCustomFieldDefinition":
+            serializeNumberCustomFieldDefinition(writer, customFieldDefinition, true);
+        break;
+        case "#microsoft.graph.security.caseManagement.optionsCustomFieldDefinition":
+            serializeOptionsCustomFieldDefinition(writer, customFieldDefinition, true);
+        break;
+        case "#microsoft.graph.security.caseManagement.stringCustomFieldDefinition":
+            serializeStringCustomFieldDefinition(writer, customFieldDefinition, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param CustomFieldDefinitionCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomFieldDefinitionCollectionResponse(writer: SerializationWriter, customFieldDefinitionCollectionResponse: Partial<CustomFieldDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customFieldDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, customFieldDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CustomFieldDefinition>("value", customFieldDefinitionCollectionResponse.value, serializeCustomFieldDefinition);
+}
+/**
+ * Serializes information the current object
  * @param CustomFieldValues The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -1930,6 +2355,34 @@ export function serializeCustomFieldValues(writer: SerializationWriter, customFi
     if (!customFieldValues || isSerializingDerivedType) { return; }
     writer.writeStringValue("@odata.type", customFieldValues.odataType);
     writer.writeAdditionalData(customFieldValues.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param CustomStatusDefinition The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCustomStatusDefinition(writer: SerializationWriter, customStatusDefinition: Partial<CustomStatusDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!customStatusDefinition || isSerializingDerivedType) { return; }
+    writer.writeStringValue("customStatusId", customStatusDefinition.customStatusId);
+    writer.writeStringValue("displayName", customStatusDefinition.displayName);
+    writer.writeBooleanValue("isFinal", customStatusDefinition.isFinal);
+    writer.writeStringValue("@odata.type", customStatusDefinition.odataType);
+    writer.writeNumberValue("sortOrder", customStatusDefinition.sortOrder);
+    writer.writeAdditionalData(customStatusDefinition.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param DateTimeCustomFieldDefinition The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDateTimeCustomFieldDefinition(writer: SerializationWriter, dateTimeCustomFieldDefinition: Partial<DateTimeCustomFieldDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!dateTimeCustomFieldDefinition || isSerializingDerivedType) { return; }
+    serializeCustomFieldDefinition(writer, dateTimeCustomFieldDefinition, isSerializingDerivedType)
+    writer.writeDateValue("defaultDateTime", dateTimeCustomFieldDefinition.defaultDateTime);
 }
 /**
  * Serializes information the current object
@@ -2150,6 +2603,31 @@ export function serializeModifiedProperty(writer: SerializationWriter, modifiedP
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param NumberCustomFieldDefinition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeNumberCustomFieldDefinition(writer: SerializationWriter, numberCustomFieldDefinition: Partial<NumberCustomFieldDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!numberCustomFieldDefinition || isSerializingDerivedType) { return; }
+    serializeCustomFieldDefinition(writer, numberCustomFieldDefinition, isSerializingDerivedType)
+    writer.writeNumberValue("defaultValue", numberCustomFieldDefinition.defaultValue);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param OptionsCustomFieldDefinition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeOptionsCustomFieldDefinition(writer: SerializationWriter, optionsCustomFieldDefinition: Partial<OptionsCustomFieldDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!optionsCustomFieldDefinition || isSerializingDerivedType) { return; }
+    serializeCustomFieldDefinition(writer, optionsCustomFieldDefinition, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("defaultValues", optionsCustomFieldDefinition.defaultValues);
+    writer.writeCollectionOfPrimitiveValues<string>("options", optionsCustomFieldDefinition.options);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param RecommendationRelation The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -2195,6 +2673,44 @@ export function serializeRelationCollectionResponse(writer: SerializationWriter,
     if (!relationCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, relationCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<Relation>("value", relationCollectionResponse.value, serializeRelation);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param StatusDefinition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeStatusDefinition(writer: SerializationWriter, statusDefinition: Partial<StatusDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!statusDefinition || isSerializingDerivedType) { return; }
+    serializeEntity(writer, statusDefinition, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<CustomStatusDefinition>("customStatuses", statusDefinition.customStatuses, serializeCustomStatusDefinition);
+    writer.writeStringValue("displayName", statusDefinition.displayName);
+    writer.writeNumberValue("sortOrder", statusDefinition.sortOrder);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param StatusDefinitionCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeStatusDefinitionCollectionResponse(writer: SerializationWriter, statusDefinitionCollectionResponse: Partial<StatusDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!statusDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, statusDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<StatusDefinition>("value", statusDefinitionCollectionResponse.value, serializeStatusDefinition);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param StringCustomFieldDefinition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeStringCustomFieldDefinition(writer: SerializationWriter, stringCustomFieldDefinition: Partial<StringCustomFieldDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!stringCustomFieldDefinition || isSerializingDerivedType) { return; }
+    serializeCustomFieldDefinition(writer, stringCustomFieldDefinition, isSerializingDerivedType)
+    writer.writeStringValue("defaultValue", stringCustomFieldDefinition.defaultValue);
 }
 /**
  * Serializes information the current object
@@ -2303,6 +2819,32 @@ export function serializeWorkspaceIndicatorRelation(writer: SerializationWriter,
     writer.writeStringValue("resourceGroupName", workspaceIndicatorRelation.resourceGroupName);
     writer.writeStringValue("subscriptionId", workspaceIndicatorRelation.subscriptionId);
     writer.writeStringValue("workspaceName", workspaceIndicatorRelation.workspaceName);
+}
+export interface StatusDefinition extends Entity, Parsable {
+    /**
+     * The custom statuses returned inline within this top-level status. These aren't separately addressable.
+     */
+    customStatuses?: CustomStatusDefinition[] | null;
+    /**
+     * The human-readable label of the status. Supports $filter and $orderby.
+     */
+    displayName?: string | null;
+    /**
+     * The display order of the status relative to other statuses of the same case type. Supports $filter and $orderby.
+     */
+    sortOrder?: number | null;
+}
+export interface StatusDefinitionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: StatusDefinition[] | null;
+}
+export interface StringCustomFieldDefinition extends CustomFieldDefinition, Parsable {
+    /**
+     * The default string value applied to the field on a new case.
+     */
+    defaultValue?: string | null;
 }
 export interface StringValueProperty extends Parsable, ValueProperty {
     /**

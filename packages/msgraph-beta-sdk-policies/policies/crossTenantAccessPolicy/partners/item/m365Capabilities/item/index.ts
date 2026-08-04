@@ -13,9 +13,10 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface M365CapabilityBaseNameItemRequestBuilder extends BaseRequestBuilder<M365CapabilityBaseNameItemRequestBuilder> {
     /**
-     * Delete navigation property m365Capabilities for policies
+     * Delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete-m365capabilities?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -26,15 +27,16 @@ export interface M365CapabilityBaseNameItemRequestBuilder extends BaseRequestBui
      */
      get(requestConfiguration?: RequestConfiguration<M365CapabilityBaseNameItemRequestBuilderGetQueryParameters> | undefined) : Promise<M365CapabilityBase | undefined>;
     /**
-     * Update the navigation property m365Capabilities in policies
+     * Update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<M365CapabilityBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-update-m365capabilities?view=graph-rest-beta|Find more info here}
      */
      patch(body: M365CapabilityBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<M365CapabilityBase | undefined>;
     /**
-     * Delete navigation property m365Capabilities for policies
+     * Delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -46,7 +48,7 @@ export interface M365CapabilityBaseNameItemRequestBuilder extends BaseRequestBui
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<M365CapabilityBaseNameItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property m365Capabilities in policies
+     * Update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

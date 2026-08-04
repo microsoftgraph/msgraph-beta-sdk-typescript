@@ -224,6 +224,8 @@ import { SettingsRequestBuilderNavigationMetadata, SettingsRequestBuilderRequest
 // @ts-ignore
 import { SolutionsRequestBuilderNavigationMetadata, SolutionsRequestBuilderRequestsMetadata, type SolutionsRequestBuilder } from './solutions/index.js';
 // @ts-ignore
+import { SponsorOfRequestBuilderNavigationMetadata, SponsorOfRequestBuilderRequestsMetadata, type SponsorOfRequestBuilder } from './sponsorOf/index.js';
+// @ts-ignore
 import { SponsorsRequestBuilderNavigationMetadata, SponsorsRequestBuilderRequestsMetadata, type SponsorsRequestBuilder } from './sponsors/index.js';
 // @ts-ignore
 import { TeamworkRequestBuilderNavigationMetadata, TeamworkRequestBuilderRequestsMetadata, type TeamworkRequestBuilder } from './teamwork/index.js';
@@ -670,6 +672,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the solutions property of the microsoft.graph.user entity.
      */
     get solutions(): SolutionsRequestBuilder;
+    /**
+     * Provides operations to manage the sponsorOf property of the microsoft.graph.user entity.
+     */
+    get sponsorOf(): SponsorOfRequestBuilder;
     /**
      * Provides operations to manage the sponsors property of the microsoft.graph.user entity.
      */
@@ -1237,6 +1243,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     solutions: {
         requestsMetadata: SolutionsRequestBuilderRequestsMetadata,
         navigationMetadata: SolutionsRequestBuilderNavigationMetadata,
+    },
+    sponsorOf: {
+        requestsMetadata: SponsorOfRequestBuilderRequestsMetadata,
+        navigationMetadata: SponsorOfRequestBuilderNavigationMetadata,
     },
     sponsors: {
         requestsMetadata: SponsorsRequestBuilderRequestsMetadata,

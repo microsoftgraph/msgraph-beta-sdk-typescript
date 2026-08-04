@@ -26,6 +26,10 @@ export interface BrowsePostRequestBody extends AdditionalDataHolder, BackedModel
      */
     filter?: string | null;
     /**
+     * The optimizedBrowse property
+     */
+    optimizedBrowse?: boolean | null;
+    /**
      * The orderBy property
      */
     orderBy?: BrowseQueryOrder | null;
@@ -86,6 +90,7 @@ export function deserializeIntoBrowsePostRequestBody(browsePostRequestBody: Part
         "browseLocationItemKey": n => { browsePostRequestBody.browseLocationItemKey = n.getStringValue(); },
         "browseResourceType": n => { browsePostRequestBody.browseResourceType = n.getEnumValue<BrowsableResourceType>(BrowsableResourceTypeObject); },
         "filter": n => { browsePostRequestBody.filter = n.getStringValue(); },
+        "optimizedBrowse": n => { browsePostRequestBody.optimizedBrowse = n.getBooleanValue() ?? false; },
         "orderBy": n => { browsePostRequestBody.orderBy = n.getEnumValue<BrowseQueryOrder>(BrowseQueryOrderObject); },
     }
 }
@@ -113,6 +118,7 @@ export function serializeBrowsePostRequestBody(writer: SerializationWriter, brow
     writer.writeStringValue("browseLocationItemKey", browsePostRequestBody.browseLocationItemKey);
     writer.writeEnumValue<BrowsableResourceType>("browseResourceType", browsePostRequestBody.browseResourceType);
     writer.writeStringValue("filter", browsePostRequestBody.filter);
+    writer.writeBooleanValue("optimizedBrowse", browsePostRequestBody.optimizedBrowse ?? false);
     writer.writeEnumValue<BrowseQueryOrder>("orderBy", browsePostRequestBody.orderBy);
     writer.writeAdditionalData(browsePostRequestBody.additionalData);
 }

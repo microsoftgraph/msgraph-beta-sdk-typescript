@@ -8,6 +8,8 @@ import { createCaseManagementRootFromDiscriminatorValue, serializeCaseManagement
 // @ts-ignore
 import { CasesRequestBuilderNavigationMetadata, CasesRequestBuilderRequestsMetadata, type CasesRequestBuilder } from './cases/index.js';
 // @ts-ignore
+import { CaseTypeConfigurationsRequestBuilderNavigationMetadata, CaseTypeConfigurationsRequestBuilderRequestsMetadata, type CaseTypeConfigurationsRequestBuilder } from './caseTypeConfigurations/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,10 @@ export interface CaseManagementRequestBuilder extends BaseRequestBuilder<CaseMan
      * Provides operations to manage the cases property of the microsoft.graph.security.caseManagementRoot entity.
      */
     get cases(): CasesRequestBuilder;
+    /**
+     * Provides operations to manage the caseTypeConfigurations property of the microsoft.graph.security.caseManagementRoot entity.
+     */
+    get caseTypeConfigurations(): CaseTypeConfigurationsRequestBuilder;
     /**
      * Delete navigation property caseManagement for security
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -90,6 +96,10 @@ export const CaseManagementRequestBuilderNavigationMetadata: Record<Exclude<keyo
     cases: {
         requestsMetadata: CasesRequestBuilderRequestsMetadata,
         navigationMetadata: CasesRequestBuilderNavigationMetadata,
+    },
+    caseTypeConfigurations: {
+        requestsMetadata: CaseTypeConfigurationsRequestBuilderRequestsMetadata,
+        navigationMetadata: CaseTypeConfigurationsRequestBuilderNavigationMetadata,
     },
 };
 /**
