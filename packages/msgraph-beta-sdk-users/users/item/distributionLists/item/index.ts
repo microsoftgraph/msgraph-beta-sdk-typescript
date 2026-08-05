@@ -10,8 +10,6 @@ import { AddMembersRequestBuilderRequestsMetadata, type AddMembersRequestBuilder
 // @ts-ignore
 import { DeleteMembersRequestBuilderRequestsMetadata, type DeleteMembersRequestBuilder } from './deleteMembers/index.js';
 // @ts-ignore
-import { DistributionListMembersRequestBuilderNavigationMetadata, DistributionListMembersRequestBuilderRequestsMetadata, type DistributionListMembersRequestBuilder } from './distributionListMembers/index.js';
-// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -26,10 +24,6 @@ export interface DistributionListItemRequestBuilder extends BaseRequestBuilder<D
      * Provides operations to call the deleteMembers method.
      */
     get deleteMembers(): DeleteMembersRequestBuilder;
-    /**
-     * Provides operations to manage the distributionListMembers property of the microsoft.graph.distributionList entity.
-     */
-    get distributionListMembers(): DistributionListMembersRequestBuilder;
     /**
      * Delete navigation property distributionLists for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -104,10 +98,6 @@ export const DistributionListItemRequestBuilderNavigationMetadata: Record<Exclud
     },
     deleteMembers: {
         requestsMetadata: DeleteMembersRequestBuilderRequestsMetadata,
-    },
-    distributionListMembers: {
-        requestsMetadata: DistributionListMembersRequestBuilderRequestsMetadata,
-        navigationMetadata: DistributionListMembersRequestBuilderNavigationMetadata,
     },
 };
 /**

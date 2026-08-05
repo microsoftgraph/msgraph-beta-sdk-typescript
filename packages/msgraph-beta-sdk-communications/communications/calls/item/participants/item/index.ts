@@ -12,6 +12,8 @@ import { MuteRequestBuilderRequestsMetadata, type MuteRequestBuilder } from './m
 // @ts-ignore
 import { RemoveFromLobbyRequestBuilderRequestsMetadata, type RemoveFromLobbyRequestBuilder } from './removeFromLobby/index.js';
 // @ts-ignore
+import { ReportSyntheticMediaRequestBuilderRequestsMetadata, type ReportSyntheticMediaRequestBuilder } from './reportSyntheticMedia/index.js';
+// @ts-ignore
 import { StartHoldMusicRequestBuilderRequestsMetadata, type StartHoldMusicRequestBuilder } from './startHoldMusic/index.js';
 // @ts-ignore
 import { StopHoldMusicRequestBuilderRequestsMetadata, type StopHoldMusicRequestBuilder } from './stopHoldMusic/index.js';
@@ -34,6 +36,10 @@ export interface ParticipantItemRequestBuilder extends BaseRequestBuilder<Partic
      * Provides operations to call the removeFromLobby method.
      */
     get removeFromLobby(): RemoveFromLobbyRequestBuilder;
+    /**
+     * Provides operations to call the reportSyntheticMedia method.
+     */
+    get reportSyntheticMedia(): ReportSyntheticMediaRequestBuilder;
     /**
      * Provides operations to call the startHoldMusic method.
      */
@@ -121,6 +127,9 @@ export const ParticipantItemRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     removeFromLobby: {
         requestsMetadata: RemoveFromLobbyRequestBuilderRequestsMetadata,
+    },
+    reportSyntheticMedia: {
+        requestsMetadata: ReportSyntheticMediaRequestBuilderRequestsMetadata,
     },
     startHoldMusic: {
         requestsMetadata: StartHoldMusicRequestBuilderRequestsMetadata,

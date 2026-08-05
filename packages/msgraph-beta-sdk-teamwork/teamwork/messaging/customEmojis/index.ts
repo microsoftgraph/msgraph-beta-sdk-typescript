@@ -27,28 +27,30 @@ export interface CustomEmojisRequestBuilder extends BaseRequestBuilder<CustomEmo
      */
      byTeamworkCustomEmojiDisplayName(teamworkCustomEmojiDisplayName: string) : TeamworkCustomEmojiDisplayNameItemRequestBuilder;
     /**
-     * Get customEmojis from teamwork
+     * Get a list of custom emojis available in the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkCustomEmojiCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkmessaging-list-customemojis?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomEmojisRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkCustomEmojiCollectionResponse | undefined>;
     /**
-     * Create new navigation property to customEmojis for teamwork
+     * Create a new custom emoji in the teamwork messaging of the organization, which adds the custom emoji to Teams for the tenant. The emoji image is provided as base64-encoded content bytes.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkCustomEmoji>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta|Find more info here}
      */
      post(body: TeamworkCustomEmoji, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
     /**
-     * Get customEmojis from teamwork
+     * Get a list of custom emojis available in the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomEmojisRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to customEmojis for teamwork
+     * Create a new custom emoji in the teamwork messaging of the organization, which adds the custom emoji to Teams for the tenant. The emoji image is provided as base64-encoded content bytes.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface CustomEmojisRequestBuilder extends BaseRequestBuilder<CustomEmo
      toPostRequestInformation(body: TeamworkCustomEmoji, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get customEmojis from teamwork
+ * Get a list of custom emojis available in the teamwork messaging of the organization.
  */
 export interface CustomEmojisRequestBuilderGetQueryParameters {
     /**

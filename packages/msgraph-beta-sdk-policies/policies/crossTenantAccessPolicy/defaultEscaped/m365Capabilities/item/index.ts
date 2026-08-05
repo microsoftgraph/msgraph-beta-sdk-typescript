@@ -26,11 +26,12 @@ export interface M365CapabilityBaseNameItemRequestBuilder extends BaseRequestBui
      */
      get(requestConfiguration?: RequestConfiguration<M365CapabilityBaseNameItemRequestBuilderGetQueryParameters> | undefined) : Promise<M365CapabilityBase | undefined>;
     /**
-     * Update the navigation property m365Capabilities in policies
+     * Update an existing Microsoft 365 cross-tenant capability for the default cross-tenant access policy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<M365CapabilityBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-update-m365capabilities?view=graph-rest-beta|Find more info here}
      */
      patch(body: M365CapabilityBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<M365CapabilityBase | undefined>;
     /**
@@ -46,7 +47,7 @@ export interface M365CapabilityBaseNameItemRequestBuilder extends BaseRequestBui
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<M365CapabilityBaseNameItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property m365Capabilities in policies
+     * Update an existing Microsoft 365 cross-tenant capability for the default cross-tenant access policy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

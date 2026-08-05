@@ -44,6 +44,8 @@ import { RecommendationsRequestBuilderNavigationMetadata, RecommendationsRequest
 // @ts-ignore
 import { RecoveryRequestBuilderNavigationMetadata, RecoveryRequestBuilderRequestsMetadata, type RecoveryRequestBuilder } from './recovery/index.js';
 // @ts-ignore
+import { RemoteTenantGroupsRequestBuilderNavigationMetadata, RemoteTenantGroupsRequestBuilderRequestsMetadata, type RemoteTenantGroupsRequestBuilder } from './remoteTenantGroups/index.js';
+// @ts-ignore
 import { SharedEmailDomainsRequestBuilderNavigationMetadata, SharedEmailDomainsRequestBuilderRequestsMetadata, type SharedEmailDomainsRequestBuilder } from './sharedEmailDomains/index.js';
 // @ts-ignore
 import { SubscriptionsRequestBuilderNavigationMetadata, SubscriptionsRequestBuilderRequestsMetadata, type SubscriptionsRequestBuilder } from './subscriptions/index.js';
@@ -138,6 +140,10 @@ export interface DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryReq
      * Provides operations to manage the recovery property of the microsoft.graph.directory entity.
      */
     get recovery(): RecoveryRequestBuilder;
+    /**
+     * Provides operations to manage the remoteTenantGroups property of the microsoft.graph.directory entity.
+     */
+    get remoteTenantGroups(): RemoteTenantGroupsRequestBuilder;
     /**
      * Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
      */
@@ -305,6 +311,10 @@ export const DirectoryRequestBuilderNavigationMetadata: Record<Exclude<keyof Dir
     recovery: {
         requestsMetadata: RecoveryRequestBuilderRequestsMetadata,
         navigationMetadata: RecoveryRequestBuilderNavigationMetadata,
+    },
+    remoteTenantGroups: {
+        requestsMetadata: RemoteTenantGroupsRequestBuilderRequestsMetadata,
+        navigationMetadata: RemoteTenantGroupsRequestBuilderNavigationMetadata,
     },
     sharedEmailDomains: {
         requestsMetadata: SharedEmailDomainsRequestBuilderRequestsMetadata,

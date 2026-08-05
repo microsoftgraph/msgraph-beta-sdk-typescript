@@ -11,13 +11,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MicrosoftGraphSecurityDisablePolicyRequestBuilder extends BaseRequestBuilder<MicrosoftGraphSecurityDisablePolicyRequestBuilder> {
     /**
-     * Invoke action disablePolicy
+     * Disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-disablepolicy?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Invoke action disablePolicy
+     * Disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

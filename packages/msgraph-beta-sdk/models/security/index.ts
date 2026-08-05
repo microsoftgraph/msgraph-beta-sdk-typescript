@@ -4,7 +4,7 @@
 // @ts-ignore
 import { createGroupFromDiscriminatorValue, createIdentitySetFromDiscriminatorValue, createPhysicalAddressFromDiscriminatorValue, createPublicErrorFromDiscriminatorValue, createResultInfoFromDiscriminatorValue, createSiteFromDiscriminatorValue, deserializeIntoBaseCollectionPaginationCountResponse, deserializeIntoEntity, deserializeIntoIdentity, serializeBaseCollectionPaginationCountResponse, serializeEntity, serializeGroup, serializeIdentity, serializeIdentitySet, serializePhysicalAddress, serializePublicError, serializeResultInfo, serializeSite, type BaseCollectionPaginationCountResponse, type Entity, type Group, type Identity, type IdentitySet, type PhysicalAddress, type PublicError, type ResultInfo, type Site } from '../index.js';
 // @ts-ignore
-import { createCaseEscapedFromDiscriminatorValue as I04c8fd8d7d793fe83a2f5aea097a28f9a6cf45af6c77a616d50903ea898d91e1, serializeCaseEscaped as Icff3ea98f9032045377a20ce1bc97a20b242f7708b98448f49e29fd16056f7f5, type CaseEscaped as I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28 } from './caseManagement/index.js';
+import { createCaseEscapedFromDiscriminatorValue as I04c8fd8d7d793fe83a2f5aea097a28f9a6cf45af6c77a616d50903ea898d91e1, createCaseTypeConfigurationFromDiscriminatorValue, serializeCaseEscaped as Icff3ea98f9032045377a20ce1bc97a20b242f7708b98448f49e29fd16056f7f5, serializeCaseTypeConfiguration, type CaseEscaped as I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28, type CaseTypeConfiguration } from './caseManagement/index.js';
 // @ts-ignore
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Guid, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
@@ -1244,7 +1244,7 @@ export interface AuditData extends AdditionalDataHolder, BackedModel, Parsable {
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The dynamicProperties property
+     * An open-type dictionary that contains dynamic audit event properties as name-value pairs.
      */
     dynamicProperties?: AuditRecordTypeDictionary | null;
     /**
@@ -1676,6 +1676,10 @@ export interface CaseManagementRoot extends Entity, Parsable {
      * The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, $skip, and $count.
      */
     cases?: I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28[] | null;
+    /**
+     * The collection of case type configurations that define the statuses and custom fields available for each case type. Read-only. Supports $select, $count, and $expand of the statuses and customFields relationships.
+     */
+    caseTypeConfigurations?: CaseTypeConfiguration[] | null;
 }
 export interface CaseOperation extends Entity, Parsable {
     /**
@@ -12643,6 +12647,7 @@ export function deserializeIntoCaseManagementRoot(caseManagementRoot: Partial<Ca
     return {
         ...deserializeIntoEntity(caseManagementRoot),
         "cases": n => { caseManagementRoot.cases = n.getCollectionOfObjectValues<I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28>(I04c8fd8d7d793fe83a2f5aea097a28f9a6cf45af6c77a616d50903ea898d91e1); },
+        "caseTypeConfigurations": n => { caseManagementRoot.caseTypeConfigurations = n.getCollectionOfObjectValues<CaseTypeConfiguration>(createCaseTypeConfigurationFromDiscriminatorValue); },
     }
 }
 /**
@@ -30749,6 +30754,7 @@ export function serializeCaseManagementRoot(writer: SerializationWriter, caseMan
     if (!caseManagementRoot || isSerializingDerivedType) { return; }
     serializeEntity(writer, caseManagementRoot, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28>("cases", caseManagementRoot.cases, Icff3ea98f9032045377a20ce1bc97a20b242f7708b98448f49e29fd16056f7f5);
+    writer.writeCollectionOfObjectValues<CaseTypeConfiguration>("caseTypeConfigurations", caseManagementRoot.caseTypeConfigurations, serializeCaseTypeConfiguration);
 }
 /**
  * Serializes information the current object

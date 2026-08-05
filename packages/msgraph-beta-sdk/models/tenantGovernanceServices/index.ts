@@ -6,11 +6,55 @@ import { createGroupFromDiscriminatorValue, deserializeIntoBaseCollectionPaginat
 // @ts-ignore
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
+export interface ActionStep extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The follow-on API reference for the step, containing the URL template and a machine-readable execution directive that a client uses to retrieve the drill-in data.
+     */
+    actionUrl?: ActionUrl | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The one-based order, as a string, in which the step should be evaluated by a client. Steps are intended to be run in ascending stepNumber order because later steps can depend on the output of earlier steps. This value is the key of the resource.
+     */
+    stepNumber?: string | null;
+    /**
+     * Human-readable guidance that explains what the step does and why it's useful for investigating the related metric.
+     */
+    text?: string | null;
+}
+export interface ActionUrl extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * A machine-readable directive that describes how a client should run the step, in the form metricPath§operation§input§output (for example, b2BRegistrationMetrics.recent.inboundTotalUsers§single§§$verifiedDomains). Clients use this value to chain steps together and to interpret the output of the associated url.
+     */
+    displayName?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * A Microsoft Graph or Azure Resource Manager (ARM) URL template that the client invokes to retrieve the drill-in data for the step. The template can include placeholders such as {@id}, {startDate}, {endDate}, or {sourceDomain} that the client resolves from the related tenant, the caller context, or the output of earlier steps. This value can be empty for steps that only transform data returned by a previous step.
+     */
+    url?: string | null;
+}
 export interface B2bRegistrationMetrics extends Entity, Parsable {
     /**
      * The initial property
      */
     initial?: B2BRegistrationMetricsInitial | null;
+    /**
+     * Ordered drill-in guidance for investigating B2B registration metrics. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BRegistrationMetrics($expand=investigationHints).
+     */
+    investigationHints?: ActionStep[] | null;
     /**
      * The recent property
      */
@@ -47,6 +91,10 @@ export interface B2BSignInActivityMetrics extends Entity, Parsable {
      * The initial property
      */
     initial?: B2BSignInActivityMetricsInitial | null;
+    /**
+     * Ordered drill-in guidance for investigating sign-in user and application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BSignInActivityMetrics($expand=investigationHints).
+     */
+    investigationHints?: ActionStep[] | null;
     /**
      * The recent property
      */
@@ -91,6 +139,10 @@ export interface BillingMetrics extends Entity, Parsable {
      * The initial property
      */
     initial?: BillingMetricsInitial | null;
+    /**
+     * Ordered drill-in guidance for investigating billing relationship counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=billingMetrics($expand=investigationHints).
+     */
+    investigationHints?: ActionStep[] | null;
     /**
      * The recent property
      */
@@ -141,6 +193,24 @@ export interface BillingMetricsRecent extends BillingMetricsBase, Parsable {
      * Timestamp that represents when billing metrics are aggregated and have sufficiently changed for the related tenant.
      */
     updateDateTime?: Date | null;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ActionStep}
+ */
+// @ts-ignore
+export function createActionStepFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoActionStep;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ActionUrl}
+ */
+// @ts-ignore
+export function createActionUrlFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoActionUrl;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -591,6 +661,35 @@ export interface DelegatedAdministrationRoleAssignmentSnapshot extends Additiona
 }
 /**
  * The deserialization information for the current model
+ * @param ActionStep The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoActionStep(actionStep: Partial<ActionStep> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "actionUrl": n => { actionStep.actionUrl = n.getObjectValue<ActionUrl>(createActionUrlFromDiscriminatorValue); },
+        "backingStoreEnabled": n => { actionStep.backingStoreEnabled = true; },
+        "@odata.type": n => { actionStep.odataType = n.getStringValue(); },
+        "stepNumber": n => { actionStep.stepNumber = n.getStringValue(); },
+        "text": n => { actionStep.text = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ActionUrl The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoActionUrl(actionUrl: Partial<ActionUrl> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { actionUrl.backingStoreEnabled = true; },
+        "displayName": n => { actionUrl.displayName = n.getStringValue(); },
+        "@odata.type": n => { actionUrl.odataType = n.getStringValue(); },
+        "url": n => { actionUrl.url = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param B2bRegistrationMetrics The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -599,6 +698,7 @@ export function deserializeIntoB2bRegistrationMetrics(b2bRegistrationMetrics: Pa
     return {
         ...deserializeIntoEntity(b2bRegistrationMetrics),
         "initial": n => { b2bRegistrationMetrics.initial = n.getObjectValue<B2BRegistrationMetricsInitial>(createB2BRegistrationMetricsInitialFromDiscriminatorValue); },
+        "investigationHints": n => { b2bRegistrationMetrics.investigationHints = n.getCollectionOfObjectValues<ActionStep>(createActionStepFromDiscriminatorValue); },
         "recent": n => { b2bRegistrationMetrics.recent = n.getObjectValue<B2BRegistrationMetricsRecent>(createB2BRegistrationMetricsRecentFromDiscriminatorValue); },
     }
 }
@@ -650,6 +750,7 @@ export function deserializeIntoB2BSignInActivityMetrics(b2BSignInActivityMetrics
     return {
         ...deserializeIntoEntity(b2BSignInActivityMetrics),
         "initial": n => { b2BSignInActivityMetrics.initial = n.getObjectValue<B2BSignInActivityMetricsInitial>(createB2BSignInActivityMetricsInitialFromDiscriminatorValue); },
+        "investigationHints": n => { b2BSignInActivityMetrics.investigationHints = n.getCollectionOfObjectValues<ActionStep>(createActionStepFromDiscriminatorValue); },
         "recent": n => { b2BSignInActivityMetrics.recent = n.getObjectValue<B2BSignInActivityMetricsRecent>(createB2BSignInActivityMetricsRecentFromDiscriminatorValue); },
     }
 }
@@ -703,6 +804,7 @@ export function deserializeIntoBillingMetrics(billingMetrics: Partial<BillingMet
     return {
         ...deserializeIntoEntity(billingMetrics),
         "initial": n => { billingMetrics.initial = n.getObjectValue<BillingMetricsInitial>(createBillingMetricsInitialFromDiscriminatorValue); },
+        "investigationHints": n => { billingMetrics.investigationHints = n.getCollectionOfObjectValues<ActionStep>(createActionStepFromDiscriminatorValue); },
         "recent": n => { billingMetrics.recent = n.getObjectValue<BillingMetricsRecent>(createBillingMetricsRecentFromDiscriminatorValue); },
     }
 }
@@ -928,6 +1030,7 @@ export function deserializeIntoMultiTenantApplicationMetrics(multiTenantApplicat
     return {
         ...deserializeIntoEntity(multiTenantApplicationMetrics),
         "initial": n => { multiTenantApplicationMetrics.initial = n.getObjectValue<MultiTenantApplicationMetricsInitial>(createMultiTenantApplicationMetricsInitialFromDiscriminatorValue); },
+        "investigationHints": n => { multiTenantApplicationMetrics.investigationHints = n.getCollectionOfObjectValues<ActionStep>(createActionStepFromDiscriminatorValue); },
         "recent": n => { multiTenantApplicationMetrics.recent = n.getObjectValue<MultiTenantApplicationMetricsRecent>(createMultiTenantApplicationMetricsRecentFromDiscriminatorValue); },
     }
 }
@@ -1333,6 +1436,10 @@ export interface MultiTenantApplicationMetrics extends Entity, Parsable {
      */
     initial?: MultiTenantApplicationMetricsInitial | null;
     /**
+     * Ordered drill-in guidance for investigating multitenant application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=multiTenantApplicationMetrics($expand=investigationHints).
+     */
+    investigationHints?: ActionStep[] | null;
+    /**
      * The recent property
      */
     recent?: MultiTenantApplicationMetricsRecent | null;
@@ -1438,7 +1545,7 @@ export interface RelatedTenant extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
-     * Indicates whether this tenant is a Microsoft infrastructure tenant.
+     * Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
      */
     isMicrosoftInfrastructure?: boolean | null;
     /**
@@ -1573,6 +1680,35 @@ export interface RoleTemplate extends AdditionalDataHolder, BackedModel, Parsabl
 }
 /**
  * Serializes information the current object
+ * @param ActionStep The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeActionStep(writer: SerializationWriter, actionStep: Partial<ActionStep> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!actionStep || isSerializingDerivedType) { return; }
+    writer.writeObjectValue<ActionUrl>("actionUrl", actionStep.actionUrl, serializeActionUrl);
+    writer.writeStringValue("@odata.type", actionStep.odataType);
+    writer.writeStringValue("stepNumber", actionStep.stepNumber);
+    writer.writeStringValue("text", actionStep.text);
+    writer.writeAdditionalData(actionStep.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param ActionUrl The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeActionUrl(writer: SerializationWriter, actionUrl: Partial<ActionUrl> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!actionUrl || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", actionUrl.displayName);
+    writer.writeStringValue("@odata.type", actionUrl.odataType);
+    writer.writeStringValue("url", actionUrl.url);
+    writer.writeAdditionalData(actionUrl.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param B2bRegistrationMetrics The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -1582,6 +1718,7 @@ export function serializeB2bRegistrationMetrics(writer: SerializationWriter, b2b
     if (!b2bRegistrationMetrics || isSerializingDerivedType) { return; }
     serializeEntity(writer, b2bRegistrationMetrics, isSerializingDerivedType)
     writer.writeObjectValue<B2BRegistrationMetricsInitial>("initial", b2bRegistrationMetrics.initial, serializeB2BRegistrationMetricsInitial);
+    writer.writeCollectionOfObjectValues<ActionStep>("investigationHints", b2bRegistrationMetrics.investigationHints, serializeActionStep);
     writer.writeObjectValue<B2BRegistrationMetricsRecent>("recent", b2bRegistrationMetrics.recent, serializeB2BRegistrationMetricsRecent);
 }
 /**
@@ -1641,6 +1778,7 @@ export function serializeB2BSignInActivityMetrics(writer: SerializationWriter, b
     if (!b2BSignInActivityMetrics || isSerializingDerivedType) { return; }
     serializeEntity(writer, b2BSignInActivityMetrics, isSerializingDerivedType)
     writer.writeObjectValue<B2BSignInActivityMetricsInitial>("initial", b2BSignInActivityMetrics.initial, serializeB2BSignInActivityMetricsInitial);
+    writer.writeCollectionOfObjectValues<ActionStep>("investigationHints", b2BSignInActivityMetrics.investigationHints, serializeActionStep);
     writer.writeObjectValue<B2BSignInActivityMetricsRecent>("recent", b2BSignInActivityMetrics.recent, serializeB2BSignInActivityMetricsRecent);
 }
 /**
@@ -1702,6 +1840,7 @@ export function serializeBillingMetrics(writer: SerializationWriter, billingMetr
     if (!billingMetrics || isSerializingDerivedType) { return; }
     serializeEntity(writer, billingMetrics, isSerializingDerivedType)
     writer.writeObjectValue<BillingMetricsInitial>("initial", billingMetrics.initial, serializeBillingMetricsInitial);
+    writer.writeCollectionOfObjectValues<ActionStep>("investigationHints", billingMetrics.investigationHints, serializeActionStep);
     writer.writeObjectValue<BillingMetricsRecent>("recent", billingMetrics.recent, serializeBillingMetricsRecent);
 }
 /**
@@ -1935,6 +2074,7 @@ export function serializeMultiTenantApplicationMetrics(writer: SerializationWrit
     if (!multiTenantApplicationMetrics || isSerializingDerivedType) { return; }
     serializeEntity(writer, multiTenantApplicationMetrics, isSerializingDerivedType)
     writer.writeObjectValue<MultiTenantApplicationMetricsInitial>("initial", multiTenantApplicationMetrics.initial, serializeMultiTenantApplicationMetricsInitial);
+    writer.writeCollectionOfObjectValues<ActionStep>("investigationHints", multiTenantApplicationMetrics.investigationHints, serializeActionStep);
     writer.writeObjectValue<MultiTenantApplicationMetricsRecent>("recent", multiTenantApplicationMetrics.recent, serializeMultiTenantApplicationMetricsRecent);
 }
 /**

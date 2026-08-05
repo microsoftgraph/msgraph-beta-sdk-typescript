@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { PolicyFilesRequestBuilderNavigationMetadata, PolicyFilesRequestBuilderRequestsMetadata, type PolicyFilesRequestBuilder } from './policyFiles/index.js';
 // @ts-ignore
+import { ProcessContentRequestBuilderRequestsMetadata, type ProcessContentRequestBuilder } from './processContent/index.js';
+// @ts-ignore
 import { ProcessContentAsyncRequestBuilderRequestsMetadata, type ProcessContentAsyncRequestBuilder } from './processContentAsync/index.js';
 // @ts-ignore
 import { ProtectionScopesRequestBuilderNavigationMetadata, ProtectionScopesRequestBuilderRequestsMetadata, type ProtectionScopesRequestBuilder } from './protectionScopes/index.js';
@@ -24,6 +26,10 @@ export interface DataSecurityAndGovernanceRequestBuilder extends BaseRequestBuil
      * Provides operations to manage the policyFiles property of the microsoft.graph.tenantDataSecurityAndGovernance entity.
      */
     get policyFiles(): PolicyFilesRequestBuilder;
+    /**
+     * Provides operations to call the processContent method.
+     */
+    get processContent(): ProcessContentRequestBuilder;
     /**
      * Provides operations to call the processContentAsync method.
      */
@@ -108,6 +114,9 @@ export const DataSecurityAndGovernanceRequestBuilderNavigationMetadata: Record<E
     policyFiles: {
         requestsMetadata: PolicyFilesRequestBuilderRequestsMetadata,
         navigationMetadata: PolicyFilesRequestBuilderNavigationMetadata,
+    },
+    processContent: {
+        requestsMetadata: ProcessContentRequestBuilderRequestsMetadata,
     },
     processContentAsync: {
         requestsMetadata: ProcessContentAsyncRequestBuilderRequestsMetadata,

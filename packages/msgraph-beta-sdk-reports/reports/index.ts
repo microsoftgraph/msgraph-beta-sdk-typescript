@@ -96,11 +96,11 @@ import { GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilderRequests
 // @ts-ignore
 import { GetMailboxUsageStorageWithPeriodRequestBuilderRequestsMetadata, type GetMailboxUsageStorageWithPeriodRequestBuilder } from './getMailboxUsageStorageWithPeriod/index.js';
 // @ts-ignore
-import { GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder } from './getMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion/index.js';
+import { GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder } from './getMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion/index.js';
 // @ts-ignore
-import { GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder } from './getMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion/index.js';
+import { GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder } from './getMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion/index.js';
 // @ts-ignore
-import { GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder } from './getMicrosoft365CopilotUserCountTrendWithPeriodWithVersion/index.js';
+import { GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder } from './getMicrosoft365CopilotUserCountTrendWithPeriodversionVersion/index.js';
 // @ts-ignore
 import { GetOffice365ActivationCountsRequestBuilderRequestsMetadata, type GetOffice365ActivationCountsRequestBuilder } from './getOffice365ActivationCounts/index.js';
 // @ts-ignore
@@ -159,6 +159,14 @@ import { GetSharePointActivityUserCountsWithPeriodRequestBuilderRequestsMetadata
 import { GetSharePointActivityUserDetailWithDateRequestBuilderRequestsMetadata, type GetSharePointActivityUserDetailWithDateRequestBuilder } from './getSharePointActivityUserDetailWithDate/index.js';
 // @ts-ignore
 import { GetSharePointActivityUserDetailWithPeriodRequestBuilderRequestsMetadata, type GetSharePointActivityUserDetailWithPeriodRequestBuilder } from './getSharePointActivityUserDetailWithPeriod/index.js';
+// @ts-ignore
+import { GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilderRequestsMetadata, type GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder } from './getSharePointApiUsageWithDatereportTypeReportType/index.js';
+// @ts-ignore
+import { GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilderRequestsMetadata, type GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder } from './getSharePointApiUsageWithDateWithAppIdreportTypeReportType/index.js';
+// @ts-ignore
+import { GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilderRequestsMetadata, type GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder } from './getSharePointApiUsageWithPeriodreportTypeReportType/index.js';
+// @ts-ignore
+import { GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilderRequestsMetadata, type GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder } from './getSharePointApiUsageWithPeriodWithAppIdreportTypeReportType/index.js';
 // @ts-ignore
 import { GetSharePointSiteUsageDetailWithDateRequestBuilderRequestsMetadata, type GetSharePointSiteUsageDetailWithDateRequestBuilder } from './getSharePointSiteUsageDetailWithDate/index.js';
 // @ts-ignore
@@ -289,6 +297,8 @@ import { ManagedDeviceEnrollmentFailureTrendsRequestBuilderRequestsMetadata, typ
 import { ManagedDeviceEnrollmentTopFailuresRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentTopFailuresRequestBuilder } from './managedDeviceEnrollmentTopFailures/index.js';
 // @ts-ignore
 import { ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderRequestsMetadata, type ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder } from './managedDeviceEnrollmentTopFailuresWithPeriod/index.js';
+// @ts-ignore
+import { MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilderNavigationMetadata, MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilderRequestsMetadata, type MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilder } from './microsoftAppsFileStorageContainerUsageSummary/index.js';
 // @ts-ignore
 import { MonthlyPrintUsageByPrinterRequestBuilderNavigationMetadata, MonthlyPrintUsageByPrinterRequestBuilderRequestsMetadata, type MonthlyPrintUsageByPrinterRequestBuilder } from './monthlyPrintUsageByPrinter/index.js';
 // @ts-ignore
@@ -422,6 +432,10 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the managedDeviceEnrollmentTopFailures method.
      */
     get managedDeviceEnrollmentTopFailures(): ManagedDeviceEnrollmentTopFailuresRequestBuilder;
+    /**
+     * Provides operations to manage the microsoftAppsFileStorageContainerUsageSummary property of the microsoft.graph.reportRoot entity.
+     */
+    get microsoftAppsFileStorageContainerUsageSummary(): MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilder;
     /**
      * Provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
      */
@@ -640,24 +654,21 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     /**
      * Provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
      * @param period Usage: period='{period}'
-     * @param version Usage: version='{version}'
-     * @returns {GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder}
+     * @returns {GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder}
      */
-     getMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion(period: string | undefined, version: string | undefined) : GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder;
+     getMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion(period: string | undefined) : GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder;
     /**
      * Provides operations to call the getMicrosoft365CopilotUserCountSummary method.
      * @param period Usage: period='{period}'
-     * @param version Usage: version='{version}'
-     * @returns {GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder}
+     * @returns {GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder}
      */
-     getMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion(period: string | undefined, version: string | undefined) : GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder;
+     getMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion(period: string | undefined) : GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder;
     /**
      * Provides operations to call the getMicrosoft365CopilotUserCountTrend method.
      * @param period Usage: period='{period}'
-     * @param version Usage: version='{version}'
-     * @returns {GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder}
+     * @returns {GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder}
      */
-     getMicrosoft365CopilotUserCountTrendWithPeriodWithVersion(period: string | undefined, version: string | undefined) : GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder;
+     getMicrosoft365CopilotUserCountTrendWithPeriodversionVersion(period: string | undefined) : GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder;
     /**
      * Provides operations to call the getOffice365ActiveUserCounts method.
      * @param period Usage: period='{period}'
@@ -816,6 +827,32 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @returns {GetSharePointActivityUserDetailWithPeriodRequestBuilder}
      */
      getSharePointActivityUserDetailWithPeriod(period: string | undefined) : GetSharePointActivityUserDetailWithPeriodRequestBuilder;
+    /**
+     * Provides operations to call the getSharePointApiUsage method.
+     * @param date Usage: date={date}
+     * @returns {GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder}
+     */
+     getSharePointApiUsageWithDatereportTypeReportType(date: Date | undefined) : GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder;
+    /**
+     * Provides operations to call the getSharePointApiUsage method.
+     * @param appId Usage: appId='{appId}'
+     * @param date Usage: date={date}
+     * @returns {GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder}
+     */
+     getSharePointApiUsageWithDateWithAppIdreportTypeReportType(appId: string | undefined, date: Date | undefined) : GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder;
+    /**
+     * Provides operations to call the getSharePointApiUsage method.
+     * @param period Usage: period='{period}'
+     * @returns {GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder}
+     */
+     getSharePointApiUsageWithPeriodreportTypeReportType(period: string | undefined) : GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder;
+    /**
+     * Provides operations to call the getSharePointApiUsage method.
+     * @param appId Usage: appId='{appId}'
+     * @param period Usage: period='{period}'
+     * @returns {GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder}
+     */
+     getSharePointApiUsageWithPeriodWithAppIdreportTypeReportType(appId: string | undefined, period: string | undefined) : GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder;
     /**
      * Provides operations to call the getSharePointSiteUsageDetail method.
      * @param date Usage: date={date}
@@ -1345,17 +1382,17 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
         requestsMetadata: GetMailboxUsageStorageWithPeriodRequestBuilderRequestsMetadata,
         pathParametersMappings: ["period"],
     },
-    getMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion: {
-        requestsMetadata: GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderRequestsMetadata,
-        pathParametersMappings: ["period", "version"],
+    getMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion: {
+        requestsMetadata: GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
     },
-    getMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion: {
-        requestsMetadata: GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilderRequestsMetadata,
-        pathParametersMappings: ["period", "version"],
+    getMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion: {
+        requestsMetadata: GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
     },
-    getMicrosoft365CopilotUserCountTrendWithPeriodWithVersion: {
-        requestsMetadata: GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilderRequestsMetadata,
-        pathParametersMappings: ["period", "version"],
+    getMicrosoft365CopilotUserCountTrendWithPeriodversionVersion: {
+        requestsMetadata: GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
     },
     getOffice365ActiveUserCountsWithPeriod: {
         requestsMetadata: GetOffice365ActiveUserCountsWithPeriodRequestBuilderRequestsMetadata,
@@ -1460,6 +1497,22 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     getSharePointActivityUserDetailWithPeriod: {
         requestsMetadata: GetSharePointActivityUserDetailWithPeriodRequestBuilderRequestsMetadata,
         pathParametersMappings: ["period"],
+    },
+    getSharePointApiUsageWithDatereportTypeReportType: {
+        requestsMetadata: GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["date"],
+    },
+    getSharePointApiUsageWithDateWithAppIdreportTypeReportType: {
+        requestsMetadata: GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["appId", "date"],
+    },
+    getSharePointApiUsageWithPeriodreportTypeReportType: {
+        requestsMetadata: GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["period"],
+    },
+    getSharePointApiUsageWithPeriodWithAppIdreportTypeReportType: {
+        requestsMetadata: GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["appId", "period"],
     },
     getSharePointSiteUsageDetailWithDate: {
         requestsMetadata: GetSharePointSiteUsageDetailWithDateRequestBuilderRequestsMetadata,
@@ -1790,6 +1843,10 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     managedDeviceEnrollmentTopFailures: {
         requestsMetadata: ManagedDeviceEnrollmentTopFailuresRequestBuilderRequestsMetadata,
+    },
+    microsoftAppsFileStorageContainerUsageSummary: {
+        requestsMetadata: MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilderRequestsMetadata,
+        navigationMetadata: MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilderNavigationMetadata,
     },
     monthlyPrintUsageByPrinter: {
         requestsMetadata: MonthlyPrintUsageByPrinterRequestBuilderRequestsMetadata,
