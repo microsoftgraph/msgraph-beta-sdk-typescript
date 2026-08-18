@@ -1951,7 +1951,7 @@ export interface GroupBasedSubjectSet extends Parsable, SubjectSet {
 }
 export interface GuestSponsorTrigger extends Parsable, WorkflowExecutionTrigger {
     /**
-     * The minimumRequiredSponsors property
+     * The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.
      */
     minimumRequiredSponsors?: number | null;
 }

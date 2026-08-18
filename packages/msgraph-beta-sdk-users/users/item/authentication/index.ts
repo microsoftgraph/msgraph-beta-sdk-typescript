@@ -32,6 +32,8 @@ import { QrCodePinMethodRequestBuilderNavigationMetadata, QrCodePinMethodRequest
 // @ts-ignore
 import { RequirementsRequestBuilderRequestsMetadata, type RequirementsRequestBuilder } from './requirements/index.js';
 // @ts-ignore
+import { ResourceAccountKeyAuthenticationMethodsRequestBuilderNavigationMetadata, ResourceAccountKeyAuthenticationMethodsRequestBuilderRequestsMetadata, type ResourceAccountKeyAuthenticationMethodsRequestBuilder } from './resourceAccountKeyAuthenticationMethods/index.js';
+// @ts-ignore
 import { SignInPreferencesRequestBuilderRequestsMetadata, type SignInPreferencesRequestBuilder } from './signInPreferences/index.js';
 // @ts-ignore
 import { SoftwareOathMethodsRequestBuilderNavigationMetadata, SoftwareOathMethodsRequestBuilderRequestsMetadata, type SoftwareOathMethodsRequestBuilder } from './softwareOathMethods/index.js';
@@ -98,6 +100,10 @@ export interface AuthenticationRequestBuilder extends BaseRequestBuilder<Authent
      * The requirements property
      */
     get requirements(): RequirementsRequestBuilder;
+    /**
+     * Provides operations to manage the resourceAccountKeyAuthenticationMethods property of the microsoft.graph.authentication entity.
+     */
+    get resourceAccountKeyAuthenticationMethods(): ResourceAccountKeyAuthenticationMethodsRequestBuilder;
     /**
      * The signInPreferences property
      */
@@ -233,6 +239,10 @@ export const AuthenticationRequestBuilderNavigationMetadata: Record<Exclude<keyo
     },
     requirements: {
         requestsMetadata: RequirementsRequestBuilderRequestsMetadata,
+    },
+    resourceAccountKeyAuthenticationMethods: {
+        requestsMetadata: ResourceAccountKeyAuthenticationMethodsRequestBuilderRequestsMetadata,
+        navigationMetadata: ResourceAccountKeyAuthenticationMethodsRequestBuilderNavigationMetadata,
     },
     signInPreferences: {
         requestsMetadata: SignInPreferencesRequestBuilderRequestsMetadata,
