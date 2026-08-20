@@ -32,7 +32,7 @@ export interface TargetedChatMessageItemRequestBuilder extends BaseRequestBuilde
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+     * A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TargetedChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -53,7 +53,7 @@ export interface TargetedChatMessageItemRequestBuilder extends BaseRequestBuilde
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+     * A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -67,7 +67,7 @@ export interface TargetedChatMessageItemRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: TargetedChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+ * A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
  */
 export interface TargetedChatMessageItemRequestBuilderGetQueryParameters {
     /**

@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { BucketsRequestBuilderNavigationMetadata, BucketsRequestBuilderRequestsMetadata, type BucketsRequestBuilder } from './buckets/index.js';
 // @ts-ignore
+import { GoalsRequestBuilderNavigationMetadata, GoalsRequestBuilderRequestsMetadata, type GoalsRequestBuilder } from './goals/index.js';
+// @ts-ignore
 import { PlansRequestBuilderNavigationMetadata, PlansRequestBuilderRequestsMetadata, type PlansRequestBuilder } from './plans/index.js';
 // @ts-ignore
 import { RostersRequestBuilderNavigationMetadata, RostersRequestBuilderRequestsMetadata, type RostersRequestBuilder } from './rosters/index.js';
@@ -24,6 +26,10 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      * Provides operations to manage the buckets property of the microsoft.graph.planner entity.
      */
     get buckets(): BucketsRequestBuilder;
+    /**
+     * Provides operations to manage the goals property of the microsoft.graph.planner entity.
+     */
+    get goals(): GoalsRequestBuilder;
     /**
      * Provides operations to manage the plans property of the microsoft.graph.planner entity.
      */
@@ -96,6 +102,10 @@ export const PlannerRequestBuilderNavigationMetadata: Record<Exclude<keyof Plann
     buckets: {
         requestsMetadata: BucketsRequestBuilderRequestsMetadata,
         navigationMetadata: BucketsRequestBuilderNavigationMetadata,
+    },
+    goals: {
+        requestsMetadata: GoalsRequestBuilderRequestsMetadata,
+        navigationMetadata: GoalsRequestBuilderNavigationMetadata,
     },
     plans: {
         requestsMetadata: PlansRequestBuilderRequestsMetadata,
