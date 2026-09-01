@@ -18,16 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CustomTaskExtensionItemRequestBuilder extends BaseRequestBuilder<CustomTaskExtensionItemRequestBuilder> {
     /**
      * Provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get createdBy(): CreatedByRequestBuilder;
     /**
      * Provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.customTaskExtension entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get lastModifiedBy(): LastModifiedByRequestBuilder;
     /**
      * Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -36,6 +39,7 @@ export interface CustomTaskExtensionItemRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomTaskExtension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomTaskExtensionItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomTaskExtension | undefined>;
@@ -45,6 +49,7 @@ export interface CustomTaskExtensionItemRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomTaskExtension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-customtaskextension-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomTaskExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomTaskExtension | undefined>;
@@ -52,12 +57,14 @@ export interface CustomTaskExtensionItemRequestBuilder extends BaseRequestBuilde
      * Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a customTaskExtension object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomTaskExtensionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -65,6 +72,7 @@ export interface CustomTaskExtensionItemRequestBuilder extends BaseRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: CustomTaskExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

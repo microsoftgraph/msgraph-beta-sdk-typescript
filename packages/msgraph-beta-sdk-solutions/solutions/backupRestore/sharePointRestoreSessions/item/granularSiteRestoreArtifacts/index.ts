@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GranularSiteRestoreArtifactsRequestBuilder extends BaseRequestBuilder<GranularSiteRestoreArtifactsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the granularSiteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.
      * @param granularSiteRestoreArtifactId The unique identifier of granularSiteRestoreArtifact
      * @returns {GranularSiteRestoreArtifactItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byGranularSiteRestoreArtifactId(granularSiteRestoreArtifactId: string) : GranularSiteRestoreArtifactItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface GranularSiteRestoreArtifactsRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularSiteRestoreArtifactCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointrestoresession-list-granularsiterestoreartifacts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GranularSiteRestoreArtifactsRequestBuilderGetQueryParameters> | undefined) : Promise<GranularSiteRestoreArtifactCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface GranularSiteRestoreArtifactsRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularSiteRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: GranularSiteRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GranularSiteRestoreArtifact | undefined>;
     /**
      * Get a list of the granularSiteRestoreArtifact objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GranularSiteRestoreArtifactsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface GranularSiteRestoreArtifactsRequestBuilder extends BaseRequestB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: GranularSiteRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

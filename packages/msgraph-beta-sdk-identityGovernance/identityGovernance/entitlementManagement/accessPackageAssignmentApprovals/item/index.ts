@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ApprovalItemRequestBuilder extends BaseRequestBuilder<ApprovalItemRequestBuilder> {
     /**
      * Provides operations to manage the steps property of the microsoft.graph.approval entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get steps(): StepsRequestBuilder;
     /**
      * Delete navigation property accessPackageAssignmentApprovals for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface ApprovalItemRequestBuilder extends BaseRequestBuilder<ApprovalI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Approval>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovalItemRequestBuilderGetQueryParameters> | undefined) : Promise<Approval | undefined>;
@@ -38,18 +41,21 @@ export interface ApprovalItemRequestBuilder extends BaseRequestBuilder<ApprovalI
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Approval>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: Approval, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Approval | undefined>;
     /**
      * Delete navigation property accessPackageAssignmentApprovals for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovalItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,6 +63,7 @@ export interface ApprovalItemRequestBuilder extends BaseRequestBuilder<ApprovalI
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: Approval, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

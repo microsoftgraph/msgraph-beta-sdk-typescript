@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BulkUploadRequestBuilder extends BaseRequestBuilder<BulkUploadRequestBuilder> {
     /**
      * Provides operations to manage the media for the servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get content(): ContentRequestBuilder;
     /**
      * Delete navigation property bulkUpload for servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface BulkUploadRequestBuilder extends BaseRequestBuilder<BulkUploadR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BulkUpload>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<BulkUploadRequestBuilderGetQueryParameters> | undefined) : Promise<BulkUpload | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface BulkUploadRequestBuilder extends BaseRequestBuilder<BulkUploadR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BulkUpload>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      patch(body: BulkUpload, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BulkUpload | undefined>;
     /**
      * Delete navigation property bulkUpload for servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The bulk upload operation for the job.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BulkUploadRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface BulkUploadRequestBuilder extends BaseRequestBuilder<BulkUploadR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPatchRequestInformation(body: BulkUpload, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

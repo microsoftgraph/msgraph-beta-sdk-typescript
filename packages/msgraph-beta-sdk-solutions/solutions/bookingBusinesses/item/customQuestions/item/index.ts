@@ -16,6 +16,7 @@ export interface BookingCustomQuestionItemRequestBuilder extends BaseRequestBuil
      * Delete navigation property customQuestions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface BookingCustomQuestionItemRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCustomQuestion>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters> | undefined) : Promise<BookingCustomQuestion | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface BookingCustomQuestionItemRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCustomQuestion>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: BookingCustomQuestion, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingCustomQuestion | undefined>;
     /**
      * Delete navigation property customQuestions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * All custom questions of this business.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BookingCustomQuestionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface BookingCustomQuestionItemRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BookingCustomQuestion, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,10 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SubjectProcessingResultItemRequestBuilder extends BaseRequestBuilder<SubjectProcessingResultItemRequestBuilder> {
     /**
      * Provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.subjectProcessingResult entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get reprocessedRuns(): ReprocessedRunsRequestBuilder;
     /**
      * Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.subjectProcessingResult entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get taskProcessingResults(): TaskProcessingResultsRequestBuilder;
     /**
@@ -29,12 +31,14 @@ export interface SubjectProcessingResultItemRequestBuilder extends BaseRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SubjectProcessingResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<SubjectProcessingResultItemRequestBuilderGetQueryParameters> | undefined) : Promise<SubjectProcessingResult | undefined>;
     /**
      * Get subjectProcessingResults from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SubjectProcessingResultItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

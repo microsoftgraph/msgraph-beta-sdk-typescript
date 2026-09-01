@@ -36,42 +36,52 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<IdentityGovernanceRequestBuilder> {
     /**
      * Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessReviews(): AccessReviewsRequestBuilder;
     /**
      * Provides operations to manage the appConsent property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get appConsent(): AppConsentRequestBuilder;
     /**
      * Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get catalogs(): CatalogsRequestBuilder;
     /**
      * Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get entitlementManagement(): EntitlementManagementRequestBuilder;
     /**
      * Provides operations to manage the lifecycleWorkflows property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get lifecycleWorkflows(): LifecycleWorkflowsRequestBuilder;
     /**
      * Provides operations to manage the permissionsAnalytics property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get permissionsAnalytics(): PermissionsAnalyticsRequestBuilder;
     /**
      * Provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get permissionsManagement(): PermissionsManagementRequestBuilder;
     /**
      * Provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get privilegedAccess(): PrivilegedAccessRequestBuilder;
     /**
      * Provides operations to manage the roleManagementAlerts property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get roleManagementAlerts(): RoleManagementAlertsRequestBuilder;
     /**
      * Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get termsOfUse(): TermsOfUseRequestBuilder;
     /**
@@ -86,6 +96,7 @@ export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<Ide
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityGovernance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<IdentityGovernanceRequestBuilderGetQueryParameters> | undefined) : Promise<IdentityGovernance | undefined>;
     /**
@@ -94,12 +105,14 @@ export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<Ide
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<IdentityGovernance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: IdentityGovernance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<IdentityGovernance | undefined>;
     /**
      * Get identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<IdentityGovernanceRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -107,6 +120,7 @@ export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<Ide
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: IdentityGovernance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

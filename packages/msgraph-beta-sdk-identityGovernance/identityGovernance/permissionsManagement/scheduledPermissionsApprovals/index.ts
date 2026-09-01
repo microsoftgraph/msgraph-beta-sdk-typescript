@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ScheduledPermissionsApprovalsRequestBuilder extends BaseRequestBuilder<ScheduledPermissionsApprovalsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the scheduledPermissionsApprovals property of the microsoft.graph.permissionsManagement entity.
      * @param approvalId The unique identifier of approval
      * @returns {ApprovalItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byApprovalId(approvalId: string) : ApprovalItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface ScheduledPermissionsApprovalsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<ScheduledPermissionsApprovalsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalCollectionResponse | undefined>;
     /**
@@ -47,12 +51,14 @@ export interface ScheduledPermissionsApprovalsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Approval>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: Approval, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Approval | undefined>;
     /**
      * Get scheduledPermissionsApprovals from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ScheduledPermissionsApprovalsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -60,6 +66,7 @@ export interface ScheduledPermissionsApprovalsRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: Approval, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

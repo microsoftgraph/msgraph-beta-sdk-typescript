@@ -16,6 +16,7 @@ export interface AssignedToTaskBoardFormatRequestBuilder extends BaseRequestBuil
      * Delete navigation property assignedToTaskBoardFormat for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface AssignedToTaskBoardFormatRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerAssignedToTaskBoardTaskFormat>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<AssignedToTaskBoardFormatRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerAssignedToTaskBoardTaskFormat | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface AssignedToTaskBoardFormatRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerAssignedToTaskBoardTaskFormat>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: PlannerAssignedToTaskBoardTaskFormat, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerAssignedToTaskBoardTaskFormat | undefined>;
     /**
      * Delete navigation property assignedToTaskBoardFormat for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignedToTaskBoardFormatRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface AssignedToTaskBoardFormatRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: PlannerAssignedToTaskBoardTaskFormat, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

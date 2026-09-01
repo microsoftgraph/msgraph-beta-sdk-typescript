@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SharePointRequestBuilder extends BaseRequestBuilder<SharePointRequestBuilder> {
     /**
      * Provides operations to manage the migrations property of the microsoft.graph.sharePointRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get migrations(): MigrationsRequestBuilder;
     /**
      * Delete navigation property sharePoint for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface SharePointRequestBuilder extends BaseRequestBuilder<SharePointR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<SharePointRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointRoot | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface SharePointRequestBuilder extends BaseRequestBuilder<SharePointR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: SharePointRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointRoot | undefined>;
     /**
      * Delete navigation property sharePoint for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Container for SharePoint resources that include cross-organization migration operations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SharePointRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface SharePointRequestBuilder extends BaseRequestBuilder<SharePointR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: SharePointRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

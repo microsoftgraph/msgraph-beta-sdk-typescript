@@ -16,6 +16,7 @@ export interface GranularDriveRestoreArtifactItemRequestBuilder extends BaseRequ
      * Delete navigation property granularDriveRestoreArtifacts for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface GranularDriveRestoreArtifactItemRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularDriveRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<GranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters> | undefined) : Promise<GranularDriveRestoreArtifact | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface GranularDriveRestoreArtifactItemRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularDriveRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: GranularDriveRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GranularDriveRestoreArtifact | undefined>;
     /**
      * Delete navigation property granularDriveRestoreArtifacts for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface GranularDriveRestoreArtifactItemRequestBuilder extends BaseRequ
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: GranularDriveRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

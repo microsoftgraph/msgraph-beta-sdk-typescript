@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ApprovalItemsRequestBuilder extends BaseRequestBuilder<ApprovalItemsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the approvalItems property of the microsoft.graph.approvalSolution entity.
      * @param approvalItemId The unique identifier of approvalItem
      * @returns {ApprovalItemItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byApprovalItemId(approvalItemId: string) : ApprovalItemItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ApprovalItemsRequestBuilder extends BaseRequestBuilder<Approval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItemCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalsolution-list-approvalitems?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovalItemsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalItemCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface ApprovalItemsRequestBuilder extends BaseRequestBuilder<Approval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalsolution-post-approvalitems?view=graph-rest-beta|Find more info here}
      */
      post(body: ApprovalItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalItem | undefined>;
@@ -47,6 +51,7 @@ export interface ApprovalItemsRequestBuilder extends BaseRequestBuilder<Approval
      * Get a list of the approvalItem objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovalItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface ApprovalItemsRequestBuilder extends BaseRequestBuilder<Approval
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ApprovalItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

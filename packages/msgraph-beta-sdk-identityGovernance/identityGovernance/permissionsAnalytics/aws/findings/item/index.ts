@@ -16,6 +16,7 @@ export interface FindingItemRequestBuilder extends BaseRequestBuilder<FindingIte
      * Delete navigation property findings for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface FindingItemRequestBuilder extends BaseRequestBuilder<FindingIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Finding>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<FindingItemRequestBuilderGetQueryParameters> | undefined) : Promise<Finding | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface FindingItemRequestBuilder extends BaseRequestBuilder<FindingIte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Finding>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: Finding, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Finding | undefined>;
     /**
      * Delete navigation property findings for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface FindingItemRequestBuilder extends BaseRequestBuilder<FindingIte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: Finding, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

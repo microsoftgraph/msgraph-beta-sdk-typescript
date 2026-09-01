@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WorkflowTemplateItemRequestBuilder extends BaseRequestBuilder<WorkflowTemplateItemRequestBuilder> {
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get tasks(): TasksRequestBuilder;
     /**
@@ -23,6 +24,7 @@ export interface WorkflowTemplateItemRequestBuilder extends BaseRequestBuilder<W
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkflowTemplate>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-workflowtemplate-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters> | undefined) : Promise<WorkflowTemplate | undefined>;
@@ -30,6 +32,7 @@ export interface WorkflowTemplateItemRequestBuilder extends BaseRequestBuilder<W
      * Read the properties and relationships of a workflowTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WorkflowTemplateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

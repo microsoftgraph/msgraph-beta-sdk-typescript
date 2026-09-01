@@ -393,7 +393,7 @@ export interface Alert extends Entity, Parsable {
      */
     detectorId?: string | null;
     /**
-     * Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+     * Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.
      */
     determination?: AlertDetermination | null;
     /**
@@ -1673,7 +1673,7 @@ export interface CaseEscaped extends Entity, Parsable {
 }
 export interface CaseManagementRoot extends Entity, Parsable {
     /**
-     * The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, $skip, and $count.
+     * The collection of security cases managed through the case management entry point. Supports $filter, $orderby, $select, $top, and $skip.
      */
     cases?: I22aa6e194d54359d50ba197bee7b132ae266575f41ad379242cc61c33b83cd28[] | null;
     /**
@@ -2774,6 +2774,56 @@ export function createAlertFromDiscriminatorValue(parseNode: ParseNode | undefin
         }
     }
     return deserializeIntoAlert;
+}
+export interface CreateAlertInput extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * MITRE ATT&CK category for the alert.
+     */
+    category?: string | null;
+    /**
+     * Free-text explanation of the suspicious activity or policy violation.
+     */
+    description?: string | null;
+    /**
+     * Inline entity definitions that associate entities with the alert.
+     */
+    entityDefinitions?: EntityDefinition[] | null;
+    /**
+     * Whether the alert is excluded from automatic correlation. Defaults to false.
+     */
+    isExcludedFromCorrelation?: boolean | null;
+    /**
+     * Incident ID to link the alert to. Use 0 or omit the value to create a new incident.
+     */
+    linkToIncident?: number | null;
+    /**
+     * MITRE ATT&CK technique identifiers associated with the alert.
+     */
+    mitreTechniques?: string[] | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Recommended remediation actions for the alert.
+     */
+    recommendedActions?: string | null;
+    /**
+     * Microsoft Sentinel workspace identifier used for workspace routing.
+     */
+    sentinelWorkspace?: string | null;
+    /**
+     * The severity property
+     */
+    severity?: AlertSeverity | null;
+    /**
+     * Short display name shown for the alert in the Defender portal.
+     */
+    title?: string | null;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -4822,6 +4872,15 @@ export function createCortanaBriefingAuditRecordFromDiscriminatorValue(parseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CreateAlertInput}
+ */
+// @ts-ignore
+export function createCreateAlertInputFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCreateAlertInput;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {CriticalAssetManagementClassificationRecord}
  */
 // @ts-ignore
@@ -5812,6 +5871,15 @@ export function createEnableUserIncidentTaskResponseActionFromDiscriminatorValue
 // @ts-ignore
 export function createEndpointDiscoveredCloudAppDetailFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoEndpointDiscoveredCloudAppDetail;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {EntityDefinition}
+ */
+// @ts-ignore
+export function createEntityDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoEntityDefinition;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -13519,6 +13587,28 @@ export function deserializeIntoCortanaBriefingAuditRecord(cortanaBriefingAuditRe
 }
 /**
  * The deserialization information for the current model
+ * @param CreateAlertInput The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCreateAlertInput(createAlertInput: Partial<CreateAlertInput> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { createAlertInput.backingStoreEnabled = true; },
+        "category": n => { createAlertInput.category = n.getStringValue(); },
+        "description": n => { createAlertInput.description = n.getStringValue(); },
+        "entityDefinitions": n => { createAlertInput.entityDefinitions = n.getCollectionOfObjectValues<EntityDefinition>(createEntityDefinitionFromDiscriminatorValue); },
+        "isExcludedFromCorrelation": n => { createAlertInput.isExcludedFromCorrelation = n.getBooleanValue(); },
+        "linkToIncident": n => { createAlertInput.linkToIncident = n.getNumberValue(); },
+        "mitreTechniques": n => { createAlertInput.mitreTechniques = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "@odata.type": n => { createAlertInput.odataType = n.getStringValue(); },
+        "recommendedActions": n => { createAlertInput.recommendedActions = n.getStringValue(); },
+        "sentinelWorkspace": n => { createAlertInput.sentinelWorkspace = n.getStringValue(); },
+        "severity": n => { createAlertInput.severity = n.getEnumValue<AlertSeverity>(AlertSeverityObject); },
+        "title": n => { createAlertInput.title = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param CriticalAssetManagementClassificationRecord The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -14975,6 +15065,22 @@ export function deserializeIntoEndpointDiscoveredCloudAppDetail(endpointDiscover
         ...deserializeIntoDiscoveredCloudAppDetail(endpointDiscoveredCloudAppDetail),
         "deviceCount": n => { endpointDiscoveredCloudAppDetail.deviceCount = n.getNumberValue(); },
         "devices": n => { endpointDiscoveredCloudAppDetail.devices = n.getCollectionOfObjectValues<DiscoveredCloudAppDevice>(createDiscoveredCloudAppDeviceFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param EntityDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoEntityDefinition(entityDefinition: Partial<EntityDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { entityDefinition.backingStoreEnabled = true; },
+        "entityIdentifier": n => { entityDefinition.entityIdentifier = n.getStringValue(); },
+        "entityType": n => { entityDefinition.entityType = n.getEnumValue<ManualAlertEntityType>(ManualAlertEntityTypeObject); },
+        "identifierValue": n => { entityDefinition.identifierValue = n.getStringValue(); },
+        "@odata.type": n => { entityDefinition.odataType = n.getStringValue(); },
+        "role": n => { entityDefinition.role = n.getEnumValue<EntityDefinitionInputRole>(EntityDefinitionInputRoleObject); },
     }
 }
 /**
@@ -23422,6 +23528,32 @@ export interface EndpointDiscoveredCloudAppDetail extends DiscoveredCloudAppDeta
      */
     devices?: DiscoveredCloudAppDevice[] | null;
 }
+export interface EntityDefinition extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The identifier kind for the selected entity type, such as userPrincipalName, deviceId, or address.
+     */
+    entityIdentifier?: string | null;
+    /**
+     * The entityType property
+     */
+    entityType?: ManualAlertEntityType | null;
+    /**
+     * The value for the selected entity identifier.
+     */
+    identifierValue?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The role property
+     */
+    role?: EntityDefinitionInputRole | null;
+}
 export interface EntityDefinitionInput extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -25013,7 +25145,7 @@ export interface Incident extends Entity, Parsable {
      */
     description?: string | null;
     /**
-     * Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+     * Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.
      */
     determination?: AlertDetermination | null;
     /**
@@ -31656,6 +31788,28 @@ export function serializeCortanaBriefingAuditRecord(writer: SerializationWriter,
 }
 /**
  * Serializes information the current object
+ * @param CreateAlertInput The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCreateAlertInput(writer: SerializationWriter, createAlertInput: Partial<CreateAlertInput> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!createAlertInput || isSerializingDerivedType) { return; }
+    writer.writeStringValue("category", createAlertInput.category);
+    writer.writeStringValue("description", createAlertInput.description);
+    writer.writeCollectionOfObjectValues<EntityDefinition>("entityDefinitions", createAlertInput.entityDefinitions, serializeEntityDefinition);
+    writer.writeBooleanValue("isExcludedFromCorrelation", createAlertInput.isExcludedFromCorrelation);
+    writer.writeNumberValue("linkToIncident", createAlertInput.linkToIncident);
+    writer.writeCollectionOfPrimitiveValues<string>("mitreTechniques", createAlertInput.mitreTechniques);
+    writer.writeStringValue("@odata.type", createAlertInput.odataType);
+    writer.writeStringValue("recommendedActions", createAlertInput.recommendedActions);
+    writer.writeStringValue("sentinelWorkspace", createAlertInput.sentinelWorkspace);
+    writer.writeEnumValue<AlertSeverity>("severity", createAlertInput.severity);
+    writer.writeStringValue("title", createAlertInput.title);
+    writer.writeAdditionalData(createAlertInput.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param CriticalAssetManagementClassificationRecord The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -33161,6 +33315,22 @@ export function serializeEndpointDiscoveredCloudAppDetail(writer: SerializationW
     serializeDiscoveredCloudAppDetail(writer, endpointDiscoveredCloudAppDetail, isSerializingDerivedType)
     writer.writeNumberValue("deviceCount", endpointDiscoveredCloudAppDetail.deviceCount);
     writer.writeCollectionOfObjectValues<DiscoveredCloudAppDevice>("devices", endpointDiscoveredCloudAppDetail.devices, serializeDiscoveredCloudAppDevice);
+}
+/**
+ * Serializes information the current object
+ * @param EntityDefinition The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeEntityDefinition(writer: SerializationWriter, entityDefinition: Partial<EntityDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!entityDefinition || isSerializingDerivedType) { return; }
+    writer.writeStringValue("entityIdentifier", entityDefinition.entityIdentifier);
+    writer.writeEnumValue<ManualAlertEntityType>("entityType", entityDefinition.entityType);
+    writer.writeStringValue("identifierValue", entityDefinition.identifierValue);
+    writer.writeStringValue("@odata.type", entityDefinition.odataType);
+    writer.writeEnumValue<EntityDefinitionInputRole>("role", entityDefinition.role);
+    writer.writeAdditionalData(entityDefinition.additionalData);
 }
 /**
  * Serializes information the current object

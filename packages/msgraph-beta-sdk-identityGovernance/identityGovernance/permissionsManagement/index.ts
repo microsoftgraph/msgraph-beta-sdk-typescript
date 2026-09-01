@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PermissionsManagementRequestBuilder extends BaseRequestBuilder<PermissionsManagementRequestBuilder> {
     /**
      * Provides operations to manage the permissionsRequestChanges property of the microsoft.graph.permissionsManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get permissionsRequestChanges(): PermissionsRequestChangesRequestBuilder;
     /**
      * Provides operations to manage the scheduledPermissionsApprovals property of the microsoft.graph.permissionsManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get scheduledPermissionsApprovals(): ScheduledPermissionsApprovalsRequestBuilder;
     /**
      * Provides operations to manage the scheduledPermissionsRequests property of the microsoft.graph.permissionsManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get scheduledPermissionsRequests(): ScheduledPermissionsRequestsRequestBuilder;
     /**
      * Delete navigation property permissionsManagement for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface PermissionsManagementRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionsManagement | undefined>;
     /**
@@ -49,18 +54,21 @@ export interface PermissionsManagementRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: PermissionsManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PermissionsManagement | undefined>;
     /**
      * Delete navigation property permissionsManagement for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get permissionsManagement from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PermissionsManagementRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -68,6 +76,7 @@ export interface PermissionsManagementRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: PermissionsManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

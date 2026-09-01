@@ -22,24 +22,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder extends BaseRequestBuilder<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder> {
     /**
      * Provides operations to call the cancel method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to manage the group property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get group(): GroupRequestBuilder;
     /**
      * Provides operations to manage the principal property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get principal(): PrincipalRequestBuilder;
     /**
      * Provides operations to manage the targetSchedule property of the microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get targetSchedule(): TargetScheduleRequestBuilder;
     /**
      * Delete navigation property eligibilityScheduleRequests for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -47,6 +52,7 @@ export interface PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroupEligibilityScheduleRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedAccessGroupEligibilityScheduleRequest | undefined>;
@@ -56,18 +62,21 @@ export interface PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroupEligibilityScheduleRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: PrivilegedAccessGroupEligibilityScheduleRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedAccessGroupEligibilityScheduleRequest | undefined>;
     /**
      * Delete navigation property eligibilityScheduleRequests for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -75,6 +84,7 @@ export interface PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: PrivilegedAccessGroupEligibilityScheduleRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

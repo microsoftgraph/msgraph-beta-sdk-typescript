@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExecutionScopeRequestBuilder extends BaseRequestBuilder<ExecutionScopeRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
      * @param userProcessingResultId The unique identifier of userProcessingResult
      * @returns {UserProcessingResultItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byUserProcessingResultId(userProcessingResultId: string) : UserProcessingResultItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface ExecutionScopeRequestBuilder extends BaseRequestBuilder<Executi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserProcessingResultCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<ExecutionScopeRequestBuilderGetQueryParameters> | undefined) : Promise<UserProcessingResultCollectionResponse | undefined>;
     /**
      * The list of users that meet the workflowExecutionConditions of a workflow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExecutionScopeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

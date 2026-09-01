@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessReviewHistoryInstanceItemRequestBuilder extends BaseRequestBuilder<AccessReviewHistoryInstanceItemRequestBuilder> {
     /**
      * Provides operations to call the generateDownloadUri method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get generateDownloadUri(): GenerateDownloadUriRequestBuilder;
     /**
      * Delete navigation property instances for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface AccessReviewHistoryInstanceItemRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewHistoryInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessReviewHistoryInstanceItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewHistoryInstance | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface AccessReviewHistoryInstanceItemRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewHistoryInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: AccessReviewHistoryInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewHistoryInstance | undefined>;
     /**
      * Delete navigation property instances for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessReviewHistoryInstanceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface AccessReviewHistoryInstanceItemRequestBuilder extends BaseReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessReviewHistoryInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BrowseSessionsRequestBuilder extends BaseRequestBuilder<BrowseSessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.
      * @param browseSessionBaseId The unique identifier of browseSessionBase
      * @returns {BrowseSessionBaseItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBrowseSessionBaseId(browseSessionBaseId: string) : BrowseSessionBaseItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface BrowseSessionsRequestBuilder extends BaseRequestBuilder<BrowseS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BrowseSessionBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-list-browsesessions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BrowseSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<BrowseSessionBaseCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface BrowseSessionsRequestBuilder extends BaseRequestBuilder<BrowseS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BrowseSessionBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: BrowseSessionBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BrowseSessionBase | undefined>;
     /**
      * Get a list of the browseSessionBase objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BrowseSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface BrowseSessionsRequestBuilder extends BaseRequestBuilder<BrowseS
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BrowseSessionBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

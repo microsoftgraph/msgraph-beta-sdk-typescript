@@ -18,14 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the users property of the microsoft.graph.crossTenantMigrationJob entity.
      * @param crossTenantMigrationTaskId The unique identifier of crossTenantMigrationTask
      * @returns {CrossTenantMigrationTaskItemRequestBuilder}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byCrossTenantMigrationTaskId(crossTenantMigrationTaskId: string) : CrossTenantMigrationTaskItemRequestBuilder;
     /**
@@ -33,7 +33,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/crosstenantmigrationjob-list-users?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : Promise<CrossTenantMigrationTaskCollectionResponse | undefined>;
@@ -43,14 +43,14 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: CrossTenantMigrationTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantMigrationTask | undefined>;
     /**
      * Get a list of the crossTenantMigrationTasks for users in a crossTenantMigrationJob. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UsersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +58,7 @@ export interface UsersRequestBuilder extends BaseRequestBuilder<UsersRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: CrossTenantMigrationTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

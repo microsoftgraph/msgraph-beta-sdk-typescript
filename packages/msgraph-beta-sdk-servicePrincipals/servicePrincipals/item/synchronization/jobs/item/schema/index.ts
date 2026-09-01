@@ -22,24 +22,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBuilder> {
     /**
      * Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get directories(): DirectoriesRequestBuilder;
     /**
      * Provides operations to call the filterOperators method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get filterOperators(): FilterOperatorsRequestBuilder;
     /**
      * Provides operations to call the functions method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get functions(): FunctionsRequestBuilder;
     /**
      * Provides operations to call the parseExpression method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get parseExpression(): ParseExpressionRequestBuilder;
     /**
      * Delete navigation property schema for servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -47,6 +52,7 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SynchronizationSchema>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : Promise<SynchronizationSchema | undefined>;
@@ -56,6 +62,7 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SynchronizationSchema>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: SynchronizationSchema, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SynchronizationSchema | undefined>;
@@ -63,12 +70,14 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      * Delete navigation property schema for servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the synchronizationSchema for a given synchronization job or template.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SchemaRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -76,6 +85,7 @@ export interface SchemaRequestBuilder extends BaseRequestBuilder<SchemaRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPatchRequestInformation(body: SynchronizationSchema, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

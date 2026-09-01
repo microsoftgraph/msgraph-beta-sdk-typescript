@@ -12,6 +12,8 @@ import { AssignmentFilterEvaluationStatusDetailsRequestBuilderNavigationMetadata
 // @ts-ignore
 import { BypassActivationLockRequestBuilderRequestsMetadata, type BypassActivationLockRequestBuilder } from './bypassActivationLock/index.js';
 // @ts-ignore
+import { CancelEnhancedLogCollectionRequestBuilderRequestsMetadata, type CancelEnhancedLogCollectionRequestBuilder } from './cancelEnhancedLogCollection/index.js';
+// @ts-ignore
 import { ChangeAssignmentsRequestBuilderRequestsMetadata, type ChangeAssignmentsRequestBuilder } from './changeAssignments/index.js';
 // @ts-ignore
 import { CleanWindowsDeviceRequestBuilderRequestsMetadata, type CleanWindowsDeviceRequestBuilder } from './cleanWindowsDevice/index.js';
@@ -116,6 +118,8 @@ import { SyncDeviceRequestBuilderRequestsMetadata, type SyncDeviceRequestBuilder
 // @ts-ignore
 import { TriggerConfigurationManagerActionRequestBuilderRequestsMetadata, type TriggerConfigurationManagerActionRequestBuilder } from './triggerConfigurationManagerAction/index.js';
 // @ts-ignore
+import { TriggerEnhancedLogCollectionRequestBuilderRequestsMetadata, type TriggerEnhancedLogCollectionRequestBuilder } from './triggerEnhancedLogCollection/index.js';
+// @ts-ignore
 import { type UpdateWindowsDeviceAccountRequestBuilder, UpdateWindowsDeviceAccountRequestBuilderRequestsMetadata } from './updateWindowsDeviceAccount/index.js';
 // @ts-ignore
 import { type UsersRequestBuilder, UsersRequestBuilderRequestsMetadata } from './users/index.js';
@@ -146,6 +150,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      * Provides operations to call the bypassActivationLock method.
      */
     get bypassActivationLock(): BypassActivationLockRequestBuilder;
+    /**
+     * Provides operations to call the cancelEnhancedLogCollection method.
+     */
+    get cancelEnhancedLogCollection(): CancelEnhancedLogCollectionRequestBuilder;
     /**
      * Provides operations to call the changeAssignments method.
      */
@@ -355,6 +363,10 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
      */
     get triggerConfigurationManagerAction(): TriggerConfigurationManagerActionRequestBuilder;
     /**
+     * Provides operations to call the triggerEnhancedLogCollection method.
+     */
+    get triggerEnhancedLogCollection(): TriggerEnhancedLogCollectionRequestBuilder;
+    /**
      * Provides operations to call the updateWindowsDeviceAccount method.
      */
     get updateWindowsDeviceAccount(): UpdateWindowsDeviceAccountRequestBuilder;
@@ -456,6 +468,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     bypassActivationLock: {
         requestsMetadata: BypassActivationLockRequestBuilderRequestsMetadata,
+    },
+    cancelEnhancedLogCollection: {
+        requestsMetadata: CancelEnhancedLogCollectionRequestBuilderRequestsMetadata,
     },
     changeAssignments: {
         requestsMetadata: ChangeAssignmentsRequestBuilderRequestsMetadata,
@@ -620,6 +635,9 @@ export const ManagedDeviceItemRequestBuilderNavigationMetadata: Record<Exclude<k
     },
     triggerConfigurationManagerAction: {
         requestsMetadata: TriggerConfigurationManagerActionRequestBuilderRequestsMetadata,
+    },
+    triggerEnhancedLogCollection: {
+        requestsMetadata: TriggerEnhancedLogCollectionRequestBuilderRequestsMetadata,
     },
     updateWindowsDeviceAccount: {
         requestsMetadata: UpdateWindowsDeviceAccountRequestBuilderRequestsMetadata,

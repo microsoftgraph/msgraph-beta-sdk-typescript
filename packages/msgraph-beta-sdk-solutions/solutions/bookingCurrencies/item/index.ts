@@ -16,6 +16,7 @@ export interface BookingCurrencyItemRequestBuilder extends BaseRequestBuilder<Bo
      * Delete navigation property bookingCurrencies for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface BookingCurrencyItemRequestBuilder extends BaseRequestBuilder<Bo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCurrency>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BookingCurrencyItemRequestBuilderGetQueryParameters> | undefined) : Promise<BookingCurrency | undefined>;
@@ -32,18 +34,21 @@ export interface BookingCurrencyItemRequestBuilder extends BaseRequestBuilder<Bo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCurrency>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: BookingCurrency, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingCurrency | undefined>;
     /**
      * Delete navigation property bookingCurrencies for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BookingCurrencyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -51,6 +56,7 @@ export interface BookingCurrencyItemRequestBuilder extends BaseRequestBuilder<Bo
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BookingCurrency, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

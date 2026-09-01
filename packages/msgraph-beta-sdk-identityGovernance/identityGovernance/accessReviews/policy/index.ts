@@ -16,6 +16,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * Delete navigation property policy for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewPolicy | undefined>;
@@ -32,6 +34,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: AccessReviewPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewPolicy | undefined>;
@@ -39,12 +42,14 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * Delete navigation property policy for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an accessReviewPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface PolicyRequestBuilder extends BaseRequestBuilder<PolicyRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessReviewPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

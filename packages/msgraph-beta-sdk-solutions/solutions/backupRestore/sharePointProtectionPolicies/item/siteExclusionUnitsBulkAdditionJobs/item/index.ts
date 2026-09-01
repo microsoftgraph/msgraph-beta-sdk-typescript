@@ -17,6 +17,7 @@ export interface SiteExclusionUnitsBulkAdditionJobItemRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/siteexclusionunitsbulkadditionjob-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters> | undefined) : Promise<SiteExclusionUnitsBulkAdditionJob | undefined>;
@@ -24,6 +25,7 @@ export interface SiteExclusionUnitsBulkAdditionJobItemRequestBuilder extends Bas
      * Get a site exclusion units bulk addition job associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

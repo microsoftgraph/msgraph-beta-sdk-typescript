@@ -82,7 +82,7 @@ export interface AlertStatusCounts extends AdditionalDataHolder, BackedModel, Pa
 }
 export interface Attachment extends CaseManagementEntity, Parsable {
     /**
-     * The binary content stream for the attachment.
+     * The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
      */
     content?: ArrayBuffer | null;
     /**
@@ -94,11 +94,11 @@ export interface Attachment extends CaseManagementEntity, Parsable {
      */
     displayName?: string | null;
     /**
-     * The file extension of the attachment.
+     * The file extension of the attachment. The service normalizes the value to include a leading period.
      */
     fileExtension?: string | null;
     /**
-     * The size of the attachment in bytes.
+     * The size of the attachment in bytes. The maximum file size is 100 MB.
      */
     fileSize?: number | null;
     /**
@@ -147,7 +147,7 @@ export interface AuditLog extends Activity, Parsable {
      */
     details?: ActivityResourceDetails | null;
     /**
-     * The collection of property changes recorded in the audit log.
+     * The collection of property changes recorded in the audit log. Supports $filter.
      */
     modifiedProperties?: ModifiedProperty[] | null;
 }
@@ -173,11 +173,11 @@ export interface CaseEscaped extends CaseManagementEntity, Parsable {
      */
     attachments?: Attachment[] | null;
     /**
-     * Tenant-defined custom field values keyed by custom field identifier.
+     * Tenant-defined custom field values keyed by the exact displayName of each custom field definition. The property and its dynamic fields don't support $filter.
      */
     customFields?: CustomFieldValues | null;
     /**
-     * The display name of the case. Supports $filter (eq, ne) and $orderby.
+     * The display name of the case. Supports $filter and $orderby.
      */
     displayName?: string | null;
     /**
@@ -185,7 +185,7 @@ export interface CaseEscaped extends CaseManagementEntity, Parsable {
      */
     relations?: Relation[] | null;
     /**
-     * The lifecycle status of the case, such as open, in progress, or closed. Supports $filter (eq, ne) and $orderby.
+     * The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).
      */
     status?: string | null;
     /**
@@ -239,7 +239,7 @@ export interface CaseTypeConfigurationCollectionResponse extends BaseCollectionP
 }
 export interface Comment extends Activity, Parsable {
     /**
-     * The comment body.
+     * The comment body. Supports $filter.
      */
     message?: string | null;
 }
@@ -1672,23 +1672,23 @@ export interface ExposureCaseSeemplicity extends AdditionalDataHolder, BackedMod
 }
 export interface GenericCase extends CaseEscaped, Parsable {
     /**
-     * The user assigned to the generic case.
+     * The user assigned to the generic case. Supports $filter and $orderby.
      */
     assignedTo?: string | null;
     /**
-     * Notes recorded when the generic case is closed.
+     * Notes recorded when the generic case is closed. Supports $filter.
      */
     closingNotes?: string | null;
     /**
-     * The description of the generic case.
+     * The description of the generic case. Supports $filter.
      */
     description?: string | null;
     /**
-     * The target completion date and time for the generic case.
+     * The target completion date and time for the generic case. Supports $filter.
      */
     dueDateTime?: Date | null;
     /**
-     * The priority assigned to the generic case.
+     * The priority assigned to the generic case. Possible values are: veryLow, low, medium, high, and critical. Supports $filter.
      */
     priority?: string | null;
 }
@@ -1760,27 +1760,27 @@ export interface ImpactedAssetsCounts extends AdditionalDataHolder, BackedModel,
 }
 export interface IncidentCase extends CaseEscaped, Parsable {
     /**
-     * The list of AI agent identifiers associated with the incident.
+     * The list of AI agent identifiers associated with the incident. Supports $filter.
      */
     aiAgentIds?: string[] | null;
     /**
-     * A summary of alert counts grouped by severity and status.
+     * A summary of alert counts grouped by severity and status. Supports $filter.
      */
     alertCounts?: AlertCounts | null;
     /**
-     * The list of alert policy identifiers associated with the incident.
+     * The list of alert policy identifiers associated with the incident. Supports $filter.
      */
     alertPolicyIds?: string[] | null;
     /**
-     * The user assigned to investigate the incident case.
+     * The user assigned to investigate the incident case. Supports $filter and $orderby.
      */
     assignedTo?: string | null;
     /**
-     * The list of threat identifiers associated with the incident.
+     * The list of threat identifiers associated with the incident. Supports $filter.
      */
     associatedThreatIds?: string[] | null;
     /**
-     * The incident categories.
+     * The incident categories. Supports $filter.
      */
     categories?: string[] | null;
     /**
@@ -1788,19 +1788,19 @@ export interface IncidentCase extends CaseEscaped, Parsable {
      */
     classification?: IncidentClassification | null;
     /**
-     * The cloud scopes associated with the incident.
+     * The cloud scopes associated with the incident. Supports $filter.
      */
     cloudScopes?: string[] | null;
     /**
-     * The data sensitivity labels associated with the incident.
+     * The data sensitivity labels associated with the incident. Supports $filter.
      */
     dataSensitivityLabels?: string[] | null;
     /**
-     * The data streams associated with the incident.
+     * The data streams associated with the incident. Supports $filter.
      */
     dataStreams?: string[] | null;
     /**
-     * The detection sources that identified the incident.
+     * The detection sources that identified the incident. Supports $filter.
      */
     detectionSources?: string[] | null;
     /**
@@ -1808,75 +1808,75 @@ export interface IncidentCase extends CaseEscaped, Parsable {
      */
     determination?: IncidentDetermination | null;
     /**
-     * The target completion date and time for the incident case.
+     * The target completion date and time for the incident case. Supports $filter.
      */
     dueDateTime?: Date | null;
     /**
-     * The email notification recipients for the incident case.
+     * The email notification recipients for the incident case. Supports $filter.
      */
     emailNotificationRecipients?: string[] | null;
     /**
-     * The date and time of the first event in the incident.
+     * The date and time of the first event in the incident. Supports $filter.
      */
     firstEventTime?: Date | null;
     /**
-     * A summary of impacted asset counts for the incident.
+     * A summary of impacted asset counts for the incident. Supports $filter.
      */
     impactedAssets?: ImpactedAssetsCounts | null;
     /**
-     * The Microsoft Security incident identifier.
+     * The Microsoft Security incident identifier. Supports $filter.
      */
     incidentId?: number | null;
     /**
-     * The URL for the incident in the Microsoft Defender portal.
+     * The URL for the incident in the Microsoft Defender portal. Supports $filter.
      */
     incidentWebUrl?: string | null;
     /**
-     * A summary of investigation details associated with the incident.
+     * A summary of investigation details associated with the incident. Supports $filter.
      */
     investigation?: Investigation | null;
     /**
-     * The list of investigation identifiers associated with the incident.
+     * The list of investigation identifiers associated with the incident. Supports $filter.
      */
     investigationIds?: string[] | null;
     /**
-     * The list of investigation states associated with the incident.
+     * The list of investigation states associated with the incident. Supports $filter.
      */
     investigationStates?: string[] | null;
     /**
-     * The date and time of the most recent event in the incident.
+     * The date and time of the most recent event in the incident. Supports $filter.
      */
     lastEventTime?: Date | null;
     /**
-     * The list of machine group identifiers associated with the incident.
+     * The list of machine group identifiers associated with the incident. Supports $filter.
      */
     machineGroupIds?: string[] | null;
     /**
-     * The operating system platforms associated with the incident.
+     * The operating system platforms associated with the incident. Supports $filter.
      */
     osPlatforms?: string[] | null;
     /**
-     * The policy names associated with the incident.
+     * The policy names associated with the incident. Supports $filter.
      */
     policyNames?: string[] | null;
     /**
-     * The priority score assigned to the incident.
+     * The priority score assigned to the incident. Supports $filter.
      */
     priorityScore?: number | null;
     /**
-     * The product names associated with the incident.
+     * The product names associated with the incident. Supports $filter.
      */
     productNames?: string[] | null;
     /**
-     * The case identifier to which this case redirects when merged.
+     * The redirectCaseId property
      */
     redirectCaseId?: number | null;
     /**
-     * The incident identifier to which this incident redirects when merged.
+     * The redirectIncidentId property
      */
     redirectIncidentId?: number | null;
     /**
-     * The service sources associated with the incident.
+     * The service sources associated with the incident. Supports $filter.
      */
     serviceSources?: string[] | null;
     /**
@@ -1884,19 +1884,19 @@ export interface IncidentCase extends CaseEscaped, Parsable {
      */
     severity?: IncidentSeverity | null;
     /**
-     * A summary of the incident.
+     * A summary of the incident. Supports $filter.
      */
     summary?: string | null;
     /**
-     * The system tags associated with the incident.
+     * The system tags associated with the incident. Supports $filter.
      */
     systemTags?: string[] | null;
     /**
-     * The top risk score associated with the incident.
+     * The top risk score associated with the incident. Supports $filter.
      */
     topRiskScore?: number | null;
     /**
-     * The list of workspace identifiers associated with the incident.
+     * The list of workspace identifiers associated with the incident. Supports $filter.
      */
     workspaceIds?: string[] | null;
 }
@@ -2854,7 +2854,7 @@ export interface StringValueProperty extends Parsable, ValueProperty {
 }
 export interface Task extends CaseManagementEntity, Parsable {
     /**
-     * The user assigned to the task.
+     * The user assigned to the task. Supports $filter.
      */
     assignedTo?: string | null;
     /**
@@ -2862,19 +2862,19 @@ export interface Task extends CaseManagementEntity, Parsable {
      */
     category?: CaseTaskCategory | null;
     /**
-     * Notes recorded when the task is completed.
+     * Notes recorded when the task is completed. Supports $filter.
      */
     closingNotes?: string | null;
     /**
-     * The description of the task.
+     * The description of the task. Supports $filter.
      */
     description?: string | null;
     /**
-     * The title of the task.
+     * The title of the task. Supports $filter.
      */
     displayName?: string | null;
     /**
-     * The target completion date and time for the task.
+     * The target completion date and time for the task. Supports $filter.
      */
     dueDateTime?: Date | null;
     /**

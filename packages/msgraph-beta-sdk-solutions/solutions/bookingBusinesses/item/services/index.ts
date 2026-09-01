@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
      * @param bookingServiceId The unique identifier of bookingService
      * @returns {BookingServiceItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBookingServiceId(bookingServiceId: string) : BookingServiceItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingServiceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ServicesRequestBuilderGetQueryParameters> | undefined) : Promise<BookingServiceCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingService>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: BookingService, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingService | undefined>;
     /**
      * All the services offered by this business. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ServicesRequestBuilder extends BaseRequestBuilder<ServicesReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BookingService, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

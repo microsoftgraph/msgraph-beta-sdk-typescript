@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ApprovalRequestBuilder extends BaseRequestBuilder<ApprovalRequestBuilder> {
     /**
      * Provides operations to manage the approvalItems property of the microsoft.graph.approvalSolution entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get approvalItems(): ApprovalItemsRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.approvalSolution entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get operations(): OperationsRequestBuilder;
     /**
      * Provides operations to call the provision method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get provision(): ProvisionRequestBuilder;
     /**
      * Delete navigation property approval for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface ApprovalRequestBuilder extends BaseRequestBuilder<ApprovalReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalSolution>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalsolution-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovalRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalSolution | undefined>;
@@ -50,18 +55,21 @@ export interface ApprovalRequestBuilder extends BaseRequestBuilder<ApprovalReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalSolution>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: ApprovalSolution, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalSolution | undefined>;
     /**
      * Delete navigation property approval for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties of an approvalSolution object to determine the provisioning state for a tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovalRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,6 +77,7 @@ export interface ApprovalRequestBuilder extends BaseRequestBuilder<ApprovalReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: ApprovalSolution, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

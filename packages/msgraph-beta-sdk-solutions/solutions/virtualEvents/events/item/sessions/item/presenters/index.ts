@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PresentersRequestBuilder extends BaseRequestBuilder<PresentersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the presenters property of the microsoft.graph.virtualEventSession entity.
      * @param virtualEventPresenterId The unique identifier of virtualEventPresenter
      * @returns {VirtualEventPresenterItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byVirtualEventPresenterId(virtualEventPresenterId: string) : VirtualEventPresenterItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface PresentersRequestBuilder extends BaseRequestBuilder<PresentersR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventPresenterCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<PresentersRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventPresenterCollectionResponse | undefined>;
     /**
      * Get presenters from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PresentersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

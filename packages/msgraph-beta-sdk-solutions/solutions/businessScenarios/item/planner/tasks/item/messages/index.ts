@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the messages property of the microsoft.graph.plannerTask entity.
      * @param plannerTaskChatMessageId The unique identifier of plannerTaskChatMessage
      * @returns {PlannerTaskChatMessageItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byPlannerTaskChatMessageId(plannerTaskChatMessageId: string) : PlannerTaskChatMessageItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTaskChatMessageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<MessagesRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerTaskChatMessageCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerTaskChatMessage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: PlannerTaskChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerTaskChatMessage | undefined>;
     /**
      * Read-only. Nullable. Chat messages associated with the task.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: PlannerTaskChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -32,46 +32,56 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageRequestBuilder extends BaseRequestBuilder<AccessPackageRequestBuilder> {
     /**
      * Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.accessPackage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageAssignmentPolicies(): AccessPackageAssignmentPoliciesRequestBuilder;
     /**
      * Provides operations to manage the accessPackageCatalog property of the microsoft.graph.accessPackage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageCatalog(): AccessPackageCatalogRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.accessPackage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageResourceRoleScopes(): AccessPackageResourceRoleScopesRequestBuilder;
     /**
      * Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackagesIncompatibleWith(): AccessPackagesIncompatibleWithRequestBuilder;
     /**
      * Provides operations to call the getApplicablePolicyRequirements method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get getApplicablePolicyRequirements(): GetApplicablePolicyRequirementsRequestBuilder;
     /**
      * Provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get incompatibleAccessPackages(): IncompatibleAccessPackagesRequestBuilder;
     /**
      * Provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get incompatibleGroups(): IncompatibleGroupsRequestBuilder;
     /**
      * Provides operations to call the moveToCatalog method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get moveToCatalog(): MoveToCatalogRequestBuilder;
     /**
      * Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
      * @param uniqueName Alternate key of accessPackage
      * @returns {AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      accessPackagesIncompatibleWithWithUniqueName(uniqueName: string | undefined) : AccessPackagesIncompatibleWithWithUniqueNameRequestBuilder;
     /**
      * Delete navigation property accessPackage for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -79,6 +89,7 @@ export interface AccessPackageRequestBuilder extends BaseRequestBuilder<AccessPa
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackage | undefined>;
     /**
@@ -87,18 +98,21 @@ export interface AccessPackageRequestBuilder extends BaseRequestBuilder<AccessPa
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: AccessPackage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackage | undefined>;
     /**
      * Delete navigation property accessPackage for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -106,6 +120,7 @@ export interface AccessPackageRequestBuilder extends BaseRequestBuilder<AccessPa
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessPackage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

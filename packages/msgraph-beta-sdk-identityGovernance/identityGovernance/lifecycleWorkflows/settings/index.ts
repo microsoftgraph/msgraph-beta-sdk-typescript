@@ -17,6 +17,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LifecycleManagementSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : Promise<LifecycleManagementSettings | undefined>;
@@ -26,6 +27,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LifecycleManagementSettings>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecyclemanagementsettings-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: LifecycleManagementSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LifecycleManagementSettings | undefined>;
@@ -33,6 +35,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * Read the properties and relationships of a lifecycleManagementSettings object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SettingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -40,6 +43,7 @@ export interface SettingsRequestBuilder extends BaseRequestBuilder<SettingsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: LifecycleManagementSettings, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

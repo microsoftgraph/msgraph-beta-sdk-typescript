@@ -16,6 +16,7 @@ export interface DeviceConfigurationUserStateSummariesRequestBuilder extends Bas
      * Delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -23,6 +24,7 @@ export interface DeviceConfigurationUserStateSummariesRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceConfigurationUserStateSummary>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      get(requestConfiguration?: RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceConfigurationUserStateSummary | undefined>;
     /**
@@ -31,18 +33,21 @@ export interface DeviceConfigurationUserStateSummariesRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceConfigurationUserStateSummary>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      patch(body: DeviceConfigurationUserStateSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DeviceConfigurationUserStateSummary | undefined>;
     /**
      * Delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The device configuration user state summary for this account.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceConfigurationUserStateSummariesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -50,6 +55,7 @@ export interface DeviceConfigurationUserStateSummariesRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      toPatchRequestInformation(body: DeviceConfigurationUserStateSummary, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

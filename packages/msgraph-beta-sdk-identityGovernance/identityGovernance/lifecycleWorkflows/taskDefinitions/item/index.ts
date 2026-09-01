@@ -17,6 +17,7 @@ export interface TaskDefinitionItemRequestBuilder extends BaseRequestBuilder<Tas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-taskdefinition-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TaskDefinitionItemRequestBuilderGetQueryParameters> | undefined) : Promise<TaskDefinition | undefined>;
@@ -24,6 +25,7 @@ export interface TaskDefinitionItemRequestBuilder extends BaseRequestBuilder<Tas
      * Read the details of a built-in workflow task in Lifecycle Workflows.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskDefinitionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

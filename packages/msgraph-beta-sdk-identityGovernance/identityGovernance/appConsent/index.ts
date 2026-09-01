@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AppConsentRequestBuilder extends BaseRequestBuilder<AppConsentRequestBuilder> {
     /**
      * Provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get appConsentRequests(): AppConsentRequestsRequestBuilder;
     /**
      * Delete navigation property appConsent for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface AppConsentRequestBuilder extends BaseRequestBuilder<AppConsentR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppConsentApprovalRoute>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AppConsentRequestBuilderGetQueryParameters> | undefined) : Promise<AppConsentApprovalRoute | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface AppConsentRequestBuilder extends BaseRequestBuilder<AppConsentR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppConsentApprovalRoute>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: AppConsentApprovalRoute, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AppConsentApprovalRoute | undefined>;
     /**
      * Delete navigation property appConsent for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get appConsent from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppConsentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface AppConsentRequestBuilder extends BaseRequestBuilder<AppConsentR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AppConsentApprovalRoute, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

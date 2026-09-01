@@ -27,7 +27,7 @@ export interface RelationsRequestBuilder extends BaseRequestBuilder<RelationsReq
      */
      byRelationId(relationId: string) : RelationItemRequestBuilder;
     /**
-     * Get a list of external resource relation objects for a case.
+     * Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RelationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface RelationsRequestBuilder extends BaseRequestBuilder<RelationsReq
      */
      get(requestConfiguration?: RequestConfiguration<RelationsRequestBuilderGetQueryParameters> | undefined) : Promise<RelationCollectionResponse | undefined>;
     /**
-     * Create an external resource relation for a case.
+     * Create a concrete external resource relation for a case.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Relation>}
@@ -44,13 +44,13 @@ export interface RelationsRequestBuilder extends BaseRequestBuilder<RelationsReq
      */
      post(body: Relation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Relation | undefined>;
     /**
-     * Get a list of external resource relation objects for a case.
+     * Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RelationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create an external resource relation for a case.
+     * Create a concrete external resource relation for a case.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface RelationsRequestBuilder extends BaseRequestBuilder<RelationsReq
      toPostRequestInformation(body: Relation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of external resource relation objects for a case.
+ * Get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
  */
 export interface RelationsRequestBuilderGetQueryParameters {
     /**

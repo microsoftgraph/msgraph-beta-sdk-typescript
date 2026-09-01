@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<DriveExclusionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the driveExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
      * @param driveExclusionUnitId The unique identifier of driveExclusionUnit
      * @returns {DriveExclusionUnitItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byDriveExclusionUnitId(driveExclusionUnitId: string) : DriveExclusionUnitItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveExclusionUnitCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: DriveExclusionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveExclusionUnit | undefined>;
     /**
      * The list of drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface DriveExclusionUnitsRequestBuilder extends BaseRequestBuilder<Dr
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: DriveExclusionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

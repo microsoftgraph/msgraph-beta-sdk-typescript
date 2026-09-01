@@ -82,144 +82,179 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRestoreRequestBuilder> {
     /**
      * Provides operations to manage the activityLogs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get activityLogs(): ActivityLogsRequestBuilder;
     /**
      * Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get browseSessions(): BrowseSessionsRequestBuilder;
     /**
      * Provides operations to manage the driveExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveExclusionUnits(): DriveExclusionUnitsRequestBuilder;
     /**
      * Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveExclusionUnitsBulkAdditionJobs(): DriveExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the driveInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveInclusionRules(): DriveInclusionRulesRequestBuilder;
     /**
      * Provides operations to manage the driveProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveProtectionUnits(): DriveProtectionUnitsRequestBuilder;
     /**
      * Provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveProtectionUnitsBulkAdditionJobs(): DriveProtectionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the emailNotificationsSetting property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get emailNotificationsSetting(): EmailNotificationsSettingRequestBuilder;
     /**
      * Provides operations to call the enable method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get enable(): EnableRequestBuilder;
     /**
      * Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get exchangeProtectionPolicies(): ExchangeProtectionPoliciesRequestBuilder;
     /**
      * Provides operations to manage the exchangeRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get exchangeRestoreSessions(): ExchangeRestoreSessionsRequestBuilder;
     /**
      * Provides operations to manage the exclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get exclusionUnits(): ExclusionUnitsRequestBuilder;
     /**
      * Provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxExclusionUnits(): MailboxExclusionUnitsRequestBuilder;
     /**
      * Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxExclusionUnitsBulkAdditionJobs(): MailboxExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxInclusionRules(): MailboxInclusionRulesRequestBuilder;
     /**
      * Provides operations to manage the mailboxProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxProtectionUnits(): MailboxProtectionUnitsRequestBuilder;
     /**
      * Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxProtectionUnitsBulkAdditionJobs(): MailboxProtectionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the oneDriveForBusinessBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get oneDriveForBusinessBrowseSessions(): OneDriveForBusinessBrowseSessionsRequestBuilder;
     /**
      * Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get oneDriveForBusinessProtectionPolicies(): OneDriveForBusinessProtectionPoliciesRequestBuilder;
     /**
      * Provides operations to manage the oneDriveForBusinessRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get oneDriveForBusinessRestoreSessions(): OneDriveForBusinessRestoreSessionsRequestBuilder;
     /**
      * Provides operations to manage the protectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get protectionPolicies(): ProtectionPoliciesRequestBuilder;
     /**
      * Provides operations to manage the protectionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get protectionUnits(): ProtectionUnitsRequestBuilder;
     /**
      * Provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get reports(): ReportsRequestBuilder;
     /**
      * Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get restorePoints(): RestorePointsRequestBuilder;
     /**
      * Provides operations to manage the restoreSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get restoreSessions(): RestoreSessionsRequestBuilder;
     /**
      * Provides operations to manage the serviceApps property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get serviceApps(): ServiceAppsRequestBuilder;
     /**
      * Provides operations to manage the sharePointBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sharePointBrowseSessions(): SharePointBrowseSessionsRequestBuilder;
     /**
      * Provides operations to manage the sharePointProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sharePointProtectionPolicies(): SharePointProtectionPoliciesRequestBuilder;
     /**
      * Provides operations to manage the sharePointRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sharePointRestoreSessions(): SharePointRestoreSessionsRequestBuilder;
     /**
      * Provides operations to manage the siteExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get siteExclusionUnits(): SiteExclusionUnitsRequestBuilder;
     /**
      * Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get siteExclusionUnitsBulkAdditionJobs(): SiteExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the siteInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get siteInclusionRules(): SiteInclusionRulesRequestBuilder;
     /**
      * Provides operations to manage the siteProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get siteProtectionUnits(): SiteProtectionUnitsRequestBuilder;
     /**
      * Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get siteProtectionUnitsBulkAdditionJobs(): SiteProtectionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Delete navigation property backupRestore for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -227,6 +262,7 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BackupRestoreRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BackupRestoreRequestBuilderGetQueryParameters> | undefined) : Promise<BackupRestoreRoot | undefined>;
@@ -236,18 +272,21 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BackupRestoreRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: BackupRestoreRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BackupRestoreRoot | undefined>;
     /**
      * Delete navigation property backupRestore for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get the serviceStatus of the Microsoft 365 Backup Storage service in a tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BackupRestoreRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -255,6 +294,7 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BackupRestoreRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

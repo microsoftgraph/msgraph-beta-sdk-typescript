@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface VersionsRequestBuilder extends BaseRequestBuilder<VersionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the versions property of the microsoft.graph.identityGovernance.workflow entity.
      * @param workflowVersionVersionNumber The unique identifier of workflowVersion
      * @returns {WorkflowVersionVersionNumberItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byWorkflowVersionVersionNumber(workflowVersionVersionNumber: number) : WorkflowVersionVersionNumberItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface VersionsRequestBuilder extends BaseRequestBuilder<VersionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkflowVersionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<VersionsRequestBuilderGetQueryParameters> | undefined) : Promise<WorkflowVersionCollectionResponse | undefined>;
     /**
      * The workflow versions that are available.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VersionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WorkflowsRequestBuilder extends BaseRequestBuilder<WorkflowsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      * @param workflowId The unique identifier of workflow
      * @returns {WorkflowItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byWorkflowId(workflowId: string) : WorkflowItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface WorkflowsRequestBuilder extends BaseRequestBuilder<WorkflowsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkflowCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflows?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<WorkflowsRequestBuilderGetQueryParameters> | undefined) : Promise<WorkflowCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface WorkflowsRequestBuilder extends BaseRequestBuilder<WorkflowsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Workflow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-workflows?view=graph-rest-beta|Find more info here}
      */
      post(body: Workflow, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Workflow | undefined>;
@@ -47,6 +51,7 @@ export interface WorkflowsRequestBuilder extends BaseRequestBuilder<WorkflowsReq
      * Get a list of workflow resources that are associated with Lifecycle Workflows.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WorkflowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface WorkflowsRequestBuilder extends BaseRequestBuilder<WorkflowsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: Workflow, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

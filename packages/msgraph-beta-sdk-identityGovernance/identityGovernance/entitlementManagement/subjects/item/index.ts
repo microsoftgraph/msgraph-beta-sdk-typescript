@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuilder<AccessPackageSubjectItemRequestBuilder> {
     /**
      * Provides operations to manage the connectedOrganization property of the microsoft.graph.accessPackageSubject entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get connectedOrganization(): ConnectedOrganizationRequestBuilder;
     /**
      * Delete navigation property subjects for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageSubject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageSubjectItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageSubject | undefined>;
     /**
@@ -37,6 +40,7 @@ export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageSubject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accesspackagesubject-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: AccessPackageSubject, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageSubject | undefined>;
@@ -44,12 +48,14 @@ export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuild
      * Delete navigation property subjects for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the subjects within entitlement management.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageSubjectItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,6 +63,7 @@ export interface AccessPackageSubjectItemRequestBuilder extends BaseRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessPackageSubject, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

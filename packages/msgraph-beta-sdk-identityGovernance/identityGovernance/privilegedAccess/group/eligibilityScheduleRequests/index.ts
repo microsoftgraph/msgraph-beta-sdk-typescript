@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EligibilityScheduleRequestsRequestBuilder extends BaseRequestBuilder<EligibilityScheduleRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
      * @param privilegedAccessGroupEligibilityScheduleRequestId The unique identifier of privilegedAccessGroupEligibilityScheduleRequest
      * @returns {PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byPrivilegedAccessGroupEligibilityScheduleRequestId(privilegedAccessGroupEligibilityScheduleRequestId: string) : PrivilegedAccessGroupEligibilityScheduleRequestItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface EligibilityScheduleRequestsRequestBuilder extends BaseRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<EligibilityScheduleRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponse | undefined>;
@@ -48,6 +52,7 @@ export interface EligibilityScheduleRequestsRequestBuilder extends BaseRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroupEligibilityScheduleRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-beta|Find more info here}
      */
      post(body: PrivilegedAccessGroupEligibilityScheduleRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedAccessGroupEligibilityScheduleRequest | undefined>;
@@ -55,6 +60,7 @@ export interface EligibilityScheduleRequestsRequestBuilder extends BaseRequestBu
      * Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EligibilityScheduleRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,6 +68,7 @@ export interface EligibilityScheduleRequestsRequestBuilder extends BaseRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: PrivilegedAccessGroupEligibilityScheduleRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

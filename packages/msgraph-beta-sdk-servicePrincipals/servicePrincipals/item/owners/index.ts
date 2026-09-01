@@ -28,26 +28,32 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OwnersRequestBuilder extends BaseRequestBuilder<OwnersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to appRoleAssignment.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get graphAppRoleAssignment(): GraphAppRoleAssignmentRequestBuilder;
     /**
      * Casts the previous resource to endpoint.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get graphEndpoint(): GraphEndpointRequestBuilder;
     /**
      * Casts the previous resource to servicePrincipal.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get graphServicePrincipal(): GraphServicePrincipalRequestBuilder;
     /**
      * Casts the previous resource to user.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get graphUser(): GraphUserRequestBuilder;
     /**
      * Provides operations to manage the collection of servicePrincipal entities.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get ref(): RefRequestBuilder;
     /**
@@ -61,12 +67,14 @@ export interface OwnersRequestBuilder extends BaseRequestBuilder<OwnersRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<OwnersRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
     /**
      * Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OwnersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

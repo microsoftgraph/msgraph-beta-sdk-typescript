@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskDefinitionsRequestBuilder extends BaseRequestBuilder<TaskDefinitionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      * @param taskDefinitionId The unique identifier of taskDefinition
      * @returns {TaskDefinitionItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byTaskDefinitionId(taskDefinitionId: string) : TaskDefinitionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface TaskDefinitionsRequestBuilder extends BaseRequestBuilder<TaskDe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-taskdefinitions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TaskDefinitionsRequestBuilderGetQueryParameters> | undefined) : Promise<TaskDefinitionCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface TaskDefinitionsRequestBuilder extends BaseRequestBuilder<TaskDe
      * Get a list of built-in workflow tasks in Lifecycle Workflows. A task is represented by the taskDefinition object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskDefinitionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

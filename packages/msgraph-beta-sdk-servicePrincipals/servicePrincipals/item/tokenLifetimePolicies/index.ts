@@ -20,10 +20,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TokenLifetimePoliciesRequestBuilder extends BaseRequestBuilder<TokenLifetimePoliciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the collection of servicePrincipal entities.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get ref(): RefRequestBuilder;
     /**
@@ -37,6 +39,7 @@ export interface TokenLifetimePoliciesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TokenLifetimePolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list-tokenlifetimepolicies?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<TokenLifetimePolicyCollectionResponse | undefined>;
@@ -44,6 +47,7 @@ export interface TokenLifetimePoliciesRequestBuilder extends BaseRequestBuilder<
      * List the tokenLifetimePolicy objects that are assigned to a servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to a service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TokenLifetimePoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

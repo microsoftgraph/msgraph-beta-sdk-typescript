@@ -20,12 +20,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RunsRequestBuilder extends BaseRequestBuilder<RunsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
      * @param runId The unique identifier of run
      * @returns {RunItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byRunId(runId: string) : RunItemRequestBuilder;
     /**
@@ -33,6 +35,7 @@ export interface RunsRequestBuilder extends BaseRequestBuilder<RunsRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RunCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-runs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RunsRequestBuilderGetQueryParameters> | undefined) : Promise<RunCollectionResponse | undefined>;
@@ -41,12 +44,14 @@ export interface RunsRequestBuilder extends BaseRequestBuilder<RunsRequestBuilde
      * @param endDateTime Usage: endDateTime={endDateTime}
      * @param startDateTime Usage: startDateTime={startDateTime}
      * @returns {MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      microsoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Get a list of run objects and their properties for a workflow.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RunsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

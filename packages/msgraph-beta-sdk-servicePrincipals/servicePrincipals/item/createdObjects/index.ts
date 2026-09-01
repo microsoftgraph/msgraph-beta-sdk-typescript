@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CreatedObjectsRequestBuilder extends BaseRequestBuilder<CreatedObjectsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to servicePrincipal.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get graphServicePrincipal(): GraphServicePrincipalRequestBuilder;
     /**
      * Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
      * @param directoryObjectId The unique identifier of directoryObject
      * @returns {DirectoryObjectItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byDirectoryObjectId(directoryObjectId: string) : DirectoryObjectItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface CreatedObjectsRequestBuilder extends BaseRequestBuilder<Created
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObjectCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CreatedObjectsRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObjectCollectionResponse | undefined>;
@@ -44,6 +48,7 @@ export interface CreatedObjectsRequestBuilder extends BaseRequestBuilder<Created
      * Retrieve a list of directoryobject objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CreatedObjectsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

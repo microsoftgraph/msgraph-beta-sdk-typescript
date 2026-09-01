@@ -17,6 +17,7 @@ export interface MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithSt
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkflowsInsightsSummary>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedsummary?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<WorkflowsInsightsSummary | undefined>;
@@ -24,6 +25,7 @@ export interface MicrosoftGraphIdentityGovernanceWorkflowsProcessedSummaryWithSt
      * Provide a summary from the insights resource of workflow objects processed within a tenant for a specified period. Because the list returned by List workflows doesn't indicate which workflows were processed, this summary gives you a quick overview based on counts.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GranularMailboxRestoreArtifactItemRequestBuilder extends BaseRequestBuilder<GranularMailboxRestoreArtifactItemRequestBuilder> {
     /**
      * Provides operations to manage the restorePoint property of the microsoft.graph.restoreArtifactBase entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get restorePoint(): RestorePointRequestBuilder;
     /**
      * Delete navigation property granularMailboxRestoreArtifacts for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,6 +31,7 @@ export interface GranularMailboxRestoreArtifactItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularMailboxRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<GranularMailboxRestoreArtifactItemRequestBuilderGetQueryParameters> | undefined) : Promise<GranularMailboxRestoreArtifact | undefined>;
     /**
@@ -37,18 +40,21 @@ export interface GranularMailboxRestoreArtifactItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularMailboxRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: GranularMailboxRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GranularMailboxRestoreArtifact | undefined>;
     /**
      * Delete navigation property granularMailboxRestoreArtifacts for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get granularMailboxRestoreArtifacts from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GranularMailboxRestoreArtifactItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -56,6 +62,7 @@ export interface GranularMailboxRestoreArtifactItemRequestBuilder extends BaseRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: GranularMailboxRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

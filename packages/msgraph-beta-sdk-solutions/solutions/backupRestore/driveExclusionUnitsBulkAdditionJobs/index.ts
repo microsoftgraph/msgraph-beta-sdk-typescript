@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRequestBuilder<DriveExclusionUnitsBulkAdditionJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
      * @param driveExclusionUnitsBulkAdditionJobId The unique identifier of driveExclusionUnitsBulkAdditionJob
      * @returns {DriveExclusionUnitsBulkAdditionJobItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byDriveExclusionUnitsBulkAdditionJobId(driveExclusionUnitsBulkAdditionJobId: string) : DriveExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: DriveExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveExclusionUnitsBulkAdditionJob | undefined>;
     /**
      * The list of bulk addition jobs for drive exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: DriveExclusionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

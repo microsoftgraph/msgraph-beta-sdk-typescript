@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskItemRequestBuilder extends BaseRequestBuilder<TaskItemRequestBuilder> {
     /**
      * Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.task entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get taskProcessingResults(): TaskProcessingResultsRequestBuilder;
     /**
@@ -23,12 +24,14 @@ export interface TaskItemRequestBuilder extends BaseRequestBuilder<TaskItemReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Task>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<TaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<Task | undefined>;
     /**
      * Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

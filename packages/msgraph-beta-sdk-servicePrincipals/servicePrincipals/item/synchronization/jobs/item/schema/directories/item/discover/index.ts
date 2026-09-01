@@ -17,6 +17,7 @@ export interface DiscoverRequestBuilder extends BaseRequestBuilder<DiscoverReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectoryDefinition | undefined>;
@@ -24,6 +25,7 @@ export interface DiscoverRequestBuilder extends BaseRequestBuilder<DiscoverReque
      * Discover the latest schema for a directoryDefinition to provision to an application. 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

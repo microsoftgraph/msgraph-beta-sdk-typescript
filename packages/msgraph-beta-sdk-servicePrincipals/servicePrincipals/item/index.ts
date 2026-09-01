@@ -46,7 +46,11 @@ import { HomeRealmDiscoveryPoliciesRequestBuilderNavigationMetadata, HomeRealmDi
 // @ts-ignore
 import { LicenseDetailsRequestBuilderNavigationMetadata, LicenseDetailsRequestBuilderRequestsMetadata, type LicenseDetailsRequestBuilder } from './licenseDetails/index.js';
 // @ts-ignore
+import { LifecycleRequestBuilderNavigationMetadata, LifecycleRequestBuilderRequestsMetadata, type LifecycleRequestBuilder } from './lifecycle/index.js';
+// @ts-ignore
 import { MemberOfRequestBuilderNavigationMetadata, MemberOfRequestBuilderRequestsMetadata, type MemberOfRequestBuilder } from './memberOf/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceAttestRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceAttestRequestBuilder } from './microsoftGraphIdentityGovernanceAttest/index.js';
 // @ts-ignore
 import { Oauth2PermissionGrantsRequestBuilderNavigationMetadata, Oauth2PermissionGrantsRequestBuilderRequestsMetadata, type Oauth2PermissionGrantsRequestBuilder } from './oauth2PermissionGrants/index.js';
 // @ts-ignore
@@ -78,132 +82,174 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<ServicePrincipalItemRequestBuilder> {
     /**
      * Provides operations to call the addTokenSigningCertificate method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get addTokenSigningCertificate(): AddTokenSigningCertificateRequestBuilder;
     /**
      * Provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get appManagementPolicies(): AppManagementPoliciesRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get appRoleAssignedTo(): AppRoleAssignedToRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get appRoleAssignments(): AppRoleAssignmentsRequestBuilder;
     /**
      * Provides operations to call the checkMemberGroups method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get checkMemberGroups(): CheckMemberGroupsRequestBuilder;
     /**
      * Provides operations to call the checkMemberObjects method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get checkMemberObjects(): CheckMemberObjectsRequestBuilder;
     /**
      * Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get claimsMappingPolicies(): ClaimsMappingPoliciesRequestBuilder;
     /**
      * Provides operations to manage the claimsPolicy property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get claimsPolicy(): ClaimsPolicyRequestBuilder;
     /**
      * Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get createdObjects(): CreatedObjectsRequestBuilder;
     /**
      * Provides operations to call the createPasswordSingleSignOnCredentials method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get createPasswordSingleSignOnCredentials(): CreatePasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get delegatedPermissionClassifications(): DelegatedPermissionClassificationsRequestBuilder;
     /**
      * Provides operations to call the deletePasswordSingleSignOnCredentials method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get deletePasswordSingleSignOnCredentials(): DeletePasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get endpoints(): EndpointsRequestBuilder;
     /**
      * Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get federatedIdentityCredentials(): FederatedIdentityCredentialsRequestBuilder;
     /**
      * Provides operations to call the getMemberGroups method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get getMemberGroups(): GetMemberGroupsRequestBuilder;
     /**
      * Provides operations to call the getMemberObjects method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get getMemberObjects(): GetMemberObjectsRequestBuilder;
     /**
      * Provides operations to call the getPasswordSingleSignOnCredentials method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get getPasswordSingleSignOnCredentials(): GetPasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get homeRealmDiscoveryPolicies(): HomeRealmDiscoveryPoliciesRequestBuilder;
     /**
      * Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get licenseDetails(): LicenseDetailsRequestBuilder;
     /**
+     * Provides operations to manage the lifecycle property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
+     */
+    get lifecycle(): LifecycleRequestBuilder;
+    /**
      * Provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get memberOf(): MemberOfRequestBuilder;
     /**
+     * Provides operations to call the attest method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
+     */
+    get microsoftGraphIdentityGovernanceAttest(): MicrosoftGraphIdentityGovernanceAttestRequestBuilder;
+    /**
      * Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get oauth2PermissionGrants(): Oauth2PermissionGrantsRequestBuilder;
     /**
      * Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get ownedObjects(): OwnedObjectsRequestBuilder;
     /**
      * Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get owners(): OwnersRequestBuilder;
     /**
      * Provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get permissionGrantPreApprovalPolicies(): PermissionGrantPreApprovalPoliciesRequestBuilder;
     /**
      * Provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get remoteDesktopSecurityConfiguration(): RemoteDesktopSecurityConfigurationRequestBuilder;
     /**
      * Provides operations to call the restore method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get restore(): RestoreRequestBuilder;
     /**
      * Provides operations to manage the synchronization property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get synchronization(): SynchronizationRequestBuilder;
     /**
      * Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get tokenIssuancePolicies(): TokenIssuancePoliciesRequestBuilder;
     /**
      * Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get tokenLifetimePolicies(): TokenLifetimePoliciesRequestBuilder;
     /**
      * Provides operations to manage the transitiveMemberOf property of the microsoft.graph.servicePrincipal entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get transitiveMemberOf(): TransitiveMemberOfRequestBuilder;
     /**
      * Provides operations to call the updatePasswordSingleSignOnCredentials method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get updatePasswordSingleSignOnCredentials(): UpdatePasswordSingleSignOnCredentialsRequestBuilder;
     /**
      * Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -211,6 +257,7 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      * Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
      * @param name Alternate key of federatedIdentityCredential
      * @returns {FederatedIdentityCredentialsWithNameRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      federatedIdentityCredentialsWithName(name: string | undefined) : FederatedIdentityCredentialsWithNameRequestBuilder;
     /**
@@ -218,6 +265,7 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipal | undefined>;
@@ -227,6 +275,7 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-beta|Find more info here}
      */
      patch(body: ServicePrincipal, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServicePrincipal | undefined>;
@@ -234,12 +283,14 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      * Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -247,6 +298,7 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPatchRequestInformation(body: ServicePrincipal, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -349,9 +401,16 @@ export const ServicePrincipalItemRequestBuilderNavigationMetadata: Record<Exclud
         requestsMetadata: LicenseDetailsRequestBuilderRequestsMetadata,
         navigationMetadata: LicenseDetailsRequestBuilderNavigationMetadata,
     },
+    lifecycle: {
+        requestsMetadata: LifecycleRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecycleRequestBuilderNavigationMetadata,
+    },
     memberOf: {
         requestsMetadata: MemberOfRequestBuilderRequestsMetadata,
         navigationMetadata: MemberOfRequestBuilderNavigationMetadata,
+    },
+    microsoftGraphIdentityGovernanceAttest: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceAttestRequestBuilderRequestsMetadata,
     },
     oauth2PermissionGrants: {
         requestsMetadata: Oauth2PermissionGrantsRequestBuilderRequestsMetadata,

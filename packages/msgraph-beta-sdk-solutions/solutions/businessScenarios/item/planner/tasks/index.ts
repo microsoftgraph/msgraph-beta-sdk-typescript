@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
      * @param businessScenarioTaskId The unique identifier of businessScenarioTask
      * @returns {BusinessScenarioTaskItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBusinessScenarioTaskId(businessScenarioTaskId: string) : BusinessScenarioTaskItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TasksRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenarioTaskCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-beta|Find more info here}
      */
      post(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenarioTask | undefined>;
@@ -47,6 +51,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      * Get a list of the businessScenarioTask objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TasksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

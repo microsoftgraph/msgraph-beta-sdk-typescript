@@ -22,18 +22,22 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WorkflowVersionVersionNumberItemRequestBuilder extends BaseRequestBuilder<WorkflowVersionVersionNumberItemRequestBuilder> {
     /**
      * Provides operations to manage the administrationScopeTargets property of the microsoft.graph.identityGovernance.workflowBase entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get administrationScopeTargets(): AdministrationScopeTargetsRequestBuilder;
     /**
      * Provides operations to manage the createdBy property of the microsoft.graph.identityGovernance.workflowBase entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get createdBy(): CreatedByRequestBuilder;
     /**
      * Provides operations to manage the lastModifiedBy property of the microsoft.graph.identityGovernance.workflowBase entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get lastModifiedBy(): LastModifiedByRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowBase entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get tasks(): TasksRequestBuilder;
     /**
@@ -41,12 +45,14 @@ export interface WorkflowVersionVersionNumberItemRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkflowVersion>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters> | undefined) : Promise<WorkflowVersion | undefined>;
     /**
      * The workflow versions that are available.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

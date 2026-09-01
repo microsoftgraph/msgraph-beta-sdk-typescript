@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface StagesRequestBuilder extends BaseRequestBuilder<StagesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
      * @param accessReviewStageId The unique identifier of accessReviewStage
      * @returns {AccessReviewStageItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessReviewStageId(accessReviewStageId: string) : AccessReviewStageItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface StagesRequestBuilder extends BaseRequestBuilder<StagesRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewStageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<StagesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewStageCollectionResponse | undefined>;
@@ -48,12 +52,14 @@ export interface StagesRequestBuilder extends BaseRequestBuilder<StagesRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewStage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: AccessReviewStage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewStage | undefined>;
     /**
      * Retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<StagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -61,6 +67,7 @@ export interface StagesRequestBuilder extends BaseRequestBuilder<StagesRequestBu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessReviewStage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

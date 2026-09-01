@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskProcessingResultsRequestBuilder extends BaseRequestBuilder<TaskProcessingResultsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.
      * @param taskProcessingResultId The unique identifier of taskProcessingResult
      * @returns {TaskProcessingResultItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byTaskProcessingResultId(taskProcessingResultId: string) : TaskProcessingResultItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface TaskProcessingResultsRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskProcessingResultCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-taskreport-list-taskprocessingresults?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TaskProcessingResultsRequestBuilderGetQueryParameters> | undefined) : Promise<TaskProcessingResultCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface TaskProcessingResultsRequestBuilder extends BaseRequestBuilder<
      * Get the task processing result resources from the taskReport.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskProcessingResultsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

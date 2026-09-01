@@ -34,6 +34,7 @@ export interface CheckMemberGroupsRequestBuilder extends BaseRequestBuilder<Chec
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CheckMemberGroupsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta|Find more info here}
      */
      post(body: CheckMemberGroupsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CheckMemberGroupsPostResponse | undefined>;
@@ -42,6 +43,7 @@ export interface CheckMemberGroupsRequestBuilder extends BaseRequestBuilder<Chec
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: CheckMemberGroupsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BusinessScenariosRequestBuilder extends BaseRequestBuilder<BusinessScenariosRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
      * @param businessScenarioId The unique identifier of businessScenario
      * @returns {BusinessScenarioItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBusinessScenarioId(businessScenarioId: string) : BusinessScenarioItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface BusinessScenariosRequestBuilder extends BaseRequestBuilder<Busi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenarioCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface BusinessScenariosRequestBuilder extends BaseRequestBuilder<Busi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenario>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-beta|Find more info here}
      */
      post(body: BusinessScenario, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenario | undefined>;
@@ -47,6 +51,7 @@ export interface BusinessScenariosRequestBuilder extends BaseRequestBuilder<Busi
      * Get a list of all businessScenario objects in an organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BusinessScenariosRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface BusinessScenariosRequestBuilder extends BaseRequestBuilder<Busi
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BusinessScenario, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

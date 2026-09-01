@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TargetDeviceGroupsRequestBuilder extends BaseRequestBuilder<TargetDeviceGroupsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the targetDeviceGroups property of the microsoft.graph.remoteDesktopSecurityConfiguration entity.
      * @param targetDeviceGroupId The unique identifier of targetDeviceGroup
      * @returns {TargetDeviceGroupItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byTargetDeviceGroupId(targetDeviceGroupId: string) : TargetDeviceGroupItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface TargetDeviceGroupsRequestBuilder extends BaseRequestBuilder<Tar
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TargetDeviceGroupCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-targetdevicegroups?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters> | undefined) : Promise<TargetDeviceGroupCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface TargetDeviceGroupsRequestBuilder extends BaseRequestBuilder<Tar
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TargetDeviceGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-targetdevicegroups?view=graph-rest-beta|Find more info here}
      */
      post(body: TargetDeviceGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TargetDeviceGroup | undefined>;
@@ -47,6 +51,7 @@ export interface TargetDeviceGroupsRequestBuilder extends BaseRequestBuilder<Tar
      * Get a list of the targetDeviceGroup objects and their properties on the remoteDesktopSecurityConfiguration resource on the servicePrincipal. Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that belongs to the targetDeviceGroup will get SSO.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TargetDeviceGroupsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface TargetDeviceGroupsRequestBuilder extends BaseRequestBuilder<Tar
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: TargetDeviceGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

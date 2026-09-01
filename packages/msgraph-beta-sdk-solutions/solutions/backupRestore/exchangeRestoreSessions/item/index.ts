@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExchangeRestoreSessionItemRequestBuilder extends BaseRequestBuilder<ExchangeRestoreSessionItemRequestBuilder> {
     /**
      * Provides operations to manage the granularMailboxRestoreArtifacts property of the microsoft.graph.exchangeRestoreSession entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get granularMailboxRestoreArtifacts(): GranularMailboxRestoreArtifactsRequestBuilder;
     /**
      * Provides operations to manage the mailboxRestoreArtifacts property of the microsoft.graph.exchangeRestoreSession entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxRestoreArtifacts(): MailboxRestoreArtifactsRequestBuilder;
     /**
      * Provides operations to manage the mailboxRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.exchangeRestoreSession entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get mailboxRestoreArtifactsBulkAdditionRequests(): MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder;
     /**
      * Delete navigation property exchangeRestoreSessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface ExchangeRestoreSessionItemRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeRestoreSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ExchangeRestoreSessionItemRequestBuilderGetQueryParameters> | undefined) : Promise<ExchangeRestoreSession | undefined>;
     /**
@@ -49,6 +54,7 @@ export interface ExchangeRestoreSessionItemRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeRestoreSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/exchangerestoresession-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: ExchangeRestoreSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExchangeRestoreSession | undefined>;
@@ -56,12 +62,14 @@ export interface ExchangeRestoreSessionItemRequestBuilder extends BaseRequestBui
      * Delete navigation property exchangeRestoreSessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of Exchange restore sessions available in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExchangeRestoreSessionItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,6 +77,7 @@ export interface ExchangeRestoreSessionItemRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: ExchangeRestoreSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

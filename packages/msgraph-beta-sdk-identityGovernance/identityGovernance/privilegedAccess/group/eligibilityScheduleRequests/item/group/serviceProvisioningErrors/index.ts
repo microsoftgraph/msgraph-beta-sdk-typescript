@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServiceProvisioningErrorsRequestBuilder extends BaseRequestBuilder<ServiceProvisioningErrorsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
@@ -23,12 +24,14 @@ export interface ServiceProvisioningErrorsRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceProvisioningErrorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters> | undefined) : Promise<ServiceProvisioningErrorCollectionResponse | undefined>;
     /**
      * Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServiceProvisioningErrorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

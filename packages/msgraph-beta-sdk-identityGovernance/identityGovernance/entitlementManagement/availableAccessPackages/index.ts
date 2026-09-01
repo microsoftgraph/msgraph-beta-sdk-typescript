@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AvailableAccessPackagesRequestBuilder extends BaseRequestBuilder<AvailableAccessPackagesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.
      * @param availableAccessPackageId The unique identifier of availableAccessPackage
      * @returns {AvailableAccessPackageItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAvailableAccessPackageId(availableAccessPackageId: string) : AvailableAccessPackageItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface AvailableAccessPackagesRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AvailableAccessPackageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AvailableAccessPackagesRequestBuilderGetQueryParameters> | undefined) : Promise<AvailableAccessPackageCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface AvailableAccessPackagesRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AvailableAccessPackage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: AvailableAccessPackage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AvailableAccessPackage | undefined>;
     /**
      * Get availableAccessPackages from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AvailableAccessPackagesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface AvailableAccessPackagesRequestBuilder extends BaseRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AvailableAccessPackage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

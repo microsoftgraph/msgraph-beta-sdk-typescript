@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteRestoreArtifactsRequestBuilder extends BaseRequestBuilder<SiteRestoreArtifactsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.
      * @param siteRestoreArtifactId The unique identifier of siteRestoreArtifact
      * @returns {SiteRestoreArtifactItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteRestoreArtifactId(siteRestoreArtifactId: string) : SiteRestoreArtifactItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteRestoreArtifactsRequestBuilder extends BaseRequestBuilder<S
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteRestoreArtifactCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifacts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteRestoreArtifactsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteRestoreArtifactCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface SiteRestoreArtifactsRequestBuilder extends BaseRequestBuilder<S
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: SiteRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteRestoreArtifact | undefined>;
     /**
      * List all the siteRestoreArtifact objects for a sharePointRestoreSession for the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteRestoreArtifactsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface SiteRestoreArtifactsRequestBuilder extends BaseRequestBuilder<S
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SiteRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

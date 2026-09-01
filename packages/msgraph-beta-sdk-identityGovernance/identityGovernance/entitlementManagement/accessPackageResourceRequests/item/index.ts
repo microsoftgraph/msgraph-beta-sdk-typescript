@@ -18,16 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageResourceRequestItemRequestBuilder extends BaseRequestBuilder<AccessPackageResourceRequestItemRequestBuilder> {
     /**
      * Provides operations to manage the accessPackageResource property of the microsoft.graph.accessPackageResourceRequest entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageResource(): AccessPackageResourceRequestBuilder;
     /**
      * Provides operations to manage the requestor property of the microsoft.graph.accessPackageResourceRequest entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get requestor(): RequestorRequestBuilder;
     /**
      * Delete navigation property accessPackageResourceRequests for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -35,6 +38,7 @@ export interface AccessPackageResourceRequestItemRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageResourceRequestItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageResourceRequest | undefined>;
     /**
@@ -43,18 +47,21 @@ export interface AccessPackageResourceRequestItemRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: AccessPackageResourceRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageResourceRequest | undefined>;
     /**
      * Delete navigation property accessPackageResourceRequests for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents a request to add or remove a resource to or from a catalog respectively.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageResourceRequestItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,6 +69,7 @@ export interface AccessPackageResourceRequestItemRequestBuilder extends BaseRequ
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessPackageResourceRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

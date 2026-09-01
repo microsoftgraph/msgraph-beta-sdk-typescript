@@ -20,12 +20,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskReportsRequestBuilder extends BaseRequestBuilder<TaskReportsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
      * @param taskReportId The unique identifier of taskReport
      * @returns {TaskReportItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byTaskReportId(taskReportId: string) : TaskReportItemRequestBuilder;
     /**
@@ -33,6 +35,7 @@ export interface TaskReportsRequestBuilder extends BaseRequestBuilder<TaskReport
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskReportCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters> | undefined) : Promise<TaskReportCollectionResponse | undefined>;
@@ -41,12 +44,14 @@ export interface TaskReportsRequestBuilder extends BaseRequestBuilder<TaskReport
      * @param endDateTime Usage: endDateTime={endDateTime}
      * @param startDateTime Usage: startDateTime={startDateTime}
      * @returns {MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      microsoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Get a list of the taskReport objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskReportsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

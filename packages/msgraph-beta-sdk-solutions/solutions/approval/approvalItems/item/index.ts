@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ApprovalItemItemRequestBuilder extends BaseRequestBuilder<ApprovalItemItemRequestBuilder> {
     /**
      * Provides operations to call the cancel method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to manage the requests property of the microsoft.graph.approvalItem entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get requests(): RequestsRequestBuilder;
     /**
      * Provides operations to manage the responses property of the microsoft.graph.approvalItem entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get responses(): ResponsesRequestBuilder;
     /**
      * Delete navigation property approvalItems for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface ApprovalItemItemRequestBuilder extends BaseRequestBuilder<Appro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalitem-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovalItemItemRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalItem | undefined>;
@@ -50,18 +55,21 @@ export interface ApprovalItemItemRequestBuilder extends BaseRequestBuilder<Appro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: ApprovalItem, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalItem | undefined>;
     /**
      * Delete navigation property approvalItems for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of an approvalItem object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovalItemItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -69,6 +77,7 @@ export interface ApprovalItemItemRequestBuilder extends BaseRequestBuilder<Appro
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: ApprovalItem, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

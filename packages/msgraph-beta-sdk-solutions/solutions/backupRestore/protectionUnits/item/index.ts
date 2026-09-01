@@ -24,22 +24,27 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProtectionUnitBaseItemRequestBuilder extends BaseRequestBuilder<ProtectionUnitBaseItemRequestBuilder> {
     /**
      * Provides operations to call the cancelOffboard method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get cancelOffboard(): CancelOffboardRequestBuilder;
     /**
      * Casts the previous resource to driveProtectionUnit.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get graphDriveProtectionUnit(): GraphDriveProtectionUnitRequestBuilder;
     /**
      * Casts the previous resource to mailboxProtectionUnit.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get graphMailboxProtectionUnit(): GraphMailboxProtectionUnitRequestBuilder;
     /**
      * Casts the previous resource to siteProtectionUnit.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get graphSiteProtectionUnit(): GraphSiteProtectionUnitRequestBuilder;
     /**
      * Provides operations to call the offboard method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get offboard(): OffboardRequestBuilder;
     /**
@@ -47,6 +52,7 @@ export interface ProtectionUnitBaseItemRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProtectionUnitBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/protectionunitbase-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ProtectionUnitBaseItemRequestBuilderGetQueryParameters> | undefined) : Promise<ProtectionUnitBase | undefined>;
@@ -54,6 +60,7 @@ export interface ProtectionUnitBaseItemRequestBuilder extends BaseRequestBuilder
      * Read the properties and relationships of a protectionUnitBase object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProtectionUnitBaseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

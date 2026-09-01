@@ -14,6 +14,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * Cancel a sharePointMigrationTask that moves a specific object from a source organization to a target organization. Only cancel the sharePointMigrationTask before it starts and when reverting doesn't cause system instability.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointmigrationtask-cancel?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -21,6 +22,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * Cancel a sharePointMigrationTask that moves a specific object from a source organization to a target organization. Only cancel the sharePointMigrationTask before it starts and when reverting doesn't cause system instability.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

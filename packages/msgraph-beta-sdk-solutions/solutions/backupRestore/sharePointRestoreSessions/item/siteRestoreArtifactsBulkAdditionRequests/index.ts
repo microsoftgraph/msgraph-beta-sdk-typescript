@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends BaseRequestBuilder<SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.sharePointRestoreSession entity.
      * @param siteRestoreArtifactsBulkAdditionRequestId The unique identifier of siteRestoreArtifactsBulkAdditionRequest
      * @returns {SiteRestoreArtifactsBulkAdditionRequestItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteRestoreArtifactsBulkAdditionRequestId(siteRestoreArtifactsBulkAdditionRequestId: string) : SiteRestoreArtifactsBulkAdditionRequestItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteRestoreArtifactsBulkAdditionRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteRestoreArtifactsBulkAdditionRequestCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteRestoreArtifactsBulkAdditionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      post(body: SiteRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteRestoreArtifactsBulkAdditionRequest | undefined>;
@@ -47,6 +51,7 @@ export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends 
      * Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder extends 
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SiteRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

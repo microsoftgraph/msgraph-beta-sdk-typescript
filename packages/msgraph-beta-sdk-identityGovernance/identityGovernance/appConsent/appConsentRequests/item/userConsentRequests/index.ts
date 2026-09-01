@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<UserConsentRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
      * @param userConsentRequestId The unique identifier of userConsentRequest
      * @returns {UserConsentRequestItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byUserConsentRequestId(userConsentRequestId: string) : UserConsentRequestItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<Us
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConsentRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<UserConsentRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<UserConsentRequestCollectionResponse | undefined>;
@@ -48,12 +52,14 @@ export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<Us
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserConsentRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: UserConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserConsentRequest | undefined>;
     /**
      * Retrieve a collection of userConsentRequest objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UserConsentRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -61,6 +67,7 @@ export interface UserConsentRequestsRequestBuilder extends BaseRequestBuilder<Us
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: UserConsentRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,18 +18,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BrowseSessionBaseItemRequestBuilder extends BaseRequestBuilder<BrowseSessionBaseItemRequestBuilder> {
     /**
      * Provides operations to call the browse method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get browse(): BrowseRequestBuilder;
     /**
      * Provides operations to call the browse method.
      * @param nextFetchToken Usage: nextFetchToken='{nextFetchToken}'
      * @returns {BrowseWithNextFetchTokenRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      browseWithNextFetchToken(nextFetchToken: string | undefined) : BrowseWithNextFetchTokenRequestBuilder;
     /**
      * Delete navigation property browseSessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -37,6 +40,7 @@ export interface BrowseSessionBaseItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BrowseSessionBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<BrowseSessionBaseItemRequestBuilderGetQueryParameters> | undefined) : Promise<BrowseSessionBase | undefined>;
     /**
@@ -45,18 +49,21 @@ export interface BrowseSessionBaseItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BrowseSessionBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: BrowseSessionBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BrowseSessionBase | undefined>;
     /**
      * Delete navigation property browseSessions for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of browse sessions in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BrowseSessionBaseItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,6 +71,7 @@ export interface BrowseSessionBaseItemRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BrowseSessionBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

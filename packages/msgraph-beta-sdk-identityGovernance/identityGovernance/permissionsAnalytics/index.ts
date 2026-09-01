@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PermissionsAnalyticsRequestBuilder extends BaseRequestBuilder<PermissionsAnalyticsRequestBuilder> {
     /**
      * Provides operations to manage the aws property of the microsoft.graph.permissionsAnalyticsAggregation entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get aws(): AwsRequestBuilder;
     /**
      * Provides operations to manage the azure property of the microsoft.graph.permissionsAnalyticsAggregation entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get azure(): AzureRequestBuilder;
     /**
      * Provides operations to manage the gcp property of the microsoft.graph.permissionsAnalyticsAggregation entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get gcp(): GcpRequestBuilder;
     /**
      * Delete navigation property permissionsAnalytics for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface PermissionsAnalyticsRequestBuilder extends BaseRequestBuilder<P
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsAnalyticsAggregation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<PermissionsAnalyticsRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionsAnalyticsAggregation | undefined>;
     /**
@@ -49,18 +54,21 @@ export interface PermissionsAnalyticsRequestBuilder extends BaseRequestBuilder<P
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsAnalyticsAggregation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: PermissionsAnalyticsAggregation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PermissionsAnalyticsAggregation | undefined>;
     /**
      * Delete navigation property permissionsAnalytics for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get permissionsAnalytics from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PermissionsAnalyticsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -68,6 +76,7 @@ export interface PermissionsAnalyticsRequestBuilder extends BaseRequestBuilder<P
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: PermissionsAnalyticsAggregation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

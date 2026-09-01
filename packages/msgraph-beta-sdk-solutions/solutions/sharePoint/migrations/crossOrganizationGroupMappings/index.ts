@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CrossOrganizationGroupMappingsRequestBuilder extends BaseRequestBuilder<CrossOrganizationGroupMappingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the crossOrganizationGroupMappings property of the microsoft.graph.sharePointMigrationsRoot entity.
      * @param sharePointGroupIdentityMappingId The unique identifier of sharePointGroupIdentityMapping
      * @returns {SharePointGroupIdentityMappingItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySharePointGroupIdentityMappingId(sharePointGroupIdentityMappingId: string) : SharePointGroupIdentityMappingItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface CrossOrganizationGroupMappingsRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointGroupIdentityMappingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointgroupidentitymapping-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CrossOrganizationGroupMappingsRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointGroupIdentityMappingCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface CrossOrganizationGroupMappingsRequestBuilder extends BaseReques
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointGroupIdentityMapping>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: SharePointGroupIdentityMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointGroupIdentityMapping | undefined>;
     /**
      * Retrieve a specific cross-organization group identity mapping based on the Microsoft Entra ID object ID of the source group. This method allows clients to verify existing group migration configurations and confirm that mappings are correctly established prior to or during cross-tenant migration operations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CrossOrganizationGroupMappingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface CrossOrganizationGroupMappingsRequestBuilder extends BaseReques
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SharePointGroupIdentityMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

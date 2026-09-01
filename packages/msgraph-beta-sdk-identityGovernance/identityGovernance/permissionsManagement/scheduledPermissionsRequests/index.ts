@@ -18,6 +18,7 @@ export interface ScheduledPermissionsRequestsRequestBuilder extends BaseRequestB
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -25,6 +26,7 @@ export interface ScheduledPermissionsRequestsRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ScheduledPermissionsRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<ScheduledPermissionsRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<ScheduledPermissionsRequestCollectionResponse | undefined>;
     /**
@@ -33,6 +35,7 @@ export interface ScheduledPermissionsRequestsRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ScheduledPermissionsRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/permissionsmanagement-post-scheduledpermissionsrequests?view=graph-rest-beta|Find more info here}
      */
      post(body: ScheduledPermissionsRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ScheduledPermissionsRequest | undefined>;
@@ -40,6 +43,7 @@ export interface ScheduledPermissionsRequestsRequestBuilder extends BaseRequestB
      * Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ScheduledPermissionsRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -47,6 +51,7 @@ export interface ScheduledPermissionsRequestsRequestBuilder extends BaseRequestB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: ScheduledPermissionsRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

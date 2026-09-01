@@ -20,20 +20,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualEventsRequestBuilder> {
     /**
      * Provides operations to manage the events property of the microsoft.graph.virtualEventsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get events(): EventsRequestBuilder;
     /**
      * Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get townhalls(): TownhallsRequestBuilder;
     /**
      * Provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get webinars(): WebinarsRequestBuilder;
     /**
      * Delete navigation property virtualEvents for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -41,6 +45,7 @@ export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualE
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventsRoot | undefined>;
     /**
@@ -49,18 +54,21 @@ export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualE
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: VirtualEventsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventsRoot | undefined>;
     /**
      * Delete navigation property virtualEvents for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of virtual events.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -68,6 +76,7 @@ export interface VirtualEventsRequestBuilder extends BaseRequestBuilder<VirtualE
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: VirtualEventsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

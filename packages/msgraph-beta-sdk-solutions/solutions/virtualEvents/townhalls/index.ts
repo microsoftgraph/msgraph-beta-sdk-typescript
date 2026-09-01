@@ -22,12 +22,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TownhallsRequestBuilder extends BaseRequestBuilder<TownhallsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
      * @param virtualEventTownhallId The unique identifier of virtualEventTownhall
      * @returns {VirtualEventTownhallItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byVirtualEventTownhallId(virtualEventTownhallId: string) : VirtualEventTownhallItemRequestBuilder;
     /**
@@ -35,6 +37,7 @@ export interface TownhallsRequestBuilder extends BaseRequestBuilder<TownhallsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventTownhallCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<TownhallsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventTownhallCollectionResponse | undefined>;
     /**
@@ -42,12 +45,14 @@ export interface TownhallsRequestBuilder extends BaseRequestBuilder<TownhallsReq
      * @param role Usage: role='{role}'
      * @param userId Usage: userId='{userId}'
      * @returns {GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getByUserIdAndRoleWithUserIdWithRole(role: string | undefined, userId: string | undefined) : GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder;
     /**
      * Provides operations to call the getByUserRole method.
      * @param role Usage: role='{role}'
      * @returns {GetByUserRoleWithRoleRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getByUserRoleWithRole(role: string | undefined) : GetByUserRoleWithRoleRequestBuilder;
     /**
@@ -56,6 +61,7 @@ export interface TownhallsRequestBuilder extends BaseRequestBuilder<TownhallsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventTownhall>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventsroot-post-townhalls?view=graph-rest-beta|Find more info here}
      */
      post(body: VirtualEventTownhall, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventTownhall | undefined>;
@@ -63,6 +69,7 @@ export interface TownhallsRequestBuilder extends BaseRequestBuilder<TownhallsReq
      * Read the properties and relationships of a virtualEventTownhall object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TownhallsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -70,6 +77,7 @@ export interface TownhallsRequestBuilder extends BaseRequestBuilder<TownhallsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: VirtualEventTownhall, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

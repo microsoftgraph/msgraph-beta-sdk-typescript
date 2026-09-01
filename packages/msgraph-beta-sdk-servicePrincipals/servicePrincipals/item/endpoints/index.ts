@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EndpointsRequestBuilder extends BaseRequestBuilder<EndpointsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
      * @param endpointId The unique identifier of endpoint
      * @returns {EndpointItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byEndpointId(endpointId: string) : EndpointItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface EndpointsRequestBuilder extends BaseRequestBuilder<EndpointsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EndpointCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<EndpointsRequestBuilderGetQueryParameters> | undefined) : Promise<EndpointCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface EndpointsRequestBuilder extends BaseRequestBuilder<EndpointsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Endpoint>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      post(body: Endpoint, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Endpoint | undefined>;
     /**
      * Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EndpointsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface EndpointsRequestBuilder extends BaseRequestBuilder<EndpointsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: Endpoint, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

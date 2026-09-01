@@ -17,12 +17,14 @@ export interface PrincipalRequestBuilder extends BaseRequestBuilder<PrincipalReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryObject>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<PrincipalRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryObject | undefined>;
     /**
      * References the principal that's in the scope of this membership or ownership assignment request to the group that's governed by PIM. Supports $expand and $select nested in $expand for id only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PrincipalRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

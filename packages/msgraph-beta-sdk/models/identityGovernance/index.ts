@@ -54,6 +54,28 @@ export interface ActivationScope extends AdditionalDataHolder, BackedModel, Pars
 }
 export type ActivationTaskScopeType = (typeof ActivationTaskScopeTypeObject)[keyof typeof ActivationTaskScopeTypeObject];
 export type ActivationUserScopeType = (typeof ActivationUserScopeTypeObject)[keyof typeof ActivationUserScopeTypeObject];
+export interface AgentIdentityLifecycle extends IdentityLifecycle, Parsable {
+}
+export interface AgentIdentityLifecyclePolicy extends LifecyclePolicy, Parsable {
+}
+export interface AllExcludingGroupsSubjectSet extends Parsable, SubjectSet {
+    /**
+     * The excludedGroups property
+     */
+    excludedGroups?: Group[] | null;
+}
+export interface AllExcludingSpecificObjectsSubjectSet extends Parsable, SubjectSet {
+    /**
+     * The excludedObjects property
+     */
+    excludedObjects?: DirectoryObject[] | null;
+}
+export interface AttestationComplianceIssue extends ComplianceIssue, Parsable {
+    /**
+     * The attestationBlockReasons property
+     */
+    attestationBlockReasons?: string[] | null;
+}
 export interface AttributeChangeTrigger extends Parsable, WorkflowExecutionTrigger {
     /**
      * The trigger attribute being changed that triggers the workflowexecutiontrigger of a workflow.)
@@ -115,6 +137,30 @@ export interface CancelScope extends AdditionalDataHolder, BackedModel, Parsable
      * The OdataType property
      */
     odataType?: string | null;
+}
+export interface ComplianceIssue extends Entity, Parsable {
+    /**
+     * The description property
+     */
+    description?: string | null;
+    /**
+     * The governingPolicyReferenceId property
+     */
+    governingPolicyReferenceId?: string | null;
+    /**
+     * The issueCode property
+     */
+    issueCode?: string | null;
+    /**
+     * The ruleType property
+     */
+    ruleType?: string | null;
+}
+export interface ComplianceIssueCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ComplianceIssue[] | null;
 }
 export interface CountBasedQuarantineCondition extends Parsable, QuarantineCondition {
     /**
@@ -187,6 +233,51 @@ export function createActivationScopeFromDiscriminatorValue(parseNode: ParseNode
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AgentIdentityLifecycle}
+ */
+// @ts-ignore
+export function createAgentIdentityLifecycleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAgentIdentityLifecycle;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AgentIdentityLifecyclePolicy}
+ */
+// @ts-ignore
+export function createAgentIdentityLifecyclePolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAgentIdentityLifecyclePolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AllExcludingGroupsSubjectSet}
+ */
+// @ts-ignore
+export function createAllExcludingGroupsSubjectSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAllExcludingGroupsSubjectSet;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AllExcludingSpecificObjectsSubjectSet}
+ */
+// @ts-ignore
+export function createAllExcludingSpecificObjectsSubjectSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAllExcludingSpecificObjectsSubjectSet;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {AttestationComplianceIssue}
+ */
+// @ts-ignore
+export function createAttestationComplianceIssueFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoAttestationComplianceIssue;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {AttributeChangeTrigger}
  */
 // @ts-ignore
@@ -239,6 +330,35 @@ export function createCancelScopeFromDiscriminatorValue(parseNode: ParseNode | u
         }
     }
     return deserializeIntoCancelScope;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceIssueCollectionResponse}
+ */
+// @ts-ignore
+export function createComplianceIssueCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoComplianceIssueCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ComplianceIssue}
+ */
+// @ts-ignore
+export function createComplianceIssueFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.identityGovernance.attestationComplianceIssue":
+                    return deserializeIntoAttestationComplianceIssue;
+            }
+        }
+    }
+    return deserializeIntoComplianceIssue;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -306,6 +426,42 @@ export function createCustomTaskExtensionResponseDataFromDiscriminatorValue(pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DeleteOnlyEnforcementAction}
+ */
+// @ts-ignore
+export function createDeleteOnlyEnforcementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDeleteOnlyEnforcementAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DirectoryObjectWorkflowSubject}
+ */
+// @ts-ignore
+export function createDirectoryObjectWorkflowSubjectFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDirectoryObjectWorkflowSubject;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DisableOnlyEnforcementAction}
+ */
+// @ts-ignore
+export function createDisableOnlyEnforcementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDisableOnlyEnforcementAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DisableThenDeleteEnforcementAction}
+ */
+// @ts-ignore
+export function createDisableThenDeleteEnforcementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDisableThenDeleteEnforcementAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GroupBasedSubjectSet}
  */
 // @ts-ignore
@@ -324,6 +480,35 @@ export function createGuestSponsorTriggerFromDiscriminatorValue(parseNode: Parse
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {IdentityLifecycle}
+ */
+// @ts-ignore
+export function createIdentityLifecycleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.identityGovernance.agentIdentityLifecycle":
+                    return deserializeIntoAgentIdentityLifecycle;
+            }
+        }
+    }
+    return deserializeIntoIdentityLifecycle;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {InactivityRule}
+ */
+// @ts-ignore
+export function createInactivityRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoInactivityRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {Insights}
  */
 // @ts-ignore
@@ -338,6 +523,119 @@ export function createInsightsFromDiscriminatorValue(parseNode: ParseNode | unde
 // @ts-ignore
 export function createLifecycleManagementSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoLifecycleManagementSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyCollectionResponse}
+ */
+// @ts-ignore
+export function createLifecyclePolicyCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLifecyclePolicyCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyEnforcementAction}
+ */
+// @ts-ignore
+export function createLifecyclePolicyEnforcementActionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction":
+                    return deserializeIntoDeleteOnlyEnforcementAction;
+                case "#microsoft.graph.identityGovernance.disableOnlyEnforcementAction":
+                    return deserializeIntoDisableOnlyEnforcementAction;
+                case "#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction":
+                    return deserializeIntoDisableThenDeleteEnforcementAction;
+            }
+        }
+    }
+    return deserializeIntoLifecyclePolicyEnforcementAction;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicy}
+ */
+// @ts-ignore
+export function createLifecyclePolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy":
+                    return deserializeIntoAgentIdentityLifecyclePolicy;
+            }
+        }
+    }
+    return deserializeIntoLifecyclePolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyNotificationSettings}
+ */
+// @ts-ignore
+export function createLifecyclePolicyNotificationSettingsFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLifecyclePolicyNotificationSettings;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyPriorityConfigurationCollectionResponse}
+ */
+// @ts-ignore
+export function createLifecyclePolicyPriorityConfigurationCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLifecyclePolicyPriorityConfigurationCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyPriorityConfiguration}
+ */
+// @ts-ignore
+export function createLifecyclePolicyPriorityConfigurationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLifecyclePolicyPriorityConfiguration;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyRuleCollectionResponse}
+ */
+// @ts-ignore
+export function createLifecyclePolicyRuleCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoLifecyclePolicyRuleCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {LifecyclePolicyRule}
+ */
+// @ts-ignore
+export function createLifecyclePolicyRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.identityGovernance.inactivityRule":
+                    return deserializeIntoInactivityRule;
+                case "#microsoft.graph.identityGovernance.periodicAttestationRule":
+                    return deserializeIntoPeriodicAttestationRule;
+                case "#microsoft.graph.identityGovernance.sponsorPresenceRule":
+                    return deserializeIntoSponsorPresenceRule;
+            }
+        }
+    }
+    return deserializeIntoLifecyclePolicyRule;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -383,6 +681,15 @@ export function createParameterFromDiscriminatorValue(parseNode: ParseNode | und
 // @ts-ignore
 export function createPercentageBasedQuarantineConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoPercentageBasedQuarantineCondition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PeriodicAttestationRule}
+ */
+// @ts-ignore
+export function createPeriodicAttestationRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPeriodicAttestationRule;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -490,6 +797,24 @@ export function createRunSummaryFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SelectedObjectsSubjectSet}
+ */
+// @ts-ignore
+export function createSelectedObjectsSubjectSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSelectedObjectsSubjectSet;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SponsorPresenceRule}
+ */
+// @ts-ignore
+export function createSponsorPresenceRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSponsorPresenceRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SubjectProcessingResultCollectionResponse}
  */
 // @ts-ignore
@@ -504,6 +829,15 @@ export function createSubjectProcessingResultCollectionResponseFromDiscriminator
 // @ts-ignore
 export function createSubjectProcessingResultFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoSubjectProcessingResult;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SubjectSummary}
+ */
+// @ts-ignore
+export function createSubjectSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSubjectSummary;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -799,6 +1133,8 @@ export function createWorkflowSubjectFromDiscriminatorValue(parseNode: ParseNode
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.identityGovernance.directoryObjectWorkflowSubject":
+                    return deserializeIntoDirectoryObjectWorkflowSubject;
                 case "#microsoft.graph.identityGovernance.provisioningObjectWorkflowSubject":
                     return deserializeIntoProvisioningObjectWorkflowSubject;
             }
@@ -924,6 +1260,8 @@ export interface CustomTaskExtensionResponseData extends CustomExtensionData, Pa
      */
     targetSubject?: WorkflowSubject | null;
 }
+export interface DeleteOnlyEnforcementAction extends LifecyclePolicyEnforcementAction, Parsable {
+}
 /**
  * The deserialization information for the current model
  * @param ActivateGroupScope The instance to deserialize into.
@@ -989,6 +1327,64 @@ export function deserializeIntoActivationScope(activationScope: Partial<Activati
 }
 /**
  * The deserialization information for the current model
+ * @param AgentIdentityLifecycle The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAgentIdentityLifecycle(agentIdentityLifecycle: Partial<AgentIdentityLifecycle> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoIdentityLifecycle(agentIdentityLifecycle),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AgentIdentityLifecyclePolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAgentIdentityLifecyclePolicy(agentIdentityLifecyclePolicy: Partial<AgentIdentityLifecyclePolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicy(agentIdentityLifecyclePolicy),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AllExcludingGroupsSubjectSet The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAllExcludingGroupsSubjectSet(allExcludingGroupsSubjectSet: Partial<AllExcludingGroupsSubjectSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSubjectSet(allExcludingGroupsSubjectSet),
+        "excludedGroups": n => { allExcludingGroupsSubjectSet.excludedGroups = n.getCollectionOfObjectValues<Group>(createGroupFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AllExcludingSpecificObjectsSubjectSet The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAllExcludingSpecificObjectsSubjectSet(allExcludingSpecificObjectsSubjectSet: Partial<AllExcludingSpecificObjectsSubjectSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSubjectSet(allExcludingSpecificObjectsSubjectSet),
+        "excludedObjects": n => { allExcludingSpecificObjectsSubjectSet.excludedObjects = n.getCollectionOfObjectValues<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param AttestationComplianceIssue The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoAttestationComplianceIssue(attestationComplianceIssue: Partial<AttestationComplianceIssue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoComplianceIssue(attestationComplianceIssue),
+        "attestationBlockReasons": n => { attestationComplianceIssue.attestationBlockReasons = n.getCollectionOfPrimitiveValues<string>("string"); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param AttributeChangeTrigger The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1050,6 +1446,33 @@ export function deserializeIntoCancelScope(cancelScope: Partial<CancelScope> | u
     return {
         "backingStoreEnabled": n => { cancelScope.backingStoreEnabled = true; },
         "@odata.type": n => { cancelScope.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ComplianceIssue The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceIssue(complianceIssue: Partial<ComplianceIssue> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(complianceIssue),
+        "description": n => { complianceIssue.description = n.getStringValue(); },
+        "governingPolicyReferenceId": n => { complianceIssue.governingPolicyReferenceId = n.getStringValue(); },
+        "issueCode": n => { complianceIssue.issueCode = n.getStringValue(); },
+        "ruleType": n => { complianceIssue.ruleType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ComplianceIssueCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoComplianceIssueCollectionResponse(complianceIssueCollectionResponse: Partial<ComplianceIssueCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(complianceIssueCollectionResponse),
+        "value": n => { complianceIssueCollectionResponse.value = n.getCollectionOfObjectValues<ComplianceIssue>(createComplianceIssueFromDiscriminatorValue); },
     }
 }
 /**
@@ -1149,6 +1572,52 @@ export function deserializeIntoCustomTaskExtensionResponseData(customTaskExtensi
 }
 /**
  * The deserialization information for the current model
+ * @param DeleteOnlyEnforcementAction The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDeleteOnlyEnforcementAction(deleteOnlyEnforcementAction: Partial<DeleteOnlyEnforcementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicyEnforcementAction(deleteOnlyEnforcementAction),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DirectoryObjectWorkflowSubject The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDirectoryObjectWorkflowSubject(directoryObjectWorkflowSubject: Partial<DirectoryObjectWorkflowSubject> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoWorkflowSubject(directoryObjectWorkflowSubject),
+        "directoryObject": n => { directoryObjectWorkflowSubject.directoryObject = n.getObjectValue<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DisableOnlyEnforcementAction The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDisableOnlyEnforcementAction(disableOnlyEnforcementAction: Partial<DisableOnlyEnforcementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicyEnforcementAction(disableOnlyEnforcementAction),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DisableThenDeleteEnforcementAction The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDisableThenDeleteEnforcementAction(disableThenDeleteEnforcementAction: Partial<DisableThenDeleteEnforcementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicyEnforcementAction(disableThenDeleteEnforcementAction),
+        "deletionGracePeriodInDays": n => { disableThenDeleteEnforcementAction.deletionGracePeriodInDays = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param GroupBasedSubjectSet The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1169,6 +1638,32 @@ export function deserializeIntoGuestSponsorTrigger(guestSponsorTrigger: Partial<
     return {
         ...deserializeIntoWorkflowExecutionTrigger(guestSponsorTrigger),
         "minimumRequiredSponsors": n => { guestSponsorTrigger.minimumRequiredSponsors = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param IdentityLifecycle The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoIdentityLifecycle(identityLifecycle: Partial<IdentityLifecycle> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(identityLifecycle),
+        "complianceIssues": n => { identityLifecycle.complianceIssues = n.getCollectionOfObjectValues<ComplianceIssue>(createComplianceIssueFromDiscriminatorValue); },
+        "effectiveGoverningPolicy": n => { identityLifecycle.effectiveGoverningPolicy = n.getObjectValue<LifecyclePolicy>(createLifecyclePolicyFromDiscriminatorValue); },
+        "lastAttestationDateTime": n => { identityLifecycle.lastAttestationDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param InactivityRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoInactivityRule(inactivityRule: Partial<InactivityRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicyRule(inactivityRule),
+        "lastActivityThresholdInDays": n => { inactivityRule.lastActivityThresholdInDays = n.getNumberValue(); },
     }
 }
 /**
@@ -1198,6 +1693,120 @@ export function deserializeIntoLifecycleManagementSettings(lifecycleManagementSe
 }
 /**
  * The deserialization information for the current model
+ * @param LifecyclePolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicy(lifecyclePolicy: Partial<LifecyclePolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(lifecyclePolicy),
+        "createdBy": n => { lifecyclePolicy.createdBy = n.getObjectValue<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
+        "createdDateTime": n => { lifecyclePolicy.createdDateTime = n.getDateValue(); },
+        "description": n => { lifecyclePolicy.description = n.getStringValue(); },
+        "displayName": n => { lifecyclePolicy.displayName = n.getStringValue(); },
+        "enforcementAction": n => { lifecyclePolicy.enforcementAction = n.getObjectValue<LifecyclePolicyEnforcementAction>(createLifecyclePolicyEnforcementActionFromDiscriminatorValue); },
+        "gracePeriodInDays": n => { lifecyclePolicy.gracePeriodInDays = n.getNumberValue(); },
+        "isEnabled": n => { lifecyclePolicy.isEnabled = n.getBooleanValue(); },
+        "lastModifiedBy": n => { lifecyclePolicy.lastModifiedBy = n.getObjectValue<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
+        "lastModifiedDateTime": n => { lifecyclePolicy.lastModifiedDateTime = n.getDateValue(); },
+        "notificationSchedule": n => { lifecyclePolicy.notificationSchedule = n.getObjectValue<LifecyclePolicyNotificationSettings>(createLifecyclePolicyNotificationSettingsFromDiscriminatorValue); },
+        "policySource": n => { lifecyclePolicy.policySource = n.getEnumValue<LifecyclePolicySource>(LifecyclePolicySourceObject); },
+        "rules": n => { lifecyclePolicy.rules = n.getCollectionOfObjectValues<LifecyclePolicyRule>(createLifecyclePolicyRuleFromDiscriminatorValue); },
+        "scope": n => { lifecyclePolicy.scope = n.getObjectValue<SubjectSet>(createSubjectSetFromDiscriminatorValue); },
+        "versionNumber": n => { lifecyclePolicy.versionNumber = n.getNumberValue(); },
+        "versions": n => { lifecyclePolicy.versions = n.getCollectionOfObjectValues<LifecyclePolicy>(createLifecyclePolicyFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyCollectionResponse(lifecyclePolicyCollectionResponse: Partial<LifecyclePolicyCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(lifecyclePolicyCollectionResponse),
+        "value": n => { lifecyclePolicyCollectionResponse.value = n.getCollectionOfObjectValues<LifecyclePolicy>(createLifecyclePolicyFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyEnforcementAction The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyEnforcementAction(lifecyclePolicyEnforcementAction: Partial<LifecyclePolicyEnforcementAction> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { lifecyclePolicyEnforcementAction.backingStoreEnabled = true; },
+        "@odata.type": n => { lifecyclePolicyEnforcementAction.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyNotificationSettings The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyNotificationSettings(lifecyclePolicyNotificationSettings: Partial<LifecyclePolicyNotificationSettings> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "additionalRecipients": n => { lifecyclePolicyNotificationSettings.additionalRecipients = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "backingStoreEnabled": n => { lifecyclePolicyNotificationSettings.backingStoreEnabled = true; },
+        "isEnabled": n => { lifecyclePolicyNotificationSettings.isEnabled = n.getBooleanValue(); },
+        "@odata.type": n => { lifecyclePolicyNotificationSettings.odataType = n.getStringValue(); },
+        "offsetsAfterNonComplianceInDays": n => { lifecyclePolicyNotificationSettings.offsetsAfterNonComplianceInDays = n.getCollectionOfPrimitiveValues<number>("number"); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyPriorityConfiguration The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyPriorityConfiguration(lifecyclePolicyPriorityConfiguration: Partial<LifecyclePolicyPriorityConfiguration> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(lifecyclePolicyPriorityConfiguration),
+        "orderedPolicyIds": n => { lifecyclePolicyPriorityConfiguration.orderedPolicyIds = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "subjectType": n => { lifecyclePolicyPriorityConfiguration.subjectType = n.getCollectionOfEnumValues<SubjectType>(SubjectTypeObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyPriorityConfigurationCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyPriorityConfigurationCollectionResponse(lifecyclePolicyPriorityConfigurationCollectionResponse: Partial<LifecyclePolicyPriorityConfigurationCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(lifecyclePolicyPriorityConfigurationCollectionResponse),
+        "value": n => { lifecyclePolicyPriorityConfigurationCollectionResponse.value = n.getCollectionOfObjectValues<LifecyclePolicyPriorityConfiguration>(createLifecyclePolicyPriorityConfigurationFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyRule(lifecyclePolicyRule: Partial<LifecyclePolicyRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(lifecyclePolicyRule),
+        "isEnabled": n => { lifecyclePolicyRule.isEnabled = n.getBooleanValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param LifecyclePolicyRuleCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoLifecyclePolicyRuleCollectionResponse(lifecyclePolicyRuleCollectionResponse: Partial<LifecyclePolicyRuleCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(lifecyclePolicyRuleCollectionResponse),
+        "value": n => { lifecyclePolicyRuleCollectionResponse.value = n.getCollectionOfObjectValues<LifecyclePolicyRule>(createLifecyclePolicyRuleFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param LifecycleWorkflowsContainer The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1208,6 +1817,8 @@ export function deserializeIntoLifecycleWorkflowsContainer(lifecycleWorkflowsCon
         "customTaskExtensions": n => { lifecycleWorkflowsContainer.customTaskExtensions = n.getCollectionOfObjectValues<CustomTaskExtension>(createCustomTaskExtensionFromDiscriminatorValue); },
         "deletedItems": n => { lifecycleWorkflowsContainer.deletedItems = n.getObjectValue<DeletedItemContainer>(createDeletedItemContainerFromDiscriminatorValue); },
         "insights": n => { lifecycleWorkflowsContainer.insights = n.getObjectValue<Insights>(createInsightsFromDiscriminatorValue); },
+        "lifecyclePolicies": n => { lifecycleWorkflowsContainer.lifecyclePolicies = n.getCollectionOfObjectValues<LifecyclePolicy>(createLifecyclePolicyFromDiscriminatorValue); },
+        "lifecyclePolicyPriorityConfigurations": n => { lifecycleWorkflowsContainer.lifecyclePolicyPriorityConfigurations = n.getCollectionOfObjectValues<LifecyclePolicyPriorityConfiguration>(createLifecyclePolicyPriorityConfigurationFromDiscriminatorValue); },
         "settings": n => { lifecycleWorkflowsContainer.settings = n.getObjectValue<LifecycleManagementSettings>(createLifecycleManagementSettingsFromDiscriminatorValue); },
         "taskDefinitions": n => { lifecycleWorkflowsContainer.taskDefinitions = n.getCollectionOfObjectValues<TaskDefinition>(createTaskDefinitionFromDiscriminatorValue); },
         "workflows": n => { lifecycleWorkflowsContainer.workflows = n.getCollectionOfObjectValues<Workflow>(createWorkflowFromDiscriminatorValue); },
@@ -1262,6 +1873,18 @@ export function deserializeIntoPercentageBasedQuarantineCondition(percentageBase
     return {
         ...deserializeIntoQuarantineCondition(percentageBasedQuarantineCondition),
         "percentage": n => { percentageBasedQuarantineCondition.percentage = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param PeriodicAttestationRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPeriodicAttestationRule(periodicAttestationRule: Partial<PeriodicAttestationRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicyRule(periodicAttestationRule),
+        "attestationIntervalInDays": n => { periodicAttestationRule.attestationIntervalInDays = n.getNumberValue(); },
     }
 }
 /**
@@ -1417,6 +2040,30 @@ export function deserializeIntoRunSummary(runSummary: Partial<RunSummary> | unde
 }
 /**
  * The deserialization information for the current model
+ * @param SelectedObjectsSubjectSet The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSelectedObjectsSubjectSet(selectedObjectsSubjectSet: Partial<SelectedObjectsSubjectSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSubjectSet(selectedObjectsSubjectSet),
+        "inScopeObjects": n => { selectedObjectsSubjectSet.inScopeObjects = n.getCollectionOfObjectValues<DirectoryObject>(createDirectoryObjectFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SponsorPresenceRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSponsorPresenceRule(sponsorPresenceRule: Partial<SponsorPresenceRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoLifecyclePolicyRule(sponsorPresenceRule),
+        "minimumSponsorCount": n => { sponsorPresenceRule.minimumSponsorCount = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param SubjectProcessingResult The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1431,6 +2078,7 @@ export function deserializeIntoSubjectProcessingResult(subjectProcessingResult: 
         "scheduledDateTime": n => { subjectProcessingResult.scheduledDateTime = n.getDateValue(); },
         "startedDateTime": n => { subjectProcessingResult.startedDateTime = n.getDateValue(); },
         "subject": n => { subjectProcessingResult.subject = n.getObjectValue<WorkflowSubject>(createWorkflowSubjectFromDiscriminatorValue); },
+        "subjectType": n => { subjectProcessingResult.subjectType = n.getCollectionOfEnumValues<SubjectType>(SubjectTypeObject); },
         "taskProcessingResults": n => { subjectProcessingResult.taskProcessingResults = n.getCollectionOfObjectValues<TaskProcessingResult>(createTaskProcessingResultFromDiscriminatorValue); },
         "totalTasksCount": n => { subjectProcessingResult.totalTasksCount = n.getNumberValue(); },
         "totalUnprocessedTasksCount": n => { subjectProcessingResult.totalUnprocessedTasksCount = n.getNumberValue(); },
@@ -1448,6 +2096,23 @@ export function deserializeIntoSubjectProcessingResultCollectionResponse(subject
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(subjectProcessingResultCollectionResponse),
         "value": n => { subjectProcessingResultCollectionResponse.value = n.getCollectionOfObjectValues<SubjectProcessingResult>(createSubjectProcessingResultFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SubjectSummary The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSubjectSummary(subjectSummary: Partial<SubjectSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { subjectSummary.backingStoreEnabled = true; },
+        "failedSubjects": n => { subjectSummary.failedSubjects = n.getNumberValue(); },
+        "failedTasks": n => { subjectSummary.failedTasks = n.getNumberValue(); },
+        "@odata.type": n => { subjectSummary.odataType = n.getStringValue(); },
+        "successfulSubjects": n => { subjectSummary.successfulSubjects = n.getNumberValue(); },
+        "totalSubjects": n => { subjectSummary.totalSubjects = n.getNumberValue(); },
+        "totalTasks": n => { subjectSummary.totalTasks = n.getNumberValue(); },
     }
 }
 /**
@@ -1784,6 +2449,7 @@ export function deserializeIntoWorkflowBase(workflowBase: Partial<WorkflowBase> 
         "lastModifiedBy": n => { workflowBase.lastModifiedBy = n.getObjectValue<User>(createUserFromDiscriminatorValue); },
         "lastModifiedDateTime": n => { workflowBase.lastModifiedDateTime = n.getDateValue(); },
         "@odata.type": n => { workflowBase.odataType = n.getStringValue(); },
+        "targetSubjectType": n => { workflowBase.targetSubjectType = n.getCollectionOfEnumValues<SubjectType>(SubjectTypeObject); },
         "tasks": n => { workflowBase.tasks = n.getCollectionOfObjectValues<Task>(createTaskFromDiscriminatorValue); },
     }
 }
@@ -1943,6 +2609,20 @@ export function deserializeIntoWorkflowVersionCollectionResponse(workflowVersion
         "value": n => { workflowVersionCollectionResponse.value = n.getCollectionOfObjectValues<WorkflowVersion>(createWorkflowVersionFromDiscriminatorValue); },
     }
 }
+export interface DirectoryObjectWorkflowSubject extends Parsable, WorkflowSubject {
+    /**
+     * The directoryObject property
+     */
+    directoryObject?: DirectoryObject | null;
+}
+export interface DisableOnlyEnforcementAction extends LifecyclePolicyEnforcementAction, Parsable {
+}
+export interface DisableThenDeleteEnforcementAction extends LifecyclePolicyEnforcementAction, Parsable {
+    /**
+     * The deletionGracePeriodInDays property
+     */
+    deletionGracePeriodInDays?: number | null;
+}
 export interface GroupBasedSubjectSet extends Parsable, SubjectSet {
     /**
      * The groups property
@@ -1954,6 +2634,26 @@ export interface GuestSponsorTrigger extends Parsable, WorkflowExecutionTrigger 
      * The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.
      */
     minimumRequiredSponsors?: number | null;
+}
+export interface IdentityLifecycle extends Entity, Parsable {
+    /**
+     * The complianceIssues property
+     */
+    complianceIssues?: ComplianceIssue[] | null;
+    /**
+     * The effectiveGoverningPolicy property
+     */
+    effectiveGoverningPolicy?: LifecyclePolicy | null;
+    /**
+     * The lastAttestationDateTime property
+     */
+    lastAttestationDateTime?: Date | null;
+}
+export interface InactivityRule extends LifecyclePolicyRule, Parsable {
+    /**
+     * The lastActivityThresholdInDays property
+     */
+    lastActivityThresholdInDays?: number | null;
 }
 export interface Insights extends Entity, Parsable {
 }
@@ -1971,6 +2671,135 @@ export interface LifecycleManagementSettings extends Entity, Parsable {
      */
     workflowScheduleIntervalInHours?: number | null;
 }
+export interface LifecyclePolicy extends Entity, Parsable {
+    /**
+     * The createdBy property
+     */
+    createdBy?: DirectoryObject | null;
+    /**
+     * The createdDateTime property
+     */
+    createdDateTime?: Date | null;
+    /**
+     * The description property
+     */
+    description?: string | null;
+    /**
+     * The displayName property
+     */
+    displayName?: string | null;
+    /**
+     * The enforcementAction property
+     */
+    enforcementAction?: LifecyclePolicyEnforcementAction | null;
+    /**
+     * The gracePeriodInDays property
+     */
+    gracePeriodInDays?: number | null;
+    /**
+     * The isEnabled property
+     */
+    isEnabled?: boolean | null;
+    /**
+     * The lastModifiedBy property
+     */
+    lastModifiedBy?: DirectoryObject | null;
+    /**
+     * The lastModifiedDateTime property
+     */
+    lastModifiedDateTime?: Date | null;
+    /**
+     * The notificationSchedule property
+     */
+    notificationSchedule?: LifecyclePolicyNotificationSettings | null;
+    /**
+     * The policySource property
+     */
+    policySource?: LifecyclePolicySource | null;
+    /**
+     * The rules property
+     */
+    rules?: LifecyclePolicyRule[] | null;
+    /**
+     * The scope property
+     */
+    scope?: SubjectSet | null;
+    /**
+     * The versionNumber property
+     */
+    versionNumber?: number | null;
+    /**
+     * The versions property
+     */
+    versions?: LifecyclePolicy[] | null;
+}
+export interface LifecyclePolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: LifecyclePolicy[] | null;
+}
+export interface LifecyclePolicyEnforcementAction extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface LifecyclePolicyNotificationSettings extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The additionalRecipients property
+     */
+    additionalRecipients?: string[] | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The isEnabled property
+     */
+    isEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The offsetsAfterNonComplianceInDays property
+     */
+    offsetsAfterNonComplianceInDays?: number[] | null;
+}
+export interface LifecyclePolicyPriorityConfiguration extends Entity, Parsable {
+    /**
+     * The orderedPolicyIds property
+     */
+    orderedPolicyIds?: string[] | null;
+    /**
+     * The subjectType property
+     */
+    subjectType?: SubjectType[] | null;
+}
+export interface LifecyclePolicyPriorityConfigurationCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: LifecyclePolicyPriorityConfiguration[] | null;
+}
+export interface LifecyclePolicyRule extends Entity, Parsable {
+    /**
+     * The isEnabled property
+     */
+    isEnabled?: boolean | null;
+}
+export interface LifecyclePolicyRuleCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: LifecyclePolicyRule[] | null;
+}
+export type LifecyclePolicySource = (typeof LifecyclePolicySourceObject)[keyof typeof LifecyclePolicySourceObject];
 export type LifecycleTaskCategory = (typeof LifecycleTaskCategoryObject)[keyof typeof LifecycleTaskCategoryObject];
 export type LifecycleWorkflowCategory = (typeof LifecycleWorkflowCategoryObject)[keyof typeof LifecycleWorkflowCategoryObject];
 export type LifecycleWorkflowProcessingStatus = (typeof LifecycleWorkflowProcessingStatusObject)[keyof typeof LifecycleWorkflowProcessingStatusObject];
@@ -1987,6 +2816,14 @@ export interface LifecycleWorkflowsContainer extends Entity, Parsable {
      * The insight container holding workflow insight summaries for a tenant.
      */
     insights?: Insights | null;
+    /**
+     * The lifecyclePolicies property
+     */
+    lifecyclePolicies?: LifecyclePolicy[] | null;
+    /**
+     * The lifecyclePolicyPriorityConfigurations property
+     */
+    lifecyclePolicyPriorityConfigurations?: LifecyclePolicyPriorityConfiguration[] | null;
     /**
      * The settings property
      */
@@ -2041,6 +2878,12 @@ export interface PercentageBasedQuarantineCondition extends Parsable, Quarantine
      * The maximum percentage of in-scope users a workflow run can process before the workflow is quarantined.
      */
     percentage?: number | null;
+}
+export interface PeriodicAttestationRule extends LifecyclePolicyRule, Parsable {
+    /**
+     * The attestationIntervalInDays property
+     */
+    attestationIntervalInDays?: number | null;
 }
 export interface PreviewFailedTask extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2247,6 +3090,12 @@ export interface RunSummary extends AdditionalDataHolder, BackedModel, Parsable 
      */
     totalUsers?: number | null;
 }
+export interface SelectedObjectsSubjectSet extends Parsable, SubjectSet {
+    /**
+     * The inScopeObjects property
+     */
+    inScopeObjects?: DirectoryObject[] | null;
+}
 /**
  * Serializes information the current object
  * @param ActivateGroupScope The instance to serialize from.
@@ -2326,6 +3175,64 @@ export function serializeActivationScope(writer: SerializationWriter, activation
 }
 /**
  * Serializes information the current object
+ * @param AgentIdentityLifecycle The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAgentIdentityLifecycle(writer: SerializationWriter, agentIdentityLifecycle: Partial<AgentIdentityLifecycle> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!agentIdentityLifecycle || isSerializingDerivedType) { return; }
+    serializeIdentityLifecycle(writer, agentIdentityLifecycle, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param AgentIdentityLifecyclePolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAgentIdentityLifecyclePolicy(writer: SerializationWriter, agentIdentityLifecyclePolicy: Partial<AgentIdentityLifecyclePolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!agentIdentityLifecyclePolicy || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicy(writer, agentIdentityLifecyclePolicy, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param AllExcludingGroupsSubjectSet The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAllExcludingGroupsSubjectSet(writer: SerializationWriter, allExcludingGroupsSubjectSet: Partial<AllExcludingGroupsSubjectSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!allExcludingGroupsSubjectSet || isSerializingDerivedType) { return; }
+    serializeSubjectSet(writer, allExcludingGroupsSubjectSet, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<Group>("excludedGroups", allExcludingGroupsSubjectSet.excludedGroups, serializeGroup);
+}
+/**
+ * Serializes information the current object
+ * @param AllExcludingSpecificObjectsSubjectSet The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAllExcludingSpecificObjectsSubjectSet(writer: SerializationWriter, allExcludingSpecificObjectsSubjectSet: Partial<AllExcludingSpecificObjectsSubjectSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!allExcludingSpecificObjectsSubjectSet || isSerializingDerivedType) { return; }
+    serializeSubjectSet(writer, allExcludingSpecificObjectsSubjectSet, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DirectoryObject>("excludedObjects", allExcludingSpecificObjectsSubjectSet.excludedObjects, serializeDirectoryObject);
+}
+/**
+ * Serializes information the current object
+ * @param AttestationComplianceIssue The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeAttestationComplianceIssue(writer: SerializationWriter, attestationComplianceIssue: Partial<AttestationComplianceIssue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!attestationComplianceIssue || isSerializingDerivedType) { return; }
+    serializeComplianceIssue(writer, attestationComplianceIssue, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("attestationBlockReasons", attestationComplianceIssue.attestationBlockReasons);
+}
+/**
+ * Serializes information the current object
  * @param AttributeChangeTrigger The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -2393,6 +3300,38 @@ export function serializeCancelScope(writer: SerializationWriter, cancelScope: P
             serializeCancelRunsScope(writer, cancelScope, true);
         break;
     }
+}
+/**
+ * Serializes information the current object
+ * @param ComplianceIssue The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceIssue(writer: SerializationWriter, complianceIssue: Partial<ComplianceIssue> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!complianceIssue || isSerializingDerivedType) { return; }
+    serializeEntity(writer, complianceIssue, isSerializingDerivedType)
+    writer.writeStringValue("description", complianceIssue.description);
+    writer.writeStringValue("governingPolicyReferenceId", complianceIssue.governingPolicyReferenceId);
+    writer.writeStringValue("issueCode", complianceIssue.issueCode);
+    writer.writeStringValue("ruleType", complianceIssue.ruleType);
+    switch (complianceIssue.odataType) {
+        case "#microsoft.graph.identityGovernance.attestationComplianceIssue":
+            serializeAttestationComplianceIssue(writer, complianceIssue, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param ComplianceIssueCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeComplianceIssueCollectionResponse(writer: SerializationWriter, complianceIssueCollectionResponse: Partial<ComplianceIssueCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!complianceIssueCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, complianceIssueCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ComplianceIssue>("value", complianceIssueCollectionResponse.value, serializeComplianceIssue);
 }
 /**
  * Serializes information the current object
@@ -2491,6 +3430,52 @@ export function serializeCustomTaskExtensionResponseData(writer: SerializationWr
 }
 /**
  * Serializes information the current object
+ * @param DeleteOnlyEnforcementAction The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeleteOnlyEnforcementAction(writer: SerializationWriter, deleteOnlyEnforcementAction: Partial<DeleteOnlyEnforcementAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deleteOnlyEnforcementAction || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicyEnforcementAction(writer, deleteOnlyEnforcementAction, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param DirectoryObjectWorkflowSubject The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDirectoryObjectWorkflowSubject(writer: SerializationWriter, directoryObjectWorkflowSubject: Partial<DirectoryObjectWorkflowSubject> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!directoryObjectWorkflowSubject || isSerializingDerivedType) { return; }
+    serializeWorkflowSubject(writer, directoryObjectWorkflowSubject, isSerializingDerivedType)
+    writer.writeObjectValue<DirectoryObject>("directoryObject", directoryObjectWorkflowSubject.directoryObject, serializeDirectoryObject);
+}
+/**
+ * Serializes information the current object
+ * @param DisableOnlyEnforcementAction The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDisableOnlyEnforcementAction(writer: SerializationWriter, disableOnlyEnforcementAction: Partial<DisableOnlyEnforcementAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!disableOnlyEnforcementAction || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicyEnforcementAction(writer, disableOnlyEnforcementAction, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param DisableThenDeleteEnforcementAction The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDisableThenDeleteEnforcementAction(writer: SerializationWriter, disableThenDeleteEnforcementAction: Partial<DisableThenDeleteEnforcementAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!disableThenDeleteEnforcementAction || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicyEnforcementAction(writer, disableThenDeleteEnforcementAction, isSerializingDerivedType)
+    writer.writeNumberValue("deletionGracePeriodInDays", disableThenDeleteEnforcementAction.deletionGracePeriodInDays);
+}
+/**
+ * Serializes information the current object
  * @param GroupBasedSubjectSet The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -2512,6 +3497,37 @@ export function serializeGuestSponsorTrigger(writer: SerializationWriter, guestS
     if (!guestSponsorTrigger || isSerializingDerivedType) { return; }
     serializeWorkflowExecutionTrigger(writer, guestSponsorTrigger, isSerializingDerivedType)
     writer.writeNumberValue("minimumRequiredSponsors", guestSponsorTrigger.minimumRequiredSponsors);
+}
+/**
+ * Serializes information the current object
+ * @param IdentityLifecycle The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeIdentityLifecycle(writer: SerializationWriter, identityLifecycle: Partial<IdentityLifecycle> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!identityLifecycle || isSerializingDerivedType) { return; }
+    serializeEntity(writer, identityLifecycle, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ComplianceIssue>("complianceIssues", identityLifecycle.complianceIssues, serializeComplianceIssue);
+    writer.writeObjectValue<LifecyclePolicy>("effectiveGoverningPolicy", identityLifecycle.effectiveGoverningPolicy, serializeLifecyclePolicy);
+    writer.writeDateValue("lastAttestationDateTime", identityLifecycle.lastAttestationDateTime);
+    switch (identityLifecycle.odataType) {
+        case "#microsoft.graph.identityGovernance.agentIdentityLifecycle":
+            serializeAgentIdentityLifecycle(writer, identityLifecycle, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param InactivityRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeInactivityRule(writer: SerializationWriter, inactivityRule: Partial<InactivityRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!inactivityRule || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicyRule(writer, inactivityRule, isSerializingDerivedType)
+    writer.writeNumberValue("lastActivityThresholdInDays", inactivityRule.lastActivityThresholdInDays);
 }
 /**
  * Serializes information the current object
@@ -2541,6 +3557,147 @@ export function serializeLifecycleManagementSettings(writer: SerializationWriter
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicy The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicy(writer: SerializationWriter, lifecyclePolicy: Partial<LifecyclePolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicy || isSerializingDerivedType) { return; }
+    serializeEntity(writer, lifecyclePolicy, isSerializingDerivedType)
+    writer.writeObjectValue<DirectoryObject>("createdBy", lifecyclePolicy.createdBy, serializeDirectoryObject);
+    writer.writeDateValue("createdDateTime", lifecyclePolicy.createdDateTime);
+    writer.writeStringValue("description", lifecyclePolicy.description);
+    writer.writeStringValue("displayName", lifecyclePolicy.displayName);
+    writer.writeObjectValue<LifecyclePolicyEnforcementAction>("enforcementAction", lifecyclePolicy.enforcementAction, serializeLifecyclePolicyEnforcementAction);
+    writer.writeNumberValue("gracePeriodInDays", lifecyclePolicy.gracePeriodInDays);
+    writer.writeBooleanValue("isEnabled", lifecyclePolicy.isEnabled);
+    writer.writeObjectValue<DirectoryObject>("lastModifiedBy", lifecyclePolicy.lastModifiedBy, serializeDirectoryObject);
+    writer.writeDateValue("lastModifiedDateTime", lifecyclePolicy.lastModifiedDateTime);
+    writer.writeObjectValue<LifecyclePolicyNotificationSettings>("notificationSchedule", lifecyclePolicy.notificationSchedule, serializeLifecyclePolicyNotificationSettings);
+    writer.writeEnumValue<LifecyclePolicySource>("policySource", lifecyclePolicy.policySource);
+    writer.writeCollectionOfObjectValues<LifecyclePolicyRule>("rules", lifecyclePolicy.rules, serializeLifecyclePolicyRule);
+    writer.writeObjectValue<SubjectSet>("scope", lifecyclePolicy.scope, serializeSubjectSet);
+    writer.writeNumberValue("versionNumber", lifecyclePolicy.versionNumber);
+    writer.writeCollectionOfObjectValues<LifecyclePolicy>("versions", lifecyclePolicy.versions, serializeLifecyclePolicy);
+    switch (lifecyclePolicy.odataType) {
+        case "#microsoft.graph.identityGovernance.agentIdentityLifecyclePolicy":
+            serializeAgentIdentityLifecyclePolicy(writer, lifecyclePolicy, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyCollectionResponse(writer: SerializationWriter, lifecyclePolicyCollectionResponse: Partial<LifecyclePolicyCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, lifecyclePolicyCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<LifecyclePolicy>("value", lifecyclePolicyCollectionResponse.value, serializeLifecyclePolicy);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyEnforcementAction The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyEnforcementAction(writer: SerializationWriter, lifecyclePolicyEnforcementAction: Partial<LifecyclePolicyEnforcementAction> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyEnforcementAction || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", lifecyclePolicyEnforcementAction.odataType);
+    writer.writeAdditionalData(lifecyclePolicyEnforcementAction.additionalData);
+    switch (lifecyclePolicyEnforcementAction.odataType) {
+        case "#microsoft.graph.identityGovernance.deleteOnlyEnforcementAction":
+            serializeDeleteOnlyEnforcementAction(writer, lifecyclePolicyEnforcementAction, true);
+        break;
+        case "#microsoft.graph.identityGovernance.disableOnlyEnforcementAction":
+            serializeDisableOnlyEnforcementAction(writer, lifecyclePolicyEnforcementAction, true);
+        break;
+        case "#microsoft.graph.identityGovernance.disableThenDeleteEnforcementAction":
+            serializeDisableThenDeleteEnforcementAction(writer, lifecyclePolicyEnforcementAction, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyNotificationSettings The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyNotificationSettings(writer: SerializationWriter, lifecyclePolicyNotificationSettings: Partial<LifecyclePolicyNotificationSettings> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyNotificationSettings || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfPrimitiveValues<string>("additionalRecipients", lifecyclePolicyNotificationSettings.additionalRecipients);
+    writer.writeBooleanValue("isEnabled", lifecyclePolicyNotificationSettings.isEnabled);
+    writer.writeStringValue("@odata.type", lifecyclePolicyNotificationSettings.odataType);
+    writer.writeCollectionOfPrimitiveValues<number>("offsetsAfterNonComplianceInDays", lifecyclePolicyNotificationSettings.offsetsAfterNonComplianceInDays);
+    writer.writeAdditionalData(lifecyclePolicyNotificationSettings.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyPriorityConfiguration The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyPriorityConfiguration(writer: SerializationWriter, lifecyclePolicyPriorityConfiguration: Partial<LifecyclePolicyPriorityConfiguration> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyPriorityConfiguration || isSerializingDerivedType) { return; }
+    serializeEntity(writer, lifecyclePolicyPriorityConfiguration, isSerializingDerivedType)
+    writer.writeCollectionOfPrimitiveValues<string>("orderedPolicyIds", lifecyclePolicyPriorityConfiguration.orderedPolicyIds);
+    writer.writeEnumValue<SubjectType[]>("subjectType", lifecyclePolicyPriorityConfiguration.subjectType);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyPriorityConfigurationCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyPriorityConfigurationCollectionResponse(writer: SerializationWriter, lifecyclePolicyPriorityConfigurationCollectionResponse: Partial<LifecyclePolicyPriorityConfigurationCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyPriorityConfigurationCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, lifecyclePolicyPriorityConfigurationCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<LifecyclePolicyPriorityConfiguration>("value", lifecyclePolicyPriorityConfigurationCollectionResponse.value, serializeLifecyclePolicyPriorityConfiguration);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyRule The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyRule(writer: SerializationWriter, lifecyclePolicyRule: Partial<LifecyclePolicyRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyRule || isSerializingDerivedType) { return; }
+    serializeEntity(writer, lifecyclePolicyRule, isSerializingDerivedType)
+    writer.writeBooleanValue("isEnabled", lifecyclePolicyRule.isEnabled);
+    switch (lifecyclePolicyRule.odataType) {
+        case "#microsoft.graph.identityGovernance.inactivityRule":
+            serializeInactivityRule(writer, lifecyclePolicyRule, true);
+        break;
+        case "#microsoft.graph.identityGovernance.periodicAttestationRule":
+            serializePeriodicAttestationRule(writer, lifecyclePolicyRule, true);
+        break;
+        case "#microsoft.graph.identityGovernance.sponsorPresenceRule":
+            serializeSponsorPresenceRule(writer, lifecyclePolicyRule, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param LifecyclePolicyRuleCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeLifecyclePolicyRuleCollectionResponse(writer: SerializationWriter, lifecyclePolicyRuleCollectionResponse: Partial<LifecyclePolicyRuleCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!lifecyclePolicyRuleCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, lifecyclePolicyRuleCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<LifecyclePolicyRule>("value", lifecyclePolicyRuleCollectionResponse.value, serializeLifecyclePolicyRule);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param LifecycleWorkflowsContainer The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -2551,6 +3708,8 @@ export function serializeLifecycleWorkflowsContainer(writer: SerializationWriter
     writer.writeCollectionOfObjectValues<CustomTaskExtension>("customTaskExtensions", lifecycleWorkflowsContainer.customTaskExtensions, serializeCustomTaskExtension);
     writer.writeObjectValue<DeletedItemContainer>("deletedItems", lifecycleWorkflowsContainer.deletedItems, serializeDeletedItemContainer);
     writer.writeObjectValue<Insights>("insights", lifecycleWorkflowsContainer.insights, serializeInsights);
+    writer.writeCollectionOfObjectValues<LifecyclePolicy>("lifecyclePolicies", lifecycleWorkflowsContainer.lifecyclePolicies, serializeLifecyclePolicy);
+    writer.writeCollectionOfObjectValues<LifecyclePolicyPriorityConfiguration>("lifecyclePolicyPriorityConfigurations", lifecycleWorkflowsContainer.lifecyclePolicyPriorityConfigurations, serializeLifecyclePolicyPriorityConfiguration);
     writer.writeObjectValue<LifecycleManagementSettings>("settings", lifecycleWorkflowsContainer.settings, serializeLifecycleManagementSettings);
     writer.writeCollectionOfObjectValues<TaskDefinition>("taskDefinitions", lifecycleWorkflowsContainer.taskDefinitions, serializeTaskDefinition);
     writer.writeCollectionOfObjectValues<Workflow>("workflows", lifecycleWorkflowsContainer.workflows, serializeWorkflow);
@@ -2605,6 +3764,18 @@ export function serializePercentageBasedQuarantineCondition(writer: Serializatio
     if (!percentageBasedQuarantineCondition || isSerializingDerivedType) { return; }
     serializeQuarantineCondition(writer, percentageBasedQuarantineCondition, isSerializingDerivedType)
     writer.writeNumberValue("percentage", percentageBasedQuarantineCondition.percentage);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PeriodicAttestationRule The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePeriodicAttestationRule(writer: SerializationWriter, periodicAttestationRule: Partial<PeriodicAttestationRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!periodicAttestationRule || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicyRule(writer, periodicAttestationRule, isSerializingDerivedType)
+    writer.writeNumberValue("attestationIntervalInDays", periodicAttestationRule.attestationIntervalInDays);
 }
 /**
  * Serializes information the current object
@@ -2768,6 +3939,30 @@ export function serializeRunSummary(writer: SerializationWriter, runSummary: Par
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SelectedObjectsSubjectSet The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSelectedObjectsSubjectSet(writer: SerializationWriter, selectedObjectsSubjectSet: Partial<SelectedObjectsSubjectSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!selectedObjectsSubjectSet || isSerializingDerivedType) { return; }
+    serializeSubjectSet(writer, selectedObjectsSubjectSet, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DirectoryObject>("inScopeObjects", selectedObjectsSubjectSet.inScopeObjects, serializeDirectoryObject);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SponsorPresenceRule The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSponsorPresenceRule(writer: SerializationWriter, sponsorPresenceRule: Partial<SponsorPresenceRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!sponsorPresenceRule || isSerializingDerivedType) { return; }
+    serializeLifecyclePolicyRule(writer, sponsorPresenceRule, isSerializingDerivedType)
+    writer.writeNumberValue("minimumSponsorCount", sponsorPresenceRule.minimumSponsorCount);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param SubjectProcessingResult The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -2782,6 +3977,7 @@ export function serializeSubjectProcessingResult(writer: SerializationWriter, su
     writer.writeDateValue("scheduledDateTime", subjectProcessingResult.scheduledDateTime);
     writer.writeDateValue("startedDateTime", subjectProcessingResult.startedDateTime);
     writer.writeObjectValue<WorkflowSubject>("subject", subjectProcessingResult.subject, serializeWorkflowSubject);
+    writer.writeEnumValue<SubjectType[]>("subjectType", subjectProcessingResult.subjectType);
     writer.writeCollectionOfObjectValues<TaskProcessingResult>("taskProcessingResults", subjectProcessingResult.taskProcessingResults, serializeTaskProcessingResult);
     writer.writeNumberValue("totalTasksCount", subjectProcessingResult.totalTasksCount);
     writer.writeNumberValue("totalUnprocessedTasksCount", subjectProcessingResult.totalUnprocessedTasksCount);
@@ -2799,6 +3995,23 @@ export function serializeSubjectProcessingResultCollectionResponse(writer: Seria
     if (!subjectProcessingResultCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, subjectProcessingResultCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<SubjectProcessingResult>("value", subjectProcessingResultCollectionResponse.value, serializeSubjectProcessingResult);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SubjectSummary The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSubjectSummary(writer: SerializationWriter, subjectSummary: Partial<SubjectSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!subjectSummary || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("failedSubjects", subjectSummary.failedSubjects);
+    writer.writeNumberValue("failedTasks", subjectSummary.failedTasks);
+    writer.writeStringValue("@odata.type", subjectSummary.odataType);
+    writer.writeNumberValue("successfulSubjects", subjectSummary.successfulSubjects);
+    writer.writeNumberValue("totalSubjects", subjectSummary.totalSubjects);
+    writer.writeNumberValue("totalTasks", subjectSummary.totalTasks);
+    writer.writeAdditionalData(subjectSummary.additionalData);
 }
 /**
  * Serializes information the current object
@@ -3134,6 +4347,7 @@ export function serializeWorkflowBase(writer: SerializationWriter, workflowBase:
     writer.writeObjectValue<User>("lastModifiedBy", workflowBase.lastModifiedBy, serializeUser);
     writer.writeDateValue("lastModifiedDateTime", workflowBase.lastModifiedDateTime);
     writer.writeStringValue("@odata.type", workflowBase.odataType);
+    writer.writeEnumValue<SubjectType[]>("targetSubjectType", workflowBase.targetSubjectType);
     writer.writeCollectionOfObjectValues<Task>("tasks", workflowBase.tasks, serializeTask);
     writer.writeAdditionalData(workflowBase.additionalData);
     switch (workflowBase.odataType) {
@@ -3276,6 +4490,9 @@ export function serializeWorkflowSubject(writer: SerializationWriter, workflowSu
     writer.writeStringValue("@odata.type", workflowSubject.odataType);
     writer.writeAdditionalData(workflowSubject.additionalData);
     switch (workflowSubject.odataType) {
+        case "#microsoft.graph.identityGovernance.directoryObjectWorkflowSubject":
+            serializeDirectoryObjectWorkflowSubject(writer, workflowSubject, true);
+        break;
         case "#microsoft.graph.identityGovernance.provisioningObjectWorkflowSubject":
             serializeProvisioningObjectWorkflowSubject(writer, workflowSubject, true);
         break;
@@ -3334,6 +4551,12 @@ export function serializeWorkflowVersionCollectionResponse(writer: Serialization
     serializeBaseCollectionPaginationCountResponse(writer, workflowVersionCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<WorkflowVersion>("value", workflowVersionCollectionResponse.value, serializeWorkflowVersion);
 }
+export interface SponsorPresenceRule extends LifecyclePolicyRule, Parsable {
+    /**
+     * The minimumSponsorCount property
+     */
+    minimumSponsorCount?: number | null;
+}
 export interface SubjectProcessingResult extends Entity, Parsable {
     /**
      * The date and time when the subject processing completed. Read-only.
@@ -3364,6 +4587,10 @@ export interface SubjectProcessingResult extends Entity, Parsable {
      */
     subject?: WorkflowSubject | null;
     /**
+     * The subjectType property
+     */
+    subjectType?: SubjectType[] | null;
+    /**
      * The task-level processing results for this subject. Read-only.
      */
     taskProcessingResults?: TaskProcessingResult[] | null;
@@ -3390,6 +4617,37 @@ export interface SubjectProcessingResultCollectionResponse extends BaseCollectio
      */
     value?: SubjectProcessingResult[] | null;
 }
+export interface SubjectSummary extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The number of subjects with at least one failed task in a subject summary.
+     */
+    failedSubjects?: number | null;
+    /**
+     * The number of failed tasks for subjects in a subject summary.
+     */
+    failedTasks?: number | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The number of subjects where all tasks succeeded in a subject summary.
+     */
+    successfulSubjects?: number | null;
+    /**
+     * The total number of subjects in a subject summary.
+     */
+    totalSubjects?: number | null;
+    /**
+     * The total tasks of subjects in a subject summary.
+     */
+    totalTasks?: number | null;
+}
+export type SubjectType = (typeof SubjectTypeObject)[keyof typeof SubjectTypeObject];
 export interface Task extends Entity, Parsable {
     /**
      * Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
@@ -3919,6 +5177,10 @@ export interface WorkflowBase extends AdditionalDataHolder, BackedModel, Parsabl
      */
     odataType?: string | null;
     /**
+     * The targetSubjectType property
+     */
+    targetSubjectType?: SubjectType[] | null;
+    /**
      * The tasks in the workflow.
      */
     tasks?: Task[] | null;
@@ -4132,6 +5394,11 @@ export const CustomTaskExtensionReplyModeObject = {
     Response: "response",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const LifecyclePolicySourceObject = {
+    UserCreated: "userCreated",
+    SystemDefault: "systemDefault",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const LifecycleTaskCategoryObject = {
     Joiner: "joiner",
     Leaver: "leaver",
@@ -4173,6 +5440,12 @@ export const QuarantineTypeObject = {
     PercentageBasedThresholdExceeded: "percentageBasedThresholdExceeded",
     MultipleConditionsExceeded: "multipleConditionsExceeded",
     UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const SubjectTypeObject = {
+    User: "user",
+    AgentIdentity: "agentIdentity",
+    UnknownFutureValue: "unknownFutureValue",
+    ProvisioningObject: "provisioningObject",
 } as const;
 export const ValueTypeObject = {
     EnumEscaped: "enum",

@@ -189,7 +189,7 @@ export interface DeviceAppManagementRequestBuilder extends BaseRequestBuilder<De
      get(requestConfiguration?: RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters> | undefined) : Promise<DeviceAppManagement | undefined>;
     /**
      * Update deviceAppManagement
-     * @param body The request body
+     * @param body Singleton entity that acts as a container for all device app management functionality.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeviceAppManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -203,7 +203,7 @@ export interface DeviceAppManagementRequestBuilder extends BaseRequestBuilder<De
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update deviceAppManagement
-     * @param body The request body
+     * @param body Singleton entity that acts as a container for all device app management functionality.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

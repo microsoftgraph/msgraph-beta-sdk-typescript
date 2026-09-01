@@ -17,7 +17,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationCancelResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/crosstenantmigrationjob-cancel?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantMigrationCancelResponse | undefined>;
@@ -25,7 +25,7 @@ export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBu
      * Cancel a crossTenantMigrationJob. All tasks within the job that were in a Sync state are canceled. If the job can't be canceled, a 409 Conflict response is returned and the migrations continue. This response happens when a migration is already in progress or is in a terminal state.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

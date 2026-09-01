@@ -22,24 +22,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessReviewStageItemRequestBuilder extends BaseRequestBuilder<AccessReviewStageItemRequestBuilder> {
     /**
      * Provides operations to call the acceptRecommendations method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get acceptRecommendations(): AcceptRecommendationsRequestBuilder;
     /**
      * Provides operations to call the batchRecordDecisions method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get batchRecordDecisions(): BatchRecordDecisionsRequestBuilder;
     /**
      * Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get decisions(): DecisionsRequestBuilder;
     /**
      * Provides operations to call the stop method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get stop(): StopRequestBuilder;
     /**
      * Delete navigation property stages for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -47,6 +52,7 @@ export interface AccessReviewStageItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewStage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewstage-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AccessReviewStageItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewStage | undefined>;
@@ -56,6 +62,7 @@ export interface AccessReviewStageItemRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewStage>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewstage-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: AccessReviewStage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewStage | undefined>;
@@ -63,12 +70,14 @@ export interface AccessReviewStageItemRequestBuilder extends BaseRequestBuilder<
      * Delete navigation property stages for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Retrieve the properties and relationships of an accessReviewStage object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessReviewStageItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -76,6 +85,7 @@ export interface AccessReviewStageItemRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessReviewStage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

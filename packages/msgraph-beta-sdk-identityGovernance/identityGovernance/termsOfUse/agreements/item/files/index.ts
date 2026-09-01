@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the files property of the microsoft.graph.agreement entity.
      * @param agreementFileLocalizationId The unique identifier of agreementFileLocalization
      * @returns {AgreementFileLocalizationItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAgreementFileLocalizationId(agreementFileLocalizationId: string) : AgreementFileLocalizationItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AgreementFileLocalizationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<FilesRequestBuilderGetQueryParameters> | undefined) : Promise<AgreementFileLocalizationCollectionResponse | undefined>;
     /**
@@ -39,6 +42,7 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AgreementFileLocalization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-beta|Find more info here}
      */
      post(body: AgreementFileLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AgreementFileLocalization | undefined>;
@@ -46,6 +50,7 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      * PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FilesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface FilesRequestBuilder extends BaseRequestBuilder<FilesRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AgreementFileLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

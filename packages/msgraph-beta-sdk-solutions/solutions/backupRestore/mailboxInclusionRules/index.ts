@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxInclusionRulesRequestBuilder extends BaseRequestBuilder<MailboxInclusionRulesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mailboxInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
      * @param mailboxProtectionRuleId The unique identifier of mailboxProtectionRule
      * @returns {MailboxProtectionRuleItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byMailboxProtectionRuleId(mailboxProtectionRuleId: string) : MailboxProtectionRuleItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface MailboxInclusionRulesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxProtectionRuleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<MailboxInclusionRulesRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxProtectionRuleCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface MailboxInclusionRulesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxProtectionRule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: MailboxProtectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailboxProtectionRule | undefined>;
     /**
      * The list of mailbox inclusion rules applied to the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxInclusionRulesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface MailboxInclusionRulesRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: MailboxProtectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

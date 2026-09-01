@@ -13,9 +13,10 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface TaskItemRequestBuilder extends BaseRequestBuilder<TaskItemRequestBuilder> {
     /**
-     * Delete navigation property tasks for security
+     * Delete a task from a case.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-casemanagement-task-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -36,7 +37,7 @@ export interface TaskItemRequestBuilder extends BaseRequestBuilder<TaskItemReque
      */
      patch(body: Task, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Task | undefined>;
     /**
-     * Delete navigation property tasks for security
+     * Delete a task from a case.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

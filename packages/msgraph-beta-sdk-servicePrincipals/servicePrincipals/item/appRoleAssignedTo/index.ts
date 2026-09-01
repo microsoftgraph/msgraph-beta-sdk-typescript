@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AppRoleAssignedToRequestBuilder extends BaseRequestBuilder<AppRoleAssignedToRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
      * @param appRoleAssignmentId The unique identifier of appRoleAssignment
      * @returns {AppRoleAssignmentItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byAppRoleAssignmentId(appRoleAssignmentId: string) : AppRoleAssignmentItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface AppRoleAssignedToRequestBuilder extends BaseRequestBuilder<AppR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppRoleAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AppRoleAssignedToRequestBuilderGetQueryParameters> | undefined) : Promise<AppRoleAssignmentCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface AppRoleAssignedToRequestBuilder extends BaseRequestBuilder<AppR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppRoleAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta|Find more info here}
      */
      post(body: AppRoleAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AppRoleAssignment | undefined>;
@@ -47,6 +51,7 @@ export interface AppRoleAssignedToRequestBuilder extends BaseRequestBuilder<AppR
      * Read the properties and relationships of an appRoleAssignment object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppRoleAssignedToRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface AppRoleAssignedToRequestBuilder extends BaseRequestBuilder<AppR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: AppRoleAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

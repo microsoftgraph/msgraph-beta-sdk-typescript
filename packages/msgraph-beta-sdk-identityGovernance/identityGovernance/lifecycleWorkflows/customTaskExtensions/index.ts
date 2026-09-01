@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CustomTaskExtensionsRequestBuilder extends BaseRequestBuilder<CustomTaskExtensionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      * @param customTaskExtensionId The unique identifier of customTaskExtension
      * @returns {CustomTaskExtensionItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byCustomTaskExtensionId(customTaskExtensionId: string) : CustomTaskExtensionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface CustomTaskExtensionsRequestBuilder extends BaseRequestBuilder<C
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomTaskExtensionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-customtaskextensions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomTaskExtensionsRequestBuilderGetQueryParameters> | undefined) : Promise<CustomTaskExtensionCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface CustomTaskExtensionsRequestBuilder extends BaseRequestBuilder<C
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomTaskExtension>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions?view=graph-rest-beta|Find more info here}
      */
      post(body: CustomTaskExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomTaskExtension | undefined>;
@@ -47,6 +51,7 @@ export interface CustomTaskExtensionsRequestBuilder extends BaseRequestBuilder<C
      * Get a list of the customTaskExtension objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomTaskExtensionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface CustomTaskExtensionsRequestBuilder extends BaseRequestBuilder<C
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: CustomTaskExtension, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

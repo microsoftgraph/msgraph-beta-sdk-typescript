@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProtectionPoliciesRequestBuilder extends BaseRequestBuilder<ProtectionPoliciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the protectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
      * @param protectionPolicyBaseId The unique identifier of protectionPolicyBase
      * @returns {ProtectionPolicyBaseItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byProtectionPolicyBaseId(protectionPolicyBaseId: string) : ProtectionPolicyBaseItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ProtectionPoliciesRequestBuilder extends BaseRequestBuilder<Pro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProtectionPolicyBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ProtectionPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<ProtectionPolicyBaseCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface ProtectionPoliciesRequestBuilder extends BaseRequestBuilder<Pro
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProtectionPolicyBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: ProtectionPolicyBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProtectionPolicyBase | undefined>;
     /**
      * List of protection policies in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProtectionPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ProtectionPoliciesRequestBuilder extends BaseRequestBuilder<Pro
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ProtectionPolicyBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

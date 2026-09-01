@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
      * @param accessReviewHistoryInstanceId The unique identifier of accessReviewHistoryInstance
      * @returns {AccessReviewHistoryInstanceItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessReviewHistoryInstanceId(accessReviewHistoryInstanceId: string) : AccessReviewHistoryInstanceItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewHistoryInstanceCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewhistorydefinition-list-instances?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<InstancesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewHistoryInstanceCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewHistoryInstance>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: AccessReviewHistoryInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewHistoryInstance | undefined>;
     /**
      * Retrieve the instances of an access review history definition created in the last 30 days.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<InstancesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface InstancesRequestBuilder extends BaseRequestBuilder<InstancesReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessReviewHistoryInstance, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

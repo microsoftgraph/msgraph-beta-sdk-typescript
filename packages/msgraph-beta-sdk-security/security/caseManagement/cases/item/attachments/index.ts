@@ -35,7 +35,7 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      */
      get(requestConfiguration?: RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters> | undefined) : Promise<AttachmentCollectionResponse | undefined>;
     /**
-     * Create an attachment for a case.
+     * Create attachment metadata for a case. This method doesn't upload the file content. After creating the attachment, use Upload attachment content.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Attachment>}
@@ -50,7 +50,7 @@ export interface AttachmentsRequestBuilder extends BaseRequestBuilder<Attachment
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create an attachment for a case.
+     * Create attachment metadata for a case. This method doesn't upload the file content. After creating the attachment, use Upload attachment content.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

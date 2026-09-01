@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface StaffMembersRequestBuilder extends BaseRequestBuilder<StaffMembersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
      * @param bookingStaffMemberId The unique identifier of bookingStaffMember
      * @returns {BookingStaffMemberItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBookingStaffMemberId(bookingStaffMemberId: string) : BookingStaffMemberItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface StaffMembersRequestBuilder extends BaseRequestBuilder<StaffMemb
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingStaffMemberCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters> | undefined) : Promise<BookingStaffMemberCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface StaffMembersRequestBuilder extends BaseRequestBuilder<StaffMemb
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingStaffMember>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: BookingStaffMember, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingStaffMember | undefined>;
     /**
      * All the staff members that provide services in this business. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<StaffMembersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface StaffMembersRequestBuilder extends BaseRequestBuilder<StaffMemb
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BookingStaffMember, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

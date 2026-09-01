@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface QuestionsRequestBuilder extends BaseRequestBuilder<QuestionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the questions property of the microsoft.graph.virtualEventRegistrationConfiguration entity.
      * @param virtualEventRegistrationQuestionBaseId The unique identifier of virtualEventRegistrationQuestionBase
      * @returns {VirtualEventRegistrationQuestionBaseItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byVirtualEventRegistrationQuestionBaseId(virtualEventRegistrationQuestionBaseId: string) : VirtualEventRegistrationQuestionBaseItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface QuestionsRequestBuilder extends BaseRequestBuilder<QuestionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistrationQuestionBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-list-questions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<QuestionsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventRegistrationQuestionBaseCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface QuestionsRequestBuilder extends BaseRequestBuilder<QuestionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistrationQuestionBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventregistrationconfiguration-post-questions?view=graph-rest-beta|Find more info here}
      */
      post(body: VirtualEventRegistrationQuestionBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventRegistrationQuestionBase | undefined>;
@@ -47,6 +51,7 @@ export interface QuestionsRequestBuilder extends BaseRequestBuilder<QuestionsReq
      * Get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<QuestionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface QuestionsRequestBuilder extends BaseRequestBuilder<QuestionsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: VirtualEventRegistrationQuestionBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

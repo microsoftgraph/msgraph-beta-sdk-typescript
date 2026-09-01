@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExclusionUnitsRequestBuilder extends BaseRequestBuilder<ExclusionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the exclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
      * @param exclusionUnitBaseId The unique identifier of exclusionUnitBase
      * @returns {ExclusionUnitBaseItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byExclusionUnitBaseId(exclusionUnitBaseId: string) : ExclusionUnitBaseItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface ExclusionUnitsRequestBuilder extends BaseRequestBuilder<Exclusi
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExclusionUnitBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<ExclusionUnitBaseCollectionResponse | undefined>;
     /**
      * The list of exclusion units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

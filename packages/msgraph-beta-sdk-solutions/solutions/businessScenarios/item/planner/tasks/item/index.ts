@@ -24,28 +24,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuilder<BusinessScenarioTaskItemRequestBuilder> {
     /**
      * Provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get assignedToTaskBoardFormat(): AssignedToTaskBoardFormatRequestBuilder;
     /**
      * Provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get bucketTaskBoardFormat(): BucketTaskBoardFormatRequestBuilder;
     /**
      * Provides operations to manage the details property of the microsoft.graph.plannerTask entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get details(): DetailsRequestBuilder;
     /**
      * Provides operations to manage the messages property of the microsoft.graph.plannerTask entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get messages(): MessagesRequestBuilder;
     /**
      * Provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get progressTaskBoardFormat(): ProgressTaskBoardFormatRequestBuilder;
     /**
      * Delete a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -54,6 +60,7 @@ export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenarioTask | undefined>;
@@ -63,6 +70,7 @@ export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenarioTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenarioTask | undefined>;
@@ -70,12 +78,14 @@ export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuild
      * Delete a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a businessScenarioTask object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BusinessScenarioTaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,6 +93,7 @@ export interface BusinessScenarioTaskItemRequestBuilder extends BaseRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BusinessScenarioTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -23,7 +23,7 @@ export interface DeleteMembersPostRequestBody extends AdditionalDataHolder, Back
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The members property
+     * The Members property
      */
     members?: Member[] | null;
 }
@@ -56,7 +56,7 @@ export interface DeleteMembersRequestBuilder extends BaseRequestBuilder<DeleteMe
 export function deserializeIntoDeleteMembersPostRequestBody(deleteMembersPostRequestBody: Partial<DeleteMembersPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { deleteMembersPostRequestBody.backingStoreEnabled = true; },
-        "members": n => { deleteMembersPostRequestBody.members = n.getCollectionOfObjectValues<Member>(createMemberFromDiscriminatorValue); },
+        "Members": n => { deleteMembersPostRequestBody.members = n.getCollectionOfObjectValues<Member>(createMemberFromDiscriminatorValue); },
     }
 }
 /**
@@ -68,7 +68,7 @@ export function deserializeIntoDeleteMembersPostRequestBody(deleteMembersPostReq
 // @ts-ignore
 export function serializeDeleteMembersPostRequestBody(writer: SerializationWriter, deleteMembersPostRequestBody: Partial<DeleteMembersPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!deleteMembersPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeCollectionOfObjectValues<Member>("members", deleteMembersPostRequestBody.members, serializeMember);
+    writer.writeCollectionOfObjectValues<Member>("Members", deleteMembersPostRequestBody.members, serializeMember);
     writer.writeAdditionalData(deleteMembersPostRequestBody.additionalData);
 }
 /**

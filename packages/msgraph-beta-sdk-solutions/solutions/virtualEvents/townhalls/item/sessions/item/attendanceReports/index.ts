@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<AttendanceReportsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
      * @param meetingAttendanceReportId The unique identifier of meetingAttendanceReport
      * @returns {MeetingAttendanceReportItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byMeetingAttendanceReportId(meetingAttendanceReportId: string) : MeetingAttendanceReportItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<Atte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingAttendanceReportCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AttendanceReportsRequestBuilderGetQueryParameters> | undefined) : Promise<MeetingAttendanceReportCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<Atte
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MeetingAttendanceReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: MeetingAttendanceReport, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MeetingAttendanceReport | undefined>;
     /**
      * Get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttendanceReportsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface AttendanceReportsRequestBuilder extends BaseRequestBuilder<Atte
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: MeetingAttendanceReport, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

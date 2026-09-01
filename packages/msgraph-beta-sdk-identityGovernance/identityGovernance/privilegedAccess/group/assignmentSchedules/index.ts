@@ -20,18 +20,21 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AssignmentSchedulesRequestBuilder extends BaseRequestBuilder<AssignmentSchedulesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.
      * @param privilegedAccessGroupAssignmentScheduleId The unique identifier of privilegedAccessGroupAssignmentSchedule
      * @returns {PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byPrivilegedAccessGroupAssignmentScheduleId(privilegedAccessGroupAssignmentScheduleId: string) : PrivilegedAccessGroupAssignmentScheduleItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -39,6 +42,7 @@ export interface AssignmentSchedulesRequestBuilder extends BaseRequestBuilder<As
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroupAssignmentScheduleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedAccessGroupAssignmentScheduleCollectionResponse | undefined>;
@@ -48,12 +52,14 @@ export interface AssignmentSchedulesRequestBuilder extends BaseRequestBuilder<As
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroupAssignmentSchedule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: PrivilegedAccessGroupAssignmentSchedule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedAccessGroupAssignmentSchedule | undefined>;
     /**
      * Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AssignmentSchedulesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -61,6 +67,7 @@ export interface AssignmentSchedulesRequestBuilder extends BaseRequestBuilder<As
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: PrivilegedAccessGroupAssignmentSchedule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

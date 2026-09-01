@@ -18,16 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AwsRequestBuilder extends BaseRequestBuilder<AwsRequestBuilder> {
     /**
      * Provides operations to manage the findings property of the microsoft.graph.permissionsAnalytics entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get findings(): FindingsRequestBuilder;
     /**
      * Provides operations to manage the permissionsCreepIndexDistributions property of the microsoft.graph.permissionsAnalytics entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get permissionsCreepIndexDistributions(): PermissionsCreepIndexDistributionsRequestBuilder;
     /**
      * Delete navigation property aws for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -35,6 +38,7 @@ export interface AwsRequestBuilder extends BaseRequestBuilder<AwsRequestBuilder>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsAnalytics>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AwsRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionsAnalytics | undefined>;
     /**
@@ -43,18 +47,21 @@ export interface AwsRequestBuilder extends BaseRequestBuilder<AwsRequestBuilder>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsAnalytics>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: PermissionsAnalytics, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PermissionsAnalytics | undefined>;
     /**
      * Delete navigation property aws for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * AWS permissions analytics findings.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AwsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,6 +69,7 @@ export interface AwsRequestBuilder extends BaseRequestBuilder<AwsRequestBuilder>
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: PermissionsAnalytics, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

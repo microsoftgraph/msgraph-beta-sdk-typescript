@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GraphAppRoleAssignmentRequestBuilder extends BaseRequestBuilder<GraphAppRoleAssignmentRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
@@ -23,12 +24,14 @@ export interface GraphAppRoleAssignmentRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppRoleAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<GraphAppRoleAssignmentRequestBuilderGetQueryParameters> | undefined) : Promise<AppRoleAssignmentCollectionResponse | undefined>;
     /**
      * Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphAppRoleAssignmentRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

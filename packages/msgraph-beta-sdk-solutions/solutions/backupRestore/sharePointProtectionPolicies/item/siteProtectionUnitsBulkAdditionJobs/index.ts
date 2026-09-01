@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteProtectionUnitsBulkAdditionJobsRequestBuilder extends BaseRequestBuilder<SiteProtectionUnitsBulkAdditionJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.
      * @param siteProtectionUnitsBulkAdditionJobId The unique identifier of siteProtectionUnitsBulkAdditionJob
      * @returns {SiteProtectionUnitsBulkAdditionJobItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteProtectionUnitsBulkAdditionJobId(siteProtectionUnitsBulkAdditionJobId: string) : SiteProtectionUnitsBulkAdditionJobItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteProtectionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteprotectionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteProtectionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteProtectionUnitsBulkAdditionJobCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface SiteProtectionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * Get a list of siteProtectionUnitsBulkAdditionJobs objects associated with a sharePointProtectionPolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteProtectionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

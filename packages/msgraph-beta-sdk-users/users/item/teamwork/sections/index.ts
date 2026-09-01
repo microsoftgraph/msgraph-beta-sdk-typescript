@@ -10,6 +10,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { TeamworkSectionItemRequestBuilderNavigationMetadata, TeamworkSectionItemRequestBuilderRequestsMetadata, type TeamworkSectionItemRequestBuilder } from './item/index.js';
 // @ts-ignore
+import { ReorderRequestBuilderRequestsMetadata, type ReorderRequestBuilder } from './reorder/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -20,6 +22,10 @@ export interface SectionsRequestBuilder extends BaseRequestBuilder<SectionsReque
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the reorder method.
+     */
+    get reorder(): ReorderRequestBuilder;
     /**
      * Provides operations to manage the sections property of the microsoft.graph.userTeamwork entity.
      * @param teamworkSectionId The unique identifier of teamworkSection
@@ -122,6 +128,9 @@ export const SectionsRequestBuilderNavigationMetadata: Record<Exclude<keyof Sect
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    reorder: {
+        requestsMetadata: ReorderRequestBuilderRequestsMetadata,
     },
 };
 /**

@@ -16,6 +16,7 @@ export interface DelegatedPermissionClassificationItemRequestBuilder extends Bas
      * Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -24,6 +25,7 @@ export interface DelegatedPermissionClassificationItemRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DelegatedPermissionClassification>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters> | undefined) : Promise<DelegatedPermissionClassification | undefined>;
     /**
@@ -32,18 +34,21 @@ export interface DelegatedPermissionClassificationItemRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DelegatedPermissionClassification>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      patch(body: DelegatedPermissionClassification, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DelegatedPermissionClassification | undefined>;
     /**
      * Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DelegatedPermissionClassificationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -51,6 +56,7 @@ export interface DelegatedPermissionClassificationItemRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPatchRequestInformation(body: DelegatedPermissionClassification, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

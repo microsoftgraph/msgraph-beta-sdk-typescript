@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRequestBuilder<SiteExclusionUnitsBulkAdditionJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.
      * @param siteExclusionUnitsBulkAdditionJobId The unique identifier of siteExclusionUnitsBulkAdditionJob
      * @returns {SiteExclusionUnitsBulkAdditionJobItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteExclusionUnitsBulkAdditionJobId(siteExclusionUnitsBulkAdditionJobId: string) : SiteExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteexclusionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface SiteExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRe
      * Get a list of site exclusion units bulk addition jobs associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

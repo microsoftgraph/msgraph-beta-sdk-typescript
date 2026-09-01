@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface VirtualEventRegistrationItemRequestBuilder extends BaseRequestBuilder<VirtualEventRegistrationItemRequestBuilder> {
     /**
      * Provides operations to call the cancel method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEventRegistration entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sessions(): SessionsRequestBuilder;
     /**
      * Delete navigation property registrations for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -37,6 +40,7 @@ export interface VirtualEventRegistrationItemRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventRegistrationItemRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventRegistration | undefined>;
     /**
@@ -45,24 +49,28 @@ export interface VirtualEventRegistrationItemRequestBuilder extends BaseRequestB
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistration>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: VirtualEventRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventRegistration | undefined>;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEventRegistration entity.
      * @param joinWebUrl Alternate key of virtualEventSession
      * @returns {SessionsWithJoinWebUrlRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      sessionsWithJoinWebUrl(joinWebUrl: string | undefined) : SessionsWithJoinWebUrlRequestBuilder;
     /**
      * Delete navigation property registrations for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Registration records of the town hall.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventRegistrationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -70,6 +78,7 @@ export interface VirtualEventRegistrationItemRequestBuilder extends BaseRequestB
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: VirtualEventRegistration, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

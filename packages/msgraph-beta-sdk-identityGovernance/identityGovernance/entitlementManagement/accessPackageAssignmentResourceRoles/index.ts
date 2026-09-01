@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageAssignmentResourceRolesRequestBuilder extends BaseRequestBuilder<AccessPackageAssignmentResourceRolesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the My method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get my(): MyRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.
      * @param accessPackageAssignmentResourceRoleId The unique identifier of accessPackageAssignmentResourceRole
      * @returns {AccessPackageAssignmentResourceRoleItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessPackageAssignmentResourceRoleId(accessPackageAssignmentResourceRoleId: string) : AccessPackageAssignmentResourceRoleItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface AccessPackageAssignmentResourceRolesRequestBuilder extends Base
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageAssignmentResourceRoleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentresourceroles?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageAssignmentResourceRolesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageAssignmentResourceRoleCollectionResponse | undefined>;
@@ -46,12 +50,14 @@ export interface AccessPackageAssignmentResourceRolesRequestBuilder extends Base
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageAssignmentResourceRole>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: AccessPackageAssignmentResourceRole, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageAssignmentResourceRole | undefined>;
     /**
      * Retrieve a list of accessPackageAssignmentResourceRole objects.  The resulting list includes all the resource roles of all assignments that the caller has access to read, across all catalogs and access packages.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageAssignmentResourceRolesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,6 +65,7 @@ export interface AccessPackageAssignmentResourceRolesRequestBuilder extends Base
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessPackageAssignmentResourceRole, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

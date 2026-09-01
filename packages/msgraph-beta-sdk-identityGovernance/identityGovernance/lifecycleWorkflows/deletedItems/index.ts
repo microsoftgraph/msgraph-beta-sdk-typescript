@@ -6,6 +6,8 @@ import { createDeletedItemContainerFromDiscriminatorValue, type DeletedItemConta
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { LifecyclePoliciesRequestBuilderNavigationMetadata, LifecyclePoliciesRequestBuilderRequestsMetadata, type LifecyclePoliciesRequestBuilder } from './lifecyclePolicies/index.js';
+// @ts-ignore
 import { type WorkflowsRequestBuilder, WorkflowsRequestBuilderNavigationMetadata, WorkflowsRequestBuilderRequestsMetadata } from './workflows/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -15,13 +17,20 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedItemsRequestBuilder> {
     /**
+     * Provides operations to manage the lifecyclePolicies property of the microsoft.graph.deletedItemContainer entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
+     */
+    get lifecyclePolicies(): LifecyclePoliciesRequestBuilder;
+    /**
      * Provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get workflows(): WorkflowsRequestBuilder;
     /**
      * Delete navigation property deletedItems for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -29,18 +38,21 @@ export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedIt
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DeletedItemContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<DeletedItemsRequestBuilderGetQueryParameters> | undefined) : Promise<DeletedItemContainer | undefined>;
     /**
      * Delete navigation property deletedItems for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Deleted workflows in your lifecycle workflows instance.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DeletedItemsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -72,6 +84,10 @@ const DeletedItemsRequestBuilderGetQueryParametersMapper: Record<string, string>
  * Metadata for all the navigation properties in the request builder.
  */
 export const DeletedItemsRequestBuilderNavigationMetadata: Record<Exclude<keyof DeletedItemsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    lifecyclePolicies: {
+        requestsMetadata: LifecyclePoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecyclePoliciesRequestBuilderNavigationMetadata,
+    },
     workflows: {
         requestsMetadata: WorkflowsRequestBuilderRequestsMetadata,
         navigationMetadata: WorkflowsRequestBuilderNavigationMetadata,

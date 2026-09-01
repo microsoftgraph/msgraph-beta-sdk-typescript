@@ -24,24 +24,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ProtectionUnitsRequestBuilder extends BaseRequestBuilder<ProtectionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Casts the previous resource to driveProtectionUnit.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get graphDriveProtectionUnit(): GraphDriveProtectionUnitRequestBuilder;
     /**
      * Casts the previous resource to mailboxProtectionUnit.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get graphMailboxProtectionUnit(): GraphMailboxProtectionUnitRequestBuilder;
     /**
      * Casts the previous resource to siteProtectionUnit.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get graphSiteProtectionUnit(): GraphSiteProtectionUnitRequestBuilder;
     /**
      * Provides operations to manage the protectionUnits property of the microsoft.graph.backupRestoreRoot entity.
      * @param protectionUnitBaseId The unique identifier of protectionUnitBase
      * @returns {ProtectionUnitBaseItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byProtectionUnitBaseId(protectionUnitBaseId: string) : ProtectionUnitBaseItemRequestBuilder;
     /**
@@ -49,12 +54,14 @@ export interface ProtectionUnitsRequestBuilder extends BaseRequestBuilder<Protec
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProtectionUnitBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<ProtectionUnitBaseCollectionResponse | undefined>;
     /**
      * Read the properties and relationships of a protectionUnitBase object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -40,6 +40,7 @@ export interface MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithSta
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-insights-toptasksprocessedsummary?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : Promise<TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse | undefined>;
@@ -47,6 +48,7 @@ export interface MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithSta
      * Provide a summary from the insights resource of the most processed task objects, known as top tasks, for a specified time period in a tenant. The task definition is provided, along with numerical counts of total, successful, and failed runs. For information about workflows processed, see insights: topWorkflowsProcessedSummary.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

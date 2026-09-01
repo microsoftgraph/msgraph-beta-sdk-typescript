@@ -18,16 +18,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServiceAppItemRequestBuilder extends BaseRequestBuilder<ServiceAppItemRequestBuilder> {
     /**
      * Provides operations to call the activate method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get activate(): ActivateRequestBuilder;
     /**
      * Provides operations to call the deactivate method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get deactivate(): DeactivateRequestBuilder;
     /**
      * Delete a serviceApp.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-delete-serviceapps?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -36,6 +39,7 @@ export interface ServiceAppItemRequestBuilder extends BaseRequestBuilder<Service
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/serviceapp-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ServiceAppItemRequestBuilderGetQueryParameters> | undefined) : Promise<ServiceApp | undefined>;
@@ -45,18 +49,21 @@ export interface ServiceAppItemRequestBuilder extends BaseRequestBuilder<Service
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: ServiceApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServiceApp | undefined>;
     /**
      * Delete a serviceApp.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a serviceApp object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServiceAppItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,6 +71,7 @@ export interface ServiceAppItemRequestBuilder extends BaseRequestBuilder<Service
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: ServiceApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

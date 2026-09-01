@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface HistoryDefinitionsRequestBuilder extends BaseRequestBuilder<HistoryDefinitionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
      * @param accessReviewHistoryDefinitionId The unique identifier of accessReviewHistoryDefinition
      * @returns {AccessReviewHistoryDefinitionItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessReviewHistoryDefinitionId(accessReviewHistoryDefinitionId: string) : AccessReviewHistoryDefinitionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface HistoryDefinitionsRequestBuilder extends BaseRequestBuilder<His
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewHistoryDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<HistoryDefinitionsRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewHistoryDefinitionCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface HistoryDefinitionsRequestBuilder extends BaseRequestBuilder<His
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewHistoryDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-beta|Find more info here}
      */
      post(body: AccessReviewHistoryDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewHistoryDefinition | undefined>;
@@ -47,6 +51,7 @@ export interface HistoryDefinitionsRequestBuilder extends BaseRequestBuilder<His
      * Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<HistoryDefinitionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface HistoryDefinitionsRequestBuilder extends BaseRequestBuilder<His
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessReviewHistoryDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

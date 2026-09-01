@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WorkflowTemplatesRequestBuilder extends BaseRequestBuilder<WorkflowTemplatesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      * @param workflowTemplateId The unique identifier of workflowTemplate
      * @returns {WorkflowTemplateItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byWorkflowTemplateId(workflowTemplateId: string) : WorkflowTemplateItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface WorkflowTemplatesRequestBuilder extends BaseRequestBuilder<Work
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<WorkflowTemplateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-workflowtemplates?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<WorkflowTemplatesRequestBuilderGetQueryParameters> | undefined) : Promise<WorkflowTemplateCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface WorkflowTemplatesRequestBuilder extends BaseRequestBuilder<Work
      * Get a list of the workflowTemplate objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WorkflowTemplatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

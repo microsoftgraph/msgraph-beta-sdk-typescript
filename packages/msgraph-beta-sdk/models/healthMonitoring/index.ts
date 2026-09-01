@@ -957,6 +957,10 @@ export const AlertTypeObject = {
     UnknownFutureValue: "unknownFutureValue",
     ConditionalAccessBlockedSignIn: "conditionalAccessBlockedSignIn",
     SamlSignInFailure: "samlSignInFailure",
+    InternetAppBlockedByPolicy: "internetAppBlockedByPolicy",
+    PrivateAppBlockedByConnector: "privateAppBlockedByConnector",
+    RemoteNetworkTunnelConnectivity: "remoteNetworkTunnelConnectivity",
+    RemoteNetworkBgpConnectivity: "remoteNetworkBgpConnectivity",
 } as const;
 export const CategoryObject = {
     Unknown: "unknown",
@@ -976,6 +980,7 @@ export const ScenarioObject = {
     UnknownFutureValue: "unknownFutureValue",
     ConditionalAccess: "conditionalAccess",
     Saml: "saml",
+    Gsa: "gsa",
 } as const;
 /* tslint:enable */
 /* eslint-enable */

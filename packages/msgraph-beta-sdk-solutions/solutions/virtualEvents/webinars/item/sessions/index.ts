@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
      * @param virtualEventSessionId The unique identifier of virtualEventSession
      * @returns {VirtualEventSessionItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byVirtualEventSessionId(virtualEventSessionId: string) : VirtualEventSessionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualevent-list-sessions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SessionsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventSessionCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: VirtualEventSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventSession | undefined>;
     /**
      * Get a list of all virtualEventSession objects under a virtual event. Currently, the following virtual event types are supported: virtualEventTownhall and virtualEventWebinar.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface SessionsRequestBuilder extends BaseRequestBuilder<SessionsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: VirtualEventSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

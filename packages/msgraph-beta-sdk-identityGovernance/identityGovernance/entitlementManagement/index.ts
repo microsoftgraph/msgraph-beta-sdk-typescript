@@ -58,78 +58,97 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<EntitlementManagementRequestBuilder> {
     /**
      * Provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageAssignmentApprovals(): AccessPackageAssignmentApprovalsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageAssignmentPolicies(): AccessPackageAssignmentPoliciesRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageAssignmentRequests(): AccessPackageAssignmentRequestsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageAssignmentResourceRoles(): AccessPackageAssignmentResourceRolesRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageAssignments(): AccessPackageAssignmentsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageCatalogs(): AccessPackageCatalogsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResourceEnvironments property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageResourceEnvironments(): AccessPackageResourceEnvironmentsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageResourceRequests(): AccessPackageResourceRequestsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageResourceRoleScopes(): AccessPackageResourceRoleScopesRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResources property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageResources(): AccessPackageResourcesRequestBuilder;
     /**
      * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackages(): AccessPackagesRequestBuilder;
     /**
      * Provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get accessPackageSuggestions(): AccessPackageSuggestionsRequestBuilder;
     /**
      * Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get assignmentRequests(): AssignmentRequestsRequestBuilder;
     /**
      * Provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get availableAccessPackages(): AvailableAccessPackagesRequestBuilder;
     /**
      * Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get connectedOrganizations(): ConnectedOrganizationsRequestBuilder;
     /**
      * Provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get controlConfigurations(): ControlConfigurationsRequestBuilder;
     /**
      * Provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get externalOriginResourceConnectors(): ExternalOriginResourceConnectorsRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get settings(): SettingsRequestBuilder;
     /**
      * Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get subjects(): SubjectsRequestBuilder;
     /**
@@ -143,12 +162,14 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
      * @param uniqueName Alternate key of accessPackage
      * @returns {AccessPackagesWithUniqueNameRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      accessPackagesWithUniqueName(uniqueName: string | undefined) : AccessPackagesWithUniqueNameRequestBuilder;
     /**
      * Delete navigation property entitlementManagement for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -156,6 +177,7 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EntitlementManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters> | undefined) : Promise<EntitlementManagement | undefined>;
     /**
@@ -164,24 +186,28 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<EntitlementManagement>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: EntitlementManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<EntitlementManagement | undefined>;
     /**
      * Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
      * @param objectId Alternate key of accessPackageSubject
      * @returns {SubjectsWithObjectIdRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      subjectsWithObjectId(objectId: string | undefined) : SubjectsWithObjectIdRequestBuilder;
     /**
      * Delete navigation property entitlementManagement for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get entitlementManagement from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<EntitlementManagementRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -189,6 +215,7 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: EntitlementManagement, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -24,28 +24,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OneDriveForBusinessProtectionPolicyItemRequestBuilder extends BaseRequestBuilder<OneDriveForBusinessProtectionPolicyItemRequestBuilder> {
     /**
      * Provides operations to manage the driveExclusionUnits property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveExclusionUnits(): DriveExclusionUnitsRequestBuilder;
     /**
      * Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveExclusionUnitsBulkAdditionJobs(): DriveExclusionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Provides operations to manage the driveInclusionRules property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveInclusionRules(): DriveInclusionRulesRequestBuilder;
     /**
      * Provides operations to manage the driveProtectionUnits property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveProtectionUnits(): DriveProtectionUnitsRequestBuilder;
     /**
      * Provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get driveProtectionUnitsBulkAdditionJobs(): DriveProtectionUnitsBulkAdditionJobsRequestBuilder;
     /**
      * Delete navigation property oneDriveForBusinessProtectionPolicies for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -53,6 +59,7 @@ export interface OneDriveForBusinessProtectionPolicyItemRequestBuilder extends B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OneDriveForBusinessProtectionPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<OneDriveForBusinessProtectionPolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<OneDriveForBusinessProtectionPolicy | undefined>;
     /**
@@ -61,6 +68,7 @@ export interface OneDriveForBusinessProtectionPolicyItemRequestBuilder extends B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OneDriveForBusinessProtectionPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: OneDriveForBusinessProtectionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OneDriveForBusinessProtectionPolicy | undefined>;
@@ -68,12 +76,14 @@ export interface OneDriveForBusinessProtectionPolicyItemRequestBuilder extends B
      * Delete navigation property oneDriveForBusinessProtectionPolicies for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * The list of OneDrive for Business protection policies in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OneDriveForBusinessProtectionPolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -81,6 +91,7 @@ export interface OneDriveForBusinessProtectionPolicyItemRequestBuilder extends B
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: OneDriveForBusinessProtectionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

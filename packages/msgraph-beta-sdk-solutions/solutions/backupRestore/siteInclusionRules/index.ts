@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteInclusionRulesRequestBuilder extends BaseRequestBuilder<SiteInclusionRulesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteInclusionRules property of the microsoft.graph.backupRestoreRoot entity.
      * @param siteProtectionRuleId The unique identifier of siteProtectionRule
      * @returns {SiteProtectionRuleItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteProtectionRuleId(siteProtectionRuleId: string) : SiteProtectionRuleItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteInclusionRulesRequestBuilder extends BaseRequestBuilder<Sit
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionRuleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<SiteInclusionRulesRequestBuilderGetQueryParameters> | undefined) : Promise<SiteProtectionRuleCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface SiteInclusionRulesRequestBuilder extends BaseRequestBuilder<Sit
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionRule>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: SiteProtectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteProtectionRule | undefined>;
     /**
      * The list of site inclusion rules applied to the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteInclusionRulesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface SiteInclusionRulesRequestBuilder extends BaseRequestBuilder<Sit
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SiteProtectionRule, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

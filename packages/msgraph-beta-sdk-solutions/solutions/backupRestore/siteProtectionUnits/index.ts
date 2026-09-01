@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteProtectionUnitsRequestBuilder extends BaseRequestBuilder<SiteProtectionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
      * @param siteProtectionUnitId The unique identifier of siteProtectionUnit
      * @returns {SiteProtectionUnitItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteProtectionUnitId(siteProtectionUnitId: string) : SiteProtectionUnitItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteProtectionUnitsRequestBuilder extends BaseRequestBuilder<Si
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<SiteProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteProtectionUnitCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface SiteProtectionUnitsRequestBuilder extends BaseRequestBuilder<Si
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: SiteProtectionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteProtectionUnit | undefined>;
     /**
      * The list of site protection units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface SiteProtectionUnitsRequestBuilder extends BaseRequestBuilder<Si
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SiteProtectionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

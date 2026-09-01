@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<LicenseDetailsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the getTeamsLicensingDetails method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get getTeamsLicensingDetails(): GetTeamsLicensingDetailsRequestBuilder;
     /**
      * Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
      * @param licenseDetailsId The unique identifier of licenseDetails
      * @returns {LicenseDetailsItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byLicenseDetailsId(licenseDetailsId: string) : LicenseDetailsItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<License
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LicenseDetailsCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<LicenseDetailsRequestBuilderGetQueryParameters> | undefined) : Promise<LicenseDetailsCollectionResponse | undefined>;
     /**
@@ -45,12 +49,14 @@ export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<License
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LicenseDetails>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      post(body: LicenseDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LicenseDetails | undefined>;
     /**
      * Get licenseDetails from servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LicenseDetailsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,6 +64,7 @@ export interface LicenseDetailsRequestBuilder extends BaseRequestBuilder<License
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: LicenseDetails, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

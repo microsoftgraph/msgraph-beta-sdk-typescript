@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DelegatedPermissionClassificationsRequestBuilder extends BaseRequestBuilder<DelegatedPermissionClassificationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
      * @param delegatedPermissionClassificationId The unique identifier of delegatedPermissionClassification
      * @returns {DelegatedPermissionClassificationItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byDelegatedPermissionClassificationId(delegatedPermissionClassificationId: string) : DelegatedPermissionClassificationItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DelegatedPermissionClassificationsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DelegatedPermissionClassificationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DelegatedPermissionClassificationsRequestBuilderGetQueryParameters> | undefined) : Promise<DelegatedPermissionClassificationCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface DelegatedPermissionClassificationsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DelegatedPermissionClassification>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-beta|Find more info here}
      */
      post(body: DelegatedPermissionClassification, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DelegatedPermissionClassification | undefined>;
@@ -47,6 +51,7 @@ export interface DelegatedPermissionClassificationsRequestBuilder extends BaseRe
      * Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DelegatedPermissionClassificationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface DelegatedPermissionClassificationsRequestBuilder extends BaseRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: DelegatedPermissionClassification, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

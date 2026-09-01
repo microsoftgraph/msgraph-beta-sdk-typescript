@@ -26,32 +26,39 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessReviewsRequestBuilder extends BaseRequestBuilder<AccessReviewsRequestBuilder> {
     /**
      * Provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get decisions(): DecisionsRequestBuilder;
     /**
      * Provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get definitions(): DefinitionsRequestBuilder;
     /**
      * Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get historyDefinitions(): HistoryDefinitionsRequestBuilder;
     /**
      * Provides operations to manage the instances property of the microsoft.graph.accessReviewSet entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get instances(): InstancesRequestBuilder;
     /**
      * Provides operations to manage the policy property of the microsoft.graph.accessReviewSet entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get policy(): PolicyRequestBuilder;
     /**
      * Provides operations to manage the unified property of the microsoft.graph.accessReviewSet entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get unified(): UnifiedRequestBuilder;
     /**
      * Delete navigation property accessReviews for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -59,6 +66,7 @@ export interface AccessReviewsRequestBuilder extends BaseRequestBuilder<AccessRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewSet>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessReviewsRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewSet | undefined>;
     /**
@@ -67,18 +75,21 @@ export interface AccessReviewsRequestBuilder extends BaseRequestBuilder<AccessRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewSet>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: AccessReviewSet, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewSet | undefined>;
     /**
      * Delete navigation property accessReviews for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get accessReviews from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessReviewsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -86,6 +97,7 @@ export interface AccessReviewsRequestBuilder extends BaseRequestBuilder<AccessRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: AccessReviewSet, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

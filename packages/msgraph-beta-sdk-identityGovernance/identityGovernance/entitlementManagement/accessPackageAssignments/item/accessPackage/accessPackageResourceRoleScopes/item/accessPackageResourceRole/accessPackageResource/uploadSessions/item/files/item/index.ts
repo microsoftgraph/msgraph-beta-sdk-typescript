@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CustomDataProvidedResourceFileItemRequestBuilder extends BaseRequestBuilder<CustomDataProvidedResourceFileItemRequestBuilder> {
     /**
      * Provides operations to manage the media for the identityGovernance entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get content(): ContentRequestBuilder;
     /**
@@ -23,12 +24,14 @@ export interface CustomDataProvidedResourceFileItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceFile>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<CustomDataProvidedResourceFileItemRequestBuilderGetQueryParameters> | undefined) : Promise<CustomDataProvidedResourceFile | undefined>;
     /**
      * The files uploaded during this upload session. Supports $expand and $expand with nested $filter and $orderby.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomDataProvidedResourceFileItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

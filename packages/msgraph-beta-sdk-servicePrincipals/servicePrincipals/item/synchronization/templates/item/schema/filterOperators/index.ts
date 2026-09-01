@@ -44,6 +44,7 @@ export interface FilterOperatorsRequestBuilder extends BaseRequestBuilder<Filter
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FilterOperatorsGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters> | undefined) : Promise<FilterOperatorsGetResponse | undefined>;
@@ -51,6 +52,7 @@ export interface FilterOperatorsRequestBuilder extends BaseRequestBuilder<Filter
      * List all operators supported in the scoping filters for a synchronizationSchema.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FilterOperatorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

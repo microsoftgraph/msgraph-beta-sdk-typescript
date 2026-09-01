@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the steps property of the microsoft.graph.approval entity.
      * @param approvalStepId The unique identifier of approvalStep
      * @returns {ApprovalStepItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byApprovalStepId(approvalStepId: string) : ApprovalStepItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStepCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/approval-list-steps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<StepsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalStepCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalStep>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: ApprovalStep, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalStep | undefined>;
     /**
      * List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<StepsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface StepsRequestBuilder extends BaseRequestBuilder<StepsRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: ApprovalStep, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
