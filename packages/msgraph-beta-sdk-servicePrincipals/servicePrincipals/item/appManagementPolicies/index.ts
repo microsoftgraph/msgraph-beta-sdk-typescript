@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AppManagementPoliciesRequestBuilder extends BaseRequestBuilder<AppManagementPoliciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
      * @param appManagementPolicyId The unique identifier of appManagementPolicy
      * @returns {AppManagementPolicyItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byAppManagementPolicyId(appManagementPolicyId: string) : AppManagementPolicyItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface AppManagementPoliciesRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AppManagementPolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<AppManagementPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<AppManagementPolicyCollectionResponse | undefined>;
     /**
      * The appManagementPolicy applied to this service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AppManagementPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

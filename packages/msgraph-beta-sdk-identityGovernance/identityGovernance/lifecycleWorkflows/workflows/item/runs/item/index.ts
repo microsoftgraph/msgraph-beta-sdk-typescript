@@ -22,18 +22,22 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RunItemRequestBuilder extends BaseRequestBuilder<RunItemRequestBuilder> {
     /**
      * Provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.run entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get reprocessedRuns(): ReprocessedRunsRequestBuilder;
     /**
      * Provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get subjectProcessingResults(): SubjectProcessingResultsRequestBuilder;
     /**
      * Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get taskProcessingResults(): TaskProcessingResultsRequestBuilder;
     /**
      * Provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get userProcessingResults(): UserProcessingResultsRequestBuilder;
     /**
@@ -41,6 +45,7 @@ export interface RunItemRequestBuilder extends BaseRequestBuilder<RunItemRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Run>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RunItemRequestBuilderGetQueryParameters> | undefined) : Promise<Run | undefined>;
@@ -48,6 +53,7 @@ export interface RunItemRequestBuilder extends BaseRequestBuilder<RunItemRequest
      * Read the properties and relationships of a run object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RunItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

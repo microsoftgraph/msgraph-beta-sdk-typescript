@@ -6,9 +6,13 @@ import { createImpactedResourceCollectionResponseFromDiscriminatorValue, createI
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AddTagRequestBuilderRequestsMetadata, type AddTagRequestBuilder } from './addTag/index.js';
+// @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
 import { ImpactedResourceItemRequestBuilderNavigationMetadata, ImpactedResourceItemRequestBuilderRequestsMetadata, type ImpactedResourceItemRequestBuilder } from './item/index.js';
+// @ts-ignore
+import { RemoveTagRequestBuilderRequestsMetadata, type RemoveTagRequestBuilder } from './removeTag/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -17,9 +21,17 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface ImpactedResourcesRequestBuilder extends BaseRequestBuilder<ImpactedResourcesRequestBuilder> {
     /**
+     * Provides operations to call the addTag method.
+     */
+    get addTag(): AddTagRequestBuilder;
+    /**
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the removeTag method.
+     */
+    get removeTag(): RemoveTagRequestBuilder;
     /**
      * Provides operations to manage the impactedResources property of the microsoft.graph.recommendationBase entity.
      * @param impactedResourceId The unique identifier of impactedResource
@@ -119,8 +131,14 @@ export const ImpactedResourcesRequestBuilderNavigationMetadata: Record<Exclude<k
         navigationMetadata: ImpactedResourceItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["impactedResource%2Did"],
     },
+    addTag: {
+        requestsMetadata: AddTagRequestBuilderRequestsMetadata,
+    },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    removeTag: {
+        requestsMetadata: RemoveTagRequestBuilderRequestsMetadata,
     },
 };
 /**

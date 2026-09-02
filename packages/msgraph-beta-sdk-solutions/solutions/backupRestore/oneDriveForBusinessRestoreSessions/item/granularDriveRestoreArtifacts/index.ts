@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GranularDriveRestoreArtifactsRequestBuilder extends BaseRequestBuilder<GranularDriveRestoreArtifactsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the granularDriveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
      * @param granularDriveRestoreArtifactId The unique identifier of granularDriveRestoreArtifact
      * @returns {GranularDriveRestoreArtifactItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byGranularDriveRestoreArtifactId(granularDriveRestoreArtifactId: string) : GranularDriveRestoreArtifactItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface GranularDriveRestoreArtifactsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularDriveRestoreArtifactCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-granulardriverestoreartifacts?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GranularDriveRestoreArtifactsRequestBuilderGetQueryParameters> | undefined) : Promise<GranularDriveRestoreArtifactCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface GranularDriveRestoreArtifactsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GranularDriveRestoreArtifact>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: GranularDriveRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<GranularDriveRestoreArtifact | undefined>;
     /**
      * Get a list of the granularDriveRestoreArtifact objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GranularDriveRestoreArtifactsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface GranularDriveRestoreArtifactsRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: GranularDriveRestoreArtifact, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

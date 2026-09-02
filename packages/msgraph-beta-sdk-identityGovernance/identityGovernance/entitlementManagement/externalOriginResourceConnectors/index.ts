@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExternalOriginResourceConnectorsRequestBuilder extends BaseRequestBuilder<ExternalOriginResourceConnectorsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.
      * @param externalOriginResourceConnectorId The unique identifier of externalOriginResourceConnector
      * @returns {ExternalOriginResourceConnectorItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byExternalOriginResourceConnectorId(externalOriginResourceConnectorId: string) : ExternalOriginResourceConnectorItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ExternalOriginResourceConnectorsRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalOriginResourceConnectorCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/entitlementmanagement-list-externaloriginresourceconnectors?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ExternalOriginResourceConnectorsRequestBuilderGetQueryParameters> | undefined) : Promise<ExternalOriginResourceConnectorCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface ExternalOriginResourceConnectorsRequestBuilder extends BaseRequ
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExternalOriginResourceConnector>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/entitlementmanagement-post-externaloriginresourceconnectors?view=graph-rest-beta|Find more info here}
      */
      post(body: ExternalOriginResourceConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExternalOriginResourceConnector | undefined>;
@@ -47,6 +51,7 @@ export interface ExternalOriginResourceConnectorsRequestBuilder extends BaseRequ
      * Get a list of externalOriginResourceConnector objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExternalOriginResourceConnectorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface ExternalOriginResourceConnectorsRequestBuilder extends BaseRequ
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: ExternalOriginResourceConnector, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

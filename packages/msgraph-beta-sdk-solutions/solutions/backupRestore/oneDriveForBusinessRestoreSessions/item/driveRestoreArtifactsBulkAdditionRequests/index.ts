@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder extends BaseRequestBuilder<DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the driveRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
      * @param driveRestoreArtifactsBulkAdditionRequestId The unique identifier of driveRestoreArtifactsBulkAdditionRequest
      * @returns {DriveRestoreArtifactsBulkAdditionRequestItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byDriveRestoreArtifactsBulkAdditionRequestId(driveRestoreArtifactsBulkAdditionRequestId: string) : DriveRestoreArtifactsBulkAdditionRequestItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder extends
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveRestoreArtifactsBulkAdditionRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-driverestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DriveRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveRestoreArtifactsBulkAdditionRequestCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder extends
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveRestoreArtifactsBulkAdditionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-post-driverestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      post(body: DriveRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveRestoreArtifactsBulkAdditionRequest | undefined>;
@@ -47,6 +51,7 @@ export interface DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder extends
      * Get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder extends
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: DriveRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

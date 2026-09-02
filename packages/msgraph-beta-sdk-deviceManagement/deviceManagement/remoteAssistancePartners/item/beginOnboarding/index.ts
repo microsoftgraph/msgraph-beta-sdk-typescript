@@ -4,24 +4,69 @@
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { type AdditionalDataHolder, type BackedModel, type BackingStore, type BaseRequestBuilder, type Parsable, type ParsableFactory, type ParseNode, type RequestConfiguration, type RequestInformation, type RequestsMetadata, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
+export interface BeginOnboardingPostRequestBody extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The partnerDomain property
+     */
+    partnerDomain?: string | null;
+}
 /**
  * Provides operations to call the beginOnboarding method.
  */
 export interface BeginOnboardingRequestBuilder extends BaseRequestBuilder<BeginOnboardingRequestBuilder> {
     /**
      * A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
-     post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
+     post(body: BeginOnboardingPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
      * A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
-     toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
+     toPostRequestInformation(body: BeginOnboardingPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {BeginOnboardingPostRequestBody}
+ */
+// @ts-ignore
+export function createBeginOnboardingPostRequestBodyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoBeginOnboardingPostRequestBody;
+}
+/**
+ * The deserialization information for the current model
+ * @param BeginOnboardingPostRequestBody The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoBeginOnboardingPostRequestBody(beginOnboardingPostRequestBody: Partial<BeginOnboardingPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { beginOnboardingPostRequestBody.backingStoreEnabled = true; },
+        "partnerDomain": n => { beginOnboardingPostRequestBody.partnerDomain = n.getStringValue(); },
+    }
+}
+/**
+ * Serializes information the current object
+ * @param BeginOnboardingPostRequestBody The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeBeginOnboardingPostRequestBody(writer: SerializationWriter, beginOnboardingPostRequestBody: Partial<BeginOnboardingPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!beginOnboardingPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("partnerDomain", beginOnboardingPostRequestBody.partnerDomain);
+    writer.writeAdditionalData(beginOnboardingPostRequestBody.additionalData);
 }
 /**
  * Uri template for the request builder.
@@ -38,6 +83,9 @@ export const BeginOnboardingRequestBuilderRequestsMetadata: RequestsMetadata = {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "sendNoResponseContent",
+        requestBodyContentType: "application/json",
+        requestBodySerializer: serializeBeginOnboardingPostRequestBody,
+        requestInformationContentSetMethod: "setContentFromParsable",
     },
 };
 /* tslint:enable */

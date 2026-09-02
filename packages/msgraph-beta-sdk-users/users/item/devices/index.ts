@@ -12,6 +12,8 @@ import { DeltaRequestBuilderRequestsMetadata, type DeltaRequestBuilder } from '.
 // @ts-ignore
 import { DeviceItemRequestBuilderNavigationMetadata, DeviceItemRequestBuilderRequestsMetadata, type DeviceItemRequestBuilder } from './item/index.js';
 // @ts-ignore
+import { ProvisionRequestBuilderRequestsMetadata, type ProvisionRequestBuilder } from './provision/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -26,6 +28,10 @@ export interface DevicesRequestBuilder extends BaseRequestBuilder<DevicesRequest
      * Provides operations to call the delta method.
      */
     get delta(): DeltaRequestBuilder;
+    /**
+     * Provides operations to call the provision method.
+     */
+    get provision(): ProvisionRequestBuilder;
     /**
      * Provides operations to manage the devices property of the microsoft.graph.user entity.
      * @param deviceId The unique identifier of device
@@ -129,6 +135,9 @@ export const DevicesRequestBuilderNavigationMetadata: Record<Exclude<keyof Devic
     },
     delta: {
         requestsMetadata: DeltaRequestBuilderRequestsMetadata,
+    },
+    provision: {
+        requestsMetadata: ProvisionRequestBuilderRequestsMetadata,
     },
 };
 /**

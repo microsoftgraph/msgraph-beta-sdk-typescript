@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRequestBuilder<DriveExclusionUnitsBulkAdditionJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
      * @param driveExclusionUnitsBulkAdditionJobId The unique identifier of driveExclusionUnitsBulkAdditionJob
      * @returns {DriveExclusionUnitsBulkAdditionJobItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byDriveExclusionUnitsBulkAdditionJobId(driveExclusionUnitsBulkAdditionJobId: string) : DriveExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveexclusionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface DriveExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseR
      * Get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

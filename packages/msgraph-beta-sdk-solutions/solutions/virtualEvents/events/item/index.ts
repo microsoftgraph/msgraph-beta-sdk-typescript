@@ -26,28 +26,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface VirtualEventItemRequestBuilder extends BaseRequestBuilder<VirtualEventItemRequestBuilder> {
     /**
      * Provides operations to call the cancel method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get presenters(): PresentersRequestBuilder;
     /**
      * Provides operations to call the publish method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get publish(): PublishRequestBuilder;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sessions(): SessionsRequestBuilder;
     /**
      * Provides operations to call the setExternalEventInformation method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get setExternalEventInformation(): SetExternalEventInformationRequestBuilder;
     /**
      * Delete navigation property events for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -55,6 +61,7 @@ export interface VirtualEventItemRequestBuilder extends BaseRequestBuilder<Virtu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEvent | undefined>;
     /**
@@ -63,24 +70,28 @@ export interface VirtualEventItemRequestBuilder extends BaseRequestBuilder<Virtu
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: VirtualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEvent | undefined>;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
      * @param joinWebUrl Alternate key of virtualEventSession
      * @returns {SessionsWithJoinWebUrlRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      sessionsWithJoinWebUrl(joinWebUrl: string | undefined) : SessionsWithJoinWebUrlRequestBuilder;
     /**
      * Delete navigation property events for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get events from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -88,6 +99,7 @@ export interface VirtualEventItemRequestBuilder extends BaseRequestBuilder<Virtu
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: VirtualEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

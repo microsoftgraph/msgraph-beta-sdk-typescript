@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface FindingsRequestBuilder extends BaseRequestBuilder<FindingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the findings property of the microsoft.graph.permissionsAnalytics entity.
      * @param findingId The unique identifier of finding
      * @returns {FindingItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byFindingId(findingId: string) : FindingItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface FindingsRequestBuilder extends BaseRequestBuilder<FindingsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<FindingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<FindingsRequestBuilderGetQueryParameters> | undefined) : Promise<FindingCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface FindingsRequestBuilder extends BaseRequestBuilder<FindingsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Finding>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: Finding, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Finding | undefined>;
     /**
      * The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<FindingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface FindingsRequestBuilder extends BaseRequestBuilder<FindingsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: Finding, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

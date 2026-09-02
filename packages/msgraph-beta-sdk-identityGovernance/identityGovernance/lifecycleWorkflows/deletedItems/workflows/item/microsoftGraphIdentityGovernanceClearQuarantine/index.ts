@@ -17,6 +17,7 @@ export interface MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder e
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Workflow>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/identitygovernance-workflow-clearquarantine?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Workflow | undefined>;
@@ -24,6 +25,7 @@ export interface MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder e
      * Release a quarantined workflow so that it resumes processing. A workflow is automatically quarantined when a run exceeds the threshold conditions defined in its quarantineConfiguration. After an administrator reviews the cause of the quarantine, calling this action clears the quarantine state and allows the workflow to run again.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

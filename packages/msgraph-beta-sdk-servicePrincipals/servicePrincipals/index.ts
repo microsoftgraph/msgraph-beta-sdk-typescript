@@ -26,28 +26,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServicePrincipalsRequestBuilder extends BaseRequestBuilder<ServicePrincipalsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the delta method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get delta(): DeltaRequestBuilder;
     /**
      * Provides operations to call the getByIds method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get getByIds(): GetByIdsRequestBuilder;
     /**
      * Provides operations to call the getUserOwnedObjects method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get getUserOwnedObjects(): GetUserOwnedObjectsRequestBuilder;
     /**
      * Provides operations to call the validateProperties method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get validateProperties(): ValidatePropertiesRequestBuilder;
     /**
      * Provides operations to manage the collection of servicePrincipal entities.
      * @param servicePrincipalId The unique identifier of servicePrincipal
      * @returns {ServicePrincipalItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byServicePrincipalId(servicePrincipalId: string) : ServicePrincipalItemRequestBuilder;
     /**
@@ -55,6 +61,7 @@ export interface ServicePrincipalsRequestBuilder extends BaseRequestBuilder<Serv
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipalCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ServicePrincipalsRequestBuilderGetQueryParameters> | undefined) : Promise<ServicePrincipalCollectionResponse | undefined>;
@@ -64,6 +71,7 @@ export interface ServicePrincipalsRequestBuilder extends BaseRequestBuilder<Serv
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServicePrincipal>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-beta|Find more info here}
      */
      post(body: ServicePrincipal, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServicePrincipal | undefined>;
@@ -71,6 +79,7 @@ export interface ServicePrincipalsRequestBuilder extends BaseRequestBuilder<Serv
      * Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServicePrincipalsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -78,6 +87,7 @@ export interface ServicePrincipalsRequestBuilder extends BaseRequestBuilder<Serv
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: ServicePrincipal, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

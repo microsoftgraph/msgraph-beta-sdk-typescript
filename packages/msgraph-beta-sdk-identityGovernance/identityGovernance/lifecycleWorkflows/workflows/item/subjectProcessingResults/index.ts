@@ -10,6 +10,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { SubjectProcessingResultItemRequestBuilderNavigationMetadata, SubjectProcessingResultItemRequestBuilderRequestsMetadata, type SubjectProcessingResultItemRequestBuilder } from './item/index.js';
 // @ts-ignore
+import { MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder } from './microsoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,12 +20,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SubjectProcessingResultsRequestBuilder extends BaseRequestBuilder<SubjectProcessingResultsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.
      * @param subjectProcessingResultId The unique identifier of subjectProcessingResult
      * @returns {SubjectProcessingResultItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      bySubjectProcessingResultId(subjectProcessingResultId: string) : SubjectProcessingResultItemRequestBuilder;
     /**
@@ -31,12 +35,22 @@ export interface SubjectProcessingResultsRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SubjectProcessingResultCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<SubjectProcessingResultsRequestBuilderGetQueryParameters> | undefined) : Promise<SubjectProcessingResultCollectionResponse | undefined>;
+    /**
+     * Provides operations to call the summary method.
+     * @param endDateTime Usage: endDateTime={endDateTime}
+     * @param startDateTime Usage: startDateTime={startDateTime}
+     * @returns {MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
+     */
+     microsoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder;
     /**
      * Get subjectProcessingResults from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SubjectProcessingResultsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
@@ -102,6 +116,10 @@ export const SubjectProcessingResultsRequestBuilderNavigationMetadata: Record<Ex
         requestsMetadata: SubjectProcessingResultItemRequestBuilderRequestsMetadata,
         navigationMetadata: SubjectProcessingResultItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["subjectProcessingResult%2Did"],
+    },
+    microsoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

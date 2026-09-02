@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CrossOrganizationUserMappingsRequestBuilder extends BaseRequestBuilder<CrossOrganizationUserMappingsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the crossOrganizationUserMappings property of the microsoft.graph.sharePointMigrationsRoot entity.
      * @param sharePointUserIdentityMappingId The unique identifier of sharePointUserIdentityMapping
      * @returns {SharePointUserIdentityMappingItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySharePointUserIdentityMappingId(sharePointUserIdentityMappingId: string) : SharePointUserIdentityMappingItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface CrossOrganizationUserMappingsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointUserIdentityMappingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointuseridentitymapping-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CrossOrganizationUserMappingsRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointUserIdentityMappingCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface CrossOrganizationUserMappingsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointUserIdentityMapping>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: SharePointUserIdentityMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointUserIdentityMapping | undefined>;
     /**
      * Retrieve a specific user identity mapping by the source user principal name (UPN). This method looks up existing user mappings and verifies migration configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CrossOrganizationUserMappingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface CrossOrganizationUserMappingsRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SharePointUserIdentityMapping, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

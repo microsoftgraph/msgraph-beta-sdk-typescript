@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RegistrationsRequestBuilder extends BaseRequestBuilder<RegistrationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
      * @param virtualEventRegistrationId The unique identifier of virtualEventRegistration
      * @returns {VirtualEventRegistrationItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byVirtualEventRegistrationId(virtualEventRegistrationId: string) : VirtualEventRegistrationItemRequestBuilder;
     /**
@@ -31,12 +33,14 @@ export interface RegistrationsRequestBuilder extends BaseRequestBuilder<Registra
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventRegistrationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<RegistrationsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventRegistrationCollectionResponse | undefined>;
     /**
      * Get registrations from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RegistrationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -23,6 +23,7 @@ export interface AdditionalAccessRequestBuilder extends BaseRequestBuilder<Addit
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AdditionalAccessGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AdditionalAccessRequestBuilderGetQueryParameters> | undefined) : Promise<AdditionalAccessGetResponse | undefined>;
@@ -30,6 +31,7 @@ export interface AdditionalAccessRequestBuilder extends BaseRequestBuilder<Addit
      * In Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  It can be used to prepare to configure the incompatible access packages for a specific access package.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AdditionalAccessRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

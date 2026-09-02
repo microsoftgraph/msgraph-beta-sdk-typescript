@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<SiteExclusionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.
      * @param siteExclusionUnitId The unique identifier of siteExclusionUnit
      * @returns {SiteExclusionUnitItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySiteExclusionUnitId(siteExclusionUnitId: string) : SiteExclusionUnitItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<Sit
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteExclusionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-list-siteexclusionunits?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<SiteExclusionUnitCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface SiteExclusionUnitsRequestBuilder extends BaseRequestBuilder<Sit
      * Get a list of site exclusion units associated with a SharePoint protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteExclusionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

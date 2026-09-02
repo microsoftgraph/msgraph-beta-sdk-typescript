@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<ApprovedClientAppsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the approvedClientApps property of the microsoft.graph.remoteDesktopSecurityConfiguration entity.
      * @param approvedClientAppId The unique identifier of approvedClientApp
      * @returns {ApprovedClientAppItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byApprovedClientAppId(approvedClientAppId: string) : ApprovedClientAppItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<App
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovedClientAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-list-approvedclientapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ApprovedClientAppsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovedClientAppCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<App
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovedClientApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/remotedesktopsecurityconfiguration-post-approvedclientapps?view=graph-rest-beta|Find more info here}
      */
      post(body: ApprovedClientApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovedClientApp | undefined>;
@@ -47,6 +51,7 @@ export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<App
      * Get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ApprovedClientAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface ApprovedClientAppsRequestBuilder extends BaseRequestBuilder<App
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: ApprovedClientApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

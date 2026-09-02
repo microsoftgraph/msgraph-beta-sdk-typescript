@@ -16,12 +16,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BusinessScenarioItemRequestBuilder extends BaseRequestBuilder<BusinessScenarioItemRequestBuilder> {
     /**
      * Provides operations to manage the planner property of the microsoft.graph.businessScenario entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get planner(): PlannerRequestBuilder;
     /**
      * Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -30,6 +32,7 @@ export interface BusinessScenarioItemRequestBuilder extends BaseRequestBuilder<B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenario>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BusinessScenarioItemRequestBuilderGetQueryParameters> | undefined) : Promise<BusinessScenario | undefined>;
@@ -39,6 +42,7 @@ export interface BusinessScenarioItemRequestBuilder extends BaseRequestBuilder<B
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BusinessScenario>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: BusinessScenario, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BusinessScenario | undefined>;
@@ -46,12 +50,14 @@ export interface BusinessScenarioItemRequestBuilder extends BaseRequestBuilder<B
      * Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a businessScenario object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BusinessScenarioItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,6 +65,7 @@ export interface BusinessScenarioItemRequestBuilder extends BaseRequestBuilder<B
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BusinessScenario, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

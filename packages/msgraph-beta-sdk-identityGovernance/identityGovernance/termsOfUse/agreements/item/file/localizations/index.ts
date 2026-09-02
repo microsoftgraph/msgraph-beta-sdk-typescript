@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LocalizationsRequestBuilder extends BaseRequestBuilder<LocalizationsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
      * @param agreementFileLocalizationId The unique identifier of agreementFileLocalization
      * @returns {AgreementFileLocalizationItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAgreementFileLocalizationId(agreementFileLocalizationId: string) : AgreementFileLocalizationItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AgreementFileLocalizationCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters> | undefined) : Promise<AgreementFileLocalizationCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AgreementFileLocalization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: AgreementFileLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AgreementFileLocalization | undefined>;
     /**
      * The localized version of the terms of use agreement files attached to the agreement.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LocalizationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface LocalizationsRequestBuilder extends BaseRequestBuilder<Localiza
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AgreementFileLocalization, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RequestsRequestBuilder extends BaseRequestBuilder<RequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the requests property of the microsoft.graph.approvalItem entity.
      * @param approvalItemRequestId The unique identifier of approvalItemRequest
      * @returns {ApprovalItemRequestItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byApprovalItemRequestId(approvalItemRequestId: string) : ApprovalItemRequestItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface RequestsRequestBuilder extends BaseRequestBuilder<RequestsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItemRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalitem-list-requests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RequestsRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalItemRequestCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface RequestsRequestBuilder extends BaseRequestBuilder<RequestsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItemRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: ApprovalItemRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalItemRequest | undefined>;
     /**
      * Get a list of approvalItemRequest objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface RequestsRequestBuilder extends BaseRequestBuilder<RequestsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ApprovalItemRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

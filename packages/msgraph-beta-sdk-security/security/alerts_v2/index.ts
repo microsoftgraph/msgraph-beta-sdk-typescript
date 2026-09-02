@@ -10,6 +10,8 @@ import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from '.
 // @ts-ignore
 import { AlertItemRequestBuilderNavigationMetadata, AlertItemRequestBuilderRequestsMetadata, type AlertItemRequestBuilder } from './item/index.js';
 // @ts-ignore
+import { MicrosoftGraphSecurityCreateAlertRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityCreateAlertRequestBuilder } from './microsoftGraphSecurityCreateAlert/index.js';
+// @ts-ignore
 import { MicrosoftGraphSecurityMoveAlertsRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityMoveAlertsRequestBuilder } from './microsoftGraphSecurityMoveAlerts/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -22,6 +24,10 @@ export interface Alerts_v2RequestBuilder extends BaseRequestBuilder<Alerts_v2Req
      * Provides operations to count the resources in the collection.
      */
     get count(): CountRequestBuilder;
+    /**
+     * Provides operations to call the createAlert method.
+     */
+    get microsoftGraphSecurityCreateAlert(): MicrosoftGraphSecurityCreateAlertRequestBuilder;
     /**
      * Provides operations to call the moveAlerts method.
      */
@@ -128,6 +134,9 @@ export const Alerts_v2RequestBuilderNavigationMetadata: Record<Exclude<keyof Ale
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphSecurityCreateAlert: {
+        requestsMetadata: MicrosoftGraphSecurityCreateAlertRequestBuilderRequestsMetadata,
     },
     microsoftGraphSecurityMoveAlerts: {
         requestsMetadata: MicrosoftGraphSecurityMoveAlertsRequestBuilderRequestsMetadata,

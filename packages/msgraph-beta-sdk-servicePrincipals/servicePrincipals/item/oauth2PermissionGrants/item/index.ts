@@ -17,12 +17,14 @@ export interface OAuth2PermissionGrantItemRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OAuth2PermissionGrant>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters> | undefined) : Promise<OAuth2PermissionGrant | undefined>;
     /**
      * Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OAuth2PermissionGrantItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

@@ -32,44 +32,54 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BookingBusinessItemRequestBuilder extends BaseRequestBuilder<BookingBusinessItemRequestBuilder> {
     /**
      * Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get appointments(): AppointmentsRequestBuilder;
     /**
      * Provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get calendarView(): CalendarViewRequestBuilder;
     /**
      * Provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get customers(): CustomersRequestBuilder;
     /**
      * Provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get customQuestions(): CustomQuestionsRequestBuilder;
     /**
      * Provides operations to call the getStaffAvailability method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get getStaffAvailability(): GetStaffAvailabilityRequestBuilder;
     /**
      * Provides operations to call the publish method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get publish(): PublishRequestBuilder;
     /**
      * Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get services(): ServicesRequestBuilder;
     /**
      * Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get staffMembers(): StaffMembersRequestBuilder;
     /**
      * Provides operations to call the unpublish method.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get unpublish(): UnpublishRequestBuilder;
     /**
      * Delete a bookingBusiness object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -78,6 +88,7 @@ export interface BookingBusinessItemRequestBuilder extends BaseRequestBuilder<Bo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingBusiness>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters> | undefined) : Promise<BookingBusiness | undefined>;
     /**
@@ -86,18 +97,21 @@ export interface BookingBusinessItemRequestBuilder extends BaseRequestBuilder<Bo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingBusiness>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: BookingBusiness, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingBusiness | undefined>;
     /**
      * Delete a bookingBusiness object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A collection of businesses in Microsoft Bookings. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BookingBusinessItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -105,6 +119,7 @@ export interface BookingBusinessItemRequestBuilder extends BaseRequestBuilder<Bo
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BookingBusiness, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

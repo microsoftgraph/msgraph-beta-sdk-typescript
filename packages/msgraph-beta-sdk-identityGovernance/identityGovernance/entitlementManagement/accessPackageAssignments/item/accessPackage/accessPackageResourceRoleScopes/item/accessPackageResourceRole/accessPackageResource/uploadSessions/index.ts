@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadSessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
      * @param customDataProvidedResourceUploadSessionId The unique identifier of customDataProvidedResourceUploadSession
      * @returns {CustomDataProvidedResourceUploadSessionItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byCustomDataProvidedResourceUploadSessionId(customDataProvidedResourceUploadSessionId: string) : CustomDataProvidedResourceUploadSessionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<UploadSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<CustomDataProvidedResourceUploadSessionCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomDataProvidedResourceUploadSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomDataProvidedResourceUploadSession | undefined>;
     /**
      * Get uploadSessions from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<UploadSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface UploadSessionsRequestBuilder extends BaseRequestBuilder<UploadS
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: CustomDataProvidedResourceUploadSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxExclusionUnitsBulkAdditionJobsRequestBuilder extends BaseRequestBuilder<MailboxExclusionUnitsBulkAdditionJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.
      * @param mailboxExclusionUnitsBulkAdditionJobId The unique identifier of mailboxExclusionUnitsBulkAdditionJob
      * @returns {MailboxExclusionUnitsBulkAdditionJobItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byMailboxExclusionUnitsBulkAdditionJobId(mailboxExclusionUnitsBulkAdditionJobId: string) : MailboxExclusionUnitsBulkAdditionJobItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface MailboxExclusionUnitsBulkAdditionJobsRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxExclusionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxexclusionunitsbulkadditionjobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MailboxExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxExclusionUnitsBulkAdditionJobCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface MailboxExclusionUnitsBulkAdditionJobsRequestBuilder extends Bas
      * Get a list of mailbox exclusion units bulk addition jobs associated with an Exchange protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

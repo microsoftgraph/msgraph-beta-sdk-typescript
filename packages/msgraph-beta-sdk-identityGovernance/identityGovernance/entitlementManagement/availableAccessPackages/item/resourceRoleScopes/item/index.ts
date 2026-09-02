@@ -17,12 +17,14 @@ export interface AccessPackageResourceRoleScopeItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRoleScope>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageResourceRoleScopeItemRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageResourceRoleScope | undefined>;
     /**
      * The resource role scopes associated with this available access package.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageResourceRoleScopeItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

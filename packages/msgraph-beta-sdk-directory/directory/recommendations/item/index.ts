@@ -6,15 +6,27 @@ import { createRecommendationFromDiscriminatorValue, serializeRecommendation, ty
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AcceptRiskRequestBuilderRequestsMetadata, type AcceptRiskRequestBuilder } from './acceptRisk/index.js';
+// @ts-ignore
+import { AddTagRequestBuilderRequestsMetadata, type AddTagRequestBuilder } from './addTag/index.js';
+// @ts-ignore
+import { ApplyAlternateMitigationRequestBuilderRequestsMetadata, type ApplyAlternateMitigationRequestBuilder } from './applyAlternateMitigation/index.js';
+// @ts-ignore
 import { CompleteRequestBuilderRequestsMetadata, type CompleteRequestBuilder } from './complete/index.js';
 // @ts-ignore
 import { DismissRequestBuilderRequestsMetadata, type DismissRequestBuilder } from './dismiss/index.js';
 // @ts-ignore
 import { ImpactedResourcesRequestBuilderNavigationMetadata, ImpactedResourcesRequestBuilderRequestsMetadata, type ImpactedResourcesRequestBuilder } from './impactedResources/index.js';
 // @ts-ignore
+import { MarkPlannedRequestBuilderRequestsMetadata, type MarkPlannedRequestBuilder } from './markPlanned/index.js';
+// @ts-ignore
 import { PostponeRequestBuilderRequestsMetadata, type PostponeRequestBuilder } from './postpone/index.js';
 // @ts-ignore
 import { ReactivateRequestBuilderRequestsMetadata, type ReactivateRequestBuilder } from './reactivate/index.js';
+// @ts-ignore
+import { RemoveTagRequestBuilderRequestsMetadata, type RemoveTagRequestBuilder } from './removeTag/index.js';
+// @ts-ignore
+import { TagsRequestBuilderNavigationMetadata, TagsRequestBuilderRequestsMetadata, type TagsRequestBuilder } from './tags/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -22,6 +34,18 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the recommendations property of the microsoft.graph.directory entity.
  */
 export interface RecommendationItemRequestBuilder extends BaseRequestBuilder<RecommendationItemRequestBuilder> {
+    /**
+     * Provides operations to call the acceptRisk method.
+     */
+    get acceptRisk(): AcceptRiskRequestBuilder;
+    /**
+     * Provides operations to call the addTag method.
+     */
+    get addTag(): AddTagRequestBuilder;
+    /**
+     * Provides operations to call the applyAlternateMitigation method.
+     */
+    get applyAlternateMitigation(): ApplyAlternateMitigationRequestBuilder;
     /**
      * Provides operations to call the complete method.
      */
@@ -35,6 +59,10 @@ export interface RecommendationItemRequestBuilder extends BaseRequestBuilder<Rec
      */
     get impactedResources(): ImpactedResourcesRequestBuilder;
     /**
+     * Provides operations to call the markPlanned method.
+     */
+    get markPlanned(): MarkPlannedRequestBuilder;
+    /**
      * Provides operations to call the postpone method.
      */
     get postpone(): PostponeRequestBuilder;
@@ -42,6 +70,14 @@ export interface RecommendationItemRequestBuilder extends BaseRequestBuilder<Rec
      * Provides operations to call the reactivate method.
      */
     get reactivate(): ReactivateRequestBuilder;
+    /**
+     * Provides operations to call the removeTag method.
+     */
+    get removeTag(): RemoveTagRequestBuilder;
+    /**
+     * Provides operations to manage the tags property of the microsoft.graph.recommendationBase entity.
+     */
+    get tags(): TagsRequestBuilder;
     /**
      * Delete navigation property recommendations for directory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -112,6 +148,15 @@ const RecommendationItemRequestBuilderGetQueryParametersMapper: Record<string, s
  * Metadata for all the navigation properties in the request builder.
  */
 export const RecommendationItemRequestBuilderNavigationMetadata: Record<Exclude<keyof RecommendationItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    acceptRisk: {
+        requestsMetadata: AcceptRiskRequestBuilderRequestsMetadata,
+    },
+    addTag: {
+        requestsMetadata: AddTagRequestBuilderRequestsMetadata,
+    },
+    applyAlternateMitigation: {
+        requestsMetadata: ApplyAlternateMitigationRequestBuilderRequestsMetadata,
+    },
     complete: {
         requestsMetadata: CompleteRequestBuilderRequestsMetadata,
     },
@@ -122,11 +167,21 @@ export const RecommendationItemRequestBuilderNavigationMetadata: Record<Exclude<
         requestsMetadata: ImpactedResourcesRequestBuilderRequestsMetadata,
         navigationMetadata: ImpactedResourcesRequestBuilderNavigationMetadata,
     },
+    markPlanned: {
+        requestsMetadata: MarkPlannedRequestBuilderRequestsMetadata,
+    },
     postpone: {
         requestsMetadata: PostponeRequestBuilderRequestsMetadata,
     },
     reactivate: {
         requestsMetadata: ReactivateRequestBuilderRequestsMetadata,
+    },
+    removeTag: {
+        requestsMetadata: RemoveTagRequestBuilderRequestsMetadata,
+    },
+    tags: {
+        requestsMetadata: TagsRequestBuilderRequestsMetadata,
+        navigationMetadata: TagsRequestBuilderNavigationMetadata,
     },
 };
 /**

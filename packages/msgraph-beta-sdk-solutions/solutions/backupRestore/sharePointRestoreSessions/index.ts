@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SharePointRestoreSessionsRequestBuilder extends BaseRequestBuilder<SharePointRestoreSessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the sharePointRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
      * @param sharePointRestoreSessionId The unique identifier of sharePointRestoreSession
      * @returns {SharePointRestoreSessionItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySharePointRestoreSessionId(sharePointRestoreSessionId: string) : SharePointRestoreSessionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SharePointRestoreSessionsRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointRestoreSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<SharePointRestoreSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointRestoreSessionCollectionResponse | undefined>;
     /**
@@ -39,6 +42,7 @@ export interface SharePointRestoreSessionsRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointRestoreSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointrestoresessions?view=graph-rest-beta|Find more info here}
      */
      post(body: SharePointRestoreSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointRestoreSession | undefined>;
@@ -46,6 +50,7 @@ export interface SharePointRestoreSessionsRequestBuilder extends BaseRequestBuil
      * The list of SharePoint restore sessions available in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SharePointRestoreSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface SharePointRestoreSessionsRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SharePointRestoreSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

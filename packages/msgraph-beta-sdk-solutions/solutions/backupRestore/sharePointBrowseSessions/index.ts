@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SharePointBrowseSessionsRequestBuilder extends BaseRequestBuilder<SharePointBrowseSessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the sharePointBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.
      * @param sharePointBrowseSessionId The unique identifier of sharePointBrowseSession
      * @returns {SharePointBrowseSessionItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySharePointBrowseSessionId(sharePointBrowseSessionId: string) : SharePointBrowseSessionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SharePointBrowseSessionsRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointBrowseSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-list-sharepointbrowsesessions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<SharePointBrowseSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointBrowseSessionCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface SharePointBrowseSessionsRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointBrowseSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointbrowsesessions?view=graph-rest-beta|Find more info here}
      */
      post(body: SharePointBrowseSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointBrowseSession | undefined>;
@@ -47,6 +51,7 @@ export interface SharePointBrowseSessionsRequestBuilder extends BaseRequestBuild
      * Get a list of the sharePointBrowseSession objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SharePointBrowseSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface SharePointBrowseSessionsRequestBuilder extends BaseRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SharePointBrowseSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

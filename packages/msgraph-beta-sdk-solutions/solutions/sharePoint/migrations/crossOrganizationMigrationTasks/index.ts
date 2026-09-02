@@ -24,12 +24,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CrossOrganizationMigrationTasksRequestBuilder extends BaseRequestBuilder<CrossOrganizationMigrationTasksRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the crossOrganizationMigrationTasks property of the microsoft.graph.sharePointMigrationsRoot entity.
      * @param sharePointMigrationTaskId The unique identifier of sharePointMigrationTask
      * @returns {SharePointMigrationTaskItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      bySharePointMigrationTaskId(sharePointMigrationTaskId: string) : SharePointMigrationTaskItemRequestBuilder;
     /**
@@ -37,24 +39,28 @@ export interface CrossOrganizationMigrationTasksRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointMigrationTaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<CrossOrganizationMigrationTasksRequestBuilderGetQueryParameters> | undefined) : Promise<SharePointMigrationTaskCollectionResponse | undefined>;
     /**
      * Provides operations to call the getBySourceGroupMailNickname method.
      * @param sourceGroupMailNickname Usage: sourceGroupMailNickname='{sourceGroupMailNickname}'
      * @returns {GetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getBySourceGroupMailNicknameWithSourceGroupMailNickname(sourceGroupMailNickname: string | undefined) : GetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilder;
     /**
      * Provides operations to call the getBySourceSiteUrl method.
      * @param sourceSiteUrl Usage: sourceSiteUrl='{sourceSiteUrl}'
      * @returns {GetBySourceSiteUrlWithSourceSiteUrlRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getBySourceSiteUrlWithSourceSiteUrl(sourceSiteUrl: string | undefined) : GetBySourceSiteUrlWithSourceSiteUrlRequestBuilder;
     /**
      * Provides operations to call the getBySourceUserPrincipalName method.
      * @param sourcePrincipalName Usage: sourcePrincipalName='{sourcePrincipalName}'
      * @returns {GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getBySourceUserPrincipalNameWithSourcePrincipalName(sourcePrincipalName: string | undefined) : GetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder;
     /**
@@ -63,6 +69,7 @@ export interface CrossOrganizationMigrationTasksRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SharePointMigrationTask>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/sharepointmigrationtask-update?view=graph-rest-beta|Find more info here}
      */
      post(body: SharePointMigrationTask, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SharePointMigrationTask | undefined>;
@@ -70,6 +77,7 @@ export interface CrossOrganizationMigrationTasksRequestBuilder extends BaseReque
      * Get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CrossOrganizationMigrationTasksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -77,6 +85,7 @@ export interface CrossOrganizationMigrationTasksRequestBuilder extends BaseReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SharePointMigrationTask, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

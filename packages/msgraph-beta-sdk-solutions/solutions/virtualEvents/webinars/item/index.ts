@@ -28,24 +28,29 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface VirtualEventWebinarItemRequestBuilder extends BaseRequestBuilder<VirtualEventWebinarItemRequestBuilder> {
     /**
      * Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get presenters(): PresentersRequestBuilder;
     /**
      * Provides operations to manage the registrationConfiguration property of the microsoft.graph.virtualEventWebinar entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get registrationConfiguration(): RegistrationConfigurationRequestBuilder;
     /**
      * Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get registrations(): RegistrationsRequestBuilder;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sessions(): SessionsRequestBuilder;
     /**
      * Delete navigation property webinars for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -53,6 +58,7 @@ export interface VirtualEventWebinarItemRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventWebinar>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventWebinar | undefined>;
@@ -62,6 +68,7 @@ export interface VirtualEventWebinarItemRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventWebinar>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventwebinar-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: VirtualEventWebinar, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventWebinar | undefined>;
@@ -69,30 +76,35 @@ export interface VirtualEventWebinarItemRequestBuilder extends BaseRequestBuilde
      * Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
      * @param email Alternate key of virtualEventRegistration
      * @returns {RegistrationsWithEmailRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      registrationsWithEmail(email: string | undefined) : RegistrationsWithEmailRequestBuilder;
     /**
      * Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
      * @param userId Alternate key of virtualEventRegistration
      * @returns {RegistrationsWithUserIdRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      registrationsWithUserId(userId: string | undefined) : RegistrationsWithUserIdRequestBuilder;
     /**
      * Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
      * @param joinWebUrl Alternate key of virtualEventSession
      * @returns {SessionsWithJoinWebUrlRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      sessionsWithJoinWebUrl(joinWebUrl: string | undefined) : SessionsWithJoinWebUrlRequestBuilder;
     /**
      * Delete navigation property webinars for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a virtualEventWebinar object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<VirtualEventWebinarItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -100,6 +112,7 @@ export interface VirtualEventWebinarItemRequestBuilder extends BaseRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: VirtualEventWebinar, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OneDriveForBusinessBrowseSessionsRequestBuilder extends BaseRequestBuilder<OneDriveForBusinessBrowseSessionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the oneDriveForBusinessBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.
      * @param oneDriveForBusinessBrowseSessionId The unique identifier of oneDriveForBusinessBrowseSession
      * @returns {OneDriveForBusinessBrowseSessionItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byOneDriveForBusinessBrowseSessionId(oneDriveForBusinessBrowseSessionId: string) : OneDriveForBusinessBrowseSessionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface OneDriveForBusinessBrowseSessionsRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OneDriveForBusinessBrowseSessionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-list-onedriveforbusinessbrowsesessions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<OneDriveForBusinessBrowseSessionsRequestBuilderGetQueryParameters> | undefined) : Promise<OneDriveForBusinessBrowseSessionCollectionResponse | undefined>;
@@ -40,6 +43,7 @@ export interface OneDriveForBusinessBrowseSessionsRequestBuilder extends BaseReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OneDriveForBusinessBrowseSession>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessbrowsesessions?view=graph-rest-beta|Find more info here}
      */
      post(body: OneDriveForBusinessBrowseSession, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OneDriveForBusinessBrowseSession | undefined>;
@@ -47,6 +51,7 @@ export interface OneDriveForBusinessBrowseSessionsRequestBuilder extends BaseReq
      * Get a list of the oneDriveForBusinessBrowseSession objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OneDriveForBusinessBrowseSessionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -54,6 +59,7 @@ export interface OneDriveForBusinessBrowseSessionsRequestBuilder extends BaseReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: OneDriveForBusinessBrowseSession, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

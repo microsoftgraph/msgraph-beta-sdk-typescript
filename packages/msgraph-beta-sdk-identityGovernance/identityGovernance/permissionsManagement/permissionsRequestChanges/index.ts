@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PermissionsRequestChangesRequestBuilder extends BaseRequestBuilder<PermissionsRequestChangesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the permissionsRequestChanges property of the microsoft.graph.permissionsManagement entity.
      * @param permissionsRequestChangeId The unique identifier of permissionsRequestChange
      * @returns {PermissionsRequestChangeItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byPermissionsRequestChangeId(permissionsRequestChangeId: string) : PermissionsRequestChangeItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface PermissionsRequestChangesRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsRequestChangeCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/permissionsmanagement-list-permissionsrequestchanges?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PermissionsRequestChangesRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionsRequestChangeCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface PermissionsRequestChangesRequestBuilder extends BaseRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsRequestChange>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: PermissionsRequestChange, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PermissionsRequestChange | undefined>;
     /**
      * List the permissionsRequestChange objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PermissionsRequestChangesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface PermissionsRequestChangesRequestBuilder extends BaseRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: PermissionsRequestChange, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

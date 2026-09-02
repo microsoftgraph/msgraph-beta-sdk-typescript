@@ -20,16 +20,19 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the validateCredentials method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get validateCredentials(): ValidateCredentialsRequestBuilder;
     /**
      * Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
      * @param synchronizationJobId The unique identifier of synchronizationJob
      * @returns {SynchronizationJobItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      bySynchronizationJobId(synchronizationJobId: string) : SynchronizationJobItemRequestBuilder;
     /**
@@ -37,6 +40,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SynchronizationJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<JobsRequestBuilderGetQueryParameters> | undefined) : Promise<SynchronizationJobCollectionResponse | undefined>;
@@ -46,6 +50,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SynchronizationJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-beta|Find more info here}
      */
      post(body: SynchronizationJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SynchronizationJob | undefined>;
@@ -53,6 +58,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      * List existing synchronizationJob objects for a given application instance (service principal).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<JobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -60,6 +66,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: SynchronizationJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

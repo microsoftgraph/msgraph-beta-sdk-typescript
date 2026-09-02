@@ -16,6 +16,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GraphDriveProtectionUnitRequestBuilder extends BaseRequestBuilder<GraphDriveProtectionUnitRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
@@ -23,6 +24,7 @@ export interface GraphDriveProtectionUnitRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveProtectionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-list-driveprotectionunits?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GraphDriveProtectionUnitRequestBuilderGetQueryParameters> | undefined) : Promise<DriveProtectionUnitCollectionResponse | undefined>;
@@ -30,6 +32,7 @@ export interface GraphDriveProtectionUnitRequestBuilder extends BaseRequestBuild
      * Get a list of the driveProtectionUnit objects that are associated with a oneDriveForBusinessProtectionPolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphDriveProtectionUnitRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

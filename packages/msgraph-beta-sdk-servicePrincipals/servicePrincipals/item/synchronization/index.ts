@@ -24,28 +24,34 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SynchronizationRequestBuilder extends BaseRequestBuilder<SynchronizationRequestBuilder> {
     /**
      * Provides operations to call the acquireAccessToken method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get acquireAccessToken(): AcquireAccessTokenRequestBuilder;
     /**
      * Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get jobs(): JobsRequestBuilder;
     /**
      * Provides operations to call the Ping method.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get ping(): PingRequestBuilder;
     /**
      * The secrets property
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get secrets(): SecretsRequestBuilder;
     /**
      * Provides operations to manage the templates property of the microsoft.graph.synchronization entity.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get templates(): TemplatesRequestBuilder;
     /**
      * Delete navigation property synchronization for servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -53,6 +59,7 @@ export interface SynchronizationRequestBuilder extends BaseRequestBuilder<Synchr
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Synchronization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<SynchronizationRequestBuilderGetQueryParameters> | undefined) : Promise<Synchronization | undefined>;
     /**
@@ -61,18 +68,21 @@ export interface SynchronizationRequestBuilder extends BaseRequestBuilder<Synchr
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Synchronization>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      put(body: Synchronization, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Synchronization | undefined>;
     /**
      * Delete navigation property synchronization for servicePrincipals
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SynchronizationRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -80,6 +90,7 @@ export interface SynchronizationRequestBuilder extends BaseRequestBuilder<Synchr
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPutRequestInformation(body: Synchronization, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

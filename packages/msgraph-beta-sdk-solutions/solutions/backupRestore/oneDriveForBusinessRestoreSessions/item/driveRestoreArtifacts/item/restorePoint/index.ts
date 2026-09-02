@@ -17,12 +17,14 @@ export interface RestorePointRequestBuilder extends BaseRequestBuilder<RestorePo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RestorePoint>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<RestorePointRequestBuilderGetQueryParameters> | undefined) : Promise<RestorePoint | undefined>;
     /**
      * Represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RestorePointRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

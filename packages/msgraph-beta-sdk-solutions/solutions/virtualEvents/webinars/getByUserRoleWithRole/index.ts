@@ -44,6 +44,7 @@ export interface GetByUserRoleWithRoleRequestBuilder extends BaseRequestBuilder<
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<GetByUserRoleWithRoleGetResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters> | undefined) : Promise<GetByUserRoleWithRoleGetResponse | undefined>;
@@ -51,6 +52,7 @@ export interface GetByUserRoleWithRoleRequestBuilder extends BaseRequestBuilder<
      * Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GetByUserRoleWithRoleRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

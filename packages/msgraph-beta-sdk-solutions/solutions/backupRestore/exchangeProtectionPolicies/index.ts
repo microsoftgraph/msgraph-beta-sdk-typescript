@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ExchangeProtectionPoliciesRequestBuilder extends BaseRequestBuilder<ExchangeProtectionPoliciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
      * @param exchangeProtectionPolicyId The unique identifier of exchangeProtectionPolicy
      * @returns {ExchangeProtectionPolicyItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byExchangeProtectionPolicyId(exchangeProtectionPolicyId: string) : ExchangeProtectionPolicyItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ExchangeProtectionPoliciesRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeProtectionPolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ExchangeProtectionPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<ExchangeProtectionPolicyCollectionResponse | undefined>;
     /**
@@ -39,6 +42,7 @@ export interface ExchangeProtectionPoliciesRequestBuilder extends BaseRequestBui
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeProtectionPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangeprotectionpolicies?view=graph-rest-beta|Find more info here}
      */
      post(body: ExchangeProtectionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExchangeProtectionPolicy | undefined>;
@@ -46,6 +50,7 @@ export interface ExchangeProtectionPoliciesRequestBuilder extends BaseRequestBui
      * The list of Exchange protection policies in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExchangeProtectionPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface ExchangeProtectionPoliciesRequestBuilder extends BaseRequestBui
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ExchangeProtectionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

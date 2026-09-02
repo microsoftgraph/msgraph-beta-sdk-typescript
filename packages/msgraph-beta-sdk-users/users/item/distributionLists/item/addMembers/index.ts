@@ -14,7 +14,7 @@ export interface AddMembersPostRequestBody extends AdditionalDataHolder, BackedM
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The members property
+     * The Members property
      */
     members?: Member[] | null;
 }
@@ -56,7 +56,7 @@ export function createAddMembersPostRequestBodyFromDiscriminatorValue(parseNode:
 export function deserializeIntoAddMembersPostRequestBody(addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { addMembersPostRequestBody.backingStoreEnabled = true; },
-        "members": n => { addMembersPostRequestBody.members = n.getCollectionOfObjectValues<Member>(createMemberFromDiscriminatorValue); },
+        "Members": n => { addMembersPostRequestBody.members = n.getCollectionOfObjectValues<Member>(createMemberFromDiscriminatorValue); },
     }
 }
 /**
@@ -68,7 +68,7 @@ export function deserializeIntoAddMembersPostRequestBody(addMembersPostRequestBo
 // @ts-ignore
 export function serializeAddMembersPostRequestBody(writer: SerializationWriter, addMembersPostRequestBody: Partial<AddMembersPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!addMembersPostRequestBody || isSerializingDerivedType) { return; }
-    writer.writeCollectionOfObjectValues<Member>("members", addMembersPostRequestBody.members, serializeMember);
+    writer.writeCollectionOfObjectValues<Member>("Members", addMembersPostRequestBody.members, serializeMember);
     writer.writeAdditionalData(addMembersPostRequestBody.additionalData);
 }
 /**

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DriveProtectionUnitsRequestBuilder extends BaseRequestBuilder<DriveProtectionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the driveProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
      * @param driveProtectionUnitId The unique identifier of driveProtectionUnit
      * @returns {DriveProtectionUnitItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byDriveProtectionUnitId(driveProtectionUnitId: string) : DriveProtectionUnitItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DriveProtectionUnitsRequestBuilder extends BaseRequestBuilder<D
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveProtectionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<DriveProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<DriveProtectionUnitCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface DriveProtectionUnitsRequestBuilder extends BaseRequestBuilder<D
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DriveProtectionUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: DriveProtectionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DriveProtectionUnit | undefined>;
     /**
      * The list of drive protection units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DriveProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface DriveProtectionUnitsRequestBuilder extends BaseRequestBuilder<D
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: DriveProtectionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

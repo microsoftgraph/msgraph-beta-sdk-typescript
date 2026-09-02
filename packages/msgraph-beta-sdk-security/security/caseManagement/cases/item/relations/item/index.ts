@@ -13,20 +13,22 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RelationItemRequestBuilder extends BaseRequestBuilder<RelationItemRequestBuilder> {
     /**
-     * Delete navigation property relations for security
+     * Delete a concrete relation from a case.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-casemanagement-relation-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Links from the case to related security resources. Supports $expand.
+     * Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Relation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/security-casemanagement-relation-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<RelationItemRequestBuilderGetQueryParameters> | undefined) : Promise<Relation | undefined>;
     /**
-     * Update the properties of a relation object.
+     * Update the properties of a concrete relation object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Relation>}
@@ -35,19 +37,19 @@ export interface RelationItemRequestBuilder extends BaseRequestBuilder<RelationI
      */
      patch(body: Relation, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Relation | undefined>;
     /**
-     * Delete navigation property relations for security
+     * Delete a concrete relation from a case.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Links from the case to related security resources. Supports $expand.
+     * Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RelationItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a relation object.
+     * Update the properties of a concrete relation object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -55,7 +57,7 @@ export interface RelationItemRequestBuilder extends BaseRequestBuilder<RelationI
      toPatchRequestInformation(body: Relation, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Links from the case to related security resources. Supports $expand.
+ * Read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
  */
 export interface RelationItemRequestBuilderGetQueryParameters {
     /**

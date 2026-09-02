@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface PermissionsCreepIndexDistributionsRequestBuilder extends BaseRequestBuilder<PermissionsCreepIndexDistributionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the permissionsCreepIndexDistributions property of the microsoft.graph.permissionsAnalytics entity.
      * @param permissionsCreepIndexDistributionId The unique identifier of permissionsCreepIndexDistribution
      * @returns {PermissionsCreepIndexDistributionItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byPermissionsCreepIndexDistributionId(permissionsCreepIndexDistributionId: string) : PermissionsCreepIndexDistributionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface PermissionsCreepIndexDistributionsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsCreepIndexDistributionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/permissionsanalytics-list-permissionscreepindexdistributions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionsCreepIndexDistributionCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface PermissionsCreepIndexDistributionsRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionsCreepIndexDistribution>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: PermissionsCreepIndexDistribution, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PermissionsCreepIndexDistribution | undefined>;
     /**
      * Get a list of the permissionsCreepIndexDistribution objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface PermissionsCreepIndexDistributionsRequestBuilder extends BaseRe
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: PermissionsCreepIndexDistribution, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

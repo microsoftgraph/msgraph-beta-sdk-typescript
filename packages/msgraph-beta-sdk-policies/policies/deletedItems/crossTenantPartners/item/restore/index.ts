@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequestBuilder> {
     /**
-     * Restore a deleted crossTenantAccessPolicyConfigurationPartner object. 
+     * Restore a deleted crossTenantAccessPolicyConfigurationPartner object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantAccessPolicyConfigurationPartner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,7 +21,7 @@ export interface RestoreRequestBuilder extends BaseRequestBuilder<RestoreRequest
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantAccessPolicyConfigurationPartner | undefined>;
     /**
-     * Restore a deleted crossTenantAccessPolicyConfigurationPartner object. 
+     * Restore a deleted crossTenantAccessPolicyConfigurationPartner object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

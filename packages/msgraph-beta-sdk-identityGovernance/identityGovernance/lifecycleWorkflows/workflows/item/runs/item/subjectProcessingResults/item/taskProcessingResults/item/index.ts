@@ -20,14 +20,17 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskProcessingResultItemRequestBuilder extends BaseRequestBuilder<TaskProcessingResultItemRequestBuilder> {
     /**
      * Provides operations to call the resume method.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get microsoftGraphIdentityGovernanceResume(): MicrosoftGraphIdentityGovernanceResumeRequestBuilder;
     /**
      * Provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get subject(): SubjectRequestBuilder;
     /**
      * Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get task(): TaskRequestBuilder;
     /**
@@ -35,12 +38,14 @@ export interface TaskProcessingResultItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskProcessingResult>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters> | undefined) : Promise<TaskProcessingResult | undefined>;
     /**
      * The task-level processing results for this subject. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskProcessingResultItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

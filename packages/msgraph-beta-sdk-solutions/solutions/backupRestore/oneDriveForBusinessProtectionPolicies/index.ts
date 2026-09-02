@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface OneDriveForBusinessProtectionPoliciesRequestBuilder extends BaseRequestBuilder<OneDriveForBusinessProtectionPoliciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
      * @param oneDriveForBusinessProtectionPolicyId The unique identifier of oneDriveForBusinessProtectionPolicy
      * @returns {OneDriveForBusinessProtectionPolicyItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byOneDriveForBusinessProtectionPolicyId(oneDriveForBusinessProtectionPolicyId: string) : OneDriveForBusinessProtectionPolicyItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface OneDriveForBusinessProtectionPoliciesRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OneDriveForBusinessProtectionPolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<OneDriveForBusinessProtectionPoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<OneDriveForBusinessProtectionPolicyCollectionResponse | undefined>;
     /**
@@ -39,6 +42,7 @@ export interface OneDriveForBusinessProtectionPoliciesRequestBuilder extends Bas
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OneDriveForBusinessProtectionPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessprotectionpolicies?view=graph-rest-beta|Find more info here}
      */
      post(body: OneDriveForBusinessProtectionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<OneDriveForBusinessProtectionPolicy | undefined>;
@@ -46,6 +50,7 @@ export interface OneDriveForBusinessProtectionPoliciesRequestBuilder extends Bas
      * The list of OneDrive for Business protection policies in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<OneDriveForBusinessProtectionPoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface OneDriveForBusinessProtectionPoliciesRequestBuilder extends Bas
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: OneDriveForBusinessProtectionPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

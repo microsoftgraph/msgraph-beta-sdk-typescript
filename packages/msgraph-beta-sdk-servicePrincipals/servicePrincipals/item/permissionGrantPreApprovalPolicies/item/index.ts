@@ -17,6 +17,7 @@ export interface PermissionGrantPreApprovalPolicyItemRequestBuilder extends Base
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PermissionGrantPreApprovalPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list-permissiongrantpreapprovalpolicies?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PermissionGrantPreApprovalPolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<PermissionGrantPreApprovalPolicy | undefined>;
@@ -24,6 +25,7 @@ export interface PermissionGrantPreApprovalPolicyItemRequestBuilder extends Base
      * Retrieve the permissionGrantPreApprovalPolicy object for the servicePrincipal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PermissionGrantPreApprovalPolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

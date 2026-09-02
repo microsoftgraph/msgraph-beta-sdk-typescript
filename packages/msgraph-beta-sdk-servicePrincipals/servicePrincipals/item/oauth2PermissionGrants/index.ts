@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface Oauth2PermissionGrantsRequestBuilder extends BaseRequestBuilder<Oauth2PermissionGrantsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
      * @param oAuth2PermissionGrantId The unique identifier of oAuth2PermissionGrant
      * @returns {OAuth2PermissionGrantItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byOAuth2PermissionGrantId(oAuth2PermissionGrantId: string) : OAuth2PermissionGrantItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface Oauth2PermissionGrantsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<OAuth2PermissionGrantCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<Oauth2PermissionGrantsRequestBuilderGetQueryParameters> | undefined) : Promise<OAuth2PermissionGrantCollectionResponse | undefined>;
@@ -38,6 +41,7 @@ export interface Oauth2PermissionGrantsRequestBuilder extends BaseRequestBuilder
      * Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<Oauth2PermissionGrantsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

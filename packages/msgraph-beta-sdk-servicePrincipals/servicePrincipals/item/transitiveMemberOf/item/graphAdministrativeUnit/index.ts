@@ -17,12 +17,14 @@ export interface GraphAdministrativeUnitRequestBuilder extends BaseRequestBuilde
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AdministrativeUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters> | undefined) : Promise<AdministrativeUnit | undefined>;
     /**
      * Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GraphAdministrativeUnitRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

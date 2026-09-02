@@ -10,7 +10,7 @@ import { AppsAndServicesRequestBuilderRequestsMetadata, type AppsAndServicesRequ
 // @ts-ignore
 import { CloudLicensingRequestBuilderNavigationMetadata, CloudLicensingRequestBuilderRequestsMetadata, type CloudLicensingRequestBuilder } from './cloudLicensing/index.js';
 // @ts-ignore
-import { ConfigurationManagementRequestBuilderNavigationMetadata, ConfigurationManagementRequestBuilderRequestsMetadata, type ConfigurationManagementRequestBuilder } from './configurationManagement/index.js';
+import { ConfigurationManagementRequestBuilderNavigationMetadata, type ConfigurationManagementRequestBuilder } from './configurationManagement/index.js';
 // @ts-ignore
 import { DynamicsRequestBuilderRequestsMetadata, type DynamicsRequestBuilder } from './dynamics/index.js';
 // @ts-ignore
@@ -53,7 +53,7 @@ export interface AdminRequestBuilder extends BaseRequestBuilder<AdminRequestBuil
      */
     get cloudLicensing(): CloudLicensingRequestBuilder;
     /**
-     * Provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
+     * The configurationManagement property
      */
     get configurationManagement(): ConfigurationManagementRequestBuilder;
     /**
@@ -173,7 +173,6 @@ export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRe
         navigationMetadata: CloudLicensingRequestBuilderNavigationMetadata,
     },
     configurationManagement: {
-        requestsMetadata: ConfigurationManagementRequestBuilderRequestsMetadata,
         navigationMetadata: ConfigurationManagementRequestBuilderNavigationMetadata,
     },
     dynamics: {

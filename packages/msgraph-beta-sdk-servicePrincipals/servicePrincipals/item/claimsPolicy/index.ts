@@ -17,6 +17,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/customclaimspolicy-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ClaimsPolicyRequestBuilderGetQueryParameters> | undefined) : Promise<CustomClaimsPolicy | undefined>;
@@ -26,6 +27,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
@@ -35,6 +37,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomClaimsPolicy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta|Find more info here}
      */
      put(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CustomClaimsPolicy | undefined>;
@@ -42,6 +45,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * Get the properties and relationships of a customClaimsPolicy object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ClaimsPolicyRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -49,6 +53,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPatchRequestInformation(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
@@ -56,6 +61,7 @@ export interface ClaimsPolicyRequestBuilder extends BaseRequestBuilder<ClaimsPol
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPutRequestInformation(body: CustomClaimsPolicy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DirectoriesRequestBuilder extends BaseRequestBuilder<DirectoriesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
      * @param directoryDefinitionId The unique identifier of directoryDefinition
      * @returns {DirectoryDefinitionItemRequestBuilder}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      byDirectoryDefinitionId(directoryDefinitionId: string) : DirectoryDefinitionItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface DirectoriesRequestBuilder extends BaseRequestBuilder<Directorie
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      get(requestConfiguration?: RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters> | undefined) : Promise<DirectoryDefinitionCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface DirectoriesRequestBuilder extends BaseRequestBuilder<Directorie
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<DirectoryDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      post(body: DirectoryDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<DirectoryDefinition | undefined>;
     /**
      * Contains the collection of directories and all of their objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DirectoriesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface DirectoriesRequestBuilder extends BaseRequestBuilder<Directorie
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: DirectoryDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

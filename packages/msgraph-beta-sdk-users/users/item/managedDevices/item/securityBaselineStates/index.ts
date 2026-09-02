@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SecurityBaselineStatesRequestBuilder extends BaseRequestBuilder<SecurityBaselineStatesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
      * @param securityBaselineStateId The unique identifier of securityBaselineState
      * @returns {SecurityBaselineStateItemRequestBuilder}
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      bySecurityBaselineStateId(securityBaselineStateId: string) : SecurityBaselineStateItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface SecurityBaselineStatesRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityBaselineStateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      get(requestConfiguration?: RequestConfiguration<SecurityBaselineStatesRequestBuilderGetQueryParameters> | undefined) : Promise<SecurityBaselineStateCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface SecurityBaselineStatesRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SecurityBaselineState>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      post(body: SecurityBaselineState, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SecurityBaselineState | undefined>;
     /**
      * Security baseline states for this device.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SecurityBaselineStatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface SecurityBaselineStatesRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
      toPostRequestInformation(body: SecurityBaselineState, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

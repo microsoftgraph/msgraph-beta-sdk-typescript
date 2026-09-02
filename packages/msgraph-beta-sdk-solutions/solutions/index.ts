@@ -32,40 +32,49 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsRequestBuilder> {
     /**
      * Provides operations to manage the approval property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get approval(): ApprovalRequestBuilder;
     /**
      * Provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get backupRestore(): BackupRestoreRequestBuilder;
     /**
      * Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get bookingBusinesses(): BookingBusinessesRequestBuilder;
     /**
      * Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get bookingCurrencies(): BookingCurrenciesRequestBuilder;
     /**
      * Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get businessScenarios(): BusinessScenariosRequestBuilder;
     /**
      * Provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get migrations(): MigrationsRequestBuilder;
     /**
      * Provides operations to manage the sharePoint property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get sharePoint(): SharePointRequestBuilder;
     /**
      * Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get virtualEvents(): VirtualEventsRequestBuilder;
     /**
      * Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
      * @param uniqueName Alternate key of businessScenario
      * @returns {BusinessScenariosWithUniqueNameRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      businessScenariosWithUniqueName(uniqueName: string | undefined) : BusinessScenariosWithUniqueNameRequestBuilder;
     /**
@@ -73,6 +82,7 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SolutionsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<SolutionsRequestBuilderGetQueryParameters> | undefined) : Promise<SolutionsRoot | undefined>;
     /**
@@ -81,12 +91,14 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SolutionsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: SolutionsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SolutionsRoot | undefined>;
     /**
      * Get solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SolutionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -94,6 +106,7 @@ export interface SolutionsRequestBuilder extends BaseRequestBuilder<SolutionsReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: SolutionsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -22,12 +22,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
      * @param virtualEventWebinarId The unique identifier of virtualEventWebinar
      * @returns {VirtualEventWebinarItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byVirtualEventWebinarId(virtualEventWebinarId: string) : VirtualEventWebinarItemRequestBuilder;
     /**
@@ -35,6 +37,7 @@ export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventWebinarCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<WebinarsRequestBuilderGetQueryParameters> | undefined) : Promise<VirtualEventWebinarCollectionResponse | undefined>;
@@ -43,12 +46,14 @@ export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsReque
      * @param role Usage: role='{role}'
      * @param userId Usage: userId='{userId}'
      * @returns {GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getByUserIdAndRoleWithUserIdWithRole(role: string | undefined, userId: string | undefined) : GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder;
     /**
      * Provides operations to call the getByUserRole method.
      * @param role Usage: role='{role}'
      * @returns {GetByUserRoleWithRoleRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getByUserRoleWithRole(role: string | undefined) : GetByUserRoleWithRoleRequestBuilder;
     /**
@@ -57,6 +62,7 @@ export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<VirtualEventWebinar>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/virtualeventsroot-post-webinars?view=graph-rest-beta|Find more info here}
      */
      post(body: VirtualEventWebinar, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<VirtualEventWebinar | undefined>;
@@ -64,6 +70,7 @@ export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsReque
      * Get the list of all virtualEventWebinar objects created in a tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<WebinarsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -71,6 +78,7 @@ export interface WebinarsRequestBuilder extends BaseRequestBuilder<WebinarsReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: VirtualEventWebinar, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

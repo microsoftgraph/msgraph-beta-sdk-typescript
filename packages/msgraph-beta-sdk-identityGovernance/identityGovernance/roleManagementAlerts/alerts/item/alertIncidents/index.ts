@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AlertIncidentsRequestBuilder extends BaseRequestBuilder<AlertIncidentsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the alertIncidents property of the microsoft.graph.unifiedRoleManagementAlert entity.
      * @param unifiedRoleManagementAlertIncidentId The unique identifier of unifiedRoleManagementAlertIncident
      * @returns {UnifiedRoleManagementAlertIncidentItemRequestBuilder}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byUnifiedRoleManagementAlertIncidentId(unifiedRoleManagementAlertIncidentId: string) : UnifiedRoleManagementAlertIncidentItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface AlertIncidentsRequestBuilder extends BaseRequestBuilder<AlertIn
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleManagementAlertIncidentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AlertIncidentsRequestBuilderGetQueryParameters> | undefined) : Promise<UnifiedRoleManagementAlertIncidentCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface AlertIncidentsRequestBuilder extends BaseRequestBuilder<AlertIn
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleManagementAlertIncident>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      post(body: UnifiedRoleManagementAlertIncident, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRoleManagementAlertIncident | undefined>;
     /**
      * Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AlertIncidentsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface AlertIncidentsRequestBuilder extends BaseRequestBuilder<AlertIn
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: UnifiedRoleManagementAlertIncident, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

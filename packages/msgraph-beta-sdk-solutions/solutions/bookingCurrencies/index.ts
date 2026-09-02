@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface BookingCurrenciesRequestBuilder extends BaseRequestBuilder<BookingCurrenciesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
      * @param bookingCurrencyId The unique identifier of bookingCurrency
      * @returns {BookingCurrencyItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBookingCurrencyId(bookingCurrencyId: string) : BookingCurrencyItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface BookingCurrenciesRequestBuilder extends BaseRequestBuilder<Book
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCurrencyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BookingCurrenciesRequestBuilderGetQueryParameters> | undefined) : Promise<BookingCurrencyCollectionResponse | undefined>;
@@ -40,12 +43,14 @@ export interface BookingCurrenciesRequestBuilder extends BaseRequestBuilder<Book
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCurrency>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: BookingCurrency, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingCurrency | undefined>;
     /**
      * Get a list of bookingCurrency objects available to a Microsoft Bookings business.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BookingCurrenciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -53,6 +58,7 @@ export interface BookingCurrenciesRequestBuilder extends BaseRequestBuilder<Book
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BookingCurrency, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

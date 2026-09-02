@@ -20,14 +20,17 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TaskReportItemRequestBuilder extends BaseRequestBuilder<TaskReportItemRequestBuilder> {
     /**
      * Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskReport entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get task(): TaskRequestBuilder;
     /**
      * Provides operations to manage the taskDefinition property of the microsoft.graph.identityGovernance.taskReport entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get taskDefinition(): TaskDefinitionRequestBuilder;
     /**
      * Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get taskProcessingResults(): TaskProcessingResultsRequestBuilder;
     /**
@@ -35,12 +38,14 @@ export interface TaskReportItemRequestBuilder extends BaseRequestBuilder<TaskRep
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<TaskReportItemRequestBuilderGetQueryParameters> | undefined) : Promise<TaskReport | undefined>;
     /**
      * Represents the aggregation of task execution data for tasks within a workflow object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskReportItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

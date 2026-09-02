@@ -18,12 +18,14 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityLogsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the activityLogs property of the microsoft.graph.backupRestoreRoot entity.
      * @param activityLogBaseId The unique identifier of activityLogBase
      * @returns {ActivityLogBaseItemRequestBuilder}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byActivityLogBaseId(activityLogBaseId: string) : ActivityLogBaseItemRequestBuilder;
     /**
@@ -31,6 +33,7 @@ export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityL
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityLogBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ActivityLogsRequestBuilderGetQueryParameters> | undefined) : Promise<ActivityLogBaseCollectionResponse | undefined>;
     /**
@@ -39,12 +42,14 @@ export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityL
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityLogBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: ActivityLogBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ActivityLogBase | undefined>;
     /**
      * Get activityLogs from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ActivityLogsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -52,6 +57,7 @@ export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityL
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ActivityLogBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

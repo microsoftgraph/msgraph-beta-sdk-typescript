@@ -30,40 +30,49 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     /**
      * Provides operations to manage the assignmentApprovals property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get assignmentApprovals(): AssignmentApprovalsRequestBuilder;
     /**
      * Provides operations to manage the assignmentScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get assignmentScheduleInstances(): AssignmentScheduleInstancesRequestBuilder;
     /**
      * Provides operations to manage the assignmentScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get assignmentScheduleRequests(): AssignmentScheduleRequestsRequestBuilder;
     /**
      * Provides operations to manage the assignmentSchedules property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get assignmentSchedules(): AssignmentSchedulesRequestBuilder;
     /**
      * Provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get eligibilityScheduleInstances(): EligibilityScheduleInstancesRequestBuilder;
     /**
      * Provides operations to manage the eligibilityScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get eligibilityScheduleRequests(): EligibilityScheduleRequestsRequestBuilder;
     /**
      * Provides operations to manage the eligibilitySchedules property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get eligibilitySchedules(): EligibilitySchedulesRequestBuilder;
     /**
      * Provides operations to manage the resources property of the microsoft.graph.privilegedAccessGroup entity.
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get resources(): ResourcesRequestBuilder;
     /**
      * Delete navigation property group for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -71,6 +80,7 @@ export interface GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<GroupRequestBuilderGetQueryParameters> | undefined) : Promise<PrivilegedAccessGroup | undefined>;
     /**
@@ -79,18 +89,21 @@ export interface GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuil
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PrivilegedAccessGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: PrivilegedAccessGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PrivilegedAccessGroup | undefined>;
     /**
      * Delete navigation property group for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * A group that's governed through Privileged Identity Management (PIM).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GroupRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -98,6 +111,7 @@ export interface GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuil
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
+     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: PrivilegedAccessGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
