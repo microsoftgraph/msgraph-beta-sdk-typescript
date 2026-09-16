@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxProtectionUnitsRequestBuilder extends BaseRequestBuilder<MailboxProtectionUnitsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mailboxProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
      * @param mailboxProtectionUnitId The unique identifier of mailboxProtectionUnit
      * @returns {MailboxProtectionUnitItemRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byMailboxProtectionUnitId(mailboxProtectionUnitId: string) : MailboxProtectionUnitItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface MailboxProtectionUnitsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxProtectionUnitCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<MailboxProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxProtectionUnitCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface MailboxProtectionUnitsRequestBuilder extends BaseRequestBuilder
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxProtectionUnit>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: MailboxProtectionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailboxProtectionUnit | undefined>;
     /**
      * The list of mailbox protection units in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxProtectionUnitsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface MailboxProtectionUnitsRequestBuilder extends BaseRequestBuilder
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: MailboxProtectionUnit, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

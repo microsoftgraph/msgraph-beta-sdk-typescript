@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the templates property of the microsoft.graph.synchronization entity.
      * @param synchronizationTemplateId The unique identifier of synchronizationTemplate
      * @returns {SynchronizationTemplateItemRequestBuilder}
-     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      bySynchronizationTemplateId(synchronizationTemplateId: string) : SynchronizationTemplateItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SynchronizationTemplateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      * @see {@link https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TemplatesRequestBuilderGetQueryParameters> | undefined) : Promise<SynchronizationTemplateCollectionResponse | undefined>;
@@ -43,14 +40,12 @@ export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SynchronizationTemplate>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      post(body: SynchronizationTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SynchronizationTemplate | undefined>;
     /**
      * List synchronizationTemplate objects associated with a given application or service principal.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TemplatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +53,6 @@ export interface TemplatesRequestBuilder extends BaseRequestBuilder<TemplatesReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
      */
      toPostRequestInformation(body: SynchronizationTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

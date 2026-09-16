@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder extends BaseRequestBuilder<MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mailboxRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.exchangeRestoreSession entity.
      * @param mailboxRestoreArtifactsBulkAdditionRequestId The unique identifier of mailboxRestoreArtifactsBulkAdditionRequest
      * @returns {MailboxRestoreArtifactsBulkAdditionRequestItemRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byMailboxRestoreArtifactsBulkAdditionRequestId(mailboxRestoreArtifactsBulkAdditionRequestId: string) : MailboxRestoreArtifactsBulkAdditionRequestItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder exten
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/exchangerestoresession-list-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxRestoreArtifactsBulkAdditionRequestCollectionResponse | undefined>;
@@ -43,7 +40,6 @@ export interface MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder exten
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxRestoreArtifactsBulkAdditionRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/exchangerestoresession-post-mailboxrestoreartifactsbulkadditionrequests?view=graph-rest-beta|Find more info here}
      */
      post(body: MailboxRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailboxRestoreArtifactsBulkAdditionRequest | undefined>;
@@ -51,7 +47,6 @@ export interface MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder exten
      * Get a list of the maiboxRestoreArtifactsBulkAdditionRequest objects associated with an exchangeRestoreSession. The mailboxes property is deliberately omitted from the response body in order to limit the response size.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +54,6 @@ export interface MailboxRestoreArtifactsBulkAdditionRequestsRequestBuilder exten
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: MailboxRestoreArtifactsBulkAdditionRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

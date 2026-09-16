@@ -185,6 +185,10 @@ export interface CaseEscaped extends CaseManagementEntity, Parsable {
      */
     relations?: Relation[] | null;
     /**
+     * A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
+     */
+    slaPolicies?: CaseSlaPolicyEntry[] | null;
+    /**
      * The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).
      */
     status?: string | null;
@@ -211,6 +215,33 @@ export interface CaseManagementEntity extends Entity, Parsable {
      */
     lastModifiedDateTime?: Date | null;
 }
+export interface CaseSlaPolicyEntry extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The date and time the SLA policy is targeted to breach, if applicable. null when the policy is paused or completed. Computed by the service.
+     */
+    breachTargetDateTime?: Date | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The display name of the SLA policy. Computed by the service.
+     */
+    policyDisplayName?: string | null;
+    /**
+     * The unique identifier of the SLA policy, assigned by the SLA policy engine. Computed by the service.
+     */
+    policyId?: string | null;
+    /**
+     * The status property
+     */
+    status?: CaseSlaPolicyStatus | null;
+}
+export type CaseSlaPolicyStatus = (typeof CaseSlaPolicyStatusObject)[keyof typeof CaseSlaPolicyStatusObject];
 export type CaseTaskCategory = (typeof CaseTaskCategoryObject)[keyof typeof CaseTaskCategoryObject];
 export type CaseTaskPriority = (typeof CaseTaskPriorityObject)[keyof typeof CaseTaskPriorityObject];
 export interface CaseTypeConfiguration extends Entity, Parsable {
@@ -422,6 +453,15 @@ export function createCaseManagementEntityFromDiscriminatorValue(parseNode: Pars
         }
     }
     return deserializeIntoCaseManagementEntity;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {CaseSlaPolicyEntry}
+ */
+// @ts-ignore
+export function createCaseSlaPolicyEntryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoCaseSlaPolicyEntry;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1004,6 +1044,7 @@ export function deserializeIntoCaseEscaped(caseEscaped: Partial<CaseEscaped> | u
         "customFields": n => { caseEscaped.customFields = n.getObjectValue<CustomFieldValues>(createCustomFieldValuesFromDiscriminatorValue); },
         "displayName": n => { caseEscaped.displayName = n.getStringValue(); },
         "relations": n => { caseEscaped.relations = n.getCollectionOfObjectValues<Relation>(createRelationFromDiscriminatorValue); },
+        "slaPolicies": n => { caseEscaped.slaPolicies = n.getCollectionOfObjectValues<CaseSlaPolicyEntry>(createCaseSlaPolicyEntryFromDiscriminatorValue); },
         "status": n => { caseEscaped.status = n.getStringValue(); },
         "tasks": n => { caseEscaped.tasks = n.getCollectionOfObjectValues<Task>(createTaskFromDiscriminatorValue); },
     }
@@ -1021,6 +1062,22 @@ export function deserializeIntoCaseManagementEntity(caseManagementEntity: Partia
         "createdDateTime": n => { caseManagementEntity.createdDateTime = n.getDateValue(); },
         "lastModifiedBy": n => { caseManagementEntity.lastModifiedBy = n.getStringValue(); },
         "lastModifiedDateTime": n => { caseManagementEntity.lastModifiedDateTime = n.getDateValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param CaseSlaPolicyEntry The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoCaseSlaPolicyEntry(caseSlaPolicyEntry: Partial<CaseSlaPolicyEntry> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { caseSlaPolicyEntry.backingStoreEnabled = true; },
+        "breachTargetDateTime": n => { caseSlaPolicyEntry.breachTargetDateTime = n.getDateValue(); },
+        "@odata.type": n => { caseSlaPolicyEntry.odataType = n.getStringValue(); },
+        "policyDisplayName": n => { caseSlaPolicyEntry.policyDisplayName = n.getStringValue(); },
+        "policyId": n => { caseSlaPolicyEntry.policyId = n.getStringValue(); },
+        "status": n => { caseSlaPolicyEntry.status = n.getEnumValue<CaseSlaPolicyStatus>(CaseSlaPolicyStatusObject); },
     }
 }
 /**
@@ -2266,6 +2323,19 @@ export function serializeCaseManagementEntity(writer: SerializationWriter, caseM
 }
 /**
  * Serializes information the current object
+ * @param CaseSlaPolicyEntry The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeCaseSlaPolicyEntry(writer: SerializationWriter, caseSlaPolicyEntry: Partial<CaseSlaPolicyEntry> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!caseSlaPolicyEntry || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", caseSlaPolicyEntry.odataType);
+    writer.writeEnumValue<CaseSlaPolicyStatus>("status", caseSlaPolicyEntry.status);
+    writer.writeAdditionalData(caseSlaPolicyEntry.additionalData);
+}
+/**
+ * Serializes information the current object
  * @param CaseTypeConfiguration The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -2988,6 +3058,15 @@ export const AuditActionObject = {
     Upload: "upload",
     Download: "download",
     FileUploadMalwareDetected: "fileUploadMalwareDetected",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const CaseSlaPolicyStatusObject = {
+    Active: "active",
+    AtRisk: "atRisk",
+    Breached: "breached",
+    Paused: "paused",
+    CompletedMet: "completedMet",
+    CompletedBreached: "completedBreached",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const CaseTaskCategoryObject = {

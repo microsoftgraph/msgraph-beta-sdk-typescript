@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ResponsesRequestBuilder extends BaseRequestBuilder<ResponsesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the responses property of the microsoft.graph.approvalItem entity.
      * @param approvalItemResponseId The unique identifier of approvalItemResponse
      * @returns {ApprovalItemResponseItemRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byApprovalItemResponseId(approvalItemResponseId: string) : ApprovalItemResponseItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ResponsesRequestBuilder extends BaseRequestBuilder<ResponsesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItemResponseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalitem-list-responses?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ResponsesRequestBuilderGetQueryParameters> | undefined) : Promise<ApprovalItemResponseCollectionResponse | undefined>;
@@ -43,7 +40,6 @@ export interface ResponsesRequestBuilder extends BaseRequestBuilder<ResponsesReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApprovalItemResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/approvalitem-post-responses?view=graph-rest-beta|Find more info here}
      */
      post(body: ApprovalItemResponse, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ApprovalItemResponse | undefined>;
@@ -51,7 +47,6 @@ export interface ResponsesRequestBuilder extends BaseRequestBuilder<ResponsesReq
      * Get a list of approvalItemResponse objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ResponsesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +54,6 @@ export interface ResponsesRequestBuilder extends BaseRequestBuilder<ResponsesReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ApprovalItemResponse, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

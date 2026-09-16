@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface ServiceAppsRequestBuilder extends BaseRequestBuilder<ServiceAppsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the serviceApps property of the microsoft.graph.backupRestoreRoot entity.
      * @param serviceAppId The unique identifier of serviceApp
      * @returns {ServiceAppItemRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byServiceAppId(serviceAppId: string) : ServiceAppItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface ServiceAppsRequestBuilder extends BaseRequestBuilder<ServiceApp
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceAppCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-list-serviceapps?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ServiceAppsRequestBuilderGetQueryParameters> | undefined) : Promise<ServiceAppCollectionResponse | undefined>;
@@ -43,7 +40,6 @@ export interface ServiceAppsRequestBuilder extends BaseRequestBuilder<ServiceApp
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ServiceApp>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-post-serviceapps?view=graph-rest-beta|Find more info here}
      */
      post(body: ServiceApp, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ServiceApp | undefined>;
@@ -51,7 +47,6 @@ export interface ServiceAppsRequestBuilder extends BaseRequestBuilder<ServiceApp
      * Get a list of serviceApp objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ServiceAppsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +54,6 @@ export interface ServiceAppsRequestBuilder extends BaseRequestBuilder<ServiceApp
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: ServiceApp, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

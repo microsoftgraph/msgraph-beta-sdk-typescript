@@ -20,21 +20,18 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface DefinitionsRequestBuilder extends BaseRequestBuilder<DefinitionsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the definitions property of the microsoft.graph.unifiedRoot entity.
      * @param accessReviewScheduleDefinitionId The unique identifier of accessReviewScheduleDefinition
      * @returns {AccessReviewScheduleDefinitionItemRequestBuilder}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessReviewScheduleDefinitionId(accessReviewScheduleDefinitionId: string) : AccessReviewScheduleDefinitionItemRequestBuilder;
     /**
      * Provides operations to call the filterByCurrentUser method.
      * @param on Usage: on='{on}'
      * @returns {FilterByCurrentUserWithOnRequestBuilder}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      filterByCurrentUserWithOn(on: string | undefined) : FilterByCurrentUserWithOnRequestBuilder;
     /**
@@ -42,7 +39,6 @@ export interface DefinitionsRequestBuilder extends BaseRequestBuilder<Definition
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewScheduleDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/unifiedroot-list-definitions?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<DefinitionsRequestBuilderGetQueryParameters> | undefined) : Promise<AccessReviewScheduleDefinitionCollectionResponse | undefined>;
@@ -52,7 +48,6 @@ export interface DefinitionsRequestBuilder extends BaseRequestBuilder<Definition
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessReviewScheduleDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/unifiedroot-post-definitions?view=graph-rest-beta|Find more info here}
      */
      post(body: AccessReviewScheduleDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessReviewScheduleDefinition | undefined>;
@@ -60,7 +55,6 @@ export interface DefinitionsRequestBuilder extends BaseRequestBuilder<Definition
      * Retrieve the accessReviewScheduleDefinition objects for user-centric (catalog-scope) access reviews through the unified route. A list of zero or more accessReviewScheduleDefinition objects is returned, including all of their nested properties, for each access review series created. This doesn't include the associated accessReviewInstance objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<DefinitionsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -68,7 +62,6 @@ export interface DefinitionsRequestBuilder extends BaseRequestBuilder<Definition
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessReviewScheduleDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

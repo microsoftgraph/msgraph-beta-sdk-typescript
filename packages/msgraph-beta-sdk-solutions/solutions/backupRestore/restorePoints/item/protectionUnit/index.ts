@@ -13,23 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ProtectionUnitRequestBuilder extends BaseRequestBuilder<ProtectionUnitRequestBuilder> {
     /**
-     * The site, drive, or mailbox units that are protected under a protection policy.
+     * The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProtectionUnitBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ProtectionUnitRequestBuilderGetQueryParameters> | undefined) : Promise<ProtectionUnitBase | undefined>;
     /**
-     * The site, drive, or mailbox units that are protected under a protection policy.
+     * The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ProtectionUnitRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The site, drive, or mailbox units that are protected under a protection policy.
+ * The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
  */
 export interface ProtectionUnitRequestBuilderGetQueryParameters {
     /**

@@ -13,18 +13,17 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface GetStatisticsByPolicyWithPolicyIdRequestBuilder extends BaseRequestBuilder<GetStatisticsByPolicyWithPolicyIdRequestBuilder> {
     /**
-     * Invoke function getStatisticsByPolicy
+     * Get the statistics that correspond to the specified policy ID of a backupPolicyReport.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BackupPolicyReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
+     * @see {@link https://learn.microsoft.com/graph/api/backupreport-getstatisticsbypolicy?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BackupPolicyReport | undefined>;
     /**
-     * Invoke function getStatisticsByPolicy
+     * Get the statistics that correspond to the specified policy ID of a backupPolicyReport.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
