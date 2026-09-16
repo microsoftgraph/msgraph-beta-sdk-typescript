@@ -12,10 +12,6 @@ import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilde
 // @ts-ignore
 import { InsightsRequestBuilderNavigationMetadata, InsightsRequestBuilderRequestsMetadata, type InsightsRequestBuilder } from './insights/index.js';
 // @ts-ignore
-import { LifecyclePoliciesRequestBuilderNavigationMetadata, LifecyclePoliciesRequestBuilderRequestsMetadata, type LifecyclePoliciesRequestBuilder } from './lifecyclePolicies/index.js';
-// @ts-ignore
-import { LifecyclePolicyPriorityConfigurationsRequestBuilderNavigationMetadata, LifecyclePolicyPriorityConfigurationsRequestBuilderRequestsMetadata, type LifecyclePolicyPriorityConfigurationsRequestBuilder } from './lifecyclePolicyPriorityConfigurations/index.js';
-// @ts-ignore
 import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { TaskDefinitionsRequestBuilderNavigationMetadata, TaskDefinitionsRequestBuilderRequestsMetadata, type TaskDefinitionsRequestBuilder } from './taskDefinitions/index.js';
@@ -32,54 +28,36 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface LifecycleWorkflowsRequestBuilder extends BaseRequestBuilder<LifecycleWorkflowsRequestBuilder> {
     /**
      * Provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get customTaskExtensions(): CustomTaskExtensionsRequestBuilder;
     /**
      * Provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get deletedItems(): DeletedItemsRequestBuilder;
     /**
      * Provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get insights(): InsightsRequestBuilder;
     /**
-     * Provides operations to manage the lifecyclePolicies property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
-     */
-    get lifecyclePolicies(): LifecyclePoliciesRequestBuilder;
-    /**
-     * Provides operations to manage the lifecyclePolicyPriorityConfigurations property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
-     */
-    get lifecyclePolicyPriorityConfigurations(): LifecyclePolicyPriorityConfigurationsRequestBuilder;
-    /**
      * Provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get settings(): SettingsRequestBuilder;
     /**
      * Provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get taskDefinitions(): TaskDefinitionsRequestBuilder;
     /**
      * Provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get workflows(): WorkflowsRequestBuilder;
     /**
      * Provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get workflowTemplates(): WorkflowTemplatesRequestBuilder;
     /**
      * Delete navigation property lifecycleWorkflows for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -87,7 +65,6 @@ export interface LifecycleWorkflowsRequestBuilder extends BaseRequestBuilder<Lif
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LifecycleWorkflowsContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters> | undefined) : Promise<LifecycleWorkflowsContainer | undefined>;
     /**
@@ -96,21 +73,18 @@ export interface LifecycleWorkflowsRequestBuilder extends BaseRequestBuilder<Lif
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LifecycleWorkflowsContainer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: LifecycleWorkflowsContainer, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<LifecycleWorkflowsContainer | undefined>;
     /**
      * Delete navigation property lifecycleWorkflows for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get lifecycleWorkflows from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<LifecycleWorkflowsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -118,7 +92,6 @@ export interface LifecycleWorkflowsRequestBuilder extends BaseRequestBuilder<Lif
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: LifecycleWorkflowsContainer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -161,14 +134,6 @@ export const LifecycleWorkflowsRequestBuilderNavigationMetadata: Record<Exclude<
     insights: {
         requestsMetadata: InsightsRequestBuilderRequestsMetadata,
         navigationMetadata: InsightsRequestBuilderNavigationMetadata,
-    },
-    lifecyclePolicies: {
-        requestsMetadata: LifecyclePoliciesRequestBuilderRequestsMetadata,
-        navigationMetadata: LifecyclePoliciesRequestBuilderNavigationMetadata,
-    },
-    lifecyclePolicyPriorityConfigurations: {
-        requestsMetadata: LifecyclePolicyPriorityConfigurationsRequestBuilderRequestsMetadata,
-        navigationMetadata: LifecyclePolicyPriorityConfigurationsRequestBuilderNavigationMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,

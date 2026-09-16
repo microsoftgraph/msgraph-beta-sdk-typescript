@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CustomersRequestBuilder extends BaseRequestBuilder<CustomersRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
      * @param bookingCustomerId The unique identifier of bookingCustomer
      * @returns {BookingCustomerItemRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byBookingCustomerId(bookingCustomerId: string) : BookingCustomerItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface CustomersRequestBuilder extends BaseRequestBuilder<CustomersReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCustomerCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<CustomersRequestBuilderGetQueryParameters> | undefined) : Promise<BookingCustomerCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface CustomersRequestBuilder extends BaseRequestBuilder<CustomersReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BookingCustomer>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: BookingCustomer, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BookingCustomer | undefined>;
     /**
      * All the customers of this business. Read-only. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomersRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface CustomersRequestBuilder extends BaseRequestBuilder<CustomersReq
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: BookingCustomer, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

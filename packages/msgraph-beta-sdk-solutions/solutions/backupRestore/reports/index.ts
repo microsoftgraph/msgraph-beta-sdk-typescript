@@ -18,22 +18,19 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Delete navigation property reports for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get reports from solutions
+     * Report corresponding to a protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BackupReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<ReportsRequestBuilderGetQueryParameters> | undefined) : Promise<BackupReport | undefined>;
     /**
      * Provides operations to call the getStatisticsByPolicy method.
      * @param policyId Usage: policyId='{policyId}'
      * @returns {GetStatisticsByPolicyWithPolicyIdRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      getStatisticsByPolicyWithPolicyId(policyId: string | undefined) : GetStatisticsByPolicyWithPolicyIdRequestBuilder;
     /**
@@ -42,21 +39,18 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BackupReport>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: BackupReport, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<BackupReport | undefined>;
     /**
      * Delete navigation property reports for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get reports from solutions
+     * Report corresponding to a protection policy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ReportsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,12 +58,11 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: BackupReport, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get reports from solutions
+ * Report corresponding to a protection policy.
  */
 export interface ReportsRequestBuilderGetQueryParameters {
     /**

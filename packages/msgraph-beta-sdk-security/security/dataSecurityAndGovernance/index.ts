@@ -6,6 +6,8 @@ import { createTenantDataSecurityAndGovernanceFromDiscriminatorValue, serializeT
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { ActivitiesRequestBuilderRequestsMetadata, type ActivitiesRequestBuilder } from './activities/index.js';
+// @ts-ignore
 import { PolicyFilesRequestBuilderNavigationMetadata, PolicyFilesRequestBuilderRequestsMetadata, type PolicyFilesRequestBuilder } from './policyFiles/index.js';
 // @ts-ignore
 import { ProcessContentRequestBuilderRequestsMetadata, type ProcessContentRequestBuilder } from './processContent/index.js';
@@ -22,6 +24,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.
  */
 export interface DataSecurityAndGovernanceRequestBuilder extends BaseRequestBuilder<DataSecurityAndGovernanceRequestBuilder> {
+    /**
+     * Provides operations to manage the activities property of the microsoft.graph.tenantDataSecurityAndGovernance entity.
+     */
+    get activities(): ActivitiesRequestBuilder;
     /**
      * Provides operations to manage the policyFiles property of the microsoft.graph.tenantDataSecurityAndGovernance entity.
      */
@@ -111,6 +117,9 @@ const DataSecurityAndGovernanceRequestBuilderGetQueryParametersMapper: Record<st
  * Metadata for all the navigation properties in the request builder.
  */
 export const DataSecurityAndGovernanceRequestBuilderNavigationMetadata: Record<Exclude<keyof DataSecurityAndGovernanceRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    activities: {
+        requestsMetadata: ActivitiesRequestBuilderRequestsMetadata,
+    },
     policyFiles: {
         requestsMetadata: PolicyFilesRequestBuilderRequestsMetadata,
         navigationMetadata: PolicyFilesRequestBuilderNavigationMetadata,

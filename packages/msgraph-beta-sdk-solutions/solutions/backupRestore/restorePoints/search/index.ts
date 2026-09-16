@@ -27,6 +27,7 @@ export function deserializeIntoSearchPostRequestBody(searchPostRequestBody: Part
     return {
         "artifactQuery": n => { searchPostRequestBody.artifactQuery = n.getObjectValue<ArtifactQuery>(createArtifactQueryFromDiscriminatorValue); },
         "backingStoreEnabled": n => { searchPostRequestBody.backingStoreEnabled = true; },
+        "policyId": n => { searchPostRequestBody.policyId = n.getStringValue(); },
         "protectionTimePeriod": n => { searchPostRequestBody.protectionTimePeriod = n.getObjectValue<TimePeriod>(createTimePeriodFromDiscriminatorValue); },
         "protectionUnitIds": n => { searchPostRequestBody.protectionUnitIds = n.getCollectionOfPrimitiveValues<string>("string"); },
         "restorePointPreference": n => { searchPostRequestBody.restorePointPreference = n.getEnumValue<RestorePointPreference>(RestorePointPreferenceObject); },
@@ -42,6 +43,10 @@ export interface SearchPostRequestBody extends AdditionalDataHolder, BackedModel
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * The policyId property
+     */
+    policyId?: string | null;
     /**
      * The protectionTimePeriod property
      */
@@ -64,21 +69,19 @@ export interface SearchPostRequestBody extends AdditionalDataHolder, BackedModel
  */
 export interface SearchRequestBuilder extends BaseRequestBuilder<SearchRequestBuilder> {
     /**
-     * Search for the restorePoint objects associated with a protectionUnit.
+     * Search for the restorePoint objects associated with a protectionUnit. Optionally provide policyId to scope the search to a protection policy and validate that the specified protection units belong to that policy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RestorePointSearchResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      * @see {@link https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-beta|Find more info here}
      */
      post(body: SearchPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RestorePointSearchResponse | undefined>;
     /**
-     * Search for the restorePoint objects associated with a protectionUnit.
+     * Search for the restorePoint objects associated with a protectionUnit. Optionally provide policyId to scope the search to a protection policy and validate that the specified protection units belong to that policy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: SearchPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
@@ -92,6 +95,7 @@ export interface SearchRequestBuilder extends BaseRequestBuilder<SearchRequestBu
 export function serializeSearchPostRequestBody(writer: SerializationWriter, searchPostRequestBody: Partial<SearchPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!searchPostRequestBody || isSerializingDerivedType) { return; }
     writer.writeObjectValue<ArtifactQuery>("artifactQuery", searchPostRequestBody.artifactQuery, serializeArtifactQuery);
+    writer.writeStringValue("policyId", searchPostRequestBody.policyId);
     writer.writeObjectValue<TimePeriod>("protectionTimePeriod", searchPostRequestBody.protectionTimePeriod, serializeTimePeriod);
     writer.writeCollectionOfPrimitiveValues<string>("protectionUnitIds", searchPostRequestBody.protectionUnitIds);
     writer.writeEnumValue<RestorePointPreference>("restorePointPreference", searchPostRequestBody.restorePointPreference);

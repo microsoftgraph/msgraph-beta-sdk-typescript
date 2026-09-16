@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageResourceRoleScopesRequestBuilder extends BaseRequestBuilder<AccessPackageResourceRoleScopesRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.accessPackage entity.
      * @param accessPackageResourceRoleScopeId The unique identifier of accessPackageResourceRoleScope
      * @returns {AccessPackageResourceRoleScopeItemRequestBuilder}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessPackageResourceRoleScopeId(accessPackageResourceRoleScopeId: string) : AccessPackageResourceRoleScopeItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AccessPackageResourceRoleScopesRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRoleScopeCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageResourceRoleScopeCollectionResponse | undefined>;
     /**
@@ -42,7 +39,6 @@ export interface AccessPackageResourceRoleScopesRequestBuilder extends BaseReque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRoleScope>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta|Find more info here}
      */
      post(body: AccessPackageResourceRoleScope, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageResourceRoleScope | undefined>;
@@ -50,7 +46,6 @@ export interface AccessPackageResourceRoleScopesRequestBuilder extends BaseReque
      * Get accessPackageResourceRoleScopes from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -58,7 +53,6 @@ export interface AccessPackageResourceRoleScopesRequestBuilder extends BaseReque
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessPackageResourceRoleScope, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

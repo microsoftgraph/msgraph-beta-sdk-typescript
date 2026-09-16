@@ -16,7 +16,6 @@ export interface AttendanceRecordItemRequestBuilder extends BaseRequestBuilder<A
      * Delete navigation property attendanceRecords for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface AttendanceRecordItemRequestBuilder extends BaseRequestBuilder<A
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttendanceRecord>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<AttendanceRecordItemRequestBuilderGetQueryParameters> | undefined) : Promise<AttendanceRecord | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface AttendanceRecordItemRequestBuilder extends BaseRequestBuilder<A
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AttendanceRecord>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: AttendanceRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AttendanceRecord | undefined>;
     /**
      * Delete navigation property attendanceRecords for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * List of attendance records of an attendance report. Read-only.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AttendanceRecordItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface AttendanceRecordItemRequestBuilder extends BaseRequestBuilder<A
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: AttendanceRecord, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

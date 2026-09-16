@@ -22,29 +22,24 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface RoleManagementAlertsRequestBuilder extends BaseRequestBuilder<RoleManagementAlertsRequestBuilder> {
     /**
      * Provides operations to manage the alertConfigurations property of the microsoft.graph.roleManagementAlert entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get alertConfigurations(): AlertConfigurationsRequestBuilder;
     /**
      * Provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get alertDefinitions(): AlertDefinitionsRequestBuilder;
     /**
      * Provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get alerts(): AlertsRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.roleManagementAlert entity.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get operations(): OperationsRequestBuilder;
     /**
      * Delete navigation property roleManagementAlerts for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -52,7 +47,6 @@ export interface RoleManagementAlertsRequestBuilder extends BaseRequestBuilder<R
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RoleManagementAlert>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      get(requestConfiguration?: RequestConfiguration<RoleManagementAlertsRequestBuilderGetQueryParameters> | undefined) : Promise<RoleManagementAlert | undefined>;
     /**
@@ -61,21 +55,18 @@ export interface RoleManagementAlertsRequestBuilder extends BaseRequestBuilder<R
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RoleManagementAlert>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      patch(body: RoleManagementAlert, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RoleManagementAlert | undefined>;
     /**
      * Delete navigation property roleManagementAlerts for identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get roleManagementAlerts from identityGovernance
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RoleManagementAlertsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -83,7 +74,6 @@ export interface RoleManagementAlertsRequestBuilder extends BaseRequestBuilder<R
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPatchRequestInformation(body: RoleManagementAlert, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

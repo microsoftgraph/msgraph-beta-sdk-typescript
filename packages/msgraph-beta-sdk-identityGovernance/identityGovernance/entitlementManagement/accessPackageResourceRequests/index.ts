@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface AccessPackageResourceRequestsRequestBuilder extends BaseRequestBuilder<AccessPackageResourceRequestsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.
      * @param accessPackageResourceRequestId The unique identifier of accessPackageResourceRequest
      * @returns {AccessPackageResourceRequestItemRequestBuilder}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      byAccessPackageResourceRequestId(accessPackageResourceRequestId: string) : AccessPackageResourceRequestItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface AccessPackageResourceRequestsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRequestCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourcerequests?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<AccessPackageResourceRequestsRequestBuilderGetQueryParameters> | undefined) : Promise<AccessPackageResourceRequestCollectionResponse | undefined>;
@@ -43,7 +40,6 @@ export interface AccessPackageResourceRequestsRequestBuilder extends BaseRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<AccessPackageResourceRequest>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      * @see {@link https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackageresourcerequests?view=graph-rest-beta|Find more info here}
      */
      post(body: AccessPackageResourceRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<AccessPackageResourceRequest | undefined>;
@@ -51,7 +47,6 @@ export interface AccessPackageResourceRequestsRequestBuilder extends BaseRequest
      * Retrieve a list of accessPackageResourceRequest objects.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<AccessPackageResourceRequestsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -59,7 +54,6 @@ export interface AccessPackageResourceRequestsRequestBuilder extends BaseRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
      */
      toPostRequestInformation(body: AccessPackageResourceRequest, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -16,7 +16,6 @@ export interface SiteProtectionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      * Delete navigation property siteProtectionUnitsBulkAdditionJobs for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface SiteProtectionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<SiteProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters> | undefined) : Promise<SiteProtectionUnitsBulkAdditionJob | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface SiteProtectionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<SiteProtectionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      patch(body: SiteProtectionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<SiteProtectionUnitsBulkAdditionJob | undefined>;
     /**
      * Delete navigation property siteProtectionUnitsBulkAdditionJobs for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get siteProtectionUnitsBulkAdditionJobs from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SiteProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface SiteProtectionUnitsBulkAdditionJobItemRequestBuilder extends Ba
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPatchRequestInformation(body: SiteProtectionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

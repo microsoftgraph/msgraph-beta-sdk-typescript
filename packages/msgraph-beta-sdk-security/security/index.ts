@@ -245,7 +245,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      microsoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId(query: string | undefined) : MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder;
     /**
      * Update security
-     * @param body Security singleton providing access to audit log resources.
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Security>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -259,7 +259,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<SecurityRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update security
-     * @param body Security singleton providing access to audit log resources.
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

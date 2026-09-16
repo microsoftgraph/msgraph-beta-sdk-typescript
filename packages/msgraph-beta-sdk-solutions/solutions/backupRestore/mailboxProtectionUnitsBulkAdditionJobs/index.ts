@@ -18,14 +18,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxProtectionUnitsBulkAdditionJobsRequestBuilder extends BaseRequestBuilder<MailboxProtectionUnitsBulkAdditionJobsRequestBuilder> {
     /**
      * Provides operations to count the resources in the collection.
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
      * @param mailboxProtectionUnitsBulkAdditionJobId The unique identifier of mailboxProtectionUnitsBulkAdditionJob
      * @returns {MailboxProtectionUnitsBulkAdditionJobItemRequestBuilder}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      byMailboxProtectionUnitsBulkAdditionJobId(mailboxProtectionUnitsBulkAdditionJobId: string) : MailboxProtectionUnitsBulkAdditionJobItemRequestBuilder;
     /**
@@ -33,7 +31,6 @@ export interface MailboxProtectionUnitsBulkAdditionJobsRequestBuilder extends Ba
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxProtectionUnitsBulkAdditionJobCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      get(requestConfiguration?: RequestConfiguration<MailboxProtectionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxProtectionUnitsBulkAdditionJobCollectionResponse | undefined>;
     /**
@@ -42,14 +39,12 @@ export interface MailboxProtectionUnitsBulkAdditionJobsRequestBuilder extends Ba
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxProtectionUnitsBulkAdditionJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      post(body: MailboxProtectionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailboxProtectionUnitsBulkAdditionJob | undefined>;
     /**
      * Get mailboxProtectionUnitsBulkAdditionJobs from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxProtectionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -57,7 +52,6 @@ export interface MailboxProtectionUnitsBulkAdditionJobsRequestBuilder extends Ba
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
      */
      toPostRequestInformation(body: MailboxProtectionUnitsBulkAdditionJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
