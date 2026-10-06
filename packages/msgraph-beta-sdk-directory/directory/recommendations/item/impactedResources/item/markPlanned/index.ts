@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface MarkPlannedRequestBuilder extends BaseRequestBuilder<MarkPlannedRequestBuilder> {
     /**
-     * Invoke action markPlanned
+     * Mark an impactedResource object as planned and update its status to planned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ImpactedResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/impactedresource-markplanned?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ImpactedResource | undefined>;
     /**
-     * Invoke action markPlanned
+     * Mark an impactedResource object as planned and update its status to planned.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

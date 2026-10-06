@@ -81,6 +81,7 @@ export interface RemoveTagRequestBuilder extends BaseRequestBuilder<RemoveTagReq
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RemoveTagPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/impactedresource-removetag-collection?view=graph-rest-beta|Find more info here}
      */
      post(body: RemoveTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RemoveTagPostResponse | undefined>;
     /**

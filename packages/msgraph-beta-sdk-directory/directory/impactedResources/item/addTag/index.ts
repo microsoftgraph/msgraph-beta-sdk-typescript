@@ -23,15 +23,16 @@ export interface AddTagPostRequestBody extends AdditionalDataHolder, BackedModel
  */
 export interface AddTagRequestBuilder extends BaseRequestBuilder<AddTagRequestBuilder> {
     /**
-     * Invoke action addTag
+     * Add a user-defined tag to an impactedResource object. To add the same tag to multiple impacted resources in a single request, use the addTag action on the impactedResources collection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RecommendationTag>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/impactedresource-addtag?view=graph-rest-beta|Find more info here}
      */
      post(body: AddTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RecommendationTag | undefined>;
     /**
-     * Invoke action addTag
+     * Add a user-defined tag to an impactedResource object. To add the same tag to multiple impacted resources in a single request, use the addTag action on the impactedResources collection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

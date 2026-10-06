@@ -187,6 +187,15 @@ export function createAssignmentFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DeviceCloudLicensing}
+ */
+// @ts-ignore
+export function createDeviceCloudLicensingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDeviceCloudLicensing;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {GroupCloudLicensing}
  */
 // @ts-ignore
@@ -351,6 +360,21 @@ export function deserializeIntoAssignmentErrorCollectionResponse(assignmentError
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceCloudLicensing The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDeviceCloudLicensing(deviceCloudLicensing: Partial<DeviceCloudLicensing> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "assignments": n => { deviceCloudLicensing.assignments = n.getCollectionOfObjectValues<Assignment>(createAssignmentFromDiscriminatorValue); },
+        "backingStoreEnabled": n => { deviceCloudLicensing.backingStoreEnabled = true; },
+        "@odata.type": n => { deviceCloudLicensing.odataType = n.getStringValue(); },
+        "usageRights": n => { deviceCloudLicensing.usageRights = n.getCollectionOfObjectValues<UsageRight>(createUsageRightFromDiscriminatorValue); },
+        "waitingMembers": n => { deviceCloudLicensing.waitingMembers = n.getCollectionOfObjectValues<WaitingMember>(createWaitingMemberFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param GroupCloudLicensing The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -453,6 +477,28 @@ export function deserializeIntoWaitingMemberCollectionResponse(waitingMemberColl
         ...deserializeIntoBaseCollectionPaginationCountResponse(waitingMemberCollectionResponse),
         "value": n => { waitingMemberCollectionResponse.value = n.getCollectionOfObjectValues<WaitingMember>(createWaitingMemberFromDiscriminatorValue); },
     }
+}
+export interface DeviceCloudLicensing extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * The assignments property
+     */
+    assignments?: Assignment[] | null;
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The usageRights property
+     */
+    usageRights?: UsageRight[] | null;
+    /**
+     * The waitingMembers property
+     */
+    waitingMembers?: WaitingMember[] | null;
 }
 export interface GroupCloudLicensing extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -573,6 +619,21 @@ export function serializeAssignmentErrorCollectionResponse(writer: Serialization
     if (!assignmentErrorCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, assignmentErrorCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<AssignmentError>("value", assignmentErrorCollectionResponse.value, serializeAssignmentError);
+}
+/**
+ * Serializes information the current object
+ * @param DeviceCloudLicensing The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeviceCloudLicensing(writer: SerializationWriter, deviceCloudLicensing: Partial<DeviceCloudLicensing> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceCloudLicensing || isSerializingDerivedType) { return; }
+    writer.writeCollectionOfObjectValues<Assignment>("assignments", deviceCloudLicensing.assignments, serializeAssignment);
+    writer.writeStringValue("@odata.type", deviceCloudLicensing.odataType);
+    writer.writeCollectionOfObjectValues<UsageRight>("usageRights", deviceCloudLicensing.usageRights, serializeUsageRight);
+    writer.writeCollectionOfObjectValues<WaitingMember>("waitingMembers", deviceCloudLicensing.waitingMembers, serializeWaitingMember);
+    writer.writeAdditionalData(deviceCloudLicensing.additionalData);
 }
 /**
  * Serializes information the current object

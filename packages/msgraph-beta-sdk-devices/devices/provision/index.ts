@@ -44,15 +44,16 @@ export interface ProvisionPostRequestBody extends AdditionalDataHolder, BackedMo
  */
 export interface ProvisionRequestBuilder extends BaseRequestBuilder<ProvisionRequestBuilder> {
     /**
-     * Invoke action provision
+     * Provision a device on behalf of an approved Virtual Desktop Infrastructure (VDI) provider. This action wraps the Zero Touch Deployment (ZTD) protocol to create a device in a pending state in the customer's directory. The device can't be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider. Only VDI applications on Microsoft's approved list of VDI providers can successfully call this action. Calls from other applications are blocked even when the application is granted the required permission.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ProvisionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/device-provision?view=graph-rest-beta|Find more info here}
      */
      post(body: ProvisionPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ProvisionResponse | undefined>;
     /**
-     * Invoke action provision
+     * Provision a device on behalf of an approved Virtual Desktop Infrastructure (VDI) provider. This action wraps the Zero Touch Deployment (ZTD) protocol to create a device in a pending state in the customer's directory. The device can't be used for authentication until it completes its registration. The created device is stamped with a system label that identifies the approved VDI provider. Only VDI applications on Microsoft's approved list of VDI providers can successfully call this action. Calls from other applications are blocked even when the application is granted the required permission.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

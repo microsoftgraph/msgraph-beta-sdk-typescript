@@ -16,7 +16,6 @@ export interface MailboxItemItemRequestBuilder extends BaseRequestBuilder<Mailbo
      * Delete a mailboxItem from a mailboxFolder in a mailbox. Use the disposalType query parameter to specify whether to soft-delete or hard-delete the item.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailboxfolder-delete-items?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -25,7 +24,6 @@ export interface MailboxItemItemRequestBuilder extends BaseRequestBuilder<Mailbo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxItem>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailboxitem-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MailboxItemItemRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxItem | undefined>;
@@ -33,14 +31,12 @@ export interface MailboxItemItemRequestBuilder extends BaseRequestBuilder<Mailbo
      * Delete a mailboxItem from a mailboxFolder in a mailbox. Use the disposalType query parameter to specify whether to soft-delete or hard-delete the item.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a mailboxItem object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxItemItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }

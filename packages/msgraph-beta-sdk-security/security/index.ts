@@ -46,6 +46,8 @@ import { LabelsRequestBuilderNavigationMetadata, LabelsRequestBuilderRequestsMet
 // @ts-ignore
 import { MicrosoftGraphSecurityGetHuntingSchemaRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder } from './microsoftGraphSecurityGetHuntingSchema/index.js';
 // @ts-ignore
+import { MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceIdRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceIdRequestBuilder } from './microsoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId/index.js';
+// @ts-ignore
 import { MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder } from './microsoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId/index.js';
 // @ts-ignore
 import { MicrosoftGraphSecurityRunHuntingQueryRequestBuilderRequestsMetadata, type MicrosoftGraphSecurityRunHuntingQueryRequestBuilder } from './microsoftGraphSecurityRunHuntingQuery/index.js';
@@ -166,6 +168,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to call the getHuntingSchema method.
      */
     get microsoftGraphSecurityGetHuntingSchema(): MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder;
+    /**
+     * Provides operations to call the getHuntingSchemaTables method.
+     */
+    get microsoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId(): MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceIdRequestBuilder;
     /**
      * Provides operations to call the runHuntingQuery method.
      */
@@ -375,6 +381,9 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     },
     microsoftGraphSecurityGetHuntingSchema: {
         requestsMetadata: MicrosoftGraphSecurityGetHuntingSchemaRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceId: {
+        requestsMetadata: MicrosoftGraphSecurityGetHuntingSchemaTablesWithWorkspaceIdRequestBuilderRequestsMetadata,
     },
     microsoftGraphSecurityRunHuntingQuery: {
         requestsMetadata: MicrosoftGraphSecurityRunHuntingQueryRequestBuilderRequestsMetadata,

@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface TenantGovernancePolicyTemplateItemRequestBuilder extends BaseRequestBuilder<TenantGovernancePolicyTemplateItemRequestBuilder> {
     /**
-     * Delete a governancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
+     * Delete a tenantGovernancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/tenantgovernanceservices-delete-governancepolicytemplates?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties of a governancePolicyTemplate object.
+     * Read the properties of a tenantGovernancePolicyTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TenantGovernancePolicyTemplate>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -28,7 +28,7 @@ export interface TenantGovernancePolicyTemplateItemRequestBuilder extends BaseRe
      */
      get(requestConfiguration?: RequestConfiguration<TenantGovernancePolicyTemplateItemRequestBuilderGetQueryParameters> | undefined) : Promise<TenantGovernancePolicyTemplate | undefined>;
     /**
-     * Update the properties of a governancePolicyTemplate object.
+     * Update the properties of a tenantGovernancePolicyTemplate object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TenantGovernancePolicyTemplate>}
@@ -37,19 +37,19 @@ export interface TenantGovernancePolicyTemplateItemRequestBuilder extends BaseRe
      */
      patch(body: TenantGovernancePolicyTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TenantGovernancePolicyTemplate | undefined>;
     /**
-     * Delete a governancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
+     * Delete a tenantGovernancePolicyTemplate object. You can't delete the default template or templates currently used by active relationships.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties of a governancePolicyTemplate object.
+     * Read the properties of a tenantGovernancePolicyTemplate object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TenantGovernancePolicyTemplateItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a governancePolicyTemplate object.
+     * Update the properties of a tenantGovernancePolicyTemplate object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -57,7 +57,7 @@ export interface TenantGovernancePolicyTemplateItemRequestBuilder extends BaseRe
      toPatchRequestInformation(body: TenantGovernancePolicyTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties of a governancePolicyTemplate object.
+ * Read the properties of a tenantGovernancePolicyTemplate object.
  */
 export interface TenantGovernancePolicyTemplateItemRequestBuilderGetQueryParameters {
     /**

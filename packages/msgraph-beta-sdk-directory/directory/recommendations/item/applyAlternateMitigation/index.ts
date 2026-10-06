@@ -13,14 +13,15 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface ApplyAlternateMitigationRequestBuilder extends BaseRequestBuilder<ApplyAlternateMitigationRequestBuilder> {
     /**
-     * Invoke action applyAlternateMitigation
+     * Apply an alternate mitigation for a recommendation object and update its status to alternateMitigation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Recommendation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/recommendation-applyalternatemitigation?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Recommendation | undefined>;
     /**
-     * Invoke action applyAlternateMitigation
+     * Apply an alternate mitigation for a recommendation object and update its status to alternateMitigation.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

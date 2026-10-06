@@ -23,15 +23,16 @@ export interface AddTagPostRequestBody extends AdditionalDataHolder, BackedModel
  */
 export interface AddTagRequestBuilder extends BaseRequestBuilder<AddTagRequestBuilder> {
     /**
-     * Invoke action addTag
+     * Add a user-defined tag to a recommendation object. Tags help you organize, group, and filter recommendations in the Microsoft Entra admin center.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RecommendationTag>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/recommendation-addtag?view=graph-rest-beta|Find more info here}
      */
      post(body: AddTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<RecommendationTag | undefined>;
     /**
-     * Invoke action addTag
+     * Add a user-defined tag to a recommendation object. Tags help you organize, group, and filter recommendations in the Microsoft Entra admin center.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

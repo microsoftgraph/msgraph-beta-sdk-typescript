@@ -19,7 +19,7 @@ export interface RecommendationTagItemRequestBuilder extends BaseRequestBuilder<
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get tags from directory
+     * The user-defined free-form labels applied to the impactedResource. The collection isn't directly writable; tags are created and removed through the addTag and removeTag actions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RecommendationTag>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface RecommendationTagItemRequestBuilder extends BaseRequestBuilder<
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get tags from directory
+     * The user-defined free-form labels applied to the impactedResource. The collection isn't directly writable; tags are created and removed through the addTag and removeTag actions.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface RecommendationTagItemRequestBuilder extends BaseRequestBuilder<
      toPatchRequestInformation(body: RecommendationTag, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get tags from directory
+ * The user-defined free-form labels applied to the impactedResource. The collection isn't directly writable; tags are created and removed through the addTag and removeTag actions.
  */
 export interface RecommendationTagItemRequestBuilderGetQueryParameters {
     /**

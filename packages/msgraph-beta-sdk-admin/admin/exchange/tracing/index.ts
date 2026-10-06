@@ -16,14 +16,12 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequestBuilder> {
     /**
      * Provides operations to manage the messageTraces property of the microsoft.graph.messageTracingRoot entity.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get messageTraces(): MessageTracesRequestBuilder;
     /**
      * Delete navigation property tracing for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -31,7 +29,6 @@ export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageTracingRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      get(requestConfiguration?: RequestConfiguration<TracingRequestBuilderGetQueryParameters> | undefined) : Promise<MessageTracingRoot | undefined>;
     /**
@@ -40,21 +37,18 @@ export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequest
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageTracingRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      patch(body: MessageTracingRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MessageTracingRoot | undefined>;
     /**
      * Delete navigation property tracing for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents a container for administrative resources to trace messages.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TracingRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -62,7 +56,6 @@ export interface TracingRequestBuilder extends BaseRequestBuilder<TracingRequest
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toPatchRequestInformation(body: MessageTracingRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
