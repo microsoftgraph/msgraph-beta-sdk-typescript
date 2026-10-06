@@ -218,6 +218,9 @@ export interface AgentAdminActivityRecord extends AuditData, Parsable {
  */
 export interface AgentSettingAdminActivity extends AuditData, Parsable {
 }
+/**
+ * Aggregated count of environments of a given kind within a zone.
+ */
 export interface AggregatedEnvironment extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -1252,6 +1255,9 @@ export interface AuditData extends AdditionalDataHolder, BackedModel, Parsable {
      */
     odataType?: string | null;
 }
+/**
+ * Captures who performed an action and when.
+ */
 export interface AuditInfo extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -1279,6 +1285,10 @@ export interface AuditLogQuery extends Entity, Parsable {
      */
     administrativeUnitIdFilters?: string[] | null;
     /**
+     * The approximate number of records retrieved by the query. This value can be higher or lower than recordCountLimit due to distributed counting. Read-only.
+     */
+    approximateReturnedRecordCount?: number | null;
+    /**
      * The display name of the saved audit log query.
      */
     displayName?: string | null;
@@ -1295,6 +1305,10 @@ export interface AuditLogQuery extends Entity, Parsable {
      */
     ipAddressFilters?: string[] | null;
     /**
+     * Indicates whether the query exceeded the per-search record-count limit. The default value is false. A value of true is authoritative and isn't derived from approximateReturnedRecordCount. Read-only.
+     */
+    isRecordCountLimitExceeded?: boolean | null;
+    /**
      * Free text field to search non-indexed properties of the audit log.
      */
     keywordFilter?: string | null;
@@ -1306,6 +1320,10 @@ export interface AuditLogQuery extends Entity, Parsable {
      * The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.
      */
     operationFilters?: string[] | null;
+    /**
+     * The record-count threshold used to limit query result retrieval. Read-only.
+     */
+    recordCountLimit?: number | null;
     /**
      * An individual audit log record.
      */
@@ -12356,13 +12374,16 @@ export function deserializeIntoAuditLogQuery(auditLogQuery: Partial<AuditLogQuer
     return {
         ...deserializeIntoEntity(auditLogQuery),
         "administrativeUnitIdFilters": n => { auditLogQuery.administrativeUnitIdFilters = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "approximateReturnedRecordCount": n => { auditLogQuery.approximateReturnedRecordCount = n.getNumberValue(); },
         "displayName": n => { auditLogQuery.displayName = n.getStringValue(); },
         "filterEndDateTime": n => { auditLogQuery.filterEndDateTime = n.getDateValue(); },
         "filterStartDateTime": n => { auditLogQuery.filterStartDateTime = n.getDateValue(); },
         "ipAddressFilters": n => { auditLogQuery.ipAddressFilters = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "isRecordCountLimitExceeded": n => { auditLogQuery.isRecordCountLimitExceeded = n.getBooleanValue(); },
         "keywordFilter": n => { auditLogQuery.keywordFilter = n.getStringValue(); },
         "objectIdFilters": n => { auditLogQuery.objectIdFilters = n.getCollectionOfPrimitiveValues<string>("string"); },
         "operationFilters": n => { auditLogQuery.operationFilters = n.getCollectionOfPrimitiveValues<string>("string"); },
+        "recordCountLimit": n => { auditLogQuery.recordCountLimit = n.getNumberValue(); },
         "records": n => { auditLogQuery.records = n.getCollectionOfObjectValues<AuditLogRecord>(createAuditLogRecordFromDiscriminatorValue); },
         "recordTypeFilters": n => { auditLogQuery.recordTypeFilters = n.getCollectionOfEnumValues<AuditLogRecordType>(AuditLogRecordTypeObject); },
         "serviceFilters": n => { auditLogQuery.serviceFilters = n.getCollectionOfPrimitiveValues<string>("string"); },
@@ -23670,9 +23691,12 @@ export interface EntityMappingConfiguration extends AdditionalDataHolder, Backed
     urls?: UrlEntityMapping[] | null;
 }
 export type EntityType = (typeof EntityTypeObject)[keyof typeof EntityTypeObject];
+/**
+ * Represents a single cloud environment onboarded for security posture management.
+ */
 export interface Environment extends Entity, Parsable {
     /**
-     * The kind property
+     * The kind of cloud environment onboarded to security posture management.
      */
     kind?: EnvironmentKind | null;
 }
@@ -42209,6 +42233,9 @@ export interface YammerAuditRecord extends AuditData, Parsable {
  */
 export interface YammerUserHidingAuditRecord extends AuditData, Parsable {
 }
+/**
+ * A security zone grouping cloud environments under a common posture boundary.
+ */
 export interface Zone extends Entity, Parsable {
     /**
      * Environment count summaries by type. Read-only. Supports $filter (eq) on the kind property. For example, $filter=aggregations/any(a: a/kind eq 'azureSubscription').
@@ -43283,18 +43310,33 @@ export const EntityTypeObject = {
     Unknown: "unknown",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+/**
+ * The kind of cloud environment onboarded to security posture management.
+ */
 export const EnvironmentKindObject = {
+    /** An Azure subscription. */
     AzureSubscription: "azureSubscription",
+    /** An AWS organization. */
     AwsOrganization: "awsOrganization",
+    /** An AWS account. */
     AwsAccount: "awsAccount",
+    /** A GCP organization. */
     GcpOrganization: "gcpOrganization",
+    /** A GCP project. */
     GcpProject: "gcpProject",
+    /** A Docker Hub organization. */
     DockersHubOrganization: "dockersHubOrganization",
+    /** A DevOps connection. */
     DevOpsConnection: "devOpsConnection",
+    /** An Azure DevOps organization. */
     AzureDevOpsOrganization: "azureDevOpsOrganization",
+    /** A GitHub organization. */
     GitHubOrganization: "gitHubOrganization",
+    /** A GitLab group. */
     GitLabGroup: "gitLabGroup",
+    /** A JFrog Artifactory instance. */
     JFrogArtifactory: "jFrogArtifactory",
+    /** A marker value for members added after the release of this API. */
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const EventPropagationStatusObject = {

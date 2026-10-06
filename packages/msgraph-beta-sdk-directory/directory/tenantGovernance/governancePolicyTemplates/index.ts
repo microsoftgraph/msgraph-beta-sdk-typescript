@@ -27,7 +27,7 @@ export interface GovernancePolicyTemplatesRequestBuilder extends BaseRequestBuil
      */
      byTenantGovernancePolicyTemplateId(tenantGovernancePolicyTemplateId: string) : TenantGovernancePolicyTemplateItemRequestBuilder;
     /**
-     * Get a list of the governancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+     * Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TenantGovernancePolicyTemplateCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface GovernancePolicyTemplatesRequestBuilder extends BaseRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<GovernancePolicyTemplatesRequestBuilderGetQueryParameters> | undefined) : Promise<TenantGovernancePolicyTemplateCollectionResponse | undefined>;
     /**
-     * Create a new governancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
+     * Create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TenantGovernancePolicyTemplate>}
@@ -44,13 +44,13 @@ export interface GovernancePolicyTemplatesRequestBuilder extends BaseRequestBuil
      */
      post(body: TenantGovernancePolicyTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TenantGovernancePolicyTemplate | undefined>;
     /**
-     * Get a list of the governancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+     * Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<GovernancePolicyTemplatesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new governancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
+     * Create a new tenantGovernancePolicyTemplate that defines the configuration for establishing governance relationships, including role assignments and applications to provision.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface GovernancePolicyTemplatesRequestBuilder extends BaseRequestBuil
      toPostRequestInformation(body: TenantGovernancePolicyTemplate, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the governancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
+ * Get a list of the tenantGovernancePolicyTemplate objects and their properties. Policy templates define the configuration that is applied when establishing governance relationships.
  */
 export interface GovernancePolicyTemplatesRequestBuilderGetQueryParameters {
     /**

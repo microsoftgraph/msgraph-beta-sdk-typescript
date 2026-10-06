@@ -44,15 +44,16 @@ export interface RemoveTagPostRequestBody extends AdditionalDataHolder, BackedMo
  */
 export interface RemoveTagRequestBuilder extends BaseRequestBuilder<RemoveTagRequestBuilder> {
     /**
-     * Invoke action removeTag
+     * Remove a user-defined tag from a recommendation object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Recommendation>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/recommendation-removetag?view=graph-rest-beta|Find more info here}
      */
      post(body: RemoveTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Recommendation | undefined>;
     /**
-     * Invoke action removeTag
+     * Remove a user-defined tag from a recommendation object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

@@ -18,7 +18,6 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      * Delete navigation property messageTraces for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -26,14 +25,12 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeMessageTrace>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      get(requestConfiguration?: RequestConfiguration<ExchangeMessageTraceItemRequestBuilderGetQueryParameters> | undefined) : Promise<ExchangeMessageTrace | undefined>;
     /**
      * Provides operations to call the getDetailsByRecipient method.
      * @param recipientAddress Usage: recipientAddress='{recipientAddress}'
      * @returns {GetDetailsByRecipientWithRecipientAddressRequestBuilder}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      getDetailsByRecipientWithRecipientAddress(recipientAddress: string | undefined) : GetDetailsByRecipientWithRecipientAddressRequestBuilder;
     /**
@@ -42,21 +39,18 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExchangeMessageTrace>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      patch(body: ExchangeMessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExchangeMessageTrace | undefined>;
     /**
      * Delete navigation property messageTraces for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Represents the trace information of messages that pass-through Exchange Online organizations.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ExchangeMessageTraceItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -64,7 +58,6 @@ export interface ExchangeMessageTraceItemRequestBuilder extends BaseRequestBuild
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toPatchRequestInformation(body: ExchangeMessageTrace, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

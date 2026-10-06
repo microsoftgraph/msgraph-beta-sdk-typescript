@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CustomEmojisRequestBuilderNavigationMetadata, CustomEmojisRequestBuilderRequestsMetadata, type CustomEmojisRequestBuilder } from './customEmojis/index.js';
 // @ts-ignore
+import { CustomEmojisWithDisplayNameRequestBuilderRequestsMetadata, type CustomEmojisWithDisplayNameRequestBuilder } from './customEmojisWithDisplayName/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,12 @@ export interface MessagingRequestBuilder extends BaseRequestBuilder<MessagingReq
      * Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
      */
     get customEmojis(): CustomEmojisRequestBuilder;
+    /**
+     * Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
+     * @param displayName Alternate key of teamworkCustomEmoji
+     * @returns {CustomEmojisWithDisplayNameRequestBuilder}
+     */
+     customEmojisWithDisplayName(displayName: string | undefined) : CustomEmojisWithDisplayNameRequestBuilder;
     /**
      * Delete navigation property messaging for teamwork
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -87,6 +95,10 @@ const MessagingRequestBuilderGetQueryParametersMapper: Record<string, string> = 
  * Metadata for all the navigation properties in the request builder.
  */
 export const MessagingRequestBuilderNavigationMetadata: Record<Exclude<keyof MessagingRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    customEmojisWithDisplayName: {
+        requestsMetadata: CustomEmojisWithDisplayNameRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["displayName"],
+    },
     customEmojis: {
         requestsMetadata: CustomEmojisRequestBuilderRequestsMetadata,
         navigationMetadata: CustomEmojisRequestBuilderNavigationMetadata,

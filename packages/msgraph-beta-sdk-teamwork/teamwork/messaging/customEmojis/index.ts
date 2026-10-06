@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { TeamworkCustomEmojiDisplayNameItemRequestBuilderRequestsMetadata, type TeamworkCustomEmojiDisplayNameItemRequestBuilder } from './item/index.js';
+import { TeamworkCustomEmojiItemRequestBuilderRequestsMetadata, type TeamworkCustomEmojiItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -22,10 +22,10 @@ export interface CustomEmojisRequestBuilder extends BaseRequestBuilder<CustomEmo
     get count(): CountRequestBuilder;
     /**
      * Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
-     * @param teamworkCustomEmojiDisplayName The unique identifier of teamworkCustomEmoji
-     * @returns {TeamworkCustomEmojiDisplayNameItemRequestBuilder}
+     * @param teamworkCustomEmojiId The unique identifier of teamworkCustomEmoji
+     * @returns {TeamworkCustomEmojiItemRequestBuilder}
      */
-     byTeamworkCustomEmojiDisplayName(teamworkCustomEmojiDisplayName: string) : TeamworkCustomEmojiDisplayNameItemRequestBuilder;
+     byTeamworkCustomEmojiId(teamworkCustomEmojiId: string) : TeamworkCustomEmojiItemRequestBuilder;
     /**
      * Get a list of custom emojis available in the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -115,9 +115,9 @@ const CustomEmojisRequestBuilderGetQueryParametersMapper: Record<string, string>
  * Metadata for all the navigation properties in the request builder.
  */
 export const CustomEmojisRequestBuilderNavigationMetadata: Record<Exclude<keyof CustomEmojisRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
-    byTeamworkCustomEmojiDisplayName: {
-        requestsMetadata: TeamworkCustomEmojiDisplayNameItemRequestBuilderRequestsMetadata,
-        pathParametersMappings: ["teamworkCustomEmoji%2DdisplayName"],
+    byTeamworkCustomEmojiId: {
+        requestsMetadata: TeamworkCustomEmojiItemRequestBuilderRequestsMetadata,
+        pathParametersMappings: ["teamworkCustomEmoji%2Did"],
     },
     count: {
         requestsMetadata: CountRequestBuilderRequestsMetadata,

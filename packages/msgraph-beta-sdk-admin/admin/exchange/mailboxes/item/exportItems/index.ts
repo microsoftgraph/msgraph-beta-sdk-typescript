@@ -76,7 +76,6 @@ export interface ExportItemsRequestBuilder extends BaseRequestBuilder<ExportItem
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ExportItemsPostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
      * @see {@link https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-beta|Find more info here}
      */
      post(body: ExportItemsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ExportItemsPostResponse | undefined>;
@@ -85,7 +84,6 @@ export interface ExportItemsRequestBuilder extends BaseRequestBuilder<ExportItem
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
      */
      toPostRequestInformation(body: ExportItemsPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -49,7 +49,7 @@ export interface RelatedTenantItemRequestBuilder extends BaseRequestBuilder<Rela
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of microsoft.graph.tenantGovernanceServices.relatedTenant object.
+     * Read the properties and relationships of microsoft.graph.relatedTenant object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RelatedTenant>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -71,7 +71,7 @@ export interface RelatedTenantItemRequestBuilder extends BaseRequestBuilder<Rela
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of microsoft.graph.tenantGovernanceServices.relatedTenant object.
+     * Read the properties and relationships of microsoft.graph.relatedTenant object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -85,7 +85,7 @@ export interface RelatedTenantItemRequestBuilder extends BaseRequestBuilder<Rela
      toPatchRequestInformation(body: RelatedTenant, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of microsoft.graph.tenantGovernanceServices.relatedTenant object.
+ * Read the properties and relationships of microsoft.graph.relatedTenant object.
  */
 export interface RelatedTenantItemRequestBuilderGetQueryParameters {
     /**

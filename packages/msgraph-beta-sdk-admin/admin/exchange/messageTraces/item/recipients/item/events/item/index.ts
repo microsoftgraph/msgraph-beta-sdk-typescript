@@ -16,7 +16,6 @@ export interface MessageEventItemRequestBuilder extends BaseRequestBuilder<Messa
      * Delete navigation property events for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -24,7 +23,6 @@ export interface MessageEventItemRequestBuilder extends BaseRequestBuilder<Messa
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      get(requestConfiguration?: RequestConfiguration<MessageEventItemRequestBuilderGetQueryParameters> | undefined) : Promise<MessageEvent | undefined>;
     /**
@@ -33,21 +31,18 @@ export interface MessageEventItemRequestBuilder extends BaseRequestBuilder<Messa
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MessageEvent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      patch(body: MessageEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MessageEvent | undefined>;
     /**
      * Delete navigation property events for admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get events from admin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MessageEventItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -55,7 +50,6 @@ export interface MessageEventItemRequestBuilder extends BaseRequestBuilder<Messa
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toPatchRequestInformation(body: MessageEvent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

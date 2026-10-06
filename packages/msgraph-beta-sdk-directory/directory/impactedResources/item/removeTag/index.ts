@@ -44,15 +44,16 @@ export interface RemoveTagPostRequestBody extends AdditionalDataHolder, BackedMo
  */
 export interface RemoveTagRequestBuilder extends BaseRequestBuilder<RemoveTagRequestBuilder> {
     /**
-     * Invoke action removeTag
+     * Remove a user-defined tag from an impactedResource object. To remove the same tag from multiple impacted resources in a single request, use the removeTag action on the impactedResources collection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ImpactedResource>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/impactedresource-removetag?view=graph-rest-beta|Find more info here}
      */
      post(body: RemoveTagPostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ImpactedResource | undefined>;
     /**
-     * Invoke action removeTag
+     * Remove a user-defined tag from an impactedResource object. To remove the same tag from multiple impacted resources in a single request, use the removeTag action on the impactedResources collection.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

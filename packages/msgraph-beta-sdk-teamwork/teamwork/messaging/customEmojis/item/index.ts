@@ -11,7 +11,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
 /**
  * Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
  */
-export interface TeamworkCustomEmojiDisplayNameItemRequestBuilder extends BaseRequestBuilder<TeamworkCustomEmojiDisplayNameItemRequestBuilder> {
+export interface TeamworkCustomEmojiItemRequestBuilder extends BaseRequestBuilder<TeamworkCustomEmojiItemRequestBuilder> {
     /**
      * Delete navigation property customEmojis for teamwork
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -24,7 +24,7 @@ export interface TeamworkCustomEmojiDisplayNameItemRequestBuilder extends BaseRe
      * @returns {Promise<TeamworkCustomEmoji>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
-     get(requestConfiguration?: RequestConfiguration<TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
+     get(requestConfiguration?: RequestConfiguration<TeamworkCustomEmojiItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
     /**
      * Update the navigation property customEmojis in teamwork
      * @param body The request body
@@ -44,7 +44,7 @@ export interface TeamworkCustomEmojiDisplayNameItemRequestBuilder extends BaseRe
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
-     toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
+     toGetRequestInformation(requestConfiguration?: RequestConfiguration<TeamworkCustomEmojiItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
      * Update the navigation property customEmojis in teamwork
      * @param body The request body
@@ -56,7 +56,7 @@ export interface TeamworkCustomEmojiDisplayNameItemRequestBuilder extends BaseRe
 /**
  * The collection of custom emojis available in organization messaging.
  */
-export interface TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParameters {
+export interface TeamworkCustomEmojiItemRequestBuilderGetQueryParameters {
     /**
      * Expand related entities
      */
@@ -69,20 +69,20 @@ export interface TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParamet
 /**
  * Uri template for the request builder.
  */
-export const TeamworkCustomEmojiDisplayNameItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/messaging/customEmojis/{teamworkCustomEmoji%2DdisplayName}{?%24expand,%24select}";
+export const TeamworkCustomEmojiItemRequestBuilderUriTemplate = "{+baseurl}/teamwork/messaging/customEmojis/{teamworkCustomEmoji%2Did}{?%24expand,%24select}";
 /**
  * Mapper for query parameters from symbol name to serialization name represented as a constant.
  */
-const TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
+const TeamworkCustomEmojiItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
 };
 /**
  * Metadata for all the requests in the request builder.
  */
-export const TeamworkCustomEmojiDisplayNameItemRequestBuilderRequestsMetadata: RequestsMetadata = {
+export const TeamworkCustomEmojiItemRequestBuilderRequestsMetadata: RequestsMetadata = {
     delete: {
-        uriTemplate: TeamworkCustomEmojiDisplayNameItemRequestBuilderUriTemplate,
+        uriTemplate: TeamworkCustomEmojiItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
@@ -90,17 +90,17 @@ export const TeamworkCustomEmojiDisplayNameItemRequestBuilderRequestsMetadata: R
         adapterMethodName: "sendNoResponseContent",
     },
     get: {
-        uriTemplate: TeamworkCustomEmojiDisplayNameItemRequestBuilderUriTemplate,
+        uriTemplate: TeamworkCustomEmojiItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,
         },
         adapterMethodName: "send",
         responseBodyFactory:  createTeamworkCustomEmojiFromDiscriminatorValue,
-        queryParametersMapper: TeamworkCustomEmojiDisplayNameItemRequestBuilderGetQueryParametersMapper,
+        queryParametersMapper: TeamworkCustomEmojiItemRequestBuilderGetQueryParametersMapper,
     },
     patch: {
-        uriTemplate: TeamworkCustomEmojiDisplayNameItemRequestBuilderUriTemplate,
+        uriTemplate: TeamworkCustomEmojiItemRequestBuilderUriTemplate,
         responseBodyContentType: "application/json",
         errorMappings: {
             XXX: createODataErrorFromDiscriminatorValue as ParsableFactory<Parsable>,

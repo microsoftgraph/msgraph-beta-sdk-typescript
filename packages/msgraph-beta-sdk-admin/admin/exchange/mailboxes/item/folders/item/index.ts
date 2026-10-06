@@ -18,19 +18,16 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<MailboxFolderItemRequestBuilder> {
     /**
      * Provides operations to manage the childFolders property of the microsoft.graph.mailboxFolder entity.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get childFolders(): ChildFoldersRequestBuilder;
     /**
      * Provides operations to manage the items property of the microsoft.graph.mailboxFolder entity.
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
     get items(): ItemsRequestBuilder;
     /**
      * Delete a mailboxFolder or a child mailboxFolder within a mailbox.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailbox-delete-folders?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
@@ -39,7 +36,6 @@ export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<Mail
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailboxfolder-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MailboxFolderItemRequestBuilderGetQueryParameters> | undefined) : Promise<MailboxFolder | undefined>;
@@ -49,7 +45,6 @@ export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<Mail
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MailboxFolder>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      * @see {@link https://learn.microsoft.com/graph/api/mailboxfolder-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: MailboxFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MailboxFolder | undefined>;
@@ -57,14 +52,12 @@ export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<Mail
      * Delete a mailboxFolder or a child mailboxFolder within a mailbox.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Read the properties and relationships of a mailboxFolder object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MailboxFolderItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -72,7 +65,6 @@ export interface MailboxFolderItemRequestBuilder extends BaseRequestBuilder<Mail
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
      */
      toPatchRequestInformation(body: MailboxFolder, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
