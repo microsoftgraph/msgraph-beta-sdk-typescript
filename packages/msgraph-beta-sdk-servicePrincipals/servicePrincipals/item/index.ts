@@ -46,7 +46,11 @@ import { HomeRealmDiscoveryPoliciesRequestBuilderNavigationMetadata, HomeRealmDi
 // @ts-ignore
 import { LicenseDetailsRequestBuilderNavigationMetadata, LicenseDetailsRequestBuilderRequestsMetadata, type LicenseDetailsRequestBuilder } from './licenseDetails/index.js';
 // @ts-ignore
+import { LifecycleRequestBuilderNavigationMetadata, LifecycleRequestBuilderRequestsMetadata, type LifecycleRequestBuilder } from './lifecycle/index.js';
+// @ts-ignore
 import { MemberOfRequestBuilderNavigationMetadata, MemberOfRequestBuilderRequestsMetadata, type MemberOfRequestBuilder } from './memberOf/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceAttestRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceAttestRequestBuilder } from './microsoftGraphIdentityGovernanceAttest/index.js';
 // @ts-ignore
 import { Oauth2PermissionGrantsRequestBuilderNavigationMetadata, Oauth2PermissionGrantsRequestBuilderRequestsMetadata, type Oauth2PermissionGrantsRequestBuilder } from './oauth2PermissionGrants/index.js';
 // @ts-ignore
@@ -153,9 +157,17 @@ export interface ServicePrincipalItemRequestBuilder extends BaseRequestBuilder<S
      */
     get licenseDetails(): LicenseDetailsRequestBuilder;
     /**
+     * Provides operations to manage the lifecycle property of the microsoft.graph.servicePrincipal entity.
+     */
+    get lifecycle(): LifecycleRequestBuilder;
+    /**
      * Provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
      */
     get memberOf(): MemberOfRequestBuilder;
+    /**
+     * Provides operations to call the attest method.
+     */
+    get microsoftGraphIdentityGovernanceAttest(): MicrosoftGraphIdentityGovernanceAttestRequestBuilder;
     /**
      * Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
      */
@@ -349,9 +361,16 @@ export const ServicePrincipalItemRequestBuilderNavigationMetadata: Record<Exclud
         requestsMetadata: LicenseDetailsRequestBuilderRequestsMetadata,
         navigationMetadata: LicenseDetailsRequestBuilderNavigationMetadata,
     },
+    lifecycle: {
+        requestsMetadata: LifecycleRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecycleRequestBuilderNavigationMetadata,
+    },
     memberOf: {
         requestsMetadata: MemberOfRequestBuilderRequestsMetadata,
         navigationMetadata: MemberOfRequestBuilderNavigationMetadata,
+    },
+    microsoftGraphIdentityGovernanceAttest: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceAttestRequestBuilderRequestsMetadata,
     },
     oauth2PermissionGrants: {
         requestsMetadata: Oauth2PermissionGrantsRequestBuilderRequestsMetadata,

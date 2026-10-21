@@ -6,6 +6,8 @@ import { createTeamsChannelPlannerFromDiscriminatorValue, serializeTeamsChannelP
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { Plans_v2RequestBuilderNavigationMetadata, Plans_v2RequestBuilderRequestsMetadata, type Plans_v2RequestBuilder } from './plans_v2/index.js';
+// @ts-ignore
 import { PlansRequestBuilderNavigationMetadata, PlansRequestBuilderRequestsMetadata, type PlansRequestBuilder } from './plans/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -18,6 +20,10 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      * Provides operations to manage the plans property of the microsoft.graph.teamsChannelPlanner entity.
      */
     get plans(): PlansRequestBuilder;
+    /**
+     * Provides operations to manage the plans_v2 property of the microsoft.graph.teamsChannelPlanner entity.
+     */
+    get plans_v2(): Plans_v2RequestBuilder;
     /**
      * Delete navigation property planner for teams
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -90,6 +96,10 @@ export const PlannerRequestBuilderNavigationMetadata: Record<Exclude<keyof Plann
     plans: {
         requestsMetadata: PlansRequestBuilderRequestsMetadata,
         navigationMetadata: PlansRequestBuilderNavigationMetadata,
+    },
+    plans_v2: {
+        requestsMetadata: Plans_v2RequestBuilderRequestsMetadata,
+        navigationMetadata: Plans_v2RequestBuilderNavigationMetadata,
     },
 };
 /**

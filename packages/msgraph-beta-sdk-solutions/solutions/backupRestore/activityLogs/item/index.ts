@@ -19,7 +19,7 @@ export interface ActivityLogBaseItemRequestBuilder extends BaseRequestBuilder<Ac
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get activityLogs from solutions
+     * The list of activity logs in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityLogBase>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ActivityLogBaseItemRequestBuilder extends BaseRequestBuilder<Ac
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get activityLogs from solutions
+     * The list of activity logs in the tenant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ActivityLogBaseItemRequestBuilder extends BaseRequestBuilder<Ac
      toPatchRequestInformation(body: ActivityLogBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get activityLogs from solutions
+ * The list of activity logs in the tenant.
  */
 export interface ActivityLogBaseItemRequestBuilderGetQueryParameters {
     /**

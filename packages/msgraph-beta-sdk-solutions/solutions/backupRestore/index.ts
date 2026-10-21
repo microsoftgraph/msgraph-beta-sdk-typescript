@@ -24,6 +24,8 @@ import { EmailNotificationsSettingRequestBuilderRequestsMetadata, type EmailNoti
 // @ts-ignore
 import { EnableRequestBuilderRequestsMetadata, type EnableRequestBuilder } from './enable/index.js';
 // @ts-ignore
+import { EntraProtectionPoliciesRequestBuilderNavigationMetadata, EntraProtectionPoliciesRequestBuilderRequestsMetadata, type EntraProtectionPoliciesRequestBuilder } from './entraProtectionPolicies/index.js';
+// @ts-ignore
 import { ExchangeProtectionPoliciesRequestBuilderNavigationMetadata, ExchangeProtectionPoliciesRequestBuilderRequestsMetadata, type ExchangeProtectionPoliciesRequestBuilder } from './exchangeProtectionPolicies/index.js';
 // @ts-ignore
 import { ExchangeRestoreSessionsRequestBuilderNavigationMetadata, ExchangeRestoreSessionsRequestBuilderRequestsMetadata, type ExchangeRestoreSessionsRequestBuilder } from './exchangeRestoreSessions/index.js';
@@ -116,6 +118,10 @@ export interface BackupRestoreRequestBuilder extends BaseRequestBuilder<BackupRe
      * Provides operations to call the enable method.
      */
     get enable(): EnableRequestBuilder;
+    /**
+     * Provides operations to manage the entraProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
+     */
+    get entraProtectionPolicies(): EntraProtectionPoliciesRequestBuilder;
     /**
      * Provides operations to manage the exchangeProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.
      */
@@ -319,6 +325,10 @@ export const BackupRestoreRequestBuilderNavigationMetadata: Record<Exclude<keyof
     },
     enable: {
         requestsMetadata: EnableRequestBuilderRequestsMetadata,
+    },
+    entraProtectionPolicies: {
+        requestsMetadata: EntraProtectionPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: EntraProtectionPoliciesRequestBuilderNavigationMetadata,
     },
     exchangeProtectionPolicies: {
         requestsMetadata: ExchangeProtectionPoliciesRequestBuilderRequestsMetadata,

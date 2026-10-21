@@ -142,6 +142,8 @@ import { JoinedTeamsRequestBuilderNavigationMetadata, JoinedTeamsRequestBuilderR
 // @ts-ignore
 import { LicenseDetailsRequestBuilderNavigationMetadata, LicenseDetailsRequestBuilderRequestsMetadata, type LicenseDetailsRequestBuilder } from './licenseDetails/index.js';
 // @ts-ignore
+import { LifecycleRequestBuilderNavigationMetadata, LifecycleRequestBuilderRequestsMetadata, type LifecycleRequestBuilder } from './lifecycle/index.js';
+// @ts-ignore
 import { MailboxSettingsRequestBuilderRequestsMetadata, type MailboxSettingsRequestBuilder } from './mailboxSettings/index.js';
 // @ts-ignore
 import { MailFoldersRequestBuilderNavigationMetadata, MailFoldersRequestBuilderRequestsMetadata, type MailFoldersRequestBuilder } from './mailFolders/index.js';
@@ -157,6 +159,12 @@ import { ManagerRequestBuilderNavigationMetadata, ManagerRequestBuilderRequestsM
 import { MemberOfRequestBuilderNavigationMetadata, MemberOfRequestBuilderRequestsMetadata, type MemberOfRequestBuilder } from './memberOf/index.js';
 // @ts-ignore
 import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequestsMetadata, type MessagesRequestBuilder } from './messages/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder } from './microsoftGraphIdentityGovernanceAddSelfAsSponsor/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceAttestRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceAttestRequestBuilder } from './microsoftGraphIdentityGovernanceAttest/index.js';
+// @ts-ignore
+import { MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilderRequestsMetadata, type MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder } from './microsoftGraphIdentityGovernanceRemoveSelfAsSponsor/index.js';
 // @ts-ignore
 import { MobileAppIntentAndStatesRequestBuilderNavigationMetadata, MobileAppIntentAndStatesRequestBuilderRequestsMetadata, type MobileAppIntentAndStatesRequestBuilder } from './mobileAppIntentAndStates/index.js';
 // @ts-ignore
@@ -517,6 +525,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      */
     get licenseDetails(): LicenseDetailsRequestBuilder;
     /**
+     * Provides operations to manage the lifecycle property of the microsoft.graph.user entity.
+     */
+    get lifecycle(): LifecycleRequestBuilder;
+    /**
      * The mailboxSettings property
      */
     get mailboxSettings(): MailboxSettingsRequestBuilder;
@@ -548,6 +560,18 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to manage the messages property of the microsoft.graph.user entity.
      */
     get messages(): MessagesRequestBuilder;
+    /**
+     * Provides operations to call the addSelfAsSponsor method.
+     */
+    get microsoftGraphIdentityGovernanceAddSelfAsSponsor(): MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilder;
+    /**
+     * Provides operations to call the attest method.
+     */
+    get microsoftGraphIdentityGovernanceAttest(): MicrosoftGraphIdentityGovernanceAttestRequestBuilder;
+    /**
+     * Provides operations to call the removeSelfAsSponsor method.
+     */
+    get microsoftGraphIdentityGovernanceRemoveSelfAsSponsor(): MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilder;
     /**
      * Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.
      */
@@ -1097,6 +1121,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
         requestsMetadata: LicenseDetailsRequestBuilderRequestsMetadata,
         navigationMetadata: LicenseDetailsRequestBuilderNavigationMetadata,
     },
+    lifecycle: {
+        requestsMetadata: LifecycleRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecycleRequestBuilderNavigationMetadata,
+    },
     mailboxSettings: {
         requestsMetadata: MailboxSettingsRequestBuilderRequestsMetadata,
     },
@@ -1127,6 +1155,15 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     messages: {
         requestsMetadata: MessagesRequestBuilderRequestsMetadata,
         navigationMetadata: MessagesRequestBuilderNavigationMetadata,
+    },
+    microsoftGraphIdentityGovernanceAddSelfAsSponsor: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceAddSelfAsSponsorRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphIdentityGovernanceAttest: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceAttestRequestBuilderRequestsMetadata,
+    },
+    microsoftGraphIdentityGovernanceRemoveSelfAsSponsor: {
+        requestsMetadata: MicrosoftGraphIdentityGovernanceRemoveSelfAsSponsorRequestBuilderRequestsMetadata,
     },
     mobileAppIntentAndStates: {
         requestsMetadata: MobileAppIntentAndStatesRequestBuilderRequestsMetadata,

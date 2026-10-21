@@ -24,6 +24,8 @@ export function createUnsetReactionPostRequestBodyFromDiscriminatorValue(parseNo
 export function deserializeIntoUnsetReactionPostRequestBody(unsetReactionPostRequestBody: Partial<UnsetReactionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { unsetReactionPostRequestBody.backingStoreEnabled = true; },
+        "displayName": n => { unsetReactionPostRequestBody.displayName = n.getStringValue(); },
+        "reactionId": n => { unsetReactionPostRequestBody.reactionId = n.getStringValue(); },
         "reactionType": n => { unsetReactionPostRequestBody.reactionType = n.getStringValue(); },
     }
 }
@@ -36,6 +38,8 @@ export function deserializeIntoUnsetReactionPostRequestBody(unsetReactionPostReq
 // @ts-ignore
 export function serializeUnsetReactionPostRequestBody(writer: SerializationWriter, unsetReactionPostRequestBody: Partial<UnsetReactionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!unsetReactionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", unsetReactionPostRequestBody.displayName);
+    writer.writeStringValue("reactionId", unsetReactionPostRequestBody.reactionId);
     writer.writeStringValue("reactionType", unsetReactionPostRequestBody.reactionType);
     writer.writeAdditionalData(unsetReactionPostRequestBody.additionalData);
 }
@@ -44,6 +48,14 @@ export interface UnsetReactionPostRequestBody extends AdditionalDataHolder, Back
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * The displayName property
+     */
+    displayName?: string | null;
+    /**
+     * The reactionId property
+     */
+    reactionId?: string | null;
     /**
      * The reactionType property
      */

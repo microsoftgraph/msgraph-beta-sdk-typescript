@@ -10,6 +10,8 @@ import { AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDir
 // @ts-ignore
 import { InheritsPermissionsFromRequestBuilderNavigationMetadata, InheritsPermissionsFromRequestBuilderRequestsMetadata, type InheritsPermissionsFromRequestBuilder } from './inheritsPermissionsFrom/index.js';
 // @ts-ignore
+import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -25,14 +27,18 @@ export interface UnifiedRoleDefinitionItemRequestBuilder extends BaseRequestBuil
      */
     get inheritsPermissionsFrom(): InheritsPermissionsFromRequestBuilder;
     /**
-     * Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
+     * Provides operations to call the restore method.
+     */
+    get restore(): RestoreRequestBuilder;
+    /**
+     * Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. For the directory provider, deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+     * Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UnifiedRoleDefinition>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -48,13 +54,13 @@ export interface UnifiedRoleDefinitionItemRequestBuilder extends BaseRequestBuil
      */
      patch(body: UnifiedRoleDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UnifiedRoleDefinition | undefined>;
     /**
-     * Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
+     * Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. For the directory provider, deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra ID) 
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+     * Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -68,7 +74,7 @@ export interface UnifiedRoleDefinitionItemRequestBuilder extends BaseRequestBuil
      toPatchRequestInformation(body: UnifiedRoleDefinition, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
+ * Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider. For the directory provider, you can also get a soft-deleted custom role definition from the deleted-items collection. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- Defender (Microsoft Defender XDR Unified RBAC)- directory (Microsoft Entra directory roles)- entitlement management (Microsoft Entra entitlement management)- Exchange Online (Except China operated by 21Vianet)
  */
 export interface UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters {
     /**
@@ -101,6 +107,9 @@ export const UnifiedRoleDefinitionItemRequestBuilderNavigationMetadata: Record<E
     inheritsPermissionsFrom: {
         requestsMetadata: InheritsPermissionsFromRequestBuilderRequestsMetadata,
         navigationMetadata: InheritsPermissionsFromRequestBuilderNavigationMetadata,
+    },
+    restore: {
+        requestsMetadata: RestoreRequestBuilderRequestsMetadata,
     },
 };
 /**

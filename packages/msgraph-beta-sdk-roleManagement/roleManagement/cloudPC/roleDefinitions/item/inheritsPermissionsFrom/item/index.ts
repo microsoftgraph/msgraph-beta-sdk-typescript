@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilderRequestsMetadata, type AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder } from './assignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId/index.js';
 // @ts-ignore
+import { RestoreRequestBuilderRequestsMetadata, type RestoreRequestBuilder } from './restore/index.js';
+// @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
@@ -18,6 +20,10 @@ export interface UnifiedRoleDefinitionItemRequestBuilder extends BaseRequestBuil
      * Provides operations to call the assignedPrincipals method.
      */
     get assignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId(): AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilder;
+    /**
+     * Provides operations to call the restore method.
+     */
+    get restore(): RestoreRequestBuilder;
     /**
      * Delete navigation property inheritsPermissionsFrom for roleManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -89,6 +95,9 @@ const UnifiedRoleDefinitionItemRequestBuilderGetQueryParametersMapper: Record<st
 export const UnifiedRoleDefinitionItemRequestBuilderNavigationMetadata: Record<Exclude<keyof UnifiedRoleDefinitionItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     assignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeId: {
         requestsMetadata: AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdRequestBuilderRequestsMetadata,
+    },
+    restore: {
+        requestsMetadata: RestoreRequestBuilderRequestsMetadata,
     },
 };
 /**

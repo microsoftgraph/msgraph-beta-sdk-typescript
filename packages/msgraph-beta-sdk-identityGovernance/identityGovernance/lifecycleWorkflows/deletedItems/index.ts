@@ -6,6 +6,8 @@ import { createDeletedItemContainerFromDiscriminatorValue, type DeletedItemConta
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { LifecyclePoliciesRequestBuilderNavigationMetadata, LifecyclePoliciesRequestBuilderRequestsMetadata, type LifecyclePoliciesRequestBuilder } from './lifecyclePolicies/index.js';
+// @ts-ignore
 import { type WorkflowsRequestBuilder, WorkflowsRequestBuilderNavigationMetadata, WorkflowsRequestBuilderRequestsMetadata } from './workflows/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -14,6 +16,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
  */
 export interface DeletedItemsRequestBuilder extends BaseRequestBuilder<DeletedItemsRequestBuilder> {
+    /**
+     * Provides operations to manage the lifecyclePolicies property of the microsoft.graph.deletedItemContainer entity.
+     */
+    get lifecyclePolicies(): LifecyclePoliciesRequestBuilder;
     /**
      * Provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
      */
@@ -72,6 +78,10 @@ const DeletedItemsRequestBuilderGetQueryParametersMapper: Record<string, string>
  * Metadata for all the navigation properties in the request builder.
  */
 export const DeletedItemsRequestBuilderNavigationMetadata: Record<Exclude<keyof DeletedItemsRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    lifecyclePolicies: {
+        requestsMetadata: LifecyclePoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecyclePoliciesRequestBuilderNavigationMetadata,
+    },
     workflows: {
         requestsMetadata: WorkflowsRequestBuilderRequestsMetadata,
         navigationMetadata: WorkflowsRequestBuilderNavigationMetadata,

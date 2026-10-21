@@ -24,6 +24,8 @@ export function createSetReactionPostRequestBodyFromDiscriminatorValue(parseNode
 export function deserializeIntoSetReactionPostRequestBody(setReactionPostRequestBody: Partial<SetReactionPostRequestBody> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         "backingStoreEnabled": n => { setReactionPostRequestBody.backingStoreEnabled = true; },
+        "displayName": n => { setReactionPostRequestBody.displayName = n.getStringValue(); },
+        "reactionId": n => { setReactionPostRequestBody.reactionId = n.getStringValue(); },
         "reactionType": n => { setReactionPostRequestBody.reactionType = n.getStringValue(); },
     }
 }
@@ -36,6 +38,8 @@ export function deserializeIntoSetReactionPostRequestBody(setReactionPostRequest
 // @ts-ignore
 export function serializeSetReactionPostRequestBody(writer: SerializationWriter, setReactionPostRequestBody: Partial<SetReactionPostRequestBody> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!setReactionPostRequestBody || isSerializingDerivedType) { return; }
+    writer.writeStringValue("displayName", setReactionPostRequestBody.displayName);
+    writer.writeStringValue("reactionId", setReactionPostRequestBody.reactionId);
     writer.writeStringValue("reactionType", setReactionPostRequestBody.reactionType);
     writer.writeAdditionalData(setReactionPostRequestBody.additionalData);
 }
@@ -44,6 +48,14 @@ export interface SetReactionPostRequestBody extends AdditionalDataHolder, Backed
      * Stores model information.
      */
     backingStoreEnabled?: boolean | null;
+    /**
+     * The displayName property
+     */
+    displayName?: string | null;
+    /**
+     * The reactionId property
+     */
+    reactionId?: string | null;
     /**
      * The reactionType property
      */

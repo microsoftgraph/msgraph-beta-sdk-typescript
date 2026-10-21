@@ -12,6 +12,10 @@ import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilde
 // @ts-ignore
 import { InsightsRequestBuilderNavigationMetadata, InsightsRequestBuilderRequestsMetadata, type InsightsRequestBuilder } from './insights/index.js';
 // @ts-ignore
+import { LifecyclePoliciesRequestBuilderNavigationMetadata, LifecyclePoliciesRequestBuilderRequestsMetadata, type LifecyclePoliciesRequestBuilder } from './lifecyclePolicies/index.js';
+// @ts-ignore
+import { LifecyclePolicyPriorityConfigurationsRequestBuilderNavigationMetadata, LifecyclePolicyPriorityConfigurationsRequestBuilderRequestsMetadata, type LifecyclePolicyPriorityConfigurationsRequestBuilder } from './lifecyclePolicyPriorityConfigurations/index.js';
+// @ts-ignore
 import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
 // @ts-ignore
 import { TaskDefinitionsRequestBuilderNavigationMetadata, TaskDefinitionsRequestBuilderRequestsMetadata, type TaskDefinitionsRequestBuilder } from './taskDefinitions/index.js';
@@ -38,6 +42,14 @@ export interface LifecycleWorkflowsRequestBuilder extends BaseRequestBuilder<Lif
      * Provides operations to manage the insights property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      */
     get insights(): InsightsRequestBuilder;
+    /**
+     * Provides operations to manage the lifecyclePolicies property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+     */
+    get lifecyclePolicies(): LifecyclePoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the lifecyclePolicyPriorityConfigurations property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+     */
+    get lifecyclePolicyPriorityConfigurations(): LifecyclePolicyPriorityConfigurationsRequestBuilder;
     /**
      * Provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
      */
@@ -134,6 +146,14 @@ export const LifecycleWorkflowsRequestBuilderNavigationMetadata: Record<Exclude<
     insights: {
         requestsMetadata: InsightsRequestBuilderRequestsMetadata,
         navigationMetadata: InsightsRequestBuilderNavigationMetadata,
+    },
+    lifecyclePolicies: {
+        requestsMetadata: LifecyclePoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecyclePoliciesRequestBuilderNavigationMetadata,
+    },
+    lifecyclePolicyPriorityConfigurations: {
+        requestsMetadata: LifecyclePolicyPriorityConfigurationsRequestBuilderRequestsMetadata,
+        navigationMetadata: LifecyclePolicyPriorityConfigurationsRequestBuilderNavigationMetadata,
     },
     settings: {
         requestsMetadata: SettingsRequestBuilderRequestsMetadata,
