@@ -12,11 +12,15 @@ import { FavoritePlansRequestBuilderNavigationMetadata, FavoritePlansRequestBuil
 // @ts-ignore
 import { MyDayTasksRequestBuilderNavigationMetadata, MyDayTasksRequestBuilderRequestsMetadata, type MyDayTasksRequestBuilder } from './myDayTasks/index.js';
 // @ts-ignore
+import { Plans_v2RequestBuilderNavigationMetadata, Plans_v2RequestBuilderRequestsMetadata, type Plans_v2RequestBuilder } from './plans_v2/index.js';
+// @ts-ignore
 import { PlansRequestBuilderNavigationMetadata, PlansRequestBuilderRequestsMetadata, type PlansRequestBuilder } from './plans/index.js';
 // @ts-ignore
 import { RecentPlansRequestBuilderNavigationMetadata, RecentPlansRequestBuilderRequestsMetadata, type RecentPlansRequestBuilder } from './recentPlans/index.js';
 // @ts-ignore
 import { RosterPlansRequestBuilderNavigationMetadata, RosterPlansRequestBuilderRequestsMetadata, type RosterPlansRequestBuilder } from './rosterPlans/index.js';
+// @ts-ignore
+import { Tasks_v2RequestBuilderNavigationMetadata, Tasks_v2RequestBuilderRequestsMetadata, type Tasks_v2RequestBuilder } from './tasks_v2/index.js';
 // @ts-ignore
 import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetadata, type TasksRequestBuilder } from './tasks/index.js';
 // @ts-ignore
@@ -43,6 +47,10 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
     get plans(): PlansRequestBuilder;
     /**
+     * Provides operations to manage the plans_v2 property of the microsoft.graph.plannerUser entity.
+     */
+    get plans_v2(): Plans_v2RequestBuilder;
+    /**
      * Provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
      */
     get recentPlans(): RecentPlansRequestBuilder;
@@ -54,6 +62,10 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      * Provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
      */
     get tasks(): TasksRequestBuilder;
+    /**
+     * Provides operations to manage the tasks_v2 property of the microsoft.graph.plannerUser entity.
+     */
+    get tasks_v2(): Tasks_v2RequestBuilder;
     /**
      * Delete navigation property planner for users
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -139,6 +151,10 @@ export const PlannerRequestBuilderNavigationMetadata: Record<Exclude<keyof Plann
         requestsMetadata: PlansRequestBuilderRequestsMetadata,
         navigationMetadata: PlansRequestBuilderNavigationMetadata,
     },
+    plans_v2: {
+        requestsMetadata: Plans_v2RequestBuilderRequestsMetadata,
+        navigationMetadata: Plans_v2RequestBuilderNavigationMetadata,
+    },
     recentPlans: {
         requestsMetadata: RecentPlansRequestBuilderRequestsMetadata,
         navigationMetadata: RecentPlansRequestBuilderNavigationMetadata,
@@ -150,6 +166,10 @@ export const PlannerRequestBuilderNavigationMetadata: Record<Exclude<keyof Plann
     tasks: {
         requestsMetadata: TasksRequestBuilderRequestsMetadata,
         navigationMetadata: TasksRequestBuilderNavigationMetadata,
+    },
+    tasks_v2: {
+        requestsMetadata: Tasks_v2RequestBuilderRequestsMetadata,
+        navigationMetadata: Tasks_v2RequestBuilderNavigationMetadata,
     },
 };
 /**

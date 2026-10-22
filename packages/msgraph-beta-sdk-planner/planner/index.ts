@@ -10,9 +10,13 @@ import { BucketsRequestBuilderNavigationMetadata, BucketsRequestBuilderRequestsM
 // @ts-ignore
 import { GoalsRequestBuilderNavigationMetadata, GoalsRequestBuilderRequestsMetadata, type GoalsRequestBuilder } from './goals/index.js';
 // @ts-ignore
+import { Plans_v2RequestBuilderNavigationMetadata, Plans_v2RequestBuilderRequestsMetadata, type Plans_v2RequestBuilder } from './plans_v2/index.js';
+// @ts-ignore
 import { PlansRequestBuilderNavigationMetadata, PlansRequestBuilderRequestsMetadata, type PlansRequestBuilder } from './plans/index.js';
 // @ts-ignore
 import { RostersRequestBuilderNavigationMetadata, RostersRequestBuilderRequestsMetadata, type RostersRequestBuilder } from './rosters/index.js';
+// @ts-ignore
+import { Tasks_v2RequestBuilderNavigationMetadata, Tasks_v2RequestBuilderRequestsMetadata, type Tasks_v2RequestBuilder } from './tasks_v2/index.js';
 // @ts-ignore
 import { TasksRequestBuilderNavigationMetadata, TasksRequestBuilderRequestsMetadata, type TasksRequestBuilder } from './tasks/index.js';
 // @ts-ignore
@@ -35,6 +39,10 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
     get plans(): PlansRequestBuilder;
     /**
+     * Provides operations to manage the plans_v2 property of the microsoft.graph.planner entity.
+     */
+    get plans_v2(): Plans_v2RequestBuilder;
+    /**
      * Provides operations to manage the rosters property of the microsoft.graph.planner entity.
      */
     get rosters(): RostersRequestBuilder;
@@ -43,28 +51,34 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
     get tasks(): TasksRequestBuilder;
     /**
-     * Get planner
+     * Provides operations to manage the tasks_v2 property of the microsoft.graph.planner entity.
+     */
+    get tasks_v2(): Tasks_v2RequestBuilder;
+    /**
+     * Read the properties and relationships of planner object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Planner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/planner-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : Promise<Planner | undefined>;
     /**
-     * Update planner
+     * Update the properties of a planner object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Planner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/planner-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: Planner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Planner | undefined>;
     /**
-     * Get planner
+     * Read the properties and relationships of planner object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update planner
+     * Update the properties of a planner object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -72,7 +86,7 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      toPatchRequestInformation(body: Planner, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get planner
+ * Read the properties and relationships of planner object.
  */
 export interface PlannerRequestBuilderGetQueryParameters {
     /**
@@ -111,6 +125,10 @@ export const PlannerRequestBuilderNavigationMetadata: Record<Exclude<keyof Plann
         requestsMetadata: PlansRequestBuilderRequestsMetadata,
         navigationMetadata: PlansRequestBuilderNavigationMetadata,
     },
+    plans_v2: {
+        requestsMetadata: Plans_v2RequestBuilderRequestsMetadata,
+        navigationMetadata: Plans_v2RequestBuilderNavigationMetadata,
+    },
     rosters: {
         requestsMetadata: RostersRequestBuilderRequestsMetadata,
         navigationMetadata: RostersRequestBuilderNavigationMetadata,
@@ -118,6 +136,10 @@ export const PlannerRequestBuilderNavigationMetadata: Record<Exclude<keyof Plann
     tasks: {
         requestsMetadata: TasksRequestBuilderRequestsMetadata,
         navigationMetadata: TasksRequestBuilderNavigationMetadata,
+    },
+    tasks_v2: {
+        requestsMetadata: Tasks_v2RequestBuilderRequestsMetadata,
+        navigationMetadata: Tasks_v2RequestBuilderNavigationMetadata,
     },
 };
 /**

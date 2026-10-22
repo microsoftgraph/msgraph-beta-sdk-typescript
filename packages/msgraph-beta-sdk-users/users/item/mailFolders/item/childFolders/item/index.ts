@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CopyRequestBuilderRequestsMetadata, type CopyRequestBuilder } from './copy/index.js';
 // @ts-ignore
+import { ImportMimeRequestBuilderRequestsMetadata, type ImportMimeRequestBuilder } from './importMime/index.js';
+// @ts-ignore
 import { MessageRulesRequestBuilderNavigationMetadata, MessageRulesRequestBuilderRequestsMetadata, type MessageRulesRequestBuilder } from './messageRules/index.js';
 // @ts-ignore
 import { MessagesRequestBuilderNavigationMetadata, MessagesRequestBuilderRequestsMetadata, type MessagesRequestBuilder } from './messages/index.js';
@@ -32,6 +34,10 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
      * Provides operations to call the copy method.
      */
     get copy(): CopyRequestBuilder;
+    /**
+     * Provides operations to call the importMime method.
+     */
+    get importMime(): ImportMimeRequestBuilder;
     /**
      * Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
      */
@@ -135,6 +141,9 @@ const MailFolderItemRequestBuilderGetQueryParametersMapper: Record<string, strin
 export const MailFolderItemRequestBuilderNavigationMetadata: Record<Exclude<keyof MailFolderItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     copy: {
         requestsMetadata: CopyRequestBuilderRequestsMetadata,
+    },
+    importMime: {
+        requestsMetadata: ImportMimeRequestBuilderRequestsMetadata,
     },
     messageRules: {
         requestsMetadata: MessageRulesRequestBuilderRequestsMetadata,

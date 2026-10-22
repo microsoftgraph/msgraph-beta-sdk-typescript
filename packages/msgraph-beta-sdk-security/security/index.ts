@@ -80,6 +80,8 @@ import { TriggerTypesRequestBuilderNavigationMetadata, TriggerTypesRequestBuilde
 // @ts-ignore
 import { type UserSecurityProfilesRequestBuilder, UserSecurityProfilesRequestBuilderNavigationMetadata, UserSecurityProfilesRequestBuilderRequestsMetadata } from './userSecurityProfiles/index.js';
 // @ts-ignore
+import { type WorkbooksRequestBuilder, WorkbooksRequestBuilderNavigationMetadata, WorkbooksRequestBuilderRequestsMetadata } from './workbooks/index.js';
+// @ts-ignore
 import { type ZonesRequestBuilder, ZonesRequestBuilderNavigationMetadata, ZonesRequestBuilderRequestsMetadata } from './zones/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -232,6 +234,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
      */
     get userSecurityProfiles(): UserSecurityProfilesRequestBuilder;
+    /**
+     * Provides operations to manage the workbooks property of the microsoft.graph.security entity.
+     */
+    get workbooks(): WorkbooksRequestBuilder;
     /**
      * Provides operations to manage the zones property of the microsoft.graph.security entity.
      */
@@ -443,6 +449,10 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     userSecurityProfiles: {
         requestsMetadata: UserSecurityProfilesRequestBuilderRequestsMetadata,
         navigationMetadata: UserSecurityProfilesRequestBuilderNavigationMetadata,
+    },
+    workbooks: {
+        requestsMetadata: WorkbooksRequestBuilderRequestsMetadata,
+        navigationMetadata: WorkbooksRequestBuilderNavigationMetadata,
     },
     zones: {
         requestsMetadata: ZonesRequestBuilderRequestsMetadata,

@@ -12,6 +12,8 @@ import { BucketsRequestBuilderNavigationMetadata, BucketsRequestBuilderRequestsM
 // @ts-ignore
 import { DetailsRequestBuilderRequestsMetadata, type DetailsRequestBuilder } from './details/index.js';
 // @ts-ignore
+import { ExtendExpiryRequestBuilderRequestsMetadata, type ExtendExpiryRequestBuilder } from './extendExpiry/index.js';
+// @ts-ignore
 import { GetUsageRightsRequestBuilderRequestsMetadata, type GetUsageRightsRequestBuilder } from './getUsageRights/index.js';
 // @ts-ignore
 import { GoalsRequestBuilderNavigationMetadata, GoalsRequestBuilderRequestsMetadata, type GoalsRequestBuilder } from './goals/index.js';
@@ -42,6 +44,10 @@ export interface PlannerPlanItemRequestBuilder extends BaseRequestBuilder<Planne
      * Provides operations to manage the details property of the microsoft.graph.plannerPlan entity.
      */
     get details(): DetailsRequestBuilder;
+    /**
+     * Provides operations to call the extendExpiry method.
+     */
+    get extendExpiry(): ExtendExpiryRequestBuilder;
     /**
      * Provides operations to call the getUsageRights method.
      */
@@ -147,6 +153,9 @@ export const PlannerPlanItemRequestBuilderNavigationMetadata: Record<Exclude<key
     },
     details: {
         requestsMetadata: DetailsRequestBuilderRequestsMetadata,
+    },
+    extendExpiry: {
+        requestsMetadata: ExtendExpiryRequestBuilderRequestsMetadata,
     },
     getUsageRights: {
         requestsMetadata: GetUsageRightsRequestBuilderRequestsMetadata,

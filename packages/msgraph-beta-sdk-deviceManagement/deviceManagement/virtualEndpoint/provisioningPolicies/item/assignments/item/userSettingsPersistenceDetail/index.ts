@@ -8,9 +8,15 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { BatchCleanupUserSettingsPersistenceProfileRequestBuilderRequestsMetadata, type BatchCleanupUserSettingsPersistenceProfileRequestBuilder } from './batchCleanupUserSettingsPersistenceProfile/index.js';
 // @ts-ignore
+import { BulkCreateUserProfileSnapshotRequestBuilderRequestsMetadata, type BulkCreateUserProfileSnapshotRequestBuilder } from './bulkCreateUserProfileSnapshot/index.js';
+// @ts-ignore
+import { BulkExportUserProfileSnapshotRequestBuilderRequestsMetadata, type BulkExportUserProfileSnapshotRequestBuilder } from './bulkExportUserProfileSnapshot/index.js';
+// @ts-ignore
 import { RetrieveUserSettingsPersistenceProfilesWithConfigurationIdRequestBuilderRequestsMetadata, type RetrieveUserSettingsPersistenceProfilesWithConfigurationIdRequestBuilder } from './retrieveUserSettingsPersistenceProfilesWithConfigurationId/index.js';
 // @ts-ignore
 import { RetrieveUserSettingsPersistenceProfileUsageWithConfigurationIdRequestBuilderRequestsMetadata, type RetrieveUserSettingsPersistenceProfileUsageWithConfigurationIdRequestBuilder } from './retrieveUserSettingsPersistenceProfileUsageWithConfigurationId/index.js';
+// @ts-ignore
+import { type UserProfileSnapshotsRequestBuilder, UserProfileSnapshotsRequestBuilderNavigationMetadata, UserProfileSnapshotsRequestBuilderRequestsMetadata } from './userProfileSnapshots/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -22,6 +28,18 @@ export interface UserSettingsPersistenceDetailRequestBuilder extends BaseRequest
      * Provides operations to call the batchCleanupUserSettingsPersistenceProfile method.
      */
     get batchCleanupUserSettingsPersistenceProfile(): BatchCleanupUserSettingsPersistenceProfileRequestBuilder;
+    /**
+     * Provides operations to call the bulkCreateUserProfileSnapshot method.
+     */
+    get bulkCreateUserProfileSnapshot(): BulkCreateUserProfileSnapshotRequestBuilder;
+    /**
+     * Provides operations to call the bulkExportUserProfileSnapshot method.
+     */
+    get bulkExportUserProfileSnapshot(): BulkExportUserProfileSnapshotRequestBuilder;
+    /**
+     * Provides operations to manage the userProfileSnapshots property of the microsoft.graph.cloudPCUserSettingsPersistenceDetail entity.
+     */
+    get userProfileSnapshots(): UserProfileSnapshotsRequestBuilder;
     /**
      * Delete navigation property userSettingsPersistenceDetail for deviceManagement
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -113,6 +131,16 @@ export const UserSettingsPersistenceDetailRequestBuilderNavigationMetadata: Reco
     },
     batchCleanupUserSettingsPersistenceProfile: {
         requestsMetadata: BatchCleanupUserSettingsPersistenceProfileRequestBuilderRequestsMetadata,
+    },
+    bulkCreateUserProfileSnapshot: {
+        requestsMetadata: BulkCreateUserProfileSnapshotRequestBuilderRequestsMetadata,
+    },
+    bulkExportUserProfileSnapshot: {
+        requestsMetadata: BulkExportUserProfileSnapshotRequestBuilderRequestsMetadata,
+    },
+    userProfileSnapshots: {
+        requestsMetadata: UserProfileSnapshotsRequestBuilderRequestsMetadata,
+        navigationMetadata: UserProfileSnapshotsRequestBuilderNavigationMetadata,
     },
 };
 /**

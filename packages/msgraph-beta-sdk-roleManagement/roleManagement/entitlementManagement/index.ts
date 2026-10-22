@@ -6,6 +6,8 @@ import { createRbacApplicationFromDiscriminatorValue, serializeRbacApplication, 
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { DeletedItemsRequestBuilderNavigationMetadata, DeletedItemsRequestBuilderRequestsMetadata, type DeletedItemsRequestBuilder } from './deletedItems/index.js';
+// @ts-ignore
 import { ResourceNamespacesRequestBuilderNavigationMetadata, ResourceNamespacesRequestBuilderRequestsMetadata, type ResourceNamespacesRequestBuilder } from './resourceNamespaces/index.js';
 // @ts-ignore
 import { RoleAssignmentApprovalsRequestBuilderNavigationMetadata, RoleAssignmentApprovalsRequestBuilderRequestsMetadata, type RoleAssignmentApprovalsRequestBuilder } from './roleAssignmentApprovals/index.js';
@@ -38,6 +40,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
  */
 export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<EntitlementManagementRequestBuilder> {
+    /**
+     * Provides operations to manage the deletedItems property of the microsoft.graph.rbacApplication entity.
+     */
+    get deletedItems(): DeletedItemsRequestBuilder;
     /**
      * Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
      */
@@ -159,6 +165,10 @@ const EntitlementManagementRequestBuilderGetQueryParametersMapper: Record<string
  * Metadata for all the navigation properties in the request builder.
  */
 export const EntitlementManagementRequestBuilderNavigationMetadata: Record<Exclude<keyof EntitlementManagementRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    deletedItems: {
+        requestsMetadata: DeletedItemsRequestBuilderRequestsMetadata,
+        navigationMetadata: DeletedItemsRequestBuilderNavigationMetadata,
+    },
     resourceNamespaces: {
         requestsMetadata: ResourceNamespacesRequestBuilderRequestsMetadata,
         navigationMetadata: ResourceNamespacesRequestBuilderNavigationMetadata,

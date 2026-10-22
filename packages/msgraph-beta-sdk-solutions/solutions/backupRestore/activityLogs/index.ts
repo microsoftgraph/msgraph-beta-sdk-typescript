@@ -27,10 +27,11 @@ export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityL
      */
      byActivityLogBaseId(activityLogBaseId: string) : ActivityLogBaseItemRequestBuilder;
     /**
-     * Get activityLogs from solutions
+     * Get a list of activityLogBase objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ActivityLogBaseCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/backuprestoreroot-list-activitylogs?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<ActivityLogsRequestBuilderGetQueryParameters> | undefined) : Promise<ActivityLogBaseCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityL
      */
      post(body: ActivityLogBase, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ActivityLogBase | undefined>;
     /**
-     * Get activityLogs from solutions
+     * Get a list of activityLogBase objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface ActivityLogsRequestBuilder extends BaseRequestBuilder<ActivityL
      toPostRequestInformation(body: ActivityLogBase, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get activityLogs from solutions
+ * Get a list of activityLogBase objects and their properties.
  */
 export interface ActivityLogsRequestBuilderGetQueryParameters {
     /**
