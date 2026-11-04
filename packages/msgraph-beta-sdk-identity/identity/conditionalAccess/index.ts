@@ -34,6 +34,7 @@ export interface ConditionalAccessRequestBuilder extends BaseRequestBuilder<Cond
     get authenticationStrength(): AuthenticationStrengthRequestBuilder;
     /**
      * Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.
+     * @deprecated The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31
      */
     get authenticationStrengths(): AuthenticationStrengthsRequestBuilder;
     /**

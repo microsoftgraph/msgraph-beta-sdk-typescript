@@ -13,14 +13,14 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface RingItemRequestBuilder extends BaseRequestBuilder<RingItemRequestBuilder> {
     /**
-     * Delete a ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Delete a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-ring-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Read the properties and relationships of ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Ring>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -28,7 +28,7 @@ export interface RingItemRequestBuilder extends BaseRequestBuilder<RingItemReque
      */
      get(requestConfiguration?: RequestConfiguration<RingItemRequestBuilderGetQueryParameters> | undefined) : Promise<Ring | undefined>;
     /**
-     * Update the properties of a ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Update the properties of a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Ring>}
@@ -37,19 +37,19 @@ export interface RingItemRequestBuilder extends BaseRequestBuilder<RingItemReque
      */
      patch(body: Ring, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Ring | undefined>;
     /**
-     * Delete a ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Delete a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Read the properties and relationships of ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RingItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Update the properties of a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -57,7 +57,7 @@ export interface RingItemRequestBuilder extends BaseRequestBuilder<RingItemReque
      toPatchRequestInformation(body: Ring, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
+ * Read the properties and relationships of ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
  */
 export interface RingItemRequestBuilderGetQueryParameters {
     /**

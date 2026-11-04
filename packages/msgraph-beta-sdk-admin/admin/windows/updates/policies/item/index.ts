@@ -6,6 +6,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { createPolicyFromDiscriminatorValue, serializePolicy, type Policy } from '@microsoft/msgraph-beta-sdk/models/windowsUpdates/index.js';
 // @ts-ignore
+import { ApplicableCatalogsRequestBuilderNavigationMetadata, ApplicableCatalogsRequestBuilderRequestsMetadata, type ApplicableCatalogsRequestBuilder } from './applicableCatalogs/index.js';
+// @ts-ignore
 import { ApplicableContentRequestBuilderNavigationMetadata, ApplicableContentRequestBuilderRequestsMetadata, type ApplicableContentRequestBuilder } from './applicableContent/index.js';
 // @ts-ignore
 import { ApprovalsRequestBuilderNavigationMetadata, ApprovalsRequestBuilderRequestsMetadata, type ApprovalsRequestBuilder } from './approvals/index.js';
@@ -19,6 +21,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface PolicyItemRequestBuilder extends BaseRequestBuilder<PolicyItemRequestBuilder> {
     /**
+     * Provides operations to manage the applicableCatalogs property of the microsoft.graph.windowsUpdates.policy entity.
+     */
+    get applicableCatalogs(): ApplicableCatalogsRequestBuilder;
+    /**
      * Provides operations to manage the applicableContent property of the microsoft.graph.windowsUpdates.policy entity.
      */
     get applicableContent(): ApplicableContentRequestBuilder;
@@ -31,14 +37,14 @@ export interface PolicyItemRequestBuilder extends BaseRequestBuilder<PolicyItemR
      */
     get rings(): RingsRequestBuilder;
     /**
-     * Delete a Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Delete a Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/windowsupdates-policy-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Read the properties and relationships of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Policy>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -46,7 +52,7 @@ export interface PolicyItemRequestBuilder extends BaseRequestBuilder<PolicyItemR
      */
      get(requestConfiguration?: RequestConfiguration<PolicyItemRequestBuilderGetQueryParameters> | undefined) : Promise<Policy | undefined>;
     /**
-     * Update the properties of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Update the properties of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Policy>}
@@ -55,19 +61,19 @@ export interface PolicyItemRequestBuilder extends BaseRequestBuilder<PolicyItemR
      */
      patch(body: Policy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Policy | undefined>;
     /**
-     * Delete a Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Delete a Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Read the properties and relationships of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PolicyItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Update the properties of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -75,7 +81,7 @@ export interface PolicyItemRequestBuilder extends BaseRequestBuilder<PolicyItemR
      toPatchRequestInformation(body: Policy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+ * Read the properties and relationships of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
  */
 export interface PolicyItemRequestBuilderGetQueryParameters {
     /**
@@ -102,6 +108,10 @@ const PolicyItemRequestBuilderGetQueryParametersMapper: Record<string, string> =
  * Metadata for all the navigation properties in the request builder.
  */
 export const PolicyItemRequestBuilderNavigationMetadata: Record<Exclude<keyof PolicyItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    applicableCatalogs: {
+        requestsMetadata: ApplicableCatalogsRequestBuilderRequestsMetadata,
+        navigationMetadata: ApplicableCatalogsRequestBuilderNavigationMetadata,
+    },
     applicableContent: {
         requestsMetadata: ApplicableContentRequestBuilderRequestsMetadata,
         navigationMetadata: ApplicableContentRequestBuilderNavigationMetadata,

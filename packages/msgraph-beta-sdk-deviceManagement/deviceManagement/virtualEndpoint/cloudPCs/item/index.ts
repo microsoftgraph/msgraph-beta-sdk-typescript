@@ -26,6 +26,8 @@ import { PowerOnRequestBuilderRequestsMetadata, type PowerOnRequestBuilder } fro
 // @ts-ignore
 import { RebootRequestBuilderRequestsMetadata, type RebootRequestBuilder } from './reboot/index.js';
 // @ts-ignore
+import { RelocateRequestBuilderRequestsMetadata, type RelocateRequestBuilder } from './relocate/index.js';
+// @ts-ignore
 import { RenameRequestBuilderRequestsMetadata, type RenameRequestBuilder } from './rename/index.js';
 // @ts-ignore
 import { ReprovisionRequestBuilderRequestsMetadata, type ReprovisionRequestBuilder } from './reprovision/index.js';
@@ -78,6 +80,7 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
     get getCloudPcConnectivityHistory(): GetCloudPcConnectivityHistoryRequestBuilder;
     /**
      * Provides operations to call the getCloudPcLaunchInfo method.
+     * @deprecated Starting from Oct 30, 2026, this API: getCloudPcLaunchInfo will be deprecated and no longer be supported. Please use the new API:retrieveCloudPcLaunchDetail to retrieve same details. as of 2025-09/cloudPcLaunchInfo on 2025-09-30 and will be removed 2026-10-30
      */
     get getCloudPcLaunchInfo(): GetCloudPcLaunchInfoRequestBuilder;
     /**
@@ -100,6 +103,10 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * Provides operations to call the reboot method.
      */
     get reboot(): RebootRequestBuilder;
+    /**
+     * Provides operations to call the relocate method.
+     */
+    get relocate(): RelocateRequestBuilder;
     /**
      * Provides operations to call the rename method.
      */
@@ -255,6 +262,9 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     },
     reboot: {
         requestsMetadata: RebootRequestBuilderRequestsMetadata,
+    },
+    relocate: {
+        requestsMetadata: RelocateRequestBuilderRequestsMetadata,
     },
     rename: {
         requestsMetadata: RenameRequestBuilderRequestsMetadata,

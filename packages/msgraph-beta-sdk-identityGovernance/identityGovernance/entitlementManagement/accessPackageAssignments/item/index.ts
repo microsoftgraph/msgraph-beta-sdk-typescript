@@ -30,10 +30,12 @@ export interface AccessPackageAssignmentItemRequestBuilder extends BaseRequestBu
     get accessPackage(): AccessPackageRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentPolicy property of the microsoft.graph.accessPackageAssignment entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackageAssignmentPolicy(): AccessPackageAssignmentPolicyRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.accessPackageAssignment entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackageAssignmentRequests(): AccessPackageAssignmentRequestsRequestBuilder;
     /**

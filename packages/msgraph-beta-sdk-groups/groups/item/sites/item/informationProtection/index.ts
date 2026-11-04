@@ -42,14 +42,17 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
     get dataLossPreventionPolicies(): DataLossPreventionPoliciesRequestBuilder;
     /**
      * Provides operations to call the decryptBuffer method.
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
      */
     get decryptBuffer(): DecryptBufferRequestBuilder;
     /**
      * Provides operations to call the encryptBuffer method.
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
      */
     get encryptBuffer(): EncryptBufferRequestBuilder;
     /**
      * Provides operations to manage the policy property of the microsoft.graph.informationProtection entity.
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
      */
     get policy(): PolicyRequestBuilder;
     /**
@@ -62,6 +65,7 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
     get sensitivityPolicySettings(): SensitivityPolicySettingsRequestBuilder;
     /**
      * Provides operations to call the signDigest method.
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
      */
     get signDigest(): SignDigestRequestBuilder;
     /**
@@ -70,6 +74,7 @@ export interface InformationProtectionRequestBuilder extends BaseRequestBuilder<
     get threatAssessmentRequests(): ThreatAssessmentRequestsRequestBuilder;
     /**
      * Provides operations to call the verifySignature method.
+     * @deprecated This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
      */
     get verifySignature(): VerifySignatureRequestBuilder;
     /**

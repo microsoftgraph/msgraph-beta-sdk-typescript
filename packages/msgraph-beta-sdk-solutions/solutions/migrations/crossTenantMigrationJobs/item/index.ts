@@ -22,47 +22,40 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface CrossTenantMigrationJobItemRequestBuilder extends BaseRequestBuilder<CrossTenantMigrationJobItemRequestBuilder> {
     /**
      * Provides operations to call the cancel method.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to call the migrate method.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get migrate(): MigrateRequestBuilder;
     /**
      * Provides operations to manage the users property of the microsoft.graph.crossTenantMigrationJob entity.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get users(): UsersRequestBuilder;
     /**
      * Provides operations to call the validate method.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get validate(): ValidateRequestBuilder;
     /**
      * Delete navigation property crossTenantMigrationJobs for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
+     * Read the properties and relationships of a crossTenantMigrationJob object. This API provides details about the migration job, but not about the individual crossTenantMigrationTasks objects associated with the migration job.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      * @see {@link https://learn.microsoft.com/graph/api/crosstenantmigrationjob-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CrossTenantMigrationJobItemRequestBuilderGetQueryParameters> | undefined) : Promise<CrossTenantMigrationJob | undefined>;
     /**
-     * Update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.
+     * Update the completeAfterDateTime property of a crossTenantMigrationJob object. Only updates to completeAfterDateTime are supported. This property specifies when the migration job can proceed toward completion. If the value is in the past, the service treats it as already due and proceeds toward completion during its next processing cycle. This behavior doesn't bypass earlier validation or synchronization stages.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationJob>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      * @see {@link https://learn.microsoft.com/graph/api/crosstenantmigrationjob-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: CrossTenantMigrationJob, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantMigrationJob | undefined>;
@@ -70,27 +63,24 @@ export interface CrossTenantMigrationJobItemRequestBuilder extends BaseRequestBu
      * Delete navigation property crossTenantMigrationJobs for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
+     * Read the properties and relationships of a crossTenantMigrationJob object. This API provides details about the migration job, but not about the individual crossTenantMigrationTasks objects associated with the migration job.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CrossTenantMigrationJobItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.
+     * Update the completeAfterDateTime property of a crossTenantMigrationJob object. Only updates to completeAfterDateTime are supported. This property specifies when the migration job can proceed toward completion. If the value is in the past, the service treats it as already due and proceeds toward completion during its next processing cycle. This behavior doesn't bypass earlier validation or synchronization stages.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toPatchRequestInformation(body: CrossTenantMigrationJob, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
+ * Read the properties and relationships of a crossTenantMigrationJob object. This API provides details about the migration job, but not about the individual crossTenantMigrationTasks objects associated with the migration job.
  */
 export interface CrossTenantMigrationJobItemRequestBuilderGetQueryParameters {
     /**

@@ -27,7 +27,7 @@ export interface RingsRequestBuilder extends BaseRequestBuilder<RingsRequestBuil
      */
      byRingId(ringId: string) : RingItemRequestBuilder;
     /**
-     * Get a list of the ring objects and their properties. You can use this method with the following child object type: qualityUpdateRing.
+     * Get a list of the ring objects and their properties. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<RingCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface RingsRequestBuilder extends BaseRequestBuilder<RingsRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<RingsRequestBuilderGetQueryParameters> | undefined) : Promise<RingCollectionResponse | undefined>;
     /**
-     * Create a new ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Create a new ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Ring>}
@@ -44,13 +44,13 @@ export interface RingsRequestBuilder extends BaseRequestBuilder<RingsRequestBuil
      */
      post(body: Ring, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Ring | undefined>;
     /**
-     * Get a list of the ring objects and their properties. You can use this method with the following child object type: qualityUpdateRing.
+     * Get a list of the ring objects and their properties. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RingsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new ring object. You can use this method with the following child object type: qualityUpdateRing.
+     * Create a new ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface RingsRequestBuilder extends BaseRequestBuilder<RingsRequestBuil
      toPostRequestInformation(body: Ring, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the ring objects and their properties. You can use this method with the following child object type: qualityUpdateRing.
+ * Get a list of the ring objects and their properties. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
  */
 export interface RingsRequestBuilderGetQueryParameters {
     /**

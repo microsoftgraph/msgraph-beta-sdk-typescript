@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CatalogRequestBuilderNavigationMetadata, CatalogRequestBuilderRequestsMetadata, type CatalogRequestBuilder } from './catalog/index.js';
 // @ts-ignore
+import { DataRequestBuilderNavigationMetadata, DataRequestBuilderRequestsMetadata, type DataRequestBuilder } from './data/index.js';
+// @ts-ignore
 import { DeploymentAudiencesRequestBuilderNavigationMetadata, DeploymentAudiencesRequestBuilderRequestsMetadata, type DeploymentAudiencesRequestBuilder } from './deploymentAudiences/index.js';
 // @ts-ignore
 import { DeploymentsRequestBuilderNavigationMetadata, DeploymentsRequestBuilderRequestsMetadata, type DeploymentsRequestBuilder } from './deployments/index.js';
@@ -17,6 +19,8 @@ import { PoliciesRequestBuilderNavigationMetadata, PoliciesRequestBuilderRequest
 import { ProductsRequestBuilderNavigationMetadata, ProductsRequestBuilderRequestsMetadata, type ProductsRequestBuilder } from './products/index.js';
 // @ts-ignore
 import { ResourceConnectionsRequestBuilderNavigationMetadata, ResourceConnectionsRequestBuilderRequestsMetadata, type ResourceConnectionsRequestBuilder } from './resourceConnections/index.js';
+// @ts-ignore
+import { TenantSettingsRequestBuilderNavigationMetadata, TenantSettingsRequestBuilderRequestsMetadata, type TenantSettingsRequestBuilder } from './tenantSettings/index.js';
 // @ts-ignore
 import { type UpdatableAssetsRequestBuilder, UpdatableAssetsRequestBuilderNavigationMetadata, UpdatableAssetsRequestBuilderRequestsMetadata } from './updatableAssets/index.js';
 // @ts-ignore
@@ -32,6 +36,10 @@ export interface UpdatesRequestBuilder extends BaseRequestBuilder<UpdatesRequest
      * Provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.
      */
     get catalog(): CatalogRequestBuilder;
+    /**
+     * Provides operations to manage the data property of the microsoft.graph.adminWindowsUpdates entity.
+     */
+    get data(): DataRequestBuilder;
     /**
      * Provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
      */
@@ -52,6 +60,10 @@ export interface UpdatesRequestBuilder extends BaseRequestBuilder<UpdatesRequest
      * Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
      */
     get resourceConnections(): ResourceConnectionsRequestBuilder;
+    /**
+     * Provides operations to manage the tenantSettings property of the microsoft.graph.adminWindowsUpdates entity.
+     */
+    get tenantSettings(): TenantSettingsRequestBuilder;
     /**
      * Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
      */
@@ -133,6 +145,10 @@ export const UpdatesRequestBuilderNavigationMetadata: Record<Exclude<keyof Updat
         requestsMetadata: CatalogRequestBuilderRequestsMetadata,
         navigationMetadata: CatalogRequestBuilderNavigationMetadata,
     },
+    data: {
+        requestsMetadata: DataRequestBuilderRequestsMetadata,
+        navigationMetadata: DataRequestBuilderNavigationMetadata,
+    },
     deploymentAudiences: {
         requestsMetadata: DeploymentAudiencesRequestBuilderRequestsMetadata,
         navigationMetadata: DeploymentAudiencesRequestBuilderNavigationMetadata,
@@ -152,6 +168,10 @@ export const UpdatesRequestBuilderNavigationMetadata: Record<Exclude<keyof Updat
     resourceConnections: {
         requestsMetadata: ResourceConnectionsRequestBuilderRequestsMetadata,
         navigationMetadata: ResourceConnectionsRequestBuilderNavigationMetadata,
+    },
+    tenantSettings: {
+        requestsMetadata: TenantSettingsRequestBuilderRequestsMetadata,
+        navigationMetadata: TenantSettingsRequestBuilderNavigationMetadata,
     },
     updatableAssets: {
         requestsMetadata: UpdatableAssetsRequestBuilderRequestsMetadata,

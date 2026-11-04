@@ -102,6 +102,8 @@ import { GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBu
 // @ts-ignore
 import { GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilderRequestsMetadata, type GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder } from './getMicrosoft365CopilotUserCountTrendWithPeriodversionVersion/index.js';
 // @ts-ignore
+import { GetMicrosoft365EmissionsRequestBuilderRequestsMetadata, type GetMicrosoft365EmissionsRequestBuilder } from './getMicrosoft365Emissions/index.js';
+// @ts-ignore
 import { GetOffice365ActivationCountsRequestBuilderRequestsMetadata, type GetOffice365ActivationCountsRequestBuilder } from './getOffice365ActivationCounts/index.js';
 // @ts-ignore
 import { GetOffice365ActivationsUserCountsRequestBuilderRequestsMetadata, type GetOffice365ActivationsUserCountsRequestBuilder } from './getOffice365ActivationsUserCounts/index.js';
@@ -350,6 +352,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get correlations(): CorrelationsRequestBuilder;
     /**
      * Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
+     * @deprecated The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
     get credentialUserRegistrationDetails(): CredentialUserRegistrationDetailsRequestBuilder;
     /**
@@ -366,10 +369,12 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get dailyPrintUsageByUser(): DailyPrintUsageByUserRequestBuilder;
     /**
      * Provides operations to manage the dailyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
+     * @deprecated The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get dailyPrintUsageSummariesByPrinter(): DailyPrintUsageSummariesByPrinterRequestBuilder;
     /**
      * Provides operations to manage the dailyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
+     * @deprecated The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get dailyPrintUsageSummariesByUser(): DailyPrintUsageSummariesByUserRequestBuilder;
     /**
@@ -386,20 +391,27 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get getApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId(): GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder;
     /**
      * Provides operations to call the getAttackSimulationRepeatOffenders method.
+     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
      */
     get getAttackSimulationRepeatOffenders(): GetAttackSimulationRepeatOffendersRequestBuilder;
     /**
      * Provides operations to call the getAttackSimulationSimulationUserCoverage method.
+     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
      */
     get getAttackSimulationSimulationUserCoverage(): GetAttackSimulationSimulationUserCoverageRequestBuilder;
     /**
      * Provides operations to call the getAttackSimulationTrainingUserCoverage method.
+     * @deprecated This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
      */
     get getAttackSimulationTrainingUserCoverage(): GetAttackSimulationTrainingUserCoverageRequestBuilder;
     /**
      * Provides operations to call the getCredentialUserRegistrationCount method.
      */
     get getCredentialUserRegistrationCount(): GetCredentialUserRegistrationCountRequestBuilder;
+    /**
+     * Provides operations to call the getMicrosoft365Emissions method.
+     */
+    get getMicrosoft365Emissions(): GetMicrosoft365EmissionsRequestBuilder;
     /**
      * Provides operations to call the getOffice365ActivationCounts method.
      */
@@ -446,10 +458,12 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get monthlyPrintUsageByUser(): MonthlyPrintUsageByUserRequestBuilder;
     /**
      * Provides operations to manage the monthlyPrintUsageSummariesByPrinter property of the microsoft.graph.reportRoot entity.
+     * @deprecated The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get monthlyPrintUsageSummariesByPrinter(): MonthlyPrintUsageSummariesByPrinterRequestBuilder;
     /**
      * Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.
+     * @deprecated The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get monthlyPrintUsageSummariesByUser(): MonthlyPrintUsageSummariesByUserRequestBuilder;
     /**
@@ -474,6 +488,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get sla(): SlaRequestBuilder;
     /**
      * Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
+     * @deprecated The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
      */
     get userCredentialUsageDetails(): UserCredentialUsageDetailsRequestBuilder;
     /**
@@ -1817,6 +1832,9 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
     },
     getCredentialUserRegistrationCount: {
         requestsMetadata: GetCredentialUserRegistrationCountRequestBuilderRequestsMetadata,
+    },
+    getMicrosoft365Emissions: {
+        requestsMetadata: GetMicrosoft365EmissionsRequestBuilderRequestsMetadata,
     },
     getOffice365ActivationCounts: {
         requestsMetadata: GetOffice365ActivationCountsRequestBuilderRequestsMetadata,

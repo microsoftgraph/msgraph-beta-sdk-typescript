@@ -24,6 +24,7 @@ export interface JobsRequestBuilder extends BaseRequestBuilder<JobsRequestBuilde
     get count(): CountRequestBuilder;
     /**
      * Provides operations to call the validateCredentials method.
+     * @deprecated Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
     get validateCredentials(): ValidateCredentialsRequestBuilder;
     /**

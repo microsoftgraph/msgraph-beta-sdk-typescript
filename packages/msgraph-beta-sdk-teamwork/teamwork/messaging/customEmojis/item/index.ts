@@ -6,23 +6,31 @@ import { createTeamworkCustomEmojiFromDiscriminatorValue, serializeTeamworkCusto
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
-import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
+import { ContentRequestBuilderRequestsMetadata, type ContentRequestBuilder } from './value/index.js';
+// @ts-ignore
+import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
 /**
  * Provides operations to manage the customEmojis property of the microsoft.graph.teamworkMessaging entity.
  */
 export interface TeamworkCustomEmojiItemRequestBuilder extends BaseRequestBuilder<TeamworkCustomEmojiItemRequestBuilder> {
     /**
-     * Delete navigation property customEmojis for teamwork
+     * Provides operations to manage the media for the teamwork entity.
+     */
+    get content(): ContentRequestBuilder;
+    /**
+     * Delete a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkcustomemoji-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of custom emojis available in organization messaging.
+     * Get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkCustomEmoji>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkcustomemoji-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TeamworkCustomEmojiItemRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
     /**
@@ -34,13 +42,13 @@ export interface TeamworkCustomEmojiItemRequestBuilder extends BaseRequestBuilde
      */
      patch(body: TeamworkCustomEmoji, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
     /**
-     * Delete navigation property customEmojis for teamwork
+     * Delete a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of custom emojis available in organization messaging.
+     * Get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +62,7 @@ export interface TeamworkCustomEmojiItemRequestBuilder extends BaseRequestBuilde
      toPatchRequestInformation(body: TeamworkCustomEmoji, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of custom emojis available in organization messaging.
+ * Get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
  */
 export interface TeamworkCustomEmojiItemRequestBuilderGetQueryParameters {
     /**
@@ -76,6 +84,14 @@ export const TeamworkCustomEmojiItemRequestBuilderUriTemplate = "{+baseurl}/team
 const TeamworkCustomEmojiItemRequestBuilderGetQueryParametersMapper: Record<string, string> = {
     "expand": "%24expand",
     "select": "%24select",
+};
+/**
+ * Metadata for all the navigation properties in the request builder.
+ */
+export const TeamworkCustomEmojiItemRequestBuilderNavigationMetadata: Record<Exclude<keyof TeamworkCustomEmojiItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    content: {
+        requestsMetadata: ContentRequestBuilderRequestsMetadata,
+    },
 };
 /**
  * Metadata for all the requests in the request builder.

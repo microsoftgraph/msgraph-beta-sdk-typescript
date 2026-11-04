@@ -21,7 +21,7 @@ export interface RulesRequestBuilder extends BaseRequestBuilder<RulesRequestBuil
      */
      byLifecyclePolicyRuleId(lifecyclePolicyRuleId: string) : LifecyclePolicyRuleItemRequestBuilder;
     /**
-     * Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+     * Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<LifecyclePolicyRuleCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -29,14 +29,14 @@ export interface RulesRequestBuilder extends BaseRequestBuilder<RulesRequestBuil
      */
      get(requestConfiguration?: RequestConfiguration<RulesRequestBuilderGetQueryParameters> | undefined) : Promise<LifecyclePolicyRuleCollectionResponse | undefined>;
     /**
-     * Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+     * Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<RulesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+ * Get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
  */
 export interface RulesRequestBuilderGetQueryParameters {
     /**

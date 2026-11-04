@@ -40,14 +40,17 @@ export interface OutlookRequestBuilder extends BaseRequestBuilder<OutlookRequest
     get supportedTimeZones(): SupportedTimeZonesRequestBuilder;
     /**
      * Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
      */
     get taskFolders(): TaskFoldersRequestBuilder;
     /**
      * Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
      */
     get taskGroups(): TaskGroupsRequestBuilder;
     /**
      * Provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.
+     * @deprecated The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
      */
     get tasks(): TasksRequestBuilder;
     /**

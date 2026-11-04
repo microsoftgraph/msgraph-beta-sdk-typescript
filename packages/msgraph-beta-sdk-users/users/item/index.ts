@@ -582,6 +582,7 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
     get mobileAppTroubleshootingEvents(): MobileAppTroubleshootingEventsRequestBuilder;
     /**
      * Provides operations to manage the notifications property of the microsoft.graph.user entity.
+     * @deprecated The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20
      */
     get notifications(): NotificationsRequestBuilder;
     /**

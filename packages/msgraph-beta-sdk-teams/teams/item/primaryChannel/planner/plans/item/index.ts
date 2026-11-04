@@ -54,6 +54,7 @@ export interface PlannerPlanItemRequestBuilder extends BaseRequestBuilder<Planne
     get getUsageRights(): GetUsageRightsRequestBuilder;
     /**
      * Provides operations to manage the goals property of the microsoft.graph.plannerPlan entity.
+     * @deprecated private preview elements are required to be marked as deprecated as of 2025-03/Tasks_And_Plans on 2025-03-26 and will be removed 2026-03-26
      */
     get goals(): GoalsRequestBuilder;
     /**

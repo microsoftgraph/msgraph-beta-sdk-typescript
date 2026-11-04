@@ -18,21 +18,18 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface MigrationsRequestBuilder extends BaseRequestBuilder<MigrationsRequestBuilder> {
     /**
      * Provides operations to manage the crossTenantMigrationJobs property of the microsoft.graph.migrationsRoot entity.
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
     get crossTenantMigrationJobs(): CrossTenantMigrationJobsRequestBuilder;
     /**
      * Provides operations to manage the crossTenantMigrationJobs property of the microsoft.graph.migrationsRoot entity.
      * @param displayName Alternate key of crossTenantMigrationJob
      * @returns {CrossTenantMigrationJobsWithDisplayNameRequestBuilder}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      crossTenantMigrationJobsWithDisplayName(displayName: string | undefined) : CrossTenantMigrationJobsWithDisplayNameRequestBuilder;
     /**
      * Delete navigation property migrations for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -40,7 +37,6 @@ export interface MigrationsRequestBuilder extends BaseRequestBuilder<MigrationsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MigrationsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      get(requestConfiguration?: RequestConfiguration<MigrationsRequestBuilderGetQueryParameters> | undefined) : Promise<MigrationsRoot | undefined>;
     /**
@@ -49,21 +45,18 @@ export interface MigrationsRequestBuilder extends BaseRequestBuilder<MigrationsR
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<MigrationsRoot>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      patch(body: MigrationsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<MigrationsRoot | undefined>;
     /**
      * Delete navigation property migrations for solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
      * Get migrations from solutions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<MigrationsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
@@ -71,7 +64,6 @@ export interface MigrationsRequestBuilder extends BaseRequestBuilder<MigrationsR
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toPatchRequestInformation(body: MigrationsRoot, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

@@ -8,7 +8,7 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { CountRequestBuilderRequestsMetadata, type CountRequestBuilder } from './count/index.js';
 // @ts-ignore
-import { TeamworkCustomEmojiItemRequestBuilderRequestsMetadata, type TeamworkCustomEmojiItemRequestBuilder } from './item/index.js';
+import { TeamworkCustomEmojiItemRequestBuilderNavigationMetadata, TeamworkCustomEmojiItemRequestBuilderRequestsMetadata, type TeamworkCustomEmojiItemRequestBuilder } from './item/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
 
@@ -117,6 +117,7 @@ const CustomEmojisRequestBuilderGetQueryParametersMapper: Record<string, string>
 export const CustomEmojisRequestBuilderNavigationMetadata: Record<Exclude<keyof CustomEmojisRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
     byTeamworkCustomEmojiId: {
         requestsMetadata: TeamworkCustomEmojiItemRequestBuilderRequestsMetadata,
+        navigationMetadata: TeamworkCustomEmojiItemRequestBuilderNavigationMetadata,
         pathParametersMappings: ["teamworkCustomEmoji%2Did"],
     },
     count: {

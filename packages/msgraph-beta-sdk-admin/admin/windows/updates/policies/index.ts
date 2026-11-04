@@ -27,7 +27,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      byPolicyId(policyId: string) : PolicyItemRequestBuilder;
     /**
-     * Get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+     * Get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PolicyCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -35,7 +35,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      get(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : Promise<PolicyCollectionResponse | undefined>;
     /**
-     * Create a new Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Create a new Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Policy>}
@@ -44,13 +44,13 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      */
      post(body: Policy, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Policy | undefined>;
     /**
-     * Get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+     * Get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PoliciesRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+     * Create a new Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -58,7 +58,7 @@ export interface PoliciesRequestBuilder extends BaseRequestBuilder<PoliciesReque
      toPostRequestInformation(body: Policy, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+ * Get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
  */
 export interface PoliciesRequestBuilderGetQueryParameters {
     /**

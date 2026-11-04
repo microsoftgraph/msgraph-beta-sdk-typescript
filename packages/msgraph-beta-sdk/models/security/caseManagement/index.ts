@@ -185,7 +185,7 @@ export interface CaseEscaped extends CaseManagementEntity, Parsable {
      */
     relations?: Relation[] | null;
     /**
-     * A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
+     * A read-only collection of SLA (service level agreement) policy status entries for the case. Each entry contains the policy's current status and breach target time. Computed by the service. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
      */
     slaPolicies?: CaseSlaPolicyEntry[] | null;
     /**
@@ -258,6 +258,10 @@ export interface CaseTypeConfiguration extends Entity, Parsable {
      */
     displayName?: string | null;
     /**
+     * The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+     */
+    slaPolicies?: SlaPolicyDefinition[] | null;
+    /**
      * The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
      */
     statuses?: StatusDefinition[] | null;
@@ -270,7 +274,7 @@ export interface CaseTypeConfigurationCollectionResponse extends BaseCollectionP
 }
 export interface Comment extends Activity, Parsable {
     /**
-     * The comment body. Supports $filter.
+     * The comment body. The maximum length is 1,000 characters for incident cases and 5,000 characters for generic cases. Supports $filter.
      */
     message?: string | null;
 }
@@ -445,6 +449,8 @@ export function createCaseManagementEntityFromDiscriminatorValue(parseNode: Pars
                     return deserializeIntoRecommendationRelation;
                 case "#microsoft.graph.security.caseManagement.relation":
                     return deserializeIntoRelation;
+                case "#microsoft.graph.security.caseManagement.slaPolicyDefinition":
+                    return deserializeIntoSlaPolicyDefinition;
                 case "#microsoft.graph.security.caseManagement.task":
                     return deserializeIntoTask;
                 case "#microsoft.graph.security.caseManagement.workspaceIndicatorRelation":
@@ -710,6 +716,82 @@ export function createRelationFromDiscriminatorValue(parseNode: ParseNode | unde
         }
     }
     return deserializeIntoRelation;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyConditionBase}
+ */
+// @ts-ignore
+export function createSlaPolicyConditionBaseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    if(!parseNode) throw new Error("parseNode cannot be undefined");
+    const mappingValueNode = parseNode?.getChildNode("@odata.type");
+    if (mappingValueNode) {
+        const mappingValue = mappingValueNode.getStringValue();
+        if (mappingValue) {
+            switch (mappingValue) {
+                case "#microsoft.graph.security.caseManagement.slaPolicyCondition":
+                    return deserializeIntoSlaPolicyCondition;
+                case "#microsoft.graph.security.caseManagement.slaPolicyCriteriaBlock":
+                    return deserializeIntoSlaPolicyCriteriaBlock;
+            }
+        }
+    }
+    return deserializeIntoSlaPolicyConditionBase;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyCondition}
+ */
+// @ts-ignore
+export function createSlaPolicyConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSlaPolicyCondition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyCriteriaBlock}
+ */
+// @ts-ignore
+export function createSlaPolicyCriteriaBlockFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSlaPolicyCriteriaBlock;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyDefinitionCollectionResponse}
+ */
+// @ts-ignore
+export function createSlaPolicyDefinitionCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSlaPolicyDefinitionCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyDefinition}
+ */
+// @ts-ignore
+export function createSlaPolicyDefinitionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSlaPolicyDefinition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyRecalculateCondition}
+ */
+// @ts-ignore
+export function createSlaPolicyRecalculateConditionFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSlaPolicyRecalculateCondition;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SlaPolicyTimer}
+ */
+// @ts-ignore
+export function createSlaPolicyTimerFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSlaPolicyTimer;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1092,6 +1174,7 @@ export function deserializeIntoCaseTypeConfiguration(caseTypeConfiguration: Part
         "customFields": n => { caseTypeConfiguration.customFields = n.getCollectionOfObjectValues<CustomFieldDefinition>(createCustomFieldDefinitionFromDiscriminatorValue); },
         "defaultStatusId": n => { caseTypeConfiguration.defaultStatusId = n.getStringValue(); },
         "displayName": n => { caseTypeConfiguration.displayName = n.getStringValue(); },
+        "slaPolicies": n => { caseTypeConfiguration.slaPolicies = n.getCollectionOfObjectValues<SlaPolicyDefinition>(createSlaPolicyDefinitionFromDiscriminatorValue); },
         "statuses": n => { caseTypeConfiguration.statuses = n.getCollectionOfObjectValues<StatusDefinition>(createStatusDefinitionFromDiscriminatorValue); },
     }
 }
@@ -1463,6 +1546,107 @@ export function deserializeIntoRelationCollectionResponse(relationCollectionResp
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(relationCollectionResponse),
         "value": n => { relationCollectionResponse.value = n.getCollectionOfObjectValues<Relation>(createRelationFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyCondition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyCondition(slaPolicyCondition: Partial<SlaPolicyCondition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSlaPolicyConditionBase(slaPolicyCondition),
+        "operator": n => { slaPolicyCondition.operator = n.getEnumValue<SlaPolicyConditionOperator>(SlaPolicyConditionOperatorObject); },
+        "property": n => { slaPolicyCondition.property = n.getStringValue(); },
+        "values": n => { slaPolicyCondition.values = n.getCollectionOfPrimitiveValues<string>("string"); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyConditionBase The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyConditionBase(slaPolicyConditionBase: Partial<SlaPolicyConditionBase> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { slaPolicyConditionBase.backingStoreEnabled = true; },
+        "@odata.type": n => { slaPolicyConditionBase.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyCriteriaBlock The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyCriteriaBlock(slaPolicyCriteriaBlock: Partial<SlaPolicyCriteriaBlock> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSlaPolicyConditionBase(slaPolicyCriteriaBlock),
+        "conditions": n => { slaPolicyCriteriaBlock.conditions = n.getCollectionOfObjectValues<SlaPolicyConditionBase>(createSlaPolicyConditionBaseFromDiscriminatorValue); },
+        "logicalOperator": n => { slaPolicyCriteriaBlock.logicalOperator = n.getEnumValue<SlaPolicyLogicalOperator>(SlaPolicyLogicalOperatorObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyDefinition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyDefinition(slaPolicyDefinition: Partial<SlaPolicyDefinition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoCaseManagementEntity(slaPolicyDefinition),
+        "description": n => { slaPolicyDefinition.description = n.getStringValue(); },
+        "displayName": n => { slaPolicyDefinition.displayName = n.getStringValue(); },
+        "exitCriteria": n => { slaPolicyDefinition.exitCriteria = n.getObjectValue<SlaPolicyCriteriaBlock>(createSlaPolicyCriteriaBlockFromDiscriminatorValue); },
+        "isActive": n => { slaPolicyDefinition.isActive = n.getBooleanValue(); },
+        "pauseCriteria": n => { slaPolicyDefinition.pauseCriteria = n.getObjectValue<SlaPolicyCriteriaBlock>(createSlaPolicyCriteriaBlockFromDiscriminatorValue); },
+        "recalculateCondition": n => { slaPolicyDefinition.recalculateCondition = n.getObjectValue<SlaPolicyRecalculateCondition>(createSlaPolicyRecalculateConditionFromDiscriminatorValue); },
+        "setCriteria": n => { slaPolicyDefinition.setCriteria = n.getObjectValue<SlaPolicyCriteriaBlock>(createSlaPolicyCriteriaBlockFromDiscriminatorValue); },
+        "timers": n => { slaPolicyDefinition.timers = n.getCollectionOfObjectValues<SlaPolicyTimer>(createSlaPolicyTimerFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyDefinitionCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyDefinitionCollectionResponse(slaPolicyDefinitionCollectionResponse: Partial<SlaPolicyDefinitionCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(slaPolicyDefinitionCollectionResponse),
+        "value": n => { slaPolicyDefinitionCollectionResponse.value = n.getCollectionOfObjectValues<SlaPolicyDefinition>(createSlaPolicyDefinitionFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyRecalculateCondition The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyRecalculateCondition(slaPolicyRecalculateCondition: Partial<SlaPolicyRecalculateCondition> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { slaPolicyRecalculateCondition.backingStoreEnabled = true; },
+        "@odata.type": n => { slaPolicyRecalculateCondition.odataType = n.getStringValue(); },
+        "shouldResetTime": n => { slaPolicyRecalculateCondition.shouldResetTime = n.getBooleanValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SlaPolicyTimer The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSlaPolicyTimer(slaPolicyTimer: Partial<SlaPolicyTimer> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { slaPolicyTimer.backingStoreEnabled = true; },
+        "breachThresholdInMinutes": n => { slaPolicyTimer.breachThresholdInMinutes = n.getNumberValue(); },
+        "filters": n => { slaPolicyTimer.filters = n.getObjectValue<SlaPolicyCriteriaBlock>(createSlaPolicyCriteriaBlockFromDiscriminatorValue); },
+        "isDefault": n => { slaPolicyTimer.isDefault = n.getBooleanValue(); },
+        "@odata.type": n => { slaPolicyTimer.odataType = n.getStringValue(); },
+        "order": n => { slaPolicyTimer.order = n.getNumberValue(); },
+        "policyTimerId": n => { slaPolicyTimer.policyTimerId = n.getStringValue(); },
+        "warningThresholdInMinutes": n => { slaPolicyTimer.warningThresholdInMinutes = n.getNumberValue(); },
     }
 }
 /**
@@ -2313,6 +2497,9 @@ export function serializeCaseManagementEntity(writer: SerializationWriter, caseM
         case "#microsoft.graph.security.caseManagement.relation":
             serializeRelation(writer, caseManagementEntity, true);
         break;
+        case "#microsoft.graph.security.caseManagement.slaPolicyDefinition":
+            serializeSlaPolicyDefinition(writer, caseManagementEntity, true);
+        break;
         case "#microsoft.graph.security.caseManagement.task":
             serializeTask(writer, caseManagementEntity, true);
         break;
@@ -2347,6 +2534,7 @@ export function serializeCaseTypeConfiguration(writer: SerializationWriter, case
     writer.writeCollectionOfObjectValues<CustomFieldDefinition>("customFields", caseTypeConfiguration.customFields, serializeCustomFieldDefinition);
     writer.writeStringValue("defaultStatusId", caseTypeConfiguration.defaultStatusId);
     writer.writeStringValue("displayName", caseTypeConfiguration.displayName);
+    writer.writeCollectionOfObjectValues<SlaPolicyDefinition>("slaPolicies", caseTypeConfiguration.slaPolicies, serializeSlaPolicyDefinition);
     writer.writeCollectionOfObjectValues<StatusDefinition>("statuses", caseTypeConfiguration.statuses, serializeStatusDefinition);
 }
 /**
@@ -2747,6 +2935,114 @@ export function serializeRelationCollectionResponse(writer: SerializationWriter,
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyCondition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyCondition(writer: SerializationWriter, slaPolicyCondition: Partial<SlaPolicyCondition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyCondition || isSerializingDerivedType) { return; }
+    serializeSlaPolicyConditionBase(writer, slaPolicyCondition, isSerializingDerivedType)
+    writer.writeEnumValue<SlaPolicyConditionOperator>("operator", slaPolicyCondition.operator);
+    writer.writeStringValue("property", slaPolicyCondition.property);
+    writer.writeCollectionOfPrimitiveValues<string>("values", slaPolicyCondition.values);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyConditionBase The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyConditionBase(writer: SerializationWriter, slaPolicyConditionBase: Partial<SlaPolicyConditionBase> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyConditionBase || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", slaPolicyConditionBase.odataType);
+    writer.writeAdditionalData(slaPolicyConditionBase.additionalData);
+    switch (slaPolicyConditionBase.odataType) {
+        case "#microsoft.graph.security.caseManagement.slaPolicyCondition":
+            serializeSlaPolicyCondition(writer, slaPolicyConditionBase, true);
+        break;
+        case "#microsoft.graph.security.caseManagement.slaPolicyCriteriaBlock":
+            serializeSlaPolicyCriteriaBlock(writer, slaPolicyConditionBase, true);
+        break;
+    }
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyCriteriaBlock The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyCriteriaBlock(writer: SerializationWriter, slaPolicyCriteriaBlock: Partial<SlaPolicyCriteriaBlock> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyCriteriaBlock || isSerializingDerivedType) { return; }
+    serializeSlaPolicyConditionBase(writer, slaPolicyCriteriaBlock, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SlaPolicyConditionBase>("conditions", slaPolicyCriteriaBlock.conditions, serializeSlaPolicyConditionBase);
+    writer.writeEnumValue<SlaPolicyLogicalOperator>("logicalOperator", slaPolicyCriteriaBlock.logicalOperator);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyDefinition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyDefinition(writer: SerializationWriter, slaPolicyDefinition: Partial<SlaPolicyDefinition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyDefinition || isSerializingDerivedType) { return; }
+    serializeCaseManagementEntity(writer, slaPolicyDefinition, isSerializingDerivedType)
+    writer.writeStringValue("description", slaPolicyDefinition.description);
+    writer.writeStringValue("displayName", slaPolicyDefinition.displayName);
+    writer.writeObjectValue<SlaPolicyCriteriaBlock>("exitCriteria", slaPolicyDefinition.exitCriteria, serializeSlaPolicyCriteriaBlock);
+    writer.writeBooleanValue("isActive", slaPolicyDefinition.isActive);
+    writer.writeObjectValue<SlaPolicyCriteriaBlock>("pauseCriteria", slaPolicyDefinition.pauseCriteria, serializeSlaPolicyCriteriaBlock);
+    writer.writeObjectValue<SlaPolicyRecalculateCondition>("recalculateCondition", slaPolicyDefinition.recalculateCondition, serializeSlaPolicyRecalculateCondition);
+    writer.writeObjectValue<SlaPolicyCriteriaBlock>("setCriteria", slaPolicyDefinition.setCriteria, serializeSlaPolicyCriteriaBlock);
+    writer.writeCollectionOfObjectValues<SlaPolicyTimer>("timers", slaPolicyDefinition.timers, serializeSlaPolicyTimer);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyDefinitionCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyDefinitionCollectionResponse(writer: SerializationWriter, slaPolicyDefinitionCollectionResponse: Partial<SlaPolicyDefinitionCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyDefinitionCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, slaPolicyDefinitionCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<SlaPolicyDefinition>("value", slaPolicyDefinitionCollectionResponse.value, serializeSlaPolicyDefinition);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyRecalculateCondition The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyRecalculateCondition(writer: SerializationWriter, slaPolicyRecalculateCondition: Partial<SlaPolicyRecalculateCondition> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyRecalculateCondition || isSerializingDerivedType) { return; }
+    writer.writeStringValue("@odata.type", slaPolicyRecalculateCondition.odataType);
+    writer.writeBooleanValue("shouldResetTime", slaPolicyRecalculateCondition.shouldResetTime);
+    writer.writeAdditionalData(slaPolicyRecalculateCondition.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SlaPolicyTimer The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSlaPolicyTimer(writer: SerializationWriter, slaPolicyTimer: Partial<SlaPolicyTimer> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!slaPolicyTimer || isSerializingDerivedType) { return; }
+    writer.writeNumberValue("breachThresholdInMinutes", slaPolicyTimer.breachThresholdInMinutes);
+    writer.writeObjectValue<SlaPolicyCriteriaBlock>("filters", slaPolicyTimer.filters, serializeSlaPolicyCriteriaBlock);
+    writer.writeBooleanValue("isDefault", slaPolicyTimer.isDefault);
+    writer.writeStringValue("@odata.type", slaPolicyTimer.odataType);
+    writer.writeNumberValue("order", slaPolicyTimer.order);
+    writer.writeNumberValue("warningThresholdInMinutes", slaPolicyTimer.warningThresholdInMinutes);
+    writer.writeAdditionalData(slaPolicyTimer.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param StatusDefinition The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -2889,6 +3185,130 @@ export function serializeWorkspaceIndicatorRelation(writer: SerializationWriter,
     writer.writeStringValue("resourceGroupName", workspaceIndicatorRelation.resourceGroupName);
     writer.writeStringValue("subscriptionId", workspaceIndicatorRelation.subscriptionId);
     writer.writeStringValue("workspaceName", workspaceIndicatorRelation.workspaceName);
+}
+export interface SlaPolicyCondition extends Parsable, SlaPolicyConditionBase {
+    /**
+     * The operator property
+     */
+    operator?: SlaPolicyConditionOperator | null;
+    /**
+     * The name of the case property to evaluate, such as priority.
+     */
+    property?: string | null;
+    /**
+     * The comparison values for the condition.
+     */
+    values?: string[] | null;
+}
+export interface SlaPolicyConditionBase extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export type SlaPolicyConditionOperator = (typeof SlaPolicyConditionOperatorObject)[keyof typeof SlaPolicyConditionOperatorObject];
+export interface SlaPolicyCriteriaBlock extends Parsable, SlaPolicyConditionBase {
+    /**
+     * The leaf conditions or nested groups evaluated by this block. The maximum nesting depth is two.
+     */
+    conditions?: SlaPolicyConditionBase[] | null;
+    /**
+     * The logicalOperator property
+     */
+    logicalOperator?: SlaPolicyLogicalOperator | null;
+}
+export interface SlaPolicyDefinition extends CaseManagementEntity, Parsable {
+    /**
+     * The description of the policy. Maximum length: 5,000 characters.
+     */
+    description?: string | null;
+    /**
+     * The display name of the policy. Must be unique across the tenant, using a case-insensitive comparison. Maximum length: 150 characters.
+     */
+    displayName?: string | null;
+    /**
+     * The condition that removes a case from the policy's scope.
+     */
+    exitCriteria?: SlaPolicyCriteriaBlock | null;
+    /**
+     * Whether the policy is actively evaluated. Inactive policies are excluded from new case evaluations. The default value on creation is true.
+     */
+    isActive?: boolean | null;
+    /**
+     * The condition that pauses the timer while a case matches it.
+     */
+    pauseCriteria?: SlaPolicyCriteriaBlock | null;
+    /**
+     * The settings that control whether elapsed time resets when the policy is recalculated.
+     */
+    recalculateCondition?: SlaPolicyRecalculateCondition | null;
+    /**
+     * The condition a case must match to enter the policy's scope. When omitted, the policy applies to all cases of its owning case type. The maximum nesting depth is two.
+     */
+    setCriteria?: SlaPolicyCriteriaBlock | null;
+    /**
+     * The embedded warning and breach timers, evaluated in order, lowest first. Maximum: 15 timers. Exactly one timer must have isDefault set to true. Updating this property replaces the entire collection.
+     */
+    timers?: SlaPolicyTimer[] | null;
+}
+export interface SlaPolicyDefinitionCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: SlaPolicyDefinition[] | null;
+}
+export type SlaPolicyLogicalOperator = (typeof SlaPolicyLogicalOperatorObject)[keyof typeof SlaPolicyLogicalOperatorObject];
+export interface SlaPolicyRecalculateCondition extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * Whether elapsed time resets when the policy is recalculated, for example, when a case reenters its scope.
+     */
+    shouldResetTime?: boolean | null;
+}
+export interface SlaPolicyTimer extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * The elapsed time in minutes after which the timer is considered breached. Required when supplying a timer.
+     */
+    breachThresholdInMinutes?: number | null;
+    /**
+     * The condition that a case must match for this timer to apply. Required when isDefault is false. Omit this property for the default timer.
+     */
+    filters?: SlaPolicyCriteriaBlock | null;
+    /**
+     * Whether this timer is the fallback when no other timer's filters match. Required when supplying a timer. Exactly one timer per policy must have a value of true.
+     */
+    isDefault?: boolean | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+    /**
+     * The evaluation order among the policy's timers, lowest first. Required when supplying a timer.
+     */
+    order?: number | null;
+    /**
+     * The server-generated identifier for the timer. Computed on creation and immutable thereafter. Read-only. Omit this property from request bodies.
+     */
+    policyTimerId?: string | null;
+    /**
+     * The elapsed time in minutes after which an early warning is raised.
+     */
+    warningThresholdInMinutes?: number | null;
 }
 export interface StatusDefinition extends Entity, Parsable {
     /**
@@ -3118,6 +3538,29 @@ export const IncidentSeverityObject = {
     Low: "low",
     Medium: "medium",
     High: "high",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const SlaPolicyConditionOperatorObject = {
+    Equals: "equals",
+    NotEquals: "notEquals",
+    Contains: "contains",
+    DoesNotContain: "doesNotContain",
+    IsEmpty: "isEmpty",
+    IsNotEmpty: "isNotEmpty",
+    Changed: "changed",
+    ChangedTo: "changedTo",
+    ChangedFrom: "changedFrom",
+    IsBefore: "isBefore",
+    IsAfter: "isAfter",
+    GreaterThan: "greaterThan",
+    LessThan: "lessThan",
+    AnyOf: "anyOf",
+    NoneOf: "noneOf",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const SlaPolicyLogicalOperatorObject = {
+    And: "and",
+    Or: "or",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const TaskStatusObject = {

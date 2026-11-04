@@ -594,6 +594,10 @@ export interface AlertTemplate extends AdditionalDataHolder, BackedModel, Parsab
      */
     entityMappings?: EntityMappingConfiguration | null;
     /**
+     * The eventGroupingKind property
+     */
+    eventGroupingKind?: EventGroupingKind | null;
+    /**
      * Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.
      */
     impactedAssets?: ImpactedAsset[] | null;
@@ -12422,6 +12426,7 @@ export function deserializeIntoAlertTemplate(alertTemplate: Partial<AlertTemplat
         "customDetails": n => { alertTemplate.customDetails = n.getObjectValue<AlertCustomDetails>(createAlertCustomDetailsFromDiscriminatorValue); },
         "description": n => { alertTemplate.description = n.getStringValue(); },
         "entityMappings": n => { alertTemplate.entityMappings = n.getObjectValue<EntityMappingConfiguration>(createEntityMappingConfigurationFromDiscriminatorValue); },
+        "eventGroupingKind": n => { alertTemplate.eventGroupingKind = n.getEnumValue<EventGroupingKind>(EventGroupingKindObject); },
         "impactedAssets": n => { alertTemplate.impactedAssets = n.getCollectionOfObjectValues<ImpactedAsset>(createImpactedAssetFromDiscriminatorValue); },
         "mitreTechniques": n => { alertTemplate.mitreTechniques = n.getCollectionOfPrimitiveValues<string>("string"); },
         "@odata.type": n => { alertTemplate.odataType = n.getStringValue(); },
@@ -20354,6 +20359,7 @@ export function deserializeIntoRuleSchedule(ruleSchedule: Partial<RuleSchedule> 
     return {
         "backingStoreEnabled": n => { ruleSchedule.backingStoreEnabled = true; },
         "frequency": n => { ruleSchedule.frequency = n.getDurationValue(); },
+        "lookback": n => { ruleSchedule.lookback = n.getDurationValue(); },
         "nextRunDateTime": n => { ruleSchedule.nextRunDateTime = n.getDateValue(); },
         "@odata.type": n => { ruleSchedule.odataType = n.getStringValue(); },
         "period": n => { ruleSchedule.period = n.getStringValue(); },
@@ -24642,6 +24648,7 @@ export type EnvironmentKind = (typeof EnvironmentKindObject)[keyof typeof Enviro
  */
 export interface EopSubmissionFeedEntityAuditRecord extends AuditData, Parsable {
 }
+export type EventGroupingKind = (typeof EventGroupingKindObject)[keyof typeof EventGroupingKindObject];
 export interface EventPropagationResult extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -28635,6 +28642,10 @@ export interface RuleSchedule extends AdditionalDataHolder, BackedModel, Parsabl
      */
     frequency?: Duration | null;
     /**
+     * The lookback property
+     */
+    lookback?: Duration | null;
+    /**
      * Timestamp of the custom detection rule's next scheduled run. Deprecated. This property will be removed from this resource on 2026-10-01.
      */
     nextRunDateTime?: Date | null;
@@ -29901,6 +29912,7 @@ export function serializeAlertTemplate(writer: SerializationWriter, alertTemplat
     writer.writeObjectValue<AlertCustomDetails>("customDetails", alertTemplate.customDetails, serializeAlertCustomDetails);
     writer.writeStringValue("description", alertTemplate.description);
     writer.writeObjectValue<EntityMappingConfiguration>("entityMappings", alertTemplate.entityMappings, serializeEntityMappingConfiguration);
+    writer.writeEnumValue<EventGroupingKind>("eventGroupingKind", alertTemplate.eventGroupingKind);
     writer.writeCollectionOfObjectValues<ImpactedAsset>("impactedAssets", alertTemplate.impactedAssets, serializeImpactedAsset);
     writer.writeCollectionOfPrimitiveValues<string>("mitreTechniques", alertTemplate.mitreTechniques);
     writer.writeStringValue("@odata.type", alertTemplate.odataType);
@@ -39589,6 +39601,7 @@ export function serializeRtiOperationsAgentAuditRecord(writer: SerializationWrit
 export function serializeRuleSchedule(writer: SerializationWriter, ruleSchedule: Partial<RuleSchedule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!ruleSchedule || isSerializingDerivedType) { return; }
     writer.writeDurationValue("frequency", ruleSchedule.frequency);
+    writer.writeDurationValue("lookback", ruleSchedule.lookback);
     writer.writeDateValue("nextRunDateTime", ruleSchedule.nextRunDateTime);
     writer.writeStringValue("@odata.type", ruleSchedule.odataType);
     writer.writeStringValue("period", ruleSchedule.period);
@@ -45010,6 +45023,11 @@ export const EnvironmentKindObject = {
     /** A JFrog Artifactory instance. */
     JFrogArtifactory: "jFrogArtifactory",
     /** A marker value for members added after the release of this API. */
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const EventGroupingKindObject = {
+    AlertPerEvent: "alertPerEvent",
+    SingleAlert: "singleAlert",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const EventPropagationStatusObject = {

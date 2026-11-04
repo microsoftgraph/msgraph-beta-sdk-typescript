@@ -6,6 +6,58 @@ import { createGroupFromDiscriminatorValue, deserializeIntoBaseCollectionPaginat
 // @ts-ignore
 import { type AdditionalDataHolder, type BackedModel, type BackingStore, type Duration, type Parsable, type ParseNode, type SerializationWriter } from '@microsoft/kiota-abstractions';
 
+export interface ApplicableCatalog extends Entity, Parsable {
+    /**
+     * The associated Windows update catalog entry.
+     */
+    catalogEntry?: CatalogEntry | null;
+    /**
+     * The number of devices for which the catalog entry is applicable. Read-only.
+     */
+    deviceCount?: number | null;
+    /**
+     * The devices for which the catalog entry is applicable.
+     */
+    devices?: ApplicableDevice[] | null;
+    /**
+     * Indicates whether the catalog entry is recommended for at least one applicable device. Read-only.
+     */
+    hasRecommendedDevice?: boolean | null;
+}
+export interface ApplicableCatalogCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ApplicableCatalog[] | null;
+}
+export interface ApplicableCatalogSummary extends Entity, Parsable {
+    /**
+     * The number of devices included in the summary. Read-only.
+     */
+    aggregatedDeviceCount?: number | null;
+    /**
+     * The devices included in the applicability summary.
+     */
+    aggregatedDevices?: ApplicableDevice[] | null;
+    /**
+     * The associated Windows update catalog entry.
+     */
+    catalogEntry?: CatalogEntry | null;
+    /**
+     * Indicates whether the catalog entry is recommended for at least one device in the summary. Read-only.
+     */
+    hasRecommendedDevice?: boolean | null;
+    /**
+     * The identifiers of Windows Autopatch policies for which the catalog entry is applicable. Read-only.
+     */
+    policies?: string[] | null;
+}
+export interface ApplicableCatalogSummaryCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ApplicableCatalogSummary[] | null;
+}
 export interface ApplicableContent extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -58,6 +110,18 @@ export interface ApplicableContentDeviceMatchCollectionResponse extends BaseColl
      */
     value?: ApplicableContentDeviceMatch[] | null;
 }
+export interface ApplicableDevice extends Entity, Parsable {
+    /**
+     * Indicates whether the catalog entry is recommended for the device. Read-only.
+     */
+    isRecommended?: boolean | null;
+}
+export interface ApplicableDeviceCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: ApplicableDevice[] | null;
+}
 export interface ApprovalRule extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -73,6 +137,7 @@ export interface ApprovalRule extends AdditionalDataHolder, BackedModel, Parsabl
     odataType?: string | null;
 }
 export type ApprovalStatus = (typeof ApprovalStatusObject)[keyof typeof ApprovalStatusObject];
+export type ApprovedBy = (typeof ApprovedByObject)[keyof typeof ApprovedByObject];
 export interface AssignedGroup extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -268,6 +333,42 @@ export interface ContentFilter extends AdditionalDataHolder, BackedModel, Parsab
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableCatalogCollectionResponse}
+ */
+// @ts-ignore
+export function createApplicableCatalogCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableCatalogCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableCatalog}
+ */
+// @ts-ignore
+export function createApplicableCatalogFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableCatalog;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableCatalogSummaryCollectionResponse}
+ */
+// @ts-ignore
+export function createApplicableCatalogSummaryCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableCatalogSummaryCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableCatalogSummary}
+ */
+// @ts-ignore
+export function createApplicableCatalogSummaryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableCatalogSummary;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApplicableContentCollectionResponse}
  */
 // @ts-ignore
@@ -304,6 +405,24 @@ export function createApplicableContentFromDiscriminatorValue(parseNode: ParseNo
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableDeviceCollectionResponse}
+ */
+// @ts-ignore
+export function createApplicableDeviceCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableDeviceCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {ApplicableDevice}
+ */
+// @ts-ignore
+export function createApplicableDeviceFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoApplicableDevice;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {ApprovalRule}
  */
 // @ts-ignore
@@ -314,6 +433,8 @@ export function createApprovalRuleFromDiscriminatorValue(parseNode: ParseNode | 
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.windowsUpdates.driverUpdateApprovalRule":
+                    return deserializeIntoDriverUpdateApprovalRule;
                 case "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule":
                     return deserializeIntoQualityUpdateApprovalRule;
                 case "#microsoft.graph.windowsUpdates.recoveryApprovalRule":
@@ -622,6 +743,33 @@ export function createDeploymentStateReasonFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DeviceProfileCollectionResponse}
+ */
+// @ts-ignore
+export function createDeviceProfileCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDeviceProfileCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DeviceProfile}
+ */
+// @ts-ignore
+export function createDeviceProfileFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDeviceProfile;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdateApprovalRule}
+ */
+// @ts-ignore
+export function createDriverUpdateApprovalRuleFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdateApprovalRule;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DriverUpdateCatalogEntry}
  */
 // @ts-ignore
@@ -631,11 +779,65 @@ export function createDriverUpdateCatalogEntryFromDiscriminatorValue(parseNode: 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdateDeviceStatusCollectionResponse}
+ */
+// @ts-ignore
+export function createDriverUpdateDeviceStatusCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdateDeviceStatusCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdateDeviceStatus}
+ */
+// @ts-ignore
+export function createDriverUpdateDeviceStatusFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdateDeviceStatus;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {DriverUpdateFilter}
  */
 // @ts-ignore
 export function createDriverUpdateFilterFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoDriverUpdateFilter;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdatePolicy}
+ */
+// @ts-ignore
+export function createDriverUpdatePolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdatePolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdateReportCollectionResponse}
+ */
+// @ts-ignore
+export function createDriverUpdateReportCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdateReportCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdateReport}
+ */
+// @ts-ignore
+export function createDriverUpdateReportFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdateReport;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {DriverUpdateRing}
+ */
+// @ts-ignore
+export function createDriverUpdateRingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoDriverUpdateRing;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -690,6 +892,24 @@ export function createExpediteSettingsFromDiscriminatorValue(parseNode: ParseNod
 // @ts-ignore
 export function createFeatureUpdateCatalogEntryFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoFeatureUpdateCatalogEntry;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FeatureUpdatePolicy}
+ */
+// @ts-ignore
+export function createFeatureUpdatePolicyFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFeatureUpdatePolicy;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {FeatureUpdateRing}
+ */
+// @ts-ignore
+export function createFeatureUpdateRingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoFeatureUpdateRing;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -794,6 +1014,24 @@ export function createKnownIssueHistoryItemFromDiscriminatorValue(parseNode: Par
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MdmAppSettingCollectionResponse}
+ */
+// @ts-ignore
+export function createMdmAppSettingCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMdmAppSettingCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {MdmAppSetting}
+ */
+// @ts-ignore
+export function createMdmAppSettingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoMdmAppSetting;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {MonitoringRule}
  */
 // @ts-ignore
@@ -839,6 +1077,24 @@ export function createPolicyApprovalFromDiscriminatorValue(parseNode: ParseNode 
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PolicyAssignmentCollectionResponse}
+ */
+// @ts-ignore
+export function createPolicyAssignmentCollectionResponseFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPolicyAssignmentCollectionResponse;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {PolicyAssignment}
+ */
+// @ts-ignore
+export function createPolicyAssignmentFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoPolicyAssignment;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {PolicyCollectionResponse}
  */
 // @ts-ignore
@@ -858,6 +1114,10 @@ export function createPolicyFromDiscriminatorValue(parseNode: ParseNode | undefi
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.windowsUpdates.driverUpdatePolicy":
+                    return deserializeIntoDriverUpdatePolicy;
+                case "#microsoft.graph.windowsUpdates.featureUpdatePolicy":
+                    return deserializeIntoFeatureUpdatePolicy;
                 case "#microsoft.graph.windowsUpdates.qualityUpdatePolicy":
                     return deserializeIntoQualityUpdatePolicy;
             }
@@ -1042,6 +1302,10 @@ export function createRingFromDiscriminatorValue(parseNode: ParseNode | undefine
         const mappingValue = mappingValueNode.getStringValue();
         if (mappingValue) {
             switch (mappingValue) {
+                case "#microsoft.graph.windowsUpdates.driverUpdateRing":
+                    return deserializeIntoDriverUpdateRing;
+                case "#microsoft.graph.windowsUpdates.featureUpdateRing":
+                    return deserializeIntoFeatureUpdateRing;
                 case "#microsoft.graph.windowsUpdates.qualityUpdateRing":
                     return deserializeIntoQualityUpdateRing;
             }
@@ -1140,6 +1404,15 @@ export function createSoftwareUpdateFilterFromDiscriminatorValue(parseNode: Pars
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {TenantSetting}
+ */
+// @ts-ignore
+export function createTenantSettingFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoTenantSetting;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {UpdatableAssetCollectionResponse}
  */
 // @ts-ignore
@@ -1205,6 +1478,15 @@ export function createUpdatableAssetGroupFromDiscriminatorValue(parseNode: Parse
 // @ts-ignore
 export function createUpdateCategoryEnrollmentInformationFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
     return deserializeIntoUpdateCategoryEnrollmentInformation;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {UpdateData}
+ */
+// @ts-ignore
+export function createUpdateDataFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoUpdateData;
 }
 /**
  * Creates a new instance of the appropriate class based on discriminator value
@@ -1423,6 +1705,61 @@ export type DeploymentStateReasonValue = (typeof DeploymentStateReasonValueObjec
 export type DeploymentStateValue = (typeof DeploymentStateValueObject)[keyof typeof DeploymentStateValueObject];
 /**
  * The deserialization information for the current model
+ * @param ApplicableCatalog The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicableCatalog(applicableCatalog: Partial<ApplicableCatalog> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(applicableCatalog),
+        "catalogEntry": n => { applicableCatalog.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
+        "deviceCount": n => { applicableCatalog.deviceCount = n.getNumberValue(); },
+        "devices": n => { applicableCatalog.devices = n.getCollectionOfObjectValues<ApplicableDevice>(createApplicableDeviceFromDiscriminatorValue); },
+        "hasRecommendedDevice": n => { applicableCatalog.hasRecommendedDevice = n.getBooleanValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ApplicableCatalogCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicableCatalogCollectionResponse(applicableCatalogCollectionResponse: Partial<ApplicableCatalogCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(applicableCatalogCollectionResponse),
+        "value": n => { applicableCatalogCollectionResponse.value = n.getCollectionOfObjectValues<ApplicableCatalog>(createApplicableCatalogFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ApplicableCatalogSummary The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicableCatalogSummary(applicableCatalogSummary: Partial<ApplicableCatalogSummary> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(applicableCatalogSummary),
+        "aggregatedDeviceCount": n => { applicableCatalogSummary.aggregatedDeviceCount = n.getNumberValue(); },
+        "aggregatedDevices": n => { applicableCatalogSummary.aggregatedDevices = n.getCollectionOfObjectValues<ApplicableDevice>(createApplicableDeviceFromDiscriminatorValue); },
+        "catalogEntry": n => { applicableCatalogSummary.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
+        "hasRecommendedDevice": n => { applicableCatalogSummary.hasRecommendedDevice = n.getBooleanValue(); },
+        "policies": n => { applicableCatalogSummary.policies = n.getCollectionOfPrimitiveValues<string>("string"); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ApplicableCatalogSummaryCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicableCatalogSummaryCollectionResponse(applicableCatalogSummaryCollectionResponse: Partial<ApplicableCatalogSummaryCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(applicableCatalogSummaryCollectionResponse),
+        "value": n => { applicableCatalogSummaryCollectionResponse.value = n.getCollectionOfObjectValues<ApplicableCatalogSummary>(createApplicableCatalogSummaryFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param ApplicableContent The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1472,6 +1809,30 @@ export function deserializeIntoApplicableContentDeviceMatchCollectionResponse(ap
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(applicableContentDeviceMatchCollectionResponse),
         "value": n => { applicableContentDeviceMatchCollectionResponse.value = n.getCollectionOfObjectValues<ApplicableContentDeviceMatch>(createApplicableContentDeviceMatchFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ApplicableDevice The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicableDevice(applicableDevice: Partial<ApplicableDevice> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(applicableDevice),
+        "isRecommended": n => { applicableDevice.isRecommended = n.getBooleanValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param ApplicableDeviceCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoApplicableDeviceCollectionResponse(applicableDeviceCollectionResponse: Partial<ApplicableDeviceCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(applicableDeviceCollectionResponse),
+        "value": n => { applicableDeviceCollectionResponse.value = n.getCollectionOfObjectValues<ApplicableDevice>(createApplicableDeviceFromDiscriminatorValue); },
     }
 }
 /**
@@ -1827,6 +2188,48 @@ export function deserializeIntoDeploymentStateReason(deploymentStateReason: Part
 }
 /**
  * The deserialization information for the current model
+ * @param DeviceProfile The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDeviceProfile(deviceProfile: Partial<DeviceProfile> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(deviceProfile),
+        "azureAdDeviceId": n => { deviceProfile.azureAdDeviceId = n.getStringValue(); },
+        "deviceModel": n => { deviceProfile.deviceModel = n.getStringValue(); },
+        "deviceName": n => { deviceProfile.deviceName = n.getStringValue(); },
+        "hotpatchReadiness": n => { deviceProfile.hotpatchReadiness = n.getEnumValue<HotpatchReadiness>(HotpatchReadinessObject); },
+        "osBuild": n => { deviceProfile.osBuild = n.getStringValue(); },
+        "osStatus": n => { deviceProfile.osStatus = n.getEnumValue<OsStatus>(OsStatusObject); },
+        "osVersion": n => { deviceProfile.osVersion = n.getStringValue(); },
+        "serialNumber": n => { deviceProfile.serialNumber = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DeviceProfileCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDeviceProfileCollectionResponse(deviceProfileCollectionResponse: Partial<DeviceProfileCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(deviceProfileCollectionResponse),
+        "value": n => { deviceProfileCollectionResponse.value = n.getCollectionOfObjectValues<DeviceProfile>(createDeviceProfileFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DriverUpdateApprovalRule The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdateApprovalRule(driverUpdateApprovalRule: Partial<DriverUpdateApprovalRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoApprovalRule(driverUpdateApprovalRule),
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param DriverUpdateCatalogEntry The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1845,6 +2248,40 @@ export function deserializeIntoDriverUpdateCatalogEntry(driverUpdateCatalogEntry
 }
 /**
  * The deserialization information for the current model
+ * @param DriverUpdateDeviceStatus The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdateDeviceStatus(driverUpdateDeviceStatus: Partial<DriverUpdateDeviceStatus> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(driverUpdateDeviceStatus),
+        "aadDeviceId": n => { driverUpdateDeviceStatus.aadDeviceId = n.getStringValue(); },
+        "clientState": n => { driverUpdateDeviceStatus.clientState = n.getEnumValue<DeviceClientState>(DeviceClientStateObject); },
+        "clientSubstate": n => { driverUpdateDeviceStatus.clientSubstate = n.getEnumValue<DeviceClientSubstate>(DeviceClientSubstateObject); },
+        "deviceName": n => { driverUpdateDeviceStatus.deviceName = n.getStringValue(); },
+        "lastEventDateTime": n => { driverUpdateDeviceStatus.lastEventDateTime = n.getDateValue(); },
+        "policyId": n => { driverUpdateDeviceStatus.policyId = n.getStringValue(); },
+        "policyName": n => { driverUpdateDeviceStatus.policyName = n.getStringValue(); },
+        "ringId": n => { driverUpdateDeviceStatus.ringId = n.getStringValue(); },
+        "ringName": n => { driverUpdateDeviceStatus.ringName = n.getStringValue(); },
+        "serviceState": n => { driverUpdateDeviceStatus.serviceState = n.getEnumValue<DeviceServiceState>(DeviceServiceStateObject); },
+        "serviceSubstate": n => { driverUpdateDeviceStatus.serviceSubstate = n.getEnumValue<DeviceServiceSubstate>(DeviceServiceSubstateObject); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DriverUpdateDeviceStatusCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdateDeviceStatusCollectionResponse(driverUpdateDeviceStatusCollectionResponse: Partial<DriverUpdateDeviceStatusCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(driverUpdateDeviceStatusCollectionResponse),
+        "value": n => { driverUpdateDeviceStatusCollectionResponse.value = n.getCollectionOfObjectValues<DriverUpdateDeviceStatus>(createDriverUpdateDeviceStatusFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param DriverUpdateFilter The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -1852,6 +2289,57 @@ export function deserializeIntoDriverUpdateCatalogEntry(driverUpdateCatalogEntry
 export function deserializeIntoDriverUpdateFilter(driverUpdateFilter: Partial<DriverUpdateFilter> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoWindowsUpdateFilter(driverUpdateFilter),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DriverUpdatePolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdatePolicy(driverUpdatePolicy: Partial<DriverUpdatePolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicy(driverUpdatePolicy),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DriverUpdateReport The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdateReport(driverUpdateReport: Partial<DriverUpdateReport> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(driverUpdateReport),
+        "class": n => { driverUpdateReport.classEscaped = n.getStringValue(); },
+        "deviceStatuses": n => { driverUpdateReport.deviceStatuses = n.getCollectionOfObjectValues<DriverUpdateDeviceStatus>(createDriverUpdateDeviceStatusFromDiscriminatorValue); },
+        "displayName": n => { driverUpdateReport.displayName = n.getStringValue(); },
+        "manufacturer": n => { driverUpdateReport.manufacturer = n.getStringValue(); },
+        "releaseDateTime": n => { driverUpdateReport.releaseDateTime = n.getDateValue(); },
+        "version": n => { driverUpdateReport.version = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DriverUpdateReportCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdateReportCollectionResponse(driverUpdateReportCollectionResponse: Partial<DriverUpdateReportCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(driverUpdateReportCollectionResponse),
+        "value": n => { driverUpdateReportCollectionResponse.value = n.getCollectionOfObjectValues<DriverUpdateReport>(createDriverUpdateReportFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param DriverUpdateRing The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoDriverUpdateRing(driverUpdateRing: Partial<DriverUpdateRing> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRing(driverUpdateRing),
     }
 }
 /**
@@ -1933,6 +2421,31 @@ export function deserializeIntoFeatureUpdateCatalogEntry(featureUpdateCatalogEnt
         ...deserializeIntoSoftwareUpdateCatalogEntry(featureUpdateCatalogEntry),
         "buildNumber": n => { featureUpdateCatalogEntry.buildNumber = n.getStringValue(); },
         "version": n => { featureUpdateCatalogEntry.version = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param FeatureUpdatePolicy The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoFeatureUpdatePolicy(featureUpdatePolicy: Partial<FeatureUpdatePolicy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoPolicy(featureUpdatePolicy),
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param FeatureUpdateRing The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoFeatureUpdateRing(featureUpdateRing: Partial<FeatureUpdateRing> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoRing(featureUpdateRing),
+        "isOfferOptional": n => { featureUpdateRing.isOfferOptional = n.getBooleanValue(); },
+        "offerDurationInDays": n => { featureUpdateRing.offerDurationInDays = n.getNumberValue(); },
+        "offerIntervalInDays": n => { featureUpdateRing.offerIntervalInDays = n.getNumberValue(); },
     }
 }
 /**
@@ -2048,6 +2561,32 @@ export function deserializeIntoKnownIssueHistoryItem(knownIssueHistoryItem: Part
 }
 /**
  * The deserialization information for the current model
+ * @param MdmAppSetting The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMdmAppSetting(mdmAppSetting: Partial<MdmAppSetting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        "backingStoreEnabled": n => { mdmAppSetting.backingStoreEnabled = true; },
+        "isHotpatchEnabled": n => { mdmAppSetting.isHotpatchEnabled = n.getBooleanValue(); },
+        "mdmAppId": n => { mdmAppSetting.mdmAppId = n.getStringValue(); },
+        "@odata.type": n => { mdmAppSetting.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param MdmAppSettingCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoMdmAppSettingCollectionResponse(mdmAppSettingCollectionResponse: Partial<MdmAppSettingCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(mdmAppSettingCollectionResponse),
+        "value": n => { mdmAppSettingCollectionResponse.value = n.getCollectionOfObjectValues<MdmAppSetting>(createMdmAppSettingFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param MonitoringRule The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2097,6 +2636,7 @@ export function deserializeIntoOperationalInsightsConnection(operationalInsights
 export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policy),
+        "applicableCatalogs": n => { policy.applicableCatalogs = n.getCollectionOfObjectValues<ApplicableCatalog>(createApplicableCatalogFromDiscriminatorValue); },
         "applicableContent": n => { policy.applicableContent = n.getCollectionOfObjectValues<ApplicableContent>(createApplicableContentFromDiscriminatorValue); },
         "approvalRules": n => { policy.approvalRules = n.getCollectionOfObjectValues<ApprovalRule>(createApprovalRuleFromDiscriminatorValue); },
         "approvals": n => { policy.approvals = n.getCollectionOfObjectValues<PolicyApproval>(createPolicyApprovalFromDiscriminatorValue); },
@@ -2116,10 +2656,12 @@ export function deserializeIntoPolicy(policy: Partial<Policy> | undefined = {}) 
 export function deserializeIntoPolicyApproval(policyApproval: Partial<PolicyApproval> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(policyApproval),
+        "approvedBy": n => { policyApproval.approvedBy = n.getEnumValue<ApprovedBy>(ApprovedByObject); },
         "catalogEntry": n => { policyApproval.catalogEntry = n.getObjectValue<CatalogEntry>(createCatalogEntryFromDiscriminatorValue); },
         "catalogEntryId": n => { policyApproval.catalogEntryId = n.getStringValue(); },
         "createdDateTime": n => { policyApproval.createdDateTime = n.getDateValue(); },
         "lastModifiedDateTime": n => { policyApproval.lastModifiedDateTime = n.getDateValue(); },
+        "startDateTime": n => { policyApproval.startDateTime = n.getDateValue(); },
         "status": n => { policyApproval.status = n.getEnumValue<ApprovalStatus>(ApprovalStatusObject); },
     }
 }
@@ -2133,6 +2675,33 @@ export function deserializeIntoPolicyApprovalCollectionResponse(policyApprovalCo
     return {
         ...deserializeIntoBaseCollectionPaginationCountResponse(policyApprovalCollectionResponse),
         "value": n => { policyApprovalCollectionResponse.value = n.getCollectionOfObjectValues<PolicyApproval>(createPolicyApprovalFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param PolicyAssignment The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPolicyAssignment(policyAssignment: Partial<PolicyAssignment> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(policyAssignment),
+        "azureAdDeviceId": n => { policyAssignment.azureAdDeviceId = n.getStringValue(); },
+        "deviceProfile": n => { policyAssignment.deviceProfile = n.getObjectValue<DeviceProfile>(createDeviceProfileFromDiscriminatorValue); },
+        "policyId": n => { policyAssignment.policyId = n.getStringValue(); },
+        "policyName": n => { policyAssignment.policyName = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param PolicyAssignmentCollectionResponse The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoPolicyAssignmentCollectionResponse(policyAssignmentCollectionResponse: Partial<PolicyAssignmentCollectionResponse> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoBaseCollectionPaginationCountResponse(policyAssignmentCollectionResponse),
+        "value": n => { policyAssignmentCollectionResponse.value = n.getCollectionOfObjectValues<PolicyAssignment>(createPolicyAssignmentFromDiscriminatorValue); },
     }
 }
 /**
@@ -2471,6 +3040,19 @@ export function deserializeIntoSoftwareUpdateFilter(softwareUpdateFilter: Partia
 }
 /**
  * The deserialization information for the current model
+ * @param TenantSetting The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoTenantSetting(tenantSetting: Partial<TenantSetting> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(tenantSetting),
+        "areDataProcessorServiceForWindowsFeaturesEnabled": n => { tenantSetting.areDataProcessorServiceForWindowsFeaturesEnabled = n.getBooleanValue(); },
+        "mdmAppSettings": n => { tenantSetting.mdmAppSettings = n.getCollectionOfObjectValues<MdmAppSetting>(createMdmAppSettingFromDiscriminatorValue); },
+    }
+}
+/**
+ * The deserialization information for the current model
  * @param UpdatableAsset The instance to deserialize into.
  * @returns {Record<string, (node: ParseNode) => void>}
  */
@@ -2528,6 +3110,21 @@ export function deserializeIntoUpdateCategoryEnrollmentInformation(updateCategor
         "enrollmentState": n => { updateCategoryEnrollmentInformation.enrollmentState = n.getEnumValue<EnrollmentState>(EnrollmentStateObject); },
         "lastModifiedDateTime": n => { updateCategoryEnrollmentInformation.lastModifiedDateTime = n.getDateValue(); },
         "@odata.type": n => { updateCategoryEnrollmentInformation.odataType = n.getStringValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param UpdateData The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoUpdateData(updateData: Partial<UpdateData> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoEntity(updateData),
+        "applicableCatalogSummaries": n => { updateData.applicableCatalogSummaries = n.getCollectionOfObjectValues<ApplicableCatalogSummary>(createApplicableCatalogSummaryFromDiscriminatorValue); },
+        "deviceProfiles": n => { updateData.deviceProfiles = n.getCollectionOfObjectValues<DeviceProfile>(createDeviceProfileFromDiscriminatorValue); },
+        "drivers": n => { updateData.drivers = n.getCollectionOfObjectValues<DriverUpdateReport>(createDriverUpdateReportFromDiscriminatorValue); },
+        "policyAssignments": n => { updateData.policyAssignments = n.getCollectionOfObjectValues<PolicyAssignment>(createPolicyAssignmentFromDiscriminatorValue); },
     }
 }
 /**
@@ -2599,6 +3196,52 @@ export function deserializeIntoWindowsUpdateFilter(windowsUpdateFilter: Partial<
         ...deserializeIntoSoftwareUpdateFilter(windowsUpdateFilter),
     }
 }
+export type DeviceClientState = (typeof DeviceClientStateObject)[keyof typeof DeviceClientStateObject];
+export type DeviceClientSubstate = (typeof DeviceClientSubstateObject)[keyof typeof DeviceClientSubstateObject];
+export interface DeviceProfile extends Entity, Parsable {
+    /**
+     * The Microsoft Entra device identifier. Read-only.
+     */
+    azureAdDeviceId?: string | null;
+    /**
+     * The hardware model of the device. Read-only.
+     */
+    deviceModel?: string | null;
+    /**
+     * The device name. Read-only.
+     */
+    deviceName?: string | null;
+    /**
+     * The hotpatchReadiness property
+     */
+    hotpatchReadiness?: HotpatchReadiness | null;
+    /**
+     * The Windows build installed on the device. Read-only.
+     */
+    osBuild?: string | null;
+    /**
+     * The osStatus property
+     */
+    osStatus?: OsStatus | null;
+    /**
+     * The Windows version installed on the device. Read-only.
+     */
+    osVersion?: string | null;
+    /**
+     * The device serial number. Read-only.
+     */
+    serialNumber?: string | null;
+}
+export interface DeviceProfileCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: DeviceProfile[] | null;
+}
+export type DeviceServiceState = (typeof DeviceServiceStateObject)[keyof typeof DeviceServiceStateObject];
+export type DeviceServiceSubstate = (typeof DeviceServiceSubstateObject)[keyof typeof DeviceServiceSubstateObject];
+export interface DriverUpdateApprovalRule extends ApprovalRule, Parsable {
+}
 export interface DriverUpdateCatalogEntry extends Parsable, SoftwareUpdateCatalogEntry {
     /**
      * The description of the content.
@@ -2629,7 +3272,95 @@ export interface DriverUpdateCatalogEntry extends Parsable, SoftwareUpdateCatalo
      */
     versionDateTime?: Date | null;
 }
+export interface DriverUpdateDeviceStatus extends Entity, Parsable {
+    /**
+     * The Microsoft Entra identifier of the device. Read-only.
+     */
+    aadDeviceId?: string | null;
+    /**
+     * The clientState property
+     */
+    clientState?: DeviceClientState | null;
+    /**
+     * The clientSubstate property
+     */
+    clientSubstate?: DeviceClientSubstate | null;
+    /**
+     * The device name. Read-only.
+     */
+    deviceName?: string | null;
+    /**
+     * The date and time of the latest status event. Read-only.
+     */
+    lastEventDateTime?: Date | null;
+    /**
+     * The identifier of the driver update policy. Read-only.
+     */
+    policyId?: string | null;
+    /**
+     * The display name of the driver update policy. Read-only.
+     */
+    policyName?: string | null;
+    /**
+     * The identifier of the Windows Autopatch ring. Read-only.
+     */
+    ringId?: string | null;
+    /**
+     * The display name of the Windows Autopatch ring. Read-only.
+     */
+    ringName?: string | null;
+    /**
+     * The serviceState property
+     */
+    serviceState?: DeviceServiceState | null;
+    /**
+     * The serviceSubstate property
+     */
+    serviceSubstate?: DeviceServiceSubstate | null;
+}
+export interface DriverUpdateDeviceStatusCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: DriverUpdateDeviceStatus[] | null;
+}
 export interface DriverUpdateFilter extends Parsable, WindowsUpdateFilter {
+}
+export interface DriverUpdatePolicy extends Parsable, Policy {
+}
+export interface DriverUpdateReport extends Entity, Parsable {
+    /**
+     * The device class targeted by the driver update. Read-only.
+     */
+    classEscaped?: string | null;
+    /**
+     * The latest rollout statuses for devices associated with the driver update.
+     */
+    deviceStatuses?: DriverUpdateDeviceStatus[] | null;
+    /**
+     * The display name of the driver update. Read-only.
+     */
+    displayName?: string | null;
+    /**
+     * The manufacturer of the driver update. Read-only.
+     */
+    manufacturer?: string | null;
+    /**
+     * The date and time when the driver update was released. Read-only.
+     */
+    releaseDateTime?: Date | null;
+    /**
+     * The driver version. Read-only.
+     */
+    version?: string | null;
+}
+export interface DriverUpdateReportCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: DriverUpdateReport[] | null;
+}
+export interface DriverUpdateRing extends Parsable, Ring {
 }
 export interface DurationDrivenRolloutSettings extends GradualRolloutSettings, Parsable {
     /**
@@ -2708,6 +3439,22 @@ export interface FeatureUpdateCatalogEntry extends Parsable, SoftwareUpdateCatal
      */
     version?: string | null;
 }
+export interface FeatureUpdatePolicy extends Parsable, Policy {
+}
+export interface FeatureUpdateRing extends Parsable, Ring {
+    /**
+     * Indicates whether the feature update is offered to end users as optional rather than required. Default is false.
+     */
+    isOfferOptional?: boolean | null;
+    /**
+     * The total length of the gradual-rollout window, in days, from when the update is first offered to when the rollout completes. The minimum is 1. Only used when offerIntervalInDays is 1 or greater; ignored when offerIntervalInDays is 0. Default is 1.
+     */
+    offerDurationInDays?: number | null;
+    /**
+     * How often, in days, a new subset of devices is offered the update. Accepted range is 0 to 30. Set to 0 to offer the update to all devices at once. When the value is 1 or greater, the rollout advances one subset at each interval until every device has been offered the update. Must be less than or equal to offerDurationInDays. Default is 0.
+     */
+    offerIntervalInDays?: number | null;
+}
 export interface GradualRolloutSettings extends AdditionalDataHolder, BackedModel, Parsable {
     /**
      * Stores model information.
@@ -2732,6 +3479,7 @@ export interface GroupAssignment extends AdditionalDataHolder, BackedModel, Pars
      */
     odataType?: string | null;
 }
+export type HotpatchReadiness = (typeof HotpatchReadinessObject)[keyof typeof HotpatchReadinessObject];
 export interface IncludedGroupAssignment extends GroupAssignment, Parsable {
     /**
      * A collection of entities that govern the update deployment audience, defined as a Microsoft Entra group.
@@ -2832,6 +3580,33 @@ export interface KnownIssueHistoryItem extends AdditionalDataHolder, BackedModel
      */
     odataType?: string | null;
 }
+/**
+ * Per-MDM-application settings for a tenant, identified by a unique MDM app ID (GUID-formatted string).
+ */
+export interface MdmAppSetting extends AdditionalDataHolder, BackedModel, Parsable {
+    /**
+     * Stores model information.
+     */
+    backingStoreEnabled?: boolean | null;
+    /**
+     * Whether hotpatch is enabled for this MDM application. The default is true.
+     */
+    isHotpatchEnabled?: boolean | null;
+    /**
+     * The unique identifier of the MDM application as a GUID-formatted string. This property is the resource key and can't be updated.
+     */
+    mdmAppId?: string | null;
+    /**
+     * The OdataType property
+     */
+    odataType?: string | null;
+}
+export interface MdmAppSettingCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: MdmAppSetting[] | null;
+}
 export type MonitoringAction = (typeof MonitoringActionObject)[keyof typeof MonitoringActionObject];
 export interface MonitoringRule extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -2884,9 +3659,14 @@ export interface OperationalInsightsConnection extends Parsable, ResourceConnect
      */
     workspaceName?: string | null;
 }
+export type OsStatus = (typeof OsStatusObject)[keyof typeof OsStatusObject];
 export interface Policy extends Entity, Parsable {
     /**
-     * Represents content applicable for offering to the related collection of devices.
+     * The catalog entries that apply to devices targeted by the policy.
+     */
+    applicableCatalogs?: ApplicableCatalog[] | null;
+    /**
+     * The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
      */
     applicableContent?: ApplicableContent[] | null;
     /**
@@ -2894,7 +3674,7 @@ export interface Policy extends Entity, Parsable {
      */
     approvalRules?: ApprovalRule[] | null;
     /**
-     * Represents a set of quality updates policy approval types.
+     * The update content approvals associated with the policy.
      */
     approvals?: PolicyApproval[] | null;
     /**
@@ -2914,11 +3694,15 @@ export interface Policy extends Entity, Parsable {
      */
     lastModifiedDateTime?: Date | null;
     /**
-     * Represents a set of deployment rings that contains update deployment settings.
+     * The deployment rings that define targeting, deferral, and pause settings for the policy.
      */
     rings?: Ring[] | null;
 }
 export interface PolicyApproval extends Entity, Parsable {
+    /**
+     * The approvedBy property
+     */
+    approvedBy?: ApprovedBy | null;
     /**
      * The content that you can approve for deployment. Read-only.
      */
@@ -2936,6 +3720,10 @@ export interface PolicyApproval extends Entity, Parsable {
      */
     lastModifiedDateTime?: Date | null;
     /**
+     * The date and time when the approved content can start being offered. If omitted when the approval is created, the service uses the current time.
+     */
+    startDateTime?: Date | null;
+    /**
      * The status property
      */
     status?: ApprovalStatus | null;
@@ -2945,6 +3733,30 @@ export interface PolicyApprovalCollectionResponse extends BaseCollectionPaginati
      * The value property
      */
     value?: PolicyApproval[] | null;
+}
+export interface PolicyAssignment extends Entity, Parsable {
+    /**
+     * The Microsoft Entra identifier of the assigned device. Read-only.
+     */
+    azureAdDeviceId?: string | null;
+    /**
+     * The deviceProfile property
+     */
+    deviceProfile?: DeviceProfile | null;
+    /**
+     * The identifier of the assigned Windows Autopatch policy. Read-only.
+     */
+    policyId?: string | null;
+    /**
+     * The display name of the assigned Windows Autopatch policy. Read-only.
+     */
+    policyName?: string | null;
+}
+export interface PolicyAssignmentCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
+    /**
+     * The value property
+     */
+    value?: PolicyAssignment[] | null;
 }
 export interface PolicyCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
     /**
@@ -3151,7 +3963,7 @@ export interface Ring extends Entity, Parsable {
      */
     createdDateTime?: Date | null;
     /**
-     * The quality update deferral period in days. The value must be between 0 and 30. Optional.
+     * The update deferral period in days. The value must be between 0 and 30. Optional.
      */
     deferralInDays?: number | null;
     /**
@@ -3171,11 +3983,11 @@ export interface Ring extends Entity, Parsable {
      */
     includedGroupAssignment?: IncludedGroupAssignment | null;
     /**
-     * The pause action for the quality update ring policy. Required.
+     * The pause action for the update ring. Required.
      */
     isPaused?: boolean | null;
     /**
-     * The date and time whenthe ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+     * The date and time when the ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
      */
     lastModifiedDateTime?: Date | null;
 }
@@ -3234,6 +4046,56 @@ export interface ScheduleSettings extends AdditionalDataHolder, BackedModel, Par
 }
 /**
  * Serializes information the current object
+ * @param ApplicableCatalog The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicableCatalog(writer: SerializationWriter, applicableCatalog: Partial<ApplicableCatalog> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicableCatalog || isSerializingDerivedType) { return; }
+    serializeEntity(writer, applicableCatalog, isSerializingDerivedType)
+    writer.writeObjectValue<CatalogEntry>("catalogEntry", applicableCatalog.catalogEntry, serializeCatalogEntry);
+    writer.writeCollectionOfObjectValues<ApplicableDevice>("devices", applicableCatalog.devices, serializeApplicableDevice);
+}
+/**
+ * Serializes information the current object
+ * @param ApplicableCatalogCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicableCatalogCollectionResponse(writer: SerializationWriter, applicableCatalogCollectionResponse: Partial<ApplicableCatalogCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicableCatalogCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, applicableCatalogCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicableCatalog>("value", applicableCatalogCollectionResponse.value, serializeApplicableCatalog);
+}
+/**
+ * Serializes information the current object
+ * @param ApplicableCatalogSummary The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicableCatalogSummary(writer: SerializationWriter, applicableCatalogSummary: Partial<ApplicableCatalogSummary> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicableCatalogSummary || isSerializingDerivedType) { return; }
+    serializeEntity(writer, applicableCatalogSummary, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicableDevice>("aggregatedDevices", applicableCatalogSummary.aggregatedDevices, serializeApplicableDevice);
+    writer.writeObjectValue<CatalogEntry>("catalogEntry", applicableCatalogSummary.catalogEntry, serializeCatalogEntry);
+}
+/**
+ * Serializes information the current object
+ * @param ApplicableCatalogSummaryCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicableCatalogSummaryCollectionResponse(writer: SerializationWriter, applicableCatalogSummaryCollectionResponse: Partial<ApplicableCatalogSummaryCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicableCatalogSummaryCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, applicableCatalogSummaryCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicableCatalogSummary>("value", applicableCatalogSummaryCollectionResponse.value, serializeApplicableCatalogSummary);
+}
+/**
+ * Serializes information the current object
  * @param ApplicableContent The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -3287,6 +4149,29 @@ export function serializeApplicableContentDeviceMatchCollectionResponse(writer: 
 }
 /**
  * Serializes information the current object
+ * @param ApplicableDevice The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicableDevice(writer: SerializationWriter, applicableDevice: Partial<ApplicableDevice> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicableDevice || isSerializingDerivedType) { return; }
+    serializeEntity(writer, applicableDevice, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param ApplicableDeviceCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeApplicableDeviceCollectionResponse(writer: SerializationWriter, applicableDeviceCollectionResponse: Partial<ApplicableDeviceCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!applicableDeviceCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, applicableDeviceCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicableDevice>("value", applicableDeviceCollectionResponse.value, serializeApplicableDevice);
+}
+/**
+ * Serializes information the current object
  * @param ApprovalRule The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -3298,6 +4183,9 @@ export function serializeApprovalRule(writer: SerializationWriter, approvalRule:
     writer.writeStringValue("@odata.type", approvalRule.odataType);
     writer.writeAdditionalData(approvalRule.additionalData);
     switch (approvalRule.odataType) {
+        case "#microsoft.graph.windowsUpdates.driverUpdateApprovalRule":
+            serializeDriverUpdateApprovalRule(writer, approvalRule, true);
+        break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule":
             serializeQualityUpdateApprovalRule(writer, approvalRule, true);
         break;
@@ -3695,6 +4583,42 @@ export function serializeDeploymentStateReason(writer: SerializationWriter, depl
 }
 /**
  * Serializes information the current object
+ * @param DeviceProfile The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeviceProfile(writer: SerializationWriter, deviceProfile: Partial<DeviceProfile> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceProfile || isSerializingDerivedType) { return; }
+    serializeEntity(writer, deviceProfile, isSerializingDerivedType)
+    writer.writeEnumValue<HotpatchReadiness>("hotpatchReadiness", deviceProfile.hotpatchReadiness);
+    writer.writeEnumValue<OsStatus>("osStatus", deviceProfile.osStatus);
+}
+/**
+ * Serializes information the current object
+ * @param DeviceProfileCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDeviceProfileCollectionResponse(writer: SerializationWriter, deviceProfileCollectionResponse: Partial<DeviceProfileCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!deviceProfileCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, deviceProfileCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DeviceProfile>("value", deviceProfileCollectionResponse.value, serializeDeviceProfile);
+}
+/**
+ * Serializes information the current object
+ * @param DriverUpdateApprovalRule The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdateApprovalRule(writer: SerializationWriter, driverUpdateApprovalRule: Partial<DriverUpdateApprovalRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdateApprovalRule || isSerializingDerivedType) { return; }
+    serializeApprovalRule(writer, driverUpdateApprovalRule, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
  * @param DriverUpdateCatalogEntry The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -3713,6 +4637,33 @@ export function serializeDriverUpdateCatalogEntry(writer: SerializationWriter, d
 }
 /**
  * Serializes information the current object
+ * @param DriverUpdateDeviceStatus The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdateDeviceStatus(writer: SerializationWriter, driverUpdateDeviceStatus: Partial<DriverUpdateDeviceStatus> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdateDeviceStatus || isSerializingDerivedType) { return; }
+    serializeEntity(writer, driverUpdateDeviceStatus, isSerializingDerivedType)
+    writer.writeEnumValue<DeviceClientState>("clientState", driverUpdateDeviceStatus.clientState);
+    writer.writeEnumValue<DeviceClientSubstate>("clientSubstate", driverUpdateDeviceStatus.clientSubstate);
+    writer.writeEnumValue<DeviceServiceState>("serviceState", driverUpdateDeviceStatus.serviceState);
+    writer.writeEnumValue<DeviceServiceSubstate>("serviceSubstate", driverUpdateDeviceStatus.serviceSubstate);
+}
+/**
+ * Serializes information the current object
+ * @param DriverUpdateDeviceStatusCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdateDeviceStatusCollectionResponse(writer: SerializationWriter, driverUpdateDeviceStatusCollectionResponse: Partial<DriverUpdateDeviceStatusCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdateDeviceStatusCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, driverUpdateDeviceStatusCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DriverUpdateDeviceStatus>("value", driverUpdateDeviceStatusCollectionResponse.value, serializeDriverUpdateDeviceStatus);
+}
+/**
+ * Serializes information the current object
  * @param DriverUpdateFilter The instance to serialize from.
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param writer Serialization writer to use to serialize this model
@@ -3721,6 +4672,52 @@ export function serializeDriverUpdateCatalogEntry(writer: SerializationWriter, d
 export function serializeDriverUpdateFilter(writer: SerializationWriter, driverUpdateFilter: Partial<DriverUpdateFilter> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!driverUpdateFilter || isSerializingDerivedType) { return; }
     serializeWindowsUpdateFilter(writer, driverUpdateFilter, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param DriverUpdatePolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdatePolicy(writer: SerializationWriter, driverUpdatePolicy: Partial<DriverUpdatePolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdatePolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, driverUpdatePolicy, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param DriverUpdateReport The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdateReport(writer: SerializationWriter, driverUpdateReport: Partial<DriverUpdateReport> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdateReport || isSerializingDerivedType) { return; }
+    serializeEntity(writer, driverUpdateReport, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DriverUpdateDeviceStatus>("deviceStatuses", driverUpdateReport.deviceStatuses, serializeDriverUpdateDeviceStatus);
+}
+/**
+ * Serializes information the current object
+ * @param DriverUpdateReportCollectionResponse The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdateReportCollectionResponse(writer: SerializationWriter, driverUpdateReportCollectionResponse: Partial<DriverUpdateReportCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdateReportCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, driverUpdateReportCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<DriverUpdateReport>("value", driverUpdateReportCollectionResponse.value, serializeDriverUpdateReport);
+}
+/**
+ * Serializes information the current object
+ * @param DriverUpdateRing The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeDriverUpdateRing(writer: SerializationWriter, driverUpdateRing: Partial<DriverUpdateRing> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!driverUpdateRing || isSerializingDerivedType) { return; }
+    serializeRing(writer, driverUpdateRing, isSerializingDerivedType)
 }
 /**
  * Serializes information the current object
@@ -3802,6 +4799,31 @@ export function serializeFeatureUpdateCatalogEntry(writer: SerializationWriter, 
     serializeSoftwareUpdateCatalogEntry(writer, featureUpdateCatalogEntry, isSerializingDerivedType)
     writer.writeStringValue("buildNumber", featureUpdateCatalogEntry.buildNumber);
     writer.writeStringValue("version", featureUpdateCatalogEntry.version);
+}
+/**
+ * Serializes information the current object
+ * @param FeatureUpdatePolicy The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFeatureUpdatePolicy(writer: SerializationWriter, featureUpdatePolicy: Partial<FeatureUpdatePolicy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!featureUpdatePolicy || isSerializingDerivedType) { return; }
+    serializePolicy(writer, featureUpdatePolicy, isSerializingDerivedType)
+}
+/**
+ * Serializes information the current object
+ * @param FeatureUpdateRing The instance to serialize from.
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeFeatureUpdateRing(writer: SerializationWriter, featureUpdateRing: Partial<FeatureUpdateRing> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!featureUpdateRing || isSerializingDerivedType) { return; }
+    serializeRing(writer, featureUpdateRing, isSerializingDerivedType)
+    writer.writeBooleanValue("isOfferOptional", featureUpdateRing.isOfferOptional);
+    writer.writeNumberValue("offerDurationInDays", featureUpdateRing.offerDurationInDays);
+    writer.writeNumberValue("offerIntervalInDays", featureUpdateRing.offerIntervalInDays);
 }
 /**
  * Serializes information the current object
@@ -3936,6 +4958,32 @@ export function serializeKnownIssueHistoryItem(writer: SerializationWriter, know
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MdmAppSetting The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMdmAppSetting(writer: SerializationWriter, mdmAppSetting: Partial<MdmAppSetting> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!mdmAppSetting || isSerializingDerivedType) { return; }
+    writer.writeBooleanValue("isHotpatchEnabled", mdmAppSetting.isHotpatchEnabled);
+    writer.writeStringValue("mdmAppId", mdmAppSetting.mdmAppId);
+    writer.writeStringValue("@odata.type", mdmAppSetting.odataType);
+    writer.writeAdditionalData(mdmAppSetting.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param MdmAppSettingCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeMdmAppSettingCollectionResponse(writer: SerializationWriter, mdmAppSettingCollectionResponse: Partial<MdmAppSettingCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!mdmAppSettingCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, mdmAppSettingCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<MdmAppSetting>("value", mdmAppSettingCollectionResponse.value, serializeMdmAppSetting);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param MonitoringRule The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -3985,6 +5033,7 @@ export function serializeOperationalInsightsConnection(writer: SerializationWrit
 export function serializePolicy(writer: SerializationWriter, policy: Partial<Policy> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!policy || isSerializingDerivedType) { return; }
     serializeEntity(writer, policy, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicableCatalog>("applicableCatalogs", policy.applicableCatalogs, serializeApplicableCatalog);
     writer.writeCollectionOfObjectValues<ApplicableContent>("applicableContent", policy.applicableContent, serializeApplicableContent);
     writer.writeCollectionOfObjectValues<ApprovalRule>("approvalRules", policy.approvalRules, serializeApprovalRule);
     writer.writeCollectionOfObjectValues<PolicyApproval>("approvals", policy.approvals, serializePolicyApproval);
@@ -3994,6 +5043,12 @@ export function serializePolicy(writer: SerializationWriter, policy: Partial<Pol
     writer.writeDateValue("lastModifiedDateTime", policy.lastModifiedDateTime);
     writer.writeCollectionOfObjectValues<Ring>("rings", policy.rings, serializeRing);
     switch (policy.odataType) {
+        case "#microsoft.graph.windowsUpdates.driverUpdatePolicy":
+            serializeDriverUpdatePolicy(writer, policy, true);
+        break;
+        case "#microsoft.graph.windowsUpdates.featureUpdatePolicy":
+            serializeFeatureUpdatePolicy(writer, policy, true);
+        break;
         case "#microsoft.graph.windowsUpdates.qualityUpdatePolicy":
             serializeQualityUpdatePolicy(writer, policy, true);
         break;
@@ -4009,10 +5064,12 @@ export function serializePolicy(writer: SerializationWriter, policy: Partial<Pol
 export function serializePolicyApproval(writer: SerializationWriter, policyApproval: Partial<PolicyApproval> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!policyApproval || isSerializingDerivedType) { return; }
     serializeEntity(writer, policyApproval, isSerializingDerivedType)
+    writer.writeEnumValue<ApprovedBy>("approvedBy", policyApproval.approvedBy);
     writer.writeObjectValue<CatalogEntry>("catalogEntry", policyApproval.catalogEntry, serializeCatalogEntry);
     writer.writeStringValue("catalogEntryId", policyApproval.catalogEntryId);
     writer.writeDateValue("createdDateTime", policyApproval.createdDateTime);
     writer.writeDateValue("lastModifiedDateTime", policyApproval.lastModifiedDateTime);
+    writer.writeDateValue("startDateTime", policyApproval.startDateTime);
     writer.writeEnumValue<ApprovalStatus>("status", policyApproval.status);
 }
 /**
@@ -4026,6 +5083,30 @@ export function serializePolicyApprovalCollectionResponse(writer: SerializationW
     if (!policyApprovalCollectionResponse || isSerializingDerivedType) { return; }
     serializeBaseCollectionPaginationCountResponse(writer, policyApprovalCollectionResponse, isSerializingDerivedType)
     writer.writeCollectionOfObjectValues<PolicyApproval>("value", policyApprovalCollectionResponse.value, serializePolicyApproval);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyAssignment The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePolicyAssignment(writer: SerializationWriter, policyAssignment: Partial<PolicyAssignment> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyAssignment || isSerializingDerivedType) { return; }
+    serializeEntity(writer, policyAssignment, isSerializingDerivedType)
+    writer.writeObjectValue<DeviceProfile>("deviceProfile", policyAssignment.deviceProfile, serializeDeviceProfile);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param PolicyAssignmentCollectionResponse The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializePolicyAssignmentCollectionResponse(writer: SerializationWriter, policyAssignmentCollectionResponse: Partial<PolicyAssignmentCollectionResponse> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!policyAssignmentCollectionResponse || isSerializingDerivedType) { return; }
+    serializeBaseCollectionPaginationCountResponse(writer, policyAssignmentCollectionResponse, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<PolicyAssignment>("value", policyAssignmentCollectionResponse.value, serializePolicyAssignment);
 }
 /**
  * Serializes information the current object
@@ -4277,6 +5358,12 @@ export function serializeRing(writer: SerializationWriter, ring: Partial<Ring> |
     writer.writeBooleanValue("isPaused", ring.isPaused);
     writer.writeDateValue("lastModifiedDateTime", ring.lastModifiedDateTime);
     switch (ring.odataType) {
+        case "#microsoft.graph.windowsUpdates.driverUpdateRing":
+            serializeDriverUpdateRing(writer, ring, true);
+        break;
+        case "#microsoft.graph.windowsUpdates.featureUpdateRing":
+            serializeFeatureUpdateRing(writer, ring, true);
+        break;
         case "#microsoft.graph.windowsUpdates.qualityUpdateRing":
             serializeQualityUpdateRing(writer, ring, true);
         break;
@@ -4402,6 +5489,19 @@ export function serializeSoftwareUpdateFilter(writer: SerializationWriter, softw
 /**
  * Serializes information the current object
  * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param TenantSetting The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeTenantSetting(writer: SerializationWriter, tenantSetting: Partial<TenantSetting> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!tenantSetting || isSerializingDerivedType) { return; }
+    serializeEntity(writer, tenantSetting, isSerializingDerivedType)
+    writer.writeBooleanValue("areDataProcessorServiceForWindowsFeaturesEnabled", tenantSetting.areDataProcessorServiceForWindowsFeaturesEnabled);
+    writer.writeCollectionOfObjectValues<MdmAppSetting>("mdmAppSettings", tenantSetting.mdmAppSettings, serializeMdmAppSetting);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
  * @param UpdatableAsset The instance to serialize from.
  * @param writer Serialization writer to use to serialize this model
  */
@@ -4472,6 +5572,21 @@ export function serializeUpdateCategoryEnrollmentInformation(writer: Serializati
     writer.writeDateValue("lastModifiedDateTime", updateCategoryEnrollmentInformation.lastModifiedDateTime);
     writer.writeStringValue("@odata.type", updateCategoryEnrollmentInformation.odataType);
     writer.writeAdditionalData(updateCategoryEnrollmentInformation.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param UpdateData The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeUpdateData(writer: SerializationWriter, updateData: Partial<UpdateData> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!updateData || isSerializingDerivedType) { return; }
+    serializeEntity(writer, updateData, isSerializingDerivedType)
+    writer.writeCollectionOfObjectValues<ApplicableCatalogSummary>("applicableCatalogSummaries", updateData.applicableCatalogSummaries, serializeApplicableCatalogSummary);
+    writer.writeCollectionOfObjectValues<DeviceProfile>("deviceProfiles", updateData.deviceProfiles, serializeDeviceProfile);
+    writer.writeCollectionOfObjectValues<DriverUpdateReport>("drivers", updateData.drivers, serializeDriverUpdateReport);
+    writer.writeCollectionOfObjectValues<PolicyAssignment>("policyAssignments", updateData.policyAssignments, serializePolicyAssignment);
 }
 /**
  * Serializes information the current object
@@ -4579,6 +5694,19 @@ export interface SoftwareUpdateCatalogEntry extends CatalogEntry, Parsable {
 }
 export interface SoftwareUpdateFilter extends ContentFilter, Parsable {
 }
+/**
+ * Tenant-level settings singleton for Windows Autopatch updates. Each tenant has at most one resource; a missing resource means all defaults apply.
+ */
+export interface TenantSetting extends Entity, Parsable {
+    /**
+     * Whether Data Processor Service for Windows (DPSW) features are enabled for this tenant. The default is false.
+     */
+    areDataProcessorServiceForWindowsFeaturesEnabled?: boolean | null;
+    /**
+     * The per-MDM-application settings for the current tenant.
+     */
+    mdmAppSettings?: MdmAppSetting[] | null;
+}
 export interface UpdatableAsset extends Entity, Parsable {
 }
 export interface UpdatableAssetCollectionResponse extends BaseCollectionPaginationCountResponse, Parsable {
@@ -4621,6 +5749,24 @@ export interface UpdateCategoryEnrollmentInformation extends AdditionalDataHolde
      * The OdataType property
      */
     odataType?: string | null;
+}
+export interface UpdateData extends Entity, Parsable {
+    /**
+     * Catalog applicability aggregated across Autopatch policies. Read-only.
+     */
+    applicableCatalogSummaries?: ApplicableCatalogSummary[] | null;
+    /**
+     * Device profile and Windows servicing information. Read-only.
+     */
+    deviceProfiles?: DeviceProfile[] | null;
+    /**
+     * Driver updates available in the tenant and their per-device rollout status. Read-only.
+     */
+    drivers?: DriverUpdateReport[] | null;
+    /**
+     * Assignments that associate Autopatch policies with devices. Read-only.
+     */
+    policyAssignments?: PolicyAssignment[] | null;
 }
 export interface UpdateManagementEnrollment extends AdditionalDataHolder, BackedModel, Parsable {
     /**
@@ -4702,6 +5848,11 @@ export const ApprovalStatusObject = {
     Suspended: "suspended",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const ApprovedByObject = {
+    System: "system",
+    User: "user",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const AzureADDeviceRegistrationErrorReasonObject = {
     InvalidGlobalDeviceId: "invalidGlobalDeviceId",
     InvalidAzureADDeviceId: "invalidAzureADDeviceId",
@@ -4736,12 +5887,70 @@ export const DeploymentStateValueObject = {
     Archived: "archived",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
+export const DeviceClientStateObject = {
+    Offering: "offering",
+    OnHold: "onHold",
+    Installing: "installing",
+    Installed: "installed",
+    Cancelled: "cancelled",
+    Uninstalling: "uninstalling",
+    Uninstalled: "uninstalled",
+    NotOffering: "notOffering",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const DeviceClientSubstateObject = {
+    Deferred: "deferred",
+    OfferReady: "offerReady",
+    Paused: "paused",
+    OfferReceived: "offerReceived",
+    DownloadStart: "downloadStart",
+    DownloadComplete: "downloadComplete",
+    InstallStart: "installStart",
+    InstallComplete: "installComplete",
+    RestartRequired: "restartRequired",
+    RestartInitiated: "restartInitiated",
+    RestartComplete: "restartComplete",
+    UpdateInstalled: "updateInstalled",
+    RollbackComplete: "rollbackComplete",
+    UserCancelled: "userCancelled",
+    DeviceCancelled: "deviceCancelled",
+    Uninstall: "uninstall",
+    Rollback: "rollback",
+    UpdateUninstalled: "updateUninstalled",
+    NotSupported: "notSupported",
+    PreviousUpdateInProgress: "previousUpdateInProgress",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const DeviceServiceStateObject = {
+    Unknown: "unknown",
+    Pending: "pending",
+    Offering: "offering",
+    OnHold: "onHold",
+    Cancelled: "cancelled",
+    NotOffering: "notOffering",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const DeviceServiceSubstateObject = {
+    Unknown: "unknown",
+    Scheduled: "scheduled",
+    OfferReady: "offerReady",
+    AdminPaused: "adminPaused",
+    AdminCancelled: "adminCancelled",
+    RemovedFromDeployment: "removedFromDeployment",
+    NotOffering: "notOffering",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
 export const EnrollmentStateObject = {
     NotEnrolled: "notEnrolled",
     Enrolled: "enrolled",
     EnrolledWithPolicy: "enrolledWithPolicy",
     Enrolling: "enrolling",
     Unenrolling: "unenrolling",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const HotpatchReadinessObject = {
+    Ready: "ready",
+    NotReady: "notReady",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const MonitoringActionObject = {
@@ -4753,6 +5962,12 @@ export const MonitoringActionObject = {
 export const MonitoringSignalObject = {
     Rollback: "rollback",
     Ineligible: "ineligible",
+    UnknownFutureValue: "unknownFutureValue",
+} as const;
+export const OsStatusObject = {
+    EndOfServicing: "endOfServicing",
+    InServicing: "inServicing",
+    NearEndOfServicing: "nearEndOfServicing",
     UnknownFutureValue: "unknownFutureValue",
 } as const;
 export const QualityUpdateCadenceObject = {

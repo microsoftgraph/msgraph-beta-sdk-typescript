@@ -584,6 +584,7 @@ export interface DeviceManagementRequestBuilder extends BaseRequestBuilder<Devic
     get deviceConfigurationsAllManagedDeviceCertificateStates(): DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder;
     /**
      * Provides operations to manage the deviceConfigurationUserStateSummaries property of the microsoft.graph.deviceManagement entity.
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
     get deviceConfigurationUserStateSummaries(): DeviceConfigurationUserStateSummariesRequestBuilder;
     /**
