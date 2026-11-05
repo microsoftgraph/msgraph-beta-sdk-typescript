@@ -13,16 +13,18 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface CustomEmojisWithDisplayNameRequestBuilder extends BaseRequestBuilder<CustomEmojisWithDisplayNameRequestBuilder> {
     /**
-     * Delete navigation property customEmojis for teamwork
+     * Delete a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkcustomemoji-delete?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of custom emojis available in organization messaging.
+     * Get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamworkCustomEmoji>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/teamworkcustomemoji-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<CustomEmojisWithDisplayNameRequestBuilderGetQueryParameters> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
     /**
@@ -34,13 +36,13 @@ export interface CustomEmojisWithDisplayNameRequestBuilder extends BaseRequestBu
      */
      patch(body: TeamworkCustomEmoji, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamworkCustomEmoji | undefined>;
     /**
-     * Delete navigation property customEmojis for teamwork
+     * Delete a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of custom emojis available in organization messaging.
+     * Get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +56,7 @@ export interface CustomEmojisWithDisplayNameRequestBuilder extends BaseRequestBu
      toPatchRequestInformation(body: TeamworkCustomEmoji, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of custom emojis available in organization messaging.
+ * Get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
  */
 export interface CustomEmojisWithDisplayNameRequestBuilderGetQueryParameters {
     /**

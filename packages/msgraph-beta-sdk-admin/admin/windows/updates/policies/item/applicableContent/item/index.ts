@@ -31,7 +31,7 @@ export interface ApplicableContentCatalogEntryItemRequestBuilder extends BaseReq
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * Represents content applicable for offering to the related collection of devices.
+     * The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ApplicableContent>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -52,7 +52,7 @@ export interface ApplicableContentCatalogEntryItemRequestBuilder extends BaseReq
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * Represents content applicable for offering to the related collection of devices.
+     * The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -66,7 +66,7 @@ export interface ApplicableContentCatalogEntryItemRequestBuilder extends BaseReq
      toPatchRequestInformation(body: ApplicableContent, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * Represents content applicable for offering to the related collection of devices.
+ * The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
  */
 export interface ApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters {
     /**

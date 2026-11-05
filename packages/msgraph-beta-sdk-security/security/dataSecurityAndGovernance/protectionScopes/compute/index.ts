@@ -49,15 +49,16 @@ export interface ComputePostResponse extends BaseCollectionPaginationCountRespon
  */
 export interface ComputeRequestBuilder extends BaseRequestBuilder<ComputeRequestBuilder> {
     /**
-     * Invoke action compute
+     * Compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ComputePostResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta|Find more info here}
      */
      post(body: ComputePostRequestBody, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ComputePostResponse | undefined>;
     /**
-     * Invoke action compute
+     * Compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

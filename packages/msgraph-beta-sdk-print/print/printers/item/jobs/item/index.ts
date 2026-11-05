@@ -38,6 +38,7 @@ export interface PrintJobItemRequestBuilder extends BaseRequestBuilder<PrintJobI
     get cancel(): CancelRequestBuilder;
     /**
      * Provides operations to call the cancelPrintJob method.
+     * @deprecated The cancelPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the cancel API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get cancelPrintJob(): CancelPrintJobRequestBuilder;
     /**
@@ -54,6 +55,7 @@ export interface PrintJobItemRequestBuilder extends BaseRequestBuilder<PrintJobI
     get start(): StartRequestBuilder;
     /**
      * Provides operations to call the startPrintJob method.
+     * @deprecated The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get startPrintJob(): StartPrintJobRequestBuilder;
     /**

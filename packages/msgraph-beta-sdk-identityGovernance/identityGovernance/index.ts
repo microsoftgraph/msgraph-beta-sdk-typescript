@@ -44,6 +44,7 @@ export interface IdentityGovernanceRequestBuilder extends BaseRequestBuilder<Ide
     get appConsent(): AppConsentRequestBuilder;
     /**
      * Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get catalogs(): CatalogsRequestBuilder;
     /**

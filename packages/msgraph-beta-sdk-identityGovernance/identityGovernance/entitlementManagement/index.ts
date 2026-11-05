@@ -62,10 +62,12 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
     get accessPackageAssignmentApprovals(): AccessPackageAssignmentApprovalsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackageAssignmentPolicies(): AccessPackageAssignmentPoliciesRequestBuilder;
     /**
      * Provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackageAssignmentRequests(): AccessPackageAssignmentRequestsRequestBuilder;
     /**
@@ -78,6 +80,7 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
     get accessPackageAssignments(): AccessPackageAssignmentsRequestBuilder;
     /**
      * Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get accessPackageCatalogs(): AccessPackageCatalogsRequestBuilder;
     /**
@@ -106,6 +109,7 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
     get accessPackageSuggestions(): AccessPackageSuggestionsRequestBuilder;
     /**
      * Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
      */
     get assignmentRequests(): AssignmentRequestsRequestBuilder;
     /**
@@ -118,6 +122,7 @@ export interface EntitlementManagementRequestBuilder extends BaseRequestBuilder<
     get connectedOrganizations(): ConnectedOrganizationsRequestBuilder;
     /**
      * Provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
+     * @deprecated Controls configurations preview. as of PrivatePreview:ControlConfigurations on 2024-09-27 and will be removed 2025-09-27
      */
     get controlConfigurations(): ControlConfigurationsRequestBuilder;
     /**

@@ -82,6 +82,7 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
     get microsoftGraphIdentityGovernanceActivateWithScope(): MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder;
     /**
      * Provides operations to call the cancelProcessing method.
+     * @deprecated  as of 2025-11/PrivatePreview:cancelWorkflows on 2025-10-28 and will be removed 2026-10-28
      */
     get microsoftGraphIdentityGovernanceCancelProcessing(): MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder;
     /**
@@ -94,10 +95,12 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
     get microsoftGraphIdentityGovernanceCreateNewVersion(): MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder;
     /**
      * Provides operations to call the previewTaskFailures method.
+     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-08-12 and will be removed 2026-02-28
      */
     get microsoftGraphIdentityGovernancePreviewTaskFailures(): MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder;
     /**
      * Provides operations to call the previewWorkflow method.
+     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-08-12 and will be removed 2026-02-28
      */
     get microsoftGraphIdentityGovernancePreviewWorkflow(): MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder;
     /**
@@ -106,6 +109,7 @@ export interface WorkflowItemRequestBuilder extends BaseRequestBuilder<WorkflowI
     get microsoftGraphIdentityGovernanceRestore(): MicrosoftGraphIdentityGovernanceRestoreRequestBuilder;
     /**
      * Provides operations to manage the previewScope property of the microsoft.graph.identityGovernance.workflow entity.
+     * @deprecated  as of 2025-01/PrivatePreview:organizationalUnit on 2025-08-12 and will be removed 2026-02-28
      */
     get previewScope(): PreviewScopeRequestBuilder;
     /**

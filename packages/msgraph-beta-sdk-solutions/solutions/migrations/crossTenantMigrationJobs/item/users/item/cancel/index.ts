@@ -13,19 +13,17 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBuilder> {
     /**
-     * Cancel a specific crossTenantMigrationTask for a User within a CrossTenantMigrationJob.  If the User migration can't be canceled or is in a terminal state, a 409 CONFLICT response code is returned, and the migration continues.
+     * Cancel a specific crossTenantMigrationTask for a user in a crossTenantMigrationJob. If the user migration can't be canceled or is in a terminal state, a 409 Conflict response code is returned, and the migration continues.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CrossTenantMigrationCancelResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      * @see {@link https://learn.microsoft.com/graph/api/crosstenantmigrationtask-cancel?view=graph-rest-beta|Find more info here}
      */
      post(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<CrossTenantMigrationCancelResponse | undefined>;
     /**
-     * Cancel a specific crossTenantMigrationTask for a User within a CrossTenantMigrationJob.  If the User migration can't be canceled or is in a terminal state, a 409 CONFLICT response code is returned, and the migration continues.
+     * Cancel a specific crossTenantMigrationTask for a user in a crossTenantMigrationJob. If the user migration can't be canceled or is in a terminal state, a 409 Conflict response code is returned, and the migration continues.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
-     * @deprecated  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
      */
      toPostRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }

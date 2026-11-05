@@ -34,6 +34,7 @@ export interface PrinterItemRequestBuilder extends BaseRequestBuilder<PrinterIte
     get connectors(): ConnectorsRequestBuilder;
     /**
      * Provides operations to call the getCapabilities method.
+     * @deprecated The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get getCapabilities(): GetCapabilitiesRequestBuilder;
     /**
@@ -42,6 +43,7 @@ export interface PrinterItemRequestBuilder extends BaseRequestBuilder<PrinterIte
     get jobs(): JobsRequestBuilder;
     /**
      * Provides operations to call the resetDefaults method.
+     * @deprecated The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get resetDefaults(): ResetDefaultsRequestBuilder;
     /**
@@ -50,6 +52,7 @@ export interface PrinterItemRequestBuilder extends BaseRequestBuilder<PrinterIte
     get restoreFactoryDefaults(): RestoreFactoryDefaultsRequestBuilder;
     /**
      * Provides operations to manage the share property of the microsoft.graph.printer entity.
+     * @deprecated The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
      */
     get share(): ShareRequestBuilder;
     /**

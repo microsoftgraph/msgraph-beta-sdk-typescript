@@ -336,6 +336,7 @@ export interface ManagedDeviceItemRequestBuilder extends BaseRequestBuilder<Mana
     get rotateRecoveryLockPasscode(): RotateRecoveryLockPasscodeRequestBuilder;
     /**
      * Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
+     * @deprecated This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
      */
     get securityBaselineStates(): SecurityBaselineStatesRequestBuilder;
     /**

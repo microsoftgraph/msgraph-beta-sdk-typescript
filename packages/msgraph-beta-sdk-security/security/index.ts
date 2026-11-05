@@ -92,6 +92,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityRequestBuilder> {
     /**
      * Provides operations to manage the alerts property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get alerts(): AlertsRequestBuilder;
     /**
@@ -116,6 +117,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get cases(): CasesRequestBuilder;
     /**
      * Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get cloudAppSecurityProfiles(): CloudAppSecurityProfilesRequestBuilder;
     /**
@@ -132,14 +134,17 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get dataSecurityAndGovernance(): DataSecurityAndGovernanceRequestBuilder;
     /**
      * Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get domainSecurityProfiles(): DomainSecurityProfilesRequestBuilder;
     /**
      * Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get fileSecurityProfiles(): FileSecurityProfilesRequestBuilder;
     /**
      * Provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get hostSecurityProfiles(): HostSecurityProfilesRequestBuilder;
     /**
@@ -160,6 +165,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get informationProtection(): InformationProtectionRequestBuilder;
     /**
      * Provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get ipSecurityProfiles(): IpSecurityProfilesRequestBuilder;
     /**
@@ -184,6 +190,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get partner(): PartnerRequestBuilder;
     /**
      * Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get providerTenantSettings(): ProviderTenantSettingsRequestBuilder;
     /**
@@ -200,6 +207,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get secureScores(): SecureScoresRequestBuilder;
     /**
      * Provides operations to manage the securityActions property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get securityActions(): SecurityActionsRequestBuilder;
     /**
@@ -220,6 +228,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get threatSubmission(): ThreatSubmissionRequestBuilder;
     /**
      * Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get tiIndicators(): TiIndicatorsRequestBuilder;
     /**
@@ -232,6 +241,7 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
     get triggerTypes(): TriggerTypesRequestBuilder;
     /**
      * Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
+     * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
     get userSecurityProfiles(): UserSecurityProfilesRequestBuilder;
     /**

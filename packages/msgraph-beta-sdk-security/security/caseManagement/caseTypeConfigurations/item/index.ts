@@ -8,6 +8,8 @@ import { createCaseTypeConfigurationFromDiscriminatorValue, type CaseTypeConfigu
 // @ts-ignore
 import { CustomFieldsRequestBuilderNavigationMetadata, CustomFieldsRequestBuilderRequestsMetadata, type CustomFieldsRequestBuilder } from './customFields/index.js';
 // @ts-ignore
+import { SlaPoliciesRequestBuilderNavigationMetadata, SlaPoliciesRequestBuilderRequestsMetadata, type SlaPoliciesRequestBuilder } from './slaPolicies/index.js';
+// @ts-ignore
 import { StatusesRequestBuilderNavigationMetadata, StatusesRequestBuilderRequestsMetadata, type StatusesRequestBuilder } from './statuses/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -20,6 +22,10 @@ export interface CaseTypeConfigurationItemRequestBuilder extends BaseRequestBuil
      * Provides operations to manage the customFields property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.
      */
     get customFields(): CustomFieldsRequestBuilder;
+    /**
+     * Provides operations to manage the slaPolicies property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.
+     */
+    get slaPolicies(): SlaPoliciesRequestBuilder;
     /**
      * Provides operations to manage the statuses property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.
      */
@@ -69,6 +75,10 @@ export const CaseTypeConfigurationItemRequestBuilderNavigationMetadata: Record<E
     customFields: {
         requestsMetadata: CustomFieldsRequestBuilderRequestsMetadata,
         navigationMetadata: CustomFieldsRequestBuilderNavigationMetadata,
+    },
+    slaPolicies: {
+        requestsMetadata: SlaPoliciesRequestBuilderRequestsMetadata,
+        navigationMetadata: SlaPoliciesRequestBuilderNavigationMetadata,
     },
     statuses: {
         requestsMetadata: StatusesRequestBuilderRequestsMetadata,

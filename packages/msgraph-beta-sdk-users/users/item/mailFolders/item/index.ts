@@ -58,6 +58,7 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
     get move(): MoveRequestBuilder;
     /**
      * Provides operations to manage the operations property of the microsoft.graph.mailFolder entity.
+     * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
      */
     get operations(): OperationsRequestBuilder;
     /**
@@ -66,6 +67,7 @@ export interface MailFolderItemRequestBuilder extends BaseRequestBuilder<MailFol
     get permanentDelete(): PermanentDeleteRequestBuilder;
     /**
      * Provides operations to call the updateAllMessagesReadState method.
+     * @deprecated  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
      */
     get updateAllMessagesReadState(): UpdateAllMessagesReadStateRequestBuilder;
     /**

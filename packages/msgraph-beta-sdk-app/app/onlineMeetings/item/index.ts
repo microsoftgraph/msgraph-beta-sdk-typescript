@@ -76,6 +76,7 @@ export interface OnlineMeetingItemRequestBuilder extends BaseRequestBuilder<Onli
     get recordings(): RecordingsRequestBuilder;
     /**
      * Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
+     * @deprecated The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
      */
     get registration(): RegistrationRequestBuilder;
     /**

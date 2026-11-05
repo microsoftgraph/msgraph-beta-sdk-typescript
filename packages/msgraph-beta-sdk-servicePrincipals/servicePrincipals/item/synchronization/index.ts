@@ -24,6 +24,7 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
 export interface SynchronizationRequestBuilder extends BaseRequestBuilder<SynchronizationRequestBuilder> {
     /**
      * Provides operations to call the acquireAccessToken method.
+     * @deprecated This action acquires an access token via Oauth Code Grant Flow. Code Grant will be completely deprecated so this action will be obsolete. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
     get acquireAccessToken(): AcquireAccessTokenRequestBuilder;
     /**
@@ -36,6 +37,7 @@ export interface SynchronizationRequestBuilder extends BaseRequestBuilder<Synchr
     get ping(): PingRequestBuilder;
     /**
      * The secrets property
+     * @deprecated Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
     get secrets(): SecretsRequestBuilder;
     /**

@@ -8,6 +8,8 @@ import { createODataErrorFromDiscriminatorValue, type ODataError } from '@micros
 // @ts-ignore
 import { BulkUploadRequestBuilderNavigationMetadata, BulkUploadRequestBuilderRequestsMetadata, type BulkUploadRequestBuilder } from './bulkUpload/index.js';
 // @ts-ignore
+import { ObjectConnectionsRequestBuilderNavigationMetadata, ObjectConnectionsRequestBuilderRequestsMetadata, type ObjectConnectionsRequestBuilder } from './objectConnections/index.js';
+// @ts-ignore
 import { PauseRequestBuilderRequestsMetadata, type PauseRequestBuilder } from './pause/index.js';
 // @ts-ignore
 import { ProvisionOnDemandRequestBuilderRequestsMetadata, type ProvisionOnDemandRequestBuilder } from './provisionOnDemand/index.js';
@@ -31,6 +33,10 @@ export interface SynchronizationJobItemRequestBuilder extends BaseRequestBuilder
      */
     get bulkUpload(): BulkUploadRequestBuilder;
     /**
+     * Provides operations to manage the objectConnections property of the microsoft.graph.synchronizationJob entity.
+     */
+    get objectConnections(): ObjectConnectionsRequestBuilder;
+    /**
      * Provides operations to call the pause method.
      */
     get pause(): PauseRequestBuilder;
@@ -52,6 +58,7 @@ export interface SynchronizationJobItemRequestBuilder extends BaseRequestBuilder
     get start(): StartRequestBuilder;
     /**
      * Provides operations to call the validateCredentials method.
+     * @deprecated Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
      */
     get validateCredentials(): ValidateCredentialsRequestBuilder;
     /**
@@ -128,6 +135,10 @@ export const SynchronizationJobItemRequestBuilderNavigationMetadata: Record<Excl
     bulkUpload: {
         requestsMetadata: BulkUploadRequestBuilderRequestsMetadata,
         navigationMetadata: BulkUploadRequestBuilderNavigationMetadata,
+    },
+    objectConnections: {
+        requestsMetadata: ObjectConnectionsRequestBuilderRequestsMetadata,
+        navigationMetadata: ObjectConnectionsRequestBuilderNavigationMetadata,
     },
     pause: {
         requestsMetadata: PauseRequestBuilderRequestsMetadata,

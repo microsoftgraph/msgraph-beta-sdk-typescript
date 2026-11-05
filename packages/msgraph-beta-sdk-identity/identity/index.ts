@@ -82,6 +82,7 @@ export interface IdentityRequestBuilder extends BaseRequestBuilder<IdentityReque
     get riskPrevention(): RiskPreventionRequestBuilder;
     /**
      * Provides operations to manage the signInIdentifiers property of the microsoft.graph.identityContainer entity.
+     * @deprecated  as of 2025-03/SignInWithAlias on 2025-03-26 and will be removed 2025-12-25
      */
     get signInIdentifiers(): SignInIdentifiersRequestBuilder;
     /**
@@ -90,6 +91,7 @@ export interface IdentityRequestBuilder extends BaseRequestBuilder<IdentityReque
     get userFlowAttributes(): UserFlowAttributesRequestBuilder;
     /**
      * Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
+     * @deprecated The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15
      */
     get userFlows(): UserFlowsRequestBuilder;
     /**

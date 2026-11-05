@@ -1011,6 +1011,15 @@ export function createRunSummaryFromDiscriminatorValue(parseNode: ParseNode | un
 /**
  * Creates a new instance of the appropriate class based on discriminator value
  * @param parseNode The parse node to use to read the discriminator value and create the object
+ * @returns {SelectedAgentBuilderPlatformsSubjectSet}
+ */
+// @ts-ignore
+export function createSelectedAgentBuilderPlatformsSubjectSetFromDiscriminatorValue(parseNode: ParseNode | undefined) : ((instance?: Parsable) => Record<string, (node: ParseNode) => void>) {
+    return deserializeIntoSelectedAgentBuilderPlatformsSubjectSet;
+}
+/**
+ * Creates a new instance of the appropriate class based on discriminator value
+ * @param parseNode The parse node to use to read the discriminator value and create the object
  * @returns {SelectedObjectsSubjectSet}
  */
 // @ts-ignore
@@ -2187,6 +2196,7 @@ export function deserializeIntoLifecyclePolicyReport(lifecyclePolicyReport: Part
 export function deserializeIntoLifecyclePolicyRule(lifecyclePolicyRule: Partial<LifecyclePolicyRule> | undefined = {}) : Record<string, (node: ParseNode) => void> {
     return {
         ...deserializeIntoEntity(lifecyclePolicyRule),
+        "gracePeriodInDays": n => { lifecyclePolicyRule.gracePeriodInDays = n.getNumberValue(); },
         "isEnabled": n => { lifecyclePolicyRule.isEnabled = n.getBooleanValue(); },
     }
 }
@@ -2587,6 +2597,18 @@ export function deserializeIntoRunSummary(runSummary: Partial<RunSummary> | unde
         "totalRuns": n => { runSummary.totalRuns = n.getNumberValue(); },
         "totalTasks": n => { runSummary.totalTasks = n.getNumberValue(); },
         "totalUsers": n => { runSummary.totalUsers = n.getNumberValue(); },
+    }
+}
+/**
+ * The deserialization information for the current model
+ * @param SelectedAgentBuilderPlatformsSubjectSet The instance to deserialize into.
+ * @returns {Record<string, (node: ParseNode) => void>}
+ */
+// @ts-ignore
+export function deserializeIntoSelectedAgentBuilderPlatformsSubjectSet(selectedAgentBuilderPlatformsSubjectSet: Partial<SelectedAgentBuilderPlatformsSubjectSet> | undefined = {}) : Record<string, (node: ParseNode) => void> {
+    return {
+        ...deserializeIntoSubjectSet(selectedAgentBuilderPlatformsSubjectSet),
+        "includedAgentBuilderPlatforms": n => { selectedAgentBuilderPlatformsSubjectSet.includedAgentBuilderPlatforms = n.getCollectionOfEnumValues<AgentBuilderPlatforms>(AgentBuilderPlatformsObject); },
     }
 }
 /**
@@ -3472,6 +3494,10 @@ export interface LifecyclePolicyReport extends Entity, Parsable {
 }
 export interface LifecyclePolicyRule extends Entity, Parsable {
     /**
+     * The optional grace period, in days, that starts when the rule violation is first detected. The allowed range is 0 through 30. If omitted or set to null, the gracePeriodInDays value of the containing lifecycle policy applies. A value of 0 means no additional grace period. If multiple rules remain violated, the earliest rule grace-period expiry starts the policy action sequence; the policy-level grace period isn't added again.
+     */
+    gracePeriodInDays?: number | null;
+    /**
      * Indicates whether the rule is enabled and evaluated as part of its policy.
      */
     isEnabled?: boolean | null;
@@ -3948,6 +3974,15 @@ export interface RunSummary extends AdditionalDataHolder, BackedModel, Parsable 
      * The total number of users processed by a workflow.
      */
     totalUsers?: number | null;
+}
+/**
+ * Defines the scope as only agent identities created by any of the selected builder platforms. It is valid only for agent identity lifecycle policies; using it on another policy type returns HTTP 400.
+ */
+export interface SelectedAgentBuilderPlatformsSubjectSet extends Parsable, SubjectSet {
+    /**
+     * The includedAgentBuilderPlatforms property
+     */
+    includedAgentBuilderPlatforms?: AgentBuilderPlatforms[] | null;
 }
 export interface SelectedObjectsSubjectSet extends Parsable, SubjectSet {
     /**
@@ -4648,6 +4683,7 @@ export function serializeLifecyclePolicyReport(writer: SerializationWriter, life
 export function serializeLifecyclePolicyRule(writer: SerializationWriter, lifecyclePolicyRule: Partial<LifecyclePolicyRule> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
     if (!lifecyclePolicyRule || isSerializingDerivedType) { return; }
     serializeEntity(writer, lifecyclePolicyRule, isSerializingDerivedType)
+    writer.writeNumberValue("gracePeriodInDays", lifecyclePolicyRule.gracePeriodInDays);
     writer.writeBooleanValue("isEnabled", lifecyclePolicyRule.isEnabled);
     switch (lifecyclePolicyRule.odataType) {
         case "#microsoft.graph.identityGovernance.accessPackageAssignmentRequiredRule":
@@ -5081,6 +5117,18 @@ export function serializeRunSummary(writer: SerializationWriter, runSummary: Par
     writer.writeNumberValue("totalTasks", runSummary.totalTasks);
     writer.writeNumberValue("totalUsers", runSummary.totalUsers);
     writer.writeAdditionalData(runSummary.additionalData);
+}
+/**
+ * Serializes information the current object
+ * @param isSerializingDerivedType A boolean indicating whether the serialization is for a derived type.
+ * @param SelectedAgentBuilderPlatformsSubjectSet The instance to serialize from.
+ * @param writer Serialization writer to use to serialize this model
+ */
+// @ts-ignore
+export function serializeSelectedAgentBuilderPlatformsSubjectSet(writer: SerializationWriter, selectedAgentBuilderPlatformsSubjectSet: Partial<SelectedAgentBuilderPlatformsSubjectSet> | undefined | null = {}, isSerializingDerivedType: boolean = false) : void {
+    if (!selectedAgentBuilderPlatformsSubjectSet || isSerializingDerivedType) { return; }
+    serializeSubjectSet(writer, selectedAgentBuilderPlatformsSubjectSet, isSerializingDerivedType)
+    writer.writeEnumValue<AgentBuilderPlatforms[]>("includedAgentBuilderPlatforms", selectedAgentBuilderPlatformsSubjectSet.includedAgentBuilderPlatforms);
 }
 /**
  * Serializes information the current object

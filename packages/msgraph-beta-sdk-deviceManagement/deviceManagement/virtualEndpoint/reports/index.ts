@@ -64,14 +64,17 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get getActionStatusReports(): GetActionStatusReportsRequestBuilder;
     /**
      * Provides operations to call the getCloudPcPerformanceReport method.
+     * @deprecated Starting from December 31, 2024, this API (&apos;getCloudPcPerformanceReport&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcTenantMetricsReport API. as of 2024-09/getCloudPcPerformanceReport on 2024-09-10 and will be removed 2024-12-31
      */
     get getCloudPcPerformanceReport(): GetCloudPcPerformanceReportRequestBuilder;
     /**
      * Provides operations to call the getCloudPcRecommendationReports method.
+     * @deprecated Starting from July 01, 2025, this API (&apos;getCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcRecommendationReports API. as of 2025-02/getCloudPcRecommendationReports on 2025-02-27 and will be removed 2025-07-01
      */
     get getCloudPcRecommendationReports(): GetCloudPcRecommendationReportsRequestBuilder;
     /**
      * Provides operations to call the getConnectionQualityReports method.
+     * @deprecated Starting from December 31, 2024, this API (&apos;getConnectionQualityReports&apos;) will be deprecated and no longer supported. Please use the retrieveConnectionQualityReports API. as of 2024-09/getConnectionQualityReports on 2024-09-10 and will be removed 2024-12-31
      */
     get getConnectionQualityReports(): GetConnectionQualityReportsRequestBuilder;
     /**
@@ -80,6 +83,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get getDailyAggregatedRemoteConnectionReports(): GetDailyAggregatedRemoteConnectionReportsRequestBuilder;
     /**
      * Provides operations to call the getFrontlineReport method.
+     * @deprecated Starting from December 31, 2024, this API (&apos;getFrontlineReport&apos;) will be deprecated and no longer supported. Please use the retrieveFrontlineReports API. as of 2024-09/getFrontlineReport on 2024-08-22 and will be removed 2024-12-31
      */
     get getFrontlineReport(): GetFrontlineReportRequestBuilder;
     /**
@@ -108,6 +112,7 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
     get retrieveCloudPcPerformanceMetricsReport(): RetrieveCloudPcPerformanceMetricsReportRequestBuilder;
     /**
      * Provides operations to call the retrieveCloudPcRecommendationReports method.
+     * @deprecated Starting from December 31, 2025, this API (&apos;cloudPcReports/retrieveCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the cloudPcReport/retrieveCloudPcRecommendationReports API. as of 2025-09/cloudPcReports/retrieveCloudPcRecommendationReports on 2025-09-01 and will be removed 2025-12-31
      */
     get retrieveCloudPcRecommendationReports(): RetrieveCloudPcRecommendationReportsRequestBuilder;
     /**
