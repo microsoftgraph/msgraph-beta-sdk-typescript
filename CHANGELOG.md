@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-preview.86](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.85...v1.0.0-preview.86) (2026-11-20)
+
+
+### Bug Fixes
+
+* **ci:** update ESRP release task to v14 ([#584](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/issues/584)) ([89f43d5](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/commit/89f43d5e7f6213abb626b99224382f52d9d3c2c5))
+
 ## [1.0.0-preview.85](https://github.com/microsoftgraph/msgraph-beta-sdk-typescript/compare/v1.0.0-preview.84...v1.0.0-preview.85) (2026-11-20)
 
 
