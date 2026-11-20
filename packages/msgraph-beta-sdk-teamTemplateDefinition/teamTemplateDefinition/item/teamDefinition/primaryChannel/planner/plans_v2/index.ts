@@ -27,21 +27,21 @@ export interface Plans_v2RequestBuilder extends BaseRequestBuilder<Plans_v2Reque
      */
      byPlanId(planId: string) : PlanItemRequestBuilder;
     /**
-     * Read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.
+     * Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlanCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<Plans_v2RequestBuilderGetQueryParameters> | undefined) : Promise<PlanCollectionResponse | undefined>;
     /**
-     * Read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.
+     * Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<Plans_v2RequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.
+ * Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported.
  */
 export interface Plans_v2RequestBuilderGetQueryParameters {
     /**

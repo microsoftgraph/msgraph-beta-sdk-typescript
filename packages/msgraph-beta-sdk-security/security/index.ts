@@ -6,6 +6,8 @@ import { createSecurityFromDiscriminatorValue, serializeSecurity, type Security 
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AgenticSecurityRequestBuilderNavigationMetadata, type AgenticSecurityRequestBuilder } from './agenticSecurity/index.js';
+// @ts-ignore
 import { Alerts_v2RequestBuilderNavigationMetadata, Alerts_v2RequestBuilderRequestsMetadata, type Alerts_v2RequestBuilder } from './alerts_v2/index.js';
 // @ts-ignore
 import { AlertsRequestBuilderNavigationMetadata, AlertsRequestBuilderRequestsMetadata, type AlertsRequestBuilder } from './alerts/index.js';
@@ -21,6 +23,8 @@ import { CasesRequestBuilderNavigationMetadata, CasesRequestBuilderRequestsMetad
 import { CloudAppSecurityProfilesRequestBuilderNavigationMetadata, CloudAppSecurityProfilesRequestBuilderRequestsMetadata, type CloudAppSecurityProfilesRequestBuilder } from './cloudAppSecurityProfiles/index.js';
 // @ts-ignore
 import { CollaborationRequestBuilderNavigationMetadata, CollaborationRequestBuilderRequestsMetadata, type CollaborationRequestBuilder } from './collaboration/index.js';
+// @ts-ignore
+import { ContentManagementRequestBuilderNavigationMetadata, type ContentManagementRequestBuilder } from './contentManagement/index.js';
 // @ts-ignore
 import { DataDiscoveryRequestBuilderNavigationMetadata, DataDiscoveryRequestBuilderRequestsMetadata, type DataDiscoveryRequestBuilder } from './dataDiscovery/index.js';
 // @ts-ignore
@@ -91,6 +95,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  */
 export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityRequestBuilder> {
     /**
+     * The agenticSecurity property
+     */
+    get agenticSecurity(): AgenticSecurityRequestBuilder;
+    /**
      * Provides operations to manage the alerts property of the microsoft.graph.security entity.
      * @deprecated The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
      */
@@ -124,6 +132,10 @@ export interface SecurityRequestBuilder extends BaseRequestBuilder<SecurityReque
      * Provides operations to manage the collaboration property of the microsoft.graph.security entity.
      */
     get collaboration(): CollaborationRequestBuilder;
+    /**
+     * The contentManagement property
+     */
+    get contentManagement(): ContentManagementRequestBuilder;
     /**
      * Provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.
      */
@@ -319,6 +331,9 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
         requestsMetadata: MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilderRequestsMetadata,
         pathParametersMappings: ["query"],
     },
+    agenticSecurity: {
+        navigationMetadata: AgenticSecurityRequestBuilderNavigationMetadata,
+    },
     alerts: {
         requestsMetadata: AlertsRequestBuilderRequestsMetadata,
         navigationMetadata: AlertsRequestBuilderNavigationMetadata,
@@ -350,6 +365,9 @@ export const SecurityRequestBuilderNavigationMetadata: Record<Exclude<keyof Secu
     collaboration: {
         requestsMetadata: CollaborationRequestBuilderRequestsMetadata,
         navigationMetadata: CollaborationRequestBuilderNavigationMetadata,
+    },
+    contentManagement: {
+        navigationMetadata: ContentManagementRequestBuilderNavigationMetadata,
     },
     dataDiscovery: {
         requestsMetadata: DataDiscoveryRequestBuilderRequestsMetadata,

@@ -124,6 +124,8 @@ import { GetMemberObjectsRequestBuilderRequestsMetadata, type GetMemberObjectsRe
 // @ts-ignore
 import { GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata, type GetPasswordSingleSignOnCredentialsRequestBuilder } from './getPasswordSingleSignOnCredentials/index.js';
 // @ts-ignore
+import { IdentityVerificationStatusRequestBuilderNavigationMetadata, IdentityVerificationStatusRequestBuilderRequestsMetadata, type IdentityVerificationStatusRequestBuilder } from './identityVerificationStatus/index.js';
+// @ts-ignore
 import { InferenceClassificationRequestBuilderNavigationMetadata, InferenceClassificationRequestBuilderRequestsMetadata, type InferenceClassificationRequestBuilder } from './inferenceClassification/index.js';
 // @ts-ignore
 import { InformationProtectionRequestBuilderNavigationMetadata, InformationProtectionRequestBuilderRequestsMetadata, type InformationProtectionRequestBuilder } from './informationProtection/index.js';
@@ -488,6 +490,10 @@ export interface UserItemRequestBuilder extends BaseRequestBuilder<UserItemReque
      * Provides operations to call the getPasswordSingleSignOnCredentials method.
      */
     get getPasswordSingleSignOnCredentials(): GetPasswordSingleSignOnCredentialsRequestBuilder;
+    /**
+     * Provides operations to manage the identityVerificationStatus property of the microsoft.graph.user entity.
+     */
+    get identityVerificationStatus(): IdentityVerificationStatusRequestBuilder;
     /**
      * Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
      */
@@ -1088,6 +1094,10 @@ export const UserItemRequestBuilderNavigationMetadata: Record<Exclude<keyof User
     },
     getPasswordSingleSignOnCredentials: {
         requestsMetadata: GetPasswordSingleSignOnCredentialsRequestBuilderRequestsMetadata,
+    },
+    identityVerificationStatus: {
+        requestsMetadata: IdentityVerificationStatusRequestBuilderRequestsMetadata,
+        navigationMetadata: IdentityVerificationStatusRequestBuilderNavigationMetadata,
     },
     inferenceClassification: {
         requestsMetadata: InferenceClassificationRequestBuilderRequestsMetadata,

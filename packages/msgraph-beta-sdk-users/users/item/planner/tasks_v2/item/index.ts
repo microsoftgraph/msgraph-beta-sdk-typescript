@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface TaskItemRequestBuilder extends BaseRequestBuilder<TaskItemRequestBuilder> {
     /**
-     * Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+     * Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Task>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<TaskItemRequestBuilderGetQueryParameters> | undefined) : Promise<Task | undefined>;
     /**
-     * Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+     * Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TaskItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+ * Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
  */
 export interface TaskItemRequestBuilderGetQueryParameters {
     /**

@@ -27,7 +27,7 @@ export interface ChecklistRequestBuilder extends BaseRequestBuilder<ChecklistReq
      */
      byChecklistItemV4Id(checklistItemV4Id: string) : ChecklistItemV4ItemRequestBuilder;
     /**
-     * The collection of checklist items on the task. Read-only. Nullable.
+     * Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChecklistItemV4CollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface ChecklistRequestBuilder extends BaseRequestBuilder<ChecklistReq
      */
      post(body: ChecklistItemV4, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ChecklistItemV4 | undefined>;
     /**
-     * The collection of checklist items on the task. Read-only. Nullable.
+     * Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface ChecklistRequestBuilder extends BaseRequestBuilder<ChecklistReq
      toPostRequestInformation(body: ChecklistItemV4, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of checklist items on the task. Read-only. Nullable.
+ * Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
  */
 export interface ChecklistRequestBuilderGetQueryParameters {
     /**

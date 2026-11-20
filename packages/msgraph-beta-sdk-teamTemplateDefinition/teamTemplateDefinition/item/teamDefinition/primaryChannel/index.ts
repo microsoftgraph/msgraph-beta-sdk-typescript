@@ -36,6 +36,8 @@ import { StartMigrationRequestBuilderRequestsMetadata, type StartMigrationReques
 // @ts-ignore
 import { TabsRequestBuilderNavigationMetadata, TabsRequestBuilderRequestsMetadata, type TabsRequestBuilder } from './tabs/index.js';
 // @ts-ignore
+import { TagsRequestBuilderNavigationMetadata, TagsRequestBuilderRequestsMetadata, type TagsRequestBuilder } from './tags/index.js';
+// @ts-ignore
 import { type UnarchiveRequestBuilder, UnarchiveRequestBuilderRequestsMetadata } from './unarchive/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata, type Parsable, type ParsableFactory, type RequestConfiguration, type RequestInformation, type RequestsMetadata } from '@microsoft/kiota-abstractions';
@@ -104,6 +106,10 @@ export interface PrimaryChannelRequestBuilder extends BaseRequestBuilder<Primary
      * Provides operations to manage the tabs property of the microsoft.graph.channel entity.
      */
     get tabs(): TabsRequestBuilder;
+    /**
+     * Provides operations to manage the tags property of the microsoft.graph.channel entity.
+     */
+    get tags(): TagsRequestBuilder;
     /**
      * Provides operations to call the unarchive method.
      */
@@ -230,6 +236,10 @@ export const PrimaryChannelRequestBuilderNavigationMetadata: Record<Exclude<keyo
     tabs: {
         requestsMetadata: TabsRequestBuilderRequestsMetadata,
         navigationMetadata: TabsRequestBuilderNavigationMetadata,
+    },
+    tags: {
+        requestsMetadata: TagsRequestBuilderRequestsMetadata,
+        navigationMetadata: TagsRequestBuilderNavigationMetadata,
     },
     unarchive: {
         requestsMetadata: UnarchiveRequestBuilderRequestsMetadata,

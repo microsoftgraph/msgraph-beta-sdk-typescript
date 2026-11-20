@@ -25,10 +25,9 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
     get plans_v2(): Plans_v2RequestBuilder;
     /**
-     * Delete a plannerGroup object.
+     * Delete navigation property planner for groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/group-delete-planner?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -40,16 +39,15 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
      get(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerGroup | undefined>;
     /**
-     * Update the properties of a plannerGroup object.
+     * Update the navigation property planner in groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerGroup>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/plannergroup-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: PlannerGroup, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerGroup | undefined>;
     /**
-     * Delete a plannerGroup object.
+     * Delete navigation property planner for groups
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -61,7 +59,7 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a plannerGroup object.
+     * Update the navigation property planner in groups
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

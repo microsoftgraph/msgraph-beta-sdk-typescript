@@ -27,10 +27,11 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      */
      byPlannerChatMessageId(plannerChatMessageId: string) : PlannerChatMessageItemRequestBuilder;
     /**
-     * The collection of chat messages associated with the task. Read-only. Nullable.
+     * Get a list of the plannerChatMessage objects associated with the task.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlannerChatMessageCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/task-list-messages?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<MessagesRequestBuilderGetQueryParameters> | undefined) : Promise<PlannerChatMessageCollectionResponse | undefined>;
     /**
@@ -42,7 +43,7 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      */
      post(body: PlannerChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlannerChatMessage | undefined>;
     /**
-     * The collection of chat messages associated with the task. Read-only. Nullable.
+     * Get a list of the plannerChatMessage objects associated with the task.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +57,7 @@ export interface MessagesRequestBuilder extends BaseRequestBuilder<MessagesReque
      toPostRequestInformation(body: PlannerChatMessage, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of chat messages associated with the task. Read-only. Nullable.
+ * Get a list of the plannerChatMessage objects associated with the task.
  */
 export interface MessagesRequestBuilderGetQueryParameters {
     /**

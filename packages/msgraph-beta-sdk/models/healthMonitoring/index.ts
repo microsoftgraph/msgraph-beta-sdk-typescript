@@ -961,6 +961,8 @@ export const AlertTypeObject = {
     PrivateAppBlockedByConnector: "privateAppBlockedByConnector",
     RemoteNetworkTunnelConnectivity: "remoteNetworkTunnelConnectivity",
     RemoteNetworkBgpConnectivity: "remoteNetworkBgpConnectivity",
+    AgentIdAutonomousSignInFailure: "agentIdAutonomousSignInFailure",
+    AgentIdInteractiveSignInFailure: "agentIdInteractiveSignInFailure",
 } as const;
 export const CategoryObject = {
     Unknown: "unknown",
@@ -981,6 +983,7 @@ export const ScenarioObject = {
     ConditionalAccess: "conditionalAccess",
     Saml: "saml",
     Gsa: "gsa",
+    AgentId: "agentId",
 } as const;
 /* tslint:enable */
 /* eslint-enable */

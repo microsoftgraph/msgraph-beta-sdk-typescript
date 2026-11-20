@@ -35,7 +35,7 @@ export interface ConfigurationMonitorsRequestBuilder extends BaseRequestBuilder<
      */
      get(requestConfiguration?: RequestConfiguration<ConfigurationMonitorsRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationMonitorCollectionResponse | undefined>;
     /**
-     * Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+     * Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency to detect configuration drift in monitorOnly mode, or applies a desired-state baseline once in applyOnce mode.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationMonitor>}
@@ -50,7 +50,7 @@ export interface ConfigurationMonitorsRequestBuilder extends BaseRequestBuilder<
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<ConfigurationMonitorsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+     * Create a new configurationMonitor object that runs periodically in the background at a scheduled frequency to detect configuration drift in monitorOnly mode, or applies a desired-state baseline once in applyOnce mode.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

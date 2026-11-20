@@ -31,7 +31,7 @@ export interface Tasks_v2RequestBuilder extends BaseRequestBuilder<Tasks_v2Reque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/plan-list-tasks?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/planner-list-tasks_v2?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<Tasks_v2RequestBuilderGetQueryParameters> | undefined) : Promise<TaskCollectionResponse | undefined>;
     /**
@@ -40,7 +40,7 @@ export interface Tasks_v2RequestBuilder extends BaseRequestBuilder<Tasks_v2Reque
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Task>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/plan-post-tasks?view=graph-rest-beta|Find more info here}
+     * @see {@link https://learn.microsoft.com/graph/api/planner-post-tasks_v2?view=graph-rest-beta|Find more info here}
      */
      post(body: Task, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Task | undefined>;
     /**

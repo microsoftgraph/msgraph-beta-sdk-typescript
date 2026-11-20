@@ -26,7 +26,7 @@ import { MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWith
 // @ts-ignore
 import { MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder } from './microsoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime/index.js';
 // @ts-ignore
-import { MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingIdRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingIdRequestBuilder } from './microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingId/index.js';
+import { MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder } from './microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId/index.js';
 // @ts-ignore
 import { MicrosoftGraphNetworkaccessGetEnterpriseApplicationReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderRequestsMetadata, type MicrosoftGraphNetworkaccessGetEnterpriseApplicationReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder } from './microsoftGraphNetworkaccessGetEnterpriseApplicationReportWithStartDateTimeWithEndDateTimeuserIdUserId/index.js';
 // @ts-ignore
@@ -135,9 +135,9 @@ export interface ReportsRequestBuilder extends BaseRequestBuilder<ReportsRequest
      * Provides operations to call the getDiscoveredApplicationSegmentReport method.
      * @param endDateTime Usage: endDateTime={endDateTime}
      * @param startDateTime Usage: startDateTime={startDateTime}
-     * @returns {MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingIdRequestBuilder}
+     * @returns {MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder}
      */
-     microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingId(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingIdRequestBuilder;
+     microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId(endDateTime: Date | undefined, startDateTime: Date | undefined) : MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder;
     /**
      * Provides operations to call the getEnterpriseApplicationReport method.
      * @param endDateTime Usage: endDateTime={endDateTime}
@@ -270,8 +270,8 @@ export const ReportsRequestBuilderNavigationMetadata: Record<Exclude<keyof Repor
         requestsMetadata: MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilderRequestsMetadata,
         pathParametersMappings: ["activityPivotDateTime", "endDateTime", "startDateTime"],
     },
-    microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingId: {
-        requestsMetadata: MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGroupingIdGroupingIdRequestBuilderRequestsMetadata,
+    microsoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserId: {
+        requestsMetadata: MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderRequestsMetadata,
         pathParametersMappings: ["endDateTime", "startDateTime"],
     },
     microsoftGraphNetworkaccessGetEnterpriseApplicationReportWithStartDateTimeWithEndDateTimeuserIdUserId: {

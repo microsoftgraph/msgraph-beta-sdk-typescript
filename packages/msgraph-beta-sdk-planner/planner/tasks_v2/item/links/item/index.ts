@@ -19,7 +19,7 @@ export interface ContentLinkItemRequestBuilder extends BaseRequestBuilder<Conten
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of content links attached to the task. Read-only. Nullable.
+     * Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContentLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ContentLinkItemRequestBuilder extends BaseRequestBuilder<Conten
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of content links attached to the task. Read-only. Nullable.
+     * Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ContentLinkItemRequestBuilder extends BaseRequestBuilder<Conten
      toPatchRequestInformation(body: ContentLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of content links attached to the task. Read-only. Nullable.
+ * Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
  */
 export interface ContentLinkItemRequestBuilderGetQueryParameters {
     /**
