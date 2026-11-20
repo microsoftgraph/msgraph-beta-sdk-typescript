@@ -27,7 +27,7 @@ export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuil
      */
      byContentLinkId(contentLinkId: string) : ContentLinkItemRequestBuilder;
     /**
-     * The collection of content links attached to the plan. Read-only. Nullable.
+     * Content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ContentLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuil
      */
      post(body: ContentLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<ContentLink | undefined>;
     /**
-     * The collection of content links attached to the plan. Read-only. Nullable.
+     * Content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface LinksRequestBuilder extends BaseRequestBuilder<LinksRequestBuil
      toPostRequestInformation(body: ContentLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of content links attached to the plan. Read-only. Nullable.
+ * Content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
  */
 export interface LinksRequestBuilderGetQueryParameters {
     /**

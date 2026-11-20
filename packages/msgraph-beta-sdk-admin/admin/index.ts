@@ -28,6 +28,8 @@ import { PeopleRequestBuilderNavigationMetadata, PeopleRequestBuilderRequestsMet
 // @ts-ignore
 import { ReportSettingsRequestBuilderNavigationMetadata, ReportSettingsRequestBuilderRequestsMetadata, type ReportSettingsRequestBuilder } from './reportSettings/index.js';
 // @ts-ignore
+import { ResourcePolicyRequestBuilderNavigationMetadata, ResourcePolicyRequestBuilderRequestsMetadata, type ResourcePolicyRequestBuilder } from './resourcePolicy/index.js';
+// @ts-ignore
 import { ServiceAnnouncementRequestBuilderNavigationMetadata, ServiceAnnouncementRequestBuilderRequestsMetadata, type ServiceAnnouncementRequestBuilder } from './serviceAnnouncement/index.js';
 // @ts-ignore
 import { SharepointRequestBuilderNavigationMetadata, SharepointRequestBuilderRequestsMetadata, type SharepointRequestBuilder } from './sharepoint/index.js';
@@ -88,6 +90,10 @@ export interface AdminRequestBuilder extends BaseRequestBuilder<AdminRequestBuil
      * Provides operations to manage the reportSettings property of the microsoft.graph.admin entity.
      */
     get reportSettings(): ReportSettingsRequestBuilder;
+    /**
+     * Provides operations to manage the resourcePolicy property of the microsoft.graph.admin entity.
+     */
+    get resourcePolicy(): ResourcePolicyRequestBuilder;
     /**
      * Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
      */
@@ -204,6 +210,10 @@ export const AdminRequestBuilderNavigationMetadata: Record<Exclude<keyof AdminRe
     reportSettings: {
         requestsMetadata: ReportSettingsRequestBuilderRequestsMetadata,
         navigationMetadata: ReportSettingsRequestBuilderNavigationMetadata,
+    },
+    resourcePolicy: {
+        requestsMetadata: ResourcePolicyRequestBuilderRequestsMetadata,
+        navigationMetadata: ResourcePolicyRequestBuilderNavigationMetadata,
     },
     serviceAnnouncement: {
         requestsMetadata: ServiceAnnouncementRequestBuilderRequestsMetadata,

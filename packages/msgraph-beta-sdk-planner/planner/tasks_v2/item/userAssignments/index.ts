@@ -27,7 +27,7 @@ export interface UserAssignmentsRequestBuilder extends BaseRequestBuilder<UserAs
      */
      byUserAssignmentId(userAssignmentId: string) : UserAssignmentItemRequestBuilder;
     /**
-     * The collection of user assignments on the task. Read-only. Nullable.
+     * User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserAssignmentCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface UserAssignmentsRequestBuilder extends BaseRequestBuilder<UserAs
      */
      post(body: UserAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<UserAssignment | undefined>;
     /**
-     * The collection of user assignments on the task. Read-only. Nullable.
+     * User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface UserAssignmentsRequestBuilder extends BaseRequestBuilder<UserAs
      toPostRequestInformation(body: UserAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of user assignments on the task. Read-only. Nullable.
+ * User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
  */
 export interface UserAssignmentsRequestBuilderGetQueryParameters {
     /**

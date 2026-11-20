@@ -13,7 +13,7 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface BaselineRequestBuilder extends BaseRequestBuilder<BaselineRequestBuilder> {
     /**
-     * Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+     * Get the configurationBaseline attached to a monitor or a configurationTemplateVersion.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ConfigurationBaseline>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -21,14 +21,14 @@ export interface BaselineRequestBuilder extends BaseRequestBuilder<BaselineReque
      */
      get(requestConfiguration?: RequestConfiguration<BaselineRequestBuilderGetQueryParameters> | undefined) : Promise<ConfigurationBaseline | undefined>;
     /**
-     * Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+     * Get the configurationBaseline attached to a monitor or a configurationTemplateVersion.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BaselineRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
+ * Get the configurationBaseline attached to a monitor or a configurationTemplateVersion.
  */
 export interface BaselineRequestBuilderGetQueryParameters {
     /**

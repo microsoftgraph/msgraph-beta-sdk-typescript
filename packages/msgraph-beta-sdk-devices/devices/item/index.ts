@@ -91,7 +91,7 @@ export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemR
      */
     get usageRights(): UsageRightsRequestBuilder;
     /**
-     * Delete a registered device.
+     * Delete a registered device. When deleted, the device is moved to the deleted items container and is available for recovery for up to 30 days. After 30 days, the device is permanently deleted.- To learn more, see deletedItems.- For more information about soft deletion behavior for devices, see Device soft delete overview (preview).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      * @see {@link https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-beta|Find more info here}
@@ -115,7 +115,7 @@ export interface DeviceItemRequestBuilder extends BaseRequestBuilder<DeviceItemR
      */
      patch(body: Device, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Device | undefined>;
     /**
-     * Delete a registered device.
+     * Delete a registered device. When deleted, the device is moved to the deleted items container and is available for recovery for up to 30 days. After 30 days, the device is permanently deleted.- To learn more, see deletedItems.- For more information about soft deletion behavior for devices, see Device soft delete overview (preview).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */

@@ -19,7 +19,7 @@ export interface ChecklistItemV4ItemRequestBuilder extends BaseRequestBuilder<Ch
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of checklist items on the task. Read-only. Nullable.
+     * Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<ChecklistItemV4>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface ChecklistItemV4ItemRequestBuilder extends BaseRequestBuilder<Ch
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of checklist items on the task. Read-only. Nullable.
+     * Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface ChecklistItemV4ItemRequestBuilder extends BaseRequestBuilder<Ch
      toPatchRequestInformation(body: ChecklistItemV4, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of checklist items on the task. Read-only. Nullable.
+ * Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
  */
 export interface ChecklistItemV4ItemRequestBuilderGetQueryParameters {
     /**

@@ -27,21 +27,22 @@ export interface TasksRequestBuilder extends BaseRequestBuilder<TasksRequestBuil
      */
      byTaskId(taskId: string) : TaskItemRequestBuilder;
     /**
-     * The collection of tasks in the plan. Read-only. Nullable.
+     * Get a list of the task objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TaskCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plan-list-tasks?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<TasksRequestBuilderGetQueryParameters> | undefined) : Promise<TaskCollectionResponse | undefined>;
     /**
-     * The collection of tasks in the plan. Read-only. Nullable.
+     * Get a list of the task objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<TasksRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The collection of tasks in the plan. Read-only. Nullable.
+ * Get a list of the task objects and their properties.
  */
 export interface TasksRequestBuilderGetQueryParameters {
     /**

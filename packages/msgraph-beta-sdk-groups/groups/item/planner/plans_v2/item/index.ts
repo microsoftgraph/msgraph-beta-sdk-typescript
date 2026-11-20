@@ -13,21 +13,21 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface PlanItemRequestBuilder extends BaseRequestBuilder<PlanItemRequestBuilder> {
     /**
-     * Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.
+     * Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the group.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Plan>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<PlanItemRequestBuilderGetQueryParameters> | undefined) : Promise<Plan | undefined>;
     /**
-     * Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.
+     * Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the group.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlanItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.
+ * Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the group.
  */
 export interface PlanItemRequestBuilderGetQueryParameters {
     /**

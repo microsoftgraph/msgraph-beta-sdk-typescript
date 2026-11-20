@@ -27,21 +27,21 @@ export interface CustomFieldsRequestBuilder extends BaseRequestBuilder<CustomFie
      */
      byCustomFieldDefinitionId(customFieldDefinitionId: string) : CustomFieldDefinitionItemRequestBuilder;
     /**
-     * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+     * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<CustomFieldDefinitionCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
      */
      get(requestConfiguration?: RequestConfiguration<CustomFieldsRequestBuilderGetQueryParameters> | undefined) : Promise<CustomFieldDefinitionCollectionResponse | undefined>;
     /**
-     * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+     * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<CustomFieldsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
 }
 /**
- * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+ * The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
  */
 export interface CustomFieldsRequestBuilderGetQueryParameters {
     /**

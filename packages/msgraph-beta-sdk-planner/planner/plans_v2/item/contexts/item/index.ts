@@ -19,7 +19,7 @@ export interface PlanContextLinkItemRequestBuilder extends BaseRequestBuilder<Pl
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+     * Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlanContextLink>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface PlanContextLinkItemRequestBuilder extends BaseRequestBuilder<Pl
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+     * Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface PlanContextLinkItemRequestBuilder extends BaseRequestBuilder<Pl
      toPatchRequestInformation(body: PlanContextLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+ * Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
  */
 export interface PlanContextLinkItemRequestBuilderGetQueryParameters {
     /**

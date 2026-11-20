@@ -19,7 +19,7 @@ export interface UserAssignmentItemRequestBuilder extends BaseRequestBuilder<Use
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of user assignments on the task. Read-only. Nullable.
+     * User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<UserAssignment>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -40,7 +40,7 @@ export interface UserAssignmentItemRequestBuilder extends BaseRequestBuilder<Use
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of user assignments on the task. Read-only. Nullable.
+     * User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -54,7 +54,7 @@ export interface UserAssignmentItemRequestBuilder extends BaseRequestBuilder<Use
      toPatchRequestInformation(body: UserAssignment, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of user assignments on the task. Read-only. Nullable.
+ * User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
  */
 export interface UserAssignmentItemRequestBuilderGetQueryParameters {
     /**

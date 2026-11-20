@@ -6,6 +6,8 @@ import { createAuthenticationMethodFromDiscriminatorValue, serializeAuthenticati
 // @ts-ignore
 import { createODataErrorFromDiscriminatorValue, type ODataError } from '@microsoft/msgraph-beta-sdk/models/oDataErrors/index.js';
 // @ts-ignore
+import { AttestProvenanceRequestBuilderRequestsMetadata, type AttestProvenanceRequestBuilder } from './attestProvenance/index.js';
+// @ts-ignore
 import { DisableSmsSignInRequestBuilderRequestsMetadata, type DisableSmsSignInRequestBuilder } from './disableSmsSignIn/index.js';
 // @ts-ignore
 import { EnableSmsSignInRequestBuilderRequestsMetadata, type EnableSmsSignInRequestBuilder } from './enableSmsSignIn/index.js';
@@ -18,6 +20,10 @@ import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type 
  * Provides operations to manage the methods property of the microsoft.graph.authentication entity.
  */
 export interface AuthenticationMethodItemRequestBuilder extends BaseRequestBuilder<AuthenticationMethodItemRequestBuilder> {
+    /**
+     * Provides operations to call the attestProvenance method.
+     */
+    get attestProvenance(): AttestProvenanceRequestBuilder;
     /**
      * Provides operations to call the disableSmsSignIn method.
      */
@@ -87,6 +93,9 @@ const AuthenticationMethodItemRequestBuilderGetQueryParametersMapper: Record<str
  * Metadata for all the navigation properties in the request builder.
  */
 export const AuthenticationMethodItemRequestBuilderNavigationMetadata: Record<Exclude<keyof AuthenticationMethodItemRequestBuilder, KeysToExcludeForNavigationMetadata>, NavigationMetadata> = {
+    attestProvenance: {
+        requestsMetadata: AttestProvenanceRequestBuilderRequestsMetadata,
+    },
     disableSmsSignIn: {
         requestsMetadata: DisableSmsSignInRequestBuilderRequestsMetadata,
     },

@@ -13,40 +13,43 @@ import { type BaseRequestBuilder, type Parsable, type ParsableFactory, type Requ
  */
 export interface BucketItemRequestBuilder extends BaseRequestBuilder<BucketItemRequestBuilder> {
     /**
-     * Delete navigation property buckets for planner
+     * Delete a bucket object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plan-delete-buckets?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
-     * The collection of buckets in the plan. Read-only. Nullable.
+     * Read the properties and relationships of bucket object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Bucket>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/bucket-get?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BucketItemRequestBuilderGetQueryParameters> | undefined) : Promise<Bucket | undefined>;
     /**
-     * Update the navigation property buckets in planner
+     * Update the properties of a bucket object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Bucket>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/bucket-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: Bucket, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Bucket | undefined>;
     /**
-     * Delete navigation property buckets for planner
+     * Delete a bucket object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toDeleteRequestInformation(requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
     /**
-     * The collection of buckets in the plan. Read-only. Nullable.
+     * Read the properties and relationships of bucket object.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BucketItemRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the navigation property buckets in planner
+     * Update the properties of a bucket object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -54,7 +57,7 @@ export interface BucketItemRequestBuilder extends BaseRequestBuilder<BucketItemR
      toPatchRequestInformation(body: Bucket, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of buckets in the plan. Read-only. Nullable.
+ * Read the properties and relationships of bucket object.
  */
 export interface BucketItemRequestBuilderGetQueryParameters {
     /**

@@ -25,10 +25,9 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
     get plans_v2(): Plans_v2RequestBuilder;
     /**
-     * Delete a teamsChannelPlanner object.
+     * Delete navigation property planner for teams
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/channel-delete-planner?view=graph-rest-beta|Find more info here}
      */
      delete(requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<void>;
     /**
@@ -40,16 +39,15 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
      get(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : Promise<TeamsChannelPlanner | undefined>;
     /**
-     * Update the properties of a teamsChannelPlanner object.
+     * Update the navigation property planner in teams
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<TeamsChannelPlanner>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
-     * @see {@link https://learn.microsoft.com/graph/api/teamschannelplanner-update?view=graph-rest-beta|Find more info here}
      */
      patch(body: TeamsChannelPlanner, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<TeamsChannelPlanner | undefined>;
     /**
-     * Delete a teamsChannelPlanner object.
+     * Delete navigation property planner for teams
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -61,7 +59,7 @@ export interface PlannerRequestBuilder extends BaseRequestBuilder<PlannerRequest
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<PlannerRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Update the properties of a teamsChannelPlanner object.
+     * Update the navigation property planner in teams
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}

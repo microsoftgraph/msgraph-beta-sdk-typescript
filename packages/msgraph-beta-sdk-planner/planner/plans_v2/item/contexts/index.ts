@@ -27,7 +27,7 @@ export interface ContextsRequestBuilder extends BaseRequestBuilder<ContextsReque
      */
      byPlanContextLinkId(planContextLinkId: string) : PlanContextLinkItemRequestBuilder;
     /**
-     * The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+     * Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<PlanContextLinkCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
@@ -42,7 +42,7 @@ export interface ContextsRequestBuilder extends BaseRequestBuilder<ContextsReque
      */
      post(body: PlanContextLink, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<PlanContextLink | undefined>;
     /**
-     * The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+     * Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
@@ -56,7 +56,7 @@ export interface ContextsRequestBuilder extends BaseRequestBuilder<ContextsReque
      toPostRequestInformation(body: PlanContextLink, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+ * Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
  */
 export interface ContextsRequestBuilderGetQueryParameters {
     /**

@@ -40,6 +40,10 @@ import { RetrieveCloudPcLaunchDetailRequestBuilderRequestsMetadata, type Retriev
 // @ts-ignore
 import { RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata, type RetrieveCloudPCRemoteActionResultsRequestBuilder } from './retrieveCloudPCRemoteActionResults/index.js';
 // @ts-ignore
+import { RetrieveFlexCloudPcAccessConfigurationRequestBuilderRequestsMetadata, type RetrieveFlexCloudPcAccessConfigurationRequestBuilder } from './retrieveFlexCloudPcAccessConfiguration/index.js';
+// @ts-ignore
+import { RetrieveFlexCloudPcConfigurationDetailRequestBuilderRequestsMetadata, type RetrieveFlexCloudPcConfigurationDetailRequestBuilder } from './retrieveFlexCloudPcConfigurationDetail/index.js';
+// @ts-ignore
 import { RetrieveFrontlineCloudPcDetailRequestBuilderRequestsMetadata, type RetrieveFrontlineCloudPcDetailRequestBuilder } from './retrieveFrontlineCloudPcDetail/index.js';
 // @ts-ignore
 import { RetrieveReviewStatusRequestBuilderRequestsMetadata, type RetrieveReviewStatusRequestBuilder } from './retrieveReviewStatus/index.js';
@@ -47,6 +51,8 @@ import { RetrieveReviewStatusRequestBuilderRequestsMetadata, type RetrieveReview
 import { RetrieveSnapshotsRequestBuilderRequestsMetadata, type RetrieveSnapshotsRequestBuilder } from './retrieveSnapshots/index.js';
 // @ts-ignore
 import { RetryPartnerAgentInstallationRequestBuilderRequestsMetadata, type RetryPartnerAgentInstallationRequestBuilder } from './retryPartnerAgentInstallation/index.js';
+// @ts-ignore
+import { SetDeviceNameRequestBuilderRequestsMetadata, type SetDeviceNameRequestBuilder } from './setDeviceName/index.js';
 // @ts-ignore
 import { SetReviewStatusRequestBuilderRequestsMetadata, type SetReviewStatusRequestBuilder } from './setReviewStatus/index.js';
 // @ts-ignore
@@ -132,6 +138,14 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      */
     get retrieveCloudPCRemoteActionResults(): RetrieveCloudPCRemoteActionResultsRequestBuilder;
     /**
+     * Provides operations to call the retrieveFlexCloudPcAccessConfiguration method.
+     */
+    get retrieveFlexCloudPcAccessConfiguration(): RetrieveFlexCloudPcAccessConfigurationRequestBuilder;
+    /**
+     * Provides operations to call the retrieveFlexCloudPcConfigurationDetail method.
+     */
+    get retrieveFlexCloudPcConfigurationDetail(): RetrieveFlexCloudPcConfigurationDetailRequestBuilder;
+    /**
      * Provides operations to call the retrieveFrontlineCloudPcDetail method.
      */
     get retrieveFrontlineCloudPcDetail(): RetrieveFrontlineCloudPcDetailRequestBuilder;
@@ -147,6 +161,10 @@ export interface CloudPCItemRequestBuilder extends BaseRequestBuilder<CloudPCIte
      * Provides operations to call the retryPartnerAgentInstallation method.
      */
     get retryPartnerAgentInstallation(): RetryPartnerAgentInstallationRequestBuilder;
+    /**
+     * Provides operations to call the setDeviceName method.
+     */
+    get setDeviceName(): SetDeviceNameRequestBuilder;
     /**
      * Provides operations to call the setReviewStatus method.
      */
@@ -283,6 +301,12 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     retrieveCloudPCRemoteActionResults: {
         requestsMetadata: RetrieveCloudPCRemoteActionResultsRequestBuilderRequestsMetadata,
     },
+    retrieveFlexCloudPcAccessConfiguration: {
+        requestsMetadata: RetrieveFlexCloudPcAccessConfigurationRequestBuilderRequestsMetadata,
+    },
+    retrieveFlexCloudPcConfigurationDetail: {
+        requestsMetadata: RetrieveFlexCloudPcConfigurationDetailRequestBuilderRequestsMetadata,
+    },
     retrieveFrontlineCloudPcDetail: {
         requestsMetadata: RetrieveFrontlineCloudPcDetailRequestBuilderRequestsMetadata,
     },
@@ -294,6 +318,9 @@ export const CloudPCItemRequestBuilderNavigationMetadata: Record<Exclude<keyof C
     },
     retryPartnerAgentInstallation: {
         requestsMetadata: RetryPartnerAgentInstallationRequestBuilderRequestsMetadata,
+    },
+    setDeviceName: {
+        requestsMetadata: SetDeviceNameRequestBuilderRequestsMetadata,
     },
     setReviewStatus: {
         requestsMetadata: SetReviewStatusRequestBuilderRequestsMetadata,

@@ -22,6 +22,8 @@ import { GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilder
 // @ts-ignore
 import { ProvisioningRequestBuilderNavigationMetadata, ProvisioningRequestBuilderRequestsMetadata, type ProvisioningRequestBuilder } from './provisioning/index.js';
 // @ts-ignore
+import { ResourcePolicyRequestBuilderNavigationMetadata, ResourcePolicyRequestBuilderRequestsMetadata, type ResourcePolicyRequestBuilder } from './resourcePolicy/index.js';
+// @ts-ignore
 import { SignInEventsAppSummaryRequestBuilderNavigationMetadata, SignInEventsAppSummaryRequestBuilderRequestsMetadata, type SignInEventsAppSummaryRequestBuilder } from './signInEventsAppSummary/index.js';
 // @ts-ignore
 import { SignInEventsSummaryRequestBuilderNavigationMetadata, SignInEventsSummaryRequestBuilderRequestsMetadata, type SignInEventsSummaryRequestBuilder } from './signInEventsSummary/index.js';
@@ -56,6 +58,10 @@ export interface AuditLogsRequestBuilder extends BaseRequestBuilder<AuditLogsReq
      * Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
      */
     get provisioning(): ProvisioningRequestBuilder;
+    /**
+     * Provides operations to manage the resourcePolicy property of the microsoft.graph.auditLogRoot entity.
+     */
+    get resourcePolicy(): ResourcePolicyRequestBuilder;
     /**
      * Provides operations to manage the signInEventsAppSummary property of the microsoft.graph.auditLogRoot entity.
      */
@@ -178,6 +184,10 @@ export const AuditLogsRequestBuilderNavigationMetadata: Record<Exclude<keyof Aud
     provisioning: {
         requestsMetadata: ProvisioningRequestBuilderRequestsMetadata,
         navigationMetadata: ProvisioningRequestBuilderNavigationMetadata,
+    },
+    resourcePolicy: {
+        requestsMetadata: ResourcePolicyRequestBuilderRequestsMetadata,
+        navigationMetadata: ResourcePolicyRequestBuilderNavigationMetadata,
     },
     signInEventsAppSummary: {
         requestsMetadata: SignInEventsAppSummaryRequestBuilderRequestsMetadata,

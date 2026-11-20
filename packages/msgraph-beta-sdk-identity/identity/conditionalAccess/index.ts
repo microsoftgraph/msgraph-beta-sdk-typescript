@@ -16,6 +16,8 @@ import { NamedLocationsRequestBuilderNavigationMetadata, NamedLocationsRequestBu
 // @ts-ignore
 import { PoliciesRequestBuilderNavigationMetadata, PoliciesRequestBuilderRequestsMetadata, type PoliciesRequestBuilder } from './policies/index.js';
 // @ts-ignore
+import { SettingsRequestBuilderRequestsMetadata, type SettingsRequestBuilder } from './settings/index.js';
+// @ts-ignore
 import { TemplatesRequestBuilderNavigationMetadata, TemplatesRequestBuilderRequestsMetadata, type TemplatesRequestBuilder } from './templates/index.js';
 // @ts-ignore
 import { type BaseRequestBuilder, type KeysToExcludeForNavigationMetadata, type NavigationMetadata } from '@microsoft/kiota-abstractions';
@@ -53,6 +55,10 @@ export interface ConditionalAccessRequestBuilder extends BaseRequestBuilder<Cond
      * Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
      */
     get policies(): PoliciesRequestBuilder;
+    /**
+     * Provides operations to manage the settings property of the microsoft.graph.conditionalAccessRoot entity.
+     */
+    get settings(): SettingsRequestBuilder;
     /**
      * Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
      */
@@ -92,6 +98,9 @@ export const ConditionalAccessRequestBuilderNavigationMetadata: Record<Exclude<k
     policies: {
         requestsMetadata: PoliciesRequestBuilderRequestsMetadata,
         navigationMetadata: PoliciesRequestBuilderNavigationMetadata,
+    },
+    settings: {
+        requestsMetadata: SettingsRequestBuilderRequestsMetadata,
     },
     templates: {
         requestsMetadata: TemplatesRequestBuilderRequestsMetadata,

@@ -27,28 +27,30 @@ export interface BucketsRequestBuilder extends BaseRequestBuilder<BucketsRequest
      */
      byBucketId(bucketId: string) : BucketItemRequestBuilder;
     /**
-     * The collection of buckets in the plan. Read-only. Nullable.
+     * Get a list of the bucket objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<BucketCollectionResponse>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plan-list-buckets?view=graph-rest-beta|Find more info here}
      */
      get(requestConfiguration?: RequestConfiguration<BucketsRequestBuilderGetQueryParameters> | undefined) : Promise<BucketCollectionResponse | undefined>;
     /**
-     * Create new navigation property to buckets for planner
+     * Create a new bucket object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {Promise<Bucket>}
      * @throws {ODataError} error when the service returns a 4XX or 5XX status code
+     * @see {@link https://learn.microsoft.com/graph/api/plan-post-buckets?view=graph-rest-beta|Find more info here}
      */
      post(body: Bucket, requestConfiguration?: RequestConfiguration<object> | undefined) : Promise<Bucket | undefined>;
     /**
-     * The collection of buckets in the plan. Read-only. Nullable.
+     * Get a list of the bucket objects and their properties.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
      */
      toGetRequestInformation(requestConfiguration?: RequestConfiguration<BucketsRequestBuilderGetQueryParameters> | undefined) : RequestInformation;
     /**
-     * Create new navigation property to buckets for planner
+     * Create a new bucket object.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @returns {RequestInformation}
@@ -56,7 +58,7 @@ export interface BucketsRequestBuilder extends BaseRequestBuilder<BucketsRequest
      toPostRequestInformation(body: Bucket, requestConfiguration?: RequestConfiguration<object> | undefined) : RequestInformation;
 }
 /**
- * The collection of buckets in the plan. Read-only. Nullable.
+ * Get a list of the bucket objects and their properties.
  */
 export interface BucketsRequestBuilderGetQueryParameters {
     /**

@@ -39,7 +39,7 @@ export interface AlertRecord extends Entity, Parsable {
      */
     alertRuleId?: string | null;
     /**
-     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario.
+     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario, cloudPcReserveHealthScenario. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario, cloudPcReserveHealthScenario.
      */
     alertRuleTemplate?: AlertRuleTemplate | null;
     /**
@@ -75,7 +75,7 @@ export interface AlertRecordCollectionResponse extends BaseCollectionPaginationC
 }
 export interface AlertRule extends Entity, Parsable {
     /**
-     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario.  Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario.
+     * The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario, cloudPcReserveHealthScenario.  Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario, cloudPcReserveHealthScenario.
      */
     alertRuleTemplate?: AlertRuleTemplate | null;
     /**
@@ -457,7 +457,7 @@ export interface PortalNotification extends AdditionalDataHolder, BackedModel, P
      */
     alertRuleName?: string | null;
     /**
-     * The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+     * The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario, cloudPcReserveHealthScenario. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario, cloudPcFrontlineConcurrencyScenario, cloudPcUserSettingsPersistenceScenario, cloudPcDeprovisionFailedScenario, cloudPcReserveHealthScenario.
      */
     alertRuleTemplate?: AlertRuleTemplate | null;
     /**
@@ -492,7 +492,7 @@ export interface RuleCondition extends AdditionalDataHolder, BackedModel, Parsab
      */
     backingStoreEnabled?: boolean | null;
     /**
-     * The property that the rule condition monitors. The possible values are: provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue, frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold.
+     * The property that the rule condition monitors. The possible values are: provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue, frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold, cloudPcReserveLicensesAvailabilityBelowThreshold, reserveCloudPcUnlicensedUsersAssignment, cloudPcMaxUserStorageUsageThresholdExceeded. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: frontlineBufferUsageDuration, frontlineBufferUsageThreshold, cloudPcUserSettingsPersistenceUsageThreshold, cloudPcDeprovisionedThreshold, cloudPcReserveDeprovisionFailedThreshold, cloudPcReserveLicensesAvailabilityBelowThreshold, reserveCloudPcUnlicensedUsersAssignment, cloudPcMaxUserStorageUsageThresholdExceeded.
      */
     conditionCategory?: ConditionCategory | null;
     /**
@@ -726,6 +726,7 @@ export const AlertRuleTemplateObject = {
     CloudPcFrontlineConcurrencyScenario: "cloudPcFrontlineConcurrencyScenario",
     CloudPcUserSettingsPersistenceScenario: "cloudPcUserSettingsPersistenceScenario",
     CloudPcDeprovisionFailedScenario: "cloudPcDeprovisionFailedScenario",
+    CloudPcReserveHealthScenario: "cloudPcReserveHealthScenario",
 } as const;
 export const AlertStatusTypeObject = {
     Active: "active",
@@ -747,6 +748,9 @@ export const ConditionCategoryObject = {
     CloudPcUserSettingsPersistenceUsageThreshold: "cloudPcUserSettingsPersistenceUsageThreshold",
     CloudPcDeprovisionedThreshold: "cloudPcDeprovisionedThreshold",
     CloudPcReserveDeprovisionFailedThreshold: "cloudPcReserveDeprovisionFailedThreshold",
+    CloudPcReserveLicensesAvailabilityBelowThreshold: "cloudPcReserveLicensesAvailabilityBelowThreshold",
+    ReserveCloudPcUnlicensedUsersAssignment: "reserveCloudPcUnlicensedUsersAssignment",
+    CloudPcMaxUserStorageUsageThresholdExceeded: "cloudPcMaxUserStorageUsageThresholdExceeded",
 } as const;
 export const NotificationChannelTypeObject = {
     Portal: "portal",
